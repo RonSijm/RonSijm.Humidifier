@@ -375,6 +375,13 @@ namespace Humidifier.CodeGen
                                 case "Boolean":
                                     typeName = "Dictionary<string, bool>";
                                     break;
+
+                                // Not sure if this works, but if the specs expect Json,
+                                // I guess you can just add a random object and serialize it right?
+                                case "Json":
+                                    typeName = "dynamic";
+                                    break;
+
                                 default:
                                     throw new InvalidOperationException($"Unknown PrimitiveItemType: {property.PrimitiveItemType}");
                             }
@@ -522,8 +529,7 @@ namespace Humidifier.CodeGen
             {
                 property.Type = "dynamic";
             }
-
-            if (property.PrimitiveType == null)
+            else if (property.PrimitiveType == null)
             {
                 Debug.Assert(property.Type != null);
             }
