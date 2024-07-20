@@ -1,48 +1,48 @@
-﻿namespace Humidifier.CodeGen
+﻿using System.Threading.Tasks;
+
+namespace Humidifier.CodeGen
 {
     public static class Program
     {
         private const string CloudFormationResourceSpecificationUrl = "https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json";
 
-        public static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            var json = DownloadSpecs();
+            var sourcePath = TryFindSourcePath(args);
+            var json = await GetSpecsJson(args, sourcePath);
+
+            if(json == null)
+            {
+                return;
+            }
 
             var specification = ParseSpecification(json);
 
-            Console.WriteLine($"ResourceSpecificationVersion: {specification.ResourceSpecificationVersion}");
+            var versionFile = await CheckSpecVersion(args, specification, sourcePath);
 
-            var solutionDirectory = GetSolutionDirectory(args);
-            var sourcePath = FindPath(solutionDirectory, "Humidifier.sln");
-
-            if (sourcePath == null)
+            if (versionFile == null)
             {
-                Console.WriteLine("Could not find the solution file.");
-
-                // Throwing exception to stop Github from continuing the workflow
-                throw new FileNotFoundException("Humidifier.sln");
+                return;
             }
 
             var humidifierPath = Path.Combine(sourcePath, "Humidifier");
-
-            var versionFile = Path.Combine(sourcePath, "spec-version.txt");
-            var currentVersion = File.ReadAllText(versionFile);
-
-            if (currentVersion == specification.ResourceSpecificationVersion || args != null && args.Any(x => x.Contains("force")))
-            {
-                // If we're already using this version, we don't have to regenerate
-                // Unless something was actually changed to the generator.
-                Console.WriteLine($"Current version is already {currentVersion}.");
-                Console.WriteLine($"Use 'Force' argument to regenerate anyways.");
-                return;
-            }
 
             CleanupOldGeneratedResults(humidifierPath);
 
             WriteSpecsToFile(sourcePath, json);
 
-            Console.WriteLine("Parsing spec");
+            await ParseSpecs(specification, humidifierPath);
 
+            // Write the version file last, so we regenerate if something goes wrong.
+            await File.WriteAllTextAsync(versionFile, specification.ResourceSpecificationVersion);
+
+            Console.WriteLine("Done");
+            Console.ResetColor();
+        }
+
+        private static async Task ParseSpecs(Specification specification, string humidifierPath)
+        {
+            Console.WriteLine("Parsing spec");
 
             foreach (var resourceType in specification.ResourceTypes)
             {
@@ -184,19 +184,86 @@
 
                 namespaceDecl = namespaceDecl.AddMembers(resourceClassDecl);
 
-                if (propertyTypes.Any()) namespaceDecl = namespaceDecl.AddMembers(propertyTypesNamespace);
+                if (propertyTypes.Any())
+                {
+                    namespaceDecl = namespaceDecl.AddMembers(propertyTypesNamespace);
+                }
 
                 var code = namespaceDecl.NormalizeWhitespace().ToFullString();
                 var filePath = $"{path}/{resourceClassName}.cs";
-                File.WriteAllText(filePath, code);
+                await File.WriteAllTextAsync(filePath, code);
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
+        }
 
-            File.WriteAllText(versionFile, specification.ResourceSpecificationVersion);
+        private static async Task<string> CheckSpecVersion(string[] args, Specification specification, string sourcePath)
+        {
+            Console.WriteLine($"ResourceSpecificationVersion: {specification.ResourceSpecificationVersion}");
 
-            Console.WriteLine("Done");
-            Console.ResetColor();
+            var versionFile = Path.Combine(sourcePath, "spec-version.txt");
+            var currentVersion = await File.ReadAllTextAsync(versionFile);
+
+            if (currentVersion == specification.ResourceSpecificationVersion || args != null && args.Any(x => x.Contains("force")))
+            {
+                // If we're already using this version, we don't have to regenerate
+                // Unless something was actually changed to the generator.
+                Console.WriteLine($"Current version is already {currentVersion}.");
+                Console.WriteLine($"Use 'Force' argument to regenerate anyways.");
+
+                return null;
+            }
+
+            return versionFile;
+        }
+
+        private static async Task<string> GetSpecsJson(string[] args, string sourcePath)
+        {
+            var etagVersionFile = Path.Combine(sourcePath, "etag-version.txt");
+            var serverEtagVersion = await GetServerEtagVersion();
+
+            if (etagVersionFile != serverEtagVersion || args != null && args.Any(x => x.Contains("redownload")))
+            {
+                var (downloadedJson, etag) = await DownloadSpecs();
+                await File.WriteAllTextAsync(etagVersionFile, etag);
+
+                return downloadedJson;
+            }
+
+            if(args != null && args.Any(x => x.Contains("redownload")))
+            {
+                var codegenPath = Path.Combine(sourcePath, "Humidifier.CodeGen");
+                var specFile = Path.Combine(codegenPath, "Specification.json");
+
+                return await File.ReadAllTextAsync(specFile);
+            }
+
+            return null;
+        }
+
+        private static async Task<string> GetServerEtagVersion()
+        {
+            var request = new HttpRequestMessage(HttpMethod.Head, CloudFormationResourceSpecificationUrl);
+            var client = new HttpClient();
+            var response = await client.SendAsync(request);
+            var serverEtagVersion = response.Headers.ETag.Tag;
+            return serverEtagVersion;
+        }
+
+        private static string TryFindSourcePath(string[] args)
+        {
+            var solutionDirectory = GetSolutionDirectory(args);
+            var sourcePath = FindPath(solutionDirectory, "Humidifier.sln");
+
+            if (sourcePath == null)
+            {
+                Console.WriteLine("Could not find the solution file.");
+
+                // Throwing exception to stop Github from continuing the workflow
+                throw new FileNotFoundException("Humidifier.sln");
+            }
+
+            return sourcePath;
         }
 
         private static string GetSolutionDirectory(string[] args)
@@ -235,7 +302,7 @@
             File.WriteAllText(Path.Combine(codegenPath, "Specification.json"), json);
         }
 
-        private static string DownloadSpecs()
+        private static async Task<(string, string)> DownloadSpecs()
         {
             Console.WriteLine($"Downloading spec from {CloudFormationResourceSpecificationUrl}");
 
@@ -249,14 +316,14 @@
             var request = new HttpRequestMessage(HttpMethod.Get, CloudFormationResourceSpecificationUrl);
             request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
 
-            var response = client.SendAsync(request).GetAwaiter().GetResult();
-            var json = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+            var response = await client.SendAsync(request);
+            var json = await response.Content.ReadAsStringAsync();
 
-            //
             // https://github.com/jakejscott/Humidifier/issues/12
-            // 
             json = json.Replace("VPCEndpointType", "VpcEndpointType");
-            return json;
+            var etag = response.Headers.ETag.Tag;
+
+            return (json, etag);
         }
 
         private static void CleanupOldGeneratedResults(string humidifierPath)

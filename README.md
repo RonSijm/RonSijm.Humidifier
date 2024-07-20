@@ -3,10 +3,16 @@
 Q: What is this fork?  
 A: [The original](https://github.com/jakejscott/Humidifier) project hasn't been updated in 4 years, so I'm not really sure if it's still maintained. And since it was created 4 years ago, a lot has changed in CloudFormation. And I wanted to use this for my CloudFormation...
 
-Luckily [the original author Jake Scott](https://github.com/jakejscott) probably anticipated that a lot would change, and made a generator to update everything. So I just updated everything and did [some small fixes to get it to generate and compile](https://github.com/jakejscott/Humidifier/commit/6c7e6ff0b03d937b91c5a241f6d9cd24adc01347). "Showing 1,165 changed files with 327,286 additions and 18,649 deletions." 🫠
+Luckily [the original author Jake Scott](https://github.com/jakejscott) probably anticipated that a lot would change, and made a generator to update everything.
+
+This Fork runs the generator daily, and publishes a new nuget if there is an update available.
 
 Q: Why did you prefix the fork with `RonSijm.`  
-A: Since I intend to publish a NuGet so other people can use it, I cannot use the exact same name (Humidifier).
+A: I'm publishing a NuGet so other people can use it, I cannot use the exact same name (Humidifier) in Nuget.
+
+## Versioning syntax:
+
+x.x-{aws-spec-version}
 
 For compatibility reasons I haven't updated any or the original namespaces or whatever, so this fork should be compatible with the original version as substitute
 
