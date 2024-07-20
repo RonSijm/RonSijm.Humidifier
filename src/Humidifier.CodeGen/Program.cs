@@ -1,77 +1,50 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-
-using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
-
-namespace Humidifier.CodeGen
+﻿namespace Humidifier.CodeGen
 {
     public static class Program
     {
-        static string url = "https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json";
+        private const string CloudFormationResourceSpecificationUrl = "https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json";
 
         public static void Main(string[] args)
         {
-            Console.WriteLine("Cleaning files");
+            var json = DownloadSpecs();
 
-            var pwd = Directory.GetCurrentDirectory();
-            var srcPath = FindPath(pwd, "Humidifier.sln");
-            var humidifierPath = Path.Combine(srcPath, "Humidifier");
-            var codegenPath = Path.Combine(srcPath, "Humidifier.CodeGen");
+            var specification = ParseSpecification(json);
 
-            foreach (var directory in Directory.GetDirectories(humidifierPath))
+            Console.WriteLine($"ResourceSpecificationVersion: {specification.ResourceSpecificationVersion}");
+
+            var solutionDirectory = GetSolutionDirectory(args);
+            var sourcePath = FindPath(solutionDirectory, "Humidifier.sln");
+
+            if (sourcePath == null)
             {
-                if (directory.EndsWith("bin") || directory.EndsWith("obj"))
-                    continue;
+                Console.WriteLine("Could not find the solution file.");
 
-                if (directory.Contains("Serverless"))
-                    continue;
-
-                Directory.Delete(directory, true);
+                // Throwing exception to stop Github from continuing the workflow
+                throw new FileNotFoundException("Humidifier.sln");
             }
 
-            Console.WriteLine("Downloading spec from " + url);
+            var humidifierPath = Path.Combine(sourcePath, "Humidifier");
 
-            var handler = new HttpClientHandler
+            var versionFile = Path.Combine(sourcePath, "spec-version.txt");
+            var currentVersion = File.ReadAllText(versionFile);
+
+            if (currentVersion == specification.ResourceSpecificationVersion || args != null && args.Any(x => x.Contains("force")))
             {
-                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
-            };
-            
-            var client = new HttpClient(handler);
+                // If we're already using this version, we don't have to regenerate
+                // Unless something was actually changed to the generator.
+                Console.WriteLine($"Current version is already {currentVersion}.");
+                Console.WriteLine($"Use 'Force' argument to regenerate anyways.");
+                return;
+            }
 
-            var request = new HttpRequestMessage(HttpMethod.Get, url);
-            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+            CleanupOldGeneratedResults(humidifierPath);
 
-            var response = client.SendAsync(request).GetAwaiter().GetResult();
-            var json = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-
-            //
-            // https://github.com/jakejscott/Humidifier/issues/12
-            // 
-            json = json.Replace("VPCEndpointType", "VpcEndpointType");
-
-
-            File.WriteAllText(Path.Combine(codegenPath, "Specification.json"), json);
+            WriteSpecsToFile(sourcePath, json);
 
             Console.WriteLine("Parsing spec");
-            Specification specification = ParseSpecification(json);
 
-            Console.WriteLine("ResourceSpecificationVersion: " + specification.ResourceSpecificationVersion);
 
-            foreach (ResourceType resourceType in specification.ResourceTypes)
+            foreach (var resourceType in specification.ResourceTypes)
             {
                 var parts = resourceType.Name.Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -81,21 +54,20 @@ namespace Humidifier.CodeGen
 
                 Directory.CreateDirectory(path);
 
-                var propsNamespace = resourceClassName + "Types";
+                var propsNamespace = $"{resourceClassName}Types";
 
-                var namespaceDecl = NamespaceDeclaration(ParseName("Humidifier." + group))
+                var namespaceDecl = NamespaceDeclaration(ParseName($"Humidifier.{group}"))
                     .AddUsings(
                         UsingDirective(ParseName("System.Collections.Generic"))
                     );
 
-                List<PropertyType> propertyTypes = specification.PropertyTypes.Where(x => x.Name.StartsWith(resourceType.Name + ".")).ToList();
+                var propertyTypes = specification.PropertyTypes.Where(x => x.Name.StartsWith($"{resourceType.Name}."))
+                    .ToList();
 
                 if (propertyTypes.Any())
-                {
                     namespaceDecl = namespaceDecl.AddUsings(
                         UsingDirective(ParseName(propsNamespace))
                     );
-                }
 
                 var resourceClassDecl = ClassDeclaration(resourceClassName)
                     .AddModifiers(Token(SyntaxKind.PublicKeyword))
@@ -104,18 +76,16 @@ namespace Humidifier.CodeGen
                 if (resourceType.Attributes != null)
                 {
                     var attributesClassDecl = ClassDeclaration("Attributes")
-                        .AddModifiers(Token(SyntaxKind.PublicKeyword))
-                        .AddModifiers(Token(SyntaxKind.StaticKeyword));
+                            .AddModifiers(Token(SyntaxKind.PublicKeyword))
+                        //.AddModifiers(Token(SyntaxKind.StaticKeyword))
+                        ;
 
-                    foreach (Attribute attribute in resourceType.Attributes)
+                    foreach (var attribute in resourceType.Attributes)
                     {
-                        if (attribute.Name.Contains(".") && attribute.Name != resourceClassName)
-                        {
-                            continue;
-                        }
+                        if (attribute.Name.Contains(".") && attribute.Name != resourceClassName) continue;
 
-                        string[] tokens = attribute.Name.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
-                        string attributeName = tokens.Length == 2 ? tokens[1] : tokens[0];
+                        var tokens = attribute.Name.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
+                        var attributeName = tokens.Length == 2 ? tokens[1] : tokens[0];
 
                         var propertyDecl = PropertyDeclaration(ParseTypeName("string"), attributeName)
                             .WithTrailingTrivia(
@@ -134,19 +104,19 @@ namespace Humidifier.CodeGen
 
                 {
                     var propertyDecAWSType = PropertyDeclaration(ParseTypeName("string"), "AWSTypeName")
-                            .AddModifiers(Token(SyntaxKind.PublicKeyword))
-                            .AddModifiers(Token(SyntaxKind.OverrideKeyword))
-                            .AddAccessorListAccessors(
-                                AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithBody(Block(
-                                        ReturnStatement(
-                                            LiteralExpression(
-                                                SyntaxKind.StringLiteralExpression,
-                                                Literal(string.Format(@"@""{0}""", resourceType.Name), resourceType.Name)
-                                            )
+                        .AddModifiers(Token(SyntaxKind.PublicKeyword))
+                        .AddModifiers(Token(SyntaxKind.OverrideKeyword))
+                        .AddAccessorListAccessors(
+                            AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithBody(Block(
+                                    ReturnStatement(
+                                        LiteralExpression(
+                                            SyntaxKind.StringLiteralExpression,
+                                            Literal($@"@""{resourceType.Name}""", resourceType.Name)
                                         )
                                     )
                                 )
-                            );
+                            )
+                        );
 
                     resourceClassDecl = resourceClassDecl.AddMembers(propertyDecAWSType);
                 }
@@ -156,18 +126,17 @@ namespace Humidifier.CodeGen
                     var typeName = GetTypeName(property);
 
                     var propertyName = property.Name;
-                    if (propertyName == resourceClassName || propertyName == "Attributes")
-                    {
-                        propertyName += "_";
-                    }
+                    if (propertyName == resourceClassName || propertyName == "Attributes") propertyName += "_";
 
                     var commentDecl = ParseLeadingTrivia(GetComment(property));
 
                     var propertyDecl = PropertyDeclaration(ParseTypeName(typeName), propertyName)
                             .AddModifiers(Token(SyntaxKind.PublicKeyword))
                             .AddAccessorListAccessors(
-                                AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                                AccessorDeclaration(SyntaxKind.SetAccessorDeclaration).WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                                AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                             )
                             .WithLeadingTrivia(TriviaList(commentDecl))
                         ;
@@ -177,50 +146,45 @@ namespace Humidifier.CodeGen
 
                 var propertyTypesNamespace = NamespaceDeclaration(ParseName(propsNamespace));
 
-                foreach (PropertyType propertyType in propertyTypes)
+                foreach (var propertyType in propertyTypes)
                 {
-                    var split = propertyType.Name.Split(new[] {"::"}, StringSplitOptions.RemoveEmptyEntries);
-                    var propertyTypeClassName = split[2].Split(new[] {"."}, StringSplitOptions.RemoveEmptyEntries)[1];
+                    var split = propertyType.Name.Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
+                    var propertyTypeClassName = split[2].Split(new[] { "." }, StringSplitOptions.RemoveEmptyEntries)[1];
 
                     var propertyTypeClassDecl = ClassDeclaration(propertyTypeClassName)
                         .AddModifiers(Token(SyntaxKind.PublicKeyword));
 
                     if (propertyType.Properties != null)
-                    {
                         foreach (var property in propertyType.Properties)
                         {
                             var typeName = GetTypeName(property);
 
                             var propertyName = property.Name;
                             if (property.Name == propertyTypeClassName || propertyName == "Attributes")
-                            {
                                 propertyName += "_";
-                            }
 
                             var commentDecl = ParseLeadingTrivia(GetComment(property));
 
-                            PropertyDeclarationSyntax propertyDecl = PropertyDeclaration(ParseTypeName(typeName), propertyName)
+                            var propertyDecl = PropertyDeclaration(ParseTypeName(typeName), propertyName)
                                     .AddModifiers(Token(SyntaxKind.PublicKeyword))
                                     .AddAccessorListAccessors(
-                                        AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                                        AccessorDeclaration(SyntaxKind.SetAccessorDeclaration).WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                        AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                                        AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                                     )
                                     .WithLeadingTrivia(TriviaList(commentDecl))
                                 ;
 
                             propertyTypeClassDecl = propertyTypeClassDecl.AddMembers(propertyDecl);
                         }
-                    }
 
                     propertyTypesNamespace = propertyTypesNamespace.AddMembers(propertyTypeClassDecl);
                 }
 
                 namespaceDecl = namespaceDecl.AddMembers(resourceClassDecl);
 
-                if (propertyTypes.Any())
-                {
-                    namespaceDecl = namespaceDecl.AddMembers(propertyTypesNamespace);
-                }
+                if (propertyTypes.Any()) namespaceDecl = namespaceDecl.AddMembers(propertyTypesNamespace);
 
                 var code = namespaceDecl.NormalizeWhitespace().ToFullString();
                 var filePath = $"{path}/{resourceClassName}.cs";
@@ -228,8 +192,96 @@ namespace Humidifier.CodeGen
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
+
+            File.WriteAllText(versionFile, specification.ResourceSpecificationVersion);
+
             Console.WriteLine("Done");
             Console.ResetColor();
+        }
+
+        private static string GetSolutionDirectory(string[] args)
+        {
+            string currentDirectory = null;
+
+            for (var i = 0; i < args.Length; i++)
+            {
+                if (args[i].Equals("-directory", StringComparison.OrdinalIgnoreCase) && i + 1 < args.Length)
+                {
+                    currentDirectory = args[i + 1];
+                }
+            }
+
+            if (currentDirectory == null)
+            {
+                Console.WriteLine("-directory args not specified. Using current dir.");
+                currentDirectory = Directory.GetCurrentDirectory();
+            }
+            else
+            {
+                Console.WriteLine($"-directory specified. Using {currentDirectory}");
+            }
+
+            if (currentDirectory.EndsWith("RonSijm.Humidifier"))
+            {
+                currentDirectory = Path.Combine(currentDirectory, "src");
+            }
+
+            return currentDirectory;
+        }
+
+        private static void WriteSpecsToFile(string srcPath, string json)
+        {
+            var codegenPath = Path.Combine(srcPath, "Humidifier.CodeGen");
+            File.WriteAllText(Path.Combine(codegenPath, "Specification.json"), json);
+        }
+
+        private static string DownloadSpecs()
+        {
+            Console.WriteLine($"Downloading spec from {CloudFormationResourceSpecificationUrl}");
+
+            var handler = new HttpClientHandler
+            {
+                AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
+            };
+
+            var client = new HttpClient(handler);
+
+            var request = new HttpRequestMessage(HttpMethod.Get, CloudFormationResourceSpecificationUrl);
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+
+            var response = client.SendAsync(request).GetAwaiter().GetResult();
+            var json = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
+
+            //
+            // https://github.com/jakejscott/Humidifier/issues/12
+            // 
+            json = json.Replace("VPCEndpointType", "VpcEndpointType");
+            return json;
+        }
+
+        private static void CleanupOldGeneratedResults(string humidifierPath)
+        {
+            Console.WriteLine("Cleaning files");
+
+            foreach (var directory in Directory.GetDirectories(humidifierPath))
+            {
+                if (directory.EndsWith("bin") || directory.EndsWith("obj"))
+                {
+                    continue;
+                }
+
+                if (directory.Contains("Serverless"))
+                {
+                    continue;
+                }
+
+                if (directory.Contains("1-ManualFixes"))
+                {
+                    continue;
+                }
+
+                Directory.Delete(directory, true);
+            }
         }
 
         private static string GetComment(Property property)
@@ -308,97 +360,94 @@ namespace Humidifier.CodeGen
                 }
 #endif
             }
-            else
+
+            Debug.Assert(property.PrimitiveType == null);
+
+            switch (property.Type)
             {
-                Debug.Assert(property.PrimitiveType == null);
-
-                switch (property.Type)
-                {
-                    // TODO: Might have use "List<dynamic>" dynamic[] or dynamic.
-                    case "List":
-                        if (property.PrimitiveItemType != null)
+                // TODO: Might have use "List<dynamic>" dynamic[] or dynamic.
+                case "List":
+                    if (property.PrimitiveItemType != null)
+                    {
+                        switch (property.PrimitiveItemType)
                         {
-                            switch (property.PrimitiveItemType)
-                            {
-                                case "String":
-                                    typeName = "dynamic";
-                                    break;
-                                case "Long":
-                                    typeName = $"List<long>";
-                                    break;
-                                case "Double":
-                                    typeName = $"List<double>";
-                                    break;
-                                case "Boolean":
-                                    typeName = "List<bool>";
-                                    break;
-                                case "Integer":
-                                    typeName = "List<int>";
-                                    break;
-                                case "Timestamp":
-                                    typeName = "List<DateTime>";
-                                    break;
-                                case "Json":
-                                    typeName = "List<dynamic>";
-                                    break;
-                                default:
-                                    throw new InvalidOperationException($"Unknown PrimitiveItemType: {property.PrimitiveItemType}");
-                            }
-                        }
-                        else
-                        {
-                            // Hack, SshPublicKey contains object of primitive type String
-                            if (property.ItemType == "SshPublicKey")
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("WARN::Property name: " + property.Name + " is a primitive type: " + property.ItemType);
-                                Console.ResetColor();
+                            case "String":
+                                typeName = "dynamic";
+                                break;
+                            case "Long":
+                                typeName = "List<long>";
+                                break;
+                            case "Double":
+                                typeName = "List<double>";
+                                break;
+                            case "Boolean":
+                                typeName = "List<bool>";
+                                break;
+                            case "Integer":
+                                typeName = "List<int>";
+                                break;
+                            case "Timestamp":
+                                typeName = "List<DateTime>";
+                                break;
+                            case "Json":
                                 typeName = "List<dynamic>";
-                            }
-                            else
-                            {
-                                typeName = $"List<{property.ItemType}>";
-                            }
+                                break;
+                            default:
+                                throw new InvalidOperationException(
+                                    $"Unknown PrimitiveItemType: {property.PrimitiveItemType}");
                         }
-
-                        break;
-
-                    // TODO: Might have to use "Dictionary<string, dynamic>"
-                    case "Map":
-                        if (property.PrimitiveItemType != null)
+                    }
+                    else
+                    {
+                        // Hack, SshPublicKey contains object of primitive type String
+                        if (property.ItemType == "SshPublicKey")
                         {
-                            switch (property.PrimitiveItemType)
-                            {
-                                case "String":
-                                    typeName = $"Dictionary<string, dynamic>";
-                                    break;
-                                case "Boolean":
-                                    typeName = "Dictionary<string, bool>";
-                                    break;
-
-                                // Not sure if this works, but if the specs expect Json,
-                                // I guess you can just add a random object and serialize it right?
-                                case "Json":
-                                    typeName = "dynamic";
-                                    break;
-
-                                default:
-                                    throw new InvalidOperationException($"Unknown PrimitiveItemType: {property.PrimitiveItemType}");
-                            }
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine(
+                                $"WARN::Property name: {property.Name} is a primitive type: {property.ItemType}");
+                            Console.ResetColor();
+                            typeName = "List<dynamic>";
                         }
                         else
                         {
-                            // Console.WriteLine("Map:: " + property.ItemType);
-                            typeName = $"Dictionary<string, {property.ItemType}>";
+                            typeName = $"List<{property.ItemType}>";
                         }
+                    }
 
-                        break;
+                    break;
 
-                    default:
-                        // Console.WriteLine("Struct:: " + property.Type);
-                        typeName = property.Type;
-                        break;
-                }
+                // TODO: Might have to use "Dictionary<string, dynamic>"
+                case "Map":
+                    if (property.PrimitiveItemType != null)
+                        switch (property.PrimitiveItemType)
+                        {
+                            case "String":
+                                typeName = "Dictionary<string, dynamic>";
+                                break;
+                            case "Boolean":
+                                typeName = "Dictionary<string, bool>";
+                                break;
+
+                            // Not sure if this works, but if the specs expect Json,
+                            // I guess you can just add a random object and serialize it right?
+                            case "Json":
+                                typeName = "dynamic";
+                                break;
+
+                            default:
+                                throw new InvalidOperationException(
+                                    $"Unknown PrimitiveItemType: {property.PrimitiveItemType}");
+                        }
+                    else
+                        // Console.WriteLine("Map:: " + property.ItemType);
+                        typeName = $"Dictionary<string, {property.ItemType}>";
+
+                    break;
+
+                default:
+                    // Console.WriteLine("Struct:: " + property.Type);
+                    typeName = property.Type;
+                    break;
             }
 
             return typeName;
@@ -414,9 +463,7 @@ namespace Humidifier.CodeGen
             };
 
             if (string.IsNullOrWhiteSpace(specification.ResourceSpecificationVersion))
-            {
                 throw new InvalidOperationException("Error: ResourceSpecificationVersion");
-            }
 
             foreach (var propType in parsed.SelectToken("PropertyTypes").Children<JProperty>())
             {
@@ -426,38 +473,34 @@ namespace Humidifier.CodeGen
                     var primitiveTypeValue = primitiveType.Value<string>();
 
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("WARN::Property name: " + propType.Name + " is a primitive type: " + primitiveTypeValue);
+                    Console.WriteLine(
+                        $"WARN::Property name: {propType.Name} is a primitive type: {primitiveTypeValue}");
                     Console.ResetColor();
                     continue;
                 }
-                else
+
+                var docs = propType.Value.SelectToken("Documentation");
+                if (docs == null) throw new InvalidOperationException($"Missing docs{propType.Name}");
+
+                var propertyType = new PropertyType
                 {
-                    var docs = propType.Value.SelectToken("Documentation");
-                    if (docs == null)
+                    Name = propType.Name,
+                    Documentation = docs.ToString()
+                };
+
+                var properties = propType.Value.SelectToken("Properties");
+                if (properties != null)
+                {
+                    if (propertyType.Properties == null) propertyType.Properties = new List<Property>();
+
+                    foreach (var prop in properties.Children<JProperty>())
                     {
-                        throw new InvalidOperationException("Missing docs" + propType.Name);
+                        var property = ParseProperty(prop);
+                        propertyType.Properties.Add(property);
                     }
-
-                    var propertyType = new PropertyType
-                    {
-                        Name = propType.Name,
-                        Documentation = docs?.ToString()
-                    };
-
-                    var properties = propType.Value.SelectToken("Properties");
-                    if (properties != null)
-                    {
-                        if (propertyType.Properties == null) propertyType.Properties = new List<Property>();
-
-                        foreach (var prop in properties.Children<JProperty>())
-                        {
-                            Property property = ParseProperty(prop);
-                            propertyType.Properties.Add(property);
-                        }
-                    }
-
-                    specification.PropertyTypes.Add(propertyType);
                 }
+
+                specification.PropertyTypes.Add(propertyType);
             }
 
             foreach (var resType in parsed.SelectToken("ResourceTypes").Children<JProperty>())
@@ -473,7 +516,7 @@ namespace Humidifier.CodeGen
 
                 foreach (var prop in properties.Children<JProperty>())
                 {
-                    Property property = ParseProperty(prop);
+                    var property = ParseProperty(prop);
                     resourceType.Properties.Add(property);
                 }
 
@@ -484,7 +527,7 @@ namespace Humidifier.CodeGen
 
                     foreach (var attr in attributes.Children<JProperty>())
                     {
-                        Attribute attribute = ParseAttribute(attr);
+                        var attribute = ParseAttribute(attr);
                         resourceType.Attributes.Add(attribute);
                     }
                 }
@@ -547,12 +590,25 @@ namespace Humidifier.CodeGen
             return property;
         }
 
-        static string FindPath(string path, string searchPattern)
+        private static string FindPath(string path, string searchPattern)
         {
+            Console.WriteLine($"Searching in: {path}");
+
             var files = Directory.GetFiles(path, searchPattern, SearchOption.TopDirectoryOnly);
-            if (files.Any()) return path;
+            if (files.Any())
+            {
+                Console.WriteLine($"Found {searchPattern} in: {path}");
+                return path;
+            }
+
             var parent = Directory.GetParent(path);
-            if (parent.Exists) return FindPath(parent.FullName, searchPattern);
+            if (parent != null && parent.Exists)
+            {
+                Console.WriteLine($"Moving up to parent directory: {parent.FullName}");
+                return FindPath(parent.FullName, searchPattern);
+            }
+
+            Console.WriteLine("Reached the root directory without finding the file.");
             return null;
         }
     }

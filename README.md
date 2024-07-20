@@ -1,3 +1,23 @@
+# Fork note
+
+Q: What is this fork?  
+A: [The original](https://github.com/jakejscott/Humidifier) project hasn't been updated in 4 years, so I'm not really sure if it's still maintained. And since it was created 4 years ago, a lot has changed in CloudFormation. And I wanted to use this for my CloudFormation...
+
+Luckily [the original author Jake Scott](https://github.com/jakejscott) probably anticipated that a lot would change, and made a generator to update everything. So I just updated everything and did [some small fixes to get it to generate and compile](https://github.com/jakejscott/Humidifier/commit/6c7e6ff0b03d937b91c5a241f6d9cd24adc01347). "Showing 1,165 changed files with 327,286 additions and 18,649 deletions." 🫠
+
+Q: Why did you prefix the fork with `RonSijm.`  
+A: Since I intend to publish a NuGet so other people can use it, I cannot use the exact same name (Humidifier).
+
+For compatibility reasons I haven't updated any or the original namespaces or whatever, so this fork should be compatible with the original version as substitute
+
+## What's next?
+
+2 - I might try to generate a bunch of interfaces for classes, for example an `IHaveTags` interface - or an `IHaveEncryption` (KMS) - So I'll be easier to generically weave in settings to things that support it.
+
+</end of Fork Note, original Readme starts below>
+
+----------
+
 # Humidifier [![Build status](https://ci.appveyor.com/api/projects/status/qidmpegskc7tp020/branch/master?svg=true)](https://ci.appveyor.com/project/superlogical/humidifier/branch/master) [![NuGet](https://img.shields.io/nuget/v/Humidifier.svg)](https://www.nuget.org/packages/Humidifier/)
 
 Humidifier allows you to build AWS CloudFormation templates programmatically. Stacks and resources are represented as C# objects with accessors for all their supported properties.

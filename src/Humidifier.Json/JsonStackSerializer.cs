@@ -11,40 +11,40 @@ namespace Humidifier.Json
 {
     public class JsonStackSerializer : IStackSerializer
     {
-        private static readonly JsonSerializerSettings settings;
+        private static readonly JsonSerializerSettings Settings;
 
         static JsonStackSerializer()
         {
-            settings = new JsonSerializerSettings
+            Settings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
                 NullValueHandling = NullValueHandling.Ignore,
                 DateFormatHandling = DateFormatHandling.IsoDateFormat,
             };
 
-            settings.ContractResolver = new JsonStackSerializerContractResolver();
+            Settings.ContractResolver = new JsonStackSerializerContractResolver();
 
-            settings.Converters.Add(new ConditionConverter());
+            Settings.Converters.Add(new ConditionConverter());
 
             // Intrinsic functions
-            settings.Converters.Add(new FnJoinConverter());
-            settings.Converters.Add(new FnRefConverter());
-            settings.Converters.Add(new FnGetAttConverter());
-            settings.Converters.Add(new FnSubConverter());
-            settings.Converters.Add(new FnImportValueConverter());
-            settings.Converters.Add(new FnSplitConverter());
-            settings.Converters.Add(new FnSelectConverter());
-            settings.Converters.Add(new FnGetAZsConverter());
-            settings.Converters.Add(new FnFindInMapConverter());
-            settings.Converters.Add(new FnBase64Converter());
-            settings.Converters.Add(new FnCidrConvertor());
+            Settings.Converters.Add(new FnJoinConverter());
+            Settings.Converters.Add(new FnRefConverter());
+            Settings.Converters.Add(new FnGetAttConverter());
+            Settings.Converters.Add(new FnSubConverter());
+            Settings.Converters.Add(new FnImportValueConverter());
+            Settings.Converters.Add(new FnSplitConverter());
+            Settings.Converters.Add(new FnSelectConverter());
+            Settings.Converters.Add(new FnGetAZsConverter());
+            Settings.Converters.Add(new FnFindInMapConverter());
+            Settings.Converters.Add(new FnBase64Converter());
+            Settings.Converters.Add(new FnCidrConvertor());
 
             // Conditional functions
-            settings.Converters.Add(new FnAndConverter());
-            settings.Converters.Add(new FnIfConverter());
-            settings.Converters.Add(new FnEqualsConverter());
-            settings.Converters.Add(new FnNotConverter());
-            settings.Converters.Add(new FnOrConverter());
+            Settings.Converters.Add(new FnAndConverter());
+            Settings.Converters.Add(new FnIfConverter());
+            Settings.Converters.Add(new FnEqualsConverter());
+            Settings.Converters.Add(new FnNotConverter());
+            Settings.Converters.Add(new FnOrConverter());
         }
 
         public string Serialize(Stack stack)
@@ -116,7 +116,7 @@ namespace Humidifier.Json
                 }
             }
 
-            var result = JsonConvert.SerializeObject(stackJson, settings);
+            var result = JsonConvert.SerializeObject(stackJson, Settings);
             return result;
         }
 
