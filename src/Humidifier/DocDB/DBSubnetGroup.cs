@@ -19,12 +19,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBSubnetGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBSubnetGroupName { get; set; }
         /// <summary>
         /// DBSubnetGroupDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-dbsubnetgroupdescription
@@ -32,12 +27,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBSubnetGroupDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBSubnetGroupDescription { get; set; }
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-subnetids
@@ -46,12 +36,7 @@ namespace Humidifier.DocDB
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SubnetIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbsubnetgroup.html#cfn-docdb-dbsubnetgroup-tags
@@ -60,10 +45,6 @@ namespace Humidifier.DocDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

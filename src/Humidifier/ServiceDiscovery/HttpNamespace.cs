@@ -4,7 +4,7 @@ namespace Humidifier.ServiceDiscovery
 
     public class HttpNamespace : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
@@ -22,15 +22,19 @@ namespace Humidifier.ServiceDiscovery
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-description
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-name
@@ -38,10 +42,6 @@ namespace Humidifier.ServiceDiscovery
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

@@ -17,28 +17,18 @@ namespace Humidifier.LakeFormation
         /// DataLakePrincipal
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-datalakeprincipal
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: DataLakePrincipal
         /// </summary>
-        public DataLakePrincipal DataLakePrincipal
-        {
-            get;
-            set;
-        }
-
+        public DataLakePrincipal DataLakePrincipal { get; set; }
         /// <summary>
         /// Resource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-resource
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: Resource
         /// </summary>
-        public Resource Resource
-        {
-            get;
-            set;
-        }
-
+        public Resource Resource { get; set; }
         /// <summary>
         /// Permissions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissions
@@ -47,12 +37,7 @@ namespace Humidifier.LakeFormation
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Permissions_
-        {
-            get;
-            set;
-        }
-
+        public dynamic Permissions_ { get; set; }
         /// <summary>
         /// PermissionsWithGrantOption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissionswithgrantoption
@@ -61,29 +46,22 @@ namespace Humidifier.LakeFormation
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic PermissionsWithGrantOption
-        {
-            get;
-            set;
-        }
+        public dynamic PermissionsWithGrantOption { get; set; }
     }
 
     namespace PermissionsTypes
     {
-        public class DatabaseResource
+        public class ColumnWildcard
         {
             /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html#cfn-lakeformation-permissions-databaseresource-name
+            /// ExcludedColumnNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-columnwildcard.html#cfn-lakeformation-permissions-columnwildcard-excludedcolumnnames
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: List
+            /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic ExcludedColumnNames { get; set; }
         }
 
         public class DataLakePrincipal
@@ -95,40 +73,47 @@ namespace Humidifier.LakeFormation
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DataLakePrincipalIdentifier
-            {
-                get;
-                set;
-            }
+            public dynamic DataLakePrincipalIdentifier { get; set; }
         }
 
-        public class TableResource
+        public class DataLocationResource
         {
             /// <summary>
-            /// DatabaseName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-databasename
+            /// S3Resource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalocationresource.html#cfn-lakeformation-permissions-datalocationresource-s3resource
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DatabaseName
-            {
-                get;
-                set;
-            }
+            public dynamic S3Resource { get; set; }
+            /// <summary>
+            /// CatalogId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalocationresource.html#cfn-lakeformation-permissions-datalocationresource-catalogid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogId { get; set; }
+        }
 
+        public class DatabaseResource
+        {
+            /// <summary>
+            /// CatalogId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html#cfn-lakeformation-permissions-databaseresource-catalogid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogId { get; set; }
             /// <summary>
             /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html#cfn-lakeformation-permissions-databaseresource-name
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class Resource
@@ -140,12 +125,7 @@ namespace Humidifier.LakeFormation
             /// UpdateType: Mutable
             /// Type: TableResource
             /// </summary>
-            public TableResource TableResource
-            {
-                get;
-                set;
-            }
-
+            public TableResource TableResource { get; set; }
             /// <summary>
             /// DatabaseResource
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-databaseresource
@@ -153,11 +133,108 @@ namespace Humidifier.LakeFormation
             /// UpdateType: Mutable
             /// Type: DatabaseResource
             /// </summary>
-            public DatabaseResource DatabaseResource
-            {
-                get;
-                set;
-            }
+            public DatabaseResource DatabaseResource { get; set; }
+            /// <summary>
+            /// DataLocationResource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-datalocationresource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DataLocationResource
+            /// </summary>
+            public DataLocationResource DataLocationResource { get; set; }
+            /// <summary>
+            /// TableWithColumnsResource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-tablewithcolumnsresource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TableWithColumnsResource
+            /// </summary>
+            public TableWithColumnsResource TableWithColumnsResource { get; set; }
+        }
+
+        public class TableResource
+        {
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// CatalogId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-catalogid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogId { get; set; }
+            /// <summary>
+            /// TableWildcard
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-tablewildcard
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TableWildcard
+            /// </summary>
+            public TableWildcard TableWildcard { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class TableWildcard
+        {
+        }
+
+        public class TableWithColumnsResource
+        {
+            /// <summary>
+            /// ColumnNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-columnnames
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ColumnNames { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// CatalogId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-catalogid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogId { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// ColumnWildcard
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-columnwildcard
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ColumnWildcard
+            /// </summary>
+            public ColumnWildcard ColumnWildcard { get; set; }
         }
     }
 }

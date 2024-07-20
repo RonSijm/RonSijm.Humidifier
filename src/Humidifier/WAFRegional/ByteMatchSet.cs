@@ -21,12 +21,7 @@ namespace Humidifier.WAFRegional
         /// Type: List
         /// ItemType: ByteMatchTuple
         /// </summary>
-        public List<ByteMatchTuple> ByteMatchTuples
-        {
-            get;
-            set;
-        }
-
+        public List<ByteMatchTuple> ByteMatchTuples { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-name
@@ -34,11 +29,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ByteMatchSetTypes
@@ -52,12 +43,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TargetString
-            {
-                get;
-                set;
-            }
-
+            public dynamic TargetString { get; set; }
             /// <summary>
             /// TargetStringBase64
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-targetstringbase64
@@ -65,12 +51,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TargetStringBase64
-            {
-                get;
-                set;
-            }
-
+            public dynamic TargetStringBase64 { get; set; }
             /// <summary>
             /// PositionalConstraint
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-positionalconstraint
@@ -78,12 +59,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PositionalConstraint
-            {
-                get;
-                set;
-            }
-
+            public dynamic PositionalConstraint { get; set; }
             /// <summary>
             /// TextTransformation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-texttransformation
@@ -91,12 +67,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TextTransformation
-            {
-                get;
-                set;
-            }
-
+            public dynamic TextTransformation { get; set; }
             /// <summary>
             /// FieldToMatch
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-fieldtomatch
@@ -104,11 +75,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// Type: FieldToMatch
             /// </summary>
-            public FieldToMatch FieldToMatch
-            {
-                get;
-                set;
-            }
+            public FieldToMatch FieldToMatch { get; set; }
         }
 
         public class FieldToMatch
@@ -120,12 +87,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Data
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-data
@@ -133,11 +95,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Data
-            {
-                get;
-                set;
-            }
+            public dynamic Data { get; set; }
         }
     }
 }

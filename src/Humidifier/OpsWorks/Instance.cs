@@ -5,7 +5,7 @@ namespace Humidifier.OpsWorks
 
     public class Instance : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string AvailabilityZone =  "AvailabilityZone" ;
             public static string PrivateDnsName =  "PrivateDnsName" ;
@@ -29,12 +29,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AgentVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic AgentVersion { get; set; }
         /// <summary>
         /// AmiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-amiid
@@ -42,12 +37,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AmiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic AmiId { get; set; }
         /// <summary>
         /// Architecture
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-architecture
@@ -55,12 +45,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Architecture
-        {
-            get;
-            set;
-        }
-
+        public dynamic Architecture { get; set; }
         /// <summary>
         /// AutoScalingType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-autoscalingtype
@@ -68,12 +53,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AutoScalingType
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoScalingType { get; set; }
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-availabilityzone
@@ -81,12 +61,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AvailabilityZone
-        {
-            get;
-            set;
-        }
-
+        public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// BlockDeviceMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-blockdevicemappings
@@ -95,12 +70,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: BlockDeviceMapping
         /// </summary>
-        public List<BlockDeviceMapping> BlockDeviceMappings
-        {
-            get;
-            set;
-        }
-
+        public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
         /// <summary>
         /// EbsOptimized
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-ebsoptimized
@@ -108,12 +78,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EbsOptimized
-        {
-            get;
-            set;
-        }
-
+        public dynamic EbsOptimized { get; set; }
         /// <summary>
         /// ElasticIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-elasticips
@@ -122,12 +87,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ElasticIps
-        {
-            get;
-            set;
-        }
-
+        public dynamic ElasticIps { get; set; }
         /// <summary>
         /// Hostname
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-hostname
@@ -135,12 +95,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Hostname
-        {
-            get;
-            set;
-        }
-
+        public dynamic Hostname { get; set; }
         /// <summary>
         /// InstallUpdatesOnBoot
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-installupdatesonboot
@@ -148,12 +103,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic InstallUpdatesOnBoot
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstallUpdatesOnBoot { get; set; }
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-instancetype
@@ -161,12 +111,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstanceType { get; set; }
         /// <summary>
         /// LayerIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-layerids
@@ -175,12 +120,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic LayerIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic LayerIds { get; set; }
         /// <summary>
         /// Os
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-os
@@ -188,12 +128,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Os
-        {
-            get;
-            set;
-        }
-
+        public dynamic Os { get; set; }
         /// <summary>
         /// RootDeviceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-rootdevicetype
@@ -201,12 +136,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RootDeviceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic RootDeviceType { get; set; }
         /// <summary>
         /// SshKeyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-sshkeyname
@@ -214,12 +144,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SshKeyName
-        {
-            get;
-            set;
-        }
-
+        public dynamic SshKeyName { get; set; }
         /// <summary>
         /// StackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-stackid
@@ -227,12 +152,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StackId
-        {
-            get;
-            set;
-        }
-
+        public dynamic StackId { get; set; }
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-subnetid
@@ -240,12 +160,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetId { get; set; }
         /// <summary>
         /// Tenancy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-tenancy
@@ -253,12 +168,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Tenancy
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tenancy { get; set; }
         /// <summary>
         /// TimeBasedAutoScaling
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-timebasedautoscaling
@@ -266,12 +176,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// Type: TimeBasedAutoScaling
         /// </summary>
-        public TimeBasedAutoScaling TimeBasedAutoScaling
-        {
-            get;
-            set;
-        }
-
+        public TimeBasedAutoScaling TimeBasedAutoScaling { get; set; }
         /// <summary>
         /// VirtualizationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-virtualizationtype
@@ -279,12 +184,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VirtualizationType
-        {
-            get;
-            set;
-        }
-
+        public dynamic VirtualizationType { get; set; }
         /// <summary>
         /// Volumes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-volumes
@@ -293,11 +193,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Volumes
-        {
-            get;
-            set;
-        }
+        public dynamic Volumes { get; set; }
     }
 
     namespace InstanceTypes
@@ -311,12 +207,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeviceName
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeviceName { get; set; }
             /// <summary>
             /// Ebs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs
@@ -324,12 +215,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// Type: EbsBlockDevice
             /// </summary>
-            public EbsBlockDevice Ebs
-            {
-                get;
-                set;
-            }
-
+            public EbsBlockDevice Ebs { get; set; }
             /// <summary>
             /// NoDevice
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-nodevice
@@ -337,12 +223,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic NoDevice
-            {
-                get;
-                set;
-            }
-
+            public dynamic NoDevice { get; set; }
             /// <summary>
             /// VirtualName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-virtualname
@@ -350,11 +231,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VirtualName
-            {
-                get;
-                set;
-            }
+            public dynamic VirtualName { get; set; }
         }
 
         public class EbsBlockDevice
@@ -366,12 +243,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DeleteOnTermination
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeleteOnTermination { get; set; }
             /// <summary>
             /// Iops
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-iops
@@ -379,12 +251,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Iops
-            {
-                get;
-                set;
-            }
-
+            public dynamic Iops { get; set; }
             /// <summary>
             /// SnapshotId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-snapshotid
@@ -392,12 +259,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SnapshotId
-            {
-                get;
-                set;
-            }
-
+            public dynamic SnapshotId { get; set; }
             /// <summary>
             /// VolumeSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-volumesize
@@ -405,12 +267,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic VolumeSize
-            {
-                get;
-                set;
-            }
-
+            public dynamic VolumeSize { get; set; }
             /// <summary>
             /// VolumeType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-volumetype
@@ -418,11 +275,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VolumeType
-            {
-                get;
-                set;
-            }
+            public dynamic VolumeType { get; set; }
         }
 
         public class TimeBasedAutoScaling
@@ -435,12 +288,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Friday
-            {
-                get;
-                set;
-            }
-
+            public Dictionary<string, dynamic> Friday { get; set; }
             /// <summary>
             /// Monday
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-monday
@@ -449,12 +297,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Monday
-            {
-                get;
-                set;
-            }
-
+            public Dictionary<string, dynamic> Monday { get; set; }
             /// <summary>
             /// Saturday
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-saturday
@@ -463,12 +306,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Saturday
-            {
-                get;
-                set;
-            }
-
+            public Dictionary<string, dynamic> Saturday { get; set; }
             /// <summary>
             /// Sunday
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-sunday
@@ -477,12 +315,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Sunday
-            {
-                get;
-                set;
-            }
-
+            public Dictionary<string, dynamic> Sunday { get; set; }
             /// <summary>
             /// Thursday
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-thursday
@@ -491,12 +324,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Thursday
-            {
-                get;
-                set;
-            }
-
+            public Dictionary<string, dynamic> Thursday { get; set; }
             /// <summary>
             /// Tuesday
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-tuesday
@@ -505,12 +333,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Tuesday
-            {
-                get;
-                set;
-            }
-
+            public Dictionary<string, dynamic> Tuesday { get; set; }
             /// <summary>
             /// Wednesday
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-wednesday
@@ -519,11 +342,7 @@ namespace Humidifier.OpsWorks
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Wednesday
-            {
-                get;
-                set;
-            }
+            public Dictionary<string, dynamic> Wednesday { get; set; }
         }
     }
 }

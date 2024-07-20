@@ -5,6 +5,11 @@ namespace Humidifier.ElasticBeanstalk
 
     public class ApplicationVersion : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -15,42 +20,28 @@ namespace Humidifier.ElasticBeanstalk
 
         /// <summary>
         /// ApplicationName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-applicationversion.html#cfn-elasticbeanstalk-applicationversion-applicationname
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationName { get; set; }
         /// <summary>
         /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-applicationversion.html#cfn-elasticbeanstalk-applicationversion-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SourceBundle
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-applicationversion.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
         /// Required: True
         /// UpdateType: Immutable
         /// Type: SourceBundle
         /// </summary>
-        public SourceBundle SourceBundle
-        {
-            get;
-            set;
-        }
+        public SourceBundle SourceBundle { get; set; }
     }
 
     namespace ApplicationVersionTypes
@@ -59,29 +50,20 @@ namespace Humidifier.ElasticBeanstalk
         {
             /// <summary>
             /// S3Bucket
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3bucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-applicationversion-sourcebundle.html#cfn-elasticbeanstalk-applicationversion-sourcebundle-s3bucket
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic S3Bucket { get; set; }
             /// <summary>
             /// S3Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-applicationversion-sourcebundle.html#cfn-elasticbeanstalk-applicationversion-sourcebundle-s3key
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3Key
-            {
-                get;
-                set;
-            }
+            public dynamic S3Key { get; set; }
         }
     }
 }

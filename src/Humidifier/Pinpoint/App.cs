@@ -4,7 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class App : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-name
@@ -37,10 +32,6 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

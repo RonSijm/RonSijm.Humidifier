@@ -4,6 +4,11 @@ namespace Humidifier.ElastiCache
 
     public class ParameterGroup : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string CacheParameterGroupName =  "CacheParameterGroupName" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,43 +18,38 @@ namespace Humidifier.ElastiCache
         }
 
         /// <summary>
-        /// CacheParameterGroupFamily
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-cacheparametergroupfamily
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic CacheParameterGroupFamily
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-parametergroup.html#cfn-elasticache-parametergroup-description
         /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Properties
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-parametergroup.html#cfn-elasticache-parametergroup-properties
         /// Required: False
         /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        public Dictionary<string, dynamic> Properties
-        {
-            get;
-            set;
-        }
+        public Dictionary<string, dynamic> Properties { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-parametergroup.html#cfn-elasticache-parametergroup-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// CacheParameterGroupFamily
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-parametergroup.html#cfn-elasticache-parametergroup-cacheparametergroupfamily
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CacheParameterGroupFamily { get; set; }
     }
 }

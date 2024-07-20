@@ -20,12 +20,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// Type: DefaultConfig
         /// </summary>
-        public DefaultConfig DefaultConfig
-        {
-            get;
-            set;
-        }
-
+        public DefaultConfig DefaultConfig { get; set; }
         /// <summary>
         /// Functions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functions
@@ -34,12 +29,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Function
         /// </summary>
-        public List<Function> Functions
-        {
-            get;
-            set;
-        }
-
+        public List<Function> Functions { get; set; }
         /// <summary>
         /// FunctionDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functiondefinitionid
@@ -47,165 +37,21 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FunctionDefinitionId
-        {
-            get;
-            set;
-        }
+        public dynamic FunctionDefinitionId { get; set; }
     }
 
     namespace FunctionDefinitionVersionTypes
     {
-        public class FunctionConfiguration
+        public class DefaultConfig
         {
             /// <summary>
-            /// MemorySize
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-memorysize
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MemorySize
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Pinned
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-pinned
-            /// Required: False
+            /// Execution
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution
+            /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// Type: Execution
             /// </summary>
-            public dynamic Pinned
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ExecArgs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-execargs
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ExecArgs
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Timeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-timeout
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Timeout
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// EncodingType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-encodingtype
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic EncodingType
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Environment
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-environment
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: Environment
-            /// </summary>
-            public Environment Environment
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Executable
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-executable
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Executable
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Execution
-        {
-            /// <summary>
-            /// IsolationMode
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-isolationmode
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic IsolationMode
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RunAs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-runas
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: RunAs
-            /// </summary>
-            public RunAs RunAs
-            {
-                get;
-                set;
-            }
-        }
-
-        public class RunAs
-        {
-            /// <summary>
-            /// Uid
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Uid
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Gid
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Gid
-            {
-                get;
-                set;
-            }
+            public Execution Execution { get; set; }
         }
 
         public class Environment
@@ -217,12 +63,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic Variables
-            {
-                get;
-                set;
-            }
-
+            public dynamic Variables { get; set; }
             /// <summary>
             /// Execution
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-execution
@@ -230,12 +71,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: Execution
             /// </summary>
-            public Execution Execution
-            {
-                get;
-                set;
-            }
-
+            public Execution Execution { get; set; }
             /// <summary>
             /// ResourceAccessPolicies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-resourceaccesspolicies
@@ -244,12 +80,7 @@ namespace Humidifier.Greengrass
             /// Type: List
             /// ItemType: ResourceAccessPolicy
             /// </summary>
-            public List<ResourceAccessPolicy> ResourceAccessPolicies
-            {
-                get;
-                set;
-            }
-
+            public List<ResourceAccessPolicy> ResourceAccessPolicies { get; set; }
             /// <summary>
             /// AccessSysfs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-accesssysfs
@@ -257,27 +88,27 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic AccessSysfs
-            {
-                get;
-                set;
-            }
+            public dynamic AccessSysfs { get; set; }
         }
 
-        public class DefaultConfig
+        public class Execution
         {
             /// <summary>
-            /// Execution
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: Execution
+            /// IsolationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-isolationmode
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
             /// </summary>
-            public Execution Execution
-            {
-                get;
-                set;
-            }
+            public dynamic IsolationMode { get; set; }
+            /// <summary>
+            /// RunAs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-execution.html#cfn-greengrass-functiondefinitionversion-execution-runas
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RunAs
+            /// </summary>
+            public RunAs RunAs { get; set; }
         }
 
         public class Function
@@ -289,12 +120,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic FunctionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic FunctionArn { get; set; }
             /// <summary>
             /// FunctionConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration
@@ -302,12 +128,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: FunctionConfiguration
             /// </summary>
-            public FunctionConfiguration FunctionConfiguration
-            {
-                get;
-                set;
-            }
-
+            public FunctionConfiguration FunctionConfiguration { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-id
@@ -315,11 +136,67 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
+            public dynamic Id { get; set; }
+        }
+
+        public class FunctionConfiguration
+        {
+            /// <summary>
+            /// MemorySize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-memorysize
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MemorySize { get; set; }
+            /// <summary>
+            /// Pinned
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-pinned
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Pinned { get; set; }
+            /// <summary>
+            /// ExecArgs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-execargs
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExecArgs { get; set; }
+            /// <summary>
+            /// Timeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-timeout
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Timeout { get; set; }
+            /// <summary>
+            /// EncodingType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-encodingtype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncodingType { get; set; }
+            /// <summary>
+            /// Environment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-environment
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: Environment
+            /// </summary>
+            public Environment Environment { get; set; }
+            /// <summary>
+            /// Executable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-executable
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Executable { get; set; }
         }
 
         public class ResourceAccessPolicy
@@ -331,12 +208,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ResourceId
-            {
-                get;
-                set;
-            }
-
+            public dynamic ResourceId { get; set; }
             /// <summary>
             /// Permission
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-resourceaccesspolicy.html#cfn-greengrass-functiondefinitionversion-resourceaccesspolicy-permission
@@ -344,11 +216,27 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Permission
-            {
-                get;
-                set;
-            }
+            public dynamic Permission { get; set; }
+        }
+
+        public class RunAs
+        {
+            /// <summary>
+            /// Uid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Uid { get; set; }
+            /// <summary>
+            /// Gid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Gid { get; set; }
         }
     }
 }

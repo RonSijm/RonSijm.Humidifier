@@ -5,6 +5,11 @@ namespace Humidifier.MSK
 
     public class Cluster : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Arn =  "Arn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,44 +19,13 @@ namespace Humidifier.MSK
         }
 
         /// <summary>
-        /// BrokerNodeGroupInfo
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo
-        /// Required: True
-        /// UpdateType: Immutable
-        /// Type: BrokerNodeGroupInfo
-        /// </summary>
-        public BrokerNodeGroupInfo BrokerNodeGroupInfo
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// EnhancedMonitoring
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic EnhancedMonitoring
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// KafkaVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-kafkaversion
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic KafkaVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic KafkaVersion { get; set; }
         /// <summary>
         /// NumberOfBrokerNodes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
@@ -59,25 +33,15 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic NumberOfBrokerNodes
-        {
-            get;
-            set;
-        }
-
+        public dynamic NumberOfBrokerNodes { get; set; }
         /// <summary>
         /// EncryptionInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: EncryptionInfo
         /// </summary>
-        public EncryptionInfo EncryptionInfo
-        {
-            get;
-            set;
-        }
-
+        public EncryptionInfo EncryptionInfo { get; set; }
         /// <summary>
         /// OpenMonitoring
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring
@@ -85,12 +49,47 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// Type: OpenMonitoring
         /// </summary>
-        public OpenMonitoring OpenMonitoring
-        {
-            get;
-            set;
-        }
-
+        public OpenMonitoring OpenMonitoring { get; set; }
+        /// <summary>
+        /// CurrentVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-currentversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CurrentVersion { get; set; }
+        /// <summary>
+        /// StorageMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-storagemode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StorageMode { get; set; }
+        /// <summary>
+        /// ConfigurationInfo
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ConfigurationInfo
+        /// </summary>
+        public ConfigurationInfo ConfigurationInfo { get; set; }
+        /// <summary>
+        /// BrokerNodeGroupInfo
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: BrokerNodeGroupInfo
+        /// </summary>
+        public BrokerNodeGroupInfo BrokerNodeGroupInfo { get; set; }
+        /// <summary>
+        /// EnhancedMonitoring
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EnhancedMonitoring { get; set; }
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clustername
@@ -98,25 +97,15 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClusterName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClusterName { get; set; }
         /// <summary>
         /// ClientAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: ClientAuthentication
         /// </summary>
-        public ClientAuthentication ClientAuthentication
-        {
-            get;
-            set;
-        }
-
+        public ClientAuthentication ClientAuthentication { get; set; }
         /// <summary>
         /// LoggingInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-logginginfo
@@ -124,97 +113,46 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// Type: LoggingInfo
         /// </summary>
-        public LoggingInfo LoggingInfo
-        {
-            get;
-            set;
-        }
-
+        public LoggingInfo LoggingInfo { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags
         /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Json
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ConfigurationInfo
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: ConfigurationInfo
-        /// </summary>
-        public ConfigurationInfo ConfigurationInfo
-        {
-            get;
-            set;
-        }
+        public Dictionary<string, dynamic> Tags { get; set; }
     }
 
     namespace ClusterTypes
     {
-        public class EncryptionInfo
+        public class BrokerLogs
         {
             /// <summary>
-            /// EncryptionAtRest
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionatrest
+            /// S3
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3
             /// Required: False
-            /// UpdateType: Immutable
-            /// Type: EncryptionAtRest
+            /// UpdateType: Mutable
+            /// Type: S3
             /// </summary>
-            public EncryptionAtRest EncryptionAtRest
-            {
-                get;
-                set;
-            }
-
+            public S3 S3 { get; set; }
             /// <summary>
-            /// EncryptionInTransit
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit
+            /// Firehose
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose
             /// Required: False
-            /// UpdateType: Immutable
-            /// Type: EncryptionInTransit
+            /// UpdateType: Mutable
+            /// Type: Firehose
             /// </summary>
-            public EncryptionInTransit EncryptionInTransit
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ConfigurationInfo
-        {
+            public Firehose Firehose { get; set; }
             /// <summary>
-            /// Revision
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-revision
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// CloudWatchLogs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CloudWatchLogs
             /// </summary>
-            public dynamic Revision
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Arn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-arn
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Arn
-            {
-                get;
-                set;
-            }
+            public CloudWatchLogs CloudWatchLogs { get; set; }
         }
 
         public class BrokerNodeGroupInfo
@@ -227,12 +165,7 @@ namespace Humidifier.MSK
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SecurityGroups
-            {
-                get;
-                set;
-            }
-
+            public dynamic SecurityGroups { get; set; }
             /// <summary>
             /// ClientSubnets
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-clientsubnets
@@ -241,25 +174,23 @@ namespace Humidifier.MSK
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic ClientSubnets
-            {
-                get;
-                set;
-            }
-
+            public dynamic ClientSubnets { get; set; }
+            /// <summary>
+            /// ConnectivityInfo
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-connectivityinfo
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ConnectivityInfo
+            /// </summary>
+            public ConnectivityInfo ConnectivityInfo { get; set; }
             /// <summary>
             /// StorageInfo
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-storageinfo
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: StorageInfo
             /// </summary>
-            public StorageInfo StorageInfo
-            {
-                get;
-                set;
-            }
-
+            public StorageInfo StorageInfo { get; set; }
             /// <summary>
             /// BrokerAZDistribution
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-brokerazdistribution
@@ -267,66 +198,43 @@ namespace Humidifier.MSK
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BrokerAZDistribution
-            {
-                get;
-                set;
-            }
-
+            public dynamic BrokerAZDistribution { get; set; }
             /// <summary>
             /// InstanceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-instancetype
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InstanceType
-            {
-                get;
-                set;
-            }
+            public dynamic InstanceType { get; set; }
         }
 
-        public class S3
+        public class ClientAuthentication
         {
             /// <summary>
-            /// Bucket
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket
+            /// Sasl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-sasl
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: Sasl
             /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
+            public Sasl Sasl { get; set; }
             /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Prefix
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix
+            /// Unauthenticated
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-unauthenticated
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: Unauthenticated
             /// </summary>
-            public dynamic Prefix
-            {
-                get;
-                set;
-            }
+            public Unauthenticated Unauthenticated { get; set; }
+            /// <summary>
+            /// Tls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Tls
+            /// </summary>
+            public Tls Tls { get; set; }
         }
 
         public class CloudWatchLogs
@@ -338,12 +246,7 @@ namespace Humidifier.MSK
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic LogGroup
-            {
-                get;
-                set;
-            }
-
+            public dynamic LogGroup { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled
@@ -351,43 +254,67 @@ namespace Humidifier.MSK
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
+            public dynamic Enabled { get; set; }
         }
 
-        public class JmxExporter
+        public class ConfigurationInfo
         {
             /// <summary>
-            /// EnabledInBroker
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker
+            /// Revision
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-revision
             /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic EnabledInBroker
-            {
-                get;
-                set;
-            }
+            public dynamic Revision { get; set; }
+            /// <summary>
+            /// Arn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-arn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Arn { get; set; }
         }
 
-        public class StorageInfo
+        public class ConnectivityInfo
         {
             /// <summary>
-            /// EBSStorageInfo
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html#cfn-msk-cluster-storageinfo-ebsstorageinfo
+            /// VpcConnectivity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-vpcconnectivity
             /// Required: False
-            /// UpdateType: Immutable
-            /// Type: EBSStorageInfo
+            /// UpdateType: Mutable
+            /// Type: VpcConnectivity
             /// </summary>
-            public EBSStorageInfo EBSStorageInfo
-            {
-                get;
-                set;
-            }
+            public VpcConnectivity VpcConnectivity { get; set; }
+            /// <summary>
+            /// PublicAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PublicAccess
+            /// </summary>
+            public PublicAccess PublicAccess { get; set; }
+        }
+
+        public class EBSStorageInfo
+        {
+            /// <summary>
+            /// ProvisionedThroughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-provisionedthroughput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ProvisionedThroughput
+            /// </summary>
+            public ProvisionedThroughput ProvisionedThroughput { get; set; }
+            /// <summary>
+            /// VolumeSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeSize { get; set; }
         }
 
         public class EncryptionAtRest
@@ -399,85 +326,47 @@ namespace Humidifier.MSK
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DataVolumeKMSKeyId
-            {
-                get;
-                set;
-            }
+            public dynamic DataVolumeKMSKeyId { get; set; }
         }
 
-        public class BrokerLogs
+        public class EncryptionInTransit
         {
             /// <summary>
-            /// S3
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3
+            /// ClientBroker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-clientbroker
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: S3
+            /// PrimitiveType: String
             /// </summary>
-            public S3 S3
-            {
-                get;
-                set;
-            }
-
+            public dynamic ClientBroker { get; set; }
             /// <summary>
-            /// Firehose
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Firehose
-            /// </summary>
-            public Firehose Firehose
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// CloudWatchLogs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: CloudWatchLogs
-            /// </summary>
-            public CloudWatchLogs CloudWatchLogs
-            {
-                get;
-                set;
-            }
-        }
-
-        public class NodeExporter
-        {
-            /// <summary>
-            /// EnabledInBroker
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic EnabledInBroker
-            {
-                get;
-                set;
-            }
-        }
-
-        public class EBSStorageInfo
-        {
-            /// <summary>
-            /// VolumeSize
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize
+            /// InCluster
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic VolumeSize
-            {
-                get;
-                set;
-            }
+            public dynamic InCluster { get; set; }
+        }
+
+        public class EncryptionInfo
+        {
+            /// <summary>
+            /// EncryptionAtRest
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionatrest
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: EncryptionAtRest
+            /// </summary>
+            public EncryptionAtRest EncryptionAtRest { get; set; }
+            /// <summary>
+            /// EncryptionInTransit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EncryptionInTransit
+            /// </summary>
+            public EncryptionInTransit EncryptionInTransit { get; set; }
         }
 
         public class Firehose
@@ -489,12 +378,7 @@ namespace Humidifier.MSK
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeliveryStream
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeliveryStream { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled
@@ -502,118 +386,31 @@ namespace Humidifier.MSK
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
+            public dynamic Enabled { get; set; }
         }
 
-        public class EncryptionInTransit
+        public class Iam
         {
             /// <summary>
-            /// ClientBroker
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-clientbroker
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ClientBroker
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// InCluster
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic InCluster
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ClientAuthentication
-        {
-            /// <summary>
-            /// Tls
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: Tls
-            /// </summary>
-            public Tls Tls
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Prometheus
-        {
-            /// <summary>
-            /// JmxExporter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-jmxexporter
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: JmxExporter
-            /// </summary>
-            public JmxExporter JmxExporter
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// NodeExporter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-nodeexporter
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: NodeExporter
-            /// </summary>
-            public NodeExporter NodeExporter
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Tls
-        {
-            /// <summary>
-            /// CertificateAuthorityArnList
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic CertificateAuthorityArnList
-            {
-                get;
-                set;
-            }
-        }
-
-        public class OpenMonitoring
-        {
-            /// <summary>
-            /// Prometheus
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html#cfn-msk-cluster-openmonitoring-prometheus
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-iam.html#cfn-msk-cluster-iam-enabled
             /// Required: True
             /// UpdateType: Mutable
-            /// Type: Prometheus
+            /// PrimitiveType: Boolean
             /// </summary>
-            public Prometheus Prometheus
-            {
-                get;
-                set;
-            }
+            public dynamic Enabled { get; set; }
+        }
+
+        public class JmxExporter
+        {
+            /// <summary>
+            /// EnabledInBroker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnabledInBroker { get; set; }
         }
 
         public class LoggingInfo
@@ -625,11 +422,276 @@ namespace Humidifier.MSK
             /// UpdateType: Mutable
             /// Type: BrokerLogs
             /// </summary>
-            public BrokerLogs BrokerLogs
-            {
-                get;
-                set;
-            }
+            public BrokerLogs BrokerLogs { get; set; }
+        }
+
+        public class NodeExporter
+        {
+            /// <summary>
+            /// EnabledInBroker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnabledInBroker { get; set; }
+        }
+
+        public class OpenMonitoring
+        {
+            /// <summary>
+            /// Prometheus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html#cfn-msk-cluster-openmonitoring-prometheus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Prometheus
+            /// </summary>
+            public Prometheus Prometheus { get; set; }
+        }
+
+        public class Prometheus
+        {
+            /// <summary>
+            /// JmxExporter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-jmxexporter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: JmxExporter
+            /// </summary>
+            public JmxExporter JmxExporter { get; set; }
+            /// <summary>
+            /// NodeExporter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-nodeexporter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NodeExporter
+            /// </summary>
+            public NodeExporter NodeExporter { get; set; }
+        }
+
+        public class ProvisionedThroughput
+        {
+            /// <summary>
+            /// VolumeThroughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-provisionedthroughput.html#cfn-msk-cluster-provisionedthroughput-volumethroughput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeThroughput { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-provisionedthroughput.html#cfn-msk-cluster-provisionedthroughput-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class PublicAccess
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-publicaccess.html#cfn-msk-cluster-publicaccess-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class S3
+        {
+            /// <summary>
+            /// Bucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Bucket { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Prefix { get; set; }
+        }
+
+        public class Sasl
+        {
+            /// <summary>
+            /// Iam
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-iam
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Iam
+            /// </summary>
+            public Iam Iam { get; set; }
+            /// <summary>
+            /// Scram
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-scram
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Scram
+            /// </summary>
+            public Scram Scram { get; set; }
+        }
+
+        public class Scram
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-scram.html#cfn-msk-cluster-scram-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class StorageInfo
+        {
+            /// <summary>
+            /// EBSStorageInfo
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html#cfn-msk-cluster-storageinfo-ebsstorageinfo
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EBSStorageInfo
+            /// </summary>
+            public EBSStorageInfo EBSStorageInfo { get; set; }
+        }
+
+        public class Tls
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// CertificateAuthorityArnList
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CertificateAuthorityArnList { get; set; }
+        }
+
+        public class Unauthenticated
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class VpcConnectivity
+        {
+            /// <summary>
+            /// ClientAuthentication
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivity.html#cfn-msk-cluster-vpcconnectivity-clientauthentication
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConnectivityClientAuthentication
+            /// </summary>
+            public VpcConnectivityClientAuthentication ClientAuthentication { get; set; }
+        }
+
+        public class VpcConnectivityClientAuthentication
+        {
+            /// <summary>
+            /// Sasl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-sasl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConnectivitySasl
+            /// </summary>
+            public VpcConnectivitySasl Sasl { get; set; }
+            /// <summary>
+            /// Tls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-tls
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConnectivityTls
+            /// </summary>
+            public VpcConnectivityTls Tls { get; set; }
+        }
+
+        public class VpcConnectivityIam
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityiam.html#cfn-msk-cluster-vpcconnectivityiam-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class VpcConnectivitySasl
+        {
+            /// <summary>
+            /// Iam
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-iam
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConnectivityIam
+            /// </summary>
+            public VpcConnectivityIam Iam { get; set; }
+            /// <summary>
+            /// Scram
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-scram
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConnectivityScram
+            /// </summary>
+            public VpcConnectivityScram Scram { get; set; }
+        }
+
+        public class VpcConnectivityScram
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityscram.html#cfn-msk-cluster-vpcconnectivityscram-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class VpcConnectivityTls
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html#cfn-msk-cluster-vpcconnectivitytls-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
     }
 }

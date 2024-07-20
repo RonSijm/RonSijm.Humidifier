@@ -5,7 +5,7 @@ namespace Humidifier.ApiGatewayV2
 
     public class DomainName : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string RegionalHostedZoneId =  "RegionalHostedZoneId" ;
             public static string RegionalDomainName =  "RegionalDomainName" ;
@@ -20,18 +20,21 @@ namespace Humidifier.ApiGatewayV2
         }
 
         /// <summary>
+        /// MutualTlsAuthentication
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-mutualtlsauthentication
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MutualTlsAuthentication
+        /// </summary>
+        public MutualTlsAuthentication MutualTlsAuthentication { get; set; }
+        /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainname
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DomainName_
-        {
-            get;
-            set;
-        }
-
+        public dynamic DomainName_ { get; set; }
         /// <summary>
         /// DomainNameConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainnameconfigurations
@@ -40,24 +43,16 @@ namespace Humidifier.ApiGatewayV2
         /// Type: List
         /// ItemType: DomainNameConfiguration
         /// </summary>
-        public List<DomainNameConfiguration> DomainNameConfigurations
-        {
-            get;
-            set;
-        }
-
+        public List<DomainNameConfiguration> DomainNameConfigurations { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public Dictionary<string, dynamic> Tags { get; set; }
     }
 
     namespace DomainNameTypes
@@ -65,18 +60,29 @@ namespace Humidifier.ApiGatewayV2
         public class DomainNameConfiguration
         {
             /// <summary>
+            /// OwnershipVerificationCertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-ownershipverificationcertificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OwnershipVerificationCertificateArn { get; set; }
+            /// <summary>
+            /// SecurityPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-securitypolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecurityPolicy { get; set; }
+            /// <summary>
             /// EndpointType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-endpointtype
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EndpointType
-            {
-                get;
-                set;
-            }
-
+            public dynamic EndpointType { get; set; }
             /// <summary>
             /// CertificateName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-certificatename
@@ -84,12 +90,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CertificateName
-            {
-                get;
-                set;
-            }
-
+            public dynamic CertificateName { get; set; }
             /// <summary>
             /// CertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-certificatearn
@@ -97,11 +98,27 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CertificateArn
-            {
-                get;
-                set;
-            }
+            public dynamic CertificateArn { get; set; }
+        }
+
+        public class MutualTlsAuthentication
+        {
+            /// <summary>
+            /// TruststoreVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html#cfn-apigatewayv2-domainname-mutualtlsauthentication-truststoreversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TruststoreVersion { get; set; }
+            /// <summary>
+            /// TruststoreUri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html#cfn-apigatewayv2-domainname-mutualtlsauthentication-truststoreuri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TruststoreUri { get; set; }
         }
     }
 }

@@ -16,16 +16,11 @@ namespace Humidifier.IoTEvents
         /// <summary>
         /// InputDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputdefinition
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: InputDefinition
         /// </summary>
-        public InputDefinition InputDefinition
-        {
-            get;
-            set;
-        }
-
+        public InputDefinition InputDefinition { get; set; }
         /// <summary>
         /// InputName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputname
@@ -33,12 +28,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InputName
-        {
-            get;
-            set;
-        }
-
+        public dynamic InputName { get; set; }
         /// <summary>
         /// InputDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputdescription
@@ -46,12 +36,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InputDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic InputDescription { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-tags
@@ -60,11 +45,7 @@ namespace Humidifier.IoTEvents
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace InputTypes
@@ -74,15 +55,11 @@ namespace Humidifier.IoTEvents
             /// <summary>
             /// JsonPath
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-attribute.html#cfn-iotevents-input-attribute-jsonpath
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic JsonPath
-            {
-                get;
-                set;
-            }
+            public dynamic JsonPath { get; set; }
         }
 
         public class InputDefinition
@@ -90,16 +67,12 @@ namespace Humidifier.IoTEvents
             /// <summary>
             /// Attributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-inputdefinition.html#cfn-iotevents-input-inputdefinition-attributes
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Attribute
             /// </summary>
-            public List<Attribute> Attributes_
-            {
-                get;
-                set;
-            }
+            public List<Attribute> Attributes_ { get; set; }
         }
     }
 }

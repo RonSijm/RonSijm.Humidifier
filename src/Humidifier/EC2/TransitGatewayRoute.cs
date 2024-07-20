@@ -19,25 +19,15 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TransitGatewayRouteTableId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TransitGatewayRouteTableId { get; set; }
         /// <summary>
         /// DestinationCidrBlock
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-destinationcidrblock
-        /// Required: False
+        /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DestinationCidrBlock
-        {
-            get;
-            set;
-        }
-
+        public dynamic DestinationCidrBlock { get; set; }
         /// <summary>
         /// Blackhole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-blackhole
@@ -45,12 +35,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Blackhole
-        {
-            get;
-            set;
-        }
-
+        public dynamic Blackhole { get; set; }
         /// <summary>
         /// TransitGatewayAttachmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayattachmentid
@@ -58,10 +43,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TransitGatewayAttachmentId
-        {
-            get;
-            set;
-        }
+        public dynamic TransitGatewayAttachmentId { get; set; }
     }
 }

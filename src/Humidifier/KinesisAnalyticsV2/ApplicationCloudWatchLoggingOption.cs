@@ -20,12 +20,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationName { get; set; }
         /// <summary>
         /// CloudWatchLoggingOption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationcloudwatchloggingoption.html#cfn-kinesisanalyticsv2-applicationcloudwatchloggingoption-cloudwatchloggingoption
@@ -33,11 +28,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Mutable
         /// Type: CloudWatchLoggingOption
         /// </summary>
-        public CloudWatchLoggingOption CloudWatchLoggingOption
-        {
-            get;
-            set;
-        }
+        public CloudWatchLoggingOption CloudWatchLoggingOption { get; set; }
     }
 
     namespace ApplicationCloudWatchLoggingOptionTypes
@@ -51,11 +42,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic LogStreamARN
-            {
-                get;
-                set;
-            }
+            public dynamic LogStreamARN { get; set; }
         }
     }
 }

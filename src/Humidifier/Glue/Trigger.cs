@@ -17,15 +17,10 @@ namespace Humidifier.Glue
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
-
+        public dynamic Type { get; set; }
         /// <summary>
         /// StartOnCreation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-startoncreation
@@ -33,12 +28,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic StartOnCreation
-        {
-            get;
-            set;
-        }
-
+        public dynamic StartOnCreation { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description
@@ -46,12 +36,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Actions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
@@ -60,12 +45,15 @@ namespace Humidifier.Glue
         /// Type: List
         /// ItemType: Action
         /// </summary>
-        public List<Action> Actions
-        {
-            get;
-            set;
-        }
-
+        public List<Action> Actions { get; set; }
+        /// <summary>
+        /// EventBatchingCondition
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-eventbatchingcondition
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EventBatchingCondition
+        /// </summary>
+        public EventBatchingCondition EventBatchingCondition { get; set; }
         /// <summary>
         /// WorkflowName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-workflowname
@@ -73,12 +61,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic WorkflowName
-        {
-            get;
-            set;
-        }
-
+        public dynamic WorkflowName { get; set; }
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule
@@ -86,12 +69,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Schedule
-        {
-            get;
-            set;
-        }
-
+        public dynamic Schedule { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-tags
@@ -99,12 +77,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name
@@ -112,12 +85,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// Predicate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate
@@ -125,113 +93,11 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: Predicate
         /// </summary>
-        public Predicate Predicate
-        {
-            get;
-            set;
-        }
+        public Predicate Predicate { get; set; }
     }
 
     namespace TriggerTypes
     {
-        public class Condition
-        {
-            /// <summary>
-            /// CrawlerName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CrawlerName
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// State
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic State
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// CrawlState
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CrawlState
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// LogicalOperator
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LogicalOperator
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// JobName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic JobName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Predicate
-        {
-            /// <summary>
-            /// Logical
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-logical
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Logical
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Conditions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-conditions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Condition
-            /// </summary>
-            public List<Condition> Conditions
-            {
-                get;
-                set;
-            }
-        }
-
         public class Action
         {
             /// <summary>
@@ -241,12 +107,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// Type: NotificationProperty
             /// </summary>
-            public NotificationProperty NotificationProperty
-            {
-                get;
-                set;
-            }
-
+            public NotificationProperty NotificationProperty { get; set; }
             /// <summary>
             /// CrawlerName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-crawlername
@@ -254,12 +115,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CrawlerName
-            {
-                get;
-                set;
-            }
-
+            public dynamic CrawlerName { get; set; }
             /// <summary>
             /// Timeout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-timeout
@@ -267,12 +123,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Timeout
-            {
-                get;
-                set;
-            }
-
+            public dynamic Timeout { get; set; }
             /// <summary>
             /// JobName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-jobname
@@ -280,12 +131,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic JobName
-            {
-                get;
-                set;
-            }
-
+            public dynamic JobName { get; set; }
             /// <summary>
             /// Arguments
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-arguments
@@ -293,12 +139,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic Arguments
-            {
-                get;
-                set;
-            }
-
+            public dynamic Arguments { get; set; }
             /// <summary>
             /// SecurityConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-action.html#cfn-glue-trigger-action-securityconfiguration
@@ -306,11 +147,71 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SecurityConfiguration
-            {
-                get;
-                set;
-            }
+            public dynamic SecurityConfiguration { get; set; }
+        }
+
+        public class Condition
+        {
+            /// <summary>
+            /// CrawlerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CrawlerName { get; set; }
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
+            /// <summary>
+            /// CrawlState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CrawlState { get; set; }
+            /// <summary>
+            /// LogicalOperator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogicalOperator { get; set; }
+            /// <summary>
+            /// JobName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic JobName { get; set; }
+        }
+
+        public class EventBatchingCondition
+        {
+            /// <summary>
+            /// BatchSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchsize
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BatchSize { get; set; }
+            /// <summary>
+            /// BatchWindow
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchwindow
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BatchWindow { get; set; }
         }
 
         public class NotificationProperty
@@ -322,11 +223,28 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic NotifyDelayAfter
-            {
-                get;
-                set;
-            }
+            public dynamic NotifyDelayAfter { get; set; }
+        }
+
+        public class Predicate
+        {
+            /// <summary>
+            /// Logical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-logical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Logical { get; set; }
+            /// <summary>
+            /// Conditions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-predicate.html#cfn-glue-trigger-predicate-conditions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Condition
+            /// </summary>
+            public List<Condition> Conditions { get; set; }
         }
     }
 }

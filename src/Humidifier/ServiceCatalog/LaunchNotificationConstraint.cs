@@ -19,12 +19,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// NotificationArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-notificationarns
@@ -33,12 +28,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic NotificationArns
-        {
-            get;
-            set;
-        }
-
+        public dynamic NotificationArns { get; set; }
         /// <summary>
         /// AcceptLanguage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-acceptlanguage
@@ -46,12 +36,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AcceptLanguage
-        {
-            get;
-            set;
-        }
-
+        public dynamic AcceptLanguage { get; set; }
         /// <summary>
         /// PortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-portfolioid
@@ -59,12 +44,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PortfolioId
-        {
-            get;
-            set;
-        }
-
+        public dynamic PortfolioId { get; set; }
         /// <summary>
         /// ProductId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-productid
@@ -72,10 +52,6 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProductId
-        {
-            get;
-            set;
-        }
+        public dynamic ProductId { get; set; }
     }
 }

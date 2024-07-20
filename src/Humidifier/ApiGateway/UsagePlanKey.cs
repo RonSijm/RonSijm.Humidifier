@@ -4,6 +4,11 @@ namespace Humidifier.ApiGateway
 
     public class UsagePlanKey : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,31 +18,13 @@ namespace Humidifier.ApiGateway
         }
 
         /// <summary>
-        /// KeyId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic KeyId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// KeyType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keytype
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic KeyType
-        {
-            get;
-            set;
-        }
-
+        public dynamic KeyType { get; set; }
         /// <summary>
         /// UsagePlanId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid
@@ -45,10 +32,14 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UsagePlanId
-        {
-            get;
-            set;
-        }
+        public dynamic UsagePlanId { get; set; }
+        /// <summary>
+        /// KeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KeyId { get; set; }
     }
 }

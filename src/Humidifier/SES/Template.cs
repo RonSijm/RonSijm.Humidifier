@@ -5,6 +5,11 @@ namespace Humidifier.SES
 
     public class Template : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,11 +25,7 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// Type: Template
         /// </summary>
-        public Template Template_
-        {
-            get;
-            set;
-        }
+        public Template Template_ { get; set; }
     }
 
     namespace TemplateTypes
@@ -38,12 +39,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic HtmlPart
-            {
-                get;
-                set;
-            }
-
+            public dynamic HtmlPart { get; set; }
             /// <summary>
             /// TextPart
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart
@@ -51,12 +47,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TextPart
-            {
-                get;
-                set;
-            }
-
+            public dynamic TextPart { get; set; }
             /// <summary>
             /// TemplateName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-templatename
@@ -64,24 +55,15 @@ namespace Humidifier.SES
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TemplateName
-            {
-                get;
-                set;
-            }
-
+            public dynamic TemplateName { get; set; }
             /// <summary>
             /// SubjectPart
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-subjectpart
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SubjectPart
-            {
-                get;
-                set;
-            }
+            public dynamic SubjectPart { get; set; }
         }
     }
 }

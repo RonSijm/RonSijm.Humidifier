@@ -19,12 +19,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TransitGatewayRouteTableId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TransitGatewayRouteTableId { get; set; }
         /// <summary>
         /// TransitGatewayAttachmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayattachmentid
@@ -32,10 +27,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TransitGatewayAttachmentId
-        {
-            get;
-            set;
-        }
+        public dynamic TransitGatewayAttachmentId { get; set; }
     }
 }

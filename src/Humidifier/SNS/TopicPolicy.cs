@@ -4,6 +4,11 @@ namespace Humidifier.SNS
 
     public class TopicPolicy : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,30 +18,21 @@ namespace Humidifier.SNS
         }
 
         /// <summary>
-        /// PolicyDocument
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-policydocument
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic PolicyDocument
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Topics
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-policy.html#cfn-sns-topicpolicy-topics
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topicpolicy.html#cfn-sns-topicpolicy-topics
         /// Required: True
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Topics
-        {
-            get;
-            set;
-        }
+        public dynamic Topics { get; set; }
+        /// <summary>
+        /// PolicyDocument
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topicpolicy.html#cfn-sns-topicpolicy-policydocument
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic PolicyDocument { get; set; }
     }
 }

@@ -19,12 +19,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic GroupName { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-description
@@ -32,12 +27,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// UserPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-userpoolid
@@ -45,25 +35,15 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserPoolId { get; set; }
         /// <summary>
         /// Precedence
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-precedence
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Double
+        /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Precedence
-        {
-            get;
-            set;
-        }
-
+        public dynamic Precedence { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolgroup.html#cfn-cognito-userpoolgroup-rolearn
@@ -71,10 +51,6 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RoleArn
-        {
-            get;
-            set;
-        }
+        public dynamic RoleArn { get; set; }
     }
 }

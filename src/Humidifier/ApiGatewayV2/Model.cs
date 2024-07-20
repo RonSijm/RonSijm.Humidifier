@@ -4,6 +4,11 @@ namespace Humidifier.ApiGatewayV2
 
     public class Model : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ModelId =  "ModelId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// ContentType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html#cfn-apigatewayv2-model-contenttype
@@ -32,12 +32,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ContentType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ContentType { get; set; }
         /// <summary>
         /// Schema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html#cfn-apigatewayv2-model-schema
@@ -45,12 +40,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Schema
-        {
-            get;
-            set;
-        }
-
+        public dynamic Schema { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html#cfn-apigatewayv2-model-apiid
@@ -58,12 +48,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApiId { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html#cfn-apigatewayv2-model-name
@@ -71,10 +56,6 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

@@ -19,12 +19,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LoggerDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic LoggerDefinitionVersionArn { get; set; }
         /// <summary>
         /// DeviceDefinitionVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-devicedefinitionversionarn
@@ -32,12 +27,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DeviceDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic DeviceDefinitionVersionArn { get; set; }
         /// <summary>
         /// FunctionDefinitionVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-functiondefinitionversionarn
@@ -45,12 +35,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FunctionDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic FunctionDefinitionVersionArn { get; set; }
         /// <summary>
         /// CoreDefinitionVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-coredefinitionversionarn
@@ -58,12 +43,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CoreDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic CoreDefinitionVersionArn { get; set; }
         /// <summary>
         /// ResourceDefinitionVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-resourcedefinitionversionarn
@@ -71,12 +51,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResourceDefinitionVersionArn { get; set; }
         /// <summary>
         /// ConnectorDefinitionVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-connectordefinitionversionarn
@@ -84,12 +59,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConnectorDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConnectorDefinitionVersionArn { get; set; }
         /// <summary>
         /// SubscriptionDefinitionVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-subscriptiondefinitionversionarn
@@ -97,12 +67,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubscriptionDefinitionVersionArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubscriptionDefinitionVersionArn { get; set; }
         /// <summary>
         /// GroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid
@@ -110,10 +75,6 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GroupId
-        {
-            get;
-            set;
-        }
+        public dynamic GroupId { get; set; }
     }
 }

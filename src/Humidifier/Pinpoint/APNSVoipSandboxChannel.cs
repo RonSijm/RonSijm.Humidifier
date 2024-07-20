@@ -19,12 +19,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BundleId
-        {
-            get;
-            set;
-        }
-
+        public dynamic BundleId { get; set; }
         /// <summary>
         /// PrivateKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-privatekey
@@ -32,12 +27,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PrivateKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic PrivateKey { get; set; }
         /// <summary>
         /// Enabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-enabled
@@ -45,12 +35,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Enabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic Enabled { get; set; }
         /// <summary>
         /// DefaultAuthenticationMethod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-defaultauthenticationmethod
@@ -58,12 +43,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultAuthenticationMethod
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultAuthenticationMethod { get; set; }
         /// <summary>
         /// TokenKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkey
@@ -71,12 +51,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TokenKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic TokenKey { get; set; }
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-applicationid
@@ -84,12 +59,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationId { get; set; }
         /// <summary>
         /// TeamId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-teamid
@@ -97,12 +67,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TeamId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TeamId { get; set; }
         /// <summary>
         /// Certificate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-certificate
@@ -110,12 +75,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Certificate
-        {
-            get;
-            set;
-        }
-
+        public dynamic Certificate { get; set; }
         /// <summary>
         /// TokenKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnsvoipsandboxchannel.html#cfn-pinpoint-apnsvoipsandboxchannel-tokenkeyid
@@ -123,10 +83,6 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TokenKeyId
-        {
-            get;
-            set;
-        }
+        public dynamic TokenKeyId { get; set; }
     }
 }

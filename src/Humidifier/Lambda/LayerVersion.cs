@@ -5,6 +5,11 @@ namespace Humidifier.Lambda
 
     public class LayerVersion : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string LayerVersionArn =  "LayerVersionArn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -21,12 +26,7 @@ namespace Humidifier.Lambda
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic CompatibleRuntimes
-        {
-            get;
-            set;
-        }
-
+        public dynamic CompatibleRuntimes { get; set; }
         /// <summary>
         /// LicenseInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-licenseinfo
@@ -34,12 +34,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LicenseInfo
-        {
-            get;
-            set;
-        }
-
+        public dynamic LicenseInfo { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-description
@@ -47,12 +42,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// LayerName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-layername
@@ -60,12 +50,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LayerName
-        {
-            get;
-            set;
-        }
-
+        public dynamic LayerName { get; set; }
         /// <summary>
         /// Content
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content
@@ -73,11 +58,16 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// Type: Content
         /// </summary>
-        public Content Content
-        {
-            get;
-            set;
-        }
+        public Content Content { get; set; }
+        /// <summary>
+        /// CompatibleArchitectures
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatiblearchitectures
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic CompatibleArchitectures { get; set; }
     }
 
     namespace LayerVersionTypes
@@ -91,12 +81,7 @@ namespace Humidifier.Lambda
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3ObjectVersion
-            {
-                get;
-                set;
-            }
-
+            public dynamic S3ObjectVersion { get; set; }
             /// <summary>
             /// S3Bucket
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3bucket
@@ -104,12 +89,7 @@ namespace Humidifier.Lambda
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic S3Bucket { get; set; }
             /// <summary>
             /// S3Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3key
@@ -117,11 +97,7 @@ namespace Humidifier.Lambda
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3Key
-            {
-                get;
-                set;
-            }
+            public dynamic S3Key { get; set; }
         }
     }
 }

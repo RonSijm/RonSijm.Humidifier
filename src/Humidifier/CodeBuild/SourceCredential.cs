@@ -19,12 +19,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ServerType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ServerType { get; set; }
         /// <summary>
         /// Username
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-username
@@ -32,12 +27,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Username
-        {
-            get;
-            set;
-        }
-
+        public dynamic Username { get; set; }
         /// <summary>
         /// Token
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-token
@@ -45,12 +35,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Token
-        {
-            get;
-            set;
-        }
-
+        public dynamic Token { get; set; }
         /// <summary>
         /// AuthType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-sourcecredential.html#cfn-codebuild-sourcecredential-authtype
@@ -58,10 +43,6 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthType
-        {
-            get;
-            set;
-        }
+        public dynamic AuthType { get; set; }
     }
 }

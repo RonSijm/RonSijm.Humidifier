@@ -20,12 +20,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationName { get; set; }
         /// <summary>
         /// Output
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationoutput.html#cfn-kinesisanalyticsv2-applicationoutput-output
@@ -33,29 +28,21 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Mutable
         /// Type: Output
         /// </summary>
-        public Output Output
-        {
-            get;
-            set;
-        }
+        public Output Output { get; set; }
     }
 
     namespace ApplicationOutputTypes
     {
-        public class LambdaOutput
+        public class DestinationSchema
         {
             /// <summary>
-            /// ResourceARN
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html#cfn-kinesisanalyticsv2-applicationoutput-lambdaoutput-resourcearn
-            /// Required: True
+            /// RecordFormatType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html#cfn-kinesisanalyticsv2-applicationoutput-destinationschema-recordformattype
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ResourceARN
-            {
-                get;
-                set;
-            }
+            public dynamic RecordFormatType { get; set; }
         }
 
         public class KinesisFirehoseOutput
@@ -67,11 +54,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ResourceARN
-            {
-                get;
-                set;
-            }
+            public dynamic ResourceARN { get; set; }
         }
 
         public class KinesisStreamsOutput
@@ -83,27 +66,19 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ResourceARN
-            {
-                get;
-                set;
-            }
+            public dynamic ResourceARN { get; set; }
         }
 
-        public class DestinationSchema
+        public class LambdaOutput
         {
             /// <summary>
-            /// RecordFormatType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html#cfn-kinesisanalyticsv2-applicationoutput-destinationschema-recordformattype
-            /// Required: False
+            /// ResourceARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-lambdaoutput.html#cfn-kinesisanalyticsv2-applicationoutput-lambdaoutput-resourcearn
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RecordFormatType
-            {
-                get;
-                set;
-            }
+            public dynamic ResourceARN { get; set; }
         }
 
         public class Output
@@ -115,12 +90,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: DestinationSchema
             /// </summary>
-            public DestinationSchema DestinationSchema
-            {
-                get;
-                set;
-            }
-
+            public DestinationSchema DestinationSchema { get; set; }
             /// <summary>
             /// LambdaOutput
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-output.html#cfn-kinesisanalyticsv2-applicationoutput-output-lambdaoutput
@@ -128,12 +98,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: LambdaOutput
             /// </summary>
-            public LambdaOutput LambdaOutput
-            {
-                get;
-                set;
-            }
-
+            public LambdaOutput LambdaOutput { get; set; }
             /// <summary>
             /// KinesisFirehoseOutput
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-output.html#cfn-kinesisanalyticsv2-applicationoutput-output-kinesisfirehoseoutput
@@ -141,12 +106,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: KinesisFirehoseOutput
             /// </summary>
-            public KinesisFirehoseOutput KinesisFirehoseOutput
-            {
-                get;
-                set;
-            }
-
+            public KinesisFirehoseOutput KinesisFirehoseOutput { get; set; }
             /// <summary>
             /// KinesisStreamsOutput
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-output.html#cfn-kinesisanalyticsv2-applicationoutput-output-kinesisstreamsoutput
@@ -154,12 +114,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: KinesisStreamsOutput
             /// </summary>
-            public KinesisStreamsOutput KinesisStreamsOutput
-            {
-                get;
-                set;
-            }
-
+            public KinesisStreamsOutput KinesisStreamsOutput { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-output.html#cfn-kinesisanalyticsv2-applicationoutput-output-name
@@ -167,11 +122,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
     }
 }

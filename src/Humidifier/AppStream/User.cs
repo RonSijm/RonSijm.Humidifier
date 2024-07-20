@@ -19,12 +19,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserName
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserName { get; set; }
         /// <summary>
         /// FirstName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-firstname
@@ -32,12 +27,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FirstName
-        {
-            get;
-            set;
-        }
-
+        public dynamic FirstName { get; set; }
         /// <summary>
         /// MessageAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-messageaction
@@ -45,12 +35,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MessageAction
-        {
-            get;
-            set;
-        }
-
+        public dynamic MessageAction { get; set; }
         /// <summary>
         /// LastName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-lastname
@@ -58,12 +43,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LastName
-        {
-            get;
-            set;
-        }
-
+        public dynamic LastName { get; set; }
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-authenticationtype
@@ -71,10 +51,6 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthenticationType
-        {
-            get;
-            set;
-        }
+        public dynamic AuthenticationType { get; set; }
     }
 }

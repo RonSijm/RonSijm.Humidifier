@@ -5,7 +5,7 @@ namespace Humidifier.SageMaker
 
     public class NotebookInstanceLifecycleConfig : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string NotebookInstanceLifecycleConfigName =  "NotebookInstanceLifecycleConfigName" ;
         }
@@ -26,12 +26,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: NotebookInstanceLifecycleHook
         /// </summary>
-        public List<NotebookInstanceLifecycleHook> OnStart
-        {
-            get;
-            set;
-        }
-
+        public List<NotebookInstanceLifecycleHook> OnStart { get; set; }
         /// <summary>
         /// NotebookInstanceLifecycleConfigName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecycleconfigname
@@ -39,12 +34,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NotebookInstanceLifecycleConfigName
-        {
-            get;
-            set;
-        }
-
+        public dynamic NotebookInstanceLifecycleConfigName { get; set; }
         /// <summary>
         /// OnCreate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-oncreate
@@ -53,11 +43,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: NotebookInstanceLifecycleHook
         /// </summary>
-        public List<NotebookInstanceLifecycleHook> OnCreate
-        {
-            get;
-            set;
-        }
+        public List<NotebookInstanceLifecycleHook> OnCreate { get; set; }
     }
 
     namespace NotebookInstanceLifecycleConfigTypes
@@ -71,11 +57,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Content
-            {
-                get;
-                set;
-            }
+            public dynamic Content { get; set; }
         }
     }
 }

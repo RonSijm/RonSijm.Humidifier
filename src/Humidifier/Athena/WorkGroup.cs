@@ -5,7 +5,7 @@ namespace Humidifier.Athena
 
     public class WorkGroup : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string CreationTime =  "CreationTime" ;
         }
@@ -19,44 +19,13 @@ namespace Humidifier.Athena
         }
 
         /// <summary>
-        /// Name
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-name
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-description
+        /// RecursiveDeleteOption
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-recursivedeleteoption
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: String
+        /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: Tags
-        /// </summary>
-        public Tags Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic RecursiveDeleteOption { get; set; }
         /// <summary>
         /// WorkGroupConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfiguration
@@ -64,25 +33,15 @@ namespace Humidifier.Athena
         /// UpdateType: Mutable
         /// Type: WorkGroupConfiguration
         /// </summary>
-        public WorkGroupConfiguration WorkGroupConfiguration
-        {
-            get;
-            set;
-        }
-
+        public WorkGroupConfiguration WorkGroupConfiguration { get; set; }
         /// <summary>
-        /// WorkGroupConfigurationUpdates
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfigurationupdates
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-description
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: WorkGroupConfigurationUpdates
+        /// PrimitiveType: String
         /// </summary>
-        public WorkGroupConfigurationUpdates WorkGroupConfigurationUpdates
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// State
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-state
@@ -90,175 +49,50 @@ namespace Humidifier.Athena
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic State
-        {
-            get;
-            set;
-        }
-
+        public dynamic State { get; set; }
         /// <summary>
-        /// RecursiveDeleteOption
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-recursivedeleteoption
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
+        /// Type: List
+        /// ItemType: Tag
         /// </summary>
-        public dynamic RecursiveDeleteOption
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-name
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Name { get; set; }
     }
 
     namespace WorkGroupTypes
     {
-        public class WorkGroupConfigurationUpdates
+        public class AclConfiguration
         {
             /// <summary>
-            /// BytesScannedCutoffPerQuery
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-bytesscannedcutoffperquery
-            /// Required: False
+            /// S3AclOption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-aclconfiguration.html#cfn-athena-workgroup-aclconfiguration-s3acloption
+            /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic BytesScannedCutoffPerQuery
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// EnforceWorkGroupConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-enforceworkgroupconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic EnforceWorkGroupConfiguration
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// PublishCloudWatchMetricsEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-publishcloudwatchmetricsenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic PublishCloudWatchMetricsEnabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RequesterPaysEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-requesterpaysenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic RequesterPaysEnabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ResultConfigurationUpdates
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-resultconfigurationupdates
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResultConfigurationUpdates
-            /// </summary>
-            public ResultConfigurationUpdates ResultConfigurationUpdates
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RemoveBytesScannedCutoffPerQuery
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-removebytesscannedcutoffperquery
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic RemoveBytesScannedCutoffPerQuery
-            {
-                get;
-                set;
-            }
+            public dynamic S3AclOption { get; set; }
         }
 
-        public class WorkGroupConfiguration
+        public class CustomerContentEncryptionConfiguration
         {
             /// <summary>
-            /// BytesScannedCutoffPerQuery
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-bytesscannedcutoffperquery
-            /// Required: False
+            /// KmsKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-customercontentencryptionconfiguration.html#cfn-athena-workgroup-customercontentencryptionconfiguration-kmskey
+            /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic BytesScannedCutoffPerQuery
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// EnforceWorkGroupConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-enforceworkgroupconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic EnforceWorkGroupConfiguration
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// PublishCloudWatchMetricsEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-publishcloudwatchmetricsenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic PublishCloudWatchMetricsEnabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RequesterPaysEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-requesterpaysenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic RequesterPaysEnabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ResultConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-resultconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResultConfiguration
-            /// </summary>
-            public ResultConfiguration ResultConfiguration
-            {
-                get;
-                set;
-            }
+            public dynamic KmsKey { get; set; }
         }
 
         public class EncryptionConfiguration
@@ -270,12 +104,7 @@ namespace Humidifier.Athena
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EncryptionOption
-            {
-                get;
-                set;
-            }
-
+            public dynamic EncryptionOption { get; set; }
             /// <summary>
             /// KmsKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-encryptionconfiguration.html#cfn-athena-workgroup-encryptionconfiguration-kmskey
@@ -283,11 +112,27 @@ namespace Humidifier.Athena
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic KmsKey
-            {
-                get;
-                set;
-            }
+            public dynamic KmsKey { get; set; }
+        }
+
+        public class EngineVersion
+        {
+            /// <summary>
+            /// SelectedEngineVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineversion.html#cfn-athena-workgroup-engineversion-selectedengineversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SelectedEngineVersion { get; set; }
+            /// <summary>
+            /// EffectiveEngineVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineversion.html#cfn-athena-workgroup-engineversion-effectiveengineversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EffectiveEngineVersion { get; set; }
         }
 
         public class ResultConfiguration
@@ -299,12 +144,7 @@ namespace Humidifier.Athena
             /// UpdateType: Mutable
             /// Type: EncryptionConfiguration
             /// </summary>
-            public EncryptionConfiguration EncryptionConfiguration
-            {
-                get;
-                set;
-            }
-
+            public EncryptionConfiguration EncryptionConfiguration { get; set; }
             /// <summary>
             /// OutputLocation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-outputlocation
@@ -312,83 +152,99 @@ namespace Humidifier.Athena
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic OutputLocation
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ResultConfigurationUpdates
-        {
+            public dynamic OutputLocation { get; set; }
             /// <summary>
-            /// EncryptionConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfigurationupdates.html#cfn-athena-workgroup-resultconfigurationupdates-encryptionconfiguration
+            /// AclConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-aclconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: EncryptionConfiguration
+            /// Type: AclConfiguration
             /// </summary>
-            public EncryptionConfiguration EncryptionConfiguration
-            {
-                get;
-                set;
-            }
-
+            public AclConfiguration AclConfiguration { get; set; }
             /// <summary>
-            /// OutputLocation
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfigurationupdates.html#cfn-athena-workgroup-resultconfigurationupdates-outputlocation
+            /// ExpectedBucketOwner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-expectedbucketowner
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic OutputLocation
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RemoveEncryptionConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfigurationupdates.html#cfn-athena-workgroup-resultconfigurationupdates-removeencryptionconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic RemoveEncryptionConfiguration
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RemoveOutputLocation
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfigurationupdates.html#cfn-athena-workgroup-resultconfigurationupdates-removeoutputlocation
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic RemoveOutputLocation
-            {
-                get;
-                set;
-            }
+            public dynamic ExpectedBucketOwner { get; set; }
         }
 
-        public class Tags
+        public class WorkGroupConfiguration
         {
             /// <summary>
-            /// Tags
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-tags.html#cfn-athena-workgroup-tags-tags
+            /// EnforceWorkGroupConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-enforceworkgroupconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Tag
+            /// PrimitiveType: Boolean
             /// </summary>
-            public List<Tag> Tags_
-            {
-                get;
-                set;
-            }
+            public dynamic EnforceWorkGroupConfiguration { get; set; }
+            /// <summary>
+            /// EngineVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-engineversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EngineVersion
+            /// </summary>
+            public EngineVersion EngineVersion { get; set; }
+            /// <summary>
+            /// PublishCloudWatchMetricsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-publishcloudwatchmetricsenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic PublishCloudWatchMetricsEnabled { get; set; }
+            /// <summary>
+            /// ResultConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-resultconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ResultConfiguration
+            /// </summary>
+            public ResultConfiguration ResultConfiguration { get; set; }
+            /// <summary>
+            /// AdditionalConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-additionalconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AdditionalConfiguration { get; set; }
+            /// <summary>
+            /// CustomerContentEncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-customercontentencryptionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomerContentEncryptionConfiguration
+            /// </summary>
+            public CustomerContentEncryptionConfiguration CustomerContentEncryptionConfiguration { get; set; }
+            /// <summary>
+            /// BytesScannedCutoffPerQuery
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-bytesscannedcutoffperquery
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BytesScannedCutoffPerQuery { get; set; }
+            /// <summary>
+            /// RequesterPaysEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-requesterpaysenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic RequesterPaysEnabled { get; set; }
+            /// <summary>
+            /// ExecutionRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-executionrole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExecutionRole { get; set; }
         }
     }
 }

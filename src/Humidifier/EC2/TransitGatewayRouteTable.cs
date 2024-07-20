@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class TransitGatewayRouteTable : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string TransitGatewayRouteTableId =  "TransitGatewayRouteTableId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TransitGatewayId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TransitGatewayId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html#cfn-ec2-transitgatewayroutetable-tags
@@ -33,10 +33,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

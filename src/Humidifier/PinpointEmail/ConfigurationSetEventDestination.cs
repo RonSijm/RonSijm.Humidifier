@@ -20,12 +20,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EventDestinationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EventDestinationName { get; set; }
         /// <summary>
         /// ConfigurationSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-configurationsetname
@@ -33,12 +28,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConfigurationSetName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConfigurationSetName { get; set; }
         /// <summary>
         /// EventDestination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination
@@ -46,89 +36,11 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// Type: EventDestination
         /// </summary>
-        public EventDestination EventDestination
-        {
-            get;
-            set;
-        }
+        public EventDestination EventDestination { get; set; }
     }
 
     namespace ConfigurationSetEventDestinationTypes
     {
-        public class DimensionConfiguration
-        {
-            /// <summary>
-            /// DimensionValueSource
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DimensionValueSource
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DefaultDimensionValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-defaultdimensionvalue
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DefaultDimensionValue
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DimensionName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionname
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DimensionName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class SnsDestination
-        {
-            /// <summary>
-            /// TopicArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-snsdestination.html#cfn-pinpointemail-configurationseteventdestination-snsdestination-topicarn
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TopicArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class PinpointDestination
-        {
-            /// <summary>
-            /// ApplicationArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html#cfn-pinpointemail-configurationseteventdestination-pinpointdestination-applicationarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ApplicationArn
-            {
-                get;
-                set;
-            }
-        }
-
         public class CloudWatchDestination
         {
             /// <summary>
@@ -139,40 +51,35 @@ namespace Humidifier.PinpointEmail
             /// Type: List
             /// ItemType: DimensionConfiguration
             /// </summary>
-            public List<DimensionConfiguration> DimensionConfigurations
-            {
-                get;
-                set;
-            }
+            public List<DimensionConfiguration> DimensionConfigurations { get; set; }
         }
 
-        public class KinesisFirehoseDestination
+        public class DimensionConfiguration
         {
             /// <summary>
-            /// DeliveryStreamArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn
+            /// DimensionValueSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeliveryStreamArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic DimensionValueSource { get; set; }
             /// <summary>
-            /// IamRoleArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-iamrolearn
+            /// DefaultDimensionValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-defaultdimensionvalue
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic IamRoleArn
-            {
-                get;
-                set;
-            }
+            public dynamic DefaultDimensionValue { get; set; }
+            /// <summary>
+            /// DimensionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DimensionName { get; set; }
         }
 
         public class EventDestination
@@ -184,12 +91,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// Type: SnsDestination
             /// </summary>
-            public SnsDestination SnsDestination
-            {
-                get;
-                set;
-            }
-
+            public SnsDestination SnsDestination { get; set; }
             /// <summary>
             /// CloudWatchDestination
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-cloudwatchdestination
@@ -197,12 +99,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// Type: CloudWatchDestination
             /// </summary>
-            public CloudWatchDestination CloudWatchDestination
-            {
-                get;
-                set;
-            }
-
+            public CloudWatchDestination CloudWatchDestination { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-enabled
@@ -210,12 +107,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic Enabled { get; set; }
             /// <summary>
             /// MatchingEventTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-matchingeventtypes
@@ -224,12 +116,7 @@ namespace Humidifier.PinpointEmail
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic MatchingEventTypes
-            {
-                get;
-                set;
-            }
-
+            public dynamic MatchingEventTypes { get; set; }
             /// <summary>
             /// PinpointDestination
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-pinpointdestination
@@ -237,12 +124,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// Type: PinpointDestination
             /// </summary>
-            public PinpointDestination PinpointDestination
-            {
-                get;
-                set;
-            }
-
+            public PinpointDestination PinpointDestination { get; set; }
             /// <summary>
             /// KinesisFirehoseDestination
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-kinesisfirehosedestination
@@ -250,11 +132,51 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// Type: KinesisFirehoseDestination
             /// </summary>
-            public KinesisFirehoseDestination KinesisFirehoseDestination
-            {
-                get;
-                set;
-            }
+            public KinesisFirehoseDestination KinesisFirehoseDestination { get; set; }
+        }
+
+        public class KinesisFirehoseDestination
+        {
+            /// <summary>
+            /// DeliveryStreamArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeliveryStreamArn { get; set; }
+            /// <summary>
+            /// IamRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-iamrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IamRoleArn { get; set; }
+        }
+
+        public class PinpointDestination
+        {
+            /// <summary>
+            /// ApplicationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html#cfn-pinpointemail-configurationseteventdestination-pinpointdestination-applicationarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApplicationArn { get; set; }
+        }
+
+        public class SnsDestination
+        {
+            /// <summary>
+            /// TopicArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-snsdestination.html#cfn-pinpointemail-configurationseteventdestination-snsdestination-topicarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicArn { get; set; }
         }
     }
 }

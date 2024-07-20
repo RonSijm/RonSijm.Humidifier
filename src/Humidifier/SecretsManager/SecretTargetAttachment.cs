@@ -19,12 +19,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SecretId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecretId { get; set; }
         /// <summary>
         /// TargetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targettype
@@ -32,12 +27,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TargetType
-        {
-            get;
-            set;
-        }
-
+        public dynamic TargetType { get; set; }
         /// <summary>
         /// TargetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secrettargetattachment.html#cfn-secretsmanager-secrettargetattachment-targetid
@@ -45,10 +35,6 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TargetId
-        {
-            get;
-            set;
-        }
+        public dynamic TargetId { get; set; }
     }
 }

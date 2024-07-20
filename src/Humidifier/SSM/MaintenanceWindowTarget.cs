@@ -20,12 +20,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic OwnerInformation
-        {
-            get;
-            set;
-        }
-
+        public dynamic OwnerInformation { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-description
@@ -33,12 +28,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// WindowId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-windowid
@@ -46,12 +36,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic WindowId
-        {
-            get;
-            set;
-        }
-
+        public dynamic WindowId { get; set; }
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-resourcetype
@@ -59,12 +44,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResourceType { get; set; }
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets
@@ -73,12 +53,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// ItemType: Targets
         /// </summary>
-        public List<Targets> Targets
-        {
-            get;
-            set;
-        }
-
+        public List<Targets> Targets { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-name
@@ -86,11 +61,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace MaintenanceWindowTargetTypes
@@ -100,17 +71,12 @@ namespace Humidifier.SSM
             /// <summary>
             /// Values
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html#cfn-ssm-maintenancewindowtarget-targets-values
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Values
-            {
-                get;
-                set;
-            }
-
+            public dynamic Values { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html#cfn-ssm-maintenancewindowtarget-targets-key
@@ -118,11 +84,7 @@ namespace Humidifier.SSM
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

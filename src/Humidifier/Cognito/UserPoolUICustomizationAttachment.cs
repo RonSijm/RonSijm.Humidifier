@@ -19,12 +19,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CSS
-        {
-            get;
-            set;
-        }
-
+        public dynamic CSS { get; set; }
         /// <summary>
         /// UserPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-userpoolid
@@ -32,12 +27,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserPoolId { get; set; }
         /// <summary>
         /// ClientId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-clientid
@@ -45,10 +35,6 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClientId
-        {
-            get;
-            set;
-        }
+        public dynamic ClientId { get; set; }
     }
 }

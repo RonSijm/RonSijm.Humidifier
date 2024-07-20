@@ -5,6 +5,7 @@ namespace Humidifier
 {
     public class Stack
     {
+        public string Name { get; set; }
         private Dictionary<string, string> ResourceConditions { get; } = new Dictionary<string, string>();
         private Dictionary<string, DeletionPolicy> ResourceDeletionPolicies { get; } = new Dictionary<string, DeletionPolicy>();
         private Dictionary<string, CreationPolicy> ResourceCreationPolicies { get; } = new Dictionary<string, CreationPolicy>();

@@ -20,12 +20,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FunctionName
-        {
-            get;
-            set;
-        }
-
+        public dynamic FunctionName { get; set; }
         /// <summary>
         /// MaximumRetryAttempts
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumretryattempts
@@ -33,12 +28,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic MaximumRetryAttempts
-        {
-            get;
-            set;
-        }
-
+        public dynamic MaximumRetryAttempts { get; set; }
         /// <summary>
         /// DestinationConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig
@@ -46,12 +36,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// Type: DestinationConfig
         /// </summary>
-        public DestinationConfig DestinationConfig
-        {
-            get;
-            set;
-        }
-
+        public DestinationConfig DestinationConfig { get; set; }
         /// <summary>
         /// Qualifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-qualifier
@@ -59,12 +44,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Qualifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic Qualifier { get; set; }
         /// <summary>
         /// MaximumEventAgeInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-maximumeventageinseconds
@@ -72,47 +52,11 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic MaximumEventAgeInSeconds
-        {
-            get;
-            set;
-        }
+        public dynamic MaximumEventAgeInSeconds { get; set; }
     }
 
     namespace EventInvokeConfigTypes
     {
-        public class OnFailure
-        {
-            /// <summary>
-            /// Destination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onfailure.html#cfn-lambda-eventinvokeconfig-destinationconfig-onfailure-destination
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Destination
-            {
-                get;
-                set;
-            }
-        }
-
-        public class OnSuccess
-        {
-            /// <summary>
-            /// Destination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html#cfn-lambda-eventinvokeconfig-destinationconfig-onsuccess-destination
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Destination
-            {
-                get;
-                set;
-            }
-        }
-
         public class DestinationConfig
         {
             /// <summary>
@@ -122,12 +66,7 @@ namespace Humidifier.Lambda
             /// UpdateType: Mutable
             /// Type: OnSuccess
             /// </summary>
-            public OnSuccess OnSuccess
-            {
-                get;
-                set;
-            }
-
+            public OnSuccess OnSuccess { get; set; }
             /// <summary>
             /// OnFailure
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig-onfailure
@@ -135,11 +74,31 @@ namespace Humidifier.Lambda
             /// UpdateType: Mutable
             /// Type: OnFailure
             /// </summary>
-            public OnFailure OnFailure
-            {
-                get;
-                set;
-            }
+            public OnFailure OnFailure { get; set; }
+        }
+
+        public class OnFailure
+        {
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-onfailure.html#cfn-lambda-eventinvokeconfig-onfailure-destination
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Destination { get; set; }
+        }
+
+        public class OnSuccess
+        {
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-onsuccess.html#cfn-lambda-eventinvokeconfig-onsuccess-destination
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Destination { get; set; }
         }
     }
 }

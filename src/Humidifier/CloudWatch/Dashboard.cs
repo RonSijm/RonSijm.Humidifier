@@ -19,12 +19,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DashboardName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DashboardName { get; set; }
         /// <summary>
         /// DashboardBody
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-dashboardbody
@@ -32,10 +27,6 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DashboardBody
-        {
-            get;
-            set;
-        }
+        public dynamic DashboardBody { get; set; }
     }
 }

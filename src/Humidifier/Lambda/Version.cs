@@ -5,8 +5,9 @@ namespace Humidifier.Lambda
 
     public class Version : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string FunctionArn =  "FunctionArn" ;
             public static string Version =  "Version" ;
         }
 
@@ -19,31 +20,13 @@ namespace Humidifier.Lambda
         }
 
         /// <summary>
-        /// CodeSha256
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
+        /// Policy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-policy
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: String
+        /// PrimitiveType: Json
         /// </summary>
-        public dynamic CodeSha256
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Policy { get; set; }
         /// <summary>
         /// FunctionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname
@@ -51,24 +34,39 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FunctionName
-        {
-            get;
-            set;
-        }
-
+        public dynamic FunctionName { get; set; }
         /// <summary>
         /// ProvisionedConcurrencyConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-provisionedconcurrencyconfig
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: ProvisionedConcurrencyConfiguration
         /// </summary>
-        public ProvisionedConcurrencyConfiguration ProvisionedConcurrencyConfig
-        {
-            get;
-            set;
-        }
+        public ProvisionedConcurrencyConfiguration ProvisionedConcurrencyConfig { get; set; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// RuntimePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-runtimepolicy
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: RuntimePolicy
+        /// </summary>
+        public RuntimePolicy RuntimePolicy { get; set; }
+        /// <summary>
+        /// CodeSha256
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-codesha256
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CodeSha256 { get; set; }
     }
 
     namespace VersionTypes
@@ -79,14 +77,30 @@ namespace Humidifier.Lambda
             /// ProvisionedConcurrentExecutions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html#cfn-lambda-version-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic ProvisionedConcurrentExecutions
-            {
-                get;
-                set;
-            }
+            public dynamic ProvisionedConcurrentExecutions { get; set; }
+        }
+
+        public class RuntimePolicy
+        {
+            /// <summary>
+            /// UpdateRuntimeOn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-runtimepolicy.html#cfn-lambda-version-runtimepolicy-updateruntimeon
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UpdateRuntimeOn { get; set; }
+            /// <summary>
+            /// RuntimeVersionArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-runtimepolicy.html#cfn-lambda-version-runtimepolicy-runtimeversionarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RuntimeVersionArn { get; set; }
         }
     }
 }

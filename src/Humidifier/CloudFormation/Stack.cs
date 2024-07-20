@@ -20,12 +20,7 @@ namespace Humidifier.CloudFormation
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic NotificationARNs
-        {
-            get;
-            set;
-        }
-
+        public dynamic NotificationARNs { get; set; }
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-parameters
@@ -34,12 +29,7 @@ namespace Humidifier.CloudFormation
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        public Dictionary<string, dynamic> Parameters
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> Parameters { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-tags
@@ -48,12 +38,7 @@ namespace Humidifier.CloudFormation
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// TemplateURL
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-templateurl
@@ -61,12 +46,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateURL
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateURL { get; set; }
         /// <summary>
         /// TimeoutInMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-timeoutinminutes
@@ -74,10 +54,6 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic TimeoutInMinutes
-        {
-            get;
-            set;
-        }
+        public dynamic TimeoutInMinutes { get; set; }
     }
 }

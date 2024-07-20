@@ -5,7 +5,7 @@ namespace Humidifier.SageMaker
 
     public class Workteam : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string WorkteamName =  "WorkteamName" ;
         }
@@ -25,12 +25,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// NotificationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-notificationconfiguration
@@ -38,12 +33,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: NotificationConfiguration
         /// </summary>
-        public NotificationConfiguration NotificationConfiguration
-        {
-            get;
-            set;
-        }
-
+        public NotificationConfiguration NotificationConfiguration { get; set; }
         /// <summary>
         /// WorkteamName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-workteamname
@@ -51,12 +41,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic WorkteamName
-        {
-            get;
-            set;
-        }
-
+        public dynamic WorkteamName { get; set; }
         /// <summary>
         /// MemberDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-memberdefinitions
@@ -65,12 +50,15 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: MemberDefinition
         /// </summary>
-        public List<MemberDefinition> MemberDefinitions
-        {
-            get;
-            set;
-        }
-
+        public List<MemberDefinition> MemberDefinitions { get; set; }
+        /// <summary>
+        /// WorkforceName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-workforcename
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WorkforceName { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-tags
@@ -79,11 +67,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace WorkteamTypes
@@ -97,12 +81,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CognitoUserPool
-            {
-                get;
-                set;
-            }
-
+            public dynamic CognitoUserPool { get; set; }
             /// <summary>
             /// CognitoClientId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitoclientid
@@ -110,12 +89,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CognitoClientId
-            {
-                get;
-                set;
-            }
-
+            public dynamic CognitoClientId { get; set; }
             /// <summary>
             /// CognitoUserGroup
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitousergroup
@@ -123,27 +97,27 @@ namespace Humidifier.SageMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CognitoUserGroup
-            {
-                get;
-                set;
-            }
+            public dynamic CognitoUserGroup { get; set; }
         }
 
         public class MemberDefinition
         {
             /// <summary>
+            /// OidcMemberDefinition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-oidcmemberdefinition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OidcMemberDefinition
+            /// </summary>
+            public OidcMemberDefinition OidcMemberDefinition { get; set; }
+            /// <summary>
             /// CognitoMemberDefinition
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-cognitomemberdefinition
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: CognitoMemberDefinition
             /// </summary>
-            public CognitoMemberDefinition CognitoMemberDefinition
-            {
-                get;
-                set;
-            }
+            public CognitoMemberDefinition CognitoMemberDefinition { get; set; }
         }
 
         public class NotificationConfiguration
@@ -155,11 +129,20 @@ namespace Humidifier.SageMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic NotificationTopicArn
-            {
-                get;
-                set;
-            }
+            public dynamic NotificationTopicArn { get; set; }
+        }
+
+        public class OidcMemberDefinition
+        {
+            /// <summary>
+            /// OidcGroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-oidcmemberdefinition.html#cfn-sagemaker-workteam-oidcmemberdefinition-oidcgroups
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic OidcGroups { get; set; }
         }
     }
 }

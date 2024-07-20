@@ -5,9 +5,11 @@ namespace Humidifier.ServiceCatalog
 
     public class CloudFormationProvisionedProduct : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string CloudformationStackArn =  "CloudformationStackArn" ;
+            public static string Outputs =  "Outputs" ;
+            public static string ProvisionedProductId =  "ProvisionedProductId" ;
             public static string RecordId =  "RecordId" ;
         }
 
@@ -26,12 +28,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PathId
-        {
-            get;
-            set;
-        }
-
+        public dynamic PathId { get; set; }
         /// <summary>
         /// ProvisioningParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters
@@ -40,12 +37,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// ItemType: ProvisioningParameter
         /// </summary>
-        public List<ProvisioningParameter> ProvisioningParameters
-        {
-            get;
-            set;
-        }
-
+        public List<ProvisioningParameter> ProvisioningParameters { get; set; }
         /// <summary>
         /// ProvisioningPreferences
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences
@@ -53,12 +45,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// Type: ProvisioningPreferences
         /// </summary>
-        public ProvisioningPreferences ProvisioningPreferences
-        {
-            get;
-            set;
-        }
-
+        public ProvisioningPreferences ProvisioningPreferences { get; set; }
         /// <summary>
         /// ProductName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productname
@@ -66,12 +53,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProductName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProductName { get; set; }
         /// <summary>
         /// ProvisioningArtifactName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname
@@ -79,12 +61,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProvisioningArtifactName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProvisioningArtifactName { get; set; }
         /// <summary>
         /// NotificationArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-notificationarns
@@ -93,12 +70,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic NotificationArns
-        {
-            get;
-            set;
-        }
-
+        public dynamic NotificationArns { get; set; }
         /// <summary>
         /// AcceptLanguage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-acceptlanguage
@@ -106,12 +78,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AcceptLanguage
-        {
-            get;
-            set;
-        }
-
+        public dynamic AcceptLanguage { get; set; }
         /// <summary>
         /// ProductId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-productid
@@ -119,12 +86,15 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProductId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProductId { get; set; }
+        /// <summary>
+        /// PathName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PathName { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags
@@ -133,12 +103,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// ProvisionedProductName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname
@@ -146,12 +111,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProvisionedProductName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProvisionedProductName { get; set; }
         /// <summary>
         /// ProvisioningArtifactId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactid
@@ -159,11 +119,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProvisioningArtifactId
-        {
-            get;
-            set;
-        }
+        public dynamic ProvisioningArtifactId { get; set; }
     }
 
     namespace CloudFormationProvisionedProductTypes
@@ -173,28 +129,19 @@ namespace Humidifier.ServiceCatalog
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameter-value
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameter-key
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
 
         public class ProvisioningPreferences
@@ -207,12 +154,7 @@ namespace Humidifier.ServiceCatalog
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic StackSetAccounts
-            {
-                get;
-                set;
-            }
-
+            public dynamic StackSetAccounts { get; set; }
             /// <summary>
             /// StackSetFailureToleranceCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancecount
@@ -220,12 +162,7 @@ namespace Humidifier.ServiceCatalog
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic StackSetFailureToleranceCount
-            {
-                get;
-                set;
-            }
-
+            public dynamic StackSetFailureToleranceCount { get; set; }
             /// <summary>
             /// StackSetMaxConcurrencyPercentage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencypercentage
@@ -233,12 +170,7 @@ namespace Humidifier.ServiceCatalog
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic StackSetMaxConcurrencyPercentage
-            {
-                get;
-                set;
-            }
-
+            public dynamic StackSetMaxConcurrencyPercentage { get; set; }
             /// <summary>
             /// StackSetMaxConcurrencyCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetmaxconcurrencycount
@@ -246,12 +178,7 @@ namespace Humidifier.ServiceCatalog
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic StackSetMaxConcurrencyCount
-            {
-                get;
-                set;
-            }
-
+            public dynamic StackSetMaxConcurrencyCount { get; set; }
             /// <summary>
             /// StackSetRegions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetregions
@@ -260,12 +187,7 @@ namespace Humidifier.ServiceCatalog
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic StackSetRegions
-            {
-                get;
-                set;
-            }
-
+            public dynamic StackSetRegions { get; set; }
             /// <summary>
             /// StackSetOperationType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetoperationtype
@@ -273,12 +195,7 @@ namespace Humidifier.ServiceCatalog
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic StackSetOperationType
-            {
-                get;
-                set;
-            }
-
+            public dynamic StackSetOperationType { get; set; }
             /// <summary>
             /// StackSetFailureTolerancePercentage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetfailuretolerancepercentage
@@ -286,11 +203,7 @@ namespace Humidifier.ServiceCatalog
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic StackSetFailureTolerancePercentage
-            {
-                get;
-                set;
-            }
+            public dynamic StackSetFailureTolerancePercentage { get; set; }
         }
     }
 }

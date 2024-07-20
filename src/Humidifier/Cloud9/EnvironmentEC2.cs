@@ -5,7 +5,7 @@ namespace Humidifier.Cloud9
 
     public class EnvironmentEC2 : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -27,12 +27,7 @@ namespace Humidifier.Cloud9
         /// Type: List
         /// ItemType: Repository
         /// </summary>
-        public List<Repository> Repositories
-        {
-            get;
-            set;
-        }
-
+        public List<Repository> Repositories { get; set; }
         /// <summary>
         /// OwnerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-ownerarn
@@ -40,12 +35,7 @@ namespace Humidifier.Cloud9
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic OwnerArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic OwnerArn { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-description
@@ -53,12 +43,15 @@ namespace Humidifier.Cloud9
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// ConnectionType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-connectiontype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConnectionType { get; set; }
         /// <summary>
         /// AutomaticStopTimeMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-automaticstoptimeminutes
@@ -66,12 +59,15 @@ namespace Humidifier.Cloud9
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AutomaticStopTimeMinutes
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutomaticStopTimeMinutes { get; set; }
+        /// <summary>
+        /// ImageId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-imageid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ImageId { get; set; }
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-subnetid
@@ -79,12 +75,7 @@ namespace Humidifier.Cloud9
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetId { get; set; }
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype
@@ -92,12 +83,7 @@ namespace Humidifier.Cloud9
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstanceType { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-tags
@@ -106,12 +92,7 @@ namespace Humidifier.Cloud9
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-name
@@ -119,11 +100,7 @@ namespace Humidifier.Cloud9
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace EnvironmentEC2Types
@@ -137,12 +114,7 @@ namespace Humidifier.Cloud9
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PathComponent
-            {
-                get;
-                set;
-            }
-
+            public dynamic PathComponent { get; set; }
             /// <summary>
             /// RepositoryUrl
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-repositoryurl
@@ -150,11 +122,7 @@ namespace Humidifier.Cloud9
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RepositoryUrl
-            {
-                get;
-                set;
-            }
+            public dynamic RepositoryUrl { get; set; }
         }
     }
 }

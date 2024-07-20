@@ -19,12 +19,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// DefaultRunProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-defaultrunproperties
@@ -32,12 +27,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic DefaultRunProperties
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultRunProperties { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-tags
@@ -45,12 +35,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-name
@@ -58,10 +43,14 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
+        /// <summary>
+        /// MaxConcurrentRuns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-maxconcurrentruns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic MaxConcurrentRuns { get; set; }
     }
 }

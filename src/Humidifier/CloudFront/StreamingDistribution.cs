@@ -5,7 +5,7 @@ namespace Humidifier.CloudFront
 
     public class StreamingDistribution : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string DomainName =  "DomainName" ;
         }
@@ -25,12 +25,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: StreamingDistributionConfig
         /// </summary>
-        public StreamingDistributionConfig StreamingDistributionConfig
-        {
-            get;
-            set;
-        }
-
+        public StreamingDistributionConfig StreamingDistributionConfig { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags
@@ -39,43 +34,37 @@ namespace Humidifier.CloudFront
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace StreamingDistributionTypes
     {
-        public class TrustedSigners
+        public class Logging
         {
             /// <summary>
+            /// Bucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-bucket
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Bucket { get; set; }
+            /// <summary>
             /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-enabled
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic Enabled { get; set; }
             /// <summary>
-            /// AwsAccountNumbers
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers
-            /// Required: False
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-prefix
+            /// Required: True
             /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic AwsAccountNumbers
-            {
-                get;
-                set;
-            }
+            public dynamic Prefix { get; set; }
         }
 
         public class S3Origin
@@ -87,12 +76,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DomainName
-            {
-                get;
-                set;
-            }
-
+            public dynamic DomainName { get; set; }
             /// <summary>
             /// OriginAccessIdentity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity
@@ -100,53 +84,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic OriginAccessIdentity
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Logging
-        {
-            /// <summary>
-            /// Bucket
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-bucket
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-enabled
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Prefix
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-prefix
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Prefix
-            {
-                get;
-                set;
-            }
+            public dynamic OriginAccessIdentity { get; set; }
         }
 
         public class StreamingDistributionConfig
@@ -158,12 +96,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// Type: Logging
             /// </summary>
-            public Logging Logging
-            {
-                get;
-                set;
-            }
-
+            public Logging Logging { get; set; }
             /// <summary>
             /// Comment
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-comment
@@ -171,12 +104,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Comment
-            {
-                get;
-                set;
-            }
-
+            public dynamic Comment { get; set; }
             /// <summary>
             /// PriceClass
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-priceclass
@@ -184,12 +112,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PriceClass
-            {
-                get;
-                set;
-            }
-
+            public dynamic PriceClass { get; set; }
             /// <summary>
             /// S3Origin
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-s3origin
@@ -197,12 +120,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// Type: S3Origin
             /// </summary>
-            public S3Origin S3Origin
-            {
-                get;
-                set;
-            }
-
+            public S3Origin S3Origin { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-enabled
@@ -210,12 +128,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic Enabled { get; set; }
             /// <summary>
             /// Aliases
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-aliases
@@ -224,12 +137,7 @@ namespace Humidifier.CloudFront
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Aliases
-            {
-                get;
-                set;
-            }
-
+            public dynamic Aliases { get; set; }
             /// <summary>
             /// TrustedSigners
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-trustedsigners
@@ -237,11 +145,28 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// Type: TrustedSigners
             /// </summary>
-            public TrustedSigners TrustedSigners
-            {
-                get;
-                set;
-            }
+            public TrustedSigners TrustedSigners { get; set; }
+        }
+
+        public class TrustedSigners
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// AwsAccountNumbers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AwsAccountNumbers { get; set; }
         }
     }
 }

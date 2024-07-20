@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class VPCEndpointConnectionNotification : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string VPCEndpointConnectionNotificationId =  "VPCEndpointConnectionNotificationId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ConnectionEvents
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConnectionEvents { get; set; }
         /// <summary>
         /// VPCEndpointId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-vpcendpointid
@@ -33,25 +33,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VPCEndpointId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ServiceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ServiceId
-        {
-            get;
-            set;
-        }
-
+        public dynamic VPCEndpointId { get; set; }
         /// <summary>
         /// ConnectionNotificationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn
@@ -59,10 +41,14 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConnectionNotificationArn
-        {
-            get;
-            set;
-        }
+        public dynamic ConnectionNotificationArn { get; set; }
+        /// <summary>
+        /// ServiceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ServiceId { get; set; }
     }
 }

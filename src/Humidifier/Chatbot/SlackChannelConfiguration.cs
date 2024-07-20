@@ -4,6 +4,11 @@ namespace Humidifier.Chatbot
 
     public class SlackChannelConfiguration : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Arn =  "Arn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,57 +18,21 @@ namespace Humidifier.Chatbot
         }
 
         /// <summary>
-        /// SlackWorkspaceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackworkspaceid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// UserRoleRequired
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-userrolerequired
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic SlackWorkspaceId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserRoleRequired { get; set; }
         /// <summary>
-        /// SlackChannelId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackchannelid
-        /// Required: True
+        /// LoggingLevel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-logginglevel
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SlackChannelId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ConfigurationName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-configurationname
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ConfigurationName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// IamRoleArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-iamrolearn
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic IamRoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic LoggingLevel { get; set; }
         /// <summary>
         /// SnsTopicArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-snstopicarns
@@ -72,36 +41,56 @@ namespace Humidifier.Chatbot
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SnsTopicArns
-        {
-            get;
-            set;
-        }
-
+        public dynamic SnsTopicArns { get; set; }
         /// <summary>
-        /// LoggingLevel
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-logginglevel
+        /// GuardrailPolicies
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-guardrailpolicies
         /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic GuardrailPolicies { get; set; }
+        /// <summary>
+        /// SlackWorkspaceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackworkspaceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SlackWorkspaceId { get; set; }
+        /// <summary>
+        /// SlackChannelId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackchannelid
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LoggingLevel
-        {
-            get;
-            set;
-        }
-
+        public dynamic SlackChannelId { get; set; }
         /// <summary>
-        /// Arn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-arn
-        /// Required: False
+        /// IamRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-iamrolearn
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Arn
-        {
-            get;
-            set;
-        }
+        public dynamic IamRoleArn { get; set; }
+        /// <summary>
+        /// ConfigurationName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-configurationname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConfigurationName { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

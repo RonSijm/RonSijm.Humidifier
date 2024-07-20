@@ -5,7 +5,7 @@ namespace Humidifier.Backup
 
     public class BackupVault : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string BackupVaultName =  "BackupVaultName" ;
             public static string BackupVaultArn =  "BackupVaultArn" ;
@@ -24,14 +24,10 @@ namespace Humidifier.Backup
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaulttags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic BackupVaultTags
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> BackupVaultTags { get; set; }
         /// <summary>
         /// BackupVaultName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaultname
@@ -39,12 +35,7 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BackupVaultName
-        {
-            get;
-            set;
-        }
-
+        public dynamic BackupVaultName { get; set; }
         /// <summary>
         /// EncryptionKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-encryptionkeyarn
@@ -52,12 +43,15 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EncryptionKeyArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic EncryptionKeyArn { get; set; }
+        /// <summary>
+        /// LockConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-lockconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LockConfigurationType
+        /// </summary>
+        public LockConfigurationType LockConfiguration { get; set; }
         /// <summary>
         /// Notifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications
@@ -65,12 +59,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// Type: NotificationObjectType
         /// </summary>
-        public NotificationObjectType Notifications
-        {
-            get;
-            set;
-        }
-
+        public NotificationObjectType Notifications { get; set; }
         /// <summary>
         /// AccessPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-accesspolicy
@@ -78,15 +67,39 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic AccessPolicy
-        {
-            get;
-            set;
-        }
+        public dynamic AccessPolicy { get; set; }
     }
 
     namespace BackupVaultTypes
     {
+        public class LockConfigurationType
+        {
+            /// <summary>
+            /// ChangeableForDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ChangeableForDays { get; set; }
+            /// <summary>
+            /// MaxRetentionDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxRetentionDays { get; set; }
+            /// <summary>
+            /// MinRetentionDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinRetentionDays { get; set; }
+        }
+
         public class NotificationObjectType
         {
             /// <summary>
@@ -96,12 +109,7 @@ namespace Humidifier.Backup
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SNSTopicArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic SNSTopicArn { get; set; }
             /// <summary>
             /// BackupVaultEvents
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-backupvaultevents
@@ -110,11 +118,7 @@ namespace Humidifier.Backup
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic BackupVaultEvents
-            {
-                get;
-                set;
-            }
+            public dynamic BackupVaultEvents { get; set; }
         }
     }
 }

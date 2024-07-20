@@ -5,7 +5,7 @@ namespace Humidifier.AmazonMQ
 
     public class Configuration : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Revision =  "Revision" ;
             public static string Id =  "Id" ;
@@ -23,16 +23,11 @@ namespace Humidifier.AmazonMQ
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-engineversion
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EngineVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic EngineVersion { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-description
@@ -40,12 +35,15 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// AuthenticationStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-authenticationstrategy
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AuthenticationStrategy { get; set; }
         /// <summary>
         /// EngineType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-enginetype
@@ -53,12 +51,7 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EngineType
-        {
-            get;
-            set;
-        }
-
+        public dynamic EngineType { get; set; }
         /// <summary>
         /// Data
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data
@@ -66,12 +59,7 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Data
-        {
-            get;
-            set;
-        }
-
+        public dynamic Data { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-tags
@@ -80,12 +68,7 @@ namespace Humidifier.AmazonMQ
         /// Type: List
         /// ItemType: TagsEntry
         /// </summary>
-        public List<TagsEntry> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<TagsEntry> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-name
@@ -93,11 +76,7 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ConfigurationTypes
@@ -111,12 +90,7 @@ namespace Humidifier.AmazonMQ
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configuration-tagsentry.html#cfn-amazonmq-configuration-tagsentry-key
@@ -124,11 +98,7 @@ namespace Humidifier.AmazonMQ
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

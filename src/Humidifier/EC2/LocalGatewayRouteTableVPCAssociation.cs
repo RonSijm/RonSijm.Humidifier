@@ -1,15 +1,14 @@
 namespace Humidifier.EC2
 {
     using System.Collections.Generic;
-    using LocalGatewayRouteTableVPCAssociationTypes;
 
     public class LocalGatewayRouteTableVPCAssociation : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string LocalGatewayId =  "LocalGatewayId" ;
-            public static string LocalGatewayRouteTableVpcAssociationId =  "LocalGatewayRouteTableVpcAssociationId" ;
             public static string State =  "State" ;
+            public static string LocalGatewayRouteTableVpcAssociationId =  "LocalGatewayRouteTableVpcAssociationId" ;
         }
 
         public override string AWSTypeName
@@ -21,62 +20,29 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// LocalGatewayRouteTableId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-localgatewayroutetableid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic LocalGatewayRouteTableId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-vpcid
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpcId
-        {
-            get;
-            set;
-        }
-
+        public dynamic VpcId { get; set; }
+        /// <summary>
+        /// LocalGatewayRouteTableId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-localgatewayroutetableid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LocalGatewayRouteTableId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: Tags
+        /// Type: List
+        /// ItemType: Tag
         /// </summary>
-        public Tags Tags
-        {
-            get;
-            set;
-        }
-    }
-
-    namespace LocalGatewayRouteTableVPCAssociationTypes
-    {
-        public class Tags
-        {
-            /// <summary>
-            /// Tags
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-localgatewayroutetablevpcassociation-tags.html#cfn-ec2-localgatewayroutetablevpcassociation-tags-tags
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Tag
-            /// </summary>
-            public List<Tag> Tags_
-            {
-                get;
-                set;
-            }
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

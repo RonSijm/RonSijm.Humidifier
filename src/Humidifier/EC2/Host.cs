@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class Host : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string HostId =  "HostId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,18 +18,45 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
+        /// HostRecovery
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic HostRecovery { get; set; }
+        /// <summary>
+        /// InstanceFamily
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancefamily
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InstanceFamily { get; set; }
+        /// <summary>
         /// AutoPlacement
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AutoPlacement
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoPlacement { get; set; }
+        /// <summary>
+        /// OutpostArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-outpostarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OutpostArn { get; set; }
+        /// <summary>
+        /// HostMaintenance
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostmaintenance
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic HostMaintenance { get; set; }
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
@@ -32,36 +64,22 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AvailabilityZone
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// HostRecovery
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic HostRecovery
-        {
-            get;
-            set;
-        }
-
+        public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceType
-        {
-            get;
-            set;
-        }
+        public dynamic InstanceType { get; set; }
+        /// <summary>
+        /// AssetId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-assetid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AssetId { get; set; }
     }
 }

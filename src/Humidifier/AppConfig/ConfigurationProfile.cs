@@ -5,6 +5,12 @@ namespace Humidifier.AppConfig
 
     public class ConfigurationProfile : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ConfigurationProfileId =  "ConfigurationProfileId" ;
+            public static string KmsKeyArn =  "KmsKeyArn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +26,23 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LocationUri
-        {
-            get;
-            set;
-        }
-
+        public dynamic LocationUri { get; set; }
+        /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-type
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Type { get; set; }
+        /// <summary>
+        /// KmsKeyIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-kmskeyidentifier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyIdentifier { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-description
@@ -33,12 +50,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Validators
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-validators
@@ -47,12 +59,7 @@ namespace Humidifier.AppConfig
         /// Type: List
         /// ItemType: Validators
         /// </summary>
-        public List<Validators> Validators
-        {
-            get;
-            set;
-        }
-
+        public List<Validators> Validators { get; set; }
         /// <summary>
         /// RetrievalRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-retrievalrolearn
@@ -60,12 +67,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RetrievalRoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic RetrievalRoleArn { get; set; }
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-applicationid
@@ -73,12 +75,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-tags
@@ -87,12 +84,7 @@ namespace Humidifier.AppConfig
         /// Type: List
         /// ItemType: Tags
         /// </summary>
-        public List<Tags> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tags> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-name
@@ -100,44 +92,11 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ConfigurationProfileTypes
     {
-        public class Validators
-        {
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-validators.html#cfn-appconfig-configurationprofile-validators-type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Content
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-validators.html#cfn-appconfig-configurationprofile-validators-content
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Content
-            {
-                get;
-                set;
-            }
-        }
-
         public class Tags
         {
             /// <summary>
@@ -147,12 +106,7 @@ namespace Humidifier.AppConfig
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-tags.html#cfn-appconfig-configurationprofile-tags-key
@@ -160,11 +114,27 @@ namespace Humidifier.AppConfig
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
+        }
+
+        public class Validators
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-validators.html#cfn-appconfig-configurationprofile-validators-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Content
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-validators.html#cfn-appconfig-configurationprofile-validators-content
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Content { get; set; }
         }
     }
 }

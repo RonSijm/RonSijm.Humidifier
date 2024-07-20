@@ -5,6 +5,11 @@ namespace Humidifier.ApiGatewayV2
 
     public class Authorizer : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string AuthorizerId =  "AuthorizerId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IdentityValidationExpression
-        {
-            get;
-            set;
-        }
-
+        public dynamic IdentityValidationExpression { get; set; }
         /// <summary>
         /// AuthorizerUri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizeruri
@@ -33,12 +33,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthorizerUri
-        {
-            get;
-            set;
-        }
-
+        public dynamic AuthorizerUri { get; set; }
         /// <summary>
         /// AuthorizerCredentialsArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizercredentialsarn
@@ -46,12 +41,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthorizerCredentialsArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic AuthorizerCredentialsArn { get; set; }
         /// <summary>
         /// AuthorizerType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizertype
@@ -59,12 +49,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthorizerType
-        {
-            get;
-            set;
-        }
-
+        public dynamic AuthorizerType { get; set; }
         /// <summary>
         /// JwtConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-jwtconfiguration
@@ -72,12 +57,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// Type: JWTConfiguration
         /// </summary>
-        public JWTConfiguration JwtConfiguration
-        {
-            get;
-            set;
-        }
-
+        public JWTConfiguration JwtConfiguration { get; set; }
         /// <summary>
         /// AuthorizerResultTtlInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizerresultttlinseconds
@@ -85,26 +65,32 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AuthorizerResultTtlInSeconds
-        {
-            get;
-            set;
-        }
-
+        public dynamic AuthorizerResultTtlInSeconds { get; set; }
         /// <summary>
         /// IdentitySource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-identitysource
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic IdentitySource
-        {
-            get;
-            set;
-        }
-
+        public dynamic IdentitySource { get; set; }
+        /// <summary>
+        /// AuthorizerPayloadFormatVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizerpayloadformatversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AuthorizerPayloadFormatVersion { get; set; }
+        /// <summary>
+        /// EnableSimpleResponses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-enablesimpleresponses
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableSimpleResponses { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-apiid
@@ -112,12 +98,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApiId { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-name
@@ -125,11 +106,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace AuthorizerTypes
@@ -143,12 +120,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Issuer
-            {
-                get;
-                set;
-            }
-
+            public dynamic Issuer { get; set; }
             /// <summary>
             /// Audience
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html#cfn-apigatewayv2-authorizer-jwtconfiguration-audience
@@ -157,11 +129,7 @@ namespace Humidifier.ApiGatewayV2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Audience
-            {
-                get;
-                set;
-            }
+            public dynamic Audience { get; set; }
         }
     }
 }

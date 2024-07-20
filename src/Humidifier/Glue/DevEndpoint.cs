@@ -19,12 +19,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ExtraJarsS3Path
-        {
-            get;
-            set;
-        }
-
+        public dynamic ExtraJarsS3Path { get; set; }
         /// <summary>
         /// PublicKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey
@@ -32,12 +27,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PublicKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic PublicKey { get; set; }
         /// <summary>
         /// NumberOfNodes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes
@@ -45,12 +35,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic NumberOfNodes
-        {
-            get;
-            set;
-        }
-
+        public dynamic NumberOfNodes { get; set; }
         /// <summary>
         /// Arguments
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-arguments
@@ -58,12 +43,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Arguments
-        {
-            get;
-            set;
-        }
-
+        public dynamic Arguments { get; set; }
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid
@@ -71,12 +51,16 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetId { get; set; }
+        /// <summary>
+        /// PublicKeys
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickeys
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic PublicKeys { get; set; }
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids
@@ -85,12 +69,7 @@ namespace Humidifier.Glue
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SecurityGroupIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecurityGroupIds { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
@@ -98,12 +77,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic RoleArn { get; set; }
         /// <summary>
         /// WorkerType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-workertype
@@ -111,12 +85,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic WorkerType
-        {
-            get;
-            set;
-        }
-
+        public dynamic WorkerType { get; set; }
         /// <summary>
         /// EndpointName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname
@@ -124,12 +93,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EndpointName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EndpointName { get; set; }
         /// <summary>
         /// GlueVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-glueversion
@@ -137,12 +101,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GlueVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic GlueVersion { get; set; }
         /// <summary>
         /// ExtraPythonLibsS3Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path
@@ -150,12 +109,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ExtraPythonLibsS3Path
-        {
-            get;
-            set;
-        }
-
+        public dynamic ExtraPythonLibsS3Path { get; set; }
         /// <summary>
         /// SecurityConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securityconfiguration
@@ -163,12 +117,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SecurityConfiguration
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecurityConfiguration { get; set; }
         /// <summary>
         /// NumberOfWorkers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofworkers
@@ -176,12 +125,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic NumberOfWorkers
-        {
-            get;
-            set;
-        }
-
+        public dynamic NumberOfWorkers { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-tags
@@ -189,10 +133,6 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public dynamic Tags { get; set; }
     }
 }

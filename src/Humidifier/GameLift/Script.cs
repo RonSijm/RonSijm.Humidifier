@@ -5,10 +5,12 @@ namespace Humidifier.GameLift
 
     public class Script : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string CreationTime =  "CreationTime" ;
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
+            public static string SizeOnDisk =  "SizeOnDisk" ;
         }
 
         public override string AWSTypeName
@@ -26,12 +28,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Version
-        {
-            get;
-            set;
-        }
-
+        public dynamic Version { get; set; }
         /// <summary>
         /// StorageLocation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-storagelocation
@@ -39,12 +36,16 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// Type: S3Location
         /// </summary>
-        public S3Location StorageLocation
-        {
-            get;
-            set;
-        }
-
+        public S3Location StorageLocation { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-name
@@ -52,11 +53,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ScriptTypes
@@ -70,12 +67,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ObjectVersion
-            {
-                get;
-                set;
-            }
-
+            public dynamic ObjectVersion { get; set; }
             /// <summary>
             /// Bucket
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-bucket
@@ -83,12 +75,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic Bucket { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-key
@@ -96,12 +83,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
-
+            public dynamic Key { get; set; }
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-rolearn
@@ -109,11 +91,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RoleArn
-            {
-                get;
-                set;
-            }
+            public dynamic RoleArn { get; set; }
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Humidifier.CodeBuild
 
     public class ReportGroup : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -22,15 +22,10 @@ namespace Humidifier.CodeBuild
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-type
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
-
+        public dynamic Type { get; set; }
         /// <summary>
         /// ExportConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-exportconfig
@@ -38,12 +33,24 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// Type: ReportExportConfig
         /// </summary>
-        public ReportExportConfig ExportConfig
-        {
-            get;
-            set;
-        }
-
+        public ReportExportConfig ExportConfig { get; set; }
+        /// <summary>
+        /// DeleteReports
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-deletereports
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DeleteReports { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-name
@@ -51,11 +58,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ReportGroupTypes
@@ -69,12 +72,7 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// Type: S3ReportExportConfig
             /// </summary>
-            public S3ReportExportConfig S3Destination
-            {
-                get;
-                set;
-            }
-
+            public S3ReportExportConfig S3Destination { get; set; }
             /// <summary>
             /// ExportConfigType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-exportconfigtype
@@ -82,11 +80,7 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ExportConfigType
-            {
-                get;
-                set;
-            }
+            public dynamic ExportConfigType { get; set; }
         }
 
         public class S3ReportExportConfig
@@ -98,12 +92,7 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Path
-            {
-                get;
-                set;
-            }
-
+            public dynamic Path { get; set; }
             /// <summary>
             /// Bucket
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-bucket
@@ -111,12 +100,7 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic Bucket { get; set; }
             /// <summary>
             /// Packaging
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-packaging
@@ -124,12 +108,7 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Packaging
-            {
-                get;
-                set;
-            }
-
+            public dynamic Packaging { get; set; }
             /// <summary>
             /// EncryptionKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-encryptionkey
@@ -137,12 +116,15 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EncryptionKey
-            {
-                get;
-                set;
-            }
-
+            public dynamic EncryptionKey { get; set; }
+            /// <summary>
+            /// BucketOwner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-bucketowner
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketOwner { get; set; }
             /// <summary>
             /// EncryptionDisabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-encryptiondisabled
@@ -150,11 +132,7 @@ namespace Humidifier.CodeBuild
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic EncryptionDisabled
-            {
-                get;
-                set;
-            }
+            public dynamic EncryptionDisabled { get; set; }
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Humidifier.MediaConvert
 
     public class Queue : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -25,12 +25,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Status
-        {
-            get;
-            set;
-        }
-
+        public dynamic Status { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-description
@@ -38,12 +33,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// PricingPlan
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-pricingplan
@@ -51,12 +41,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PricingPlan
-        {
-            get;
-            set;
-        }
-
+        public dynamic PricingPlan { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-tags
@@ -64,12 +49,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-name
@@ -77,10 +57,6 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

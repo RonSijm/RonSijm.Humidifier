@@ -19,12 +19,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConfigurationSet
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConfigurationSet { get; set; }
         /// <summary>
         /// FromAddress
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-fromaddress
@@ -32,12 +27,15 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FromAddress
-        {
-            get;
-            set;
-        }
-
+        public dynamic FromAddress { get; set; }
+        /// <summary>
+        /// OrchestrationSendingRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-orchestrationsendingrolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OrchestrationSendingRoleArn { get; set; }
         /// <summary>
         /// Enabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-enabled
@@ -45,12 +43,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Enabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic Enabled { get; set; }
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-applicationid
@@ -58,12 +51,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Identity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-identity
@@ -71,12 +59,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Identity
-        {
-            get;
-            set;
-        }
-
+        public dynamic Identity { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-rolearn
@@ -84,10 +67,6 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RoleArn
-        {
-            get;
-            set;
-        }
+        public dynamic RoleArn { get; set; }
     }
 }

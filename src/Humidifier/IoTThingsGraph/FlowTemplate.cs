@@ -20,12 +20,7 @@ namespace Humidifier.IoTThingsGraph
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
-        public dynamic CompatibleNamespaceVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic CompatibleNamespaceVersion { get; set; }
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition
@@ -33,11 +28,7 @@ namespace Humidifier.IoTThingsGraph
         /// UpdateType: Mutable
         /// Type: DefinitionDocument
         /// </summary>
-        public DefinitionDocument Definition
-        {
-            get;
-            set;
-        }
+        public DefinitionDocument Definition { get; set; }
     }
 
     namespace FlowTemplateTypes
@@ -51,12 +42,7 @@ namespace Humidifier.IoTThingsGraph
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Language
-            {
-                get;
-                set;
-            }
-
+            public dynamic Language { get; set; }
             /// <summary>
             /// Text
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotthingsgraph-flowtemplate-definitiondocument.html#cfn-iotthingsgraph-flowtemplate-definitiondocument-text
@@ -64,11 +50,7 @@ namespace Humidifier.IoTThingsGraph
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Text
-            {
-                get;
-                set;
-            }
+            public dynamic Text { get; set; }
         }
     }
 }

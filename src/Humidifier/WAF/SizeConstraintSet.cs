@@ -20,12 +20,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// SizeConstraints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints
@@ -34,11 +29,7 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: SizeConstraint
         /// </summary>
-        public List<SizeConstraint> SizeConstraints
-        {
-            get;
-            set;
-        }
+        public List<SizeConstraint> SizeConstraints { get; set; }
     }
 
     namespace SizeConstraintSetTypes
@@ -52,12 +43,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Data
-            {
-                get;
-                set;
-            }
-
+            public dynamic Data { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-type
@@ -65,11 +51,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic Type { get; set; }
         }
 
         public class SizeConstraint
@@ -81,12 +63,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ComparisonOperator
-            {
-                get;
-                set;
-            }
-
+            public dynamic ComparisonOperator { get; set; }
             /// <summary>
             /// FieldToMatch
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch
@@ -94,12 +71,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// Type: FieldToMatch
             /// </summary>
-            public FieldToMatch FieldToMatch
-            {
-                get;
-                set;
-            }
-
+            public FieldToMatch FieldToMatch { get; set; }
             /// <summary>
             /// Size
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-size
@@ -107,12 +79,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Size
-            {
-                get;
-                set;
-            }
-
+            public dynamic Size { get; set; }
             /// <summary>
             /// TextTransformation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-texttransformation
@@ -120,11 +87,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TextTransformation
-            {
-                get;
-                set;
-            }
+            public dynamic TextTransformation { get; set; }
         }
     }
 }

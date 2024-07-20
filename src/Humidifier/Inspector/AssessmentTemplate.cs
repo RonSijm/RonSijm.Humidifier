@@ -4,7 +4,7 @@ namespace Humidifier.Inspector
 
     public class AssessmentTemplate : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.Inspector
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AssessmentTargetArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic AssessmentTargetArn { get; set; }
         /// <summary>
         /// DurationInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-durationinseconds
@@ -37,12 +32,7 @@ namespace Humidifier.Inspector
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic DurationInSeconds
-        {
-            get;
-            set;
-        }
-
+        public dynamic DurationInSeconds { get; set; }
         /// <summary>
         /// AssessmentTemplateName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-assessmenttemplatename
@@ -50,12 +40,7 @@ namespace Humidifier.Inspector
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AssessmentTemplateName
-        {
-            get;
-            set;
-        }
-
+        public dynamic AssessmentTemplateName { get; set; }
         /// <summary>
         /// RulesPackageArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-rulespackagearns
@@ -64,12 +49,7 @@ namespace Humidifier.Inspector
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic RulesPackageArns
-        {
-            get;
-            set;
-        }
-
+        public dynamic RulesPackageArns { get; set; }
         /// <summary>
         /// UserAttributesForFindings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-userattributesforfindings
@@ -78,10 +58,6 @@ namespace Humidifier.Inspector
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> UserAttributesForFindings
-        {
-            get;
-            set;
-        }
+        public List<Tag> UserAttributesForFindings { get; set; }
     }
 }

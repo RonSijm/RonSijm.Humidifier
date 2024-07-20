@@ -4,9 +4,10 @@ namespace Humidifier.EFS
 
     public class MountTarget : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string IpAddress =  "IpAddress" ;
+            public static string Id =  "Id" ;
         }
 
         public override string AWSTypeName
@@ -18,32 +19,6 @@ namespace Humidifier.EFS
         }
 
         /// <summary>
-        /// FileSystemId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic FileSystemId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// IpAddress
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic IpAddress
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// SecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-securitygroups
         /// Required: True
@@ -51,12 +26,23 @@ namespace Humidifier.EFS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SecurityGroups
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecurityGroups { get; set; }
+        /// <summary>
+        /// FileSystemId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FileSystemId { get; set; }
+        /// <summary>
+        /// IpAddress
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddress
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpAddress { get; set; }
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid
@@ -64,10 +50,6 @@ namespace Humidifier.EFS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetId
-        {
-            get;
-            set;
-        }
+        public dynamic SubnetId { get; set; }
     }
 }

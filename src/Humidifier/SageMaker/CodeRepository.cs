@@ -5,7 +5,7 @@ namespace Humidifier.SageMaker
 
     public class CodeRepository : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string CodeRepositoryName =  "CodeRepositoryName" ;
         }
@@ -25,12 +25,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CodeRepositoryName
-        {
-            get;
-            set;
-        }
-
+        public dynamic CodeRepositoryName { get; set; }
         /// <summary>
         /// GitConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-gitconfig
@@ -38,11 +33,16 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: GitConfig
         /// </summary>
-        public GitConfig GitConfig
-        {
-            get;
-            set;
-        }
+        public GitConfig GitConfig { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 
     namespace CodeRepositoryTypes
@@ -56,12 +56,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SecretArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic SecretArn { get; set; }
             /// <summary>
             /// Branch
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-branch
@@ -69,12 +64,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Branch
-            {
-                get;
-                set;
-            }
-
+            public dynamic Branch { get; set; }
             /// <summary>
             /// RepositoryUrl
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-repositoryurl
@@ -82,11 +72,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RepositoryUrl
-            {
-                get;
-                set;
-            }
+            public dynamic RepositoryUrl { get; set; }
         }
     }
 }

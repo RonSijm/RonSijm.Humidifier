@@ -21,12 +21,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Ingress
         /// </summary>
-        public List<Ingress> DBSecurityGroupIngress
-        {
-            get;
-            set;
-        }
-
+        public List<Ingress> DBSecurityGroupIngress { get; set; }
         /// <summary>
         /// EC2VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-ec2vpcid
@@ -34,12 +29,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EC2VpcId
-        {
-            get;
-            set;
-        }
-
+        public dynamic EC2VpcId { get; set; }
         /// <summary>
         /// GroupDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
@@ -47,12 +37,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GroupDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic GroupDescription { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-tags
@@ -61,11 +46,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace DBSecurityGroupTypes
@@ -79,12 +60,7 @@ namespace Humidifier.RDS
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CIDRIP
-            {
-                get;
-                set;
-            }
-
+            public dynamic CIDRIP { get; set; }
             /// <summary>
             /// EC2SecurityGroupId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupid
@@ -92,12 +68,7 @@ namespace Humidifier.RDS
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EC2SecurityGroupId
-            {
-                get;
-                set;
-            }
-
+            public dynamic EC2SecurityGroupId { get; set; }
             /// <summary>
             /// EC2SecurityGroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupname
@@ -105,12 +76,7 @@ namespace Humidifier.RDS
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EC2SecurityGroupName
-            {
-                get;
-                set;
-            }
-
+            public dynamic EC2SecurityGroupName { get; set; }
             /// <summary>
             /// EC2SecurityGroupOwnerId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid
@@ -118,11 +84,7 @@ namespace Humidifier.RDS
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EC2SecurityGroupOwnerId
-            {
-                get;
-                set;
-            }
+            public dynamic EC2SecurityGroupOwnerId { get; set; }
         }
     }
 }

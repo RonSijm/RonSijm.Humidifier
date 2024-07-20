@@ -20,12 +20,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClusterId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClusterId { get; set; }
         /// <summary>
         /// InstanceFleetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancefleettype
@@ -33,12 +28,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceFleetType
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstanceFleetType { get; set; }
         /// <summary>
         /// InstanceTypeConfigs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfigs
@@ -47,12 +37,7 @@ namespace Humidifier.EMR
         /// Type: List
         /// ItemType: InstanceTypeConfig
         /// </summary>
-        public List<InstanceTypeConfig> InstanceTypeConfigs
-        {
-            get;
-            set;
-        }
-
+        public List<InstanceTypeConfig> InstanceTypeConfigs { get; set; }
         /// <summary>
         /// LaunchSpecifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-launchspecifications
@@ -60,12 +45,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// Type: InstanceFleetProvisioningSpecifications
         /// </summary>
-        public InstanceFleetProvisioningSpecifications LaunchSpecifications
-        {
-            get;
-            set;
-        }
-
+        public InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-name
@@ -73,12 +53,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// TargetOnDemandCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetondemandcapacity
@@ -86,12 +61,7 @@ namespace Humidifier.EMR
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic TargetOnDemandCapacity
-        {
-            get;
-            set;
-        }
-
+        public dynamic TargetOnDemandCapacity { get; set; }
         /// <summary>
         /// TargetSpotCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetspotcapacity
@@ -99,55 +69,59 @@ namespace Humidifier.EMR
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic TargetSpotCapacity
-        {
-            get;
-            set;
-        }
+        public dynamic TargetSpotCapacity { get; set; }
     }
 
     namespace InstanceFleetConfigTypes
     {
-        public class SpotProvisioningSpecification
+        public class Configuration
         {
             /// <summary>
-            /// BlockDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-blockdurationminutes
+            /// Classification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-classification
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic BlockDurationMinutes
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// TimeoutAction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutaction
-            /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TimeoutAction
-            {
-                get;
-                set;
-            }
-
+            public dynamic Classification { get; set; }
             /// <summary>
-            /// TimeoutDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutdurationminutes
+            /// ConfigurationProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> ConfigurationProperties { get; set; }
+            /// <summary>
+            /// Configurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Configuration
+            /// </summary>
+            public List<Configuration> Configurations { get; set; }
+        }
+
+        public class EbsBlockDeviceConfig
+        {
+            /// <summary>
+            /// VolumeSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumespecification
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
+            /// Type: VolumeSpecification
+            /// </summary>
+            public VolumeSpecification VolumeSpecification { get; set; }
+            /// <summary>
+            /// VolumesPerInstance
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumesperinstance
+            /// Required: False
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic TimeoutDurationMinutes
-            {
-                get;
-                set;
-            }
+            public dynamic VolumesPerInstance { get; set; }
         }
 
         public class EbsConfiguration
@@ -160,12 +134,7 @@ namespace Humidifier.EMR
             /// Type: List
             /// ItemType: EbsBlockDeviceConfig
             /// </summary>
-            public List<EbsBlockDeviceConfig> EbsBlockDeviceConfigs
-            {
-                get;
-                set;
-            }
-
+            public List<EbsBlockDeviceConfig> EbsBlockDeviceConfigs { get; set; }
             /// <summary>
             /// EbsOptimized
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsoptimized
@@ -173,97 +142,27 @@ namespace Humidifier.EMR
             /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic EbsOptimized
-            {
-                get;
-                set;
-            }
+            public dynamic EbsOptimized { get; set; }
         }
 
-        public class VolumeSpecification
+        public class InstanceFleetProvisioningSpecifications
         {
             /// <summary>
-            /// Iops
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-iops
+            /// OnDemandSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-ondemandspecification
             /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// UpdateType: Mutable
+            /// Type: OnDemandProvisioningSpecification
             /// </summary>
-            public dynamic Iops
-            {
-                get;
-                set;
-            }
-
+            public OnDemandProvisioningSpecification OnDemandSpecification { get; set; }
             /// <summary>
-            /// SizeInGB
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-sizeingb
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic SizeInGB
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// VolumeType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-volumetype
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic VolumeType
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Configuration
-        {
-            /// <summary>
-            /// Classification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-classification
+            /// SpotSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-spotspecification
             /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
+            /// UpdateType: Mutable
+            /// Type: SpotProvisioningSpecification
             /// </summary>
-            public dynamic Classification
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ConfigurationProperties
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: Map
-            /// PrimitiveItemType: String
-            /// </summary>
-            public Dictionary<string, dynamic> ConfigurationProperties
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Configurations
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: List
-            /// ItemType: Configuration
-            /// </summary>
-            public List<Configuration> Configurations
-            {
-                get;
-                set;
-            }
+            public SpotProvisioningSpecification SpotSpecification { get; set; }
         }
 
         public class InstanceTypeConfig
@@ -275,12 +174,7 @@ namespace Humidifier.EMR
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BidPrice
-            {
-                get;
-                set;
-            }
-
+            public dynamic BidPrice { get; set; }
             /// <summary>
             /// BidPriceAsPercentageOfOnDemandPrice
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-bidpriceaspercentageofondemandprice
@@ -288,12 +182,7 @@ namespace Humidifier.EMR
             /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
-            public dynamic BidPriceAsPercentageOfOnDemandPrice
-            {
-                get;
-                set;
-            }
-
+            public dynamic BidPriceAsPercentageOfOnDemandPrice { get; set; }
             /// <summary>
             /// Configurations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-configurations
@@ -302,12 +191,15 @@ namespace Humidifier.EMR
             /// Type: List
             /// ItemType: Configuration
             /// </summary>
-            public List<Configuration> Configurations
-            {
-                get;
-                set;
-            }
-
+            public List<Configuration> Configurations { get; set; }
+            /// <summary>
+            /// CustomAmiId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-customamiid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomAmiId { get; set; }
             /// <summary>
             /// EbsConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-ebsconfiguration
@@ -315,12 +207,7 @@ namespace Humidifier.EMR
             /// UpdateType: Immutable
             /// Type: EbsConfiguration
             /// </summary>
-            public EbsConfiguration EbsConfiguration
-            {
-                get;
-                set;
-            }
-
+            public EbsConfiguration EbsConfiguration { get; set; }
             /// <summary>
             /// InstanceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-instancetype
@@ -328,12 +215,7 @@ namespace Humidifier.EMR
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InstanceType
-            {
-                get;
-                set;
-            }
-
+            public dynamic InstanceType { get; set; }
             /// <summary>
             /// WeightedCapacity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-weightedcapacity
@@ -341,56 +223,91 @@ namespace Humidifier.EMR
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic WeightedCapacity
-            {
-                get;
-                set;
-            }
+            public dynamic WeightedCapacity { get; set; }
         }
 
-        public class InstanceFleetProvisioningSpecifications
+        public class OnDemandProvisioningSpecification
         {
             /// <summary>
-            /// SpotSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-spotspecification
+            /// AllocationStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification-allocationstrategy
             /// Required: True
             /// UpdateType: Mutable
-            /// Type: SpotProvisioningSpecification
+            /// PrimitiveType: String
             /// </summary>
-            public SpotProvisioningSpecification SpotSpecification
-            {
-                get;
-                set;
-            }
+            public dynamic AllocationStrategy { get; set; }
         }
 
-        public class EbsBlockDeviceConfig
+        public class SpotProvisioningSpecification
         {
             /// <summary>
-            /// VolumeSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumespecification
-            /// Required: True
-            /// UpdateType: Immutable
-            /// Type: VolumeSpecification
+            /// AllocationStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-allocationstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
             /// </summary>
-            public VolumeSpecification VolumeSpecification
-            {
-                get;
-                set;
-            }
-
+            public dynamic AllocationStrategy { get; set; }
             /// <summary>
-            /// VolumesPerInstance
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumesperinstance
+            /// BlockDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-blockdurationminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BlockDurationMinutes { get; set; }
+            /// <summary>
+            /// TimeoutAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutaction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimeoutAction { get; set; }
+            /// <summary>
+            /// TimeoutDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutdurationminutes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TimeoutDurationMinutes { get; set; }
+        }
+
+        public class VolumeSpecification
+        {
+            /// <summary>
+            /// Iops
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-iops
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic VolumesPerInstance
-            {
-                get;
-                set;
-            }
+            public dynamic Iops { get; set; }
+            /// <summary>
+            /// SizeInGB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-sizeingb
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SizeInGB { get; set; }
+            /// <summary>
+            /// Throughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-throughput
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Throughput { get; set; }
+            /// <summary>
+            /// VolumeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-volumetype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VolumeType { get; set; }
         }
     }
 }

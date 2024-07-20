@@ -5,7 +5,7 @@ namespace Humidifier.MediaLive
 
     public class InputSecurityGroup : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -26,12 +26,7 @@ namespace Humidifier.MediaLive
         /// Type: List
         /// ItemType: InputWhitelistRuleCidr
         /// </summary>
-        public List<InputWhitelistRuleCidr> WhitelistRules
-        {
-            get;
-            set;
-        }
-
+        public List<InputWhitelistRuleCidr> WhitelistRules { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags
@@ -39,11 +34,7 @@ namespace Humidifier.MediaLive
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public dynamic Tags { get; set; }
     }
 
     namespace InputSecurityGroupTypes
@@ -57,11 +48,7 @@ namespace Humidifier.MediaLive
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Cidr
-            {
-                get;
-                set;
-            }
+            public dynamic Cidr { get; set; }
         }
     }
 }

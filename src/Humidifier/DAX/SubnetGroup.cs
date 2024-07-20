@@ -19,12 +19,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SubnetGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetgroupname
@@ -32,12 +27,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetGroupName { get; set; }
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetids
@@ -46,10 +36,6 @@ namespace Humidifier.DAX
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SubnetIds
-        {
-            get;
-            set;
-        }
+        public dynamic SubnetIds { get; set; }
     }
 }

@@ -20,12 +20,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClientCertificateId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClientCertificateId { get; set; }
         /// <summary>
         /// DeploymentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-deploymentid
@@ -33,12 +28,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DeploymentId
-        {
-            get;
-            set;
-        }
-
+        public dynamic DeploymentId { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-description
@@ -46,12 +36,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// AccessLogSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesslogsettings
@@ -59,12 +44,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// Type: AccessLogSettings
         /// </summary>
-        public AccessLogSettings AccessLogSettings
-        {
-            get;
-            set;
-        }
-
+        public AccessLogSettings AccessLogSettings { get; set; }
         /// <summary>
         /// AutoDeploy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-autodeploy
@@ -72,12 +52,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AutoDeploy
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoDeploy { get; set; }
         /// <summary>
         /// RouteSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings
@@ -85,12 +60,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic RouteSettings
-        {
-            get;
-            set;
-        }
-
+        public dynamic RouteSettings { get; set; }
         /// <summary>
         /// StageName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagename
@@ -98,12 +68,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StageName
-        {
-            get;
-            set;
-        }
-
+        public dynamic StageName { get; set; }
         /// <summary>
         /// StageVariables
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagevariables
@@ -111,12 +76,15 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic StageVariables
-        {
-            get;
-            set;
-        }
-
+        public dynamic StageVariables { get; set; }
+        /// <summary>
+        /// AccessPolicyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesspolicyid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AccessPolicyId { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-apiid
@@ -124,12 +92,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApiId { get; set; }
         /// <summary>
         /// DefaultRouteSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-defaultroutesettings
@@ -137,12 +100,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// Type: RouteSettings
         /// </summary>
-        public RouteSettings DefaultRouteSettings
-        {
-            get;
-            set;
-        }
-
+        public RouteSettings DefaultRouteSettings { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-tags
@@ -150,11 +108,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public dynamic Tags { get; set; }
     }
 
     namespace StageTypes
@@ -168,12 +122,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Format
-            {
-                get;
-                set;
-            }
-
+            public dynamic Format { get; set; }
             /// <summary>
             /// DestinationArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-accesslogsettings.html#cfn-apigatewayv2-stage-accesslogsettings-destinationarn
@@ -181,11 +130,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DestinationArn
-            {
-                get;
-                set;
-            }
+            public dynamic DestinationArn { get; set; }
         }
 
         public class RouteSettings
@@ -197,12 +142,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic LoggingLevel
-            {
-                get;
-                set;
-            }
-
+            public dynamic LoggingLevel { get; set; }
             /// <summary>
             /// DataTraceEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-datatraceenabled
@@ -210,12 +150,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DataTraceEnabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic DataTraceEnabled { get; set; }
             /// <summary>
             /// ThrottlingBurstLimit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingburstlimit
@@ -223,12 +158,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic ThrottlingBurstLimit
-            {
-                get;
-                set;
-            }
-
+            public dynamic ThrottlingBurstLimit { get; set; }
             /// <summary>
             /// DetailedMetricsEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-detailedmetricsenabled
@@ -236,12 +166,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DetailedMetricsEnabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic DetailedMetricsEnabled { get; set; }
             /// <summary>
             /// ThrottlingRateLimit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingratelimit
@@ -249,11 +174,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: Double
             /// </summary>
-            public dynamic ThrottlingRateLimit
-            {
-                get;
-                set;
-            }
+            public dynamic ThrottlingRateLimit { get; set; }
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class EmailTemplate : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic HtmlPart
-        {
-            get;
-            set;
-        }
-
+        public dynamic HtmlPart { get; set; }
         /// <summary>
         /// TextPart
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-textpart
@@ -37,12 +32,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TextPart
-        {
-            get;
-            set;
-        }
-
+        public dynamic TextPart { get; set; }
         /// <summary>
         /// TemplateName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-templatename
@@ -50,12 +40,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateName
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateName { get; set; }
         /// <summary>
         /// TemplateDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-templatedescription
@@ -63,12 +48,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateDescription { get; set; }
         /// <summary>
         /// DefaultSubstitutions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-defaultsubstitutions
@@ -76,12 +56,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultSubstitutions
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultSubstitutions { get; set; }
         /// <summary>
         /// Subject
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-subject
@@ -89,12 +64,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Subject
-        {
-            get;
-            set;
-        }
-
+        public dynamic Subject { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-tags
@@ -102,10 +72,6 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public dynamic Tags { get; set; }
     }
 }

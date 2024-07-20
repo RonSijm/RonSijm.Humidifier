@@ -5,7 +5,7 @@ namespace Humidifier.IAM
 
     public class Role : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string RoleId =  "RoleId" ;
@@ -20,45 +20,22 @@ namespace Humidifier.IAM
         }
 
         /// <summary>
-        /// AssumeRolePolicyDocument
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic AssumeRolePolicyDocument
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-description
+        /// Path
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Path { get; set; }
         /// <summary>
         /// ManagedPolicyArns
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managepolicyarns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-managedpolicyarns
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ManagedPolicyArns
-        {
-            get;
-            set;
-        }
-
+        public dynamic ManagedPolicyArns { get; set; }
         /// <summary>
         /// MaxSessionDuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-maxsessionduration
@@ -66,38 +43,23 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic MaxSessionDuration
-        {
-            get;
-            set;
-        }
-
+        public dynamic MaxSessionDuration { get; set; }
         /// <summary>
-        /// Path
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path
+        /// RoleName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Path
-        {
-            get;
-            set;
-        }
-
+        public dynamic RoleName { get; set; }
         /// <summary>
-        /// PermissionsBoundary
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PermissionsBoundary
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Policies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies
@@ -106,25 +68,15 @@ namespace Humidifier.IAM
         /// Type: List
         /// ItemType: Policy
         /// </summary>
-        public List<Policy> Policies
-        {
-            get;
-            set;
-        }
-
+        public List<Policy> Policies { get; set; }
         /// <summary>
-        /// RoleName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-rolename
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// AssumeRolePolicyDocument
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
         /// </summary>
-        public dynamic RoleName
-        {
-            get;
-            set;
-        }
-
+        public dynamic AssumeRolePolicyDocument { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-tags
@@ -133,11 +85,15 @@ namespace Humidifier.IAM
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// PermissionsBoundary
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PermissionsBoundary { get; set; }
     }
 
     namespace RoleTypes
@@ -145,30 +101,21 @@ namespace Humidifier.IAM
         public class Policy
         {
             /// <summary>
-            /// PolicyDocument
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic PolicyDocument
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// PolicyName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-role-policy.html#cfn-iam-role-policy-policyname
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PolicyName
-            {
-                get;
-                set;
-            }
+            public dynamic PolicyName { get; set; }
+            /// <summary>
+            /// PolicyDocument
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-role-policy.html#cfn-iam-role-policy-policydocument
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic PolicyDocument { get; set; }
         }
     }
 }

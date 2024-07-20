@@ -4,7 +4,7 @@ namespace Humidifier.DocDB
 
     public class DBInstance : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Endpoint =  "Endpoint" ;
             public static string Port =  "Port" ;
@@ -19,18 +19,29 @@ namespace Humidifier.DocDB
         }
 
         /// <summary>
+        /// CACertificateIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-cacertificateidentifier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CACertificateIdentifier { get; set; }
+        /// <summary>
+        /// CertificateRotationRestart
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-certificaterotationrestart
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic CertificateRotationRestart { get; set; }
+        /// <summary>
         /// DBInstanceClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceclass
         /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBInstanceClass
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBInstanceClass { get; set; }
         /// <summary>
         /// DBClusterIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbclusteridentifier
@@ -38,12 +49,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBClusterIdentifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBClusterIdentifier { get; set; }
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-availabilityzone
@@ -51,12 +57,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AvailabilityZone
-        {
-            get;
-            set;
-        }
-
+        public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// PreferredMaintenanceWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-preferredmaintenancewindow
@@ -64,12 +65,15 @@ namespace Humidifier.DocDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PreferredMaintenanceWindow
-        {
-            get;
-            set;
-        }
-
+        public dynamic PreferredMaintenanceWindow { get; set; }
+        /// <summary>
+        /// EnablePerformanceInsights
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-enableperformanceinsights
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnablePerformanceInsights { get; set; }
         /// <summary>
         /// AutoMinorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-autominorversionupgrade
@@ -77,12 +81,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AutoMinorVersionUpgrade
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoMinorVersionUpgrade { get; set; }
         /// <summary>
         /// DBInstanceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceidentifier
@@ -90,12 +89,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBInstanceIdentifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBInstanceIdentifier { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-tags
@@ -104,10 +98,6 @@ namespace Humidifier.DocDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

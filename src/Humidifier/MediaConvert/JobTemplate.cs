@@ -5,7 +5,7 @@ namespace Humidifier.MediaConvert
 
     public class JobTemplate : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -26,12 +26,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Category
-        {
-            get;
-            set;
-        }
-
+        public dynamic Category { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-description
@@ -39,12 +34,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// AccelerationSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-accelerationsettings
@@ -52,12 +42,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// Type: AccelerationSettings
         /// </summary>
-        public AccelerationSettings AccelerationSettings
-        {
-            get;
-            set;
-        }
-
+        public AccelerationSettings AccelerationSettings { get; set; }
         /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-priority
@@ -65,12 +50,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Priority
-        {
-            get;
-            set;
-        }
-
+        public dynamic Priority { get; set; }
         /// <summary>
         /// StatusUpdateInterval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-statusupdateinterval
@@ -78,12 +58,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StatusUpdateInterval
-        {
-            get;
-            set;
-        }
-
+        public dynamic StatusUpdateInterval { get; set; }
         /// <summary>
         /// SettingsJson
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-settingsjson
@@ -91,12 +66,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic SettingsJson
-        {
-            get;
-            set;
-        }
-
+        public dynamic SettingsJson { get; set; }
         /// <summary>
         /// Queue
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-queue
@@ -104,12 +74,16 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Queue
-        {
-            get;
-            set;
-        }
-
+        public dynamic Queue { get; set; }
+        /// <summary>
+        /// HopDestinations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-hopdestinations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: HopDestination
+        /// </summary>
+        public List<HopDestination> HopDestinations { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-tags
@@ -117,12 +91,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-name
@@ -130,11 +99,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace JobTemplateTypes
@@ -148,11 +113,35 @@ namespace Humidifier.MediaConvert
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Mode
-            {
-                get;
-                set;
-            }
+            public dynamic Mode { get; set; }
+        }
+
+        public class HopDestination
+        {
+            /// <summary>
+            /// WaitMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-waitminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WaitMinutes { get; set; }
+            /// <summary>
+            /// Priority
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-priority
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Priority { get; set; }
+            /// <summary>
+            /// Queue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-queue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Queue { get; set; }
         }
     }
 }

@@ -20,12 +20,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: DatabaseInput
         /// </summary>
-        public DatabaseInput DatabaseInput
-        {
-            get;
-            set;
-        }
-
+        public DatabaseInput DatabaseInput { get; set; }
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid
@@ -33,15 +28,51 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CatalogId
-        {
-            get;
-            set;
-        }
+        public dynamic CatalogId { get; set; }
     }
 
     namespace DatabaseTypes
     {
+        public class DataLakePrincipal
+        {
+            /// <summary>
+            /// DataLakePrincipalIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-datalakeprincipal.html#cfn-glue-database-datalakeprincipal-datalakeprincipalidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataLakePrincipalIdentifier { get; set; }
+        }
+
+        public class DatabaseIdentifier
+        {
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseidentifier.html#cfn-glue-database-databaseidentifier-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseidentifier.html#cfn-glue-database-databaseidentifier-region
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
+            /// <summary>
+            /// CatalogId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseidentifier.html#cfn-glue-database-databaseidentifier-catalogid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogId { get; set; }
+        }
+
         public class DatabaseInput
         {
             /// <summary>
@@ -51,12 +82,16 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic LocationUri
-            {
-                get;
-                set;
-            }
-
+            public dynamic LocationUri { get; set; }
+            /// <summary>
+            /// CreateTableDefaultPermissions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-createtabledefaultpermissions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PrincipalPrivileges
+            /// </summary>
+            public List<PrincipalPrivileges> CreateTableDefaultPermissions { get; set; }
             /// <summary>
             /// Description
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-description
@@ -64,12 +99,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Description
-            {
-                get;
-                set;
-            }
-
+            public dynamic Description { get; set; }
             /// <summary>
             /// Parameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters
@@ -77,12 +107,23 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic Parameters
-            {
-                get;
-                set;
-            }
-
+            public dynamic Parameters { get; set; }
+            /// <summary>
+            /// TargetDatabase
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-targetdatabase
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DatabaseIdentifier
+            /// </summary>
+            public DatabaseIdentifier TargetDatabase { get; set; }
+            /// <summary>
+            /// FederatedDatabase
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-federateddatabase
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FederatedDatabase
+            /// </summary>
+            public FederatedDatabase FederatedDatabase { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-name
@@ -90,11 +131,48 @@ namespace Humidifier.Glue
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
+        }
+
+        public class FederatedDatabase
+        {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput-federateddatabase.html#cfn-glue-database-databaseinput-federateddatabase-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
+            /// <summary>
+            /// Identifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput-federateddatabase.html#cfn-glue-database-databaseinput-federateddatabase-identifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Identifier { get; set; }
+        }
+
+        public class PrincipalPrivileges
+        {
+            /// <summary>
+            /// Permissions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Permissions { get; set; }
+            /// <summary>
+            /// Principal
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DataLakePrincipal
+            /// </summary>
+            public DataLakePrincipal Principal { get; set; }
         }
     }
 }

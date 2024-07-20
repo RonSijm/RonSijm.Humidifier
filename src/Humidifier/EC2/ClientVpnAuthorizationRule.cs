@@ -19,12 +19,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClientVpnEndpointId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClientVpnEndpointId { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-description
@@ -32,12 +27,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// AccessGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-accessgroupid
@@ -45,12 +35,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AccessGroupId
-        {
-            get;
-            set;
-        }
-
+        public dynamic AccessGroupId { get; set; }
         /// <summary>
         /// TargetNetworkCidr
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-targetnetworkcidr
@@ -58,12 +43,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TargetNetworkCidr
-        {
-            get;
-            set;
-        }
-
+        public dynamic TargetNetworkCidr { get; set; }
         /// <summary>
         /// AuthorizeAllGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-authorizeallgroups
@@ -71,10 +51,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AuthorizeAllGroups
-        {
-            get;
-            set;
-        }
+        public dynamic AuthorizeAllGroups { get; set; }
     }
 }

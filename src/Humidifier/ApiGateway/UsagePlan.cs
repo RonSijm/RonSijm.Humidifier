@@ -5,6 +5,11 @@ namespace Humidifier.ApiGateway
 
     public class UsagePlan : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,32 +19,13 @@ namespace Humidifier.ApiGateway
         }
 
         /// <summary>
-        /// ApiStages
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ApiStage
-        /// </summary>
-        public List<ApiStage> ApiStages
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Quota
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota
@@ -47,12 +33,16 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// Type: QuotaSettings
         /// </summary>
-        public QuotaSettings Quota
-        {
-            get;
-            set;
-        }
-
+        public QuotaSettings Quota { get; set; }
+        /// <summary>
+        /// ApiStages
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ApiStage
+        /// </summary>
+        public List<ApiStage> ApiStages { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-tags
@@ -61,12 +51,7 @@ namespace Humidifier.ApiGateway
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Throttle
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle
@@ -74,12 +59,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// Type: ThrottleSettings
         /// </summary>
-        public ThrottleSettings Throttle
-        {
-            get;
-            set;
-        }
-
+        public ThrottleSettings Throttle { get; set; }
         /// <summary>
         /// UsagePlanName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-usageplanname
@@ -87,11 +67,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UsagePlanName
-        {
-            get;
-            set;
-        }
+        public dynamic UsagePlanName { get; set; }
     }
 
     namespace UsagePlanTypes
@@ -99,31 +75,21 @@ namespace Humidifier.ApiGateway
         public class ApiStage
         {
             /// <summary>
-            /// ApiId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ApiId
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// Stage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Stage
-            {
-                get;
-                set;
-            }
-
+            public dynamic Stage { get; set; }
+            /// <summary>
+            /// ApiId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-apiid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApiId { get; set; }
             /// <summary>
             /// Throttle
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle
@@ -132,11 +98,35 @@ namespace Humidifier.ApiGateway
             /// Type: Map
             /// ItemType: ThrottleSettings
             /// </summary>
-            public Dictionary<string, ThrottleSettings> Throttle
-            {
-                get;
-                set;
-            }
+            public Dictionary<string, ThrottleSettings> Throttle { get; set; }
+        }
+
+        public class QuotaSettings
+        {
+            /// <summary>
+            /// Period
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Period { get; set; }
+            /// <summary>
+            /// Limit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Limit { get; set; }
+            /// <summary>
+            /// Offset
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Offset { get; set; }
         }
 
         public class ThrottleSettings
@@ -148,12 +138,7 @@ namespace Humidifier.ApiGateway
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic BurstLimit
-            {
-                get;
-                set;
-            }
-
+            public dynamic BurstLimit { get; set; }
             /// <summary>
             /// RateLimit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit
@@ -161,53 +146,7 @@ namespace Humidifier.ApiGateway
             /// UpdateType: Mutable
             /// PrimitiveType: Double
             /// </summary>
-            public dynamic RateLimit
-            {
-                get;
-                set;
-            }
-        }
-
-        public class QuotaSettings
-        {
-            /// <summary>
-            /// Limit
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-limit
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Limit
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Offset
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-offset
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Offset
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Period
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Period
-            {
-                get;
-                set;
-            }
+            public dynamic RateLimit { get; set; }
         }
     }
 }

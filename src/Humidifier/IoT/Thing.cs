@@ -5,6 +5,12 @@ namespace Humidifier.IoT
 
     public class Thing : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+            public static string Arn =  "Arn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +26,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// Type: AttributePayload
         /// </summary>
-        public AttributePayload AttributePayload
-        {
-            get;
-            set;
-        }
-
+        public AttributePayload AttributePayload { get; set; }
         /// <summary>
         /// ThingName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname
@@ -33,11 +34,7 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ThingName
-        {
-            get;
-            set;
-        }
+        public dynamic ThingName { get; set; }
     }
 
     namespace ThingTypes
@@ -52,11 +49,7 @@ namespace Humidifier.IoT
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
-            public Dictionary<string, dynamic> Attributes_
-            {
-                get;
-                set;
-            }
+            public Dictionary<string, dynamic> Attributes_ { get; set; }
         }
     }
 }

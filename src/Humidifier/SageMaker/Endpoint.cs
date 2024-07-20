@@ -5,7 +5,7 @@ namespace Humidifier.SageMaker
 
     public class Endpoint : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string EndpointName =  "EndpointName" ;
         }
@@ -25,12 +25,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic RetainAllVariantProperties
-        {
-            get;
-            set;
-        }
-
+        public dynamic RetainAllVariantProperties { get; set; }
         /// <summary>
         /// EndpointName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname
@@ -38,12 +33,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EndpointName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EndpointName { get; set; }
         /// <summary>
         /// ExcludeRetainedVariantProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-excluderetainedvariantproperties
@@ -52,12 +42,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: VariantProperty
         /// </summary>
-        public List<VariantProperty> ExcludeRetainedVariantProperties
-        {
-            get;
-            set;
-        }
-
+        public List<VariantProperty> ExcludeRetainedVariantProperties { get; set; }
         /// <summary>
         /// EndpointConfigName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname
@@ -65,12 +50,23 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EndpointConfigName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EndpointConfigName { get; set; }
+        /// <summary>
+        /// DeploymentConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-deploymentconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DeploymentConfig
+        /// </summary>
+        public DeploymentConfig DeploymentConfig { get; set; }
+        /// <summary>
+        /// RetainDeploymentConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retaindeploymentconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic RetainDeploymentConfig { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-tags
@@ -79,15 +75,184 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace EndpointTypes
     {
+        public class Alarm
+        {
+            /// <summary>
+            /// AlarmName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-alarm.html#cfn-sagemaker-endpoint-alarm-alarmname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AlarmName { get; set; }
+        }
+
+        public class AutoRollbackConfig
+        {
+            /// <summary>
+            /// Alarms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html#cfn-sagemaker-endpoint-autorollbackconfig-alarms
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Alarm
+            /// </summary>
+            public List<Alarm> Alarms { get; set; }
+        }
+
+        public class BlueGreenUpdatePolicy
+        {
+            /// <summary>
+            /// MaximumExecutionTimeoutInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-maximumexecutiontimeoutinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumExecutionTimeoutInSeconds { get; set; }
+            /// <summary>
+            /// TerminationWaitInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-terminationwaitinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TerminationWaitInSeconds { get; set; }
+            /// <summary>
+            /// TrafficRoutingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-trafficroutingconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: TrafficRoutingConfig
+            /// </summary>
+            public TrafficRoutingConfig TrafficRoutingConfiguration { get; set; }
+        }
+
+        public class CapacitySize
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class DeploymentConfig
+        {
+            /// <summary>
+            /// AutoRollbackConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-autorollbackconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AutoRollbackConfig
+            /// </summary>
+            public AutoRollbackConfig AutoRollbackConfiguration { get; set; }
+            /// <summary>
+            /// RollingUpdatePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-rollingupdatepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RollingUpdatePolicy
+            /// </summary>
+            public RollingUpdatePolicy RollingUpdatePolicy { get; set; }
+            /// <summary>
+            /// BlueGreenUpdatePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-bluegreenupdatepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BlueGreenUpdatePolicy
+            /// </summary>
+            public BlueGreenUpdatePolicy BlueGreenUpdatePolicy { get; set; }
+        }
+
+        public class RollingUpdatePolicy
+        {
+            /// <summary>
+            /// MaximumExecutionTimeoutInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-rollingupdatepolicy.html#cfn-sagemaker-endpoint-rollingupdatepolicy-maximumexecutiontimeoutinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumExecutionTimeoutInSeconds { get; set; }
+            /// <summary>
+            /// MaximumBatchSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-rollingupdatepolicy.html#cfn-sagemaker-endpoint-rollingupdatepolicy-maximumbatchsize
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: CapacitySize
+            /// </summary>
+            public CapacitySize MaximumBatchSize { get; set; }
+            /// <summary>
+            /// WaitIntervalInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-rollingupdatepolicy.html#cfn-sagemaker-endpoint-rollingupdatepolicy-waitintervalinseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WaitIntervalInSeconds { get; set; }
+            /// <summary>
+            /// RollbackMaximumBatchSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-rollingupdatepolicy.html#cfn-sagemaker-endpoint-rollingupdatepolicy-rollbackmaximumbatchsize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapacitySize
+            /// </summary>
+            public CapacitySize RollbackMaximumBatchSize { get; set; }
+        }
+
+        public class TrafficRoutingConfig
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// LinearStepSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-linearstepsize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapacitySize
+            /// </summary>
+            public CapacitySize LinearStepSize { get; set; }
+            /// <summary>
+            /// CanarySize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-canarysize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapacitySize
+            /// </summary>
+            public CapacitySize CanarySize { get; set; }
+            /// <summary>
+            /// WaitIntervalInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-waitintervalinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WaitIntervalInSeconds { get; set; }
+        }
+
         public class VariantProperty
         {
             /// <summary>
@@ -97,11 +262,7 @@ namespace Humidifier.SageMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VariantPropertyType
-            {
-                get;
-                set;
-            }
+            public dynamic VariantPropertyType { get; set; }
         }
     }
 }

@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class EgressOnlyInternetGateway : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,10 +24,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpcId
-        {
-            get;
-            set;
-        }
+        public dynamic VpcId { get; set; }
     }
 }

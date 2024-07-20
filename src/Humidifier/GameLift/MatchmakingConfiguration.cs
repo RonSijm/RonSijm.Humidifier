@@ -5,7 +5,7 @@ namespace Humidifier.GameLift
 
     public class MatchmakingConfiguration : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -27,12 +27,7 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: GameProperty
         /// </summary>
-        public List<GameProperty> GameProperties
-        {
-            get;
-            set;
-        }
-
+        public List<GameProperty> GameProperties { get; set; }
         /// <summary>
         /// GameSessionData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessiondata
@@ -40,12 +35,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GameSessionData
-        {
-            get;
-            set;
-        }
-
+        public dynamic GameSessionData { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-description
@@ -53,12 +43,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// AcceptanceTimeoutSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancetimeoutseconds
@@ -66,12 +51,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AcceptanceTimeoutSeconds
-        {
-            get;
-            set;
-        }
-
+        public dynamic AcceptanceTimeoutSeconds { get; set; }
         /// <summary>
         /// NotificationTarget
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-notificationtarget
@@ -79,12 +59,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NotificationTarget
-        {
-            get;
-            set;
-        }
-
+        public dynamic NotificationTarget { get; set; }
         /// <summary>
         /// CustomEventData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-customeventdata
@@ -92,12 +67,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CustomEventData
-        {
-            get;
-            set;
-        }
-
+        public dynamic CustomEventData { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-name
@@ -105,12 +75,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// AdditionalPlayerCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-additionalplayercount
@@ -118,12 +83,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AdditionalPlayerCount
-        {
-            get;
-            set;
-        }
-
+        public dynamic AdditionalPlayerCount { get; set; }
         /// <summary>
         /// BackfillMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-backfillmode
@@ -131,12 +91,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BackfillMode
-        {
-            get;
-            set;
-        }
-
+        public dynamic BackfillMode { get; set; }
         /// <summary>
         /// RequestTimeoutSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-requesttimeoutseconds
@@ -144,12 +99,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic RequestTimeoutSeconds
-        {
-            get;
-            set;
-        }
-
+        public dynamic RequestTimeoutSeconds { get; set; }
         /// <summary>
         /// AcceptanceRequired
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancerequired
@@ -157,12 +107,23 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AcceptanceRequired
-        {
-            get;
-            set;
-        }
-
+        public dynamic AcceptanceRequired { get; set; }
+        /// <summary>
+        /// CreationTime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-creationtime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CreationTime { get; set; }
+        /// <summary>
+        /// FlexMatchMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-flexmatchmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FlexMatchMode { get; set; }
         /// <summary>
         /// RuleSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetname
@@ -170,25 +131,33 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleSetName
-        {
-            get;
-            set;
-        }
-
+        public dynamic RuleSetName { get; set; }
         /// <summary>
         /// GameSessionQueueArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gamesessionqueuearns
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic GameSessionQueueArns
-        {
-            get;
-            set;
-        }
+        public dynamic GameSessionQueueArns { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// RuleSetArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RuleSetArn { get; set; }
     }
 
     namespace MatchmakingConfigurationTypes
@@ -202,12 +171,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-matchmakingconfiguration-gameproperty.html#cfn-gamelift-matchmakingconfiguration-gameproperty-key
@@ -215,11 +179,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

@@ -4,6 +4,11 @@ namespace Humidifier.ApiGatewayV2
 
     public class Deployment : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string DeploymentId =  "DeploymentId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// StageName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-deployment.html#cfn-apigatewayv2-deployment-stagename
@@ -32,12 +32,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StageName
-        {
-            get;
-            set;
-        }
-
+        public dynamic StageName { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-deployment.html#cfn-apigatewayv2-deployment-apiid
@@ -45,10 +40,6 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
+        public dynamic ApiId { get; set; }
     }
 }

@@ -19,12 +19,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AwsAccountId
-        {
-            get;
-            set;
-        }
-
+        public dynamic AwsAccountId { get; set; }
         /// <summary>
         /// NetworkInterfaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid
@@ -32,12 +27,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NetworkInterfaceId
-        {
-            get;
-            set;
-        }
-
+        public dynamic NetworkInterfaceId { get; set; }
         /// <summary>
         /// Permission
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission
@@ -45,10 +35,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Permission
-        {
-            get;
-            set;
-        }
+        public dynamic Permission { get; set; }
     }
 }

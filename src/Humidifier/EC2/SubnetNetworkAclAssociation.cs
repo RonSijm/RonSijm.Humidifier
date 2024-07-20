@@ -4,7 +4,7 @@ namespace Humidifier.EC2
 
     public class SubnetNetworkAclAssociation : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string AssociationId =  "AssociationId" ;
         }
@@ -19,28 +19,19 @@ namespace Humidifier.EC2
 
         /// <summary>
         /// NetworkAclId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetnetworkaclassociation.html#cfn-ec2-subnetnetworkaclassociation-networkaclid
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NetworkAclId
-        {
-            get;
-            set;
-        }
-
+        public dynamic NetworkAclId { get; set; }
         /// <summary>
         /// SubnetId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetnetworkaclassociation.html#cfn-ec2-subnetnetworkaclassociation-subnetid
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetId
-        {
-            get;
-            set;
-        }
+        public dynamic SubnetId { get; set; }
     }
 }

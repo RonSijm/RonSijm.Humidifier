@@ -4,6 +4,11 @@ namespace Humidifier.ApiGateway
 
     public class Resource : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ResourceId =  "ResourceId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ParentId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ParentId { get; set; }
         /// <summary>
         /// PathPart
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-pathpart
@@ -32,12 +32,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PathPart
-        {
-            get;
-            set;
-        }
-
+        public dynamic PathPart { get; set; }
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-resource.html#cfn-apigateway-resource-restapiid
@@ -45,10 +40,6 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RestApiId
-        {
-            get;
-            set;
-        }
+        public dynamic RestApiId { get; set; }
     }
 }

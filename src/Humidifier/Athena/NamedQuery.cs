@@ -4,6 +4,11 @@ namespace Humidifier.Athena
 
     public class NamedQuery : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string NamedQueryId =  "NamedQueryId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,18 +18,21 @@ namespace Humidifier.Athena
         }
 
         /// <summary>
+        /// WorkGroup
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-workgroup
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WorkGroup { get; set; }
+        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-description
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// QueryString
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-querystring
@@ -32,12 +40,7 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic QueryString
-        {
-            get;
-            set;
-        }
-
+        public dynamic QueryString { get; set; }
         /// <summary>
         /// Database
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-database
@@ -45,12 +48,7 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Database
-        {
-            get;
-            set;
-        }
-
+        public dynamic Database { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-name
@@ -58,10 +56,6 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

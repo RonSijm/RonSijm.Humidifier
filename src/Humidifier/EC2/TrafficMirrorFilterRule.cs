@@ -20,12 +20,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// Type: TrafficMirrorPortRange
         /// </summary>
-        public TrafficMirrorPortRange DestinationPortRange
-        {
-            get;
-            set;
-        }
-
+        public TrafficMirrorPortRange DestinationPortRange { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-description
@@ -33,12 +28,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SourcePortRange
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourceportrange
@@ -46,12 +36,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// Type: TrafficMirrorPortRange
         /// </summary>
-        public TrafficMirrorPortRange SourcePortRange
-        {
-            get;
-            set;
-        }
-
+        public TrafficMirrorPortRange SourcePortRange { get; set; }
         /// <summary>
         /// RuleAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-ruleaction
@@ -59,12 +44,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleAction
-        {
-            get;
-            set;
-        }
-
+        public dynamic RuleAction { get; set; }
         /// <summary>
         /// SourceCidrBlock
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourcecidrblock
@@ -72,12 +52,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SourceCidrBlock
-        {
-            get;
-            set;
-        }
-
+        public dynamic SourceCidrBlock { get; set; }
         /// <summary>
         /// RuleNumber
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-rulenumber
@@ -85,12 +60,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic RuleNumber
-        {
-            get;
-            set;
-        }
-
+        public dynamic RuleNumber { get; set; }
         /// <summary>
         /// DestinationCidrBlock
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationcidrblock
@@ -98,12 +68,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DestinationCidrBlock
-        {
-            get;
-            set;
-        }
-
+        public dynamic DestinationCidrBlock { get; set; }
         /// <summary>
         /// TrafficMirrorFilterId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorfilterid
@@ -111,12 +76,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TrafficMirrorFilterId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TrafficMirrorFilterId { get; set; }
         /// <summary>
         /// TrafficDirection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficdirection
@@ -124,12 +84,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TrafficDirection
-        {
-            get;
-            set;
-        }
-
+        public dynamic TrafficDirection { get; set; }
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-protocol
@@ -137,11 +92,16 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Protocol
-        {
-            get;
-            set;
-        }
+        public dynamic Protocol { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 
     namespace TrafficMirrorFilterRuleTypes
@@ -155,12 +115,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic FromPort
-            {
-                get;
-                set;
-            }
-
+            public dynamic FromPort { get; set; }
             /// <summary>
             /// ToPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport
@@ -168,11 +123,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic ToPort
-            {
-                get;
-                set;
-            }
+            public dynamic ToPort { get; set; }
         }
     }
 }

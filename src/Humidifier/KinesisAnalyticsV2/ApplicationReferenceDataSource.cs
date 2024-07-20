@@ -20,12 +20,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationName { get; set; }
         /// <summary>
         /// ReferenceDataSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationreferencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource
@@ -33,84 +28,29 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Mutable
         /// Type: ReferenceDataSource
         /// </summary>
-        public ReferenceDataSource ReferenceDataSource
-        {
-            get;
-            set;
-        }
+        public ReferenceDataSource ReferenceDataSource { get; set; }
     }
 
     namespace ApplicationReferenceDataSourceTypes
     {
-        public class RecordColumn
+        public class CSVMappingParameters
         {
             /// <summary>
-            /// Mapping
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn-mapping
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Mapping
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SqlType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn-sqltype
+            /// RecordRowDelimiter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordrowdelimiter
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SqlType
-            {
-                get;
-                set;
-            }
-
+            public dynamic RecordRowDelimiter { get; set; }
             /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn-name
+            /// RecordColumnDelimiter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordcolumndelimiter
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-        }
-
-        public class RecordFormat
-        {
-            /// <summary>
-            /// MappingParameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordformat-mappingparameters
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: MappingParameters
-            /// </summary>
-            public MappingParameters MappingParameters
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RecordFormatType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordformat-recordformattype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RecordFormatType
-            {
-                get;
-                set;
-            }
+            public dynamic RecordColumnDelimiter { get; set; }
         }
 
         public class JSONMappingParameters
@@ -122,53 +62,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RecordRowPath
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ReferenceDataSource
-        {
-            /// <summary>
-            /// ReferenceSchema
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-referenceschema
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: ReferenceSchema
-            /// </summary>
-            public ReferenceSchema ReferenceSchema
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// TableName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-tablename
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TableName
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// S3ReferenceDataSource
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-s3referencedatasource
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: S3ReferenceDataSource
-            /// </summary>
-            public S3ReferenceDataSource S3ReferenceDataSource
-            {
-                get;
-                set;
-            }
+            public dynamic RecordRowPath { get; set; }
         }
 
         public class MappingParameters
@@ -180,12 +74,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: JSONMappingParameters
             /// </summary>
-            public JSONMappingParameters JSONMappingParameters
-            {
-                get;
-                set;
-            }
-
+            public JSONMappingParameters JSONMappingParameters { get; set; }
             /// <summary>
             /// CSVMappingParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-mappingparameters-csvmappingparameters
@@ -193,40 +82,83 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: CSVMappingParameters
             /// </summary>
-            public CSVMappingParameters CSVMappingParameters
-            {
-                get;
-                set;
-            }
+            public CSVMappingParameters CSVMappingParameters { get; set; }
         }
 
-        public class S3ReferenceDataSource
+        public class RecordColumn
         {
             /// <summary>
-            /// BucketARN
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource-bucketarn
-            /// Required: True
+            /// Mapping
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn-mapping
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BucketARN
-            {
-                get;
-                set;
-            }
-
+            public dynamic Mapping { get; set; }
             /// <summary>
-            /// FileKey
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource-filekey
+            /// SqlType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn-sqltype
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic FileKey
-            {
-                get;
-                set;
-            }
+            public dynamic SqlType { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordcolumn-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class RecordFormat
+        {
+            /// <summary>
+            /// MappingParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordformat-mappingparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MappingParameters
+            /// </summary>
+            public MappingParameters MappingParameters { get; set; }
+            /// <summary>
+            /// RecordFormatType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-recordformat.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-recordformat-recordformattype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RecordFormatType { get; set; }
+        }
+
+        public class ReferenceDataSource
+        {
+            /// <summary>
+            /// ReferenceSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-referenceschema
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ReferenceSchema
+            /// </summary>
+            public ReferenceSchema ReferenceSchema { get; set; }
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-tablename
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// S3ReferenceDataSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource-s3referencedatasource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3ReferenceDataSource
+            /// </summary>
+            public S3ReferenceDataSource S3ReferenceDataSource { get; set; }
         }
 
         public class ReferenceSchema
@@ -238,12 +170,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RecordEncoding
-            {
-                get;
-                set;
-            }
-
+            public dynamic RecordEncoding { get; set; }
             /// <summary>
             /// RecordColumns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referenceschema-recordcolumns
@@ -252,12 +179,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// Type: List
             /// ItemType: RecordColumn
             /// </summary>
-            public List<RecordColumn> RecordColumns
-            {
-                get;
-                set;
-            }
-
+            public List<RecordColumn> RecordColumns { get; set; }
             /// <summary>
             /// RecordFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-referenceschema.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referenceschema-recordformat
@@ -265,40 +187,27 @@ namespace Humidifier.KinesisAnalyticsV2
             /// UpdateType: Mutable
             /// Type: RecordFormat
             /// </summary>
-            public RecordFormat RecordFormat
-            {
-                get;
-                set;
-            }
+            public RecordFormat RecordFormat { get; set; }
         }
 
-        public class CSVMappingParameters
+        public class S3ReferenceDataSource
         {
             /// <summary>
-            /// RecordRowDelimiter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordrowdelimiter
+            /// BucketARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource-bucketarn
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RecordRowDelimiter
-            {
-                get;
-                set;
-            }
-
+            public dynamic BucketARN { get; set; }
             /// <summary>
-            /// RecordColumnDelimiter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-csvmappingparameters-recordcolumndelimiter
+            /// FileKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-s3referencedatasource-filekey
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RecordColumnDelimiter
-            {
-                get;
-                set;
-            }
+            public dynamic FileKey { get; set; }
         }
     }
 }

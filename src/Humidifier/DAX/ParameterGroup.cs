@@ -19,12 +19,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic ParameterNameValues
-        {
-            get;
-            set;
-        }
-
+        public dynamic ParameterNameValues { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description
@@ -32,12 +27,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// ParameterGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-parametergroupname
@@ -45,10 +35,6 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ParameterGroupName
-        {
-            get;
-            set;
-        }
+        public dynamic ParameterGroupName { get; set; }
     }
 }

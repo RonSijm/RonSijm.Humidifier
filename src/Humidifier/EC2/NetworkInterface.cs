@@ -5,10 +5,13 @@ namespace Humidifier.EC2
 
     public class NetworkInterface : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
-            public static string PrimaryPrivateIpAddress =  "PrimaryPrivateIpAddress" ;
+            public static string PrimaryIpv6Address =  "PrimaryIpv6Address" ;
             public static string SecondaryPrivateIpAddresses =  "SecondaryPrivateIpAddresses" ;
+            public static string VpcId =  "VpcId" ;
+            public static string PrimaryPrivateIpAddress =  "PrimaryPrivateIpAddress" ;
+            public static string Id =  "Id" ;
         }
 
         public override string AWSTypeName
@@ -21,153 +24,170 @@ namespace Humidifier.EC2
 
         /// <summary>
         /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// GroupSet
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-groupset
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic GroupSet
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// InterfaceType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-interfacetype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InterfaceType
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Ipv6AddressCount
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresscount
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic Ipv6AddressCount
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Ipv6Addresses
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-ec2-networkinterface-ipv6addresses
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: InstanceIpv6Address
-        /// </summary>
-        public InstanceIpv6Address Ipv6Addresses
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// PrivateIpAddress
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddress
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-privateipaddress
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PrivateIpAddress
-        {
-            get;
-            set;
-        }
-
+        public dynamic PrivateIpAddress { get; set; }
         /// <summary>
         /// PrivateIpAddresses
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-privateipaddresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-privateipaddresses
         /// Required: False
         /// UpdateType: Conditional
         /// Type: List
         /// ItemType: PrivateIpAddressSpecification
         /// </summary>
-        public List<PrivateIpAddressSpecification> PrivateIpAddresses
-        {
-            get;
-            set;
-        }
-
+        public List<PrivateIpAddressSpecification> PrivateIpAddresses { get; set; }
         /// <summary>
         /// SecondaryPrivateIpAddressCount
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-secondaryprivateipcount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-secondaryprivateipaddresscount
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic SecondaryPrivateIpAddressCount
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecondaryPrivateIpAddressCount { get; set; }
         /// <summary>
-        /// SourceDestCheck
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-sourcedestcheck
+        /// Ipv6PrefixCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6prefixcount
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
+        /// PrimitiveType: Integer
         /// </summary>
-        public dynamic SourceDestCheck
-        {
-            get;
-            set;
-        }
-
+        public dynamic Ipv6PrefixCount { get; set; }
+        /// <summary>
+        /// Ipv4Prefixes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv4prefixes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Ipv4PrefixSpecification
+        /// </summary>
+        public List<Ipv4PrefixSpecification> Ipv4Prefixes { get; set; }
+        /// <summary>
+        /// Ipv4PrefixCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv4prefixcount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic Ipv4PrefixCount { get; set; }
+        /// <summary>
+        /// GroupSet
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-groupset
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic GroupSet { get; set; }
+        /// <summary>
+        /// Ipv6Addresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6addresses
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: InstanceIpv6Address
+        /// </summary>
+        public List<InstanceIpv6Address> Ipv6Addresses { get; set; }
+        /// <summary>
+        /// Ipv6Prefixes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6prefixes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Ipv6PrefixSpecification
+        /// </summary>
+        public List<Ipv6PrefixSpecification> Ipv6Prefixes { get; set; }
         /// <summary>
         /// SubnetId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-subnetid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-subnetid
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetId { get; set; }
+        /// <summary>
+        /// SourceDestCheck
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-sourcedestcheck
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic SourceDestCheck { get; set; }
+        /// <summary>
+        /// InterfaceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-interfacetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InterfaceType { get; set; }
+        /// <summary>
+        /// Ipv6AddressCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6addresscount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic Ipv6AddressCount { get; set; }
         /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface.html#cfn-awsec2networkinterface-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// ConnectionTrackingSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-connectiontrackingspecification
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: ConnectionTrackingSpecification
+        /// </summary>
+        public ConnectionTrackingSpecification ConnectionTrackingSpecification { get; set; }
     }
 
     namespace NetworkInterfaceTypes
     {
+        public class ConnectionTrackingSpecification
+        {
+            /// <summary>
+            /// UdpTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-connectiontrackingspecification.html#cfn-ec2-networkinterface-connectiontrackingspecification-udptimeout
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic UdpTimeout { get; set; }
+            /// <summary>
+            /// TcpEstablishedTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-connectiontrackingspecification.html#cfn-ec2-networkinterface-connectiontrackingspecification-tcpestablishedtimeout
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TcpEstablishedTimeout { get; set; }
+            /// <summary>
+            /// UdpStreamTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-connectiontrackingspecification.html#cfn-ec2-networkinterface-connectiontrackingspecification-udpstreamtimeout
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic UdpStreamTimeout { get; set; }
+        }
+
         public class InstanceIpv6Address
         {
             /// <summary>
@@ -177,40 +197,51 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Ipv6Address
-            {
-                get;
-                set;
-            }
+            public dynamic Ipv6Address { get; set; }
+        }
+
+        public class Ipv4PrefixSpecification
+        {
+            /// <summary>
+            /// Ipv4Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-ipv4prefixspecification.html#cfn-ec2-networkinterface-ipv4prefixspecification-ipv4prefix
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv4Prefix { get; set; }
+        }
+
+        public class Ipv6PrefixSpecification
+        {
+            /// <summary>
+            /// Ipv6Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-ipv6prefixspecification.html#cfn-ec2-networkinterface-ipv6prefixspecification-ipv6prefix
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv6Prefix { get; set; }
         }
 
         public class PrivateIpAddressSpecification
         {
             /// <summary>
-            /// Primary
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-primary
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Primary
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// PrivateIpAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-interface-privateipspec.html#cfn-ec2-networkinterface-privateipspecification-privateipaddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-privateipaddressspecification.html#cfn-ec2-networkinterface-privateipaddressspecification-privateipaddress
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PrivateIpAddress
-            {
-                get;
-                set;
-            }
+            public dynamic PrivateIpAddress { get; set; }
+            /// <summary>
+            /// Primary
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-privateipaddressspecification.html#cfn-ec2-networkinterface-privateipaddressspecification-primary
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Primary { get; set; }
         }
     }
 }

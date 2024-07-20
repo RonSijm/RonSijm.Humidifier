@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class InternetGateway : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string InternetGatewayId =  "InternetGatewayId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,10 +25,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

@@ -19,10 +19,6 @@ namespace Humidifier.SDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
+        public dynamic Description { get; set; }
     }
 }

@@ -21,12 +21,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// ItemType: AttributeType
         /// </summary>
-        public List<AttributeType> ValidationData
-        {
-            get;
-            set;
-        }
-
+        public List<AttributeType> ValidationData { get; set; }
         /// <summary>
         /// UserPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userpoolid
@@ -34,12 +29,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserPoolId { get; set; }
         /// <summary>
         /// Username
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-username
@@ -47,12 +37,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Username
-        {
-            get;
-            set;
-        }
-
+        public dynamic Username { get; set; }
         /// <summary>
         /// MessageAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-messageaction
@@ -60,25 +45,16 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MessageAction
-        {
-            get;
-            set;
-        }
-
+        public dynamic MessageAction { get; set; }
         /// <summary>
         /// ClientMetadata
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-clientmetadata
         /// Required: False
         /// UpdateType: Immutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ClientMetadata
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> ClientMetadata { get; set; }
         /// <summary>
         /// DesiredDeliveryMediums
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-desireddeliverymediums
@@ -87,12 +63,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic DesiredDeliveryMediums
-        {
-            get;
-            set;
-        }
-
+        public dynamic DesiredDeliveryMediums { get; set; }
         /// <summary>
         /// ForceAliasCreation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-forcealiascreation
@@ -100,12 +71,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic ForceAliasCreation
-        {
-            get;
-            set;
-        }
-
+        public dynamic ForceAliasCreation { get; set; }
         /// <summary>
         /// UserAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes
@@ -114,11 +80,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// ItemType: AttributeType
         /// </summary>
-        public List<AttributeType> UserAttributes
-        {
-            get;
-            set;
-        }
+        public List<AttributeType> UserAttributes { get; set; }
     }
 
     namespace UserPoolUserTypes
@@ -129,27 +91,18 @@ namespace Humidifier.Cognito
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html#cfn-cognito-userpooluser-attributetype-value
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html#cfn-cognito-userpooluser-attributetype-name
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
     }
 }

@@ -20,12 +20,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubscriptionDefinitionId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubscriptionDefinitionId { get; set; }
         /// <summary>
         /// Subscriptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptions
@@ -34,11 +29,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Subscription
         /// </summary>
-        public List<Subscription> Subscriptions
-        {
-            get;
-            set;
-        }
+        public List<Subscription> Subscriptions { get; set; }
     }
 
     namespace SubscriptionDefinitionVersionTypes
@@ -52,12 +43,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Target
-            {
-                get;
-                set;
-            }
-
+            public dynamic Target { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-id
@@ -65,12 +51,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
-
+            public dynamic Id { get; set; }
             /// <summary>
             /// Source
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-source
@@ -78,12 +59,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Source
-            {
-                get;
-                set;
-            }
-
+            public dynamic Source { get; set; }
             /// <summary>
             /// Subject
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinitionversion-subscription.html#cfn-greengrass-subscriptiondefinitionversion-subscription-subject
@@ -91,11 +67,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Subject
-            {
-                get;
-                set;
-            }
+            public dynamic Subject { get; set; }
         }
     }
 }

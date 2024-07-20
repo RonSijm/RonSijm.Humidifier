@@ -13,31 +13,21 @@ namespace Humidifier.ECS
         }
 
         /// <summary>
-        /// Cluster
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-cluster
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Cluster
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// TaskSetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-tasksetid
         /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TaskSetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TaskSetId { get; set; }
+        /// <summary>
+        /// Cluster
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-cluster
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Cluster { get; set; }
         /// <summary>
         /// Service
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-service
@@ -45,10 +35,6 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Service
-        {
-            get;
-            set;
-        }
+        public dynamic Service { get; set; }
     }
 }

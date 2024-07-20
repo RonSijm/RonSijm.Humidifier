@@ -5,7 +5,7 @@ namespace Humidifier.AppMesh
 
     public class Mesh : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Uid =  "Uid" ;
             public static string MeshName =  "MeshName" ;
@@ -25,16 +25,11 @@ namespace Humidifier.AppMesh
         /// <summary>
         /// MeshName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MeshName
-        {
-            get;
-            set;
-        }
-
+        public dynamic MeshName { get; set; }
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec
@@ -42,12 +37,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: MeshSpec
         /// </summary>
-        public MeshSpec Spec
-        {
-            get;
-            set;
-        }
-
+        public MeshSpec Spec { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags
@@ -56,31 +46,11 @@ namespace Humidifier.AppMesh
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace MeshTypes
     {
-        public class MeshSpec
-        {
-            /// <summary>
-            /// EgressFilter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: EgressFilter
-            /// </summary>
-            public EgressFilter EgressFilter
-            {
-                get;
-                set;
-            }
-        }
-
         public class EgressFilter
         {
             /// <summary>
@@ -90,11 +60,39 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic Type { get; set; }
+        }
+
+        public class MeshServiceDiscovery
+        {
+            /// <summary>
+            /// IpPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshservicediscovery.html#cfn-appmesh-mesh-meshservicediscovery-ippreference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpPreference { get; set; }
+        }
+
+        public class MeshSpec
+        {
+            /// <summary>
+            /// EgressFilter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EgressFilter
+            /// </summary>
+            public EgressFilter EgressFilter { get; set; }
+            /// <summary>
+            /// ServiceDiscovery
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-servicediscovery
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MeshServiceDiscovery
+            /// </summary>
+            public MeshServiceDiscovery ServiceDiscovery { get; set; }
         }
     }
 }

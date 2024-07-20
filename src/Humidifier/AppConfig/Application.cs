@@ -5,6 +5,11 @@ namespace Humidifier.AppConfig
 
     public class Application : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ApplicationId =  "ApplicationId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-application.html#cfn-appconfig-application-tags
@@ -34,12 +34,7 @@ namespace Humidifier.AppConfig
         /// Type: List
         /// ItemType: Tags
         /// </summary>
-        public List<Tags> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tags> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-application.html#cfn-appconfig-application-name
@@ -47,11 +42,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ApplicationTypes
@@ -61,28 +52,19 @@ namespace Humidifier.AppConfig
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-application-tags.html#cfn-appconfig-application-tags-value
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-application-tags.html#cfn-appconfig-application-tags-key
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

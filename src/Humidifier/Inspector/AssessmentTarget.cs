@@ -4,7 +4,7 @@ namespace Humidifier.Inspector
 
     public class AssessmentTarget : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.Inspector
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AssessmentTargetName
-        {
-            get;
-            set;
-        }
-
+        public dynamic AssessmentTargetName { get; set; }
         /// <summary>
         /// ResourceGroupArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttarget.html#cfn-inspector-assessmenttarget-resourcegrouparn
@@ -37,10 +32,6 @@ namespace Humidifier.Inspector
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceGroupArn
-        {
-            get;
-            set;
-        }
+        public dynamic ResourceGroupArn { get; set; }
     }
 }

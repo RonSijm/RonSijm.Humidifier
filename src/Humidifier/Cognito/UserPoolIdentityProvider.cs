@@ -19,12 +19,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProviderName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProviderName { get; set; }
         /// <summary>
         /// UserPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-userpoolid
@@ -32,12 +27,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserPoolId { get; set; }
         /// <summary>
         /// AttributeMapping
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-attributemapping
@@ -45,12 +35,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic AttributeMapping
-        {
-            get;
-            set;
-        }
-
+        public dynamic AttributeMapping { get; set; }
         /// <summary>
         /// ProviderDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providerdetails
@@ -58,12 +43,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic ProviderDetails
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProviderDetails { get; set; }
         /// <summary>
         /// ProviderType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providertype
@@ -71,12 +51,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProviderType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProviderType { get; set; }
         /// <summary>
         /// IdpIdentifiers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-idpidentifiers
@@ -85,10 +60,6 @@ namespace Humidifier.Cognito
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic IdpIdentifiers
-        {
-            get;
-            set;
-        }
+        public dynamic IdpIdentifiers { get; set; }
     }
 }

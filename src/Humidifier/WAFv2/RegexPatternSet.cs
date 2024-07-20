@@ -4,10 +4,10 @@ namespace Humidifier.WAFv2
 
     public class RegexPatternSet : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
-            public static string Arn =  "Arn" ;
             public static string Id =  "Id" ;
+            public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName
@@ -25,25 +25,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Name
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-name
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// RegularExpressionList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-regularexpressionlist
@@ -52,25 +34,15 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic RegularExpressionList
-        {
-            get;
-            set;
-        }
-
+        public dynamic RegularExpressionList { get; set; }
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-scope
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Scope
-        {
-            get;
-            set;
-        }
-
+        public dynamic Scope { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-tags
@@ -79,10 +51,14 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-name
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Name { get; set; }
     }
 }

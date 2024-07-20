@@ -14,18 +14,29 @@ namespace Humidifier.CertificateManager
         }
 
         /// <summary>
+        /// CertificateAuthorityArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificateauthorityarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificateAuthorityArn { get; set; }
+        /// <summary>
+        /// CertificateTransparencyLoggingPreference
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificatetransparencyloggingpreference
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificateTransparencyLoggingPreference { get; set; }
+        /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DomainName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DomainName { get; set; }
         /// <summary>
         /// DomainValidationOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions
@@ -34,12 +45,15 @@ namespace Humidifier.CertificateManager
         /// Type: List
         /// ItemType: DomainValidationOption
         /// </summary>
-        public List<DomainValidationOption> DomainValidationOptions
-        {
-            get;
-            set;
-        }
-
+        public List<DomainValidationOption> DomainValidationOptions { get; set; }
+        /// <summary>
+        /// KeyAlgorithm
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-keyalgorithm
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KeyAlgorithm { get; set; }
         /// <summary>
         /// SubjectAlternativeNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames
@@ -48,12 +62,7 @@ namespace Humidifier.CertificateManager
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SubjectAlternativeNames
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubjectAlternativeNames { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags
@@ -62,12 +71,7 @@ namespace Humidifier.CertificateManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// ValidationMethod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
@@ -75,11 +79,7 @@ namespace Humidifier.CertificateManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ValidationMethod
-        {
-            get;
-            set;
-        }
+        public dynamic ValidationMethod { get; set; }
     }
 
     namespace CertificateTypes
@@ -93,24 +93,23 @@ namespace Humidifier.CertificateManager
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DomainName
-            {
-                get;
-                set;
-            }
-
+            public dynamic DomainName { get; set; }
             /// <summary>
-            /// ValidationDomain
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-validationdomain
-            /// Required: True
+            /// HostedZoneId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-hostedzoneid
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ValidationDomain
-            {
-                get;
-                set;
-            }
+            public dynamic HostedZoneId { get; set; }
+            /// <summary>
+            /// ValidationDomain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-validationdomain
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ValidationDomain { get; set; }
         }
     }
 }

@@ -21,12 +21,7 @@ namespace Humidifier.WAFRegional
         /// Type: List
         /// ItemType: XssMatchTuple
         /// </summary>
-        public List<XssMatchTuple> XssMatchTuples
-        {
-            get;
-            set;
-        }
-
+        public List<XssMatchTuple> XssMatchTuples { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-name
@@ -34,44 +29,11 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace XssMatchSetTypes
     {
-        public class XssMatchTuple
-        {
-            /// <summary>
-            /// TextTransformation
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-texttransformation
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TextTransformation
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// FieldToMatch
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-fieldtomatch
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: FieldToMatch
-            /// </summary>
-            public FieldToMatch FieldToMatch
-            {
-                get;
-                set;
-            }
-        }
-
         public class FieldToMatch
         {
             /// <summary>
@@ -81,12 +43,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Data
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html#cfn-wafregional-xssmatchset-fieldtomatch-data
@@ -94,11 +51,27 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Data
-            {
-                get;
-                set;
-            }
+            public dynamic Data { get; set; }
+        }
+
+        public class XssMatchTuple
+        {
+            /// <summary>
+            /// TextTransformation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-texttransformation
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextTransformation { get; set; }
+            /// <summary>
+            /// FieldToMatch
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-fieldtomatch
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FieldToMatch
+            /// </summary>
+            public FieldToMatch FieldToMatch { get; set; }
         }
     }
 }

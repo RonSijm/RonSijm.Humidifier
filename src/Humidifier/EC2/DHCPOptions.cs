@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class DHCPOptions : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string DhcpOptionsId =  "DhcpOptionsId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,85 +18,64 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
+        /// NetbiosNameServers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnameservers
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic NetbiosNameServers { get; set; }
+        /// <summary>
+        /// NtpServers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-ntpservers
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic NtpServers { get; set; }
+        /// <summary>
         /// DomainName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainname
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-domainname
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DomainName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DomainName { get; set; }
         /// <summary>
-        /// DomainNameServers
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-domainnameservers
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic DomainNameServers
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// NetbiosNameServers
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnameservers
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic NetbiosNameServers
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// NetbiosNodeType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-netbiosnodetype
+        /// Ipv6AddressPreferredLeaseTime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-ipv6addresspreferredleasetime
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic NetbiosNodeType
-        {
-            get;
-            set;
-        }
-
+        public dynamic Ipv6AddressPreferredLeaseTime { get; set; }
         /// <summary>
-        /// NtpServers
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-ntpservers
+        /// NetbiosNodeType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnodetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic NetbiosNodeType { get; set; }
+        /// <summary>
+        /// DomainNameServers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-domainnameservers
         /// Required: False
         /// UpdateType: Immutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic NtpServers
-        {
-            get;
-            set;
-        }
-
+        public dynamic DomainNameServers { get; set; }
         /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcp-options.html#cfn-ec2-dhcpoptions-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

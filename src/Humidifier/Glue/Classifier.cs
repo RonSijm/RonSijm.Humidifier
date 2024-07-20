@@ -20,12 +20,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: XMLClassifier
         /// </summary>
-        public XMLClassifier XMLClassifier
-        {
-            get;
-            set;
-        }
-
+        public XMLClassifier XMLClassifier { get; set; }
         /// <summary>
         /// JsonClassifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-jsonclassifier
@@ -33,12 +28,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: JsonClassifier
         /// </summary>
-        public JsonClassifier JsonClassifier
-        {
-            get;
-            set;
-        }
-
+        public JsonClassifier JsonClassifier { get; set; }
         /// <summary>
         /// CsvClassifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-csvclassifier
@@ -46,12 +36,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: CsvClassifier
         /// </summary>
-        public CsvClassifier CsvClassifier
-        {
-            get;
-            set;
-        }
-
+        public CsvClassifier CsvClassifier { get; set; }
         /// <summary>
         /// GrokClassifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier
@@ -59,11 +44,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: GrokClassifier
         /// </summary>
-        public GrokClassifier GrokClassifier
-        {
-            get;
-            set;
-        }
+        public GrokClassifier GrokClassifier { get; set; }
     }
 
     namespace ClassifierTypes
@@ -71,18 +52,22 @@ namespace Humidifier.Glue
         public class CsvClassifier
         {
             /// <summary>
+            /// ContainsCustomDatatype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-containscustomdatatype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ContainsCustomDatatype { get; set; }
+            /// <summary>
             /// QuoteSymbol
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-quotesymbol
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic QuoteSymbol
-            {
-                get;
-                set;
-            }
-
+            public dynamic QuoteSymbol { get; set; }
             /// <summary>
             /// ContainsHeader
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-containsheader
@@ -90,12 +75,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ContainsHeader
-            {
-                get;
-                set;
-            }
-
+            public dynamic ContainsHeader { get; set; }
             /// <summary>
             /// Delimiter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-delimiter
@@ -103,12 +83,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Delimiter
-            {
-                get;
-                set;
-            }
-
+            public dynamic Delimiter { get; set; }
             /// <summary>
             /// Header
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-header
@@ -117,12 +92,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Header
-            {
-                get;
-                set;
-            }
-
+            public dynamic Header { get; set; }
             /// <summary>
             /// AllowSingleColumn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-allowsinglecolumn
@@ -130,12 +100,15 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic AllowSingleColumn
-            {
-                get;
-                set;
-            }
-
+            public dynamic AllowSingleColumn { get; set; }
+            /// <summary>
+            /// CustomDatatypeConfigured
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-customdatatypeconfigured
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic CustomDatatypeConfigured { get; set; }
             /// <summary>
             /// DisableValueTrimming
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-disablevaluetrimming
@@ -143,12 +116,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DisableValueTrimming
-            {
-                get;
-                set;
-            }
-
+            public dynamic DisableValueTrimming { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-csvclassifier.html#cfn-glue-classifier-csvclassifier-name
@@ -156,53 +124,7 @@ namespace Humidifier.Glue
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-        }
-
-        public class XMLClassifier
-        {
-            /// <summary>
-            /// RowTag
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RowTag
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Classification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Classification
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class GrokClassifier
@@ -214,12 +136,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CustomPatterns
-            {
-                get;
-                set;
-            }
-
+            public dynamic CustomPatterns { get; set; }
             /// <summary>
             /// GrokPattern
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-grokpattern
@@ -227,12 +144,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic GrokPattern
-            {
-                get;
-                set;
-            }
-
+            public dynamic GrokPattern { get; set; }
             /// <summary>
             /// Classification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-classification
@@ -240,12 +152,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Classification
-            {
-                get;
-                set;
-            }
-
+            public dynamic Classification { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-grokclassifier.html#cfn-glue-classifier-grokclassifier-name
@@ -253,11 +160,7 @@ namespace Humidifier.Glue
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class JsonClassifier
@@ -269,12 +172,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic JsonPath
-            {
-                get;
-                set;
-            }
-
+            public dynamic JsonPath { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-name
@@ -282,11 +180,35 @@ namespace Humidifier.Glue
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
+        }
+
+        public class XMLClassifier
+        {
+            /// <summary>
+            /// RowTag
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RowTag { get; set; }
+            /// <summary>
+            /// Classification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Classification { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
     }
 }

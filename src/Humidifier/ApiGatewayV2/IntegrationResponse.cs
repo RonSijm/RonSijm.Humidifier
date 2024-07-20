@@ -4,6 +4,11 @@ namespace Humidifier.ApiGatewayV2
 
     public class IntegrationResponse : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string IntegrationResponseId =  "IntegrationResponseId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic ResponseTemplates
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResponseTemplates { get; set; }
         /// <summary>
         /// TemplateSelectionExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-templateselectionexpression
@@ -32,12 +32,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateSelectionExpression
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateSelectionExpression { get; set; }
         /// <summary>
         /// ResponseParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-responseparameters
@@ -45,12 +40,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic ResponseParameters
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResponseParameters { get; set; }
         /// <summary>
         /// ContentHandlingStrategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-contenthandlingstrategy
@@ -58,25 +48,15 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ContentHandlingStrategy
-        {
-            get;
-            set;
-        }
-
+        public dynamic ContentHandlingStrategy { get; set; }
         /// <summary>
         /// IntegrationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-integrationid
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IntegrationId
-        {
-            get;
-            set;
-        }
-
+        public dynamic IntegrationId { get; set; }
         /// <summary>
         /// IntegrationResponseKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-integrationresponsekey
@@ -84,23 +64,14 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IntegrationResponseKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic IntegrationResponseKey { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-apiid
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
+        public dynamic ApiId { get; set; }
     }
 }

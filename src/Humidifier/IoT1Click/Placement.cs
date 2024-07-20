@@ -4,7 +4,7 @@ namespace Humidifier.IoT1Click
 
     public class Placement : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string PlacementName =  "PlacementName" ;
             public static string ProjectName =  "ProjectName" ;
@@ -25,12 +25,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PlacementName
-        {
-            get;
-            set;
-        }
-
+        public dynamic PlacementName { get; set; }
         /// <summary>
         /// ProjectName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-projectname
@@ -38,12 +33,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProjectName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProjectName { get; set; }
         /// <summary>
         /// AssociatedDevices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-associateddevices
@@ -51,12 +41,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Immutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic AssociatedDevices
-        {
-            get;
-            set;
-        }
-
+        public dynamic AssociatedDevices { get; set; }
         /// <summary>
         /// Attributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-attributes
@@ -64,10 +49,6 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Attributes_
-        {
-            get;
-            set;
-        }
+        public dynamic Attributes_ { get; set; }
     }
 }

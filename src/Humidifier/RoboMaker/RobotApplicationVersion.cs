@@ -4,6 +4,12 @@ namespace Humidifier.RoboMaker
 
     public class RobotApplicationVersion : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ApplicationVersion =  "ApplicationVersion" ;
+            public static string Arn =  "Arn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +25,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CurrentRevisionId
-        {
-            get;
-            set;
-        }
-
+        public dynamic CurrentRevisionId { get; set; }
         /// <summary>
         /// Application
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-application
@@ -32,10 +33,6 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Application
-        {
-            get;
-            set;
-        }
+        public dynamic Application { get; set; }
     }
 }

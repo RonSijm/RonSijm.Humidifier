@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class RouteTable : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string RouteTableId =  "RouteTableId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,30 +18,21 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
+        /// VpcId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-routetable.html#cfn-ec2-routetable-vpcid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VpcId { get; set; }
+        /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html#cfn-ec2-routetable-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-routetable.html#cfn-ec2-routetable-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// VpcId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route-table.html#cfn-ec2-routetable-vpcid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic VpcId
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

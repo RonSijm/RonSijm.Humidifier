@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class VPCGatewayAttachment : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string AttachmentType =  "AttachmentType" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,41 +19,27 @@ namespace Humidifier.EC2
 
         /// <summary>
         /// InternetGatewayId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcgatewayattachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InternetGatewayId
-        {
-            get;
-            set;
-        }
-
+        public dynamic InternetGatewayId { get; set; }
         /// <summary>
         /// VpcId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcgatewayattachment.html#cfn-ec2-vpcgatewayattachment-vpcid
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpcId
-        {
-            get;
-            set;
-        }
-
+        public dynamic VpcId { get; set; }
         /// <summary>
         /// VpnGatewayId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcgatewayattachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpnGatewayId
-        {
-            get;
-            set;
-        }
+        public dynamic VpnGatewayId { get; set; }
     }
 }

@@ -15,42 +15,28 @@ namespace Humidifier.ElasticBeanstalk
 
         /// <summary>
         /// ApplicationName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-application.html#cfn-elasticbeanstalk-application-applicationname
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationName { get; set; }
         /// <summary>
         /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-application.html#cfn-elasticbeanstalk-application-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// ResourceLifecycleConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-application.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
         /// Required: False
         /// UpdateType: Mutable
         /// Type: ApplicationResourceLifecycleConfig
         /// </summary>
-        public ApplicationResourceLifecycleConfig ResourceLifecycleConfig
-        {
-            get;
-            set;
-        }
+        public ApplicationResourceLifecycleConfig ResourceLifecycleConfig { get; set; }
     }
 
     namespace ApplicationTypes
@@ -64,12 +50,7 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ServiceRole
-            {
-                get;
-                set;
-            }
-
+            public dynamic ServiceRole { get; set; }
             /// <summary>
             /// VersionLifecycleConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-versionlifecycleconfig
@@ -77,28 +58,11 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// Type: ApplicationVersionLifecycleConfig
             /// </summary>
-            public ApplicationVersionLifecycleConfig VersionLifecycleConfig
-            {
-                get;
-                set;
-            }
+            public ApplicationVersionLifecycleConfig VersionLifecycleConfig { get; set; }
         }
 
         public class ApplicationVersionLifecycleConfig
         {
-            /// <summary>
-            /// MaxAgeRule
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxagerule
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: MaxAgeRule
-            /// </summary>
-            public MaxAgeRule MaxAgeRule
-            {
-                get;
-                set;
-            }
-
             /// <summary>
             /// MaxCountRule
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxcountrule
@@ -106,11 +70,15 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// Type: MaxCountRule
             /// </summary>
-            public MaxCountRule MaxCountRule
-            {
-                get;
-                set;
-            }
+            public MaxCountRule MaxCountRule { get; set; }
+            /// <summary>
+            /// MaxAgeRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxagerule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MaxAgeRule
+            /// </summary>
+            public MaxAgeRule MaxAgeRule { get; set; }
         }
 
         public class MaxAgeRule
@@ -122,25 +90,7 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DeleteSourceFromS3
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-enabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeleteSourceFromS3 { get; set; }
             /// <summary>
             /// MaxAgeInDays
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-maxageindays
@@ -148,11 +98,15 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic MaxAgeInDays
-            {
-                get;
-                set;
-            }
+            public dynamic MaxAgeInDays { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class MaxCountRule
@@ -164,12 +118,7 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DeleteSourceFromS3
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeleteSourceFromS3 { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-enabled
@@ -177,12 +126,7 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
+            public dynamic Enabled { get; set; }
             /// <summary>
             /// MaxCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount
@@ -190,11 +134,7 @@ namespace Humidifier.ElasticBeanstalk
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic MaxCount
-            {
-                get;
-                set;
-            }
+            public dynamic MaxCount { get; set; }
         }
     }
 }

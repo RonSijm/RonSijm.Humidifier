@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class CustomerGateway : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string CustomerGatewayId =  "CustomerGatewayId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,56 +18,61 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// BgpAsn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic BgpAsn
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// IpAddress
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-type
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IpAddress
-        {
-            get;
-            set;
-        }
-
+        public dynamic Type { get; set; }
+        /// <summary>
+        /// IpAddress
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-ipaddress
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpAddress { get; set; }
+        /// <summary>
+        /// BgpAsnExtended
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-bgpasnextended
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Double
+        /// </summary>
+        public dynamic BgpAsnExtended { get; set; }
+        /// <summary>
+        /// BgpAsn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-bgpasn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic BgpAsn { get; set; }
         /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
-        /// Type
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type
-        /// Required: True
+        /// CertificateArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-certificatearn
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
+        public dynamic CertificateArn { get; set; }
+        /// <summary>
+        /// DeviceName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-devicename
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeviceName { get; set; }
     }
 }

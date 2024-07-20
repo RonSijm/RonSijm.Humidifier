@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Humidifier.Serverless.FunctionTypes;
+using Environment = Humidifier.Serverless.FunctionTypes.Environment;
 
 namespace Humidifier.Serverless
 {

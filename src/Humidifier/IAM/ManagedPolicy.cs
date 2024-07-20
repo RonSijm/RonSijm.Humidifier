@@ -4,6 +4,18 @@ namespace Humidifier.IAM
 
     public class ManagedPolicy : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string IsAttachable =  "IsAttachable" ;
+            public static string UpdateDate =  "UpdateDate" ;
+            public static string PermissionsBoundaryUsageCount =  "PermissionsBoundaryUsageCount" ;
+            public static string AttachmentCount =  "AttachmentCount" ;
+            public static string PolicyArn =  "PolicyArn" ;
+            public static string DefaultVersionId =  "DefaultVersionId" ;
+            public static string CreateDate =  "CreateDate" ;
+            public static string PolicyId =  "PolicyId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,18 +25,29 @@ namespace Humidifier.IAM
         }
 
         /// <summary>
+        /// ManagedPolicyName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ManagedPolicyName { get; set; }
+        /// <summary>
+        /// Path
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-path
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Path { get; set; }
+        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-description
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Groups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-groups
@@ -33,38 +56,7 @@ namespace Humidifier.IAM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Groups
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// ManagedPolicyName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-managedpolicyname
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ManagedPolicyName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Path
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-ec2-dhcpoptions-path
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Path
-        {
-            get;
-            set;
-        }
-
+        public dynamic Groups { get; set; }
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-policydocument
@@ -72,12 +64,7 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic PolicyDocument
-        {
-            get;
-            set;
-        }
-
+        public dynamic PolicyDocument { get; set; }
         /// <summary>
         /// Roles
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-roles
@@ -86,12 +73,7 @@ namespace Humidifier.IAM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Roles
-        {
-            get;
-            set;
-        }
-
+        public dynamic Roles { get; set; }
         /// <summary>
         /// Users
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-managedpolicy.html#cfn-iam-managedpolicy-users
@@ -100,10 +82,6 @@ namespace Humidifier.IAM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Users
-        {
-            get;
-            set;
-        }
+        public dynamic Users { get; set; }
     }
 }

@@ -5,9 +5,10 @@ namespace Humidifier.EC2
 
     public class LaunchTemplate : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string LatestVersionNumber =  "LatestVersionNumber" ;
+            public static string LaunchTemplateId =  "LaunchTemplateId" ;
             public static string DefaultVersionNumber =  "DefaultVersionNumber" ;
         }
 
@@ -26,55 +27,94 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LaunchTemplateName
-        {
-            get;
-            set;
-        }
-
+        public dynamic LaunchTemplateName { get; set; }
         /// <summary>
         /// LaunchTemplateData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: LaunchTemplateData
         /// </summary>
-        public LaunchTemplateData LaunchTemplateData
-        {
-            get;
-            set;
-        }
+        public LaunchTemplateData LaunchTemplateData { get; set; }
+        /// <summary>
+        /// VersionDescription
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-versiondescription
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VersionDescription { get; set; }
+        /// <summary>
+        /// TagSpecifications
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: LaunchTemplateTagSpecification
+        /// </summary>
+        public List<LaunchTemplateTagSpecification> TagSpecifications { get; set; }
     }
 
     namespace LaunchTemplateTypes
     {
-        public class PrivateIpAdd
+        public class AcceleratorCount
         {
             /// <summary>
-            /// PrivateIpAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-privateipaddress
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratorcount.html#cfn-ec2-launchtemplate-acceleratorcount-min
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic PrivateIpAddress
-            {
-                get;
-                set;
-            }
-
+            public dynamic Min { get; set; }
             /// <summary>
-            /// Primary
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-primary
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratorcount.html#cfn-ec2-launchtemplate-acceleratorcount-max
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Primary
-            {
-                get;
-                set;
-            }
+            public dynamic Max { get; set; }
+        }
+
+        public class AcceleratorTotalMemoryMiB
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratortotalmemorymib.html#cfn-ec2-launchtemplate-acceleratortotalmemorymib-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-acceleratortotalmemorymib.html#cfn-ec2-launchtemplate-acceleratortotalmemorymib-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Max { get; set; }
+        }
+
+        public class BaselineEbsBandwidthMbps
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-baselineebsbandwidthmbps.html#cfn-ec2-launchtemplate-baselineebsbandwidthmbps-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-baselineebsbandwidthmbps.html#cfn-ec2-launchtemplate-baselineebsbandwidthmbps-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Max { get; set; }
         }
 
         public class BlockDeviceMapping
@@ -86,12 +126,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: Ebs
             /// </summary>
-            public Ebs Ebs
-            {
-                get;
-                set;
-            }
-
+            public Ebs Ebs { get; set; }
             /// <summary>
             /// NoDevice
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html#cfn-ec2-launchtemplate-blockdevicemapping-nodevice
@@ -99,12 +134,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic NoDevice
-            {
-                get;
-                set;
-            }
-
+            public dynamic NoDevice { get; set; }
             /// <summary>
             /// VirtualName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html#cfn-ec2-launchtemplate-blockdevicemapping-virtualname
@@ -112,12 +142,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VirtualName
-            {
-                get;
-                set;
-            }
-
+            public dynamic VirtualName { get; set; }
             /// <summary>
             /// DeviceName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping.html#cfn-ec2-launchtemplate-blockdevicemapping-devicename
@@ -125,79 +150,184 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeviceName
-            {
-                get;
-                set;
-            }
+            public dynamic DeviceName { get; set; }
         }
 
-        public class SpotOptions
+        public class CapacityReservationSpecification
         {
             /// <summary>
-            /// SpotInstanceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype
+            /// CapacityReservationPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationspecification.html#cfn-ec2-launchtemplate-capacityreservationspecification-capacityreservationpreference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: dynamic
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityReservationPreference { get; set; }
+            /// <summary>
+            /// CapacityReservationTarget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationspecification.html#cfn-ec2-launchtemplate-capacityreservationspecification-capacityreservationtarget
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapacityReservationTarget
+            /// </summary>
+            public CapacityReservationTarget CapacityReservationTarget { get; set; }
+        }
+
+        public class CapacityReservationTarget
+        {
+            /// <summary>
+            /// CapacityReservationResourceGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationresourcegrouparn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SpotInstanceType
-            {
-                get;
-                set;
-            }
-
+            public dynamic CapacityReservationResourceGroupArn { get; set; }
             /// <summary>
-            /// InstanceInterruptionBehavior
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-instanceinterruptionbehavior
+            /// CapacityReservationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InstanceInterruptionBehavior
-            {
-                get;
-                set;
-            }
+            public dynamic CapacityReservationId { get; set; }
+        }
 
+        public class ConnectionTrackingSpecification
+        {
             /// <summary>
-            /// MaxPrice
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MaxPrice
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// BlockDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes
+            /// UdpTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-connectiontrackingspecification.html#cfn-ec2-launchtemplate-connectiontrackingspecification-udptimeout
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic BlockDurationMinutes
-            {
-                get;
-                set;
-            }
-
+            public dynamic UdpTimeout { get; set; }
             /// <summary>
-            /// ValidUntil
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil
+            /// TcpEstablishedTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-connectiontrackingspecification.html#cfn-ec2-launchtemplate-connectiontrackingspecification-tcpestablishedtimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TcpEstablishedTimeout { get; set; }
+            /// <summary>
+            /// UdpStreamTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-connectiontrackingspecification.html#cfn-ec2-launchtemplate-connectiontrackingspecification-udpstreamtimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic UdpStreamTimeout { get; set; }
+        }
+
+        public class CpuOptions
+        {
+            /// <summary>
+            /// ThreadsPerCore
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpuoptions.html#cfn-ec2-launchtemplate-cpuoptions-threadspercore
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThreadsPerCore { get; set; }
+            /// <summary>
+            /// AmdSevSnp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpuoptions.html#cfn-ec2-launchtemplate-cpuoptions-amdsevsnp
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ValidUntil
-            {
-                get;
-                set;
-            }
+            public dynamic AmdSevSnp { get; set; }
+            /// <summary>
+            /// CoreCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpuoptions.html#cfn-ec2-launchtemplate-cpuoptions-corecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CoreCount { get; set; }
+        }
+
+        public class CreditSpecification
+        {
+            /// <summary>
+            /// CpuCredits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-creditspecification.html#cfn-ec2-launchtemplate-creditspecification-cpucredits
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CpuCredits { get; set; }
+        }
+
+        public class Ebs
+        {
+            /// <summary>
+            /// SnapshotId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-snapshotid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SnapshotId { get; set; }
+            /// <summary>
+            /// VolumeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-volumetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VolumeType { get; set; }
+            /// <summary>
+            /// KmsKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-kmskeyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyId { get; set; }
+            /// <summary>
+            /// Encrypted
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-encrypted
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Encrypted { get; set; }
+            /// <summary>
+            /// Throughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-throughput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Throughput { get; set; }
+            /// <summary>
+            /// Iops
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-iops
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Iops { get; set; }
+            /// <summary>
+            /// VolumeSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-volumesize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeSize { get; set; }
+            /// <summary>
+            /// DeleteOnTermination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-deleteontermination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DeleteOnTermination { get; set; }
         }
 
         public class ElasticGpuSpecification
@@ -209,196 +339,343 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic Type { get; set; }
         }
 
-        public class TagSpecification
+        public class EnaSrdSpecification
         {
             /// <summary>
-            /// ResourceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-tagspecification.html#cfn-ec2-launchtemplate-tagspecification-resourcetype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ResourceType
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Tags
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-tagspecification.html#cfn-ec2-launchtemplate-tagspecification-tags
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Tag
-            /// </summary>
-            public List<Tag> Tags
-            {
-                get;
-                set;
-            }
-        }
-
-        public class IamInstanceProfile
-        {
-            /// <summary>
-            /// Arn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-arn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Arn
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-name
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-        }
-
-        public class LicenseSpecification
-        {
-            /// <summary>
-            /// LicenseConfigurationArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-licensespecification.html#cfn-ec2-launchtemplate-licensespecification-licenseconfigurationarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LicenseConfigurationArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Ebs
-        {
-            /// <summary>
-            /// SnapshotId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-snapshotid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SnapshotId
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// VolumeType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumetype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic VolumeType
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// KmsKeyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic KmsKeyId
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Encrypted
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-encrypted
+            /// EnaSrdEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-enasrdspecification.html#cfn-ec2-launchtemplate-enasrdspecification-enasrdenabled
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Encrypted
-            {
-                get;
-                set;
-            }
-
+            public dynamic EnaSrdEnabled { get; set; }
             /// <summary>
-            /// Iops
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-iops
+            /// EnaSrdUdpSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-enasrdspecification.html#cfn-ec2-launchtemplate-enasrdspecification-enasrdudpspecification
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// Type: EnaSrdUdpSpecification
             /// </summary>
-            public dynamic Iops
-            {
-                get;
-                set;
-            }
+            public EnaSrdUdpSpecification EnaSrdUdpSpecification { get; set; }
+        }
 
+        public class EnaSrdUdpSpecification
+        {
             /// <summary>
-            /// VolumeSize
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumesize
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic VolumeSize
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DeleteOnTermination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-deleteontermination
+            /// EnaSrdUdpEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-enasrdudpspecification.html#cfn-ec2-launchtemplate-enasrdudpspecification-enasrdudpenabled
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DeleteOnTermination
-            {
-                get;
-                set;
-            }
+            public dynamic EnaSrdUdpEnabled { get; set; }
+        }
+
+        public class EnclaveOptions
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-enclaveoptions.html#cfn-ec2-launchtemplate-enclaveoptions-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class HibernationOptions
         {
             /// <summary>
             /// Configured
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-hibernationoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions-configured
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-hibernationoptions.html#cfn-ec2-launchtemplate-hibernationoptions-configured
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Configured
-            {
-                get;
-                set;
-            }
+            public dynamic Configured { get; set; }
+        }
+
+        public class IamInstanceProfile
+        {
+            /// <summary>
+            /// Arn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-iaminstanceprofile.html#cfn-ec2-launchtemplate-iaminstanceprofile-arn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Arn { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-iaminstanceprofile.html#cfn-ec2-launchtemplate-iaminstanceprofile-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class InstanceMarketOptions
+        {
+            /// <summary>
+            /// SpotOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancemarketoptions.html#cfn-ec2-launchtemplate-instancemarketoptions-spotoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SpotOptions
+            /// </summary>
+            public SpotOptions SpotOptions { get; set; }
+            /// <summary>
+            /// MarketType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancemarketoptions.html#cfn-ec2-launchtemplate-instancemarketoptions-markettype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MarketType { get; set; }
+        }
+
+        public class InstanceRequirements
+        {
+            /// <summary>
+            /// LocalStorageTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstoragetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LocalStorageTypes { get; set; }
+            /// <summary>
+            /// InstanceGenerations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-instancegenerations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic InstanceGenerations { get; set; }
+            /// <summary>
+            /// NetworkInterfaceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-networkinterfacecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NetworkInterfaceCount
+            /// </summary>
+            public NetworkInterfaceCount NetworkInterfaceCount { get; set; }
+            /// <summary>
+            /// MemoryGiBPerVCpu
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-memorygibpervcpu
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MemoryGiBPerVCpu
+            /// </summary>
+            public MemoryGiBPerVCpu MemoryGiBPerVCpu { get; set; }
+            /// <summary>
+            /// AcceleratorTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratortypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AcceleratorTypes { get; set; }
+            /// <summary>
+            /// VCpuCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-vcpucount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VCpuCount
+            /// </summary>
+            public VCpuCount VCpuCount { get; set; }
+            /// <summary>
+            /// ExcludedInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-excludedinstancetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludedInstanceTypes { get; set; }
+            /// <summary>
+            /// AcceleratorManufacturers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratormanufacturers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AcceleratorManufacturers { get; set; }
+            /// <summary>
+            /// AllowedInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-allowedinstancetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedInstanceTypes { get; set; }
+            /// <summary>
+            /// LocalStorage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstorage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LocalStorage { get; set; }
+            /// <summary>
+            /// CpuManufacturers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-cpumanufacturers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CpuManufacturers { get; set; }
+            /// <summary>
+            /// AcceleratorCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratorcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AcceleratorCount
+            /// </summary>
+            public AcceleratorCount AcceleratorCount { get; set; }
+            /// <summary>
+            /// NetworkBandwidthGbps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-networkbandwidthgbps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NetworkBandwidthGbps
+            /// </summary>
+            public NetworkBandwidthGbps NetworkBandwidthGbps { get; set; }
+            /// <summary>
+            /// BareMetal
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-baremetal
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BareMetal { get; set; }
+            /// <summary>
+            /// RequireHibernateSupport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-requirehibernatesupport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic RequireHibernateSupport { get; set; }
+            /// <summary>
+            /// MaxSpotPriceAsPercentageOfOptimalOnDemandPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-maxspotpriceaspercentageofoptimalondemandprice
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxSpotPriceAsPercentageOfOptimalOnDemandPrice { get; set; }
+            /// <summary>
+            /// SpotMaxPricePercentageOverLowestPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-spotmaxpricepercentageoverlowestprice
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SpotMaxPricePercentageOverLowestPrice { get; set; }
+            /// <summary>
+            /// BaselineEbsBandwidthMbps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-baselineebsbandwidthmbps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BaselineEbsBandwidthMbps
+            /// </summary>
+            public BaselineEbsBandwidthMbps BaselineEbsBandwidthMbps { get; set; }
+            /// <summary>
+            /// OnDemandMaxPricePercentageOverLowestPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-ondemandmaxpricepercentageoverlowestprice
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic OnDemandMaxPricePercentageOverLowestPrice { get; set; }
+            /// <summary>
+            /// AcceleratorNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratornames
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AcceleratorNames { get; set; }
+            /// <summary>
+            /// AcceleratorTotalMemoryMiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratortotalmemorymib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AcceleratorTotalMemoryMiB
+            /// </summary>
+            public AcceleratorTotalMemoryMiB AcceleratorTotalMemoryMiB { get; set; }
+            /// <summary>
+            /// BurstablePerformance
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-burstableperformance
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BurstablePerformance { get; set; }
+            /// <summary>
+            /// MemoryMiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-memorymib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MemoryMiB
+            /// </summary>
+            public MemoryMiB MemoryMiB { get; set; }
+            /// <summary>
+            /// TotalLocalStorageGB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-totallocalstoragegb
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TotalLocalStorageGB
+            /// </summary>
+            public TotalLocalStorageGB TotalLocalStorageGB { get; set; }
+        }
+
+        public class Ipv4PrefixSpecification
+        {
+            /// <summary>
+            /// Ipv4Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv4prefixspecification.html#cfn-ec2-launchtemplate-ipv4prefixspecification-ipv4prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv4Prefix { get; set; }
+        }
+
+        public class Ipv6Add
+        {
+            /// <summary>
+            /// Ipv6Address
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html#cfn-ec2-launchtemplate-ipv6add-ipv6address
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv6Address { get; set; }
+        }
+
+        public class Ipv6PrefixSpecification
+        {
+            /// <summary>
+            /// Ipv6Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6prefixspecification.html#cfn-ec2-launchtemplate-ipv6prefixspecification-ipv6prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv6Prefix { get; set; }
         }
 
         public class LaunchTemplateData
@@ -411,12 +688,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SecurityGroups
-            {
-                get;
-                set;
-            }
-
+            public dynamic SecurityGroups { get; set; }
             /// <summary>
             /// TagSpecifications
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications
@@ -425,12 +697,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: TagSpecification
             /// </summary>
-            public List<TagSpecification> TagSpecifications
-            {
-                get;
-                set;
-            }
-
+            public List<TagSpecification> TagSpecifications { get; set; }
             /// <summary>
             /// UserData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
@@ -438,12 +705,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic UserData
-            {
-                get;
-                set;
-            }
-
+            public dynamic UserData { get; set; }
             /// <summary>
             /// BlockDeviceMappings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings
@@ -452,12 +714,15 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: BlockDeviceMapping
             /// </summary>
-            public List<BlockDeviceMapping> BlockDeviceMappings
-            {
-                get;
-                set;
-            }
-
+            public List<BlockDeviceMapping> BlockDeviceMappings { get; set; }
+            /// <summary>
+            /// MaintenanceOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-maintenanceoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MaintenanceOptions
+            /// </summary>
+            public MaintenanceOptions MaintenanceOptions { get; set; }
             /// <summary>
             /// IamInstanceProfile
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile
@@ -465,12 +730,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: IamInstanceProfile
             /// </summary>
-            public IamInstanceProfile IamInstanceProfile
-            {
-                get;
-                set;
-            }
-
+            public IamInstanceProfile IamInstanceProfile { get; set; }
             /// <summary>
             /// KernelId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid
@@ -478,12 +738,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic KernelId
-            {
-                get;
-                set;
-            }
-
+            public dynamic KernelId { get; set; }
             /// <summary>
             /// EbsOptimized
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized
@@ -491,12 +746,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic EbsOptimized
-            {
-                get;
-                set;
-            }
-
+            public dynamic EbsOptimized { get; set; }
             /// <summary>
             /// ElasticGpuSpecifications
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications
@@ -505,12 +755,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: ElasticGpuSpecification
             /// </summary>
-            public List<ElasticGpuSpecification> ElasticGpuSpecifications
-            {
-                get;
-                set;
-            }
-
+            public List<ElasticGpuSpecification> ElasticGpuSpecifications { get; set; }
             /// <summary>
             /// ElasticInferenceAccelerators
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators
@@ -519,12 +764,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: LaunchTemplateElasticInferenceAccelerator
             /// </summary>
-            public List<LaunchTemplateElasticInferenceAccelerator> ElasticInferenceAccelerators
-            {
-                get;
-                set;
-            }
-
+            public List<LaunchTemplateElasticInferenceAccelerator> ElasticInferenceAccelerators { get; set; }
             /// <summary>
             /// Placement
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement
@@ -532,12 +772,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: Placement
             /// </summary>
-            public Placement Placement
-            {
-                get;
-                set;
-            }
-
+            public Placement Placement { get; set; }
             /// <summary>
             /// NetworkInterfaces
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
@@ -546,12 +781,15 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: NetworkInterface
             /// </summary>
-            public List<NetworkInterface> NetworkInterfaces
-            {
-                get;
-                set;
-            }
-
+            public List<NetworkInterface> NetworkInterfaces { get; set; }
+            /// <summary>
+            /// EnclaveOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EnclaveOptions
+            /// </summary>
+            public EnclaveOptions EnclaveOptions { get; set; }
             /// <summary>
             /// ImageId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid
@@ -559,12 +797,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ImageId
-            {
-                get;
-                set;
-            }
-
+            public dynamic ImageId { get; set; }
             /// <summary>
             /// InstanceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype
@@ -572,12 +805,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InstanceType
-            {
-                get;
-                set;
-            }
-
+            public dynamic InstanceType { get; set; }
             /// <summary>
             /// Monitoring
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring
@@ -585,12 +813,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: Monitoring
             /// </summary>
-            public Monitoring Monitoring
-            {
-                get;
-                set;
-            }
-
+            public Monitoring Monitoring { get; set; }
             /// <summary>
             /// HibernationOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions
@@ -598,12 +821,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: HibernationOptions
             /// </summary>
-            public HibernationOptions HibernationOptions
-            {
-                get;
-                set;
-            }
-
+            public HibernationOptions HibernationOptions { get; set; }
             /// <summary>
             /// MetadataOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions
@@ -611,12 +829,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: MetadataOptions
             /// </summary>
-            public MetadataOptions MetadataOptions
-            {
-                get;
-                set;
-            }
-
+            public MetadataOptions MetadataOptions { get; set; }
             /// <summary>
             /// LicenseSpecifications
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications
@@ -625,12 +838,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: LicenseSpecification
             /// </summary>
-            public List<LicenseSpecification> LicenseSpecifications
-            {
-                get;
-                set;
-            }
-
+            public List<LicenseSpecification> LicenseSpecifications { get; set; }
             /// <summary>
             /// InstanceInitiatedShutdownBehavior
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior
@@ -638,12 +846,15 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InstanceInitiatedShutdownBehavior
-            {
-                get;
-                set;
-            }
-
+            public dynamic InstanceInitiatedShutdownBehavior { get; set; }
+            /// <summary>
+            /// DisableApiStop
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapistop
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DisableApiStop { get; set; }
             /// <summary>
             /// CpuOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions
@@ -651,12 +862,15 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: CpuOptions
             /// </summary>
-            public CpuOptions CpuOptions
-            {
-                get;
-                set;
-            }
-
+            public CpuOptions CpuOptions { get; set; }
+            /// <summary>
+            /// PrivateDnsNameOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PrivateDnsNameOptions
+            /// </summary>
+            public PrivateDnsNameOptions PrivateDnsNameOptions { get; set; }
             /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids
@@ -665,12 +879,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SecurityGroupIds
-            {
-                get;
-                set;
-            }
-
+            public dynamic SecurityGroupIds { get; set; }
             /// <summary>
             /// KeyName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname
@@ -678,12 +887,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic KeyName
-            {
-                get;
-                set;
-            }
-
+            public dynamic KeyName { get; set; }
             /// <summary>
             /// DisableApiTermination
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination
@@ -691,12 +895,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic DisableApiTermination
-            {
-                get;
-                set;
-            }
-
+            public dynamic DisableApiTermination { get; set; }
             /// <summary>
             /// InstanceMarketOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions
@@ -704,12 +903,15 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: InstanceMarketOptions
             /// </summary>
-            public InstanceMarketOptions InstanceMarketOptions
-            {
-                get;
-                set;
-            }
-
+            public InstanceMarketOptions InstanceMarketOptions { get; set; }
+            /// <summary>
+            /// InstanceRequirements
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InstanceRequirements
+            /// </summary>
+            public InstanceRequirements InstanceRequirements { get; set; }
             /// <summary>
             /// RamDiskId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid
@@ -717,12 +919,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RamDiskId
-            {
-                get;
-                set;
-            }
-
+            public dynamic RamDiskId { get; set; }
             /// <summary>
             /// CapacityReservationSpecification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification
@@ -730,12 +927,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: CapacityReservationSpecification
             /// </summary>
-            public CapacityReservationSpecification CapacityReservationSpecification
-            {
-                get;
-                set;
-            }
-
+            public CapacityReservationSpecification CapacityReservationSpecification { get; set; }
             /// <summary>
             /// CreditSpecification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification
@@ -743,486 +935,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// Type: CreditSpecification
             /// </summary>
-            public CreditSpecification CreditSpecification
-            {
-                get;
-                set;
-            }
-        }
-
-        public class InstanceMarketOptions
-        {
-            /// <summary>
-            /// SpotOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SpotOptions
-            /// </summary>
-            public SpotOptions SpotOptions
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// MarketType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-markettype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MarketType
-            {
-                get;
-                set;
-            }
-        }
-
-        public class CreditSpecification
-        {
-            /// <summary>
-            /// CpuCredits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-creditspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification-cpucredits
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CpuCredits
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Monitoring
-        {
-            /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-monitoring.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring-enabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-        }
-
-        public class MetadataOptions
-        {
-            /// <summary>
-            /// HttpPutResponseHopLimit
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-metadataoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions-httpputresponsehoplimit
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic HttpPutResponseHopLimit
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// HttpTokens
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-metadataoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions-httptokens
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic HttpTokens
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// HttpEndpoint
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-metadataoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions-httpendpoint
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic HttpEndpoint
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Placement
-        {
-            /// <summary>
-            /// GroupName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic GroupName
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Tenancy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Tenancy
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SpreadDomain
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SpreadDomain
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// PartitionNumber
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic PartitionNumber
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// AvailabilityZone
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-availabilityzone
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic AvailabilityZone
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Affinity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-affinity
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Affinity
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// HostId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic HostId
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// HostResourceGroupArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic HostResourceGroupArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class CapacityReservationSpecification
-        {
-            /// <summary>
-            /// CapacityReservationPreference
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationpreference
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: dynamic
-            /// </summary>
-            public dynamic CapacityReservationPreference
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// CapacityReservationTarget
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationtarget
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: CapacityReservationTarget
-            /// </summary>
-            public CapacityReservationTarget CapacityReservationTarget
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Ipv6Add
-        {
-            /// <summary>
-            /// Ipv6Address
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html#cfn-ec2-launchtemplate-ipv6add-ipv6address
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Ipv6Address
-            {
-                get;
-                set;
-            }
-        }
-
-        public class CapacityReservationTarget
-        {
-            /// <summary>
-            /// CapacityReservationId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CapacityReservationId
-            {
-                get;
-                set;
-            }
-        }
-
-        public class NetworkInterface
-        {
-            /// <summary>
-            /// Description
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-description
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Description
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// PrivateIpAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddress
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic PrivateIpAddress
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// PrivateIpAddresses
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddresses
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: PrivateIpAdd
-            /// </summary>
-            public List<PrivateIpAdd> PrivateIpAddresses
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SecondaryPrivateIpAddressCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-secondaryprivateipaddresscount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic SecondaryPrivateIpAddressCount
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DeviceIndex
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic DeviceIndex
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SubnetId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-subnetid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SubnetId
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Ipv6Addresses
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresses
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Ipv6Add
-            /// </summary>
-            public List<Ipv6Add> Ipv6Addresses
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// AssociatePublicIpAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-associatepublicipaddress
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic AssociatePublicIpAddress
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// NetworkInterfaceId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic NetworkInterfaceId
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// InterfaceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic InterfaceType
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Ipv6AddressCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Ipv6AddressCount
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Groups
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic Groups
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DeleteOnTermination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deleteontermination
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic DeleteOnTermination
-            {
-                get;
-                set;
-            }
-        }
-
-        public class CpuOptions
-        {
-            /// <summary>
-            /// ThreadsPerCore
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-threadspercore
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ThreadsPerCore
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// CoreCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-corecount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic CoreCount
-            {
-                get;
-                set;
-            }
+            public CreditSpecification CreditSpecification { get; set; }
         }
 
         public class LaunchTemplateElasticInferenceAccelerator
@@ -1234,12 +947,7 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Count
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-count
@@ -1247,11 +955,602 @@ namespace Humidifier.EC2
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Count
-            {
-                get;
-                set;
-            }
+            public dynamic Count { get; set; }
+        }
+
+        public class LaunchTemplateTagSpecification
+        {
+            /// <summary>
+            /// ResourceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-resourcetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceType { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+        }
+
+        public class LicenseSpecification
+        {
+            /// <summary>
+            /// LicenseConfigurationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-licensespecification.html#cfn-ec2-launchtemplate-licensespecification-licenseconfigurationarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LicenseConfigurationArn { get; set; }
+        }
+
+        public class MaintenanceOptions
+        {
+            /// <summary>
+            /// AutoRecovery
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-maintenanceoptions.html#cfn-ec2-launchtemplate-maintenanceoptions-autorecovery
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AutoRecovery { get; set; }
+        }
+
+        public class MemoryGiBPerVCpu
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorygibpervcpu.html#cfn-ec2-launchtemplate-memorygibpervcpu-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorygibpervcpu.html#cfn-ec2-launchtemplate-memorygibpervcpu-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Max { get; set; }
+        }
+
+        public class MemoryMiB
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorymib.html#cfn-ec2-launchtemplate-memorymib-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorymib.html#cfn-ec2-launchtemplate-memorymib-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Max { get; set; }
+        }
+
+        public class MetadataOptions
+        {
+            /// <summary>
+            /// HttpPutResponseHopLimit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httpputresponsehoplimit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HttpPutResponseHopLimit { get; set; }
+            /// <summary>
+            /// HttpTokens
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httptokens
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpTokens { get; set; }
+            /// <summary>
+            /// HttpProtocolIpv6
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httpprotocolipv6
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpProtocolIpv6 { get; set; }
+            /// <summary>
+            /// InstanceMetadataTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-instancemetadatatags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceMetadataTags { get; set; }
+            /// <summary>
+            /// HttpEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-metadataoptions.html#cfn-ec2-launchtemplate-metadataoptions-httpendpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpEndpoint { get; set; }
+        }
+
+        public class Monitoring
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-monitoring.html#cfn-ec2-launchtemplate-monitoring-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class NetworkBandwidthGbps
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Max { get; set; }
+        }
+
+        public class NetworkInterface
+        {
+            /// <summary>
+            /// Description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-description
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Description { get; set; }
+            /// <summary>
+            /// PrivateIpAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrivateIpAddress { get; set; }
+            /// <summary>
+            /// PrivateIpAddresses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddresses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PrivateIpAdd
+            /// </summary>
+            public List<PrivateIpAdd> PrivateIpAddresses { get; set; }
+            /// <summary>
+            /// SecondaryPrivateIpAddressCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-secondaryprivateipaddresscount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SecondaryPrivateIpAddressCount { get; set; }
+            /// <summary>
+            /// Ipv6PrefixCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Ipv6PrefixCount { get; set; }
+            /// <summary>
+            /// Ipv4Prefixes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv4prefixes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Ipv4PrefixSpecification
+            /// </summary>
+            public List<Ipv4PrefixSpecification> Ipv4Prefixes { get; set; }
+            /// <summary>
+            /// DeviceIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DeviceIndex { get; set; }
+            /// <summary>
+            /// PrimaryIpv6
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-primaryipv6
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic PrimaryIpv6 { get; set; }
+            /// <summary>
+            /// Ipv4PrefixCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv4prefixcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Ipv4PrefixCount { get; set; }
+            /// <summary>
+            /// Ipv6Prefixes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Ipv6PrefixSpecification
+            /// </summary>
+            public List<Ipv6PrefixSpecification> Ipv6Prefixes { get; set; }
+            /// <summary>
+            /// SubnetId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-subnetid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SubnetId { get; set; }
+            /// <summary>
+            /// Ipv6Addresses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Ipv6Add
+            /// </summary>
+            public List<Ipv6Add> Ipv6Addresses { get; set; }
+            /// <summary>
+            /// AssociatePublicIpAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-associatepublicipaddress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AssociatePublicIpAddress { get; set; }
+            /// <summary>
+            /// NetworkInterfaceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NetworkInterfaceId { get; set; }
+            /// <summary>
+            /// NetworkCardIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkcardindex
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic NetworkCardIndex { get; set; }
+            /// <summary>
+            /// InterfaceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InterfaceType { get; set; }
+            /// <summary>
+            /// AssociateCarrierIpAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-associatecarrieripaddress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AssociateCarrierIpAddress { get; set; }
+            /// <summary>
+            /// EnaSrdSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-enasrdspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EnaSrdSpecification
+            /// </summary>
+            public EnaSrdSpecification EnaSrdSpecification { get; set; }
+            /// <summary>
+            /// Ipv6AddressCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Ipv6AddressCount { get; set; }
+            /// <summary>
+            /// Groups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Groups { get; set; }
+            /// <summary>
+            /// DeleteOnTermination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deleteontermination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DeleteOnTermination { get; set; }
+            /// <summary>
+            /// ConnectionTrackingSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-connectiontrackingspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ConnectionTrackingSpecification
+            /// </summary>
+            public ConnectionTrackingSpecification ConnectionTrackingSpecification { get; set; }
+        }
+
+        public class NetworkInterfaceCount
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterfacecount.html#cfn-ec2-launchtemplate-networkinterfacecount-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterfacecount.html#cfn-ec2-launchtemplate-networkinterfacecount-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Max { get; set; }
+        }
+
+        public class Placement
+        {
+            /// <summary>
+            /// GroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-groupname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupName { get; set; }
+            /// <summary>
+            /// Tenancy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-tenancy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Tenancy { get; set; }
+            /// <summary>
+            /// SpreadDomain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-spreaddomain
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SpreadDomain { get; set; }
+            /// <summary>
+            /// PartitionNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-partitionnumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic PartitionNumber { get; set; }
+            /// <summary>
+            /// AvailabilityZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-availabilityzone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityZone { get; set; }
+            /// <summary>
+            /// Affinity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-affinity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Affinity { get; set; }
+            /// <summary>
+            /// HostId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-hostid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostId { get; set; }
+            /// <summary>
+            /// HostResourceGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-hostresourcegrouparn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostResourceGroupArn { get; set; }
+            /// <summary>
+            /// GroupId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-placement.html#cfn-ec2-launchtemplate-placement-groupid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupId { get; set; }
+        }
+
+        public class PrivateDnsNameOptions
+        {
+            /// <summary>
+            /// EnableResourceNameDnsARecord
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privatednsnameoptions.html#cfn-ec2-launchtemplate-privatednsnameoptions-enableresourcenamednsarecord
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableResourceNameDnsARecord { get; set; }
+            /// <summary>
+            /// HostnameType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privatednsnameoptions.html#cfn-ec2-launchtemplate-privatednsnameoptions-hostnametype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostnameType { get; set; }
+            /// <summary>
+            /// EnableResourceNameDnsAAAARecord
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privatednsnameoptions.html#cfn-ec2-launchtemplate-privatednsnameoptions-enableresourcenamednsaaaarecord
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableResourceNameDnsAAAARecord { get; set; }
+        }
+
+        public class PrivateIpAdd
+        {
+            /// <summary>
+            /// PrivateIpAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-privateipaddress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrivateIpAddress { get; set; }
+            /// <summary>
+            /// Primary
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-primary
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Primary { get; set; }
+        }
+
+        public class SpotOptions
+        {
+            /// <summary>
+            /// SpotInstanceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-spotinstancetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SpotInstanceType { get; set; }
+            /// <summary>
+            /// InstanceInterruptionBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-instanceinterruptionbehavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceInterruptionBehavior { get; set; }
+            /// <summary>
+            /// MaxPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-maxprice
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MaxPrice { get; set; }
+            /// <summary>
+            /// BlockDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-blockdurationminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BlockDurationMinutes { get; set; }
+            /// <summary>
+            /// ValidUntil
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-spotoptions.html#cfn-ec2-launchtemplate-spotoptions-validuntil
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ValidUntil { get; set; }
+        }
+
+        public class TagSpecification
+        {
+            /// <summary>
+            /// ResourceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-tagspecification.html#cfn-ec2-launchtemplate-tagspecification-resourcetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceType { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-tagspecification.html#cfn-ec2-launchtemplate-tagspecification-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Tag> Tags { get; set; }
+        }
+
+        public class TotalLocalStorageGB
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Max { get; set; }
+        }
+
+        public class VCpuCount
+        {
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-vcpucount.html#cfn-ec2-launchtemplate-vcpucount-min
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+            /// <summary>
+            /// Max
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-vcpucount.html#cfn-ec2-launchtemplate-vcpucount-max
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Max { get; set; }
         }
     }
 }

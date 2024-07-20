@@ -19,12 +19,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AccountId
-        {
-            get;
-            set;
-        }
-
+        public dynamic AccountId { get; set; }
         /// <summary>
         /// AcceptLanguage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-acceptlanguage
@@ -32,12 +27,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AcceptLanguage
-        {
-            get;
-            set;
-        }
-
+        public dynamic AcceptLanguage { get; set; }
         /// <summary>
         /// PortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-portfolioid
@@ -45,10 +35,14 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PortfolioId
-        {
-            get;
-            set;
-        }
+        public dynamic PortfolioId { get; set; }
+        /// <summary>
+        /// ShareTagOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-sharetagoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ShareTagOptions { get; set; }
     }
 }

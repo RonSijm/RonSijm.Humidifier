@@ -20,12 +20,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic RouteTableIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic RouteTableIds { get; set; }
         /// <summary>
         /// VpnGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gatewayrouteprop.html#cfn-ec2-vpngatewayrouteprop-vpngatewayid
@@ -33,10 +28,6 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpnGatewayId
-        {
-            get;
-            set;
-        }
+        public dynamic VpnGatewayId { get; set; }
     }
 }

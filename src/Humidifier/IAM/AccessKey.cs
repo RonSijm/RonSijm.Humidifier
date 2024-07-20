@@ -4,7 +4,7 @@ namespace Humidifier.IAM
 
     public class AccessKey : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string SecretAccessKey =  "SecretAccessKey" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.IAM
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Serial
-        {
-            get;
-            set;
-        }
-
+        public dynamic Serial { get; set; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-status
@@ -37,12 +32,7 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Status
-        {
-            get;
-            set;
-        }
-
+        public dynamic Status { get; set; }
         /// <summary>
         /// UserName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username
@@ -50,10 +40,6 @@ namespace Humidifier.IAM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserName
-        {
-            get;
-            set;
-        }
+        public dynamic UserName { get; set; }
     }
 }

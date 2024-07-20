@@ -5,7 +5,7 @@ namespace Humidifier.EventSchemas
 
     public class Registry : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string RegistryName =  "RegistryName" ;
             public static string RegistryArn =  "RegistryArn" ;
@@ -26,12 +26,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// RegistryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-registryname
@@ -39,12 +34,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RegistryName
-        {
-            get;
-            set;
-        }
-
+        public dynamic RegistryName { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-tags
@@ -53,11 +43,7 @@ namespace Humidifier.EventSchemas
         /// Type: List
         /// ItemType: TagsEntry
         /// </summary>
-        public List<TagsEntry> Tags
-        {
-            get;
-            set;
-        }
+        public List<TagsEntry> Tags { get; set; }
     }
 
     namespace RegistryTypes
@@ -71,12 +57,7 @@ namespace Humidifier.EventSchemas
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-registry-tagsentry.html#cfn-eventschemas-registry-tagsentry-key
@@ -84,11 +65,7 @@ namespace Humidifier.EventSchemas
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

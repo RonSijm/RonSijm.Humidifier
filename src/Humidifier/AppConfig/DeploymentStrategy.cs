@@ -20,12 +20,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ReplicateTo
-        {
-            get;
-            set;
-        }
-
+        public dynamic ReplicateTo { get; set; }
         /// <summary>
         /// GrowthType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthtype
@@ -33,12 +28,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GrowthType
-        {
-            get;
-            set;
-        }
-
+        public dynamic GrowthType { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-description
@@ -46,12 +36,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// DeploymentDurationInMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-deploymentdurationinminutes
@@ -59,12 +44,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
-        public dynamic DeploymentDurationInMinutes
-        {
-            get;
-            set;
-        }
-
+        public dynamic DeploymentDurationInMinutes { get; set; }
         /// <summary>
         /// GrowthFactor
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthfactor
@@ -72,12 +52,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
-        public dynamic GrowthFactor
-        {
-            get;
-            set;
-        }
-
+        public dynamic GrowthFactor { get; set; }
         /// <summary>
         /// FinalBakeTimeInMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-finalbaketimeinminutes
@@ -85,12 +60,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
-        public dynamic FinalBakeTimeInMinutes
-        {
-            get;
-            set;
-        }
-
+        public dynamic FinalBakeTimeInMinutes { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-tags
@@ -99,12 +69,7 @@ namespace Humidifier.AppConfig
         /// Type: List
         /// ItemType: Tags
         /// </summary>
-        public List<Tags> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tags> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-name
@@ -112,11 +77,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace DeploymentStrategyTypes
@@ -130,12 +91,7 @@ namespace Humidifier.AppConfig
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html#cfn-appconfig-deploymentstrategy-tags-key
@@ -143,11 +99,7 @@ namespace Humidifier.AppConfig
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

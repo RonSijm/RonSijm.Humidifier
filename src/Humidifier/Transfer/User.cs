@@ -5,7 +5,7 @@ namespace Humidifier.Transfer
 
     public class User : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ServerId =  "ServerId" ;
             public static string UserName =  "UserName" ;
@@ -27,12 +27,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Policy
-        {
-            get;
-            set;
-        }
-
+        public dynamic Policy { get; set; }
         /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-role
@@ -40,12 +35,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Role
-        {
-            get;
-            set;
-        }
-
+        public dynamic Role { get; set; }
         /// <summary>
         /// HomeDirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectory
@@ -53,12 +43,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic HomeDirectory
-        {
-            get;
-            set;
-        }
-
+        public dynamic HomeDirectory { get; set; }
         /// <summary>
         /// HomeDirectoryType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorytype
@@ -66,12 +51,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic HomeDirectoryType
-        {
-            get;
-            set;
-        }
-
+        public dynamic HomeDirectoryType { get; set; }
         /// <summary>
         /// ServerId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-serverid
@@ -79,12 +59,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ServerId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ServerId { get; set; }
         /// <summary>
         /// UserName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-username
@@ -92,12 +67,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserName
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserName { get; set; }
         /// <summary>
         /// HomeDirectoryMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorymappings
@@ -106,12 +76,15 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: HomeDirectoryMapEntry
         /// </summary>
-        public List<HomeDirectoryMapEntry> HomeDirectoryMappings
-        {
-            get;
-            set;
-        }
-
+        public List<HomeDirectoryMapEntry> HomeDirectoryMappings { get; set; }
+        /// <summary>
+        /// PosixProfile
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-posixprofile
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PosixProfile
+        /// </summary>
+        public PosixProfile PosixProfile { get; set; }
         /// <summary>
         /// SshPublicKeys
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-sshpublickeys
@@ -120,12 +93,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: SshPublicKey
         /// </summary>
-        public List<dynamic> SshPublicKeys
-        {
-            get;
-            set;
-        }
-
+        public List<dynamic> SshPublicKeys { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-tags
@@ -134,11 +102,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace UserTypes
@@ -152,12 +116,7 @@ namespace Humidifier.Transfer
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Entry
-            {
-                get;
-                set;
-            }
-
+            public dynamic Entry { get; set; }
             /// <summary>
             /// Target
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html#cfn-transfer-user-homedirectorymapentry-target
@@ -165,11 +124,44 @@ namespace Humidifier.Transfer
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Target
-            {
-                get;
-                set;
-            }
+            public dynamic Target { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html#cfn-transfer-user-homedirectorymapentry-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class PosixProfile
+        {
+            /// <summary>
+            /// Uid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-uid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Uid { get; set; }
+            /// <summary>
+            /// SecondaryGids
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-secondarygids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Double
+            /// </summary>
+            public List<double> SecondaryGids { get; set; }
+            /// <summary>
+            /// Gid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-gid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Gid { get; set; }
         }
     }
 }

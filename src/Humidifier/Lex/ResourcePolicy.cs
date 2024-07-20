@@ -1,0 +1,38 @@
+namespace Humidifier.Lex
+{
+    using System.Collections.Generic;
+
+    public class ResourcePolicy : Humidifier.Resource
+    {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+            public static string RevisionId =  "RevisionId" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::Lex::ResourcePolicy";
+            }
+        }
+
+        /// <summary>
+        /// Policy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-policy
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic Policy { get; set; }
+        /// <summary>
+        /// ResourceArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-resourcearn
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResourceArn { get; set; }
+    }
+}

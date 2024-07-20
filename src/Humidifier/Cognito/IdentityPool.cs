@@ -5,8 +5,9 @@ namespace Humidifier.Cognito
 
     public class IdentityPool : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string Id =  "Id" ;
             public static string Name =  "Name" ;
         }
 
@@ -25,12 +26,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// Type: PushSync
         /// </summary>
-        public PushSync PushSync
-        {
-            get;
-            set;
-        }
-
+        public PushSync PushSync { get; set; }
         /// <summary>
         /// CognitoIdentityProviders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders
@@ -39,12 +35,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// ItemType: CognitoIdentityProvider
         /// </summary>
-        public List<CognitoIdentityProvider> CognitoIdentityProviders
-        {
-            get;
-            set;
-        }
-
+        public List<CognitoIdentityProvider> CognitoIdentityProviders { get; set; }
         /// <summary>
         /// CognitoEvents
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents
@@ -52,12 +43,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic CognitoEvents
-        {
-            get;
-            set;
-        }
-
+        public dynamic CognitoEvents { get; set; }
         /// <summary>
         /// DeveloperProviderName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-developerprovidername
@@ -65,12 +51,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DeveloperProviderName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DeveloperProviderName { get; set; }
         /// <summary>
         /// CognitoStreams
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams
@@ -78,12 +59,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// Type: CognitoStreams
         /// </summary>
-        public CognitoStreams CognitoStreams
-        {
-            get;
-            set;
-        }
-
+        public CognitoStreams CognitoStreams { get; set; }
         /// <summary>
         /// IdentityPoolName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-identitypoolname
@@ -91,25 +67,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IdentityPoolName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// AllowUnauthenticatedIdentities
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic AllowUnauthenticatedIdentities
-        {
-            get;
-            set;
-        }
-
+        public dynamic IdentityPoolName { get; set; }
         /// <summary>
         /// SupportedLoginProviders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-supportedloginproviders
@@ -117,12 +75,15 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic SupportedLoginProviders
-        {
-            get;
-            set;
-        }
-
+        public dynamic SupportedLoginProviders { get; set; }
+        /// <summary>
+        /// AllowUnauthenticatedIdentities
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic AllowUnauthenticatedIdentities { get; set; }
         /// <summary>
         /// SamlProviderARNs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns
@@ -131,12 +92,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SamlProviderARNs
-        {
-            get;
-            set;
-        }
-
+        public dynamic SamlProviderARNs { get; set; }
         /// <summary>
         /// OpenIdConnectProviderARNs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns
@@ -145,12 +101,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic OpenIdConnectProviderARNs
-        {
-            get;
-            set;
-        }
-
+        public dynamic OpenIdConnectProviderARNs { get; set; }
         /// <summary>
         /// AllowClassicFlow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowclassicflow
@@ -158,15 +109,39 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AllowClassicFlow
-        {
-            get;
-            set;
-        }
+        public dynamic AllowClassicFlow { get; set; }
     }
 
     namespace IdentityPoolTypes
     {
+        public class CognitoIdentityProvider
+        {
+            /// <summary>
+            /// ServerSideTokenCheck
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-serversidetokencheck
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ServerSideTokenCheck { get; set; }
+            /// <summary>
+            /// ProviderName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-providername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProviderName { get; set; }
+            /// <summary>
+            /// ClientId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-clientid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientId { get; set; }
+        }
+
         public class CognitoStreams
         {
             /// <summary>
@@ -176,12 +151,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic StreamingStatus
-            {
-                get;
-                set;
-            }
-
+            public dynamic StreamingStatus { get; set; }
             /// <summary>
             /// StreamName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamname
@@ -189,12 +159,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic StreamName
-            {
-                get;
-                set;
-            }
-
+            public dynamic StreamName { get; set; }
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-rolearn
@@ -202,11 +167,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RoleArn
-            {
-                get;
-                set;
-            }
+            public dynamic RoleArn { get; set; }
         }
 
         public class PushSync
@@ -219,12 +180,7 @@ namespace Humidifier.Cognito
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic ApplicationArns
-            {
-                get;
-                set;
-            }
-
+            public dynamic ApplicationArns { get; set; }
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-rolearn
@@ -232,53 +188,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RoleArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class CognitoIdentityProvider
-        {
-            /// <summary>
-            /// ServerSideTokenCheck
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-serversidetokencheck
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic ServerSideTokenCheck
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ProviderName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-providername
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ProviderName
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ClientId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-clientid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ClientId
-            {
-                get;
-                set;
-            }
+            public dynamic RoleArn { get; set; }
         }
     }
 }

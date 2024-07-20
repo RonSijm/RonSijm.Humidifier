@@ -19,12 +19,7 @@ namespace Humidifier.CodeDeploy
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApplicationName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApplicationName { get; set; }
         /// <summary>
         /// ComputePlatform
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
@@ -32,10 +27,15 @@ namespace Humidifier.CodeDeploy
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ComputePlatform
-        {
-            get;
-            set;
-        }
+        public dynamic ComputePlatform { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

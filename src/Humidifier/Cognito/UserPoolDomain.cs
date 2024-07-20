@@ -5,6 +5,11 @@ namespace Humidifier.Cognito
 
     public class UserPoolDomain : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string CloudFrontDistribution =  "CloudFrontDistribution" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserPoolId { get; set; }
         /// <summary>
         /// CustomDomainConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-customdomainconfig
@@ -33,12 +33,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// Type: CustomDomainConfigType
         /// </summary>
-        public CustomDomainConfigType CustomDomainConfig
-        {
-            get;
-            set;
-        }
-
+        public CustomDomainConfigType CustomDomainConfig { get; set; }
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-domain
@@ -46,11 +41,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Domain
-        {
-            get;
-            set;
-        }
+        public dynamic Domain { get; set; }
     }
 
     namespace UserPoolDomainTypes
@@ -64,11 +55,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CertificateArn
-            {
-                get;
-                set;
-            }
+            public dynamic CertificateArn { get; set; }
         }
     }
 }

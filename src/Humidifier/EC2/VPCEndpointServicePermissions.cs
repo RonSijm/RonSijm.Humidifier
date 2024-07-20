@@ -20,12 +20,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic AllowedPrincipals
-        {
-            get;
-            set;
-        }
-
+        public dynamic AllowedPrincipals { get; set; }
         /// <summary>
         /// ServiceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-serviceid
@@ -33,10 +28,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ServiceId
-        {
-            get;
-            set;
-        }
+        public dynamic ServiceId { get; set; }
     }
 }

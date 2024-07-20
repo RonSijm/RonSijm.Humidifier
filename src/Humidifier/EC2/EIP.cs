@@ -4,8 +4,9 @@ namespace Humidifier.EC2
 
     public class EIP : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string PublicIp =  "PublicIp" ;
             public static string AllocationId =  "AllocationId" ;
         }
 
@@ -18,56 +19,53 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// Domain
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain
+        /// InstanceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-instanceid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InstanceId { get; set; }
+        /// <summary>
+        /// PublicIpv4Pool
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-publicipv4pool
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PublicIpv4Pool { get; set; }
+        /// <summary>
+        /// TransferAddress
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-transferaddress
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Domain
-        {
-            get;
-            set;
-        }
-
+        public dynamic TransferAddress { get; set; }
         /// <summary>
-        /// InstanceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid
+        /// Domain
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-domain
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// PublicIpv4Pool
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-publicipv4pool
-        /// Required: False
-        /// UpdateType: Conditional
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic PublicIpv4Pool
-        {
-            get;
-            set;
-        }
-
+        public dynamic Domain { get; set; }
         /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// NetworkBorderGroup
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-networkbordergroup
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkBorderGroup { get; set; }
     }
 }

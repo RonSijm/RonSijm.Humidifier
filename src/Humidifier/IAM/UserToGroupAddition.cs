@@ -19,12 +19,7 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic GroupName { get; set; }
         /// <summary>
         /// Users
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html#cfn-iam-addusertogroup-users
@@ -33,10 +28,6 @@ namespace Humidifier.IAM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Users
-        {
-            get;
-            set;
-        }
+        public dynamic Users { get; set; }
     }
 }

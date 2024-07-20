@@ -5,7 +5,7 @@ namespace Humidifier.Greengrass
 
     public class Group : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string RoleAttachedAt =  "RoleAttachedAt" ;
             public static string LatestVersionArn =  "LatestVersionArn" ;
@@ -30,12 +30,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// Type: GroupVersion
         /// </summary>
-        public GroupVersion InitialVersion
-        {
-            get;
-            set;
-        }
-
+        public GroupVersion InitialVersion { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-rolearn
@@ -43,12 +38,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-tags
@@ -56,12 +46,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-name
@@ -69,11 +54,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace GroupTypes
@@ -87,12 +68,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic LoggerDefinitionVersionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic LoggerDefinitionVersionArn { get; set; }
             /// <summary>
             /// DeviceDefinitionVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-devicedefinitionversionarn
@@ -100,12 +76,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeviceDefinitionVersionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeviceDefinitionVersionArn { get; set; }
             /// <summary>
             /// FunctionDefinitionVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-functiondefinitionversionarn
@@ -113,12 +84,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic FunctionDefinitionVersionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic FunctionDefinitionVersionArn { get; set; }
             /// <summary>
             /// CoreDefinitionVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-coredefinitionversionarn
@@ -126,12 +92,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CoreDefinitionVersionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic CoreDefinitionVersionArn { get; set; }
             /// <summary>
             /// ResourceDefinitionVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-resourcedefinitionversionarn
@@ -139,12 +100,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ResourceDefinitionVersionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic ResourceDefinitionVersionArn { get; set; }
             /// <summary>
             /// ConnectorDefinitionVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-connectordefinitionversionarn
@@ -152,12 +108,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConnectorDefinitionVersionArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConnectorDefinitionVersionArn { get; set; }
             /// <summary>
             /// SubscriptionDefinitionVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-group-groupversion.html#cfn-greengrass-group-groupversion-subscriptiondefinitionversionarn
@@ -165,11 +116,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SubscriptionDefinitionVersionArn
-            {
-                get;
-                set;
-            }
+            public dynamic SubscriptionDefinitionVersionArn { get; set; }
         }
     }
 }

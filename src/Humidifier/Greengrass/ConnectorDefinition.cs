@@ -5,7 +5,7 @@ namespace Humidifier.Greengrass
 
     public class ConnectorDefinition : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string LatestVersionArn =  "LatestVersionArn" ;
             public static string Id =  "Id" ;
@@ -28,12 +28,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// Type: ConnectorDefinitionVersion
         /// </summary>
-        public ConnectorDefinitionVersion InitialVersion
-        {
-            get;
-            set;
-        }
-
+        public ConnectorDefinitionVersion InitialVersion { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-tags
@@ -41,12 +36,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-name
@@ -54,15 +44,39 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ConnectorDefinitionTypes
     {
+        public class Connector
+        {
+            /// <summary>
+            /// ConnectorArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-connectorarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectorArn { get; set; }
+            /// <summary>
+            /// Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-parameters
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Parameters { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-id
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
         public class ConnectorDefinitionVersion
         {
             /// <summary>
@@ -73,53 +87,7 @@ namespace Humidifier.Greengrass
             /// Type: List
             /// ItemType: Connector
             /// </summary>
-            public List<Connector> Connectors
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Connector
-        {
-            /// <summary>
-            /// ConnectorArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-connectorarn
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ConnectorArn
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Parameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-parameters
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic Parameters
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-id
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
+            public List<Connector> Connectors { get; set; }
         }
     }
 }

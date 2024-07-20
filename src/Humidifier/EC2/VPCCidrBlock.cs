@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class VPCCidrBlock : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,31 +18,21 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// AmazonProvidedIpv6CidrBlock
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
+        /// Ipv6NetmaskLength
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6netmasklength
         /// Required: False
         /// UpdateType: Immutable
-        /// PrimitiveType: Boolean
+        /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AmazonProvidedIpv6CidrBlock
-        {
-            get;
-            set;
-        }
-
+        public dynamic Ipv6NetmaskLength { get; set; }
         /// <summary>
-        /// CidrBlock
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
+        /// Ipv6IpamPoolId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6ipampoolid
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CidrBlock
-        {
-            get;
-            set;
-        }
-
+        public dynamic Ipv6IpamPoolId { get; set; }
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
@@ -45,10 +40,54 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpcId
-        {
-            get;
-            set;
-        }
+        public dynamic VpcId { get; set; }
+        /// <summary>
+        /// Ipv4NetmaskLength
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4netmasklength
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic Ipv4NetmaskLength { get; set; }
+        /// <summary>
+        /// CidrBlock
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CidrBlock { get; set; }
+        /// <summary>
+        /// Ipv6Pool
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6pool
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Ipv6Pool { get; set; }
+        /// <summary>
+        /// Ipv4IpamPoolId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4ipampoolid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Ipv4IpamPoolId { get; set; }
+        /// <summary>
+        /// Ipv6CidrBlock
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6cidrblock
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Ipv6CidrBlock { get; set; }
+        /// <summary>
+        /// AmazonProvidedIpv6CidrBlock
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic AmazonProvidedIpv6CidrBlock { get; set; }
     }
 }

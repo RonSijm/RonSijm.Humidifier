@@ -5,6 +5,11 @@ namespace Humidifier.GameLift
 
     public class Alias : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string AliasId =  "AliasId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,25 +25,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Name
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// RoutingStrategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy
@@ -46,11 +33,15 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// Type: RoutingStrategy
         /// </summary>
-        public RoutingStrategy RoutingStrategy
-        {
-            get;
-            set;
-        }
+        public RoutingStrategy RoutingStrategy { get; set; }
+        /// <summary>
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Name { get; set; }
     }
 
     namespace AliasTypes
@@ -58,18 +49,13 @@ namespace Humidifier.GameLift
         public class RoutingStrategy
         {
             /// <summary>
-            /// FleetId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-fleetid
-            /// Required: False
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-type
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic FleetId
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Message
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-message
@@ -77,24 +63,15 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Message
-            {
-                get;
-                set;
-            }
-
+            public dynamic Message { get; set; }
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-type
-            /// Required: True
+            /// FleetId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-fleetid
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic FleetId { get; set; }
         }
     }
 }

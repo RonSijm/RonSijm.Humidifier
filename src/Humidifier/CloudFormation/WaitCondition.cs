@@ -4,7 +4,7 @@ namespace Humidifier.CloudFormation
 
     public class WaitCondition : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Data =  "Data" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Count
-        {
-            get;
-            set;
-        }
-
+        public dynamic Count { get; set; }
         /// <summary>
         /// Handle
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-handle
@@ -37,12 +32,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Handle
-        {
-            get;
-            set;
-        }
-
+        public dynamic Handle { get; set; }
         /// <summary>
         /// Timeout
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-timeout
@@ -50,10 +40,6 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Timeout
-        {
-            get;
-            set;
-        }
+        public dynamic Timeout { get; set; }
     }
 }

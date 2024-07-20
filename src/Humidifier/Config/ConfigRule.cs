@@ -5,10 +5,10 @@ namespace Humidifier.Config
 
     public class ConfigRule : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
-            public static string Arn =  "Arn" ;
             public static string ConfigRuleId =  "ConfigRuleId" ;
+            public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName
@@ -20,18 +20,14 @@ namespace Humidifier.Config
         }
 
         /// <summary>
-        /// ConfigRuleName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-configrulename
+        /// EvaluationModes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-evaluationmodes
         /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: EvaluationModeConfiguration
         /// </summary>
-        public dynamic ConfigRuleName
-        {
-            get;
-            set;
-        }
-
+        public List<EvaluationModeConfiguration> EvaluationModes { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-description
@@ -39,38 +35,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// InputParameters
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-inputparameters
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic InputParameters
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// MaximumExecutionFrequency
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-maximumexecutionfrequency
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic MaximumExecutionFrequency
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-scope
@@ -78,12 +43,31 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// Type: Scope
         /// </summary>
-        public Scope Scope
-        {
-            get;
-            set;
-        }
-
+        public Scope Scope { get; set; }
+        /// <summary>
+        /// Compliance
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-compliance
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Compliance
+        /// </summary>
+        public Compliance Compliance { get; set; }
+        /// <summary>
+        /// ConfigRuleName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-configrulename
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConfigRuleName { get; set; }
+        /// <summary>
+        /// MaximumExecutionFrequency
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-maximumexecutionfrequency
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MaximumExecutionFrequency { get; set; }
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-source
@@ -91,15 +75,71 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// Type: Source
         /// </summary>
-        public Source Source
-        {
-            get;
-            set;
-        }
+        public Source Source { get; set; }
+        /// <summary>
+        /// InputParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-inputparameters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic InputParameters { get; set; }
     }
 
     namespace ConfigRuleTypes
     {
+        public class Compliance
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-compliance.html#cfn-config-configrule-compliance-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class CustomPolicyDetails
+        {
+            /// <summary>
+            /// EnableDebugLogDelivery
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-enabledebuglogdelivery
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableDebugLogDelivery { get; set; }
+            /// <summary>
+            /// PolicyText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policytext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyText { get; set; }
+            /// <summary>
+            /// PolicyRuntime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policyruntime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyRuntime { get; set; }
+        }
+
+        public class EvaluationModeConfiguration
+        {
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-evaluationmodeconfiguration.html#cfn-config-configrule-evaluationmodeconfiguration-mode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
+        }
+
         public class Scope
         {
             /// <summary>
@@ -109,12 +149,15 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ComplianceResourceId
-            {
-                get;
-                set;
-            }
-
+            public dynamic ComplianceResourceId { get; set; }
+            /// <summary>
+            /// TagKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagkey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TagKey { get; set; }
             /// <summary>
             /// ComplianceResourceTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-complianceresourcetypes
@@ -123,25 +166,7 @@ namespace Humidifier.Config
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic ComplianceResourceTypes
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// TagKey
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagkey
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TagKey
-            {
-                get;
-                set;
-            }
-
+            public dynamic ComplianceResourceTypes { get; set; }
             /// <summary>
             /// TagValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagvalue
@@ -149,11 +174,7 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TagValue
-            {
-                get;
-                set;
-            }
+            public dynamic TagValue { get; set; }
         }
 
         public class Source
@@ -165,12 +186,23 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Owner
-            {
-                get;
-                set;
-            }
-
+            public dynamic Owner { get; set; }
+            /// <summary>
+            /// CustomPolicyDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-custompolicydetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomPolicyDetails
+            /// </summary>
+            public CustomPolicyDetails CustomPolicyDetails { get; set; }
+            /// <summary>
+            /// SourceIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceIdentifier { get; set; }
             /// <summary>
             /// SourceDetails
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails
@@ -179,66 +211,35 @@ namespace Humidifier.Config
             /// Type: List
             /// ItemType: SourceDetail
             /// </summary>
-            public List<SourceDetail> SourceDetails
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SourceIdentifier
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SourceIdentifier
-            {
-                get;
-                set;
-            }
+            public List<SourceDetail> SourceDetails { get; set; }
         }
 
         public class SourceDetail
         {
             /// <summary>
             /// EventSource
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-eventsource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-sourcedetail.html#cfn-config-configrule-sourcedetail-eventsource
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EventSource
-            {
-                get;
-                set;
-            }
-
+            public dynamic EventSource { get; set; }
             /// <summary>
             /// MaximumExecutionFrequency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-sourcedetail.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MaximumExecutionFrequency
-            {
-                get;
-                set;
-            }
-
+            public dynamic MaximumExecutionFrequency { get; set; }
             /// <summary>
             /// MessageType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-messagetype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-sourcedetail.html#cfn-config-configrule-sourcedetail-messagetype
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MessageType
-            {
-                get;
-                set;
-            }
+            public dynamic MessageType { get; set; }
         }
     }
 }

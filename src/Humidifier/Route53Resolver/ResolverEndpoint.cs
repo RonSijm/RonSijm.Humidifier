@@ -5,10 +5,13 @@ namespace Humidifier.Route53Resolver
 
     public class ResolverEndpoint : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ResolverEndpointId =  "ResolverEndpointId" ;
             public static string IpAddressCount =  "IpAddressCount" ;
+            public static string OutpostArn =  "OutpostArn" ;
+            public static string PreferredInstanceType =  "PreferredInstanceType" ;
+            public static string ResolverEndpointType =  "ResolverEndpointType" ;
             public static string Arn =  "Arn" ;
             public static string Direction =  "Direction" ;
             public static string HostVPCId =  "HostVPCId" ;
@@ -31,12 +34,40 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// ItemType: IpAddressRequest
         /// </summary>
-        public List<IpAddressRequest> IpAddresses
-        {
-            get;
-            set;
-        }
-
+        public List<IpAddressRequest> IpAddresses { get; set; }
+        /// <summary>
+        /// Protocols
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-protocols
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic Protocols { get; set; }
+        /// <summary>
+        /// OutpostArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-outpostarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OutpostArn { get; set; }
+        /// <summary>
+        /// PreferredInstanceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-preferredinstancetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PreferredInstanceType { get; set; }
+        /// <summary>
+        /// ResolverEndpointType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-resolverendpointtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResolverEndpointType { get; set; }
         /// <summary>
         /// Direction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction
@@ -44,12 +75,7 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Direction
-        {
-            get;
-            set;
-        }
-
+        public dynamic Direction { get; set; }
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids
@@ -58,12 +84,7 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SecurityGroupIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecurityGroupIds { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags
@@ -72,12 +93,7 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name
@@ -85,11 +101,7 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ResolverEndpointTypes
@@ -97,18 +109,21 @@ namespace Humidifier.Route53Resolver
         public class IpAddressRequest
         {
             /// <summary>
+            /// Ipv6
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ipv6
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv6 { get; set; }
+            /// <summary>
             /// Ip
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ip
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Ip
-            {
-                get;
-                set;
-            }
-
+            public dynamic Ip { get; set; }
             /// <summary>
             /// SubnetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-subnetid
@@ -116,11 +131,7 @@ namespace Humidifier.Route53Resolver
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SubnetId
-            {
-                get;
-                set;
-            }
+            public dynamic SubnetId { get; set; }
         }
     }
 }

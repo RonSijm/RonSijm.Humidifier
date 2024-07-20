@@ -5,7 +5,7 @@ namespace Humidifier.PinpointEmail
 
     public class Identity : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string IdentityDNSRecordName3 =  "IdentityDNSRecordName3" ;
             public static string IdentityDNSRecordName1 =  "IdentityDNSRecordName1" ;
@@ -30,12 +30,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic FeedbackForwardingEnabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic FeedbackForwardingEnabled { get; set; }
         /// <summary>
         /// DkimSigningEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-dkimsigningenabled
@@ -43,12 +38,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic DkimSigningEnabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic DkimSigningEnabled { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-tags
@@ -57,12 +47,7 @@ namespace Humidifier.PinpointEmail
         /// Type: List
         /// ItemType: Tags
         /// </summary>
-        public List<Tags> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tags> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-name
@@ -70,12 +55,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// MailFromAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-mailfromattributes
@@ -83,44 +63,11 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// Type: MailFromAttributes
         /// </summary>
-        public MailFromAttributes MailFromAttributes
-        {
-            get;
-            set;
-        }
+        public MailFromAttributes MailFromAttributes { get; set; }
     }
 
     namespace IdentityTypes
     {
-        public class Tags
-        {
-            /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html#cfn-pinpointemail-identity-tags-value
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html#cfn-pinpointemail-identity-tags-key
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
-        }
-
         public class MailFromAttributes
         {
             /// <summary>
@@ -130,12 +77,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MailFromDomain
-            {
-                get;
-                set;
-            }
-
+            public dynamic MailFromDomain { get; set; }
             /// <summary>
             /// BehaviorOnMxFailure
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-mailfromattributes.html#cfn-pinpointemail-identity-mailfromattributes-behavioronmxfailure
@@ -143,11 +85,27 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BehaviorOnMxFailure
-            {
-                get;
-                set;
-            }
+            public dynamic BehaviorOnMxFailure { get; set; }
+        }
+
+        public class Tags
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html#cfn-pinpointemail-identity-tags-value
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html#cfn-pinpointemail-identity-tags-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
     }
 }

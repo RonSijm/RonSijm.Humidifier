@@ -5,10 +5,11 @@ namespace Humidifier.EventSchemas
 
     public class Discoverer : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string DiscovererArn =  "DiscovererArn" ;
             public static string DiscovererId =  "DiscovererId" ;
+            public static string State =  "State" ;
         }
 
         public override string AWSTypeName
@@ -20,18 +21,21 @@ namespace Humidifier.EventSchemas
         }
 
         /// <summary>
+        /// CrossAccount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-crossaccount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic CrossAccount { get; set; }
+        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-sourcearn
@@ -39,12 +43,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SourceArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic SourceArn { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-tags
@@ -53,11 +52,7 @@ namespace Humidifier.EventSchemas
         /// Type: List
         /// ItemType: TagsEntry
         /// </summary>
-        public List<TagsEntry> Tags
-        {
-            get;
-            set;
-        }
+        public List<TagsEntry> Tags { get; set; }
     }
 
     namespace DiscovererTypes
@@ -71,12 +66,7 @@ namespace Humidifier.EventSchemas
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html#cfn-eventschemas-discoverer-tagsentry-key
@@ -84,11 +74,7 @@ namespace Humidifier.EventSchemas
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

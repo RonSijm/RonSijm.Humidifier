@@ -4,8 +4,9 @@ namespace Humidifier.IoT
 
     public class Policy : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -18,29 +19,29 @@ namespace Humidifier.IoT
         }
 
         /// <summary>
-        /// PolicyDocument
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic PolicyDocument
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// PolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policyname
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PolicyName
-        {
-            get;
-            set;
-        }
+        public dynamic PolicyName { get; set; }
+        /// <summary>
+        /// PolicyDocument
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic PolicyDocument { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

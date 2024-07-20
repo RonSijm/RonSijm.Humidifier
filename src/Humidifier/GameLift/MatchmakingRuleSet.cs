@@ -4,8 +4,9 @@ namespace Humidifier.GameLift
 
     public class MatchmakingRuleSet : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string CreationTime =  "CreationTime" ;
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
         }
@@ -25,12 +26,16 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleSetBody
-        {
-            get;
-            set;
-        }
-
+        public dynamic RuleSetBody { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html#cfn-gamelift-matchmakingruleset-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingruleset.html#cfn-gamelift-matchmakingruleset-name
@@ -38,10 +43,6 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

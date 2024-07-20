@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class VPNGateway : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string VPNGatewayId =  "VPNGatewayId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,43 +18,29 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-type
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Type { get; set; }
+        /// <summary>
         /// AmazonSideAsn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-amazonsideasn
         /// Required: False
         /// UpdateType: Immutable
-        /// PrimitiveType: Long
+        /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AmazonSideAsn
-        {
-            get;
-            set;
-        }
-
+        public dynamic AmazonSideAsn { get; set; }
         /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Type
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

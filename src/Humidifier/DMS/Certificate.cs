@@ -19,12 +19,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CertificateIdentifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic CertificateIdentifier { get; set; }
         /// <summary>
         /// CertificatePem
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatepem
@@ -32,12 +27,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CertificatePem
-        {
-            get;
-            set;
-        }
-
+        public dynamic CertificatePem { get; set; }
         /// <summary>
         /// CertificateWallet
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificatewallet
@@ -45,10 +35,6 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CertificateWallet
-        {
-            get;
-            set;
-        }
+        public dynamic CertificateWallet { get; set; }
     }
 }

@@ -21,12 +21,7 @@ namespace Humidifier.OpsWorks
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        public Dictionary<string, dynamic> Attributes_
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> Attributes_ { get; set; }
         /// <summary>
         /// AutoAssignElasticIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips
@@ -34,12 +29,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AutoAssignElasticIps
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoAssignElasticIps { get; set; }
         /// <summary>
         /// AutoAssignPublicIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips
@@ -47,12 +37,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AutoAssignPublicIps
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoAssignPublicIps { get; set; }
         /// <summary>
         /// CustomInstanceProfileArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-custominstanceprofilearn
@@ -60,12 +45,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CustomInstanceProfileArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic CustomInstanceProfileArn { get; set; }
         /// <summary>
         /// CustomJson
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson
@@ -73,12 +53,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic CustomJson
-        {
-            get;
-            set;
-        }
-
+        public dynamic CustomJson { get; set; }
         /// <summary>
         /// CustomRecipes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes
@@ -86,12 +61,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// Type: Recipes
         /// </summary>
-        public Recipes CustomRecipes
-        {
-            get;
-            set;
-        }
-
+        public Recipes CustomRecipes { get; set; }
         /// <summary>
         /// CustomSecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customsecuritygroupids
@@ -100,12 +70,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic CustomSecurityGroupIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic CustomSecurityGroupIds { get; set; }
         /// <summary>
         /// EnableAutoHealing
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing
@@ -113,12 +78,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EnableAutoHealing
-        {
-            get;
-            set;
-        }
-
+        public dynamic EnableAutoHealing { get; set; }
         /// <summary>
         /// InstallUpdatesOnBoot
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot
@@ -126,12 +86,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic InstallUpdatesOnBoot
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstallUpdatesOnBoot { get; set; }
         /// <summary>
         /// LifecycleEventConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration
@@ -139,12 +94,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// Type: LifecycleEventConfiguration
         /// </summary>
-        public LifecycleEventConfiguration LifecycleEventConfiguration
-        {
-            get;
-            set;
-        }
-
+        public LifecycleEventConfiguration LifecycleEventConfiguration { get; set; }
         /// <summary>
         /// LoadBasedAutoScaling
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling
@@ -152,12 +102,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// Type: LoadBasedAutoScaling
         /// </summary>
-        public LoadBasedAutoScaling LoadBasedAutoScaling
-        {
-            get;
-            set;
-        }
-
+        public LoadBasedAutoScaling LoadBasedAutoScaling { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-name
@@ -165,12 +110,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// Packages
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-packages
@@ -179,12 +119,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Packages
-        {
-            get;
-            set;
-        }
-
+        public dynamic Packages { get; set; }
         /// <summary>
         /// Shortname
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
@@ -192,12 +127,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Shortname
-        {
-            get;
-            set;
-        }
-
+        public dynamic Shortname { get; set; }
         /// <summary>
         /// StackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
@@ -205,12 +135,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StackId
-        {
-            get;
-            set;
-        }
-
+        public dynamic StackId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-tags
@@ -219,12 +144,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
@@ -232,12 +152,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
-
+        public dynamic Type { get; set; }
         /// <summary>
         /// UseEbsOptimizedInstances
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances
@@ -245,12 +160,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic UseEbsOptimizedInstances
-        {
-            get;
-            set;
-        }
-
+        public dynamic UseEbsOptimizedInstances { get; set; }
         /// <summary>
         /// VolumeConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations
@@ -259,136 +169,61 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: VolumeConfiguration
         /// </summary>
-        public List<VolumeConfiguration> VolumeConfigurations
-        {
-            get;
-            set;
-        }
+        public List<VolumeConfiguration> VolumeConfigurations { get; set; }
     }
 
     namespace LayerTypes
     {
-        public class ShutdownEventConfiguration
+        public class AutoScalingThresholds
         {
             /// <summary>
-            /// DelayUntilElbConnectionsDrained
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-delayuntilelbconnectionsdrained
+            /// CpuThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-cputhreshold
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// PrimitiveType: Double
             /// </summary>
-            public dynamic DelayUntilElbConnectionsDrained
-            {
-                get;
-                set;
-            }
-
+            public dynamic CpuThreshold { get; set; }
             /// <summary>
-            /// ExecutionTimeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout
+            /// IgnoreMetricsTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-ignoremetricstime
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic ExecutionTimeout
-            {
-                get;
-                set;
-            }
-        }
-
-        public class VolumeConfiguration
-        {
+            public dynamic IgnoreMetricsTime { get; set; }
             /// <summary>
-            /// Encrypted
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volumeconfiguration-encrypted
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Encrypted
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Iops
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-iops
+            /// InstanceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-instancecount
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Iops
-            {
-                get;
-                set;
-            }
-
+            public dynamic InstanceCount { get; set; }
             /// <summary>
-            /// MountPoint
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-mountpoint
+            /// LoadThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-loadthreshold
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Double
             /// </summary>
-            public dynamic MountPoint
-            {
-                get;
-                set;
-            }
-
+            public dynamic LoadThreshold { get; set; }
             /// <summary>
-            /// NumberOfDisks
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-numberofdisks
+            /// MemoryThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-memorythreshold
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Double
             /// </summary>
-            public dynamic NumberOfDisks
-            {
-                get;
-                set;
-            }
-
+            public dynamic MemoryThreshold { get; set; }
             /// <summary>
-            /// RaidLevel
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-raidlevel
+            /// ThresholdsWaitTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-thresholdwaittime
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic RaidLevel
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Size
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-size
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Size
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// VolumeType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-volumetype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic VolumeType
-            {
-                get;
-                set;
-            }
+            public dynamic ThresholdsWaitTime { get; set; }
         }
 
         public class LifecycleEventConfiguration
@@ -400,11 +235,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// Type: ShutdownEventConfiguration
             /// </summary>
-            public ShutdownEventConfiguration ShutdownEventConfiguration
-            {
-                get;
-                set;
-            }
+            public ShutdownEventConfiguration ShutdownEventConfiguration { get; set; }
         }
 
         public class LoadBasedAutoScaling
@@ -416,12 +247,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// Type: AutoScalingThresholds
             /// </summary>
-            public AutoScalingThresholds DownScaling
-            {
-                get;
-                set;
-            }
-
+            public AutoScalingThresholds DownScaling { get; set; }
             /// <summary>
             /// Enable
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-enable
@@ -429,12 +255,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Enable
-            {
-                get;
-                set;
-            }
-
+            public dynamic Enable { get; set; }
             /// <summary>
             /// UpScaling
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-upscaling
@@ -442,92 +263,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// Type: AutoScalingThresholds
             /// </summary>
-            public AutoScalingThresholds UpScaling
-            {
-                get;
-                set;
-            }
-        }
-
-        public class AutoScalingThresholds
-        {
-            /// <summary>
-            /// CpuThreshold
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-cputhreshold
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic CpuThreshold
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// IgnoreMetricsTime
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-ignoremetricstime
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic IgnoreMetricsTime
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// InstanceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-instancecount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic InstanceCount
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// LoadThreshold
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-loadthreshold
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic LoadThreshold
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// MemoryThreshold
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-memorythreshold
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic MemoryThreshold
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ThresholdsWaitTime
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-thresholdwaittime
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ThresholdsWaitTime
-            {
-                get;
-                set;
-            }
+            public AutoScalingThresholds UpScaling { get; set; }
         }
 
         public class Recipes
@@ -540,12 +276,7 @@ namespace Humidifier.OpsWorks
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Configure
-            {
-                get;
-                set;
-            }
-
+            public dynamic Configure { get; set; }
             /// <summary>
             /// Deploy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-deploy
@@ -554,12 +285,7 @@ namespace Humidifier.OpsWorks
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Deploy
-            {
-                get;
-                set;
-            }
-
+            public dynamic Deploy { get; set; }
             /// <summary>
             /// Setup
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-setup
@@ -568,12 +294,7 @@ namespace Humidifier.OpsWorks
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Setup
-            {
-                get;
-                set;
-            }
-
+            public dynamic Setup { get; set; }
             /// <summary>
             /// Shutdown
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-shutdown
@@ -582,12 +303,7 @@ namespace Humidifier.OpsWorks
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Shutdown
-            {
-                get;
-                set;
-            }
-
+            public dynamic Shutdown { get; set; }
             /// <summary>
             /// Undeploy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-undeploy
@@ -596,11 +312,87 @@ namespace Humidifier.OpsWorks
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Undeploy
-            {
-                get;
-                set;
-            }
+            public dynamic Undeploy { get; set; }
+        }
+
+        public class ShutdownEventConfiguration
+        {
+            /// <summary>
+            /// DelayUntilElbConnectionsDrained
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-delayuntilelbconnectionsdrained
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DelayUntilElbConnectionsDrained { get; set; }
+            /// <summary>
+            /// ExecutionTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ExecutionTimeout { get; set; }
+        }
+
+        public class VolumeConfiguration
+        {
+            /// <summary>
+            /// Encrypted
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volumeconfiguration-encrypted
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Encrypted { get; set; }
+            /// <summary>
+            /// Iops
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-iops
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Iops { get; set; }
+            /// <summary>
+            /// MountPoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-mountpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MountPoint { get; set; }
+            /// <summary>
+            /// NumberOfDisks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-numberofdisks
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic NumberOfDisks { get; set; }
+            /// <summary>
+            /// RaidLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-raidlevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RaidLevel { get; set; }
+            /// <summary>
+            /// Size
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-size
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Size { get; set; }
+            /// <summary>
+            /// VolumeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-volumetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VolumeType { get; set; }
         }
     }
 }

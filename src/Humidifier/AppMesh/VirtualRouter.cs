@@ -5,7 +5,7 @@ namespace Humidifier.AppMesh
 
     public class VirtualRouter : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Uid =  "Uid" ;
             public static string MeshName =  "MeshName" ;
@@ -30,25 +30,15 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MeshName
-        {
-            get;
-            set;
-        }
-
+        public dynamic MeshName { get; set; }
         /// <summary>
         /// VirtualRouterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VirtualRouterName
-        {
-            get;
-            set;
-        }
-
+        public dynamic VirtualRouterName { get; set; }
         /// <summary>
         /// MeshOwner
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner
@@ -56,12 +46,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MeshOwner
-        {
-            get;
-            set;
-        }
-
+        public dynamic MeshOwner { get; set; }
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec
@@ -69,12 +54,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: VirtualRouterSpec
         /// </summary>
-        public VirtualRouterSpec Spec
-        {
-            get;
-            set;
-        }
-
+        public VirtualRouterSpec Spec { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags
@@ -83,11 +63,7 @@ namespace Humidifier.AppMesh
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace VirtualRouterTypes
@@ -101,12 +77,7 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Port
-            {
-                get;
-                set;
-            }
-
+            public dynamic Port { get; set; }
             /// <summary>
             /// Protocol
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-protocol
@@ -114,11 +85,7 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Protocol
-            {
-                get;
-                set;
-            }
+            public dynamic Protocol { get; set; }
         }
 
         public class VirtualRouterListener
@@ -130,11 +97,7 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// Type: PortMapping
             /// </summary>
-            public PortMapping PortMapping
-            {
-                get;
-                set;
-            }
+            public PortMapping PortMapping { get; set; }
         }
 
         public class VirtualRouterSpec
@@ -147,11 +110,7 @@ namespace Humidifier.AppMesh
             /// Type: List
             /// ItemType: VirtualRouterListener
             /// </summary>
-            public List<VirtualRouterListener> Listeners
-            {
-                get;
-                set;
-            }
+            public List<VirtualRouterListener> Listeners { get; set; }
         }
     }
 }

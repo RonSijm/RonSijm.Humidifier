@@ -4,6 +4,11 @@ namespace Humidifier.ApiGateway
 
     public class RequestValidator : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string RequestValidatorId =  "RequestValidatorId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,18 +18,13 @@ namespace Humidifier.ApiGateway
         }
 
         /// <summary>
-        /// Name
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
+        /// ValidateRequestParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
         /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic ValidateRequestParameters { get; set; }
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
@@ -32,12 +32,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RestApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic RestApiId { get; set; }
         /// <summary>
         /// ValidateRequestBody
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestbody
@@ -45,23 +40,14 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic ValidateRequestBody
-        {
-            get;
-            set;
-        }
-
+        public dynamic ValidateRequestBody { get; set; }
         /// <summary>
-        /// ValidateRequestParameters
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-name
         /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
         /// </summary>
-        public dynamic ValidateRequestParameters
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

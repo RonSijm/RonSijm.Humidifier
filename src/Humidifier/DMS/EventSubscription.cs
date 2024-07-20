@@ -19,12 +19,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SourceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic SourceType { get; set; }
         /// <summary>
         /// EventCategories
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-eventcategories
@@ -33,12 +28,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic EventCategories
-        {
-            get;
-            set;
-        }
-
+        public dynamic EventCategories { get; set; }
         /// <summary>
         /// Enabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-enabled
@@ -46,12 +36,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Enabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic Enabled { get; set; }
         /// <summary>
         /// SubscriptionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-subscriptionname
@@ -59,12 +44,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubscriptionName
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubscriptionName { get; set; }
         /// <summary>
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-snstopicarn
@@ -72,12 +52,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SnsTopicArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic SnsTopicArn { get; set; }
         /// <summary>
         /// SourceIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-sourceids
@@ -86,24 +61,15 @@ namespace Humidifier.DMS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SourceIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SourceIds { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

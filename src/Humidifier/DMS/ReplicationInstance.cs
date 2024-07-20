@@ -4,7 +4,7 @@ namespace Humidifier.DMS
 
     public class ReplicationInstance : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ReplicationInstancePublicIpAddresses =  "ReplicationInstancePublicIpAddresses" ;
             public static string ReplicationInstancePrivateIpAddresses =  "ReplicationInstancePrivateIpAddresses" ;
@@ -25,12 +25,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ReplicationInstanceIdentifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic ReplicationInstanceIdentifier { get; set; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-engineversion
@@ -38,12 +33,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EngineVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic EngineVersion { get; set; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-kmskeyid
@@ -51,25 +41,15 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic KmsKeyId
-        {
-            get;
-            set;
-        }
-
+        public dynamic KmsKeyId { get; set; }
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-availabilityzone
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AvailabilityZone
-        {
-            get;
-            set;
-        }
-
+        public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// PreferredMaintenanceWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-preferredmaintenancewindow
@@ -77,12 +57,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PreferredMaintenanceWindow
-        {
-            get;
-            set;
-        }
-
+        public dynamic PreferredMaintenanceWindow { get; set; }
         /// <summary>
         /// AutoMinorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-autominorversionupgrade
@@ -90,12 +65,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AutoMinorVersionUpgrade
-        {
-            get;
-            set;
-        }
-
+        public dynamic AutoMinorVersionUpgrade { get; set; }
         /// <summary>
         /// ReplicationSubnetGroupIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationsubnetgroupidentifier
@@ -103,12 +73,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ReplicationSubnetGroupIdentifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic ReplicationSubnetGroupIdentifier { get; set; }
         /// <summary>
         /// AllocatedStorage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allocatedstorage
@@ -116,12 +81,15 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic AllocatedStorage
-        {
-            get;
-            set;
-        }
-
+        public dynamic AllocatedStorage { get; set; }
+        /// <summary>
+        /// ResourceIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-resourceidentifier
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResourceIdentifier { get; set; }
         /// <summary>
         /// VpcSecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-vpcsecuritygroupids
@@ -130,12 +98,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic VpcSecurityGroupIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic VpcSecurityGroupIds { get; set; }
         /// <summary>
         /// AllowMajorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade
@@ -143,12 +106,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AllowMajorVersionUpgrade
-        {
-            get;
-            set;
-        }
-
+        public dynamic AllowMajorVersionUpgrade { get; set; }
         /// <summary>
         /// ReplicationInstanceClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass
@@ -156,12 +114,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ReplicationInstanceClass
-        {
-            get;
-            set;
-        }
-
+        public dynamic ReplicationInstanceClass { get; set; }
         /// <summary>
         /// PubliclyAccessible
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-publiclyaccessible
@@ -169,12 +122,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic PubliclyAccessible
-        {
-            get;
-            set;
-        }
-
+        public dynamic PubliclyAccessible { get; set; }
         /// <summary>
         /// MultiAZ
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-multiaz
@@ -182,24 +130,15 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic MultiAZ
-        {
-            get;
-            set;
-        }
-
+        public dynamic MultiAZ { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

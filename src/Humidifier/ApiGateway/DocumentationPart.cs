@@ -5,6 +5,11 @@ namespace Humidifier.ApiGateway
 
     public class DocumentationPart : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string DocumentationPartId =  "DocumentationPartId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,18 +19,13 @@ namespace Humidifier.ApiGateway
         }
 
         /// <summary>
-        /// Location
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location
+        /// RestApiId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid
         /// Required: True
         /// UpdateType: Immutable
-        /// Type: Location
+        /// PrimitiveType: String
         /// </summary>
-        public Location Location
-        {
-            get;
-            set;
-        }
-
+        public dynamic RestApiId { get; set; }
         /// <summary>
         /// Properties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-properties
@@ -33,24 +33,15 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Properties
-        {
-            get;
-            set;
-        }
-
+        public dynamic Properties { get; set; }
         /// <summary>
-        /// RestApiId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-restapiid
+        /// Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location
         /// Required: True
         /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// Type: Location
         /// </summary>
-        public dynamic RestApiId
-        {
-            get;
-            set;
-        }
+        public Location Location { get; set; }
     }
 
     namespace DocumentationPartTypes
@@ -58,57 +49,13 @@ namespace Humidifier.ApiGateway
         public class Location
         {
             /// <summary>
-            /// Method
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-method
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Method
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-name
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// Path
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-path
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Path
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// StatusCode
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-statuscode
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic StatusCode
-            {
-                get;
-                set;
-            }
-
+            public dynamic Path { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-type
@@ -116,11 +63,31 @@ namespace Humidifier.ApiGateway
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Method
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-method
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Method { get; set; }
+            /// <summary>
+            /// StatusCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-statuscode
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StatusCode { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-name
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
     }
 }

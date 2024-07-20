@@ -19,12 +19,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ElasticLoadBalancerName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ElasticLoadBalancerName { get; set; }
         /// <summary>
         /// LayerId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-layerid
@@ -32,10 +27,6 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LayerId
-        {
-            get;
-            set;
-        }
+        public dynamic LayerId { get; set; }
     }
 }

@@ -19,12 +19,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic SendEmailNotification
-        {
-            get;
-            set;
-        }
-
+        public dynamic SendEmailNotification { get; set; }
         /// <summary>
         /// UserName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-username
@@ -32,12 +27,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserName
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserName { get; set; }
         /// <summary>
         /// StackName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-stackname
@@ -45,12 +35,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StackName
-        {
-            get;
-            set;
-        }
-
+        public dynamic StackName { get; set; }
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-authenticationtype
@@ -58,10 +43,6 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthenticationType
-        {
-            get;
-            set;
-        }
+        public dynamic AuthenticationType { get; set; }
     }
 }

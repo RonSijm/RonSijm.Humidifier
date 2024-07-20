@@ -20,12 +20,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PoolName
-        {
-            get;
-            set;
-        }
-
+        public dynamic PoolName { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html#cfn-pinpointemail-dedicatedippool-tags
@@ -34,11 +29,7 @@ namespace Humidifier.PinpointEmail
         /// Type: List
         /// ItemType: Tags
         /// </summary>
-        public List<Tags> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tags> Tags { get; set; }
     }
 
     namespace DedicatedIpPoolTypes
@@ -52,12 +43,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-dedicatedippool-tags.html#cfn-pinpointemail-dedicatedippool-tags-key
@@ -65,11 +51,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

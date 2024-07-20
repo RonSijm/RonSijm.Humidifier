@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class PlacementGroup : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string GroupName =  "GroupName" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,16 +18,37 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
+        /// SpreadLevel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-spreadlevel
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SpreadLevel { get; set; }
+        /// <summary>
         /// Strategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Strategy
-        {
-            get;
-            set;
-        }
+        public dynamic Strategy { get; set; }
+        /// <summary>
+        /// PartitionCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-partitioncount
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic PartitionCount { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

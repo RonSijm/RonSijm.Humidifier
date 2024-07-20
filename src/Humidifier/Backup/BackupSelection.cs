@@ -5,9 +5,10 @@ namespace Humidifier.Backup
 
     public class BackupSelection : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string BackupPlanId =  "BackupPlanId" ;
+            public static string Id =  "Id" ;
             public static string SelectionId =  "SelectionId" ;
         }
 
@@ -26,12 +27,7 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// Type: BackupSelectionResourceType
         /// </summary>
-        public BackupSelectionResourceType BackupSelection_
-        {
-            get;
-            set;
-        }
-
+        public BackupSelectionResourceType BackupSelection_ { get; set; }
         /// <summary>
         /// BackupPlanId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupplanid
@@ -39,11 +35,7 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BackupPlanId
-        {
-            get;
-            set;
-        }
+        public dynamic BackupPlanId { get; set; }
     }
 
     namespace BackupSelectionTypes
@@ -54,55 +46,73 @@ namespace Humidifier.Backup
             /// ListOfTags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: ConditionResourceType
             /// </summary>
-            public List<ConditionResourceType> ListOfTags
-            {
-                get;
-                set;
-            }
-
+            public List<ConditionResourceType> ListOfTags { get; set; }
+            /// <summary>
+            /// NotResources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-notresources
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic NotResources { get; set; }
             /// <summary>
             /// SelectionName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SelectionName
-            {
-                get;
-                set;
-            }
-
+            public dynamic SelectionName { get; set; }
             /// <summary>
             /// IamRoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic IamRoleArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic IamRoleArn { get; set; }
             /// <summary>
             /// Resources
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Resources
-            {
-                get;
-                set;
-            }
+            public dynamic Resources { get; set; }
+            /// <summary>
+            /// Conditions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-conditions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: Conditions
+            /// </summary>
+            public Conditions Conditions { get; set; }
+        }
+
+        public class ConditionParameter
+        {
+            /// <summary>
+            /// ConditionValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionvalue
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConditionValue { get; set; }
+            /// <summary>
+            /// ConditionKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionkey
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConditionKey { get; set; }
         }
 
         public class ConditionResourceType
@@ -111,40 +121,66 @@ namespace Humidifier.Backup
             /// ConditionValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionvalue
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConditionValue
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConditionValue { get; set; }
             /// <summary>
             /// ConditionKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionkey
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConditionKey
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConditionKey { get; set; }
             /// <summary>
             /// ConditionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditiontype
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConditionType
-            {
-                get;
-                set;
-            }
+            public dynamic ConditionType { get; set; }
+        }
+
+        public class Conditions
+        {
+            /// <summary>
+            /// StringEquals
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringequals
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: ConditionParameter
+            /// </summary>
+            public List<ConditionParameter> StringEquals { get; set; }
+            /// <summary>
+            /// StringNotLike
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotlike
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: ConditionParameter
+            /// </summary>
+            public List<ConditionParameter> StringNotLike { get; set; }
+            /// <summary>
+            /// StringLike
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringlike
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: ConditionParameter
+            /// </summary>
+            public List<ConditionParameter> StringLike { get; set; }
+            /// <summary>
+            /// StringNotEquals
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotequals
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: ConditionParameter
+            /// </summary>
+            public List<ConditionParameter> StringNotEquals { get; set; }
         }
     }
 }

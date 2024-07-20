@@ -1,0 +1,91 @@
+namespace Humidifier.ResourceExplorer2
+{
+    using System.Collections.Generic;
+    using ViewTypes;
+
+    public class View : Humidifier.Resource
+    {
+        public class Attributes
+        {
+            public static string ViewArn =  "ViewArn" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::ResourceExplorer2::View";
+            }
+        }
+
+        /// <summary>
+        /// Filters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-filters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SearchFilter
+        /// </summary>
+        public SearchFilter Filters { get; set; }
+        /// <summary>
+        /// Scope
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-scope
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Scope { get; set; }
+        /// <summary>
+        /// IncludedProperties
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-includedproperties
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: IncludedProperty
+        /// </summary>
+        public List<IncludedProperty> IncludedProperties { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> Tags { get; set; }
+        /// <summary>
+        /// ViewName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-viewname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ViewName { get; set; }
+    }
+
+    namespace ViewTypes
+    {
+        public class IncludedProperty
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourceexplorer2-view-includedproperty.html#cfn-resourceexplorer2-view-includedproperty-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class SearchFilter
+        {
+            /// <summary>
+            /// FilterString
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourceexplorer2-view-searchfilter.html#cfn-resourceexplorer2-view-searchfilter-filterstring
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FilterString { get; set; }
+        }
+    }
+}

@@ -4,6 +4,11 @@ namespace Humidifier.ApiGateway
 
     public class Account : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,10 +24,6 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CloudWatchRoleArn
-        {
-            get;
-            set;
-        }
+        public dynamic CloudWatchRoleArn { get; set; }
     }
 }

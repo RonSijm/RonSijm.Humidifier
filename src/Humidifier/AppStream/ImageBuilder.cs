@@ -5,7 +5,7 @@ namespace Humidifier.AppStream
 
     public class ImageBuilder : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string StreamingUrl =  "StreamingUrl" ;
         }
@@ -19,31 +19,13 @@ namespace Humidifier.AppStream
         }
 
         /// <summary>
-        /// ImageName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagename
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ImageName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-description
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// VpcConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-vpcconfig
@@ -51,12 +33,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// Type: VpcConfig
         /// </summary>
-        public VpcConfig VpcConfig
-        {
-            get;
-            set;
-        }
-
+        public VpcConfig VpcConfig { get; set; }
         /// <summary>
         /// EnableDefaultInternetAccess
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-enabledefaultinternetaccess
@@ -64,25 +41,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EnableDefaultInternetAccess
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// DisplayName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-displayname
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DisplayName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EnableDefaultInternetAccess { get; set; }
         /// <summary>
         /// DomainJoinInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-domainjoininfo
@@ -90,12 +49,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// Type: DomainJoinInfo
         /// </summary>
-        public DomainJoinInfo DomainJoinInfo
-        {
-            get;
-            set;
-        }
-
+        public DomainJoinInfo DomainJoinInfo { get; set; }
         /// <summary>
         /// AppstreamAgentVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-appstreamagentversion
@@ -103,12 +57,39 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AppstreamAgentVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic AppstreamAgentVersion { get; set; }
+        /// <summary>
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-name
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Name { get; set; }
+        /// <summary>
+        /// ImageName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagename
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ImageName { get; set; }
+        /// <summary>
+        /// DisplayName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-displayname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DisplayName { get; set; }
+        /// <summary>
+        /// IamRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-iamrolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IamRoleArn { get; set; }
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-instancetype
@@ -116,12 +97,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstanceType { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-tags
@@ -130,25 +106,7 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Name
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-name
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// ImageArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagearn
@@ -156,12 +114,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ImageArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic ImageArn { get; set; }
         /// <summary>
         /// AccessEndpoints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-accessendpoints
@@ -170,46 +123,11 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: AccessEndpoint
         /// </summary>
-        public List<AccessEndpoint> AccessEndpoints
-        {
-            get;
-            set;
-        }
+        public List<AccessEndpoint> AccessEndpoints { get; set; }
     }
 
     namespace ImageBuilderTypes
     {
-        public class VpcConfig
-        {
-            /// <summary>
-            /// SecurityGroupIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-securitygroupids
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic SecurityGroupIds
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SubnetIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-subnetids
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic SubnetIds
-            {
-                get;
-                set;
-            }
-        }
-
         public class AccessEndpoint
         {
             /// <summary>
@@ -219,12 +137,7 @@ namespace Humidifier.AppStream
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EndpointType
-            {
-                get;
-                set;
-            }
-
+            public dynamic EndpointType { get; set; }
             /// <summary>
             /// VpceId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-accessendpoint.html#cfn-appstream-imagebuilder-accessendpoint-vpceid
@@ -232,11 +145,7 @@ namespace Humidifier.AppStream
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VpceId
-            {
-                get;
-                set;
-            }
+            public dynamic VpceId { get; set; }
         }
 
         public class DomainJoinInfo
@@ -248,12 +157,7 @@ namespace Humidifier.AppStream
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic OrganizationalUnitDistinguishedName
-            {
-                get;
-                set;
-            }
-
+            public dynamic OrganizationalUnitDistinguishedName { get; set; }
             /// <summary>
             /// DirectoryName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-directoryname
@@ -261,11 +165,29 @@ namespace Humidifier.AppStream
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DirectoryName
-            {
-                get;
-                set;
-            }
+            public dynamic DirectoryName { get; set; }
+        }
+
+        public class VpcConfig
+        {
+            /// <summary>
+            /// SecurityGroupIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-securitygroupids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SecurityGroupIds { get; set; }
+            /// <summary>
+            /// SubnetIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-subnetids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SubnetIds { get; set; }
         }
     }
 }

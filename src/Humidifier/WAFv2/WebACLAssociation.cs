@@ -16,26 +16,17 @@ namespace Humidifier.WAFv2
         /// ResourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webaclassociation.html#cfn-wafv2-webaclassociation-resourcearn
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResourceArn { get; set; }
         /// <summary>
         /// WebACLArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webaclassociation.html#cfn-wafv2-webaclassociation-webaclarn
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic WebACLArn
-        {
-            get;
-            set;
-        }
+        public dynamic WebACLArn { get; set; }
     }
 }

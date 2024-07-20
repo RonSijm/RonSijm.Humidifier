@@ -20,12 +20,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TargetVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic TargetVersion { get; set; }
         /// <summary>
         /// ExecutionControls
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-executioncontrols
@@ -33,12 +28,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// Type: ExecutionControls
         /// </summary>
-        public ExecutionControls ExecutionControls
-        {
-            get;
-            set;
-        }
-
+        public ExecutionControls ExecutionControls { get; set; }
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-parameters
@@ -46,12 +36,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Parameters
-        {
-            get;
-            set;
-        }
-
+        public dynamic Parameters { get; set; }
         /// <summary>
         /// TargetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype
@@ -59,12 +44,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TargetType
-        {
-            get;
-            set;
-        }
-
+        public dynamic TargetType { get; set; }
         /// <summary>
         /// ConfigRuleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename
@@ -72,12 +52,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConfigRuleName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConfigRuleName { get; set; }
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-resourcetype
@@ -85,12 +60,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResourceType { get; set; }
         /// <summary>
         /// RetryAttemptSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-retryattemptseconds
@@ -98,12 +68,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic RetryAttemptSeconds
-        {
-            get;
-            set;
-        }
-
+        public dynamic RetryAttemptSeconds { get; set; }
         /// <summary>
         /// MaximumAutomaticAttempts
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-maximumautomaticattempts
@@ -111,12 +76,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic MaximumAutomaticAttempts
-        {
-            get;
-            set;
-        }
-
+        public dynamic MaximumAutomaticAttempts { get; set; }
         /// <summary>
         /// TargetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid
@@ -124,12 +84,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TargetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TargetId { get; set; }
         /// <summary>
         /// Automatic
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-automatic
@@ -137,15 +92,43 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Automatic
-        {
-            get;
-            set;
-        }
+        public dynamic Automatic { get; set; }
     }
 
     namespace RemediationConfigurationTypes
     {
+        public class ExecutionControls
+        {
+            /// <summary>
+            /// SsmControls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html#cfn-config-remediationconfiguration-executioncontrols-ssmcontrols
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SsmControls
+            /// </summary>
+            public SsmControls SsmControls { get; set; }
+        }
+
+        public class RemediationParameterValue
+        {
+            /// <summary>
+            /// ResourceValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ResourceValue
+            /// </summary>
+            public ResourceValue ResourceValue { get; set; }
+            /// <summary>
+            /// StaticValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StaticValue
+            /// </summary>
+            public StaticValue StaticValue { get; set; }
+        }
+
         public class ResourceValue
         {
             /// <summary>
@@ -155,11 +138,7 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
+            public dynamic Value { get; set; }
         }
 
         public class SsmControls
@@ -171,12 +150,7 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic ErrorPercentage
-            {
-                get;
-                set;
-            }
-
+            public dynamic ErrorPercentage { get; set; }
             /// <summary>
             /// ConcurrentExecutionRatePercentage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-concurrentexecutionratepercentage
@@ -184,11 +158,7 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic ConcurrentExecutionRatePercentage
-            {
-                get;
-                set;
-            }
+            public dynamic ConcurrentExecutionRatePercentage { get; set; }
         }
 
         public class StaticValue
@@ -201,56 +171,7 @@ namespace Humidifier.Config
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Values
-            {
-                get;
-                set;
-            }
-        }
-
-        public class RemediationParameterValue
-        {
-            /// <summary>
-            /// ResourceValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResourceValue
-            /// </summary>
-            public ResourceValue ResourceValue
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// StaticValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: StaticValue
-            /// </summary>
-            public StaticValue StaticValue
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ExecutionControls
-        {
-            /// <summary>
-            /// SsmControls
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html#cfn-config-remediationconfiguration-executioncontrols-ssmcontrols
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SsmControls
-            /// </summary>
-            public SsmControls SsmControls
-            {
-                get;
-                set;
-            }
+            public dynamic Values { get; set; }
         }
     }
 }

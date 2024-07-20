@@ -20,12 +20,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserPoolId { get; set; }
         /// <summary>
         /// Identifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html#cfn-cognito-userpoolresourceserver-identifier
@@ -33,12 +28,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Identifier
-        {
-            get;
-            set;
-        }
-
+        public dynamic Identifier { get; set; }
         /// <summary>
         /// Scopes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html#cfn-cognito-userpoolresourceserver-scopes
@@ -47,12 +37,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// ItemType: ResourceServerScopeType
         /// </summary>
-        public List<ResourceServerScopeType> Scopes
-        {
-            get;
-            set;
-        }
-
+        public List<ResourceServerScopeType> Scopes { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html#cfn-cognito-userpoolresourceserver-name
@@ -60,11 +45,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace UserPoolResourceServerTypes
@@ -78,12 +59,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ScopeName
-            {
-                get;
-                set;
-            }
-
+            public dynamic ScopeName { get; set; }
             /// <summary>
             /// ScopeDescription
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html#cfn-cognito-userpoolresourceserver-resourceserverscopetype-scopedescription
@@ -91,11 +67,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ScopeDescription
-            {
-                get;
-                set;
-            }
+            public dynamic ScopeDescription { get; set; }
         }
     }
 }

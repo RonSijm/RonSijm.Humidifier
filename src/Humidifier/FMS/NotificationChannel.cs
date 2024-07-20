@@ -13,29 +13,20 @@ namespace Humidifier.FMS
         }
 
         /// <summary>
-        /// SnsRoleName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snsrolename
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SnsRoleName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snstopicarn
         /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SnsTopicArn
-        {
-            get;
-            set;
-        }
+        public dynamic SnsTopicArn { get; set; }
+        /// <summary>
+        /// SnsRoleName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snsrolename
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SnsRoleName { get; set; }
     }
 }

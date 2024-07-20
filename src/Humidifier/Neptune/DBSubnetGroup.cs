@@ -19,12 +19,7 @@ namespace Humidifier.Neptune
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBSubnetGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBSubnetGroupName { get; set; }
         /// <summary>
         /// DBSubnetGroupDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupdescription
@@ -32,12 +27,7 @@ namespace Humidifier.Neptune
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBSubnetGroupDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBSubnetGroupDescription { get; set; }
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-subnetids
@@ -46,12 +36,7 @@ namespace Humidifier.Neptune
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SubnetIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-tags
@@ -60,10 +45,6 @@ namespace Humidifier.Neptune
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

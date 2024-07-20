@@ -5,8 +5,9 @@ namespace Humidifier.ECR
 
     public class Repository : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string RepositoryUri =  "RepositoryUri" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -19,31 +20,29 @@ namespace Humidifier.ECR
         }
 
         /// <summary>
-        /// LifecyclePolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy
+        /// EmptyOnDelete
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-emptyondelete
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: LifecyclePolicy
+        /// PrimitiveType: Boolean
         /// </summary>
-        public LifecyclePolicy LifecyclePolicy
-        {
-            get;
-            set;
-        }
-
+        public dynamic EmptyOnDelete { get; set; }
         /// <summary>
-        /// RepositoryName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname
+        /// ImageScanningConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ImageScanningConfiguration
+        /// </summary>
+        public ImageScanningConfiguration ImageScanningConfiguration { get; set; }
+        /// <summary>
+        /// EncryptionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration
         /// Required: False
         /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// Type: EncryptionConfiguration
         /// </summary>
-        public dynamic RepositoryName
-        {
-            get;
-            set;
-        }
-
+        public EncryptionConfiguration EncryptionConfiguration { get; set; }
         /// <summary>
         /// RepositoryPolicyText
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositorypolicytext
@@ -51,12 +50,23 @@ namespace Humidifier.ECR
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic RepositoryPolicyText
-        {
-            get;
-            set;
-        }
-
+        public dynamic RepositoryPolicyText { get; set; }
+        /// <summary>
+        /// LifecyclePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LifecyclePolicy
+        /// </summary>
+        public LifecyclePolicy LifecyclePolicy { get; set; }
+        /// <summary>
+        /// RepositoryName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-repositoryname
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RepositoryName { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-tags
@@ -65,15 +75,51 @@ namespace Humidifier.ECR
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// ImageTagMutability
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ImageTagMutability { get; set; }
     }
 
     namespace RepositoryTypes
     {
+        public class EncryptionConfiguration
+        {
+            /// <summary>
+            /// EncryptionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-encryptionconfiguration.html#cfn-ecr-repository-encryptionconfiguration-encryptiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionType { get; set; }
+            /// <summary>
+            /// KmsKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-encryptionconfiguration.html#cfn-ecr-repository-encryptionconfiguration-kmskey
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKey { get; set; }
+        }
+
+        public class ImageScanningConfiguration
+        {
+            /// <summary>
+            /// ScanOnPush
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagescanningconfiguration.html#cfn-ecr-repository-imagescanningconfiguration-scanonpush
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ScanOnPush { get; set; }
+        }
+
         public class LifecyclePolicy
         {
             /// <summary>
@@ -83,12 +129,7 @@ namespace Humidifier.ECR
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic LifecyclePolicyText
-            {
-                get;
-                set;
-            }
-
+            public dynamic LifecyclePolicyText { get; set; }
             /// <summary>
             /// RegistryId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid
@@ -96,11 +137,7 @@ namespace Humidifier.ECR
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RegistryId
-            {
-                get;
-                set;
-            }
+            public dynamic RegistryId { get; set; }
         }
     }
 }

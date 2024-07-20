@@ -16,16 +16,11 @@ namespace Humidifier.IoTEvents
         /// <summary>
         /// DetectorModelDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodeldefinition
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: DetectorModelDefinition
         /// </summary>
-        public DetectorModelDefinition DetectorModelDefinition
-        {
-            get;
-            set;
-        }
-
+        public DetectorModelDefinition DetectorModelDefinition { get; set; }
         /// <summary>
         /// EvaluationMethod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-evaluationmethod
@@ -33,12 +28,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EvaluationMethod
-        {
-            get;
-            set;
-        }
-
+        public dynamic EvaluationMethod { get; set; }
         /// <summary>
         /// DetectorModelName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodelname
@@ -46,12 +36,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DetectorModelName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DetectorModelName { get; set; }
         /// <summary>
         /// DetectorModelDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodeldescription
@@ -59,12 +44,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DetectorModelDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic DetectorModelDescription { get; set; }
         /// <summary>
         /// Key
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-key
@@ -72,25 +52,15 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Key
-        {
-            get;
-            set;
-        }
-
+        public dynamic Key { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-rolearn
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-tags
@@ -99,219 +69,201 @@ namespace Humidifier.IoTEvents
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace DetectorModelTypes
     {
-        public class SetTimer
+        public class Action
         {
             /// <summary>
-            /// Seconds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-seconds
+            /// IotEvents
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotevents
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// Type: IotEvents
             /// </summary>
-            public dynamic Seconds
-            {
-                get;
-                set;
-            }
-
+            public IotEvents IotEvents { get; set; }
             /// <summary>
-            /// TimerName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-timername
+            /// Firehose
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-firehose
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: Firehose
             /// </summary>
-            public dynamic TimerName
-            {
-                get;
-                set;
-            }
+            public Firehose Firehose { get; set; }
+            /// <summary>
+            /// DynamoDB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-dynamodb
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DynamoDB
+            /// </summary>
+            public DynamoDB DynamoDB { get; set; }
+            /// <summary>
+            /// IotTopicPublish
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iottopicpublish
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IotTopicPublish
+            /// </summary>
+            public IotTopicPublish IotTopicPublish { get; set; }
+            /// <summary>
+            /// DynamoDBv2
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-dynamodbv2
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DynamoDBv2
+            /// </summary>
+            public DynamoDBv2 DynamoDBv2 { get; set; }
+            /// <summary>
+            /// IotSiteWise
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotsitewise
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IotSiteWise
+            /// </summary>
+            public IotSiteWise IotSiteWise { get; set; }
+            /// <summary>
+            /// ResetTimer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-resettimer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ResetTimer
+            /// </summary>
+            public ResetTimer ResetTimer { get; set; }
+            /// <summary>
+            /// Sqs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sqs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Sqs
+            /// </summary>
+            public Sqs Sqs { get; set; }
+            /// <summary>
+            /// SetTimer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-settimer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SetTimer
+            /// </summary>
+            public SetTimer SetTimer { get; set; }
+            /// <summary>
+            /// Sns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Sns
+            /// </summary>
+            public Sns Sns { get; set; }
+            /// <summary>
+            /// ClearTimer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-cleartimer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ClearTimer
+            /// </summary>
+            public ClearTimer ClearTimer { get; set; }
+            /// <summary>
+            /// Lambda
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-lambda
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Lambda
+            /// </summary>
+            public Lambda Lambda { get; set; }
+            /// <summary>
+            /// SetVariable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-setvariable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SetVariable
+            /// </summary>
+            public SetVariable SetVariable { get; set; }
         }
 
-        public class ResetTimer
+        public class AssetPropertyTimestamp
         {
             /// <summary>
-            /// TimerName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html#cfn-iotevents-detectormodel-resettimer-timername
+            /// TimeInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertytimestamp.html#cfn-iotevents-detectormodel-assetpropertytimestamp-timeinseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimeInSeconds { get; set; }
+            /// <summary>
+            /// OffsetInNanos
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertytimestamp.html#cfn-iotevents-detectormodel-assetpropertytimestamp-offsetinnanos
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TimerName
-            {
-                get;
-                set;
-            }
+            public dynamic OffsetInNanos { get; set; }
         }
 
-        public class IotEvents
+        public class AssetPropertyValue
         {
             /// <summary>
-            /// InputName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html#cfn-iotevents-detectormodel-iotevents-inputname
+            /// Quality
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-quality
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InputName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class TransitionEvent
-        {
-            /// <summary>
-            /// Condition
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-condition
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Condition
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Actions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-actions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Action
-            /// </summary>
-            public List<Action> Actions
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// NextState
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-nextstate
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic NextState
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// EventName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-eventname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic EventName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class OnInput
-        {
-            /// <summary>
-            /// Events
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-events
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Event
-            /// </summary>
-            public List<Event> Events
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// TransitionEvents
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-transitionevents
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: TransitionEvent
-            /// </summary>
-            public List<TransitionEvent> TransitionEvents
-            {
-                get;
-                set;
-            }
-        }
-
-        public class SetVariable
-        {
-            /// <summary>
-            /// VariableName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html#cfn-iotevents-detectormodel-setvariable-variablename
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic VariableName
-            {
-                get;
-                set;
-            }
-
+            public dynamic Quality { get; set; }
             /// <summary>
             /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html#cfn-iotevents-detectormodel-setvariable-value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: AssetPropertyVariant
+            /// </summary>
+            public AssetPropertyVariant Value { get; set; }
+            /// <summary>
+            /// Timestamp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-timestamp
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: AssetPropertyTimestamp
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
+            public AssetPropertyTimestamp Timestamp { get; set; }
         }
 
-        public class Firehose
+        public class AssetPropertyVariant
         {
             /// <summary>
-            /// DeliveryStreamName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-deliverystreamname
+            /// DoubleValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvariant.html#cfn-iotevents-detectormodel-assetpropertyvariant-doublevalue
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeliveryStreamName
-            {
-                get;
-                set;
-            }
-
+            public dynamic DoubleValue { get; set; }
             /// <summary>
-            /// Separator
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator
+            /// BooleanValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvariant.html#cfn-iotevents-detectormodel-assetpropertyvariant-booleanvalue
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Separator
-            {
-                get;
-                set;
-            }
+            public dynamic BooleanValue { get; set; }
+            /// <summary>
+            /// IntegerValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvariant.html#cfn-iotevents-detectormodel-assetpropertyvariant-integervalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IntegerValue { get; set; }
+            /// <summary>
+            /// StringValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvariant.html#cfn-iotevents-detectormodel-assetpropertyvariant-stringvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StringValue { get; set; }
         }
 
         public class ClearTimer
@@ -319,15 +271,297 @@ namespace Humidifier.IoTEvents
             /// <summary>
             /// TimerName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-cleartimer.html#cfn-iotevents-detectormodel-cleartimer-timername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimerName { get; set; }
+        }
+
+        public class DetectorModelDefinition
+        {
+            /// <summary>
+            /// States
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-states
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: State
+            /// </summary>
+            public List<State> States { get; set; }
+            /// <summary>
+            /// InitialStateName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-initialstatename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InitialStateName { get; set; }
+        }
+
+        public class DynamoDB
+        {
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-tablename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// PayloadField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-payloadfield
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TimerName
-            {
-                get;
-                set;
-            }
+            public dynamic PayloadField { get; set; }
+            /// <summary>
+            /// RangeKeyField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-rangekeyfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RangeKeyField { get; set; }
+            /// <summary>
+            /// HashKeyField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-hashkeyfield
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HashKeyField { get; set; }
+            /// <summary>
+            /// RangeKeyValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-rangekeyvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RangeKeyValue { get; set; }
+            /// <summary>
+            /// RangeKeyType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-rangekeytype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RangeKeyType { get; set; }
+            /// <summary>
+            /// HashKeyType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-hashkeytype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HashKeyType { get; set; }
+            /// <summary>
+            /// HashKeyValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-hashkeyvalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HashKeyValue { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
+            /// <summary>
+            /// Operation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-operation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Operation { get; set; }
+        }
+
+        public class DynamoDBv2
+        {
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodbv2.html#cfn-iotevents-detectormodel-dynamodbv2-tablename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodbv2.html#cfn-iotevents-detectormodel-dynamodbv2-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
+        }
+
+        public class Event
+        {
+            /// <summary>
+            /// Condition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Condition { get; set; }
+            /// <summary>
+            /// Actions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Action
+            /// </summary>
+            public List<Action> Actions { get; set; }
+            /// <summary>
+            /// EventName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-eventname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventName { get; set; }
+        }
+
+        public class Firehose
+        {
+            /// <summary>
+            /// DeliveryStreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-deliverystreamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeliveryStreamName { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
+            /// <summary>
+            /// Separator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Separator { get; set; }
+        }
+
+        public class IotEvents
+        {
+            /// <summary>
+            /// InputName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html#cfn-iotevents-detectormodel-iotevents-inputname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InputName { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html#cfn-iotevents-detectormodel-iotevents-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
+        }
+
+        public class IotSiteWise
+        {
+            /// <summary>
+            /// EntryId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-entryid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EntryId { get; set; }
+            /// <summary>
+            /// PropertyAlias
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-propertyalias
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PropertyAlias { get; set; }
+            /// <summary>
+            /// PropertyValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-propertyvalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: AssetPropertyValue
+            /// </summary>
+            public AssetPropertyValue PropertyValue { get; set; }
+            /// <summary>
+            /// AssetId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-assetid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AssetId { get; set; }
+            /// <summary>
+            /// PropertyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-propertyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PropertyId { get; set; }
+        }
+
+        public class IotTopicPublish
+        {
+            /// <summary>
+            /// MqttTopic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-mqtttopic
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MqttTopic { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
+        }
+
+        public class Lambda
+        {
+            /// <summary>
+            /// FunctionArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html#cfn-iotevents-detectormodel-lambda-functionarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FunctionArn { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html#cfn-iotevents-detectormodel-lambda-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
         }
 
         public class OnEnter
@@ -340,125 +574,7 @@ namespace Humidifier.IoTEvents
             /// Type: List
             /// ItemType: Event
             /// </summary>
-            public List<Event> Events
-            {
-                get;
-                set;
-            }
-        }
-
-        public class State
-        {
-            /// <summary>
-            /// OnInput
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OnInput
-            /// </summary>
-            public OnInput OnInput
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// OnExit
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OnExit
-            /// </summary>
-            public OnExit OnExit
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// StateName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-statename
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic StateName
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// OnEnter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OnEnter
-            /// </summary>
-            public OnEnter OnEnter
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Event
-        {
-            /// <summary>
-            /// Condition
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Condition
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Actions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Action
-            /// </summary>
-            public List<Action> Actions
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// EventName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-eventname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic EventName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Sns
-        {
-            /// <summary>
-            /// TargetArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-targetarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TargetArn
-            {
-                get;
-                set;
-            }
+            public List<Event> Events { get; set; }
         }
 
         public class OnExit
@@ -471,11 +587,129 @@ namespace Humidifier.IoTEvents
             /// Type: List
             /// ItemType: Event
             /// </summary>
-            public List<Event> Events
-            {
-                get;
-                set;
-            }
+            public List<Event> Events { get; set; }
+        }
+
+        public class OnInput
+        {
+            /// <summary>
+            /// Events
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-events
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Event
+            /// </summary>
+            public List<Event> Events { get; set; }
+            /// <summary>
+            /// TransitionEvents
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-transitionevents
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: TransitionEvent
+            /// </summary>
+            public List<TransitionEvent> TransitionEvents { get; set; }
+        }
+
+        public class Payload
+        {
+            /// <summary>
+            /// ContentExpression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-payload.html#cfn-iotevents-detectormodel-payload-contentexpression
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ContentExpression { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-payload.html#cfn-iotevents-detectormodel-payload-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class ResetTimer
+        {
+            /// <summary>
+            /// TimerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html#cfn-iotevents-detectormodel-resettimer-timername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimerName { get; set; }
+        }
+
+        public class SetTimer
+        {
+            /// <summary>
+            /// Seconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-seconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Seconds { get; set; }
+            /// <summary>
+            /// TimerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-timername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimerName { get; set; }
+            /// <summary>
+            /// DurationExpression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-durationexpression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DurationExpression { get; set; }
+        }
+
+        public class SetVariable
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html#cfn-iotevents-detectormodel-setvariable-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// VariableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html#cfn-iotevents-detectormodel-setvariable-variablename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VariableName { get; set; }
+        }
+
+        public class Sns
+        {
+            /// <summary>
+            /// TargetArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-targetarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetArn { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
         }
 
         public class Sqs
@@ -487,219 +721,96 @@ namespace Humidifier.IoTEvents
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic UseBase64
-            {
-                get;
-                set;
-            }
-
+            public dynamic UseBase64 { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Payload
+            /// </summary>
+            public Payload Payload { get; set; }
             /// <summary>
             /// QueueUrl
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-queueurl
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic QueueUrl
-            {
-                get;
-                set;
-            }
+            public dynamic QueueUrl { get; set; }
         }
 
-        public class DetectorModelDefinition
+        public class State
         {
             /// <summary>
-            /// States
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-states
+            /// OnInput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OnInput
+            /// </summary>
+            public OnInput OnInput { get; set; }
+            /// <summary>
+            /// OnExit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OnExit
+            /// </summary>
+            public OnExit OnExit { get; set; }
+            /// <summary>
+            /// StateName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-statename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StateName { get; set; }
+            /// <summary>
+            /// OnEnter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OnEnter
+            /// </summary>
+            public OnEnter OnEnter { get; set; }
+        }
+
+        public class TransitionEvent
+        {
+            /// <summary>
+            /// Condition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-condition
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Condition { get; set; }
+            /// <summary>
+            /// Actions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-actions
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: State
+            /// ItemType: Action
             /// </summary>
-            public List<State> States
-            {
-                get;
-                set;
-            }
-
+            public List<Action> Actions { get; set; }
             /// <summary>
-            /// InitialStateName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-initialstatename
-            /// Required: False
+            /// NextState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-nextstate
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InitialStateName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class IotTopicPublish
-        {
+            public dynamic NextState { get; set; }
             /// <summary>
-            /// MqttTopic
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-mqtttopic
-            /// Required: False
+            /// EventName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-eventname
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MqttTopic
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Action
-        {
-            /// <summary>
-            /// IotEvents
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotevents
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: IotEvents
-            /// </summary>
-            public IotEvents IotEvents
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ResetTimer
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-resettimer
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResetTimer
-            /// </summary>
-            public ResetTimer ResetTimer
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Sqs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sqs
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Sqs
-            /// </summary>
-            public Sqs Sqs
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Firehose
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-firehose
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Firehose
-            /// </summary>
-            public Firehose Firehose
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Sns
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sns
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Sns
-            /// </summary>
-            public Sns Sns
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// IotTopicPublish
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iottopicpublish
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: IotTopicPublish
-            /// </summary>
-            public IotTopicPublish IotTopicPublish
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SetTimer
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-settimer
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SetTimer
-            /// </summary>
-            public SetTimer SetTimer
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ClearTimer
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-cleartimer
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ClearTimer
-            /// </summary>
-            public ClearTimer ClearTimer
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Lambda
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-lambda
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Lambda
-            /// </summary>
-            public Lambda Lambda
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SetVariable
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-setvariable
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SetVariable
-            /// </summary>
-            public SetVariable SetVariable
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Lambda
-        {
-            /// <summary>
-            /// FunctionArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html#cfn-iotevents-detectormodel-lambda-functionarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic FunctionArn
-            {
-                get;
-                set;
-            }
+            public dynamic EventName { get; set; }
         }
     }
 }

@@ -4,6 +4,11 @@ namespace Humidifier.Redshift
 
     public class ClusterSubnetGroup : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ClusterSubnetGroupName =  "ClusterSubnetGroupName" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
@@ -33,12 +33,7 @@ namespace Humidifier.Redshift
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SubnetIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-tags
@@ -47,10 +42,6 @@ namespace Humidifier.Redshift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

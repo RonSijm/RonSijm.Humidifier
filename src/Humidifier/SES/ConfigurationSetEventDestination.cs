@@ -5,6 +5,11 @@ namespace Humidifier.SES
 
     public class ConfigurationSetEventDestination : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConfigurationSetName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConfigurationSetName { get; set; }
         /// <summary>
         /// EventDestination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination
@@ -33,82 +33,22 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// Type: EventDestination
         /// </summary>
-        public EventDestination EventDestination
-        {
-            get;
-            set;
-        }
+        public EventDestination EventDestination { get; set; }
     }
 
     namespace ConfigurationSetEventDestinationTypes
     {
-        public class EventDestination
+        public class CloudWatchDestination
         {
             /// <summary>
-            /// CloudWatchDestination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-cloudwatchdestination
+            /// DimensionConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations
             /// Required: False
-            /// UpdateType: Mutable
-            /// Type: CloudWatchDestination
-            /// </summary>
-            public CloudWatchDestination CloudWatchDestination
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-enabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// MatchingEventTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-matchingeventtypes
-            /// Required: True
             /// UpdateType: Mutable
             /// Type: List
-            /// PrimitiveItemType: String
+            /// ItemType: DimensionConfiguration
             /// </summary>
-            public dynamic MatchingEventTypes
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-name
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// KinesisFirehoseDestination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-kinesisfirehosedestination
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: KinesisFirehoseDestination
-            /// </summary>
-            public KinesisFirehoseDestination KinesisFirehoseDestination
-            {
-                get;
-                set;
-            }
+            public List<DimensionConfiguration> DimensionConfigurations { get; set; }
         }
 
         public class DimensionConfiguration
@@ -120,12 +60,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DimensionValueSource
-            {
-                get;
-                set;
-            }
-
+            public dynamic DimensionValueSource { get; set; }
             /// <summary>
             /// DefaultDimensionValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-defaultdimensionvalue
@@ -133,12 +68,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DefaultDimensionValue
-            {
-                get;
-                set;
-            }
-
+            public dynamic DefaultDimensionValue { get; set; }
             /// <summary>
             /// DimensionName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-dimensionname
@@ -146,28 +76,80 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DimensionName
-            {
-                get;
-                set;
-            }
+            public dynamic DimensionName { get; set; }
         }
 
-        public class CloudWatchDestination
+        public class EventBridgeDestination
         {
             /// <summary>
-            /// DimensionConfigurations
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations
+            /// EventBusArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventbridgedestination.html#cfn-ses-configurationseteventdestination-eventbridgedestination-eventbusarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventBusArn { get; set; }
+        }
+
+        public class EventDestination
+        {
+            /// <summary>
+            /// SnsDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-snsdestination
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: DimensionConfiguration
+            /// Type: SnsDestination
             /// </summary>
-            public List<DimensionConfiguration> DimensionConfigurations
-            {
-                get;
-                set;
-            }
+            public SnsDestination SnsDestination { get; set; }
+            /// <summary>
+            /// CloudWatchDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-cloudwatchdestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CloudWatchDestination
+            /// </summary>
+            public CloudWatchDestination CloudWatchDestination { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// MatchingEventTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-matchingeventtypes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic MatchingEventTypes { get; set; }
+            /// <summary>
+            /// EventBridgeDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-eventbridgedestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EventBridgeDestination
+            /// </summary>
+            public EventBridgeDestination EventBridgeDestination { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// KinesisFirehoseDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-kinesisfirehosedestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: KinesisFirehoseDestination
+            /// </summary>
+            public KinesisFirehoseDestination KinesisFirehoseDestination { get; set; }
         }
 
         public class KinesisFirehoseDestination
@@ -179,12 +161,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic IAMRoleARN
-            {
-                get;
-                set;
-            }
-
+            public dynamic IAMRoleARN { get; set; }
             /// <summary>
             /// DeliveryStreamARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-deliverystreamarn
@@ -192,11 +169,19 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeliveryStreamARN
-            {
-                get;
-                set;
-            }
+            public dynamic DeliveryStreamARN { get; set; }
+        }
+
+        public class SnsDestination
+        {
+            /// <summary>
+            /// TopicARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-snsdestination.html#cfn-ses-configurationseteventdestination-snsdestination-topicarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicARN { get; set; }
         }
     }
 }

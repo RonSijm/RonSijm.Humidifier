@@ -16,29 +16,19 @@ namespace Humidifier.GuardDuty
         /// <summary>
         /// Action
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Action
-        {
-            get;
-            set;
-        }
-
+        public dynamic Action { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-description
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// DetectorId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid
@@ -46,12 +36,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DetectorId
-        {
-            get;
-            set;
-        }
-
+        public dynamic DetectorId { get; set; }
         /// <summary>
         /// FindingCriteria
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria
@@ -59,25 +44,24 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// Type: FindingCriteria
         /// </summary>
-        public FindingCriteria FindingCriteria
-        {
-            get;
-            set;
-        }
-
+        public FindingCriteria FindingCriteria { get; set; }
         /// <summary>
         /// Rank
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-rank
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Rank
-        {
-            get;
-            set;
-        }
-
+        public dynamic Rank { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: TagItem
+        /// </summary>
+        public List<TagItem> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-name
@@ -85,46 +69,46 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace FilterTypes
     {
-        public class FindingCriteria
-        {
-            /// <summary>
-            /// Criterion
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-criterion
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic Criterion
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ItemType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-itemtype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Condition
-            /// </summary>
-            public Condition ItemType
-            {
-                get;
-                set;
-            }
-        }
-
         public class Condition
         {
+            /// <summary>
+            /// Equals
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-equals
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Equals { get; set; }
+            /// <summary>
+            /// LessThan
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lessthan
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic LessThan { get; set; }
+            /// <summary>
+            /// LessThanOrEqual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lessthanorequal
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic LessThanOrEqual { get; set; }
+            /// <summary>
+            /// GreaterThan
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-greaterthan
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic GreaterThan { get; set; }
             /// <summary>
             /// Lt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lt
@@ -132,12 +116,7 @@ namespace Humidifier.GuardDuty
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Lt
-            {
-                get;
-                set;
-            }
-
+            public dynamic Lt { get; set; }
             /// <summary>
             /// Gte
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gte
@@ -145,12 +124,7 @@ namespace Humidifier.GuardDuty
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Gte
-            {
-                get;
-                set;
-            }
-
+            public dynamic Gte { get; set; }
             /// <summary>
             /// Neq
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-neq
@@ -159,12 +133,15 @@ namespace Humidifier.GuardDuty
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Neq
-            {
-                get;
-                set;
-            }
-
+            public dynamic Neq { get; set; }
+            /// <summary>
+            /// GreaterThanOrEqual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-greaterthanorequal
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic GreaterThanOrEqual { get; set; }
             /// <summary>
             /// Eq
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-eq
@@ -173,12 +150,7 @@ namespace Humidifier.GuardDuty
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Eq
-            {
-                get;
-                set;
-            }
-
+            public dynamic Eq { get; set; }
             /// <summary>
             /// Lte
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-lte
@@ -186,11 +158,57 @@ namespace Humidifier.GuardDuty
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Lte
-            {
-                get;
-                set;
-            }
+            public dynamic Lte { get; set; }
+            /// <summary>
+            /// Gt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-gt
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Gt { get; set; }
+            /// <summary>
+            /// NotEquals
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-notequals
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic NotEquals { get; set; }
+        }
+
+        public class FindingCriteria
+        {
+            /// <summary>
+            /// Criterion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-criterion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// ItemType: Condition
+            /// </summary>
+            public Dictionary<string, Condition> Criterion { get; set; }
+        }
+
+        public class TagItem
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-tagitem.html#cfn-guardduty-filter-tagitem-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-tagitem.html#cfn-guardduty-filter-tagitem-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
     }
 }

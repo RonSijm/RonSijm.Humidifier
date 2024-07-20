@@ -1,9 +1,15 @@
 namespace Humidifier.EC2
 {
     using System.Collections.Generic;
+    using NetworkInterfaceAttachmentTypes;
 
     public class NetworkInterfaceAttachment : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string AttachmentId =  "AttachmentId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,55 +19,79 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
+        /// EnaSrdSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-enasrdspecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EnaSrdSpecification
+        /// </summary>
+        public EnaSrdSpecification EnaSrdSpecification { get; set; }
+        /// <summary>
+        /// InstanceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-instanceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InstanceId { get; set; }
+        /// <summary>
+        /// DeviceIndex
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-deviceindex
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeviceIndex { get; set; }
+        /// <summary>
+        /// NetworkInterfaceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-networkinterfaceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkInterfaceId { get; set; }
+        /// <summary>
         /// DeleteOnTermination
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-deleteontermination
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic DeleteOnTermination
+        public dynamic DeleteOnTermination { get; set; }
+    }
+
+    namespace NetworkInterfaceAttachmentTypes
+    {
+        public class EnaSrdSpecification
         {
-            get;
-            set;
+            /// <summary>
+            /// EnaSrdEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterfaceattachment-enasrdspecification.html#cfn-ec2-networkinterfaceattachment-enasrdspecification-enasrdenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnaSrdEnabled { get; set; }
+            /// <summary>
+            /// EnaSrdUdpSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterfaceattachment-enasrdspecification.html#cfn-ec2-networkinterfaceattachment-enasrdspecification-enasrdudpspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EnaSrdUdpSpecification
+            /// </summary>
+            public EnaSrdUdpSpecification EnaSrdUdpSpecification { get; set; }
         }
 
-        /// <summary>
-        /// DeviceIndex
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DeviceIndex
+        public class EnaSrdUdpSpecification
         {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// InstanceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InstanceId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// NetworkInterfaceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic NetworkInterfaceId
-        {
-            get;
-            set;
+            /// <summary>
+            /// EnaSrdUdpEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterfaceattachment-enasrdudpspecification.html#cfn-ec2-networkinterfaceattachment-enasrdudpspecification-enasrdudpenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnaSrdUdpEnabled { get; set; }
         }
     }
 }

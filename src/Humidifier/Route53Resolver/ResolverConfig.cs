@@ -1,0 +1,39 @@
+namespace Humidifier.Route53Resolver
+{
+    using System.Collections.Generic;
+
+    public class ResolverConfig : Humidifier.Resource
+    {
+        public class Attributes
+        {
+            public static string OwnerId =  "OwnerId" ;
+            public static string AutodefinedReverse =  "AutodefinedReverse" ;
+            public static string Id =  "Id" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::Route53Resolver::ResolverConfig";
+            }
+        }
+
+        /// <summary>
+        /// ResourceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#cfn-route53resolver-resolverconfig-resourceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResourceId { get; set; }
+        /// <summary>
+        /// AutodefinedReverseFlag
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#cfn-route53resolver-resolverconfig-autodefinedreverseflag
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AutodefinedReverseFlag { get; set; }
+    }
+}

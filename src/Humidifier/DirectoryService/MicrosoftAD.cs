@@ -5,7 +5,7 @@ namespace Humidifier.DirectoryService
 
     public class MicrosoftAD : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Alias =  "Alias" ;
             public static string DnsIpAddresses =  "DnsIpAddresses" ;
@@ -26,12 +26,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic CreateAlias
-        {
-            get;
-            set;
-        }
-
+        public dynamic CreateAlias { get; set; }
         /// <summary>
         /// Edition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-edition
@@ -39,12 +34,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Edition
-        {
-            get;
-            set;
-        }
-
+        public dynamic Edition { get; set; }
         /// <summary>
         /// EnableSso
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-enablesso
@@ -52,12 +42,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EnableSso
-        {
-            get;
-            set;
-        }
-
+        public dynamic EnableSso { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-name
@@ -65,12 +50,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// Password
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
@@ -78,12 +58,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Password
-        {
-            get;
-            set;
-        }
-
+        public dynamic Password { get; set; }
         /// <summary>
         /// ShortName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-shortname
@@ -91,12 +66,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ShortName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ShortName { get; set; }
         /// <summary>
         /// VpcSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
@@ -104,11 +74,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// Type: VpcSettings
         /// </summary>
-        public VpcSettings VpcSettings
-        {
-            get;
-            set;
-        }
+        public VpcSettings VpcSettings { get; set; }
     }
 
     namespace MicrosoftADTypes
@@ -123,12 +89,7 @@ namespace Humidifier.DirectoryService
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SubnetIds
-            {
-                get;
-                set;
-            }
-
+            public dynamic SubnetIds { get; set; }
             /// <summary>
             /// VpcId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-vpcid
@@ -136,11 +97,7 @@ namespace Humidifier.DirectoryService
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VpcId
-            {
-                get;
-                set;
-            }
+            public dynamic VpcId { get; set; }
         }
     }
 }

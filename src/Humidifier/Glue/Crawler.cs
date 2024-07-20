@@ -14,19 +14,6 @@ namespace Humidifier.Glue
         }
 
         /// <summary>
-        /// Role
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Role
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Classifiers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers
         /// Required: False
@@ -34,12 +21,7 @@ namespace Humidifier.Glue
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Classifiers
-        {
-            get;
-            set;
-        }
-
+        public dynamic Classifiers { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description
@@ -47,12 +29,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SchemaChangePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy
@@ -60,12 +37,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: SchemaChangePolicy
         /// </summary>
-        public SchemaChangePolicy SchemaChangePolicy
-        {
-            get;
-            set;
-        }
-
+        public SchemaChangePolicy SchemaChangePolicy { get; set; }
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-configuration
@@ -73,25 +45,15 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Configuration
-        {
-            get;
-            set;
-        }
-
+        public dynamic Configuration { get; set; }
         /// <summary>
-        /// Schedule
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule
+        /// RecrawlPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-recrawlpolicy
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: Schedule
+        /// Type: RecrawlPolicy
         /// </summary>
-        public Schedule Schedule
-        {
-            get;
-            set;
-        }
-
+        public RecrawlPolicy RecrawlPolicy { get; set; }
         /// <summary>
         /// DatabaseName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename
@@ -99,12 +61,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DatabaseName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DatabaseName { get; set; }
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets
@@ -112,12 +69,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: Targets
         /// </summary>
-        public Targets Targets
-        {
-            get;
-            set;
-        }
-
+        public Targets Targets { get; set; }
         /// <summary>
         /// CrawlerSecurityConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-crawlersecurityconfiguration
@@ -125,38 +77,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CrawlerSecurityConfiguration
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// TablePrefix
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic TablePrefix
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic CrawlerSecurityConfiguration { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name
@@ -164,76 +85,61 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
+        /// <summary>
+        /// Role
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Role { get; set; }
+        /// <summary>
+        /// LakeFormationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-lakeformationconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LakeFormationConfiguration
+        /// </summary>
+        public LakeFormationConfiguration LakeFormationConfiguration { get; set; }
+        /// <summary>
+        /// Schedule
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Schedule
+        /// </summary>
+        public Schedule Schedule { get; set; }
+        /// <summary>
+        /// TablePrefix
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TablePrefix { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic Tags { get; set; }
     }
 
     namespace CrawlerTypes
     {
-        public class Targets
-        {
-            /// <summary>
-            /// S3Targets
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: S3Target
-            /// </summary>
-            public List<S3Target> S3Targets
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// CatalogTargets
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: CatalogTarget
-            /// </summary>
-            public List<CatalogTarget> CatalogTargets
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// JdbcTargets
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: JdbcTarget
-            /// </summary>
-            public List<JdbcTarget> JdbcTargets
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DynamoDBTargets
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: DynamoDBTarget
-            /// </summary>
-            public List<DynamoDBTarget> DynamoDBTargets
-            {
-                get;
-                set;
-            }
-        }
-
         public class CatalogTarget
         {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
             /// <summary>
             /// DatabaseName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-databasename
@@ -241,12 +147,15 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DatabaseName
-            {
-                get;
-                set;
-            }
-
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// DlqEventQueueArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-dlqeventqueuearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DlqEventQueueArn { get; set; }
             /// <summary>
             /// Tables
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-tables
@@ -255,70 +164,52 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Tables
-            {
-                get;
-                set;
-            }
+            public dynamic Tables { get; set; }
+            /// <summary>
+            /// EventQueueArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-catalogtarget.html#cfn-glue-crawler-catalogtarget-eventqueuearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventQueueArn { get; set; }
         }
 
-        public class JdbcTarget
+        public class DeltaTarget
         {
             /// <summary>
             /// ConnectionName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-connectionname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConnectionName
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConnectionName { get; set; }
             /// <summary>
-            /// Path
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
+            /// CreateNativeDeltaTable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-createnativedeltatable
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Path
-            {
-                get;
-                set;
-            }
-
+            public dynamic CreateNativeDeltaTable { get; set; }
             /// <summary>
-            /// Exclusions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions
+            /// WriteManifest
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-writemanifest
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic WriteManifest { get; set; }
+            /// <summary>
+            /// DeltaTables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-deltatarget.html#cfn-glue-crawler-deltatarget-deltatables
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Exclusions
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Schedule
-        {
-            /// <summary>
-            /// ScheduleExpression
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ScheduleExpression
-            {
-                get;
-                set;
-            }
+            public dynamic DeltaTables { get; set; }
         }
 
         public class DynamoDBTarget
@@ -330,11 +221,200 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Path
-            {
-                get;
-                set;
-            }
+            public dynamic Path { get; set; }
+        }
+
+        public class IcebergTarget
+        {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
+            /// <summary>
+            /// Exclusions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-exclusions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclusions { get; set; }
+            /// <summary>
+            /// Paths
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-paths
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Paths { get; set; }
+            /// <summary>
+            /// MaximumTraversalDepth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-icebergtarget.html#cfn-glue-crawler-icebergtarget-maximumtraversaldepth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumTraversalDepth { get; set; }
+        }
+
+        public class JdbcTarget
+        {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
+            /// <summary>
+            /// Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Path { get; set; }
+            /// <summary>
+            /// Exclusions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclusions { get; set; }
+            /// <summary>
+            /// EnableAdditionalMetadata
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-enableadditionalmetadata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EnableAdditionalMetadata { get; set; }
+        }
+
+        public class LakeFormationConfiguration
+        {
+            /// <summary>
+            /// AccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-lakeformationconfiguration.html#cfn-glue-crawler-lakeformationconfiguration-accountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AccountId { get; set; }
+            /// <summary>
+            /// UseLakeFormationCredentials
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-lakeformationconfiguration.html#cfn-glue-crawler-lakeformationconfiguration-uselakeformationcredentials
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UseLakeFormationCredentials { get; set; }
+        }
+
+        public class MongoDBTarget
+        {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-mongodbtarget.html#cfn-glue-crawler-mongodbtarget-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
+            /// <summary>
+            /// Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-mongodbtarget.html#cfn-glue-crawler-mongodbtarget-path
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Path { get; set; }
+        }
+
+        public class RecrawlPolicy
+        {
+            /// <summary>
+            /// RecrawlBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html#cfn-glue-crawler-recrawlpolicy-recrawlbehavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RecrawlBehavior { get; set; }
+        }
+
+        public class S3Target
+        {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
+            /// <summary>
+            /// Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Path { get; set; }
+            /// <summary>
+            /// SampleSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-samplesize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SampleSize { get; set; }
+            /// <summary>
+            /// Exclusions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclusions { get; set; }
+            /// <summary>
+            /// DlqEventQueueArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-dlqeventqueuearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DlqEventQueueArn { get; set; }
+            /// <summary>
+            /// EventQueueArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-eventqueuearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventQueueArn { get; set; }
+        }
+
+        public class Schedule
+        {
+            /// <summary>
+            /// ScheduleExpression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScheduleExpression { get; set; }
         }
 
         public class SchemaChangePolicy
@@ -346,12 +426,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic UpdateBehavior
-            {
-                get;
-                set;
-            }
-
+            public dynamic UpdateBehavior { get; set; }
             /// <summary>
             /// DeleteBehavior
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior
@@ -359,41 +434,74 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeleteBehavior
-            {
-                get;
-                set;
-            }
+            public dynamic DeleteBehavior { get; set; }
         }
 
-        public class S3Target
+        public class Targets
         {
             /// <summary>
-            /// Path
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Path
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Exclusions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions
+            /// S3Targets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// PrimitiveItemType: String
+            /// ItemType: S3Target
             /// </summary>
-            public dynamic Exclusions
-            {
-                get;
-                set;
-            }
+            public List<S3Target> S3Targets { get; set; }
+            /// <summary>
+            /// CatalogTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CatalogTarget
+            /// </summary>
+            public List<CatalogTarget> CatalogTargets { get; set; }
+            /// <summary>
+            /// DeltaTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-deltatargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DeltaTarget
+            /// </summary>
+            public List<DeltaTarget> DeltaTargets { get; set; }
+            /// <summary>
+            /// MongoDBTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-mongodbtargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: MongoDBTarget
+            /// </summary>
+            public List<MongoDBTarget> MongoDBTargets { get; set; }
+            /// <summary>
+            /// JdbcTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: JdbcTarget
+            /// </summary>
+            public List<JdbcTarget> JdbcTargets { get; set; }
+            /// <summary>
+            /// DynamoDBTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DynamoDBTarget
+            /// </summary>
+            public List<DynamoDBTarget> DynamoDBTargets { get; set; }
+            /// <summary>
+            /// IcebergTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-icebergtargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: IcebergTarget
+            /// </summary>
+            public List<IcebergTarget> IcebergTargets { get; set; }
         }
     }
 }

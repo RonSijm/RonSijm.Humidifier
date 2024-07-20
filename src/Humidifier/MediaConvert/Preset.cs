@@ -4,7 +4,7 @@ namespace Humidifier.MediaConvert
 
     public class Preset : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -25,12 +25,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Category
-        {
-            get;
-            set;
-        }
-
+        public dynamic Category { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-description
@@ -38,12 +33,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// SettingsJson
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-settingsjson
@@ -51,12 +41,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic SettingsJson
-        {
-            get;
-            set;
-        }
-
+        public dynamic SettingsJson { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-tags
@@ -64,12 +49,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-name
@@ -77,10 +57,6 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

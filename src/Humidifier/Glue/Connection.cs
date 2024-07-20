@@ -20,12 +20,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: ConnectionInput
         /// </summary>
-        public ConnectionInput ConnectionInput
-        {
-            get;
-            set;
-        }
-
+        public ConnectionInput ConnectionInput { get; set; }
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid
@@ -33,11 +28,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CatalogId
-        {
-            get;
-            set;
-        }
+        public dynamic CatalogId { get; set; }
     }
 
     namespace ConnectionTypes
@@ -51,12 +42,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Description
-            {
-                get;
-                set;
-            }
-
+            public dynamic Description { get; set; }
             /// <summary>
             /// ConnectionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectiontype
@@ -64,12 +50,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConnectionType
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConnectionType { get; set; }
             /// <summary>
             /// MatchCriteria
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-matchcriteria
@@ -78,12 +59,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic MatchCriteria
-            {
-                get;
-                set;
-            }
-
+            public dynamic MatchCriteria { get; set; }
             /// <summary>
             /// PhysicalConnectionRequirements
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-physicalconnectionrequirements
@@ -91,25 +67,15 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// Type: PhysicalConnectionRequirements
             /// </summary>
-            public PhysicalConnectionRequirements PhysicalConnectionRequirements
-            {
-                get;
-                set;
-            }
-
+            public PhysicalConnectionRequirements PhysicalConnectionRequirements { get; set; }
             /// <summary>
             /// ConnectionProperties
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-connectionproperties
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic ConnectionProperties
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConnectionProperties { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-name
@@ -117,11 +83,7 @@ namespace Humidifier.Glue
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class PhysicalConnectionRequirements
@@ -133,12 +95,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic AvailabilityZone
-            {
-                get;
-                set;
-            }
-
+            public dynamic AvailabilityZone { get; set; }
             /// <summary>
             /// SecurityGroupIdList
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html#cfn-glue-connection-physicalconnectionrequirements-securitygroupidlist
@@ -147,12 +104,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SecurityGroupIdList
-            {
-                get;
-                set;
-            }
-
+            public dynamic SecurityGroupIdList { get; set; }
             /// <summary>
             /// SubnetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html#cfn-glue-connection-physicalconnectionrequirements-subnetid
@@ -160,11 +112,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SubnetId
-            {
-                get;
-                set;
-            }
+            public dynamic SubnetId { get; set; }
         }
     }
 }

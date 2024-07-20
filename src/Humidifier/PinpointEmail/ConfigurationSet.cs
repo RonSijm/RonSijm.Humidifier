@@ -20,12 +20,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// Type: SendingOptions
         /// </summary>
-        public SendingOptions SendingOptions
-        {
-            get;
-            set;
-        }
-
+        public SendingOptions SendingOptions { get; set; }
         /// <summary>
         /// TrackingOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-trackingoptions
@@ -33,12 +28,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// Type: TrackingOptions
         /// </summary>
-        public TrackingOptions TrackingOptions
-        {
-            get;
-            set;
-        }
-
+        public TrackingOptions TrackingOptions { get; set; }
         /// <summary>
         /// ReputationOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-reputationoptions
@@ -46,12 +36,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// Type: ReputationOptions
         /// </summary>
-        public ReputationOptions ReputationOptions
-        {
-            get;
-            set;
-        }
-
+        public ReputationOptions ReputationOptions { get; set; }
         /// <summary>
         /// DeliveryOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-deliveryoptions
@@ -59,12 +44,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Mutable
         /// Type: DeliveryOptions
         /// </summary>
-        public DeliveryOptions DeliveryOptions
-        {
-            get;
-            set;
-        }
-
+        public DeliveryOptions DeliveryOptions { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-tags
@@ -73,12 +53,7 @@ namespace Humidifier.PinpointEmail
         /// Type: List
         /// ItemType: Tags
         /// </summary>
-        public List<Tags> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tags> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-name
@@ -86,58 +61,21 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ConfigurationSetTypes
     {
-        public class SendingOptions
+        public class DeliveryOptions
         {
             /// <summary>
-            /// SendingEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-sendingoptions.html#cfn-pinpointemail-configurationset-sendingoptions-sendingenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic SendingEnabled
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Tags
-        {
-            /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html#cfn-pinpointemail-configurationset-tags-value
+            /// SendingPoolName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-deliveryoptions.html#cfn-pinpointemail-configurationset-deliveryoptions-sendingpoolname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html#cfn-pinpointemail-configurationset-tags-key
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic SendingPoolName { get; set; }
         }
 
         public class ReputationOptions
@@ -149,27 +87,39 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ReputationMetricsEnabled
-            {
-                get;
-                set;
-            }
+            public dynamic ReputationMetricsEnabled { get; set; }
         }
 
-        public class DeliveryOptions
+        public class SendingOptions
         {
             /// <summary>
-            /// SendingPoolName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-deliveryoptions.html#cfn-pinpointemail-configurationset-deliveryoptions-sendingpoolname
+            /// SendingEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-sendingoptions.html#cfn-pinpointemail-configurationset-sendingoptions-sendingenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic SendingEnabled { get; set; }
+        }
+
+        public class Tags
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html#cfn-pinpointemail-configurationset-tags-value
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SendingPoolName
-            {
-                get;
-                set;
-            }
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html#cfn-pinpointemail-configurationset-tags-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class TrackingOptions
@@ -181,11 +131,7 @@ namespace Humidifier.PinpointEmail
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CustomRedirectDomain
-            {
-                get;
-                set;
-            }
+            public dynamic CustomRedirectDomain { get; set; }
         }
     }
 }

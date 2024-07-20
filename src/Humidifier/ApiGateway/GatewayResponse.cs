@@ -4,26 +4,17 @@ namespace Humidifier.ApiGateway
 
     public class GatewayResponse : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
             {
                 return @"AWS::ApiGateway::GatewayResponse";
             }
-        }
-
-        /// <summary>
-        /// ResponseParameters
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: Map
-        /// PrimitiveItemType: String
-        /// </summary>
-        public Dictionary<string, dynamic> ResponseParameters
-        {
-            get;
-            set;
         }
 
         /// <summary>
@@ -34,25 +25,16 @@ namespace Humidifier.ApiGateway
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        public Dictionary<string, dynamic> ResponseTemplates
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> ResponseTemplates { get; set; }
         /// <summary>
-        /// ResponseType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// ResponseParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responseparameters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ResponseType
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> ResponseParameters { get; set; }
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-restapiid
@@ -60,12 +42,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RestApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic RestApiId { get; set; }
         /// <summary>
         /// StatusCode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-statuscode
@@ -73,10 +50,14 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StatusCode
-        {
-            get;
-            set;
-        }
+        public dynamic StatusCode { get; set; }
+        /// <summary>
+        /// ResponseType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetype
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResponseType { get; set; }
     }
 }

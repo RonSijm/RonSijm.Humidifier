@@ -5,6 +5,11 @@ namespace Humidifier.SSM
 
     public class PatchBaseline : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic OperatingSystem
-        {
-            get;
-            set;
-        }
-
+        public dynamic OperatingSystem { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description
@@ -33,12 +33,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// ApprovalRules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules
@@ -46,12 +41,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// Type: RuleGroup
         /// </summary>
-        public RuleGroup ApprovalRules
-        {
-            get;
-            set;
-        }
-
+        public RuleGroup ApprovalRules { get; set; }
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources
@@ -60,12 +50,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// ItemType: PatchSource
         /// </summary>
-        public List<PatchSource> Sources
-        {
-            get;
-            set;
-        }
-
+        public List<PatchSource> Sources { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name
@@ -73,12 +58,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// RejectedPatches
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatches
@@ -87,12 +67,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic RejectedPatches
-        {
-            get;
-            set;
-        }
-
+        public dynamic RejectedPatches { get; set; }
         /// <summary>
         /// ApprovedPatches
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatches
@@ -101,12 +76,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ApprovedPatches
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApprovedPatches { get; set; }
         /// <summary>
         /// RejectedPatchesAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatchesaction
@@ -114,12 +84,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RejectedPatchesAction
-        {
-            get;
-            set;
-        }
-
+        public dynamic RejectedPatchesAction { get; set; }
         /// <summary>
         /// PatchGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-patchgroups
@@ -128,12 +93,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic PatchGroups
-        {
-            get;
-            set;
-        }
-
+        public dynamic PatchGroups { get; set; }
         /// <summary>
         /// ApprovedPatchesComplianceLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchescompliancelevel
@@ -141,12 +101,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApprovedPatchesComplianceLevel
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApprovedPatchesComplianceLevel { get; set; }
         /// <summary>
         /// ApprovedPatchesEnableNonSecurity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity
@@ -154,12 +109,15 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic ApprovedPatchesEnableNonSecurity
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApprovedPatchesEnableNonSecurity { get; set; }
+        /// <summary>
+        /// DefaultBaseline
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-defaultbaseline
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DefaultBaseline { get; set; }
         /// <summary>
         /// GlobalFilters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters
@@ -167,12 +125,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// Type: PatchFilterGroup
         /// </summary>
-        public PatchFilterGroup GlobalFilters
-        {
-            get;
-            set;
-        }
-
+        public PatchFilterGroup GlobalFilters { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-tags
@@ -181,32 +134,11 @@ namespace Humidifier.SSM
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace PatchBaselineTypes
     {
-        public class RuleGroup
-        {
-            /// <summary>
-            /// PatchRules
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Rule
-            /// </summary>
-            public List<Rule> PatchRules
-            {
-                get;
-                set;
-            }
-        }
-
         public class PatchFilter
         {
             /// <summary>
@@ -217,12 +149,7 @@ namespace Humidifier.SSM
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Values
-            {
-                get;
-                set;
-            }
-
+            public dynamic Values { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html#cfn-ssm-patchbaseline-patchfilter-key
@@ -230,66 +157,7 @@ namespace Humidifier.SSM
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Rule
-        {
-            /// <summary>
-            /// EnableNonSecurity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic EnableNonSecurity
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// PatchFilterGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-patchfiltergroup
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: PatchFilterGroup
-            /// </summary>
-            public PatchFilterGroup PatchFilterGroup
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ApproveAfterDays
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ApproveAfterDays
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ComplianceLevel
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-compliancelevel
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ComplianceLevel
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
 
         public class PatchFilterGroup
@@ -302,11 +170,7 @@ namespace Humidifier.SSM
             /// Type: List
             /// ItemType: PatchFilter
             /// </summary>
-            public List<PatchFilter> PatchFilters
-            {
-                get;
-                set;
-            }
+            public List<PatchFilter> PatchFilters { get; set; }
         }
 
         public class PatchSource
@@ -319,12 +183,7 @@ namespace Humidifier.SSM
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Products
-            {
-                get;
-                set;
-            }
-
+            public dynamic Products { get; set; }
             /// <summary>
             /// Configuration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-configuration
@@ -332,12 +191,7 @@ namespace Humidifier.SSM
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Configuration
-            {
-                get;
-                set;
-            }
-
+            public dynamic Configuration { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-name
@@ -345,11 +199,64 @@ namespace Humidifier.SSM
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
+        }
+
+        public class Rule
+        {
+            /// <summary>
+            /// ApproveUntilDate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveuntildate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApproveUntilDate { get; set; }
+            /// <summary>
+            /// EnableNonSecurity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableNonSecurity { get; set; }
+            /// <summary>
+            /// PatchFilterGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-patchfiltergroup
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PatchFilterGroup
+            /// </summary>
+            public PatchFilterGroup PatchFilterGroup { get; set; }
+            /// <summary>
+            /// ApproveAfterDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ApproveAfterDays { get; set; }
+            /// <summary>
+            /// ComplianceLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-compliancelevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ComplianceLevel { get; set; }
+        }
+
+        public class RuleGroup
+        {
+            /// <summary>
+            /// PatchRules
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Rule
+            /// </summary>
+            public List<Rule> PatchRules { get; set; }
         }
     }
 }

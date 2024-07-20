@@ -20,12 +20,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BundleId
-        {
-            get;
-            set;
-        }
-
+        public dynamic BundleId { get; set; }
         /// <summary>
         /// DirectoryId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
@@ -33,12 +28,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DirectoryId
-        {
-            get;
-            set;
-        }
-
+        public dynamic DirectoryId { get; set; }
         /// <summary>
         /// RootVolumeEncryptionEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-rootvolumeencryptionenabled
@@ -46,12 +36,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic RootVolumeEncryptionEnabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic RootVolumeEncryptionEnabled { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags
@@ -60,12 +45,7 @@ namespace Humidifier.WorkSpaces
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// UserName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
@@ -73,12 +53,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserName
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserName { get; set; }
         /// <summary>
         /// UserVolumeEncryptionEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-uservolumeencryptionenabled
@@ -86,12 +61,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic UserVolumeEncryptionEnabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic UserVolumeEncryptionEnabled { get; set; }
         /// <summary>
         /// VolumeEncryptionKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey
@@ -99,12 +69,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VolumeEncryptionKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic VolumeEncryptionKey { get; set; }
         /// <summary>
         /// WorkspaceProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties
@@ -112,11 +77,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Mutable
         /// Type: WorkspaceProperties
         /// </summary>
-        public WorkspaceProperties WorkspaceProperties
-        {
-            get;
-            set;
-        }
+        public WorkspaceProperties WorkspaceProperties { get; set; }
     }
 
     namespace WorkspaceTypes
@@ -130,12 +91,7 @@ namespace Humidifier.WorkSpaces
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ComputeTypeName
-            {
-                get;
-                set;
-            }
-
+            public dynamic ComputeTypeName { get; set; }
             /// <summary>
             /// RootVolumeSizeGib
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-rootvolumesizegib
@@ -143,12 +99,7 @@ namespace Humidifier.WorkSpaces
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic RootVolumeSizeGib
-            {
-                get;
-                set;
-            }
-
+            public dynamic RootVolumeSizeGib { get; set; }
             /// <summary>
             /// RunningMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmode
@@ -156,12 +107,7 @@ namespace Humidifier.WorkSpaces
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RunningMode
-            {
-                get;
-                set;
-            }
-
+            public dynamic RunningMode { get; set; }
             /// <summary>
             /// RunningModeAutoStopTimeoutInMinutes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-runningmodeautostoptimeoutinminutes
@@ -169,12 +115,7 @@ namespace Humidifier.WorkSpaces
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic RunningModeAutoStopTimeoutInMinutes
-            {
-                get;
-                set;
-            }
-
+            public dynamic RunningModeAutoStopTimeoutInMinutes { get; set; }
             /// <summary>
             /// UserVolumeSizeGib
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib
@@ -182,11 +123,7 @@ namespace Humidifier.WorkSpaces
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic UserVolumeSizeGib
-            {
-                get;
-                set;
-            }
+            public dynamic UserVolumeSizeGib { get; set; }
         }
     }
 }

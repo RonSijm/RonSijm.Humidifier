@@ -4,7 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class SmsTemplate : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateName
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateName { get; set; }
         /// <summary>
         /// TemplateDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-templatedescription
@@ -37,12 +32,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateDescription
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateDescription { get; set; }
         /// <summary>
         /// DefaultSubstitutions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-defaultsubstitutions
@@ -50,12 +40,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultSubstitutions
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultSubstitutions { get; set; }
         /// <summary>
         /// Body
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-body
@@ -63,12 +48,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Body
-        {
-            get;
-            set;
-        }
-
+        public dynamic Body { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-tags
@@ -76,10 +56,6 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public dynamic Tags { get; set; }
     }
 }

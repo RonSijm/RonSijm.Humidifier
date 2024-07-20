@@ -20,12 +20,7 @@ namespace Humidifier.WAFRegional
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic RegexPatternStrings
-        {
-            get;
-            set;
-        }
-
+        public dynamic RegexPatternStrings { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-regexpatternset.html#cfn-wafregional-regexpatternset-name
@@ -33,10 +28,6 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

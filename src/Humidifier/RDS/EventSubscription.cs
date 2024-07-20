@@ -13,18 +13,21 @@ namespace Humidifier.RDS
         }
 
         /// <summary>
+        /// SourceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceType { get; set; }
+        /// <summary>
         /// Enabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-enabled
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic Enabled
-        {
-            get;
-            set;
-        }
-
+        public dynamic Enabled { get; set; }
         /// <summary>
         /// EventCategories
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-eventcategories
@@ -33,12 +36,15 @@ namespace Humidifier.RDS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic EventCategories
-        {
-            get;
-            set;
-        }
-
+        public dynamic EventCategories { get; set; }
+        /// <summary>
+        /// SubscriptionName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-subscriptionname
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SubscriptionName { get; set; }
         /// <summary>
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn
@@ -46,12 +52,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SnsTopicArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic SnsTopicArn { get; set; }
         /// <summary>
         /// SourceIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourceids
@@ -60,23 +61,15 @@ namespace Humidifier.RDS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SourceIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SourceIds { get; set; }
         /// <summary>
-        /// SourceType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-tags
         /// Required: False
-        /// UpdateType: Conditional
-        /// PrimitiveType: String
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
         /// </summary>
-        public dynamic SourceType
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

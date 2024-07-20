@@ -4,7 +4,7 @@ namespace Humidifier.Inspector
 
     public class ResourceGroup : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -25,10 +25,6 @@ namespace Humidifier.Inspector
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> ResourceGroupTags
-        {
-            get;
-            set;
-        }
+        public List<Tag> ResourceGroupTags { get; set; }
     }
 }

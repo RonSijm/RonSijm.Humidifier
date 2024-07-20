@@ -5,7 +5,7 @@ namespace Humidifier.IoT1Click
 
     public class Project : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ProjectName =  "ProjectName" ;
             public static string Arn =  "Arn" ;
@@ -26,12 +26,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// PlacementTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-placementtemplate
@@ -39,12 +34,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Mutable
         /// Type: PlacementTemplate
         /// </summary>
-        public PlacementTemplate PlacementTemplate
-        {
-            get;
-            set;
-        }
-
+        public PlacementTemplate PlacementTemplate { get; set; }
         /// <summary>
         /// ProjectName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-projectname
@@ -52,11 +42,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProjectName
-        {
-            get;
-            set;
-        }
+        public dynamic ProjectName { get; set; }
     }
 
     namespace ProjectTypes
@@ -70,12 +56,7 @@ namespace Humidifier.IoT1Click
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeviceType
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeviceType { get; set; }
             /// <summary>
             /// CallbackOverrides
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-callbackoverrides
@@ -83,11 +64,7 @@ namespace Humidifier.IoT1Click
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic CallbackOverrides
-            {
-                get;
-                set;
-            }
+            public dynamic CallbackOverrides { get; set; }
         }
 
         public class PlacementTemplate
@@ -99,12 +76,7 @@ namespace Humidifier.IoT1Click
             /// UpdateType: Immutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic DeviceTemplates
-            {
-                get;
-                set;
-            }
-
+            public dynamic DeviceTemplates { get; set; }
             /// <summary>
             /// DefaultAttributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-placementtemplate.html#cfn-iot1click-project-placementtemplate-defaultattributes
@@ -112,11 +84,7 @@ namespace Humidifier.IoT1Click
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic DefaultAttributes
-            {
-                get;
-                set;
-            }
+            public dynamic DefaultAttributes { get; set; }
         }
     }
 }

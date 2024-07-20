@@ -20,11 +20,7 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// Type: Filter
         /// </summary>
-        public Filter Filter
-        {
-            get;
-            set;
-        }
+        public Filter Filter { get; set; }
     }
 
     namespace ReceiptFilterTypes
@@ -38,12 +34,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// Type: IpFilter
             /// </summary>
-            public IpFilter IpFilter
-            {
-                get;
-                set;
-            }
-
+            public IpFilter IpFilter { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name
@@ -51,11 +42,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class IpFilter
@@ -67,12 +54,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Policy
-            {
-                get;
-                set;
-            }
-
+            public dynamic Policy { get; set; }
             /// <summary>
             /// Cidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-cidr
@@ -80,11 +62,7 @@ namespace Humidifier.SES
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Cidr
-            {
-                get;
-                set;
-            }
+            public dynamic Cidr { get; set; }
         }
     }
 }

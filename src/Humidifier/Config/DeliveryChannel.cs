@@ -20,12 +20,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// Type: ConfigSnapshotDeliveryProperties
         /// </summary>
-        public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties
-        {
-            get;
-            set;
-        }
-
+        public ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-name
@@ -33,12 +28,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// S3BucketName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3bucketname
@@ -46,12 +36,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic S3BucketName
-        {
-            get;
-            set;
-        }
-
+        public dynamic S3BucketName { get; set; }
         /// <summary>
         /// S3KeyPrefix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3keyprefix
@@ -59,12 +44,15 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic S3KeyPrefix
-        {
-            get;
-            set;
-        }
-
+        public dynamic S3KeyPrefix { get; set; }
+        /// <summary>
+        /// S3KmsKeyArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3kmskeyarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic S3KmsKeyArn { get; set; }
         /// <summary>
         /// SnsTopicARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-snstopicarn
@@ -72,11 +60,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SnsTopicARN
-        {
-            get;
-            set;
-        }
+        public dynamic SnsTopicARN { get; set; }
     }
 
     namespace DeliveryChannelTypes
@@ -90,11 +74,7 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeliveryFrequency
-            {
-                get;
-                set;
-            }
+            public dynamic DeliveryFrequency { get; set; }
         }
     }
 }

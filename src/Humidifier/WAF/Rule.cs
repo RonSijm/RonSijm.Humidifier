@@ -20,12 +20,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MetricName
-        {
-            get;
-            set;
-        }
-
+        public dynamic MetricName { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name
@@ -33,12 +28,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// Predicates
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-predicates
@@ -47,11 +37,7 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: Predicate
         /// </summary>
-        public List<Predicate> Predicates
-        {
-            get;
-            set;
-        }
+        public List<Predicate> Predicates { get; set; }
     }
 
     namespace RuleTypes
@@ -65,12 +51,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DataId
-            {
-                get;
-                set;
-            }
-
+            public dynamic DataId { get; set; }
             /// <summary>
             /// Negated
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html#cfn-waf-rule-predicates-negated
@@ -78,12 +59,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Negated
-            {
-                get;
-                set;
-            }
-
+            public dynamic Negated { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html#cfn-waf-rule-predicates-type
@@ -91,11 +67,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic Type { get; set; }
         }
     }
 }

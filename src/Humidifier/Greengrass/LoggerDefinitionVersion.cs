@@ -20,12 +20,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LoggerDefinitionId
-        {
-            get;
-            set;
-        }
-
+        public dynamic LoggerDefinitionId { get; set; }
         /// <summary>
         /// Loggers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggers
@@ -34,11 +29,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Logger
         /// </summary>
-        public List<Logger> Loggers
-        {
-            get;
-            set;
-        }
+        public List<Logger> Loggers { get; set; }
     }
 
     namespace LoggerDefinitionVersionTypes
@@ -52,12 +43,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Space
-            {
-                get;
-                set;
-            }
-
+            public dynamic Space { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-type
@@ -65,12 +51,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Level
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-level
@@ -78,12 +59,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Level
-            {
-                get;
-                set;
-            }
-
+            public dynamic Level { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-id
@@ -91,12 +67,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
-
+            public dynamic Id { get; set; }
             /// <summary>
             /// Component
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-component
@@ -104,11 +75,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Component
-            {
-                get;
-                set;
-            }
+            public dynamic Component { get; set; }
         }
     }
 }

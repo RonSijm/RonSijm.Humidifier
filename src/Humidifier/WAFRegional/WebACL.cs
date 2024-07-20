@@ -20,12 +20,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MetricName
-        {
-            get;
-            set;
-        }
-
+        public dynamic MetricName { get; set; }
         /// <summary>
         /// DefaultAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-defaultaction
@@ -33,12 +28,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Mutable
         /// Type: Action
         /// </summary>
-        public Action DefaultAction
-        {
-            get;
-            set;
-        }
-
+        public Action DefaultAction { get; set; }
         /// <summary>
         /// Rules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-rules
@@ -47,12 +37,7 @@ namespace Humidifier.WAFRegional
         /// Type: List
         /// ItemType: Rule
         /// </summary>
-        public List<Rule> Rules
-        {
-            get;
-            set;
-        }
-
+        public List<Rule> Rules { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-name
@@ -60,11 +45,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace WebACLTypes
@@ -78,11 +59,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
+            public dynamic Type { get; set; }
         }
 
         public class Rule
@@ -94,12 +71,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// Type: Action
             /// </summary>
-            public Action Action
-            {
-                get;
-                set;
-            }
-
+            public Action Action { get; set; }
             /// <summary>
             /// Priority
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-priority
@@ -107,12 +79,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Priority
-            {
-                get;
-                set;
-            }
-
+            public dynamic Priority { get; set; }
             /// <summary>
             /// RuleId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-ruleid
@@ -120,11 +87,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RuleId
-            {
-                get;
-                set;
-            }
+            public dynamic RuleId { get; set; }
         }
     }
 }

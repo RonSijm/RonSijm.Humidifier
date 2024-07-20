@@ -20,12 +20,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: DataCatalogEncryptionSettings
         /// </summary>
-        public DataCatalogEncryptionSettings DataCatalogEncryptionSettings_
-        {
-            get;
-            set;
-        }
-
+        public DataCatalogEncryptionSettings DataCatalogEncryptionSettings_ { get; set; }
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-catalogid
@@ -33,15 +28,31 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CatalogId
-        {
-            get;
-            set;
-        }
+        public dynamic CatalogId { get; set; }
     }
 
     namespace DataCatalogEncryptionSettingsTypes
     {
+        public class ConnectionPasswordEncryption
+        {
+            /// <summary>
+            /// ReturnConnectionPasswordEncrypted
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html#cfn-glue-datacatalogencryptionsettings-connectionpasswordencryption-returnconnectionpasswordencrypted
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReturnConnectionPasswordEncrypted { get; set; }
+            /// <summary>
+            /// KmsKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html#cfn-glue-datacatalogencryptionsettings-connectionpasswordencryption-kmskeyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyId { get; set; }
+        }
+
         public class DataCatalogEncryptionSettings
         {
             /// <summary>
@@ -51,12 +62,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// Type: ConnectionPasswordEncryption
             /// </summary>
-            public ConnectionPasswordEncryption ConnectionPasswordEncryption
-            {
-                get;
-                set;
-            }
-
+            public ConnectionPasswordEncryption ConnectionPasswordEncryption { get; set; }
             /// <summary>
             /// EncryptionAtRest
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-datacatalogencryptionsettings-encryptionatrest
@@ -64,11 +70,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// Type: EncryptionAtRest
             /// </summary>
-            public EncryptionAtRest EncryptionAtRest
-            {
-                get;
-                set;
-            }
+            public EncryptionAtRest EncryptionAtRest { get; set; }
         }
 
         public class EncryptionAtRest
@@ -80,12 +82,15 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CatalogEncryptionMode
-            {
-                get;
-                set;
-            }
-
+            public dynamic CatalogEncryptionMode { get; set; }
+            /// <summary>
+            /// CatalogEncryptionServiceRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-catalogencryptionservicerole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogEncryptionServiceRole { get; set; }
             /// <summary>
             /// SseAwsKmsKeyId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-sseawskmskeyid
@@ -93,40 +98,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SseAwsKmsKeyId
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ConnectionPasswordEncryption
-        {
-            /// <summary>
-            /// ReturnConnectionPasswordEncrypted
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html#cfn-glue-datacatalogencryptionsettings-connectionpasswordencryption-returnconnectionpasswordencrypted
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic ReturnConnectionPasswordEncrypted
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// KmsKeyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-connectionpasswordencryption.html#cfn-glue-datacatalogencryptionsettings-connectionpasswordencryption-kmskeyid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic KmsKeyId
-            {
-                get;
-                set;
-            }
+            public dynamic SseAwsKmsKeyId { get; set; }
         }
     }
 }

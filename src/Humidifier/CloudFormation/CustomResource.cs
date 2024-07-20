@@ -19,10 +19,6 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ServiceToken
-        {
-            get;
-            set;
-        }
+        public dynamic ServiceToken { get; set; }
     }
 }

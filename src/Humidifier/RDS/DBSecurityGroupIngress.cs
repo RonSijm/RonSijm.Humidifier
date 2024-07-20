@@ -19,12 +19,7 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CIDRIP
-        {
-            get;
-            set;
-        }
-
+        public dynamic CIDRIP { get; set; }
         /// <summary>
         /// DBSecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname
@@ -32,12 +27,7 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DBSecurityGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DBSecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupid
@@ -45,12 +35,7 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EC2SecurityGroupId
-        {
-            get;
-            set;
-        }
-
+        public dynamic EC2SecurityGroupId { get; set; }
         /// <summary>
         /// EC2SecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupname
@@ -58,12 +43,7 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EC2SecurityGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EC2SecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupOwnerId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-ec2securitygroupownerid
@@ -71,10 +51,6 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EC2SecurityGroupOwnerId
-        {
-            get;
-            set;
-        }
+        public dynamic EC2SecurityGroupOwnerId { get; set; }
     }
 }

@@ -20,12 +20,7 @@ namespace Humidifier.Events
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EventBusName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EventBusName { get; set; }
         /// <summary>
         /// Condition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-condition
@@ -33,25 +28,15 @@ namespace Humidifier.Events
         /// UpdateType: Mutable
         /// Type: Condition
         /// </summary>
-        public Condition Condition
-        {
-            get;
-            set;
-        }
-
+        public Condition Condition { get; set; }
         /// <summary>
         /// Action
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-action
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Action
-        {
-            get;
-            set;
-        }
-
+        public dynamic Action { get; set; }
         /// <summary>
         /// StatementId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-statementid
@@ -59,24 +44,23 @@ namespace Humidifier.Events
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StatementId
-        {
-            get;
-            set;
-        }
-
+        public dynamic StatementId { get; set; }
+        /// <summary>
+        /// Statement
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-statement
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic Statement { get; set; }
         /// <summary>
         /// Principal
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-principal
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Principal
-        {
-            get;
-            set;
-        }
+        public dynamic Principal { get; set; }
     }
 
     namespace EventBusPolicyTypes
@@ -90,12 +74,7 @@ namespace Humidifier.Events
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html#cfn-events-eventbuspolicy-condition-value
@@ -103,12 +82,7 @@ namespace Humidifier.Events
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html#cfn-events-eventbuspolicy-condition-key
@@ -116,11 +90,7 @@ namespace Humidifier.Events
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

@@ -21,12 +21,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Connector
         /// </summary>
-        public List<Connector> Connectors
-        {
-            get;
-            set;
-        }
-
+        public List<Connector> Connectors { get; set; }
         /// <summary>
         /// ConnectorDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectordefinitionid
@@ -34,11 +29,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConnectorDefinitionId
-        {
-            get;
-            set;
-        }
+        public dynamic ConnectorDefinitionId { get; set; }
     }
 
     namespace ConnectorDefinitionVersionTypes
@@ -52,12 +43,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConnectorArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic ConnectorArn { get; set; }
             /// <summary>
             /// Parameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-parameters
@@ -65,12 +51,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic Parameters
-            {
-                get;
-                set;
-            }
-
+            public dynamic Parameters { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinitionversion-connector.html#cfn-greengrass-connectordefinitionversion-connector-id
@@ -78,11 +59,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
+            public dynamic Id { get; set; }
         }
     }
 }

@@ -20,12 +20,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// TemplateSelectionExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-templateselectionexpression
@@ -33,12 +28,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TemplateSelectionExpression
-        {
-            get;
-            set;
-        }
-
+        public dynamic TemplateSelectionExpression { get; set; }
         /// <summary>
         /// ConnectionType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-connectiontype
@@ -46,12 +36,15 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConnectionType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConnectionType { get; set; }
+        /// <summary>
+        /// ResponseParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-responseparameters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic ResponseParameters { get; set; }
         /// <summary>
         /// IntegrationMethod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationmethod
@@ -59,12 +52,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IntegrationMethod
-        {
-            get;
-            set;
-        }
-
+        public dynamic IntegrationMethod { get; set; }
         /// <summary>
         /// PassthroughBehavior
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-passthroughbehavior
@@ -72,12 +60,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PassthroughBehavior
-        {
-            get;
-            set;
-        }
-
+        public dynamic PassthroughBehavior { get; set; }
         /// <summary>
         /// RequestParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-requestparameters
@@ -85,12 +68,15 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic RequestParameters
-        {
-            get;
-            set;
-        }
-
+        public dynamic RequestParameters { get; set; }
+        /// <summary>
+        /// ConnectionId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-connectionid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConnectionId { get; set; }
         /// <summary>
         /// IntegrationUri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationuri
@@ -98,12 +84,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IntegrationUri
-        {
-            get;
-            set;
-        }
-
+        public dynamic IntegrationUri { get; set; }
         /// <summary>
         /// PayloadFormatVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-payloadformatversion
@@ -111,12 +92,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PayloadFormatVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic PayloadFormatVersion { get; set; }
         /// <summary>
         /// CredentialsArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-credentialsarn
@@ -124,12 +100,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CredentialsArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic CredentialsArn { get; set; }
         /// <summary>
         /// RequestTemplates
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-requesttemplates
@@ -137,12 +108,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic RequestTemplates
-        {
-            get;
-            set;
-        }
-
+        public dynamic RequestTemplates { get; set; }
         /// <summary>
         /// TimeoutInMillis
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-timeoutinmillis
@@ -150,12 +116,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic TimeoutInMillis
-        {
-            get;
-            set;
-        }
-
+        public dynamic TimeoutInMillis { get; set; }
         /// <summary>
         /// TlsConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-tlsconfig
@@ -163,12 +124,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// Type: TlsConfig
         /// </summary>
-        public TlsConfig TlsConfig
-        {
-            get;
-            set;
-        }
-
+        public TlsConfig TlsConfig { get; set; }
         /// <summary>
         /// ContentHandlingStrategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-contenthandlingstrategy
@@ -176,12 +132,15 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ContentHandlingStrategy
-        {
-            get;
-            set;
-        }
-
+        public dynamic ContentHandlingStrategy { get; set; }
+        /// <summary>
+        /// IntegrationSubtype
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationsubtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IntegrationSubtype { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-apiid
@@ -189,12 +148,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApiId { get; set; }
         /// <summary>
         /// IntegrationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-integrationtype
@@ -202,15 +156,44 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IntegrationType
-        {
-            get;
-            set;
-        }
+        public dynamic IntegrationType { get; set; }
     }
 
     namespace IntegrationTypes
     {
+        public class ResponseParameter
+        {
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameter.html#cfn-apigatewayv2-integration-responseparameter-destination
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Destination { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameter.html#cfn-apigatewayv2-integration-responseparameter-source
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Source { get; set; }
+        }
+
+        public class ResponseParameterList
+        {
+            /// <summary>
+            /// ResponseParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameterlist.html#cfn-apigatewayv2-integration-responseparameterlist-responseparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ResponseParameter
+            /// </summary>
+            public List<ResponseParameter> ResponseParameters { get; set; }
+        }
+
         public class TlsConfig
         {
             /// <summary>
@@ -220,11 +203,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ServerNameToVerify
-            {
-                get;
-                set;
-            }
+            public dynamic ServerNameToVerify { get; set; }
         }
     }
 }

@@ -4,7 +4,7 @@ namespace Humidifier.OpsWorks
 
     public class UserProfile : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string SshUsername =  "SshUsername" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AllowSelfManagement
-        {
-            get;
-            set;
-        }
-
+        public dynamic AllowSelfManagement { get; set; }
         /// <summary>
         /// IamUserArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
@@ -37,12 +32,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IamUserArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic IamUserArn { get; set; }
         /// <summary>
         /// SshPublicKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshpublickey
@@ -50,12 +40,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SshPublicKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic SshPublicKey { get; set; }
         /// <summary>
         /// SshUsername
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-sshusername
@@ -63,10 +48,6 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SshUsername
-        {
-            get;
-            set;
-        }
+        public dynamic SshUsername { get; set; }
     }
 }

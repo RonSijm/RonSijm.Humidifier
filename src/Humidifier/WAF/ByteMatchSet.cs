@@ -21,12 +21,7 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: ByteMatchTuple
         /// </summary>
-        public List<ByteMatchTuple> ByteMatchTuples
-        {
-            get;
-            set;
-        }
-
+        public List<ByteMatchTuple> ByteMatchTuples { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-name
@@ -34,44 +29,11 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ByteMatchSetTypes
     {
-        public class FieldToMatch
-        {
-            /// <summary>
-            /// Data
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-data
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Data
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-        }
-
         public class ByteMatchTuple
         {
             /// <summary>
@@ -81,12 +43,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// Type: FieldToMatch
             /// </summary>
-            public FieldToMatch FieldToMatch
-            {
-                get;
-                set;
-            }
-
+            public FieldToMatch FieldToMatch { get; set; }
             /// <summary>
             /// PositionalConstraint
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-positionalconstraint
@@ -94,12 +51,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PositionalConstraint
-            {
-                get;
-                set;
-            }
-
+            public dynamic PositionalConstraint { get; set; }
             /// <summary>
             /// TargetString
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-targetstring
@@ -107,12 +59,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TargetString
-            {
-                get;
-                set;
-            }
-
+            public dynamic TargetString { get; set; }
             /// <summary>
             /// TargetStringBase64
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-targetstringbase64
@@ -120,12 +67,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TargetStringBase64
-            {
-                get;
-                set;
-            }
-
+            public dynamic TargetStringBase64 { get; set; }
             /// <summary>
             /// TextTransformation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-texttransformation
@@ -133,11 +75,27 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TextTransformation
-            {
-                get;
-                set;
-            }
+            public dynamic TextTransformation { get; set; }
+        }
+
+        public class FieldToMatch
+        {
+            /// <summary>
+            /// Data
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-data
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Data { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
     }
 }

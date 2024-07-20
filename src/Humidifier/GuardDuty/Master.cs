@@ -19,12 +19,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DetectorId
-        {
-            get;
-            set;
-        }
-
+        public dynamic DetectorId { get; set; }
         /// <summary>
         /// MasterId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-masterid
@@ -32,12 +27,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MasterId
-        {
-            get;
-            set;
-        }
-
+        public dynamic MasterId { get; set; }
         /// <summary>
         /// InvitationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-master.html#cfn-guardduty-master-invitationid
@@ -45,10 +35,6 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InvitationId
-        {
-            get;
-            set;
-        }
+        public dynamic InvitationId { get; set; }
     }
 }

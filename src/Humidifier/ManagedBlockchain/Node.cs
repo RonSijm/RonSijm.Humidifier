@@ -5,7 +5,7 @@ namespace Humidifier.ManagedBlockchain
 
     public class Node : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string MemberId =  "MemberId" ;
             public static string NodeId =  "NodeId" ;
@@ -24,16 +24,11 @@ namespace Humidifier.ManagedBlockchain
         /// <summary>
         /// MemberId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-memberid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MemberId
-        {
-            get;
-            set;
-        }
-
+        public dynamic MemberId { get; set; }
         /// <summary>
         /// NetworkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-networkid
@@ -41,12 +36,7 @@ namespace Humidifier.ManagedBlockchain
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NetworkId
-        {
-            get;
-            set;
-        }
-
+        public dynamic NetworkId { get; set; }
         /// <summary>
         /// NodeConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-nodeconfiguration
@@ -54,11 +44,7 @@ namespace Humidifier.ManagedBlockchain
         /// UpdateType: Mutable
         /// Type: NodeConfiguration
         /// </summary>
-        public NodeConfiguration NodeConfiguration
-        {
-            get;
-            set;
-        }
+        public NodeConfiguration NodeConfiguration { get; set; }
     }
 
     namespace NodeTypes
@@ -72,12 +58,7 @@ namespace Humidifier.ManagedBlockchain
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic AvailabilityZone
-            {
-                get;
-                set;
-            }
-
+            public dynamic AvailabilityZone { get; set; }
             /// <summary>
             /// InstanceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-instancetype
@@ -85,11 +66,7 @@ namespace Humidifier.ManagedBlockchain
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic InstanceType
-            {
-                get;
-                set;
-            }
+            public dynamic InstanceType { get; set; }
         }
     }
 }

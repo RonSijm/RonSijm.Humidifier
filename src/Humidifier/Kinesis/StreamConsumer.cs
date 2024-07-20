@@ -4,7 +4,7 @@ namespace Humidifier.Kinesis
 
     public class StreamConsumer : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ConsumerCreationTimestamp =  "ConsumerCreationTimestamp" ;
             public static string ConsumerName =  "ConsumerName" ;
@@ -28,12 +28,7 @@ namespace Humidifier.Kinesis
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConsumerName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConsumerName { get; set; }
         /// <summary>
         /// StreamARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-streamarn
@@ -41,10 +36,6 @@ namespace Humidifier.Kinesis
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StreamARN
-        {
-            get;
-            set;
-        }
+        public dynamic StreamARN { get; set; }
     }
 }

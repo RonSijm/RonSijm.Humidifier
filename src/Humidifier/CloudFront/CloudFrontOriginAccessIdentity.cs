@@ -5,9 +5,10 @@ namespace Humidifier.CloudFront
 
     public class CloudFrontOriginAccessIdentity : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string S3CanonicalUserId =  "S3CanonicalUserId" ;
+            public static string Id =  "Id" ;
         }
 
         public override string AWSTypeName
@@ -25,11 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: CloudFrontOriginAccessIdentityConfig
         /// </summary>
-        public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig
-        {
-            get;
-            set;
-        }
+        public CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig { get; set; }
     }
 
     namespace CloudFrontOriginAccessIdentityTypes
@@ -43,11 +40,7 @@ namespace Humidifier.CloudFront
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Comment
-            {
-                get;
-                set;
-            }
+            public dynamic Comment { get; set; }
         }
     }
 }

@@ -5,6 +5,11 @@ namespace Humidifier.EC2
 
     public class VPNConnection : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string VpnConnectionId =  "VpnConnectionId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,97 +19,63 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// CustomerGatewayId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic CustomerGatewayId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// StaticRoutesOnly
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic StaticRoutesOnly
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// TransitGatewayId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-transitgatewayid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TransitGatewayId
-        {
-            get;
-            set;
-        }
-
+        public dynamic TransitGatewayId { get; set; }
         /// <summary>
         /// Type
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-type
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// VpnGatewayId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic VpnGatewayId
-        {
-            get;
-            set;
-        }
-
+        public dynamic Type { get; set; }
         /// <summary>
         /// VpnTunnelOptionsSpecifications
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
         /// Required: False
         /// UpdateType: Immutable
         /// Type: List
         /// ItemType: VpnTunnelOptionsSpecification
         /// </summary>
-        public List<VpnTunnelOptionsSpecification> VpnTunnelOptionsSpecifications
-        {
-            get;
-            set;
-        }
+        public List<VpnTunnelOptionsSpecification> VpnTunnelOptionsSpecifications { get; set; }
+        /// <summary>
+        /// CustomerGatewayId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-customergatewayid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CustomerGatewayId { get; set; }
+        /// <summary>
+        /// VpnGatewayId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpngatewayid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VpnGatewayId { get; set; }
+        /// <summary>
+        /// StaticRoutesOnly
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-staticroutesonly
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic StaticRoutesOnly { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 
     namespace VPNConnectionTypes
@@ -118,12 +89,7 @@ namespace Humidifier.EC2
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PreSharedKey
-            {
-                get;
-                set;
-            }
-
+            public dynamic PreSharedKey { get; set; }
             /// <summary>
             /// TunnelInsideCidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
@@ -131,11 +97,7 @@ namespace Humidifier.EC2
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TunnelInsideCidr
-            {
-                get;
-                set;
-            }
+            public dynamic TunnelInsideCidr { get; set; }
         }
     }
 }

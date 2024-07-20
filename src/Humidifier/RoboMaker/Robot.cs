@@ -4,6 +4,11 @@ namespace Humidifier.RoboMaker
 
     public class Robot : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Arn =  "Arn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Fleet
-        {
-            get;
-            set;
-        }
-
+        public dynamic Fleet { get; set; }
         /// <summary>
         /// Architecture
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-architecture
@@ -32,12 +32,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Architecture
-        {
-            get;
-            set;
-        }
-
+        public dynamic Architecture { get; set; }
         /// <summary>
         /// GreengrassGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-greengrassgroupid
@@ -45,25 +40,16 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GreengrassGroupId
-        {
-            get;
-            set;
-        }
-
+        public dynamic GreengrassGroupId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-name
@@ -71,10 +57,6 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 }

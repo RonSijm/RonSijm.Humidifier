@@ -1,0 +1,72 @@
+namespace Humidifier.MediaConnect
+{
+    using System.Collections.Generic;
+    using GatewayTypes;
+
+    public class Gateway : Humidifier.Resource
+    {
+        public class Attributes
+        {
+            public static string GatewayArn =  "GatewayArn" ;
+            public static string GatewayState =  "GatewayState" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::MediaConnect::Gateway";
+            }
+        }
+
+        /// <summary>
+        /// Networks
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-gateway.html#cfn-mediaconnect-gateway-networks
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: GatewayNetwork
+        /// </summary>
+        public List<GatewayNetwork> Networks { get; set; }
+        /// <summary>
+        /// EgressCidrBlocks
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-gateway.html#cfn-mediaconnect-gateway-egresscidrblocks
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic EgressCidrBlocks { get; set; }
+        /// <summary>
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-gateway.html#cfn-mediaconnect-gateway-name
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Name { get; set; }
+    }
+
+    namespace GatewayTypes
+    {
+        public class GatewayNetwork
+        {
+            /// <summary>
+            /// CidrBlock
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-gateway-gatewaynetwork.html#cfn-mediaconnect-gateway-gatewaynetwork-cidrblock
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CidrBlock { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-gateway-gatewaynetwork.html#cfn-mediaconnect-gateway-gatewaynetwork-name
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+    }
+}

@@ -19,10 +19,6 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleSetName
-        {
-            get;
-            set;
-        }
+        public dynamic RuleSetName { get; set; }
     }
 }

@@ -5,7 +5,7 @@ namespace Humidifier.AppSync
 
     public class Resolver : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string TypeName =  "TypeName" ;
             public static string ResolverArn =  "ResolverArn" ;
@@ -21,31 +21,13 @@ namespace Humidifier.AppSync
         }
 
         /// <summary>
-        /// ResponseMappingTemplateS3Location
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ResponseMappingTemplateS3Location
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// TypeName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic TypeName
-        {
-            get;
-            set;
-        }
-
+        public dynamic TypeName { get; set; }
         /// <summary>
         /// PipelineConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-pipelineconfig
@@ -53,25 +35,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// Type: PipelineConfig
         /// </summary>
-        public PipelineConfig PipelineConfig
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// DataSourceName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DataSourceName
-        {
-            get;
-            set;
-        }
-
+        public PipelineConfig PipelineConfig { get; set; }
         /// <summary>
         /// RequestMappingTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate
@@ -79,12 +43,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RequestMappingTemplate
-        {
-            get;
-            set;
-        }
-
+        public dynamic RequestMappingTemplate { get; set; }
         /// <summary>
         /// ResponseMappingTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
@@ -92,38 +51,15 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResponseMappingTemplate
-        {
-            get;
-            set;
-        }
-
+        public dynamic ResponseMappingTemplate { get; set; }
         /// <summary>
-        /// Kind
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind
+        /// MaxBatchSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-maxbatchsize
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: String
+        /// PrimitiveType: Integer
         /// </summary>
-        public dynamic Kind
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// CachingConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: CachingConfig
-        /// </summary>
-        public CachingConfig CachingConfig
-        {
-            get;
-            set;
-        }
-
+        public dynamic MaxBatchSize { get; set; }
         /// <summary>
         /// SyncConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig
@@ -131,12 +67,71 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// Type: SyncConfig
         /// </summary>
-        public SyncConfig SyncConfig
-        {
-            get;
-            set;
-        }
-
+        public SyncConfig SyncConfig { get; set; }
+        /// <summary>
+        /// Code
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-code
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Code { get; set; }
+        /// <summary>
+        /// MetricsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-metricsconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MetricsConfig { get; set; }
+        /// <summary>
+        /// ResponseMappingTemplateS3Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResponseMappingTemplateS3Location { get; set; }
+        /// <summary>
+        /// Runtime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-runtime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AppSyncRuntime
+        /// </summary>
+        public AppSyncRuntime Runtime { get; set; }
+        /// <summary>
+        /// CodeS3Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-codes3location
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CodeS3Location { get; set; }
+        /// <summary>
+        /// DataSourceName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DataSourceName { get; set; }
+        /// <summary>
+        /// Kind
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Kind { get; set; }
+        /// <summary>
+        /// CachingConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CachingConfig
+        /// </summary>
+        public CachingConfig CachingConfig { get; set; }
         /// <summary>
         /// RequestMappingTemplateS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
@@ -144,12 +139,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RequestMappingTemplateS3Location
-        {
-            get;
-            set;
-        }
-
+        public dynamic RequestMappingTemplateS3Location { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
@@ -157,12 +147,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApiId { get; set; }
         /// <summary>
         /// FieldName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
@@ -170,88 +155,29 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FieldName
-        {
-            get;
-            set;
-        }
+        public dynamic FieldName { get; set; }
     }
 
     namespace ResolverTypes
     {
-        public class LambdaConflictHandlerConfig
+        public class AppSyncRuntime
         {
             /// <summary>
-            /// LambdaConflictHandlerArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LambdaConflictHandlerArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class PipelineConfig
-        {
-            /// <summary>
-            /// Functions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html#cfn-appsync-resolver-pipelineconfig-functions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic Functions
-            {
-                get;
-                set;
-            }
-        }
-
-        public class SyncConfig
-        {
-            /// <summary>
-            /// ConflictHandler
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-conflicthandler
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ConflictHandler
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// ConflictDetection
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-conflictdetection
+            /// RuntimeVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html#cfn-appsync-resolver-appsyncruntime-runtimeversion
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ConflictDetection
-            {
-                get;
-                set;
-            }
-
+            public dynamic RuntimeVersion { get; set; }
             /// <summary>
-            /// LambdaConflictHandlerConfig
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-lambdaconflicthandlerconfig
-            /// Required: False
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html#cfn-appsync-resolver-appsyncruntime-name
+            /// Required: True
             /// UpdateType: Mutable
-            /// Type: LambdaConflictHandlerConfig
+            /// PrimitiveType: String
             /// </summary>
-            public LambdaConflictHandlerConfig LambdaConflictHandlerConfig
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class CachingConfig
@@ -264,24 +190,68 @@ namespace Humidifier.AppSync
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic CachingKeys
-            {
-                get;
-                set;
-            }
-
+            public dynamic CachingKeys { get; set; }
             /// <summary>
             /// Ttl
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-cachingconfig.html#cfn-appsync-resolver-cachingconfig-ttl
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Double
             /// </summary>
-            public dynamic Ttl
-            {
-                get;
-                set;
-            }
+            public dynamic Ttl { get; set; }
+        }
+
+        public class LambdaConflictHandlerConfig
+        {
+            /// <summary>
+            /// LambdaConflictHandlerArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LambdaConflictHandlerArn { get; set; }
+        }
+
+        public class PipelineConfig
+        {
+            /// <summary>
+            /// Functions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html#cfn-appsync-resolver-pipelineconfig-functions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Functions { get; set; }
+        }
+
+        public class SyncConfig
+        {
+            /// <summary>
+            /// ConflictHandler
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-conflicthandler
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConflictHandler { get; set; }
+            /// <summary>
+            /// ConflictDetection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-conflictdetection
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConflictDetection { get; set; }
+            /// <summary>
+            /// LambdaConflictHandlerConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-lambdaconflicthandlerconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LambdaConflictHandlerConfig
+            /// </summary>
+            public LambdaConflictHandlerConfig LambdaConflictHandlerConfig { get; set; }
         }
     }
 }

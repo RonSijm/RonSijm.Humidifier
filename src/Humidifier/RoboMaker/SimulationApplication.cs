@@ -5,7 +5,7 @@ namespace Humidifier.RoboMaker
 
     public class SimulationApplication : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string CurrentRevisionId =  "CurrentRevisionId" ;
             public static string Arn =  "Arn" ;
@@ -22,29 +22,19 @@ namespace Humidifier.RoboMaker
         /// <summary>
         /// RenderingEngine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine
-        /// Required: True
-        /// UpdateType: Immutable
+        /// Required: False
+        /// UpdateType: Mutable
         /// Type: RenderingEngine
         /// </summary>
-        public RenderingEngine RenderingEngine
-        {
-            get;
-            set;
-        }
-
+        public RenderingEngine RenderingEngine { get; set; }
         /// <summary>
         /// SimulationSoftwareSuite
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: SimulationSoftwareSuite
         /// </summary>
-        public SimulationSoftwareSuite SimulationSoftwareSuite
-        {
-            get;
-            set;
-        }
-
+        public SimulationSoftwareSuite SimulationSoftwareSuite { get; set; }
         /// <summary>
         /// CurrentRevisionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid
@@ -52,52 +42,41 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CurrentRevisionId
-        {
-            get;
-            set;
-        }
-
+        public dynamic CurrentRevisionId { get; set; }
+        /// <summary>
+        /// Environment
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-environment
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Environment { get; set; }
         /// <summary>
         /// RobotSoftwareSuite
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: RobotSoftwareSuite
         /// </summary>
-        public RobotSoftwareSuite RobotSoftwareSuite
-        {
-            get;
-            set;
-        }
-
+        public RobotSoftwareSuite RobotSoftwareSuite { get; set; }
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: SourceConfig
         /// </summary>
-        public List<SourceConfig> Sources
-        {
-            get;
-            set;
-        }
-
+        public List<SourceConfig> Sources { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name
@@ -105,11 +84,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace SimulationApplicationTypes
@@ -123,12 +98,7 @@ namespace Humidifier.RoboMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Version
-            {
-                get;
-                set;
-            }
-
+            public dynamic Version { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html#cfn-robomaker-simulationapplication-renderingengine-name
@@ -136,40 +106,7 @@ namespace Humidifier.RoboMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-        }
-
-        public class SimulationSoftwareSuite
-        {
-            /// <summary>
-            /// Version
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-version
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Version
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-name
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
 
         public class RobotSoftwareSuite
@@ -177,16 +114,11 @@ namespace Humidifier.RoboMaker
             /// <summary>
             /// Version
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-version
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Version
-            {
-                get;
-                set;
-            }
-
+            public dynamic Version { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-name
@@ -194,11 +126,27 @@ namespace Humidifier.RoboMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
+        }
+
+        public class SimulationSoftwareSuite
+        {
+            /// <summary>
+            /// Version
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-version
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Version { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class SourceConfig
@@ -210,12 +158,7 @@ namespace Humidifier.RoboMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic S3Bucket { get; set; }
             /// <summary>
             /// Architecture
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html#cfn-robomaker-simulationapplication-sourceconfig-architecture
@@ -223,12 +166,7 @@ namespace Humidifier.RoboMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Architecture
-            {
-                get;
-                set;
-            }
-
+            public dynamic Architecture { get; set; }
             /// <summary>
             /// S3Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html#cfn-robomaker-simulationapplication-sourceconfig-s3key
@@ -236,11 +174,7 @@ namespace Humidifier.RoboMaker
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic S3Key
-            {
-                get;
-                set;
-            }
+            public dynamic S3Key { get; set; }
         }
     }
 }

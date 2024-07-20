@@ -4,7 +4,7 @@ namespace Humidifier.CodeStarConnections
 
     public class Connection : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ConnectionArn =  "ConnectionArn" ;
             public static string ConnectionStatus =  "ConnectionStatus" ;
@@ -26,23 +26,31 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConnectionName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConnectionName { get; set; }
         /// <summary>
-        /// ProviderType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-providertype
-        /// Required: True
+        /// HostArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-hostarn
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProviderType
-        {
-            get;
-            set;
-        }
+        public dynamic HostArn { get; set; }
+        /// <summary>
+        /// ProviderType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-providertype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ProviderType { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-connection.html#cfn-codestarconnections-connection-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

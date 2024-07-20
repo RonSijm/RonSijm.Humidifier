@@ -20,12 +20,15 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: TableInput
         /// </summary>
-        public TableInput TableInput
-        {
-            get;
-            set;
-        }
-
+        public TableInput TableInput { get; set; }
+        /// <summary>
+        /// OpenTableFormatInput
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-opentableformatinput
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: OpenTableFormatInput
+        /// </summary>
+        public OpenTableFormatInput OpenTableFormatInput { get; set; }
         /// <summary>
         /// DatabaseName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-databasename
@@ -33,12 +36,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DatabaseName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DatabaseName { get; set; }
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-catalogid
@@ -46,44 +44,11 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CatalogId
-        {
-            get;
-            set;
-        }
+        public dynamic CatalogId { get; set; }
     }
 
     namespace TableTypes
     {
-        public class Order
-        {
-            /// <summary>
-            /// Column
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-column
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Column
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SortOrder
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-sortorder
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic SortOrder
-            {
-                get;
-                set;
-            }
-        }
-
         public class Column
         {
             /// <summary>
@@ -93,12 +58,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Comment
-            {
-                get;
-                set;
-            }
-
+            public dynamic Comment { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html#cfn-glue-table-column-type
@@ -106,12 +66,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html#cfn-glue-table-column-name
@@ -119,11 +74,143 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
+        }
+
+        public class IcebergInput
+        {
+            /// <summary>
+            /// MetadataOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-iceberginput.html#cfn-glue-table-iceberginput-metadataoperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetadataOperation
+            /// </summary>
+            public MetadataOperation MetadataOperation { get; set; }
+            /// <summary>
+            /// Version
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-iceberginput.html#cfn-glue-table-iceberginput-version
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Version { get; set; }
+        }
+
+        public class OpenTableFormatInput
+        {
+            /// <summary>
+            /// IcebergInput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-opentableformatinput.html#cfn-glue-table-opentableformatinput-iceberginput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IcebergInput
+            /// </summary>
+            public IcebergInput IcebergInput { get; set; }
+        }
+
+        public class Order
+        {
+            /// <summary>
+            /// Column
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-column
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Column { get; set; }
+            /// <summary>
+            /// SortOrder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-order.html#cfn-glue-table-order-sortorder
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SortOrder { get; set; }
+        }
+
+        public class SchemaId
+        {
+            /// <summary>
+            /// RegistryName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RegistryName { get; set; }
+            /// <summary>
+            /// SchemaName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SchemaName { get; set; }
+            /// <summary>
+            /// SchemaArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SchemaArn { get; set; }
+        }
+
+        public class SchemaReference
+        {
+            /// <summary>
+            /// SchemaVersionId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaversionid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SchemaVersionId { get; set; }
+            /// <summary>
+            /// SchemaId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SchemaId
+            /// </summary>
+            public SchemaId SchemaId { get; set; }
+            /// <summary>
+            /// SchemaVersionNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemareference.html#cfn-glue-table-schemareference-schemaversionnumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SchemaVersionNumber { get; set; }
+        }
+
+        public class SerdeInfo
+        {
+            /// <summary>
+            /// Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-parameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Parameters { get; set; }
+            /// <summary>
+            /// SerializationLibrary
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-serializationlibrary
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SerializationLibrary { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class SkewedInfo
@@ -136,12 +223,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SkewedColumnNames
-            {
-                get;
-                set;
-            }
-
+            public dynamic SkewedColumnNames { get; set; }
             /// <summary>
             /// SkewedColumnValues
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvalues
@@ -150,12 +232,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SkewedColumnValues
-            {
-                get;
-                set;
-            }
-
+            public dynamic SkewedColumnValues { get; set; }
             /// <summary>
             /// SkewedColumnValueLocationMaps
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvaluelocationmaps
@@ -163,11 +240,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic SkewedColumnValueLocationMaps
-            {
-                get;
-                set;
-            }
+            public dynamic SkewedColumnValueLocationMaps { get; set; }
         }
 
         public class StorageDescriptor
@@ -179,12 +252,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic StoredAsSubDirectories
-            {
-                get;
-                set;
-            }
-
+            public dynamic StoredAsSubDirectories { get; set; }
             /// <summary>
             /// Parameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-parameters
@@ -192,12 +260,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic Parameters
-            {
-                get;
-                set;
-            }
-
+            public dynamic Parameters { get; set; }
             /// <summary>
             /// BucketColumns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-bucketcolumns
@@ -206,38 +269,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic BucketColumns
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SkewedInfo
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-skewedinfo
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SkewedInfo
-            /// </summary>
-            public SkewedInfo SkewedInfo
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// InputFormat
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-inputformat
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic InputFormat
-            {
-                get;
-                set;
-            }
-
+            public dynamic BucketColumns { get; set; }
             /// <summary>
             /// NumberOfBuckets
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-numberofbuckets
@@ -245,12 +277,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic NumberOfBuckets
-            {
-                get;
-                set;
-            }
-
+            public dynamic NumberOfBuckets { get; set; }
             /// <summary>
             /// OutputFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-outputformat
@@ -258,12 +285,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic OutputFormat
-            {
-                get;
-                set;
-            }
-
+            public dynamic OutputFormat { get; set; }
             /// <summary>
             /// Columns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-columns
@@ -272,12 +294,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// ItemType: Column
             /// </summary>
-            public List<Column> Columns
-            {
-                get;
-                set;
-            }
-
+            public List<Column> Columns { get; set; }
             /// <summary>
             /// SerdeInfo
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-serdeinfo
@@ -285,12 +302,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// Type: SerdeInfo
             /// </summary>
-            public SerdeInfo SerdeInfo
-            {
-                get;
-                set;
-            }
-
+            public SerdeInfo SerdeInfo { get; set; }
             /// <summary>
             /// SortColumns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-sortcolumns
@@ -299,12 +311,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// ItemType: Order
             /// </summary>
-            public List<Order> SortColumns
-            {
-                get;
-                set;
-            }
-
+            public List<Order> SortColumns { get; set; }
             /// <summary>
             /// Compressed
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-compressed
@@ -312,12 +319,31 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Compressed
-            {
-                get;
-                set;
-            }
-
+            public dynamic Compressed { get; set; }
+            /// <summary>
+            /// SchemaReference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-schemareference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SchemaReference
+            /// </summary>
+            public SchemaReference SchemaReference { get; set; }
+            /// <summary>
+            /// SkewedInfo
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-skewedinfo
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SkewedInfo
+            /// </summary>
+            public SkewedInfo SkewedInfo { get; set; }
+            /// <summary>
+            /// InputFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-inputformat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InputFormat { get; set; }
             /// <summary>
             /// Location
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-location
@@ -325,11 +351,43 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Location
-            {
-                get;
-                set;
-            }
+            public dynamic Location { get; set; }
+        }
+
+        public class TableIdentifier
+        {
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableidentifier.html#cfn-glue-table-tableidentifier-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableidentifier.html#cfn-glue-table-tableidentifier-region
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
+            /// <summary>
+            /// CatalogId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableidentifier.html#cfn-glue-table-tableidentifier-catalogid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogId { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableidentifier.html#cfn-glue-table-tableidentifier-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class TableInput
@@ -341,12 +399,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Owner
-            {
-                get;
-                set;
-            }
-
+            public dynamic Owner { get; set; }
             /// <summary>
             /// ViewOriginalText
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-vieworiginaltext
@@ -354,12 +407,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ViewOriginalText
-            {
-                get;
-                set;
-            }
-
+            public dynamic ViewOriginalText { get; set; }
             /// <summary>
             /// Description
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-description
@@ -367,12 +415,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Description
-            {
-                get;
-                set;
-            }
-
+            public dynamic Description { get; set; }
             /// <summary>
             /// TableType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-tabletype
@@ -380,12 +423,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic TableType
-            {
-                get;
-                set;
-            }
-
+            public dynamic TableType { get; set; }
             /// <summary>
             /// Parameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-parameters
@@ -393,12 +431,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
-            public dynamic Parameters
-            {
-                get;
-                set;
-            }
-
+            public dynamic Parameters { get; set; }
             /// <summary>
             /// ViewExpandedText
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-viewexpandedtext
@@ -406,12 +439,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ViewExpandedText
-            {
-                get;
-                set;
-            }
-
+            public dynamic ViewExpandedText { get; set; }
             /// <summary>
             /// StorageDescriptor
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-storagedescriptor
@@ -419,12 +447,15 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// Type: StorageDescriptor
             /// </summary>
-            public StorageDescriptor StorageDescriptor
-            {
-                get;
-                set;
-            }
-
+            public StorageDescriptor StorageDescriptor { get; set; }
+            /// <summary>
+            /// TargetTable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-targettable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TableIdentifier
+            /// </summary>
+            public TableIdentifier TargetTable { get; set; }
             /// <summary>
             /// PartitionKeys
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-partitionkeys
@@ -433,12 +464,7 @@ namespace Humidifier.Glue
             /// Type: List
             /// ItemType: Column
             /// </summary>
-            public List<Column> PartitionKeys
-            {
-                get;
-                set;
-            }
-
+            public List<Column> PartitionKeys { get; set; }
             /// <summary>
             /// Retention
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-retention
@@ -446,12 +472,7 @@ namespace Humidifier.Glue
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Retention
-            {
-                get;
-                set;
-            }
-
+            public dynamic Retention { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-name
@@ -459,53 +480,7 @@ namespace Humidifier.Glue
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-        }
-
-        public class SerdeInfo
-        {
-            /// <summary>
-            /// Parameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-parameters
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic Parameters
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SerializationLibrary
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-serializationlibrary
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SerializationLibrary
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-name
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
         }
     }
 }

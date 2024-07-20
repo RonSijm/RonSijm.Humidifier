@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class VPCEndpointService : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ServiceId =  "ServiceId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -15,17 +20,20 @@ namespace Humidifier.EC2
         /// <summary>
         /// NetworkLoadBalancerArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-networkloadbalancerarns
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic NetworkLoadBalancerArns
-        {
-            get;
-            set;
-        }
-
+        public dynamic NetworkLoadBalancerArns { get; set; }
+        /// <summary>
+        /// PayerResponsibility
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-payerresponsibility
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PayerResponsibility { get; set; }
         /// <summary>
         /// AcceptanceRequired
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-acceptancerequired
@@ -33,10 +41,23 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic AcceptanceRequired
-        {
-            get;
-            set;
-        }
+        public dynamic AcceptanceRequired { get; set; }
+        /// <summary>
+        /// ContributorInsightsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-contributorinsightsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ContributorInsightsEnabled { get; set; }
+        /// <summary>
+        /// GatewayLoadBalancerArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-gatewayloadbalancerarns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic GatewayLoadBalancerArns { get; set; }
     }
 }

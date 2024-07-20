@@ -5,6 +5,11 @@ namespace Humidifier.Config
 
     public class ConfigurationAggregator : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ConfigurationAggregatorArn =  "ConfigurationAggregatorArn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -21,25 +26,15 @@ namespace Humidifier.Config
         /// Type: List
         /// ItemType: AccountAggregationSource
         /// </summary>
-        public List<AccountAggregationSource> AccountAggregationSources
-        {
-            get;
-            set;
-        }
-
+        public List<AccountAggregationSource> AccountAggregationSources { get; set; }
         /// <summary>
         /// ConfigurationAggregatorName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-configurationaggregatorname
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ConfigurationAggregatorName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ConfigurationAggregatorName { get; set; }
         /// <summary>
         /// OrganizationAggregationSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-organizationaggregationsource
@@ -47,12 +42,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// Type: OrganizationAggregationSource
         /// </summary>
-        public OrganizationAggregationSource OrganizationAggregationSource
-        {
-            get;
-            set;
-        }
-
+        public OrganizationAggregationSource OrganizationAggregationSource { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-tags
@@ -61,58 +51,11 @@ namespace Humidifier.Config
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace ConfigurationAggregatorTypes
     {
-        public class OrganizationAggregationSource
-        {
-            /// <summary>
-            /// AllAwsRegions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic AllAwsRegions
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// AwsRegions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic AwsRegions
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RoleArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RoleArn
-            {
-                get;
-                set;
-            }
-        }
-
         public class AccountAggregationSource
         {
             /// <summary>
@@ -122,12 +65,7 @@ namespace Humidifier.Config
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic AllAwsRegions
-            {
-                get;
-                set;
-            }
-
+            public dynamic AllAwsRegions { get; set; }
             /// <summary>
             /// AwsRegions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-awsregions
@@ -136,12 +74,7 @@ namespace Humidifier.Config
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic AwsRegions
-            {
-                get;
-                set;
-            }
-
+            public dynamic AwsRegions { get; set; }
             /// <summary>
             /// AccountIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-accountids
@@ -150,11 +83,36 @@ namespace Humidifier.Config
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic AccountIds
-            {
-                get;
-                set;
-            }
+            public dynamic AccountIds { get; set; }
+        }
+
+        public class OrganizationAggregationSource
+        {
+            /// <summary>
+            /// AllAwsRegions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AllAwsRegions { get; set; }
+            /// <summary>
+            /// AwsRegions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AwsRegions { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
         }
     }
 }

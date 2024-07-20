@@ -1,10 +1,11 @@
 namespace Humidifier.CloudWatch
 {
     using System.Collections.Generic;
+    using InsightRuleTypes;
 
     public class InsightRule : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string RuleName =  "RuleName" ;
@@ -25,12 +26,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleState
-        {
-            get;
-            set;
-        }
-
+        public dynamic RuleState { get; set; }
         /// <summary>
         /// RuleBody
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulebody
@@ -38,12 +34,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleBody
-        {
-            get;
-            set;
-        }
-
+        public dynamic RuleBody { get; set; }
         /// <summary>
         /// RuleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulename
@@ -51,10 +42,21 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RuleName
+        public dynamic RuleName { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Tags
+        /// </summary>
+        public Tags Tags { get; set; }
+    }
+
+    namespace InsightRuleTypes
+    {
+        public class Tags
         {
-            get;
-            set;
         }
     }
 }

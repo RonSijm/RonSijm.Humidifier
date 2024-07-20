@@ -5,6 +5,11 @@ namespace Humidifier.IoTAnalytics
 
     public class Channel : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.IoTAnalytics
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ChannelName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ChannelName { get; set; }
         /// <summary>
         /// ChannelStorage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-channelstorage
@@ -33,12 +33,7 @@ namespace Humidifier.IoTAnalytics
         /// UpdateType: Mutable
         /// Type: ChannelStorage
         /// </summary>
-        public ChannelStorage ChannelStorage
-        {
-            get;
-            set;
-        }
-
+        public ChannelStorage ChannelStorage { get; set; }
         /// <summary>
         /// RetentionPeriod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-retentionperiod
@@ -46,12 +41,7 @@ namespace Humidifier.IoTAnalytics
         /// UpdateType: Mutable
         /// Type: RetentionPeriod
         /// </summary>
-        public RetentionPeriod RetentionPeriod
-        {
-            get;
-            set;
-        }
-
+        public RetentionPeriod RetentionPeriod { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-tags
@@ -60,11 +50,7 @@ namespace Humidifier.IoTAnalytics
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace ChannelTypes
@@ -78,24 +64,15 @@ namespace Humidifier.IoTAnalytics
             /// UpdateType: Mutable
             /// Type: CustomerManagedS3
             /// </summary>
-            public CustomerManagedS3 CustomerManagedS3
-            {
-                get;
-                set;
-            }
-
+            public CustomerManagedS3 CustomerManagedS3 { get; set; }
             /// <summary>
             /// ServiceManagedS3
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: ServiceManagedS3
+            /// PrimitiveType: Json
             /// </summary>
-            public ServiceManagedS3 ServiceManagedS3
-            {
-                get;
-                set;
-            }
+            public dynamic ServiceManagedS3 { get; set; }
         }
 
         public class CustomerManagedS3
@@ -107,12 +84,7 @@ namespace Humidifier.IoTAnalytics
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic Bucket { get; set; }
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-customermanageds3.html#cfn-iotanalytics-channel-customermanageds3-rolearn
@@ -120,12 +92,7 @@ namespace Humidifier.IoTAnalytics
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RoleArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic RoleArn { get; set; }
             /// <summary>
             /// KeyPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-customermanageds3.html#cfn-iotanalytics-channel-customermanageds3-keyprefix
@@ -133,11 +100,7 @@ namespace Humidifier.IoTAnalytics
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic KeyPrefix
-            {
-                get;
-                set;
-            }
+            public dynamic KeyPrefix { get; set; }
         }
 
         public class RetentionPeriod
@@ -149,12 +112,7 @@ namespace Humidifier.IoTAnalytics
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic NumberOfDays
-            {
-                get;
-                set;
-            }
-
+            public dynamic NumberOfDays { get; set; }
             /// <summary>
             /// Unlimited
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-unlimited
@@ -162,15 +120,7 @@ namespace Humidifier.IoTAnalytics
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic Unlimited
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ServiceManagedS3
-        {
+            public dynamic Unlimited { get; set; }
         }
     }
 }

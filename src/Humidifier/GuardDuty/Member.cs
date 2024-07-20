@@ -19,38 +19,23 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Status
-        {
-            get;
-            set;
-        }
-
+        public dynamic Status { get; set; }
         /// <summary>
         /// MemberId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-memberid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MemberId
-        {
-            get;
-            set;
-        }
-
+        public dynamic MemberId { get; set; }
         /// <summary>
         /// Email
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Email
-        {
-            get;
-            set;
-        }
-
+        public dynamic Email { get; set; }
         /// <summary>
         /// Message
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-message
@@ -58,12 +43,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Message
-        {
-            get;
-            set;
-        }
-
+        public dynamic Message { get; set; }
         /// <summary>
         /// DisableEmailNotification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-disableemailnotification
@@ -71,23 +51,14 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic DisableEmailNotification
-        {
-            get;
-            set;
-        }
-
+        public dynamic DisableEmailNotification { get; set; }
         /// <summary>
         /// DetectorId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-detectorid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DetectorId
-        {
-            get;
-            set;
-        }
+        public dynamic DetectorId { get; set; }
     }
 }

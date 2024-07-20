@@ -20,12 +20,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DeviceDefinitionId
-        {
-            get;
-            set;
-        }
-
+        public dynamic DeviceDefinitionId { get; set; }
         /// <summary>
         /// Devices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devices
@@ -34,11 +29,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Device
         /// </summary>
-        public List<Device> Devices
-        {
-            get;
-            set;
-        }
+        public List<Device> Devices { get; set; }
     }
 
     namespace DeviceDefinitionVersionTypes
@@ -52,12 +43,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic SyncShadow
-            {
-                get;
-                set;
-            }
-
+            public dynamic SyncShadow { get; set; }
             /// <summary>
             /// ThingArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-thingarn
@@ -65,12 +51,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ThingArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic ThingArn { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-id
@@ -78,12 +59,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
-
+            public dynamic Id { get; set; }
             /// <summary>
             /// CertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-devicedefinitionversion-device.html#cfn-greengrass-devicedefinitionversion-device-certificatearn
@@ -91,11 +67,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CertificateArn
-            {
-                get;
-                set;
-            }
+            public dynamic CertificateArn { get; set; }
         }
     }
 }

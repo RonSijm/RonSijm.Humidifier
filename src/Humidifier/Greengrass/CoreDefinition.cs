@@ -5,7 +5,7 @@ namespace Humidifier.Greengrass
 
     public class CoreDefinition : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string LatestVersionArn =  "LatestVersionArn" ;
             public static string Id =  "Id" ;
@@ -28,12 +28,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// Type: CoreDefinitionVersion
         /// </summary>
-        public CoreDefinitionVersion InitialVersion
-        {
-            get;
-            set;
-        }
-
+        public CoreDefinitionVersion InitialVersion { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-tags
@@ -41,12 +36,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-name
@@ -54,11 +44,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace CoreDefinitionTypes
@@ -72,12 +58,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic SyncShadow
-            {
-                get;
-                set;
-            }
-
+            public dynamic SyncShadow { get; set; }
             /// <summary>
             /// ThingArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-thingarn
@@ -85,12 +66,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ThingArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic ThingArn { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-id
@@ -98,12 +74,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
-
+            public dynamic Id { get; set; }
             /// <summary>
             /// CertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-core.html#cfn-greengrass-coredefinition-core-certificatearn
@@ -111,11 +82,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CertificateArn
-            {
-                get;
-                set;
-            }
+            public dynamic CertificateArn { get; set; }
         }
 
         public class CoreDefinitionVersion
@@ -128,11 +95,7 @@ namespace Humidifier.Greengrass
             /// Type: List
             /// ItemType: Core
             /// </summary>
-            public List<Core> Cores
-            {
-                get;
-                set;
-            }
+            public List<Core> Cores { get; set; }
         }
     }
 }

@@ -20,12 +20,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AgentVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic AgentVersion { get; set; }
         /// <summary>
         /// Attributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-attributes
@@ -34,12 +29,7 @@ namespace Humidifier.OpsWorks
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        public Dictionary<string, dynamic> Attributes_
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> Attributes_ { get; set; }
         /// <summary>
         /// ChefConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-chefconfiguration
@@ -47,12 +37,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// Type: ChefConfiguration
         /// </summary>
-        public ChefConfiguration ChefConfiguration
-        {
-            get;
-            set;
-        }
-
+        public ChefConfiguration ChefConfiguration { get; set; }
         /// <summary>
         /// CloneAppIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-cloneappids
@@ -61,12 +46,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic CloneAppIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic CloneAppIds { get; set; }
         /// <summary>
         /// ClonePermissions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions
@@ -74,12 +54,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic ClonePermissions
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClonePermissions { get; set; }
         /// <summary>
         /// ConfigurationManager
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-configmanager
@@ -87,12 +62,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// Type: StackConfigurationManager
         /// </summary>
-        public StackConfigurationManager ConfigurationManager
-        {
-            get;
-            set;
-        }
-
+        public StackConfigurationManager ConfigurationManager { get; set; }
         /// <summary>
         /// CustomCookbooksSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-custcookbooksource
@@ -100,12 +70,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// Type: Source
         /// </summary>
-        public Source CustomCookbooksSource
-        {
-            get;
-            set;
-        }
-
+        public Source CustomCookbooksSource { get; set; }
         /// <summary>
         /// CustomJson
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-custjson
@@ -113,12 +78,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic CustomJson
-        {
-            get;
-            set;
-        }
-
+        public dynamic CustomJson { get; set; }
         /// <summary>
         /// DefaultAvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultaz
@@ -126,12 +86,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultAvailabilityZone
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultAvailabilityZone { get; set; }
         /// <summary>
         /// DefaultInstanceProfileArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultinstanceprof
@@ -139,12 +94,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultInstanceProfileArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultInstanceProfileArn { get; set; }
         /// <summary>
         /// DefaultOs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultos
@@ -152,12 +102,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultOs
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultOs { get; set; }
         /// <summary>
         /// DefaultRootDeviceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultrootdevicetype
@@ -165,12 +110,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultRootDeviceType
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultRootDeviceType { get; set; }
         /// <summary>
         /// DefaultSshKeyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultsshkeyname
@@ -178,12 +118,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultSshKeyName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultSshKeyName { get; set; }
         /// <summary>
         /// DefaultSubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#defaultsubnet
@@ -191,12 +126,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefaultSubnetId
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefaultSubnetId { get; set; }
         /// <summary>
         /// EcsClusterArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-ecsclusterarn
@@ -204,12 +134,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EcsClusterArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic EcsClusterArn { get; set; }
         /// <summary>
         /// ElasticIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-elasticips
@@ -218,12 +143,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: ElasticIp
         /// </summary>
-        public List<ElasticIp> ElasticIps
-        {
-            get;
-            set;
-        }
-
+        public List<ElasticIp> ElasticIps { get; set; }
         /// <summary>
         /// HostnameTheme
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-hostnametheme
@@ -231,12 +151,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic HostnameTheme
-        {
-            get;
-            set;
-        }
-
+        public dynamic HostnameTheme { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-name
@@ -244,12 +159,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// RdsDbInstances
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-rdsdbinstances
@@ -258,12 +168,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: RdsDbInstance
         /// </summary>
-        public List<RdsDbInstance> RdsDbInstances
-        {
-            get;
-            set;
-        }
-
+        public List<RdsDbInstance> RdsDbInstances { get; set; }
         /// <summary>
         /// ServiceRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-servicerolearn
@@ -271,12 +176,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ServiceRoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic ServiceRoleArn { get; set; }
         /// <summary>
         /// SourceStackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-sourcestackid
@@ -284,12 +184,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SourceStackId
-        {
-            get;
-            set;
-        }
-
+        public dynamic SourceStackId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-tags
@@ -298,12 +193,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// UseCustomCookbooks
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks
@@ -311,12 +201,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic UseCustomCookbooks
-        {
-            get;
-            set;
-        }
-
+        public dynamic UseCustomCookbooks { get; set; }
         /// <summary>
         /// UseOpsworksSecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-useopsworkssecuritygroups
@@ -324,12 +209,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic UseOpsworksSecurityGroups
-        {
-            get;
-            set;
-        }
-
+        public dynamic UseOpsworksSecurityGroups { get; set; }
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-vpcid
@@ -337,167 +217,11 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VpcId
-        {
-            get;
-            set;
-        }
+        public dynamic VpcId { get; set; }
     }
 
     namespace StackTypes
     {
-        public class StackConfigurationManager
-        {
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-name
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Version
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-version
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Version
-            {
-                get;
-                set;
-            }
-        }
-
-        public class RdsDbInstance
-        {
-            /// <summary>
-            /// DbPassword
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DbPassword
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DbUser
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DbUser
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RdsDbInstanceArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RdsDbInstanceArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class Source
-        {
-            /// <summary>
-            /// Password
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-password
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Password
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Revision
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-revision
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Revision
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SshKey
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-sshkey
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SshKey
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-url
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Url
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Username
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-username
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Username
-            {
-                get;
-                set;
-            }
-        }
-
         public class ChefConfiguration
         {
             /// <summary>
@@ -507,12 +231,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BerkshelfVersion
-            {
-                get;
-                set;
-            }
-
+            public dynamic BerkshelfVersion { get; set; }
             /// <summary>
             /// ManageBerkshelf
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion
@@ -520,11 +239,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ManageBerkshelf
-            {
-                get;
-                set;
-            }
+            public dynamic ManageBerkshelf { get; set; }
         }
 
         public class ElasticIp
@@ -536,12 +251,7 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Ip
-            {
-                get;
-                set;
-            }
-
+            public dynamic Ip { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-name
@@ -549,11 +259,107 @@ namespace Humidifier.OpsWorks
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic Name { get; set; }
+        }
+
+        public class RdsDbInstance
+        {
+            /// <summary>
+            /// DbPassword
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbpassword
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DbPassword { get; set; }
+            /// <summary>
+            /// DbUser
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-dbuser
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DbUser { get; set; }
+            /// <summary>
+            /// RdsDbInstanceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RdsDbInstanceArn { get; set; }
+        }
+
+        public class Source
+        {
+            /// <summary>
+            /// Password
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-password
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Password { get; set; }
+            /// <summary>
+            /// Revision
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-revision
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Revision { get; set; }
+            /// <summary>
+            /// SshKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-sshkey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SshKey { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-url
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Url { get; set; }
+            /// <summary>
+            /// Username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-username
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Username { get; set; }
+        }
+
+        public class StackConfigurationManager
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// Version
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-version
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Version { get; set; }
         }
     }
 }

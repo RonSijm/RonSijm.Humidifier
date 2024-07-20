@@ -1,0 +1,100 @@
+namespace Humidifier.Oam
+{
+    using System.Collections.Generic;
+    using LinkTypes;
+
+    public class Link : Humidifier.Resource
+    {
+        public class Attributes
+        {
+            public static string Label =  "Label" ;
+            public static string Arn =  "Arn" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::Oam::Link";
+            }
+        }
+
+        /// <summary>
+        /// SinkIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-sinkidentifier
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SinkIdentifier { get; set; }
+        /// <summary>
+        /// LabelTemplate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-labeltemplate
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LabelTemplate { get; set; }
+        /// <summary>
+        /// ResourceTypes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-resourcetypes
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic ResourceTypes { get; set; }
+        /// <summary>
+        /// LinkConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-linkconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LinkConfiguration
+        /// </summary>
+        public LinkConfiguration LinkConfiguration { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> Tags { get; set; }
+    }
+
+    namespace LinkTypes
+    {
+        public class LinkConfiguration
+        {
+            /// <summary>
+            /// LogGroupConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-oam-link-linkconfiguration.html#cfn-oam-link-linkconfiguration-loggroupconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LinkFilter
+            /// </summary>
+            public LinkFilter LogGroupConfiguration { get; set; }
+            /// <summary>
+            /// MetricConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-oam-link-linkconfiguration.html#cfn-oam-link-linkconfiguration-metricconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LinkFilter
+            /// </summary>
+            public LinkFilter MetricConfiguration { get; set; }
+        }
+
+        public class LinkFilter
+        {
+            /// <summary>
+            /// Filter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-oam-link-linkfilter.html#cfn-oam-link-linkfilter-filter
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Filter { get; set; }
+        }
+    }
+}

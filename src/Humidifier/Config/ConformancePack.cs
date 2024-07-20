@@ -14,71 +14,6 @@ namespace Humidifier.Config
         }
 
         /// <summary>
-        /// ConformancePackName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackname
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ConformancePackName
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// DeliveryS3Bucket
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3bucket
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DeliveryS3Bucket
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// DeliveryS3KeyPrefix
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3keyprefix
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DeliveryS3KeyPrefix
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// TemplateBody
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatebody
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic TemplateBody
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// TemplateS3Uri
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic TemplateS3Uri
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// ConformancePackInputParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackinputparameters
         /// Required: False
@@ -86,11 +21,55 @@ namespace Humidifier.Config
         /// Type: List
         /// ItemType: ConformancePackInputParameter
         /// </summary>
-        public List<ConformancePackInputParameter> ConformancePackInputParameters
-        {
-            get;
-            set;
-        }
+        public List<ConformancePackInputParameter> ConformancePackInputParameters { get; set; }
+        /// <summary>
+        /// TemplateSSMDocumentDetails
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatessmdocumentdetails
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TemplateSSMDocumentDetails
+        /// </summary>
+        public TemplateSSMDocumentDetails TemplateSSMDocumentDetails { get; set; }
+        /// <summary>
+        /// DeliveryS3Bucket
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3bucket
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeliveryS3Bucket { get; set; }
+        /// <summary>
+        /// ConformancePackName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConformancePackName { get; set; }
+        /// <summary>
+        /// DeliveryS3KeyPrefix
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3keyprefix
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeliveryS3KeyPrefix { get; set; }
+        /// <summary>
+        /// TemplateBody
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatebody
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TemplateBody { get; set; }
+        /// <summary>
+        /// TemplateS3Uri
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TemplateS3Uri { get; set; }
     }
 
     namespace ConformancePackTypes
@@ -98,30 +77,41 @@ namespace Humidifier.Config
         public class ConformancePackInputParameter
         {
             /// <summary>
-            /// ParameterName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametername
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ParameterName
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// ParameterValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametervalue
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ParameterValue
-            {
-                get;
-                set;
-            }
+            public dynamic ParameterValue { get; set; }
+            /// <summary>
+            /// ParameterName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterName { get; set; }
+        }
+
+        public class TemplateSSMDocumentDetails
+        {
+            /// <summary>
+            /// DocumentVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-templatessmdocumentdetails.html#cfn-config-conformancepack-templatessmdocumentdetails-documentversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DocumentVersion { get; set; }
+            /// <summary>
+            /// DocumentName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-templatessmdocumentdetails.html#cfn-config-conformancepack-templatessmdocumentdetails-documentname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DocumentName { get; set; }
         }
     }
 }

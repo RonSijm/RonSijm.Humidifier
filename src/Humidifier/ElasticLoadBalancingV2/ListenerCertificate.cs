@@ -17,16 +17,11 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Certificates
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Certificate
         /// </summary>
-        public List<Certificate> Certificates
-        {
-            get;
-            set;
-        }
-
+        public List<Certificate> Certificates { get; set; }
         /// <summary>
         /// ListenerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn
@@ -34,11 +29,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ListenerArn
-        {
-            get;
-            set;
-        }
+        public dynamic ListenerArn { get; set; }
     }
 
     namespace ListenerCertificateTypes
@@ -52,11 +43,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CertificateArn
-            {
-                get;
-                set;
-            }
+            public dynamic CertificateArn { get; set; }
         }
     }
 }

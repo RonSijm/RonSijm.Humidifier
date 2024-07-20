@@ -5,7 +5,7 @@ namespace Humidifier.MediaLive
 
     public class Input : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Destinations =  "Destinations" ;
             public static string Arn =  "Arn" ;
@@ -27,12 +27,7 @@ namespace Humidifier.MediaLive
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Type
-        {
-            get;
-            set;
-        }
-
+        public dynamic Type { get; set; }
         /// <summary>
         /// Destinations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-destinations
@@ -41,12 +36,7 @@ namespace Humidifier.MediaLive
         /// Type: List
         /// ItemType: InputDestinationRequest
         /// </summary>
-        public List<InputDestinationRequest> Destinations
-        {
-            get;
-            set;
-        }
-
+        public List<InputDestinationRequest> Destinations { get; set; }
         /// <summary>
         /// Vpc
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc
@@ -54,12 +44,7 @@ namespace Humidifier.MediaLive
         /// UpdateType: Immutable
         /// Type: InputVpcRequest
         /// </summary>
-        public InputVpcRequest Vpc
-        {
-            get;
-            set;
-        }
-
+        public InputVpcRequest Vpc { get; set; }
         /// <summary>
         /// MediaConnectFlows
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-mediaconnectflows
@@ -68,12 +53,7 @@ namespace Humidifier.MediaLive
         /// Type: List
         /// ItemType: MediaConnectFlowRequest
         /// </summary>
-        public List<MediaConnectFlowRequest> MediaConnectFlows
-        {
-            get;
-            set;
-        }
-
+        public List<MediaConnectFlowRequest> MediaConnectFlows { get; set; }
         /// <summary>
         /// InputSecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups
@@ -82,12 +62,16 @@ namespace Humidifier.MediaLive
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic InputSecurityGroups
-        {
-            get;
-            set;
-        }
-
+        public dynamic InputSecurityGroups { get; set; }
+        /// <summary>
+        /// InputDevices
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputdevices
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: InputDeviceSettings
+        /// </summary>
+        public List<InputDeviceSettings> InputDevices { get; set; }
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources
@@ -96,12 +80,7 @@ namespace Humidifier.MediaLive
         /// Type: List
         /// ItemType: InputSourceRequest
         /// </summary>
-        public List<InputSourceRequest> Sources
-        {
-            get;
-            set;
-        }
-
+        public List<InputSourceRequest> Sources { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn
@@ -109,12 +88,7 @@ namespace Humidifier.MediaLive
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RoleArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-tags
@@ -122,12 +96,7 @@ namespace Humidifier.MediaLive
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public dynamic Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-name
@@ -135,44 +104,45 @@ namespace Humidifier.MediaLive
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace InputTypes
     {
-        public class InputVpcRequest
+        public class InputDestinationRequest
         {
             /// <summary>
-            /// SecurityGroupIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-securitygroupids
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic SecurityGroupIds
-            {
-                get;
-                set;
-            }
+            public dynamic StreamName { get; set; }
+        }
 
+        public class InputDeviceRequest
+        {
             /// <summary>
-            /// SubnetIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicerequest.html#cfn-medialive-input-inputdevicerequest-id
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic SubnetIds
-            {
-                get;
-                set;
-            }
+            public dynamic Id { get; set; }
+        }
+
+        public class InputDeviceSettings
+        {
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicesettings.html#cfn-medialive-input-inputdevicesettings-id
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
         }
 
         public class InputSourceRequest
@@ -184,12 +154,7 @@ namespace Humidifier.MediaLive
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Username
-            {
-                get;
-                set;
-            }
-
+            public dynamic Username { get; set; }
             /// <summary>
             /// PasswordParam
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam
@@ -197,12 +162,7 @@ namespace Humidifier.MediaLive
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PasswordParam
-            {
-                get;
-                set;
-            }
-
+            public dynamic PasswordParam { get; set; }
             /// <summary>
             /// Url
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url
@@ -210,27 +170,29 @@ namespace Humidifier.MediaLive
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Url
-            {
-                get;
-                set;
-            }
+            public dynamic Url { get; set; }
         }
 
-        public class InputDestinationRequest
+        public class InputVpcRequest
         {
             /// <summary>
-            /// StreamName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname
+            /// SecurityGroupIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-securitygroupids
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: List
+            /// PrimitiveItemType: String
             /// </summary>
-            public dynamic StreamName
-            {
-                get;
-                set;
-            }
+            public dynamic SecurityGroupIds { get; set; }
+            /// <summary>
+            /// SubnetIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SubnetIds { get; set; }
         }
 
         public class MediaConnectFlowRequest
@@ -242,11 +204,7 @@ namespace Humidifier.MediaLive
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic FlowArn
-            {
-                get;
-                set;
-            }
+            public dynamic FlowArn { get; set; }
         }
     }
 }

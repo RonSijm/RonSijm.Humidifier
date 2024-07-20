@@ -4,6 +4,11 @@ namespace Humidifier.IAM
 
     public class ServiceLinkedRole : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string RoleName =  "RoleName" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.IAM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CustomSuffix
-        {
-            get;
-            set;
-        }
-
+        public dynamic CustomSuffix { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description
@@ -32,23 +32,14 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// AWSServiceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AWSServiceName
-        {
-            get;
-            set;
-        }
+        public dynamic AWSServiceName { get; set; }
     }
 }

@@ -20,12 +20,15 @@ namespace Humidifier.CodeStar
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EnableIssues
-        {
-            get;
-            set;
-        }
-
+        public dynamic EnableIssues { get; set; }
+        /// <summary>
+        /// ConnectionArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-connectionarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConnectionArn { get; set; }
         /// <summary>
         /// RepositoryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryname
@@ -33,25 +36,15 @@ namespace Humidifier.CodeStar
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RepositoryName
-        {
-            get;
-            set;
-        }
-
+        public dynamic RepositoryName { get; set; }
         /// <summary>
         /// RepositoryAccessToken
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryaccesstoken
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RepositoryAccessToken
-        {
-            get;
-            set;
-        }
-
+        public dynamic RepositoryAccessToken { get; set; }
         /// <summary>
         /// RepositoryOwner
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryowner
@@ -59,12 +52,7 @@ namespace Humidifier.CodeStar
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RepositoryOwner
-        {
-            get;
-            set;
-        }
-
+        public dynamic RepositoryOwner { get; set; }
         /// <summary>
         /// IsPrivate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-isprivate
@@ -72,12 +60,7 @@ namespace Humidifier.CodeStar
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic IsPrivate
-        {
-            get;
-            set;
-        }
-
+        public dynamic IsPrivate { get; set; }
         /// <summary>
         /// Code
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-code
@@ -85,12 +68,7 @@ namespace Humidifier.CodeStar
         /// UpdateType: Mutable
         /// Type: Code
         /// </summary>
-        public Code Code
-        {
-            get;
-            set;
-        }
-
+        public Code Code { get; set; }
         /// <summary>
         /// RepositoryDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositorydescription
@@ -98,11 +76,7 @@ namespace Humidifier.CodeStar
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RepositoryDescription
-        {
-            get;
-            set;
-        }
+        public dynamic RepositoryDescription { get; set; }
     }
 
     namespace GitHubRepositoryTypes
@@ -116,11 +90,7 @@ namespace Humidifier.CodeStar
             /// UpdateType: Mutable
             /// Type: S3
             /// </summary>
-            public S3 S3
-            {
-                get;
-                set;
-            }
+            public S3 S3 { get; set; }
         }
 
         public class S3
@@ -132,12 +102,7 @@ namespace Humidifier.CodeStar
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ObjectVersion
-            {
-                get;
-                set;
-            }
-
+            public dynamic ObjectVersion { get; set; }
             /// <summary>
             /// Bucket
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html#cfn-codestar-githubrepository-s3-bucket
@@ -145,12 +110,7 @@ namespace Humidifier.CodeStar
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
+            public dynamic Bucket { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html#cfn-codestar-githubrepository-s3-key
@@ -158,11 +118,7 @@ namespace Humidifier.CodeStar
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

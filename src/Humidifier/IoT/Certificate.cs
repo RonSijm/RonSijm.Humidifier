@@ -4,8 +4,9 @@ namespace Humidifier.IoT
 
     public class Certificate : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -18,29 +19,44 @@ namespace Humidifier.IoT
         }
 
         /// <summary>
-        /// CertificateSigningRequest
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic CertificateSigningRequest
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-status
         /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Status
-        {
-            get;
-            set;
-        }
+        public dynamic Status { get; set; }
+        /// <summary>
+        /// CACertificatePem
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-cacertificatepem
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CACertificatePem { get; set; }
+        /// <summary>
+        /// CertificateMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatemode
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificateMode { get; set; }
+        /// <summary>
+        /// CertificateSigningRequest
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatesigningrequest
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificateSigningRequest { get; set; }
+        /// <summary>
+        /// CertificatePem
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificate.html#cfn-iot-certificate-certificatepem
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificatePem { get; set; }
     }
 }

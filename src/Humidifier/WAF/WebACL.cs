@@ -20,12 +20,7 @@ namespace Humidifier.WAF
         /// UpdateType: Mutable
         /// Type: WafAction
         /// </summary>
-        public WafAction DefaultAction
-        {
-            get;
-            set;
-        }
-
+        public WafAction DefaultAction { get; set; }
         /// <summary>
         /// MetricName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname
@@ -33,12 +28,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MetricName
-        {
-            get;
-            set;
-        }
-
+        public dynamic MetricName { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name
@@ -46,12 +36,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// Rules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules
@@ -60,31 +45,11 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: ActivatedRule
         /// </summary>
-        public List<ActivatedRule> Rules
-        {
-            get;
-            set;
-        }
+        public List<ActivatedRule> Rules { get; set; }
     }
 
     namespace WebACLTypes
     {
-        public class WafAction
-        {
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-        }
-
         public class ActivatedRule
         {
             /// <summary>
@@ -94,12 +59,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// Type: WafAction
             /// </summary>
-            public WafAction Action
-            {
-                get;
-                set;
-            }
-
+            public WafAction Action { get; set; }
             /// <summary>
             /// Priority
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-priority
@@ -107,12 +67,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Priority
-            {
-                get;
-                set;
-            }
-
+            public dynamic Priority { get; set; }
             /// <summary>
             /// RuleId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-ruleid
@@ -120,11 +75,19 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RuleId
-            {
-                get;
-                set;
-            }
+            public dynamic RuleId { get; set; }
+        }
+
+        public class WafAction
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
     }
 }

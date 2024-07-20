@@ -21,12 +21,7 @@ namespace Humidifier.WAFRegional
         /// Type: List
         /// ItemType: GeoMatchConstraint
         /// </summary>
-        public List<GeoMatchConstraint> GeoMatchConstraints
-        {
-            get;
-            set;
-        }
-
+        public List<GeoMatchConstraint> GeoMatchConstraints { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-name
@@ -34,11 +29,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace GeoMatchSetTypes
@@ -52,12 +43,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-geomatchset-geomatchconstraint.html#cfn-wafregional-geomatchset-geomatchconstraint-value
@@ -65,11 +51,7 @@ namespace Humidifier.WAFRegional
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
+            public dynamic Value { get; set; }
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Humidifier.GameLift
 
     public class GameSessionQueue : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -26,12 +26,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic TimeoutInSeconds
-        {
-            get;
-            set;
-        }
-
+        public dynamic TimeoutInSeconds { get; set; }
         /// <summary>
         /// PlayerLatencyPolicies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-playerlatencypolicies
@@ -40,26 +35,49 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: PlayerLatencyPolicy
         /// </summary>
-        public List<PlayerLatencyPolicy> PlayerLatencyPolicies
-        {
-            get;
-            set;
-        }
-
+        public List<PlayerLatencyPolicy> PlayerLatencyPolicies { get; set; }
         /// <summary>
         /// Destinations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-destinations
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: Destination
+        /// ItemType: GameSessionQueueDestination
         /// </summary>
-        public List<Destination> Destinations
-        {
-            get;
-            set;
-        }
-
+        public List<GameSessionQueueDestination> Destinations { get; set; }
+        /// <summary>
+        /// NotificationTarget
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-notificationtarget
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NotificationTarget { get; set; }
+        /// <summary>
+        /// FilterConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-filterconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: FilterConfiguration
+        /// </summary>
+        public FilterConfiguration FilterConfiguration { get; set; }
+        /// <summary>
+        /// CustomEventData
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-customeventdata
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CustomEventData { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-name
@@ -67,29 +85,42 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
+        /// <summary>
+        /// PriorityConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-priorityconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PriorityConfiguration
+        /// </summary>
+        public PriorityConfiguration PriorityConfiguration { get; set; }
     }
 
     namespace GameSessionQueueTypes
     {
-        public class Destination
+        public class FilterConfiguration
+        {
+            /// <summary>
+            /// AllowedLocations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-filterconfiguration.html#cfn-gamelift-gamesessionqueue-filterconfiguration-allowedlocations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedLocations { get; set; }
+        }
+
+        public class GameSessionQueueDestination
         {
             /// <summary>
             /// DestinationArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-destination.html#cfn-gamelift-gamesessionqueue-destination-destinationarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-gamesessionqueuedestination.html#cfn-gamelift-gamesessionqueue-gamesessionqueuedestination-destinationarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DestinationArn
-            {
-                get;
-                set;
-            }
+            public dynamic DestinationArn { get; set; }
         }
 
         public class PlayerLatencyPolicy
@@ -101,12 +132,7 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic PolicyDurationSeconds
-            {
-                get;
-                set;
-            }
-
+            public dynamic PolicyDurationSeconds { get; set; }
             /// <summary>
             /// MaximumIndividualPlayerLatencyMilliseconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-maximumindividualplayerlatencymilliseconds
@@ -114,11 +140,29 @@ namespace Humidifier.GameLift
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic MaximumIndividualPlayerLatencyMilliseconds
-            {
-                get;
-                set;
-            }
+            public dynamic MaximumIndividualPlayerLatencyMilliseconds { get; set; }
+        }
+
+        public class PriorityConfiguration
+        {
+            /// <summary>
+            /// PriorityOrder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-priorityconfiguration.html#cfn-gamelift-gamesessionqueue-priorityconfiguration-priorityorder
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic PriorityOrder { get; set; }
+            /// <summary>
+            /// LocationOrder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-priorityconfiguration.html#cfn-gamelift-gamesessionqueue-priorityconfiguration-locationorder
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LocationOrder { get; set; }
         }
     }
 }

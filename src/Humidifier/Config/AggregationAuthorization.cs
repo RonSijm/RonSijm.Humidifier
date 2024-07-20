@@ -4,6 +4,11 @@ namespace Humidifier.Config
 
     public class AggregationAuthorization : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string AggregationAuthorizationArn =  "AggregationAuthorizationArn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthorizedAccountId
-        {
-            get;
-            set;
-        }
-
+        public dynamic AuthorizedAccountId { get; set; }
         /// <summary>
         /// AuthorizedAwsRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion
@@ -32,12 +32,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AuthorizedAwsRegion
-        {
-            get;
-            set;
-        }
-
+        public dynamic AuthorizedAwsRegion { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-tags
@@ -46,10 +41,6 @@ namespace Humidifier.Config
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 }

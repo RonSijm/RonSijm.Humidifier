@@ -4,6 +4,11 @@ namespace Humidifier.SQS
 
     public class QueuePolicy : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,29 +19,20 @@ namespace Humidifier.SQS
 
         /// <summary>
         /// PolicyDocument
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-policydoc
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queuepolicy.html#cfn-sqs-queuepolicy-policydocument
         /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic PolicyDocument
-        {
-            get;
-            set;
-        }
-
+        public dynamic PolicyDocument { get; set; }
         /// <summary>
         /// Queues
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-policy.html#cfn-sqs-queuepolicy-queues
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queuepolicy.html#cfn-sqs-queuepolicy-queues
         /// Required: True
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Queues
-        {
-            get;
-            set;
-        }
+        public dynamic Queues { get; set; }
     }
 }

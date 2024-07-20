@@ -5,7 +5,7 @@ namespace Humidifier.Amplify
 
     public class Branch : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string BranchName =  "BranchName" ;
             public static string Arn =  "Arn" ;
@@ -26,12 +26,23 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// EnablePerformanceMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableperformancemode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnablePerformanceMode { get; set; }
+        /// <summary>
+        /// Backend
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-backend
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Backend
+        /// </summary>
+        public Backend Backend { get; set; }
         /// <summary>
         /// EnvironmentVariables
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-environmentvariables
@@ -40,12 +51,7 @@ namespace Humidifier.Amplify
         /// Type: List
         /// ItemType: EnvironmentVariable
         /// </summary>
-        public List<EnvironmentVariable> EnvironmentVariables
-        {
-            get;
-            set;
-        }
-
+        public List<EnvironmentVariable> EnvironmentVariables { get; set; }
         /// <summary>
         /// AppId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-appid
@@ -53,12 +59,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AppId
-        {
-            get;
-            set;
-        }
-
+        public dynamic AppId { get; set; }
         /// <summary>
         /// PullRequestEnvironmentName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-pullrequestenvironmentname
@@ -66,12 +67,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PullRequestEnvironmentName
-        {
-            get;
-            set;
-        }
-
+        public dynamic PullRequestEnvironmentName { get; set; }
         /// <summary>
         /// EnablePullRequestPreview
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enablepullrequestpreview
@@ -79,12 +75,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EnablePullRequestPreview
-        {
-            get;
-            set;
-        }
-
+        public dynamic EnablePullRequestPreview { get; set; }
         /// <summary>
         /// EnableAutoBuild
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableautobuild
@@ -92,12 +83,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic EnableAutoBuild
-        {
-            get;
-            set;
-        }
-
+        public dynamic EnableAutoBuild { get; set; }
         /// <summary>
         /// BuildSpec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-buildspec
@@ -105,12 +91,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BuildSpec
-        {
-            get;
-            set;
-        }
-
+        public dynamic BuildSpec { get; set; }
         /// <summary>
         /// Stage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-stage
@@ -118,12 +99,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Stage
-        {
-            get;
-            set;
-        }
-
+        public dynamic Stage { get; set; }
         /// <summary>
         /// BranchName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-branchname
@@ -131,12 +107,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BranchName
-        {
-            get;
-            set;
-        }
-
+        public dynamic BranchName { get; set; }
         /// <summary>
         /// BasicAuthConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-basicauthconfig
@@ -144,12 +115,15 @@ namespace Humidifier.Amplify
         /// UpdateType: Mutable
         /// Type: BasicAuthConfig
         /// </summary>
-        public BasicAuthConfig BasicAuthConfig
-        {
-            get;
-            set;
-        }
-
+        public BasicAuthConfig BasicAuthConfig { get; set; }
+        /// <summary>
+        /// Framework
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-framework
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Framework { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-tags
@@ -158,42 +132,21 @@ namespace Humidifier.Amplify
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace BranchTypes
     {
-        public class EnvironmentVariable
+        public class Backend
         {
             /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html#cfn-amplify-branch-environmentvariable-value
-            /// Required: True
+            /// StackArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-backend.html#cfn-amplify-branch-backend-stackarn
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html#cfn-amplify-branch-environmentvariable-name
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
+            public dynamic StackArn { get; set; }
         }
 
         public class BasicAuthConfig
@@ -205,12 +158,7 @@ namespace Humidifier.Amplify
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Username
-            {
-                get;
-                set;
-            }
-
+            public dynamic Username { get; set; }
             /// <summary>
             /// EnableBasicAuth
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-enablebasicauth
@@ -218,12 +166,7 @@ namespace Humidifier.Amplify
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic EnableBasicAuth
-            {
-                get;
-                set;
-            }
-
+            public dynamic EnableBasicAuth { get; set; }
             /// <summary>
             /// Password
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-password
@@ -231,11 +174,27 @@ namespace Humidifier.Amplify
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Password
-            {
-                get;
-                set;
-            }
+            public dynamic Password { get; set; }
+        }
+
+        public class EnvironmentVariable
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html#cfn-amplify-branch-environmentvariable-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html#cfn-amplify-branch-environmentvariable-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
     }
 }

@@ -5,7 +5,7 @@ namespace Humidifier.AppMesh
 
     public class VirtualService : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Uid =  "Uid" ;
             public static string MeshName =  "MeshName" ;
@@ -30,12 +30,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MeshName
-        {
-            get;
-            set;
-        }
-
+        public dynamic MeshName { get; set; }
         /// <summary>
         /// MeshOwner
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-meshowner
@@ -43,12 +38,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic MeshOwner
-        {
-            get;
-            set;
-        }
-
+        public dynamic MeshOwner { get; set; }
         /// <summary>
         /// VirtualServiceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-virtualservicename
@@ -56,12 +46,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic VirtualServiceName
-        {
-            get;
-            set;
-        }
-
+        public dynamic VirtualServiceName { get; set; }
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-spec
@@ -69,12 +54,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: VirtualServiceSpec
         /// </summary>
-        public VirtualServiceSpec Spec
-        {
-            get;
-            set;
-        }
-
+        public VirtualServiceSpec Spec { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-tags
@@ -83,29 +63,21 @@ namespace Humidifier.AppMesh
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace VirtualServiceTypes
     {
-        public class VirtualServiceSpec
+        public class VirtualNodeServiceProvider
         {
             /// <summary>
-            /// Provider
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html#cfn-appmesh-virtualservice-virtualservicespec-provider
-            /// Required: False
+            /// VirtualNodeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html#cfn-appmesh-virtualservice-virtualnodeserviceprovider-virtualnodename
+            /// Required: True
             /// UpdateType: Mutable
-            /// Type: VirtualServiceProvider
+            /// PrimitiveType: String
             /// </summary>
-            public VirtualServiceProvider Provider
-            {
-                get;
-                set;
-            }
+            public dynamic VirtualNodeName { get; set; }
         }
 
         public class VirtualRouterServiceProvider
@@ -117,27 +89,7 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VirtualRouterName
-            {
-                get;
-                set;
-            }
-        }
-
-        public class VirtualNodeServiceProvider
-        {
-            /// <summary>
-            /// VirtualNodeName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html#cfn-appmesh-virtualservice-virtualnodeserviceprovider-virtualnodename
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic VirtualNodeName
-            {
-                get;
-                set;
-            }
+            public dynamic VirtualRouterName { get; set; }
         }
 
         public class VirtualServiceProvider
@@ -149,12 +101,7 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// Type: VirtualNodeServiceProvider
             /// </summary>
-            public VirtualNodeServiceProvider VirtualNode
-            {
-                get;
-                set;
-            }
-
+            public VirtualNodeServiceProvider VirtualNode { get; set; }
             /// <summary>
             /// VirtualRouter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter
@@ -162,11 +109,19 @@ namespace Humidifier.AppMesh
             /// UpdateType: Mutable
             /// Type: VirtualRouterServiceProvider
             /// </summary>
-            public VirtualRouterServiceProvider VirtualRouter
-            {
-                get;
-                set;
-            }
+            public VirtualRouterServiceProvider VirtualRouter { get; set; }
+        }
+
+        public class VirtualServiceSpec
+        {
+            /// <summary>
+            /// Provider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html#cfn-appmesh-virtualservice-virtualservicespec-provider
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VirtualServiceProvider
+            /// </summary>
+            public VirtualServiceProvider Provider { get; set; }
         }
     }
 }

@@ -19,12 +19,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FleetName
-        {
-            get;
-            set;
-        }
-
+        public dynamic FleetName { get; set; }
         /// <summary>
         /// StackName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html#cfn-appstream-stackfleetassociation-stackname
@@ -32,10 +27,6 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic StackName
-        {
-            get;
-            set;
-        }
+        public dynamic StackName { get; set; }
     }
 }

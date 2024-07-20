@@ -1,0 +1,47 @@
+namespace Humidifier.AppSync
+{
+    using System.Collections.Generic;
+
+    public class DomainName : Humidifier.Resource
+    {
+        public class Attributes
+        {
+            public static string AppSyncDomainName =  "AppSyncDomainName" ;
+            public static string DomainName =  "DomainName" ;
+            public static string HostedZoneId =  "HostedZoneId" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::AppSync::DomainName";
+            }
+        }
+
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// DomainName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-domainname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DomainName_ { get; set; }
+        /// <summary>
+        /// CertificateArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-certificatearn
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificateArn { get; set; }
+    }
+}

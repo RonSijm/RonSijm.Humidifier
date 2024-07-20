@@ -5,6 +5,11 @@ namespace Humidifier.SecretsManager
 
     public class Secret : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-kmskeyid
@@ -33,12 +33,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic KmsKeyId
-        {
-            get;
-            set;
-        }
-
+        public dynamic KmsKeyId { get; set; }
         /// <summary>
         /// SecretString
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-secretstring
@@ -46,12 +41,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SecretString
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecretString { get; set; }
         /// <summary>
         /// GenerateSecretString
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-generatesecretstring
@@ -59,12 +49,16 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// Type: GenerateSecretString
         /// </summary>
-        public GenerateSecretString GenerateSecretString
-        {
-            get;
-            set;
-        }
-
+        public GenerateSecretString GenerateSecretString { get; set; }
+        /// <summary>
+        /// ReplicaRegions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-replicaregions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ReplicaRegion
+        /// </summary>
+        public List<ReplicaRegion> ReplicaRegions { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-tags
@@ -73,12 +67,7 @@ namespace Humidifier.SecretsManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-name
@@ -86,11 +75,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace SecretTypes
@@ -104,12 +89,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ExcludeUppercase
-            {
-                get;
-                set;
-            }
-
+            public dynamic ExcludeUppercase { get; set; }
             /// <summary>
             /// RequireEachIncludedType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-requireeachincludedtype
@@ -117,12 +97,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic RequireEachIncludedType
-            {
-                get;
-                set;
-            }
-
+            public dynamic RequireEachIncludedType { get; set; }
             /// <summary>
             /// IncludeSpace
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-includespace
@@ -130,12 +105,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic IncludeSpace
-            {
-                get;
-                set;
-            }
-
+            public dynamic IncludeSpace { get; set; }
             /// <summary>
             /// ExcludeCharacters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludecharacters
@@ -143,12 +113,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ExcludeCharacters
-            {
-                get;
-                set;
-            }
-
+            public dynamic ExcludeCharacters { get; set; }
             /// <summary>
             /// GenerateStringKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-generatestringkey
@@ -156,12 +121,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic GenerateStringKey
-            {
-                get;
-                set;
-            }
-
+            public dynamic GenerateStringKey { get; set; }
             /// <summary>
             /// PasswordLength
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-passwordlength
@@ -169,12 +129,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic PasswordLength
-            {
-                get;
-                set;
-            }
-
+            public dynamic PasswordLength { get; set; }
             /// <summary>
             /// ExcludePunctuation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludepunctuation
@@ -182,12 +137,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ExcludePunctuation
-            {
-                get;
-                set;
-            }
-
+            public dynamic ExcludePunctuation { get; set; }
             /// <summary>
             /// ExcludeLowercase
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludelowercase
@@ -195,12 +145,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ExcludeLowercase
-            {
-                get;
-                set;
-            }
-
+            public dynamic ExcludeLowercase { get; set; }
             /// <summary>
             /// SecretStringTemplate
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-secretstringtemplate
@@ -208,12 +153,7 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SecretStringTemplate
-            {
-                get;
-                set;
-            }
-
+            public dynamic SecretStringTemplate { get; set; }
             /// <summary>
             /// ExcludeNumbers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-generatesecretstring.html#cfn-secretsmanager-secret-generatesecretstring-excludenumbers
@@ -221,11 +161,27 @@ namespace Humidifier.SecretsManager
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ExcludeNumbers
-            {
-                get;
-                set;
-            }
+            public dynamic ExcludeNumbers { get; set; }
+        }
+
+        public class ReplicaRegion
+        {
+            /// <summary>
+            /// KmsKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-replicaregion.html#cfn-secretsmanager-secret-replicaregion-kmskeyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyId { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-replicaregion.html#cfn-secretsmanager-secret-replicaregion-region
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
         }
     }
 }

@@ -4,6 +4,11 @@ namespace Humidifier.ApiGatewayV2
 
     public class ApiMapping : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ApiMappingId =  "ApiMappingId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -19,12 +24,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DomainName
-        {
-            get;
-            set;
-        }
-
+        public dynamic DomainName { get; set; }
         /// <summary>
         /// Stage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html#cfn-apigatewayv2-apimapping-stage
@@ -32,12 +32,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Stage
-        {
-            get;
-            set;
-        }
-
+        public dynamic Stage { get; set; }
         /// <summary>
         /// ApiMappingKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html#cfn-apigatewayv2-apimapping-apimappingkey
@@ -45,23 +40,14 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiMappingKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic ApiMappingKey { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apimapping.html#cfn-apigatewayv2-apimapping-apiid
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
+        public dynamic ApiId { get; set; }
     }
 }

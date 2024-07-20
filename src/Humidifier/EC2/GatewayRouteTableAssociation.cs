@@ -4,7 +4,7 @@ namespace Humidifier.EC2
 
     public class GatewayRouteTableAssociation : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string AssociationId =  "AssociationId" ;
         }
@@ -24,12 +24,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RouteTableId
-        {
-            get;
-            set;
-        }
-
+        public dynamic RouteTableId { get; set; }
         /// <summary>
         /// GatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-gatewayroutetableassociation.html#cfn-ec2-gatewayroutetableassociation-gatewayid
@@ -37,10 +32,6 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic GatewayId
-        {
-            get;
-            set;
-        }
+        public dynamic GatewayId { get; set; }
     }
 }

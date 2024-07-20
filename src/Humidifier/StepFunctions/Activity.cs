@@ -5,8 +5,9 @@ namespace Humidifier.StepFunctions
 
     public class Activity : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
         }
 
@@ -26,12 +27,7 @@ namespace Humidifier.StepFunctions
         /// Type: List
         /// ItemType: TagsEntry
         /// </summary>
-        public List<TagsEntry> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<TagsEntry> Tags { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name
@@ -39,11 +35,7 @@ namespace Humidifier.StepFunctions
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace ActivityTypes
@@ -57,12 +49,7 @@ namespace Humidifier.StepFunctions
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html#cfn-stepfunctions-activity-tagsentry-key
@@ -70,11 +57,7 @@ namespace Humidifier.StepFunctions
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic Key { get; set; }
         }
     }
 }

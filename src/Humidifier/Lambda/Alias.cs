@@ -20,12 +20,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// FunctionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname
@@ -33,12 +28,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FunctionName
-        {
-            get;
-            set;
-        }
-
+        public dynamic FunctionName { get; set; }
         /// <summary>
         /// FunctionVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
@@ -46,12 +36,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FunctionVersion
-        {
-            get;
-            set;
-        }
-
+        public dynamic FunctionVersion { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name
@@ -59,12 +44,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// ProvisionedConcurrencyConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig
@@ -72,12 +52,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// Type: ProvisionedConcurrencyConfiguration
         /// </summary>
-        public ProvisionedConcurrencyConfiguration ProvisionedConcurrencyConfig
-        {
-            get;
-            set;
-        }
-
+        public ProvisionedConcurrencyConfiguration ProvisionedConcurrencyConfig { get; set; }
         /// <summary>
         /// RoutingConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig
@@ -85,31 +60,11 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// Type: AliasRoutingConfiguration
         /// </summary>
-        public AliasRoutingConfiguration RoutingConfig
-        {
-            get;
-            set;
-        }
+        public AliasRoutingConfiguration RoutingConfig { get; set; }
     }
 
     namespace AliasTypes
     {
-        public class ProvisionedConcurrencyConfiguration
-        {
-            /// <summary>
-            /// ProvisionedConcurrentExecutions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html#cfn-lambda-alias-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ProvisionedConcurrentExecutions
-            {
-                get;
-                set;
-            }
-        }
-
         public class AliasRoutingConfiguration
         {
             /// <summary>
@@ -120,11 +75,19 @@ namespace Humidifier.Lambda
             /// Type: List
             /// ItemType: VersionWeight
             /// </summary>
-            public List<VersionWeight> AdditionalVersionWeights
-            {
-                get;
-                set;
-            }
+            public List<VersionWeight> AdditionalVersionWeights { get; set; }
+        }
+
+        public class ProvisionedConcurrencyConfiguration
+        {
+            /// <summary>
+            /// ProvisionedConcurrentExecutions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html#cfn-lambda-alias-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ProvisionedConcurrentExecutions { get; set; }
         }
 
         public class VersionWeight
@@ -136,12 +99,7 @@ namespace Humidifier.Lambda
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic FunctionVersion
-            {
-                get;
-                set;
-            }
-
+            public dynamic FunctionVersion { get; set; }
             /// <summary>
             /// FunctionWeight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight
@@ -149,11 +107,7 @@ namespace Humidifier.Lambda
             /// UpdateType: Mutable
             /// PrimitiveType: Double
             /// </summary>
-            public dynamic FunctionWeight
-            {
-                get;
-                set;
-            }
+            public dynamic FunctionWeight { get; set; }
         }
     }
 }

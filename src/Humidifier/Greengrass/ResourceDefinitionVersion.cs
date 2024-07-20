@@ -21,12 +21,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: ResourceInstance
         /// </summary>
-        public List<ResourceInstance> Resources
-        {
-            get;
-            set;
-        }
-
+        public List<ResourceInstance> Resources { get; set; }
         /// <summary>
         /// ResourceDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resourcedefinitionid
@@ -34,126 +29,29 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceDefinitionId
-        {
-            get;
-            set;
-        }
+        public dynamic ResourceDefinitionId { get; set; }
     }
 
     namespace ResourceDefinitionVersionTypes
     {
-        public class ResourceInstance
+        public class GroupOwnerSetting
         {
             /// <summary>
-            /// ResourceDataContainer
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer
+            /// AutoAddGroupOwner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner
             /// Required: True
             /// UpdateType: Immutable
-            /// Type: ResourceDataContainer
+            /// PrimitiveType: Boolean
             /// </summary>
-            public ResourceDataContainer ResourceDataContainer
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Id
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name
-            {
-                get;
-                set;
-            }
-        }
-
-        public class SageMakerMachineLearningModelResourceData
-        {
-            /// <summary>
-            /// OwnerSetting
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: ResourceDownloadOwnerSetting
-            /// </summary>
-            public ResourceDownloadOwnerSetting OwnerSetting
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DestinationPath
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DestinationPath
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// SageMakerJobArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SageMakerJobArn
-            {
-                get;
-                set;
-            }
-        }
-
-        public class ResourceDownloadOwnerSetting
-        {
+            public dynamic AutoAddGroupOwner { get; set; }
             /// <summary>
             /// GroupOwner
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinitionversion-resourcedownloadownersetting-groupowner
-            /// Required: True
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner
+            /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic GroupOwner
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// GroupPermission
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinitionversion-resourcedownloadownersetting-grouppermission
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic GroupPermission
-            {
-                get;
-                set;
-            }
+            public dynamic GroupOwner { get; set; }
         }
 
         public class LocalDeviceResourceData
@@ -165,12 +63,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SourcePath
-            {
-                get;
-                set;
-            }
-
+            public dynamic SourcePath { get; set; }
             /// <summary>
             /// GroupOwnerSetting
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting
@@ -178,53 +71,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: GroupOwnerSetting
             /// </summary>
-            public GroupOwnerSetting GroupOwnerSetting
-            {
-                get;
-                set;
-            }
-        }
-
-        public class S3MachineLearningModelResourceData
-        {
-            /// <summary>
-            /// OwnerSetting
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: ResourceDownloadOwnerSetting
-            /// </summary>
-            public ResourceDownloadOwnerSetting OwnerSetting
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// DestinationPath
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DestinationPath
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// S3Uri
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic S3Uri
-            {
-                get;
-                set;
-            }
+            public GroupOwnerSetting GroupOwnerSetting { get; set; }
         }
 
         public class LocalVolumeResourceData
@@ -236,12 +83,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SourcePath
-            {
-                get;
-                set;
-            }
-
+            public dynamic SourcePath { get; set; }
             /// <summary>
             /// DestinationPath
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html#cfn-greengrass-resourcedefinitionversion-localvolumeresourcedata-destinationpath
@@ -249,12 +91,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DestinationPath
-            {
-                get;
-                set;
-            }
-
+            public dynamic DestinationPath { get; set; }
             /// <summary>
             /// GroupOwnerSetting
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localvolumeresourcedata.html#cfn-greengrass-resourcedefinitionversion-localvolumeresourcedata-groupownersetting
@@ -262,11 +99,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: GroupOwnerSetting
             /// </summary>
-            public GroupOwnerSetting GroupOwnerSetting
-            {
-                get;
-                set;
-            }
+            public GroupOwnerSetting GroupOwnerSetting { get; set; }
         }
 
         public class ResourceDataContainer
@@ -278,12 +111,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: SecretsManagerSecretResourceData
             /// </summary>
-            public SecretsManagerSecretResourceData SecretsManagerSecretResourceData
-            {
-                get;
-                set;
-            }
-
+            public SecretsManagerSecretResourceData SecretsManagerSecretResourceData { get; set; }
             /// <summary>
             /// SageMakerMachineLearningModelResourceData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
@@ -291,12 +119,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: SageMakerMachineLearningModelResourceData
             /// </summary>
-            public SageMakerMachineLearningModelResourceData SageMakerMachineLearningModelResourceData
-            {
-                get;
-                set;
-            }
-
+            public SageMakerMachineLearningModelResourceData SageMakerMachineLearningModelResourceData { get; set; }
             /// <summary>
             /// LocalVolumeResourceData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata
@@ -304,12 +127,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: LocalVolumeResourceData
             /// </summary>
-            public LocalVolumeResourceData LocalVolumeResourceData
-            {
-                get;
-                set;
-            }
-
+            public LocalVolumeResourceData LocalVolumeResourceData { get; set; }
             /// <summary>
             /// LocalDeviceResourceData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata
@@ -317,12 +135,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: LocalDeviceResourceData
             /// </summary>
-            public LocalDeviceResourceData LocalDeviceResourceData
-            {
-                get;
-                set;
-            }
-
+            public LocalDeviceResourceData LocalDeviceResourceData { get; set; }
             /// <summary>
             /// S3MachineLearningModelResourceData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata
@@ -330,40 +143,111 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// Type: S3MachineLearningModelResourceData
             /// </summary>
-            public S3MachineLearningModelResourceData S3MachineLearningModelResourceData
-            {
-                get;
-                set;
-            }
+            public S3MachineLearningModelResourceData S3MachineLearningModelResourceData { get; set; }
         }
 
-        public class GroupOwnerSetting
+        public class ResourceDownloadOwnerSetting
         {
             /// <summary>
-            /// AutoAddGroupOwner
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic AutoAddGroupOwner
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// GroupOwner
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner
-            /// Required: False
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinitionversion-resourcedownloadownersetting-groupowner
+            /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic GroupOwner
-            {
-                get;
-                set;
-            }
+            public dynamic GroupOwner { get; set; }
+            /// <summary>
+            /// GroupPermission
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinitionversion-resourcedownloadownersetting-grouppermission
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupPermission { get; set; }
+        }
+
+        public class ResourceInstance
+        {
+            /// <summary>
+            /// ResourceDataContainer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: ResourceDataContainer
+            /// </summary>
+            public ResourceDataContainer ResourceDataContainer { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class S3MachineLearningModelResourceData
+        {
+            /// <summary>
+            /// OwnerSetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ResourceDownloadOwnerSetting
+            /// </summary>
+            public ResourceDownloadOwnerSetting OwnerSetting { get; set; }
+            /// <summary>
+            /// DestinationPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DestinationPath { get; set; }
+            /// <summary>
+            /// S3Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3Uri { get; set; }
+        }
+
+        public class SageMakerMachineLearningModelResourceData
+        {
+            /// <summary>
+            /// OwnerSetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ResourceDownloadOwnerSetting
+            /// </summary>
+            public ResourceDownloadOwnerSetting OwnerSetting { get; set; }
+            /// <summary>
+            /// DestinationPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DestinationPath { get; set; }
+            /// <summary>
+            /// SageMakerJobArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SageMakerJobArn { get; set; }
         }
 
         public class SecretsManagerSecretResourceData
@@ -375,12 +259,7 @@ namespace Humidifier.Greengrass
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ARN
-            {
-                get;
-                set;
-            }
-
+            public dynamic ARN { get; set; }
             /// <summary>
             /// AdditionalStagingLabelsToDownload
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload
@@ -389,11 +268,7 @@ namespace Humidifier.Greengrass
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic AdditionalStagingLabelsToDownload
-            {
-                get;
-                set;
-            }
+            public dynamic AdditionalStagingLabelsToDownload { get; set; }
         }
     }
 }

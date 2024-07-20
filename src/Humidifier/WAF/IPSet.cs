@@ -21,12 +21,7 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: IPSetDescriptor
         /// </summary>
-        public List<IPSetDescriptor> IPSetDescriptors
-        {
-            get;
-            set;
-        }
-
+        public List<IPSetDescriptor> IPSetDescriptors { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-name
@@ -34,11 +29,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
+        public dynamic Name { get; set; }
     }
 
     namespace IPSetTypes
@@ -52,12 +43,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
+            public dynamic Type { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-ipset-ipsetdescriptors.html#cfn-waf-ipset-ipsetdescriptors-value
@@ -65,11 +51,7 @@ namespace Humidifier.WAF
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
+            public dynamic Value { get; set; }
         }
     }
 }

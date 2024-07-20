@@ -5,8 +5,9 @@ namespace Humidifier.DAX
 
     public class Cluster : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
+            public static string ClusterDiscoveryEndpointURL =  "ClusterDiscoveryEndpointURL" ;
             public static string ClusterDiscoveryEndpoint =  "ClusterDiscoveryEndpoint" ;
             public static string Arn =  "Arn" ;
         }
@@ -26,12 +27,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// Type: SSESpecification
         /// </summary>
-        public SSESpecification SSESpecification
-        {
-            get;
-            set;
-        }
-
+        public SSESpecification SSESpecification { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-description
@@ -39,12 +35,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// ReplicationFactor
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor
@@ -52,12 +43,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        public dynamic ReplicationFactor
-        {
-            get;
-            set;
-        }
-
+        public dynamic ReplicationFactor { get; set; }
         /// <summary>
         /// ParameterGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-parametergroupname
@@ -65,12 +51,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ParameterGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ParameterGroupName { get; set; }
         /// <summary>
         /// AvailabilityZones
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-availabilityzones
@@ -79,12 +60,7 @@ namespace Humidifier.DAX
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic AvailabilityZones
-        {
-            get;
-            set;
-        }
-
+        public dynamic AvailabilityZones { get; set; }
         /// <summary>
         /// IAMRoleARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn
@@ -92,12 +68,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IAMRoleARN
-        {
-            get;
-            set;
-        }
-
+        public dynamic IAMRoleARN { get; set; }
         /// <summary>
         /// SubnetGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-subnetgroupname
@@ -105,12 +76,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SubnetGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic SubnetGroupName { get; set; }
         /// <summary>
         /// PreferredMaintenanceWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow
@@ -118,12 +84,15 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic PreferredMaintenanceWindow
-        {
-            get;
-            set;
-        }
-
+        public dynamic PreferredMaintenanceWindow { get; set; }
+        /// <summary>
+        /// ClusterEndpointEncryptionType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clusterendpointencryptiontype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ClusterEndpointEncryptionType { get; set; }
         /// <summary>
         /// NotificationTopicARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-notificationtopicarn
@@ -131,12 +100,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NotificationTopicARN
-        {
-            get;
-            set;
-        }
-
+        public dynamic NotificationTopicARN { get; set; }
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-securitygroupids
@@ -145,12 +109,7 @@ namespace Humidifier.DAX
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SecurityGroupIds
-        {
-            get;
-            set;
-        }
-
+        public dynamic SecurityGroupIds { get; set; }
         /// <summary>
         /// NodeType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype
@@ -158,12 +117,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NodeType
-        {
-            get;
-            set;
-        }
-
+        public dynamic NodeType { get; set; }
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-clustername
@@ -171,12 +125,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClusterName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClusterName { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-tags
@@ -184,11 +133,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
+        public dynamic Tags { get; set; }
     }
 
     namespace ClusterTypes
@@ -202,11 +147,7 @@ namespace Humidifier.DAX
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic SSEEnabled
-            {
-                get;
-                set;
-            }
+            public dynamic SSEEnabled { get; set; }
         }
     }
 }

@@ -19,12 +19,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Definition
-        {
-            get;
-            set;
-        }
-
+        public dynamic Definition { get; set; }
         /// <summary>
         /// DefinitionS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location
@@ -32,12 +27,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DefinitionS3Location
-        {
-            get;
-            set;
-        }
-
+        public dynamic DefinitionS3Location { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
@@ -45,10 +35,6 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
+        public dynamic ApiId { get; set; }
     }
 }

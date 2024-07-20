@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class EIPAssociation : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -13,68 +18,36 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// AllocationId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-allocationid
+        /// PrivateIpAddress
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eipassociation.html#cfn-ec2-eipassociation-privateipaddress
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AllocationId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// EIP
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip
-        /// Required: False
-        /// UpdateType: Conditional
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic EIP
-        {
-            get;
-            set;
-        }
-
+        public dynamic PrivateIpAddress { get; set; }
         /// <summary>
         /// InstanceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-instanceid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eipassociation.html#cfn-ec2-eipassociation-instanceid
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic InstanceId
-        {
-            get;
-            set;
-        }
-
+        public dynamic InstanceId { get; set; }
+        /// <summary>
+        /// AllocationId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eipassociation.html#cfn-ec2-eipassociation-allocationid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AllocationId { get; set; }
         /// <summary>
         /// NetworkInterfaceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-networkinterfaceid
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eipassociation.html#cfn-ec2-eipassociation-networkinterfaceid
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NetworkInterfaceId
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// PrivateIpAddress
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic PrivateIpAddress
-        {
-            get;
-            set;
-        }
+        public dynamic NetworkInterfaceId { get; set; }
     }
 }

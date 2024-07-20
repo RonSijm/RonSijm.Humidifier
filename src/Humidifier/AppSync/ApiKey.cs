@@ -4,7 +4,7 @@ namespace Humidifier.AppSync
 
     public class ApiKey : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string ApiKey =  "ApiKey" ;
             public static string Arn =  "Arn" ;
@@ -25,12 +25,15 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// ApiKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apikeyid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ApiKeyId { get; set; }
         /// <summary>
         /// Expires
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires
@@ -38,12 +41,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
-        public dynamic Expires
-        {
-            get;
-            set;
-        }
-
+        public dynamic Expires { get; set; }
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid
@@ -51,10 +49,6 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiId
-        {
-            get;
-            set;
-        }
+        public dynamic ApiId { get; set; }
     }
 }

@@ -5,6 +5,11 @@ namespace Humidifier.SSM
 
     public class ResourceDataSync : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string SyncName =  "SyncName" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +25,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// Type: S3Destination
         /// </summary>
-        public S3Destination S3Destination
-        {
-            get;
-            set;
-        }
-
+        public S3Destination S3Destination { get; set; }
         /// <summary>
         /// KMSKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn
@@ -33,12 +33,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic KMSKeyArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic KMSKeyArn { get; set; }
         /// <summary>
         /// SyncSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource
@@ -46,12 +41,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// Type: SyncSource
         /// </summary>
-        public SyncSource SyncSource
-        {
-            get;
-            set;
-        }
-
+        public SyncSource SyncSource { get; set; }
         /// <summary>
         /// BucketName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketname
@@ -59,12 +49,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BucketName
-        {
-            get;
-            set;
-        }
-
+        public dynamic BucketName { get; set; }
         /// <summary>
         /// BucketRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketregion
@@ -72,12 +57,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BucketRegion
-        {
-            get;
-            set;
-        }
-
+        public dynamic BucketRegion { get; set; }
         /// <summary>
         /// SyncFormat
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat
@@ -85,25 +65,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SyncFormat
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// SyncName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SyncName
-        {
-            get;
-            set;
-        }
-
+        public dynamic SyncFormat { get; set; }
         /// <summary>
         /// SyncType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-synctype
@@ -111,12 +73,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SyncType
-        {
-            get;
-            set;
-        }
-
+        public dynamic SyncType { get; set; }
         /// <summary>
         /// BucketPrefix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-bucketprefix
@@ -124,15 +81,40 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BucketPrefix
-        {
-            get;
-            set;
-        }
+        public dynamic BucketPrefix { get; set; }
+        /// <summary>
+        /// SyncName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SyncName { get; set; }
     }
 
     namespace ResourceDataSyncTypes
     {
+        public class AwsOrganizationsSource
+        {
+            /// <summary>
+            /// OrganizationSourceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationsourcetype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OrganizationSourceType { get; set; }
+            /// <summary>
+            /// OrganizationalUnits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationalunits
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic OrganizationalUnits { get; set; }
+        }
+
         public class S3Destination
         {
             /// <summary>
@@ -142,12 +124,7 @@ namespace Humidifier.SSM
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic KMSKeyArn
-            {
-                get;
-                set;
-            }
-
+            public dynamic KMSKeyArn { get; set; }
             /// <summary>
             /// BucketName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-s3destination.html#cfn-ssm-resourcedatasync-s3destination-bucketname
@@ -155,12 +132,7 @@ namespace Humidifier.SSM
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BucketName
-            {
-                get;
-                set;
-            }
-
+            public dynamic BucketName { get; set; }
             /// <summary>
             /// BucketRegion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-s3destination.html#cfn-ssm-resourcedatasync-s3destination-bucketregion
@@ -168,12 +140,7 @@ namespace Humidifier.SSM
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BucketRegion
-            {
-                get;
-                set;
-            }
-
+            public dynamic BucketRegion { get; set; }
             /// <summary>
             /// SyncFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-s3destination.html#cfn-ssm-resourcedatasync-s3destination-syncformat
@@ -181,12 +148,7 @@ namespace Humidifier.SSM
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SyncFormat
-            {
-                get;
-                set;
-            }
-
+            public dynamic SyncFormat { get; set; }
             /// <summary>
             /// BucketPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-s3destination.html#cfn-ssm-resourcedatasync-s3destination-bucketprefix
@@ -194,41 +156,7 @@ namespace Humidifier.SSM
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic BucketPrefix
-            {
-                get;
-                set;
-            }
-        }
-
-        public class AwsOrganizationsSource
-        {
-            /// <summary>
-            /// OrganizationSourceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationsourcetype
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic OrganizationSourceType
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// OrganizationalUnits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationalunits
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic OrganizationalUnits
-            {
-                get;
-                set;
-            }
+            public dynamic BucketPrefix { get; set; }
         }
 
         public class SyncSource
@@ -237,15 +165,10 @@ namespace Humidifier.SSM
             /// SourceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-sourcetype
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic SourceType
-            {
-                get;
-                set;
-            }
-
+            public dynamic SourceType { get; set; }
             /// <summary>
             /// AwsOrganizationsSource
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-awsorganizationssource
@@ -253,12 +176,7 @@ namespace Humidifier.SSM
             /// UpdateType: Mutable
             /// Type: AwsOrganizationsSource
             /// </summary>
-            public AwsOrganizationsSource AwsOrganizationsSource
-            {
-                get;
-                set;
-            }
-
+            public AwsOrganizationsSource AwsOrganizationsSource { get; set; }
             /// <summary>
             /// IncludeFutureRegions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-includefutureregions
@@ -266,12 +184,7 @@ namespace Humidifier.SSM
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic IncludeFutureRegions
-            {
-                get;
-                set;
-            }
-
+            public dynamic IncludeFutureRegions { get; set; }
             /// <summary>
             /// SourceRegions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-sourceregions
@@ -280,11 +193,7 @@ namespace Humidifier.SSM
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic SourceRegions
-            {
-                get;
-                set;
-            }
+            public dynamic SourceRegions { get; set; }
         }
     }
 }

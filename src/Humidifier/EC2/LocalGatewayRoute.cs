@@ -4,10 +4,10 @@ namespace Humidifier.EC2
 
     public class LocalGatewayRoute : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
-            public static string State =  "State" ;
             public static string Type =  "Type" ;
+            public static string State =  "State" ;
         }
 
         public override string AWSTypeName
@@ -19,42 +19,36 @@ namespace Humidifier.EC2
         }
 
         /// <summary>
-        /// DestinationCidrBlock
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-destinationcidrblock
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DestinationCidrBlock
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
         /// LocalGatewayRouteTableId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayroutetableid
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LocalGatewayRouteTableId
-        {
-            get;
-            set;
-        }
-
+        public dynamic LocalGatewayRouteTableId { get; set; }
         /// <summary>
-        /// LocalGatewayVirtualInterfaceGroupId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid
+        /// DestinationCidrBlock
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-destinationcidrblock
         /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic LocalGatewayVirtualInterfaceGroupId
-        {
-            get;
-            set;
-        }
+        public dynamic DestinationCidrBlock { get; set; }
+        /// <summary>
+        /// NetworkInterfaceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-networkinterfaceid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkInterfaceId { get; set; }
+        /// <summary>
+        /// LocalGatewayVirtualInterfaceGroupId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LocalGatewayVirtualInterfaceGroupId { get; set; }
     }
 }

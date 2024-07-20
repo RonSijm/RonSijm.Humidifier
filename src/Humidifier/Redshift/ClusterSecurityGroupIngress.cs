@@ -19,12 +19,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CIDRIP
-        {
-            get;
-            set;
-        }
-
+        public dynamic CIDRIP { get; set; }
         /// <summary>
         /// ClusterSecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
@@ -32,12 +27,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ClusterSecurityGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic ClusterSecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupname
@@ -45,12 +35,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EC2SecurityGroupName
-        {
-            get;
-            set;
-        }
-
+        public dynamic EC2SecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupOwnerId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-ec2securitygroupownerid
@@ -58,10 +43,6 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EC2SecurityGroupOwnerId
-        {
-            get;
-            set;
-        }
+        public dynamic EC2SecurityGroupOwnerId { get; set; }
     }
 }

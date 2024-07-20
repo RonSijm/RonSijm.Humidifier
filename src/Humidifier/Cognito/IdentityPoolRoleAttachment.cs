@@ -5,6 +5,11 @@ namespace Humidifier.Cognito
 
     public class IdentityPoolRoleAttachment : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -18,14 +23,10 @@ namespace Humidifier.Cognito
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-rolemappings
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// ItemType: RoleMapping
         /// </summary>
-        public dynamic RoleMappings
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, RoleMapping> RoleMappings { get; set; }
         /// <summary>
         /// IdentityPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-identitypoolid
@@ -33,83 +34,20 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic IdentityPoolId
-        {
-            get;
-            set;
-        }
-
+        public dynamic IdentityPoolId { get; set; }
         /// <summary>
         /// Roles
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-roles
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Roles
-        {
-            get;
-            set;
-        }
+        public Dictionary<string, dynamic> Roles { get; set; }
     }
 
     namespace IdentityPoolRoleAttachmentTypes
     {
-        public class RoleMapping
-        {
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// AmbiguousRoleResolution
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic AmbiguousRoleResolution
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// RulesConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: RulesConfigurationType
-            /// </summary>
-            public RulesConfigurationType RulesConfiguration
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// IdentityProvider
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-identityprovider
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic IdentityProvider
-            {
-                get;
-                set;
-            }
-        }
-
         public class MappingRule
         {
             /// <summary>
@@ -119,12 +57,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MatchType
-            {
-                get;
-                set;
-            }
-
+            public dynamic MatchType { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value
@@ -132,12 +65,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value
-            {
-                get;
-                set;
-            }
-
+            public dynamic Value { get; set; }
             /// <summary>
             /// Claim
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-claim
@@ -145,12 +73,7 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Claim
-            {
-                get;
-                set;
-            }
-
+            public dynamic Claim { get; set; }
             /// <summary>
             /// RoleARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-rolearn
@@ -158,11 +81,43 @@ namespace Humidifier.Cognito
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic RoleARN
-            {
-                get;
-                set;
-            }
+            public dynamic RoleARN { get; set; }
+        }
+
+        public class RoleMapping
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// AmbiguousRoleResolution
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-ambiguousroleresolution
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AmbiguousRoleResolution { get; set; }
+            /// <summary>
+            /// RulesConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RulesConfigurationType
+            /// </summary>
+            public RulesConfigurationType RulesConfiguration { get; set; }
+            /// <summary>
+            /// IdentityProvider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-identityprovider
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdentityProvider { get; set; }
         }
 
         public class RulesConfigurationType
@@ -175,11 +130,7 @@ namespace Humidifier.Cognito
             /// Type: List
             /// ItemType: MappingRule
             /// </summary>
-            public List<MappingRule> Rules
-            {
-                get;
-                set;
-            }
+            public List<MappingRule> Rules { get; set; }
         }
     }
 }

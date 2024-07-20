@@ -5,7 +5,7 @@ namespace Humidifier.IAM
 
     public class User : Humidifier.Resource
     {
-        public static class Attributes
+        public class Attributes
         {
             public static string Arn =  "Arn" ;
         }
@@ -19,112 +19,73 @@ namespace Humidifier.IAM
         }
 
         /// <summary>
-        /// Groups
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups
+        /// Path
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-path
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
+        /// PrimitiveType: String
         /// </summary>
-        public dynamic Groups
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// LoginProfile
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: LoginProfile
-        /// </summary>
-        public LoginProfile LoginProfile
-        {
-            get;
-            set;
-        }
-
+        public dynamic Path { get; set; }
         /// <summary>
         /// ManagedPolicyArns
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-managepolicyarns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-managedpolicyarns
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ManagedPolicyArns
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// Path
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-path
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Path
-        {
-            get;
-            set;
-        }
-
-        /// <summary>
-        /// PermissionsBoundary
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-permissionsboundary
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic PermissionsBoundary
-        {
-            get;
-            set;
-        }
-
+        public dynamic ManagedPolicyArns { get; set; }
         /// <summary>
         /// Policies
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-policies
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Policy
         /// </summary>
-        public List<Policy> Policies
-        {
-            get;
-            set;
-        }
-
+        public List<Policy> Policies { get; set; }
+        /// <summary>
+        /// UserName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-username
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic UserName { get; set; }
+        /// <summary>
+        /// Groups
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-groups
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic Groups { get; set; }
+        /// <summary>
+        /// LoginProfile
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-loginprofile
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LoginProfile
+        /// </summary>
+        public LoginProfile LoginProfile { get; set; }
         /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags
-        {
-            get;
-            set;
-        }
-
+        public List<Tag> Tags { get; set; }
         /// <summary>
-        /// UserName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-username
+        /// PermissionsBoundary
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-permissionsboundary
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic UserName
-        {
-            get;
-            set;
-        }
+        public dynamic PermissionsBoundary { get; set; }
     }
 
     namespace UserTypes
@@ -132,59 +93,41 @@ namespace Humidifier.IAM
         public class LoginProfile
         {
             /// <summary>
-            /// Password
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Password
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// PasswordResetRequired
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic PasswordResetRequired
-            {
-                get;
-                set;
-            }
+            public dynamic PasswordResetRequired { get; set; }
+            /// <summary>
+            /// Password
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-password
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Password { get; set; }
         }
 
         public class Policy
         {
             /// <summary>
-            /// PolicyDocument
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policydocument
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic PolicyDocument
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
             /// PolicyName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-policy.html#cfn-iam-user-policy-policyname
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PolicyName
-            {
-                get;
-                set;
-            }
+            public dynamic PolicyName { get; set; }
+            /// <summary>
+            /// PolicyDocument
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-policy.html#cfn-iam-user-policy-policydocument
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic PolicyDocument { get; set; }
         }
     }
 }

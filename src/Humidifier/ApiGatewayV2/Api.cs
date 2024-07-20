@@ -5,6 +5,12 @@ namespace Humidifier.ApiGatewayV2
 
     public class Api : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string ApiEndpoint =  "ApiEndpoint" ;
+            public static string ApiId =  "ApiId" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -20,12 +26,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RouteSelectionExpression
-        {
-            get;
-            set;
-        }
-
+        public dynamic RouteSelectionExpression { get; set; }
         /// <summary>
         /// BodyS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location
@@ -33,12 +34,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// Type: BodyS3Location
         /// </summary>
-        public BodyS3Location BodyS3Location
-        {
-            get;
-            set;
-        }
-
+        public BodyS3Location BodyS3Location { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-description
@@ -46,12 +42,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Description
-        {
-            get;
-            set;
-        }
-
+        public dynamic Description { get; set; }
         /// <summary>
         /// BasePath
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-basepath
@@ -59,12 +50,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic BasePath
-        {
-            get;
-            set;
-        }
-
+        public dynamic BasePath { get; set; }
         /// <summary>
         /// FailOnWarnings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-failonwarnings
@@ -72,12 +58,15 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic FailOnWarnings
-        {
-            get;
-            set;
-        }
-
+        public dynamic FailOnWarnings { get; set; }
+        /// <summary>
+        /// DisableExecuteApiEndpoint
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableexecuteapiendpoint
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DisableExecuteApiEndpoint { get; set; }
         /// <summary>
         /// DisableSchemaValidation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-disableschemavalidation
@@ -85,12 +74,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
-        public dynamic DisableSchemaValidation
-        {
-            get;
-            set;
-        }
-
+        public dynamic DisableSchemaValidation { get; set; }
         /// <summary>
         /// Name
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-name
@@ -98,12 +82,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Name
-        {
-            get;
-            set;
-        }
-
+        public dynamic Name { get; set; }
         /// <summary>
         /// Target
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-target
@@ -111,12 +90,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Target
-        {
-            get;
-            set;
-        }
-
+        public dynamic Target { get; set; }
         /// <summary>
         /// CredentialsArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-credentialsarn
@@ -124,12 +98,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic CredentialsArn
-        {
-            get;
-            set;
-        }
-
+        public dynamic CredentialsArn { get; set; }
         /// <summary>
         /// CorsConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-corsconfiguration
@@ -137,12 +106,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// Type: Cors
         /// </summary>
-        public Cors CorsConfiguration
-        {
-            get;
-            set;
-        }
-
+        public Cors CorsConfiguration { get; set; }
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-version
@@ -150,12 +114,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic Version
-        {
-            get;
-            set;
-        }
-
+        public dynamic Version { get; set; }
         /// <summary>
         /// ProtocolType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-protocoltype
@@ -163,12 +122,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProtocolType
-        {
-            get;
-            set;
-        }
-
+        public dynamic ProtocolType { get; set; }
         /// <summary>
         /// RouteKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-routekey
@@ -176,12 +130,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic RouteKey
-        {
-            get;
-            set;
-        }
-
+        public dynamic RouteKey { get; set; }
         /// <summary>
         /// Body
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-body
@@ -189,25 +138,16 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
-        public dynamic Body
-        {
-            get;
-            set;
-        }
-
+        public dynamic Body { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags
-        {
-            get;
-            set;
-        }
-
+        public Dictionary<string, dynamic> Tags { get; set; }
         /// <summary>
         /// ApiKeySelectionExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-apikeyselectionexpression
@@ -215,15 +155,47 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ApiKeySelectionExpression
-        {
-            get;
-            set;
-        }
+        public dynamic ApiKeySelectionExpression { get; set; }
     }
 
     namespace ApiTypes
     {
+        public class BodyS3Location
+        {
+            /// <summary>
+            /// Etag
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-etag
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Etag { get; set; }
+            /// <summary>
+            /// Bucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-bucket
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Bucket { get; set; }
+            /// <summary>
+            /// Version
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-version
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Version { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+
         public class Cors
         {
             /// <summary>
@@ -234,12 +206,7 @@ namespace Humidifier.ApiGatewayV2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic AllowOrigins
-            {
-                get;
-                set;
-            }
-
+            public dynamic AllowOrigins { get; set; }
             /// <summary>
             /// AllowCredentials
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-allowcredentials
@@ -247,12 +214,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic AllowCredentials
-            {
-                get;
-                set;
-            }
-
+            public dynamic AllowCredentials { get; set; }
             /// <summary>
             /// ExposeHeaders
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-exposeheaders
@@ -261,12 +223,7 @@ namespace Humidifier.ApiGatewayV2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic ExposeHeaders
-            {
-                get;
-                set;
-            }
-
+            public dynamic ExposeHeaders { get; set; }
             /// <summary>
             /// AllowHeaders
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-allowheaders
@@ -275,12 +232,7 @@ namespace Humidifier.ApiGatewayV2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic AllowHeaders
-            {
-                get;
-                set;
-            }
-
+            public dynamic AllowHeaders { get; set; }
             /// <summary>
             /// MaxAge
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-maxage
@@ -288,12 +240,7 @@ namespace Humidifier.ApiGatewayV2
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic MaxAge
-            {
-                get;
-                set;
-            }
-
+            public dynamic MaxAge { get; set; }
             /// <summary>
             /// AllowMethods
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-allowmethods
@@ -302,66 +249,7 @@ namespace Humidifier.ApiGatewayV2
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
-            public dynamic AllowMethods
-            {
-                get;
-                set;
-            }
-        }
-
-        public class BodyS3Location
-        {
-            /// <summary>
-            /// Etag
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-etag
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Etag
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Bucket
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-bucket
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Bucket
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Version
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-version
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Version
-            {
-                get;
-                set;
-            }
-
-            /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-key
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key
-            {
-                get;
-                set;
-            }
+            public dynamic AllowMethods { get; set; }
         }
     }
 }
