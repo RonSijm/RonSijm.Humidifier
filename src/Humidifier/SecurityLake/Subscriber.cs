@@ -3,7 +3,7 @@ namespace Humidifier.SecurityLake
     using System.Collections.Generic;
     using SubscriberTypes;
 
-    public class Subscriber : Humidifier.Resource
+    public class Subscriber : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

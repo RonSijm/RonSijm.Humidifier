@@ -3,7 +3,7 @@ namespace Humidifier.Lex
     using System.Collections.Generic;
     using BotAliasTypes;
 
-    public class BotAlias : Humidifier.Resource
+    public class BotAlias : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

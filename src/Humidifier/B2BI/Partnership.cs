@@ -2,7 +2,7 @@ namespace Humidifier.B2BI
 {
     using System.Collections.Generic;
 
-    public class Partnership : Humidifier.Resource
+    public class Partnership : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

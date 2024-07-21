@@ -3,7 +3,7 @@ namespace Humidifier.AccessAnalyzer
     using System.Collections.Generic;
     using AnalyzerTypes;
 
-    public class Analyzer : Humidifier.Resource
+    public class Analyzer : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

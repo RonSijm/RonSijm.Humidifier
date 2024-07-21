@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using InferenceExperimentTypes;
 
-    public class InferenceExperiment : Humidifier.Resource
+    public class InferenceExperiment : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

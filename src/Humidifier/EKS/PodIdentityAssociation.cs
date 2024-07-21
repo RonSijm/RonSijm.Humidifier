@@ -2,7 +2,7 @@ namespace Humidifier.EKS
 {
     using System.Collections.Generic;
 
-    public class PodIdentityAssociation : Humidifier.Resource
+    public class PodIdentityAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

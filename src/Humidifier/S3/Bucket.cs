@@ -3,7 +3,7 @@ namespace Humidifier.S3
     using System.Collections.Generic;
     using BucketTypes;
 
-    public class Bucket : Humidifier.Resource
+    public class Bucket : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using MitigationActionTypes;
 
-    public class MitigationAction : Humidifier.Resource
+    public class MitigationAction : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

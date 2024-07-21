@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackage
     using System.Collections.Generic;
     using PackagingGroupTypes;
 
-    public class PackagingGroup : Humidifier.Resource
+    public class PackagingGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

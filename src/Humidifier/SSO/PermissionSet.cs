@@ -3,7 +3,7 @@ namespace Humidifier.SSO
     using System.Collections.Generic;
     using PermissionSetTypes;
 
-    public class PermissionSet : Humidifier.Resource
+    public class PermissionSet : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

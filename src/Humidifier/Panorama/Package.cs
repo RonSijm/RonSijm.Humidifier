@@ -3,7 +3,7 @@ namespace Humidifier.Panorama
     using System.Collections.Generic;
     using PackageTypes;
 
-    public class Package : Humidifier.Resource
+    public class Package : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

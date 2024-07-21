@@ -3,7 +3,7 @@ namespace Humidifier.ApiGatewayV2
     using System.Collections.Generic;
     using StageTypes;
 
-    public class Stage : Humidifier.Resource
+    public class Stage : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

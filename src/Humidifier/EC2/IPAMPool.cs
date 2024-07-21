@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using IPAMPoolTypes;
 
-    public class IPAMPool : Humidifier.Resource
+    public class IPAMPool : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

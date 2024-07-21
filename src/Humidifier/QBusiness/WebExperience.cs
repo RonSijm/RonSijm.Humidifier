@@ -2,7 +2,7 @@ namespace Humidifier.QBusiness
 {
     using System.Collections.Generic;
 
-    public class WebExperience : Humidifier.Resource
+    public class WebExperience : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

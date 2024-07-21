@@ -3,7 +3,7 @@ namespace Humidifier.EntityResolution
     using System.Collections.Generic;
     using MatchingWorkflowTypes;
 
-    public class MatchingWorkflow : Humidifier.Resource
+    public class MatchingWorkflow : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

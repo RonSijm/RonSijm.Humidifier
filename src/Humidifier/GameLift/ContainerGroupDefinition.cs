@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using ContainerGroupDefinitionTypes;
 
-    public class ContainerGroupDefinition : Humidifier.Resource
+    public class ContainerGroupDefinition : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

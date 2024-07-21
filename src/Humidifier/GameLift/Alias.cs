@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using AliasTypes;
 
-    public class Alias : Humidifier.Resource
+    public class Alias : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

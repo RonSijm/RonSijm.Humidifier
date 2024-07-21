@@ -3,7 +3,7 @@ namespace Humidifier.AppFlow
     using System.Collections.Generic;
     using FlowTypes;
 
-    public class Flow : Humidifier.Resource
+    public class Flow : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

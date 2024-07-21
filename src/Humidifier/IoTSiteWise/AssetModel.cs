@@ -3,7 +3,7 @@ namespace Humidifier.IoTSiteWise
     using System.Collections.Generic;
     using AssetModelTypes;
 
-    public class AssetModel : Humidifier.Resource
+    public class AssetModel : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

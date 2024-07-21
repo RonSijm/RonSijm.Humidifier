@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationS3Types;
 
-    public class LocationS3 : Humidifier.Resource
+    public class LocationS3 : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

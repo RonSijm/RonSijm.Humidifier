@@ -3,7 +3,7 @@ namespace Humidifier.DLM
     using System.Collections.Generic;
     using LifecyclePolicyTypes;
 
-    public class LifecyclePolicy : Humidifier.Resource
+    public class LifecyclePolicy : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

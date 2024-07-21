@@ -3,7 +3,7 @@ namespace Humidifier.DirectoryService
     using System.Collections.Generic;
     using SimpleADTypes;
 
-    public class SimpleAD : Humidifier.Resource
+    public class SimpleAD : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using SecurityGroupTypes;
 
-    public class SecurityGroup : Humidifier.Resource
+    public class SecurityGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

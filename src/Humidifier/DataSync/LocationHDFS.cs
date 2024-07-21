@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationHDFSTypes;
 
-    public class LocationHDFS : Humidifier.Resource
+    public class LocationHDFS : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

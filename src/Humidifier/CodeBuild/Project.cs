@@ -3,7 +3,7 @@ namespace Humidifier.CodeBuild
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Resource
+    public class Project : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

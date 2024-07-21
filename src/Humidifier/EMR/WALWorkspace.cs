@@ -2,7 +2,7 @@ namespace Humidifier.EMR
 {
     using System.Collections.Generic;
 
-    public class WALWorkspace : Humidifier.Resource
+    public class WALWorkspace : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

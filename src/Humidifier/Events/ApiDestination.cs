@@ -2,7 +2,7 @@ namespace Humidifier.Events
 {
     using System.Collections.Generic;
 
-    public class ApiDestination : Humidifier.Resource
+    public class ApiDestination : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

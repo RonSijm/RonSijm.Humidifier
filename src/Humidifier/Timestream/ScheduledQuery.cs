@@ -3,7 +3,7 @@ namespace Humidifier.Timestream
     using System.Collections.Generic;
     using ScheduledQueryTypes;
 
-    public class ScheduledQuery : Humidifier.Resource
+    public class ScheduledQuery : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

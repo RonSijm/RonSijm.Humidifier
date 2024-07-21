@@ -3,7 +3,7 @@ namespace Humidifier.CodeBuild
     using System.Collections.Generic;
     using ReportGroupTypes;
 
-    public class ReportGroup : Humidifier.Resource
+    public class ReportGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

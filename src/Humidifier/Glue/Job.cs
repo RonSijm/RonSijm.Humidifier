@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using JobTypes;
 
-    public class Job : Humidifier.Resource
+    public class Job : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

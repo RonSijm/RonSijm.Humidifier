@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using IntegrationTypes;
 
-    public class Integration : Humidifier.Resource
+    public class Integration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

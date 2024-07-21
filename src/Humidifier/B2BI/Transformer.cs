@@ -3,7 +3,7 @@ namespace Humidifier.B2BI
     using System.Collections.Generic;
     using TransformerTypes;
 
-    public class Transformer : Humidifier.Resource
+    public class Transformer : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

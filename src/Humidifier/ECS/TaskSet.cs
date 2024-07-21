@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using TaskSetTypes;
 
-    public class TaskSet : Humidifier.Resource
+    public class TaskSet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.AppRunner
 {
     using System.Collections.Generic;
 
-    public class AutoScalingConfiguration : Humidifier.Resource
+    public class AutoScalingConfiguration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

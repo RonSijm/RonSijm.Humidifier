@@ -3,7 +3,7 @@ namespace Humidifier.QBusiness
     using System.Collections.Generic;
     using RetrieverTypes;
 
-    public class Retriever : Humidifier.Resource
+    public class Retriever : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

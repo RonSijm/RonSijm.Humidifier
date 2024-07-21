@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryControl
     using System.Collections.Generic;
     using SafetyRuleTypes;
 
-    public class SafetyRule : Humidifier.Resource
+    public class SafetyRule : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

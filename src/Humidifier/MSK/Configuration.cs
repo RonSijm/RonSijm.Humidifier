@@ -3,7 +3,7 @@ namespace Humidifier.MSK
     using System.Collections.Generic;
     using ConfigurationTypes;
 
-    public class Configuration : Humidifier.Resource
+    public class Configuration : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

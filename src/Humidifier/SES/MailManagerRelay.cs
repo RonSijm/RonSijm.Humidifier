@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using MailManagerRelayTypes;
 
-    public class MailManagerRelay : Humidifier.Resource
+    public class MailManagerRelay : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Wisdom
     using System.Collections.Generic;
     using AssistantTypes;
 
-    public class Assistant : Humidifier.Resource
+    public class Assistant : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

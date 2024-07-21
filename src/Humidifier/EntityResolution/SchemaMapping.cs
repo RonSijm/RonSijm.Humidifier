@@ -3,7 +3,7 @@ namespace Humidifier.EntityResolution
     using System.Collections.Generic;
     using SchemaMappingTypes;
 
-    public class SchemaMapping : Humidifier.Resource
+    public class SchemaMapping : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

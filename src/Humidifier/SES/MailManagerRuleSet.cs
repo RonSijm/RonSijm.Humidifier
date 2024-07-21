@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using MailManagerRuleSetTypes;
 
-    public class MailManagerRuleSet : Humidifier.Resource
+    public class MailManagerRuleSet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.ControlTower
     using System.Collections.Generic;
     using EnabledControlTypes;
 
-    public class EnabledControl : Humidifier.Resource
+    public class EnabledControl : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

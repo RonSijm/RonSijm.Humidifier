@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using MaintenanceWindowTargetTypes;
 
-    public class MaintenanceWindowTarget : Humidifier.Resource
+    public class MaintenanceWindowTarget : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

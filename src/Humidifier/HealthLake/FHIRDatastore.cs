@@ -3,7 +3,7 @@ namespace Humidifier.HealthLake
     using System.Collections.Generic;
     using FHIRDatastoreTypes;
 
-    public class FHIRDatastore : Humidifier.Resource
+    public class FHIRDatastore : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

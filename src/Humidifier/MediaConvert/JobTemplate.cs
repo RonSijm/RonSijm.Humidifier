@@ -3,7 +3,7 @@ namespace Humidifier.MediaConvert
     using System.Collections.Generic;
     using JobTemplateTypes;
 
-    public class JobTemplate : Humidifier.Resource
+    public class JobTemplate : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

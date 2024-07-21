@@ -3,7 +3,7 @@ namespace Humidifier.Pipes
     using System.Collections.Generic;
     using PipeTypes;
 
-    public class Pipe : Humidifier.Resource
+    public class Pipe : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.DataBrew
 {
     using System.Collections.Generic;
 
-    public class Schedule : Humidifier.Resource
+    public class Schedule : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

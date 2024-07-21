@@ -3,7 +3,7 @@ namespace Humidifier.IoTSiteWise
     using System.Collections.Generic;
     using GatewayTypes;
 
-    public class Gateway : Humidifier.Resource
+    public class Gateway : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Resource
+    public class Fleet : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

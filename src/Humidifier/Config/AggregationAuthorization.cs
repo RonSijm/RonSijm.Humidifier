@@ -2,7 +2,7 @@ namespace Humidifier.Config
 {
     using System.Collections.Generic;
 
-    public class AggregationAuthorization : Humidifier.Resource
+    public class AggregationAuthorization : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

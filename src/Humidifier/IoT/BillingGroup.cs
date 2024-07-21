@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using BillingGroupTypes;
 
-    public class BillingGroup : Humidifier.Resource
+    public class BillingGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

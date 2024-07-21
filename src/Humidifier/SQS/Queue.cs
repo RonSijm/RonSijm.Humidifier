@@ -2,7 +2,7 @@ namespace Humidifier.SQS
 {
     using System.Collections.Generic;
 
-    public class Queue : Humidifier.Resource
+    public class Queue : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

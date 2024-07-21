@@ -2,7 +2,7 @@ namespace Humidifier.Config
 {
     using System.Collections.Generic;
 
-    public class StoredQuery : Humidifier.Resource
+    public class StoredQuery : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Location
 {
     using System.Collections.Generic;
 
-    public class RouteCalculator : Humidifier.Resource
+    public class RouteCalculator : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

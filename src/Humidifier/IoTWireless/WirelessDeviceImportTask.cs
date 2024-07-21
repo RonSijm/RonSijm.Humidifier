@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using WirelessDeviceImportTaskTypes;
 
-    public class WirelessDeviceImportTask : Humidifier.Resource
+    public class WirelessDeviceImportTask : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

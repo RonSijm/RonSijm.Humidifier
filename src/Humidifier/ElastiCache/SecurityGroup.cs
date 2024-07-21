@@ -2,7 +2,7 @@ namespace Humidifier.ElastiCache
 {
     using System.Collections.Generic;
 
-    public class SecurityGroup : Humidifier.Resource
+    public class SecurityGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpacesThinClient
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Resource
+    public class Environment : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Redshift
 {
     using System.Collections.Generic;
 
-    public class ClusterSubnetGroup : Humidifier.Resource
+    public class ClusterSubnetGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

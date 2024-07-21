@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class NatGateway : Humidifier.Resource
+    public class NatGateway : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

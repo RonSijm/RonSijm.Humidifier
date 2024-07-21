@@ -3,7 +3,7 @@ namespace Humidifier.Panorama
     using System.Collections.Generic;
     using ApplicationInstanceTypes;
 
-    public class ApplicationInstance : Humidifier.Resource
+    public class ApplicationInstance : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

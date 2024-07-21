@@ -3,7 +3,7 @@ namespace Humidifier.KafkaConnect
     using System.Collections.Generic;
     using CustomPluginTypes;
 
-    public class CustomPlugin : Humidifier.Resource
+    public class CustomPlugin : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

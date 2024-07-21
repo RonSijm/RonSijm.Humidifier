@@ -2,7 +2,7 @@ namespace Humidifier.Synthetics
 {
     using System.Collections.Generic;
 
-    public class Group : Humidifier.Resource
+    public class Group : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

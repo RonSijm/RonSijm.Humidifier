@@ -3,7 +3,7 @@ namespace Humidifier.DAX
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Resource
+    public class Cluster : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

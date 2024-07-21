@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using GatewayRouteTypes;
 
-    public class GatewayRoute : Humidifier.Resource
+    public class GatewayRoute : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

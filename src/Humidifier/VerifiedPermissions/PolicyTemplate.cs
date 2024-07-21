@@ -2,7 +2,7 @@ namespace Humidifier.VerifiedPermissions
 {
     using System.Collections.Generic;
 
-    public class PolicyTemplate : Humidifier.Resource
+    public class PolicyTemplate : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

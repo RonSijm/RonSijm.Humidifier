@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationAzureBlobTypes;
 
-    public class LocationAzureBlob : Humidifier.Resource
+    public class LocationAzureBlob : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using TransitGatewayRouteTableAttachmentTypes;
 
-    public class TransitGatewayRouteTableAttachment : Humidifier.Resource
+    public class TransitGatewayRouteTableAttachment : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

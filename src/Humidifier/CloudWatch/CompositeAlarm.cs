@@ -2,7 +2,7 @@ namespace Humidifier.CloudWatch
 {
     using System.Collections.Generic;
 
-    public class CompositeAlarm : Humidifier.Resource
+    public class CompositeAlarm : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

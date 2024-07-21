@@ -2,7 +2,7 @@ namespace Humidifier.OpenSearchServerless
 {
     using System.Collections.Generic;
 
-    public class LifecyclePolicy : Humidifier.Resource
+    public class LifecyclePolicy : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

@@ -3,7 +3,7 @@ namespace Humidifier.InspectorV2
     using System.Collections.Generic;
     using FilterTypes;
 
-    public class Filter : Humidifier.Resource
+    public class Filter : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

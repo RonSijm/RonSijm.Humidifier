@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using SubnetTypes;
 
-    public class Subnet : Humidifier.Resource
+    public class Subnet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

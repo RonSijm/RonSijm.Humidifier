@@ -3,7 +3,7 @@ namespace Humidifier.IAM
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Resource
+    public class User : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

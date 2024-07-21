@@ -3,7 +3,7 @@ namespace Humidifier.ApplicationSignals
     using System.Collections.Generic;
     using ServiceLevelObjectiveTypes;
 
-    public class ServiceLevelObjective : Humidifier.Resource
+    public class ServiceLevelObjective : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

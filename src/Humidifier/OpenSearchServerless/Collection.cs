@@ -2,7 +2,7 @@ namespace Humidifier.OpenSearchServerless
 {
     using System.Collections.Generic;
 
-    public class Collection : Humidifier.Resource
+    public class Collection : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

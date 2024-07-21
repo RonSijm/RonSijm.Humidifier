@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using ChannelTypes;
 
-    public class Channel : Humidifier.Resource
+    public class Channel : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

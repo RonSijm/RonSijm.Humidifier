@@ -2,7 +2,7 @@ namespace Humidifier.AppConfig
 {
     using System.Collections.Generic;
 
-    public class ExtensionAssociation : Humidifier.Resource
+    public class ExtensionAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

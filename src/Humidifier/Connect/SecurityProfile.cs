@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using SecurityProfileTypes;
 
-    public class SecurityProfile : Humidifier.Resource
+    public class SecurityProfile : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

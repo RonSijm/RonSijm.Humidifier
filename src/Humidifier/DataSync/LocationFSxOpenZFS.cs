@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationFSxOpenZFSTypes;
 
-    public class LocationFSxOpenZFS : Humidifier.Resource
+    public class LocationFSxOpenZFS : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

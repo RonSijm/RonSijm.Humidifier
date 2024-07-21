@@ -2,7 +2,7 @@ namespace Humidifier.CodeGuruReviewer
 {
     using System.Collections.Generic;
 
-    public class RepositoryAssociation : Humidifier.Resource
+    public class RepositoryAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

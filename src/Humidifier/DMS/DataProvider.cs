@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using DataProviderTypes;
 
-    public class DataProvider : Humidifier.Resource
+    public class DataProvider : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

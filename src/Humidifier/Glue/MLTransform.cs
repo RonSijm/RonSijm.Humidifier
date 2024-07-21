@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using MLTransformTypes;
 
-    public class MLTransform : Humidifier.Resource
+    public class MLTransform : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

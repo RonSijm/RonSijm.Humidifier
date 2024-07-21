@@ -3,7 +3,7 @@ namespace Humidifier.CodePipeline
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Resource
+    public class Pipeline : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

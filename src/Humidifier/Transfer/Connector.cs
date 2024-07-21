@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Resource
+    public class Connector : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

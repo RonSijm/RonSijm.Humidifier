@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using MonitoringScheduleTypes;
 
-    public class MonitoringSchedule : Humidifier.Resource
+    public class MonitoringSchedule : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using TrailTypes;
 
-    public class Trail : Humidifier.Resource
+    public class Trail : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

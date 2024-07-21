@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualGatewayTypes;
 
-    public class VirtualGateway : Humidifier.Resource
+    public class VirtualGateway : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

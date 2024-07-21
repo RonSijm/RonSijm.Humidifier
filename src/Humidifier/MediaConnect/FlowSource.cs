@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using System.Collections.Generic;
     using FlowSourceTypes;
 
-    public class FlowSource : Humidifier.Resource
+    public class FlowSource : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Omics
     using System.Collections.Generic;
     using WorkflowTypes;
 
-    public class Workflow : Humidifier.Resource
+    public class Workflow : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

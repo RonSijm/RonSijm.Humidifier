@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class ClientVpnRoute : Humidifier.Resource
+    public class ClientVpnRoute : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

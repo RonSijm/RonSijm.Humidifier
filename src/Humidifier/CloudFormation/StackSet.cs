@@ -3,7 +3,7 @@ namespace Humidifier.CloudFormation
     using System.Collections.Generic;
     using StackSetTypes;
 
-    public class StackSet : Humidifier.Resource
+    public class StackSet : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

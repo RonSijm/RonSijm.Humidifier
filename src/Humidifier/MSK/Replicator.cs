@@ -3,7 +3,7 @@ namespace Humidifier.MSK
     using System.Collections.Generic;
     using ReplicatorTypes;
 
-    public class Replicator : Humidifier.Resource
+    public class Replicator : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

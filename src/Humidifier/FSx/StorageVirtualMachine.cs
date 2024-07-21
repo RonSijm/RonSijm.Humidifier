@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using StorageVirtualMachineTypes;
 
-    public class StorageVirtualMachine : Humidifier.Resource
+    public class StorageVirtualMachine : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

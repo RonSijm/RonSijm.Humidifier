@@ -3,7 +3,7 @@ namespace Humidifier.Signer
     using System.Collections.Generic;
     using SigningProfileTypes;
 
-    public class SigningProfile : Humidifier.Resource
+    public class SigningProfile : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

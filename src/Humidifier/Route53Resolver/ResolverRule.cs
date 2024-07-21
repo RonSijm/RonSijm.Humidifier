@@ -3,7 +3,7 @@ namespace Humidifier.Route53Resolver
     using System.Collections.Generic;
     using ResolverRuleTypes;
 
-    public class ResolverRule : Humidifier.Resource
+    public class ResolverRule : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

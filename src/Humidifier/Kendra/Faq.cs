@@ -3,7 +3,7 @@ namespace Humidifier.Kendra
     using System.Collections.Generic;
     using FaqTypes;
 
-    public class Faq : Humidifier.Resource
+    public class Faq : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

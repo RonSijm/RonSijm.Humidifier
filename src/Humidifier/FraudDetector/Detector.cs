@@ -3,7 +3,7 @@ namespace Humidifier.FraudDetector
     using System.Collections.Generic;
     using DetectorTypes;
 
-    public class Detector : Humidifier.Resource
+    public class Detector : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.ElasticLoadBalancing
     using System.Collections.Generic;
     using LoadBalancerTypes;
 
-    public class LoadBalancer : Humidifier.Resource
+    public class LoadBalancer : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

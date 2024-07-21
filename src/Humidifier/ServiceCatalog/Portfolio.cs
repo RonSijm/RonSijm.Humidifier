@@ -2,7 +2,7 @@ namespace Humidifier.ServiceCatalog
 {
     using System.Collections.Generic;
 
-    public class Portfolio : Humidifier.Resource
+    public class Portfolio : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

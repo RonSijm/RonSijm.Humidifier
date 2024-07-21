@@ -3,7 +3,7 @@ namespace Humidifier.Route53Resolver
     using System.Collections.Generic;
     using FirewallRuleGroupTypes;
 
-    public class FirewallRuleGroup : Humidifier.Resource
+    public class FirewallRuleGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

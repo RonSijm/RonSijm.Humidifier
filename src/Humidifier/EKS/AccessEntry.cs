@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using AccessEntryTypes;
 
-    public class AccessEntry : Humidifier.Resource
+    public class AccessEntry : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

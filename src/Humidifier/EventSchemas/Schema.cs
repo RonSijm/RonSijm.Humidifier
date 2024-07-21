@@ -3,7 +3,7 @@ namespace Humidifier.EventSchemas
     using System.Collections.Generic;
     using SchemaTypes;
 
-    public class Schema : Humidifier.Resource
+    public class Schema : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

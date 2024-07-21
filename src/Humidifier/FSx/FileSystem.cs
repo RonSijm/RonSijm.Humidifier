@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using FileSystemTypes;
 
-    public class FileSystem : Humidifier.Resource
+    public class FileSystem : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

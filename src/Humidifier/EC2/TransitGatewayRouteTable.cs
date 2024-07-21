@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class TransitGatewayRouteTable : Humidifier.Resource
+    public class TransitGatewayRouteTable : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

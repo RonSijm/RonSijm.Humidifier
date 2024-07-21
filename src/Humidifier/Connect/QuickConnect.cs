@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using QuickConnectTypes;
 
-    public class QuickConnect : Humidifier.Resource
+    public class QuickConnect : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

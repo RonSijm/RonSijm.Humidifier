@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using TaskTypes;
 
-    public class Task : Humidifier.Resource
+    public class Task : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

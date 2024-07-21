@@ -3,7 +3,7 @@ namespace Humidifier.S3
     using System.Collections.Generic;
     using StorageLensTypes;
 
-    public class StorageLens : Humidifier.Resource
+    public class StorageLens : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

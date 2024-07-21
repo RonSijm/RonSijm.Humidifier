@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using AnalysisTypes;
 
-    public class Analysis : Humidifier.Resource
+    public class Analysis : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

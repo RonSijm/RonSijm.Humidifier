@@ -2,7 +2,7 @@ namespace Humidifier.EMR
 {
     using System.Collections.Generic;
 
-    public class Studio : Humidifier.Resource
+    public class Studio : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

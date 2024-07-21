@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class SoftwarePackage : Humidifier.Resource
+    public class SoftwarePackage : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Location
     using System.Collections.Generic;
     using PlaceIndexTypes;
 
-    public class PlaceIndex : Humidifier.Resource
+    public class PlaceIndex : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

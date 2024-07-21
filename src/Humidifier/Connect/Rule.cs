@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using RuleTypes;
 
-    public class Rule : Humidifier.Resource
+    public class Rule : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

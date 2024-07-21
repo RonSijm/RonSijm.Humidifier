@@ -2,7 +2,7 @@ namespace Humidifier.WAFv2
 {
     using System.Collections.Generic;
 
-    public class RegexPatternSet : Humidifier.Resource
+    public class RegexPatternSet : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

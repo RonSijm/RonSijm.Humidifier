@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using RoutingProfileTypes;
 
-    public class RoutingProfile : Humidifier.Resource
+    public class RoutingProfile : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

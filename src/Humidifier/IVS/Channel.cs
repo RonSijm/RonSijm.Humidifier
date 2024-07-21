@@ -2,7 +2,7 @@ namespace Humidifier.IVS
 {
     using System.Collections.Generic;
 
-    public class Channel : Humidifier.Resource
+    public class Channel : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using UserProfileTypes;
 
-    public class UserProfile : Humidifier.Resource
+    public class UserProfile : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

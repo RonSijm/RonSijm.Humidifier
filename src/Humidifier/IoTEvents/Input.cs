@@ -3,7 +3,7 @@ namespace Humidifier.IoTEvents
     using System.Collections.Generic;
     using InputTypes;
 
-    public class Input : Humidifier.Resource
+    public class Input : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

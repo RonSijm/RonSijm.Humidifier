@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using UsagePlanTypes;
 
-    public class UsagePlan : Humidifier.Resource
+    public class UsagePlan : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

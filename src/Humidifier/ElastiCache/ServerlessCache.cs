@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using ServerlessCacheTypes;
 
-    public class ServerlessCache : Humidifier.Resource
+    public class ServerlessCache : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

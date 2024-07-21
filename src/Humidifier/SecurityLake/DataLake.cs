@@ -3,7 +3,7 @@ namespace Humidifier.SecurityLake
     using System.Collections.Generic;
     using DataLakeTypes;
 
-    public class DataLake : Humidifier.Resource
+    public class DataLake : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

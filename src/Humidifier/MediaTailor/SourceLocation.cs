@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using SourceLocationTypes;
 
-    public class SourceLocation : Humidifier.Resource
+    public class SourceLocation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

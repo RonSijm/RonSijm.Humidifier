@@ -2,7 +2,7 @@ namespace Humidifier.ApiGateway
 {
     using System.Collections.Generic;
 
-    public class VpcLink : Humidifier.Resource
+    public class VpcLink : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

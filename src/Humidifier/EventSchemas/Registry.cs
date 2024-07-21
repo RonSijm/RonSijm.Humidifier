@@ -3,7 +3,7 @@ namespace Humidifier.EventSchemas
     using System.Collections.Generic;
     using RegistryTypes;
 
-    public class Registry : Humidifier.Resource
+    public class Registry : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

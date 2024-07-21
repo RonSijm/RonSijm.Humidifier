@@ -3,7 +3,7 @@ namespace Humidifier.IoTTwinMaker
     using System.Collections.Generic;
     using EntityTypes;
 
-    public class Entity : Humidifier.Resource
+    public class Entity : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

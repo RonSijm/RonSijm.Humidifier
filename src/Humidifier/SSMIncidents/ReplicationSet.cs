@@ -3,7 +3,7 @@ namespace Humidifier.SSMIncidents
     using System.Collections.Generic;
     using ReplicationSetTypes;
 
-    public class ReplicationSet : Humidifier.Resource
+    public class ReplicationSet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

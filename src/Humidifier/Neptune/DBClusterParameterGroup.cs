@@ -2,7 +2,7 @@ namespace Humidifier.Neptune
 {
     using System.Collections.Generic;
 
-    public class DBClusterParameterGroup : Humidifier.Resource
+    public class DBClusterParameterGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

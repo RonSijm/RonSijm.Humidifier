@@ -2,7 +2,7 @@ namespace Humidifier.IVS
 {
     using System.Collections.Generic;
 
-    public class StreamKey : Humidifier.Resource
+    public class StreamKey : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

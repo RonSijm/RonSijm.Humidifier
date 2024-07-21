@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using DocumentTypes;
 
-    public class Document : Humidifier.Resource
+    public class Document : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

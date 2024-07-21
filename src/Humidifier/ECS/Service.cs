@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Resource
+    public class Service : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

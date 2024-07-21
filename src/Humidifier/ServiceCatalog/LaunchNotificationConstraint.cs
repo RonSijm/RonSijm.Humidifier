@@ -2,7 +2,7 @@ namespace Humidifier.ServiceCatalog
 {
     using System.Collections.Generic;
 
-    public class LaunchNotificationConstraint : Humidifier.Resource
+    public class LaunchNotificationConstraint : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

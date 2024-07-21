@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using CodeRepositoryTypes;
 
-    public class CodeRepository : Humidifier.Resource
+    public class CodeRepository : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppIntegrations
     using System.Collections.Generic;
     using DataIntegrationTypes;
 
-    public class DataIntegration : Humidifier.Resource
+    public class DataIntegration : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

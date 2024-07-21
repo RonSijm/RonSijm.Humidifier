@@ -2,7 +2,7 @@ namespace Humidifier.IoTFleetHub
 {
     using System.Collections.Generic;
 
-    public class Application : Humidifier.Resource
+    public class Application : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

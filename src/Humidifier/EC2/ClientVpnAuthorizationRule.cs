@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class ClientVpnAuthorizationRule : Humidifier.Resource
+    public class ClientVpnAuthorizationRule : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

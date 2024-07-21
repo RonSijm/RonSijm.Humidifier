@@ -3,7 +3,7 @@ namespace Humidifier.WAFv2
     using System.Collections.Generic;
     using RuleGroupTypes;
 
-    public class RuleGroup : Humidifier.Resource
+    public class RuleGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

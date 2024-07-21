@@ -3,7 +3,7 @@ namespace Humidifier.IVS
     using System.Collections.Generic;
     using EncoderConfigurationTypes;
 
-    public class EncoderConfiguration : Humidifier.Resource
+    public class EncoderConfiguration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.NetworkManager
 {
     using System.Collections.Generic;
 
-    public class TransitGatewayPeering : Humidifier.Resource
+    public class TransitGatewayPeering : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

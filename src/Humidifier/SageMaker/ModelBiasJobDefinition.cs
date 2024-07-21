@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelBiasJobDefinitionTypes;
 
-    public class ModelBiasJobDefinition : Humidifier.Resource
+    public class ModelBiasJobDefinition : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

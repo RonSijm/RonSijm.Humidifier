@@ -3,7 +3,7 @@ namespace Humidifier.QBusiness
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Resource
+    public class DataSource : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

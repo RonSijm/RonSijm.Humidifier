@@ -3,7 +3,7 @@ namespace Humidifier.GroundStation
     using System.Collections.Generic;
     using MissionProfileTypes;
 
-    public class MissionProfile : Humidifier.Resource
+    public class MissionProfile : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

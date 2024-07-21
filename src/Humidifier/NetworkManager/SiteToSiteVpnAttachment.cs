@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using SiteToSiteVpnAttachmentTypes;
 
-    public class SiteToSiteVpnAttachment : Humidifier.Resource
+    public class SiteToSiteVpnAttachment : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

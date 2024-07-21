@@ -2,7 +2,7 @@ namespace Humidifier.RDS
 {
     using System.Collections.Generic;
 
-    public class CustomDBEngineVersion : Humidifier.Resource
+    public class CustomDBEngineVersion : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackageV2
     using System.Collections.Generic;
     using OriginEndpointTypes;
 
-    public class OriginEndpoint : Humidifier.Resource
+    public class OriginEndpoint : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

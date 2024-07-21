@@ -2,7 +2,7 @@ namespace Humidifier.ControlTower
 {
     using System.Collections.Generic;
 
-    public class LandingZone : Humidifier.Resource
+    public class LandingZone : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

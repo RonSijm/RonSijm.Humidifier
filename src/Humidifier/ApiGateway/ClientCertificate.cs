@@ -2,7 +2,7 @@ namespace Humidifier.ApiGateway
 {
     using System.Collections.Generic;
 
-    public class ClientCertificate : Humidifier.Resource
+    public class ClientCertificate : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

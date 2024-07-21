@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation : Humidifier.Resource
+    public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

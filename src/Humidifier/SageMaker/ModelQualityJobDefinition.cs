@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelQualityJobDefinitionTypes;
 
-    public class ModelQualityJobDefinition : Humidifier.Resource
+    public class ModelQualityJobDefinition : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

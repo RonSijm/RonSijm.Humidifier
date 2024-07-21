@@ -3,7 +3,7 @@ namespace Humidifier.OpenSearchServerless
     using System.Collections.Generic;
     using SecurityConfigTypes;
 
-    public class SecurityConfig : Humidifier.Resource
+    public class SecurityConfig : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

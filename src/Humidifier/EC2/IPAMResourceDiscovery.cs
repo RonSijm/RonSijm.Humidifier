@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using IPAMResourceDiscoveryTypes;
 
-    public class IPAMResourceDiscovery : Humidifier.Resource
+    public class IPAMResourceDiscovery : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

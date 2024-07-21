@@ -2,7 +2,7 @@ namespace Humidifier.Organizations
 {
     using System.Collections.Generic;
 
-    public class Account : Humidifier.Resource
+    public class Account : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

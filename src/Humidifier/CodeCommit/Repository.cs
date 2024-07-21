@@ -3,7 +3,7 @@ namespace Humidifier.CodeCommit
     using System.Collections.Generic;
     using RepositoryTypes;
 
-    public class Repository : Humidifier.Resource
+    public class Repository : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

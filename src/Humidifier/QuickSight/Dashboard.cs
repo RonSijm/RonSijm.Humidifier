@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DashboardTypes;
 
-    public class Dashboard : Humidifier.Resource
+    public class Dashboard : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

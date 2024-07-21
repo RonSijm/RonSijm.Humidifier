@@ -3,7 +3,7 @@ namespace Humidifier.NeptuneGraph
     using System.Collections.Generic;
     using GraphTypes;
 
-    public class Graph : Humidifier.Resource
+    public class Graph : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

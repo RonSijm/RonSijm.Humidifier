@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using VerifiedAccessTrustProviderTypes;
 
-    public class VerifiedAccessTrustProvider : Humidifier.Resource
+    public class VerifiedAccessTrustProvider : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

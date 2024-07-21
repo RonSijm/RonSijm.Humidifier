@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using ServerTypes;
 
-    public class Server : Humidifier.Resource
+    public class Server : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Location
 {
     using System.Collections.Generic;
 
-    public class GeofenceCollection : Humidifier.Resource
+    public class GeofenceCollection : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

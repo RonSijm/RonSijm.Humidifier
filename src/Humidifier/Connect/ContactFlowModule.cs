@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class ContactFlowModule : Humidifier.Resource
+    public class ContactFlowModule : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

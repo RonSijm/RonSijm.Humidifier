@@ -3,7 +3,7 @@ namespace Humidifier.IoTEvents
     using System.Collections.Generic;
     using AlarmModelTypes;
 
-    public class AlarmModel : Humidifier.Resource
+    public class AlarmModel : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

@@ -3,7 +3,7 @@ namespace Humidifier.ACMPCA
     using System.Collections.Generic;
     using CertificateAuthorityTypes;
 
-    public class CertificateAuthority : Humidifier.Resource
+    public class CertificateAuthority : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

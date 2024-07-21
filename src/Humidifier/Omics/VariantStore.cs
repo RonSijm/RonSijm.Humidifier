@@ -3,7 +3,7 @@ namespace Humidifier.Omics
     using System.Collections.Generic;
     using VariantStoreTypes;
 
-    public class VariantStore : Humidifier.Resource
+    public class VariantStore : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

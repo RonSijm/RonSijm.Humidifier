@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using SiteTypes;
 
-    public class Site : Humidifier.Resource
+    public class Site : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

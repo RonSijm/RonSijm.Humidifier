@@ -3,7 +3,7 @@ namespace Humidifier.LookoutEquipment
     using System.Collections.Generic;
     using InferenceSchedulerTypes;
 
-    public class InferenceScheduler : Humidifier.Resource
+    public class InferenceScheduler : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

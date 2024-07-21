@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationFSxONTAPTypes;
 
-    public class LocationFSxONTAP : Humidifier.Resource
+    public class LocationFSxONTAP : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

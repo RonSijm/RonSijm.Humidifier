@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using ConfigurationProfileTypes;
 
-    public class ConfigurationProfile : Humidifier.Resource
+    public class ConfigurationProfile : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

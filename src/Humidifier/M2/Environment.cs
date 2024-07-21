@@ -3,7 +3,7 @@ namespace Humidifier.M2
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Resource
+    public class Environment : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using MailManagerTrafficPolicyTypes;
 
-    public class MailManagerTrafficPolicy : Humidifier.Resource
+    public class MailManagerTrafficPolicy : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

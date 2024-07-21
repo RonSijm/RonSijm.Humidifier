@@ -2,7 +2,7 @@ namespace Humidifier.DataSync
 {
     using System.Collections.Generic;
 
-    public class Agent : Humidifier.Resource
+    public class Agent : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

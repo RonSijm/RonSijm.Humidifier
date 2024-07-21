@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using ConfiguredTableTypes;
 
-    public class ConfiguredTable : Humidifier.Resource
+    public class ConfiguredTable : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

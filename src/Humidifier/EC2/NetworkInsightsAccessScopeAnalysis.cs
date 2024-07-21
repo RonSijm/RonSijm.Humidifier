@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class NetworkInsightsAccessScopeAnalysis : Humidifier.Resource
+    public class NetworkInsightsAccessScopeAnalysis : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

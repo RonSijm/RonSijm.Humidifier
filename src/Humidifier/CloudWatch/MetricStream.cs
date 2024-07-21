@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using System.Collections.Generic;
     using MetricStreamTypes;
 
-    public class MetricStream : Humidifier.Resource
+    public class MetricStream : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

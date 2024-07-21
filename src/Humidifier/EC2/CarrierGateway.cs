@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class CarrierGateway : Humidifier.Resource
+    public class CarrierGateway : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

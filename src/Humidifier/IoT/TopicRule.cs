@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using TopicRuleTypes;
 
-    public class TopicRule : Humidifier.Resource
+    public class TopicRule : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.RefactorSpaces
     using System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Resource
+    public class Service : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

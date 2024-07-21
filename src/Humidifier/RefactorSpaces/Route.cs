@@ -3,7 +3,7 @@ namespace Humidifier.RefactorSpaces
     using System.Collections.Generic;
     using RouteTypes;
 
-    public class Route : Humidifier.Resource
+    public class Route : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

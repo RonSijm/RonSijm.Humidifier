@@ -2,7 +2,7 @@ namespace Humidifier.Cognito
 {
     using System.Collections.Generic;
 
-    public class UserPoolGroup : Humidifier.Resource
+    public class UserPoolGroup : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

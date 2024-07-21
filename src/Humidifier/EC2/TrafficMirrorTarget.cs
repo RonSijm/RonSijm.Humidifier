@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class TrafficMirrorTarget : Humidifier.Resource
+    public class TrafficMirrorTarget : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

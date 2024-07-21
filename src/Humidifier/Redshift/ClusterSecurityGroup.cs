@@ -2,7 +2,7 @@ namespace Humidifier.Redshift
 {
     using System.Collections.Generic;
 
-    public class ClusterSecurityGroup : Humidifier.Resource
+    public class ClusterSecurityGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

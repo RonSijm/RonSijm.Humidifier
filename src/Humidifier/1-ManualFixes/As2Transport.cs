@@ -1,6 +1,0 @@
-namespace Humidifier.Transfer.ServerTypes
-{
-    public class As2Transport
-    {
-    }
-}

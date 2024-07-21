@@ -3,7 +3,7 @@ namespace Humidifier.Macie
     using System.Collections.Generic;
     using AllowListTypes;
 
-    public class AllowList : Humidifier.Resource
+    public class AllowList : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

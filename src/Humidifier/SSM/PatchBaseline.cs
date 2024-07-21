@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using PatchBaselineTypes;
 
-    public class PatchBaseline : Humidifier.Resource
+    public class PatchBaseline : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

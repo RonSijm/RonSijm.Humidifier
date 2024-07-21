@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using WirelessGatewayTypes;
 
-    public class WirelessGateway : Humidifier.Resource
+    public class WirelessGateway : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

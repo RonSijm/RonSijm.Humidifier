@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class Prompt : Humidifier.Resource
+    public class Prompt : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.DataSync
 {
     using System.Collections.Generic;
 
-    public class LocationFSxWindows : Humidifier.Resource
+    public class LocationFSxWindows : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using KnowledgeBaseTypes;
 
-    public class KnowledgeBase : Humidifier.Resource
+    public class KnowledgeBase : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class VirtualMFADevice : Humidifier.Resource
+    public class VirtualMFADevice : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

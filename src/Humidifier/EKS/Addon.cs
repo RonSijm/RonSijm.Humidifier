@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using AddonTypes;
 
-    public class Addon : Humidifier.Resource
+    public class Addon : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

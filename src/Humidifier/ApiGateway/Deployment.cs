@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using DeploymentTypes;
 
-    public class Deployment : Humidifier.Resource
+    public class Deployment : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

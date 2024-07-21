@@ -2,7 +2,7 @@ namespace Humidifier.IVS
 {
     using System.Collections.Generic;
 
-    public class PlaybackRestrictionPolicy : Humidifier.Resource
+    public class PlaybackRestrictionPolicy : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

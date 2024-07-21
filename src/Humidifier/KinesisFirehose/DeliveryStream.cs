@@ -3,7 +3,7 @@ namespace Humidifier.KinesisFirehose
     using System.Collections.Generic;
     using DeliveryStreamTypes;
 
-    public class DeliveryStream : Humidifier.Resource
+    public class DeliveryStream : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

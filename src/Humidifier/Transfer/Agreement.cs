@@ -2,7 +2,7 @@ namespace Humidifier.Transfer
 {
     using System.Collections.Generic;
 
-    public class Agreement : Humidifier.Resource
+    public class Agreement : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

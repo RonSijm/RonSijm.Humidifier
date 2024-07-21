@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using SignalCatalogTypes;
 
-    public class SignalCatalog : Humidifier.Resource
+    public class SignalCatalog : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

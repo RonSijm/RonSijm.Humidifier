@@ -3,7 +3,7 @@ namespace Humidifier.RolesAnywhere
     using System.Collections.Generic;
     using TrustAnchorTypes;
 
-    public class TrustAnchor : Humidifier.Resource
+    public class TrustAnchor : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

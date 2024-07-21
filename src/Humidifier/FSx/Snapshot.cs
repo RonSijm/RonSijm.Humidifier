@@ -2,7 +2,7 @@ namespace Humidifier.FSx
 {
     using System.Collections.Generic;
 
-    public class Snapshot : Humidifier.Resource
+    public class Snapshot : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

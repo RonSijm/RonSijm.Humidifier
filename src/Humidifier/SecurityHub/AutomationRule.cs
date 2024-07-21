@@ -3,7 +3,7 @@ namespace Humidifier.SecurityHub
     using System.Collections.Generic;
     using AutomationRuleTypes;
 
-    public class AutomationRule : Humidifier.Resource
+    public class AutomationRule : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

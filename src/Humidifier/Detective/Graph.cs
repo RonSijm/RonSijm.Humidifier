@@ -2,7 +2,7 @@ namespace Humidifier.Detective
 {
     using System.Collections.Generic;
 
-    public class Graph : Humidifier.Resource
+    public class Graph : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.RDS
 {
     using System.Collections.Generic;
 
-    public class Integration : Humidifier.Resource
+    public class Integration : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

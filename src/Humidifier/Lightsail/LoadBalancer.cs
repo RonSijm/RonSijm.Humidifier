@@ -2,7 +2,7 @@ namespace Humidifier.Lightsail
 {
     using System.Collections.Generic;
 
-    public class LoadBalancer : Humidifier.Resource
+    public class LoadBalancer : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.MediaPackageV2
 {
     using System.Collections.Generic;
 
-    public class ChannelGroup : Humidifier.Resource
+    public class ChannelGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

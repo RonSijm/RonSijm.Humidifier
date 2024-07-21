@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using InstanceTypes;
 
-    public class Instance : Humidifier.Resource
+    public class Instance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

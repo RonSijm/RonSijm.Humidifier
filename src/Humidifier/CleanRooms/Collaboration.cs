@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using CollaborationTypes;
 
-    public class Collaboration : Humidifier.Resource
+    public class Collaboration : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Transfer
 {
     using System.Collections.Generic;
 
-    public class Certificate : Humidifier.Resource
+    public class Certificate : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

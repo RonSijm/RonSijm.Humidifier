@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using StackTypes;
 
-    public class Stack : Humidifier.Resource
+    public class Stack : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using StreamingImageTypes;
 
-    public class StreamingImage : Humidifier.Resource
+    public class StreamingImage : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

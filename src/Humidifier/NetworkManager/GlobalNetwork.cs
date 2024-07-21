@@ -2,7 +2,7 @@ namespace Humidifier.NetworkManager
 {
     using System.Collections.Generic;
 
-    public class GlobalNetwork : Humidifier.Resource
+    public class GlobalNetwork : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using FargateProfileTypes;
 
-    public class FargateProfile : Humidifier.Resource
+    public class FargateProfile : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

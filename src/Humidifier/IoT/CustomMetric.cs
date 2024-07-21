@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class CustomMetric : Humidifier.Resource
+    public class CustomMetric : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

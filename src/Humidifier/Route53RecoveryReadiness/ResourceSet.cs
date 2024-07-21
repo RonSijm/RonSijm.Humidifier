@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryReadiness
     using System.Collections.Generic;
     using ResourceSetTypes;
 
-    public class ResourceSet : Humidifier.Resource
+    public class ResourceSet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

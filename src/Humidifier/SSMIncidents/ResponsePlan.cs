@@ -3,7 +3,7 @@ namespace Humidifier.SSMIncidents
     using System.Collections.Generic;
     using ResponsePlanTypes;
 
-    public class ResponsePlan : Humidifier.Resource
+    public class ResponsePlan : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

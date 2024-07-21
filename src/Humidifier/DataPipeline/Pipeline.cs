@@ -3,7 +3,7 @@ namespace Humidifier.DataPipeline
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Resource
+    public class Pipeline : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

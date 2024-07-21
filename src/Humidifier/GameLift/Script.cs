@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using ScriptTypes;
 
-    public class Script : Humidifier.Resource
+    public class Script : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

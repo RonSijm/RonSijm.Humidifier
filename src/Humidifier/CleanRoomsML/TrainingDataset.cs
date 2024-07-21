@@ -3,7 +3,7 @@ namespace Humidifier.CleanRoomsML
     using System.Collections.Generic;
     using TrainingDatasetTypes;
 
-    public class TrainingDataset : Humidifier.Resource
+    public class TrainingDataset : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

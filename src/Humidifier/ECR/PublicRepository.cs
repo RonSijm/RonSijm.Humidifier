@@ -3,7 +3,7 @@ namespace Humidifier.ECR
     using System.Collections.Generic;
     using PublicRepositoryTypes;
 
-    public class PublicRepository : Humidifier.Resource
+    public class PublicRepository : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

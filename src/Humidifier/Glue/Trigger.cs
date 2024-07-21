@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using TriggerTypes;
 
-    public class Trigger : Humidifier.Resource
+    public class Trigger : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

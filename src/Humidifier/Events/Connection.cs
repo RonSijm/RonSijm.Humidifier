@@ -3,7 +3,7 @@ namespace Humidifier.Events
     using System.Collections.Generic;
     using ConnectionTypes;
 
-    public class Connection : Humidifier.Resource
+    public class Connection : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

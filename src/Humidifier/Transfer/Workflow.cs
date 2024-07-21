@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using WorkflowTypes;
 
-    public class Workflow : Humidifier.Resource
+    public class Workflow : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using FirewallTypes;
 
-    public class Firewall : Humidifier.Resource
+    public class Firewall : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

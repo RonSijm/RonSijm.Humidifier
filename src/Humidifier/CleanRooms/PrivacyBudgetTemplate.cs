@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using PrivacyBudgetTemplateTypes;
 
-    public class PrivacyBudgetTemplate : Humidifier.Resource
+    public class PrivacyBudgetTemplate : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

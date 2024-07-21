@@ -3,7 +3,7 @@ namespace Humidifier.WAFv2
     using System.Collections.Generic;
     using WebACLTypes;
 
-    public class WebACL : Humidifier.Resource
+    public class WebACL : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

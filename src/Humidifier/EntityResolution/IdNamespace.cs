@@ -3,7 +3,7 @@ namespace Humidifier.EntityResolution
     using System.Collections.Generic;
     using IdNamespaceTypes;
 
-    public class IdNamespace : Humidifier.Resource
+    public class IdNamespace : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

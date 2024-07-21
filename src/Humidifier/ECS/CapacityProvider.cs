@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using CapacityProviderTypes;
 
-    public class CapacityProvider : Humidifier.Resource
+    public class CapacityProvider : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

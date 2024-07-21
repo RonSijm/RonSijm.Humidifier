@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using ImageBuilderTypes;
 
-    public class ImageBuilder : Humidifier.Resource
+    public class ImageBuilder : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

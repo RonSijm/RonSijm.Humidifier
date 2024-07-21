@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using ReplicationGroupTypes;
 
-    public class ReplicationGroup : Humidifier.Resource
+    public class ReplicationGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

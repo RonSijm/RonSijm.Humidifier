@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using StudioComponentTypes;
 
-    public class StudioComponent : Humidifier.Resource
+    public class StudioComponent : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

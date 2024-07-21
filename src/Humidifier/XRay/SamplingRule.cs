@@ -3,7 +3,7 @@ namespace Humidifier.XRay
     using System.Collections.Generic;
     using SamplingRuleTypes;
 
-    public class SamplingRule : Humidifier.Resource
+    public class SamplingRule : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

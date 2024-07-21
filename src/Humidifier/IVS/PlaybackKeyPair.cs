@@ -2,7 +2,7 @@ namespace Humidifier.IVS
 {
     using System.Collections.Generic;
 
-    public class PlaybackKeyPair : Humidifier.Resource
+    public class PlaybackKeyPair : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

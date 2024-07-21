@@ -2,7 +2,7 @@ namespace Humidifier.Scheduler
 {
     using System.Collections.Generic;
 
-    public class ScheduleGroup : Humidifier.Resource
+    public class ScheduleGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

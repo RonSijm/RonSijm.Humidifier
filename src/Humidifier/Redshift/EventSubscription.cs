@@ -2,7 +2,7 @@ namespace Humidifier.Redshift
 {
     using System.Collections.Generic;
 
-    public class EventSubscription : Humidifier.Resource
+    public class EventSubscription : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

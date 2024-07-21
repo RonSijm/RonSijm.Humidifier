@@ -3,7 +3,7 @@ namespace Humidifier.AppRunner
     using System.Collections.Generic;
     using VpcIngressConnectionTypes;
 
-    public class VpcIngressConnection : Humidifier.Resource
+    public class VpcIngressConnection : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

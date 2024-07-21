@@ -3,7 +3,7 @@ namespace Humidifier.Cassandra
     using System.Collections.Generic;
     using TableTypes;
 
-    public class Table : Humidifier.Resource
+    public class Table : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

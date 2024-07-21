@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using VPNConnectionTypes;
 
-    public class VPNConnection : Humidifier.Resource
+    public class VPNConnection : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

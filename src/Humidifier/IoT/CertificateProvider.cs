@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class CertificateProvider : Humidifier.Resource
+    public class CertificateProvider : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

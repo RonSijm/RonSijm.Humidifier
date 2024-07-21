@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using DecoderManifestTypes;
 
-    public class DecoderManifest : Humidifier.Resource
+    public class DecoderManifest : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

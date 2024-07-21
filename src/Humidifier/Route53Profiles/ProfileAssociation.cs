@@ -2,7 +2,7 @@ namespace Humidifier.Route53Profiles
 {
     using System.Collections.Generic;
 
-    public class ProfileAssociation : Humidifier.Resource
+    public class ProfileAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

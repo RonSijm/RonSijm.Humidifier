@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class EIP : Humidifier.Resource
+    public class EIP : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.EMRContainers
     using System.Collections.Generic;
     using VirtualClusterTypes;
 
-    public class VirtualCluster : Humidifier.Resource
+    public class VirtualCluster : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

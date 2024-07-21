@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using EventDataStoreTypes;
 
-    public class EventDataStore : Humidifier.Resource
+    public class EventDataStore : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

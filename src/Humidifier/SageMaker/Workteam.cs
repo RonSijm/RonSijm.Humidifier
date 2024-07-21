@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using WorkteamTypes;
 
-    public class Workteam : Humidifier.Resource
+    public class Workteam : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

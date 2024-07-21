@@ -2,7 +2,7 @@ namespace Humidifier.FIS
 {
     using System.Collections.Generic;
 
-    public class TargetAccountConfiguration : Humidifier.Resource
+    public class TargetAccountConfiguration : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

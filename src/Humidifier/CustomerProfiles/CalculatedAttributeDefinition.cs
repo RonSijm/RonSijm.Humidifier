@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using CalculatedAttributeDefinitionTypes;
 
-    public class CalculatedAttributeDefinition : Humidifier.Resource
+    public class CalculatedAttributeDefinition : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

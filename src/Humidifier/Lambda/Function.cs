@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using FunctionTypes;
 
-    public class Function : Humidifier.Resource
+    public class Function : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

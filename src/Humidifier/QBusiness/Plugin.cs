@@ -3,7 +3,7 @@ namespace Humidifier.QBusiness
     using System.Collections.Generic;
     using PluginTypes;
 
-    public class Plugin : Humidifier.Resource
+    public class Plugin : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

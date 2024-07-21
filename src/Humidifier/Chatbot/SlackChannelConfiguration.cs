@@ -2,7 +2,7 @@ namespace Humidifier.Chatbot
 {
     using System.Collections.Generic;
 
-    public class SlackChannelConfiguration : Humidifier.Resource
+    public class SlackChannelConfiguration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

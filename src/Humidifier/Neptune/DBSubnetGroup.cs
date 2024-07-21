@@ -2,7 +2,7 @@ namespace Humidifier.Neptune
 {
     using System.Collections.Generic;
 
-    public class DBSubnetGroup : Humidifier.Resource
+    public class DBSubnetGroup : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

@@ -2,7 +2,7 @@ namespace Humidifier.AppRunner
 {
     using System.Collections.Generic;
 
-    public class VpcConnector : Humidifier.Resource
+    public class VpcConnector : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

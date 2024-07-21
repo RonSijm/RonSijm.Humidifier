@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Resource
+    public class Project : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

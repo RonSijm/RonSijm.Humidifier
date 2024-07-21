@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using VodSourceTypes;
 
-    public class VodSource : Humidifier.Resource
+    public class VodSource : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

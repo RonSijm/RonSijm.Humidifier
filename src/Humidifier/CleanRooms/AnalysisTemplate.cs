@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using AnalysisTemplateTypes;
 
-    public class AnalysisTemplate : Humidifier.Resource
+    public class AnalysisTemplate : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

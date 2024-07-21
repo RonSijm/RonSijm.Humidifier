@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualServiceTypes;
 
-    public class VirtualService : Humidifier.Resource
+    public class VirtualService : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

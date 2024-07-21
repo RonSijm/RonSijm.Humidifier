@@ -3,7 +3,7 @@ namespace Humidifier.CloudFront
     using System.Collections.Generic;
     using DistributionTypes;
 
-    public class Distribution : Humidifier.Resource
+    public class Distribution : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

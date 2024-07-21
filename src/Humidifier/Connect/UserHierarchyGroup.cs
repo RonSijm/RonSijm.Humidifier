@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class UserHierarchyGroup : Humidifier.Resource
+    public class UserHierarchyGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

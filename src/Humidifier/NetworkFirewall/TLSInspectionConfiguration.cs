@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using TLSInspectionConfigurationTypes;
 
-    public class TLSInspectionConfiguration : Humidifier.Resource
+    public class TLSInspectionConfiguration : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

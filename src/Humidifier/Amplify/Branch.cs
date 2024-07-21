@@ -3,7 +3,7 @@ namespace Humidifier.Amplify
     using System.Collections.Generic;
     using BranchTypes;
 
-    public class Branch : Humidifier.Resource
+    public class Branch : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

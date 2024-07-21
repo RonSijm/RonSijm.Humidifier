@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using ConnectAttachmentTypes;
 
-    public class ConnectAttachment : Humidifier.Resource
+    public class ConnectAttachment : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

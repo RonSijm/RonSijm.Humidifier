@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using LaunchTypes;
 
-    public class Launch : Humidifier.Resource
+    public class Launch : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

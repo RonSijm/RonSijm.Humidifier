@@ -3,7 +3,7 @@ namespace Humidifier.BillingConductor
     using System.Collections.Generic;
     using BillingGroupTypes;
 
-    public class BillingGroup : Humidifier.Resource
+    public class BillingGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

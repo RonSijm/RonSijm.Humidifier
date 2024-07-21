@@ -2,7 +2,7 @@ namespace Humidifier.DocDB
 {
     using System.Collections.Generic;
 
-    public class DBInstance : Humidifier.Resource
+    public class DBInstance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

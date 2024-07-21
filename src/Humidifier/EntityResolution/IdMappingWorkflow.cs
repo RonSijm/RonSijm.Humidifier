@@ -3,7 +3,7 @@ namespace Humidifier.EntityResolution
     using System.Collections.Generic;
     using IdMappingWorkflowTypes;
 
-    public class IdMappingWorkflow : Humidifier.Resource
+    public class IdMappingWorkflow : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

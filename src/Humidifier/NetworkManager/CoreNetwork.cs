@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using CoreNetworkTypes;
 
-    public class CoreNetwork : Humidifier.Resource
+    public class CoreNetwork : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

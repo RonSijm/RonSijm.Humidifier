@@ -3,7 +3,7 @@ namespace Humidifier.GlobalAccelerator
     using System.Collections.Generic;
     using CrossAccountAttachmentTypes;
 
-    public class CrossAccountAttachment : Humidifier.Resource
+    public class CrossAccountAttachment : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

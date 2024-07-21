@@ -2,7 +2,7 @@ namespace Humidifier.Glue
 {
     using System.Collections.Generic;
 
-    public class Registry : Humidifier.Resource
+    public class Registry : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

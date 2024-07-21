@@ -3,7 +3,7 @@ namespace Humidifier.Deadline
     using System.Collections.Generic;
     using QueueTypes;
 
-    public class Queue : Humidifier.Resource
+    public class Queue : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Synthetics
     using System.Collections.Generic;
     using CanaryTypes;
 
-    public class Canary : Humidifier.Resource
+    public class Canary : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

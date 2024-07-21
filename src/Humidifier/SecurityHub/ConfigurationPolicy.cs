@@ -3,7 +3,7 @@ namespace Humidifier.SecurityHub
     using System.Collections.Generic;
     using ConfigurationPolicyTypes;
 
-    public class ConfigurationPolicy : Humidifier.Resource
+    public class ConfigurationPolicy : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

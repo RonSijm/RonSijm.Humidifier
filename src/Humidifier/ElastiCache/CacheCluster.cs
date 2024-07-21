@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using CacheClusterTypes;
 
-    public class CacheCluster : Humidifier.Resource
+    public class CacheCluster : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

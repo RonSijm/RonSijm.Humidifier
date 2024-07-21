@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using EventStreamTypes;
 
-    public class EventStream : Humidifier.Resource
+    public class EventStream : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

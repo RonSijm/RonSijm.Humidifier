@@ -3,7 +3,7 @@ namespace Humidifier.SNS
     using System.Collections.Generic;
     using TopicTypes;
 
-    public class Topic : Humidifier.Resource
+    public class Topic : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

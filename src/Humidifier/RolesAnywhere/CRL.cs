@@ -2,7 +2,7 @@ namespace Humidifier.RolesAnywhere
 {
     using System.Collections.Generic;
 
-    public class CRL : Humidifier.Resource
+    public class CRL : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

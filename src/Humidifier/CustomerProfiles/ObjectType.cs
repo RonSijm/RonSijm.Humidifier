@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using ObjectTypeTypes;
 
-    public class ObjectType : Humidifier.Resource
+    public class ObjectType : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

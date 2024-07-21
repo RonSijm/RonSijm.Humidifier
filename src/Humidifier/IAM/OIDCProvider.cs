@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class OIDCProvider : Humidifier.Resource
+    public class OIDCProvider : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

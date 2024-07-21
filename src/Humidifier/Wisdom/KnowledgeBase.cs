@@ -3,7 +3,7 @@ namespace Humidifier.Wisdom
     using System.Collections.Generic;
     using KnowledgeBaseTypes;
 
-    public class KnowledgeBase : Humidifier.Resource
+    public class KnowledgeBase : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

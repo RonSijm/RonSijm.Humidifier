@@ -2,7 +2,7 @@ namespace Humidifier.VpcLattice
 {
     using System.Collections.Generic;
 
-    public class AccessLogSubscription : Humidifier.Resource
+    public class AccessLogSubscription : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

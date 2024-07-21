@@ -3,7 +3,7 @@ namespace Humidifier.RUM
     using System.Collections.Generic;
     using AppMonitorTypes;
 
-    public class AppMonitor : Humidifier.Resource
+    public class AppMonitor : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

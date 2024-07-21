@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using SecurityProfileTypes;
 
-    public class SecurityProfile : Humidifier.Resource
+    public class SecurityProfile : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

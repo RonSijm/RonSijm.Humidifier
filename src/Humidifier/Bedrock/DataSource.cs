@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Resource
+    public class DataSource : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

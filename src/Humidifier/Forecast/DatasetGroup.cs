@@ -2,7 +2,7 @@ namespace Humidifier.Forecast
 {
     using System.Collections.Generic;
 
-    public class DatasetGroup : Humidifier.Resource
+    public class DatasetGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using CodeSigningConfigTypes;
 
-    public class CodeSigningConfig : Humidifier.Resource
+    public class CodeSigningConfig : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.ElastiCache
 {
     using System.Collections.Generic;
 
-    public class UserGroup : Humidifier.Resource
+    public class UserGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

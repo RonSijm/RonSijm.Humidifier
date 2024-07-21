@@ -3,7 +3,7 @@ namespace Humidifier.IoTSiteWise
     using System.Collections.Generic;
     using PortalTypes;
 
-    public class Portal : Humidifier.Resource
+    public class Portal : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

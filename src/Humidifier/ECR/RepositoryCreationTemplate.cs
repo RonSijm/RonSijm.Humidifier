@@ -3,7 +3,7 @@ namespace Humidifier.ECR
     using System.Collections.Generic;
     using RepositoryCreationTemplateTypes;
 
-    public class RepositoryCreationTemplate : Humidifier.Resource
+    public class RepositoryCreationTemplate : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

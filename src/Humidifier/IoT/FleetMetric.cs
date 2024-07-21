@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using FleetMetricTypes;
 
-    public class FleetMetric : Humidifier.Resource
+    public class FleetMetric : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.ServiceDiscovery
     using System.Collections.Generic;
     using PublicDnsNamespaceTypes;
 
-    public class PublicDnsNamespace : Humidifier.Resource
+    public class PublicDnsNamespace : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

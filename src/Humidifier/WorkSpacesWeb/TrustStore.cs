@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class TrustStore : Humidifier.Resource
+    public class TrustStore : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

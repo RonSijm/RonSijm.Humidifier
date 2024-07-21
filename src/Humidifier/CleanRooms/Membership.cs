@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using MembershipTypes;
 
-    public class Membership : Humidifier.Resource
+    public class Membership : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

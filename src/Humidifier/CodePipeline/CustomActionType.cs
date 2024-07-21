@@ -3,7 +3,7 @@ namespace Humidifier.CodePipeline
     using System.Collections.Generic;
     using CustomActionTypeTypes;
 
-    public class CustomActionType : Humidifier.Resource
+    public class CustomActionType : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

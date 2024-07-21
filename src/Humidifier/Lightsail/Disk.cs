@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DiskTypes;
 
-    public class Disk : Humidifier.Resource
+    public class Disk : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

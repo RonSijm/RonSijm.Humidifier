@@ -3,7 +3,7 @@ namespace Humidifier.BillingConductor
     using System.Collections.Generic;
     using PricingRuleTypes;
 
-    public class PricingRule : Humidifier.Resource
+    public class PricingRule : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

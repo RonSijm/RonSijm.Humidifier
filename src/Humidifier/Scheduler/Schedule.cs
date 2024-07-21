@@ -3,7 +3,7 @@ namespace Humidifier.Scheduler
     using System.Collections.Generic;
     using ScheduleTypes;
 
-    public class Schedule : Humidifier.Resource
+    public class Schedule : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

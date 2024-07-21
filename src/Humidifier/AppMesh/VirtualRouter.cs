@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualRouterTypes;
 
-    public class VirtualRouter : Humidifier.Resource
+    public class VirtualRouter : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

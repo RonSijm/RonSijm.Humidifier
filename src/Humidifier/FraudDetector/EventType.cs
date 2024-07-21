@@ -3,7 +3,7 @@ namespace Humidifier.FraudDetector
     using System.Collections.Generic;
     using EventTypeTypes;
 
-    public class EventType : Humidifier.Resource
+    public class EventType : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

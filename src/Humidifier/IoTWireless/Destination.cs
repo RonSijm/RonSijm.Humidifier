@@ -2,7 +2,7 @@ namespace Humidifier.IoTWireless
 {
     using System.Collections.Generic;
 
-    public class Destination : Humidifier.Resource
+    public class Destination : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

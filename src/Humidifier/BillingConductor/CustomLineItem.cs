@@ -3,7 +3,7 @@ namespace Humidifier.BillingConductor
     using System.Collections.Generic;
     using CustomLineItemTypes;
 
-    public class CustomLineItem : Humidifier.Resource
+    public class CustomLineItem : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

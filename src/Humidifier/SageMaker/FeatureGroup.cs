@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using FeatureGroupTypes;
 
-    public class FeatureGroup : Humidifier.Resource
+    public class FeatureGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

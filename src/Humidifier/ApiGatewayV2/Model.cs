@@ -2,7 +2,7 @@ namespace Humidifier.ApiGatewayV2
 {
     using System.Collections.Generic;
 
-    public class Model : Humidifier.Resource
+    public class Model : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

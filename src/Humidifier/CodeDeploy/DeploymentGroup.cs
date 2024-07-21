@@ -3,7 +3,7 @@ namespace Humidifier.CodeDeploy
     using System.Collections.Generic;
     using DeploymentGroupTypes;
 
-    public class DeploymentGroup : Humidifier.Resource
+    public class DeploymentGroup : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

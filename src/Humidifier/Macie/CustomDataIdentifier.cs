@@ -2,7 +2,7 @@ namespace Humidifier.Macie
 {
     using System.Collections.Generic;
 
-    public class CustomDataIdentifier : Humidifier.Resource
+    public class CustomDataIdentifier : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Shield
 {
     using System.Collections.Generic;
 
-    public class ProtectionGroup : Humidifier.Resource
+    public class ProtectionGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

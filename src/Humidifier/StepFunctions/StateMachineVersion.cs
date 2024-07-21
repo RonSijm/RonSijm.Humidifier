@@ -2,7 +2,7 @@ namespace Humidifier.StepFunctions
 {
     using System.Collections.Generic;
 
-    public class StateMachineVersion : Humidifier.Resource
+    public class StateMachineVersion : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

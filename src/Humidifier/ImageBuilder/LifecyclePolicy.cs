@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using LifecyclePolicyTypes;
 
-    public class LifecyclePolicy : Humidifier.Resource
+    public class LifecyclePolicy : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

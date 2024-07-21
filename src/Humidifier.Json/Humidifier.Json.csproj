@@ -17,7 +17,7 @@
 		<PackageProjectUrl>https://github.com/jakejscott/humidifier</PackageProjectUrl>
 		<PackageLicenseUrl>https://github.com/jakejscott/humidifier/blob/master/license.txt</PackageLicenseUrl>
 		<DebugType>None</DebugType>
-		<LangVersion>latest</LangVersion>
+		<LangVersion>12</LangVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">

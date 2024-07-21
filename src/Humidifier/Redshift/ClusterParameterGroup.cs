@@ -3,7 +3,7 @@ namespace Humidifier.Redshift
     using System.Collections.Generic;
     using ClusterParameterGroupTypes;
 
-    public class ClusterParameterGroup : Humidifier.Resource
+    public class ClusterParameterGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

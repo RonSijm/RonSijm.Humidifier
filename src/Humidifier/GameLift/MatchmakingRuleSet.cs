@@ -2,7 +2,7 @@ namespace Humidifier.GameLift
 {
     using System.Collections.Generic;
 
-    public class MatchmakingRuleSet : Humidifier.Resource
+    public class MatchmakingRuleSet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

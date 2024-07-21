@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using JobTemplateTypes;
 
-    public class JobTemplate : Humidifier.Resource
+    public class JobTemplate : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

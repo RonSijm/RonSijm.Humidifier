@@ -2,7 +2,7 @@ namespace Humidifier.ManagedBlockchain
 {
     using System.Collections.Generic;
 
-    public class Accessor : Humidifier.Resource
+    public class Accessor : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.SSMContacts
     using System.Collections.Generic;
     using RotationTypes;
 
-    public class Rotation : Humidifier.Resource
+    public class Rotation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class ServerCertificate : Humidifier.Resource
+    public class ServerCertificate : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

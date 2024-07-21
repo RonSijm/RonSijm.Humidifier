@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using LiveSourceTypes;
 
-    public class LiveSource : Humidifier.Resource
+    public class LiveSource : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

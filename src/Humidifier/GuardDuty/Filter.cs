@@ -3,7 +3,7 @@ namespace Humidifier.GuardDuty
     using System.Collections.Generic;
     using FilterTypes;
 
-    public class Filter : Humidifier.Resource
+    public class Filter : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

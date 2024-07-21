@@ -2,7 +2,7 @@ namespace Humidifier.Deadline
 {
     using System.Collections.Generic;
 
-    public class Farm : Humidifier.Resource
+    public class Farm : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

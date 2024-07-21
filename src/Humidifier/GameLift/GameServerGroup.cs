@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using GameServerGroupTypes;
 
-    public class GameServerGroup : Humidifier.Resource
+    public class GameServerGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

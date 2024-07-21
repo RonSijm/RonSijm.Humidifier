@@ -2,7 +2,7 @@ namespace Humidifier.IoTFleetWise
 {
     using System.Collections.Generic;
 
-    public class Fleet : Humidifier.Resource
+    public class Fleet : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

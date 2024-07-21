@@ -3,7 +3,7 @@ namespace Humidifier.ElasticBeanstalk
     using System.Collections.Generic;
     using ApplicationVersionTypes;
 
-    public class ApplicationVersion : Humidifier.Resource
+    public class ApplicationVersion : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

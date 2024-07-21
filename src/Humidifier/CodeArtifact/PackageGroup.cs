@@ -3,7 +3,7 @@ namespace Humidifier.CodeArtifact
     using System.Collections.Generic;
     using PackageGroupTypes;
 
-    public class PackageGroup : Humidifier.Resource
+    public class PackageGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

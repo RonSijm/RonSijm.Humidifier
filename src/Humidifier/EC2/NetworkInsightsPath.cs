@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using NetworkInsightsPathTypes;
 
-    public class NetworkInsightsPath : Humidifier.Resource
+    public class NetworkInsightsPath : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

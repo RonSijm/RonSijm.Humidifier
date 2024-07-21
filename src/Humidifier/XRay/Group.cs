@@ -3,7 +3,7 @@ namespace Humidifier.XRay
     using System.Collections.Generic;
     using GroupTypes;
 
-    public class Group : Humidifier.Resource
+    public class Group : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

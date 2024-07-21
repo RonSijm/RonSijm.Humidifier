@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class RouteTable : Humidifier.Resource
+    public class RouteTable : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

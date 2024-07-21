@@ -3,7 +3,7 @@ namespace Humidifier.Kendra
     using System.Collections.Generic;
     using IndexTypes;
 
-    public class Index : Humidifier.Resource
+    public class Index : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.DataSync
 {
     using System.Collections.Generic;
 
-    public class LocationObjectStorage : Humidifier.Resource
+    public class LocationObjectStorage : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

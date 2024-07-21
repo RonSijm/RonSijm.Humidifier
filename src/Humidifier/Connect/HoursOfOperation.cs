@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using HoursOfOperationTypes;
 
-    public class HoursOfOperation : Humidifier.Resource
+    public class HoursOfOperation : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using AppBlockBuilderTypes;
 
-    public class AppBlockBuilder : Humidifier.Resource
+    public class AppBlockBuilder : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.CloudFront
     using System.Collections.Generic;
     using StreamingDistributionTypes;
 
-    public class StreamingDistribution : Humidifier.Resource
+    public class StreamingDistribution : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

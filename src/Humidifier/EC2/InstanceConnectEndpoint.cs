@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class InstanceConnectEndpoint : Humidifier.Resource
+    public class InstanceConnectEndpoint : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

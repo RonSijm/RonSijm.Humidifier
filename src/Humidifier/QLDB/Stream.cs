@@ -3,7 +3,7 @@ namespace Humidifier.QLDB
     using System.Collections.Generic;
     using StreamTypes;
 
-    public class Stream : Humidifier.Resource
+    public class Stream : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

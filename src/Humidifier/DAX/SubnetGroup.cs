@@ -2,7 +2,7 @@ namespace Humidifier.DAX
 {
     using System.Collections.Generic;
 
-    public class SubnetGroup : Humidifier.Resource
+    public class SubnetGroup : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

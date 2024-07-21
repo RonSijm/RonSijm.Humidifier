@@ -3,7 +3,7 @@ namespace Humidifier.IVS
     using System.Collections.Generic;
     using StorageConfigurationTypes;
 
-    public class StorageConfiguration : Humidifier.Resource
+    public class StorageConfiguration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.AppConfig
 {
     using System.Collections.Generic;
 
-    public class HostedConfigurationVersion : Humidifier.Resource
+    public class HostedConfigurationVersion : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.ServiceCatalog
     using System.Collections.Generic;
     using ServiceActionTypes;
 
-    public class ServiceAction : Humidifier.Resource
+    public class ServiceAction : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

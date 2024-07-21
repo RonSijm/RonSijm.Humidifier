@@ -3,7 +3,7 @@ namespace Humidifier.IoT1Click
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Resource
+    public class Project : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

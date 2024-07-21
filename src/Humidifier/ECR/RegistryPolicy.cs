@@ -2,7 +2,7 @@ namespace Humidifier.ECR
 {
     using System.Collections.Generic;
 
-    public class RegistryPolicy : Humidifier.Resource
+    public class RegistryPolicy : Humidifier.Resource, IHavePolicyText
     {
         public class Attributes
         {

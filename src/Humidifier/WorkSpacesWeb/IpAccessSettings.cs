@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpacesWeb
     using System.Collections.Generic;
     using IpAccessSettingsTypes;
 
-    public class IpAccessSettings : Humidifier.Resource
+    public class IpAccessSettings : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

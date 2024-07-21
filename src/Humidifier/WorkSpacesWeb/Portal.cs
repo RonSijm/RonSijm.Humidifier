@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class Portal : Humidifier.Resource
+    public class Portal : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

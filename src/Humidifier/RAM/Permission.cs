@@ -2,7 +2,7 @@ namespace Humidifier.RAM
 {
     using System.Collections.Generic;
 
-    public class Permission : Humidifier.Resource
+    public class Permission : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

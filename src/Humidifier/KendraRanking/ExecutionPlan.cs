@@ -3,7 +3,7 @@ namespace Humidifier.KendraRanking
     using System.Collections.Generic;
     using ExecutionPlanTypes;
 
-    public class ExecutionPlan : Humidifier.Resource
+    public class ExecutionPlan : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

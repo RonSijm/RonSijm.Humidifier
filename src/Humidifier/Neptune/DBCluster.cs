@@ -3,7 +3,7 @@ namespace Humidifier.Neptune
     using System.Collections.Generic;
     using DBClusterTypes;
 
-    public class DBCluster : Humidifier.Resource
+    public class DBCluster : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

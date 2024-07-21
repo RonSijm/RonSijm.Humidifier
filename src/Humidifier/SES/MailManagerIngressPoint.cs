@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using MailManagerIngressPointTypes;
 
-    public class MailManagerIngressPoint : Humidifier.Resource
+    public class MailManagerIngressPoint : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

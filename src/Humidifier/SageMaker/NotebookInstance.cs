@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using NotebookInstanceTypes;
 
-    public class NotebookInstance : Humidifier.Resource
+    public class NotebookInstance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

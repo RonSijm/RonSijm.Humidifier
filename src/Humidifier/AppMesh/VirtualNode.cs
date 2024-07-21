@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualNodeTypes;
 
-    public class VirtualNode : Humidifier.Resource
+    public class VirtualNode : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

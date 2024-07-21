@@ -3,7 +3,7 @@ namespace Humidifier.MediaStore
     using System.Collections.Generic;
     using ContainerTypes;
 
-    public class Container : Humidifier.Resource
+    public class Container : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

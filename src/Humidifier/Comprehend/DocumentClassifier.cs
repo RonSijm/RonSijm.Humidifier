@@ -3,7 +3,7 @@ namespace Humidifier.Comprehend
     using System.Collections.Generic;
     using DocumentClassifierTypes;
 
-    public class DocumentClassifier : Humidifier.Resource
+    public class DocumentClassifier : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

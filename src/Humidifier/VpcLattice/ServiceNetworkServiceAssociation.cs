@@ -3,7 +3,7 @@ namespace Humidifier.VpcLattice
     using System.Collections.Generic;
     using ServiceNetworkServiceAssociationTypes;
 
-    public class ServiceNetworkServiceAssociation : Humidifier.Resource
+    public class ServiceNetworkServiceAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

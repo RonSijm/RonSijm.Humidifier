@@ -2,7 +2,7 @@ namespace Humidifier.SSO
 {
     using System.Collections.Generic;
 
-    public class Instance : Humidifier.Resource
+    public class Instance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

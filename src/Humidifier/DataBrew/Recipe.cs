@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using RecipeTypes;
 
-    public class Recipe : Humidifier.Resource
+    public class Recipe : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using LaunchProfileTypes;
 
-    public class LaunchProfile : Humidifier.Resource
+    public class LaunchProfile : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

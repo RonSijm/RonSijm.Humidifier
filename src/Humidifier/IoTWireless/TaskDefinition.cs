@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using TaskDefinitionTypes;
 
-    public class TaskDefinition : Humidifier.Resource
+    public class TaskDefinition : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

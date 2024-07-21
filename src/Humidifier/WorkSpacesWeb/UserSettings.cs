@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpacesWeb
     using System.Collections.Generic;
     using UserSettingsTypes;
 
-    public class UserSettings : Humidifier.Resource
+    public class UserSettings : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

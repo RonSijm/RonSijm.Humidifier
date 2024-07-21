@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using PlaybackConfigurationTypes;
 
-    public class PlaybackConfiguration : Humidifier.Resource
+    public class PlaybackConfiguration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

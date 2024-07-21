@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using RulesetTypes;
 
-    public class Ruleset : Humidifier.Resource
+    public class Ruleset : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

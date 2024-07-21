@@ -2,7 +2,7 @@ namespace Humidifier.Deadline
 {
     using System.Collections.Generic;
 
-    public class LicenseEndpoint : Humidifier.Resource
+    public class LicenseEndpoint : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using SourceApiAssociationTypes;
 
-    public class SourceApiAssociation : Humidifier.Resource
+    public class SourceApiAssociation : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

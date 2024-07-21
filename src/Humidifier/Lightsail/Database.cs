@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DatabaseTypes;
 
-    public class Database : Humidifier.Resource
+    public class Database : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.APS
     using System.Collections.Generic;
     using ScraperTypes;
 
-    public class Scraper : Humidifier.Resource
+    public class Scraper : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

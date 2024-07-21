@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Resource
+    public class Cluster : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

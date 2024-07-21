@@ -3,7 +3,7 @@ namespace Humidifier.S3
     using System.Collections.Generic;
     using AccessGrantTypes;
 
-    public class AccessGrant : Humidifier.Resource
+    public class AccessGrant : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

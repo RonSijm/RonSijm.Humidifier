@@ -2,7 +2,7 @@ namespace Humidifier.ApiGateway
 {
     using System.Collections.Generic;
 
-    public class Model : Humidifier.Resource
+    public class Model : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

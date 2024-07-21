@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using GraphQLApiTypes;
 
-    public class GraphQLApi : Humidifier.Resource
+    public class GraphQLApi : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

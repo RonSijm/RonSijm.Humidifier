@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using TaskTemplateTypes;
 
-    public class TaskTemplate : Humidifier.Resource
+    public class TaskTemplate : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

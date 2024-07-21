@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using MigrationProjectTypes;
 
-    public class MigrationProject : Humidifier.Resource
+    public class MigrationProject : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

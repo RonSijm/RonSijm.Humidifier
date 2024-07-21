@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ImageRecipeTypes;
 
-    public class ImageRecipe : Humidifier.Resource
+    public class ImageRecipe : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

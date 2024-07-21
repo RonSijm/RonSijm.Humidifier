@@ -3,7 +3,7 @@ namespace Humidifier.RedshiftServerless
     using System.Collections.Generic;
     using WorkgroupTypes;
 
-    public class Workgroup : Humidifier.Resource
+    public class Workgroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

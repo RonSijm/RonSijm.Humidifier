@@ -3,7 +3,7 @@ namespace Humidifier.Timestream
     using System.Collections.Generic;
     using InfluxDBInstanceTypes;
 
-    public class InfluxDBInstance : Humidifier.Resource
+    public class InfluxDBInstance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

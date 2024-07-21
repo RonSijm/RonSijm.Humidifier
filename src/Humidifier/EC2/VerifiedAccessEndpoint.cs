@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using VerifiedAccessEndpointTypes;
 
-    public class VerifiedAccessEndpoint : Humidifier.Resource
+    public class VerifiedAccessEndpoint : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

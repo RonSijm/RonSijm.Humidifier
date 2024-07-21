@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using RestApiTypes;
 
-    public class RestApi : Humidifier.Resource
+    public class RestApi : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

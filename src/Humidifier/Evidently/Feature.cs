@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using FeatureTypes;
 
-    public class Feature : Humidifier.Resource
+    public class Feature : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

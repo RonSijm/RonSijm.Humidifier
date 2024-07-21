@@ -3,7 +3,7 @@ namespace Humidifier.Comprehend
     using System.Collections.Generic;
     using FlywheelTypes;
 
-    public class Flywheel : Humidifier.Resource
+    public class Flywheel : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

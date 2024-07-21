@@ -3,7 +3,7 @@ namespace Humidifier.VpcLattice
     using System.Collections.Generic;
     using ListenerTypes;
 
-    public class Listener : Humidifier.Resource
+    public class Listener : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

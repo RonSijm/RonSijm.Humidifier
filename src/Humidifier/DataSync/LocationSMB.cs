@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationSMBTypes;
 
-    public class LocationSMB : Humidifier.Resource
+    public class LocationSMB : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

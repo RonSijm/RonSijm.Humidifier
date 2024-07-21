@@ -3,7 +3,7 @@ namespace Humidifier.B2BI
     using System.Collections.Generic;
     using CapabilityTypes;
 
-    public class Capability : Humidifier.Resource
+    public class Capability : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

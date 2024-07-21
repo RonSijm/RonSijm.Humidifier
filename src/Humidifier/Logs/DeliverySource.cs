@@ -2,7 +2,7 @@ namespace Humidifier.Logs
 {
     using System.Collections.Generic;
 
-    public class DeliverySource : Humidifier.Resource
+    public class DeliverySource : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

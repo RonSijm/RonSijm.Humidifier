@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using DBInstanceTypes;
 
-    public class DBInstance : Humidifier.Resource
+    public class DBInstance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

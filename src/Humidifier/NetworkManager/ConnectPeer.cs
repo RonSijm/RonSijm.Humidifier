@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using ConnectPeerTypes;
 
-    public class ConnectPeer : Humidifier.Resource
+    public class ConnectPeer : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

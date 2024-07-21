@@ -2,7 +2,7 @@ namespace Humidifier.IVS
 {
     using System.Collections.Generic;
 
-    public class Stage : Humidifier.Resource
+    public class Stage : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpaces
     using System.Collections.Generic;
     using WorkspacesPoolTypes;
 
-    public class WorkspacesPool : Humidifier.Resource
+    public class WorkspacesPool : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using DataRepositoryAssociationTypes;
 
-    public class DataRepositoryAssociation : Humidifier.Resource
+    public class DataRepositoryAssociation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

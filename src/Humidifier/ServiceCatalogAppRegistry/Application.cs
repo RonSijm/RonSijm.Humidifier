@@ -2,7 +2,7 @@ namespace Humidifier.ServiceCatalogAppRegistry
 {
     using System.Collections.Generic;
 
-    public class Application : Humidifier.Resource
+    public class Application : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

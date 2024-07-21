@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class TrafficDistributionGroup : Humidifier.Resource
+    public class TrafficDistributionGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

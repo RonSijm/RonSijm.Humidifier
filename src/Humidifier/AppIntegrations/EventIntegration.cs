@@ -3,7 +3,7 @@ namespace Humidifier.AppIntegrations
     using System.Collections.Generic;
     using EventIntegrationTypes;
 
-    public class EventIntegration : Humidifier.Resource
+    public class EventIntegration : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using VpcAttachmentTypes;
 
-    public class VpcAttachment : Humidifier.Resource
+    public class VpcAttachment : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

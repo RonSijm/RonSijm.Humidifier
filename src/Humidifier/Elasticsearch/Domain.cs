@@ -3,7 +3,7 @@ namespace Humidifier.Elasticsearch
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Resource
+    public class Domain : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

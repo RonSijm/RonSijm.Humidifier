@@ -3,7 +3,7 @@ namespace Humidifier.RolesAnywhere
     using System.Collections.Generic;
     using ProfileTypes;
 
-    public class Profile : Humidifier.Resource
+    public class Profile : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

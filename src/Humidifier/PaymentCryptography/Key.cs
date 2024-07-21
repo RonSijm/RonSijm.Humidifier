@@ -3,7 +3,7 @@ namespace Humidifier.PaymentCryptography
     using System.Collections.Generic;
     using KeyTypes;
 
-    public class Key : Humidifier.Resource
+    public class Key : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

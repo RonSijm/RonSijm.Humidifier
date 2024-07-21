@@ -3,7 +3,7 @@ namespace Humidifier.Athena
     using System.Collections.Generic;
     using CapacityReservationTypes;
 
-    public class CapacityReservation : Humidifier.Resource
+    public class CapacityReservation : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

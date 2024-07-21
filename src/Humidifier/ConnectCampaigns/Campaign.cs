@@ -3,7 +3,7 @@ namespace Humidifier.ConnectCampaigns
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Resource
+    public class Campaign : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using MulticastGroupTypes;
 
-    public class MulticastGroup : Humidifier.Resource
+    public class MulticastGroup : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using LayerVersionTypes;
 
-    public class LayerVersion : Humidifier.Resource
+    public class LayerVersion : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

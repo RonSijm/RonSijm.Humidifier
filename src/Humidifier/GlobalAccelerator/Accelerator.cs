@@ -2,7 +2,7 @@ namespace Humidifier.GlobalAccelerator
 {
     using System.Collections.Generic;
 
-    public class Accelerator : Humidifier.Resource
+    public class Accelerator : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

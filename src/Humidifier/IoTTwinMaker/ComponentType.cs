@@ -3,7 +3,7 @@ namespace Humidifier.IoTTwinMaker
     using System.Collections.Generic;
     using ComponentTypeTypes;
 
-    public class ComponentType : Humidifier.Resource
+    public class ComponentType : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

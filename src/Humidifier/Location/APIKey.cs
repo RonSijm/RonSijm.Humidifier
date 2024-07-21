@@ -3,7 +3,7 @@ namespace Humidifier.Location
     using System.Collections.Generic;
     using APIKeyTypes;
 
-    public class APIKey : Humidifier.Resource
+    public class APIKey : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

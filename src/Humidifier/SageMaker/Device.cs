@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using DeviceTypes;
 
-    public class Device : Humidifier.Resource
+    public class Device : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

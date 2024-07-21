@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using EndpointConfigTypes;
 
-    public class EndpointConfig : Humidifier.Resource
+    public class EndpointConfig : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

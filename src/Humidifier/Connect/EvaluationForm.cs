@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using EvaluationFormTypes;
 
-    public class EvaluationForm : Humidifier.Resource
+    public class EvaluationForm : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

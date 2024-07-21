@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpaces
     using System.Collections.Generic;
     using WorkspaceTypes;
 
-    public class Workspace : Humidifier.Resource
+    public class Workspace : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

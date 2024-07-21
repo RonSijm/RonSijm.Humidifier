@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class RoleAlias : Humidifier.Resource
+    public class RoleAlias : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

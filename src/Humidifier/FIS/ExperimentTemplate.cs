@@ -3,7 +3,7 @@ namespace Humidifier.FIS
     using System.Collections.Generic;
     using ExperimentTemplateTypes;
 
-    public class ExperimentTemplate : Humidifier.Resource
+    public class ExperimentTemplate : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

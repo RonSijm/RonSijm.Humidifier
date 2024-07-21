@@ -2,7 +2,7 @@ namespace Humidifier.Route53RecoveryReadiness
 {
     using System.Collections.Generic;
 
-    public class ReadinessCheck : Humidifier.Resource
+    public class ReadinessCheck : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

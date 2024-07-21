@@ -3,7 +3,7 @@ namespace Humidifier.Macie
     using System.Collections.Generic;
     using FindingsFilterTypes;
 
-    public class FindingsFilter : Humidifier.Resource
+    public class FindingsFilter : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

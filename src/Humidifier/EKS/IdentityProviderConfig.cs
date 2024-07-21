@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using IdentityProviderConfigTypes;
 
-    public class IdentityProviderConfig : Humidifier.Resource
+    public class IdentityProviderConfig : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Resource
+    public class Fleet : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

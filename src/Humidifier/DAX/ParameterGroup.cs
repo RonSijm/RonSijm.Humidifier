@@ -2,7 +2,7 @@ namespace Humidifier.DAX
 {
     using System.Collections.Generic;
 
-    public class ParameterGroup : Humidifier.Resource
+    public class ParameterGroup : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

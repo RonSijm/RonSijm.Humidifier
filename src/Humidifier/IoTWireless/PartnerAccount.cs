@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using PartnerAccountTypes;
 
-    public class PartnerAccount : Humidifier.Resource
+    public class PartnerAccount : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

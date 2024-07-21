@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class BrowserSettings : Humidifier.Resource
+    public class BrowserSettings : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

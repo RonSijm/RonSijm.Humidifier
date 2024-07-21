@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using TransitGatewayConnectTypes;
 
-    public class TransitGatewayConnect : Humidifier.Resource
+    public class TransitGatewayConnect : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

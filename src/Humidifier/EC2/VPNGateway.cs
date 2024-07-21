@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class VPNGateway : Humidifier.Resource
+    public class VPNGateway : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.MemoryDB
 {
     using System.Collections.Generic;
 
-    public class ACL : Humidifier.Resource
+    public class ACL : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

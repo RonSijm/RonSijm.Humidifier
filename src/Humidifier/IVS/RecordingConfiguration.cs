@@ -3,7 +3,7 @@ namespace Humidifier.IVS
     using System.Collections.Generic;
     using RecordingConfigurationTypes;
 
-    public class RecordingConfiguration : Humidifier.Resource
+    public class RecordingConfiguration : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class SAMLProvider : Humidifier.Resource
+    public class SAMLProvider : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

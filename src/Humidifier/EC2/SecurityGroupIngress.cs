@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class SecurityGroupIngress : Humidifier.Resource
+    public class SecurityGroupIngress : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

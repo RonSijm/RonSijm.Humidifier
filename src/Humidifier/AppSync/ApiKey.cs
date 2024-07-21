@@ -2,7 +2,7 @@ namespace Humidifier.AppSync
 {
     using System.Collections.Generic;
 
-    public class ApiKey : Humidifier.Resource
+    public class ApiKey : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

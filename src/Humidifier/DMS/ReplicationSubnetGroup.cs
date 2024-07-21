@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using System.Collections.Generic;
 
-    public class ReplicationSubnetGroup : Humidifier.Resource
+    public class ReplicationSubnetGroup : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

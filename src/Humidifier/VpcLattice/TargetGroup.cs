@@ -3,7 +3,7 @@ namespace Humidifier.VpcLattice
     using System.Collections.Generic;
     using TargetGroupTypes;
 
-    public class TargetGroup : Humidifier.Resource
+    public class TargetGroup : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

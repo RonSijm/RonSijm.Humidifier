@@ -2,7 +2,7 @@ namespace Humidifier.SDB
 {
     using System.Collections.Generic;
 
-    public class Domain : Humidifier.Resource
+    public class Domain : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

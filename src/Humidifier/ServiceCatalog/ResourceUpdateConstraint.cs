@@ -2,7 +2,7 @@ namespace Humidifier.ServiceCatalog
 {
     using System.Collections.Generic;
 
-    public class ResourceUpdateConstraint : Humidifier.Resource
+    public class ResourceUpdateConstraint : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using EntitlementTypes;
 
-    public class Entitlement : Humidifier.Resource
+    public class Entitlement : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

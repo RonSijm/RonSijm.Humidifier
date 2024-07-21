@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using DomainNameTypes;
 
-    public class DomainName : Humidifier.Resource
+    public class DomainName : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

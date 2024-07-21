@@ -3,7 +3,7 @@ namespace Humidifier.AppTest
     using System.Collections.Generic;
     using TestCaseTypes;
 
-    public class TestCase : Humidifier.Resource
+    public class TestCase : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

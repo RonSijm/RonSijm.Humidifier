@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using DBSecurityGroupTypes;
 
-    public class DBSecurityGroup : Humidifier.Resource
+    public class DBSecurityGroup : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

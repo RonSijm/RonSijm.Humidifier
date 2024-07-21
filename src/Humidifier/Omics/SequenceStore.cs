@@ -3,7 +3,7 @@ namespace Humidifier.Omics
     using System.Collections.Generic;
     using SequenceStoreTypes;
 
-    public class SequenceStore : Humidifier.Resource
+    public class SequenceStore : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

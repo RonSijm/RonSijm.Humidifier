@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class DHCPOptions : Humidifier.Resource
+    public class DHCPOptions : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

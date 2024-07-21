@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using TransitGatewayMulticastDomainTypes;
 
-    public class TransitGatewayMulticastDomain : Humidifier.Resource
+    public class TransitGatewayMulticastDomain : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

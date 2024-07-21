@@ -3,7 +3,7 @@ namespace Humidifier.IoTCoreDeviceAdvisor
     using System.Collections.Generic;
     using SuiteDefinitionTypes;
 
-    public class SuiteDefinition : Humidifier.Resource
+    public class SuiteDefinition : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

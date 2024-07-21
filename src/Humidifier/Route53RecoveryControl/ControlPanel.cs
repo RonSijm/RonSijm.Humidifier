@@ -2,7 +2,7 @@ namespace Humidifier.Route53RecoveryControl
 {
     using System.Collections.Generic;
 
-    public class ControlPanel : Humidifier.Resource
+    public class ControlPanel : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

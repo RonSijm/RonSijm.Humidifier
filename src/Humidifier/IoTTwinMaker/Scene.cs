@@ -2,7 +2,7 @@ namespace Humidifier.IoTTwinMaker
 {
     using System.Collections.Generic;
 
-    public class Scene : Humidifier.Resource
+    public class Scene : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

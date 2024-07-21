@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using StorageSystemTypes;
 
-    public class StorageSystem : Humidifier.Resource
+    public class StorageSystem : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

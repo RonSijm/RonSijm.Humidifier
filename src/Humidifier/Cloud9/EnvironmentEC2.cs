@@ -3,7 +3,7 @@ namespace Humidifier.Cloud9
     using System.Collections.Generic;
     using EnvironmentEC2Types;
 
-    public class EnvironmentEC2 : Humidifier.Resource
+    public class EnvironmentEC2 : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

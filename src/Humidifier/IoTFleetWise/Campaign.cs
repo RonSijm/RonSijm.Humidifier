@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Resource
+    public class Campaign : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

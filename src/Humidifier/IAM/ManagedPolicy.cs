@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class ManagedPolicy : Humidifier.Resource
+    public class ManagedPolicy : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

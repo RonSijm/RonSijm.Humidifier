@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Resource
+    public class DataSource : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

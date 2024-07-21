@@ -2,7 +2,7 @@ namespace Humidifier.ServiceCatalog
 {
     using System.Collections.Generic;
 
-    public class LaunchTemplateConstraint : Humidifier.Resource
+    public class LaunchTemplateConstraint : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

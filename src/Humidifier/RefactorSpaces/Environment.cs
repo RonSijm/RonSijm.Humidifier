@@ -2,7 +2,7 @@ namespace Humidifier.RefactorSpaces
 {
     using System.Collections.Generic;
 
-    public class Environment : Humidifier.Resource
+    public class Environment : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

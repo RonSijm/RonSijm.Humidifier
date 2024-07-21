@@ -2,7 +2,7 @@ namespace Humidifier.SSM
 {
     using System.Collections.Generic;
 
-    public class Parameter : Humidifier.Resource
+    public class Parameter : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

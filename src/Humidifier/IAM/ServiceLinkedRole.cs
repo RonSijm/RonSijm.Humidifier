@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class ServiceLinkedRole : Humidifier.Resource
+    public class ServiceLinkedRole : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

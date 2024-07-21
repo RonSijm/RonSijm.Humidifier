@@ -3,7 +3,7 @@ namespace Humidifier.CodeBuild
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Resource
+    public class Fleet : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

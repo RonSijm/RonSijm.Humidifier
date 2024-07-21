@@ -3,7 +3,7 @@ namespace Humidifier.EventSchemas
     using System.Collections.Generic;
     using DiscovererTypes;
 
-    public class Discoverer : Humidifier.Resource
+    public class Discoverer : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.SES
 {
     using System.Collections.Generic;
 
-    public class MailManagerAddonInstance : Humidifier.Resource
+    public class MailManagerAddonInstance : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

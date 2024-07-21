@@ -3,7 +3,7 @@ namespace Humidifier.Route53Resolver
     using System.Collections.Generic;
     using ResolverEndpointTypes;
 
-    public class ResolverEndpoint : Humidifier.Resource
+    public class ResolverEndpoint : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

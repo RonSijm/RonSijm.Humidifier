@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using StackTypes;
 
-    public class Stack : Humidifier.Resource
+    public class Stack : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

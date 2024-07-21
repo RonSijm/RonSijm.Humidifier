@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class ScheduledAudit : Humidifier.Resource
+    public class ScheduledAudit : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

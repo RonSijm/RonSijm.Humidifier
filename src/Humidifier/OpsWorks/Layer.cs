@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using LayerTypes;
 
-    public class Layer : Humidifier.Resource
+    public class Layer : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

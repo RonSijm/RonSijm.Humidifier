@@ -2,7 +2,7 @@ namespace Humidifier.IoTSiteWise
 {
     using System.Collections.Generic;
 
-    public class Dashboard : Humidifier.Resource
+    public class Dashboard : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

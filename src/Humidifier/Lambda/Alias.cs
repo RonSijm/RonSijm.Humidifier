@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using AliasTypes;
 
-    public class Alias : Humidifier.Resource
+    public class Alias : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

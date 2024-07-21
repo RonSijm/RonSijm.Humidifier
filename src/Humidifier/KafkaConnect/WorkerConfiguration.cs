@@ -2,7 +2,7 @@ namespace Humidifier.KafkaConnect
 {
     using System.Collections.Generic;
 
-    public class WorkerConfiguration : Humidifier.Resource
+    public class WorkerConfiguration : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Athena
 {
     using System.Collections.Generic;
 
-    public class PreparedStatement : Humidifier.Resource
+    public class PreparedStatement : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

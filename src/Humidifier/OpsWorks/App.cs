@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using AppTypes;
 
-    public class App : Humidifier.Resource
+    public class App : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

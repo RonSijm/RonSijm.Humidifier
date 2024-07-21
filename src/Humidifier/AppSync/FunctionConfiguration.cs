@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using FunctionConfigurationTypes;
 
-    public class FunctionConfiguration : Humidifier.Resource
+    public class FunctionConfiguration : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

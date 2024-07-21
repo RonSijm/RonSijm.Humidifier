@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpaces
     using System.Collections.Generic;
     using ConnectionAliasTypes;
 
-    public class ConnectionAlias : Humidifier.Resource
+    public class ConnectionAlias : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

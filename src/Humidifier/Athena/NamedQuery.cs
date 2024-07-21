@@ -2,7 +2,7 @@ namespace Humidifier.Athena
 {
     using System.Collections.Generic;
 
-    public class NamedQuery : Humidifier.Resource
+    public class NamedQuery : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

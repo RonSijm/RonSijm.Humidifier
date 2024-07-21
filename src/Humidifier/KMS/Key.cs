@@ -2,7 +2,7 @@ namespace Humidifier.KMS
 {
     using System.Collections.Generic;
 
-    public class Key : Humidifier.Resource
+    public class Key : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

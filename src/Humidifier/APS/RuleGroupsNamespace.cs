@@ -2,7 +2,7 @@ namespace Humidifier.APS
 {
     using System.Collections.Generic;
 
-    public class RuleGroupsNamespace : Humidifier.Resource
+    public class RuleGroupsNamespace : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

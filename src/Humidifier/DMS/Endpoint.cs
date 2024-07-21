@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using EndpointTypes;
 
-    public class Endpoint : Humidifier.Resource
+    public class Endpoint : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

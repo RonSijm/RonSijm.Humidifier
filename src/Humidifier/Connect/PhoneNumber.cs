@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class PhoneNumber : Humidifier.Resource
+    public class PhoneNumber : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

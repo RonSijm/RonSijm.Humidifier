@@ -3,7 +3,7 @@ namespace Humidifier.AuditManager
     using System.Collections.Generic;
     using AssessmentTypes;
 
-    public class Assessment : Humidifier.Resource
+    public class Assessment : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

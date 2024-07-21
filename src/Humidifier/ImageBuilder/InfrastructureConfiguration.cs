@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using InfrastructureConfigurationTypes;
 
-    public class InfrastructureConfiguration : Humidifier.Resource
+    public class InfrastructureConfiguration : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

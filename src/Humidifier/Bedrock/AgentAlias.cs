@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using AgentAliasTypes;
 
-    public class AgentAlias : Humidifier.Resource
+    public class AgentAlias : Humidifier.Resource, IHaveDescription
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using DeploymentStrategyTypes;
 
-    public class DeploymentStrategy : Humidifier.Resource
+    public class DeploymentStrategy : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {

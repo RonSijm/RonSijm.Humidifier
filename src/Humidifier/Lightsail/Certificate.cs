@@ -2,7 +2,7 @@ namespace Humidifier.Lightsail
 {
     using System.Collections.Generic;
 
-    public class Certificate : Humidifier.Resource
+    public class Certificate : Humidifier.Resource, IHaveTags
     {
         public class Attributes
         {

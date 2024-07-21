@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using JobTypes;
 
-    public class Job : Humidifier.Resource
+    public class Job : Humidifier.Resource, IHaveTags
     {
         public override string AWSTypeName
         {

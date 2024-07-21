@@ -3,7 +3,7 @@ namespace Humidifier.Location
     using System.Collections.Generic;
     using MapTypes;
 
-    public class Map : Humidifier.Resource
+    public class Map : Humidifier.Resource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

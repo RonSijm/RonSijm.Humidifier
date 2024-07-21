@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using DataQualityRulesetTypes;
 
-    public class DataQualityRuleset : Humidifier.Resource
+    public class DataQualityRuleset : Humidifier.Resource, IHaveDescription
     {
         public override string AWSTypeName
         {
