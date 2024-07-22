@@ -27,8 +27,8 @@ jobs:
     - name: Combine version numbers
       run: |
         VERSION=$(cat src/version.txt)
-        SPEC_VERSION=$(cat src/spec-version.txt)
-        FINAL_VERSION="${VERSION}-${SPEC_VERSION}"
+        SPEC_VERSION=$(cat src/spec-version.txt | tr -d '.')
+        FINAL_VERSION="${VERSION}.${SPEC_VERSION}"
         echo "FINAL_VERSION=$FINAL_VERSION" >> $GITHUB_ENV
 
     - name: Build Humidifier

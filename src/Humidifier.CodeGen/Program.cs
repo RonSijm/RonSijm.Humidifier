@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using Humidifier.CodeGen.Features;
 using Humidifier.CodeGen.Features.Init;
 using Humidifier.CodeGen.Features.JsonToModels;
 using Humidifier.CodeGen.Features.ModelToClasses;
@@ -28,7 +27,7 @@ public static class Program
 
         WriteSpecsToFile(sourcePath, json);
 
-        var result = await ModelToClassConverter.ParseSpecs(specification);
+        var result = ModelToClassConverter.ParseSpecs(specification);
 
         foreach (var (resourceType, code) in result)
         {

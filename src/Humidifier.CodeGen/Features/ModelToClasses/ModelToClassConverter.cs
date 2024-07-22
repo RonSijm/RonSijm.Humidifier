@@ -1,12 +1,11 @@
-﻿using System.Threading.Tasks;
-using Humidifier.CodeGen.Features.Extensions;
+﻿using Humidifier.CodeGen.Features.Extensions;
 using Humidifier.CodeGen.Features.JsonToModels.Models;
 
 namespace Humidifier.CodeGen.Features.ModelToClasses;
 
 public static class ModelToClassConverter
 {
-    public static async Task<List<(ResourceType, string)>> ParseSpecs(Specification specification)
+    public static List<(ResourceType, string)> ParseSpecs(Specification specification)
     {
         Console.WriteLine("Parsing spec");
 
@@ -95,7 +94,7 @@ public static class ModelToClassConverter
 
             foreach (var property in resourceType.Properties)
             {
-                var typeName = PropertyExtensions.GetTypeName(property);
+                var typeName = property.GetTypeName();
 
                 var propertyName = property.Name;
                 if (propertyName == resourceType.ResourceClassName || propertyName == "Attributes")
@@ -103,7 +102,7 @@ public static class ModelToClassConverter
                     propertyName += "_";
                 }
 
-                var commentDecl = ParseLeadingTrivia(PropertyExtensions.GetComment(property));
+                var commentDecl = ParseLeadingTrivia(property.GetComment());
 
                 var propertyDecl = PropertyDeclaration(ParseTypeName(typeName), propertyName)
                         .AddModifiers(Token(SyntaxKind.PublicKeyword))
@@ -133,13 +132,13 @@ public static class ModelToClassConverter
                 {
                     foreach (var property in propertyType.Properties)
                     {
-                        var typeName = PropertyExtensions.GetTypeName(property);
+                        var typeName = property.GetTypeName();
 
                         var propertyName = property.Name;
                         if (property.Name == propertyTypeClassName || propertyName == "Attributes")
                             propertyName += "_";
 
-                        var commentDecl = ParseLeadingTrivia(PropertyExtensions.GetComment(property));
+                        var commentDecl = ParseLeadingTrivia(property.GetComment());
 
                         var propertyDecl = PropertyDeclaration(ParseTypeName(typeName), propertyName)
                                 .AddModifiers(Token(SyntaxKind.PublicKeyword))
