@@ -1,16 +1,26 @@
 ﻿using Humidifier.CodeGen.Features.Extensions;
 using Humidifier.CodeGen.Features.JsonToModels.Models;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Humidifier.CodeGen.Features.ModelToClasses;
 
-public static class ModelToClassConverter
+public class SpecsModelToClassConverter
 {
-    public static List<(ResourceType, string)> ParseSpecs(Specification specification)
+    public List<(ResourceType, string)> ParseSpecsToCode(Specification specification)
     {
         Console.WriteLine("Parsing spec");
 
+        var syntaxTreeResults = ParseSpecsToTrees(specification);
 
-        var result = new List<(ResourceType, string)>();
+        var syntaxTreesToCode = syntaxTreeResults
+            .Select(result => (result.Item1, result.Item2.NormalizeWhitespace().ToFullString())).ToList();
+
+        return syntaxTreesToCode;
+    }
+
+    public List<(ResourceType, NamespaceDeclarationSyntax)> ParseSpecsToTrees(Specification specification)
+    {
+        var syntaxTreeResults = new List<(ResourceType, NamespaceDeclarationSyntax)>();
 
         foreach (var resourceType in specification.ResourceTypes)
         {
@@ -165,11 +175,10 @@ public static class ModelToClassConverter
                 namespaceDecl = namespaceDecl.AddMembers(propertyTypesNamespace);
             }
 
-            var code = namespaceDecl.NormalizeWhitespace().ToFullString();
 
-            result.Add((resourceType, code));
+            syntaxTreeResults.Add((resourceType, namespaceDecl));
         }
 
-        return result;
+        return syntaxTreeResults;
     }
 }

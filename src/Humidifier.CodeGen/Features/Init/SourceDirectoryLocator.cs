@@ -1,11 +1,11 @@
 ﻿namespace Humidifier.CodeGen.Features.Init;
 
-public static class SourceDirectoryLocator
+public class SourceDirectoryLocator(PathLocator pathLocator)
 {
-    public static string TryFindSourcePath(string[] args)
+    public string TryFindSourcePath(string[] args)
     {
             var solutionDirectory = GetSolutionDirectory(args);
-            var sourcePath = PathLocator.FindPath(solutionDirectory, "Humidifier.sln");
+            var sourcePath = pathLocator.FindPath(solutionDirectory, "Humidifier.sln");
 
             if (sourcePath == null)
             {
@@ -18,7 +18,7 @@ public static class SourceDirectoryLocator
             return sourcePath;
         }
 
-    public static string GetSolutionDirectory(string[] args)
+    public string GetSolutionDirectory(string[] args)
     {
             string currentDirectory = null;
 

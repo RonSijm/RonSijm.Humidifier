@@ -1,8 +1,8 @@
 ﻿namespace Humidifier.CodeGen.Features.Init;
 
-public static class CleanupHelper
+public class ExistingResultCleaner
 {
-    public static void CleanupOldGeneratedResults(string humidifierPath)
+    public void CleanupOldGeneratedResults(string humidifierPath)
     {
         Console.WriteLine("Cleaning files");
 

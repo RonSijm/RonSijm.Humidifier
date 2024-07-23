@@ -3,9 +3,9 @@ using Humidifier.CodeGen.Features.JsonToModels.Models;
 
 namespace Humidifier.CodeGen.Features.Init;
 
-public static class SpecVersionChecker
+public class SpecVersionChecker
 {
-    public static async Task<string> CheckSpecVersion(string[] args, Specification specification, string sourcePath)
+    public async Task<string> CheckSpecVersion(string[] args, Specification specification, string sourcePath)
     {
         Console.WriteLine($"ResourceSpecificationVersion: {specification.ResourceSpecificationVersion}");
 

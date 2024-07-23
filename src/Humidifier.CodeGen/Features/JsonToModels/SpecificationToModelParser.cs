@@ -4,14 +4,11 @@ using Humidifier.CodeGen.Features.JsonToModels.Models;
 
 namespace Humidifier.CodeGen.Features.JsonToModels;
 
-public static class SpecificationToModelParser
+public class SpecificationToModelParser(IEnumerable<IInterfaceIdentifier> interfaceIdentifiers)
 {
-    private static readonly List<IInterfaceIdentifier> InterfaceIdentifiers = [
-        new HaveTagsInterfaceIdentifier(),
-        new HaveIHavePolicyTextInterfaceIdentifier(),
-        new HaveIHaveDescriptionInterfaceIdentifier()];
+    private readonly List<IInterfaceIdentifier> _interfaceIdentifiers = interfaceIdentifiers.ToList();
 
-    public static Specification ParseSpecification(string json)
+    public Specification ParseSpecification(string json)
     {
         var parsed = JsonConvert.DeserializeObject<JObject>(json);
 
@@ -72,7 +69,7 @@ public static class SpecificationToModelParser
 
         foreach (var specificationResourceType in specification.ResourceTypes)
         {
-            foreach (var interfaceIdentifier in InterfaceIdentifiers)
+            foreach (var interfaceIdentifier in _interfaceIdentifiers)
             {
                 interfaceIdentifier.FindInterface(specificationResourceType);
             }
@@ -81,7 +78,7 @@ public static class SpecificationToModelParser
         return specification;
     }
 
-    private static void DecoratePropertyWithProperties(JProperty propType, PropertyType propertyType)
+    private void DecoratePropertyWithProperties(JProperty propType, PropertyType propertyType)
     {
         var properties = propType.Value.SelectToken("Properties");
 
@@ -102,7 +99,7 @@ public static class SpecificationToModelParser
         }
     }
 
-    private static void DecorateResourceWithProperties(JProperty resType, ResourceType resourceType)
+    private void DecorateResourceWithProperties(JProperty resType, ResourceType resourceType)
     {
         var properties = resType.Value.SelectToken("Properties");
         resourceType.Properties = [];
@@ -114,7 +111,7 @@ public static class SpecificationToModelParser
         }
     }
 
-    public static void DecorateResourceWithAttributes(JProperty resType, ResourceType resourceType)
+    public void DecorateResourceWithAttributes(JProperty resType, ResourceType resourceType)
     {
         var attributes = resType.Value.SelectToken("Attributes");
 

@@ -2,9 +2,9 @@
 
 namespace Humidifier.CodeGen.Features.Init;
 
-public static class SpecDownloader
+public class JsonFromServerRetriever
 {
-    public static async Task<(string, string)> DownloadSpecs()
+    public async Task<(string, string)> DownloadSpecs()
     {
             Console.WriteLine($"Downloading spec from {CodeGenConfig.CloudFormationResourceSpecificationUrl}");
 

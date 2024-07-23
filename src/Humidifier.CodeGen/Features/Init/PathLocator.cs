@@ -1,8 +1,8 @@
 ﻿namespace Humidifier.CodeGen.Features.Init;
 
-public static class PathLocator
+public class PathLocator
 {
-    public static string FindPath(string path, string searchPattern)
+    public string FindPath(string path, string searchPattern)
     {
             Console.WriteLine($"Searching in: {path}");
 

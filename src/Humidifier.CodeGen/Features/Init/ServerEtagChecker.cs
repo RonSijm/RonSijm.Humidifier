@@ -2,9 +2,9 @@
 
 namespace Humidifier.CodeGen.Features.Init;
 
-public static class ServerEtagChecker
+public class ServerEtagChecker
 {
-    public static async Task<string> GetServerEtagVersion()
+    public async Task<string> GetServerEtagVersion()
     {
         var request = new HttpRequestMessage(HttpMethod.Head, CodeGenConfig.CloudFormationResourceSpecificationUrl);
         var client = new HttpClient();
