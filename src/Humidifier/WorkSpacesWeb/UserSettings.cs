@@ -36,6 +36,14 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         public dynamic UploadAllowed { get; set; }
         /// <summary>
+        /// DeepLinkAllowed
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-deeplinkallowed
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeepLinkAllowed { get; set; }
+        /// <summary>
         /// CustomerManagedKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-customermanagedkey
         /// Required: False

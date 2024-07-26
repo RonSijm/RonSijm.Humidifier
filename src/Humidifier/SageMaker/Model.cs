@@ -172,6 +172,18 @@ namespace Humidifier.SageMaker
             public MultiModelConfig MultiModelConfig { get; set; }
         }
 
+        public class HubAccessConfig
+        {
+            /// <summary>
+            /// HubContentArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-modeldatasource-s3datasource-hubaccessconfig.html#cfn-sagemaker-model-containerdefinition-modeldatasource-s3datasource-hubaccessconfig-hubcontentarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HubContentArn { get; set; }
+        }
+
         public class ImageConfig
         {
             /// <summary>
@@ -286,6 +298,14 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic CompressionType { get; set; }
+            /// <summary>
+            /// HubAccessConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-modeldatasource-s3datasource.html#cfn-sagemaker-model-containerdefinition-modeldatasource-s3datasource-hubaccessconfig
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: HubAccessConfig
+            /// </summary>
+            public HubAccessConfig HubAccessConfig { get; set; }
         }
 
         public class VpcConfig

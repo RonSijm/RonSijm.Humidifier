@@ -373,6 +373,28 @@ namespace Humidifier.SageMaker
             public dynamic S3OutputPath { get; set; }
         }
 
+        public class StudioWebPortalSettings
+        {
+            /// <summary>
+            /// HiddenAppTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-studiowebportalsettings.html#cfn-sagemaker-userprofile-studiowebportalsettings-hiddenapptypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic HiddenAppTypes { get; set; }
+            /// <summary>
+            /// HiddenMlTools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-studiowebportalsettings.html#cfn-sagemaker-userprofile-studiowebportalsettings-hiddenmltools
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic HiddenMlTools { get; set; }
+        }
+
         public class UserSettings
         {
             /// <summary>
@@ -400,6 +422,14 @@ namespace Humidifier.SageMaker
             /// Type: KernelGatewayAppSettings
             /// </summary>
             public KernelGatewayAppSettings KernelGatewayAppSettings { get; set; }
+            /// <summary>
+            /// StudioWebPortalSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-studiowebportalsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StudioWebPortalSettings
+            /// </summary>
+            public StudioWebPortalSettings StudioWebPortalSettings { get; set; }
             /// <summary>
             /// CustomFileSystemConfigs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-customfilesystemconfigs

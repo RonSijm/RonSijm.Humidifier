@@ -21,6 +21,14 @@ namespace Humidifier.StepFunctions
         }
 
         /// <summary>
+        /// EncryptionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-encryptionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EncryptionConfiguration
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration { get; set; }
+        /// <summary>
         /// DefinitionString
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionstring
         /// Required: False
@@ -116,6 +124,34 @@ namespace Humidifier.StepFunctions
             /// PrimitiveType: String
             /// </summary>
             public dynamic LogGroupArn { get; set; }
+        }
+
+        public class EncryptionConfiguration
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-encryptionconfiguration.html#cfn-stepfunctions-statemachine-encryptionconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// KmsKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-encryptionconfiguration.html#cfn-stepfunctions-statemachine-encryptionconfiguration-kmskeyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyId { get; set; }
+            /// <summary>
+            /// KmsDataKeyReusePeriodSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-encryptionconfiguration.html#cfn-stepfunctions-statemachine-encryptionconfiguration-kmsdatakeyreuseperiodseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic KmsDataKeyReusePeriodSeconds { get; set; }
         }
 
         public class LogDestination

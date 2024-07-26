@@ -29,7 +29,7 @@ namespace Humidifier.IAM
         /// <summary>
         /// ThumbprintList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-oidcprovider.html#cfn-iam-oidcprovider-thumbprintlist
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String

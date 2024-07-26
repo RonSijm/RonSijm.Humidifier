@@ -57,6 +57,14 @@ namespace Humidifier.MediaPackageV2
         /// </summary>
         public dynamic ContainerType { get; set; }
         /// <summary>
+        /// ForceEndpointErrorConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-forceendpointerrorconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ForceEndpointErrorConfiguration
+        /// </summary>
+        public ForceEndpointErrorConfiguration ForceEndpointErrorConfiguration { get; set; }
+        /// <summary>
         /// OriginEndpointName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-originendpointname
         /// Required: True
@@ -342,6 +350,19 @@ namespace Humidifier.MediaPackageV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic ManifestFilter { get; set; }
+        }
+
+        public class ForceEndpointErrorConfiguration
+        {
+            /// <summary>
+            /// EndpointErrorConditions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-forceendpointerrorconfiguration.html#cfn-mediapackagev2-originendpoint-forceendpointerrorconfiguration-endpointerrorconditions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EndpointErrorConditions { get; set; }
         }
 
         public class HlsManifestConfiguration

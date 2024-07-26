@@ -5,6 +5,11 @@ namespace Humidifier.Lambda
 
     public class Alias : Humidifier.Resource, IHaveDescription
     {
+        public class Attributes
+        {
+            public static string AliasArn =  "AliasArn" ;
+        }
+
         public override string AWSTypeName
         {
             get
@@ -14,14 +19,6 @@ namespace Humidifier.Lambda
         }
 
         /// <summary>
-        /// Description
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Description { get; set; }
-        /// <summary>
         /// FunctionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionname
         /// Required: True
@@ -29,22 +26,6 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic FunctionName { get; set; }
-        /// <summary>
-        /// FunctionVersion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic FunctionVersion { get; set; }
-        /// <summary>
-        /// Name
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Name { get; set; }
         /// <summary>
         /// ProvisionedConcurrencyConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig
@@ -54,6 +35,22 @@ namespace Humidifier.Lambda
         /// </summary>
         public ProvisionedConcurrencyConfiguration ProvisionedConcurrencyConfig { get; set; }
         /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// FunctionVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FunctionVersion { get; set; }
+        /// <summary>
         /// RoutingConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig
         /// Required: False
@@ -61,6 +58,14 @@ namespace Humidifier.Lambda
         /// Type: AliasRoutingConfiguration
         /// </summary>
         public AliasRoutingConfiguration RoutingConfig { get; set; }
+        /// <summary>
+        /// Name
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-name
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Name { get; set; }
     }
 
     namespace AliasTypes
@@ -70,7 +75,7 @@ namespace Humidifier.Lambda
             /// <summary>
             /// AdditionalVersionWeights
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// ItemType: VersionWeight

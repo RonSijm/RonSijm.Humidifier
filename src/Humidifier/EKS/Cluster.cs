@@ -33,6 +33,14 @@ namespace Humidifier.EKS
         /// </summary>
         public Logging Logging { get; set; }
         /// <summary>
+        /// UpgradePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-upgradepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: UpgradePolicy
+        /// </summary>
+        public UpgradePolicy UpgradePolicy { get; set; }
+        /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
         /// Required: False
@@ -322,6 +330,18 @@ namespace Humidifier.EKS
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SubnetIds { get; set; }
+        }
+
+        public class UpgradePolicy
+        {
+            /// <summary>
+            /// SupportType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-upgradepolicy.html#cfn-eks-cluster-upgradepolicy-supporttype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SupportType { get; set; }
         }
     }
 }

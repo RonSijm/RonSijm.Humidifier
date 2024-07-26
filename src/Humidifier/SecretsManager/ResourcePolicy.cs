@@ -4,6 +4,11 @@ namespace Humidifier.SecretsManager
 
     public class ResourcePolicy : Humidifier.Resource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName
         {
             get

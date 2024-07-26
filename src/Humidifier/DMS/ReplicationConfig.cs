@@ -37,7 +37,7 @@ namespace Humidifier.DMS
         /// <summary>
         /// ReplicationConfigIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-replicationconfigidentifier
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
@@ -45,7 +45,7 @@ namespace Humidifier.DMS
         /// <summary>
         /// ComputeConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-computeconfig
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: ComputeConfig
         /// </summary>
@@ -53,7 +53,7 @@ namespace Humidifier.DMS
         /// <summary>
         /// ReplicationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-replicationtype
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
@@ -61,7 +61,7 @@ namespace Humidifier.DMS
         /// <summary>
         /// TableMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-tablemappings
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
@@ -69,7 +69,7 @@ namespace Humidifier.DMS
         /// <summary>
         /// SourceEndpointArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-sourceendpointarn
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
@@ -85,7 +85,7 @@ namespace Humidifier.DMS
         /// <summary>
         /// TargetEndpointArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-targetendpointarn
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>

@@ -76,6 +76,30 @@ namespace Humidifier.Bedrock
 
     namespace KnowledgeBaseTypes
     {
+        public class BedrockEmbeddingModelConfiguration
+        {
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-dimensions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Dimensions { get; set; }
+        }
+
+        public class EmbeddingModelConfiguration
+        {
+            /// <summary>
+            /// BedrockEmbeddingModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-embeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-embeddingmodelconfiguration-bedrockembeddingmodelconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: BedrockEmbeddingModelConfiguration
+            /// </summary>
+            public BedrockEmbeddingModelConfiguration BedrockEmbeddingModelConfiguration { get; set; }
+        }
+
         public class KnowledgeBaseConfiguration
         {
             /// <summary>
@@ -94,6 +118,94 @@ namespace Humidifier.Bedrock
             /// Type: VectorKnowledgeBaseConfiguration
             /// </summary>
             public VectorKnowledgeBaseConfiguration VectorKnowledgeBaseConfiguration { get; set; }
+        }
+
+        public class MongoDbAtlasConfiguration
+        {
+            /// <summary>
+            /// Endpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-endpoint
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Endpoint { get; set; }
+            /// <summary>
+            /// CollectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-collectionname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CollectionName { get; set; }
+            /// <summary>
+            /// VectorIndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-vectorindexname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VectorIndexName { get; set; }
+            /// <summary>
+            /// FieldMapping
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-fieldmapping
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: MongoDbAtlasFieldMapping
+            /// </summary>
+            public MongoDbAtlasFieldMapping FieldMapping { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-databasename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// EndpointServiceName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-endpointservicename
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndpointServiceName { get; set; }
+            /// <summary>
+            /// CredentialsSecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-credentialssecretarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CredentialsSecretArn { get; set; }
+        }
+
+        public class MongoDbAtlasFieldMapping
+        {
+            /// <summary>
+            /// VectorField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasfieldmapping.html#cfn-bedrock-knowledgebase-mongodbatlasfieldmapping-vectorfield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VectorField { get; set; }
+            /// <summary>
+            /// TextField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasfieldmapping.html#cfn-bedrock-knowledgebase-mongodbatlasfieldmapping-textfield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextField { get; set; }
+            /// <summary>
+            /// MetadataField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasfieldmapping.html#cfn-bedrock-knowledgebase-mongodbatlasfieldmapping-metadatafield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetadataField { get; set; }
         }
 
         public class OpenSearchServerlessConfiguration
@@ -307,6 +419,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic Type { get; set; }
             /// <summary>
+            /// MongoDbAtlasConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-mongodbatlasconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: MongoDbAtlasConfiguration
+            /// </summary>
+            public MongoDbAtlasConfiguration MongoDbAtlasConfiguration { get; set; }
+            /// <summary>
             /// RdsConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-rdsconfiguration
             /// Required: False
@@ -326,6 +446,14 @@ namespace Humidifier.Bedrock
 
         public class VectorKnowledgeBaseConfiguration
         {
+            /// <summary>
+            /// EmbeddingModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-vectorknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-vectorknowledgebaseconfiguration-embeddingmodelconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: EmbeddingModelConfiguration
+            /// </summary>
+            public EmbeddingModelConfiguration EmbeddingModelConfiguration { get; set; }
             /// <summary>
             /// EmbeddingModelArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-vectorknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-vectorknowledgebaseconfiguration-embeddingmodelarn

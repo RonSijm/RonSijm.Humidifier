@@ -1100,6 +1100,14 @@ namespace Humidifier.Batch
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic InstanceTypes { get; set; }
+            /// <summary>
+            /// EksProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html#cfn-batch-jobdefinition-noderangeproperty-eksproperties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EksProperties
+            /// </summary>
+            public EksProperties EksProperties { get; set; }
         }
 
         public class PodProperties

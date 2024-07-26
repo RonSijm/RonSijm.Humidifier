@@ -39,6 +39,14 @@ namespace Humidifier.MediaPackageV2
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// InputType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channel.html#cfn-mediapackagev2-channel-inputtype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InputType { get; set; }
+        /// <summary>
         /// ChannelGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channel.html#cfn-mediapackagev2-channel-channelgroupname
         /// Required: True
