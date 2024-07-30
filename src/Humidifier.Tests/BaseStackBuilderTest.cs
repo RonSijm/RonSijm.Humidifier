@@ -1,5 +1,4 @@
 ﻿using Humidifier.Json.Serializer;
-using Newtonsoft.Json;
 
 namespace Humidifier.Tests;
 
@@ -10,7 +9,7 @@ public abstract class BaseStackBuilderTest
     {
         var stack = await BuildStack();
 
-        var serializer = new JsonStackSerializer(new List<JsonConverter>());
+        var serializer = new JsonStackSerializer();
         var template = serializer.Serialize(stack);
 
         var settings = new VerifySettings();

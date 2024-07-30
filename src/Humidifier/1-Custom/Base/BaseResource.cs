@@ -27,4 +27,7 @@ public abstract class BaseResource : BaseHumidifierDTO
         get => _resourceName;
         set => _resourceName = value.CleanName();
     }
+
+    [Ignore]
+    public dynamic DependsOn { get; set; }
 }

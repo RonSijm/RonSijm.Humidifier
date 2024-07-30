@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Humidifier.Base;
+﻿using Humidifier.Base;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
@@ -10,7 +9,7 @@ public class ResourceJson
     public string Type { get; set; }
     public string Condition { get; set; }
     public BaseResource Properties { get; set; }
-    public List<string> DependsOn { get; set; }
+    public dynamic DependsOn { get; set; }
     public CreationPolicy CreationPolicy { get; set; }
     public UpdatePolicy UpdatePolicy { get; set; }
     [JsonConverter(typeof(StringEnumConverter))]

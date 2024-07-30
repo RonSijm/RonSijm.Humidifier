@@ -9,7 +9,7 @@
                 return null;
             }
 
-            var cleanName = name.Replace("-", string.Empty);
+            var cleanName = name.Replace("-", string.Empty).Replace(" ", string.Empty);
             return cleanName;
         }
     }

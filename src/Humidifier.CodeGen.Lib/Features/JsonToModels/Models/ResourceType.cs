@@ -10,13 +10,13 @@ public class ResourceType : IClassType
         get => _name;
         set
         {
-                _name = value;
+            _name = value;
 
-                Parts = value.Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
+            Parts = value.Split(new[] { "::" }, StringSplitOptions.RemoveEmptyEntries);
 
-                Group = Parts[1];
-                ClassName = Parts[2];
-            }
+            Group = Parts[1];
+            ClassName = Parts[2];
+        }
     }
 
     public string[] Parts { get; private set; }

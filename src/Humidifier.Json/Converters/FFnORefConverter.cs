@@ -3,11 +3,11 @@ using Newtonsoft.Json;
 
 namespace Humidifier.Json.Converters
 {
-    public class FnORefConverter : JsonConverter
+    public class FFnORefConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var fn = (FnORef)value;
+            var fn = (FFnARN)value;
             var factory = fn.Result;
             var resultObject = factory.Result;
             var resourceName = resultObject.ResourceName;
@@ -27,6 +27,6 @@ namespace Humidifier.Json.Converters
             throw new NotImplementedException();
         }
 
-        public override bool CanConvert(Type objectType) => objectType == typeof(FnORef);
+        public override bool CanConvert(Type objectType) => objectType == typeof(FFnARN);
     }
 }

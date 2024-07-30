@@ -10,7 +10,7 @@ namespace Humidifier.Json.Serializer;
 
 public class JsonStackSerializer : IStackSerializer
 {
-    public JsonStackSerializer(IList<JsonConverter> injectedConverters)
+    public JsonStackSerializer()
     {
         _settings = new JsonSerializerSettings
         {
@@ -42,13 +42,18 @@ public class JsonStackSerializer : IStackSerializer
         _settings.Converters.Add(new FnNotConverter());
         _settings.Converters.Add(new FnOrConverter());
 
-        if (injectedConverters != null)
-        {
-            foreach (var injectedConverter in injectedConverters)
-            {
-                _settings.Converters.Add(injectedConverter);
-            }
-        }
+        _settings.Converters.Add(new FnOARNRefConverter());
+        _settings.Converters.Add(new FFnORefConverter());
+        _settings.Converters.Add(new FnONamedListConverter());
+        _settings.Converters.Add(new FnOARNRefListConverter());
+
+        //if (injectedConverters != null)
+        //{
+        //    foreach (var injectedConverter in injectedConverters)
+        //    {
+        //        _settings.Converters.Add(injectedConverter);
+        //    }
+        //}
     }
 
     private readonly JsonSerializerSettings _settings;
@@ -111,7 +116,7 @@ public class JsonStackSerializer : IStackSerializer
                     Type = resource.AWSTypeName,
                     Condition = condition,
                     Properties = resource,
-                    DependsOn = dependsOn,
+                    DependsOn = resource.DependsOn,
                     CreationPolicy = creationPolicy,
                     UpdatePolicy = updatePolicy,
                     DeletionPolicy = deletionPolicy,
