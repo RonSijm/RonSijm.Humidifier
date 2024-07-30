@@ -1,0 +1,371 @@
+namespace Humidifier.CleanRooms
+{
+    using System.Collections.Generic;
+    using ConfiguredTableTypes;
+
+    public class ConfiguredTable : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    {
+        public class Attributes
+        {
+            public static string ConfiguredTableIdentifier =  "ConfiguredTableIdentifier" ;
+            public static string Arn =  "Arn" ;
+        }
+
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::CleanRooms::ConfiguredTable";
+            }
+        }
+
+        /// <summary>
+        /// AnalysisMethod
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-analysismethod
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AnalysisMethod { get; set; }
+        /// <summary>
+        /// TableReference
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-tablereference
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: TableReference
+        /// </summary>
+        public ConfiguredTableTypes.TableReference TableReference { get; set; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Description { get; set; }
+        /// <summary>
+        /// AnalysisRules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-analysisrules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AnalysisRule
+        /// </summary>
+        public List<ConfiguredTableTypes.AnalysisRule> AnalysisRules { get; set; }
+        /// <summary>
+        /// AllowedColumns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-allowedcolumns
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic AllowedColumns { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace ConfiguredTableTypes
+    {
+        public class AggregateColumn : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Function
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-aggregatecolumn.html#cfn-cleanrooms-configuredtable-aggregatecolumn-function
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Function { get; set; }
+            /// <summary>
+            /// ColumnNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-aggregatecolumn.html#cfn-cleanrooms-configuredtable-aggregatecolumn-columnnames
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ColumnNames { get; set; }
+        }
+
+        public class AggregationConstraint : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ColumnName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-aggregationconstraint.html#cfn-cleanrooms-configuredtable-aggregationconstraint-columnname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ColumnName { get; set; }
+            /// <summary>
+            /// Minimum
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-aggregationconstraint.html#cfn-cleanrooms-configuredtable-aggregationconstraint-minimum
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Minimum { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-aggregationconstraint.html#cfn-cleanrooms-configuredtable-aggregationconstraint-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class AnalysisRule : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Policy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrule.html#cfn-cleanrooms-configuredtable-analysisrule-policy
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ConfiguredTableAnalysisRulePolicy
+            /// </summary>
+            public ConfiguredTableTypes.ConfiguredTableAnalysisRulePolicy Policy { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrule.html#cfn-cleanrooms-configuredtable-analysisrule-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class AnalysisRuleAggregation : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AllowedJoinOperators
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-allowedjoinoperators
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedJoinOperators { get; set; }
+            /// <summary>
+            /// ScalarFunctions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-scalarfunctions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ScalarFunctions { get; set; }
+            /// <summary>
+            /// OutputConstraints
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-outputconstraints
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AggregationConstraint
+            /// </summary>
+            public List<ConfiguredTableTypes.AggregationConstraint> OutputConstraints { get; set; }
+            /// <summary>
+            /// DimensionColumns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-dimensioncolumns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic DimensionColumns { get; set; }
+            /// <summary>
+            /// JoinColumns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-joincolumns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic JoinColumns { get; set; }
+            /// <summary>
+            /// JoinRequired
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-joinrequired
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic JoinRequired { get; set; }
+            /// <summary>
+            /// AggregateColumns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-aggregatecolumns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AggregateColumn
+            /// </summary>
+            public List<ConfiguredTableTypes.AggregateColumn> AggregateColumns { get; set; }
+        }
+
+        public class AnalysisRuleCustom : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AllowedAnalysisProviders
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-allowedanalysisproviders
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedAnalysisProviders { get; set; }
+            /// <summary>
+            /// DifferentialPrivacy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-differentialprivacy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DifferentialPrivacy
+            /// </summary>
+            public ConfiguredTableTypes.DifferentialPrivacy DifferentialPrivacy { get; set; }
+            /// <summary>
+            /// AllowedAnalyses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-allowedanalyses
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedAnalyses { get; set; }
+        }
+
+        public class AnalysisRuleList : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AllowedJoinOperators
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-allowedjoinoperators
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedJoinOperators { get; set; }
+            /// <summary>
+            /// ListColumns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-listcolumns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ListColumns { get; set; }
+            /// <summary>
+            /// JoinColumns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-joincolumns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic JoinColumns { get; set; }
+        }
+
+        public class ConfiguredTableAnalysisRulePolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// V1
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-configuredtableanalysisrulepolicy.html#cfn-cleanrooms-configuredtable-configuredtableanalysisrulepolicy-v1
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ConfiguredTableAnalysisRulePolicyV1
+            /// </summary>
+            public ConfiguredTableTypes.ConfiguredTableAnalysisRulePolicyV1 V1 { get; set; }
+        }
+
+        public class ConfiguredTableAnalysisRulePolicyV1 : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Aggregation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-configuredtableanalysisrulepolicyv1.html#cfn-cleanrooms-configuredtable-configuredtableanalysisrulepolicyv1-aggregation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisRuleAggregation
+            /// </summary>
+            public ConfiguredTableTypes.AnalysisRuleAggregation Aggregation { get; set; }
+            /// <summary>
+            /// List
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-configuredtableanalysisrulepolicyv1.html#cfn-cleanrooms-configuredtable-configuredtableanalysisrulepolicyv1-list
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisRuleList
+            /// </summary>
+            public ConfiguredTableTypes.AnalysisRuleList List { get; set; }
+            /// <summary>
+            /// Custom
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-configuredtableanalysisrulepolicyv1.html#cfn-cleanrooms-configuredtable-configuredtableanalysisrulepolicyv1-custom
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisRuleCustom
+            /// </summary>
+            public ConfiguredTableTypes.AnalysisRuleCustom Custom { get; set; }
+        }
+
+        public class DifferentialPrivacy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Columns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-differentialprivacy.html#cfn-cleanrooms-configuredtable-differentialprivacy-columns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DifferentialPrivacyColumn
+            /// </summary>
+            public List<ConfiguredTableTypes.DifferentialPrivacyColumn> Columns { get; set; }
+        }
+
+        public class DifferentialPrivacyColumn : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-differentialprivacycolumn.html#cfn-cleanrooms-configuredtable-differentialprivacycolumn-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class GlueTableReference : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-gluetablereference.html#cfn-cleanrooms-configuredtable-gluetablereference-tablename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-gluetablereference.html#cfn-cleanrooms-configuredtable-gluetablereference-databasename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+        }
+
+        public class TableReference : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Glue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-tablereference.html#cfn-cleanrooms-configuredtable-tablereference-glue
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: GlueTableReference
+            /// </summary>
+            public ConfiguredTableTypes.GlueTableReference Glue { get; set; }
+        }
+    }
+}

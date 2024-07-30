@@ -4,7 +4,6 @@
 	<Import Project="..\..\BuildSettings\NuGetVersioning.props" />
 
 	<PropertyGroup>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>RonSijm.Humidifier</Title>
 		<Description>Humidifier allows you to build AWS CloudFormation templates programmatically.</Description>
 		<Copyright>Ron Sijm; Jake Scott</Copyright>
@@ -24,6 +23,7 @@
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<WarningLevel>0</WarningLevel>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,6 +32,10 @@
 
 	<ItemGroup>
 		<None Include="..\..\README.md" Pack="true" PackagePath="packaging" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Gen\" />
 	</ItemGroup>
 
 </Project>

@@ -1,0 +1,40 @@
+namespace Humidifier.ServiceCatalog
+{
+    using System.Collections.Generic;
+
+    public class ServiceActionAssociation : Humidifier.Base.BaseResource
+    {
+        public override string AWSTypeName
+        {
+            get
+            {
+                return @"AWS::ServiceCatalog::ServiceActionAssociation";
+            }
+        }
+
+        /// <summary>
+        /// ServiceActionId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-serviceactionid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ServiceActionId { get; set; }
+        /// <summary>
+        /// ProductId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-productid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ProductId { get; set; }
+        /// <summary>
+        /// ProvisioningArtifactId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceactionassociation.html#cfn-servicecatalog-serviceactionassociation-provisioningartifactid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ProvisioningArtifactId { get; set; }
+    }
+}

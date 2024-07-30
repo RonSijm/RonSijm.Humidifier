@@ -1,0 +1,30 @@
+﻿using Humidifier.Helpers;
+
+namespace Humidifier.Base;
+
+public abstract class BaseResource : BaseHumidifierDTO
+{
+    [Ignore]
+    public abstract string AWSTypeName { get; }
+
+    private string _givenName;
+    private string _resourceName;
+
+    [Ignore]
+    public virtual string GivenName
+    {
+        get => _givenName;
+        set
+        {
+            _givenName = value;
+            ResourceName = value;
+        }
+    }
+
+    [Ignore]
+    public virtual string ResourceName
+    {
+        get => _resourceName;
+        set => _resourceName = value.CleanName();
+    }
+}

@@ -4,7 +4,6 @@
 	<Import Project="..\..\BuildSettings\NuGetVersioning.props" />
 
 	<PropertyGroup>
-		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Description>Json Serialization support for Humidifier.</Description>
 		<Copyright>RonSijm; Jake Scott</Copyright>
 		<AssemblyTitle>RonSijm.Humidifier.Json</AssemblyTitle>
@@ -21,9 +20,9 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<WarningLevel>0</WarningLevel>
 	</PropertyGroup>
-
 
 	<ItemGroup>
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
