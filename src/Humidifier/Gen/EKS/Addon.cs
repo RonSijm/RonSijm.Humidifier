@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using AddonTypes;
 
-    public class Addon : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Addon : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -42,6 +42,7 @@ namespace Humidifier.EKS
         /// PrimitiveType: String
         /// </summary>
         public dynamic ServiceAccountRoleArn { get; set; }
+
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-clustername
@@ -49,6 +50,7 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterName { get; set; }
         public dynamic AddonName { get => GivenName; set => GivenName = value; }
         /// <summary>

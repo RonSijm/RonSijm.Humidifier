@@ -32,7 +32,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CoreNetworkId { get; set; }
+
         /// <summary>
         /// TransitGatewayArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-transitgatewayarn
@@ -40,6 +42,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayArn { get; set; }
         /// <summary>
         /// Tags

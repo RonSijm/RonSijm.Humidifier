@@ -2,7 +2,7 @@ namespace Humidifier.OpenSearchServerless
 {
     using System.Collections.Generic;
 
-    public class VpcEndpoint : Humidifier.Base.BaseResource, IHaveVpcId, IHaveImpliedResourceName
+    public class VpcEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.OpenSearchServerless
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
         /// <summary>
         /// SecurityGroupIds
@@ -34,6 +35,7 @@ namespace Humidifier.OpenSearchServerless
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-vpcendpoint.html#cfn-opensearchserverless-vpcendpoint-subnetids
@@ -42,6 +44,7 @@ namespace Humidifier.OpenSearchServerless
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

@@ -24,7 +24,9 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceId { get; set; }
+
         /// <summary>
         /// Key
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securitykey.html#cfn-connect-securitykey-key
@@ -32,6 +34,7 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Key { get; set; }
     }
 }

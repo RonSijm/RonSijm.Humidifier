@@ -20,7 +20,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterId { get; set; }
+
         /// <summary>
         /// InstanceFleetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancefleettype
@@ -28,6 +30,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceFleetType { get; set; }
         /// <summary>
         /// InstanceTypeConfigs

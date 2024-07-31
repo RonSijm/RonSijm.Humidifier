@@ -43,6 +43,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic SslPolicy { get; set; }
+
         /// <summary>
         /// LoadBalancerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-loadbalancerarn
@@ -50,7 +51,9 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LoadBalancerArn { get; set; }
+
         /// <summary>
         /// DefaultActions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions
@@ -59,6 +62,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Type: List
         /// ItemType: Action
         /// </summary>
+        [Required]
         public List<ListenerTypes.Action> DefaultActions { get; set; }
         /// <summary>
         /// Port

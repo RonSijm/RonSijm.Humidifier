@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class Dimension : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Dimension : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,7 +24,9 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// StringValues
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-dimension.html#cfn-iot-dimension-stringvalues
@@ -33,6 +35,7 @@ namespace Humidifier.IoT
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic StringValues { get; set; }
         /// <summary>
         /// Tags

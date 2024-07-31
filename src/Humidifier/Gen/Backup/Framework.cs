@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using FrameworkTypes;
 
-    public class Framework : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Framework : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.Backup
         /// Type: List
         /// ItemType: FrameworkControl
         /// </summary>
+        [Required]
         public List<FrameworkTypes.FrameworkControl> FrameworkControls { get; set; }
         public dynamic FrameworkName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -48,6 +49,9 @@ namespace Humidifier.Backup
         /// PrimitiveType: String
         /// </summary>
         public dynamic FrameworkDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => FrameworkDescription; set => FrameworkDescription = value; }
     }
 
     namespace FrameworkTypes

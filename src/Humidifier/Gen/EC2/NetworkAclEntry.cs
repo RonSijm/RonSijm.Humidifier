@@ -26,6 +26,7 @@ namespace Humidifier.EC2
         /// Type: PortRange
         /// </summary>
         public NetworkAclEntryTypes.PortRange PortRange { get; set; }
+
         /// <summary>
         /// NetworkAclId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-networkaclid
@@ -33,7 +34,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NetworkAclId { get; set; }
+
         /// <summary>
         /// RuleAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-ruleaction
@@ -41,6 +44,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleAction { get; set; }
         /// <summary>
         /// CidrBlock
@@ -58,6 +62,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic Egress { get; set; }
+
         /// <summary>
         /// RuleNumber
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-rulenumber
@@ -65,6 +70,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic RuleNumber { get; set; }
         /// <summary>
         /// Ipv6CidrBlock
@@ -74,6 +80,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Ipv6CidrBlock { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-protocol
@@ -81,6 +88,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Protocol { get; set; }
         /// <summary>
         /// Icmp

@@ -70,6 +70,7 @@ namespace Humidifier.StepFunctions
         /// </summary>
         public StateMachineTypes.S3Location DefinitionS3Location { get; set; }
         public dynamic StateMachineName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn
@@ -77,6 +78,7 @@ namespace Humidifier.StepFunctions
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

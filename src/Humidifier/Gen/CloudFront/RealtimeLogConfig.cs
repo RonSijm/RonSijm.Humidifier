@@ -26,7 +26,9 @@ namespace Humidifier.CloudFront
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Fields { get; set; }
+
         /// <summary>
         /// EndPoints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-endpoints
@@ -35,7 +37,9 @@ namespace Humidifier.CloudFront
         /// Type: List
         /// ItemType: EndPoint
         /// </summary>
+        [Required]
         public List<RealtimeLogConfigTypes.EndPoint> EndPoints { get; set; }
+
         /// <summary>
         /// SamplingRate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-samplingrate
@@ -43,6 +47,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
+        [Required]
         public dynamic SamplingRate { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

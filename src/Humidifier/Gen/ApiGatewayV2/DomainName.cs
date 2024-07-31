@@ -27,6 +27,7 @@ namespace Humidifier.ApiGatewayV2
         /// Type: MutualTlsAuthentication
         /// </summary>
         public DomainNameTypes.MutualTlsAuthentication MutualTlsAuthentication { get; set; }
+
         /// <summary>
         /// DomainName_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainname
@@ -34,6 +35,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName_ { get; set; }
         /// <summary>
         /// DomainNameConfigurations

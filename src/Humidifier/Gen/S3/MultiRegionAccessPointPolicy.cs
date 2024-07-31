@@ -25,7 +25,9 @@ namespace Humidifier.S3
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// MrapName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspointpolicy.html#cfn-s3-multiregionaccesspointpolicy-mrapname
@@ -33,6 +35,7 @@ namespace Humidifier.S3
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MrapName { get; set; }
     }
 

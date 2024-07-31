@@ -2,7 +2,7 @@ namespace Humidifier.SSM
 {
     using System.Collections.Generic;
 
-    public class Parameter : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Parameter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -58,6 +59,7 @@ namespace Humidifier.SSM
         /// PrimitiveType: String
         /// </summary>
         public dynamic Tier { get; set; }
+
         /// <summary>
         /// Value
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-parameter.html#cfn-ssm-parameter-value
@@ -65,6 +67,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Value { get; set; }
         /// <summary>
         /// DataType

@@ -2,7 +2,7 @@ namespace Humidifier.Route53Profiles
 {
     using System.Collections.Generic;
 
-    public class ProfileAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ProfileAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,7 +24,9 @@ namespace Humidifier.Route53Profiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProfileId { get; set; }
+
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53profiles-profileassociation.html#cfn-route53profiles-profileassociation-resourceid
@@ -32,6 +34,7 @@ namespace Humidifier.Route53Profiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceId { get; set; }
         /// <summary>
         /// Arn

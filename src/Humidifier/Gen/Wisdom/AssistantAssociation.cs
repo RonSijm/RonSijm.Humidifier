@@ -27,7 +27,9 @@ namespace Humidifier.Wisdom
         /// UpdateType: Immutable
         /// Type: AssociationData
         /// </summary>
+        [Required]
         public AssistantAssociationTypes.AssociationData Association { get; set; }
+
         /// <summary>
         /// AssociationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-associationtype
@@ -35,7 +37,9 @@ namespace Humidifier.Wisdom
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AssociationType { get; set; }
+
         /// <summary>
         /// AssistantId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-assistantassociation.html#cfn-wisdom-assistantassociation-assistantid
@@ -43,6 +47,7 @@ namespace Humidifier.Wisdom
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AssistantId { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -44,6 +44,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic AccessString { get; set; }
+
         /// <summary>
         /// UserId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-userid
@@ -51,6 +52,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserId { get; set; }
         /// <summary>
         /// Passwords
@@ -61,6 +63,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Passwords { get; set; }
+
         /// <summary>
         /// Engine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-engine
@@ -68,6 +71,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Engine { get; set; }
         /// <summary>
         /// Tags

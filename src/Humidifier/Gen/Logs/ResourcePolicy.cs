@@ -19,7 +19,9 @@ namespace Humidifier.Logs
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyName { get; set; }
+
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-resourcepolicy.html#cfn-logs-resourcepolicy-policydocument
@@ -27,6 +29,7 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
     }
 }

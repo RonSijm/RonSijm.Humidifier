@@ -20,7 +20,9 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BundleId { get; set; }
+
         /// <summary>
         /// DirectoryId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-directoryid
@@ -28,6 +30,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DirectoryId { get; set; }
         /// <summary>
         /// RootVolumeEncryptionEnabled
@@ -46,6 +49,7 @@ namespace Humidifier.WorkSpaces
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// UserName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-username
@@ -53,6 +57,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserName { get; set; }
         /// <summary>
         /// UserVolumeEncryptionEnabled

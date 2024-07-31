@@ -24,7 +24,9 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// ResourceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-authpolicy.html#cfn-vpclattice-authpolicy-resourceidentifier
@@ -32,6 +34,7 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceIdentifier { get; set; }
     }
 }

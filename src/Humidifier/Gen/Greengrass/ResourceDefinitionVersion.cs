@@ -21,7 +21,9 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: ResourceInstance
         /// </summary>
+        [Required]
         public List<ResourceDefinitionVersionTypes.ResourceInstance> Resources { get; set; }
+
         /// <summary>
         /// ResourceDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resourcedefinitionid
@@ -29,6 +31,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceDefinitionId { get; set; }
     }
 

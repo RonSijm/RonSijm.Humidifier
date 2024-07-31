@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using GuardrailTypes;
 
-    public class Guardrail : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Guardrail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -57,6 +57,7 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyArn { get; set; }
+
         /// <summary>
         /// BlockedInputMessaging
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-guardrail.html#cfn-bedrock-guardrail-blockedinputmessaging
@@ -64,7 +65,9 @@ namespace Humidifier.Bedrock
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BlockedInputMessaging { get; set; }
+
         /// <summary>
         /// BlockedOutputsMessaging
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-guardrail.html#cfn-bedrock-guardrail-blockedoutputsmessaging
@@ -72,6 +75,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BlockedOutputsMessaging { get; set; }
         /// <summary>
         /// SensitiveInformationPolicyConfig

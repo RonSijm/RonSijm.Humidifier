@@ -30,7 +30,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectAttachmentId { get; set; }
+
         /// <summary>
         /// PeerAddress
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-peeraddress
@@ -38,6 +40,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PeerAddress { get; set; }
         /// <summary>
         /// SubnetArn

@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ImagePipelineTypes;
 
-    public class ImagePipeline : Humidifier.Base.BaseResource, IHaveDescription, IHaveExecutionRole, IHaveImpliedResourceName
+    public class ImagePipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveExecutionRole
     {
         public class Attributes
         {
@@ -61,6 +61,7 @@ namespace Humidifier.ImageBuilder
         /// </summary>
         public List<ImagePipelineTypes.WorkflowConfiguration> Workflows { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// InfrastructureConfigurationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-infrastructureconfigurationarn
@@ -68,6 +69,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InfrastructureConfigurationArn { get; set; }
         /// <summary>
         /// ImageRecipeArn

@@ -2,7 +2,7 @@ namespace Humidifier.OpenSearchServerless
 {
     using System.Collections.Generic;
 
-    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -19,7 +19,9 @@ namespace Humidifier.OpenSearchServerless
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-lifecyclepolicy.html#cfn-opensearchserverless-lifecyclepolicy-type
@@ -27,6 +29,7 @@ namespace Humidifier.OpenSearchServerless
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description

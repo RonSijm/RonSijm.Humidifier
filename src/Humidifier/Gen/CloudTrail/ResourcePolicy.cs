@@ -19,7 +19,9 @@ namespace Humidifier.CloudTrail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceArn { get; set; }
+
         /// <summary>
         /// ResourcePolicy_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-resourcepolicy.html#cfn-cloudtrail-resourcepolicy-resourcepolicy
@@ -27,6 +29,7 @@ namespace Humidifier.CloudTrail
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic ResourcePolicy_ { get; set; }
     }
 }

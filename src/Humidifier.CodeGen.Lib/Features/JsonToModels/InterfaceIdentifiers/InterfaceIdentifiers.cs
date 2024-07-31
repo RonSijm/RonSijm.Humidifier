@@ -10,3 +10,4 @@ public class HaveIHaveExecutionRoleInterfaceIdentifier() : BaseSingleDynamicProp
 public class HaveIHaveRoleInterfaceIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("Role", "IHaveRole");
 public class HaveIHaveVpcIdInterfaceIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("VpcId", "IHaveVpcId");
 public class HaveIHavePolicyDocumentIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("PolicyDocument", "IHavePolicyDocument");
+public class HaveIHaveSubnetIdsIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("SubnetIds", "IHaveSubnetIds");

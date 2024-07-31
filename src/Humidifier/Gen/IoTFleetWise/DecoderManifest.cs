@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using DecoderManifestTypes;
 
-    public class DecoderManifest : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class DecoderManifest : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -54,6 +54,7 @@ namespace Humidifier.IoTFleetWise
         /// ItemType: NetworkInterfacesItems
         /// </summary>
         public List<DecoderManifestTypes.NetworkInterfacesItems> NetworkInterfaces { get; set; }
+
         /// <summary>
         /// ModelManifestArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#cfn-iotfleetwise-decodermanifest-modelmanifestarn
@@ -61,6 +62,7 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ModelManifestArn { get; set; }
         /// <summary>
         /// Tags

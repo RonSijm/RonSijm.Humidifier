@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using FirewallPolicyTypes;
 
-    public class FirewallPolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class FirewallPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.NetworkFirewall
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// FirewallPolicy_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy
@@ -44,6 +45,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Mutable
         /// Type: FirewallPolicy
         /// </summary>
+        [Required]
         public FirewallPolicyTypes.FirewallPolicy FirewallPolicy_ { get; set; }
     }
 

@@ -22,6 +22,7 @@ namespace Humidifier.Cognito
         /// ItemType: AttributeType
         /// </summary>
         public List<UserPoolUserTypes.AttributeType> ValidationData { get; set; }
+
         /// <summary>
         /// UserPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userpoolid
@@ -29,6 +30,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserPoolId { get; set; }
         /// <summary>
         /// Username

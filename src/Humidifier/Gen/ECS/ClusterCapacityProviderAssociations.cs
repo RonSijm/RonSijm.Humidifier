@@ -21,7 +21,9 @@ namespace Humidifier.ECS
         /// Type: List
         /// ItemType: CapacityProviderStrategy
         /// </summary>
+        [Required]
         public List<ClusterCapacityProviderAssociationsTypes.CapacityProviderStrategy> DefaultCapacityProviderStrategy { get; set; }
+
         /// <summary>
         /// CapacityProviders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-capacityproviders
@@ -30,7 +32,9 @@ namespace Humidifier.ECS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic CapacityProviders { get; set; }
+
         /// <summary>
         /// Cluster
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-cluster
@@ -38,6 +42,7 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Cluster { get; set; }
     }
 

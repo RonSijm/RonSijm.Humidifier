@@ -2,7 +2,7 @@ namespace Humidifier.Neptune
 {
     using System.Collections.Generic;
 
-    public class DBParameterGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class DBParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -19,7 +19,9 @@ namespace Humidifier.Neptune
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-parameters
@@ -27,7 +29,9 @@ namespace Humidifier.Neptune
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Parameters { get; set; }
+
         /// <summary>
         /// Family
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbparametergroup.html#cfn-neptune-dbparametergroup-family
@@ -35,6 +39,7 @@ namespace Humidifier.Neptune
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Family { get; set; }
         /// <summary>
         /// Tags

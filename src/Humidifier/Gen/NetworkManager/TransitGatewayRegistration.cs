@@ -19,7 +19,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GlobalNetworkId { get; set; }
+
         /// <summary>
         /// TransitGatewayArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayregistration.html#cfn-networkmanager-transitgatewayregistration-transitgatewayarn
@@ -27,6 +29,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayArn { get; set; }
     }
 }

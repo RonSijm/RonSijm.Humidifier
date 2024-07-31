@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using HoursOfOperationTypes;
 
-    public class HoursOfOperation : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class HoursOfOperation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TimeZone { get; set; }
         /// <summary>
         /// Description
@@ -34,6 +35,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Config
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-config
@@ -42,7 +44,9 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: HoursOfOperationConfig
         /// </summary>
+        [Required]
         public List<HoursOfOperationTypes.HoursOfOperationConfig> Config { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-instancearn
@@ -50,6 +54,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// Tags

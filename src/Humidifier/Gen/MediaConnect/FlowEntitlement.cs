@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using System.Collections.Generic;
     using FlowEntitlementTypes;
 
-    public class FlowEntitlement : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class FlowEntitlement : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DataTransferSubscriberFeePercent { get; set; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-description
@@ -33,6 +34,7 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Encryption
@@ -42,6 +44,7 @@ namespace Humidifier.MediaConnect
         /// Type: Encryption
         /// </summary>
         public FlowEntitlementTypes.Encryption Encryption { get; set; }
+
         /// <summary>
         /// Subscribers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-subscribers
@@ -50,7 +53,9 @@ namespace Humidifier.MediaConnect
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Subscribers { get; set; }
+
         /// <summary>
         /// FlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-flowarn
@@ -58,6 +63,7 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FlowArn { get; set; }
         /// <summary>
         /// EntitlementStatus

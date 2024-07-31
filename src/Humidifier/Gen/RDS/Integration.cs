@@ -2,7 +2,7 @@ namespace Humidifier.RDS
 {
     using System.Collections.Generic;
 
-    public class Integration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Integration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic KMSKeyId { get; set; }
+
         /// <summary>
         /// SourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-integration.html#cfn-rds-integration-sourcearn
@@ -50,7 +51,9 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceArn { get; set; }
+
         /// <summary>
         /// TargetArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-integration.html#cfn-rds-integration-targetarn
@@ -58,6 +61,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetArn { get; set; }
         /// <summary>
         /// AdditionalEncryptionContext

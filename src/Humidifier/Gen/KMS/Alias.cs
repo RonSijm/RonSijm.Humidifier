@@ -19,6 +19,7 @@ namespace Humidifier.KMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetKeyId { get; set; }
         public dynamic AliasName { get => GivenName; set => GivenName = value; }
     }

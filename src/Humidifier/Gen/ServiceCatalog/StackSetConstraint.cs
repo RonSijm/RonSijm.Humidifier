@@ -19,7 +19,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
+
         /// <summary>
         /// StackInstanceControl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-stackinstancecontrol
@@ -27,6 +29,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackInstanceControl { get; set; }
         /// <summary>
         /// AcceptLanguage
@@ -36,6 +39,7 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: String
         /// </summary>
         public dynamic AcceptLanguage { get; set; }
+
         /// <summary>
         /// PortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-portfolioid
@@ -43,7 +47,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PortfolioId { get; set; }
+
         /// <summary>
         /// ProductId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-productid
@@ -51,7 +57,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProductId { get; set; }
+
         /// <summary>
         /// RegionList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-regionlist
@@ -60,7 +68,9 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic RegionList { get; set; }
+
         /// <summary>
         /// AdminRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-adminrole
@@ -68,7 +78,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AdminRole { get; set; }
+
         /// <summary>
         /// AccountList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-accountlist
@@ -77,7 +89,9 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AccountList { get; set; }
+
         /// <summary>
         /// ExecutionRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-stacksetconstraint.html#cfn-servicecatalog-stacksetconstraint-executionrole
@@ -85,6 +99,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ExecutionRole { get; set; }
     }
 }

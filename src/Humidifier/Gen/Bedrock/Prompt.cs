@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using PromptTypes;
 
-    public class Prompt : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Prompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {

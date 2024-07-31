@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using TriggerTypes;
 
-    public class Trigger : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Trigger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// StartOnCreation
@@ -37,6 +38,7 @@ namespace Humidifier.Glue
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Actions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
@@ -45,6 +47,7 @@ namespace Humidifier.Glue
         /// Type: List
         /// ItemType: Action
         /// </summary>
+        [Required]
         public List<TriggerTypes.Action> Actions { get; set; }
         /// <summary>
         /// EventBatchingCondition

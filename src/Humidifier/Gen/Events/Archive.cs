@@ -2,7 +2,7 @@ namespace Humidifier.Events
 {
     using System.Collections.Generic;
 
-    public class Archive : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Archive : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -33,6 +33,7 @@ namespace Humidifier.Events
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-sourcearn
@@ -40,6 +41,7 @@ namespace Humidifier.Events
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceArn { get; set; }
         public dynamic ArchiveName { get => GivenName; set => GivenName = value; }
         /// <summary>

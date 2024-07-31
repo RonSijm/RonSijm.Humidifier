@@ -20,6 +20,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SecretId { get; set; }
         /// <summary>
         /// HostedRotationLambda

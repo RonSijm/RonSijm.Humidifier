@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using JobTypes;
 
-    public class Job : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -78,6 +78,7 @@ namespace Humidifier.DataBrew
         /// Type: OutputLocation
         /// </summary>
         public JobTypes.OutputLocation OutputLocation { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-rolearn
@@ -85,8 +86,10 @@ namespace Humidifier.DataBrew
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-type
@@ -94,6 +97,7 @@ namespace Humidifier.DataBrew
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// DatasetName

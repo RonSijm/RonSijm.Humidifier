@@ -3,7 +3,7 @@ namespace Humidifier.SecurityLake
     using System.Collections.Generic;
     using SubscriberTypes;
 
-    public class Subscriber : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Subscriber : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Mutable
         /// Type: SubscriberIdentity
         /// </summary>
+        [Required]
         public SubscriberTypes.SubscriberIdentity SubscriberIdentity { get; set; }
         public dynamic SubscriberName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -39,6 +40,10 @@ namespace Humidifier.SecurityLake
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubscriberDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => SubscriberDescription; set => SubscriberDescription = value; }
+
         /// <summary>
         /// AccessTypes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-subscriber.html#cfn-securitylake-subscriber-accesstypes
@@ -47,7 +52,9 @@ namespace Humidifier.SecurityLake
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AccessTypes { get; set; }
+
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-subscriber.html#cfn-securitylake-subscriber-sources
@@ -56,7 +63,9 @@ namespace Humidifier.SecurityLake
         /// Type: List
         /// ItemType: Source
         /// </summary>
+        [Required]
         public List<SubscriberTypes.Source> Sources { get; set; }
+
         /// <summary>
         /// DataLakeArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-subscriber.html#cfn-securitylake-subscriber-datalakearn
@@ -64,6 +73,7 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataLakeArn { get; set; }
         /// <summary>
         /// Tags

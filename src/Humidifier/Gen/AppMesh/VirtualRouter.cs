@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualRouterTypes;
 
-    public class VirtualRouter : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VirtualRouter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MeshName { get; set; }
         public dynamic VirtualRouterName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -40,6 +41,7 @@ namespace Humidifier.AppMesh
         /// PrimitiveType: String
         /// </summary>
         public dynamic MeshOwner { get; set; }
+
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec
@@ -47,6 +49,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: VirtualRouterSpec
         /// </summary>
+        [Required]
         public VirtualRouterTypes.VirtualRouterSpec Spec { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.RUM
     using System.Collections.Generic;
     using AppMonitorTypes;
 
-    public class AppMonitor : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class AppMonitor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.RUM
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic CwLogEnabled { get; set; }
+
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-domain
@@ -41,6 +42,7 @@ namespace Humidifier.RUM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Domain { get; set; }
         /// <summary>
         /// AppMonitorConfiguration

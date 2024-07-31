@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using StorageVirtualMachineTypes;
 
-    public class StorageVirtualMachine : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class StorageVirtualMachine : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -44,6 +44,7 @@ namespace Humidifier.FSx
         /// PrimitiveType: String
         /// </summary>
         public dynamic RootVolumeSecurityStyle { get; set; }
+
         /// <summary>
         /// FileSystemId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-filesystemid
@@ -51,6 +52,7 @@ namespace Humidifier.FSx
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileSystemId { get; set; }
         /// <summary>
         /// Tags

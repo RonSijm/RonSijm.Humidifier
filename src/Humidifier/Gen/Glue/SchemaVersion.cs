@@ -25,7 +25,9 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SchemaDefinition { get; set; }
+
         /// <summary>
         /// Schema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversion.html#cfn-glue-schemaversion-schema
@@ -33,6 +35,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// Type: Schema
         /// </summary>
+        [Required]
         public SchemaVersionTypes.Schema Schema { get; set; }
     }
 

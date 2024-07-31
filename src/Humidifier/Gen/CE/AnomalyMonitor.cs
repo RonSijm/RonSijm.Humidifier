@@ -29,6 +29,7 @@ namespace Humidifier.CE
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MonitorType { get; set; }
         /// <summary>
         /// ResourceTags
@@ -39,6 +40,7 @@ namespace Humidifier.CE
         /// ItemType: ResourceTag
         /// </summary>
         public List<AnomalyMonitorTypes.ResourceTag> ResourceTags { get; set; }
+
         /// <summary>
         /// MonitorName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#cfn-ce-anomalymonitor-monitorname
@@ -46,6 +48,7 @@ namespace Humidifier.CE
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MonitorName { get; set; }
         /// <summary>
         /// MonitorSpecification

@@ -33,6 +33,7 @@ namespace Humidifier.IAM
         /// PrimitiveType: String
         /// </summary>
         public dynamic Status { get; set; }
+
         /// <summary>
         /// UserName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-username
@@ -40,6 +41,7 @@ namespace Humidifier.IAM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserName { get; set; }
     }
 }

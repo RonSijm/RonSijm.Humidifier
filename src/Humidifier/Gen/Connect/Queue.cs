@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using QueueTypes;
 
-    public class Queue : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic Status { get; set; }
+
         /// <summary>
         /// HoursOfOperationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-hoursofoperationarn
@@ -34,6 +35,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic HoursOfOperationArn { get; set; }
         /// <summary>
         /// Description
@@ -43,6 +45,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-instancearn
@@ -50,6 +53,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// QuickConnectArns

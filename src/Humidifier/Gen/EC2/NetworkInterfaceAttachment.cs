@@ -26,6 +26,7 @@ namespace Humidifier.EC2
         /// Type: EnaSrdSpecification
         /// </summary>
         public NetworkInterfaceAttachmentTypes.EnaSrdSpecification EnaSrdSpecification { get; set; }
+
         /// <summary>
         /// InstanceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-instanceid
@@ -33,7 +34,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceId { get; set; }
+
         /// <summary>
         /// DeviceIndex
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-deviceindex
@@ -41,7 +44,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DeviceIndex { get; set; }
+
         /// <summary>
         /// NetworkInterfaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-networkinterfaceid
@@ -49,6 +54,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NetworkInterfaceId { get; set; }
         /// <summary>
         /// DeleteOnTermination

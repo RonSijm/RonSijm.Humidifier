@@ -19,7 +19,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayRouteTableId { get; set; }
+
         /// <summary>
         /// DestinationCidrBlock
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-destinationcidrblock
@@ -27,6 +29,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DestinationCidrBlock { get; set; }
         /// <summary>
         /// Blackhole

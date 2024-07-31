@@ -60,6 +60,7 @@ namespace Humidifier.Deadline
         /// PrimitiveType: String
         /// </summary>
         public dynamic DefaultBudgetAction { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queue.html#cfn-deadline-queue-displayname
@@ -67,6 +68,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// RequiredFileSystemLocationNames

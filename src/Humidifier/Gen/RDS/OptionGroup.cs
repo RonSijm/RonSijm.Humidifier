@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using OptionGroupTypes;
 
-    public class OptionGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class OptionGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,7 +20,11 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OptionGroupDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => OptionGroupDescription; set => OptionGroupDescription = value; }
         public dynamic OptionGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// OptionConfigurations
@@ -31,6 +35,7 @@ namespace Humidifier.RDS
         /// ItemType: OptionConfiguration
         /// </summary>
         public List<OptionGroupTypes.OptionConfiguration> OptionConfigurations { get; set; }
+
         /// <summary>
         /// MajorEngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion
@@ -38,7 +43,9 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MajorEngineVersion { get; set; }
+
         /// <summary>
         /// EngineName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-enginename
@@ -46,6 +53,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineName { get; set; }
         /// <summary>
         /// Tags

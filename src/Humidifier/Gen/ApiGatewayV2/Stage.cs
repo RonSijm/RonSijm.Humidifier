@@ -3,7 +3,7 @@ namespace Humidifier.ApiGatewayV2
     using System.Collections.Generic;
     using StageTypes;
 
-    public class Stage : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -78,6 +78,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic AccessPolicyId { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-apiid
@@ -85,6 +86,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
         /// <summary>
         /// DefaultRouteSettings

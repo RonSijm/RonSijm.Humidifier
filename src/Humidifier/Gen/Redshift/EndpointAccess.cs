@@ -30,7 +30,9 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointName { get; set; }
+
         /// <summary>
         /// VpcSecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcsecuritygroupids
@@ -39,6 +41,7 @@ namespace Humidifier.Redshift
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic VpcSecurityGroupIds { get; set; }
         /// <summary>
         /// ResourceOwner
@@ -48,6 +51,7 @@ namespace Humidifier.Redshift
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceOwner { get; set; }
+
         /// <summary>
         /// SubnetGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-subnetgroupname
@@ -55,7 +59,9 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubnetGroupName { get; set; }
+
         /// <summary>
         /// ClusterIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-clusteridentifier
@@ -63,6 +69,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterIdentifier { get; set; }
     }
 

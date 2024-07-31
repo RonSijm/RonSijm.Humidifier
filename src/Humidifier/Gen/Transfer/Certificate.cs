@@ -31,6 +31,7 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic InactiveDate { get; set; }
+
         /// <summary>
         /// Usage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-usage
@@ -38,6 +39,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Usage { get; set; }
         /// <summary>
         /// PrivateKey
@@ -80,6 +82,7 @@ namespace Humidifier.Transfer
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Certificate_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-certificate
@@ -87,6 +90,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Certificate_ { get; set; }
     }
 }

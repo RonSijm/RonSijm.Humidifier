@@ -24,7 +24,9 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetType { get; set; }
+
         /// <summary>
         /// TargetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-resourcespecificlogging.html#cfn-iot-resourcespecificlogging-targetname
@@ -32,7 +34,9 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetName { get; set; }
+
         /// <summary>
         /// LogLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-resourcespecificlogging.html#cfn-iot-resourcespecificlogging-loglevel
@@ -40,6 +44,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LogLevel { get; set; }
     }
 }

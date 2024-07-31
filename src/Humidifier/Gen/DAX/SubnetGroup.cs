@@ -2,7 +2,7 @@ namespace Humidifier.DAX
 {
     using System.Collections.Generic;
 
-    public class SubnetGroup : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class SubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSubnetIds
     {
         public override string AWSTypeName
         {
@@ -21,6 +21,7 @@ namespace Humidifier.DAX
         /// </summary>
         public dynamic Description { get; set; }
         public dynamic SubnetGroupName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-subnetids
@@ -29,6 +30,7 @@ namespace Humidifier.DAX
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
     }
 }

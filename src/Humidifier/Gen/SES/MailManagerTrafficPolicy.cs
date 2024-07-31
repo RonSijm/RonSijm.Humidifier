@@ -26,7 +26,9 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefaultAction { get; set; }
+
         /// <summary>
         /// PolicyStatements
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-mailmanagertrafficpolicy.html#cfn-ses-mailmanagertrafficpolicy-policystatements
@@ -35,6 +37,7 @@ namespace Humidifier.SES
         /// Type: List
         /// ItemType: PolicyStatement
         /// </summary>
+        [Required]
         public List<MailManagerTrafficPolicyTypes.PolicyStatement> PolicyStatements { get; set; }
         /// <summary>
         /// TrafficPolicyName

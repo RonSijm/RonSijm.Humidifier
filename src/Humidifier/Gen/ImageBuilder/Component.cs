@@ -2,7 +2,7 @@ namespace Humidifier.ImageBuilder
 {
     using System.Collections.Generic;
 
-    public class Component : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Component : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SupportedOsVersions { get; set; }
+
         /// <summary>
         /// Platform
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-platform
@@ -44,6 +45,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Platform { get; set; }
         /// <summary>
         /// KmsKeyId
@@ -53,6 +55,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-version
@@ -60,6 +63,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Version { get; set; }
         /// <summary>
         /// ChangeDescription

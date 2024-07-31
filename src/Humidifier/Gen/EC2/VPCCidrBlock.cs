@@ -33,6 +33,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Ipv6IpamPoolId { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid
@@ -40,6 +41,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
         /// <summary>
         /// Ipv4NetmaskLength

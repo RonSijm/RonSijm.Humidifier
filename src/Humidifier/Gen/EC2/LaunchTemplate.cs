@@ -21,6 +21,7 @@ namespace Humidifier.EC2
         }
 
         public dynamic LaunchTemplateName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// LaunchTemplateData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
@@ -28,6 +29,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// Type: LaunchTemplateData
         /// </summary>
+        [Required]
         public LaunchTemplateTypes.LaunchTemplateData LaunchTemplateData { get; set; }
         /// <summary>
         /// VersionDescription

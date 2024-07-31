@@ -20,6 +20,7 @@ namespace Humidifier.SSO
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// AccessControlAttributes

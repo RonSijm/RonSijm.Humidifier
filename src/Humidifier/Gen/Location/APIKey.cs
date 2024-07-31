@@ -28,6 +28,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyName { get; set; }
         /// <summary>
         /// Description
@@ -69,6 +70,7 @@ namespace Humidifier.Location
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ForceUpdate { get; set; }
+
         /// <summary>
         /// Restrictions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-apikey.html#cfn-location-apikey-restrictions
@@ -76,6 +78,7 @@ namespace Humidifier.Location
         /// UpdateType: Mutable
         /// Type: ApiKeyRestrictions
         /// </summary>
+        [Required]
         public APIKeyTypes.ApiKeyRestrictions Restrictions { get; set; }
         /// <summary>
         /// Tags

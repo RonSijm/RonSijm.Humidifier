@@ -19,6 +19,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Ec2VolumeId { get; set; }
         /// <summary>
         /// MountPoint
@@ -29,6 +30,7 @@ namespace Humidifier.OpsWorks
         /// </summary>
         public dynamic MountPoint { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// StackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-volume.html#cfn-opsworks-volume-stackid
@@ -36,6 +38,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackId { get; set; }
     }
 }

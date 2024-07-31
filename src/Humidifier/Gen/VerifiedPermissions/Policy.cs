@@ -26,7 +26,9 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Mutable
         /// Type: PolicyDefinition
         /// </summary>
+        [Required]
         public PolicyTypes.PolicyDefinition Definition { get; set; }
+
         /// <summary>
         /// PolicyStoreId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-policy.html#cfn-verifiedpermissions-policy-policystoreid
@@ -34,6 +36,7 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyStoreId { get; set; }
     }
 

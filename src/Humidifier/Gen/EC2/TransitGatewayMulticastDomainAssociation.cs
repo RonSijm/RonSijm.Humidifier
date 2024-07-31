@@ -26,7 +26,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayMulticastDomainId { get; set; }
+
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-subnetid
@@ -34,7 +36,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubnetId { get; set; }
+
         /// <summary>
         /// TransitGatewayAttachmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-transitgatewayattachmentid
@@ -42,6 +46,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayAttachmentId { get; set; }
     }
 }

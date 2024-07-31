@@ -27,6 +27,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// Type: BackupPlanResourceType
         /// </summary>
+        [Required]
         public BackupPlanTypes.BackupPlanResourceType BackupPlan_ { get; set; }
         /// <summary>
         /// BackupPlanTags

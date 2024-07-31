@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using ThemeTypes;
 
-    public class Theme : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Theme : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ThemeId { get; set; }
         /// <summary>
         /// VersionDescription
@@ -38,6 +39,7 @@ namespace Humidifier.QuickSight
         /// PrimitiveType: String
         /// </summary>
         public dynamic VersionDescription { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-configuration
@@ -45,7 +47,9 @@ namespace Humidifier.QuickSight
         /// UpdateType: Mutable
         /// Type: ThemeConfiguration
         /// </summary>
+        [Required]
         public ThemeTypes.ThemeConfiguration Configuration { get; set; }
+
         /// <summary>
         /// BaseThemeId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-basethemeid
@@ -53,7 +57,9 @@ namespace Humidifier.QuickSight
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BaseThemeId { get; set; }
+
         /// <summary>
         /// AwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-awsaccountid
@@ -61,6 +67,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AwsAccountId { get; set; }
         /// <summary>
         /// Permissions

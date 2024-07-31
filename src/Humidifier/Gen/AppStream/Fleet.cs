@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -151,6 +151,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MaxSessionsPerInstance { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-instancetype
@@ -158,6 +159,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// MaxConcurrentSessions
@@ -248,7 +250,7 @@ namespace Humidifier.AppStream
             public dynamic S3Key { get; set; }
         }
 
-        public class VpcConfig : Humidifier.Base.BaseSubResource
+        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

@@ -20,6 +20,7 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Mutable
         /// Type: AccessRights
         /// </summary>
+        [Required]
         public TemplateGroupAccessControlEntryTypes.AccessRights AccessRights { get; set; }
         /// <summary>
         /// TemplateArn
@@ -29,6 +30,7 @@ namespace Humidifier.PCAConnectorAD
         /// PrimitiveType: String
         /// </summary>
         public dynamic TemplateArn { get; set; }
+
         /// <summary>
         /// GroupDisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-templategroupaccesscontrolentry.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-groupdisplayname
@@ -36,6 +38,7 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupDisplayName { get; set; }
         /// <summary>
         /// GroupSecurityIdentifier

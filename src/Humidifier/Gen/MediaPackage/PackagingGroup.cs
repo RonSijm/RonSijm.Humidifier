@@ -27,6 +27,7 @@ namespace Humidifier.MediaPackage
         /// Type: Authorization
         /// </summary>
         public PackagingGroupTypes.Authorization Authorization { get; set; }
+
         /// <summary>
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packaginggroup.html#cfn-mediapackage-packaginggroup-id
@@ -34,6 +35,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Id { get; set; }
         /// <summary>
         /// EgressAccessLogs

@@ -3,7 +3,7 @@ namespace Humidifier.S3Outposts
     using System.Collections.Generic;
     using BucketTypes;
 
-    public class Bucket : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.S3Outposts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OutpostId { get; set; }
         public dynamic BucketName { get => GivenName; set => GivenName = value; }
         /// <summary>

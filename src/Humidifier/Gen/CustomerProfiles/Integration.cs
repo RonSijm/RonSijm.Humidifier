@@ -28,6 +28,7 @@ namespace Humidifier.CustomerProfiles
         /// ItemType: ObjectTypeMapping
         /// </summary>
         public List<IntegrationTypes.ObjectTypeMapping> ObjectTypeNames { get; set; }
+
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-domainname
@@ -35,6 +36,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
         /// ObjectTypeName

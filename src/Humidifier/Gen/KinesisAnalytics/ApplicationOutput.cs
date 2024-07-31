@@ -20,7 +20,9 @@ namespace Humidifier.KinesisAnalytics
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationName { get; set; }
+
         /// <summary>
         /// Output
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-output
@@ -28,6 +30,7 @@ namespace Humidifier.KinesisAnalytics
         /// UpdateType: Mutable
         /// Type: Output
         /// </summary>
+        [Required]
         public ApplicationOutputTypes.Output Output { get; set; }
     }
 

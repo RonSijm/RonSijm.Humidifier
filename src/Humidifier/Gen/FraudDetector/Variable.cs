@@ -2,7 +2,7 @@ namespace Humidifier.FraudDetector
 {
     using System.Collections.Generic;
 
-    public class Variable : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Variable : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.FraudDetector
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefaultValue { get; set; }
         /// <summary>
         /// Description
@@ -43,6 +44,7 @@ namespace Humidifier.FraudDetector
         /// PrimitiveType: String
         /// </summary>
         public dynamic VariableType { get; set; }
+
         /// <summary>
         /// DataType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html#cfn-frauddetector-variable-datatype
@@ -50,6 +52,7 @@ namespace Humidifier.FraudDetector
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataType { get; set; }
         /// <summary>
         /// Tags
@@ -61,6 +64,7 @@ namespace Humidifier.FraudDetector
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DataSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html#cfn-frauddetector-variable-datasource
@@ -68,6 +72,7 @@ namespace Humidifier.FraudDetector
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataSource { get; set; }
     }
 }

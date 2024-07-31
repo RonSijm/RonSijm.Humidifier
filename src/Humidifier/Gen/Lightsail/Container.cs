@@ -29,6 +29,7 @@ namespace Humidifier.Lightsail
         /// ItemType: PublicDomainName
         /// </summary>
         public List<ContainerTypes.PublicDomainName> PublicDomainNames { get; set; }
+
         /// <summary>
         /// ServiceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-servicename
@@ -36,6 +37,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceName { get; set; }
         /// <summary>
         /// PrivateRegistryAccess
@@ -61,6 +63,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic IsDisabled { get; set; }
+
         /// <summary>
         /// Scale
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-scale
@@ -68,7 +71,9 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Scale { get; set; }
+
         /// <summary>
         /// Power
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-power
@@ -76,6 +81,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Power { get; set; }
         /// <summary>
         /// Tags

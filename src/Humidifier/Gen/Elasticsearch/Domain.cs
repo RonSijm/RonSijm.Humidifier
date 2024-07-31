@@ -3,7 +3,7 @@ namespace Humidifier.Elasticsearch
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -488,7 +488,7 @@ namespace Humidifier.Elasticsearch
             public dynamic AutomatedSnapshotStartHour { get; set; }
         }
 
-        public class VPCOptions : Humidifier.Base.BaseSubResource
+        public class VPCOptions : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroupIds

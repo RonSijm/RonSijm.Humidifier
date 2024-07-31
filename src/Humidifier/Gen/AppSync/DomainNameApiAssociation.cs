@@ -24,7 +24,9 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainnameapiassociation.html#cfn-appsync-domainnameapiassociation-apiid
@@ -32,6 +34,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
     }
 }

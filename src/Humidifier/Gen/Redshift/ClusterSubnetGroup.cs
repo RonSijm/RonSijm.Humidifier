@@ -2,7 +2,7 @@ namespace Humidifier.Redshift
 {
     using System.Collections.Generic;
 
-    public class ClusterSubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
+    public class ClusterSubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -24,7 +24,9 @@ namespace Humidifier.Redshift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersubnetgroup.html#cfn-redshift-clustersubnetgroup-subnetids
@@ -33,6 +35,7 @@ namespace Humidifier.Redshift
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

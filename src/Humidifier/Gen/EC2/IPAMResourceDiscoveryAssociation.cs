@@ -31,6 +31,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IpamId { get; set; }
         /// <summary>
         /// Tags
@@ -41,6 +42,7 @@ namespace Humidifier.EC2
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// IpamResourceDiscoveryId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamresourcediscoveryid
@@ -48,6 +50,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IpamResourceDiscoveryId { get; set; }
     }
 }

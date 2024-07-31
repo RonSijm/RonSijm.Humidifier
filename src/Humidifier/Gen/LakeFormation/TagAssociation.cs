@@ -27,7 +27,9 @@ namespace Humidifier.LakeFormation
         /// Type: List
         /// ItemType: LFTagPair
         /// </summary>
+        [Required]
         public List<TagAssociationTypes.LFTagPair> LFTags { get; set; }
+
         /// <summary>
         /// Resource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-tagassociation.html#cfn-lakeformation-tagassociation-resource
@@ -35,6 +37,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// Type: Resource
         /// </summary>
+        [Required]
         public TagAssociationTypes.Resource Resource { get; set; }
     }
 

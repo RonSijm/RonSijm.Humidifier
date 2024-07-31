@@ -52,6 +52,7 @@ namespace Humidifier.Pinpoint
         /// PrimitiveType: String
         /// </summary>
         public dynamic TokenKey { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-applicationid
@@ -59,6 +60,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// TeamId

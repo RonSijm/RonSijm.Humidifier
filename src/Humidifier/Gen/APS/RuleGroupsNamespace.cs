@@ -2,7 +2,7 @@ namespace Humidifier.APS
 {
     using System.Collections.Generic;
 
-    public class RuleGroupsNamespace : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class RuleGroupsNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.APS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Data { get; set; }
         /// <summary>
         /// Tags
@@ -34,6 +35,7 @@ namespace Humidifier.APS
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Workspace
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-rulegroupsnamespace.html#cfn-aps-rulegroupsnamespace-workspace
@@ -41,6 +43,7 @@ namespace Humidifier.APS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Workspace { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

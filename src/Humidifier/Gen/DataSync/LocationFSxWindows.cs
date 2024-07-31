@@ -25,6 +25,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic User { get; set; }
         /// <summary>
         /// Subdirectory
@@ -50,6 +51,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic Domain { get; set; }
+
         /// <summary>
         /// SecurityGroupArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-securitygrouparns
@@ -58,6 +60,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupArns { get; set; }
         /// <summary>
         /// Tags

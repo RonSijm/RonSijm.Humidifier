@@ -28,6 +28,7 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: List
         /// ItemType: IpRule
         /// </summary>
+        [Required]
         public List<IpAccessSettingsTypes.IpRule> IpRules { get; set; }
         /// <summary>
         /// Description

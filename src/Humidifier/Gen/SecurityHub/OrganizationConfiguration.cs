@@ -27,6 +27,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AutoEnable { get; set; }
         /// <summary>
         /// ConfigurationType

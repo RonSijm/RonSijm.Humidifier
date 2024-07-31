@@ -25,6 +25,7 @@ namespace Humidifier.SecretsManager
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic BlockPublicPolicy { get; set; }
+
         /// <summary>
         /// SecretId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-secretid
@@ -32,7 +33,9 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SecretId { get; set; }
+
         /// <summary>
         /// ResourcePolicy_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-resourcepolicy
@@ -40,6 +43,7 @@ namespace Humidifier.SecretsManager
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic ResourcePolicy_ { get; set; }
     }
 }

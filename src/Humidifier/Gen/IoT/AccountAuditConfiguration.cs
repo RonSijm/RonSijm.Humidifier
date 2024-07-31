@@ -20,7 +20,9 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccountId { get; set; }
+
         /// <summary>
         /// AuditCheckConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations
@@ -28,6 +30,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// Type: AuditCheckConfigurations
         /// </summary>
+        [Required]
         public AccountAuditConfigurationTypes.AuditCheckConfigurations AuditCheckConfigurations { get; set; }
         /// <summary>
         /// AuditNotificationTargetConfigurations
@@ -37,6 +40,7 @@ namespace Humidifier.IoT
         /// Type: AuditNotificationTargetConfigurations
         /// </summary>
         public AccountAuditConfigurationTypes.AuditNotificationTargetConfigurations AuditNotificationTargetConfigurations { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-rolearn
@@ -44,6 +48,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
     }
 

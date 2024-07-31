@@ -27,6 +27,7 @@ namespace Humidifier.S3
         /// UpdateType: Mutable
         /// Type: Grantee
         /// </summary>
+        [Required]
         public AccessGrantTypes.Grantee Grantee { get; set; }
         /// <summary>
         /// AccessGrantsLocationConfiguration
@@ -44,6 +45,7 @@ namespace Humidifier.S3
         /// PrimitiveType: String
         /// </summary>
         public dynamic ApplicationArn { get; set; }
+
         /// <summary>
         /// Permission
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accessgrant.html#cfn-s3-accessgrant-permission
@@ -51,6 +53,7 @@ namespace Humidifier.S3
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Permission { get; set; }
         /// <summary>
         /// S3PrefixType
@@ -69,6 +72,7 @@ namespace Humidifier.S3
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AccessGrantsLocationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accessgrant.html#cfn-s3-accessgrant-accessgrantslocationid
@@ -76,6 +80,7 @@ namespace Humidifier.S3
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccessGrantsLocationId { get; set; }
     }
 

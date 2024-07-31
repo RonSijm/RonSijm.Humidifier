@@ -24,7 +24,9 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyType { get; set; }
+
         /// <summary>
         /// UsagePlanId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-usageplanid
@@ -32,7 +34,9 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UsagePlanId { get; set; }
+
         /// <summary>
         /// KeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplankey.html#cfn-apigateway-usageplankey-keyid
@@ -40,6 +44,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyId { get; set; }
     }
 }

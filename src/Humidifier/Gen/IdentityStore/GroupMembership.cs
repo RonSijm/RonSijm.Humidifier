@@ -25,7 +25,9 @@ namespace Humidifier.IdentityStore
         /// UpdateType: Immutable
         /// Type: MemberId
         /// </summary>
+        [Required]
         public GroupMembershipTypes.MemberId MemberId { get; set; }
+
         /// <summary>
         /// IdentityStoreId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-groupmembership.html#cfn-identitystore-groupmembership-identitystoreid
@@ -33,7 +35,9 @@ namespace Humidifier.IdentityStore
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityStoreId { get; set; }
+
         /// <summary>
         /// GroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-groupmembership.html#cfn-identitystore-groupmembership-groupid
@@ -41,6 +45,7 @@ namespace Humidifier.IdentityStore
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupId { get; set; }
     }
 

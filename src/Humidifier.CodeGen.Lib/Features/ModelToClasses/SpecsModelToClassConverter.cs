@@ -48,14 +48,6 @@ public class SpecsModelToClassConverter
                 .AddModifiers(Token(SyntaxKind.PublicKeyword))
                 .AddBaseListTypes(SimpleBaseType(ParseTypeName("Humidifier.Base.BaseResource")));
 
-            if (resourceType.Interfaces != null)
-            {
-                foreach (var interfaceType in resourceType.Interfaces)
-                {
-                    resourceClassDecl = resourceClassDecl.AddBaseListTypes(SimpleBaseType(ParseTypeName(interfaceType.Name)));
-                }
-            }
-
             if (resourceType.Attributes != null)
             {
                 var attributesClassDecl = ClassDeclaration("Attributes")
@@ -88,24 +80,23 @@ public class SpecsModelToClassConverter
                 resourceClassDecl = resourceClassDecl.AddMembers(attributesClassDecl);
             }
 
-            {
-                var propertyDecAWSType = PropertyDeclaration(ParseTypeName("string"), "AWSTypeName")
-                    .AddModifiers(Token(SyntaxKind.PublicKeyword))
-                    .AddModifiers(Token(SyntaxKind.OverrideKeyword))
-                    .AddAccessorListAccessors(
-                        AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithBody(Block(
-                                ReturnStatement(
-                                    LiteralExpression(
-                                        SyntaxKind.StringLiteralExpression,
-                                        Literal($@"@""{resourceType.Name}""", resourceType.Name)
-                                    )
+            var propertyDecAWSType = PropertyDeclaration(ParseTypeName("string"), "AWSTypeName")
+                .AddModifiers(Token(SyntaxKind.PublicKeyword))
+                .AddModifiers(Token(SyntaxKind.OverrideKeyword))
+                .AddAccessorListAccessors(
+                    AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithBody(Block(
+                            ReturnStatement(
+                                LiteralExpression(
+                                    SyntaxKind.StringLiteralExpression,
+                                    Literal($@"@""{resourceType.Name}""", resourceType.Name)
                                 )
                             )
                         )
-                    );
+                    )
+                );
 
-                resourceClassDecl = resourceClassDecl.AddMembers(propertyDecAWSType);
-            }
+            resourceClassDecl = resourceClassDecl.AddMembers(propertyDecAWSType);
+
 
             var hasImpliedResourceName = false;
 
@@ -120,7 +111,7 @@ public class SpecsModelToClassConverter
 
                 var commentDecl = ParseLeadingTrivia(property.GetComment());
 
-                if (property.Name == "Name" || property.Name == $"{resourceType.ClassName}Name")
+                if (property.Name == "Name" || property.Name == $"{resourceType.ClassName}Name" && !hasImpliedResourceName)
                 {
                     hasImpliedResourceName = true;
 
@@ -141,21 +132,46 @@ public class SpecsModelToClassConverter
                         );
 
                     resourceClassDecl = resourceClassDecl.AddMembers(propertyDecl);
+
+
+
+                }
+                else if (property.Name == $"{resourceType.ClassName}Description")
+                {
+                    resourceClassDecl = AddTypeProperty(typeName, property, commentDecl, resourceClassDecl);
+
+                    var propertyDecl = PropertyDeclaration(IdentifierName("dynamic"), "Description")
+                        .AddModifiers(Token(SyntaxKind.PublicKeyword))
+                        .AddAttributeLists(
+                            AttributeList(
+                                SingletonSeparatedList(
+                                    Attribute(
+                                        IdentifierName("Ignore"))
+                                )
+                            )
+                        )
+                        .AddAccessorListAccessors(
+                            AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                                .WithExpressionBody(ArrowExpressionClause(
+                                    IdentifierName(property.Name)))
+                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                            AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+                                .WithExpressionBody(ArrowExpressionClause(
+                                    AssignmentExpression(
+                                        SyntaxKind.SimpleAssignmentExpression,
+                                        IdentifierName(property.Name),
+                                        IdentifierName("value"))))
+                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                        );
+
+                    resourceClassDecl = resourceClassDecl.AddMembers(propertyDecl);
+
+                    resourceType.Interfaces ??= [];
+                    resourceType.Interfaces.Add(new InterfaceType() { Name = "IHaveDescription" });
                 }
                 else
                 {
-                    var propertyDecl = PropertyDeclaration(ParseTypeName(typeName), $"{property.Name}")
-                            .AddModifiers(Token(SyntaxKind.PublicKeyword))
-                            .AddAccessorListAccessors(
-                                AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
-                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
-                                AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
-                                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                            )
-                            .WithLeadingTrivia(TriviaList(commentDecl))
-                        ;
-
-                    resourceClassDecl = resourceClassDecl.AddMembers(propertyDecl);
+                    resourceClassDecl = AddTypeProperty(typeName, property, commentDecl, resourceClassDecl);
                 }
             }
 
@@ -211,6 +227,15 @@ public class SpecsModelToClassConverter
                 propertyTypesNamespace = propertyTypesNamespace.AddMembers(propertyTypeClassDecl);
             }
 
+            if (resourceType.Interfaces != null)
+            {
+                foreach (var interfaceType in resourceType.Interfaces)
+                {
+                    resourceClassDecl = resourceClassDecl.AddBaseListTypes(SimpleBaseType(ParseTypeName(interfaceType.Name)));
+                }
+            }
+
+            // Don't modify resourceClassDecl below here, it has no effect after it's been added to the namespace.
             namespaceDecl = namespaceDecl.AddMembers(resourceClassDecl);
 
             if (propertyTypes.Any())
@@ -218,10 +243,38 @@ public class SpecsModelToClassConverter
                 namespaceDecl = namespaceDecl.AddMembers(propertyTypesNamespace);
             }
 
-
             syntaxTreeResults.Add((resourceType, namespaceDecl));
         }
 
         return syntaxTreeResults;
+    }
+
+    private static ClassDeclarationSyntax AddTypeProperty(string typeName, Property property, SyntaxTriviaList commentDecl, ClassDeclarationSyntax resourceClassDecl)
+    {
+        var propertyDecl = PropertyDeclaration(ParseTypeName(typeName), $"{property.Name}").AddModifiers(Token(SyntaxKind.PublicKeyword));
+
+        if (property.Required)
+        {
+            propertyDecl = propertyDecl.AddAttributeLists(
+                AttributeList(
+                    SingletonSeparatedList(
+                        Attribute(
+                            IdentifierName("Required"))
+                    )
+                )
+            );
+        }
+
+        propertyDecl = propertyDecl.AddAccessorListAccessors(
+                    AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+                    AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                )
+                .WithLeadingTrivia(TriviaList(commentDecl))
+            ;
+
+        resourceClassDecl = resourceClassDecl.AddMembers(propertyDecl);
+        return resourceClassDecl;
     }
 }

@@ -35,6 +35,7 @@ namespace Humidifier.NetworkManager
         /// Type: ProposedSegmentChange
         /// </summary>
         public ConnectAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
+
         /// <summary>
         /// Options
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-options
@@ -42,7 +43,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// Type: ConnectAttachmentOptions
         /// </summary>
+        [Required]
         public ConnectAttachmentTypes.ConnectAttachmentOptions Options { get; set; }
+
         /// <summary>
         /// TransportAttachmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-transportattachmentid
@@ -50,7 +53,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransportAttachmentId { get; set; }
+
         /// <summary>
         /// CoreNetworkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-corenetworkid
@@ -58,6 +63,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CoreNetworkId { get; set; }
         /// <summary>
         /// Tags
@@ -68,6 +74,7 @@ namespace Humidifier.NetworkManager
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// EdgeLocation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-edgelocation
@@ -75,6 +82,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EdgeLocation { get; set; }
     }
 

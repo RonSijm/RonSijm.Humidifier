@@ -26,6 +26,7 @@ namespace Humidifier.Lex
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// BotId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-botid
@@ -33,7 +34,9 @@ namespace Humidifier.Lex
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BotId { get; set; }
+
         /// <summary>
         /// BotVersionLocaleSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-botversionlocalespecification
@@ -42,6 +45,7 @@ namespace Humidifier.Lex
         /// Type: List
         /// ItemType: BotVersionLocaleSpecification
         /// </summary>
+        [Required]
         public List<BotVersionTypes.BotVersionLocaleSpecification> BotVersionLocaleSpecification { get; set; }
     }
 

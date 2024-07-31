@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using AppImageConfigTypes;
 
-    public class AppImageConfig : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class AppImageConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

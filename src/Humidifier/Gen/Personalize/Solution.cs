@@ -42,6 +42,7 @@ namespace Humidifier.Personalize
         /// PrimitiveType: String
         /// </summary>
         public dynamic EventType { get; set; }
+
         /// <summary>
         /// DatasetGroupArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-datasetgrouparn
@@ -49,6 +50,7 @@ namespace Humidifier.Personalize
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatasetGroupArn { get; set; }
         /// <summary>
         /// SolutionConfig

@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DashboardTypes;
 
-    public class Dashboard : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -70,6 +70,7 @@ namespace Humidifier.QuickSight
         /// Type: ValidationStrategy
         /// </summary>
         public DashboardTypes.ValidationStrategy ValidationStrategy { get; set; }
+
         /// <summary>
         /// DashboardId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-dashboardid
@@ -77,6 +78,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DashboardId { get; set; }
         /// <summary>
         /// LinkSharingConfiguration
@@ -95,6 +97,7 @@ namespace Humidifier.QuickSight
         /// Type: DashboardPublishOptions
         /// </summary>
         public DashboardTypes.DashboardPublishOptions DashboardPublishOptions { get; set; }
+
         /// <summary>
         /// AwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-awsaccountid
@@ -102,6 +105,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AwsAccountId { get; set; }
         /// <summary>
         /// Permissions

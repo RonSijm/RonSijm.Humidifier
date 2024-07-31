@@ -27,6 +27,7 @@ namespace Humidifier.RoboMaker
         /// Type: RenderingEngine
         /// </summary>
         public SimulationApplicationTypes.RenderingEngine RenderingEngine { get; set; }
+
         /// <summary>
         /// SimulationSoftwareSuite
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite
@@ -34,6 +35,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Mutable
         /// Type: SimulationSoftwareSuite
         /// </summary>
+        [Required]
         public SimulationApplicationTypes.SimulationSoftwareSuite SimulationSoftwareSuite { get; set; }
         /// <summary>
         /// CurrentRevisionId
@@ -51,6 +53,7 @@ namespace Humidifier.RoboMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic Environment { get; set; }
+
         /// <summary>
         /// RobotSoftwareSuite
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite
@@ -58,6 +61,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Mutable
         /// Type: RobotSoftwareSuite
         /// </summary>
+        [Required]
         public SimulationApplicationTypes.RobotSoftwareSuite RobotSoftwareSuite { get; set; }
         /// <summary>
         /// Sources

@@ -2,7 +2,7 @@ namespace Humidifier.CloudFormation
 {
     using System.Collections.Generic;
 
-    public class Macro : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Macro : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.CloudFormation
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// FunctionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-functionname
@@ -27,6 +28,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionName { get; set; }
         /// <summary>
         /// LogGroupName

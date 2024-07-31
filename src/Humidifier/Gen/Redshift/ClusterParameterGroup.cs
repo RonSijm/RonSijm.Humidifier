@@ -20,6 +20,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Parameters
@@ -38,6 +39,7 @@ namespace Humidifier.Redshift
         /// PrimitiveType: String
         /// </summary>
         public dynamic ParameterGroupName { get; set; }
+
         /// <summary>
         /// ParameterGroupFamily
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
@@ -45,6 +47,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ParameterGroupFamily { get; set; }
         /// <summary>
         /// Tags

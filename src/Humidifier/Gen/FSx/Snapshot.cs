@@ -2,7 +2,7 @@ namespace Humidifier.FSx
 {
     using System.Collections.Generic;
 
-    public class Snapshot : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Snapshot : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.FSx
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VolumeId { get; set; }
         /// <summary>
         /// Tags

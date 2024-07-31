@@ -19,7 +19,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TagOptionId { get; set; }
+
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoptionassociation.html#cfn-servicecatalog-tagoptionassociation-resourceid
@@ -27,6 +29,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceId { get; set; }
     }
 }

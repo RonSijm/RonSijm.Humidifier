@@ -21,7 +21,9 @@ namespace Humidifier.Logs
         /// Type: List
         /// ItemType: MetricTransformation
         /// </summary>
+        [Required]
         public List<MetricFilterTypes.MetricTransformation> MetricTransformations { get; set; }
+
         /// <summary>
         /// FilterPattern
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-logs-metricfilter-filterpattern
@@ -29,7 +31,9 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FilterPattern { get; set; }
+
         /// <summary>
         /// LogGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-logs-metricfilter-loggroupname
@@ -37,6 +41,7 @@ namespace Humidifier.Logs
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LogGroupName { get; set; }
         /// <summary>
         /// FilterName

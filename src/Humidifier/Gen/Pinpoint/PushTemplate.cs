@@ -34,6 +34,7 @@ namespace Humidifier.Pinpoint
         /// Type: AndroidPushNotificationTemplate
         /// </summary>
         public PushTemplateTypes.AndroidPushNotificationTemplate Baidu { get; set; }
+
         /// <summary>
         /// TemplateName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatename
@@ -41,6 +42,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TemplateName { get; set; }
         /// <summary>
         /// ADM

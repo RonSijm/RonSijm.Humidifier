@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using AnalysisTemplateTypes;
 
-    public class AnalysisTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class AnalysisTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MembershipIdentifier { get; set; }
         /// <summary>
         /// Description
@@ -39,6 +40,7 @@ namespace Humidifier.CleanRooms
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Format
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-analysistemplate.html#cfn-cleanrooms-analysistemplate-format
@@ -46,6 +48,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Format { get; set; }
         /// <summary>
         /// AnalysisParameters
@@ -56,6 +59,7 @@ namespace Humidifier.CleanRooms
         /// ItemType: AnalysisParameter
         /// </summary>
         public List<AnalysisTemplateTypes.AnalysisParameter> AnalysisParameters { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-analysistemplate.html#cfn-cleanrooms-analysistemplate-source
@@ -63,6 +67,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// Type: AnalysisSource
         /// </summary>
+        [Required]
         public AnalysisTemplateTypes.AnalysisSource Source { get; set; }
         /// <summary>
         /// Tags

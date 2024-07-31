@@ -34,6 +34,7 @@ namespace Humidifier.KMS
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic PendingWindowInDays { get; set; }
+
         /// <summary>
         /// KeyPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-keypolicy
@@ -41,7 +42,9 @@ namespace Humidifier.KMS
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic KeyPolicy { get; set; }
+
         /// <summary>
         /// PrimaryKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-primarykeyarn
@@ -49,6 +52,7 @@ namespace Humidifier.KMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrimaryKeyArn { get; set; }
         /// <summary>
         /// Enabled

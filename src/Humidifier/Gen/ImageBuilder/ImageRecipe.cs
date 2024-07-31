@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ImageRecipeTypes;
 
-    public class ImageRecipe : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ImageRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.ImageBuilder
         /// Type: List
         /// ItemType: ComponentConfiguration
         /// </summary>
+        [Required]
         public List<ImageRecipeTypes.ComponentConfiguration> Components { get; set; }
         /// <summary>
         /// WorkingDirectory
@@ -36,6 +37,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic WorkingDirectory { get; set; }
+
         /// <summary>
         /// ParentImage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-parentimage
@@ -43,6 +45,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ParentImage { get; set; }
         /// <summary>
         /// Description
@@ -52,6 +55,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-version
@@ -59,6 +63,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Version { get; set; }
         /// <summary>
         /// BlockDeviceMappings

@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using AppBlockBuilderTypes;
 
-    public class AppBlockBuilder : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class AppBlockBuilder : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Platform
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-platform
@@ -34,7 +35,9 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Platform { get; set; }
+
         /// <summary>
         /// VpcConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-vpcconfig
@@ -42,6 +45,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// Type: VpcConfig
         /// </summary>
+        [Required]
         public AppBlockBuilderTypes.VpcConfig VpcConfig { get; set; }
         /// <summary>
         /// AppBlockArns
@@ -76,6 +80,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic IamRoleArn { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-instancetype
@@ -83,6 +88,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// Tags
@@ -127,7 +133,7 @@ namespace Humidifier.AppStream
             public dynamic VpceId { get; set; }
         }
 
-        public class VpcConfig : Humidifier.Base.BaseSubResource
+        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroupIds

@@ -19,7 +19,9 @@ namespace Humidifier.IAM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserName { get; set; }
+
         /// <summary>
         /// PolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-userpolicy.html#cfn-iam-userpolicy-policyname
@@ -27,6 +29,7 @@ namespace Humidifier.IAM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyName { get; set; }
         /// <summary>
         /// PolicyDocument

@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -20,7 +20,9 @@ namespace Humidifier.DataBrew
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RecipeName { get; set; }
+
         /// <summary>
         /// DatasetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-datasetname
@@ -28,6 +30,7 @@ namespace Humidifier.DataBrew
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatasetName { get; set; }
         /// <summary>
         /// Sample
@@ -37,6 +40,7 @@ namespace Humidifier.DataBrew
         /// Type: Sample
         /// </summary>
         public ProjectTypes.Sample Sample { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-rolearn
@@ -44,6 +48,7 @@ namespace Humidifier.DataBrew
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

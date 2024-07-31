@@ -26,7 +26,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ModelBiasJobInput
         /// </summary>
+        [Required]
         public ModelBiasJobDefinitionTypes.ModelBiasJobInput ModelBiasJobInput { get; set; }
+
         /// <summary>
         /// ModelBiasJobOutputConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjoboutputconfig
@@ -34,6 +36,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: MonitoringOutputConfig
         /// </summary>
+        [Required]
         public ModelBiasJobDefinitionTypes.MonitoringOutputConfig ModelBiasJobOutputConfig { get; set; }
         /// <summary>
         /// EndpointName
@@ -59,6 +62,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic JobDefinitionName { get; set; }
+
         /// <summary>
         /// JobResources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobresources
@@ -66,6 +70,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: MonitoringResources
         /// </summary>
+        [Required]
         public ModelBiasJobDefinitionTypes.MonitoringResources JobResources { get; set; }
         /// <summary>
         /// NetworkConfig
@@ -83,6 +88,7 @@ namespace Humidifier.SageMaker
         /// Type: ModelBiasBaselineConfig
         /// </summary>
         public ModelBiasJobDefinitionTypes.ModelBiasBaselineConfig ModelBiasBaselineConfig { get; set; }
+
         /// <summary>
         /// ModelBiasAppSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification
@@ -90,7 +96,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ModelBiasAppSpecification
         /// </summary>
+        [Required]
         public ModelBiasJobDefinitionTypes.ModelBiasAppSpecification ModelBiasAppSpecification { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-rolearn
@@ -98,6 +106,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

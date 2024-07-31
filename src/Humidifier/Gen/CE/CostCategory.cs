@@ -34,6 +34,7 @@ namespace Humidifier.CE
         /// PrimitiveType: String
         /// </summary>
         public dynamic SplitChargeRules { get; set; }
+
         /// <summary>
         /// RuleVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-ruleversion
@@ -41,7 +42,9 @@ namespace Humidifier.CE
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleVersion { get; set; }
+
         /// <summary>
         /// Rules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-rules
@@ -49,6 +52,7 @@ namespace Humidifier.CE
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Rules { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

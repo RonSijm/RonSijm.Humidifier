@@ -69,6 +69,7 @@ namespace Humidifier.Cognito
         /// PrimitiveType: Json
         /// </summary>
         public dynamic SupportedLoginProviders { get; set; }
+
         /// <summary>
         /// AllowUnauthenticatedIdentities
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-allowunauthenticatedidentities
@@ -76,6 +77,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AllowUnauthenticatedIdentities { get; set; }
         /// <summary>
         /// SamlProviderARNs

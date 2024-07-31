@@ -31,6 +31,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AttachmentType { get; set; }
         /// <summary>
         /// Description
@@ -40,6 +41,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DomainCertificateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-domaincertificatearn
@@ -47,7 +49,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainCertificateArn { get; set; }
+
         /// <summary>
         /// VerifiedAccessGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-verifiedaccessgroupid
@@ -55,6 +59,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VerifiedAccessGroupId { get; set; }
         /// <summary>
         /// SecurityGroupIds
@@ -73,6 +78,7 @@ namespace Humidifier.EC2
         /// Type: LoadBalancerOptions
         /// </summary>
         public VerifiedAccessEndpointTypes.LoadBalancerOptions LoadBalancerOptions { get; set; }
+
         /// <summary>
         /// ApplicationDomain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-applicationdomain
@@ -80,6 +86,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationDomain { get; set; }
         /// <summary>
         /// PolicyEnabled
@@ -89,6 +96,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PolicyEnabled { get; set; }
+
         /// <summary>
         /// EndpointDomainPrefix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-endpointdomainprefix
@@ -96,7 +104,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointDomainPrefix { get; set; }
+
         /// <summary>
         /// EndpointType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-endpointtype
@@ -104,6 +114,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointType { get; set; }
         /// <summary>
         /// PolicyDocument
@@ -142,7 +153,7 @@ namespace Humidifier.EC2
 
     namespace VerifiedAccessEndpointTypes
     {
-        public class LoadBalancerOptions : Humidifier.Base.BaseSubResource
+        public class LoadBalancerOptions : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// LoadBalancerArn

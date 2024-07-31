@@ -26,7 +26,9 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigFile { get; set; }
+
         /// <summary>
         /// ResourceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-syncconfiguration.html#cfn-codestarconnections-syncconfiguration-resourcename
@@ -34,7 +36,9 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceName { get; set; }
+
         /// <summary>
         /// Branch
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-syncconfiguration.html#cfn-codestarconnections-syncconfiguration-branch
@@ -42,7 +46,9 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Branch { get; set; }
+
         /// <summary>
         /// SyncType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-syncconfiguration.html#cfn-codestarconnections-syncconfiguration-synctype
@@ -50,6 +56,7 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SyncType { get; set; }
         /// <summary>
         /// TriggerResourceUpdateOn
@@ -59,6 +66,7 @@ namespace Humidifier.CodeStarConnections
         /// PrimitiveType: String
         /// </summary>
         public dynamic TriggerResourceUpdateOn { get; set; }
+
         /// <summary>
         /// RepositoryLinkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-syncconfiguration.html#cfn-codestarconnections-syncconfiguration-repositorylinkid
@@ -66,7 +74,9 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RepositoryLinkId { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-syncconfiguration.html#cfn-codestarconnections-syncconfiguration-rolearn
@@ -74,6 +84,7 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// PublishDeploymentStatus

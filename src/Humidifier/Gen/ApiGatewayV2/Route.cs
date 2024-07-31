@@ -74,6 +74,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ApiKeyRequired { get; set; }
+
         /// <summary>
         /// RouteKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-routekey
@@ -81,6 +82,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RouteKey { get; set; }
         /// <summary>
         /// AuthorizationType
@@ -98,6 +100,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic ModelSelectionExpression { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-apiid
@@ -105,6 +108,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
         /// <summary>
         /// RequestParameters

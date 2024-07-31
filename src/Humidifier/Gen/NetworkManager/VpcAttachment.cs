@@ -36,6 +36,7 @@ namespace Humidifier.NetworkManager
         /// Type: ProposedSegmentChange
         /// </summary>
         public VpcAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
+
         /// <summary>
         /// SubnetArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-subnetarns
@@ -44,6 +45,7 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetArns { get; set; }
         /// <summary>
         /// Options
@@ -53,6 +55,7 @@ namespace Humidifier.NetworkManager
         /// Type: VpcOptions
         /// </summary>
         public VpcAttachmentTypes.VpcOptions Options { get; set; }
+
         /// <summary>
         /// CoreNetworkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-corenetworkid
@@ -60,7 +63,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CoreNetworkId { get; set; }
+
         /// <summary>
         /// VpcArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-vpcarn
@@ -68,6 +73,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcArn { get; set; }
         /// <summary>
         /// Tags

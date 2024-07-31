@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class UserHierarchyGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class UserHierarchyGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// ParentGroupArn

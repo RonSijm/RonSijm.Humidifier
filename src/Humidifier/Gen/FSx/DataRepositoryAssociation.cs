@@ -26,7 +26,9 @@ namespace Humidifier.FSx
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileSystemPath { get; set; }
+
         /// <summary>
         /// DataRepositoryPath
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-datarepositorypath
@@ -34,6 +36,7 @@ namespace Humidifier.FSx
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataRepositoryPath { get; set; }
         /// <summary>
         /// BatchImportMetaDataOnCreate
@@ -51,6 +54,7 @@ namespace Humidifier.FSx
         /// Type: S3
         /// </summary>
         public DataRepositoryAssociationTypes.S3 S3 { get; set; }
+
         /// <summary>
         /// FileSystemId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-datarepositoryassociation.html#cfn-fsx-datarepositoryassociation-filesystemid
@@ -58,6 +62,7 @@ namespace Humidifier.FSx
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileSystemId { get; set; }
         /// <summary>
         /// ImportedFileChunkSize

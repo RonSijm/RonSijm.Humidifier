@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.QuickSight
         /// Type: DataSourceParameters
         /// </summary>
         public DataSourceTypes.DataSourceParameters DataSourceParameters { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-type
@@ -36,6 +37,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// VpcConnectionProperties

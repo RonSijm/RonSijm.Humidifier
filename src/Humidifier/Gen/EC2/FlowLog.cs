@@ -26,6 +26,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic LogFormat { get; set; }
+
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
@@ -33,6 +34,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceId { get; set; }
         /// <summary>
         /// MaxAggregationInterval
@@ -50,6 +52,7 @@ namespace Humidifier.EC2
         /// Type: DestinationOptions
         /// </summary>
         public FlowLogTypes.DestinationOptions DestinationOptions { get; set; }
+
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype
@@ -57,6 +60,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceType { get; set; }
         /// <summary>
         /// DeliverCrossAccountRole

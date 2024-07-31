@@ -49,6 +49,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic ContentHandlingStrategy { get; set; }
+
         /// <summary>
         /// IntegrationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-integrationid
@@ -56,7 +57,9 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IntegrationId { get; set; }
+
         /// <summary>
         /// IntegrationResponseKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-integrationresponsekey
@@ -64,7 +67,9 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IntegrationResponseKey { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-apiid
@@ -72,6 +77,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
     }
 }

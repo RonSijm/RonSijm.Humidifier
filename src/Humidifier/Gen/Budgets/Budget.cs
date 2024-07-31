@@ -31,6 +31,7 @@ namespace Humidifier.Budgets
         /// ItemType: ResourceTag
         /// </summary>
         public List<BudgetTypes.ResourceTag> ResourceTags { get; set; }
+
         /// <summary>
         /// Budget_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-budget
@@ -38,6 +39,7 @@ namespace Humidifier.Budgets
         /// UpdateType: Mutable
         /// Type: BudgetData
         /// </summary>
+        [Required]
         public BudgetTypes.BudgetData Budget_ { get; set; }
     }
 

@@ -38,6 +38,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> RequestModels { get; set; }
+
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-restapiid
@@ -45,6 +46,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RestApiId { get; set; }
         /// <summary>
         /// AuthorizationScopes
@@ -89,6 +91,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: String
         /// </summary>
         public dynamic AuthorizerId { get; set; }
+
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-resourceid
@@ -96,6 +99,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceId { get; set; }
         /// <summary>
         /// ApiKeyRequired
@@ -113,6 +117,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: String
         /// </summary>
         public dynamic AuthorizationType { get; set; }
+
         /// <summary>
         /// HttpMethod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-httpmethod
@@ -120,6 +125,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic HttpMethod { get; set; }
     }
 

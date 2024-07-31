@@ -25,6 +25,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RelationalDatabaseName { get; set; }
         /// <summary>
         /// CaCertificateIdentifier
@@ -50,6 +51,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: String
         /// </summary>
         public dynamic PreferredMaintenanceWindow { get; set; }
+
         /// <summary>
         /// RelationalDatabaseBlueprintId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabaseblueprintid
@@ -57,6 +59,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RelationalDatabaseBlueprintId { get; set; }
         /// <summary>
         /// PreferredBackupWindow
@@ -66,6 +69,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: String
         /// </summary>
         public dynamic PreferredBackupWindow { get; set; }
+
         /// <summary>
         /// MasterDatabaseName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-masterdatabasename
@@ -73,6 +77,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MasterDatabaseName { get; set; }
         /// <summary>
         /// MasterUserPassword
@@ -99,6 +104,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic RotateMasterUserPassword { get; set; }
+
         /// <summary>
         /// MasterUsername
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-masterusername
@@ -106,6 +112,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MasterUsername { get; set; }
         /// <summary>
         /// PubliclyAccessible
@@ -115,6 +122,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PubliclyAccessible { get; set; }
+
         /// <summary>
         /// RelationalDatabaseBundleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-database.html#cfn-lightsail-database-relationaldatabasebundleid
@@ -122,6 +130,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RelationalDatabaseBundleId { get; set; }
         /// <summary>
         /// BackupRetention

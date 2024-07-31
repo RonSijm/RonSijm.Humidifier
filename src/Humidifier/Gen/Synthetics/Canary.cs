@@ -3,7 +3,7 @@ namespace Humidifier.Synthetics
     using System.Collections.Generic;
     using CanaryTypes;
 
-    public class Canary : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Canary : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.Synthetics
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic SuccessRetentionPeriod { get; set; }
+
         /// <summary>
         /// RuntimeVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runtimeversion
@@ -50,6 +51,7 @@ namespace Humidifier.Synthetics
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuntimeVersion { get; set; }
         /// <summary>
         /// VPCConfig
@@ -75,6 +77,7 @@ namespace Humidifier.Synthetics
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic FailureRetentionPeriod { get; set; }
+
         /// <summary>
         /// Code
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-code
@@ -82,8 +85,10 @@ namespace Humidifier.Synthetics
         /// UpdateType: Mutable
         /// Type: Code
         /// </summary>
+        [Required]
         public CanaryTypes.Code Code { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-executionrolearn
@@ -91,7 +96,9 @@ namespace Humidifier.Synthetics
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ExecutionRoleArn { get; set; }
+
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule
@@ -99,7 +106,9 @@ namespace Humidifier.Synthetics
         /// UpdateType: Mutable
         /// Type: Schedule
         /// </summary>
+        [Required]
         public CanaryTypes.Schedule Schedule { get; set; }
+
         /// <summary>
         /// ArtifactS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifacts3location
@@ -107,6 +116,7 @@ namespace Humidifier.Synthetics
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ArtifactS3Location { get; set; }
         /// <summary>
         /// Tags
@@ -291,7 +301,7 @@ namespace Humidifier.Synthetics
             public dynamic Expression { get; set; }
         }
 
-        public class VPCConfig : Humidifier.Base.BaseSubResource, IHaveVpcId
+        public class VPCConfig : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveSubnetIds
         {
             /// <summary>
             /// VpcId

@@ -2,7 +2,7 @@ namespace Humidifier.GameLift
 {
     using System.Collections.Generic;
 
-    public class Location : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Location : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

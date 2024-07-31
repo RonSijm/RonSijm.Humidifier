@@ -26,6 +26,7 @@ namespace Humidifier.Config
         /// PrimitiveType: String
         /// </summary>
         public dynamic QueryDescription { get; set; }
+
         /// <summary>
         /// QueryExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-queryexpression
@@ -33,6 +34,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryExpression { get; set; }
         /// <summary>
         /// Tags
@@ -43,6 +45,7 @@ namespace Humidifier.Config
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// QueryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-queryname
@@ -50,6 +53,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryName { get; set; }
     }
 }

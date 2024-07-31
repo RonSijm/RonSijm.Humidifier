@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using PrefixListTypes;
 
-    public class PrefixList : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class PrefixList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -39,6 +39,7 @@ namespace Humidifier.EC2
         /// ItemType: Entry
         /// </summary>
         public List<PrefixListTypes.Entry> Entries { get; set; }
+
         /// <summary>
         /// AddressFamily
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-addressfamily
@@ -46,6 +47,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AddressFamily { get; set; }
         /// <summary>
         /// Tags

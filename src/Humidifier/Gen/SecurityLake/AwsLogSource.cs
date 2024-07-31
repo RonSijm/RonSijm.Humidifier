@@ -19,7 +19,9 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceName { get; set; }
+
         /// <summary>
         /// SourceVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-awslogsource.html#cfn-securitylake-awslogsource-sourceversion
@@ -27,6 +29,7 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceVersion { get; set; }
         /// <summary>
         /// Accounts
@@ -37,6 +40,7 @@ namespace Humidifier.SecurityLake
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Accounts { get; set; }
+
         /// <summary>
         /// DataLakeArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-awslogsource.html#cfn-securitylake-awslogsource-datalakearn
@@ -44,6 +48,7 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataLakeArn { get; set; }
     }
 }

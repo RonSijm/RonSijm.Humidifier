@@ -25,6 +25,7 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AddonName { get; set; }
         /// <summary>
         /// Tags

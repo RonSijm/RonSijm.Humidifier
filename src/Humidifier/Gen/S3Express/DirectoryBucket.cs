@@ -25,6 +25,7 @@ namespace Humidifier.S3Express
         /// PrimitiveType: String
         /// </summary>
         public dynamic BucketName { get; set; }
+
         /// <summary>
         /// DataRedundancy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-dataredundancy
@@ -32,7 +33,9 @@ namespace Humidifier.S3Express
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataRedundancy { get; set; }
+
         /// <summary>
         /// LocationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-locationname
@@ -40,6 +43,7 @@ namespace Humidifier.S3Express
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LocationName { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace Humidifier.IoT1Click
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.IoT1Click
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// PlacementTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-placementtemplate
@@ -34,6 +35,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Mutable
         /// Type: PlacementTemplate
         /// </summary>
+        [Required]
         public ProjectTypes.PlacementTemplate PlacementTemplate { get; set; }
         public dynamic ProjectName { get => GivenName; set => GivenName = value; }
     }

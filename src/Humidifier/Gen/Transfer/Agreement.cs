@@ -34,6 +34,7 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ServerId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-serverid
@@ -41,7 +42,9 @@ namespace Humidifier.Transfer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServerId { get; set; }
+
         /// <summary>
         /// BaseDirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-basedirectory
@@ -49,7 +52,9 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BaseDirectory { get; set; }
+
         /// <summary>
         /// AccessRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-accessrole
@@ -57,7 +62,9 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccessRole { get; set; }
+
         /// <summary>
         /// PartnerProfileId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-partnerprofileid
@@ -65,7 +72,9 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PartnerProfileId { get; set; }
+
         /// <summary>
         /// LocalProfileId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-localprofileid
@@ -73,6 +82,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LocalProfileId { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using DomainConfigurationTypes;
 
-    public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

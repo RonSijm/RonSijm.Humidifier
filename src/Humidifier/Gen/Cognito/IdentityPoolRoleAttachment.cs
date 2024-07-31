@@ -27,6 +27,7 @@ namespace Humidifier.Cognito
         /// ItemType: RoleMapping
         /// </summary>
         public Dictionary<string, IdentityPoolRoleAttachmentTypes.RoleMapping> RoleMappings { get; set; }
+
         /// <summary>
         /// IdentityPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolroleattachment.html#cfn-cognito-identitypoolroleattachment-identitypoolid
@@ -34,6 +35,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityPoolId { get; set; }
         /// <summary>
         /// Roles

@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using ScriptTypes;
 
-    public class Script : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Script : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic Version { get; set; }
+
         /// <summary>
         /// StorageLocation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-storagelocation
@@ -36,6 +37,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// Type: S3Location
         /// </summary>
+        [Required]
         public ScriptTypes.S3Location StorageLocation { get; set; }
         /// <summary>
         /// Tags

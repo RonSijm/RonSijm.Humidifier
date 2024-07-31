@@ -3,7 +3,7 @@ namespace Humidifier.IVS
     using System.Collections.Generic;
     using RecordingConfigurationTypes;
 
-    public class RecordingConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class RecordingConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.IVS
         /// UpdateType: Immutable
         /// Type: DestinationConfiguration
         /// </summary>
+        [Required]
         public RecordingConfigurationTypes.DestinationConfiguration DestinationConfiguration { get; set; }
         /// <summary>
         /// RenditionConfiguration

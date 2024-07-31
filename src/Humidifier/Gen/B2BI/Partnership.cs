@@ -2,7 +2,7 @@ namespace Humidifier.B2BI
 {
     using System.Collections.Generic;
 
-    public class Partnership : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Partnership : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,7 +28,9 @@ namespace Humidifier.B2BI
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProfileId { get; set; }
+
         /// <summary>
         /// Email
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-partnership.html#cfn-b2bi-partnership-email
@@ -36,6 +38,7 @@ namespace Humidifier.B2BI
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Email { get; set; }
         /// <summary>
         /// Capabilities

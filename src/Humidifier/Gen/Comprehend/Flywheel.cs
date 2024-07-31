@@ -3,7 +3,7 @@ namespace Humidifier.Comprehend
     using System.Collections.Generic;
     using FlywheelTypes;
 
-    public class Flywheel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Flywheel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.Comprehend
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataLakeS3Uri { get; set; }
+
         /// <summary>
         /// DataAccessRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-flywheel.html#cfn-comprehend-flywheel-dataaccessrolearn
@@ -33,6 +35,7 @@ namespace Humidifier.Comprehend
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataAccessRoleArn { get; set; }
         public dynamic FlywheelName { get => GivenName; set => GivenName = value; }
         /// <summary>

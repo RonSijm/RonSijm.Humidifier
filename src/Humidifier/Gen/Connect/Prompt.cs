@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class Prompt : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Prompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -33,6 +33,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic S3Uri { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-prompt.html#cfn-connect-prompt-instancearn
@@ -40,6 +41,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// Tags

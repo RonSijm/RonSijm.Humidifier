@@ -3,7 +3,7 @@ namespace Humidifier.Timestream
     using System.Collections.Generic;
     using TableTypes;
 
-    public class Table : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.Timestream
         /// Type: Schema
         /// </summary>
         public TableTypes.Schema Schema { get; set; }
+
         /// <summary>
         /// DatabaseName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-databasename
@@ -43,6 +44,7 @@ namespace Humidifier.Timestream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatabaseName { get; set; }
         /// <summary>
         /// Tags

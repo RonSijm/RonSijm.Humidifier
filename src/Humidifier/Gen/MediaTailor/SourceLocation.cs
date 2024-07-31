@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using SourceLocationTypes;
 
-    public class SourceLocation : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class SourceLocation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.MediaTailor
         /// ItemType: SegmentDeliveryConfiguration
         /// </summary>
         public List<SourceLocationTypes.SegmentDeliveryConfiguration> SegmentDeliveryConfigurations { get; set; }
+
         /// <summary>
         /// HttpConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-sourcelocation.html#cfn-mediatailor-sourcelocation-httpconfiguration
@@ -43,6 +44,7 @@ namespace Humidifier.MediaTailor
         /// UpdateType: Mutable
         /// Type: HttpConfiguration
         /// </summary>
+        [Required]
         public SourceLocationTypes.HttpConfiguration HttpConfiguration { get; set; }
         /// <summary>
         /// AccessConfiguration

@@ -19,7 +19,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityType { get; set; }
+
         /// <summary>
         /// SessionPolicyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studiosessionmapping.html#cfn-emr-studiosessionmapping-sessionpolicyarn
@@ -27,7 +29,9 @@ namespace Humidifier.EMR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SessionPolicyArn { get; set; }
+
         /// <summary>
         /// StudioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studiosessionmapping.html#cfn-emr-studiosessionmapping-studioid
@@ -35,7 +39,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StudioId { get; set; }
+
         /// <summary>
         /// IdentityName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studiosessionmapping.html#cfn-emr-studiosessionmapping-identityname
@@ -43,6 +49,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityName { get; set; }
     }
 }

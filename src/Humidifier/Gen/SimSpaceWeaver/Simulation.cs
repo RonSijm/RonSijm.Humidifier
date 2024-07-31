@@ -42,6 +42,7 @@ namespace Humidifier.SimSpaceWeaver
         /// PrimitiveType: String
         /// </summary>
         public dynamic MaximumDuration { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-simspaceweaver-simulation.html#cfn-simspaceweaver-simulation-rolearn
@@ -49,6 +50,7 @@ namespace Humidifier.SimSpaceWeaver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

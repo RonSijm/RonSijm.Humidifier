@@ -33,6 +33,7 @@ namespace Humidifier.StepFunctions
         /// PrimitiveType: String
         /// </summary>
         public dynamic StateMachineRevisionId { get; set; }
+
         /// <summary>
         /// StateMachineArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachineversion.html#cfn-stepfunctions-statemachineversion-statemachinearn
@@ -40,6 +41,7 @@ namespace Humidifier.StepFunctions
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StateMachineArn { get; set; }
     }
 }

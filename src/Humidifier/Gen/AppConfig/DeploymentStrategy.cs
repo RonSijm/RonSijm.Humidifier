@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using DeploymentStrategyTypes;
 
-    public class DeploymentStrategy : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class DeploymentStrategy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReplicateTo { get; set; }
         /// <summary>
         /// GrowthType
@@ -37,6 +38,7 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DeploymentDurationInMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-deploymentdurationinminutes
@@ -44,7 +46,9 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
+        [Required]
         public dynamic DeploymentDurationInMinutes { get; set; }
+
         /// <summary>
         /// GrowthFactor
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthfactor
@@ -52,6 +56,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
+        [Required]
         public dynamic GrowthFactor { get; set; }
         /// <summary>
         /// FinalBakeTimeInMinutes

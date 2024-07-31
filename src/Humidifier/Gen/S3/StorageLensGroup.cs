@@ -3,7 +3,7 @@ namespace Humidifier.S3
     using System.Collections.Generic;
     using StorageLensGroupTypes;
 
-    public class StorageLensGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class StorageLensGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.S3
         /// UpdateType: Mutable
         /// Type: Filter
         /// </summary>
+        [Required]
         public StorageLensGroupTypes.Filter Filter { get; set; }
         /// <summary>
         /// Tags

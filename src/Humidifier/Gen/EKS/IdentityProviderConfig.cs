@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using IdentityProviderConfigTypes;
 
-    public class IdentityProviderConfig : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class IdentityProviderConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-identityproviderconfig.html#cfn-eks-identityproviderconfig-clustername
@@ -33,6 +35,7 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterName { get; set; }
         public dynamic IdentityProviderConfigName { get => GivenName; set => GivenName = value; }
         /// <summary>

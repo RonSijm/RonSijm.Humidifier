@@ -19,6 +19,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrincipalARN { get; set; }
         /// <summary>
         /// AcceptLanguage
@@ -28,6 +29,7 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: String
         /// </summary>
         public dynamic AcceptLanguage { get; set; }
+
         /// <summary>
         /// PortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-portfolioid
@@ -35,7 +37,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PortfolioId { get; set; }
+
         /// <summary>
         /// PrincipalType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principaltype
@@ -43,6 +47,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrincipalType { get; set; }
     }
 }

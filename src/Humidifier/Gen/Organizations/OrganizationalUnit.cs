@@ -2,7 +2,7 @@ namespace Humidifier.Organizations
 {
     using System.Collections.Generic;
 
-    public class OrganizationalUnit : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class OrganizationalUnit : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Organizations
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ParentId { get; set; }
         /// <summary>
         /// Tags

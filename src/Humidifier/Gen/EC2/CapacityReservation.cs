@@ -48,6 +48,7 @@ namespace Humidifier.EC2
         /// ItemType: TagSpecification
         /// </summary>
         public List<CapacityReservationTypes.TagSpecification> TagSpecifications { get; set; }
+
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-availabilityzone
@@ -55,6 +56,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// EndDate
@@ -80,6 +82,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic OutPostArn { get; set; }
+
         /// <summary>
         /// InstanceCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancecount
@@ -87,6 +90,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic InstanceCount { get; set; }
         /// <summary>
         /// PlacementGroupArn
@@ -96,6 +100,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic PlacementGroupArn { get; set; }
+
         /// <summary>
         /// InstancePlatform
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instanceplatform
@@ -103,7 +108,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstancePlatform { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancetype
@@ -111,6 +118,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// EphemeralStorage

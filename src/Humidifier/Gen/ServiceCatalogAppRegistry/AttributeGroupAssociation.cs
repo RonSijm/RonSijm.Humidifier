@@ -25,7 +25,9 @@ namespace Humidifier.ServiceCatalogAppRegistry
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AttributeGroup { get; set; }
+
         /// <summary>
         /// Application
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-attributegroupassociation.html#cfn-servicecatalogappregistry-attributegroupassociation-application
@@ -33,6 +35,7 @@ namespace Humidifier.ServiceCatalogAppRegistry
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Application { get; set; }
     }
 }

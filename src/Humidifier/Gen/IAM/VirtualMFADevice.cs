@@ -33,6 +33,7 @@ namespace Humidifier.IAM
         /// PrimitiveType: String
         /// </summary>
         public dynamic VirtualMfaDeviceName { get; set; }
+
         /// <summary>
         /// Users
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-virtualmfadevice.html#cfn-iam-virtualmfadevice-users
@@ -41,6 +42,7 @@ namespace Humidifier.IAM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Users { get; set; }
         /// <summary>
         /// Tags

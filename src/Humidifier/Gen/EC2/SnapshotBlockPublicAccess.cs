@@ -24,6 +24,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic State { get; set; }
     }
 }

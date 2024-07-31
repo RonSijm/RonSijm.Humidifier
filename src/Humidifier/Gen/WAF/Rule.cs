@@ -20,6 +20,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>

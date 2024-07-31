@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using GlobalReplicationGroupTypes;
 
-    public class GlobalReplicationGroup : Humidifier.Base.BaseResource
+    public class GlobalReplicationGroup : Humidifier.Base.BaseResource, IHaveDescription
     {
         public class Attributes
         {
@@ -51,6 +51,9 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic GlobalReplicationGroupDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => GlobalReplicationGroupDescription; set => GlobalReplicationGroupDescription = value; }
         /// <summary>
         /// RegionalConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-regionalconfigurations
@@ -68,6 +71,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic CacheParameterGroupName { get; set; }
+
         /// <summary>
         /// Members
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-members
@@ -76,6 +80,7 @@ namespace Humidifier.ElastiCache
         /// Type: List
         /// ItemType: GlobalReplicationGroupMember
         /// </summary>
+        [Required]
         public List<GlobalReplicationGroupTypes.GlobalReplicationGroupMember> Members { get; set; }
         /// <summary>
         /// AutomaticFailoverEnabled

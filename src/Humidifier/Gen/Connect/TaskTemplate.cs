@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using TaskTemplateTypes;
 
-    public class TaskTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class TaskTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -60,6 +60,7 @@ namespace Humidifier.Connect
         /// ItemType: Field
         /// </summary>
         public List<TaskTemplateTypes.Field> Fields { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-instancearn
@@ -67,6 +68,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// ContactFlowArn

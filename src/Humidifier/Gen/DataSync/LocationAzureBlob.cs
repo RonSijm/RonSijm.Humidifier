@@ -59,6 +59,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic AzureBlobContainerUrl { get; set; }
+
         /// <summary>
         /// AgentArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-agentarns
@@ -67,6 +68,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AgentArns { get; set; }
         /// <summary>
         /// Tags
@@ -77,6 +79,7 @@ namespace Humidifier.DataSync
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AzureBlobAuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureblobauthenticationtype
@@ -84,6 +87,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AzureBlobAuthenticationType { get; set; }
     }
 

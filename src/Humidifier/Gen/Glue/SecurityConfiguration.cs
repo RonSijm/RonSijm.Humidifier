@@ -20,6 +20,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: EncryptionConfiguration
         /// </summary>
+        [Required]
         public SecurityConfigurationTypes.EncryptionConfiguration EncryptionConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

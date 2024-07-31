@@ -27,6 +27,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic S3StorageClass { get; set; }
+
         /// <summary>
         /// S3Config
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3config
@@ -34,6 +35,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// Type: S3Config
         /// </summary>
+        [Required]
         public LocationS3Types.S3Config S3Config { get; set; }
         /// <summary>
         /// Subdirectory

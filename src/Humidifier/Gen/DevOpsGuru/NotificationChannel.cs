@@ -25,6 +25,7 @@ namespace Humidifier.DevOpsGuru
         /// UpdateType: Immutable
         /// Type: NotificationChannelConfig
         /// </summary>
+        [Required]
         public NotificationChannelTypes.NotificationChannelConfig Config { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using LaunchProfileTypes;
 
-    public class LaunchProfile : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class LaunchProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.NimbleStudio
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Ec2SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-ec2subnetids
@@ -34,7 +35,9 @@ namespace Humidifier.NimbleStudio
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Ec2SubnetIds { get; set; }
+
         /// <summary>
         /// StudioComponentIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-studiocomponentids
@@ -43,7 +46,9 @@ namespace Humidifier.NimbleStudio
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic StudioComponentIds { get; set; }
+
         /// <summary>
         /// StreamConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-streamconfiguration
@@ -51,7 +56,9 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Mutable
         /// Type: StreamConfiguration
         /// </summary>
+        [Required]
         public LaunchProfileTypes.StreamConfiguration StreamConfiguration { get; set; }
+
         /// <summary>
         /// LaunchProfileProtocolVersions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-launchprofileprotocolversions
@@ -60,7 +67,9 @@ namespace Humidifier.NimbleStudio
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic LaunchProfileProtocolVersions { get; set; }
+
         /// <summary>
         /// StudioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-studioid
@@ -68,6 +77,7 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StudioId { get; set; }
         /// <summary>
         /// Tags

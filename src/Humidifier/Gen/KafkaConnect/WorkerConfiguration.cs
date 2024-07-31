@@ -2,7 +2,7 @@ namespace Humidifier.KafkaConnect
 {
     using System.Collections.Generic;
 
-    public class WorkerConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class WorkerConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PropertiesFileContent { get; set; }
         /// <summary>
         /// Description

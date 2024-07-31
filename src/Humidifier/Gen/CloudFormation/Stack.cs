@@ -39,6 +39,7 @@ namespace Humidifier.CloudFormation
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// TemplateURL
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stack.html#cfn-cloudformation-stack-templateurl
@@ -46,6 +47,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TemplateURL { get; set; }
         /// <summary>
         /// TimeoutInMinutes

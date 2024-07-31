@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualNodeTypes;
 
-    public class VirtualNode : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VirtualNode : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MeshName { get; set; }
         /// <summary>
         /// MeshOwner
@@ -39,6 +40,7 @@ namespace Humidifier.AppMesh
         /// PrimitiveType: String
         /// </summary>
         public dynamic MeshOwner { get; set; }
+
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-spec
@@ -46,6 +48,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: VirtualNodeSpec
         /// </summary>
+        [Required]
         public VirtualNodeTypes.VirtualNodeSpec Spec { get; set; }
         public dynamic VirtualNodeName { get => GivenName; set => GivenName = value; }
         /// <summary>

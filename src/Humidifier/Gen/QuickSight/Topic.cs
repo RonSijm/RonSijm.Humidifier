@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using TopicTypes;
 
-    public class Topic : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Topic : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {

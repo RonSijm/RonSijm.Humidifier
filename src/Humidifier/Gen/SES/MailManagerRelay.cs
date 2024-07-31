@@ -26,7 +26,9 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// Type: RelayAuthentication
         /// </summary>
+        [Required]
         public MailManagerRelayTypes.RelayAuthentication Authentication { get; set; }
+
         /// <summary>
         /// ServerName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-mailmanagerrelay.html#cfn-ses-mailmanagerrelay-servername
@@ -34,6 +36,7 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServerName { get; set; }
         /// <summary>
         /// RelayName
@@ -43,6 +46,7 @@ namespace Humidifier.SES
         /// PrimitiveType: String
         /// </summary>
         public dynamic RelayName { get; set; }
+
         /// <summary>
         /// ServerPort
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-mailmanagerrelay.html#cfn-ses-mailmanagerrelay-serverport
@@ -50,6 +54,7 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
+        [Required]
         public dynamic ServerPort { get; set; }
         /// <summary>
         /// Tags

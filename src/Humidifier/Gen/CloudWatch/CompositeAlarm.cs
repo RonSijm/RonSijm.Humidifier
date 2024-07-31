@@ -66,6 +66,7 @@ namespace Humidifier.CloudWatch
         /// PrimitiveType: String
         /// </summary>
         public dynamic ActionsSuppressor { get; set; }
+
         /// <summary>
         /// AlarmRule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmrule
@@ -73,6 +74,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AlarmRule { get; set; }
         /// <summary>
         /// InsufficientDataActions

@@ -27,7 +27,9 @@ namespace Humidifier.APS
         /// UpdateType: Immutable
         /// Type: ScrapeConfiguration
         /// </summary>
+        [Required]
         public ScraperTypes.ScrapeConfiguration ScrapeConfiguration { get; set; }
+
         /// <summary>
         /// Destination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-scraper.html#cfn-aps-scraper-destination
@@ -35,6 +37,7 @@ namespace Humidifier.APS
         /// UpdateType: Immutable
         /// Type: Destination
         /// </summary>
+        [Required]
         public ScraperTypes.Destination Destination { get; set; }
         /// <summary>
         /// Alias
@@ -44,6 +47,7 @@ namespace Humidifier.APS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Alias { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-scraper.html#cfn-aps-scraper-source
@@ -51,6 +55,7 @@ namespace Humidifier.APS
         /// UpdateType: Immutable
         /// Type: Source
         /// </summary>
+        [Required]
         public ScraperTypes.Source Source { get; set; }
         /// <summary>
         /// Tags
@@ -89,7 +94,7 @@ namespace Humidifier.APS
             public ScraperTypes.AmpConfiguration AmpConfiguration { get; set; }
         }
 
-        public class EksConfiguration : Humidifier.Base.BaseSubResource
+        public class EksConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// ClusterArn

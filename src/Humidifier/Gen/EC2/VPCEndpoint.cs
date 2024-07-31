@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class VPCEndpoint : Humidifier.Base.BaseResource, IHaveVpcId, IHavePolicyDocument
+    public class VPCEndpoint : Humidifier.Base.BaseResource, IHaveVpcId, IHavePolicyDocument, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PrivateDnsEnabled { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid
@@ -35,6 +36,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
         /// <summary>
         /// RouteTableIds
@@ -45,6 +47,7 @@ namespace Humidifier.EC2
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic RouteTableIds { get; set; }
+
         /// <summary>
         /// ServiceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename
@@ -52,6 +55,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceName { get; set; }
         /// <summary>
         /// PolicyDocument

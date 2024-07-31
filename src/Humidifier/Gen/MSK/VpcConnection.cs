@@ -25,7 +25,9 @@ namespace Humidifier.MSK
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroups { get; set; }
+
         /// <summary>
         /// TargetClusterArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-targetclusterarn
@@ -33,7 +35,9 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetClusterArn { get; set; }
+
         /// <summary>
         /// ClientSubnets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-clientsubnets
@@ -42,7 +46,9 @@ namespace Humidifier.MSK
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic ClientSubnets { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-vpcid
@@ -50,7 +56,9 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// Authentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-vpcconnection.html#cfn-msk-vpcconnection-authentication
@@ -58,6 +66,7 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Authentication { get; set; }
         /// <summary>
         /// Tags

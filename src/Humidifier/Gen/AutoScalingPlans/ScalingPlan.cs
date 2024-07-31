@@ -26,7 +26,9 @@ namespace Humidifier.AutoScalingPlans
         /// UpdateType: Mutable
         /// Type: ApplicationSource
         /// </summary>
+        [Required]
         public ScalingPlanTypes.ApplicationSource ApplicationSource { get; set; }
+
         /// <summary>
         /// ScalingInstructions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions
@@ -35,6 +37,7 @@ namespace Humidifier.AutoScalingPlans
         /// Type: List
         /// ItemType: ScalingInstruction
         /// </summary>
+        [Required]
         public List<ScalingPlanTypes.ScalingInstruction> ScalingInstructions { get; set; }
     }
 

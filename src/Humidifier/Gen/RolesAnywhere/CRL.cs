@@ -2,7 +2,7 @@ namespace Humidifier.RolesAnywhere
 {
     using System.Collections.Generic;
 
-    public class CRL : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class CRL : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -33,6 +33,7 @@ namespace Humidifier.RolesAnywhere
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic Enabled { get; set; }
+
         /// <summary>
         /// CrlData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html#cfn-rolesanywhere-crl-crldata
@@ -40,6 +41,7 @@ namespace Humidifier.RolesAnywhere
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CrlData { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using AnalysisTypes;
 
-    public class Analysis : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Analysis : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -79,6 +79,7 @@ namespace Humidifier.QuickSight
         /// ItemType: AnalysisError
         /// </summary>
         public List<AnalysisTypes.AnalysisError> Errors { get; set; }
+
         /// <summary>
         /// AnalysisId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-analysisid
@@ -86,7 +87,9 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AnalysisId { get; set; }
+
         /// <summary>
         /// AwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-awsaccountid
@@ -94,6 +97,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AwsAccountId { get; set; }
         /// <summary>
         /// Permissions

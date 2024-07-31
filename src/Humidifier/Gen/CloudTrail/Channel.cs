@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using ChannelTypes;
 
-    public class Channel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

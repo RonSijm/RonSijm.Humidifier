@@ -25,7 +25,9 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationSetName { get; set; }
+
         /// <summary>
         /// EventDestination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination
@@ -33,6 +35,7 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// Type: EventDestination
         /// </summary>
+        [Required]
         public ConfigurationSetEventDestinationTypes.EventDestination EventDestination { get; set; }
     }
 

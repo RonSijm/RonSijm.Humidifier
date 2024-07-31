@@ -3,7 +3,7 @@ namespace Humidifier.AccessAnalyzer
     using System.Collections.Generic;
     using AnalyzerTypes;
 
-    public class Analyzer : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Analyzer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.AccessAnalyzer
         /// ItemType: ArchiveRule
         /// </summary>
         public List<AnalyzerTypes.ArchiveRule> ArchiveRules { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-type
@@ -34,6 +35,7 @@ namespace Humidifier.AccessAnalyzer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         public dynamic AnalyzerName { get => GivenName; set => GivenName = value; }
         /// <summary>

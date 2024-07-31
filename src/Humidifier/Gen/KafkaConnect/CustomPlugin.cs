@@ -3,7 +3,7 @@ namespace Humidifier.KafkaConnect
     using System.Collections.Generic;
     using CustomPluginTypes;
 
-    public class CustomPlugin : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class CustomPlugin : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.KafkaConnect
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ContentType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-customplugin.html#cfn-kafkaconnect-customplugin-contenttype
@@ -35,6 +36,7 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ContentType { get; set; }
         /// <summary>
         /// Tags
@@ -46,6 +48,7 @@ namespace Humidifier.KafkaConnect
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-customplugin.html#cfn-kafkaconnect-customplugin-location
@@ -53,6 +56,7 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// Type: CustomPluginLocation
         /// </summary>
+        [Required]
         public CustomPluginTypes.CustomPluginLocation Location { get; set; }
     }
 

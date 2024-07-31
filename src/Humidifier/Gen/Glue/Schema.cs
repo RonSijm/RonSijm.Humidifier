@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using SchemaTypes;
 
-    public class Schema : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Schema : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SchemaDefinition { get; set; }
         /// <summary>
         /// Description
@@ -35,6 +36,7 @@ namespace Humidifier.Glue
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DataFormat
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-dataformat
@@ -42,6 +44,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataFormat { get; set; }
         /// <summary>
         /// Registry
@@ -51,6 +54,7 @@ namespace Humidifier.Glue
         /// Type: Registry
         /// </summary>
         public SchemaTypes.Registry Registry { get; set; }
+
         /// <summary>
         /// Compatibility
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-compatibility
@@ -58,6 +62,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Compatibility { get; set; }
         /// <summary>
         /// Tags

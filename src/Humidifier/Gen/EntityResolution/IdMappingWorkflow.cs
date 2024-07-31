@@ -28,6 +28,7 @@ namespace Humidifier.EntityResolution
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InputSourceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idmappingworkflow.html#cfn-entityresolution-idmappingworkflow-inputsourceconfig
@@ -36,7 +37,9 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: IdMappingWorkflowInputSource
         /// </summary>
+        [Required]
         public List<IdMappingWorkflowTypes.IdMappingWorkflowInputSource> InputSourceConfig { get; set; }
+
         /// <summary>
         /// IdMappingTechniques
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idmappingworkflow.html#cfn-entityresolution-idmappingworkflow-idmappingtechniques
@@ -44,7 +47,9 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Mutable
         /// Type: IdMappingTechniques
         /// </summary>
+        [Required]
         public IdMappingWorkflowTypes.IdMappingTechniques IdMappingTechniques { get; set; }
+
         /// <summary>
         /// WorkflowName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idmappingworkflow.html#cfn-entityresolution-idmappingworkflow-workflowname
@@ -52,6 +57,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkflowName { get; set; }
         /// <summary>
         /// OutputSourceConfig
@@ -62,6 +68,7 @@ namespace Humidifier.EntityResolution
         /// ItemType: IdMappingWorkflowOutputSource
         /// </summary>
         public List<IdMappingWorkflowTypes.IdMappingWorkflowOutputSource> OutputSourceConfig { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idmappingworkflow.html#cfn-entityresolution-idmappingworkflow-rolearn
@@ -69,6 +76,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

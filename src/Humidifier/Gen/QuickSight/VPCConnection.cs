@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using VPCConnectionTypes;
 
-    public class VPCConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VPCConnection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds
     {
         public class Attributes
         {

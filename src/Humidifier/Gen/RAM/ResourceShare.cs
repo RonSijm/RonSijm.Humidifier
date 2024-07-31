@@ -2,7 +2,7 @@ namespace Humidifier.RAM
 {
     using System.Collections.Generic;
 
-    public class ResourceShare : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ResourceShare : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

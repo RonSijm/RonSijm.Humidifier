@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using TaskDefinitionTypes;
 
-    public class TaskDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class TaskDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AutoCreateTasks { get; set; }
         /// <summary>
         /// LoRaWANUpdateGatewayTaskEntry

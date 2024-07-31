@@ -20,7 +20,9 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: ConnectionInput
         /// </summary>
+        [Required]
         public ConnectionTypes.ConnectionInput ConnectionInput { get; set; }
+
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid
@@ -28,6 +30,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CatalogId { get; set; }
     }
 

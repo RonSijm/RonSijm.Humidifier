@@ -3,7 +3,7 @@ namespace Humidifier.IoTSiteWise
     using System.Collections.Generic;
     using AssetModelTypes;
 
-    public class AssetModel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class AssetModel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,9 @@ namespace Humidifier.IoTSiteWise
         /// PrimitiveType: String
         /// </summary>
         public dynamic AssetModelDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => AssetModelDescription; set => AssetModelDescription = value; }
         /// <summary>
         /// AssetModelCompositeModels
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodels

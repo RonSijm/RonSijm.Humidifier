@@ -38,6 +38,7 @@ namespace Humidifier.ManagedBlockchain
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AccessorType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-accessor.html#cfn-managedblockchain-accessor-accessortype
@@ -45,6 +46,7 @@ namespace Humidifier.ManagedBlockchain
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccessorType { get; set; }
     }
 }

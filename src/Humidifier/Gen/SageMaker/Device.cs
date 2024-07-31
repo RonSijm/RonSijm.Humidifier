@@ -20,6 +20,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DeviceFleetName { get; set; }
         /// <summary>
         /// Device_

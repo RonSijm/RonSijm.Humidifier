@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using System.Collections.Generic;
     using FlowSourceTypes;
 
-    public class FlowSource : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: String
         /// </summary>
         public dynamic StreamId { get; set; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-description
@@ -35,6 +36,7 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// SenderIpAddress

@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: CloudFrontOriginAccessIdentityConfig
         /// </summary>
+        [Required]
         public CloudFrontOriginAccessIdentityTypes.CloudFrontOriginAccessIdentityConfig CloudFrontOriginAccessIdentityConfig { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using KnowledgeBaseTypes;
 
-    public class KnowledgeBase : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class KnowledgeBase : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// KnowledgeBaseConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-knowledgebase.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration
@@ -38,7 +39,9 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// Type: KnowledgeBaseConfiguration
         /// </summary>
+        [Required]
         public KnowledgeBaseTypes.KnowledgeBaseConfiguration KnowledgeBaseConfiguration { get; set; }
+
         /// <summary>
         /// StorageConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-knowledgebase.html#cfn-bedrock-knowledgebase-storageconfiguration
@@ -46,7 +49,9 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// Type: StorageConfiguration
         /// </summary>
+        [Required]
         public KnowledgeBaseTypes.StorageConfiguration StorageConfiguration { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-knowledgebase.html#cfn-bedrock-knowledgebase-rolearn
@@ -54,6 +59,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

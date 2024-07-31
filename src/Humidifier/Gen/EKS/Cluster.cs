@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -89,6 +89,7 @@ namespace Humidifier.EKS
         /// Type: KubernetesNetworkConfig
         /// </summary>
         public ClusterTypes.KubernetesNetworkConfig KubernetesNetworkConfig { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn
@@ -96,7 +97,9 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
+
         /// <summary>
         /// ResourcesVpcConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig
@@ -104,6 +107,7 @@ namespace Humidifier.EKS
         /// UpdateType: Mutable
         /// Type: ResourcesVpcConfig
         /// </summary>
+        [Required]
         public ClusterTypes.ResourcesVpcConfig ResourcesVpcConfig { get; set; }
         /// <summary>
         /// Tags
@@ -278,7 +282,7 @@ namespace Humidifier.EKS
             public dynamic KeyArn { get; set; }
         }
 
-        public class ResourcesVpcConfig : Humidifier.Base.BaseSubResource
+        public class ResourcesVpcConfig : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// EndpointPublicAccess

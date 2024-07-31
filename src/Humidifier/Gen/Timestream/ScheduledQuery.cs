@@ -3,7 +3,7 @@ namespace Humidifier.Timestream
     using System.Collections.Generic;
     using ScheduledQueryTypes;
 
-    public class ScheduledQuery : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ScheduledQuery : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -33,7 +33,9 @@ namespace Humidifier.Timestream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ScheduledQueryExecutionRoleArn { get; set; }
+
         /// <summary>
         /// ErrorReportConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-errorreportconfiguration
@@ -41,7 +43,9 @@ namespace Humidifier.Timestream
         /// UpdateType: Immutable
         /// Type: ErrorReportConfiguration
         /// </summary>
+        [Required]
         public ScheduledQueryTypes.ErrorReportConfiguration ErrorReportConfiguration { get; set; }
+
         /// <summary>
         /// ScheduleConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduleconfiguration
@@ -49,6 +53,7 @@ namespace Humidifier.Timestream
         /// UpdateType: Immutable
         /// Type: ScheduleConfiguration
         /// </summary>
+        [Required]
         public ScheduledQueryTypes.ScheduleConfiguration ScheduleConfiguration { get; set; }
         /// <summary>
         /// TargetConfiguration
@@ -66,6 +71,7 @@ namespace Humidifier.Timestream
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+
         /// <summary>
         /// QueryString
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-querystring
@@ -73,7 +79,9 @@ namespace Humidifier.Timestream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryString { get; set; }
+
         /// <summary>
         /// NotificationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-notificationconfiguration
@@ -81,6 +89,7 @@ namespace Humidifier.Timestream
         /// UpdateType: Immutable
         /// Type: NotificationConfiguration
         /// </summary>
+        [Required]
         public ScheduledQueryTypes.NotificationConfiguration NotificationConfiguration { get; set; }
         public dynamic ScheduledQueryName { get => GivenName; set => GivenName = value; }
         /// <summary>

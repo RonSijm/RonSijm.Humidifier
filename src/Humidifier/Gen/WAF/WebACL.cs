@@ -20,7 +20,9 @@ namespace Humidifier.WAF
         /// UpdateType: Mutable
         /// Type: WafAction
         /// </summary>
+        [Required]
         public WebACLTypes.WafAction DefaultAction { get; set; }
+
         /// <summary>
         /// MetricName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-metricname
@@ -28,6 +30,7 @@ namespace Humidifier.WAF
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>

@@ -37,6 +37,7 @@ namespace Humidifier.FraudDetector
         /// PrimitiveType: String
         /// </summary>
         public dynamic DetectorVersionStatus { get; set; }
+
         /// <summary>
         /// EventType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-eventtype
@@ -44,7 +45,9 @@ namespace Humidifier.FraudDetector
         /// UpdateType: Mutable
         /// Type: EventType
         /// </summary>
+        [Required]
         public DetectorTypes.EventType EventType { get; set; }
+
         /// <summary>
         /// DetectorId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-detectorid
@@ -52,6 +55,7 @@ namespace Humidifier.FraudDetector
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DetectorId { get; set; }
         /// <summary>
         /// AssociatedModels
@@ -70,6 +74,7 @@ namespace Humidifier.FraudDetector
         /// PrimitiveType: String
         /// </summary>
         public dynamic RuleExecutionMode { get; set; }
+
         /// <summary>
         /// Rules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-rules
@@ -78,6 +83,7 @@ namespace Humidifier.FraudDetector
         /// Type: List
         /// ItemType: Rule
         /// </summary>
+        [Required]
         public List<DetectorTypes.Rule> Rules { get; set; }
         /// <summary>
         /// Tags

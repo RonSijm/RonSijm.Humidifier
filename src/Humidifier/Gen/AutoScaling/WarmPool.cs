@@ -29,6 +29,7 @@ namespace Humidifier.AutoScaling
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MaxGroupPreparedCapacity { get; set; }
+
         /// <summary>
         /// AutoScalingGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html#cfn-autoscaling-warmpool-autoscalinggroupname
@@ -36,6 +37,7 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AutoScalingGroupName { get; set; }
         /// <summary>
         /// PoolState

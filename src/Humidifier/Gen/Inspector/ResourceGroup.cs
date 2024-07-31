@@ -25,6 +25,7 @@ namespace Humidifier.Inspector
         /// Type: List
         /// ItemType: Tag
         /// </summary>
+        [Required]
         public List<Tag> ResourceGroupTags { get; set; }
     }
 }

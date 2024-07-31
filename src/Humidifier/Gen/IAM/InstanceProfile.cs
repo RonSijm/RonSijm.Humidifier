@@ -26,6 +26,7 @@ namespace Humidifier.IAM
         /// </summary>
         public dynamic Path { get; set; }
         public dynamic InstanceProfileName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Roles
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-roles
@@ -34,6 +35,7 @@ namespace Humidifier.IAM
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Roles { get; set; }
     }
 }

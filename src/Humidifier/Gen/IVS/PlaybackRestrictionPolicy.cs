@@ -2,7 +2,7 @@ namespace Humidifier.IVS
 {
     using System.Collections.Generic;
 
-    public class PlaybackRestrictionPolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class PlaybackRestrictionPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.IVS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AllowedOrigins { get; set; }
         /// <summary>
         /// EnableStrictOriginEnforcement
@@ -34,6 +35,7 @@ namespace Humidifier.IVS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableStrictOriginEnforcement { get; set; }
+
         /// <summary>
         /// AllowedCountries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackrestrictionpolicy.html#cfn-ivs-playbackrestrictionpolicy-allowedcountries
@@ -42,6 +44,7 @@ namespace Humidifier.IVS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AllowedCountries { get; set; }
         /// <summary>
         /// Tags

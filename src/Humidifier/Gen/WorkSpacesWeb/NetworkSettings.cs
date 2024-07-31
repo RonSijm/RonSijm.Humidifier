@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class NetworkSettings : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId
+    public class NetworkSettings : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-networksettings.html#cfn-workspacesweb-networksettings-securitygroupids
@@ -34,7 +36,9 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-networksettings.html#cfn-workspacesweb-networksettings-subnetids
@@ -43,6 +47,7 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

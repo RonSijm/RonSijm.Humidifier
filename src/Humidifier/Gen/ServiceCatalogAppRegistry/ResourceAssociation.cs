@@ -25,7 +25,9 @@ namespace Humidifier.ServiceCatalogAppRegistry
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Resource { get; set; }
+
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-resourceassociation.html#cfn-servicecatalogappregistry-resourceassociation-resourcetype
@@ -33,7 +35,9 @@ namespace Humidifier.ServiceCatalogAppRegistry
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceType { get; set; }
+
         /// <summary>
         /// Application
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-resourceassociation.html#cfn-servicecatalogappregistry-resourceassociation-application
@@ -41,6 +45,7 @@ namespace Humidifier.ServiceCatalogAppRegistry
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Application { get; set; }
     }
 }

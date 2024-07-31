@@ -3,7 +3,7 @@ namespace Humidifier.QLDB
     using System.Collections.Generic;
     using StreamTypes;
 
-    public class Stream : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Stream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,8 +26,10 @@ namespace Humidifier.QLDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InclusiveStartTime { get; set; }
         public dynamic StreamName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// KinesisConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-kinesisconfiguration
@@ -35,6 +37,7 @@ namespace Humidifier.QLDB
         /// UpdateType: Immutable
         /// Type: KinesisConfiguration
         /// </summary>
+        [Required]
         public StreamTypes.KinesisConfiguration KinesisConfiguration { get; set; }
         /// <summary>
         /// ExclusiveEndTime
@@ -44,6 +47,7 @@ namespace Humidifier.QLDB
         /// PrimitiveType: String
         /// </summary>
         public dynamic ExclusiveEndTime { get; set; }
+
         /// <summary>
         /// LedgerName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-ledgername
@@ -51,7 +55,9 @@ namespace Humidifier.QLDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LedgerName { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-rolearn
@@ -59,6 +65,7 @@ namespace Humidifier.QLDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

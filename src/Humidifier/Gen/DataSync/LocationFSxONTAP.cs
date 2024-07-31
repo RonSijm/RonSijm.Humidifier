@@ -27,6 +27,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StorageVirtualMachineArn { get; set; }
         /// <summary>
         /// Subdirectory
@@ -44,6 +45,7 @@ namespace Humidifier.DataSync
         /// Type: Protocol
         /// </summary>
         public LocationFSxONTAPTypes.Protocol Protocol { get; set; }
+
         /// <summary>
         /// SecurityGroupArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-securitygrouparns
@@ -52,6 +54,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupArns { get; set; }
         /// <summary>
         /// Tags

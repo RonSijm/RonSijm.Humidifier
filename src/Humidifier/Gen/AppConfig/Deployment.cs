@@ -20,7 +20,9 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DeploymentStrategyId { get; set; }
+
         /// <summary>
         /// ConfigurationProfileId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-configurationprofileid
@@ -28,7 +30,9 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationProfileId { get; set; }
+
         /// <summary>
         /// EnvironmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-environmentid
@@ -36,6 +40,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentId { get; set; }
         /// <summary>
         /// KmsKeyIdentifier
@@ -53,6 +58,7 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ConfigurationVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-configurationversion
@@ -60,7 +66,9 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationVersion { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-applicationid
@@ -68,6 +76,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// DynamicExtensionParameters

@@ -37,6 +37,7 @@ namespace Humidifier.S3
         /// Type: PublicAccessBlockConfiguration
         /// </summary>
         public AccessPointTypes.PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
+
         /// <summary>
         /// Bucket
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-bucket
@@ -44,6 +45,7 @@ namespace Humidifier.S3
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Bucket { get; set; }
         /// <summary>
         /// BucketAccountId

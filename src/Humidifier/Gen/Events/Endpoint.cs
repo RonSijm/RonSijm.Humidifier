@@ -3,7 +3,7 @@ namespace Humidifier.Events
     using System.Collections.Generic;
     using EndpointTypes;
 
-    public class Endpoint : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Endpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.Events
         /// Type: List
         /// ItemType: EndpointEventBus
         /// </summary>
+        [Required]
         public List<EndpointTypes.EndpointEventBus> EventBuses { get; set; }
         /// <summary>
         /// Description
@@ -47,6 +48,7 @@ namespace Humidifier.Events
         /// Type: ReplicationConfig
         /// </summary>
         public EndpointTypes.ReplicationConfig ReplicationConfig { get; set; }
+
         /// <summary>
         /// RoutingConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-routingconfig
@@ -54,6 +56,7 @@ namespace Humidifier.Events
         /// UpdateType: Mutable
         /// Type: RoutingConfig
         /// </summary>
+        [Required]
         public EndpointTypes.RoutingConfig RoutingConfig { get; set; }
         /// <summary>
         /// RoleArn

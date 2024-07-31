@@ -24,7 +24,9 @@ namespace Humidifier.Shield
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Aggregation { get; set; }
+
         /// <summary>
         /// Pattern
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-pattern
@@ -32,7 +34,9 @@ namespace Humidifier.Shield
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Pattern { get; set; }
+
         /// <summary>
         /// ProtectionGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-protectiongroup.html#cfn-shield-protectiongroup-protectiongroupid
@@ -40,6 +44,7 @@ namespace Humidifier.Shield
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProtectionGroupId { get; set; }
         /// <summary>
         /// ResourceType

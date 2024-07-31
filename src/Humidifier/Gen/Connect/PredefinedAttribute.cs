@@ -26,7 +26,9 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
+
         /// <summary>
         /// Values
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-predefinedattribute.html#cfn-connect-predefinedattribute-values
@@ -34,6 +36,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// Type: Values
         /// </summary>
+        [Required]
         public PredefinedAttributeTypes.Values Values { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

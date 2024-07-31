@@ -35,6 +35,7 @@ namespace Humidifier.LicenseManager
         /// PrimitiveType: String
         /// </summary>
         public dynamic Status { get; set; }
+
         /// <summary>
         /// ConsumptionConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-consumptionconfiguration
@@ -42,7 +43,9 @@ namespace Humidifier.LicenseManager
         /// UpdateType: Mutable
         /// Type: ConsumptionConfiguration
         /// </summary>
+        [Required]
         public LicenseTypes.ConsumptionConfiguration ConsumptionConfiguration { get; set; }
+
         /// <summary>
         /// Validity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-validity
@@ -50,7 +53,9 @@ namespace Humidifier.LicenseManager
         /// UpdateType: Mutable
         /// Type: ValidityDateFormat
         /// </summary>
+        [Required]
         public LicenseTypes.ValidityDateFormat Validity { get; set; }
+
         /// <summary>
         /// ProductName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productname
@@ -58,7 +63,9 @@ namespace Humidifier.LicenseManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProductName { get; set; }
+
         /// <summary>
         /// Issuer
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-issuer
@@ -66,7 +73,9 @@ namespace Humidifier.LicenseManager
         /// UpdateType: Mutable
         /// Type: IssuerData
         /// </summary>
+        [Required]
         public LicenseTypes.IssuerData Issuer { get; set; }
+
         /// <summary>
         /// HomeRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-homeregion
@@ -74,7 +83,9 @@ namespace Humidifier.LicenseManager
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic HomeRegion { get; set; }
+
         /// <summary>
         /// Entitlements
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-entitlements
@@ -83,6 +94,7 @@ namespace Humidifier.LicenseManager
         /// Type: List
         /// ItemType: Entitlement
         /// </summary>
+        [Required]
         public List<LicenseTypes.Entitlement> Entitlements { get; set; }
         /// <summary>
         /// LicenseMetadata

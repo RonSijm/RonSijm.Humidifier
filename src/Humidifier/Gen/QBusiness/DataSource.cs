@@ -30,6 +30,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IndexId { get; set; }
         /// <summary>
         /// Description
@@ -39,6 +40,7 @@ namespace Humidifier.QBusiness
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-datasource.html#cfn-qbusiness-datasource-configuration
@@ -46,6 +48,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Configuration { get; set; }
         /// <summary>
         /// SyncSchedule
@@ -63,6 +66,7 @@ namespace Humidifier.QBusiness
         /// Type: DocumentEnrichmentConfiguration
         /// </summary>
         public DataSourceTypes.DocumentEnrichmentConfiguration DocumentEnrichmentConfiguration { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-datasource.html#cfn-qbusiness-datasource-displayname
@@ -70,6 +74,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// VpcConfiguration
@@ -79,6 +84,7 @@ namespace Humidifier.QBusiness
         /// Type: DataSourceVpcConfiguration
         /// </summary>
         public DataSourceTypes.DataSourceVpcConfiguration VpcConfiguration { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-datasource.html#cfn-qbusiness-datasource-applicationid
@@ -86,6 +92,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// RoleArn
@@ -108,7 +115,7 @@ namespace Humidifier.QBusiness
 
     namespace DataSourceTypes
     {
-        public class DataSourceVpcConfiguration : Humidifier.Base.BaseSubResource
+        public class DataSourceVpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

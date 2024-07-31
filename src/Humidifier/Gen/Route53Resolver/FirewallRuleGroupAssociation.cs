@@ -2,7 +2,7 @@ namespace Humidifier.Route53Resolver
 {
     using System.Collections.Generic;
 
-    public class FirewallRuleGroupAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveImpliedResourceName
+    public class FirewallRuleGroupAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId
     {
         public class Attributes
         {
@@ -31,7 +31,9 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// FirewallRuleGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#cfn-route53resolver-firewallrulegroupassociation-firewallrulegroupid
@@ -39,7 +41,9 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirewallRuleGroupId { get; set; }
+
         /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#cfn-route53resolver-firewallrulegroupassociation-priority
@@ -47,6 +51,7 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Priority { get; set; }
         /// <summary>
         /// MutationProtection

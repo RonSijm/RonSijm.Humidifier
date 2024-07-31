@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using WirelessGatewayTypes;
 
-    public class WirelessGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class WirelessGateway : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -35,6 +35,7 @@ namespace Humidifier.IoTWireless
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// LoRaWAN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-lorawan
@@ -42,6 +43,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// Type: LoRaWANGateway
         /// </summary>
+        [Required]
         public WirelessGatewayTypes.LoRaWANGateway LoRaWAN { get; set; }
         /// <summary>
         /// ThingArn

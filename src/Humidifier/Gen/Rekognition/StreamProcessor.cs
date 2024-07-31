@@ -3,7 +3,7 @@ namespace Humidifier.Rekognition
     using System.Collections.Generic;
     using StreamProcessorTypes;
 
-    public class StreamProcessor : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class StreamProcessor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -60,6 +60,7 @@ namespace Humidifier.Rekognition
         /// PrimitiveType: Json
         /// </summary>
         public dynamic PolygonRegionsOfInterest { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-rolearn
@@ -67,6 +68,7 @@ namespace Humidifier.Rekognition
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -85,6 +87,7 @@ namespace Humidifier.Rekognition
         /// Type: NotificationChannel
         /// </summary>
         public StreamProcessorTypes.NotificationChannel NotificationChannel { get; set; }
+
         /// <summary>
         /// KinesisVideoStream
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-kinesisvideostream
@@ -92,6 +95,7 @@ namespace Humidifier.Rekognition
         /// UpdateType: Immutable
         /// Type: KinesisVideoStream
         /// </summary>
+        [Required]
         public StreamProcessorTypes.KinesisVideoStream KinesisVideoStream { get; set; }
         /// <summary>
         /// BoundingBoxRegionsOfInterest

@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using FeatureGroupTypes;
 
-    public class FeatureGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class FeatureGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.SageMaker
         /// Type: OfflineStoreConfig
         /// </summary>
         public FeatureGroupTypes.OfflineStoreConfig OfflineStoreConfig { get; set; }
+
         /// <summary>
         /// FeatureDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-featuredefinitions
@@ -51,7 +52,9 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: FeatureDefinition
         /// </summary>
+        [Required]
         public List<FeatureGroupTypes.FeatureDefinition> FeatureDefinitions { get; set; }
+
         /// <summary>
         /// RecordIdentifierFeatureName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-recordidentifierfeaturename
@@ -59,7 +62,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RecordIdentifierFeatureName { get; set; }
+
         /// <summary>
         /// EventTimeFeatureName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-eventtimefeaturename
@@ -67,6 +72,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EventTimeFeatureName { get; set; }
         public dynamic FeatureGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>

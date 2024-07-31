@@ -34,6 +34,7 @@ namespace Humidifier.Deadline
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyArn { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-farm.html#cfn-deadline-farm-displayname
@@ -41,6 +42,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// Tags

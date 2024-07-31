@@ -29,6 +29,7 @@ namespace Humidifier.EntityResolution
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Action { get; set; }
+
         /// <summary>
         /// StatementId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-policystatement.html#cfn-entityresolution-policystatement-statementid
@@ -36,6 +37,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StatementId { get; set; }
         /// <summary>
         /// Effect
@@ -45,6 +47,7 @@ namespace Humidifier.EntityResolution
         /// PrimitiveType: String
         /// </summary>
         public dynamic Effect { get; set; }
+
         /// <summary>
         /// Arn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-policystatement.html#cfn-entityresolution-policystatement-arn
@@ -52,6 +55,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Arn { get; set; }
         /// <summary>
         /// Principal

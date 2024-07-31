@@ -3,7 +3,7 @@ namespace Humidifier.GuardDuty
     using System.Collections.Generic;
     using FilterTypes;
 
-    public class Filter : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Filter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -29,6 +29,7 @@ namespace Humidifier.GuardDuty
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DetectorId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid
@@ -36,7 +37,9 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DetectorId { get; set; }
+
         /// <summary>
         /// FindingCriteria
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria
@@ -44,6 +47,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// Type: FindingCriteria
         /// </summary>
+        [Required]
         public FilterTypes.FindingCriteria FindingCriteria { get; set; }
         /// <summary>
         /// Rank

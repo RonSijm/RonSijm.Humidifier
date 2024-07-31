@@ -27,6 +27,7 @@ namespace Humidifier.WorkSpacesWeb
         /// PrimitiveType: Double
         /// </summary>
         public dynamic IdleDisconnectTimeoutInMinutes { get; set; }
+
         /// <summary>
         /// UploadAllowed
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-uploadallowed
@@ -34,6 +35,7 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UploadAllowed { get; set; }
         /// <summary>
         /// DeepLinkAllowed
@@ -68,6 +70,7 @@ namespace Humidifier.WorkSpacesWeb
         /// PrimitiveType: Double
         /// </summary>
         public dynamic DisconnectTimeoutInMinutes { get; set; }
+
         /// <summary>
         /// PrintAllowed
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-printallowed
@@ -75,7 +78,9 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrintAllowed { get; set; }
+
         /// <summary>
         /// CopyAllowed
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-copyallowed
@@ -83,6 +88,7 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CopyAllowed { get; set; }
         /// <summary>
         /// CookieSynchronizationConfiguration
@@ -92,6 +98,7 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: CookieSynchronizationConfiguration
         /// </summary>
         public UserSettingsTypes.CookieSynchronizationConfiguration CookieSynchronizationConfiguration { get; set; }
+
         /// <summary>
         /// DownloadAllowed
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-downloadallowed
@@ -99,7 +106,9 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DownloadAllowed { get; set; }
+
         /// <summary>
         /// PasteAllowed
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-pasteallowed
@@ -107,6 +116,7 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PasteAllowed { get; set; }
         /// <summary>
         /// Tags

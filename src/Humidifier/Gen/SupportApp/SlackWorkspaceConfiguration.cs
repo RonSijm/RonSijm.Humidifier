@@ -20,6 +20,7 @@ namespace Humidifier.SupportApp
         /// PrimitiveType: String
         /// </summary>
         public dynamic VersionId { get; set; }
+
         /// <summary>
         /// TeamId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackworkspaceconfiguration.html#cfn-supportapp-slackworkspaceconfiguration-teamid
@@ -27,6 +28,7 @@ namespace Humidifier.SupportApp
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TeamId { get; set; }
     }
 }

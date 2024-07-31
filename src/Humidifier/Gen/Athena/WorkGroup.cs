@@ -3,7 +3,7 @@ namespace Humidifier.Athena
     using System.Collections.Generic;
     using WorkGroupTypes;
 
-    public class WorkGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class WorkGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

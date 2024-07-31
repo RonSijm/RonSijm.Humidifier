@@ -2,7 +2,7 @@ namespace Humidifier.RAM
 {
     using System.Collections.Generic;
 
-    public class Permission : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Permission : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -27,7 +27,9 @@ namespace Humidifier.RAM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceType { get; set; }
+
         /// <summary>
         /// PolicyTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-permission.html#cfn-ram-permission-policytemplate
@@ -35,6 +37,7 @@ namespace Humidifier.RAM
         /// UpdateType: Immutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic PolicyTemplate { get; set; }
         /// <summary>
         /// Tags

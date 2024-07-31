@@ -68,6 +68,7 @@ namespace Humidifier.ECR
         /// PrimitiveType: String
         /// </summary>
         public dynamic LifecyclePolicy { get; set; }
+
         /// <summary>
         /// AppliedFor
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repositorycreationtemplate.html#cfn-ecr-repositorycreationtemplate-appliedfor
@@ -76,7 +77,9 @@ namespace Humidifier.ECR
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AppliedFor { get; set; }
+
         /// <summary>
         /// Prefix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repositorycreationtemplate.html#cfn-ecr-repositorycreationtemplate-prefix
@@ -84,6 +87,7 @@ namespace Humidifier.ECR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Prefix { get; set; }
         /// <summary>
         /// ImageTagMutability

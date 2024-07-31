@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DistributionTypes;
 
-    public class Distribution : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Distribution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: String
         /// </summary>
         public dynamic IpAddressType { get; set; }
+
         /// <summary>
         /// Origin
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-origin
@@ -35,8 +36,10 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// Type: InputOrigin
         /// </summary>
+        [Required]
         public DistributionTypes.InputOrigin Origin { get; set; }
         public dynamic DistributionName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// BundleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-bundleid
@@ -44,7 +47,9 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BundleId { get; set; }
+
         /// <summary>
         /// DefaultCacheBehavior
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-defaultcachebehavior
@@ -52,6 +57,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// Type: CacheBehavior
         /// </summary>
+        [Required]
         public DistributionTypes.CacheBehavior DefaultCacheBehavior { get; set; }
         /// <summary>
         /// IsEnabled

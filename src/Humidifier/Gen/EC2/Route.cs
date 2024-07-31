@@ -25,6 +25,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic DestinationIpv6CidrBlock { get; set; }
+
         /// <summary>
         /// RouteTableId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid
@@ -32,6 +33,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RouteTableId { get; set; }
         /// <summary>
         /// InstanceId

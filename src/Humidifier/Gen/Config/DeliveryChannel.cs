@@ -22,6 +22,7 @@ namespace Humidifier.Config
         /// </summary>
         public DeliveryChannelTypes.ConfigSnapshotDeliveryProperties ConfigSnapshotDeliveryProperties { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// S3BucketName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3bucketname
@@ -29,6 +30,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic S3BucketName { get; set; }
         /// <summary>
         /// S3KeyPrefix

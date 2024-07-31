@@ -2,7 +2,7 @@ namespace Humidifier.Lightsail
 {
     using System.Collections.Generic;
 
-    public class Certificate : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Certificate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
         /// SubjectAlternativeNames

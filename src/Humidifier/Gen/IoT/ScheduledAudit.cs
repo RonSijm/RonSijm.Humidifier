@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class ScheduledAudit : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ScheduledAudit : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.IoT
         /// PrimitiveType: String
         /// </summary>
         public dynamic DayOfWeek { get; set; }
+
         /// <summary>
         /// TargetCheckNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-targetchecknames
@@ -33,6 +34,7 @@ namespace Humidifier.IoT
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic TargetCheckNames { get; set; }
         public dynamic ScheduledAuditName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -43,6 +45,7 @@ namespace Humidifier.IoT
         /// PrimitiveType: String
         /// </summary>
         public dynamic DayOfMonth { get; set; }
+
         /// <summary>
         /// Frequency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-frequency
@@ -50,6 +53,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Frequency { get; set; }
         /// <summary>
         /// Tags

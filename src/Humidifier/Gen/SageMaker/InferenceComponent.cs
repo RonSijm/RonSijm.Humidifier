@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using InferenceComponentTypes;
 
-    public class InferenceComponent : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class InferenceComponent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -29,7 +29,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointName { get; set; }
+
         /// <summary>
         /// VariantName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferencecomponent.html#cfn-sagemaker-inferencecomponent-variantname
@@ -37,8 +39,10 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VariantName { get; set; }
         public dynamic InferenceComponentName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Specification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferencecomponent.html#cfn-sagemaker-inferencecomponent-specification
@@ -46,7 +50,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: InferenceComponentSpecification
         /// </summary>
+        [Required]
         public InferenceComponentTypes.InferenceComponentSpecification Specification { get; set; }
+
         /// <summary>
         /// RuntimeConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferencecomponent.html#cfn-sagemaker-inferencecomponent-runtimeconfig
@@ -54,6 +60,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: InferenceComponentRuntimeConfig
         /// </summary>
+        [Required]
         public InferenceComponentTypes.InferenceComponentRuntimeConfig RuntimeConfig { get; set; }
         /// <summary>
         /// EndpointArn

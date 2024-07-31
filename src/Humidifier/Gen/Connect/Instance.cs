@@ -30,6 +30,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic DirectoryId { get; set; }
+
         /// <summary>
         /// IdentityManagementType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instance.html#cfn-connect-instance-identitymanagementtype
@@ -37,6 +38,7 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityManagementType { get; set; }
         /// <summary>
         /// InstanceAlias
@@ -46,6 +48,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic InstanceAlias { get; set; }
+
         /// <summary>
         /// Attributes_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instance.html#cfn-connect-instance-attributes
@@ -53,6 +56,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// Type: Attributes
         /// </summary>
+        [Required]
         public InstanceTypes.Attributes Attributes_ { get; set; }
         /// <summary>
         /// Tags

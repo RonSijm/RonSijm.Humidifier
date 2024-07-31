@@ -25,6 +25,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// FileSystemLocations
@@ -43,6 +44,7 @@ namespace Humidifier.Deadline
         /// PrimitiveType: String
         /// </summary>
         public dynamic FarmId { get; set; }
+
         /// <summary>
         /// OsFamily
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-storageprofile.html#cfn-deadline-storageprofile-osfamily
@@ -50,6 +52,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OsFamily { get; set; }
     }
 

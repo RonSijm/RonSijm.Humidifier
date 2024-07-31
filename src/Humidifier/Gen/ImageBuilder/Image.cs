@@ -29,6 +29,7 @@ namespace Humidifier.ImageBuilder
         /// Type: ImageScanningConfiguration
         /// </summary>
         public ImageTypes.ImageScanningConfiguration ImageScanningConfiguration { get; set; }
+
         /// <summary>
         /// InfrastructureConfigurationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-infrastructureconfigurationarn
@@ -36,6 +37,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InfrastructureConfigurationArn { get; set; }
         /// <summary>
         /// ImageRecipeArn

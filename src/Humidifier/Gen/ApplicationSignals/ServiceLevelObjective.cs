@@ -3,7 +3,7 @@ namespace Humidifier.ApplicationSignals
     using System.Collections.Generic;
     using ServiceLevelObjectiveTypes;
 
-    public class ServiceLevelObjective : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ServiceLevelObjective : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.ApplicationSignals
         /// UpdateType: Mutable
         /// Type: Sli
         /// </summary>
+        [Required]
         public ServiceLevelObjectiveTypes.Sli Sli { get; set; }
         /// <summary>
         /// Goal

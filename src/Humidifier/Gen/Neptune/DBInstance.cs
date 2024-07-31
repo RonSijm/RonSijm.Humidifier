@@ -26,6 +26,7 @@ namespace Humidifier.Neptune
         /// PrimitiveType: String
         /// </summary>
         public dynamic DBParameterGroupName { get; set; }
+
         /// <summary>
         /// DBInstanceClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceclass
@@ -33,6 +34,7 @@ namespace Humidifier.Neptune
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBInstanceClass { get; set; }
         /// <summary>
         /// AllowMajorVersionUpgrade

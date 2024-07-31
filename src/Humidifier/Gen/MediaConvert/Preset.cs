@@ -2,7 +2,7 @@ namespace Humidifier.MediaConvert
 {
     using System.Collections.Generic;
 
-    public class Preset : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Preset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.MediaConvert
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SettingsJson
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-preset.html#cfn-mediaconvert-preset-settingsjson
@@ -41,6 +42,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic SettingsJson { get; set; }
         /// <summary>
         /// Tags

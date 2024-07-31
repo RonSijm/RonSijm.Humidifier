@@ -20,7 +20,9 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DeviceDefinitionId { get; set; }
+
         /// <summary>
         /// Devices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devices
@@ -29,6 +31,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Device
         /// </summary>
+        [Required]
         public List<DeviceDefinitionVersionTypes.Device> Devices { get; set; }
     }
 

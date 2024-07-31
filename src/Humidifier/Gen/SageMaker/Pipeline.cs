@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -30,6 +30,9 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic PipelineDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => PipelineDescription; set => PipelineDescription = value; }
         /// <summary>
         /// PipelineDisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedisplayname
@@ -38,6 +41,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic PipelineDisplayName { get; set; }
+
         /// <summary>
         /// PipelineDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-pipelinedefinition
@@ -45,7 +49,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: PipelineDefinition
         /// </summary>
+        [Required]
         public PipelineTypes.PipelineDefinition PipelineDefinition { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-rolearn
@@ -53,6 +59,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.RefactorSpaces
     using System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveVpcId, IHaveImpliedResourceName
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveVpcId
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.RefactorSpaces
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// EnvironmentIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-environmentidentifier
@@ -50,6 +51,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentIdentifier { get; set; }
         /// <summary>
         /// VpcId
@@ -59,6 +61,7 @@ namespace Humidifier.RefactorSpaces
         /// PrimitiveType: String
         /// </summary>
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// EndpointType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-endpointtype
@@ -66,7 +69,9 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointType { get; set; }
+
         /// <summary>
         /// ApplicationIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-applicationidentifier
@@ -74,6 +79,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationIdentifier { get; set; }
         /// <summary>
         /// Tags

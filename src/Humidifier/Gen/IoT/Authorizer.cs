@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class Authorizer : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Authorizer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -68,6 +68,7 @@ namespace Humidifier.IoT
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AuthorizerFunctionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-authorizer.html#cfn-iot-authorizer-authorizerfunctionarn
@@ -75,6 +76,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthorizerFunctionArn { get; set; }
     }
 }

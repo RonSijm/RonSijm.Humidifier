@@ -34,6 +34,7 @@ namespace Humidifier.Connect
         /// Type: S3Config
         /// </summary>
         public InstanceStorageConfigTypes.S3Config S3Config { get; set; }
+
         /// <summary>
         /// StorageType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-storagetype
@@ -41,7 +42,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StorageType { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-instancearn
@@ -49,7 +52,9 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
+
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-resourcetype
@@ -57,6 +62,7 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceType { get; set; }
         /// <summary>
         /// KinesisVideoStreamConfig

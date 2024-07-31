@@ -25,7 +25,9 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubscriberArn { get; set; }
+
         /// <summary>
         /// NotificationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-subscribernotification.html#cfn-securitylake-subscribernotification-notificationconfiguration
@@ -33,6 +35,7 @@ namespace Humidifier.SecurityLake
         /// UpdateType: Mutable
         /// Type: NotificationConfiguration
         /// </summary>
+        [Required]
         public SubscriberNotificationTypes.NotificationConfiguration NotificationConfiguration { get; set; }
     }
 

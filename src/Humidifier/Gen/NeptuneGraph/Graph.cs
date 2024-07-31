@@ -3,7 +3,7 @@ namespace Humidifier.NeptuneGraph
     using System.Collections.Generic;
     using GraphTypes;
 
-    public class Graph : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Graph : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.NeptuneGraph
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ReplicaCount { get; set; }
+
         /// <summary>
         /// ProvisionedMemory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-provisionedmemory
@@ -44,6 +45,7 @@ namespace Humidifier.NeptuneGraph
         /// UpdateType: Conditional
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic ProvisionedMemory { get; set; }
         /// <summary>
         /// DeletionProtection

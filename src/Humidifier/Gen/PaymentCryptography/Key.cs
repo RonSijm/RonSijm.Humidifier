@@ -27,7 +27,9 @@ namespace Humidifier.PaymentCryptography
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic Exportable { get; set; }
+
         /// <summary>
         /// KeyAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-paymentcryptography-key.html#cfn-paymentcryptography-key-keyattributes
@@ -35,6 +37,7 @@ namespace Humidifier.PaymentCryptography
         /// UpdateType: Mutable
         /// Type: KeyAttributes
         /// </summary>
+        [Required]
         public KeyTypes.KeyAttributes KeyAttributes { get; set; }
         /// <summary>
         /// Enabled

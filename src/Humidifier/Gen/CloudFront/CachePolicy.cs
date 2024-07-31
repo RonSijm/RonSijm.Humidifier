@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: CachePolicyConfig
         /// </summary>
+        [Required]
         public CachePolicyTypes.CachePolicyConfig CachePolicyConfig { get; set; }
     }
 

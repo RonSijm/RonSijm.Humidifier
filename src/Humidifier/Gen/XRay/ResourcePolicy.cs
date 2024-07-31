@@ -20,6 +20,7 @@ namespace Humidifier.XRay
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic BypassPolicyLockoutCheck { get; set; }
+
         /// <summary>
         /// PolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-resourcepolicy.html#cfn-xray-resourcepolicy-policyname
@@ -27,7 +28,9 @@ namespace Humidifier.XRay
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyName { get; set; }
+
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-resourcepolicy.html#cfn-xray-resourcepolicy-policydocument
@@ -35,6 +38,7 @@ namespace Humidifier.XRay
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
     }
 }

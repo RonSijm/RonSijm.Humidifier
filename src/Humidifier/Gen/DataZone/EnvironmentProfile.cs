@@ -3,7 +3,7 @@ namespace Humidifier.DataZone
     using System.Collections.Generic;
     using EnvironmentProfileTypes;
 
-    public class EnvironmentProfile : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class EnvironmentProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProjectIdentifier { get; set; }
         /// <summary>
         /// UserParameters
@@ -49,6 +50,7 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// AwsAccountRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentprofile.html#cfn-datazone-environmentprofile-awsaccountregion
@@ -56,7 +58,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AwsAccountRegion { get; set; }
+
         /// <summary>
         /// AwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentprofile.html#cfn-datazone-environmentprofile-awsaccountid
@@ -64,7 +68,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AwsAccountId { get; set; }
+
         /// <summary>
         /// EnvironmentBlueprintIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentprofile.html#cfn-datazone-environmentprofile-environmentblueprintidentifier
@@ -72,8 +78,10 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentBlueprintIdentifier { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentprofile.html#cfn-datazone-environmentprofile-domainidentifier
@@ -81,6 +89,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
     }
 

@@ -27,6 +27,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic EfsFilesystemArn { get; set; }
+
         /// <summary>
         /// Ec2Config
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-ec2config
@@ -34,6 +35,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// Type: Ec2Config
         /// </summary>
+        [Required]
         public LocationEFSTypes.Ec2Config Ec2Config { get; set; }
         /// <summary>
         /// AccessPointArn

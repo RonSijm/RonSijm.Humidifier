@@ -68,6 +68,7 @@ namespace Humidifier.AutoScaling
         /// ItemType: StepAdjustment
         /// </summary>
         public List<ScalingPolicyTypes.StepAdjustment> StepAdjustments { get; set; }
+
         /// <summary>
         /// AutoScalingGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-autoscalinggroupname
@@ -75,6 +76,7 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AutoScalingGroupName { get; set; }
         /// <summary>
         /// MinAdjustmentMagnitude

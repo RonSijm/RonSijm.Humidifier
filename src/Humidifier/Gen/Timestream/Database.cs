@@ -2,7 +2,7 @@ namespace Humidifier.Timestream
 {
     using System.Collections.Generic;
 
-    public class Database : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Database : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

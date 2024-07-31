@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackageV2
     using System.Collections.Generic;
     using OriginEndpointTypes;
 
-    public class OriginEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class OriginEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.MediaPackageV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ChannelName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-channelname
@@ -38,6 +39,7 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelName { get; set; }
         /// <summary>
         /// LowLatencyHlsManifests
@@ -74,6 +76,7 @@ namespace Humidifier.MediaPackageV2
         /// ItemType: HlsManifestConfiguration
         /// </summary>
         public List<OriginEndpointTypes.HlsManifestConfiguration> HlsManifests { get; set; }
+
         /// <summary>
         /// ChannelGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-channelgroupname
@@ -81,6 +84,7 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelGroupName { get; set; }
         /// <summary>
         /// DashManifests

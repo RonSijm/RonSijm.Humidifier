@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using DataProviderTypes;
 
-    public class DataProvider : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class DataProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.DMS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ExactSettings { get; set; }
+
         /// <summary>
         /// Engine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-dataprovider.html#cfn-dms-dataprovider-engine
@@ -43,6 +44,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Engine { get; set; }
         /// <summary>
         /// Settings

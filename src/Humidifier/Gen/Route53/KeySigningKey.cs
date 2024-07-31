@@ -19,7 +19,9 @@ namespace Humidifier.Route53
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Status { get; set; }
+
         /// <summary>
         /// KeyManagementServiceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-keysigningkey.html#cfn-route53-keysigningkey-keymanagementservicearn
@@ -27,7 +29,9 @@ namespace Humidifier.Route53
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyManagementServiceArn { get; set; }
+
         /// <summary>
         /// HostedZoneId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-keysigningkey.html#cfn-route53-keysigningkey-hostedzoneid
@@ -35,6 +39,7 @@ namespace Humidifier.Route53
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic HostedZoneId { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

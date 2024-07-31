@@ -25,6 +25,7 @@ namespace Humidifier.CodeArtifact
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Pattern { get; set; }
         /// <summary>
         /// Description
@@ -34,6 +35,7 @@ namespace Humidifier.CodeArtifact
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-packagegroup.html#cfn-codeartifact-packagegroup-domainname
@@ -41,6 +43,7 @@ namespace Humidifier.CodeArtifact
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
         /// OriginConfiguration

@@ -26,6 +26,7 @@ namespace Humidifier.ManagedBlockchain
         /// UpdateType: Mutable
         /// Type: MemberConfiguration
         /// </summary>
+        [Required]
         public MemberTypes.MemberConfiguration MemberConfiguration { get; set; }
         /// <summary>
         /// NetworkConfiguration

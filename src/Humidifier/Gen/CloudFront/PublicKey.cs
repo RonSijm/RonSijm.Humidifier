@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: PublicKeyConfig
         /// </summary>
+        [Required]
         public PublicKeyTypes.PublicKeyConfig PublicKeyConfig { get; set; }
     }
 

@@ -14,6 +14,7 @@ namespace Humidifier.WAF
         }
 
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// SizeConstraints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints
@@ -22,6 +23,7 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: SizeConstraint
         /// </summary>
+        [Required]
         public List<SizeConstraintSetTypes.SizeConstraint> SizeConstraints { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using FlowTypes;
 
-    public class Flow : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Flow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -32,6 +32,7 @@ namespace Humidifier.Bedrock
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> TestAliasTags { get; set; }
+
         /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flow.html#cfn-bedrock-flow-executionrolearn
@@ -39,6 +40,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ExecutionRoleArn { get; set; }
         /// <summary>
         /// Description

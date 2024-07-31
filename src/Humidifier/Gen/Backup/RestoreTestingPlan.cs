@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using RestoreTestingPlanTypes;
 
-    public class RestoreTestingPlan : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class RestoreTestingPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ScheduleExpression { get; set; }
         /// <summary>
         /// StartWindowHours
@@ -34,6 +35,7 @@ namespace Humidifier.Backup
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic StartWindowHours { get; set; }
+
         /// <summary>
         /// RecoveryPointSelection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingplan.html#cfn-backup-restoretestingplan-recoverypointselection
@@ -41,6 +43,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// Type: RestoreTestingRecoveryPointSelection
         /// </summary>
+        [Required]
         public RestoreTestingPlanTypes.RestoreTestingRecoveryPointSelection RecoveryPointSelection { get; set; }
         public dynamic RestoreTestingPlanName { get => GivenName; set => GivenName = value; }
         /// <summary>

@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using NotebookInstanceTypes;
 
-    public class NotebookInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class NotebookInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -93,6 +93,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-rolearn
@@ -100,6 +101,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// InstanceMetadataServiceConfiguration
@@ -118,6 +120,7 @@ namespace Humidifier.SageMaker
         /// </summary>
         public dynamic RootAccess { get; set; }
         public dynamic NotebookInstanceName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-instancetype
@@ -125,6 +128,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// LifecycleConfigName

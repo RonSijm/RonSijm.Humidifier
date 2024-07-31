@@ -3,7 +3,7 @@ namespace Humidifier.IoTEvents
     using System.Collections.Generic;
     using AlarmModelTypes;
 
-    public class AlarmModel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class AlarmModel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// Type: AlarmRule
         /// </summary>
+        [Required]
         public AlarmModelTypes.AlarmRule AlarmRule { get; set; }
         public dynamic AlarmModelName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -30,6 +31,9 @@ namespace Humidifier.IoTEvents
         /// PrimitiveType: String
         /// </summary>
         public dynamic AlarmModelDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => AlarmModelDescription; set => AlarmModelDescription = value; }
         /// <summary>
         /// Severity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-severity
@@ -46,6 +50,7 @@ namespace Humidifier.IoTEvents
         /// Type: AlarmCapabilities
         /// </summary>
         public AlarmModelTypes.AlarmCapabilities AlarmCapabilities { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-alarmmodel.html#cfn-iotevents-alarmmodel-rolearn
@@ -53,6 +58,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Key

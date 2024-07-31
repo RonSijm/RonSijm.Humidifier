@@ -3,7 +3,7 @@ namespace Humidifier.VoiceID
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.VoiceID
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ServerSideEncryptionConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-voiceid-domain.html#cfn-voiceid-domain-serversideencryptionconfiguration
@@ -33,6 +34,7 @@ namespace Humidifier.VoiceID
         /// UpdateType: Mutable
         /// Type: ServerSideEncryptionConfiguration
         /// </summary>
+        [Required]
         public DomainTypes.ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration { get; set; }
         /// <summary>
         /// Tags

@@ -27,6 +27,7 @@ namespace Humidifier.ACMPCA
         /// Type: CsrExtensions
         /// </summary>
         public CertificateAuthorityTypes.CsrExtensions CsrExtensions { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-type
@@ -34,6 +35,7 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// RevocationConfiguration
@@ -51,6 +53,7 @@ namespace Humidifier.ACMPCA
         /// PrimitiveType: String
         /// </summary>
         public dynamic UsageMode { get; set; }
+
         /// <summary>
         /// SigningAlgorithm
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-signingalgorithm
@@ -58,6 +61,7 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SigningAlgorithm { get; set; }
         /// <summary>
         /// KeyStorageSecurityStandard
@@ -67,6 +71,7 @@ namespace Humidifier.ACMPCA
         /// PrimitiveType: String
         /// </summary>
         public dynamic KeyStorageSecurityStandard { get; set; }
+
         /// <summary>
         /// Subject
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-subject
@@ -74,6 +79,7 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// Type: Subject
         /// </summary>
+        [Required]
         public CertificateAuthorityTypes.Subject Subject { get; set; }
         /// <summary>
         /// Tags
@@ -84,6 +90,7 @@ namespace Humidifier.ACMPCA
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// KeyAlgorithm
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keyalgorithm
@@ -91,6 +98,7 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyAlgorithm { get; set; }
     }
 

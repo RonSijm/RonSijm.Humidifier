@@ -3,7 +3,7 @@ namespace Humidifier.RedshiftServerless
     using System.Collections.Generic;
     using WorkgroupTypes;
 
-    public class Workgroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Workgroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -221,7 +221,7 @@ namespace Humidifier.RedshiftServerless
             public dynamic VpcEndpointId { get; set; }
         }
 
-        public class Workgroup : Humidifier.Base.BaseSubResource
+        public class Workgroup : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// Status

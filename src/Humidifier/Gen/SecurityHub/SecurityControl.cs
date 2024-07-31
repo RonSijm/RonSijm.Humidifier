@@ -29,6 +29,7 @@ namespace Humidifier.SecurityHub
         /// PrimitiveType: String
         /// </summary>
         public dynamic LastUpdateReason { get; set; }
+
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-securitycontrol.html#cfn-securityhub-securitycontrol-parameters
@@ -37,6 +38,7 @@ namespace Humidifier.SecurityHub
         /// Type: Map
         /// ItemType: ParameterConfiguration
         /// </summary>
+        [Required]
         public Dictionary<string, SecurityControlTypes.ParameterConfiguration> Parameters { get; set; }
         /// <summary>
         /// SecurityControlArn

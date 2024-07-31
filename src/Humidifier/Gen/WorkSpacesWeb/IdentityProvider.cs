@@ -25,6 +25,7 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public Dictionary<string, dynamic> IdentityProviderDetails { get; set; }
         /// <summary>
         /// PortalArn
@@ -35,6 +36,7 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         public dynamic PortalArn { get; set; }
         public dynamic IdentityProviderName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// IdentityProviderType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-identityprovider.html#cfn-workspacesweb-identityprovider-identityprovidertype
@@ -42,6 +44,7 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityProviderType { get; set; }
     }
 }

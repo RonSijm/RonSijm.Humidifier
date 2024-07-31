@@ -26,6 +26,7 @@ namespace Humidifier.Shield
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic LogBucketList { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-drtaccess.html#cfn-shield-drtaccess-rolearn
@@ -33,6 +34,7 @@ namespace Humidifier.Shield
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
     }
 }

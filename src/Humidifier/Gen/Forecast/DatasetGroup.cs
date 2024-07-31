@@ -2,7 +2,7 @@ namespace Humidifier.Forecast
 {
     using System.Collections.Generic;
 
-    public class DatasetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DatasetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.Forecast
         /// </summary>
         public dynamic DatasetArns { get; set; }
         public dynamic DatasetGroupName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-domain
@@ -34,6 +35,7 @@ namespace Humidifier.Forecast
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Domain { get; set; }
         /// <summary>
         /// Tags

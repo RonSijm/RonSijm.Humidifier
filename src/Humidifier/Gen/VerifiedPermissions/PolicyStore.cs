@@ -27,6 +27,7 @@ namespace Humidifier.VerifiedPermissions
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ValidationSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-policystore.html#cfn-verifiedpermissions-policystore-validationsettings
@@ -34,6 +35,7 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Mutable
         /// Type: ValidationSettings
         /// </summary>
+        [Required]
         public PolicyStoreTypes.ValidationSettings ValidationSettings { get; set; }
         /// <summary>
         /// Schema

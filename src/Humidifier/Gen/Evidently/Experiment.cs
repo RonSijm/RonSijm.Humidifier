@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using ExperimentTypes;
 
-    public class Experiment : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Experiment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Evidently
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Project { get; set; }
         /// <summary>
         /// RunningStatus
@@ -42,6 +43,7 @@ namespace Humidifier.Evidently
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// MetricGoals
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-metricgoals
@@ -50,7 +52,9 @@ namespace Humidifier.Evidently
         /// Type: List
         /// ItemType: MetricGoalObject
         /// </summary>
+        [Required]
         public List<ExperimentTypes.MetricGoalObject> MetricGoals { get; set; }
+
         /// <summary>
         /// OnlineAbConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-onlineabconfig
@@ -58,6 +62,7 @@ namespace Humidifier.Evidently
         /// UpdateType: Mutable
         /// Type: OnlineAbConfigObject
         /// </summary>
+        [Required]
         public ExperimentTypes.OnlineAbConfigObject OnlineAbConfig { get; set; }
         /// <summary>
         /// RemoveSegment
@@ -75,6 +80,7 @@ namespace Humidifier.Evidently
         /// PrimitiveType: String
         /// </summary>
         public dynamic RandomizationSalt { get; set; }
+
         /// <summary>
         /// Treatments
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-experiment.html#cfn-evidently-experiment-treatments
@@ -83,6 +89,7 @@ namespace Humidifier.Evidently
         /// Type: List
         /// ItemType: TreatmentObject
         /// </summary>
+        [Required]
         public List<ExperimentTypes.TreatmentObject> Treatments { get; set; }
         /// <summary>
         /// SamplingRate

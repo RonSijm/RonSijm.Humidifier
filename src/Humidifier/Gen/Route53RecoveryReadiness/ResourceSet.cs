@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryReadiness
     using System.Collections.Generic;
     using ResourceSetTypes;
 
-    public class ResourceSet : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ResourceSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,8 +25,10 @@ namespace Humidifier.Route53RecoveryReadiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceSetType { get; set; }
         public dynamic ResourceSetName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Resources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-resourceset.html#cfn-route53recoveryreadiness-resourceset-resources
@@ -35,6 +37,7 @@ namespace Humidifier.Route53RecoveryReadiness
         /// Type: List
         /// ItemType: Resource
         /// </summary>
+        [Required]
         public List<ResourceSetTypes.Resource> Resources { get; set; }
         /// <summary>
         /// Tags

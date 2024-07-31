@@ -51,6 +51,7 @@ namespace Humidifier.Chatbot
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic GuardrailPolicies { get; set; }
+
         /// <summary>
         /// SlackWorkspaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackworkspaceid
@@ -58,7 +59,9 @@ namespace Humidifier.Chatbot
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SlackWorkspaceId { get; set; }
+
         /// <summary>
         /// SlackChannelId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-slackchannelid
@@ -66,7 +69,9 @@ namespace Humidifier.Chatbot
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SlackChannelId { get; set; }
+
         /// <summary>
         /// IamRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-iamrolearn
@@ -74,7 +79,9 @@ namespace Humidifier.Chatbot
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IamRoleArn { get; set; }
+
         /// <summary>
         /// ConfigurationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-slackchannelconfiguration.html#cfn-chatbot-slackchannelconfiguration-configurationname
@@ -82,6 +89,7 @@ namespace Humidifier.Chatbot
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationName { get; set; }
         /// <summary>
         /// Tags

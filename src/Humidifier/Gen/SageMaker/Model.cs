@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelTypes;
 
-    public class Model : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Model : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

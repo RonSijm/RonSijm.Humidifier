@@ -19,7 +19,9 @@ namespace Humidifier.Deadline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FleetId { get; set; }
+
         /// <summary>
         /// QueueId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queuefleetassociation.html#cfn-deadline-queuefleetassociation-queueid
@@ -27,7 +29,9 @@ namespace Humidifier.Deadline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueueId { get; set; }
+
         /// <summary>
         /// FarmId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queuefleetassociation.html#cfn-deadline-queuefleetassociation-farmid
@@ -35,6 +39,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FarmId { get; set; }
     }
 }

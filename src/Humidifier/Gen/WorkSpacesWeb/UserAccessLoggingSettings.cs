@@ -25,6 +25,7 @@ namespace Humidifier.WorkSpacesWeb
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KinesisStreamArn { get; set; }
         /// <summary>
         /// Tags

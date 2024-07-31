@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class Policy : Humidifier.Base.BaseResource, IHaveTags, IHavePolicyDocument, IHaveImpliedResourceName
+    public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePolicyDocument
     {
         public class Attributes
         {
@@ -19,6 +19,7 @@ namespace Humidifier.IoT
         }
 
         public dynamic PolicyName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-policy.html#cfn-iot-policy-policydocument
@@ -26,6 +27,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
         /// <summary>
         /// Tags

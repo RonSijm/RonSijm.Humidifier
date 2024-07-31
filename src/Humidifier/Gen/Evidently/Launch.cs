@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using LaunchTypes;
 
-    public class Launch : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Launch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Evidently
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Project { get; set; }
         /// <summary>
         /// Description
@@ -42,6 +43,7 @@ namespace Humidifier.Evidently
         /// Type: ExecutionStatusObject
         /// </summary>
         public LaunchTypes.ExecutionStatusObject ExecutionStatus { get; set; }
+
         /// <summary>
         /// Groups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-groups
@@ -50,6 +52,7 @@ namespace Humidifier.Evidently
         /// Type: List
         /// ItemType: LaunchGroupObject
         /// </summary>
+        [Required]
         public List<LaunchTypes.LaunchGroupObject> Groups { get; set; }
         /// <summary>
         /// RandomizationSalt
@@ -68,6 +71,7 @@ namespace Humidifier.Evidently
         /// ItemType: MetricDefinitionObject
         /// </summary>
         public List<LaunchTypes.MetricDefinitionObject> MetricMonitors { get; set; }
+
         /// <summary>
         /// ScheduledSplitsConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-launch.html#cfn-evidently-launch-scheduledsplitsconfig
@@ -76,6 +80,7 @@ namespace Humidifier.Evidently
         /// Type: List
         /// ItemType: StepConfig
         /// </summary>
+        [Required]
         public List<LaunchTypes.StepConfig> ScheduledSplitsConfig { get; set; }
         /// <summary>
         /// Tags

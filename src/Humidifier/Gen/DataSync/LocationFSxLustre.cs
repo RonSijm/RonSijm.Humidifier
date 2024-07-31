@@ -34,6 +34,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic FsxFilesystemArn { get; set; }
+
         /// <summary>
         /// SecurityGroupArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-securitygrouparns
@@ -42,6 +43,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupArns { get; set; }
         /// <summary>
         /// Tags

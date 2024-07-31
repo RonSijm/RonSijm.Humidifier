@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using BucketTypes;
 
-    public class Bucket : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic ReadOnlyAccessAccounts { get; set; }
+
         /// <summary>
         /// BundleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-bundleid
@@ -44,6 +45,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BundleId { get; set; }
         public dynamic BucketName { get => GivenName; set => GivenName = value; }
         /// <summary>

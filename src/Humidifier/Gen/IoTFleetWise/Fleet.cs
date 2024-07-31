@@ -27,6 +27,7 @@ namespace Humidifier.IoTFleetWise
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-fleet.html#cfn-iotfleetwise-fleet-id
@@ -34,7 +35,9 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Id { get; set; }
+
         /// <summary>
         /// SignalCatalogArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-fleet.html#cfn-iotfleetwise-fleet-signalcatalogarn
@@ -42,6 +45,7 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SignalCatalogArn { get; set; }
         /// <summary>
         /// Tags

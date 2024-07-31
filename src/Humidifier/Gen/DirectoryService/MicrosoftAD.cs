@@ -44,6 +44,7 @@ namespace Humidifier.DirectoryService
         /// </summary>
         public dynamic EnableSso { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Password
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password
@@ -51,6 +52,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Password { get; set; }
         /// <summary>
         /// ShortName
@@ -60,6 +62,7 @@ namespace Humidifier.DirectoryService
         /// PrimitiveType: String
         /// </summary>
         public dynamic ShortName { get; set; }
+
         /// <summary>
         /// VpcSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings
@@ -67,12 +70,13 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// Type: VpcSettings
         /// </summary>
+        [Required]
         public MicrosoftADTypes.VpcSettings VpcSettings { get; set; }
     }
 
     namespace MicrosoftADTypes
     {
-        public class VpcSettings : Humidifier.Base.BaseSubResource, IHaveVpcId
+        public class VpcSettings : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

@@ -32,6 +32,7 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// FlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flowversion.html#cfn-bedrock-flowversion-flowarn
@@ -39,6 +40,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FlowArn { get; set; }
     }
 

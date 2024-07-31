@@ -3,7 +3,7 @@ namespace Humidifier.Amplify
     using System.Collections.Generic;
     using AppTypes;
 
-    public class App : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

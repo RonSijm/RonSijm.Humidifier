@@ -25,7 +25,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// Alias
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-alias
@@ -33,7 +35,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Alias { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-displayname
@@ -41,6 +45,7 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// Plan

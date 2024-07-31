@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using VodSourceTypes;
 
-    public class VodSource : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VodSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -19,6 +19,7 @@ namespace Humidifier.MediaTailor
         }
 
         public dynamic VodSourceName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// SourceLocationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-vodsource.html#cfn-mediatailor-vodsource-sourcelocationname
@@ -26,7 +27,9 @@ namespace Humidifier.MediaTailor
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceLocationName { get; set; }
+
         /// <summary>
         /// HttpPackageConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-vodsource.html#cfn-mediatailor-vodsource-httppackageconfigurations
@@ -35,6 +38,7 @@ namespace Humidifier.MediaTailor
         /// Type: List
         /// ItemType: HttpPackageConfiguration
         /// </summary>
+        [Required]
         public List<VodSourceTypes.HttpPackageConfiguration> HttpPackageConfigurations { get; set; }
         /// <summary>
         /// Tags

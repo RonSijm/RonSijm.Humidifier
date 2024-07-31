@@ -22,6 +22,7 @@ namespace Humidifier.RDS
         }
 
         public dynamic DBProxyEndpointName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DBProxyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-dbproxyname
@@ -29,6 +30,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBProxyName { get; set; }
         /// <summary>
         /// TargetRole
@@ -47,6 +49,7 @@ namespace Humidifier.RDS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic VpcSecurityGroupIds { get; set; }
+
         /// <summary>
         /// VpcSubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-vpcsubnetids
@@ -55,6 +58,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic VpcSubnetIds { get; set; }
         /// <summary>
         /// Tags

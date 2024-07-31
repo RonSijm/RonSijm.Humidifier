@@ -19,6 +19,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic SecurityConfiguration_ { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using EntitlementTypes;
 
-    public class Entitlement : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Entitlement : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AppVisibility { get; set; }
         /// <summary>
         /// Description
@@ -35,6 +36,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Attributes_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-entitlement.html#cfn-appstream-entitlement-attributes
@@ -43,7 +45,9 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Attribute
         /// </summary>
+        [Required]
         public List<EntitlementTypes.Attribute> Attributes_ { get; set; }
+
         /// <summary>
         /// StackName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-entitlement.html#cfn-appstream-entitlement-stackname
@@ -51,6 +55,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackName { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

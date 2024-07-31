@@ -14,6 +14,7 @@ namespace Humidifier.WAF
         }
 
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// XssMatchTuples
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples
@@ -22,6 +23,7 @@ namespace Humidifier.WAF
         /// Type: List
         /// ItemType: XssMatchTuple
         /// </summary>
+        [Required]
         public List<XssMatchSetTypes.XssMatchTuple> XssMatchTuples { get; set; }
     }
 

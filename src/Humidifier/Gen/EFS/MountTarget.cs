@@ -26,7 +26,9 @@ namespace Humidifier.EFS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroups { get; set; }
+
         /// <summary>
         /// FileSystemId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-filesystemid
@@ -34,6 +36,7 @@ namespace Humidifier.EFS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileSystemId { get; set; }
         /// <summary>
         /// IpAddress
@@ -43,6 +46,7 @@ namespace Humidifier.EFS
         /// PrimitiveType: String
         /// </summary>
         public dynamic IpAddress { get; set; }
+
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-subnetid
@@ -50,6 +54,7 @@ namespace Humidifier.EFS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubnetId { get; set; }
     }
 }

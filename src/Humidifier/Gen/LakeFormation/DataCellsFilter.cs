@@ -20,6 +20,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TableName { get; set; }
         /// <summary>
         /// ColumnNames
@@ -38,6 +39,7 @@ namespace Humidifier.LakeFormation
         /// Type: RowFilter
         /// </summary>
         public DataCellsFilterTypes.RowFilter RowFilter { get; set; }
+
         /// <summary>
         /// DatabaseName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-databasename
@@ -45,7 +47,9 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatabaseName { get; set; }
+
         /// <summary>
         /// TableCatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datacellsfilter.html#cfn-lakeformation-datacellsfilter-tablecatalogid
@@ -53,6 +57,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TableCatalogId { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>

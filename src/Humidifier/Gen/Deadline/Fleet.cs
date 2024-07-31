@@ -30,6 +30,7 @@ namespace Humidifier.Deadline
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-fleet.html#cfn-deadline-fleet-configuration
@@ -37,7 +38,9 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// Type: FleetConfiguration
         /// </summary>
+        [Required]
         public FleetTypes.FleetConfiguration Configuration { get; set; }
+
         /// <summary>
         /// MaxWorkerCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-fleet.html#cfn-deadline-fleet-maxworkercount
@@ -45,7 +48,9 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic MaxWorkerCount { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-fleet.html#cfn-deadline-fleet-displayname
@@ -53,6 +58,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// MinWorkerCount
@@ -70,6 +76,7 @@ namespace Humidifier.Deadline
         /// PrimitiveType: String
         /// </summary>
         public dynamic FarmId { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-fleet.html#cfn-deadline-fleet-rolearn
@@ -77,6 +84,7 @@ namespace Humidifier.Deadline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

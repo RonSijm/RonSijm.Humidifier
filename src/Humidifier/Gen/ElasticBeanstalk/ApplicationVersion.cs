@@ -25,6 +25,7 @@ namespace Humidifier.ElasticBeanstalk
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationName { get; set; }
         /// <summary>
         /// Description
@@ -34,6 +35,7 @@ namespace Humidifier.ElasticBeanstalk
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SourceBundle
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-applicationversion.html#cfn-elasticbeanstalk-applicationversion-sourcebundle
@@ -41,6 +43,7 @@ namespace Humidifier.ElasticBeanstalk
         /// UpdateType: Immutable
         /// Type: SourceBundle
         /// </summary>
+        [Required]
         public ApplicationVersionTypes.SourceBundle SourceBundle { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using AppTypes;
 
-    public class App : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainId { get; set; }
         /// <summary>
         /// ResourceSpec
@@ -34,6 +35,7 @@ namespace Humidifier.SageMaker
         /// Type: ResourceSpec
         /// </summary>
         public AppTypes.ResourceSpec ResourceSpec { get; set; }
+
         /// <summary>
         /// AppType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-apptype
@@ -41,6 +43,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AppType { get; set; }
         /// <summary>
         /// Tags
@@ -51,6 +54,7 @@ namespace Humidifier.SageMaker
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// UserProfileName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-userprofilename
@@ -58,6 +62,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserProfileName { get; set; }
         public dynamic AppName { get => GivenName; set => GivenName = value; }
     }

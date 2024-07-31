@@ -26,6 +26,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: MonitoringOutputConfig
         /// </summary>
+        [Required]
         public ModelExplainabilityJobDefinitionTypes.MonitoringOutputConfig ModelExplainabilityJobOutputConfig { get; set; }
         /// <summary>
         /// EndpointName
@@ -59,6 +60,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic JobDefinitionName { get; set; }
+
         /// <summary>
         /// JobResources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobresources
@@ -66,6 +68,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: MonitoringResources
         /// </summary>
+        [Required]
         public ModelExplainabilityJobDefinitionTypes.MonitoringResources JobResources { get; set; }
         /// <summary>
         /// NetworkConfig
@@ -75,6 +78,7 @@ namespace Humidifier.SageMaker
         /// Type: NetworkConfig
         /// </summary>
         public ModelExplainabilityJobDefinitionTypes.NetworkConfig NetworkConfig { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-rolearn
@@ -82,7 +86,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
+
         /// <summary>
         /// ModelExplainabilityJobInput
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput
@@ -90,6 +96,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ModelExplainabilityJobInput
         /// </summary>
+        [Required]
         public ModelExplainabilityJobDefinitionTypes.ModelExplainabilityJobInput ModelExplainabilityJobInput { get; set; }
         /// <summary>
         /// Tags
@@ -100,6 +107,7 @@ namespace Humidifier.SageMaker
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// ModelExplainabilityAppSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification
@@ -107,6 +115,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ModelExplainabilityAppSpecification
         /// </summary>
+        [Required]
         public ModelExplainabilityJobDefinitionTypes.ModelExplainabilityAppSpecification ModelExplainabilityAppSpecification { get; set; }
     }
 

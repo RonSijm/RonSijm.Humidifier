@@ -104,6 +104,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic InstallUpdatesOnBoot { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-instancetype
@@ -111,7 +112,9 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
+
         /// <summary>
         /// LayerIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-layerids
@@ -120,6 +123,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic LayerIds { get; set; }
         /// <summary>
         /// Os
@@ -145,6 +149,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveType: String
         /// </summary>
         public dynamic SshKeyName { get; set; }
+
         /// <summary>
         /// StackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-stackid
@@ -152,6 +157,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackId { get; set; }
         /// <summary>
         /// SubnetId

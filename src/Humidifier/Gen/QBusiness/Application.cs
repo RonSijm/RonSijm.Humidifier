@@ -47,6 +47,7 @@ namespace Humidifier.QBusiness
         /// Type: EncryptionConfiguration
         /// </summary>
         public ApplicationTypes.EncryptionConfiguration EncryptionConfiguration { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-application.html#cfn-qbusiness-application-displayname
@@ -54,6 +55,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// RoleArn

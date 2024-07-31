@@ -30,3 +30,18 @@ public class FnAnd
         Conditions = new List<dynamic>(conditions);
     }
 }
+
+public class FnStringJoin
+{
+    public List<dynamic> Conditions { get; }
+
+    public FnStringJoin(params dynamic[] conditions)
+    {
+        if (conditions == null)
+        {
+            throw new ArgumentNullException(nameof(conditions));
+        }
+
+        Conditions = new List<dynamic>(conditions);
+    }
+}

@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using MeshTypes;
 
-    public class Mesh : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Mesh : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

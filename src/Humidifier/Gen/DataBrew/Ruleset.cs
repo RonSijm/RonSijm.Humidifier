@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using RulesetTypes;
 
-    public class Ruleset : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Ruleset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -21,6 +21,7 @@ namespace Humidifier.DataBrew
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// TargetArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-targetarn
@@ -28,7 +29,9 @@ namespace Humidifier.DataBrew
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetArn { get; set; }
+
         /// <summary>
         /// Rules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-rules
@@ -37,6 +40,7 @@ namespace Humidifier.DataBrew
         /// Type: List
         /// ItemType: Rule
         /// </summary>
+        [Required]
         public List<RulesetTypes.Rule> Rules { get; set; }
         /// <summary>
         /// Tags

@@ -19,7 +19,9 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EntitlementName { get; set; }
+
         /// <summary>
         /// ApplicationIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-applicationentitlementassociation.html#cfn-appstream-applicationentitlementassociation-applicationidentifier
@@ -27,7 +29,9 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationIdentifier { get; set; }
+
         /// <summary>
         /// StackName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-applicationentitlementassociation.html#cfn-appstream-applicationentitlementassociation-stackname
@@ -35,6 +39,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackName { get; set; }
     }
 }

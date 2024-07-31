@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using FuotaTaskTypes;
 
-    public class FuotaTask : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class FuotaTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirmwareUpdateImage { get; set; }
         /// <summary>
         /// Description
@@ -36,6 +37,7 @@ namespace Humidifier.IoTWireless
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// LoRaWAN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#cfn-iotwireless-fuotatask-lorawan
@@ -43,7 +45,9 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// Type: LoRaWAN
         /// </summary>
+        [Required]
         public FuotaTaskTypes.LoRaWAN LoRaWAN { get; set; }
+
         /// <summary>
         /// FirmwareUpdateRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#cfn-iotwireless-fuotatask-firmwareupdaterole
@@ -51,6 +55,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirmwareUpdateRole { get; set; }
         /// <summary>
         /// AssociateMulticastGroup

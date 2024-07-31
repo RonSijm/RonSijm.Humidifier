@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class Policy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveImpliedResourceName
+    public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHavePolicyDocument
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.IAM
         /// </summary>
         public dynamic Groups { get; set; }
         public dynamic PolicyName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-policy.html#cfn-iam-policy-policydocument
@@ -34,6 +35,7 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
         /// <summary>
         /// Roles

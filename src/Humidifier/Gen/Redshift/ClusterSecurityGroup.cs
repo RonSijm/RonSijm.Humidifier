@@ -19,6 +19,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Tags

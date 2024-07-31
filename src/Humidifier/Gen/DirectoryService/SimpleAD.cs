@@ -3,7 +3,7 @@ namespace Humidifier.DirectoryService
     using System.Collections.Generic;
     using SimpleADTypes;
 
-    public class SimpleAD : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class SimpleAD : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.DirectoryService
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// VpcSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings
@@ -35,7 +36,9 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// Type: VpcSettings
         /// </summary>
+        [Required]
         public SimpleADTypes.VpcSettings VpcSettings { get; set; }
+
         /// <summary>
         /// Size
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size
@@ -43,6 +46,7 @@ namespace Humidifier.DirectoryService
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Size { get; set; }
         /// <summary>
         /// CreateAlias
@@ -81,7 +85,7 @@ namespace Humidifier.DirectoryService
 
     namespace SimpleADTypes
     {
-        public class VpcSettings : Humidifier.Base.BaseSubResource, IHaveVpcId
+        public class VpcSettings : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveSubnetIds
         {
             /// <summary>
             /// VpcId

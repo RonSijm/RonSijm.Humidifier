@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using AppBlockTypes;
 
-    public class AppBlock : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class AppBlock : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -51,6 +51,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic DisplayName { get; set; }
+
         /// <summary>
         /// SourceS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblock.html#cfn-appstream-appblock-sources3location
@@ -58,6 +59,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// Type: S3Location
         /// </summary>
+        [Required]
         public AppBlockTypes.S3Location SourceS3Location { get; set; }
         /// <summary>
         /// Tags

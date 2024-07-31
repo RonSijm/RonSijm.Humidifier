@@ -20,6 +20,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic CIDRIP { get; set; }
+
         /// <summary>
         /// DBSecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-security-group-ingress.html#cfn-rds-securitygroup-ingress-dbsecuritygroupname
@@ -27,6 +28,7 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBSecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupId

@@ -3,7 +3,7 @@ namespace Humidifier.VpcLattice
     using System.Collections.Generic;
     using ListenerTypes;
 
-    public class Listener : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Listener : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Mutable
         /// Type: DefaultAction
         /// </summary>
+        [Required]
         public ListenerTypes.DefaultAction DefaultAction { get; set; }
         /// <summary>
         /// Port
@@ -45,6 +46,7 @@ namespace Humidifier.VpcLattice
         /// PrimitiveType: String
         /// </summary>
         public dynamic ServiceIdentifier { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-listener.html#cfn-vpclattice-listener-protocol
@@ -52,6 +54,7 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Protocol { get; set; }
         /// <summary>
         /// Tags

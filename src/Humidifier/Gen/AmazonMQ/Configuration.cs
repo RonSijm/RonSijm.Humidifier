@@ -3,7 +3,7 @@ namespace Humidifier.AmazonMQ
     using System.Collections.Generic;
     using ConfigurationTypes;
 
-    public class Configuration : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Configuration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -44,6 +44,7 @@ namespace Humidifier.AmazonMQ
         /// PrimitiveType: String
         /// </summary>
         public dynamic AuthenticationStrategy { get; set; }
+
         /// <summary>
         /// EngineType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-enginetype
@@ -51,7 +52,9 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineType { get; set; }
+
         /// <summary>
         /// Data
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data
@@ -59,6 +62,7 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Data { get; set; }
         /// <summary>
         /// Tags

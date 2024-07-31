@@ -2,7 +2,7 @@ namespace Humidifier.IoTSiteWise
 {
     using System.Collections.Generic;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.IoTSiteWise
         /// </summary>
         public dynamic AssetIds { get; set; }
         public dynamic ProjectName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// PortalId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-portalid
@@ -35,6 +36,7 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PortalId { get; set; }
         /// <summary>
         /// ProjectDescription
@@ -44,6 +46,9 @@ namespace Humidifier.IoTSiteWise
         /// PrimitiveType: String
         /// </summary>
         public dynamic ProjectDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ProjectDescription; set => ProjectDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-tags

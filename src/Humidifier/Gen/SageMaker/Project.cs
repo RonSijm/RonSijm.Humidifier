@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.SageMaker
         /// Type: ServiceCatalogProvisionedProductDetails
         /// </summary>
         public ProjectTypes.ServiceCatalogProvisionedProductDetails ServiceCatalogProvisionedProductDetails { get; set; }
+
         /// <summary>
         /// ServiceCatalogProvisioningDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-servicecatalogprovisioningdetails
@@ -37,6 +38,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ServiceCatalogProvisioningDetails
         /// </summary>
+        [Required]
         public ProjectTypes.ServiceCatalogProvisioningDetails ServiceCatalogProvisioningDetails { get; set; }
         /// <summary>
         /// ProjectDescription
@@ -46,6 +48,9 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic ProjectDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ProjectDescription; set => ProjectDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-tags

@@ -25,7 +25,9 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Mutable
         /// Type: AwsSecurityFindingFilters
         /// </summary>
+        [Required]
         public InsightTypes.AwsSecurityFindingFilters Filters { get; set; }
+
         /// <summary>
         /// GroupByAttribute
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-insight.html#cfn-securityhub-insight-groupbyattribute
@@ -33,6 +35,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupByAttribute { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

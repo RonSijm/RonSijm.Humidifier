@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using WirelessDeviceTypes;
 
-    public class WirelessDevice : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class WirelessDevice : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.IoTWireless
         /// PrimitiveType: String
         /// </summary>
         public dynamic Positioning { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-type
@@ -43,6 +44,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -60,6 +62,7 @@ namespace Humidifier.IoTWireless
         /// Type: LoRaWANDevice
         /// </summary>
         public WirelessDeviceTypes.LoRaWANDevice LoRaWAN { get; set; }
+
         /// <summary>
         /// DestinationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-destinationname
@@ -67,6 +70,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DestinationName { get; set; }
         /// <summary>
         /// ThingArn

@@ -3,7 +3,7 @@ namespace Humidifier.BillingConductor
     using System.Collections.Generic;
     using CustomLineItemTypes;
 
-    public class CustomLineItem : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class CustomLineItem : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -47,6 +47,7 @@ namespace Humidifier.BillingConductor
         /// PrimitiveType: String
         /// </summary>
         public dynamic AccountId { get; set; }
+
         /// <summary>
         /// BillingGroupArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-billinggrouparn
@@ -54,6 +55,7 @@ namespace Humidifier.BillingConductor
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BillingGroupArn { get; set; }
         /// <summary>
         /// CustomLineItemChargeDetails

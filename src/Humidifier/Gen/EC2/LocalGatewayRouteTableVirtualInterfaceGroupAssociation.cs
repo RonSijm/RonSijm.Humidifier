@@ -28,6 +28,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LocalGatewayRouteTableId { get; set; }
         /// <summary>
         /// Tags
@@ -38,6 +39,7 @@ namespace Humidifier.EC2
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// LocalGatewayVirtualInterfaceGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayvirtualinterfacegroupid
@@ -45,6 +47,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LocalGatewayVirtualInterfaceGroupId { get; set; }
     }
 }

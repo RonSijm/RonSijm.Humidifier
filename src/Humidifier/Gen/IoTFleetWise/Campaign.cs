@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Action { get; set; }
         /// <summary>
         /// Compression
@@ -95,6 +96,7 @@ namespace Humidifier.IoTFleetWise
         /// ItemType: DataDestinationConfig
         /// </summary>
         public List<CampaignTypes.DataDestinationConfig> DataDestinationConfigs { get; set; }
+
         /// <summary>
         /// SignalCatalogArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-signalcatalogarn
@@ -102,6 +104,7 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SignalCatalogArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -129,6 +132,7 @@ namespace Humidifier.IoTFleetWise
         /// PrimitiveType: String
         /// </summary>
         public dynamic DiagnosticsMode { get; set; }
+
         /// <summary>
         /// TargetArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-targetarn
@@ -136,7 +140,9 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetArn { get; set; }
+
         /// <summary>
         /// CollectionScheme
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-collectionscheme
@@ -144,6 +150,7 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Immutable
         /// Type: CollectionScheme
         /// </summary>
+        [Required]
         public CampaignTypes.CollectionScheme CollectionScheme { get; set; }
         /// <summary>
         /// Tags

@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: KeyGroupConfig
         /// </summary>
+        [Required]
         public KeyGroupTypes.KeyGroupConfig KeyGroupConfig { get; set; }
     }
 

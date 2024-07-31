@@ -27,6 +27,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// ItemType: ScheduledAction
         /// </summary>
         public List<ScalableTargetTypes.ScheduledAction> ScheduledActions { get; set; }
+
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-resourceid
@@ -34,7 +35,9 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceId { get; set; }
+
         /// <summary>
         /// ServiceNamespace
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace
@@ -42,7 +45,9 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceNamespace { get; set; }
+
         /// <summary>
         /// ScalableDimension
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scalabledimension
@@ -50,6 +55,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ScalableDimension { get; set; }
         /// <summary>
         /// SuspendedState
@@ -59,6 +65,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// Type: SuspendedState
         /// </summary>
         public ScalableTargetTypes.SuspendedState SuspendedState { get; set; }
+
         /// <summary>
         /// MinCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-mincapacity
@@ -66,6 +73,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic MinCapacity { get; set; }
         /// <summary>
         /// RoleARN
@@ -75,6 +83,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// PrimitiveType: String
         /// </summary>
         public dynamic RoleARN { get; set; }
+
         /// <summary>
         /// MaxCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-maxcapacity
@@ -82,6 +91,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic MaxCapacity { get; set; }
     }
 

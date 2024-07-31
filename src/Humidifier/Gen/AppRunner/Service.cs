@@ -3,7 +3,7 @@ namespace Humidifier.AppRunner
     using System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -54,6 +54,7 @@ namespace Humidifier.AppRunner
         /// Type: ServiceObservabilityConfiguration
         /// </summary>
         public ServiceTypes.ServiceObservabilityConfiguration ObservabilityConfiguration { get; set; }
+
         /// <summary>
         /// SourceConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-sourceconfiguration
@@ -61,6 +62,7 @@ namespace Humidifier.AppRunner
         /// UpdateType: Mutable
         /// Type: SourceConfiguration
         /// </summary>
+        [Required]
         public ServiceTypes.SourceConfiguration SourceConfiguration { get; set; }
         /// <summary>
         /// AutoScalingConfigurationArn

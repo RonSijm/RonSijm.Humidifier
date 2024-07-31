@@ -19,7 +19,9 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CertificateAuthorityArn { get; set; }
+
         /// <summary>
         /// Actions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-actions
@@ -28,6 +30,7 @@ namespace Humidifier.ACMPCA
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Actions { get; set; }
         /// <summary>
         /// SourceAccount
@@ -37,6 +40,7 @@ namespace Humidifier.ACMPCA
         /// PrimitiveType: String
         /// </summary>
         public dynamic SourceAccount { get; set; }
+
         /// <summary>
         /// Principal
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-permission.html#cfn-acmpca-permission-principal
@@ -44,6 +48,7 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Principal { get; set; }
     }
 }

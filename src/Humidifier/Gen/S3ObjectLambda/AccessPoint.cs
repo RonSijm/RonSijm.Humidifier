@@ -28,6 +28,7 @@ namespace Humidifier.S3ObjectLambda
         /// UpdateType: Mutable
         /// Type: ObjectLambdaConfiguration
         /// </summary>
+        [Required]
         public AccessPointTypes.ObjectLambdaConfiguration ObjectLambdaConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

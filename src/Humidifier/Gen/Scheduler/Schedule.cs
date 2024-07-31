@@ -3,7 +3,7 @@ namespace Humidifier.Scheduler
     using System.Collections.Generic;
     using ScheduleTypes;
 
-    public class Schedule : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Schedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.Scheduler
         /// PrimitiveType: String
         /// </summary>
         public dynamic StartDate { get; set; }
+
         /// <summary>
         /// ScheduleExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-scheduleexpression
@@ -41,7 +42,9 @@ namespace Humidifier.Scheduler
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ScheduleExpression { get; set; }
+
         /// <summary>
         /// Target
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-target
@@ -49,6 +52,7 @@ namespace Humidifier.Scheduler
         /// UpdateType: Mutable
         /// Type: Target
         /// </summary>
+        [Required]
         public ScheduleTypes.Target Target { get; set; }
         /// <summary>
         /// Description
@@ -74,6 +78,7 @@ namespace Humidifier.Scheduler
         /// PrimitiveType: String
         /// </summary>
         public dynamic State { get; set; }
+
         /// <summary>
         /// FlexibleTimeWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html#cfn-scheduler-schedule-flexibletimewindow
@@ -81,6 +86,7 @@ namespace Humidifier.Scheduler
         /// UpdateType: Mutable
         /// Type: FlexibleTimeWindow
         /// </summary>
+        [Required]
         public ScheduleTypes.FlexibleTimeWindow FlexibleTimeWindow { get; set; }
         /// <summary>
         /// ScheduleExpressionTimezone

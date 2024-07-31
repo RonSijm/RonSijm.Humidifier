@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using CapacityProviderTypes;
 
-    public class CapacityProvider : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class CapacityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.ECS
         /// UpdateType: Mutable
         /// Type: AutoScalingGroupProvider
         /// </summary>
+        [Required]
         public CapacityProviderTypes.AutoScalingGroupProvider AutoScalingGroupProvider { get; set; }
         /// <summary>
         /// Tags

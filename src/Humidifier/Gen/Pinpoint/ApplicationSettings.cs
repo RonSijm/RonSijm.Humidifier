@@ -29,6 +29,7 @@ namespace Humidifier.Pinpoint
         /// Type: Limits
         /// </summary>
         public ApplicationSettingsTypes.Limits Limits { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-applicationid
@@ -36,6 +37,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// CampaignHook

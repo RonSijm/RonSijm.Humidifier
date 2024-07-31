@@ -3,7 +3,7 @@ namespace Humidifier.Route53Resolver
     using System.Collections.Generic;
     using ResolverRuleTypes;
 
-    public class ResolverRule : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ResolverRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.Route53Resolver
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResolverEndpointId { get; set; }
+
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-domainname
@@ -38,7 +39,9 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
+
         /// <summary>
         /// RuleType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-ruletype
@@ -46,6 +49,7 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleType { get; set; }
         /// <summary>
         /// Tags

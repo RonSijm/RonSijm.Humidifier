@@ -20,7 +20,9 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: MonitoringSubscription
         /// </summary>
+        [Required]
         public MonitoringSubscriptionTypes.MonitoringSubscription MonitoringSubscription_ { get; set; }
+
         /// <summary>
         /// DistributionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-distributionid
@@ -28,6 +30,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DistributionId { get; set; }
     }
 

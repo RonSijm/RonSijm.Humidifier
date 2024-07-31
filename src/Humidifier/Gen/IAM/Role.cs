@@ -3,7 +3,7 @@ namespace Humidifier.IAM
     using System.Collections.Generic;
     using RoleTypes;
 
-    public class Role : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Role : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -62,6 +62,7 @@ namespace Humidifier.IAM
         /// ItemType: Policy
         /// </summary>
         public List<RoleTypes.Policy> Policies { get; set; }
+
         /// <summary>
         /// AssumeRolePolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-assumerolepolicydocument
@@ -69,6 +70,7 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic AssumeRolePolicyDocument { get; set; }
         /// <summary>
         /// Tags

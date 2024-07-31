@@ -25,6 +25,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBProxyName { get; set; }
         /// <summary>
         /// DBInstanceIdentifiers
@@ -35,6 +36,7 @@ namespace Humidifier.RDS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic DBInstanceIdentifiers { get; set; }
+
         /// <summary>
         /// TargetGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname
@@ -42,6 +44,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetGroupName { get; set; }
         /// <summary>
         /// ConnectionPoolConfigurationInfo

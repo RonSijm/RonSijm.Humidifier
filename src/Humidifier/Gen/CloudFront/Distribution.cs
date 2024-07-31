@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: DistributionConfig
         /// </summary>
+        [Required]
         public DistributionTypes.DistributionConfig DistributionConfig { get; set; }
         /// <summary>
         /// Tags

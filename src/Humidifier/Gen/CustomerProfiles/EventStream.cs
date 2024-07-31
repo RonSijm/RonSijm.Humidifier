@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using EventStreamTypes;
 
-    public class EventStream : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class EventStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,8 +28,10 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         public dynamic EventStreamName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Uri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-eventstream.html#cfn-customerprofiles-eventstream-uri
@@ -37,6 +39,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Uri { get; set; }
         /// <summary>
         /// Tags

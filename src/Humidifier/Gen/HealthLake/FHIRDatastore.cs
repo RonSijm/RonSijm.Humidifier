@@ -29,6 +29,7 @@ namespace Humidifier.HealthLake
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatastoreTypeVersion { get; set; }
         /// <summary>
         /// DatastoreName

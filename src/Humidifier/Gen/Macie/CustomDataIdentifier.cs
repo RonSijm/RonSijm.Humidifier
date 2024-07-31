@@ -2,7 +2,7 @@ namespace Humidifier.Macie
 {
     using System.Collections.Generic;
 
-    public class CustomDataIdentifier : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class CustomDataIdentifier : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -35,6 +35,7 @@ namespace Humidifier.Macie
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Keywords { get; set; }
+
         /// <summary>
         /// Regex
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-regex
@@ -42,6 +43,7 @@ namespace Humidifier.Macie
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Regex { get; set; }
         /// <summary>
         /// IgnoreWords

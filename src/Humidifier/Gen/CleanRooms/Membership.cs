@@ -28,6 +28,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CollaborationIdentifier { get; set; }
         /// <summary>
         /// DefaultResultConfiguration
@@ -37,6 +38,7 @@ namespace Humidifier.CleanRooms
         /// Type: MembershipProtectedQueryResultConfiguration
         /// </summary>
         public MembershipTypes.MembershipProtectedQueryResultConfiguration DefaultResultConfiguration { get; set; }
+
         /// <summary>
         /// QueryLogStatus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-querylogstatus
@@ -44,6 +46,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryLogStatus { get; set; }
         /// <summary>
         /// Tags

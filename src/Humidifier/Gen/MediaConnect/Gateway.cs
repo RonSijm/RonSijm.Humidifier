@@ -27,7 +27,9 @@ namespace Humidifier.MediaConnect
         /// Type: List
         /// ItemType: GatewayNetwork
         /// </summary>
+        [Required]
         public List<GatewayTypes.GatewayNetwork> Networks { get; set; }
+
         /// <summary>
         /// EgressCidrBlocks
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-gateway.html#cfn-mediaconnect-gateway-egresscidrblocks
@@ -36,6 +38,7 @@ namespace Humidifier.MediaConnect
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic EgressCidrBlocks { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

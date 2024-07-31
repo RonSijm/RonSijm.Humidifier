@@ -3,7 +3,7 @@ namespace Humidifier.EventSchemas
     using System.Collections.Generic;
     using SchemaTypes;
 
-    public class Schema : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Schema : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -38,6 +39,7 @@ namespace Humidifier.EventSchemas
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Content
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-content
@@ -45,7 +47,9 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Content { get; set; }
+
         /// <summary>
         /// RegistryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-registryname
@@ -53,6 +57,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RegistryName { get; set; }
         public dynamic SchemaName { get => GivenName; set => GivenName = value; }
         /// <summary>

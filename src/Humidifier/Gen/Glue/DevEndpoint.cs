@@ -70,6 +70,7 @@ namespace Humidifier.Glue
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn
@@ -77,6 +78,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// WorkerType

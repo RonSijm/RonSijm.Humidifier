@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using StudioComponentTypes;
 
-    public class StudioComponent : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class StudioComponent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -62,6 +62,7 @@ namespace Humidifier.NimbleStudio
         /// ItemType: ScriptParameterKeyValue
         /// </summary>
         public List<StudioComponentTypes.ScriptParameterKeyValue> ScriptParameters { get; set; }
+
         /// <summary>
         /// StudioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-studioid
@@ -69,6 +70,7 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StudioId { get; set; }
         /// <summary>
         /// Subtype
@@ -87,6 +89,7 @@ namespace Humidifier.NimbleStudio
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Tags { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-type
@@ -94,6 +97,7 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
     }
 

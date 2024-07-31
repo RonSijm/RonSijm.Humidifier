@@ -3,7 +3,7 @@ namespace Humidifier.EntityResolution
     using System.Collections.Generic;
     using IdNamespaceTypes;
 
-    public class IdNamespace : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class IdNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -21,6 +21,7 @@ namespace Humidifier.EntityResolution
         }
 
         public dynamic IdNamespaceName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idnamespace.html#cfn-entityresolution-idnamespace-type
@@ -28,6 +29,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description

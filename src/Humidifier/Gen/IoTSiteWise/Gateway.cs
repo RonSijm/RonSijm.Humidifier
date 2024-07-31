@@ -3,7 +3,7 @@ namespace Humidifier.IoTSiteWise
     using System.Collections.Generic;
     using GatewayTypes;
 
-    public class Gateway : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Gateway : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.IoTSiteWise
         /// </summary>
         public List<GatewayTypes.GatewayCapabilitySummary> GatewayCapabilitySummaries { get; set; }
         public dynamic GatewayName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// GatewayPlatform
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewayplatform
@@ -35,6 +36,7 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Immutable
         /// Type: GatewayPlatform
         /// </summary>
+        [Required]
         public GatewayTypes.GatewayPlatform GatewayPlatform { get; set; }
         /// <summary>
         /// Tags

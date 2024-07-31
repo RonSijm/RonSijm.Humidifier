@@ -33,6 +33,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutoMinorVersionUpgrade { get; set; }
+
         /// <summary>
         /// CacheNodeType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachenodetype
@@ -40,6 +41,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CacheNodeType { get; set; }
         /// <summary>
         /// CacheParameterGroupName
@@ -74,6 +76,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic ClusterName { get; set; }
+
         /// <summary>
         /// Engine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engine
@@ -81,6 +84,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Engine { get; set; }
         /// <summary>
         /// EngineVersion
@@ -123,6 +127,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic NotificationTopicArn { get; set; }
+
         /// <summary>
         /// NumCacheNodes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes
@@ -130,6 +135,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Conditional
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic NumCacheNodes { get; set; }
         /// <summary>
         /// Port

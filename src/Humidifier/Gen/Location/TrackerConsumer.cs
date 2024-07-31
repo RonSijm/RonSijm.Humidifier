@@ -19,7 +19,9 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TrackerName { get; set; }
+
         /// <summary>
         /// ConsumerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-trackerconsumer.html#cfn-location-trackerconsumer-consumerarn
@@ -27,6 +29,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConsumerArn { get; set; }
     }
 }

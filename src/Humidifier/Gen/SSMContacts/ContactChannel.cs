@@ -24,7 +24,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelName { get; set; }
+
         /// <summary>
         /// ChannelAddress
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channeladdress
@@ -32,7 +34,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelAddress { get; set; }
+
         /// <summary>
         /// ContactId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-contactid
@@ -40,7 +44,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ContactId { get; set; }
+
         /// <summary>
         /// ChannelType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contactchannel.html#cfn-ssmcontacts-contactchannel-channeltype
@@ -48,6 +54,7 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelType { get; set; }
         /// <summary>
         /// DeferActivation

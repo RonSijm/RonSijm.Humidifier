@@ -3,7 +3,7 @@ namespace Humidifier.LookoutMetrics
     using System.Collections.Generic;
     using AnomalyDetectorTypes;
 
-    public class AnomalyDetector : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class AnomalyDetector : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -35,6 +35,10 @@ namespace Humidifier.LookoutMetrics
         /// PrimitiveType: String
         /// </summary>
         public dynamic AnomalyDetectorDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => AnomalyDetectorDescription; set => AnomalyDetectorDescription = value; }
+
         /// <summary>
         /// AnomalyDetectorConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorconfig
@@ -42,7 +46,9 @@ namespace Humidifier.LookoutMetrics
         /// UpdateType: Mutable
         /// Type: AnomalyDetectorConfig
         /// </summary>
+        [Required]
         public AnomalyDetectorTypes.AnomalyDetectorConfig AnomalyDetectorConfig { get; set; }
+
         /// <summary>
         /// MetricSetList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-metricsetlist
@@ -51,6 +57,7 @@ namespace Humidifier.LookoutMetrics
         /// Type: List
         /// ItemType: MetricSet
         /// </summary>
+        [Required]
         public List<AnomalyDetectorTypes.MetricSet> MetricSetList { get; set; }
     }
 

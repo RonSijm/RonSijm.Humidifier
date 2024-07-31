@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using InfrastructureConfigurationTypes;
 
-    public class InfrastructureConfiguration : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class InfrastructureConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InstanceProfileName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-instanceprofilename
@@ -50,6 +51,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceProfileName { get; set; }
         /// <summary>
         /// ResourceTags

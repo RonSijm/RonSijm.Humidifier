@@ -66,6 +66,7 @@ namespace Humidifier.IoTTwinMaker
         /// ItemType: PropertyGroup
         /// </summary>
         public Dictionary<string, ComponentTypeTypes.PropertyGroup> PropertyGroups { get; set; }
+
         /// <summary>
         /// WorkspaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-workspaceid
@@ -73,7 +74,9 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkspaceId { get; set; }
+
         /// <summary>
         /// ComponentTypeId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-componenttypeid
@@ -81,6 +84,7 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ComponentTypeId { get; set; }
         /// <summary>
         /// Functions

@@ -25,7 +25,9 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectorArn { get; set; }
+
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-template.html#cfn-pcaconnectorad-template-definition
@@ -33,6 +35,7 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Mutable
         /// Type: TemplateDefinition
         /// </summary>
+        [Required]
         public TemplateTypes.TemplateDefinition Definition { get; set; }
         /// <summary>
         /// Tags

@@ -19,6 +19,7 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FilterPattern { get; set; }
         /// <summary>
         /// Distribution
@@ -28,6 +29,7 @@ namespace Humidifier.Logs
         /// PrimitiveType: String
         /// </summary>
         public dynamic Distribution { get; set; }
+
         /// <summary>
         /// LogGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-logs-subscriptionfilter-loggroupname
@@ -35,6 +37,7 @@ namespace Humidifier.Logs
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LogGroupName { get; set; }
         /// <summary>
         /// FilterName
@@ -44,6 +47,7 @@ namespace Humidifier.Logs
         /// PrimitiveType: String
         /// </summary>
         public dynamic FilterName { get; set; }
+
         /// <summary>
         /// DestinationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-logs-subscriptionfilter-destinationarn
@@ -51,6 +55,7 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DestinationArn { get; set; }
         /// <summary>
         /// RoleArn

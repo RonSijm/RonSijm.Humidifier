@@ -20,6 +20,7 @@ namespace Humidifier.Redshift
         /// PrimitiveType: String
         /// </summary>
         public dynamic CIDRIP { get; set; }
+
         /// <summary>
         /// ClusterSecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-clustersecuritygroupname
@@ -27,6 +28,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterSecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupName

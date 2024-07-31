@@ -107,6 +107,7 @@ namespace Humidifier.DMS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AllowMajorVersionUpgrade { get; set; }
+
         /// <summary>
         /// ReplicationInstanceClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceclass
@@ -114,6 +115,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReplicationInstanceClass { get; set; }
         /// <summary>
         /// PubliclyAccessible

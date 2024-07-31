@@ -28,7 +28,9 @@ namespace Humidifier.Kinesis
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConsumerName { get; set; }
+
         /// <summary>
         /// StreamARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-streamarn
@@ -36,6 +38,7 @@ namespace Humidifier.Kinesis
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StreamARN { get; set; }
     }
 }

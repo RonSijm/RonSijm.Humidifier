@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using InferenceExperimentTypes;
 
-    public class InferenceExperiment : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class InferenceExperiment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -46,6 +46,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic StatusReason { get; set; }
+
         /// <summary>
         /// ModelVariants
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-modelvariants
@@ -54,6 +55,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: ModelVariantConfig
         /// </summary>
+        [Required]
         public List<InferenceExperimentTypes.ModelVariantConfig> ModelVariants { get; set; }
         /// <summary>
         /// ShadowModeConfig
@@ -63,6 +65,7 @@ namespace Humidifier.SageMaker
         /// Type: ShadowModeConfig
         /// </summary>
         public InferenceExperimentTypes.ShadowModeConfig ShadowModeConfig { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-rolearn
@@ -70,8 +73,10 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-type
@@ -79,7 +84,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// EndpointName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-endpointname
@@ -87,6 +94,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointName { get; set; }
         /// <summary>
         /// DesiredState

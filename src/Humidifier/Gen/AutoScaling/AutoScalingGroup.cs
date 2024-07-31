@@ -189,6 +189,7 @@ namespace Humidifier.AutoScaling
         /// Type: InstanceMaintenancePolicy
         /// </summary>
         public AutoScalingGroupTypes.InstanceMaintenancePolicy InstanceMaintenancePolicy { get; set; }
+
         /// <summary>
         /// MaxSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-maxsize
@@ -196,7 +197,9 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MaxSize { get; set; }
+
         /// <summary>
         /// MinSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-minsize
@@ -204,6 +207,7 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MinSize { get; set; }
         /// <summary>
         /// TerminationPolicies

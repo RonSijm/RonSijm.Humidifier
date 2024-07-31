@@ -2,7 +2,7 @@ namespace Humidifier.SSM
 {
     using System.Collections.Generic;
 
-    public class MaintenanceWindow : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class MaintenanceWindow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -28,6 +28,7 @@ namespace Humidifier.SSM
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// AllowUnassociatedTargets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-allowunassociatedtargets
@@ -35,7 +36,9 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AllowUnassociatedTargets { get; set; }
+
         /// <summary>
         /// Cutoff
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-cutoff
@@ -43,7 +46,9 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Cutoff { get; set; }
+
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-schedule
@@ -51,7 +56,9 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Schedule { get; set; }
+
         /// <summary>
         /// Duration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-duration
@@ -59,6 +66,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Duration { get; set; }
         /// <summary>
         /// ScheduleOffset

@@ -19,7 +19,9 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// ChannelName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpointpolicy.html#cfn-mediapackagev2-originendpointpolicy-channelname
@@ -27,7 +29,9 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelName { get; set; }
+
         /// <summary>
         /// OriginEndpointName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpointpolicy.html#cfn-mediapackagev2-originendpointpolicy-originendpointname
@@ -35,7 +39,9 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OriginEndpointName { get; set; }
+
         /// <summary>
         /// ChannelGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpointpolicy.html#cfn-mediapackagev2-originendpointpolicy-channelgroupname
@@ -43,6 +49,7 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelGroupName { get; set; }
     }
 }

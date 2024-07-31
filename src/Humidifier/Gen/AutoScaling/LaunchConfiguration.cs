@@ -3,7 +3,7 @@ namespace Humidifier.AutoScaling
     using System.Collections.Generic;
     using LaunchConfigurationTypes;
 
-    public class LaunchConfiguration : Humidifier.Base.BaseResource, IHaveSecurityGroups, IHaveImpliedResourceName
+    public class LaunchConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSecurityGroups
     {
         public override string AWSTypeName
         {
@@ -129,6 +129,7 @@ namespace Humidifier.AutoScaling
         /// PrimitiveType: String
         /// </summary>
         public dynamic SpotPrice { get; set; }
+
         /// <summary>
         /// ImageId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-imageid
@@ -136,7 +137,9 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ImageId { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-instancetype
@@ -144,6 +147,7 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// RamDiskId

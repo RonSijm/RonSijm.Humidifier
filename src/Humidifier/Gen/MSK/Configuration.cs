@@ -3,7 +3,7 @@ namespace Humidifier.MSK
     using System.Collections.Generic;
     using ConfigurationTypes;
 
-    public class Configuration : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Configuration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.MSK
         /// Type: LatestRevision
         /// </summary>
         public ConfigurationTypes.LatestRevision LatestRevision { get; set; }
+
         /// <summary>
         /// ServerProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-serverproperties
@@ -41,6 +42,7 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServerProperties { get; set; }
         /// <summary>
         /// KafkaVersionsList

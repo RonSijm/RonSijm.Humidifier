@@ -3,7 +3,7 @@ namespace Humidifier.Redshift
     using System.Collections.Generic;
     using ScheduledActionTypes;
 
-    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,9 @@ namespace Humidifier.Redshift
         /// PrimitiveType: String
         /// </summary>
         public dynamic ScheduledActionDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ScheduledActionDescription; set => ScheduledActionDescription = value; }
         public dynamic ScheduledActionName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// EndTime

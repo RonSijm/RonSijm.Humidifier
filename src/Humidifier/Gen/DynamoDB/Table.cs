@@ -3,7 +3,7 @@ namespace Humidifier.DynamoDB
     using System.Collections.Generic;
     using TableTypes;
 
-    public class Table : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -118,6 +118,7 @@ namespace Humidifier.DynamoDB
         /// Type: ResourcePolicy
         /// </summary>
         public TableTypes.ResourcePolicy ResourcePolicy { get; set; }
+
         /// <summary>
         /// KeySchema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema
@@ -126,6 +127,7 @@ namespace Humidifier.DynamoDB
         /// Type: List
         /// ItemType: KeySchema
         /// </summary>
+        [Required]
         public List<TableTypes.KeySchema> KeySchema { get; set; }
         /// <summary>
         /// LocalSecondaryIndexes

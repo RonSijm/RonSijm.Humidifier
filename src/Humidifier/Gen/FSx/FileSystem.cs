@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using FileSystemTypes;
 
-    public class FileSystem : Humidifier.Base.BaseResource, IHaveTags
+    public class FileSystem : Humidifier.Base.BaseResource, IHaveTags, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -69,6 +69,7 @@ namespace Humidifier.FSx
         /// Type: OntapConfiguration
         /// </summary>
         public FileSystemTypes.OntapConfiguration OntapConfiguration { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-subnetids
@@ -77,6 +78,7 @@ namespace Humidifier.FSx
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// SecurityGroupIds
@@ -111,6 +113,7 @@ namespace Humidifier.FSx
         /// Type: OpenZFSConfiguration
         /// </summary>
         public FileSystemTypes.OpenZFSConfiguration OpenZFSConfiguration { get; set; }
+
         /// <summary>
         /// FileSystemType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-filesystemtype
@@ -118,6 +121,7 @@ namespace Humidifier.FSx
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileSystemType { get; set; }
         /// <summary>
         /// Tags

@@ -19,6 +19,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TagKey { get; set; }
         /// <summary>
         /// CatalogId
@@ -28,6 +29,7 @@ namespace Humidifier.LakeFormation
         /// PrimitiveType: String
         /// </summary>
         public dynamic CatalogId { get; set; }
+
         /// <summary>
         /// TagValues
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-tag.html#cfn-lakeformation-tag-tagvalues
@@ -36,6 +38,7 @@ namespace Humidifier.LakeFormation
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic TagValues { get; set; }
     }
 }

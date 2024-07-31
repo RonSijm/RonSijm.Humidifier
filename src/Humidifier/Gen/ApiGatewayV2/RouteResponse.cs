@@ -25,6 +25,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RouteResponseKey { get; set; }
         /// <summary>
         /// ResponseParameters
@@ -35,6 +36,7 @@ namespace Humidifier.ApiGatewayV2
         /// ItemType: ParameterConstraints
         /// </summary>
         public Dictionary<string, RouteResponseTypes.ParameterConstraints> ResponseParameters { get; set; }
+
         /// <summary>
         /// RouteId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-routeid
@@ -42,6 +44,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RouteId { get; set; }
         /// <summary>
         /// ModelSelectionExpression
@@ -51,6 +54,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic ModelSelectionExpression { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-routeresponse.html#cfn-apigatewayv2-routeresponse-apiid
@@ -58,6 +62,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
         /// <summary>
         /// ResponseModels

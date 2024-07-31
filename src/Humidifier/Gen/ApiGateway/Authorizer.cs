@@ -42,6 +42,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: String
         /// </summary>
         public dynamic IdentityValidationExpression { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-type
@@ -49,6 +50,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// AuthorizerUri
@@ -66,6 +68,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AuthorizerResultTtlInSeconds { get; set; }
+
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-restapiid
@@ -73,6 +76,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RestApiId { get; set; }
         /// <summary>
         /// IdentitySource

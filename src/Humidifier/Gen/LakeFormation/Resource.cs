@@ -19,6 +19,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceArn { get; set; }
         /// <summary>
         /// WithFederation
@@ -28,6 +29,7 @@ namespace Humidifier.LakeFormation
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic WithFederation { get; set; }
+
         /// <summary>
         /// UseServiceLinkedRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-useservicelinkedrole
@@ -35,6 +37,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Conditional
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic UseServiceLinkedRole { get; set; }
         /// <summary>
         /// HybridAccessEnabled

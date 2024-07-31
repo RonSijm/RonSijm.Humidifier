@@ -25,6 +25,7 @@ namespace Humidifier.BCMDataExports
         /// UpdateType: Mutable
         /// Type: Export
         /// </summary>
+        [Required]
         public ExportTypes.Export Export_ { get; set; }
         /// <summary>
         /// Tags

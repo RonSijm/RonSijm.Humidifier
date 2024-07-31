@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using TransitGatewayAttachmentTypes;
 
-    public class TransitGatewayAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId
+    public class TransitGatewayAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.EC2
         /// Type: Options
         /// </summary>
         public TransitGatewayAttachmentTypes.Options Options { get; set; }
+
         /// <summary>
         /// TransitGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-transitgatewayid
@@ -33,7 +34,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayId { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-vpcid
@@ -41,7 +44,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-subnetids
@@ -50,6 +55,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

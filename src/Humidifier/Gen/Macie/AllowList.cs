@@ -3,7 +3,7 @@ namespace Humidifier.Macie
     using System.Collections.Generic;
     using AllowListTypes;
 
-    public class AllowList : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class AllowList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.Macie
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Criteria
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-allowlist.html#cfn-macie-allowlist-criteria
@@ -35,6 +36,7 @@ namespace Humidifier.Macie
         /// UpdateType: Mutable
         /// Type: Criteria
         /// </summary>
+        [Required]
         public AllowListTypes.Criteria Criteria { get; set; }
         /// <summary>
         /// Tags

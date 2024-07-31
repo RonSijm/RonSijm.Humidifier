@@ -3,7 +3,7 @@ namespace Humidifier.EMRContainers
     using System.Collections.Generic;
     using VirtualClusterTypes;
 
-    public class VirtualCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VirtualCluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.EMRContainers
         /// UpdateType: Immutable
         /// Type: ContainerProvider
         /// </summary>
+        [Required]
         public VirtualClusterTypes.ContainerProvider ContainerProvider { get; set; }
         /// <summary>
         /// Tags

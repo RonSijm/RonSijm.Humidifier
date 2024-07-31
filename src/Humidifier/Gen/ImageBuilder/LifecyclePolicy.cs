@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using LifecyclePolicyTypes;
 
-    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveDescription, IHaveExecutionRole, IHaveImpliedResourceName
+    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveExecutionRole
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-lifecyclepolicy.html#cfn-imagebuilder-lifecyclepolicy-resourcetype
@@ -41,7 +42,9 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceType { get; set; }
+
         /// <summary>
         /// PolicyDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-lifecyclepolicy.html#cfn-imagebuilder-lifecyclepolicy-policydetails
@@ -50,7 +53,9 @@ namespace Humidifier.ImageBuilder
         /// Type: List
         /// ItemType: PolicyDetail
         /// </summary>
+        [Required]
         public List<LifecyclePolicyTypes.PolicyDetail> PolicyDetails { get; set; }
+
         /// <summary>
         /// ExecutionRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-lifecyclepolicy.html#cfn-imagebuilder-lifecyclepolicy-executionrole
@@ -58,7 +63,9 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ExecutionRole { get; set; }
+
         /// <summary>
         /// ResourceSelection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-lifecyclepolicy.html#cfn-imagebuilder-lifecyclepolicy-resourceselection
@@ -66,6 +73,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Mutable
         /// Type: ResourceSelection
         /// </summary>
+        [Required]
         public LifecyclePolicyTypes.ResourceSelection ResourceSelection { get; set; }
         /// <summary>
         /// Tags

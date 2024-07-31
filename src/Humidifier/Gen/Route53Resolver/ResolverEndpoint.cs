@@ -3,7 +3,7 @@ namespace Humidifier.Route53Resolver
     using System.Collections.Generic;
     using ResolverEndpointTypes;
 
-    public class ResolverEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ResolverEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// ItemType: IpAddressRequest
         /// </summary>
+        [Required]
         public List<ResolverEndpointTypes.IpAddressRequest> IpAddresses { get; set; }
         /// <summary>
         /// Protocols
@@ -68,6 +69,7 @@ namespace Humidifier.Route53Resolver
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResolverEndpointType { get; set; }
+
         /// <summary>
         /// Direction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction
@@ -75,7 +77,9 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Direction { get; set; }
+
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids
@@ -84,6 +88,7 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupIds { get; set; }
         /// <summary>
         /// Tags

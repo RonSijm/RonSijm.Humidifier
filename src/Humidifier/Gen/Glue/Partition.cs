@@ -20,7 +20,9 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TableName { get; set; }
+
         /// <summary>
         /// DatabaseName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename
@@ -28,7 +30,9 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatabaseName { get; set; }
+
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid
@@ -36,7 +40,9 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CatalogId { get; set; }
+
         /// <summary>
         /// PartitionInput
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput
@@ -44,6 +50,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: PartitionInput
         /// </summary>
+        [Required]
         public PartitionTypes.PartitionInput PartitionInput { get; set; }
     }
 

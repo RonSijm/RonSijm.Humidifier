@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using System.Collections.Generic;
     using FlowOutputTypes;
 
-    public class FlowOutput : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -108,6 +108,7 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MinLatency { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-protocol
@@ -115,7 +116,9 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Protocol { get; set; }
+
         /// <summary>
         /// FlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-flowarn
@@ -123,6 +126,7 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FlowArn { get; set; }
         /// <summary>
         /// MaxLatency

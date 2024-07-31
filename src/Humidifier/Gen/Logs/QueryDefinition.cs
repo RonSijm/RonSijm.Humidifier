@@ -24,6 +24,7 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryString { get; set; }
         /// <summary>
         /// LogGroupNames

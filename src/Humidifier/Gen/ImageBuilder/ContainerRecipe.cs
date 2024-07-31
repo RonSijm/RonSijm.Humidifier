@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ContainerRecipeTypes;
 
-    public class ContainerRecipe : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ContainerRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic WorkingDirectory { get; set; }
+
         /// <summary>
         /// ParentImage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-parentimage
@@ -34,6 +35,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ParentImage { get; set; }
         /// <summary>
         /// Description
@@ -59,6 +61,7 @@ namespace Humidifier.ImageBuilder
         /// Type: InstanceConfiguration
         /// </summary>
         public ContainerRecipeTypes.InstanceConfiguration InstanceConfiguration { get; set; }
+
         /// <summary>
         /// ContainerType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-containertype
@@ -66,6 +69,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ContainerType { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -76,6 +80,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic DockerfileTemplateData { get; set; }
+
         /// <summary>
         /// Components
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-components
@@ -84,7 +89,9 @@ namespace Humidifier.ImageBuilder
         /// Type: List
         /// ItemType: ComponentConfiguration
         /// </summary>
+        [Required]
         public List<ContainerRecipeTypes.ComponentConfiguration> Components { get; set; }
+
         /// <summary>
         /// TargetRepository
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-targetrepository
@@ -92,7 +99,9 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// Type: TargetContainerRepository
         /// </summary>
+        [Required]
         public ContainerRecipeTypes.TargetContainerRepository TargetRepository { get; set; }
+
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-version
@@ -100,6 +109,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Version { get; set; }
         /// <summary>
         /// PlatformOverride

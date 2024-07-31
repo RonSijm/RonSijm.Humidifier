@@ -3,7 +3,7 @@ namespace Humidifier.IoTTwinMaker
     using System.Collections.Generic;
     using EntityTypes;
 
-    public class Entity : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Entity : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -65,6 +65,7 @@ namespace Humidifier.IoTTwinMaker
         /// </summary>
         public dynamic Description { get; set; }
         public dynamic EntityName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// WorkspaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#cfn-iottwinmaker-entity-workspaceid
@@ -72,6 +73,7 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkspaceId { get; set; }
         /// <summary>
         /// Tags

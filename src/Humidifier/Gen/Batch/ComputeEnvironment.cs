@@ -26,6 +26,7 @@ namespace Humidifier.Batch
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic UnmanagedvCpus { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-type
@@ -33,6 +34,7 @@ namespace Humidifier.Batch
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// ReplaceComputeEnvironment

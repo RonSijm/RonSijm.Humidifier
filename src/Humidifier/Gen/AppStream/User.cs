@@ -37,6 +37,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic LastName { get; set; }
+
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-user.html#cfn-appstream-user-authenticationtype
@@ -44,6 +45,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthenticationType { get; set; }
     }
 }

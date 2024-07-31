@@ -3,7 +3,7 @@ namespace Humidifier.FraudDetector
     using System.Collections.Generic;
     using EventTypeTypes;
 
-    public class EventType : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class EventType : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.FraudDetector
         /// Type: List
         /// ItemType: EntityType
         /// </summary>
+        [Required]
         public List<EventTypeTypes.EntityType> EntityTypes { get; set; }
         /// <summary>
         /// Description
@@ -37,6 +38,7 @@ namespace Humidifier.FraudDetector
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Labels
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-labels
@@ -45,7 +47,9 @@ namespace Humidifier.FraudDetector
         /// Type: List
         /// ItemType: Label
         /// </summary>
+        [Required]
         public List<EventTypeTypes.Label> Labels { get; set; }
+
         /// <summary>
         /// EventVariables
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-eventvariables
@@ -54,6 +58,7 @@ namespace Humidifier.FraudDetector
         /// Type: List
         /// ItemType: EventVariable
         /// </summary>
+        [Required]
         public List<EventTypeTypes.EventVariable> EventVariables { get; set; }
         /// <summary>
         /// Tags

@@ -27,6 +27,7 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic Status { get; set; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-groupprofile.html#cfn-datazone-groupprofile-domainidentifier
@@ -34,7 +35,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
+
         /// <summary>
         /// GroupIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-groupprofile.html#cfn-datazone-groupprofile-groupidentifier
@@ -42,6 +45,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupIdentifier { get; set; }
     }
 }

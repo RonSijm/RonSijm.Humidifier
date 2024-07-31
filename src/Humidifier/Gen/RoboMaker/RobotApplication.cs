@@ -35,6 +35,7 @@ namespace Humidifier.RoboMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic Environment { get; set; }
+
         /// <summary>
         /// RobotSoftwareSuite
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-robotsoftwaresuite
@@ -42,6 +43,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Mutable
         /// Type: RobotSoftwareSuite
         /// </summary>
+        [Required]
         public RobotApplicationTypes.RobotSoftwareSuite RobotSoftwareSuite { get; set; }
         /// <summary>
         /// Sources

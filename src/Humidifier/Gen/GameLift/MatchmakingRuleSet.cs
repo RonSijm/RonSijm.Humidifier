@@ -2,7 +2,7 @@ namespace Humidifier.GameLift
 {
     using System.Collections.Generic;
 
-    public class MatchmakingRuleSet : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class MatchmakingRuleSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleSetBody { get; set; }
         /// <summary>
         /// Tags

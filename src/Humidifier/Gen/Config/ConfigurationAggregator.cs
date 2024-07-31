@@ -3,7 +3,7 @@ namespace Humidifier.Config
     using System.Collections.Generic;
     using ConfigurationAggregatorTypes;
 
-    public class ConfigurationAggregator : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ConfigurationAggregator : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

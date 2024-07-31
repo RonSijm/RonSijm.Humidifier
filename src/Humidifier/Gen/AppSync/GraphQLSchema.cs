@@ -28,6 +28,7 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic DefinitionS3Location { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
@@ -35,6 +36,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
     }
 }

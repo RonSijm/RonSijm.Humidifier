@@ -2,7 +2,7 @@ namespace Humidifier.ServiceDiscovery
 {
     using System.Collections.Generic;
 
-    public class HttpNamespace : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class HttpNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

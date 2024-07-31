@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Base.BaseResource, IHaveTags, IHaveRole, IHaveImpliedResourceName
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRole
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-role
@@ -35,6 +36,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Role { get; set; }
         /// <summary>
         /// HomeDirectory
@@ -52,6 +54,7 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic HomeDirectoryType { get; set; }
+
         /// <summary>
         /// ServerId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-serverid
@@ -59,6 +62,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServerId { get; set; }
         public dynamic UserName { get => GivenName; set => GivenName = value; }
         /// <summary>

@@ -3,7 +3,7 @@ namespace Humidifier.ElasticLoadBalancingV2
     using System.Collections.Generic;
     using LoadBalancerTypes;
 
-    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroups, IHaveSubnets, IHaveImpliedResourceName
+    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSecurityGroups, IHaveSubnets
     {
         public class Attributes
         {

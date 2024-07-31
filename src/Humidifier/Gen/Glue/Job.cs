@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using JobTypes;
 
-    public class Job : Humidifier.Base.BaseResource, IHaveDescription, IHaveRole, IHaveImpliedResourceName
+    public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRole
     {
         public override string AWSTypeName
         {
@@ -54,6 +54,7 @@ namespace Humidifier.Glue
         /// </summary>
         public dynamic AllocatedCapacity { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-role
@@ -61,6 +62,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Role { get; set; }
         /// <summary>
         /// DefaultArguments
@@ -102,6 +104,7 @@ namespace Humidifier.Glue
         /// PrimitiveType: String
         /// </summary>
         public dynamic LogUri { get; set; }
+
         /// <summary>
         /// Command
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-command
@@ -109,6 +112,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: JobCommand
         /// </summary>
+        [Required]
         public JobTypes.JobCommand Command { get; set; }
         /// <summary>
         /// GlueVersion

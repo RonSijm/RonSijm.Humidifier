@@ -27,6 +27,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CalculatorName { get; set; }
         /// <summary>
         /// Description
@@ -53,6 +54,7 @@ namespace Humidifier.Location
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// DataSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#cfn-location-routecalculator-datasource
@@ -60,6 +62,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataSource { get; set; }
     }
 }

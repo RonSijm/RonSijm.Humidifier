@@ -25,6 +25,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyName { get; set; }
         /// <summary>
         /// KeyType

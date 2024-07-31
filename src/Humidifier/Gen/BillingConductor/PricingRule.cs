@@ -3,7 +3,7 @@ namespace Humidifier.BillingConductor
     using System.Collections.Generic;
     using PricingRuleTypes;
 
-    public class PricingRule : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class PricingRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.BillingConductor
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -37,6 +38,7 @@ namespace Humidifier.BillingConductor
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-scope
@@ -44,6 +46,7 @@ namespace Humidifier.BillingConductor
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Scope { get; set; }
         /// <summary>
         /// Service

@@ -26,6 +26,7 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OwnerId { get; set; }
         /// <summary>
         /// EncryptionKeyArn
@@ -35,6 +36,7 @@ namespace Humidifier.CodeStarConnections
         /// PrimitiveType: String
         /// </summary>
         public dynamic EncryptionKeyArn { get; set; }
+
         /// <summary>
         /// ConnectionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-repositorylink.html#cfn-codestarconnections-repositorylink-connectionarn
@@ -42,7 +44,9 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectionArn { get; set; }
+
         /// <summary>
         /// RepositoryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarconnections-repositorylink.html#cfn-codestarconnections-repositorylink-repositoryname
@@ -50,6 +54,7 @@ namespace Humidifier.CodeStarConnections
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RepositoryName { get; set; }
         /// <summary>
         /// Tags

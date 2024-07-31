@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using ObjectTypeTypes;
 
-    public class ObjectType : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ObjectType : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Fields
@@ -36,6 +37,7 @@ namespace Humidifier.CustomerProfiles
         /// ItemType: FieldMap
         /// </summary>
         public List<ObjectTypeTypes.FieldMap> Fields { get; set; }
+
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-domainname
@@ -43,6 +45,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
         /// AllowProfileCreation

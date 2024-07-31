@@ -25,7 +25,9 @@ namespace Humidifier.SNS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Topics { get; set; }
+
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topicpolicy.html#cfn-sns-topicpolicy-policydocument
@@ -33,6 +35,7 @@ namespace Humidifier.SNS
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
     }
 }

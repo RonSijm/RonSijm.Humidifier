@@ -3,7 +3,7 @@ namespace Humidifier.Kendra
     using System.Collections.Generic;
     using IndexTypes;
 
-    public class Index : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Index : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -69,6 +69,7 @@ namespace Humidifier.Kendra
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-rolearn
@@ -76,7 +77,9 @@ namespace Humidifier.Kendra
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
+
         /// <summary>
         /// Edition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-edition
@@ -84,6 +87,7 @@ namespace Humidifier.Kendra
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Edition { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>

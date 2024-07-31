@@ -3,7 +3,7 @@ namespace Humidifier.IVS
     using System.Collections.Generic;
     using StorageConfigurationTypes;
 
-    public class StorageConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class StorageConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.IVS
         /// UpdateType: Immutable
         /// Type: S3StorageConfiguration
         /// </summary>
+        [Required]
         public StorageConfigurationTypes.S3StorageConfiguration S3 { get; set; }
         /// <summary>
         /// Tags

@@ -36,6 +36,7 @@ namespace Humidifier.EventSchemas
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-sourcearn
@@ -43,6 +44,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceArn { get; set; }
         /// <summary>
         /// Tags

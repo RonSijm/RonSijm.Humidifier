@@ -3,7 +3,7 @@ namespace Humidifier.LookoutEquipment
     using System.Collections.Generic;
     using InferenceSchedulerTypes;
 
-    public class InferenceScheduler : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class InferenceScheduler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -19,6 +19,7 @@ namespace Humidifier.LookoutEquipment
         }
 
         public dynamic InferenceSchedulerName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DataUploadFrequency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datauploadfrequency
@@ -26,7 +27,9 @@ namespace Humidifier.LookoutEquipment
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataUploadFrequency { get; set; }
+
         /// <summary>
         /// ModelName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-modelname
@@ -34,7 +37,9 @@ namespace Humidifier.LookoutEquipment
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ModelName { get; set; }
+
         /// <summary>
         /// DataInputConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration
@@ -42,7 +47,9 @@ namespace Humidifier.LookoutEquipment
         /// UpdateType: Mutable
         /// Type: DataInputConfiguration
         /// </summary>
+        [Required]
         public InferenceSchedulerTypes.DataInputConfiguration DataInputConfiguration { get; set; }
+
         /// <summary>
         /// DataOutputConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration
@@ -50,6 +57,7 @@ namespace Humidifier.LookoutEquipment
         /// UpdateType: Mutable
         /// Type: DataOutputConfiguration
         /// </summary>
+        [Required]
         public InferenceSchedulerTypes.DataOutputConfiguration DataOutputConfiguration { get; set; }
         /// <summary>
         /// ServerSideKmsKeyId
@@ -67,6 +75,7 @@ namespace Humidifier.LookoutEquipment
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DataDelayOffsetInMinutes { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-rolearn
@@ -74,6 +83,7 @@ namespace Humidifier.LookoutEquipment
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

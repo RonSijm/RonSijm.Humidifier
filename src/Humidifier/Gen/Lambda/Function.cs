@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using FunctionTypes;
 
-    public class Function : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRole, IHaveImpliedResourceName
+    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRole
     {
         public class Attributes
         {
@@ -167,6 +167,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic Handler { get; set; }
+
         /// <summary>
         /// Code
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code
@@ -174,7 +175,9 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// Type: Code
         /// </summary>
+        [Required]
         public FunctionTypes.Code Code { get; set; }
+
         /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-role
@@ -182,6 +185,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Role { get; set; }
         /// <summary>
         /// LoggingConfig
@@ -451,7 +455,7 @@ namespace Humidifier.Lambda
             public dynamic Mode { get; set; }
         }
 
-        public class VpcConfig : Humidifier.Base.BaseSubResource
+        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// Ipv6AllowedForDualStack

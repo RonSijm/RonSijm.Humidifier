@@ -26,7 +26,9 @@ namespace Humidifier.GlobalAccelerator
         /// Type: List
         /// ItemType: PortRange
         /// </summary>
+        [Required]
         public List<ListenerTypes.PortRange> PortRanges { get; set; }
+
         /// <summary>
         /// AcceleratorArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-acceleratorarn
@@ -34,7 +36,9 @@ namespace Humidifier.GlobalAccelerator
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AcceleratorArn { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-protocol
@@ -42,6 +46,7 @@ namespace Humidifier.GlobalAccelerator
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Protocol { get; set; }
         /// <summary>
         /// ClientAffinity

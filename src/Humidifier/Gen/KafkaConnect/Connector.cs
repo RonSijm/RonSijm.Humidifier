@@ -3,7 +3,7 @@ namespace Humidifier.KafkaConnect
     using System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Connector : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// Type: KafkaCluster
         /// </summary>
+        [Required]
         public ConnectorTypes.KafkaCluster KafkaCluster { get; set; }
+
         /// <summary>
         /// KafkaConnectVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaconnectversion
@@ -33,7 +35,9 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KafkaConnectVersion { get; set; }
+
         /// <summary>
         /// ConnectorConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorconfiguration
@@ -42,6 +46,7 @@ namespace Humidifier.KafkaConnect
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public Dictionary<string, dynamic> ConnectorConfiguration { get; set; }
         /// <summary>
         /// LogDelivery
@@ -59,6 +64,7 @@ namespace Humidifier.KafkaConnect
         /// Type: WorkerConfiguration
         /// </summary>
         public ConnectorTypes.WorkerConfiguration WorkerConfiguration { get; set; }
+
         /// <summary>
         /// Capacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-capacity
@@ -66,7 +72,9 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Mutable
         /// Type: Capacity
         /// </summary>
+        [Required]
         public ConnectorTypes.Capacity Capacity { get; set; }
+
         /// <summary>
         /// KafkaClusterEncryptionInTransit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterencryptionintransit
@@ -74,6 +82,7 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// Type: KafkaClusterEncryptionInTransit
         /// </summary>
+        [Required]
         public ConnectorTypes.KafkaClusterEncryptionInTransit KafkaClusterEncryptionInTransit { get; set; }
         /// <summary>
         /// ConnectorDescription
@@ -83,6 +92,10 @@ namespace Humidifier.KafkaConnect
         /// PrimitiveType: String
         /// </summary>
         public dynamic ConnectorDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ConnectorDescription; set => ConnectorDescription = value; }
+
         /// <summary>
         /// KafkaClusterClientAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterclientauthentication
@@ -90,8 +103,10 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// Type: KafkaClusterClientAuthentication
         /// </summary>
+        [Required]
         public ConnectorTypes.KafkaClusterClientAuthentication KafkaClusterClientAuthentication { get; set; }
         public dynamic ConnectorName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ServiceExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-serviceexecutionrolearn
@@ -99,6 +114,7 @@ namespace Humidifier.KafkaConnect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceExecutionRoleArn { get; set; }
         /// <summary>
         /// Tags
@@ -109,6 +125,7 @@ namespace Humidifier.KafkaConnect
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Plugins
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-plugins
@@ -117,6 +134,7 @@ namespace Humidifier.KafkaConnect
         /// Type: List
         /// ItemType: Plugin
         /// </summary>
+        [Required]
         public List<ConnectorTypes.Plugin> Plugins { get; set; }
     }
 

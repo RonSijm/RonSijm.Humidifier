@@ -37,6 +37,7 @@ namespace Humidifier.Events
         /// PrimitiveType: String
         /// </summary>
         public dynamic Action { get; set; }
+
         /// <summary>
         /// StatementId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-statementid
@@ -44,6 +45,7 @@ namespace Humidifier.Events
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StatementId { get; set; }
         /// <summary>
         /// Statement

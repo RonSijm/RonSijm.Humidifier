@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using StackTypes;
 
-    public class Stack : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveImpliedResourceName
+    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId
     {
         public override string AWSTypeName
         {
@@ -87,6 +87,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveType: String
         /// </summary>
         public dynamic DefaultAvailabilityZone { get; set; }
+
         /// <summary>
         /// DefaultInstanceProfileArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-defaultinstanceprof
@@ -94,6 +95,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefaultInstanceProfileArn { get; set; }
         /// <summary>
         /// DefaultOs
@@ -162,6 +164,7 @@ namespace Humidifier.OpsWorks
         /// ItemType: RdsDbInstance
         /// </summary>
         public List<StackTypes.RdsDbInstance> RdsDbInstances { get; set; }
+
         /// <summary>
         /// ServiceRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-servicerolearn
@@ -169,6 +172,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceRoleArn { get; set; }
         /// <summary>
         /// SourceStackId

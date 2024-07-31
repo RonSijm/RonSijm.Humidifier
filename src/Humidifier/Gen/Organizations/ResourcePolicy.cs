@@ -25,6 +25,7 @@ namespace Humidifier.Organizations
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Content { get; set; }
         /// <summary>
         /// Tags

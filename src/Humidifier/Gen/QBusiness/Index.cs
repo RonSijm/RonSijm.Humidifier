@@ -39,6 +39,7 @@ namespace Humidifier.QBusiness
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-index.html#cfn-qbusiness-index-displayname
@@ -46,6 +47,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         /// <summary>
         /// DocumentAttributeConfigurations
@@ -56,6 +58,7 @@ namespace Humidifier.QBusiness
         /// ItemType: DocumentAttributeConfiguration
         /// </summary>
         public List<IndexTypes.DocumentAttributeConfiguration> DocumentAttributeConfigurations { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-index.html#cfn-qbusiness-index-applicationid
@@ -63,6 +66,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Tags

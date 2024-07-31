@@ -54,6 +54,7 @@ namespace Humidifier.EMR
         /// Type: EbsConfiguration
         /// </summary>
         public InstanceGroupConfigTypes.EbsConfiguration EbsConfiguration { get; set; }
+
         /// <summary>
         /// InstanceCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfiginstancecount-
@@ -61,7 +62,9 @@ namespace Humidifier.EMR
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic InstanceCount { get; set; }
+
         /// <summary>
         /// InstanceRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancerole
@@ -69,7 +72,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceRole { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-instancetype
@@ -77,7 +82,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
+
         /// <summary>
         /// JobFlowId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid
@@ -85,6 +92,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic JobFlowId { get; set; }
         /// <summary>
         /// Market

@@ -2,7 +2,7 @@ namespace Humidifier.ApiGatewayV2
 {
     using System.Collections.Generic;
 
-    public class VpcLink : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class VpcLink : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.ApiGatewayV2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// SecurityGroupIds

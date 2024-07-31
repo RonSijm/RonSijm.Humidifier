@@ -21,6 +21,7 @@ namespace Humidifier.Backup
         /// Type: ProtectedResourceConditions
         /// </summary>
         public RestoreTestingSelectionTypes.ProtectedResourceConditions ProtectedResourceConditions { get; set; }
+
         /// <summary>
         /// ProtectedResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingselection.html#cfn-backup-restoretestingselection-protectedresourcetype
@@ -28,6 +29,7 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProtectedResourceType { get; set; }
         /// <summary>
         /// RestoreMetadataOverrides
@@ -48,6 +50,7 @@ namespace Humidifier.Backup
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic ProtectedResourceArns { get; set; }
+
         /// <summary>
         /// RestoreTestingPlanName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingselection.html#cfn-backup-restoretestingselection-restoretestingplanname
@@ -55,7 +58,9 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RestoreTestingPlanName { get; set; }
+
         /// <summary>
         /// IamRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingselection.html#cfn-backup-restoretestingselection-iamrolearn
@@ -63,6 +68,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IamRoleArn { get; set; }
         /// <summary>
         /// ValidationWindowHours

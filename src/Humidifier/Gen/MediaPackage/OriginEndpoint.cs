@@ -35,6 +35,7 @@ namespace Humidifier.MediaPackage
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ChannelId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-channelid
@@ -42,6 +43,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelId { get; set; }
         /// <summary>
         /// TimeDelaySeconds
@@ -92,6 +94,7 @@ namespace Humidifier.MediaPackage
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Whitelist { get; set; }
+
         /// <summary>
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-id
@@ -99,6 +102,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Id { get; set; }
         /// <summary>
         /// HlsPackage

@@ -25,6 +25,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: OriginAccessControlConfig
         /// </summary>
+        [Required]
         public OriginAccessControlTypes.OriginAccessControlConfig OriginAccessControlConfig { get; set; }
     }
 

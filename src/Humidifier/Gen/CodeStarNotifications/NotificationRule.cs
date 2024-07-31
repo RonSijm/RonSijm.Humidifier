@@ -26,6 +26,7 @@ namespace Humidifier.CodeStarNotifications
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic EventTypeIds { get; set; }
         /// <summary>
         /// Status
@@ -43,6 +44,7 @@ namespace Humidifier.CodeStarNotifications
         /// PrimitiveType: String
         /// </summary>
         public dynamic CreatedBy { get; set; }
+
         /// <summary>
         /// DetailType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-detailtype
@@ -50,7 +52,9 @@ namespace Humidifier.CodeStarNotifications
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DetailType { get; set; }
+
         /// <summary>
         /// Resource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-resource
@@ -58,6 +62,7 @@ namespace Humidifier.CodeStarNotifications
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Resource { get; set; }
         /// <summary>
         /// EventTypeId
@@ -75,6 +80,7 @@ namespace Humidifier.CodeStarNotifications
         /// PrimitiveType: String
         /// </summary>
         public dynamic TargetAddress { get; set; }
+
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-targets
@@ -83,6 +89,7 @@ namespace Humidifier.CodeStarNotifications
         /// Type: List
         /// ItemType: Target
         /// </summary>
+        [Required]
         public List<NotificationRuleTypes.Target> Targets { get; set; }
         /// <summary>
         /// Tags

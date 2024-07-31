@@ -223,6 +223,7 @@ namespace Humidifier.Redshift
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic DeferMaintenance { get; set; }
+
         /// <summary>
         /// NodeType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-nodetype
@@ -230,7 +231,9 @@ namespace Humidifier.Redshift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NodeType { get; set; }
+
         /// <summary>
         /// MasterUsername
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-masterusername
@@ -238,6 +241,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MasterUsername { get; set; }
         /// <summary>
         /// PubliclyAccessible
@@ -392,6 +396,7 @@ namespace Humidifier.Redshift
         /// PrimitiveType: String
         /// </summary>
         public dynamic DeferMaintenanceStartTime { get; set; }
+
         /// <summary>
         /// ClusterType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-clustertype
@@ -399,6 +404,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterType { get; set; }
         /// <summary>
         /// Classic
@@ -424,6 +430,7 @@ namespace Humidifier.Redshift
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DeferMaintenanceDuration { get; set; }
+
         /// <summary>
         /// DBName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-dbname
@@ -431,6 +438,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBName { get; set; }
         /// <summary>
         /// SnapshotCopyRetentionPeriod

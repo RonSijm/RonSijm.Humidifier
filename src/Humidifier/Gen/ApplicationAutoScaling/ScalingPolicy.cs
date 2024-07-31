@@ -25,6 +25,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyType { get; set; }
         /// <summary>
         /// ResourceId
@@ -42,6 +43,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// PrimitiveType: String
         /// </summary>
         public dynamic ScalingTargetId { get; set; }
+
         /// <summary>
         /// PolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-policyname
@@ -49,6 +51,7 @@ namespace Humidifier.ApplicationAutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyName { get; set; }
         /// <summary>
         /// ServiceNamespace

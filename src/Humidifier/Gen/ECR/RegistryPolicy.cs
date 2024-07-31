@@ -24,6 +24,7 @@ namespace Humidifier.ECR
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic PolicyText { get; set; }
     }
 }

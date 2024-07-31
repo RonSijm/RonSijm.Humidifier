@@ -3,7 +3,7 @@ namespace Humidifier.MemoryDB
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -69,6 +69,7 @@ namespace Humidifier.MemoryDB
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic Port { get; set; }
+
         /// <summary>
         /// ACLName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-aclname
@@ -76,6 +77,7 @@ namespace Humidifier.MemoryDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ACLName { get; set; }
         /// <summary>
         /// SnapshotName
@@ -200,6 +202,7 @@ namespace Humidifier.MemoryDB
         /// PrimitiveType: String
         /// </summary>
         public dynamic DataTiering { get; set; }
+
         /// <summary>
         /// NodeType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-nodetype
@@ -207,6 +210,7 @@ namespace Humidifier.MemoryDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NodeType { get; set; }
         /// <summary>
         /// MaintenanceWindow

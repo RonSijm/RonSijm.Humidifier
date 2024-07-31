@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using SpaceTypes;
 
-    public class Space : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Space : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainId { get; set; }
         public dynamic SpaceName { get => GivenName; set => GivenName = value; }
         /// <summary>

@@ -2,7 +2,7 @@ namespace Humidifier.IoTFleetWise
 {
     using System.Collections.Generic;
 
-    public class Vehicle : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Vehicle : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.IoTFleetWise
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Attributes_ { get; set; }
+
         /// <summary>
         /// DecoderManifestArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-decodermanifestarn
@@ -43,7 +44,9 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DecoderManifestArn { get; set; }
+
         /// <summary>
         /// ModelManifestArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-modelmanifestarn
@@ -51,6 +54,7 @@ namespace Humidifier.IoTFleetWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ModelManifestArn { get; set; }
         /// <summary>
         /// Tags

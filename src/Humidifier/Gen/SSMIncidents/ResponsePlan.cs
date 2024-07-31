@@ -3,7 +3,7 @@ namespace Humidifier.SSMIncidents
     using System.Collections.Generic;
     using ResponsePlanTypes;
 
-    public class ResponsePlan : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ResponsePlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -52,6 +52,7 @@ namespace Humidifier.SSMIncidents
         /// PrimitiveType: String
         /// </summary>
         public dynamic DisplayName { get; set; }
+
         /// <summary>
         /// IncidentTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-incidenttemplate
@@ -59,6 +60,7 @@ namespace Humidifier.SSMIncidents
         /// UpdateType: Mutable
         /// Type: IncidentTemplate
         /// </summary>
+        [Required]
         public ResponsePlanTypes.IncidentTemplate IncidentTemplate { get; set; }
         /// <summary>
         /// Engagements

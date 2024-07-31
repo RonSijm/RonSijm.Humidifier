@@ -3,7 +3,7 @@ namespace Humidifier.IVSChat
     using System.Collections.Generic;
     using LoggingConfigurationTypes;
 
-    public class LoggingConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class LoggingConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.IVSChat
         /// UpdateType: Mutable
         /// Type: DestinationConfiguration
         /// </summary>
+        [Required]
         public LoggingConfigurationTypes.DestinationConfiguration DestinationConfiguration { get; set; }
         /// <summary>
         /// Tags

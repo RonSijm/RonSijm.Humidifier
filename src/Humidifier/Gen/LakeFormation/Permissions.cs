@@ -20,7 +20,9 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// Type: DataLakePrincipal
         /// </summary>
+        [Required]
         public PermissionsTypes.DataLakePrincipal DataLakePrincipal { get; set; }
+
         /// <summary>
         /// Resource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-resource
@@ -28,6 +30,7 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// Type: Resource
         /// </summary>
+        [Required]
         public PermissionsTypes.Resource Resource { get; set; }
         /// <summary>
         /// Permissions_

@@ -2,7 +2,7 @@ namespace Humidifier.IAM
 {
     using System.Collections.Generic;
 
-    public class SAMLProvider : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class SAMLProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.IAM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SamlMetadataDocument { get; set; }
         /// <summary>
         /// Tags

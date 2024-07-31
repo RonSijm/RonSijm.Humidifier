@@ -51,6 +51,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic LayerName { get; set; }
+
         /// <summary>
         /// Content
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content
@@ -58,6 +59,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// Type: Content
         /// </summary>
+        [Required]
         public LayerVersionTypes.Content Content { get; set; }
         /// <summary>
         /// CompatibleArchitectures

@@ -20,6 +20,7 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// Type: Filter
         /// </summary>
+        [Required]
         public ReceiptFilterTypes.Filter Filter { get; set; }
     }
 

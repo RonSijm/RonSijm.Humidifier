@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using ConfiguredTableTypes;
 
-    public class ConfiguredTable : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ConfiguredTable : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,7 +26,9 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AnalysisMethod { get; set; }
+
         /// <summary>
         /// TableReference
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-tablereference
@@ -34,6 +36,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// Type: TableReference
         /// </summary>
+        [Required]
         public ConfiguredTableTypes.TableReference TableReference { get; set; }
         /// <summary>
         /// Description
@@ -52,6 +55,7 @@ namespace Humidifier.CleanRooms
         /// ItemType: AnalysisRule
         /// </summary>
         public List<ConfiguredTableTypes.AnalysisRule> AnalysisRules { get; set; }
+
         /// <summary>
         /// AllowedColumns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtable.html#cfn-cleanrooms-configuredtable-allowedcolumns
@@ -60,6 +64,7 @@ namespace Humidifier.CleanRooms
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AllowedColumns { get; set; }
         /// <summary>
         /// Tags

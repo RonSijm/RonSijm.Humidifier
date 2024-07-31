@@ -102,6 +102,7 @@ namespace Humidifier.ApplicationInsights
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// ResourceGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-resourcegroupname
@@ -109,6 +110,7 @@ namespace Humidifier.ApplicationInsights
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceGroupName { get; set; }
     }
 

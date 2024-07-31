@@ -25,7 +25,9 @@ namespace Humidifier.WAFv2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceArn { get; set; }
+
         /// <summary>
         /// LogDestinationConfigs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-loggingconfiguration.html#cfn-wafv2-loggingconfiguration-logdestinationconfigs
@@ -34,6 +36,7 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic LogDestinationConfigs { get; set; }
         /// <summary>
         /// RedactedFields

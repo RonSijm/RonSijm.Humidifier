@@ -26,6 +26,7 @@ namespace Humidifier.Oam
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SinkIdentifier { get; set; }
         /// <summary>
         /// LabelTemplate
@@ -35,6 +36,7 @@ namespace Humidifier.Oam
         /// PrimitiveType: String
         /// </summary>
         public dynamic LabelTemplate { get; set; }
+
         /// <summary>
         /// ResourceTypes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-link.html#cfn-oam-link-resourcetypes
@@ -43,6 +45,7 @@ namespace Humidifier.Oam
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic ResourceTypes { get; set; }
         /// <summary>
         /// LinkConfiguration

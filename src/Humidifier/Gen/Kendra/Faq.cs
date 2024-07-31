@@ -3,7 +3,7 @@ namespace Humidifier.Kendra
     using System.Collections.Generic;
     using FaqTypes;
 
-    public class Faq : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Faq : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.Kendra
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IndexId { get; set; }
         /// <summary>
         /// LanguageCode
@@ -43,6 +44,7 @@ namespace Humidifier.Kendra
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// S3Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-s3path
@@ -50,6 +52,7 @@ namespace Humidifier.Kendra
         /// UpdateType: Immutable
         /// Type: S3Path
         /// </summary>
+        [Required]
         public FaqTypes.S3Path S3Path { get; set; }
         /// <summary>
         /// FileFormat
@@ -59,6 +62,7 @@ namespace Humidifier.Kendra
         /// PrimitiveType: String
         /// </summary>
         public dynamic FileFormat { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-rolearn
@@ -66,6 +70,7 @@ namespace Humidifier.Kendra
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

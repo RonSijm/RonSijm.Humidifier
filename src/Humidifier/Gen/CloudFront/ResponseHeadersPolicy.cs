@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: ResponseHeadersPolicyConfig
         /// </summary>
+        [Required]
         public ResponseHeadersPolicyTypes.ResponseHeadersPolicyConfig ResponseHeadersPolicyConfig { get; set; }
     }
 

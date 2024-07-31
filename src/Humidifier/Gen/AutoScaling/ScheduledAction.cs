@@ -49,6 +49,7 @@ namespace Humidifier.AutoScaling
         /// PrimitiveType: String
         /// </summary>
         public dynamic EndTime { get; set; }
+
         /// <summary>
         /// AutoScalingGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-autoscalinggroupname
@@ -56,6 +57,7 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AutoScalingGroupName { get; set; }
         /// <summary>
         /// StartTime

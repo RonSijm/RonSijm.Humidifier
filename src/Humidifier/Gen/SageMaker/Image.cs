@@ -2,7 +2,7 @@ namespace Humidifier.SageMaker
 {
     using System.Collections.Generic;
 
-    public class Image : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Image : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic ImageDisplayName { get; set; }
+
         /// <summary>
         /// ImageRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-imagerolearn
@@ -33,6 +34,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ImageRoleArn { get; set; }
         /// <summary>
         /// ImageDescription
@@ -42,6 +44,9 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic ImageDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ImageDescription; set => ImageDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-image.html#cfn-sagemaker-image-tags

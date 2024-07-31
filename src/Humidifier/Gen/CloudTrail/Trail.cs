@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using TrailTypes;
 
-    public class Trail : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Trail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -111,6 +111,7 @@ namespace Humidifier.CloudTrail
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic IsMultiRegionTrail { get; set; }
+
         /// <summary>
         /// S3BucketName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-s3bucketname
@@ -118,6 +119,7 @@ namespace Humidifier.CloudTrail
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic S3BucketName { get; set; }
         /// <summary>
         /// EnableLogFileValidation
@@ -136,6 +138,7 @@ namespace Humidifier.CloudTrail
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// IsLogging
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-islogging
@@ -143,6 +146,7 @@ namespace Humidifier.CloudTrail
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic IsLogging { get; set; }
     }
 

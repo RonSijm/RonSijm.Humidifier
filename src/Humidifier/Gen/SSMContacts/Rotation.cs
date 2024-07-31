@@ -3,7 +3,7 @@ namespace Humidifier.SSMContacts
     using System.Collections.Generic;
     using RotationTypes;
 
-    public class Rotation : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Rotation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Mutable
         /// Type: RecurrenceSettings
         /// </summary>
+        [Required]
         public RotationTypes.RecurrenceSettings Recurrence { get; set; }
+
         /// <summary>
         /// TimeZoneId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-timezoneid
@@ -33,7 +35,9 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TimeZoneId { get; set; }
+
         /// <summary>
         /// StartTime
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-starttime
@@ -41,6 +45,7 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StartTime { get; set; }
         /// <summary>
         /// Tags
@@ -52,6 +57,7 @@ namespace Humidifier.SSMContacts
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ContactIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-rotation.html#cfn-ssmcontacts-rotation-contactids
@@ -60,6 +66,7 @@ namespace Humidifier.SSMContacts
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic ContactIds { get; set; }
     }
 

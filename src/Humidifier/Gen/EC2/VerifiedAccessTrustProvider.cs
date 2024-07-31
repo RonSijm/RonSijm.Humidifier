@@ -27,6 +27,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyReferenceName { get; set; }
         /// <summary>
         /// DeviceOptions
@@ -60,6 +61,7 @@ namespace Humidifier.EC2
         /// Type: OidcOptions
         /// </summary>
         public VerifiedAccessTrustProviderTypes.OidcOptions OidcOptions { get; set; }
+
         /// <summary>
         /// TrustProviderType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccesstrustprovider.html#cfn-ec2-verifiedaccesstrustprovider-trustprovidertype
@@ -67,6 +69,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TrustProviderType { get; set; }
         /// <summary>
         /// SseSpecification

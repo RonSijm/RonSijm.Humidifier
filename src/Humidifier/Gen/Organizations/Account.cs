@@ -2,7 +2,7 @@ namespace Humidifier.Organizations
 {
     using System.Collections.Generic;
 
-    public class Account : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Account : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.Organizations
         /// PrimitiveType: String
         /// </summary>
         public dynamic RoleName { get; set; }
+
         /// <summary>
         /// Email
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#cfn-organizations-account-email
@@ -36,6 +37,7 @@ namespace Humidifier.Organizations
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Email { get; set; }
         /// <summary>
         /// ParentIds

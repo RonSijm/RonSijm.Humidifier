@@ -27,7 +27,9 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VPCId { get; set; }
+
         /// <summary>
         /// ResolverRuleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverruleassociation.html#cfn-route53resolver-resolverruleassociation-resolverruleid
@@ -35,6 +37,7 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResolverRuleId { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

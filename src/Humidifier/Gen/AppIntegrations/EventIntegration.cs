@@ -3,7 +3,7 @@ namespace Humidifier.AppIntegrations
     using System.Collections.Generic;
     using EventIntegrationTypes;
 
-    public class EventIntegration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class EventIntegration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.AppIntegrations
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// EventBridgeBus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventbridgebus
@@ -33,7 +34,9 @@ namespace Humidifier.AppIntegrations
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EventBridgeBus { get; set; }
+
         /// <summary>
         /// EventFilter
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventfilter
@@ -41,6 +44,7 @@ namespace Humidifier.AppIntegrations
         /// UpdateType: Immutable
         /// Type: EventFilter
         /// </summary>
+        [Required]
         public EventIntegrationTypes.EventFilter EventFilter { get; set; }
         /// <summary>
         /// Tags

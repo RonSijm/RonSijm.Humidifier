@@ -21,7 +21,9 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Type: List
         /// ItemType: Certificate
         /// </summary>
+        [Required]
         public List<ListenerCertificateTypes.Certificate> Certificates { get; set; }
+
         /// <summary>
         /// ListenerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-listenerarn
@@ -29,6 +31,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ListenerArn { get; set; }
     }
 

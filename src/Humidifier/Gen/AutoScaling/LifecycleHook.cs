@@ -13,6 +13,7 @@ namespace Humidifier.AutoScaling
         }
 
         public dynamic LifecycleHookName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// LifecycleTransition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-lifecyclehook.html#cfn-autoscaling-lifecyclehook-lifecycletransition
@@ -20,7 +21,9 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LifecycleTransition { get; set; }
+
         /// <summary>
         /// AutoScalingGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-lifecyclehook.html#cfn-autoscaling-lifecyclehook-autoscalinggroupname
@@ -28,6 +31,7 @@ namespace Humidifier.AutoScaling
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AutoScalingGroupName { get; set; }
         /// <summary>
         /// HeartbeatTimeout

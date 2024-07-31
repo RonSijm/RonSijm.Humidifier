@@ -2,7 +2,7 @@ namespace Humidifier.Athena
 {
     using System.Collections.Generic;
 
-    public class NamedQuery : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class NamedQuery : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -33,6 +33,7 @@ namespace Humidifier.Athena
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// QueryString
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-querystring
@@ -40,7 +41,9 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryString { get; set; }
+
         /// <summary>
         /// Database
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-database
@@ -48,6 +51,7 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Database { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

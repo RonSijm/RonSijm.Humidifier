@@ -2,7 +2,7 @@ namespace Humidifier.MediaConvert
 {
     using System.Collections.Generic;
 
-    public class Queue : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {

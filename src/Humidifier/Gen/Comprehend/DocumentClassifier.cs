@@ -3,7 +3,7 @@ namespace Humidifier.Comprehend
     using System.Collections.Generic;
     using DocumentClassifierTypes;
 
-    public class DocumentClassifier : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DocumentClassifier : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.Comprehend
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LanguageCode { get; set; }
+
         /// <summary>
         /// DataAccessRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-dataaccessrolearn
@@ -33,6 +35,7 @@ namespace Humidifier.Comprehend
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataAccessRoleArn { get; set; }
         /// <summary>
         /// OutputDataConfig
@@ -91,6 +94,7 @@ namespace Humidifier.Comprehend
         /// PrimitiveType: String
         /// </summary>
         public dynamic ModelPolicy { get; set; }
+
         /// <summary>
         /// InputDataConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-comprehend-documentclassifier.html#cfn-comprehend-documentclassifier-inputdataconfig
@@ -98,6 +102,7 @@ namespace Humidifier.Comprehend
         /// UpdateType: Immutable
         /// Type: DocumentClassifierInputDataConfig
         /// </summary>
+        [Required]
         public DocumentClassifierTypes.DocumentClassifierInputDataConfig InputDataConfig { get; set; }
         /// <summary>
         /// Tags

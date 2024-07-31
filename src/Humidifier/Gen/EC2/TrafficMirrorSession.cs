@@ -19,6 +19,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TrafficMirrorTargetId { get; set; }
         /// <summary>
         /// Description
@@ -28,6 +29,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SessionNumber
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-sessionnumber
@@ -35,6 +37,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic SessionNumber { get; set; }
         /// <summary>
         /// VirtualNetworkId
@@ -52,6 +55,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic PacketLength { get; set; }
+
         /// <summary>
         /// NetworkInterfaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-networkinterfaceid
@@ -59,7 +63,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NetworkInterfaceId { get; set; }
+
         /// <summary>
         /// TrafficMirrorFilterId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-trafficmirrorfilterid
@@ -67,6 +73,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TrafficMirrorFilterId { get; set; }
         /// <summary>
         /// Tags

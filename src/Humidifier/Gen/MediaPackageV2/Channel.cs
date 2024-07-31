@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackageV2
     using System.Collections.Generic;
     using ChannelTypes;
 
-    public class Channel : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -39,6 +39,7 @@ namespace Humidifier.MediaPackageV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic InputType { get; set; }
+
         /// <summary>
         /// ChannelGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channel.html#cfn-mediapackagev2-channel-channelgroupname
@@ -46,6 +47,7 @@ namespace Humidifier.MediaPackageV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelGroupName { get; set; }
         /// <summary>
         /// Tags

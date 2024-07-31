@@ -21,6 +21,7 @@ namespace Humidifier.IoTThingsGraph
         /// PrimitiveType: Double
         /// </summary>
         public dynamic CompatibleNamespaceVersion { get; set; }
+
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition
@@ -28,6 +29,7 @@ namespace Humidifier.IoTThingsGraph
         /// UpdateType: Mutable
         /// Type: DefinitionDocument
         /// </summary>
+        [Required]
         public FlowTemplateTypes.DefinitionDocument Definition { get; set; }
     }
 

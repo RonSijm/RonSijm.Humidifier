@@ -26,7 +26,9 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleState { get; set; }
+
         /// <summary>
         /// RuleBody
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulebody
@@ -34,7 +36,9 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleBody { get; set; }
+
         /// <summary>
         /// RuleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulename
@@ -42,6 +46,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleName { get; set; }
         /// <summary>
         /// Tags

@@ -2,7 +2,7 @@ namespace Humidifier.BillingConductor
 {
     using System.Collections.Generic;
 
-    public class PricingPlan : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class PricingPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -29,6 +29,7 @@ namespace Humidifier.EC2
         /// Type: Options
         /// </summary>
         public TransitGatewayMulticastDomainTypes.Options Options { get; set; }
+
         /// <summary>
         /// TransitGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-transitgatewayid
@@ -36,6 +37,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayId { get; set; }
         /// <summary>
         /// Tags

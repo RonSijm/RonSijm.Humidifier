@@ -3,7 +3,7 @@ namespace Humidifier.AppIntegrations
     using System.Collections.Generic;
     using DataIntegrationTypes;
 
-    public class DataIntegration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class DataIntegration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.AppIntegrations
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SourceURI
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-sourceuri
@@ -50,6 +51,7 @@ namespace Humidifier.AppIntegrations
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceURI { get; set; }
         /// <summary>
         /// ObjectConfiguration
@@ -59,6 +61,7 @@ namespace Humidifier.AppIntegrations
         /// PrimitiveType: Json
         /// </summary>
         public dynamic ObjectConfiguration { get; set; }
+
         /// <summary>
         /// KmsKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-kmskey
@@ -66,6 +69,7 @@ namespace Humidifier.AppIntegrations
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KmsKey { get; set; }
         /// <summary>
         /// Tags

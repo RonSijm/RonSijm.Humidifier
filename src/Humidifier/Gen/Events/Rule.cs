@@ -3,7 +3,7 @@ namespace Humidifier.Events
     using System.Collections.Generic;
     using RuleTypes;
 
-    public class Rule : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {

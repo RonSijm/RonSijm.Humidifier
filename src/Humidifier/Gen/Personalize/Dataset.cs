@@ -25,7 +25,9 @@ namespace Humidifier.Personalize
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatasetGroupArn { get; set; }
+
         /// <summary>
         /// DatasetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-datasettype
@@ -33,6 +35,7 @@ namespace Humidifier.Personalize
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatasetType { get; set; }
         /// <summary>
         /// DatasetImportJob
@@ -42,6 +45,7 @@ namespace Humidifier.Personalize
         /// Type: DatasetImportJob
         /// </summary>
         public DatasetTypes.DatasetImportJob DatasetImportJob { get; set; }
+
         /// <summary>
         /// SchemaArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-schemaarn
@@ -49,6 +53,7 @@ namespace Humidifier.Personalize
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SchemaArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

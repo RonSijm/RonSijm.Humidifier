@@ -25,6 +25,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AdminAccountId { get; set; }
     }
 }

@@ -20,7 +20,9 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: DatabaseInput
         /// </summary>
+        [Required]
         public DatabaseTypes.DatabaseInput DatabaseInput { get; set; }
+
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid
@@ -28,6 +30,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CatalogId { get; set; }
     }
 

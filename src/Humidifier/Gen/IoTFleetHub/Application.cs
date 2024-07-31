@@ -2,7 +2,7 @@ namespace Humidifier.IoTFleetHub
 {
     using System.Collections.Generic;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -33,6 +33,10 @@ namespace Humidifier.IoTFleetHub
         /// PrimitiveType: String
         /// </summary>
         public dynamic ApplicationDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ApplicationDescription; set => ApplicationDescription = value; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#cfn-iotfleethub-application-rolearn
@@ -40,6 +44,7 @@ namespace Humidifier.IoTFleetHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

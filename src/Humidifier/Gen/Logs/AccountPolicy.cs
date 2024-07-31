@@ -24,6 +24,7 @@ namespace Humidifier.Logs
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyType { get; set; }
         /// <summary>
         /// Scope
@@ -33,6 +34,7 @@ namespace Humidifier.Logs
         /// PrimitiveType: String
         /// </summary>
         public dynamic Scope { get; set; }
+
         /// <summary>
         /// PolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-accountpolicy.html#cfn-logs-accountpolicy-policyname
@@ -40,6 +42,7 @@ namespace Humidifier.Logs
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyName { get; set; }
         /// <summary>
         /// SelectionCriteria
@@ -49,6 +52,7 @@ namespace Humidifier.Logs
         /// PrimitiveType: String
         /// </summary>
         public dynamic SelectionCriteria { get; set; }
+
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-accountpolicy.html#cfn-logs-accountpolicy-policydocument
@@ -56,6 +60,7 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
     }
 }

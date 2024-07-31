@@ -28,7 +28,9 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationPolicyId { get; set; }
+
         /// <summary>
         /// TargetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-policyassociation.html#cfn-securityhub-policyassociation-targettype
@@ -36,7 +38,9 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetType { get; set; }
+
         /// <summary>
         /// TargetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-policyassociation.html#cfn-securityhub-policyassociation-targetid
@@ -44,6 +48,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetId { get; set; }
     }
 }

@@ -27,6 +27,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic ListenerArn { get; set; }
+
         /// <summary>
         /// Actions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions
@@ -35,7 +36,9 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Type: List
         /// ItemType: Action
         /// </summary>
+        [Required]
         public List<ListenerRuleTypes.Action> Actions { get; set; }
+
         /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-priority
@@ -43,7 +46,9 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Priority { get; set; }
+
         /// <summary>
         /// Conditions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions
@@ -52,6 +57,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Type: List
         /// ItemType: RuleCondition
         /// </summary>
+        [Required]
         public List<ListenerRuleTypes.RuleCondition> Conditions { get; set; }
     }
 

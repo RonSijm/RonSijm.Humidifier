@@ -26,6 +26,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic User { get; set; }
         /// <summary>
         /// Subdirectory
@@ -59,6 +60,7 @@ namespace Humidifier.DataSync
         /// Type: MountOptions
         /// </summary>
         public LocationSMBTypes.MountOptions MountOptions { get; set; }
+
         /// <summary>
         /// AgentArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-agentarns
@@ -67,6 +69,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AgentArns { get; set; }
         /// <summary>
         /// Tags

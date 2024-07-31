@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using System.Collections.Generic;
 
-    public class ReplicationSubnetGroup : Humidifier.Base.BaseResource, IHaveTags
+    public class ReplicationSubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveSubnetIds, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -19,7 +19,11 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReplicationSubnetGroupDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ReplicationSubnetGroupDescription; set => ReplicationSubnetGroupDescription = value; }
         /// <summary>
         /// ReplicationSubnetGroupIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-replicationsubnetgroupidentifier
@@ -28,6 +32,7 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic ReplicationSubnetGroupIdentifier { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationsubnetgroup.html#cfn-dms-replicationsubnetgroup-subnetids
@@ -36,6 +41,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

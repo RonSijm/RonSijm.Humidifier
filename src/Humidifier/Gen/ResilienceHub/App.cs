@@ -3,7 +3,7 @@ namespace Humidifier.ResilienceHub
     using System.Collections.Generic;
     using AppTypes;
 
-    public class App : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.ResilienceHub
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// AppTemplateBody
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-apptemplatebody
@@ -34,6 +35,7 @@ namespace Humidifier.ResilienceHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AppTemplateBody { get; set; }
         /// <summary>
         /// AppAssessmentSchedule
@@ -51,6 +53,7 @@ namespace Humidifier.ResilienceHub
         /// Type: PermissionModel
         /// </summary>
         public AppTypes.PermissionModel PermissionModel { get; set; }
+
         /// <summary>
         /// ResourceMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-resourcemappings
@@ -59,6 +62,7 @@ namespace Humidifier.ResilienceHub
         /// Type: List
         /// ItemType: ResourceMapping
         /// </summary>
+        [Required]
         public List<AppTypes.ResourceMapping> ResourceMappings { get; set; }
         /// <summary>
         /// EventSubscriptions

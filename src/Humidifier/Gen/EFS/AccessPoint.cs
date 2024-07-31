@@ -26,6 +26,7 @@ namespace Humidifier.EFS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileSystemId { get; set; }
         /// <summary>
         /// RootDirectory

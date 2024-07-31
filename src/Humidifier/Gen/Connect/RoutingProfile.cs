@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using RoutingProfileTypes;
 
-    public class RoutingProfile : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class RoutingProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
+
         /// <summary>
         /// MediaConcurrencies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-mediaconcurrencies
@@ -34,7 +36,9 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: MediaConcurrency
         /// </summary>
+        [Required]
         public List<RoutingProfileTypes.MediaConcurrency> MediaConcurrencies { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-instancearn
@@ -42,6 +46,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// AgentAvailabilityTimer
@@ -60,6 +65,7 @@ namespace Humidifier.Connect
         /// ItemType: RoutingProfileQueueConfig
         /// </summary>
         public List<RoutingProfileTypes.RoutingProfileQueueConfig> QueueConfigs { get; set; }
+
         /// <summary>
         /// DefaultOutboundQueueArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-defaultoutboundqueuearn
@@ -67,6 +73,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefaultOutboundQueueArn { get; set; }
         /// <summary>
         /// Tags

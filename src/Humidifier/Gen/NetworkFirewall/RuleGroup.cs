@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using RuleGroupTypes;
 
-    public class RuleGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -35,6 +36,7 @@ namespace Humidifier.NetworkFirewall
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Capacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-capacity
@@ -42,6 +44,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Capacity { get; set; }
         public dynamic RuleGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>

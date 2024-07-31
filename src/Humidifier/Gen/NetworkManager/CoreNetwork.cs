@@ -31,6 +31,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GlobalNetworkId { get; set; }
         /// <summary>
         /// Description

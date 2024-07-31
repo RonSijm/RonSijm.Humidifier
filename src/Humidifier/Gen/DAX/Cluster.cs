@@ -3,7 +3,7 @@ namespace Humidifier.DAX
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.DAX
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ReplicationFactor
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-replicationfactor
@@ -43,6 +44,7 @@ namespace Humidifier.DAX
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic ReplicationFactor { get; set; }
         /// <summary>
         /// ParameterGroupName
@@ -61,6 +63,7 @@ namespace Humidifier.DAX
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic AvailabilityZones { get; set; }
+
         /// <summary>
         /// IAMRoleARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-iamrolearn
@@ -68,6 +71,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IAMRoleARN { get; set; }
         /// <summary>
         /// SubnetGroupName
@@ -110,6 +114,7 @@ namespace Humidifier.DAX
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// NodeType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-nodetype
@@ -117,6 +122,7 @@ namespace Humidifier.DAX
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NodeType { get; set; }
         public dynamic ClusterName { get => GivenName; set => GivenName = value; }
         /// <summary>

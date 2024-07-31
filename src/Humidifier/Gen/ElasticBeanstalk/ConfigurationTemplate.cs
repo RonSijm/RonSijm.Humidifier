@@ -34,6 +34,7 @@ namespace Humidifier.ElasticBeanstalk
         /// PrimitiveType: String
         /// </summary>
         public dynamic PlatformArn { get; set; }
+
         /// <summary>
         /// ApplicationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-applicationname
@@ -41,6 +42,7 @@ namespace Humidifier.ElasticBeanstalk
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationName { get; set; }
         /// <summary>
         /// Description

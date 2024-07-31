@@ -20,7 +20,9 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Broker { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html#cfn-amazonmq-configurationassociation-configuration
@@ -28,6 +30,7 @@ namespace Humidifier.AmazonMQ
         /// UpdateType: Mutable
         /// Type: ConfigurationId
         /// </summary>
+        [Required]
         public ConfigurationAssociationTypes.ConfigurationId Configuration { get; set; }
     }
 

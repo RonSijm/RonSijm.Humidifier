@@ -2,7 +2,7 @@ namespace Humidifier.Events
 {
     using System.Collections.Generic;
 
-    public class ApiDestination : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ApiDestination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Events
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ConnectionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html#cfn-events-apidestination-connectionarn
@@ -32,7 +33,9 @@ namespace Humidifier.Events
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectionArn { get; set; }
+
         /// <summary>
         /// InvocationEndpoint
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html#cfn-events-apidestination-invocationendpoint
@@ -40,7 +43,9 @@ namespace Humidifier.Events
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InvocationEndpoint { get; set; }
+
         /// <summary>
         /// HttpMethod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html#cfn-events-apidestination-httpmethod
@@ -48,6 +53,7 @@ namespace Humidifier.Events
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic HttpMethod { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>

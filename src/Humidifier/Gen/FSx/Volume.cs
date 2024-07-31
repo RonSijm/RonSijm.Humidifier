@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using VolumeTypes;
 
-    public class Volume : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Volume : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

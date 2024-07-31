@@ -2,7 +2,7 @@ namespace Humidifier.ApiGateway
 {
     using System.Collections.Generic;
 
-    public class Model : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Model : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -36,6 +36,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Schema { get; set; }
+
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-restapiid
@@ -43,6 +44,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RestApiId { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

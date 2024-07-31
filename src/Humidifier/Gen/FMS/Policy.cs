@@ -3,7 +3,7 @@ namespace Humidifier.FMS
     using System.Collections.Generic;
     using PolicyTypes;
 
-    public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.FMS
         /// ItemType: ResourceTag
         /// </summary>
         public List<PolicyTypes.ResourceTag> ResourceTags { get; set; }
+
         /// <summary>
         /// ExcludeResourceTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excluderesourcetags
@@ -43,6 +44,7 @@ namespace Humidifier.FMS
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic ExcludeResourceTags { get; set; }
         /// <summary>
         /// ResourceType
@@ -61,6 +63,7 @@ namespace Humidifier.FMS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic ResourceSetIds { get; set; }
+
         /// <summary>
         /// SecurityServicePolicyData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-securityservicepolicydata
@@ -68,7 +71,9 @@ namespace Humidifier.FMS
         /// UpdateType: Mutable
         /// Type: SecurityServicePolicyData
         /// </summary>
+        [Required]
         public PolicyTypes.SecurityServicePolicyData SecurityServicePolicyData { get; set; }
+
         /// <summary>
         /// RemediationEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-remediationenabled
@@ -76,6 +81,7 @@ namespace Humidifier.FMS
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic RemediationEnabled { get; set; }
         /// <summary>
         /// DeleteAllPolicyResources
@@ -109,6 +115,9 @@ namespace Humidifier.FMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic PolicyDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => PolicyDescription; set => PolicyDescription = value; }
         public dynamic PolicyName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ResourceTypeList

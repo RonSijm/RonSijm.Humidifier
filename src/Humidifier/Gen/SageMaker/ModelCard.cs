@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelCardTypes;
 
-    public class ModelCard : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ModelCard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.SageMaker
         /// </summary>
         public ModelCardTypes.UserContext LastModifiedBy { get; set; }
         public dynamic ModelCardName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ModelCardStatus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardstatus
@@ -38,6 +39,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ModelCardStatus { get; set; }
         /// <summary>
         /// CreatedBy
@@ -55,6 +57,7 @@ namespace Humidifier.SageMaker
         /// Type: SecurityConfig
         /// </summary>
         public ModelCardTypes.SecurityConfig SecurityConfig { get; set; }
+
         /// <summary>
         /// Content
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-content
@@ -62,6 +65,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: Content
         /// </summary>
+        [Required]
         public ModelCardTypes.Content Content { get; set; }
         /// <summary>
         /// Tags

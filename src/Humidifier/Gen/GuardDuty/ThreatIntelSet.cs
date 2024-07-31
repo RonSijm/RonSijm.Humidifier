@@ -25,6 +25,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Format { get; set; }
         /// <summary>
         /// Activate
@@ -52,6 +53,7 @@ namespace Humidifier.GuardDuty
         /// </summary>
         public List<ThreatIntelSetTypes.TagItem> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-location
@@ -59,6 +61,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Location { get; set; }
     }
 

@@ -30,7 +30,9 @@ namespace Humidifier.S3Outposts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OutpostId { get; set; }
+
         /// <summary>
         /// SecurityGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-securitygroupid
@@ -38,6 +40,7 @@ namespace Humidifier.S3Outposts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupId { get; set; }
         /// <summary>
         /// FailedReason
@@ -47,6 +50,7 @@ namespace Humidifier.S3Outposts
         /// Type: FailedReason
         /// </summary>
         public EndpointTypes.FailedReason FailedReason { get; set; }
+
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#cfn-s3outposts-endpoint-subnetid
@@ -54,6 +58,7 @@ namespace Humidifier.S3Outposts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubnetId { get; set; }
         /// <summary>
         /// AccessType

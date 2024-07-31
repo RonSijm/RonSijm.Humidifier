@@ -25,6 +25,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserPoolId { get; set; }
         /// <summary>
         /// CustomDomainConfig
@@ -34,6 +35,7 @@ namespace Humidifier.Cognito
         /// Type: CustomDomainConfigType
         /// </summary>
         public UserPoolDomainTypes.CustomDomainConfigType CustomDomainConfig { get; set; }
+
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-domain
@@ -41,6 +43,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Domain { get; set; }
     }
 

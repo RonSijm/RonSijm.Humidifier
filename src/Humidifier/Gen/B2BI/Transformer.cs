@@ -3,7 +3,7 @@ namespace Humidifier.B2BI
     using System.Collections.Generic;
     using TransformerTypes;
 
-    public class Transformer : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Transformer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,7 +28,9 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Status { get; set; }
+
         /// <summary>
         /// MappingTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-transformer.html#cfn-b2bi-transformer-mappingtemplate
@@ -36,7 +38,9 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MappingTemplate { get; set; }
+
         /// <summary>
         /// EdiType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-transformer.html#cfn-b2bi-transformer-editype
@@ -44,6 +48,7 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// Type: EdiType
         /// </summary>
+        [Required]
         public TransformerTypes.EdiType EdiType { get; set; }
         /// <summary>
         /// SampleDocument
@@ -53,6 +58,7 @@ namespace Humidifier.B2BI
         /// PrimitiveType: String
         /// </summary>
         public dynamic SampleDocument { get; set; }
+
         /// <summary>
         /// FileFormat
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-transformer.html#cfn-b2bi-transformer-fileformat
@@ -60,6 +66,7 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FileFormat { get; set; }
         /// <summary>
         /// Tags

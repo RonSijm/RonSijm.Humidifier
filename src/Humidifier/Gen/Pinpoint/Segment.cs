@@ -35,6 +35,7 @@ namespace Humidifier.Pinpoint
         /// Type: SegmentDimensions
         /// </summary>
         public SegmentTypes.SegmentDimensions Dimensions { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-applicationid
@@ -42,6 +43,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Tags

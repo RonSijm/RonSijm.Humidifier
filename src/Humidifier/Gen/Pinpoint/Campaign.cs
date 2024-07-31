@@ -3,7 +3,7 @@ namespace Humidifier.Pinpoint
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.Pinpoint
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// SegmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid
@@ -34,6 +35,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SegmentId { get; set; }
         /// <summary>
         /// Priority
@@ -109,6 +111,7 @@ namespace Humidifier.Pinpoint
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic HoldoutPercent { get; set; }
+
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule
@@ -116,6 +119,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// Type: Schedule
         /// </summary>
+        [Required]
         public CampaignTypes.Schedule Schedule { get; set; }
         /// <summary>
         /// CustomDeliveryConfiguration
@@ -125,6 +129,7 @@ namespace Humidifier.Pinpoint
         /// Type: CustomDeliveryConfiguration
         /// </summary>
         public CampaignTypes.CustomDeliveryConfiguration CustomDeliveryConfiguration { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid
@@ -132,6 +137,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// CampaignHook

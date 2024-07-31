@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using MaintenanceWindowTaskTypes;
 
-    public class MaintenanceWindowTask : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class MaintenanceWindowTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -37,6 +37,7 @@ namespace Humidifier.SSM
         /// PrimitiveType: String
         /// </summary>
         public dynamic ServiceRoleArn { get; set; }
+
         /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-priority
@@ -44,6 +45,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Priority { get; set; }
         /// <summary>
         /// MaxConcurrency
@@ -63,6 +65,7 @@ namespace Humidifier.SSM
         /// </summary>
         public List<MaintenanceWindowTaskTypes.Target> Targets { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// TaskArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskarn
@@ -70,6 +73,7 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TaskArn { get; set; }
         /// <summary>
         /// TaskInvocationParameters
@@ -79,6 +83,7 @@ namespace Humidifier.SSM
         /// Type: TaskInvocationParameters
         /// </summary>
         public MaintenanceWindowTaskTypes.TaskInvocationParameters TaskInvocationParameters { get; set; }
+
         /// <summary>
         /// WindowId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-windowid
@@ -86,6 +91,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WindowId { get; set; }
         /// <summary>
         /// TaskParameters
@@ -95,6 +101,7 @@ namespace Humidifier.SSM
         /// PrimitiveType: Json
         /// </summary>
         public dynamic TaskParameters { get; set; }
+
         /// <summary>
         /// TaskType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-tasktype
@@ -102,6 +109,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TaskType { get; set; }
         /// <summary>
         /// CutoffBehavior

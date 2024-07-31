@@ -25,6 +25,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RegionLinkingMode { get; set; }
         /// <summary>
         /// Regions

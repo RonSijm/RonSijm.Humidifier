@@ -2,7 +2,7 @@ namespace Humidifier.KinesisVideo
 {
     using System.Collections.Generic;
 
-    public class SignalingChannel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class SignalingChannel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

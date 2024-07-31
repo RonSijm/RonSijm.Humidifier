@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using StageTypes;
 
-    public class Stage : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -30,6 +30,7 @@ namespace Humidifier.ApiGateway
         /// </summary>
         public dynamic Description { get; set; }
         public dynamic StageName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid
@@ -37,6 +38,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RestApiId { get; set; }
         /// <summary>
         /// CanarySetting

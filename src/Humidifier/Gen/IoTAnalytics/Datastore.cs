@@ -3,7 +3,7 @@ namespace Humidifier.IoTAnalytics
     using System.Collections.Generic;
     using DatastoreTypes;
 
-    public class Datastore : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Datastore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

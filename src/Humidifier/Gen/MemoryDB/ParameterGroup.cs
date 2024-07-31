@@ -2,7 +2,7 @@ namespace Humidifier.MemoryDB
 {
     using System.Collections.Generic;
 
-    public class ParameterGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.MemoryDB
         /// </summary>
         public dynamic Parameters { get; set; }
         public dynamic ParameterGroupName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Family
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html#cfn-memorydb-parametergroup-family
@@ -41,6 +42,7 @@ namespace Humidifier.MemoryDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Family { get; set; }
         /// <summary>
         /// Tags

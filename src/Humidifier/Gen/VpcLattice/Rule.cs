@@ -3,7 +3,7 @@ namespace Humidifier.VpcLattice
     using System.Collections.Generic;
     using RuleTypes;
 
-    public class Rule : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,7 +26,9 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Mutable
         /// Type: Action
         /// </summary>
+        [Required]
         public RuleTypes.Action Action { get; set; }
+
         /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-priority
@@ -34,6 +36,7 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Priority { get; set; }
         /// <summary>
         /// ServiceIdentifier
@@ -60,6 +63,7 @@ namespace Humidifier.VpcLattice
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Match
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-rule.html#cfn-vpclattice-rule-match
@@ -67,6 +71,7 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Mutable
         /// Type: Match
         /// </summary>
+        [Required]
         public RuleTypes.Match Match { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

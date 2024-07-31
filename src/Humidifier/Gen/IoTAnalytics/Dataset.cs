@@ -3,7 +3,7 @@ namespace Humidifier.IoTAnalytics
     using System.Collections.Generic;
     using DatasetTypes;
 
-    public class Dataset : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.IoTAnalytics
         /// Type: List
         /// ItemType: Action
         /// </summary>
+        [Required]
         public List<DatasetTypes.Action> Actions { get; set; }
         /// <summary>
         /// LateDataRules

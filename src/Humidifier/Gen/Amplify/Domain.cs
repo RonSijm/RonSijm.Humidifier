@@ -35,7 +35,9 @@ namespace Humidifier.Amplify
         /// Type: List
         /// ItemType: SubDomainSetting
         /// </summary>
+        [Required]
         public List<DomainTypes.SubDomainSetting> SubDomainSettings { get; set; }
+
         /// <summary>
         /// AppId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-appid
@@ -43,6 +45,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AppId { get; set; }
         /// <summary>
         /// AutoSubDomainIAMRole

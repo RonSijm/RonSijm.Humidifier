@@ -24,6 +24,7 @@ namespace Humidifier.Personalize
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Schema_ { get; set; }
         /// <summary>
         /// Domain

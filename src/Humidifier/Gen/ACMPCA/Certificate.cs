@@ -27,6 +27,7 @@ namespace Humidifier.ACMPCA
         /// PrimitiveType: String
         /// </summary>
         public dynamic TemplateArn { get; set; }
+
         /// <summary>
         /// CertificateAuthorityArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificateauthorityarn
@@ -34,7 +35,9 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CertificateAuthorityArn { get; set; }
+
         /// <summary>
         /// Validity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validity
@@ -42,7 +45,9 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// Type: Validity
         /// </summary>
+        [Required]
         public CertificateTypes.Validity Validity { get; set; }
+
         /// <summary>
         /// CertificateSigningRequest
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-certificatesigningrequest
@@ -50,7 +55,9 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CertificateSigningRequest { get; set; }
+
         /// <summary>
         /// SigningAlgorithm
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-signingalgorithm
@@ -58,6 +65,7 @@ namespace Humidifier.ACMPCA
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SigningAlgorithm { get; set; }
         /// <summary>
         /// ApiPassthrough

@@ -46,6 +46,7 @@ namespace Humidifier.EC2
         /// Type: SseSpecification
         /// </summary>
         public VerifiedAccessGroupTypes.SseSpecification SseSpecification { get; set; }
+
         /// <summary>
         /// VerifiedAccessInstanceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-verifiedaccessinstanceid
@@ -53,6 +54,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VerifiedAccessInstanceId { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.Cloud9
     using System.Collections.Generic;
     using EnvironmentEC2Types;
 
-    public class EnvironmentEC2 : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class EnvironmentEC2 : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -60,6 +60,7 @@ namespace Humidifier.Cloud9
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AutomaticStopTimeMinutes { get; set; }
+
         /// <summary>
         /// ImageId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-imageid
@@ -67,6 +68,7 @@ namespace Humidifier.Cloud9
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ImageId { get; set; }
         /// <summary>
         /// SubnetId
@@ -76,6 +78,7 @@ namespace Humidifier.Cloud9
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubnetId { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype
@@ -83,6 +86,7 @@ namespace Humidifier.Cloud9
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// Tags

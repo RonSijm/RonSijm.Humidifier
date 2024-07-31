@@ -27,6 +27,7 @@ namespace Humidifier.CE
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic MonitorArnList { get; set; }
         /// <summary>
         /// ResourceTags
@@ -37,6 +38,7 @@ namespace Humidifier.CE
         /// ItemType: ResourceTag
         /// </summary>
         public List<AnomalySubscriptionTypes.ResourceTag> ResourceTags { get; set; }
+
         /// <summary>
         /// Frequency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-frequency
@@ -44,7 +46,9 @@ namespace Humidifier.CE
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Frequency { get; set; }
+
         /// <summary>
         /// SubscriptionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscriptionname
@@ -52,7 +56,9 @@ namespace Humidifier.CE
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubscriptionName { get; set; }
+
         /// <summary>
         /// Subscribers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscribers
@@ -61,6 +67,7 @@ namespace Humidifier.CE
         /// Type: List
         /// ItemType: Subscriber
         /// </summary>
+        [Required]
         public List<AnomalySubscriptionTypes.Subscriber> Subscribers { get; set; }
         /// <summary>
         /// Threshold

@@ -31,6 +31,7 @@ namespace Humidifier.SES
         /// Type: ConfigurationSetAttributes
         /// </summary>
         public EmailIdentityTypes.ConfigurationSetAttributes ConfigurationSetAttributes { get; set; }
+
         /// <summary>
         /// EmailIdentity_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-emailidentity
@@ -38,6 +39,7 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EmailIdentity_ { get; set; }
         /// <summary>
         /// DkimSigningAttributes

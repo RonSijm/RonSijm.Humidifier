@@ -25,7 +25,9 @@ namespace Humidifier.Budgets
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ExecutionRoleArn { get; set; }
+
         /// <summary>
         /// ActionType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-actiontype
@@ -33,6 +35,7 @@ namespace Humidifier.Budgets
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ActionType { get; set; }
         /// <summary>
         /// ResourceTags
@@ -43,6 +46,7 @@ namespace Humidifier.Budgets
         /// ItemType: ResourceTag
         /// </summary>
         public List<BudgetsActionTypes.ResourceTag> ResourceTags { get; set; }
+
         /// <summary>
         /// NotificationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-notificationtype
@@ -50,7 +54,9 @@ namespace Humidifier.Budgets
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NotificationType { get; set; }
+
         /// <summary>
         /// ActionThreshold
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-actionthreshold
@@ -58,7 +64,9 @@ namespace Humidifier.Budgets
         /// UpdateType: Mutable
         /// Type: ActionThreshold
         /// </summary>
+        [Required]
         public BudgetsActionTypes.ActionThreshold ActionThreshold { get; set; }
+
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-definition
@@ -66,6 +74,7 @@ namespace Humidifier.Budgets
         /// UpdateType: Mutable
         /// Type: Definition
         /// </summary>
+        [Required]
         public BudgetsActionTypes.Definition Definition { get; set; }
         /// <summary>
         /// ApprovalModel
@@ -75,6 +84,7 @@ namespace Humidifier.Budgets
         /// PrimitiveType: String
         /// </summary>
         public dynamic ApprovalModel { get; set; }
+
         /// <summary>
         /// Subscribers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-subscribers
@@ -83,7 +93,9 @@ namespace Humidifier.Budgets
         /// Type: List
         /// ItemType: Subscriber
         /// </summary>
+        [Required]
         public List<BudgetsActionTypes.Subscriber> Subscribers { get; set; }
+
         /// <summary>
         /// BudgetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-budgetname
@@ -91,6 +103,7 @@ namespace Humidifier.Budgets
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BudgetName { get; set; }
     }
 

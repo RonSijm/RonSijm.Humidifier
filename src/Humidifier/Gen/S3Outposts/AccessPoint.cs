@@ -26,6 +26,7 @@ namespace Humidifier.S3Outposts
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// Bucket
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-bucket
@@ -33,7 +34,9 @@ namespace Humidifier.S3Outposts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Bucket { get; set; }
+
         /// <summary>
         /// VpcConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-vpcconfiguration
@@ -41,6 +44,7 @@ namespace Humidifier.S3Outposts
         /// UpdateType: Immutable
         /// Type: VpcConfiguration
         /// </summary>
+        [Required]
         public AccessPointTypes.VpcConfiguration VpcConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

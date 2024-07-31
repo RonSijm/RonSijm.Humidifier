@@ -25,6 +25,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserPoolId { get; set; }
         /// <summary>
         /// LogConfigurations

@@ -24,6 +24,7 @@ namespace Humidifier.Detective
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccountId { get; set; }
     }
 }

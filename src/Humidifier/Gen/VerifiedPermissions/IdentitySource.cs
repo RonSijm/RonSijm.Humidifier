@@ -26,6 +26,7 @@ namespace Humidifier.VerifiedPermissions
         /// PrimitiveType: String
         /// </summary>
         public dynamic PrincipalEntityType { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-identitysource.html#cfn-verifiedpermissions-identitysource-configuration
@@ -33,7 +34,9 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Mutable
         /// Type: IdentitySourceConfiguration
         /// </summary>
+        [Required]
         public IdentitySourceTypes.IdentitySourceConfiguration Configuration { get; set; }
+
         /// <summary>
         /// PolicyStoreId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-identitysource.html#cfn-verifiedpermissions-identitysource-policystoreid
@@ -41,6 +44,7 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyStoreId { get; set; }
     }
 

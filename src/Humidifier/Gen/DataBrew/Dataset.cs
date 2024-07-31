@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using DatasetTypes;
 
-    public class Dataset : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.DataBrew
         /// UpdateType: Mutable
         /// Type: Input
         /// </summary>
+        [Required]
         public DatasetTypes.Input Input { get; set; }
         /// <summary>
         /// Format

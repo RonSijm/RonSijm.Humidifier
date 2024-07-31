@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using GameServerGroupTypes;
 
-    public class GameServerGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class GameServerGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -85,6 +85,7 @@ namespace Humidifier.GameLift
         /// PrimitiveType: Double
         /// </summary>
         public dynamic MaxSize { get; set; }
+
         /// <summary>
         /// InstanceDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-instancedefinitions
@@ -93,7 +94,9 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: InstanceDefinition
         /// </summary>
+        [Required]
         public List<GameServerGroupTypes.InstanceDefinition> InstanceDefinitions { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-rolearn
@@ -101,6 +104,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

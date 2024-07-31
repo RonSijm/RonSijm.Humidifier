@@ -3,7 +3,7 @@ namespace Humidifier.OSIS
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.OSIS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PipelineConfigurationBody { get; set; }
         /// <summary>
         /// BufferOptions
@@ -37,6 +38,7 @@ namespace Humidifier.OSIS
         /// Type: BufferOptions
         /// </summary>
         public PipelineTypes.BufferOptions BufferOptions { get; set; }
+
         /// <summary>
         /// MinUnits
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-minunits
@@ -44,6 +46,7 @@ namespace Humidifier.OSIS
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic MinUnits { get; set; }
         public dynamic PipelineName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -54,6 +57,7 @@ namespace Humidifier.OSIS
         /// Type: VpcOptions
         /// </summary>
         public PipelineTypes.VpcOptions VpcOptions { get; set; }
+
         /// <summary>
         /// MaxUnits
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-maxunits
@@ -61,6 +65,7 @@ namespace Humidifier.OSIS
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic MaxUnits { get; set; }
         /// <summary>
         /// LogPublishingOptions
@@ -175,7 +180,7 @@ namespace Humidifier.OSIS
             public dynamic VpcEndpointId { get; set; }
         }
 
-        public class VpcOptions : Humidifier.Base.BaseSubResource
+        public class VpcOptions : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// VpcEndpointManagement

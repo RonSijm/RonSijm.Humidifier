@@ -22,6 +22,7 @@ namespace Humidifier.ControlTower
         /// ItemType: EnabledControlParameter
         /// </summary>
         public List<EnabledControlTypes.EnabledControlParameter> Parameters { get; set; }
+
         /// <summary>
         /// ControlIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledcontrol.html#cfn-controltower-enabledcontrol-controlidentifier
@@ -29,7 +30,9 @@ namespace Humidifier.ControlTower
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ControlIdentifier { get; set; }
+
         /// <summary>
         /// TargetIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledcontrol.html#cfn-controltower-enabledcontrol-targetidentifier
@@ -37,6 +40,7 @@ namespace Humidifier.ControlTower
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetIdentifier { get; set; }
         /// <summary>
         /// Tags

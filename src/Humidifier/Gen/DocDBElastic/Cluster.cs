@@ -2,7 +2,7 @@ namespace Humidifier.DocDBElastic
 {
     using System.Collections.Generic;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.DocDBElastic
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AdminUserName { get; set; }
         /// <summary>
         /// KmsKeyId
@@ -75,6 +76,7 @@ namespace Humidifier.DocDBElastic
         /// PrimitiveType: String
         /// </summary>
         public dynamic PreferredBackupWindow { get; set; }
+
         /// <summary>
         /// ShardCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-shardcount
@@ -82,7 +84,9 @@ namespace Humidifier.DocDBElastic
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic ShardCount { get; set; }
+
         /// <summary>
         /// ShardCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-shardcapacity
@@ -90,6 +94,7 @@ namespace Humidifier.DocDBElastic
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic ShardCapacity { get; set; }
         /// <summary>
         /// VpcSecurityGroupIds
@@ -109,6 +114,7 @@ namespace Humidifier.DocDBElastic
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic BackupRetentionPeriod { get; set; }
+
         /// <summary>
         /// AuthType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdbelastic-cluster.html#cfn-docdbelastic-cluster-authtype
@@ -116,6 +122,7 @@ namespace Humidifier.DocDBElastic
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthType { get; set; }
         /// <summary>
         /// Tags

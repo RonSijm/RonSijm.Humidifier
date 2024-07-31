@@ -3,7 +3,7 @@ namespace Humidifier.IoTEvents
     using System.Collections.Generic;
     using DetectorModelTypes;
 
-    public class DetectorModel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DetectorModel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// Type: DetectorModelDefinition
         /// </summary>
+        [Required]
         public DetectorModelTypes.DetectorModelDefinition DetectorModelDefinition { get; set; }
         /// <summary>
         /// EvaluationMethod
@@ -38,6 +39,9 @@ namespace Humidifier.IoTEvents
         /// PrimitiveType: String
         /// </summary>
         public dynamic DetectorModelDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => DetectorModelDescription; set => DetectorModelDescription = value; }
         /// <summary>
         /// Key
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-key
@@ -46,6 +50,7 @@ namespace Humidifier.IoTEvents
         /// PrimitiveType: String
         /// </summary>
         public dynamic Key { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-rolearn
@@ -53,6 +58,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

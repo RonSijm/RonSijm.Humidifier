@@ -81,6 +81,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AllocationMinNetmaskLength { get; set; }
+
         /// <summary>
         /// IpamScopeId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-ipamscopeid
@@ -88,6 +89,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IpamScopeId { get; set; }
         /// <summary>
         /// ProvisionedCidrs
@@ -122,6 +124,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutoImport { get; set; }
+
         /// <summary>
         /// AddressFamily
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-addressfamily
@@ -129,6 +132,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AddressFamily { get; set; }
         /// <summary>
         /// AllocationResourceTags

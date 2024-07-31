@@ -36,6 +36,7 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic LoggingRole { get; set; }
+
         /// <summary>
         /// AccessRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-accessrole
@@ -43,6 +44,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccessRole { get; set; }
         /// <summary>
         /// SecurityPolicyName
@@ -69,6 +71,7 @@ namespace Humidifier.Transfer
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Url
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-url
@@ -76,6 +79,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Url { get; set; }
     }
 

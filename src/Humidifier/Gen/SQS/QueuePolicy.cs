@@ -24,7 +24,9 @@ namespace Humidifier.SQS
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic PolicyDocument { get; set; }
+
         /// <summary>
         /// Queues
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queuepolicy.html#cfn-sqs-queuepolicy-queues
@@ -33,6 +35,7 @@ namespace Humidifier.SQS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Queues { get; set; }
     }
 }

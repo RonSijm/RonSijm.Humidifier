@@ -3,7 +3,7 @@ namespace Humidifier.Cassandra
     using System.Collections.Generic;
     using TableTypes;
 
-    public class Table : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -31,6 +31,7 @@ namespace Humidifier.Cassandra
         /// ItemType: ClusteringKeyColumn
         /// </summary>
         public List<TableTypes.ClusteringKeyColumn> ClusteringKeyColumns { get; set; }
+
         /// <summary>
         /// KeyspaceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-keyspacename
@@ -38,6 +39,7 @@ namespace Humidifier.Cassandra
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KeyspaceName { get; set; }
         /// <summary>
         /// EncryptionSpecification
@@ -72,6 +74,7 @@ namespace Humidifier.Cassandra
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ClientSideTimestampsEnabled { get; set; }
+
         /// <summary>
         /// PartitionKeyColumns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-partitionkeycolumns
@@ -80,6 +83,7 @@ namespace Humidifier.Cassandra
         /// Type: List
         /// ItemType: Column
         /// </summary>
+        [Required]
         public List<TableTypes.Column> PartitionKeyColumns { get; set; }
         /// <summary>
         /// BillingMode

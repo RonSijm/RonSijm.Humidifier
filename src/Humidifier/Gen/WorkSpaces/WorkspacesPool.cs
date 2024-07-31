@@ -28,6 +28,7 @@ namespace Humidifier.WorkSpaces
         /// Type: ApplicationSettings
         /// </summary>
         public WorkspacesPoolTypes.ApplicationSettings ApplicationSettings { get; set; }
+
         /// <summary>
         /// BundleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-bundleid
@@ -35,6 +36,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BundleId { get; set; }
         /// <summary>
         /// Description
@@ -44,6 +46,7 @@ namespace Humidifier.WorkSpaces
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DirectoryId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-directoryid
@@ -51,6 +54,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DirectoryId { get; set; }
         /// <summary>
         /// TimeoutSettings
@@ -60,6 +64,7 @@ namespace Humidifier.WorkSpaces
         /// Type: TimeoutSettings
         /// </summary>
         public WorkspacesPoolTypes.TimeoutSettings TimeoutSettings { get; set; }
+
         /// <summary>
         /// Capacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-capacity
@@ -67,7 +72,9 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Mutable
         /// Type: Capacity
         /// </summary>
+        [Required]
         public WorkspacesPoolTypes.Capacity Capacity { get; set; }
+
         /// <summary>
         /// PoolName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-poolname
@@ -75,6 +82,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PoolName { get; set; }
         /// <summary>
         /// Tags

@@ -19,7 +19,9 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SecretKey { get; set; }
+
         /// <summary>
         /// ApiKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-apikey
@@ -27,6 +29,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiKey { get; set; }
         /// <summary>
         /// Enabled
@@ -36,6 +39,7 @@ namespace Humidifier.Pinpoint
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic Enabled { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-baiduchannel.html#cfn-pinpoint-baiduchannel-applicationid
@@ -43,6 +47,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
     }
 }

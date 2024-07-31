@@ -26,6 +26,7 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic CertificateList { get; set; }
         /// <summary>
         /// Tags

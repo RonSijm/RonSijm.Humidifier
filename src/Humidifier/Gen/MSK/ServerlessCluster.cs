@@ -26,7 +26,9 @@ namespace Humidifier.MSK
         /// Type: List
         /// ItemType: VpcConfig
         /// </summary>
+        [Required]
         public List<ServerlessClusterTypes.VpcConfig> VpcConfigs { get; set; }
+
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-clustername
@@ -34,7 +36,9 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterName { get; set; }
+
         /// <summary>
         /// ClientAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-clientauthentication
@@ -42,6 +46,7 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// Type: ClientAuthentication
         /// </summary>
+        [Required]
         public ServerlessClusterTypes.ClientAuthentication ClientAuthentication { get; set; }
         /// <summary>
         /// Tags
@@ -92,7 +97,7 @@ namespace Humidifier.MSK
             public ServerlessClusterTypes.Iam Iam { get; set; }
         }
 
-        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroups
+        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroups

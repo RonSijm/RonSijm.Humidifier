@@ -20,6 +20,7 @@ namespace Humidifier.WAFRegional
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic RegexPatternStrings { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

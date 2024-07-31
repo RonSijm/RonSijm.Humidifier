@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryControl
     using System.Collections.Generic;
     using SafetyRuleTypes;
 
-    public class SafetyRule : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class SafetyRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.Route53RecoveryControl
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ControlPanelArn { get; set; }
         /// <summary>
         /// AssertionRule
@@ -35,6 +36,7 @@ namespace Humidifier.Route53RecoveryControl
         /// Type: AssertionRule
         /// </summary>
         public SafetyRuleTypes.AssertionRule AssertionRule { get; set; }
+
         /// <summary>
         /// RuleConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#cfn-route53recoverycontrol-safetyrule-ruleconfig
@@ -42,6 +44,7 @@ namespace Humidifier.Route53RecoveryControl
         /// UpdateType: Conditional
         /// Type: RuleConfig
         /// </summary>
+        [Required]
         public SafetyRuleTypes.RuleConfig RuleConfig { get; set; }
         /// <summary>
         /// GatingRule

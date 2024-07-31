@@ -36,6 +36,7 @@ namespace Humidifier.AppFlow
         /// PrimitiveType: String
         /// </summary>
         public dynamic KMSArn { get; set; }
+
         /// <summary>
         /// ConnectorType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectortype
@@ -43,7 +44,9 @@ namespace Humidifier.AppFlow
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectorType { get; set; }
+
         /// <summary>
         /// ConnectionMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectionmode
@@ -51,6 +54,7 @@ namespace Humidifier.AppFlow
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectionMode { get; set; }
         /// <summary>
         /// ConnectorProfileConfig

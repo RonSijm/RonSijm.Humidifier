@@ -291,7 +291,7 @@ namespace Humidifier.MWAA
             public dynamic LogLevel { get; set; }
         }
 
-        public class NetworkConfiguration : Humidifier.Base.BaseSubResource
+        public class NetworkConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

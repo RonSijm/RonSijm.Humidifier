@@ -3,7 +3,7 @@ namespace Humidifier.Lex
     using System.Collections.Generic;
     using BotAliasTypes;
 
-    public class BotAlias : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class BotAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.Lex
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// BotId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botid
@@ -43,6 +44,7 @@ namespace Humidifier.Lex
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BotId { get; set; }
         /// <summary>
         /// BotAliasLocaleSettings

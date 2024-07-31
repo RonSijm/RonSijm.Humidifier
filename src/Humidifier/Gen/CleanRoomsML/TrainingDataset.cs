@@ -3,7 +3,7 @@ namespace Humidifier.CleanRoomsML
     using System.Collections.Generic;
     using TrainingDatasetTypes;
 
-    public class TrainingDataset : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class TrainingDataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.CleanRoomsML
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// TrainingData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanroomsml-trainingdataset.html#cfn-cleanroomsml-trainingdataset-trainingdata
@@ -35,7 +36,9 @@ namespace Humidifier.CleanRoomsML
         /// Type: List
         /// ItemType: Dataset
         /// </summary>
+        [Required]
         public List<TrainingDatasetTypes.Dataset> TrainingData { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanroomsml-trainingdataset.html#cfn-cleanroomsml-trainingdataset-rolearn
@@ -43,6 +46,7 @@ namespace Humidifier.CleanRoomsML
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

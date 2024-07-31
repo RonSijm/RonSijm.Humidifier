@@ -68,6 +68,7 @@ namespace Humidifier.Greengrass
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubscriptionDefinitionVersionArn { get; set; }
+
         /// <summary>
         /// GroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid
@@ -75,6 +76,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupId { get; set; }
     }
 }

@@ -24,6 +24,7 @@ namespace Humidifier.S3
         /// UpdateType: Mutable
         /// Type: StorageLensConfiguration
         /// </summary>
+        [Required]
         public StorageLensTypes.StorageLensConfiguration StorageLensConfiguration { get; set; }
         /// <summary>
         /// Tags

@@ -29,6 +29,7 @@ namespace Humidifier.ApiGatewayV2
         /// Type: StageOverrides
         /// </summary>
         public ApiGatewayManagedOverridesTypes.StageOverrides Stage { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-apiid
@@ -36,6 +37,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
         /// <summary>
         /// Route

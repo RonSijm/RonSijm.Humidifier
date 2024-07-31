@@ -2,7 +2,7 @@ namespace Humidifier.ElasticLoadBalancingV2
 {
     using System.Collections.Generic;
 
-    public class TrustStore : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class TrustStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

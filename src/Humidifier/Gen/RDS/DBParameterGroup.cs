@@ -2,7 +2,7 @@ namespace Humidifier.RDS
 {
     using System.Collections.Generic;
 
-    public class DBParameterGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class DBParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -18,6 +18,7 @@ namespace Humidifier.RDS
         }
 
         public dynamic DBParameterGroupName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbparametergroup.html#cfn-rds-dbparametergroup-description
@@ -25,6 +26,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Parameters
@@ -34,6 +36,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Parameters { get; set; }
+
         /// <summary>
         /// Family
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbparametergroup.html#cfn-rds-dbparametergroup-family
@@ -41,6 +44,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Family { get; set; }
         /// <summary>
         /// Tags

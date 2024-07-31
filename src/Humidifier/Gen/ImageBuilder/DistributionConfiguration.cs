@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using DistributionConfigurationTypes;
 
-    public class DistributionConfiguration : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class DistributionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.ImageBuilder
         /// </summary>
         public Dictionary<string, dynamic> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Distributions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-distributions
@@ -45,6 +46,7 @@ namespace Humidifier.ImageBuilder
         /// Type: List
         /// ItemType: Distribution
         /// </summary>
+        [Required]
         public List<DistributionConfigurationTypes.Distribution> Distributions { get; set; }
     }
 

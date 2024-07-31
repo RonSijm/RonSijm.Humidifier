@@ -3,7 +3,7 @@ namespace Humidifier.ResourceGroups
     using System.Collections.Generic;
     using GroupTypes;
 
-    public class Group : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Group : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

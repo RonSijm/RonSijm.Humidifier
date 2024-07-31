@@ -26,6 +26,7 @@ namespace Humidifier.IoT
         /// Type: TimeoutConfig
         /// </summary>
         public JobTemplateTypes.TimeoutConfig TimeoutConfig { get; set; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-description
@@ -33,6 +34,7 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// JobExecutionsRetryConfig
@@ -50,6 +52,7 @@ namespace Humidifier.IoT
         /// Type: AbortConfig
         /// </summary>
         public JobTemplateTypes.AbortConfig AbortConfig { get; set; }
+
         /// <summary>
         /// JobTemplateId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobtemplateid
@@ -57,6 +60,7 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic JobTemplateId { get; set; }
         /// <summary>
         /// Document

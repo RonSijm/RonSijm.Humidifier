@@ -25,6 +25,7 @@ namespace Humidifier.CloudFormation
         /// PrimitiveType: String
         /// </summary>
         public dynamic TypeName { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hooktypeconfig.html#cfn-cloudformation-hooktypeconfig-configuration
@@ -32,6 +33,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Configuration { get; set; }
         /// <summary>
         /// TypeArn

@@ -3,7 +3,7 @@ namespace Humidifier.MediaConvert
     using System.Collections.Generic;
     using JobTemplateTypes;
 
-    public class JobTemplate : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class JobTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -59,6 +59,7 @@ namespace Humidifier.MediaConvert
         /// PrimitiveType: String
         /// </summary>
         public dynamic StatusUpdateInterval { get; set; }
+
         /// <summary>
         /// SettingsJson
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-settingsjson
@@ -66,6 +67,7 @@ namespace Humidifier.MediaConvert
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic SettingsJson { get; set; }
         /// <summary>
         /// Queue

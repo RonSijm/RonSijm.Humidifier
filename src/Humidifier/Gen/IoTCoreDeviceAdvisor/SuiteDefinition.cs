@@ -27,6 +27,7 @@ namespace Humidifier.IoTCoreDeviceAdvisor
         /// UpdateType: Mutable
         /// Type: SuiteDefinitionConfiguration
         /// </summary>
+        [Required]
         public SuiteDefinitionTypes.SuiteDefinitionConfiguration SuiteDefinitionConfiguration { get; set; }
         /// <summary>
         /// Tags

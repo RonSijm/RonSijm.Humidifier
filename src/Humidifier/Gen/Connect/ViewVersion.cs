@@ -25,6 +25,7 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ViewArn { get; set; }
         /// <summary>
         /// VersionDescription

@@ -38,6 +38,7 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic ProvisioningRoleArn { get; set; }
+
         /// <summary>
         /// EnabledRegions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-enabledregions
@@ -46,7 +47,9 @@ namespace Humidifier.DataZone
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic EnabledRegions { get; set; }
+
         /// <summary>
         /// EnvironmentBlueprintIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-environmentblueprintidentifier
@@ -54,7 +57,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentBlueprintIdentifier { get; set; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-domainidentifier
@@ -62,6 +67,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
         /// <summary>
         /// ManageAccessRoleArn

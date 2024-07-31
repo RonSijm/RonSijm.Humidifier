@@ -2,7 +2,7 @@ namespace Humidifier.CodeArtifact
 {
     using System.Collections.Generic;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

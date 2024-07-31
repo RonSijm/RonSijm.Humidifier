@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: OriginRequestPolicyConfig
         /// </summary>
+        [Required]
         public OriginRequestPolicyTypes.OriginRequestPolicyConfig OriginRequestPolicyConfig { get; set; }
     }
 

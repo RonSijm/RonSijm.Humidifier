@@ -3,7 +3,7 @@ namespace Humidifier.CodeBuild
     using System.Collections.Generic;
     using ReportGroupTypes;
 
-    public class ReportGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ReportGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// ExportConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-exportconfig
@@ -33,6 +35,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// Type: ReportExportConfig
         /// </summary>
+        [Required]
         public ReportGroupTypes.ReportExportConfig ExportConfig { get; set; }
         /// <summary>
         /// DeleteReports

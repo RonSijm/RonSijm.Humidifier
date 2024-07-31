@@ -3,7 +3,7 @@ namespace Humidifier.SSO
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.SSO
         /// PrimitiveType: String
         /// </summary>
         public dynamic Status { get; set; }
+
         /// <summary>
         /// ApplicationProviderArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-application.html#cfn-sso-application-applicationproviderarn
@@ -33,6 +34,7 @@ namespace Humidifier.SSO
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationProviderArn { get; set; }
         /// <summary>
         /// PortalOptions
@@ -50,6 +52,7 @@ namespace Humidifier.SSO
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-application.html#cfn-sso-application-instancearn
@@ -57,6 +60,7 @@ namespace Humidifier.SSO
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// Tags

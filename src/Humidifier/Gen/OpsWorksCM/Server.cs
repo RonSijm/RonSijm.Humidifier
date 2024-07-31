@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorksCM
     using System.Collections.Generic;
     using ServerTypes;
 
-    public class Server : Humidifier.Base.BaseResource, IHaveTags
+    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.OpsWorksCM
         /// PrimitiveType: String
         /// </summary>
         public dynamic EngineVersion { get; set; }
+
         /// <summary>
         /// ServiceRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-servicerolearn
@@ -43,6 +44,7 @@ namespace Humidifier.OpsWorksCM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceRoleArn { get; set; }
         /// <summary>
         /// DisableAutomatedBackup
@@ -84,6 +86,7 @@ namespace Humidifier.OpsWorksCM
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AssociatePublicIpAddress { get; set; }
+
         /// <summary>
         /// InstanceProfileArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-instanceprofilearn
@@ -91,6 +94,7 @@ namespace Humidifier.OpsWorksCM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceProfileArn { get; set; }
         /// <summary>
         /// CustomCertificate
@@ -159,6 +163,7 @@ namespace Humidifier.OpsWorksCM
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic BackupRetentionCount { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-instancetype
@@ -166,6 +171,7 @@ namespace Humidifier.OpsWorksCM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// Tags

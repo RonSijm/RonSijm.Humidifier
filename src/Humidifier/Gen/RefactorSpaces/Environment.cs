@@ -2,7 +2,7 @@ namespace Humidifier.RefactorSpaces
 {
     using System.Collections.Generic;
 
-    public class Environment : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.RefactorSpaces
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// NetworkFabricType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#cfn-refactorspaces-environment-networkfabrictype
@@ -34,6 +35,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NetworkFabricType { get; set; }
         /// <summary>
         /// Tags

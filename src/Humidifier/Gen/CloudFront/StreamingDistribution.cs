@@ -25,7 +25,9 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: StreamingDistributionConfig
         /// </summary>
+        [Required]
         public StreamingDistributionTypes.StreamingDistributionConfig StreamingDistributionConfig { get; set; }
+
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags
@@ -34,6 +36,7 @@ namespace Humidifier.CloudFront
         /// Type: List
         /// ItemType: Tag
         /// </summary>
+        [Required]
         public List<Tag> Tags { get; set; }
     }
 

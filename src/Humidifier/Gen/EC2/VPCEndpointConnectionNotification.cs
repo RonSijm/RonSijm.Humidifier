@@ -25,6 +25,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic ConnectionEvents { get; set; }
         /// <summary>
         /// VPCEndpointId
@@ -34,6 +35,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic VPCEndpointId { get; set; }
+
         /// <summary>
         /// ConnectionNotificationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn
@@ -41,6 +43,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectionNotificationArn { get; set; }
         /// <summary>
         /// ServiceId

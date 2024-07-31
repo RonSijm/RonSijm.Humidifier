@@ -19,6 +19,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// TransitEncryptionEnabled
@@ -44,6 +45,7 @@ namespace Humidifier.AppSync
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AtRestEncryptionEnabled { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apiid
@@ -51,7 +53,9 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
+
         /// <summary>
         /// ApiCachingBehavior
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apicachingbehavior
@@ -59,7 +63,9 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiCachingBehavior { get; set; }
+
         /// <summary>
         /// Ttl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-ttl
@@ -67,6 +73,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
+        [Required]
         public dynamic Ttl { get; set; }
     }
 }

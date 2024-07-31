@@ -2,7 +2,7 @@ namespace Humidifier.Evidently
 {
     using System.Collections.Generic;
 
-    public class Segment : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Segment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

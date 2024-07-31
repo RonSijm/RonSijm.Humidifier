@@ -27,6 +27,7 @@ namespace Humidifier.WorkSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectionString { get; set; }
         /// <summary>
         /// Tags

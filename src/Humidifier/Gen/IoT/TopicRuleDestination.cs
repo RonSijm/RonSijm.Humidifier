@@ -59,7 +59,7 @@ namespace Humidifier.IoT
             public dynamic ConfirmationUrl { get; set; }
         }
 
-        public class VpcDestinationProperties : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveVpcId
+        public class VpcDestinationProperties : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveVpcId, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroups

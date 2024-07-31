@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using AgentAliasTypes;
 
-    public class AgentAlias : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class AgentAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -41,6 +41,7 @@ namespace Humidifier.Bedrock
         /// ItemType: AgentAliasRoutingConfigurationListItem
         /// </summary>
         public List<AgentAliasTypes.AgentAliasRoutingConfigurationListItem> RoutingConfiguration { get; set; }
+
         /// <summary>
         /// AgentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agentalias.html#cfn-bedrock-agentalias-agentid
@@ -48,6 +49,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AgentId { get; set; }
         /// <summary>
         /// Tags

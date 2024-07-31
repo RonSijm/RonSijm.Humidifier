@@ -27,6 +27,7 @@ namespace Humidifier.SystemsManagerSAP
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Instances { get; set; }
+
         /// <summary>
         /// ApplicationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-applicationtype
@@ -34,6 +35,7 @@ namespace Humidifier.SystemsManagerSAP
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationType { get; set; }
         /// <summary>
         /// SapInstanceNumber
@@ -43,6 +45,7 @@ namespace Humidifier.SystemsManagerSAP
         /// PrimitiveType: String
         /// </summary>
         public dynamic SapInstanceNumber { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-applicationid
@@ -50,6 +53,7 @@ namespace Humidifier.SystemsManagerSAP
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Credentials

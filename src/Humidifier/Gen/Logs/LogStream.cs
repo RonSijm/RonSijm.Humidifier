@@ -13,6 +13,7 @@ namespace Humidifier.Logs
         }
 
         public dynamic LogStreamName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// LogGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-logstream.html#cfn-logs-logstream-loggroupname
@@ -20,6 +21,7 @@ namespace Humidifier.Logs
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LogGroupName { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace Humidifier.IoTSiteWise
     using System.Collections.Generic;
     using PortalTypes;
 
-    public class Portal : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Portal : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -46,6 +46,7 @@ namespace Humidifier.IoTSiteWise
         /// Type: Alarms
         /// </summary>
         public PortalTypes.Alarms Alarms { get; set; }
+
         /// <summary>
         /// PortalContactEmail
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portalcontactemail
@@ -53,7 +54,9 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PortalContactEmail { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-rolearn
@@ -61,6 +64,7 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags
@@ -79,6 +83,9 @@ namespace Humidifier.IoTSiteWise
         /// PrimitiveType: String
         /// </summary>
         public dynamic PortalDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => PortalDescription; set => PortalDescription = value; }
     }
 
     namespace PortalTypes

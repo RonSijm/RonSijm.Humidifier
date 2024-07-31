@@ -28,6 +28,7 @@ namespace Humidifier.VpcLattice
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceIdentifier { get; set; }
+
         /// <summary>
         /// DestinationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-accesslogsubscription.html#cfn-vpclattice-accesslogsubscription-destinationarn
@@ -35,6 +36,7 @@ namespace Humidifier.VpcLattice
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DestinationArn { get; set; }
         /// <summary>
         /// Tags

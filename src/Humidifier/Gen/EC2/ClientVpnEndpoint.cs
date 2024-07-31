@@ -20,6 +20,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClientCidrBlock { get; set; }
         /// <summary>
         /// ClientConnectOptions
@@ -46,6 +47,7 @@ namespace Humidifier.EC2
         /// ItemType: TagSpecification
         /// </summary>
         public List<ClientVpnEndpointTypes.TagSpecification> TagSpecifications { get; set; }
+
         /// <summary>
         /// AuthenticationOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authenticationoptions
@@ -54,7 +56,9 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: ClientAuthenticationRequest
         /// </summary>
+        [Required]
         public List<ClientVpnEndpointTypes.ClientAuthenticationRequest> AuthenticationOptions { get; set; }
+
         /// <summary>
         /// ServerCertificateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-servercertificatearn
@@ -62,6 +66,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServerCertificateArn { get; set; }
         /// <summary>
         /// SessionTimeoutHours
@@ -89,6 +94,7 @@ namespace Humidifier.EC2
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// ConnectionLogOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions
@@ -96,6 +102,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// Type: ConnectionLogOptions
         /// </summary>
+        [Required]
         public ClientVpnEndpointTypes.ConnectionLogOptions ConnectionLogOptions { get; set; }
         /// <summary>
         /// SplitTunnel

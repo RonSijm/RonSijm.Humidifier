@@ -24,7 +24,9 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Action { get; set; }
+
         /// <summary>
         /// LayerVersionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html#cfn-lambda-layerversionpermission-layerversionarn
@@ -32,6 +34,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LayerVersionArn { get; set; }
         /// <summary>
         /// OrganizationId
@@ -41,6 +44,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic OrganizationId { get; set; }
+
         /// <summary>
         /// Principal
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversionpermission.html#cfn-lambda-layerversionpermission-principal
@@ -48,6 +52,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Principal { get; set; }
     }
 }

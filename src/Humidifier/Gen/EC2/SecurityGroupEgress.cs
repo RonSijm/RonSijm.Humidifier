@@ -57,6 +57,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ToPort { get; set; }
+
         /// <summary>
         /// IpProtocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-securitygroupegress.html#cfn-ec2-securitygroupegress-ipprotocol
@@ -64,6 +65,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IpProtocol { get; set; }
         /// <summary>
         /// DestinationSecurityGroupId
@@ -81,6 +83,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic DestinationPrefixListId { get; set; }
+
         /// <summary>
         /// GroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-securitygroupegress.html#cfn-ec2-securitygroupegress-groupid
@@ -88,6 +91,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupId { get; set; }
     }
 }

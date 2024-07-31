@@ -2,7 +2,7 @@ namespace Humidifier.EMR
 {
     using System.Collections.Generic;
 
-    public class Studio : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveVpcId, IHaveImpliedResourceName
+    public class Studio : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkspaceSecurityGroupId { get; set; }
         /// <summary>
         /// Description
@@ -43,6 +44,7 @@ namespace Humidifier.EMR
         /// PrimitiveType: String
         /// </summary>
         public dynamic EncryptionKeyArn { get; set; }
+
         /// <summary>
         /// DefaultS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-defaults3location
@@ -50,7 +52,9 @@ namespace Humidifier.EMR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefaultS3Location { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-subnetids
@@ -59,6 +63,7 @@ namespace Humidifier.EMR
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// IdpAuthUrl
@@ -85,6 +90,7 @@ namespace Humidifier.EMR
         /// PrimitiveType: String
         /// </summary>
         public dynamic IdcUserAssignment { get; set; }
+
         /// <summary>
         /// ServiceRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-servicerole
@@ -92,7 +98,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceRole { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-vpcid
@@ -100,7 +108,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// EngineSecurityGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-enginesecuritygroupid
@@ -108,6 +118,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineSecurityGroupId { get; set; }
         /// <summary>
         /// UserRole
@@ -125,6 +136,7 @@ namespace Humidifier.EMR
         /// PrimitiveType: String
         /// </summary>
         public dynamic IdpRelayStateParameterName { get; set; }
+
         /// <summary>
         /// AuthMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-studio.html#cfn-emr-studio-authmode
@@ -132,6 +144,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthMode { get; set; }
         /// <summary>
         /// Tags

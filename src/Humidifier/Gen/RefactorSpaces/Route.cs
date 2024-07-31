@@ -28,6 +28,7 @@ namespace Humidifier.RefactorSpaces
         /// Type: UriPathRouteInput
         /// </summary>
         public RouteTypes.UriPathRouteInput UriPathRoute { get; set; }
+
         /// <summary>
         /// EnvironmentIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-environmentidentifier
@@ -35,7 +36,9 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentIdentifier { get; set; }
+
         /// <summary>
         /// RouteType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-routetype
@@ -43,6 +46,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RouteType { get; set; }
         /// <summary>
         /// DefaultRoute
@@ -52,6 +56,7 @@ namespace Humidifier.RefactorSpaces
         /// Type: DefaultRouteInput
         /// </summary>
         public RouteTypes.DefaultRouteInput DefaultRoute { get; set; }
+
         /// <summary>
         /// ServiceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-serviceidentifier
@@ -59,7 +64,9 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceIdentifier { get; set; }
+
         /// <summary>
         /// ApplicationIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-applicationidentifier
@@ -67,6 +74,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationIdentifier { get; set; }
         /// <summary>
         /// Tags

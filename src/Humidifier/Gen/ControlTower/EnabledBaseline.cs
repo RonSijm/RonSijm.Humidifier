@@ -25,6 +25,7 @@ namespace Humidifier.ControlTower
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BaselineVersion { get; set; }
         /// <summary>
         /// Parameters
@@ -35,6 +36,7 @@ namespace Humidifier.ControlTower
         /// ItemType: Parameter
         /// </summary>
         public List<EnabledBaselineTypes.Parameter> Parameters { get; set; }
+
         /// <summary>
         /// BaselineIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledbaseline.html#cfn-controltower-enabledbaseline-baselineidentifier
@@ -42,7 +44,9 @@ namespace Humidifier.ControlTower
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BaselineIdentifier { get; set; }
+
         /// <summary>
         /// TargetIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledbaseline.html#cfn-controltower-enabledbaseline-targetidentifier
@@ -50,6 +54,7 @@ namespace Humidifier.ControlTower
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetIdentifier { get; set; }
         /// <summary>
         /// Tags

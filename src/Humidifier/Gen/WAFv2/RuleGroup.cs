@@ -3,7 +3,7 @@ namespace Humidifier.WAFv2
     using System.Collections.Generic;
     using RuleGroupTypes;
 
-    public class RuleGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.WAFv2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-scope
@@ -35,7 +36,9 @@ namespace Humidifier.WAFv2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Scope { get; set; }
+
         /// <summary>
         /// Capacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-capacity
@@ -43,6 +46,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Capacity { get; set; }
         /// <summary>
         /// AvailableLabels
@@ -80,6 +84,7 @@ namespace Humidifier.WAFv2
         /// ItemType: Rule
         /// </summary>
         public List<RuleGroupTypes.Rule> Rules { get; set; }
+
         /// <summary>
         /// VisibilityConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-visibilityconfig
@@ -87,6 +92,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Mutable
         /// Type: VisibilityConfig
         /// </summary>
+        [Required]
         public RuleGroupTypes.VisibilityConfig VisibilityConfig { get; set; }
         /// <summary>
         /// Tags

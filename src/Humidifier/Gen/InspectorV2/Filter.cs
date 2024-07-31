@@ -3,7 +3,7 @@ namespace Humidifier.InspectorV2
     using System.Collections.Generic;
     using FilterTypes;
 
-    public class Filter : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Filter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.InspectorV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// FilterCriteria
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-filtercriteria
@@ -33,7 +34,9 @@ namespace Humidifier.InspectorV2
         /// UpdateType: Mutable
         /// Type: FilterCriteria
         /// </summary>
+        [Required]
         public FilterTypes.FilterCriteria FilterCriteria { get; set; }
+
         /// <summary>
         /// FilterAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-filteraction
@@ -41,6 +44,7 @@ namespace Humidifier.InspectorV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FilterAction { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

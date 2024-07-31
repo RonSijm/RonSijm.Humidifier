@@ -26,6 +26,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GuardrailIdentifier { get; set; }
         /// <summary>
         /// Description

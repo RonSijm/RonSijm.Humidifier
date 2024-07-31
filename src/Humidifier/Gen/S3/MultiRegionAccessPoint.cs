@@ -27,6 +27,7 @@ namespace Humidifier.S3
         /// Type: PublicAccessBlockConfiguration
         /// </summary>
         public MultiRegionAccessPointTypes.PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
+
         /// <summary>
         /// Regions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspoint.html#cfn-s3-multiregionaccesspoint-regions
@@ -35,6 +36,7 @@ namespace Humidifier.S3
         /// Type: List
         /// ItemType: Region
         /// </summary>
+        [Required]
         public List<MultiRegionAccessPointTypes.Region> Regions { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

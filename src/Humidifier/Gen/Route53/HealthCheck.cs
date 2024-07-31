@@ -25,6 +25,7 @@ namespace Humidifier.Route53
         /// UpdateType: Mutable
         /// Type: HealthCheckConfig
         /// </summary>
+        [Required]
         public HealthCheckTypes.HealthCheckConfig HealthCheckConfig { get; set; }
         /// <summary>
         /// HealthCheckTags

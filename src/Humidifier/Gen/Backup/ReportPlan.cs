@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using ReportPlanTypes;
 
-    public class ReportPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class ReportPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// Type: ReportSetting
         /// </summary>
+        [Required]
         public ReportPlanTypes.ReportSetting ReportSetting { get; set; }
         /// <summary>
         /// ReportPlanDescription
@@ -34,7 +35,11 @@ namespace Humidifier.Backup
         /// PrimitiveType: String
         /// </summary>
         public dynamic ReportPlanDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ReportPlanDescription; set => ReportPlanDescription = value; }
         public dynamic ReportPlanName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ReportDeliveryChannel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportdeliverychannel
@@ -42,6 +47,7 @@ namespace Humidifier.Backup
         /// UpdateType: Mutable
         /// Type: ReportDeliveryChannel
         /// </summary>
+        [Required]
         public ReportPlanTypes.ReportDeliveryChannel ReportDeliveryChannel { get; set; }
         /// <summary>
         /// ReportPlanTags

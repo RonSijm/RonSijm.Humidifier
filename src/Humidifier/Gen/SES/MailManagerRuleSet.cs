@@ -27,6 +27,7 @@ namespace Humidifier.SES
         /// PrimitiveType: String
         /// </summary>
         public dynamic RuleSetName { get; set; }
+
         /// <summary>
         /// Rules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-mailmanagerruleset.html#cfn-ses-mailmanagerruleset-rules
@@ -35,6 +36,7 @@ namespace Humidifier.SES
         /// Type: List
         /// ItemType: Rule
         /// </summary>
+        [Required]
         public List<MailManagerRuleSetTypes.Rule> Rules { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.RefactorSpaces
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId
     {
         public class Attributes
         {
@@ -32,7 +32,9 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentIdentifier { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-vpcid
@@ -40,6 +42,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
         /// <summary>
         /// ApiGatewayProxy
@@ -49,6 +52,7 @@ namespace Humidifier.RefactorSpaces
         /// Type: ApiGatewayProxyInput
         /// </summary>
         public ApplicationTypes.ApiGatewayProxyInput ApiGatewayProxy { get; set; }
+
         /// <summary>
         /// ProxyType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#cfn-refactorspaces-application-proxytype
@@ -56,6 +60,7 @@ namespace Humidifier.RefactorSpaces
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProxyType { get; set; }
         /// <summary>
         /// Tags

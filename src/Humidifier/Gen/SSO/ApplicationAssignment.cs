@@ -19,7 +19,9 @@ namespace Humidifier.SSO
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationArn { get; set; }
+
         /// <summary>
         /// PrincipalId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-applicationassignment.html#cfn-sso-applicationassignment-principalid
@@ -27,7 +29,9 @@ namespace Humidifier.SSO
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrincipalId { get; set; }
+
         /// <summary>
         /// PrincipalType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-applicationassignment.html#cfn-sso-applicationassignment-principaltype
@@ -35,6 +39,7 @@ namespace Humidifier.SSO
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrincipalType { get; set; }
     }
 }

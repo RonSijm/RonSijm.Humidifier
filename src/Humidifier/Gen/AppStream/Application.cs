@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic WorkingDirectory { get; set; }
+
         /// <summary>
         /// Platforms
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-application.html#cfn-appstream-application-platforms
@@ -35,7 +36,9 @@ namespace Humidifier.AppStream
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Platforms { get; set; }
+
         /// <summary>
         /// AppBlockArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-application.html#cfn-appstream-application-appblockarn
@@ -43,6 +46,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AppBlockArn { get; set; }
         /// <summary>
         /// Description
@@ -52,6 +56,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InstanceFamilies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-application.html#cfn-appstream-application-instancefamilies
@@ -60,6 +65,7 @@ namespace Humidifier.AppStream
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic InstanceFamilies { get; set; }
         /// <summary>
         /// AttributesToDelete
@@ -78,6 +84,7 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic DisplayName { get; set; }
+
         /// <summary>
         /// LaunchPath
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-application.html#cfn-appstream-application-launchpath
@@ -85,6 +92,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LaunchPath { get; set; }
         /// <summary>
         /// LaunchParameters
@@ -104,6 +112,7 @@ namespace Humidifier.AppStream
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// IconS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-application.html#cfn-appstream-application-icons3location
@@ -111,6 +120,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// Type: S3Location
         /// </summary>
+        [Required]
         public ApplicationTypes.S3Location IconS3Location { get; set; }
     }
 

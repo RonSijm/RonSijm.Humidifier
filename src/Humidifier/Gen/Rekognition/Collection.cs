@@ -24,6 +24,7 @@ namespace Humidifier.Rekognition
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CollectionId { get; set; }
         /// <summary>
         /// Tags

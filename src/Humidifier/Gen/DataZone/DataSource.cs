@@ -3,7 +3,7 @@ namespace Humidifier.DataZone
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProjectIdentifier { get; set; }
         /// <summary>
         /// PublishOnImport
@@ -43,6 +44,7 @@ namespace Humidifier.DataZone
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PublishOnImport { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-type
@@ -50,6 +52,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -59,6 +62,7 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// EnvironmentIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-environmentidentifier
@@ -66,6 +70,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentIdentifier { get; set; }
         /// <summary>
         /// Configuration
@@ -109,6 +114,7 @@ namespace Humidifier.DataZone
         /// </summary>
         public DataSourceTypes.RecommendationConfiguration Recommendation { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-domainidentifier
@@ -116,6 +122,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
     }
 

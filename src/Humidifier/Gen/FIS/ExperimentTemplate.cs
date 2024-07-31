@@ -25,6 +25,7 @@ namespace Humidifier.FIS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Actions
@@ -43,6 +44,7 @@ namespace Humidifier.FIS
         /// Type: ExperimentTemplateExperimentOptions
         /// </summary>
         public ExperimentTemplateTypes.ExperimentTemplateExperimentOptions ExperimentOptions { get; set; }
+
         /// <summary>
         /// StopConditions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-stopconditions
@@ -51,7 +53,9 @@ namespace Humidifier.FIS
         /// Type: List
         /// ItemType: ExperimentTemplateStopCondition
         /// </summary>
+        [Required]
         public List<ExperimentTemplateTypes.ExperimentTemplateStopCondition> StopConditions { get; set; }
+
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-targets
@@ -60,6 +64,7 @@ namespace Humidifier.FIS
         /// Type: Map
         /// ItemType: ExperimentTemplateTarget
         /// </summary>
+        [Required]
         public Dictionary<string, ExperimentTemplateTypes.ExperimentTemplateTarget> Targets { get; set; }
         /// <summary>
         /// LogConfiguration
@@ -69,6 +74,7 @@ namespace Humidifier.FIS
         /// Type: ExperimentTemplateLogConfiguration
         /// </summary>
         public ExperimentTemplateTypes.ExperimentTemplateLogConfiguration LogConfiguration { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-rolearn
@@ -76,7 +82,9 @@ namespace Humidifier.FIS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
+
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-tags
@@ -85,6 +93,7 @@ namespace Humidifier.FIS
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public Dictionary<string, dynamic> Tags { get; set; }
     }
 

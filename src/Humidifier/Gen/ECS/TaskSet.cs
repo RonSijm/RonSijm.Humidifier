@@ -26,6 +26,7 @@ namespace Humidifier.ECS
         /// PrimitiveType: String
         /// </summary>
         public dynamic PlatformVersion { get; set; }
+
         /// <summary>
         /// TaskDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-taskdefinition
@@ -33,6 +34,7 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TaskDefinition { get; set; }
         /// <summary>
         /// ExternalId
@@ -42,6 +44,7 @@ namespace Humidifier.ECS
         /// PrimitiveType: String
         /// </summary>
         public dynamic ExternalId { get; set; }
+
         /// <summary>
         /// Cluster
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-cluster
@@ -49,6 +52,7 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Cluster { get; set; }
         /// <summary>
         /// LoadBalancers
@@ -59,6 +63,7 @@ namespace Humidifier.ECS
         /// ItemType: LoadBalancer
         /// </summary>
         public List<TaskSetTypes.LoadBalancer> LoadBalancers { get; set; }
+
         /// <summary>
         /// Service
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-service
@@ -66,6 +71,7 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Service { get; set; }
         /// <summary>
         /// NetworkConfiguration

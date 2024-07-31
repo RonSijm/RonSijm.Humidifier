@@ -2,7 +2,7 @@ namespace Humidifier.Route53Resolver
 {
     using System.Collections.Generic;
 
-    public class OutpostResolver : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class OutpostResolver : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.Route53Resolver
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic InstanceCount { get; set; }
+
         /// <summary>
         /// OutpostArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-outpostresolver.html#cfn-route53resolver-outpostresolver-outpostarn
@@ -38,7 +39,9 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OutpostArn { get; set; }
+
         /// <summary>
         /// PreferredInstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-outpostresolver.html#cfn-route53resolver-outpostresolver-preferredinstancetype
@@ -46,6 +49,7 @@ namespace Humidifier.Route53Resolver
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PreferredInstanceType { get; set; }
         /// <summary>
         /// Tags

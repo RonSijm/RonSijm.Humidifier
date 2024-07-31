@@ -29,7 +29,9 @@ namespace Humidifier.MediaLive
         /// UpdateType: Mutable
         /// Type: MultiplexSettings
         /// </summary>
+        [Required]
         public MultiplexTypes.MultiplexSettings MultiplexSettings { get; set; }
+
         /// <summary>
         /// AvailabilityZones
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-multiplex.html#cfn-medialive-multiplex-availabilityzones
@@ -38,6 +40,7 @@ namespace Humidifier.MediaLive
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AvailabilityZones { get; set; }
         /// <summary>
         /// Destinations

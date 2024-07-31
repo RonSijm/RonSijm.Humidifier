@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using MaintenanceWindowTargetTypes;
 
-    public class MaintenanceWindowTarget : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class MaintenanceWindowTarget : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -29,6 +29,7 @@ namespace Humidifier.SSM
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// WindowId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-windowid
@@ -36,7 +37,9 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WindowId { get; set; }
+
         /// <summary>
         /// ResourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-resourcetype
@@ -44,7 +47,9 @@ namespace Humidifier.SSM
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceType { get; set; }
+
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets
@@ -53,6 +58,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// ItemType: Targets
         /// </summary>
+        [Required]
         public List<MaintenanceWindowTargetTypes.Targets> Targets { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

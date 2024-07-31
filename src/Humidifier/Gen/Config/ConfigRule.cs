@@ -3,7 +3,7 @@ namespace Humidifier.Config
     using System.Collections.Generic;
     using ConfigRuleTypes;
 
-    public class ConfigRule : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -61,6 +61,7 @@ namespace Humidifier.Config
         /// PrimitiveType: String
         /// </summary>
         public dynamic MaximumExecutionFrequency { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-source
@@ -68,6 +69,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// Type: Source
         /// </summary>
+        [Required]
         public ConfigRuleTypes.Source Source { get; set; }
         /// <summary>
         /// InputParameters

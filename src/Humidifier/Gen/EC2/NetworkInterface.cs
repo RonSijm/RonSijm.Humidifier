@@ -107,6 +107,7 @@ namespace Humidifier.EC2
         /// ItemType: Ipv6PrefixSpecification
         /// </summary>
         public List<NetworkInterfaceTypes.Ipv6PrefixSpecification> Ipv6Prefixes { get; set; }
+
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-subnetid
@@ -114,6 +115,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SubnetId { get; set; }
         /// <summary>
         /// SourceDestCheck

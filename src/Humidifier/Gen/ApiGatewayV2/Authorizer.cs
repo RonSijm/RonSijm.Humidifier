@@ -42,6 +42,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic AuthorizerCredentialsArn { get; set; }
+
         /// <summary>
         /// AuthorizerType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-authorizertype
@@ -49,6 +50,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthorizerType { get; set; }
         /// <summary>
         /// JwtConfiguration
@@ -91,6 +93,7 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableSimpleResponses { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-apiid
@@ -98,6 +101,7 @@ namespace Humidifier.ApiGatewayV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

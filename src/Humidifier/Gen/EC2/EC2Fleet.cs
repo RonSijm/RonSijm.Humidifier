@@ -26,6 +26,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Context { get; set; }
+
         /// <summary>
         /// TargetCapacitySpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-targetcapacityspecification
@@ -33,6 +34,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// Type: TargetCapacitySpecificationRequest
         /// </summary>
+        [Required]
         public EC2FleetTypes.TargetCapacitySpecificationRequest TargetCapacitySpecification { get; set; }
         /// <summary>
         /// OnDemandOptions
@@ -91,6 +93,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ReplaceUnhealthyInstances { get; set; }
+
         /// <summary>
         /// LaunchTemplateConfigs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-launchtemplateconfigs
@@ -99,6 +102,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: FleetLaunchTemplateConfigRequest
         /// </summary>
+        [Required]
         public List<EC2FleetTypes.FleetLaunchTemplateConfigRequest> LaunchTemplateConfigs { get; set; }
         /// <summary>
         /// TerminateInstancesWithExpiration

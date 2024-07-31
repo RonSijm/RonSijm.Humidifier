@@ -25,6 +25,7 @@ namespace Humidifier.RoboMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic Fleet { get; set; }
+
         /// <summary>
         /// Architecture
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-architecture
@@ -32,7 +33,9 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Architecture { get; set; }
+
         /// <summary>
         /// GreengrassGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-greengrassgroupid
@@ -40,6 +43,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GreengrassGroupId { get; set; }
         /// <summary>
         /// Tags

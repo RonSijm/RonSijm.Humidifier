@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using ThingTypeTypes;
 
-    public class ThingType : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ThingType : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

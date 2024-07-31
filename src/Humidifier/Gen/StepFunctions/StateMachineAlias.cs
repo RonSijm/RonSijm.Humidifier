@@ -3,7 +3,7 @@ namespace Humidifier.StepFunctions
     using System.Collections.Generic;
     using StateMachineAliasTypes;
 
-    public class StateMachineAlias : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class StateMachineAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {

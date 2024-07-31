@@ -32,7 +32,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// EnvironmentIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-environmentidentifier
@@ -40,7 +42,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EnvironmentIdentifier { get; set; }
+
         /// <summary>
         /// ManageAccessRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-manageaccessrole
@@ -48,7 +52,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ManageAccessRole { get; set; }
+
         /// <summary>
         /// SubscriptionTargetConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-subscriptiontargetconfig
@@ -57,7 +63,9 @@ namespace Humidifier.DataZone
         /// Type: List
         /// ItemType: SubscriptionTargetForm
         /// </summary>
+        [Required]
         public List<SubscriptionTargetTypes.SubscriptionTargetForm> SubscriptionTargetConfig { get; set; }
+
         /// <summary>
         /// ApplicableAssetTypes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-applicableassettypes
@@ -66,7 +74,9 @@ namespace Humidifier.DataZone
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic ApplicableAssetTypes { get; set; }
+
         /// <summary>
         /// AuthorizedPrincipals
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-authorizedprincipals
@@ -75,6 +85,7 @@ namespace Humidifier.DataZone
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AuthorizedPrincipals { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -85,6 +96,7 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic Provider { get; set; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-domainidentifier
@@ -92,6 +104,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
     }
 

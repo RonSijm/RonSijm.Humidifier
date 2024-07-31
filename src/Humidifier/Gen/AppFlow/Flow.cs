@@ -3,7 +3,7 @@ namespace Humidifier.AppFlow
     using System.Collections.Generic;
     using FlowTypes;
 
-    public class Flow : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Flow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.AppFlow
         /// PrimitiveType: String
         /// </summary>
         public dynamic KMSArn { get; set; }
+
         /// <summary>
         /// Tasks
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-tasks
@@ -42,8 +43,10 @@ namespace Humidifier.AppFlow
         /// Type: List
         /// ItemType: Task
         /// </summary>
+        [Required]
         public List<FlowTypes.Task> Tasks { get; set; }
         public dynamic FlowName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// TriggerConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-triggerconfig
@@ -51,7 +54,9 @@ namespace Humidifier.AppFlow
         /// UpdateType: Mutable
         /// Type: TriggerConfig
         /// </summary>
+        [Required]
         public FlowTypes.TriggerConfig TriggerConfig { get; set; }
+
         /// <summary>
         /// DestinationFlowConfigList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-destinationflowconfiglist
@@ -60,7 +65,9 @@ namespace Humidifier.AppFlow
         /// Type: List
         /// ItemType: DestinationFlowConfig
         /// </summary>
+        [Required]
         public List<FlowTypes.DestinationFlowConfig> DestinationFlowConfigList { get; set; }
+
         /// <summary>
         /// SourceFlowConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-sourceflowconfig
@@ -68,6 +75,7 @@ namespace Humidifier.AppFlow
         /// UpdateType: Mutable
         /// Type: SourceFlowConfig
         /// </summary>
+        [Required]
         public FlowTypes.SourceFlowConfig SourceFlowConfig { get; set; }
         /// <summary>
         /// FlowStatus

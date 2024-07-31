@@ -27,6 +27,7 @@ namespace Humidifier.IoT
         /// PrimitiveType: String
         /// </summary>
         public dynamic ActionName { get; set; }
+
         /// <summary>
         /// ActionParams
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-actionparams
@@ -34,7 +35,9 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// Type: ActionParams
         /// </summary>
+        [Required]
         public MitigationActionTypes.ActionParams ActionParams { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-rolearn
@@ -42,6 +45,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

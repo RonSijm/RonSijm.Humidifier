@@ -3,7 +3,7 @@ namespace Humidifier.Omics
     using System.Collections.Generic;
     using VariantStoreTypes;
 
-    public class VariantStore : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class VariantStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -32,6 +32,7 @@ namespace Humidifier.Omics
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Reference
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-variantstore.html#cfn-omics-variantstore-reference
@@ -39,6 +40,7 @@ namespace Humidifier.Omics
         /// UpdateType: Immutable
         /// Type: ReferenceItem
         /// </summary>
+        [Required]
         public VariantStoreTypes.ReferenceItem Reference { get; set; }
         /// <summary>
         /// SseConfig

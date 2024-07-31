@@ -20,7 +20,9 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LoggerDefinitionId { get; set; }
+
         /// <summary>
         /// Loggers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggers
@@ -29,6 +31,7 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Logger
         /// </summary>
+        [Required]
         public List<LoggerDefinitionVersionTypes.Logger> Loggers { get; set; }
     }
 

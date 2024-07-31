@@ -44,6 +44,7 @@ namespace Humidifier.SNS
         /// PrimitiveType: String
         /// </summary>
         public dynamic FilterPolicyScope { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-protocol
@@ -51,6 +52,7 @@ namespace Humidifier.SNS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Protocol { get; set; }
         /// <summary>
         /// RawMessageDelivery
@@ -92,6 +94,7 @@ namespace Humidifier.SNS
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubscriptionRoleArn { get; set; }
+
         /// <summary>
         /// TopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#topicarn
@@ -99,6 +102,7 @@ namespace Humidifier.SNS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TopicArn { get; set; }
     }
 }

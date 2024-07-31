@@ -3,7 +3,7 @@ namespace Humidifier.Amplify
     using System.Collections.Generic;
     using BranchTypes;
 
-    public class Branch : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Branch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -52,6 +52,7 @@ namespace Humidifier.Amplify
         /// ItemType: EnvironmentVariable
         /// </summary>
         public List<BranchTypes.EnvironmentVariable> EnvironmentVariables { get; set; }
+
         /// <summary>
         /// AppId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-appid
@@ -59,6 +60,7 @@ namespace Humidifier.Amplify
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AppId { get; set; }
         /// <summary>
         /// PullRequestEnvironmentName

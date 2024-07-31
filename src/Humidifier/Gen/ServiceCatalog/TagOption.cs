@@ -20,6 +20,7 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic Active { get; set; }
+
         /// <summary>
         /// Value
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-value
@@ -27,7 +28,9 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Value { get; set; }
+
         /// <summary>
         /// Key
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-key
@@ -35,6 +38,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Key { get; set; }
     }
 }

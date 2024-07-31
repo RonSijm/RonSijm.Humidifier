@@ -31,7 +31,9 @@ namespace Humidifier.LaunchWizard
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public Dictionary<string, dynamic> Specifications { get; set; }
+
         /// <summary>
         /// WorkloadName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-launchwizard-deployment.html#cfn-launchwizard-deployment-workloadname
@@ -39,6 +41,7 @@ namespace Humidifier.LaunchWizard
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkloadName { get; set; }
         /// <summary>
         /// Tags
@@ -49,6 +52,7 @@ namespace Humidifier.LaunchWizard
         /// ItemType: Tags
         /// </summary>
         public List<DeploymentTypes.Tags> Tags { get; set; }
+
         /// <summary>
         /// DeploymentPatternName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-launchwizard-deployment.html#cfn-launchwizard-deployment-deploymentpatternname
@@ -56,6 +60,7 @@ namespace Humidifier.LaunchWizard
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DeploymentPatternName { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

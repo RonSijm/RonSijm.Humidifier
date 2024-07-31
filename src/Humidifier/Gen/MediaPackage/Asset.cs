@@ -26,6 +26,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceArn { get; set; }
         /// <summary>
         /// ResourceId
@@ -35,6 +36,7 @@ namespace Humidifier.MediaPackage
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceId { get; set; }
+
         /// <summary>
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-id
@@ -42,7 +44,9 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Id { get; set; }
+
         /// <summary>
         /// PackagingGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-packaginggroupid
@@ -50,6 +54,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PackagingGroupId { get; set; }
         /// <summary>
         /// EgressEndpoints
@@ -69,6 +74,7 @@ namespace Humidifier.MediaPackage
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// SourceRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcerolearn
@@ -76,6 +82,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceRoleArn { get; set; }
     }
 

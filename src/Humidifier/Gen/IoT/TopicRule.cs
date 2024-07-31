@@ -25,6 +25,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// Type: TopicRulePayload
         /// </summary>
+        [Required]
         public TopicRuleTypes.TopicRulePayload TopicRulePayload { get; set; }
         /// <summary>
         /// RuleName

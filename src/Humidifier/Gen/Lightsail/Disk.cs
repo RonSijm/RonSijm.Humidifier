@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DiskTypes;
 
-    public class Disk : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Disk : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -33,6 +33,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic SizeInGb { get; set; }
         /// <summary>
         /// AvailabilityZone

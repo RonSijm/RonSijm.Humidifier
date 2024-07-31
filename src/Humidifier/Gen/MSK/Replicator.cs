@@ -3,7 +3,7 @@ namespace Humidifier.MSK
     using System.Collections.Generic;
     using ReplicatorTypes;
 
-    public class Replicator : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Replicator : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -34,6 +34,7 @@ namespace Humidifier.MSK
         /// PrimitiveType: String
         /// </summary>
         public dynamic CurrentVersion { get; set; }
+
         /// <summary>
         /// ServiceExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-replicator.html#cfn-msk-replicator-serviceexecutionrolearn
@@ -41,8 +42,10 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceExecutionRoleArn { get; set; }
         public dynamic ReplicatorName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ReplicationInfoList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-replicator.html#cfn-msk-replicator-replicationinfolist
@@ -51,7 +54,9 @@ namespace Humidifier.MSK
         /// Type: List
         /// ItemType: ReplicationInfo
         /// </summary>
+        [Required]
         public List<ReplicatorTypes.ReplicationInfo> ReplicationInfoList { get; set; }
+
         /// <summary>
         /// KafkaClusters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-replicator.html#cfn-msk-replicator-kafkaclusters
@@ -60,6 +65,7 @@ namespace Humidifier.MSK
         /// Type: List
         /// ItemType: KafkaCluster
         /// </summary>
+        [Required]
         public List<ReplicatorTypes.KafkaCluster> KafkaClusters { get; set; }
         /// <summary>
         /// Tags
@@ -144,7 +150,7 @@ namespace Humidifier.MSK
             public ReplicatorTypes.AmazonMskCluster AmazonMskCluster { get; set; }
         }
 
-        public class KafkaClusterClientVpcConfig : Humidifier.Base.BaseSubResource
+        public class KafkaClusterClientVpcConfig : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroupIds

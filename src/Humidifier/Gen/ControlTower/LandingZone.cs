@@ -28,7 +28,9 @@ namespace Humidifier.ControlTower
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Version { get; set; }
+
         /// <summary>
         /// Manifest
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-landingzone.html#cfn-controltower-landingzone-manifest
@@ -36,6 +38,7 @@ namespace Humidifier.ControlTower
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Manifest { get; set; }
         /// <summary>
         /// Tags

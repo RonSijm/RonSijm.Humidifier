@@ -3,7 +3,7 @@ namespace Humidifier.CodeGuruProfiler
     using System.Collections.Generic;
     using ProfilingGroupTypes;
 
-    public class ProfilingGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ProfilingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

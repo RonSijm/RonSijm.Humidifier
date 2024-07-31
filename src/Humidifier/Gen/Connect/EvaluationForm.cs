@@ -26,6 +26,7 @@ namespace Humidifier.Connect
         /// Type: ScoringStrategy
         /// </summary>
         public EvaluationFormTypes.ScoringStrategy ScoringStrategy { get; set; }
+
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-status
@@ -33,6 +34,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Status { get; set; }
         /// <summary>
         /// Description
@@ -42,6 +44,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-instancearn
@@ -49,7 +52,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
+
         /// <summary>
         /// Title
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-title
@@ -57,7 +62,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Title { get; set; }
+
         /// <summary>
         /// Items
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-items
@@ -66,6 +73,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: EvaluationFormBaseItem
         /// </summary>
+        [Required]
         public List<EvaluationFormTypes.EvaluationFormBaseItem> Items { get; set; }
         /// <summary>
         /// Tags

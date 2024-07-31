@@ -19,7 +19,9 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StatementName { get; set; }
+
         /// <summary>
         /// WorkGroup
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html#cfn-athena-preparedstatement-workgroup
@@ -27,6 +29,7 @@ namespace Humidifier.Athena
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkGroup { get; set; }
         /// <summary>
         /// Description
@@ -36,6 +39,7 @@ namespace Humidifier.Athena
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// QueryStatement
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-preparedstatement.html#cfn-athena-preparedstatement-querystatement
@@ -43,6 +47,7 @@ namespace Humidifier.Athena
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryStatement { get; set; }
     }
 }

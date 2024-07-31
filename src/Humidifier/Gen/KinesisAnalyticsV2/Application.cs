@@ -3,7 +3,7 @@ namespace Humidifier.KinesisAnalyticsV2
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -14,6 +14,7 @@ namespace Humidifier.KinesisAnalyticsV2
         }
 
         public dynamic ApplicationName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// RuntimeEnvironment
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-runtimeenvironment
@@ -21,6 +22,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuntimeEnvironment { get; set; }
         /// <summary>
         /// RunConfiguration
@@ -62,6 +64,9 @@ namespace Humidifier.KinesisAnalyticsV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic ApplicationDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ApplicationDescription; set => ApplicationDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-tags
@@ -71,6 +76,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// ServiceExecutionRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-application.html#cfn-kinesisanalyticsv2-application-serviceexecutionrole
@@ -78,6 +84,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceExecutionRole { get; set; }
     }
 
@@ -844,7 +851,7 @@ namespace Humidifier.KinesisAnalyticsV2
             public List<ApplicationTypes.Input> Inputs { get; set; }
         }
 
-        public class VpcConfiguration : Humidifier.Base.BaseSubResource
+        public class VpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroupIds

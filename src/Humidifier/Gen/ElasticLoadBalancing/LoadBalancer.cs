@@ -3,7 +3,7 @@ namespace Humidifier.ElasticLoadBalancing
     using System.Collections.Generic;
     using LoadBalancerTypes;
 
-    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroups, IHaveSubnets, IHaveImpliedResourceName
+    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSecurityGroups, IHaveSubnets
     {
         public class Attributes
         {
@@ -96,6 +96,7 @@ namespace Humidifier.ElasticLoadBalancing
         /// ItemType: LBCookieStickinessPolicy
         /// </summary>
         public List<LoadBalancerTypes.LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
+
         /// <summary>
         /// Listeners
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners
@@ -104,6 +105,7 @@ namespace Humidifier.ElasticLoadBalancing
         /// Type: List
         /// ItemType: Listeners
         /// </summary>
+        [Required]
         public List<LoadBalancerTypes.Listeners> Listeners { get; set; }
         public dynamic LoadBalancerName { get => GivenName; set => GivenName = value; }
         /// <summary>

@@ -25,6 +25,7 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ValidateRequestParameters { get; set; }
+
         /// <summary>
         /// RestApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-restapiid
@@ -32,6 +33,7 @@ namespace Humidifier.ApiGateway
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RestApiId { get; set; }
         /// <summary>
         /// ValidateRequestBody

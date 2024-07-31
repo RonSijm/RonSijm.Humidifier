@@ -3,7 +3,7 @@ namespace Humidifier.AppIntegrations
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,7 +26,9 @@ namespace Humidifier.AppIntegrations
         /// UpdateType: Mutable
         /// Type: ApplicationSourceConfig
         /// </summary>
+        [Required]
         public ApplicationTypes.ApplicationSourceConfig ApplicationSourceConfig { get; set; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-application.html#cfn-appintegrations-application-description
@@ -34,6 +36,7 @@ namespace Humidifier.AppIntegrations
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Permissions

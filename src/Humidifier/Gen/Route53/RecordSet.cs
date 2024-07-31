@@ -127,6 +127,7 @@ namespace Humidifier.Route53
         /// PrimitiveType: String
         /// </summary>
         public dynamic TTL { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-type
@@ -134,6 +135,7 @@ namespace Humidifier.Route53
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Weight

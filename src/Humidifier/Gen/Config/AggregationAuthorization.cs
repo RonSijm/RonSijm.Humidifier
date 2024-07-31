@@ -24,7 +24,9 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthorizedAccountId { get; set; }
+
         /// <summary>
         /// AuthorizedAwsRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion
@@ -32,6 +34,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthorizedAwsRegion { get; set; }
         /// <summary>
         /// Tags

@@ -26,7 +26,9 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// Type: AccessPolicyResource
         /// </summary>
+        [Required]
         public AccessPolicyTypes.AccessPolicyResource AccessPolicyResource { get; set; }
+
         /// <summary>
         /// AccessPolicyIdentity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity
@@ -34,7 +36,9 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// Type: AccessPolicyIdentity
         /// </summary>
+        [Required]
         public AccessPolicyTypes.AccessPolicyIdentity AccessPolicyIdentity { get; set; }
+
         /// <summary>
         /// AccessPolicyPermission
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicypermission
@@ -42,6 +46,7 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccessPolicyPermission { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -38,6 +38,7 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// KnowledgeBaseId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-datasource.html#cfn-bedrock-datasource-knowledgebaseid
@@ -45,6 +46,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KnowledgeBaseId { get; set; }
         /// <summary>
         /// ServerSideEncryptionConfiguration
@@ -62,6 +64,7 @@ namespace Humidifier.Bedrock
         /// Type: VectorIngestionConfiguration
         /// </summary>
         public DataSourceTypes.VectorIngestionConfiguration VectorIngestionConfiguration { get; set; }
+
         /// <summary>
         /// DataSourceConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-datasource.html#cfn-bedrock-datasource-datasourceconfiguration
@@ -69,6 +72,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Mutable
         /// Type: DataSourceConfiguration
         /// </summary>
+        [Required]
         public DataSourceTypes.DataSourceConfiguration DataSourceConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

@@ -20,6 +20,7 @@ namespace Humidifier.ARCZonalShift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceIdentifier { get; set; }
         /// <summary>
         /// ZonalAutoshiftStatus

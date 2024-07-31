@@ -36,6 +36,7 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic CdcStopPosition { get; set; }
+
         /// <summary>
         /// MigrationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-migrationtype
@@ -43,7 +44,9 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MigrationType { get; set; }
+
         /// <summary>
         /// TargetEndpointArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-targetendpointarn
@@ -51,7 +54,9 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetEndpointArn { get; set; }
+
         /// <summary>
         /// ReplicationInstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-replicationinstancearn
@@ -59,6 +64,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReplicationInstanceArn { get; set; }
         /// <summary>
         /// TaskData
@@ -84,6 +90,7 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceIdentifier { get; set; }
+
         /// <summary>
         /// TableMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-tablemappings
@@ -91,6 +98,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TableMappings { get; set; }
         /// <summary>
         /// ReplicationTaskIdentifier
@@ -100,6 +108,7 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic ReplicationTaskIdentifier { get; set; }
+
         /// <summary>
         /// SourceEndpointArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationtask.html#cfn-dms-replicationtask-sourceendpointarn
@@ -107,6 +116,7 @@ namespace Humidifier.DMS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceEndpointArn { get; set; }
         /// <summary>
         /// Tags

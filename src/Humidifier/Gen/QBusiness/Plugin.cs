@@ -38,6 +38,7 @@ namespace Humidifier.QBusiness
         /// Type: CustomPluginConfiguration
         /// </summary>
         public PluginTypes.CustomPluginConfiguration CustomPluginConfiguration { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-plugin.html#cfn-qbusiness-plugin-type
@@ -45,6 +46,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// State
@@ -54,6 +56,7 @@ namespace Humidifier.QBusiness
         /// PrimitiveType: String
         /// </summary>
         public dynamic State { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-plugin.html#cfn-qbusiness-plugin-displayname
@@ -61,7 +64,9 @@ namespace Humidifier.QBusiness
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
+
         /// <summary>
         /// AuthConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-plugin.html#cfn-qbusiness-plugin-authconfiguration
@@ -69,7 +74,9 @@ namespace Humidifier.QBusiness
         /// UpdateType: Mutable
         /// Type: PluginAuthConfiguration
         /// </summary>
+        [Required]
         public PluginTypes.PluginAuthConfiguration AuthConfiguration { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-plugin.html#cfn-qbusiness-plugin-applicationid
@@ -77,6 +84,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Tags

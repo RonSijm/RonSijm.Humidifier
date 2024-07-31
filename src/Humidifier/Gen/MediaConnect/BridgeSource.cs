@@ -21,6 +21,7 @@ namespace Humidifier.MediaConnect
         /// Type: BridgeNetworkSource
         /// </summary>
         public BridgeSourceTypes.BridgeNetworkSource NetworkSource { get; set; }
+
         /// <summary>
         /// BridgeArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridgesource.html#cfn-mediaconnect-bridgesource-bridgearn
@@ -28,6 +29,7 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BridgeArn { get; set; }
         /// <summary>
         /// FlowSource

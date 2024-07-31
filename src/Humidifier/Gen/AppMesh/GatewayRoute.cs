@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using GatewayRouteTypes;
 
-    public class GatewayRoute : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class GatewayRoute : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -31,7 +31,9 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MeshName { get; set; }
+
         /// <summary>
         /// VirtualGatewayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-virtualgatewayname
@@ -39,6 +41,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VirtualGatewayName { get; set; }
         /// <summary>
         /// MeshOwner
@@ -49,6 +52,7 @@ namespace Humidifier.AppMesh
         /// </summary>
         public dynamic MeshOwner { get; set; }
         public dynamic GatewayRouteName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-spec
@@ -56,6 +60,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: GatewayRouteSpec
         /// </summary>
+        [Required]
         public GatewayRouteTypes.GatewayRouteSpec Spec { get; set; }
         /// <summary>
         /// Tags

@@ -28,6 +28,7 @@ namespace Humidifier.Cognito
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic UseDefaults { get; set; }
+
         /// <summary>
         /// IdentityProviderName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolprincipaltag.html#cfn-cognito-identitypoolprincipaltag-identityprovidername
@@ -35,7 +36,9 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityProviderName { get; set; }
+
         /// <summary>
         /// IdentityPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolprincipaltag.html#cfn-cognito-identitypoolprincipaltag-identitypoolid
@@ -43,6 +46,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityPoolId { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace Humidifier.CloudFormation
     using System.Collections.Generic;
     using StackSetTypes;
 
-    public class StackSet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class StackSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -94,6 +94,7 @@ namespace Humidifier.CloudFormation
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Capabilities { get; set; }
+
         /// <summary>
         /// PermissionModel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-permissionmodel
@@ -101,6 +102,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PermissionModel { get; set; }
         /// <summary>
         /// AdministrationRoleARN

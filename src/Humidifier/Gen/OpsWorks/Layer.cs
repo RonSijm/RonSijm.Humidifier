@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using LayerTypes;
 
-    public class Layer : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Layer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -22,6 +22,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Attributes_ { get; set; }
+
         /// <summary>
         /// AutoAssignElasticIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignelasticips
@@ -29,7 +30,9 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AutoAssignElasticIps { get; set; }
+
         /// <summary>
         /// AutoAssignPublicIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-autoassignpublicips
@@ -37,6 +40,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AutoAssignPublicIps { get; set; }
         /// <summary>
         /// CustomInstanceProfileArn
@@ -71,6 +75,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic CustomSecurityGroupIds { get; set; }
+
         /// <summary>
         /// EnableAutoHealing
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-enableautohealing
@@ -78,6 +83,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic EnableAutoHealing { get; set; }
         /// <summary>
         /// InstallUpdatesOnBoot
@@ -113,6 +119,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Packages { get; set; }
+
         /// <summary>
         /// Shortname
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-shortname
@@ -120,7 +127,9 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Shortname { get; set; }
+
         /// <summary>
         /// StackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-stackid
@@ -128,6 +137,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackId { get; set; }
         /// <summary>
         /// Tags
@@ -138,6 +148,7 @@ namespace Humidifier.OpsWorks
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-type
@@ -145,6 +156,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// UseEbsOptimizedInstances

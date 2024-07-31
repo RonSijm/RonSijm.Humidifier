@@ -21,6 +21,7 @@ namespace Humidifier.Greengrass
         /// Type: DefaultConfig
         /// </summary>
         public FunctionDefinitionVersionTypes.DefaultConfig DefaultConfig { get; set; }
+
         /// <summary>
         /// Functions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functions
@@ -29,7 +30,9 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Function
         /// </summary>
+        [Required]
         public List<FunctionDefinitionVersionTypes.Function> Functions { get; set; }
+
         /// <summary>
         /// FunctionDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functiondefinitionid
@@ -37,6 +40,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionDefinitionId { get; set; }
     }
 

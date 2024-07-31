@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using FlowAliasTypes;
 
-    public class FlowAlias : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class FlowAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// RoutingConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flowalias.html#cfn-bedrock-flowalias-routingconfiguration
@@ -38,7 +39,9 @@ namespace Humidifier.Bedrock
         /// Type: List
         /// ItemType: FlowAliasRoutingConfigurationListItem
         /// </summary>
+        [Required]
         public List<FlowAliasTypes.FlowAliasRoutingConfigurationListItem> RoutingConfiguration { get; set; }
+
         /// <summary>
         /// FlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flowalias.html#cfn-bedrock-flowalias-flowarn
@@ -46,6 +49,7 @@ namespace Humidifier.Bedrock
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FlowArn { get; set; }
         /// <summary>
         /// Tags

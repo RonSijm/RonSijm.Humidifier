@@ -26,7 +26,9 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DeviceId { get; set; }
+
         /// <summary>
         /// Enabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-device.html#cfn-iot1click-device-enabled
@@ -34,6 +36,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic Enabled { get; set; }
     }
 }

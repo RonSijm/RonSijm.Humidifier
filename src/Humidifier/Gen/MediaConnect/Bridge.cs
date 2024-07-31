@@ -52,6 +52,7 @@ namespace Humidifier.MediaConnect
         /// ItemType: BridgeOutput
         /// </summary>
         public List<BridgeTypes.BridgeOutput> Outputs { get; set; }
+
         /// <summary>
         /// PlacementArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridge.html#cfn-mediaconnect-bridge-placementarn
@@ -59,7 +60,9 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PlacementArn { get; set; }
+
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridge.html#cfn-mediaconnect-bridge-sources
@@ -68,6 +71,7 @@ namespace Humidifier.MediaConnect
         /// Type: List
         /// ItemType: BridgeSource
         /// </summary>
+        [Required]
         public List<BridgeTypes.BridgeSource> Sources { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

@@ -3,7 +3,7 @@ namespace Humidifier.LookoutMetrics
     using System.Collections.Generic;
     using AlertTypes;
 
-    public class Alert : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Alert : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,10 @@ namespace Humidifier.LookoutMetrics
         /// PrimitiveType: String
         /// </summary>
         public dynamic AlertDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => AlertDescription; set => AlertDescription = value; }
+
         /// <summary>
         /// Action
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-action
@@ -33,8 +37,10 @@ namespace Humidifier.LookoutMetrics
         /// UpdateType: Immutable
         /// Type: Action
         /// </summary>
+        [Required]
         public AlertTypes.Action Action { get; set; }
         public dynamic AlertName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// AlertSensitivityThreshold
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-alertsensitivitythreshold
@@ -42,7 +48,9 @@ namespace Humidifier.LookoutMetrics
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic AlertSensitivityThreshold { get; set; }
+
         /// <summary>
         /// AnomalyDetectorArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-anomalydetectorarn
@@ -50,6 +58,7 @@ namespace Humidifier.LookoutMetrics
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AnomalyDetectorArn { get; set; }
     }
 

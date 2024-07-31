@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryControl
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

@@ -29,6 +29,7 @@ namespace Humidifier.EntityResolution
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// MappedInputFields
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-schemamapping.html#cfn-entityresolution-schemamapping-mappedinputfields
@@ -37,7 +38,9 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: SchemaInputAttribute
         /// </summary>
+        [Required]
         public List<SchemaMappingTypes.SchemaInputAttribute> MappedInputFields { get; set; }
+
         /// <summary>
         /// SchemaName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-schemamapping.html#cfn-entityresolution-schemamapping-schemaname
@@ -45,6 +48,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SchemaName { get; set; }
         /// <summary>
         /// Tags

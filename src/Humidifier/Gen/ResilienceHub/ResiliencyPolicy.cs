@@ -25,6 +25,7 @@ namespace Humidifier.ResilienceHub
         /// UpdateType: Mutable
         /// Type: PolicyMap
         /// </summary>
+        [Required]
         public ResiliencyPolicyTypes.PolicyMap Policy { get; set; }
         /// <summary>
         /// PolicyDescription
@@ -34,6 +35,7 @@ namespace Humidifier.ResilienceHub
         /// PrimitiveType: String
         /// </summary>
         public dynamic PolicyDescription { get; set; }
+
         /// <summary>
         /// Tier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-tier
@@ -41,7 +43,9 @@ namespace Humidifier.ResilienceHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Tier { get; set; }
+
         /// <summary>
         /// PolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-resiliencypolicy.html#cfn-resiliencehub-resiliencypolicy-policyname
@@ -49,6 +53,7 @@ namespace Humidifier.ResilienceHub
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyName { get; set; }
         /// <summary>
         /// DataLocationConstraint

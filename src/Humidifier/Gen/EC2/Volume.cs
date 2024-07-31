@@ -81,6 +81,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic OutpostArn { get; set; }
+
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzone
@@ -88,6 +89,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// Throughput

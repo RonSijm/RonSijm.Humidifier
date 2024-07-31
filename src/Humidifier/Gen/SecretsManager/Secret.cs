@@ -3,7 +3,7 @@ namespace Humidifier.SecretsManager
     using System.Collections.Generic;
     using SecretTypes;
 
-    public class Secret : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Secret : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

@@ -20,6 +20,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
         /// <summary>
         /// Predicates

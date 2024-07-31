@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.CustomerProfiles
         /// Type: Matching
         /// </summary>
         public DomainTypes.Matching Matching { get; set; }
+
         /// <summary>
         /// DefaultExpirationDays
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-defaultexpirationdays
@@ -35,6 +36,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic DefaultExpirationDays { get; set; }
         public dynamic DomainName { get => GivenName; set => GivenName = value; }
         /// <summary>

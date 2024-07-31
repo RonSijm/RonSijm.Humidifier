@@ -36,6 +36,7 @@ namespace Humidifier.SSMContacts
         /// ItemType: Stage
         /// </summary>
         public List<PlanTypes.Stage> Stages { get; set; }
+
         /// <summary>
         /// ContactId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-plan.html#cfn-ssmcontacts-plan-contactid
@@ -43,6 +44,7 @@ namespace Humidifier.SSMContacts
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ContactId { get; set; }
     }
 

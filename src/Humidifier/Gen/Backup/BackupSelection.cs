@@ -27,7 +27,9 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// Type: BackupSelectionResourceType
         /// </summary>
+        [Required]
         public BackupSelectionTypes.BackupSelectionResourceType BackupSelection_ { get; set; }
+
         /// <summary>
         /// BackupPlanId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupplanid
@@ -35,6 +37,7 @@ namespace Humidifier.Backup
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BackupPlanId { get; set; }
     }
 

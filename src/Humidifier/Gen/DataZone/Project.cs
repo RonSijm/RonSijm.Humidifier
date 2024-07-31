@@ -2,7 +2,7 @@ namespace Humidifier.DataZone
 {
     using System.Collections.Generic;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -38,6 +38,7 @@ namespace Humidifier.DataZone
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic GlossaryTerms { get; set; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-project.html#cfn-datazone-project-domainidentifier
@@ -45,6 +46,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

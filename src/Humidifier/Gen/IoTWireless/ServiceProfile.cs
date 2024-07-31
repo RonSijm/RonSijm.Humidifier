@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using ServiceProfileTypes;
 
-    public class ServiceProfile : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ServiceProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

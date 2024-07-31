@@ -19,7 +19,9 @@ namespace Humidifier.FMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SnsTopicArn { get; set; }
+
         /// <summary>
         /// SnsRoleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snsrolename
@@ -27,6 +29,7 @@ namespace Humidifier.FMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SnsRoleName { get; set; }
     }
 }

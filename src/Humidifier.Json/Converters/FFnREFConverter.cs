@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Linq;
+using Humidifier.Base;
 using Newtonsoft.Json;
 
 namespace Humidifier.Json.Converters
 {
-    public class FnOARNRefConverter : JsonConverter
+    public class FFnREFConverter : BaseResultFactoryJsonConverter<FFnREF>
     {
-        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, BaseResource value, JsonSerializer serializer)
         {
-            var fn = (FFnREF)value;
-            var factory = fn.Result;
-            var resultObject = factory.Result;
-            var resourceName = resultObject.ResourceName;
+            var resourceName = value.ResourceName;
 
             writer.WriteStartObject();
             writer.WritePropertyName("Ref");
             writer.WriteToken(JsonToken.String, resourceName);
             writer.WriteEndObject();
         }
-
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override bool CanConvert(Type objectType) => objectType == typeof(FFnREF);
     }
 
-    public class FnOARNRefListConverter : JsonConverter
+    public class FFnNameConverter : BaseResultFactoryJsonConverter<FFnName>
+    {
+        public override void WriteJson(JsonWriter writer, BaseResource value, JsonSerializer serializer)
+        {
+            var resourceName = value.ResourceName;
+            writer.WriteToken(JsonToken.String, resourceName);
+        }
+    }
+
+    public class FFnREFListConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {

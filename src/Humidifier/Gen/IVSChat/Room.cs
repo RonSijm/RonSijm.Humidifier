@@ -3,7 +3,7 @@ namespace Humidifier.IVSChat
     using System.Collections.Generic;
     using RoomTypes;
 
-    public class Room : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Room : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

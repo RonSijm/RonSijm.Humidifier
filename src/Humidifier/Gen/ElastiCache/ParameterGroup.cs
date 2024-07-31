@@ -24,6 +24,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// Properties
@@ -43,6 +44,7 @@ namespace Humidifier.ElastiCache
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// CacheParameterGroupFamily
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-parametergroup.html#cfn-elasticache-parametergroup-cacheparametergroupfamily
@@ -50,6 +52,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CacheParameterGroupFamily { get; set; }
     }
 }

@@ -2,7 +2,7 @@ namespace Humidifier.Lightsail
 {
     using System.Collections.Generic;
 
-    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic AttachedInstances { get; set; }
+
         /// <summary>
         /// InstancePort
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-instanceport
@@ -50,6 +51,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic InstancePort { get; set; }
         /// <summary>
         /// HealthCheckPath

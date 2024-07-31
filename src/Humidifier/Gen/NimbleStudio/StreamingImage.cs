@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using StreamingImageTypes;
 
-    public class StreamingImage : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class StreamingImage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.NimbleStudio
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Ec2ImageId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#cfn-nimblestudio-streamingimage-ec2imageid
@@ -37,7 +38,9 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Ec2ImageId { get; set; }
+
         /// <summary>
         /// StudioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#cfn-nimblestudio-streamingimage-studioid
@@ -45,6 +48,7 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StudioId { get; set; }
         /// <summary>
         /// Tags

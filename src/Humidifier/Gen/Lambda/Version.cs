@@ -27,6 +27,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// FunctionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionname
@@ -34,6 +35,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionName { get; set; }
         /// <summary>
         /// ProvisionedConcurrencyConfig

@@ -14,15 +14,50 @@ namespace Humidifier
             return wrapper;
         }
 
-        public static FFnREF FnORef<T>(IResultFactory<T> factory) where T : BaseResource
+        public static FFnREF FFnREF(IResultFactory factory)
         {
-            var result = factory;
-            var wrapper = new FFnREF(result);
+            var wrapper = new FFnREF(factory);
 
             return wrapper;
         }
 
-        public static FFnREFList FFRefList<T>(List<IResultFactory<T>> factories) where T : BaseResource
+        public static FFnREF FFnREF<T>(IResultFactory<T> factory) where T : BaseResource
+        {
+            var wrapper = new FFnREF(factory);
+
+            return wrapper;
+        }
+
+        public static FFnName FFnName<T>(IResultFactory<T> factory) where T : BaseResource
+        {
+            var wrapper = new FFnName(factory);
+
+            return wrapper;
+        }
+
+        public static FFnName FFnName(IResultFactory factory)
+        {
+            var wrapper = new FFnName(factory);
+
+            return wrapper;
+        }
+
+        public static FFnName FFnName(BaseResource resource)
+        {
+            var holder = new ResultHolder(resource);
+            var wrapper = new FFnName(holder);
+
+            return wrapper;
+        }
+
+        public static FnStringJoin FnStringJoin(params dynamic[] conditions)
+        {
+            var wrapper = new FnStringJoin(conditions);
+
+            return wrapper;
+        }
+
+        public static FFnREFList FFnREFList<T>(List<IResultFactory<T>> factories) where T : BaseResource
         {
             var untyped = factories.Cast<IResultFactory>().ToList();
             var wrapper = new FFnREFList(untyped);
@@ -30,7 +65,7 @@ namespace Humidifier
             return wrapper;
         }
 
-        public static FFnREFList FFRefList(List<IResultFactory> factories)
+        public static FFnREFList FFnREFList(List<IResultFactory> factories)
         {
             var wrapper = new FFnREFList(factories);
 

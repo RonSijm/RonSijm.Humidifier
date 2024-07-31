@@ -19,6 +19,7 @@ namespace Humidifier.Route53
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic HostedZoneId { get; set; }
     }
 }

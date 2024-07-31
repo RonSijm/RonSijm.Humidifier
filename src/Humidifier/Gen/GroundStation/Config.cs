@@ -3,7 +3,7 @@ namespace Humidifier.GroundStation
     using System.Collections.Generic;
     using ConfigTypes;
 
-    public class Config : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Config : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.GroundStation
         /// UpdateType: Mutable
         /// Type: ConfigData
         /// </summary>
+        [Required]
         public ConfigTypes.ConfigData ConfigData { get; set; }
         /// <summary>
         /// Tags

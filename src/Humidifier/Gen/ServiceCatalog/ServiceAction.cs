@@ -3,7 +3,7 @@ namespace Humidifier.ServiceCatalog
     using System.Collections.Generic;
     using ServiceActionTypes;
 
-    public class ServiceAction : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ServiceAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-definition
@@ -34,6 +35,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// ItemType: DefinitionParameter
         /// </summary>
+        [Required]
         public List<ServiceActionTypes.DefinitionParameter> Definition { get; set; }
         /// <summary>
         /// AcceptLanguage
@@ -43,6 +45,7 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: String
         /// </summary>
         public dynamic AcceptLanguage { get; set; }
+
         /// <summary>
         /// DefinitionType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-definitiontype
@@ -50,6 +53,7 @@ namespace Humidifier.ServiceCatalog
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefinitionType { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

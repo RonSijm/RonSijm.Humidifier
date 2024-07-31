@@ -24,6 +24,7 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DirectoryId { get; set; }
         /// <summary>
         /// Tags

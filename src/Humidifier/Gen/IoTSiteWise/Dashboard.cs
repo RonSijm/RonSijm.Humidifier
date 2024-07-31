@@ -2,7 +2,7 @@ namespace Humidifier.IoTSiteWise
 {
     using System.Collections.Generic;
 
-    public class Dashboard : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -19,6 +19,7 @@ namespace Humidifier.IoTSiteWise
         }
 
         public dynamic DashboardName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DashboardDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboarddefinition
@@ -26,6 +27,7 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DashboardDefinition { get; set; }
         /// <summary>
         /// ProjectId
@@ -35,6 +37,7 @@ namespace Humidifier.IoTSiteWise
         /// PrimitiveType: String
         /// </summary>
         public dynamic ProjectId { get; set; }
+
         /// <summary>
         /// DashboardDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-dashboarddescription
@@ -42,7 +45,11 @@ namespace Humidifier.IoTSiteWise
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DashboardDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => DashboardDescription; set => DashboardDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-dashboard.html#cfn-iotsitewise-dashboard-tags

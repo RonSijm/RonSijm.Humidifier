@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: FunctionConfig
         /// </summary>
+        [Required]
         public FunctionTypes.FunctionConfig FunctionConfig { get; set; }
         /// <summary>
         /// FunctionMetadata
@@ -43,6 +44,7 @@ namespace Humidifier.CloudFront
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutoPublish { get; set; }
+
         /// <summary>
         /// FunctionCode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode
@@ -50,6 +52,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionCode { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

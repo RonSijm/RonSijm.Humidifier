@@ -37,6 +37,7 @@ namespace Humidifier.NetworkManager
         /// Type: ProposedSegmentChange
         /// </summary>
         public TransitGatewayRouteTableAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
+
         /// <summary>
         /// TransitGatewayRouteTableArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-transitgatewayroutetablearn
@@ -44,7 +45,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayRouteTableArn { get; set; }
+
         /// <summary>
         /// PeeringId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-peeringid
@@ -52,6 +55,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PeeringId { get; set; }
         /// <summary>
         /// Tags

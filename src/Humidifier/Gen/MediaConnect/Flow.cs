@@ -62,6 +62,7 @@ namespace Humidifier.MediaConnect
         /// Type: Maintenance
         /// </summary>
         public FlowTypes.Maintenance Maintenance { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-source
@@ -69,6 +70,7 @@ namespace Humidifier.MediaConnect
         /// UpdateType: Mutable
         /// Type: Source
         /// </summary>
+        [Required]
         public FlowTypes.Source Source { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

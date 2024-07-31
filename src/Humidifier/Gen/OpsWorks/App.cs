@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using AppTypes;
 
-    public class App : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -90,6 +90,7 @@ namespace Humidifier.OpsWorks
         /// Type: SslConfiguration
         /// </summary>
         public AppTypes.SslConfiguration SslConfiguration { get; set; }
+
         /// <summary>
         /// StackId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-stackid
@@ -97,7 +98,9 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StackId { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-type
@@ -105,6 +108,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
     }
 

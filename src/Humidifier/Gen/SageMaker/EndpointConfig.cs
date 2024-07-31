@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using EndpointConfigTypes;
 
-    public class EndpointConfig : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class EndpointConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -51,6 +51,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableNetworkIsolation { get; set; }
+
         /// <summary>
         /// ProductionVariants
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants
@@ -59,6 +60,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: ProductionVariant
         /// </summary>
+        [Required]
         public List<EndpointConfigTypes.ProductionVariant> ProductionVariants { get; set; }
         /// <summary>
         /// KmsKeyId

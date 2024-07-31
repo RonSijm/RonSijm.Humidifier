@@ -34,6 +34,7 @@ namespace Humidifier.DocDB
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic CertificateRotationRestart { get; set; }
+
         /// <summary>
         /// DBInstanceClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbinstanceclass
@@ -41,7 +42,9 @@ namespace Humidifier.DocDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBInstanceClass { get; set; }
+
         /// <summary>
         /// DBClusterIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-dbclusteridentifier
@@ -49,6 +52,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBClusterIdentifier { get; set; }
         /// <summary>
         /// AvailabilityZone

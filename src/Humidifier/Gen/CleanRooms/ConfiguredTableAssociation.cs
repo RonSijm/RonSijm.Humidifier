@@ -2,7 +2,7 @@ namespace Humidifier.CleanRooms
 {
     using System.Collections.Generic;
 
-    public class ConfiguredTableAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ConfiguredTableAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MembershipIdentifier { get; set; }
         /// <summary>
         /// Description
@@ -34,6 +35,7 @@ namespace Humidifier.CleanRooms
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ConfiguredTableIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtableassociation.html#cfn-cleanrooms-configuredtableassociation-configuredtableidentifier
@@ -41,6 +43,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfiguredTableIdentifier { get; set; }
         /// <summary>
         /// Tags
@@ -51,6 +54,7 @@ namespace Humidifier.CleanRooms
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-configuredtableassociation.html#cfn-cleanrooms-configuredtableassociation-rolearn
@@ -58,6 +62,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

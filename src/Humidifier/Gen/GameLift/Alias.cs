@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using AliasTypes;
 
-    public class Alias : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// RoutingStrategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy
@@ -33,6 +34,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// Type: RoutingStrategy
         /// </summary>
+        [Required]
         public AliasTypes.RoutingStrategy RoutingStrategy { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

@@ -3,7 +3,7 @@ namespace Humidifier.BillingConductor
     using System.Collections.Generic;
     using BillingGroupTypes;
 
-    public class BillingGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class BillingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -31,6 +31,7 @@ namespace Humidifier.BillingConductor
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// PrimaryAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-primaryaccountid
@@ -38,7 +39,9 @@ namespace Humidifier.BillingConductor
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrimaryAccountId { get; set; }
+
         /// <summary>
         /// ComputationPreference
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-computationpreference
@@ -46,7 +49,9 @@ namespace Humidifier.BillingConductor
         /// UpdateType: Mutable
         /// Type: ComputationPreference
         /// </summary>
+        [Required]
         public BillingGroupTypes.ComputationPreference ComputationPreference { get; set; }
+
         /// <summary>
         /// AccountGrouping
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-accountgrouping
@@ -54,6 +59,7 @@ namespace Humidifier.BillingConductor
         /// UpdateType: Mutable
         /// Type: AccountGrouping
         /// </summary>
+        [Required]
         public BillingGroupTypes.AccountGrouping AccountGrouping { get; set; }
         /// <summary>
         /// Tags

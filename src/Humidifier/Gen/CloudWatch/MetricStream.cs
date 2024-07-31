@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using System.Collections.Generic;
     using MetricStreamTypes;
 
-    public class MetricStream : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class MetricStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.CloudWatch
         /// ItemType: MetricStreamStatisticsConfiguration
         /// </summary>
         public List<MetricStreamTypes.MetricStreamStatisticsConfiguration> StatisticsConfigurations { get; set; }
+
         /// <summary>
         /// FirehoseArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-firehosearn
@@ -37,6 +38,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirehoseArn { get; set; }
         /// <summary>
         /// IncludeLinkedAccountsMetrics
@@ -55,6 +57,7 @@ namespace Humidifier.CloudWatch
         /// ItemType: MetricStreamFilter
         /// </summary>
         public List<MetricStreamTypes.MetricStreamFilter> IncludeFilters { get; set; }
+
         /// <summary>
         /// OutputFormat
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-outputformat
@@ -62,6 +65,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OutputFormat { get; set; }
         /// <summary>
         /// ExcludeFilters
@@ -72,6 +76,7 @@ namespace Humidifier.CloudWatch
         /// ItemType: MetricStreamFilter
         /// </summary>
         public List<MetricStreamTypes.MetricStreamFilter> ExcludeFilters { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-rolearn
@@ -79,6 +84,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

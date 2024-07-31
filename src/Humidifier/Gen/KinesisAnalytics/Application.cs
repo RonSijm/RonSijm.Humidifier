@@ -3,7 +3,7 @@ namespace Humidifier.KinesisAnalytics
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -14,6 +14,7 @@ namespace Humidifier.KinesisAnalytics
         }
 
         public dynamic ApplicationName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Inputs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-inputs
@@ -22,6 +23,7 @@ namespace Humidifier.KinesisAnalytics
         /// Type: List
         /// ItemType: Input
         /// </summary>
+        [Required]
         public List<ApplicationTypes.Input> Inputs { get; set; }
         /// <summary>
         /// ApplicationDescription
@@ -31,6 +33,9 @@ namespace Humidifier.KinesisAnalytics
         /// PrimitiveType: String
         /// </summary>
         public dynamic ApplicationDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ApplicationDescription; set => ApplicationDescription = value; }
         /// <summary>
         /// ApplicationCode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationcode

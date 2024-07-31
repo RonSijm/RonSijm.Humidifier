@@ -29,6 +29,7 @@ namespace Humidifier.IoT
         /// PrimitiveType: String
         /// </summary>
         public dynamic IndexName { get; set; }
+
         /// <summary>
         /// MetricName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-metricname
@@ -36,6 +37,7 @@ namespace Humidifier.IoT
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
         /// <summary>
         /// Description

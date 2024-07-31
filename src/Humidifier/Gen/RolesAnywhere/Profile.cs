@@ -3,7 +3,7 @@ namespace Humidifier.RolesAnywhere
     using System.Collections.Generic;
     using ProfileTypes;
 
-    public class Profile : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Profile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.RolesAnywhere
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic RequireInstanceProperties { get; set; }
+
         /// <summary>
         /// RoleArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-rolearns
@@ -44,6 +45,7 @@ namespace Humidifier.RolesAnywhere
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic RoleArns { get; set; }
         /// <summary>
         /// SessionPolicy

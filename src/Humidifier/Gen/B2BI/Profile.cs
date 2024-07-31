@@ -2,7 +2,7 @@ namespace Humidifier.B2BI
 {
     using System.Collections.Generic;
 
-    public class Profile : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Profile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.B2BI
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Logging { get; set; }
         /// <summary>
         /// Email
@@ -37,6 +38,7 @@ namespace Humidifier.B2BI
         /// PrimitiveType: String
         /// </summary>
         public dynamic Email { get; set; }
+
         /// <summary>
         /// BusinessName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-profile.html#cfn-b2bi-profile-businessname
@@ -44,7 +46,9 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BusinessName { get; set; }
+
         /// <summary>
         /// Phone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-profile.html#cfn-b2bi-profile-phone
@@ -52,6 +56,7 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Phone { get; set; }
         /// <summary>
         /// Tags

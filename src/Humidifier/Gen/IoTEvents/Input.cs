@@ -3,7 +3,7 @@ namespace Humidifier.IoTEvents
     using System.Collections.Generic;
     using InputTypes;
 
-    public class Input : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Input : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -20,6 +20,7 @@ namespace Humidifier.IoTEvents
         /// UpdateType: Mutable
         /// Type: InputDefinition
         /// </summary>
+        [Required]
         public InputTypes.InputDefinition InputDefinition { get; set; }
         public dynamic InputName { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -30,6 +31,9 @@ namespace Humidifier.IoTEvents
         /// PrimitiveType: String
         /// </summary>
         public dynamic InputDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => InputDescription; set => InputDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-tags

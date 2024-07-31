@@ -67,6 +67,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic KerberosKeytab { get; set; }
+
         /// <summary>
         /// NameNodes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-namenodes
@@ -75,6 +76,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: NameNode
         /// </summary>
+        [Required]
         public List<LocationHDFSTypes.NameNode> NameNodes { get; set; }
         /// <summary>
         /// Subdirectory
@@ -109,6 +111,7 @@ namespace Humidifier.DataSync
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AgentArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-agentarns
@@ -117,7 +120,9 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AgentArns { get; set; }
+
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-authenticationtype
@@ -125,6 +130,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthenticationType { get; set; }
     }
 

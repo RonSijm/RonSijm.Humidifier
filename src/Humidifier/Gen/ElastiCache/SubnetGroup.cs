@@ -2,7 +2,7 @@ namespace Humidifier.ElastiCache
 {
     using System.Collections.Generic;
 
-    public class SubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
+    public class SubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSubnetIds
     {
         public override string AWSTypeName
         {
@@ -19,6 +19,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// CacheSubnetGroupName
@@ -28,6 +29,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic CacheSubnetGroupName { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
@@ -36,6 +38,7 @@ namespace Humidifier.ElastiCache
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using TaskTypes;
 
-    public class Task : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Task : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.DataSync
         /// ItemType: FilterRule
         /// </summary>
         public List<TaskTypes.FilterRule> Includes { get; set; }
+
         /// <summary>
         /// DestinationLocationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-destinationlocationarn
@@ -37,6 +38,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DestinationLocationArn { get; set; }
         /// <summary>
         /// Options
@@ -62,6 +64,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic CloudWatchLogGroupArn { get; set; }
+
         /// <summary>
         /// SourceLocationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-sourcelocationarn
@@ -69,6 +72,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SourceLocationArn { get; set; }
         /// <summary>
         /// TaskReportConfig

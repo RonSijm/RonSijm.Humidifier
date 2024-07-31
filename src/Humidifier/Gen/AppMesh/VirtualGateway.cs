@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualGatewayTypes;
 
-    public class VirtualGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VirtualGateway : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.AppMesh
         }
 
         public dynamic VirtualGatewayName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// MeshName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-meshname
@@ -31,6 +32,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MeshName { get; set; }
         /// <summary>
         /// MeshOwner
@@ -40,6 +42,7 @@ namespace Humidifier.AppMesh
         /// PrimitiveType: String
         /// </summary>
         public dynamic MeshOwner { get; set; }
+
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-spec
@@ -47,6 +50,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: VirtualGatewaySpec
         /// </summary>
+        [Required]
         public VirtualGatewayTypes.VirtualGatewaySpec Spec { get; set; }
         /// <summary>
         /// Tags

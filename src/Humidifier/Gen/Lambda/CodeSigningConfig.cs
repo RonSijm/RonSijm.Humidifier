@@ -27,6 +27,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// AllowedPublishers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html#cfn-lambda-codesigningconfig-allowedpublishers
@@ -34,6 +35,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// Type: AllowedPublishers
         /// </summary>
+        [Required]
         public CodeSigningConfigTypes.AllowedPublishers AllowedPublishers { get; set; }
         /// <summary>
         /// CodeSigningPolicies

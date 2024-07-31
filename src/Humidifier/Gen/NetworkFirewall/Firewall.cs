@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using FirewallTypes;
 
-    public class Firewall : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveVpcId, IHaveImpliedResourceName
+    public class Firewall : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveVpcId
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirewallPolicyArn { get; set; }
         /// <summary>
         /// SubnetChangeProtection
@@ -45,6 +46,7 @@ namespace Humidifier.NetworkFirewall
         /// </summary>
         public dynamic Description { get; set; }
         public dynamic FirewallName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-vpcid
@@ -52,6 +54,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
         /// <summary>
         /// DeleteProtection
@@ -78,6 +81,7 @@ namespace Humidifier.NetworkFirewall
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// SubnetMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-subnetmappings
@@ -86,6 +90,7 @@ namespace Humidifier.NetworkFirewall
         /// Type: List
         /// ItemType: SubnetMapping
         /// </summary>
+        [Required]
         public List<FirewallTypes.SubnetMapping> SubnetMappings { get; set; }
     }
 

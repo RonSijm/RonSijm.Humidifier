@@ -24,7 +24,9 @@ namespace Humidifier.Inspector
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AssessmentTargetArn { get; set; }
+
         /// <summary>
         /// DurationInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-durationinseconds
@@ -32,8 +34,10 @@ namespace Humidifier.Inspector
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic DurationInSeconds { get; set; }
         public dynamic AssessmentTemplateName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// RulesPackageArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspector-assessmenttemplate.html#cfn-inspector-assessmenttemplate-rulespackagearns
@@ -42,6 +46,7 @@ namespace Humidifier.Inspector
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic RulesPackageArns { get; set; }
         /// <summary>
         /// UserAttributesForFindings

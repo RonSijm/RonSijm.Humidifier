@@ -20,7 +20,9 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
+
         /// <summary>
         /// DefaultAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-defaultaction
@@ -28,6 +30,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Mutable
         /// Type: Action
         /// </summary>
+        [Required]
         public WebACLTypes.Action DefaultAction { get; set; }
         /// <summary>
         /// Rules

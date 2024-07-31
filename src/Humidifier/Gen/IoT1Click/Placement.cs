@@ -19,6 +19,7 @@ namespace Humidifier.IoT1Click
         }
 
         public dynamic PlacementName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ProjectName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-placement.html#cfn-iot1click-placement-projectname
@@ -26,6 +27,7 @@ namespace Humidifier.IoT1Click
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProjectName { get; set; }
         /// <summary>
         /// AssociatedDevices

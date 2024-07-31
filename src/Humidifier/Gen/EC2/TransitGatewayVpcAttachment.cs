@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using TransitGatewayVpcAttachmentTypes;
 
-    public class TransitGatewayVpcAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId
+    public class TransitGatewayVpcAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.EC2
         /// Type: Options
         /// </summary>
         public TransitGatewayVpcAttachmentTypes.Options Options { get; set; }
+
         /// <summary>
         /// TransitGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-transitgatewayid
@@ -33,7 +34,9 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TransitGatewayId { get; set; }
+
         /// <summary>
         /// VpcId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-vpcid
@@ -41,6 +44,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
         /// <summary>
         /// RemoveSubnetIds
@@ -51,6 +55,7 @@ namespace Humidifier.EC2
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic RemoveSubnetIds { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-subnetids
@@ -59,6 +64,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// AddSubnetIds

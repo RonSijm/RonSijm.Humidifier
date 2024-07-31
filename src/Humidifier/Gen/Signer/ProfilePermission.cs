@@ -19,7 +19,9 @@ namespace Humidifier.Signer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Action { get; set; }
+
         /// <summary>
         /// StatementId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-statementid
@@ -27,7 +29,9 @@ namespace Humidifier.Signer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic StatementId { get; set; }
+
         /// <summary>
         /// ProfileName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-profilename
@@ -35,7 +39,9 @@ namespace Humidifier.Signer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProfileName { get; set; }
+
         /// <summary>
         /// Principal
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-profilepermission.html#cfn-signer-profilepermission-principal
@@ -43,6 +49,7 @@ namespace Humidifier.Signer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Principal { get; set; }
         /// <summary>
         /// ProfileVersion

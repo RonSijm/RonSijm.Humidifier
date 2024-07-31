@@ -25,7 +25,9 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LoadBalancerName { get; set; }
+
         /// <summary>
         /// CertificateDomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatedomainname
@@ -33,6 +35,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CertificateDomainName { get; set; }
         /// <summary>
         /// IsAttached
@@ -59,6 +62,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic HttpsRedirectionEnabled { get; set; }
+
         /// <summary>
         /// CertificateName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#cfn-lightsail-loadbalancertlscertificate-certificatename
@@ -66,6 +70,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CertificateName { get; set; }
     }
 }

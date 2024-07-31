@@ -46,6 +46,7 @@ namespace Humidifier.RDS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic VpcSecurityGroupIds { get; set; }
+
         /// <summary>
         /// Auth
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-auth
@@ -54,6 +55,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: AuthFormat
         /// </summary>
+        [Required]
         public List<DBProxyTypes.AuthFormat> Auth { get; set; }
         /// <summary>
         /// DebugLogging
@@ -63,6 +65,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic DebugLogging { get; set; }
+
         /// <summary>
         /// VpcSubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-vpcsubnetids
@@ -71,7 +74,9 @@ namespace Humidifier.RDS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic VpcSubnetIds { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-rolearn
@@ -79,7 +84,9 @@ namespace Humidifier.RDS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
+
         /// <summary>
         /// EngineFamily
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-enginefamily
@@ -87,6 +94,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineFamily { get; set; }
         /// <summary>
         /// Tags

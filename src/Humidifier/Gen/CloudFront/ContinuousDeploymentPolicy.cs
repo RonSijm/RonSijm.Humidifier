@@ -26,6 +26,7 @@ namespace Humidifier.CloudFront
         /// UpdateType: Mutable
         /// Type: ContinuousDeploymentPolicyConfig
         /// </summary>
+        [Required]
         public ContinuousDeploymentPolicyTypes.ContinuousDeploymentPolicyConfig ContinuousDeploymentPolicyConfig { get; set; }
     }
 

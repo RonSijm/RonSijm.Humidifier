@@ -2,7 +2,7 @@ namespace Humidifier.NeptuneGraph
 {
     using System.Collections.Generic;
 
-    public class PrivateGraphEndpoint : Humidifier.Base.BaseResource, IHaveVpcId
+    public class PrivateGraphEndpoint : Humidifier.Base.BaseResource, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.NeptuneGraph
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// GraphIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-privategraphendpoint.html#cfn-neptunegraph-privategraphendpoint-graphidentifier
@@ -33,6 +35,7 @@ namespace Humidifier.NeptuneGraph
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GraphIdentifier { get; set; }
         /// <summary>
         /// SecurityGroupIds

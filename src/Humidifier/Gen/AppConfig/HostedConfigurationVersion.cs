@@ -24,6 +24,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationProfileId { get; set; }
         /// <summary>
         /// Description
@@ -33,6 +34,7 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ContentType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-contenttype
@@ -40,6 +42,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ContentType { get; set; }
         /// <summary>
         /// LatestVersionNumber
@@ -49,6 +52,7 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic LatestVersionNumber { get; set; }
+
         /// <summary>
         /// Content
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-content
@@ -56,6 +60,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Content { get; set; }
         /// <summary>
         /// VersionLabel
@@ -65,6 +70,7 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: String
         /// </summary>
         public dynamic VersionLabel { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-hostedconfigurationversion.html#cfn-appconfig-hostedconfigurationversion-applicationid
@@ -72,6 +78,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using CrawlerTypes;
 
-    public class Crawler : Humidifier.Base.BaseResource, IHaveDescription, IHaveRole, IHaveImpliedResourceName
+    public class Crawler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRole
     {
         public override string AWSTypeName
         {
@@ -62,6 +62,7 @@ namespace Humidifier.Glue
         /// PrimitiveType: String
         /// </summary>
         public dynamic DatabaseName { get; set; }
+
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets
@@ -69,6 +70,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: Targets
         /// </summary>
+        [Required]
         public CrawlerTypes.Targets Targets { get; set; }
         /// <summary>
         /// CrawlerSecurityConfiguration
@@ -79,6 +81,7 @@ namespace Humidifier.Glue
         /// </summary>
         public dynamic CrawlerSecurityConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role
@@ -86,6 +89,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Role { get; set; }
         /// <summary>
         /// LakeFormationConfiguration

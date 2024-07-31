@@ -25,7 +25,9 @@ namespace Humidifier.Shield
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProactiveEngagementStatus { get; set; }
+
         /// <summary>
         /// EmergencyContactList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-proactiveengagement.html#cfn-shield-proactiveengagement-emergencycontactlist
@@ -34,6 +36,7 @@ namespace Humidifier.Shield
         /// Type: List
         /// ItemType: EmergencyContact
         /// </summary>
+        [Required]
         public List<ProactiveEngagementTypes.EmergencyContact> EmergencyContactList { get; set; }
     }
 

@@ -2,7 +2,7 @@ namespace Humidifier.CodeGuruReviewer
 {
     using System.Collections.Generic;
 
-    public class RepositoryAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class RepositoryAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.CodeGuruReviewer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Owner

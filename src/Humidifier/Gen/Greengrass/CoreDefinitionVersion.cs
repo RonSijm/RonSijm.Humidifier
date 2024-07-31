@@ -21,7 +21,9 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Core
         /// </summary>
+        [Required]
         public List<CoreDefinitionVersionTypes.Core> Cores { get; set; }
+
         /// <summary>
         /// CoreDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-coredefinitionid
@@ -29,6 +31,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CoreDefinitionId { get; set; }
     }
 

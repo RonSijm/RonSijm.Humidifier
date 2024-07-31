@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using InstanceTypes;
 
-    public class Instance : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Instance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -35,6 +35,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveType: String
         /// </summary>
         public dynamic KeyPairName { get; set; }
+
         /// <summary>
         /// BundleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-bundleid
@@ -42,7 +43,9 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BundleId { get; set; }
+
         /// <summary>
         /// BlueprintId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-blueprintid
@@ -50,6 +53,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic BlueprintId { get; set; }
         /// <summary>
         /// Networking

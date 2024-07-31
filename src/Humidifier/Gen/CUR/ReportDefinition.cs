@@ -21,6 +21,7 @@ namespace Humidifier.CUR
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic AdditionalArtifacts { get; set; }
+
         /// <summary>
         /// ReportName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-reportname
@@ -28,7 +29,9 @@ namespace Humidifier.CUR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReportName { get; set; }
+
         /// <summary>
         /// Compression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-compression
@@ -36,7 +39,9 @@ namespace Humidifier.CUR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Compression { get; set; }
+
         /// <summary>
         /// Format
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-format
@@ -44,7 +49,9 @@ namespace Humidifier.CUR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Format { get; set; }
+
         /// <summary>
         /// RefreshClosedReports
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-refreshclosedreports
@@ -52,7 +59,9 @@ namespace Humidifier.CUR
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic RefreshClosedReports { get; set; }
+
         /// <summary>
         /// S3Bucket
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-s3bucket
@@ -60,7 +69,9 @@ namespace Humidifier.CUR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic S3Bucket { get; set; }
+
         /// <summary>
         /// ReportVersioning
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-reportversioning
@@ -68,7 +79,9 @@ namespace Humidifier.CUR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReportVersioning { get; set; }
+
         /// <summary>
         /// S3Region
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-s3region
@@ -76,7 +89,9 @@ namespace Humidifier.CUR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic S3Region { get; set; }
+
         /// <summary>
         /// TimeUnit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-timeunit
@@ -84,6 +99,7 @@ namespace Humidifier.CUR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TimeUnit { get; set; }
         /// <summary>
         /// BillingViewArn
@@ -93,6 +109,7 @@ namespace Humidifier.CUR
         /// PrimitiveType: String
         /// </summary>
         public dynamic BillingViewArn { get; set; }
+
         /// <summary>
         /// S3Prefix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-s3prefix
@@ -100,6 +117,7 @@ namespace Humidifier.CUR
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic S3Prefix { get; set; }
         /// <summary>
         /// AdditionalSchemaElements

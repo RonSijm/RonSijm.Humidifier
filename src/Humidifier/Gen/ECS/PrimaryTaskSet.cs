@@ -19,7 +19,9 @@ namespace Humidifier.ECS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TaskSetId { get; set; }
+
         /// <summary>
         /// Cluster
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-cluster
@@ -27,7 +29,9 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Cluster { get; set; }
+
         /// <summary>
         /// Service
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-primarytaskset.html#cfn-ecs-primarytaskset-service
@@ -35,6 +39,7 @@ namespace Humidifier.ECS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Service { get; set; }
     }
 }

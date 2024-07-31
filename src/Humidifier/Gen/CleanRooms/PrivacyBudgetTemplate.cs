@@ -29,7 +29,9 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrivacyBudgetType { get; set; }
+
         /// <summary>
         /// MembershipIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-privacybudgettemplate.html#cfn-cleanrooms-privacybudgettemplate-membershipidentifier
@@ -37,7 +39,9 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MembershipIdentifier { get; set; }
+
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-privacybudgettemplate.html#cfn-cleanrooms-privacybudgettemplate-parameters
@@ -45,6 +49,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Mutable
         /// Type: Parameters
         /// </summary>
+        [Required]
         public PrivacyBudgetTemplateTypes.Parameters Parameters { get; set; }
         /// <summary>
         /// Tags
@@ -55,6 +60,7 @@ namespace Humidifier.CleanRooms
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AutoRefresh
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-privacybudgettemplate.html#cfn-cleanrooms-privacybudgettemplate-autorefresh
@@ -62,6 +68,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AutoRefresh { get; set; }
     }
 

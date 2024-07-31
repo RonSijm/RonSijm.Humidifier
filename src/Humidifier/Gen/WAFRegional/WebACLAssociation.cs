@@ -19,7 +19,9 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceArn { get; set; }
+
         /// <summary>
         /// WebACLId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webaclassociation.html#cfn-wafregional-webaclassociation-webaclid
@@ -27,6 +29,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WebACLId { get; set; }
     }
 }

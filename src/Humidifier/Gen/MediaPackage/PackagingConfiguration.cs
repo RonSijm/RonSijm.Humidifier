@@ -34,6 +34,7 @@ namespace Humidifier.MediaPackage
         /// Type: CmafPackage
         /// </summary>
         public PackagingConfigurationTypes.CmafPackage CmafPackage { get; set; }
+
         /// <summary>
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-id
@@ -41,6 +42,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Id { get; set; }
         /// <summary>
         /// HlsPackage
@@ -50,6 +52,7 @@ namespace Humidifier.MediaPackage
         /// Type: HlsPackage
         /// </summary>
         public PackagingConfigurationTypes.HlsPackage HlsPackage { get; set; }
+
         /// <summary>
         /// PackagingGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid
@@ -57,6 +60,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PackagingGroupId { get; set; }
         /// <summary>
         /// DashPackage

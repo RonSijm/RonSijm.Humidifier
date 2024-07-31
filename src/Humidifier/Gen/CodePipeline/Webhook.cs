@@ -25,7 +25,9 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Mutable
         /// Type: WebhookAuthConfiguration
         /// </summary>
+        [Required]
         public WebhookTypes.WebhookAuthConfiguration AuthenticationConfiguration { get; set; }
+
         /// <summary>
         /// Filters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-filters
@@ -34,7 +36,9 @@ namespace Humidifier.CodePipeline
         /// Type: List
         /// ItemType: WebhookFilterRule
         /// </summary>
+        [Required]
         public List<WebhookTypes.WebhookFilterRule> Filters { get; set; }
+
         /// <summary>
         /// Authentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication
@@ -42,7 +46,9 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Authentication { get; set; }
+
         /// <summary>
         /// TargetPipeline
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipeline
@@ -50,7 +56,9 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetPipeline { get; set; }
+
         /// <summary>
         /// TargetAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetaction
@@ -58,8 +66,10 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetAction { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// TargetPipelineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion
@@ -67,6 +77,7 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic TargetPipelineVersion { get; set; }
         /// <summary>
         /// RegisterWithThirdParty

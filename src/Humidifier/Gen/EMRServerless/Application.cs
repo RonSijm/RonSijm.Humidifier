@@ -3,7 +3,7 @@ namespace Humidifier.EMRServerless
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -78,6 +78,7 @@ namespace Humidifier.EMRServerless
         /// </summary>
         public List<ApplicationTypes.ConfigurationObject> RuntimeConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-type
@@ -85,6 +86,7 @@ namespace Humidifier.EMRServerless
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// InitialCapacity
@@ -111,6 +113,7 @@ namespace Humidifier.EMRServerless
         /// Type: NetworkConfiguration
         /// </summary>
         public ApplicationTypes.NetworkConfiguration NetworkConfiguration { get; set; }
+
         /// <summary>
         /// ReleaseLabel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-releaselabel
@@ -118,6 +121,7 @@ namespace Humidifier.EMRServerless
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReleaseLabel { get; set; }
         /// <summary>
         /// Tags
@@ -388,7 +392,7 @@ namespace Humidifier.EMRServerless
             public ApplicationTypes.CloudWatchLoggingConfiguration CloudWatchLoggingConfiguration { get; set; }
         }
 
-        public class NetworkConfiguration : Humidifier.Base.BaseSubResource
+        public class NetworkConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

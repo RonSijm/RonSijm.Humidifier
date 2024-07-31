@@ -25,6 +25,7 @@ namespace Humidifier.DevOpsGuru
         /// UpdateType: Mutable
         /// Type: ResourceCollectionFilter
         /// </summary>
+        [Required]
         public ResourceCollectionTypes.ResourceCollectionFilter ResourceCollectionFilter { get; set; }
     }
 

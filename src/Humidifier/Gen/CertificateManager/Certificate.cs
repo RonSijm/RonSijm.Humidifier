@@ -29,6 +29,7 @@ namespace Humidifier.CertificateManager
         /// PrimitiveType: String
         /// </summary>
         public dynamic CertificateTransparencyLoggingPreference { get; set; }
+
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainname
@@ -36,6 +37,7 @@ namespace Humidifier.CertificateManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
         /// DomainValidationOptions

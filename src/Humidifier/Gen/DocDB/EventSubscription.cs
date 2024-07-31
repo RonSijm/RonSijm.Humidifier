@@ -45,6 +45,7 @@ namespace Humidifier.DocDB
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubscriptionName { get; set; }
+
         /// <summary>
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-eventsubscription.html#cfn-docdb-eventsubscription-snstopicarn
@@ -52,6 +53,7 @@ namespace Humidifier.DocDB
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SnsTopicArn { get; set; }
         /// <summary>
         /// SourceIds

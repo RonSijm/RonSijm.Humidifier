@@ -62,6 +62,7 @@ namespace Humidifier.EC2
         /// Type: PathFilter
         /// </summary>
         public NetworkInsightsPathTypes.PathFilter FilterAtSource { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-protocol
@@ -69,6 +70,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Protocol { get; set; }
         /// <summary>
         /// DestinationPort
@@ -78,6 +80,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DestinationPort { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-source
@@ -85,6 +88,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Source { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using CodeRepositoryTypes;
 
-    public class CodeRepository : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class CodeRepository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -19,6 +19,7 @@ namespace Humidifier.SageMaker
         }
 
         public dynamic CodeRepositoryName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// GitConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-gitconfig
@@ -26,6 +27,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: GitConfig
         /// </summary>
+        [Required]
         public CodeRepositoryTypes.GitConfig GitConfig { get; set; }
         /// <summary>
         /// Tags

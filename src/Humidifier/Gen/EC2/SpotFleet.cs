@@ -25,6 +25,7 @@ namespace Humidifier.EC2
         /// UpdateType: Mutable
         /// Type: SpotFleetRequestConfigData
         /// </summary>
+        [Required]
         public SpotFleetTypes.SpotFleetRequestConfigData SpotFleetRequestConfigData { get; set; }
     }
 

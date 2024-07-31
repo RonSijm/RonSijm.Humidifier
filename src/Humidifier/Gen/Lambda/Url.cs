@@ -35,6 +35,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic InvokeMode { get; set; }
+
         /// <summary>
         /// AuthType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-authtype
@@ -42,7 +43,9 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthType { get; set; }
+
         /// <summary>
         /// TargetFunctionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-targetfunctionarn
@@ -50,6 +53,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetFunctionArn { get; set; }
         /// <summary>
         /// Cors

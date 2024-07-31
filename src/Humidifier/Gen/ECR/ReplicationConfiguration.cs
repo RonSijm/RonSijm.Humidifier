@@ -25,6 +25,7 @@ namespace Humidifier.ECR
         /// UpdateType: Mutable
         /// Type: ReplicationConfiguration
         /// </summary>
+        [Required]
         public ReplicationConfigurationTypes.ReplicationConfiguration ReplicationConfiguration_ { get; set; }
     }
 

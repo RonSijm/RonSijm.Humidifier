@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelPackageTypes;
 
-    public class ModelPackage : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ModelPackage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -133,6 +133,9 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic ModelPackageDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ModelPackageDescription; set => ModelPackageDescription = value; }
         /// <summary>
         /// AdditionalInferenceSpecificationsToAdd
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-additionalinferencespecificationstoadd

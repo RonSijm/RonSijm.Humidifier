@@ -44,6 +44,7 @@ namespace Humidifier.Pinpoint
         /// PrimitiveType: String
         /// </summary>
         public dynamic DefaultAuthenticationMethod { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-applicationid
@@ -51,6 +52,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
     }
 }

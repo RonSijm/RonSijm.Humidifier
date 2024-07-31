@@ -25,6 +25,7 @@ namespace Humidifier.IdentityStore
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-group.html#cfn-identitystore-group-displayname
@@ -32,7 +33,9 @@ namespace Humidifier.IdentityStore
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
+
         /// <summary>
         /// IdentityStoreId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-group.html#cfn-identitystore-group-identitystoreid
@@ -40,6 +43,7 @@ namespace Humidifier.IdentityStore
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IdentityStoreId { get; set; }
     }
 }

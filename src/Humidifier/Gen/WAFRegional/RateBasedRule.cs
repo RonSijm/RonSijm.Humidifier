@@ -20,7 +20,9 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
+
         /// <summary>
         /// RateLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratelimit
@@ -28,6 +30,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic RateLimit { get; set; }
         /// <summary>
         /// MatchPredicates
@@ -38,6 +41,7 @@ namespace Humidifier.WAFRegional
         /// ItemType: Predicate
         /// </summary>
         public List<RateBasedRuleTypes.Predicate> MatchPredicates { get; set; }
+
         /// <summary>
         /// RateKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratekey
@@ -45,6 +49,7 @@ namespace Humidifier.WAFRegional
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RateKey { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

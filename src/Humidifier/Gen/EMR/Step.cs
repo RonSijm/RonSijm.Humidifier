@@ -25,7 +25,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic JobFlowId { get; set; }
+
         /// <summary>
         /// ActionOnFailure
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-actiononfailure
@@ -33,7 +35,9 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ActionOnFailure { get; set; }
+
         /// <summary>
         /// HadoopJarStep
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-hadoopjarstep
@@ -41,6 +45,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// Type: HadoopJarStepConfig
         /// </summary>
+        [Required]
         public StepTypes.HadoopJarStepConfig HadoopJarStep { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

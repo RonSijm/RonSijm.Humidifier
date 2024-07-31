@@ -36,6 +36,7 @@ namespace Humidifier.Location
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+
         /// <summary>
         /// CollectionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-collectionname
@@ -43,6 +44,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CollectionName { get; set; }
         /// <summary>
         /// Tags

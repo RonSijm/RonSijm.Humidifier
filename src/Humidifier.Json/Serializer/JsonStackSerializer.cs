@@ -42,10 +42,12 @@ public class JsonStackSerializer : IStackSerializer
         _settings.Converters.Add(new FnNotConverter());
         _settings.Converters.Add(new FnOrConverter());
 
-        _settings.Converters.Add(new FnOARNRefConverter());
-        _settings.Converters.Add(new FFnORefConverter());
+        _settings.Converters.Add(new FnStringJoinConverter());
+        _settings.Converters.Add(new FFnREFConverter());
+        _settings.Converters.Add(new FFnNameConverter());
+        _settings.Converters.Add(new FFnARNConverter());
         _settings.Converters.Add(new FnONamedListConverter());
-        _settings.Converters.Add(new FnOARNRefListConverter());
+        _settings.Converters.Add(new FFnREFListConverter());
 
         //if (injectedConverters != null)
         //{

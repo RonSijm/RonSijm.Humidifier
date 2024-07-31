@@ -3,7 +3,7 @@ namespace Humidifier.AppRunner
     using System.Collections.Generic;
     using ObservabilityConfigurationTypes;
 
-    public class ObservabilityConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ObservabilityConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

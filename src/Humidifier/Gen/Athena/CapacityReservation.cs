@@ -3,7 +3,7 @@ namespace Humidifier.Athena
     using System.Collections.Generic;
     using CapacityReservationTypes;
 
-    public class CapacityReservation : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class CapacityReservation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -29,6 +29,7 @@ namespace Humidifier.Athena
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic TargetDpus { get; set; }
         /// <summary>
         /// CapacityAssignmentConfiguration

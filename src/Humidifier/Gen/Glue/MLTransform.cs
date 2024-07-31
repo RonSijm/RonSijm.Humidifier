@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using MLTransformTypes;
 
-    public class MLTransform : Humidifier.Base.BaseResource, IHaveDescription, IHaveRole, IHaveImpliedResourceName
+    public class MLTransform : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRole
     {
         public override string AWSTypeName
         {
@@ -46,6 +46,7 @@ namespace Humidifier.Glue
         /// </summary>
         public dynamic Timeout { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-role
@@ -53,6 +54,7 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Role { get; set; }
         /// <summary>
         /// WorkerType
@@ -70,6 +72,7 @@ namespace Humidifier.Glue
         /// PrimitiveType: String
         /// </summary>
         public dynamic GlueVersion { get; set; }
+
         /// <summary>
         /// TransformParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformparameters
@@ -77,7 +80,9 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: TransformParameters
         /// </summary>
+        [Required]
         public MLTransformTypes.TransformParameters TransformParameters { get; set; }
+
         /// <summary>
         /// InputRecordTables
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-inputrecordtables
@@ -85,6 +90,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// Type: InputRecordTables
         /// </summary>
+        [Required]
         public MLTransformTypes.InputRecordTables InputRecordTables { get; set; }
         /// <summary>
         /// NumberOfWorkers

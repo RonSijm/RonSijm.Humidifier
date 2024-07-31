@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using EndpointTypes;
 
-    public class Endpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Endpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.SageMaker
         /// ItemType: VariantProperty
         /// </summary>
         public List<EndpointTypes.VariantProperty> ExcludeRetainedVariantProperties { get; set; }
+
         /// <summary>
         /// EndpointConfigName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname
@@ -43,6 +44,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointConfigName { get; set; }
         /// <summary>
         /// DeploymentConfig

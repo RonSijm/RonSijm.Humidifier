@@ -106,6 +106,7 @@ namespace Humidifier.DMS
         /// Type: RedshiftSettings
         /// </summary>
         public EndpointTypes.RedshiftSettings RedshiftSettings { get; set; }
+
         /// <summary>
         /// EndpointType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointtype
@@ -113,6 +114,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointType { get; set; }
         /// <summary>
         /// Tags
@@ -179,6 +181,7 @@ namespace Humidifier.DMS
         /// Type: ElasticsearchSettings
         /// </summary>
         public EndpointTypes.ElasticsearchSettings ElasticsearchSettings { get; set; }
+
         /// <summary>
         /// EngineName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-enginename
@@ -186,6 +189,7 @@ namespace Humidifier.DMS
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineName { get; set; }
         /// <summary>
         /// DocDbSettings

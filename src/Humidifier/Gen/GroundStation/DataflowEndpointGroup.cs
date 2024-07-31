@@ -27,6 +27,7 @@ namespace Humidifier.GroundStation
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ContactPostPassDurationSeconds { get; set; }
+
         /// <summary>
         /// EndpointDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-endpointdetails
@@ -35,6 +36,7 @@ namespace Humidifier.GroundStation
         /// Type: List
         /// ItemType: EndpointDetails
         /// </summary>
+        [Required]
         public List<DataflowEndpointGroupTypes.EndpointDetails> EndpointDetails { get; set; }
         /// <summary>
         /// Tags
@@ -237,7 +239,7 @@ namespace Humidifier.GroundStation
             public dynamic Name { get; set; }
         }
 
-        public class SecurityDetails : Humidifier.Base.BaseSubResource
+        public class SecurityDetails : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

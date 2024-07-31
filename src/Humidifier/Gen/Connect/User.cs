@@ -25,7 +25,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoutingProfileArn { get; set; }
+
         /// <summary>
         /// Username
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-username
@@ -33,7 +35,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Username { get; set; }
+
         /// <summary>
         /// PhoneConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-phoneconfig
@@ -41,7 +45,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// Type: UserPhoneConfig
         /// </summary>
+        [Required]
         public UserTypes.UserPhoneConfig PhoneConfig { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-instancearn
@@ -49,6 +55,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// DirectoryUserId
@@ -74,6 +81,7 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic HierarchyGroupArn { get; set; }
+
         /// <summary>
         /// SecurityProfileArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-user.html#cfn-connect-user-securityprofilearns
@@ -82,6 +90,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityProfileArns { get; set; }
         /// <summary>
         /// Tags

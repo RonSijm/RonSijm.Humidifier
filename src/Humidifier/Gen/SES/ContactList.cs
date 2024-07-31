@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using ContactListTypes;
 
-    public class ContactList : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ContactList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public override string AWSTypeName
         {

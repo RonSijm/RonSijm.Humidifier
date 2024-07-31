@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using ChannelTypes;
 
-    public class Channel : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -44,6 +44,7 @@ namespace Humidifier.MediaTailor
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Audiences { get; set; }
+
         /// <summary>
         /// Outputs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-outputs
@@ -52,6 +53,7 @@ namespace Humidifier.MediaTailor
         /// Type: List
         /// ItemType: RequestOutputItem
         /// </summary>
+        [Required]
         public List<ChannelTypes.RequestOutputItem> Outputs { get; set; }
         /// <summary>
         /// LogConfiguration
@@ -61,6 +63,7 @@ namespace Humidifier.MediaTailor
         /// Type: LogConfigurationForChannel
         /// </summary>
         public ChannelTypes.LogConfigurationForChannel LogConfiguration { get; set; }
+
         /// <summary>
         /// PlaybackMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-playbackmode
@@ -68,6 +71,7 @@ namespace Humidifier.MediaTailor
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PlaybackMode { get; set; }
         /// <summary>
         /// Tags

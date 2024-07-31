@@ -166,7 +166,7 @@ namespace Humidifier.MediaLive
             public dynamic Url { get; set; }
         }
 
-        public class InputVpcRequest : Humidifier.Base.BaseSubResource
+        public class InputVpcRequest : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroupIds

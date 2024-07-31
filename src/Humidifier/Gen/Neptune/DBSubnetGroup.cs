@@ -2,7 +2,7 @@ namespace Humidifier.Neptune
 {
     using System.Collections.Generic;
 
-    public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveDescription
     {
         public override string AWSTypeName
         {
@@ -13,6 +13,7 @@ namespace Humidifier.Neptune
         }
 
         public dynamic DBSubnetGroupName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// DBSubnetGroupDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-dbsubnetgroupdescription
@@ -20,7 +21,12 @@ namespace Humidifier.Neptune
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DBSubnetGroupDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => DBSubnetGroupDescription; set => DBSubnetGroupDescription = value; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbsubnetgroup.html#cfn-neptune-dbsubnetgroup-subnetids
@@ -29,6 +35,7 @@ namespace Humidifier.Neptune
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

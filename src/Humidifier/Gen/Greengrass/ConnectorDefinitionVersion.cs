@@ -21,7 +21,9 @@ namespace Humidifier.Greengrass
         /// Type: List
         /// ItemType: Connector
         /// </summary>
+        [Required]
         public List<ConnectorDefinitionVersionTypes.Connector> Connectors { get; set; }
+
         /// <summary>
         /// ConnectorDefinitionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectordefinitionid
@@ -29,6 +31,7 @@ namespace Humidifier.Greengrass
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectorDefinitionId { get; set; }
     }
 

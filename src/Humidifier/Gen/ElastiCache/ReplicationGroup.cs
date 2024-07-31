@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using ReplicationGroupTypes;
 
-    public class ReplicationGroup : Humidifier.Base.BaseResource, IHaveTags
+    public class ReplicationGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -237,6 +237,7 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ReplicasPerNodeGroup { get; set; }
+
         /// <summary>
         /// ReplicationGroupDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupdescription
@@ -244,7 +245,11 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ReplicationGroupDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ReplicationGroupDescription; set => ReplicationGroupDescription = value; }
         /// <summary>
         /// ReplicationGroupId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupid

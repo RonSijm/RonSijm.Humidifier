@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpacesThinClient
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.WorkSpacesThinClient
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyArn { get; set; }
+
         /// <summary>
         /// DesktopArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesthinclient-environment.html#cfn-workspacesthinclient-environment-desktoparn
@@ -50,6 +51,7 @@ namespace Humidifier.WorkSpacesThinClient
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DesktopArn { get; set; }
         /// <summary>
         /// DeviceCreationTags

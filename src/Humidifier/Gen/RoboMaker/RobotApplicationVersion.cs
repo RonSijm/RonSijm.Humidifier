@@ -26,6 +26,7 @@ namespace Humidifier.RoboMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic CurrentRevisionId { get; set; }
+
         /// <summary>
         /// Application
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-application
@@ -33,6 +34,7 @@ namespace Humidifier.RoboMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Application { get; set; }
     }
 }

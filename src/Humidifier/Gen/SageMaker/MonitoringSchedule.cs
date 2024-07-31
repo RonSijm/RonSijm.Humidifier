@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using MonitoringScheduleTypes;
 
-    public class MonitoringSchedule : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class MonitoringSchedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic MonitoringScheduleStatus { get; set; }
+
         /// <summary>
         /// MonitoringScheduleConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig
@@ -35,6 +36,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// Type: MonitoringScheduleConfig
         /// </summary>
+        [Required]
         public MonitoringScheduleTypes.MonitoringScheduleConfig MonitoringScheduleConfig { get; set; }
         public dynamic MonitoringScheduleName { get => GivenName; set => GivenName = value; }
         /// <summary>

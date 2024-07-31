@@ -37,6 +37,7 @@ namespace Humidifier.Config
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Parameters { get; set; }
+
         /// <summary>
         /// TargetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype
@@ -44,7 +45,9 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetType { get; set; }
+
         /// <summary>
         /// ConfigRuleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename
@@ -52,6 +55,7 @@ namespace Humidifier.Config
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigRuleName { get; set; }
         /// <summary>
         /// ResourceType
@@ -77,6 +81,7 @@ namespace Humidifier.Config
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MaximumAutomaticAttempts { get; set; }
+
         /// <summary>
         /// TargetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid
@@ -84,6 +89,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetId { get; set; }
         /// <summary>
         /// Automatic

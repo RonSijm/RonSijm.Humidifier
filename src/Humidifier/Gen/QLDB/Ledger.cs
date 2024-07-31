@@ -2,7 +2,7 @@ namespace Humidifier.QLDB
 {
     using System.Collections.Generic;
 
-    public class Ledger : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Ledger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -19,6 +19,7 @@ namespace Humidifier.QLDB
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PermissionsMode { get; set; }
         /// <summary>
         /// DeletionProtection

@@ -54,6 +54,7 @@ namespace Humidifier.QBusiness
         /// PrimitiveType: String
         /// </summary>
         public dynamic WelcomeMessage { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-applicationid
@@ -61,6 +62,7 @@ namespace Humidifier.QBusiness
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// RoleArn

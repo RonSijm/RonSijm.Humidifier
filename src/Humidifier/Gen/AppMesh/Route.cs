@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using RouteTypes;
 
-    public class Route : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Route : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -31,7 +31,9 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MeshName { get; set; }
+
         /// <summary>
         /// VirtualRouterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-virtualroutername
@@ -39,6 +41,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VirtualRouterName { get; set; }
         /// <summary>
         /// MeshOwner
@@ -49,6 +52,7 @@ namespace Humidifier.AppMesh
         /// </summary>
         public dynamic MeshOwner { get; set; }
         public dynamic RouteName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Spec
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-spec
@@ -56,6 +60,7 @@ namespace Humidifier.AppMesh
         /// UpdateType: Mutable
         /// Type: RouteSpec
         /// </summary>
+        [Required]
         public RouteTypes.RouteSpec Spec { get; set; }
         /// <summary>
         /// Tags

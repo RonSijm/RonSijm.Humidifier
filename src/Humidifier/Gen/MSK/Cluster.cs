@@ -25,7 +25,9 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic KafkaVersion { get; set; }
+
         /// <summary>
         /// NumberOfBrokerNodes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes
@@ -33,6 +35,7 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic NumberOfBrokerNodes { get; set; }
         /// <summary>
         /// EncryptionInfo
@@ -74,6 +77,7 @@ namespace Humidifier.MSK
         /// Type: ConfigurationInfo
         /// </summary>
         public ClusterTypes.ConfigurationInfo ConfigurationInfo { get; set; }
+
         /// <summary>
         /// BrokerNodeGroupInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo
@@ -81,6 +85,7 @@ namespace Humidifier.MSK
         /// UpdateType: Mutable
         /// Type: BrokerNodeGroupInfo
         /// </summary>
+        [Required]
         public ClusterTypes.BrokerNodeGroupInfo BrokerNodeGroupInfo { get; set; }
         /// <summary>
         /// EnhancedMonitoring

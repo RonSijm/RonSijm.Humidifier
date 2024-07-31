@@ -27,6 +27,7 @@ namespace Humidifier.Forecast
         /// </summary>
         public dynamic DataFrequency { get; set; }
         public dynamic DatasetName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Schema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-schema
@@ -34,7 +35,9 @@ namespace Humidifier.Forecast
         /// UpdateType: Mutable
         /// Type: Schema
         /// </summary>
+        [Required]
         public DatasetTypes.Schema Schema { get; set; }
+
         /// <summary>
         /// DatasetType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datasettype
@@ -42,7 +45,9 @@ namespace Humidifier.Forecast
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DatasetType { get; set; }
+
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-domain
@@ -50,6 +55,7 @@ namespace Humidifier.Forecast
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Domain { get; set; }
         /// <summary>
         /// EncryptionConfig

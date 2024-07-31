@@ -3,7 +3,7 @@ namespace Humidifier.Shield
     using System.Collections.Generic;
     using ProtectionTypes;
 
-    public class Protection : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Protection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.Shield
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceArn { get; set; }
         /// <summary>
         /// HealthCheckArns

@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using StorageSystemTypes;
 
-    public class StorageSystem : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class StorageSystem : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.DataSync
         /// Type: ServerCredentials
         /// </summary>
         public StorageSystemTypes.ServerCredentials ServerCredentials { get; set; }
+
         /// <summary>
         /// ServerConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-serverconfiguration
@@ -35,6 +36,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// Type: ServerConfiguration
         /// </summary>
+        [Required]
         public StorageSystemTypes.ServerConfiguration ServerConfiguration { get; set; }
         /// <summary>
         /// CloudWatchLogGroupArn
@@ -44,6 +46,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic CloudWatchLogGroupArn { get; set; }
+
         /// <summary>
         /// SystemType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-systemtype
@@ -51,7 +54,9 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SystemType { get; set; }
+
         /// <summary>
         /// AgentArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-agentarns
@@ -60,6 +65,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AgentArns { get; set; }
         /// <summary>
         /// Tags

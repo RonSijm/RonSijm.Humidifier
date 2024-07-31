@@ -6495,7 +6495,7 @@ namespace Humidifier.MediaLive
             public ChannelTypes.VideoSelectorPid VideoSelectorPid { get; set; }
         }
 
-        public class VpcOutputSettings : Humidifier.Base.BaseSubResource
+        public class VpcOutputSettings : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// PublicAddressAllocationIds

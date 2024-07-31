@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using TLSInspectionConfigurationTypes;
 
-    public class TLSInspectionConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class TLSInspectionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.NetworkFirewall
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// TLSInspectionConfiguration_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-tlsinspectionconfiguration.html#cfn-networkfirewall-tlsinspectionconfiguration-tlsinspectionconfiguration
@@ -44,6 +45,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Mutable
         /// Type: TLSInspectionConfiguration
         /// </summary>
+        [Required]
         public TLSInspectionConfigurationTypes.TLSInspectionConfiguration TLSInspectionConfiguration_ { get; set; }
     }
 

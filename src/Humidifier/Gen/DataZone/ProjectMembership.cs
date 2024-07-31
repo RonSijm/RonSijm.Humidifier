@@ -20,7 +20,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProjectIdentifier { get; set; }
+
         /// <summary>
         /// Designation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-projectmembership.html#cfn-datazone-projectmembership-designation
@@ -28,7 +30,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Designation { get; set; }
+
         /// <summary>
         /// Member
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-projectmembership.html#cfn-datazone-projectmembership-member
@@ -36,7 +40,9 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// Type: Member
         /// </summary>
+        [Required]
         public ProjectMembershipTypes.Member Member { get; set; }
+
         /// <summary>
         /// DomainIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-projectmembership.html#cfn-datazone-projectmembership-domainidentifier
@@ -44,6 +50,7 @@ namespace Humidifier.DataZone
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainIdentifier { get; set; }
     }
 

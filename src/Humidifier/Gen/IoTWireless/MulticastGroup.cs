@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using MulticastGroupTypes;
 
-    public class MulticastGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class MulticastGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.IoTWireless
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// LoRaWAN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#cfn-iotwireless-multicastgroup-lorawan
@@ -35,6 +36,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// Type: LoRaWAN
         /// </summary>
+        [Required]
         public MulticastGroupTypes.LoRaWAN LoRaWAN { get; set; }
         /// <summary>
         /// DisassociateWirelessDevice

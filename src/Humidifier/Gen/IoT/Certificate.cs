@@ -25,6 +25,7 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Status { get; set; }
         /// <summary>
         /// CACertificatePem

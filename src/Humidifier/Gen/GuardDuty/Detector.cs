@@ -34,6 +34,7 @@ namespace Humidifier.GuardDuty
         /// Type: CFNDataSourceConfigurations
         /// </summary>
         public DetectorTypes.CFNDataSourceConfigurations DataSources { get; set; }
+
         /// <summary>
         /// Enable
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable
@@ -41,6 +42,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic Enable { get; set; }
         /// <summary>
         /// Features

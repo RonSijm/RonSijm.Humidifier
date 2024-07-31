@@ -19,6 +19,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClientVpnEndpointId { get; set; }
         /// <summary>
         /// Description
@@ -36,6 +37,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic AccessGroupId { get; set; }
+
         /// <summary>
         /// TargetNetworkCidr
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-targetnetworkcidr
@@ -43,6 +45,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetNetworkCidr { get; set; }
         /// <summary>
         /// AuthorizeAllGroups

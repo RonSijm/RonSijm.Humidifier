@@ -3,7 +3,7 @@ namespace Humidifier.GroundStation
     using System.Collections.Generic;
     using MissionProfileTypes;
 
-    public class MissionProfile : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class MissionProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -36,6 +36,7 @@ namespace Humidifier.GroundStation
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ContactPostPassDurationSeconds { get; set; }
+
         /// <summary>
         /// MinimumViableContactDurationSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-minimumviablecontactdurationseconds
@@ -43,7 +44,9 @@ namespace Humidifier.GroundStation
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic MinimumViableContactDurationSeconds { get; set; }
+
         /// <summary>
         /// DataflowEdges
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-dataflowedges
@@ -52,6 +55,7 @@ namespace Humidifier.GroundStation
         /// Type: List
         /// ItemType: DataflowEdge
         /// </summary>
+        [Required]
         public List<MissionProfileTypes.DataflowEdge> DataflowEdges { get; set; }
         /// <summary>
         /// StreamsKmsRole
@@ -61,6 +65,7 @@ namespace Humidifier.GroundStation
         /// PrimitiveType: String
         /// </summary>
         public dynamic StreamsKmsRole { get; set; }
+
         /// <summary>
         /// TrackingConfigArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-trackingconfigarn
@@ -68,6 +73,7 @@ namespace Humidifier.GroundStation
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TrackingConfigArn { get; set; }
         /// <summary>
         /// Tags

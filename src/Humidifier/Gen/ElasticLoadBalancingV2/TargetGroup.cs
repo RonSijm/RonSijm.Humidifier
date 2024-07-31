@@ -3,7 +3,7 @@ namespace Humidifier.ElasticLoadBalancingV2
     using System.Collections.Generic;
     using TargetGroupTypes;
 
-    public class TargetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveImpliedResourceName
+    public class TargetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId
     {
         public class Attributes
         {

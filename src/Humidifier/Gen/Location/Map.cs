@@ -3,7 +3,7 @@ namespace Humidifier.Location
     using System.Collections.Generic;
     using MapTypes;
 
-    public class Map : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Map : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.Location
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#cfn-location-map-configuration
@@ -37,6 +38,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// Type: MapConfiguration
         /// </summary>
+        [Required]
         public MapTypes.MapConfiguration Configuration { get; set; }
         /// <summary>
         /// PricingPlan

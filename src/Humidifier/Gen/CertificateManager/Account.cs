@@ -25,6 +25,7 @@ namespace Humidifier.CertificateManager
         /// UpdateType: Mutable
         /// Type: ExpiryEventsConfiguration
         /// </summary>
+        [Required]
         public AccountTypes.ExpiryEventsConfiguration ExpiryEventsConfiguration { get; set; }
     }
 

@@ -28,6 +28,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IndexName { get; set; }
         /// <summary>
         /// Description
@@ -62,6 +63,7 @@ namespace Humidifier.Location
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// DataSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-datasource
@@ -69,6 +71,7 @@ namespace Humidifier.Location
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataSource { get; set; }
     }
 

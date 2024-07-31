@@ -27,6 +27,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Mutable
         /// Type: ResolutionTechniques
         /// </summary>
+        [Required]
         public MatchingWorkflowTypes.ResolutionTechniques ResolutionTechniques { get; set; }
         /// <summary>
         /// Description
@@ -36,6 +37,7 @@ namespace Humidifier.EntityResolution
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// InputSourceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-matchingworkflow.html#cfn-entityresolution-matchingworkflow-inputsourceconfig
@@ -44,7 +46,9 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: InputSource
         /// </summary>
+        [Required]
         public List<MatchingWorkflowTypes.InputSource> InputSourceConfig { get; set; }
+
         /// <summary>
         /// WorkflowName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-matchingworkflow.html#cfn-entityresolution-matchingworkflow-workflowname
@@ -52,7 +56,9 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkflowName { get; set; }
+
         /// <summary>
         /// OutputSourceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-matchingworkflow.html#cfn-entityresolution-matchingworkflow-outputsourceconfig
@@ -61,7 +67,9 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: OutputSource
         /// </summary>
+        [Required]
         public List<MatchingWorkflowTypes.OutputSource> OutputSourceConfig { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-matchingworkflow.html#cfn-entityresolution-matchingworkflow-rolearn
@@ -69,6 +77,7 @@ namespace Humidifier.EntityResolution
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

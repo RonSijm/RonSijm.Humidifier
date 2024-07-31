@@ -27,6 +27,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TypeName { get; set; }
         /// <summary>
         /// PipelineConfig
@@ -140,6 +141,7 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic RequestMappingTemplateS3Location { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid
@@ -147,7 +149,9 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
+
         /// <summary>
         /// FieldName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
@@ -155,6 +159,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FieldName { get; set; }
     }
 

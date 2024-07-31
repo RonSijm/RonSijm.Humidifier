@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using DocumentTypes;
 
-    public class Document : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Document : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -30,6 +30,7 @@ namespace Humidifier.SSM
         /// ItemType: DocumentRequires
         /// </summary>
         public List<DocumentTypes.DocumentRequires> Requires { get; set; }
+
         /// <summary>
         /// Content
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content
@@ -37,6 +38,7 @@ namespace Humidifier.SSM
         /// UpdateType: Conditional
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Content { get; set; }
         /// <summary>
         /// TargetType

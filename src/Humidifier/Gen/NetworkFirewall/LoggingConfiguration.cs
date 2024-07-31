@@ -21,6 +21,7 @@ namespace Humidifier.NetworkFirewall
         /// PrimitiveType: String
         /// </summary>
         public dynamic FirewallName { get; set; }
+
         /// <summary>
         /// FirewallArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallarn
@@ -28,7 +29,9 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirewallArn { get; set; }
+
         /// <summary>
         /// LoggingConfiguration_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-loggingconfiguration
@@ -36,6 +39,7 @@ namespace Humidifier.NetworkFirewall
         /// UpdateType: Mutable
         /// Type: LoggingConfiguration
         /// </summary>
+        [Required]
         public LoggingConfigurationTypes.LoggingConfiguration LoggingConfiguration_ { get; set; }
     }
 

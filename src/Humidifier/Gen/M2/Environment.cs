@@ -3,7 +3,7 @@ namespace Humidifier.M2
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -78,6 +78,7 @@ namespace Humidifier.M2
         /// </summary>
         public dynamic SubnetIds { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// EngineType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-enginetype
@@ -85,6 +86,7 @@ namespace Humidifier.M2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineType { get; set; }
         /// <summary>
         /// PubliclyAccessible
@@ -94,6 +96,7 @@ namespace Humidifier.M2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PubliclyAccessible { get; set; }
+
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-instancetype
@@ -101,6 +104,7 @@ namespace Humidifier.M2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// StorageConfigurations

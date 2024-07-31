@@ -115,6 +115,7 @@ namespace Humidifier.Lambda
         /// Type: DocumentDBEventSourceConfig
         /// </summary>
         public EventSourceMappingTypes.DocumentDBEventSourceConfig DocumentDBEventSourceConfig { get; set; }
+
         /// <summary>
         /// FunctionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-functionname
@@ -122,6 +123,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionName { get; set; }
         /// <summary>
         /// TumblingWindowInSeconds

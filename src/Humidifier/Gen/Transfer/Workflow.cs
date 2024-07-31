@@ -27,6 +27,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: WorkflowStep
         /// </summary>
+        [Required]
         public List<WorkflowTypes.WorkflowStep> Steps { get; set; }
         /// <summary>
         /// Description

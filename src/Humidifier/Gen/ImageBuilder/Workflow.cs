@@ -2,7 +2,7 @@ namespace Humidifier.ImageBuilder
 {
     using System.Collections.Generic;
 
-    public class Workflow : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -24,6 +24,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -41,6 +42,7 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-workflow.html#cfn-imagebuilder-workflow-version
@@ -48,6 +50,7 @@ namespace Humidifier.ImageBuilder
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Version { get; set; }
         /// <summary>
         /// ChangeDescription

@@ -25,6 +25,7 @@ namespace Humidifier.GlobalAccelerator
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ListenerArn { get; set; }
         /// <summary>
         /// PortOverrides
@@ -43,6 +44,7 @@ namespace Humidifier.GlobalAccelerator
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic HealthCheckIntervalSeconds { get; set; }
+
         /// <summary>
         /// EndpointGroupRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-endpointgroupregion
@@ -50,6 +52,7 @@ namespace Humidifier.GlobalAccelerator
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EndpointGroupRegion { get; set; }
         /// <summary>
         /// HealthCheckPath

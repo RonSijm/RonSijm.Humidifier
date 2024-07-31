@@ -3,7 +3,7 @@ namespace Humidifier.SecurityHub
     using System.Collections.Generic;
     using ConfigurationPolicyTypes;
 
-    public class ConfigurationPolicy : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ConfigurationPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.SecurityHub
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ConfigurationPolicy_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-configurationpolicy.html#cfn-securityhub-configurationpolicy-configurationpolicy
@@ -37,6 +38,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Mutable
         /// Type: Policy
         /// </summary>
+        [Required]
         public ConfigurationPolicyTypes.Policy ConfigurationPolicy_ { get; set; }
         /// <summary>
         /// Tags

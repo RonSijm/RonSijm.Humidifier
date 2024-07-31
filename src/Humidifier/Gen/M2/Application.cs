@@ -3,7 +3,7 @@ namespace Humidifier.M2
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -35,6 +35,7 @@ namespace Humidifier.M2
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-definition
@@ -42,7 +43,9 @@ namespace Humidifier.M2
         /// UpdateType: Mutable
         /// Type: Definition
         /// </summary>
+        [Required]
         public ApplicationTypes.Definition Definition { get; set; }
+
         /// <summary>
         /// EngineType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-enginetype
@@ -50,6 +53,7 @@ namespace Humidifier.M2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineType { get; set; }
         /// <summary>
         /// RoleArn

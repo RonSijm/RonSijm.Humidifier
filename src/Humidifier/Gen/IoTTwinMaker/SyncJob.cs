@@ -27,7 +27,9 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SyncSource { get; set; }
+
         /// <summary>
         /// SyncRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncrole
@@ -35,7 +37,9 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SyncRole { get; set; }
+
         /// <summary>
         /// WorkspaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-workspaceid
@@ -43,6 +47,7 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkspaceId { get; set; }
         /// <summary>
         /// Tags

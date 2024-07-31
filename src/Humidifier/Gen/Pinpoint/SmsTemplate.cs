@@ -24,6 +24,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TemplateName { get; set; }
         /// <summary>
         /// TemplateDescription
@@ -41,6 +42,7 @@ namespace Humidifier.Pinpoint
         /// PrimitiveType: String
         /// </summary>
         public dynamic DefaultSubstitutions { get; set; }
+
         /// <summary>
         /// Body
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smstemplate.html#cfn-pinpoint-smstemplate-body
@@ -48,6 +50,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Body { get; set; }
         /// <summary>
         /// Tags

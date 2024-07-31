@@ -3,7 +3,7 @@ namespace Humidifier.CodeCommit
     using System.Collections.Generic;
     using RepositoryTypes;
 
-    public class Repository : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Repository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -56,6 +56,9 @@ namespace Humidifier.CodeCommit
         /// PrimitiveType: String
         /// </summary>
         public dynamic RepositoryDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => RepositoryDescription; set => RepositoryDescription = value; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-tags

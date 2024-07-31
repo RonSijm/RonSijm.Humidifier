@@ -2,7 +2,7 @@ namespace Humidifier.Deadline
 {
     using System.Collections.Generic;
 
-    public class LicenseEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId
+    public class LicenseEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveSubnetIds
     {
         public class Attributes
         {
@@ -28,7 +28,9 @@ namespace Humidifier.Deadline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpcId { get; set; }
+
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-licenseendpoint.html#cfn-deadline-licenseendpoint-securitygroupids
@@ -37,7 +39,9 @@ namespace Humidifier.Deadline
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupIds { get; set; }
+
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-licenseendpoint.html#cfn-deadline-licenseendpoint-subnetids
@@ -46,6 +50,7 @@ namespace Humidifier.Deadline
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags

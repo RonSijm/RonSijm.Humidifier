@@ -28,6 +28,7 @@ namespace Humidifier.GuardDuty
         /// PrimitiveType: String
         /// </summary>
         public dynamic MemberId { get; set; }
+
         /// <summary>
         /// Email
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-member.html#cfn-guardduty-member-email
@@ -35,6 +36,7 @@ namespace Humidifier.GuardDuty
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Email { get; set; }
         /// <summary>
         /// Message

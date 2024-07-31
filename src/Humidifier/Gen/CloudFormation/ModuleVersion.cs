@@ -31,7 +31,9 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ModulePackage { get; set; }
+
         /// <summary>
         /// ModuleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#cfn-cloudformation-moduleversion-modulename
@@ -39,6 +41,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ModuleName { get; set; }
     }
 }

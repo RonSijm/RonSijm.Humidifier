@@ -3,7 +3,7 @@ namespace Humidifier.EMR
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -101,6 +101,7 @@ namespace Humidifier.EMR
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic EbsRootVolumeThroughput { get; set; }
+
         /// <summary>
         /// Instances
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances
@@ -108,7 +109,9 @@ namespace Humidifier.EMR
         /// UpdateType: Conditional
         /// Type: JobFlowInstancesConfig
         /// </summary>
+        [Required]
         public ClusterTypes.JobFlowInstancesConfig Instances { get; set; }
+
         /// <summary>
         /// JobFlowRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-jobflowrole
@@ -116,6 +119,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic JobFlowRole { get; set; }
         /// <summary>
         /// KerberosAttributes
@@ -191,6 +195,7 @@ namespace Humidifier.EMR
         /// PrimitiveType: String
         /// </summary>
         public dynamic SecurityConfiguration { get; set; }
+
         /// <summary>
         /// ServiceRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-servicerole
@@ -198,6 +203,7 @@ namespace Humidifier.EMR
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceRole { get; set; }
         /// <summary>
         /// StepConcurrencyLevel

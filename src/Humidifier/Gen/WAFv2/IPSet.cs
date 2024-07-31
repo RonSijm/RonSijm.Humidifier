@@ -2,7 +2,7 @@ namespace Humidifier.WAFv2
 {
     using System.Collections.Generic;
 
-    public class IPSet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class IPSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Addresses { get; set; }
         /// <summary>
         /// Description
@@ -35,6 +36,7 @@ namespace Humidifier.WAFv2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-scope
@@ -42,7 +44,9 @@ namespace Humidifier.WAFv2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Scope { get; set; }
+
         /// <summary>
         /// IPAddressVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-ipset.html#cfn-wafv2-ipset-ipaddressversion
@@ -50,6 +54,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IPAddressVersion { get; set; }
         /// <summary>
         /// Tags

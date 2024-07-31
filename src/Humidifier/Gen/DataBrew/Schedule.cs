@@ -2,7 +2,7 @@ namespace Humidifier.DataBrew
 {
     using System.Collections.Generic;
 
-    public class Schedule : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Schedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -21,6 +21,7 @@ namespace Humidifier.DataBrew
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic JobNames { get; set; }
+
         /// <summary>
         /// CronExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-cronexpression
@@ -28,6 +29,7 @@ namespace Humidifier.DataBrew
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CronExpression { get; set; }
         /// <summary>
         /// Tags

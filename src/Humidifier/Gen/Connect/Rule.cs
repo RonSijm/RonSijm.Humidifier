@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using RuleTypes;
 
-    public class Rule : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Function { get; set; }
+
         /// <summary>
         /// TriggerEventSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-triggereventsource
@@ -33,7 +35,9 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// Type: RuleTriggerEventSource
         /// </summary>
+        [Required]
         public RuleTypes.RuleTriggerEventSource TriggerEventSource { get; set; }
+
         /// <summary>
         /// Actions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-actions
@@ -41,7 +45,9 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// Type: Actions
         /// </summary>
+        [Required]
         public RuleTypes.Actions Actions { get; set; }
+
         /// <summary>
         /// InstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-instancearn
@@ -49,6 +55,7 @@ namespace Humidifier.Connect
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
         /// Tags
@@ -60,6 +67,7 @@ namespace Humidifier.Connect
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// PublishStatus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-publishstatus
@@ -67,6 +75,7 @@ namespace Humidifier.Connect
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PublishStatus { get; set; }
     }
 

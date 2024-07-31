@@ -3,7 +3,7 @@ namespace Humidifier.RedshiftServerless
     using System.Collections.Generic;
     using NamespaceTypes;
 
-    public class Namespace : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Namespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

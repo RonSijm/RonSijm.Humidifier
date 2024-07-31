@@ -31,6 +31,7 @@ namespace Humidifier.CloudFormation
         /// PrimitiveType: String
         /// </summary>
         public dynamic ExecutionRoleArn { get; set; }
+
         /// <summary>
         /// TypeName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#cfn-cloudformation-resourceversion-typename
@@ -38,6 +39,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TypeName { get; set; }
         /// <summary>
         /// LoggingConfig
@@ -47,6 +49,7 @@ namespace Humidifier.CloudFormation
         /// Type: LoggingConfig
         /// </summary>
         public ResourceVersionTypes.LoggingConfig LoggingConfig { get; set; }
+
         /// <summary>
         /// SchemaHandlerPackage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#cfn-cloudformation-resourceversion-schemahandlerpackage
@@ -54,6 +57,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SchemaHandlerPackage { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using FunctionConfigurationTypes;
 
-    public class FunctionConfiguration : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class FunctionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -94,6 +94,7 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic CodeS3Location { get; set; }
+
         /// <summary>
         /// DataSourceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename
@@ -101,6 +102,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DataSourceName { get; set; }
         /// <summary>
         /// FunctionVersion
@@ -118,6 +120,7 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic RequestMappingTemplateS3Location { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-apiid
@@ -125,6 +128,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
     }
 

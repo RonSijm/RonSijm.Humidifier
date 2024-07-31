@@ -33,7 +33,9 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DestinationName { get; set; }
+
         /// <summary>
         /// Sidewalk
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdeviceimporttask.html#cfn-iotwireless-wirelessdeviceimporttask-sidewalk
@@ -41,6 +43,7 @@ namespace Humidifier.IoTWireless
         /// UpdateType: Mutable
         /// Type: Sidewalk
         /// </summary>
+        [Required]
         public WirelessDeviceImportTaskTypes.Sidewalk Sidewalk { get; set; }
         /// <summary>
         /// Tags

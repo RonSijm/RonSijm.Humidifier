@@ -25,7 +25,9 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserGroupId { get; set; }
+
         /// <summary>
         /// Engine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-engine
@@ -33,7 +35,9 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Engine { get; set; }
+
         /// <summary>
         /// UserIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-userids
@@ -42,6 +46,7 @@ namespace Humidifier.ElastiCache
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic UserIds { get; set; }
         /// <summary>
         /// Tags

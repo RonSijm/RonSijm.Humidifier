@@ -3,7 +3,7 @@ namespace Humidifier.Panorama
     using System.Collections.Generic;
     using ApplicationInstanceTypes;
 
-    public class ApplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class ApplicationInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -32,6 +32,7 @@ namespace Humidifier.Panorama
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DefaultRuntimeContextDevice { get; set; }
         /// <summary>
         /// Description
@@ -65,6 +66,7 @@ namespace Humidifier.Panorama
         /// PrimitiveType: String
         /// </summary>
         public dynamic RuntimeRoleArn { get; set; }
+
         /// <summary>
         /// ManifestPayload
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#cfn-panorama-applicationinstance-manifestpayload
@@ -72,6 +74,7 @@ namespace Humidifier.Panorama
         /// UpdateType: Immutable
         /// Type: ManifestPayload
         /// </summary>
+        [Required]
         public ApplicationInstanceTypes.ManifestPayload ManifestPayload { get; set; }
         /// <summary>
         /// Tags

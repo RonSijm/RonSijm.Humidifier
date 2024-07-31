@@ -19,7 +19,9 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CacheSecurityGroupName { get; set; }
+
         /// <summary>
         /// EC2SecurityGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupname
@@ -27,6 +29,7 @@ namespace Humidifier.ElastiCache
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EC2SecurityGroupName { get; set; }
         /// <summary>
         /// EC2SecurityGroupOwnerId

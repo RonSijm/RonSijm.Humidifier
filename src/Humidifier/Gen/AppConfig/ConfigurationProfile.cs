@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using ConfigurationProfileTypes;
 
-    public class ConfigurationProfile : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class ConfigurationProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LocationUri { get; set; }
         /// <summary>
         /// Type
@@ -68,6 +69,7 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: String
         /// </summary>
         public dynamic RetrievalRoleArn { get; set; }
+
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-applicationid
@@ -75,6 +77,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Tags

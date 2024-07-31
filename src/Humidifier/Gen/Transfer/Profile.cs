@@ -25,7 +25,9 @@ namespace Humidifier.Transfer
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic As2Id { get; set; }
+
         /// <summary>
         /// ProfileType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-profile.html#cfn-transfer-profile-profiletype
@@ -33,6 +35,7 @@ namespace Humidifier.Transfer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProfileType { get; set; }
         /// <summary>
         /// CertificateIds

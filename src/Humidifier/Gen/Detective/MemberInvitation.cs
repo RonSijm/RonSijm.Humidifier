@@ -19,6 +19,7 @@ namespace Humidifier.Detective
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MemberId { get; set; }
         /// <summary>
         /// Message
@@ -28,6 +29,7 @@ namespace Humidifier.Detective
         /// PrimitiveType: String
         /// </summary>
         public dynamic Message { get; set; }
+
         /// <summary>
         /// GraphArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-grapharn
@@ -35,6 +37,7 @@ namespace Humidifier.Detective
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GraphArn { get; set; }
         /// <summary>
         /// DisableEmailNotification
@@ -44,6 +47,7 @@ namespace Humidifier.Detective
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic DisableEmailNotification { get; set; }
+
         /// <summary>
         /// MemberEmailAddress
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-memberinvitation.html#cfn-detective-memberinvitation-memberemailaddress
@@ -51,6 +55,7 @@ namespace Humidifier.Detective
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MemberEmailAddress { get; set; }
     }
 }

@@ -20,7 +20,9 @@ namespace Humidifier.ASK
         /// UpdateType: Mutable
         /// Type: AuthenticationConfiguration
         /// </summary>
+        [Required]
         public SkillTypes.AuthenticationConfiguration AuthenticationConfiguration { get; set; }
+
         /// <summary>
         /// VendorId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-vendorid
@@ -28,7 +30,9 @@ namespace Humidifier.ASK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VendorId { get; set; }
+
         /// <summary>
         /// SkillPackage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage
@@ -36,6 +40,7 @@ namespace Humidifier.ASK
         /// UpdateType: Mutable
         /// Type: SkillPackage
         /// </summary>
+        [Required]
         public SkillTypes.SkillPackage SkillPackage { get; set; }
     }
 

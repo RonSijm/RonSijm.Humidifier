@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using TemplateTypes;
 
-    public class Template : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Template : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -45,6 +45,7 @@ namespace Humidifier.QuickSight
         /// Type: TemplateVersionDefinition
         /// </summary>
         public TemplateTypes.TemplateVersionDefinition Definition { get; set; }
+
         /// <summary>
         /// AwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-awsaccountid
@@ -52,6 +53,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AwsAccountId { get; set; }
         /// <summary>
         /// Permissions
@@ -79,6 +81,7 @@ namespace Humidifier.QuickSight
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// TemplateId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-templateid
@@ -86,6 +89,7 @@ namespace Humidifier.QuickSight
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TemplateId { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

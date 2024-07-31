@@ -19,6 +19,7 @@ namespace Humidifier.MSK
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterArn { get; set; }
         /// <summary>
         /// SecretArnList

@@ -24,7 +24,9 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Policy { get; set; }
+
         /// <summary>
         /// RegistryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registrypolicy.html#cfn-eventschemas-registrypolicy-registryname
@@ -32,6 +34,7 @@ namespace Humidifier.EventSchemas
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RegistryName { get; set; }
         /// <summary>
         /// RevisionId

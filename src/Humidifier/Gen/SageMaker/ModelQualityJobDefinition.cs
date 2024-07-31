@@ -26,6 +26,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ModelQualityAppSpecification
         /// </summary>
+        [Required]
         public ModelQualityJobDefinitionTypes.ModelQualityAppSpecification ModelQualityAppSpecification { get; set; }
         /// <summary>
         /// EndpointName
@@ -59,6 +60,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic JobDefinitionName { get; set; }
+
         /// <summary>
         /// ModelQualityJobInput
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput
@@ -66,7 +68,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: ModelQualityJobInput
         /// </summary>
+        [Required]
         public ModelQualityJobDefinitionTypes.ModelQualityJobInput ModelQualityJobInput { get; set; }
+
         /// <summary>
         /// JobResources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobresources
@@ -74,6 +78,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: MonitoringResources
         /// </summary>
+        [Required]
         public ModelQualityJobDefinitionTypes.MonitoringResources JobResources { get; set; }
         /// <summary>
         /// NetworkConfig
@@ -83,6 +88,7 @@ namespace Humidifier.SageMaker
         /// Type: NetworkConfig
         /// </summary>
         public ModelQualityJobDefinitionTypes.NetworkConfig NetworkConfig { get; set; }
+
         /// <summary>
         /// ModelQualityJobOutputConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjoboutputconfig
@@ -90,7 +96,9 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// Type: MonitoringOutputConfig
         /// </summary>
+        [Required]
         public ModelQualityJobDefinitionTypes.MonitoringOutputConfig ModelQualityJobOutputConfig { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-rolearn
@@ -98,6 +106,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

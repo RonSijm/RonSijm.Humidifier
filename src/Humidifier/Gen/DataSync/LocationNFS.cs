@@ -43,6 +43,7 @@ namespace Humidifier.DataSync
         /// Type: MountOptions
         /// </summary>
         public LocationNFSTypes.MountOptions MountOptions { get; set; }
+
         /// <summary>
         /// OnPremConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-onpremconfig
@@ -50,6 +51,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// Type: OnPremConfig
         /// </summary>
+        [Required]
         public LocationNFSTypes.OnPremConfig OnPremConfig { get; set; }
         /// <summary>
         /// Tags

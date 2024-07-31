@@ -3,7 +3,7 @@ namespace Humidifier.KinesisFirehose
     using System.Collections.Generic;
     using DeliveryStreamTypes;
 
-    public class DeliveryStream : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DeliveryStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -1990,7 +1990,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic DurationInSeconds { get; set; }
         }
 
-        public class VpcConfiguration : Humidifier.Base.BaseSubResource
+        public class VpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

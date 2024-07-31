@@ -20,6 +20,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionName { get; set; }
         /// <summary>
         /// MaximumRetryAttempts
@@ -37,6 +38,7 @@ namespace Humidifier.Lambda
         /// Type: DestinationConfig
         /// </summary>
         public EventInvokeConfigTypes.DestinationConfig DestinationConfig { get; set; }
+
         /// <summary>
         /// Qualifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-qualifier
@@ -44,6 +46,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Qualifier { get; set; }
         /// <summary>
         /// MaximumEventAgeInSeconds

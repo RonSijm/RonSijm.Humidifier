@@ -30,6 +30,7 @@ namespace Humidifier.Panorama
         /// PrimitiveType: String
         /// </summary>
         public dynamic UpdatedLatestPatchVersion { get; set; }
+
         /// <summary>
         /// PatchVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-patchversion
@@ -37,6 +38,7 @@ namespace Humidifier.Panorama
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PatchVersion { get; set; }
         /// <summary>
         /// MarkLatest
@@ -46,6 +48,7 @@ namespace Humidifier.Panorama
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic MarkLatest { get; set; }
+
         /// <summary>
         /// PackageId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-packageid
@@ -53,6 +56,7 @@ namespace Humidifier.Panorama
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PackageId { get; set; }
         /// <summary>
         /// OwnerAccount
@@ -62,6 +66,7 @@ namespace Humidifier.Panorama
         /// PrimitiveType: String
         /// </summary>
         public dynamic OwnerAccount { get; set; }
+
         /// <summary>
         /// PackageVersion_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-packageversion
@@ -69,6 +74,7 @@ namespace Humidifier.Panorama
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PackageVersion_ { get; set; }
     }
 }

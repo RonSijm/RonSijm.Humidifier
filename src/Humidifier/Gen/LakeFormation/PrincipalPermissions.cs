@@ -26,7 +26,9 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// Type: Resource
         /// </summary>
+        [Required]
         public PrincipalPermissionsTypes.Resource Resource { get; set; }
+
         /// <summary>
         /// Permissions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#cfn-lakeformation-principalpermissions-permissions
@@ -35,6 +37,7 @@ namespace Humidifier.LakeFormation
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Permissions { get; set; }
         /// <summary>
         /// Catalog
@@ -44,6 +47,7 @@ namespace Humidifier.LakeFormation
         /// PrimitiveType: String
         /// </summary>
         public dynamic Catalog { get; set; }
+
         /// <summary>
         /// Principal
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#cfn-lakeformation-principalpermissions-principal
@@ -51,7 +55,9 @@ namespace Humidifier.LakeFormation
         /// UpdateType: Immutable
         /// Type: DataLakePrincipal
         /// </summary>
+        [Required]
         public PrincipalPermissionsTypes.DataLakePrincipal Principal { get; set; }
+
         /// <summary>
         /// PermissionsWithGrantOption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#cfn-lakeformation-principalpermissions-permissionswithgrantoption
@@ -60,6 +66,7 @@ namespace Humidifier.LakeFormation
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic PermissionsWithGrantOption { get; set; }
     }
 

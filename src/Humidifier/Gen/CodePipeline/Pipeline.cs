@@ -3,7 +3,7 @@ namespace Humidifier.CodePipeline
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -53,6 +53,7 @@ namespace Humidifier.CodePipeline
         /// ItemType: StageTransition
         /// </summary>
         public List<PipelineTypes.StageTransition> DisableInboundStageTransitions { get; set; }
+
         /// <summary>
         /// Stages
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages
@@ -61,6 +62,7 @@ namespace Humidifier.CodePipeline
         /// Type: List
         /// ItemType: StageDeclaration
         /// </summary>
+        [Required]
         public List<PipelineTypes.StageDeclaration> Stages { get; set; }
         /// <summary>
         /// PipelineType
@@ -95,6 +97,7 @@ namespace Humidifier.CodePipeline
         /// ItemType: PipelineTriggerDeclaration
         /// </summary>
         public List<PipelineTypes.PipelineTriggerDeclaration> Triggers { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn
@@ -102,6 +105,7 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.AppRunner
     using System.Collections.Generic;
     using VpcIngressConnectionTypes;
 
-    public class VpcIngressConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class VpcIngressConnection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -21,6 +21,7 @@ namespace Humidifier.AppRunner
         }
 
         public dynamic VpcIngressConnectionName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ServiceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#cfn-apprunner-vpcingressconnection-servicearn
@@ -28,6 +29,7 @@ namespace Humidifier.AppRunner
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceArn { get; set; }
         /// <summary>
         /// Tags
@@ -38,6 +40,7 @@ namespace Humidifier.AppRunner
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// IngressVpcConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#cfn-apprunner-vpcingressconnection-ingressvpcconfiguration
@@ -45,6 +48,7 @@ namespace Humidifier.AppRunner
         /// UpdateType: Mutable
         /// Type: IngressVpcConfiguration
         /// </summary>
+        [Required]
         public VpcIngressConnectionTypes.IngressVpcConfiguration IngressVpcConfiguration { get; set; }
     }
 

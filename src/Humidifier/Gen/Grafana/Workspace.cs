@@ -3,7 +3,7 @@ namespace Humidifier.Grafana
     using System.Collections.Generic;
     using WorkspaceTypes;
 
-    public class Workspace : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Workspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -50,6 +50,7 @@ namespace Humidifier.Grafana
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// PermissionType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-permissiontype
@@ -57,7 +58,9 @@ namespace Humidifier.Grafana
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PermissionType { get; set; }
+
         /// <summary>
         /// AccountAccessType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-accountaccesstype
@@ -65,6 +68,7 @@ namespace Humidifier.Grafana
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccountAccessType { get; set; }
         /// <summary>
         /// StackSetName
@@ -117,6 +121,7 @@ namespace Humidifier.Grafana
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic DataSources { get; set; }
+
         /// <summary>
         /// AuthenticationProviders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-authenticationproviders
@@ -125,6 +130,7 @@ namespace Humidifier.Grafana
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AuthenticationProviders { get; set; }
         /// <summary>
         /// OrganizationRoleName
@@ -323,7 +329,7 @@ namespace Humidifier.Grafana
             public dynamic AllowedOrganizations { get; set; }
         }
 
-        public class VpcConfiguration : Humidifier.Base.BaseSubResource
+        public class VpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SecurityGroupIds

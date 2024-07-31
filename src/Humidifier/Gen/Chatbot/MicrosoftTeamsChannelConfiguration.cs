@@ -51,6 +51,7 @@ namespace Humidifier.Chatbot
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic GuardrailPolicies { get; set; }
+
         /// <summary>
         /// IamRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-iamrolearn
@@ -58,7 +59,9 @@ namespace Humidifier.Chatbot
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IamRoleArn { get; set; }
+
         /// <summary>
         /// TeamId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamid
@@ -66,7 +69,9 @@ namespace Humidifier.Chatbot
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TeamId { get; set; }
+
         /// <summary>
         /// ConfigurationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-configurationname
@@ -74,7 +79,9 @@ namespace Humidifier.Chatbot
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationName { get; set; }
+
         /// <summary>
         /// TeamsTenantId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamstenantid
@@ -82,6 +89,7 @@ namespace Humidifier.Chatbot
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TeamsTenantId { get; set; }
         /// <summary>
         /// Tags
@@ -92,6 +100,7 @@ namespace Humidifier.Chatbot
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// TeamsChannelId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamschannelid
@@ -99,6 +108,7 @@ namespace Humidifier.Chatbot
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TeamsChannelId { get; set; }
     }
 }

@@ -35,6 +35,7 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic FsxFilesystemArn { get; set; }
+
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-protocol
@@ -42,7 +43,9 @@ namespace Humidifier.DataSync
         /// UpdateType: Immutable
         /// Type: Protocol
         /// </summary>
+        [Required]
         public LocationFSxOpenZFSTypes.Protocol Protocol { get; set; }
+
         /// <summary>
         /// SecurityGroupArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-securitygrouparns
@@ -51,6 +54,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic SecurityGroupArns { get; set; }
         /// <summary>
         /// Tags

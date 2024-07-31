@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -52,6 +52,7 @@ namespace Humidifier.AppSync
         /// </summary>
         public dynamic MetricsConfig { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type
@@ -59,6 +60,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// EventBridgeConfig
@@ -92,6 +94,7 @@ namespace Humidifier.AppSync
         /// Type: LambdaConfig
         /// </summary>
         public DataSourceTypes.LambdaConfig LambdaConfig { get; set; }
+
         /// <summary>
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-apiid
@@ -99,6 +102,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApiId { get; set; }
         /// <summary>
         /// DynamoDBConfig

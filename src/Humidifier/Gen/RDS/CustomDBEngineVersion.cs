@@ -41,6 +41,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-engineversion
@@ -48,6 +49,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EngineVersion { get; set; }
         /// <summary>
         /// KMSKeyId
@@ -97,6 +99,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic SourceCustomDbEngineVersionIdentifier { get; set; }
+
         /// <summary>
         /// Engine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-engine
@@ -104,6 +107,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Engine { get; set; }
         /// <summary>
         /// Tags

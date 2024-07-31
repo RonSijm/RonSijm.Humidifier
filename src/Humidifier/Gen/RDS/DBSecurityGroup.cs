@@ -21,6 +21,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Ingress
         /// </summary>
+        [Required]
         public List<DBSecurityGroupTypes.Ingress> DBSecurityGroupIngress { get; set; }
         /// <summary>
         /// EC2VpcId
@@ -30,6 +31,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic EC2VpcId { get; set; }
+
         /// <summary>
         /// GroupDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-groupdescription
@@ -37,6 +39,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupDescription { get; set; }
         /// <summary>
         /// Tags

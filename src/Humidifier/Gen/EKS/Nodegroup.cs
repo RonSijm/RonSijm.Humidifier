@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using NodegroupTypes;
 
-    public class Nodegroup : Humidifier.Base.BaseResource, IHaveSubnets, IHaveImpliedResourceName
+    public class Nodegroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSubnets
     {
         public class Attributes
         {
@@ -72,6 +72,7 @@ namespace Humidifier.EKS
         /// </summary>
         public dynamic ReleaseVersion { get; set; }
         public dynamic NodegroupName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// NodeRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-noderole
@@ -79,7 +80,9 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NodeRole { get; set; }
+
         /// <summary>
         /// Subnets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-subnets
@@ -88,6 +91,7 @@ namespace Humidifier.EKS
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic Subnets { get; set; }
         /// <summary>
         /// AmiType
@@ -137,6 +141,7 @@ namespace Humidifier.EKS
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DiskSize { get; set; }
+
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-clustername
@@ -144,6 +149,7 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterName { get; set; }
         /// <summary>
         /// InstanceTypes

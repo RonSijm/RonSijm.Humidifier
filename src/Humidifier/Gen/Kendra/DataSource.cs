@@ -3,7 +3,7 @@ namespace Humidifier.Kendra
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -27,6 +27,7 @@ namespace Humidifier.Kendra
         /// Type: CustomDocumentEnrichmentConfiguration
         /// </summary>
         public DataSourceTypes.CustomDocumentEnrichmentConfiguration CustomDocumentEnrichmentConfiguration { get; set; }
+
         /// <summary>
         /// IndexId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-indexid
@@ -34,6 +35,7 @@ namespace Humidifier.Kendra
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IndexId { get; set; }
         /// <summary>
         /// LanguageCode
@@ -43,6 +45,7 @@ namespace Humidifier.Kendra
         /// PrimitiveType: String
         /// </summary>
         public dynamic LanguageCode { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-type
@@ -50,6 +53,7 @@ namespace Humidifier.Kendra
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Description
@@ -652,7 +656,7 @@ namespace Humidifier.Kendra
             public dynamic DataSourceFieldName { get; set; }
         }
 
-        public class DataSourceVpcConfiguration : Humidifier.Base.BaseSubResource
+        public class DataSourceVpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnetIds
         {
             /// <summary>
             /// SubnetIds

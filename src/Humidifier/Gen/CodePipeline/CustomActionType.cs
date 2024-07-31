@@ -25,7 +25,9 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Category { get; set; }
+
         /// <summary>
         /// InputArtifactDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails
@@ -33,7 +35,9 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Immutable
         /// Type: ArtifactDetails
         /// </summary>
+        [Required]
         public CustomActionTypeTypes.ArtifactDetails InputArtifactDetails { get; set; }
+
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version
@@ -41,7 +45,9 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Version { get; set; }
+
         /// <summary>
         /// OutputArtifactDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails
@@ -49,6 +55,7 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Immutable
         /// Type: ArtifactDetails
         /// </summary>
+        [Required]
         public CustomActionTypeTypes.ArtifactDetails OutputArtifactDetails { get; set; }
         /// <summary>
         /// ConfigurationProperties
@@ -76,6 +83,7 @@ namespace Humidifier.CodePipeline
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Provider
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider
@@ -83,6 +91,7 @@ namespace Humidifier.CodePipeline
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Provider { get; set; }
     }
 

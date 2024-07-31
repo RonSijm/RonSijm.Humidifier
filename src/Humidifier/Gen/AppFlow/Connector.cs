@@ -26,6 +26,7 @@ namespace Humidifier.AppFlow
         /// PrimitiveType: String
         /// </summary>
         public dynamic ConnectorLabel { get; set; }
+
         /// <summary>
         /// ConnectorProvisioningType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connector.html#cfn-appflow-connector-connectorprovisioningtype
@@ -33,6 +34,7 @@ namespace Humidifier.AppFlow
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectorProvisioningType { get; set; }
         /// <summary>
         /// Description
@@ -42,6 +44,7 @@ namespace Humidifier.AppFlow
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// ConnectorProvisioningConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connector.html#cfn-appflow-connector-connectorprovisioningconfig
@@ -49,6 +52,7 @@ namespace Humidifier.AppFlow
         /// UpdateType: Mutable
         /// Type: ConnectorProvisioningConfig
         /// </summary>
+        [Required]
         public ConnectorTypes.ConnectorProvisioningConfig ConnectorProvisioningConfig { get; set; }
     }
 

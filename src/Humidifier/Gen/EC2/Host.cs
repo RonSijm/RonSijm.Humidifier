@@ -57,6 +57,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic HostMaintenance { get; set; }
+
         /// <summary>
         /// AvailabilityZone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
@@ -64,6 +65,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// InstanceType

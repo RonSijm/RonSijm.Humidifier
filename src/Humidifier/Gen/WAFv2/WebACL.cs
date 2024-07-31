@@ -3,7 +3,7 @@ namespace Humidifier.WAFv2
     using System.Collections.Generic;
     using WebACLTypes;
 
-    public class WebACL : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class WebACL : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -46,6 +46,7 @@ namespace Humidifier.WAFv2
         /// Type: AssociationConfig
         /// </summary>
         public WebACLTypes.AssociationConfig AssociationConfig { get; set; }
+
         /// <summary>
         /// DefaultAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-defaultaction
@@ -53,7 +54,9 @@ namespace Humidifier.WAFv2
         /// UpdateType: Mutable
         /// Type: DefaultAction
         /// </summary>
+        [Required]
         public WebACLTypes.DefaultAction DefaultAction { get; set; }
+
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-scope
@@ -61,6 +64,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Scope { get; set; }
         /// <summary>
         /// CustomResponseBodies
@@ -88,6 +92,7 @@ namespace Humidifier.WAFv2
         /// ItemType: Rule
         /// </summary>
         public List<WebACLTypes.Rule> Rules { get; set; }
+
         /// <summary>
         /// VisibilityConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig
@@ -95,6 +100,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Mutable
         /// Type: VisibilityConfig
         /// </summary>
+        [Required]
         public WebACLTypes.VisibilityConfig VisibilityConfig { get; set; }
         /// <summary>
         /// CaptchaConfig

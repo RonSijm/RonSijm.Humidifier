@@ -27,6 +27,7 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SceneId { get; set; }
         /// <summary>
         /// Description
@@ -45,6 +46,7 @@ namespace Humidifier.IoTTwinMaker
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> SceneMetadata { get; set; }
+
         /// <summary>
         /// ContentLocation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html#cfn-iottwinmaker-scene-contentlocation
@@ -52,6 +54,7 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ContentLocation { get; set; }
         /// <summary>
         /// Capabilities
@@ -62,6 +65,7 @@ namespace Humidifier.IoTTwinMaker
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic Capabilities { get; set; }
+
         /// <summary>
         /// WorkspaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html#cfn-iottwinmaker-scene-workspaceid
@@ -69,6 +73,7 @@ namespace Humidifier.IoTTwinMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic WorkspaceId { get; set; }
         /// <summary>
         /// Tags

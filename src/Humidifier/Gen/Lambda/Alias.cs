@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using AliasTypes;
 
-    public class Alias : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionName { get; set; }
         /// <summary>
         /// ProvisionedConcurrencyConfig
@@ -42,6 +43,7 @@ namespace Humidifier.Lambda
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// FunctionVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-functionversion
@@ -49,6 +51,7 @@ namespace Humidifier.Lambda
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FunctionVersion { get; set; }
         /// <summary>
         /// RoutingConfig

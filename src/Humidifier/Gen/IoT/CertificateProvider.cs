@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class CertificateProvider : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class CertificateProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -24,8 +24,10 @@ namespace Humidifier.IoT
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LambdaFunctionArn { get; set; }
         public dynamic CertificateProviderName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// AccountDefaultForOperations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-certificateprovider.html#cfn-iot-certificateprovider-accountdefaultforoperations
@@ -34,6 +36,7 @@ namespace Humidifier.IoT
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic AccountDefaultForOperations { get; set; }
         /// <summary>
         /// Tags

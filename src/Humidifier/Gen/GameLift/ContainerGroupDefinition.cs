@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using ContainerGroupDefinitionTypes;
 
-    public class ContainerGroupDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ContainerGroupDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic OperatingSystem { get; set; }
         /// <summary>
         /// SchedulingStrategy
@@ -35,6 +36,7 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic SchedulingStrategy { get; set; }
+
         /// <summary>
         /// TotalMemoryLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-containergroupdefinition.html#cfn-gamelift-containergroupdefinition-totalmemorylimit
@@ -42,7 +44,9 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic TotalMemoryLimit { get; set; }
+
         /// <summary>
         /// ContainerDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-containergroupdefinition.html#cfn-gamelift-containergroupdefinition-containerdefinitions
@@ -51,6 +55,7 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: ContainerDefinition
         /// </summary>
+        [Required]
         public List<ContainerGroupDefinitionTypes.ContainerDefinition> ContainerDefinitions { get; set; }
         /// <summary>
         /// Tags
@@ -62,6 +67,7 @@ namespace Humidifier.GameLift
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// TotalCpuLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-containergroupdefinition.html#cfn-gamelift-containergroupdefinition-totalcpulimit
@@ -69,6 +75,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic TotalCpuLimit { get; set; }
     }
 

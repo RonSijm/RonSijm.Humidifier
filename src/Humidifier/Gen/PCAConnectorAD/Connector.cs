@@ -25,7 +25,9 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CertificateAuthorityArn { get; set; }
+
         /// <summary>
         /// DirectoryId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-connector.html#cfn-pcaconnectorad-connector-directoryid
@@ -33,7 +35,9 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DirectoryId { get; set; }
+
         /// <summary>
         /// VpcInformation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-connector.html#cfn-pcaconnectorad-connector-vpcinformation
@@ -41,6 +45,7 @@ namespace Humidifier.PCAConnectorAD
         /// UpdateType: Immutable
         /// Type: VpcInformation
         /// </summary>
+        [Required]
         public ConnectorTypes.VpcInformation VpcInformation { get; set; }
         /// <summary>
         /// Tags

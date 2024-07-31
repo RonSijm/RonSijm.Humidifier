@@ -81,6 +81,7 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic SourceSecurityGroupOwnerId { get; set; }
+
         /// <summary>
         /// IpProtocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-securitygroupingress.html#cfn-ec2-securitygroupingress-ipprotocol
@@ -88,6 +89,7 @@ namespace Humidifier.EC2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IpProtocol { get; set; }
         /// <summary>
         /// SourceSecurityGroupId

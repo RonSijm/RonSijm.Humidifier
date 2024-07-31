@@ -21,7 +21,9 @@ namespace Humidifier.AppStream
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic OrganizationalUnitDistinguishedNames { get; set; }
+
         /// <summary>
         /// ServiceAccountCredentials
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-serviceaccountcredentials
@@ -29,6 +31,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Mutable
         /// Type: ServiceAccountCredentials
         /// </summary>
+        [Required]
         public DirectoryConfigTypes.ServiceAccountCredentials ServiceAccountCredentials { get; set; }
         /// <summary>
         /// CertificateBasedAuthProperties
@@ -38,6 +41,7 @@ namespace Humidifier.AppStream
         /// Type: CertificateBasedAuthProperties
         /// </summary>
         public DirectoryConfigTypes.CertificateBasedAuthProperties CertificateBasedAuthProperties { get; set; }
+
         /// <summary>
         /// DirectoryName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-directoryname
@@ -45,6 +49,7 @@ namespace Humidifier.AppStream
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DirectoryName { get; set; }
     }
 

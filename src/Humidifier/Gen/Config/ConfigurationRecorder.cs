@@ -30,6 +30,7 @@ namespace Humidifier.Config
         /// Type: RecordingMode
         /// </summary>
         public ConfigurationRecorderTypes.RecordingMode RecordingMode { get; set; }
+
         /// <summary>
         /// RoleARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn
@@ -37,6 +38,7 @@ namespace Humidifier.Config
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleARN { get; set; }
     }
 

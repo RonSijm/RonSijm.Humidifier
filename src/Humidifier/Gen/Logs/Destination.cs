@@ -26,6 +26,7 @@ namespace Humidifier.Logs
         /// </summary>
         public dynamic DestinationPolicy { get; set; }
         public dynamic DestinationName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// TargetArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-targetarn
@@ -33,7 +34,9 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetArn { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-rolearn
@@ -41,6 +44,7 @@ namespace Humidifier.Logs
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
     }
 }

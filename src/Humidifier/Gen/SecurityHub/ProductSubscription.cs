@@ -24,6 +24,7 @@ namespace Humidifier.SecurityHub
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProductArn { get; set; }
     }
 }

@@ -28,7 +28,9 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserRoleArn { get; set; }
+
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-displayname
@@ -36,8 +38,10 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DisplayName { get; set; }
         public dynamic StudioName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// AdminRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-adminrolearn
@@ -45,6 +49,7 @@ namespace Humidifier.NimbleStudio
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AdminRoleArn { get; set; }
         /// <summary>
         /// StudioEncryptionConfiguration

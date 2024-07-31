@@ -25,6 +25,7 @@ namespace Humidifier.VerifiedPermissions
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Statement
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-policytemplate.html#cfn-verifiedpermissions-policytemplate-statement
@@ -32,7 +33,9 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Statement { get; set; }
+
         /// <summary>
         /// PolicyStoreId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-policytemplate.html#cfn-verifiedpermissions-policytemplate-policystoreid
@@ -40,6 +43,7 @@ namespace Humidifier.VerifiedPermissions
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PolicyStoreId { get; set; }
     }
 }

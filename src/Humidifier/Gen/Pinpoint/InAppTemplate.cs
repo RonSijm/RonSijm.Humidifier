@@ -43,6 +43,7 @@ namespace Humidifier.Pinpoint
         /// ItemType: InAppMessageContent
         /// </summary>
         public List<InAppTemplateTypes.InAppMessageContent> Content { get; set; }
+
         /// <summary>
         /// TemplateName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-templatename
@@ -50,6 +51,7 @@ namespace Humidifier.Pinpoint
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TemplateName { get; set; }
         /// <summary>
         /// TemplateDescription

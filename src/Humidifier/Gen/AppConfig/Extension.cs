@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using ExtensionTypes;
 
-    public class Extension : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Extension : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -37,6 +37,7 @@ namespace Humidifier.AppConfig
         /// ItemType: Parameter
         /// </summary>
         public Dictionary<string, ExtensionTypes.Parameter> Parameters { get; set; }
+
         /// <summary>
         /// Actions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-actions
@@ -44,6 +45,7 @@ namespace Humidifier.AppConfig
         /// UpdateType: Mutable
         /// PrimitiveType: Json
         /// </summary>
+        [Required]
         public dynamic Actions { get; set; }
         /// <summary>
         /// LatestVersionNumber

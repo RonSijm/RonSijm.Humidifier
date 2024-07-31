@@ -29,6 +29,7 @@ namespace Humidifier.ManagedBlockchain
         /// PrimitiveType: String
         /// </summary>
         public dynamic MemberId { get; set; }
+
         /// <summary>
         /// NetworkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-networkid
@@ -36,7 +37,9 @@ namespace Humidifier.ManagedBlockchain
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NetworkId { get; set; }
+
         /// <summary>
         /// NodeConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-nodeconfiguration
@@ -44,6 +47,7 @@ namespace Humidifier.ManagedBlockchain
         /// UpdateType: Mutable
         /// Type: NodeConfiguration
         /// </summary>
+        [Required]
         public NodeTypes.NodeConfiguration NodeConfiguration { get; set; }
     }
 

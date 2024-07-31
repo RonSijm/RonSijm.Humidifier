@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using FargateProfileTypes;
 
-    public class FargateProfile : Humidifier.Base.BaseResource, IHaveTags, IHaveSubnets, IHaveImpliedResourceName
+    public class FargateProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnets
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.EKS
         /// </summary>
         public dynamic Subnets { get; set; }
         public dynamic FargateProfileName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-clustername
@@ -35,7 +36,9 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterName { get; set; }
+
         /// <summary>
         /// PodExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-podexecutionrolearn
@@ -43,7 +46,9 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PodExecutionRoleArn { get; set; }
+
         /// <summary>
         /// Selectors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-selectors
@@ -52,6 +57,7 @@ namespace Humidifier.EKS
         /// Type: List
         /// ItemType: Selector
         /// </summary>
+        [Required]
         public List<FargateProfileTypes.Selector> Selectors { get; set; }
         /// <summary>
         /// Tags

@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using CollaborationTypes;
 
-    public class Collaboration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Collaboration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,7 +26,9 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CreatorDisplayName { get; set; }
+
         /// <summary>
         /// CreatorMemberAbilities
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-creatormemberabilities
@@ -35,7 +37,9 @@ namespace Humidifier.CleanRooms
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic CreatorMemberAbilities { get; set; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-description
@@ -43,7 +47,9 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
+
         /// <summary>
         /// QueryLogStatus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-querylogstatus
@@ -51,6 +57,7 @@ namespace Humidifier.CleanRooms
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic QueryLogStatus { get; set; }
         /// <summary>
         /// CreatorPaymentConfiguration
@@ -77,6 +84,7 @@ namespace Humidifier.CleanRooms
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// Members
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-members
@@ -85,6 +93,7 @@ namespace Humidifier.CleanRooms
         /// Type: List
         /// ItemType: MemberSpecification
         /// </summary>
+        [Required]
         public List<CollaborationTypes.MemberSpecification> Members { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }

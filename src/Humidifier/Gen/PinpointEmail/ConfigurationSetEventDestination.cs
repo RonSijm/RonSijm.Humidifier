@@ -20,7 +20,9 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic EventDestinationName { get; set; }
+
         /// <summary>
         /// ConfigurationSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-configurationsetname
@@ -28,6 +30,7 @@ namespace Humidifier.PinpointEmail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConfigurationSetName { get; set; }
         /// <summary>
         /// EventDestination

@@ -3,7 +3,7 @@ namespace Humidifier.CodeBuild
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -84,6 +84,7 @@ namespace Humidifier.CodeBuild
         /// ItemType: Artifacts
         /// </summary>
         public List<ProjectTypes.Artifacts> SecondaryArtifacts { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source
@@ -91,8 +92,10 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// Type: Source
         /// </summary>
+        [Required]
         public ProjectTypes.Source Source { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// Artifacts
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
@@ -100,6 +103,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// Type: Artifacts
         /// </summary>
+        [Required]
         public ProjectTypes.Artifacts Artifacts { get; set; }
         /// <summary>
         /// BadgeEnabled
@@ -117,6 +121,7 @@ namespace Humidifier.CodeBuild
         /// Type: LogsConfig
         /// </summary>
         public ProjectTypes.LogsConfig LogsConfig { get; set; }
+
         /// <summary>
         /// ServiceRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole
@@ -124,6 +129,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceRole { get; set; }
         /// <summary>
         /// QueuedTimeoutInMinutes
@@ -142,6 +148,7 @@ namespace Humidifier.CodeBuild
         /// ItemType: ProjectFileSystemLocation
         /// </summary>
         public List<ProjectTypes.ProjectFileSystemLocation> FileSystemLocations { get; set; }
+
         /// <summary>
         /// Environment
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment
@@ -149,6 +156,7 @@ namespace Humidifier.CodeBuild
         /// UpdateType: Mutable
         /// Type: Environment
         /// </summary>
+        [Required]
         public ProjectTypes.Environment Environment { get; set; }
         /// <summary>
         /// SecondarySourceVersions

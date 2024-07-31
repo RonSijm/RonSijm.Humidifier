@@ -45,6 +45,7 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubscriptionName { get; set; }
+
         /// <summary>
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-snstopicarn
@@ -52,6 +53,7 @@ namespace Humidifier.RDS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SnsTopicArn { get; set; }
         /// <summary>
         /// SourceIds

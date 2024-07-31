@@ -26,7 +26,9 @@ namespace Humidifier.Batch
         /// Type: List
         /// ItemType: ComputeEnvironmentOrder
         /// </summary>
+        [Required]
         public List<JobQueueTypes.ComputeEnvironmentOrder> ComputeEnvironmentOrder { get; set; }
+
         /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-priority
@@ -34,6 +36,7 @@ namespace Humidifier.Batch
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic Priority { get; set; }
         /// <summary>
         /// State

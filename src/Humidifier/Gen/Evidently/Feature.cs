@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using FeatureTypes;
 
-    public class Feature : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class Feature : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -25,6 +25,7 @@ namespace Humidifier.Evidently
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Project { get; set; }
         /// <summary>
         /// Description
@@ -59,6 +60,7 @@ namespace Humidifier.Evidently
         /// ItemType: EntityOverride
         /// </summary>
         public List<FeatureTypes.EntityOverride> EntityOverrides { get; set; }
+
         /// <summary>
         /// Variations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-feature.html#cfn-evidently-feature-variations
@@ -67,6 +69,7 @@ namespace Humidifier.Evidently
         /// Type: List
         /// ItemType: VariationObject
         /// </summary>
+        [Required]
         public List<FeatureTypes.VariationObject> Variations { get; set; }
         /// <summary>
         /// Tags

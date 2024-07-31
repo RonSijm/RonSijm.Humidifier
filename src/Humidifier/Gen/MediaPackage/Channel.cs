@@ -42,6 +42,7 @@ namespace Humidifier.MediaPackage
         /// Type: HlsIngest
         /// </summary>
         public ChannelTypes.HlsIngest HlsIngest { get; set; }
+
         /// <summary>
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-id
@@ -49,6 +50,7 @@ namespace Humidifier.MediaPackage
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Id { get; set; }
         /// <summary>
         /// EgressAccessLogs

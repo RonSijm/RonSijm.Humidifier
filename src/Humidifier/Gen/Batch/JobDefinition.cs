@@ -55,6 +55,7 @@ namespace Humidifier.Batch
         /// Type: EksProperties
         /// </summary>
         public JobDefinitionTypes.EksProperties EksProperties { get; set; }
+
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-type
@@ -62,6 +63,7 @@ namespace Humidifier.Batch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// NodeProperties

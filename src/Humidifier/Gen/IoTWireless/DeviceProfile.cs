@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using DeviceProfileTypes;
 
-    public class DeviceProfile : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DeviceProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {

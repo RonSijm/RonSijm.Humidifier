@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using PlaybackConfigurationTypes;
 
-    public class PlaybackConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class PlaybackConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -76,6 +76,7 @@ namespace Humidifier.MediaTailor
         /// Type: HlsConfiguration
         /// </summary>
         public PlaybackConfigurationTypes.HlsConfiguration HlsConfiguration { get; set; }
+
         /// <summary>
         /// VideoContentSourceUrl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-videocontentsourceurl
@@ -83,6 +84,7 @@ namespace Humidifier.MediaTailor
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VideoContentSourceUrl { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -102,6 +104,7 @@ namespace Humidifier.MediaTailor
         /// PrimitiveItemType: Json
         /// </summary>
         public dynamic ConfigurationAliases { get; set; }
+
         /// <summary>
         /// AdDecisionServerUrl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-addecisionserverurl
@@ -109,6 +112,7 @@ namespace Humidifier.MediaTailor
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AdDecisionServerUrl { get; set; }
         /// <summary>
         /// SlateAdUrl

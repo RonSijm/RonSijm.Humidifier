@@ -3,7 +3,7 @@ namespace Humidifier.CodeDeploy
     using System.Collections.Generic;
     using DeploymentGroupTypes;
 
-    public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {
@@ -21,6 +21,7 @@ namespace Humidifier.CodeDeploy
         /// Type: AlarmConfiguration
         /// </summary>
         public DeploymentGroupTypes.AlarmConfiguration AlarmConfiguration { get; set; }
+
         /// <summary>
         /// ApplicationName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-applicationname
@@ -28,6 +29,7 @@ namespace Humidifier.CodeDeploy
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationName { get; set; }
         /// <summary>
         /// AutoRollbackConfiguration
@@ -138,6 +140,7 @@ namespace Humidifier.CodeDeploy
         /// PrimitiveType: String
         /// </summary>
         public dynamic OutdatedInstancesStrategy { get; set; }
+
         /// <summary>
         /// ServiceRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
@@ -145,6 +148,7 @@ namespace Humidifier.CodeDeploy
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ServiceRoleArn { get; set; }
         /// <summary>
         /// Tags

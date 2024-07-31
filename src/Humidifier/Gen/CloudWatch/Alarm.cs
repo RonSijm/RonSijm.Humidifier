@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using System.Collections.Generic;
     using AlarmTypes;
 
-    public class Alarm : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -42,6 +42,7 @@ namespace Humidifier.CloudWatch
         /// PrimitiveType: String
         /// </summary>
         public dynamic ExtendedStatistic { get; set; }
+
         /// <summary>
         /// ComparisonOperator
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-comparisonoperator
@@ -49,6 +50,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ComparisonOperator { get; set; }
         /// <summary>
         /// TreatMissingData
@@ -75,6 +77,7 @@ namespace Humidifier.CloudWatch
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic Period { get; set; }
+
         /// <summary>
         /// EvaluationPeriods
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-evaluationperiods
@@ -82,6 +85,7 @@ namespace Humidifier.CloudWatch
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic EvaluationPeriods { get; set; }
         /// <summary>
         /// Unit
@@ -150,6 +154,9 @@ namespace Humidifier.CloudWatch
         /// PrimitiveType: String
         /// </summary>
         public dynamic AlarmDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => AlarmDescription; set => AlarmDescription = value; }
         public dynamic AlarmName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Statistic

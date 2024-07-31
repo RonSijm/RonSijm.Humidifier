@@ -3,7 +3,7 @@ namespace Humidifier.IoTAnalytics
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,6 +28,7 @@ namespace Humidifier.IoTAnalytics
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// PipelineActivities
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-pipeline.html#cfn-iotanalytics-pipeline-pipelineactivities
@@ -36,6 +37,7 @@ namespace Humidifier.IoTAnalytics
         /// Type: List
         /// ItemType: Activity
         /// </summary>
+        [Required]
         public List<PipelineTypes.Activity> PipelineActivities { get; set; }
     }
 

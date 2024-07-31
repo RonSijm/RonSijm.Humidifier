@@ -20,7 +20,9 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ApplicationName { get; set; }
+
         /// <summary>
         /// ReferenceDataSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalyticsv2-applicationreferencedatasource.html#cfn-kinesisanalyticsv2-applicationreferencedatasource-referencedatasource
@@ -28,6 +30,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// UpdateType: Mutable
         /// Type: ReferenceDataSource
         /// </summary>
+        [Required]
         public ApplicationReferenceDataSourceTypes.ReferenceDataSource ReferenceDataSource { get; set; }
     }
 

@@ -3,7 +3,7 @@ namespace Humidifier.ConnectCampaigns
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -25,7 +25,9 @@ namespace Humidifier.ConnectCampaigns
         /// UpdateType: Mutable
         /// Type: OutboundCallConfig
         /// </summary>
+        [Required]
         public CampaignTypes.OutboundCallConfig OutboundCallConfig { get; set; }
+
         /// <summary>
         /// ConnectInstanceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html#cfn-connectcampaigns-campaign-connectinstancearn
@@ -33,7 +35,9 @@ namespace Humidifier.ConnectCampaigns
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ConnectInstanceArn { get; set; }
+
         /// <summary>
         /// DialerConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaigns-campaign.html#cfn-connectcampaigns-campaign-dialerconfig
@@ -41,6 +45,7 @@ namespace Humidifier.ConnectCampaigns
         /// UpdateType: Mutable
         /// Type: DialerConfig
         /// </summary>
+        [Required]
         public CampaignTypes.DialerConfig DialerConfig { get; set; }
         /// <summary>
         /// Tags

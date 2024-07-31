@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using GraphQLApiTypes;
 
-    public class GraphQLApi : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class GraphQLApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -147,6 +147,7 @@ namespace Humidifier.AppSync
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype
@@ -154,6 +155,7 @@ namespace Humidifier.AppSync
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AuthenticationType { get; set; }
         /// <summary>
         /// LogConfig

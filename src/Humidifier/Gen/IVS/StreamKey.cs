@@ -25,6 +25,7 @@ namespace Humidifier.IVS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelArn { get; set; }
         /// <summary>
         /// Tags

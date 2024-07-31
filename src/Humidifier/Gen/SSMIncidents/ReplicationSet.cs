@@ -26,6 +26,7 @@ namespace Humidifier.SSMIncidents
         /// Type: List
         /// ItemType: ReplicationRegion
         /// </summary>
+        [Required]
         public List<ReplicationSetTypes.ReplicationRegion> Regions { get; set; }
         /// <summary>
         /// DeletionProtected

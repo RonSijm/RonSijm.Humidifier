@@ -27,6 +27,7 @@ namespace Humidifier.CloudFormation
         /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AcceptTermsAndConditions { get; set; }
         /// <summary>
         /// ConnectionArn

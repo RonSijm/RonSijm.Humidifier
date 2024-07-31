@@ -28,6 +28,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SiteId { get; set; }
         /// <summary>
         /// Type
@@ -37,6 +38,7 @@ namespace Humidifier.NetworkManager
         /// PrimitiveType: String
         /// </summary>
         public dynamic Type { get; set; }
+
         /// <summary>
         /// GlobalNetworkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-globalnetworkid
@@ -44,6 +46,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GlobalNetworkId { get; set; }
         /// <summary>
         /// Description
@@ -53,6 +56,7 @@ namespace Humidifier.NetworkManager
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// Bandwidth
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-bandwidth
@@ -60,6 +64,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Mutable
         /// Type: Bandwidth
         /// </summary>
+        [Required]
         public LinkTypes.Bandwidth Bandwidth { get; set; }
         /// <summary>
         /// Tags

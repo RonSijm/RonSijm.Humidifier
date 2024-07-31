@@ -3,7 +3,7 @@ namespace Humidifier.Lex
     using System.Collections.Generic;
     using BotTypes;
 
-    public class Bot : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Bot : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -44,6 +44,7 @@ namespace Humidifier.Lex
         /// ItemType: BotLocale
         /// </summary>
         public List<BotTypes.BotLocale> BotLocales { get; set; }
+
         /// <summary>
         /// IdleSessionTTLInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-idlesessionttlinseconds
@@ -51,6 +52,7 @@ namespace Humidifier.Lex
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic IdleSessionTTLInSeconds { get; set; }
         /// <summary>
         /// BotFileS3Location
@@ -68,6 +70,7 @@ namespace Humidifier.Lex
         /// Type: TestBotAliasSettings
         /// </summary>
         public BotTypes.TestBotAliasSettings TestBotAliasSettings { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-rolearn
@@ -75,6 +78,7 @@ namespace Humidifier.Lex
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
@@ -95,6 +99,7 @@ namespace Humidifier.Lex
         /// ItemType: Tag
         /// </summary>
         public List<Tag> TestBotAliasTags { get; set; }
+
         /// <summary>
         /// DataPrivacy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-dataprivacy
@@ -102,6 +107,7 @@ namespace Humidifier.Lex
         /// UpdateType: Mutable
         /// Type: DataPrivacy
         /// </summary>
+        [Required]
         public BotTypes.DataPrivacy DataPrivacy { get; set; }
     }
 

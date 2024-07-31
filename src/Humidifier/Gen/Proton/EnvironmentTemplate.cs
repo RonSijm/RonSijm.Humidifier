@@ -2,7 +2,7 @@ namespace Humidifier.Proton
 {
     using System.Collections.Generic;
 
-    public class EnvironmentTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class EnvironmentTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {

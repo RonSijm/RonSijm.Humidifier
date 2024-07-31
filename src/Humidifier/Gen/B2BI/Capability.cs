@@ -3,7 +3,7 @@ namespace Humidifier.B2BI
     using System.Collections.Generic;
     using CapabilityTypes;
 
-    public class Capability : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Capability : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -28,7 +28,9 @@ namespace Humidifier.B2BI
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
+
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-b2bi-capability.html#cfn-b2bi-capability-configuration
@@ -36,6 +38,7 @@ namespace Humidifier.B2BI
         /// UpdateType: Mutable
         /// Type: CapabilityConfiguration
         /// </summary>
+        [Required]
         public CapabilityTypes.CapabilityConfiguration Configuration { get; set; }
         /// <summary>
         /// InstructionsDocuments

@@ -21,6 +21,7 @@ namespace Humidifier.Cognito
         /// Type: CompromisedCredentialsRiskConfigurationType
         /// </summary>
         public UserPoolRiskConfigurationAttachmentTypes.CompromisedCredentialsRiskConfigurationType CompromisedCredentialsRiskConfiguration { get; set; }
+
         /// <summary>
         /// UserPoolId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-userpoolid
@@ -28,7 +29,9 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic UserPoolId { get; set; }
+
         /// <summary>
         /// ClientId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-clientid
@@ -36,6 +39,7 @@ namespace Humidifier.Cognito
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClientId { get; set; }
         /// <summary>
         /// AccountTakeoverRiskConfiguration

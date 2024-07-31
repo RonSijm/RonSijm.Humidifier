@@ -82,6 +82,7 @@ namespace Humidifier.SSM
         /// PrimitiveType: String
         /// </summary>
         public dynamic BucketPrefix { get; set; }
+
         /// <summary>
         /// SyncName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncname
@@ -89,6 +90,7 @@ namespace Humidifier.SSM
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SyncName { get; set; }
     }
 

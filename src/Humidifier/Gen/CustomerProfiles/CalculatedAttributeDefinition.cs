@@ -27,6 +27,7 @@ namespace Humidifier.CustomerProfiles
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// AttributeDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-attributedetails
@@ -34,7 +35,9 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Mutable
         /// Type: AttributeDetails
         /// </summary>
+        [Required]
         public CalculatedAttributeDefinitionTypes.AttributeDetails AttributeDetails { get; set; }
+
         /// <summary>
         /// Statistic
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-statistic
@@ -42,7 +45,9 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Statistic { get; set; }
+
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-domainname
@@ -50,6 +55,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
         /// DisplayName
@@ -59,6 +65,7 @@ namespace Humidifier.CustomerProfiles
         /// PrimitiveType: String
         /// </summary>
         public dynamic DisplayName { get; set; }
+
         /// <summary>
         /// CalculatedAttributeName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-calculatedattributename
@@ -66,6 +73,7 @@ namespace Humidifier.CustomerProfiles
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CalculatedAttributeName { get; set; }
         /// <summary>
         /// Conditions

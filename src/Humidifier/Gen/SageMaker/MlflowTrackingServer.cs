@@ -24,6 +24,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TrackingServerName { get; set; }
         /// <summary>
         /// MlflowVersion
@@ -49,6 +50,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic TrackingServerSize { get; set; }
+
         /// <summary>
         /// ArtifactStoreUri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-mlflowtrackingserver.html#cfn-sagemaker-mlflowtrackingserver-artifactstoreuri
@@ -56,6 +58,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ArtifactStoreUri { get; set; }
         /// <summary>
         /// AutomaticModelRegistration
@@ -65,6 +68,7 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutomaticModelRegistration { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-mlflowtrackingserver.html#cfn-sagemaker-mlflowtrackingserver-rolearn
@@ -72,6 +76,7 @@ namespace Humidifier.SageMaker
         /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
         /// <summary>
         /// Tags

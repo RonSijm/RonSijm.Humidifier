@@ -24,6 +24,7 @@ namespace Humidifier.SupportApp
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic AccountAlias_ { get; set; }
     }
 }

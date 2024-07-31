@@ -28,6 +28,7 @@ namespace Humidifier.SupportApp
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic NotifyOnAddCorrespondenceToCase { get; set; }
+
         /// <summary>
         /// ChannelRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-channelrolearn
@@ -35,6 +36,7 @@ namespace Humidifier.SupportApp
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelRoleArn { get; set; }
         /// <summary>
         /// NotifyOnResolveCase
@@ -44,6 +46,7 @@ namespace Humidifier.SupportApp
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic NotifyOnResolveCase { get; set; }
+
         /// <summary>
         /// NotifyOnCaseSeverity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-notifyoncaseseverity
@@ -51,7 +54,9 @@ namespace Humidifier.SupportApp
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic NotifyOnCaseSeverity { get; set; }
+
         /// <summary>
         /// TeamId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-teamid
@@ -59,7 +64,9 @@ namespace Humidifier.SupportApp
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TeamId { get; set; }
+
         /// <summary>
         /// ChannelId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-channelid
@@ -67,6 +74,7 @@ namespace Humidifier.SupportApp
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ChannelId { get; set; }
         /// <summary>
         /// NotifyOnCreateOrReopenCase

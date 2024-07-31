@@ -3,7 +3,7 @@ namespace Humidifier.Pipes
     using System.Collections.Generic;
     using PipeTypes;
 
-    public class Pipe : Humidifier.Base.BaseResource, IHaveDescription, IHaveImpliedResourceName
+    public class Pipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
         public class Attributes
         {
@@ -30,6 +30,7 @@ namespace Humidifier.Pipes
         /// PrimitiveType: String
         /// </summary>
         public dynamic Enrichment { get; set; }
+
         /// <summary>
         /// Target
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-target
@@ -37,6 +38,7 @@ namespace Humidifier.Pipes
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Target { get; set; }
         /// <summary>
         /// Description
@@ -78,6 +80,7 @@ namespace Humidifier.Pipes
         /// Type: PipeEnrichmentParameters
         /// </summary>
         public PipeTypes.PipeEnrichmentParameters EnrichmentParameters { get; set; }
+
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-rolearn
@@ -85,7 +88,9 @@ namespace Humidifier.Pipes
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RoleArn { get; set; }
+
         /// <summary>
         /// Source
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-source
@@ -93,6 +98,7 @@ namespace Humidifier.Pipes
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Source { get; set; }
         /// <summary>
         /// SourceParameters

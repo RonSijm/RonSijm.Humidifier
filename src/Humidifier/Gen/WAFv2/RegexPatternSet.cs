@@ -2,7 +2,7 @@ namespace Humidifier.WAFv2
 {
     using System.Collections.Generic;
 
-    public class RegexPatternSet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class RegexPatternSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -26,6 +26,7 @@ namespace Humidifier.WAFv2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+
         /// <summary>
         /// RegularExpressionList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-regularexpressionlist
@@ -34,7 +35,9 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
+        [Required]
         public dynamic RegularExpressionList { get; set; }
+
         /// <summary>
         /// Scope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-scope
@@ -42,6 +45,7 @@ namespace Humidifier.WAFv2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Scope { get; set; }
         /// <summary>
         /// Tags

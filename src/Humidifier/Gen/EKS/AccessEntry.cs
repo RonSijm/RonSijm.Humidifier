@@ -26,6 +26,7 @@ namespace Humidifier.EKS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Type { get; set; }
+
         /// <summary>
         /// PrincipalArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-accessentry.html#cfn-eks-accessentry-principalarn
@@ -33,6 +34,7 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PrincipalArn { get; set; }
         /// <summary>
         /// KubernetesGroups
@@ -51,6 +53,7 @@ namespace Humidifier.EKS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Username { get; set; }
+
         /// <summary>
         /// ClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-accessentry.html#cfn-eks-accessentry-clustername
@@ -58,6 +61,7 @@ namespace Humidifier.EKS
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterName { get; set; }
         /// <summary>
         /// AccessPolicies

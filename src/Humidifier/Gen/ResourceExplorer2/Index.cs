@@ -25,6 +25,7 @@ namespace Humidifier.ResourceExplorer2
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Type { get; set; }
         /// <summary>
         /// Tags

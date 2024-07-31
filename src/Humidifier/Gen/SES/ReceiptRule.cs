@@ -21,6 +21,7 @@ namespace Humidifier.SES
         /// PrimitiveType: String
         /// </summary>
         public dynamic After { get; set; }
+
         /// <summary>
         /// Rule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule
@@ -28,7 +29,9 @@ namespace Humidifier.SES
         /// UpdateType: Mutable
         /// Type: Rule
         /// </summary>
+        [Required]
         public ReceiptRuleTypes.Rule Rule { get; set; }
+
         /// <summary>
         /// RuleSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rulesetname
@@ -36,6 +39,7 @@ namespace Humidifier.SES
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleSetName { get; set; }
     }
 

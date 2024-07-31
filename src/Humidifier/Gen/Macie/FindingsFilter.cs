@@ -3,7 +3,7 @@ namespace Humidifier.Macie
     using System.Collections.Generic;
     using FindingsFilterTypes;
 
-    public class FindingsFilter : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class FindingsFilter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -43,6 +43,7 @@ namespace Humidifier.Macie
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic Position { get; set; }
+
         /// <summary>
         /// FindingCriteria
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-findingcriteria
@@ -50,6 +51,7 @@ namespace Humidifier.Macie
         /// UpdateType: Mutable
         /// Type: FindingCriteria
         /// </summary>
+        [Required]
         public FindingsFilterTypes.FindingCriteria FindingCriteria { get; set; }
         /// <summary>
         /// Tags

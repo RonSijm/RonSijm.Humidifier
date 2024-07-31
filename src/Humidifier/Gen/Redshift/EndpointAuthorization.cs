@@ -31,6 +31,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Account { get; set; }
         /// <summary>
         /// Force
@@ -49,6 +50,7 @@ namespace Humidifier.Redshift
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic VpcIds { get; set; }
+
         /// <summary>
         /// ClusterIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#cfn-redshift-endpointauthorization-clusteridentifier
@@ -56,6 +58,7 @@ namespace Humidifier.Redshift
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ClusterIdentifier { get; set; }
     }
 }

@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using MatchmakingConfigurationTypes;
 
-    public class MatchmakingConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveImpliedResourceName
+    public class MatchmakingConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -85,6 +85,7 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic BackfillMode { get; set; }
+
         /// <summary>
         /// RequestTimeoutSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-requesttimeoutseconds
@@ -92,7 +93,9 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic RequestTimeoutSeconds { get; set; }
+
         /// <summary>
         /// AcceptanceRequired
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-acceptancerequired
@@ -100,6 +103,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
+        [Required]
         public dynamic AcceptanceRequired { get; set; }
         /// <summary>
         /// CreationTime
@@ -117,6 +121,7 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic FlexMatchMode { get; set; }
+
         /// <summary>
         /// RuleSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetname
@@ -124,6 +129,7 @@ namespace Humidifier.GameLift
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic RuleSetName { get; set; }
         /// <summary>
         /// GameSessionQueueArns

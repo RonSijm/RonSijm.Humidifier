@@ -44,6 +44,7 @@ namespace Humidifier.GreengrassV2
         /// Type: DeploymentPolicies
         /// </summary>
         public DeploymentTypes.DeploymentPolicies DeploymentPolicies { get; set; }
+
         /// <summary>
         /// TargetArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-deployment.html#cfn-greengrassv2-deployment-targetarn
@@ -51,6 +52,7 @@ namespace Humidifier.GreengrassV2
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TargetArn { get; set; }
         /// <summary>
         /// ParentTargetArn

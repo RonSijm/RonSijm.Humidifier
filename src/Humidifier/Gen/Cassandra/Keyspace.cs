@@ -3,7 +3,7 @@ namespace Humidifier.Cassandra
     using System.Collections.Generic;
     using KeyspaceTypes;
 
-    public class Keyspace : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class Keyspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName
         {

@@ -2,7 +2,7 @@ namespace Humidifier.SageMaker
 {
     using System.Collections.Generic;
 
-    public class ModelPackageGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class ModelPackageGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -28,6 +28,9 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic ModelPackageGroupDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => ModelPackageGroupDescription; set => ModelPackageGroupDescription = value; }
         /// <summary>
         /// ModelPackageGroupPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackagegroup.html#cfn-sagemaker-modelpackagegroup-modelpackagegrouppolicy

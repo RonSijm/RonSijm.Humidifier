@@ -29,6 +29,7 @@ namespace Humidifier.Signer
         /// Type: SignatureValidityPeriod
         /// </summary>
         public SigningProfileTypes.SignatureValidityPeriod SignatureValidityPeriod { get; set; }
+
         /// <summary>
         /// PlatformId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-platformid
@@ -36,6 +37,7 @@ namespace Humidifier.Signer
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic PlatformId { get; set; }
         /// <summary>
         /// Tags

@@ -20,7 +20,9 @@ namespace Humidifier.Glue
         /// UpdateType: Mutable
         /// Type: DataCatalogEncryptionSettings
         /// </summary>
+        [Required]
         public DataCatalogEncryptionSettingsTypes.DataCatalogEncryptionSettings DataCatalogEncryptionSettings_ { get; set; }
+
         /// <summary>
         /// CatalogId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-catalogid
@@ -28,6 +30,7 @@ namespace Humidifier.Glue
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CatalogId { get; set; }
     }
 

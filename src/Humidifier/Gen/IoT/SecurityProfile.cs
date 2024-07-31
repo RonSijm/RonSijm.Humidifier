@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using SecurityProfileTypes;
 
-    public class SecurityProfile : Humidifier.Base.BaseResource, IHaveTags, IHaveImpliedResourceName
+    public class SecurityProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
@@ -43,6 +43,9 @@ namespace Humidifier.IoT
         /// PrimitiveType: String
         /// </summary>
         public dynamic SecurityProfileDescription { get; set; }
+
+        [Ignore]
+        public dynamic Description { get => SecurityProfileDescription; set => SecurityProfileDescription = value; }
         /// <summary>
         /// Behaviors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-behaviors

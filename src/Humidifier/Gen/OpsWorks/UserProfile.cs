@@ -25,6 +25,7 @@ namespace Humidifier.OpsWorks
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AllowSelfManagement { get; set; }
+
         /// <summary>
         /// IamUserArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-userprofile.html#cfn-opsworks-userprofile-iamuserarn
@@ -32,6 +33,7 @@ namespace Humidifier.OpsWorks
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IamUserArn { get; set; }
         /// <summary>
         /// SshPublicKey

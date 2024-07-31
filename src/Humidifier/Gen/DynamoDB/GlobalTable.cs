@@ -36,6 +36,7 @@ namespace Humidifier.DynamoDB
         /// PrimitiveType: String
         /// </summary>
         public dynamic TableName { get; set; }
+
         /// <summary>
         /// AttributeDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-attributedefinitions
@@ -44,6 +45,7 @@ namespace Humidifier.DynamoDB
         /// Type: List
         /// ItemType: AttributeDefinition
         /// </summary>
+        [Required]
         public List<GlobalTableTypes.AttributeDefinition> AttributeDefinitions { get; set; }
         /// <summary>
         /// StreamSpecification
@@ -70,6 +72,7 @@ namespace Humidifier.DynamoDB
         /// ItemType: GlobalSecondaryIndex
         /// </summary>
         public List<GlobalTableTypes.GlobalSecondaryIndex> GlobalSecondaryIndexes { get; set; }
+
         /// <summary>
         /// KeySchema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-keyschema
@@ -78,6 +81,7 @@ namespace Humidifier.DynamoDB
         /// Type: List
         /// ItemType: KeySchema
         /// </summary>
+        [Required]
         public List<GlobalTableTypes.KeySchema> KeySchema { get; set; }
         /// <summary>
         /// LocalSecondaryIndexes
@@ -88,6 +92,7 @@ namespace Humidifier.DynamoDB
         /// ItemType: LocalSecondaryIndex
         /// </summary>
         public List<GlobalTableTypes.LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
+
         /// <summary>
         /// Replicas
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-replicas
@@ -96,6 +101,7 @@ namespace Humidifier.DynamoDB
         /// Type: List
         /// ItemType: ReplicaSpecification
         /// </summary>
+        [Required]
         public List<GlobalTableTypes.ReplicaSpecification> Replicas { get; set; }
         /// <summary>
         /// WriteProvisionedThroughputSettings

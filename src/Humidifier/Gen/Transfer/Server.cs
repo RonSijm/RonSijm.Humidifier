@@ -154,7 +154,7 @@ namespace Humidifier.Transfer
 
     namespace ServerTypes
     {
-        public class EndpointDetails : Humidifier.Base.BaseSubResource, IHaveVpcId
+        public class EndpointDetails : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveSubnetIds
         {
             /// <summary>
             /// AddressAllocationIds

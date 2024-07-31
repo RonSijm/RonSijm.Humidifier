@@ -36,6 +36,7 @@ namespace Humidifier.NetworkManager
         /// Type: ProposedSegmentChange
         /// </summary>
         public SiteToSiteVpnAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
+
         /// <summary>
         /// CoreNetworkId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-corenetworkid
@@ -43,7 +44,9 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic CoreNetworkId { get; set; }
+
         /// <summary>
         /// VpnConnectionArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-vpnconnectionarn
@@ -51,6 +54,7 @@ namespace Humidifier.NetworkManager
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic VpnConnectionArn { get; set; }
         /// <summary>
         /// Tags

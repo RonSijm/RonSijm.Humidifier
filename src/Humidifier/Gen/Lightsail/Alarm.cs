@@ -25,7 +25,9 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MetricName { get; set; }
+
         /// <summary>
         /// ComparisonOperator
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-comparisonoperator
@@ -33,6 +35,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ComparisonOperator { get; set; }
         /// <summary>
         /// TreatMissingData
@@ -52,6 +55,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic ContactProtocols { get; set; }
+
         /// <summary>
         /// MonitoredResourceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-monitoredresourcename
@@ -59,7 +63,9 @@ namespace Humidifier.Lightsail
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic MonitoredResourceName { get; set; }
+
         /// <summary>
         /// EvaluationPeriods
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-evaluationperiods
@@ -67,6 +73,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
+        [Required]
         public dynamic EvaluationPeriods { get; set; }
         /// <summary>
         /// NotificationEnabled
@@ -93,6 +100,7 @@ namespace Humidifier.Lightsail
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic NotificationTriggers { get; set; }
+
         /// <summary>
         /// Threshold
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-alarm.html#cfn-lightsail-alarm-threshold
@@ -100,6 +108,7 @@ namespace Humidifier.Lightsail
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
+        [Required]
         public dynamic Threshold { get; set; }
     }
 }
