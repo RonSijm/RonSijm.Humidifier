@@ -9,13 +9,7 @@ namespace Humidifier.PCAConnectorAD
             public static string DirectoryRegistrationArn =  "DirectoryRegistrationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PCAConnectorAD::DirectoryRegistration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.PCAConnectorAD.DirectoryRegistration; }
 
         /// <summary>
         /// DirectoryId

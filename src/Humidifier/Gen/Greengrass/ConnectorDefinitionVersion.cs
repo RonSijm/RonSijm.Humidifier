@@ -5,13 +5,7 @@ namespace Humidifier.Greengrass
 
     public class ConnectorDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::ConnectorDefinitionVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Greengrass.ConnectorDefinitionVersion; }
 
         /// <summary>
         /// Connectors

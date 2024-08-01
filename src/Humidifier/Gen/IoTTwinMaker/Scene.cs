@@ -12,13 +12,7 @@ namespace Humidifier.IoTTwinMaker
             public static string GeneratedSceneMetadata =  "GeneratedSceneMetadata" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTTwinMaker::Scene";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTTwinMaker.Scene; }
 
         /// <summary>
         /// SceneId

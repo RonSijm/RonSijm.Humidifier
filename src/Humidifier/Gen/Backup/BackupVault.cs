@@ -11,14 +11,7 @@ namespace Humidifier.Backup
             public static string BackupVaultArn =  "BackupVaultArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::BackupVault";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Backup.BackupVault; }
         /// <summary>
         /// BackupVaultTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaulttags

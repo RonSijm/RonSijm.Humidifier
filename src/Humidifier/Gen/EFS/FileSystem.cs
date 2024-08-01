@@ -11,14 +11,7 @@ namespace Humidifier.EFS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EFS::FileSystem";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EFS.FileSystem; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid

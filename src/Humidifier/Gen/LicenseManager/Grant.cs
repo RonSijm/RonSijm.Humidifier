@@ -10,14 +10,7 @@ namespace Humidifier.LicenseManager
             public static string Version =  "Version" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LicenseManager::Grant";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LicenseManager.Grant; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-status

@@ -14,13 +14,7 @@ namespace Humidifier.Athena
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Athena::CapacityReservation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Athena.CapacityReservation; }
 
         /// <summary>
         /// TargetDpus

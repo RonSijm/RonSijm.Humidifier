@@ -4,13 +4,7 @@ namespace Humidifier.Cognito
 
     public class UserPoolUserToGroupAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolUserToGroupAttachment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolUserToGroupAttachment; }
 
         /// <summary>
         /// GroupName

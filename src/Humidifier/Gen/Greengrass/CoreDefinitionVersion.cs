@@ -5,13 +5,7 @@ namespace Humidifier.Greengrass
 
     public class CoreDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::CoreDefinitionVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Greengrass.CoreDefinitionVersion; }
 
         /// <summary>
         /// Cores

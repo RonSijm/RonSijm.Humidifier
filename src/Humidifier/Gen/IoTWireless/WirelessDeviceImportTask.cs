@@ -18,13 +18,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::WirelessDeviceImportTask";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTWireless.WirelessDeviceImportTask; }
 
         /// <summary>
         /// DestinationName

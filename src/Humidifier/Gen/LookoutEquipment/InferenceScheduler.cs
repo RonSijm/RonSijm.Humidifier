@@ -10,14 +10,7 @@ namespace Humidifier.LookoutEquipment
             public static string InferenceSchedulerArn =  "InferenceSchedulerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LookoutEquipment::InferenceScheduler";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LookoutEquipment.InferenceScheduler; }
         public dynamic InferenceSchedulerName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

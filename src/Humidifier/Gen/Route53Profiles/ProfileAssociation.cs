@@ -9,13 +9,7 @@ namespace Humidifier.Route53Profiles
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Profiles::ProfileAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53Profiles.ProfileAssociation; }
 
         /// <summary>
         /// ProfileId

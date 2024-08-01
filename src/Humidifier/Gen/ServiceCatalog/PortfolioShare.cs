@@ -4,13 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class PortfolioShare : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::PortfolioShare";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.PortfolioShare; }
 
         /// <summary>
         /// AccountId

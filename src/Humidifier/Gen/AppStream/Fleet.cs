@@ -5,14 +5,7 @@ namespace Humidifier.AppStream
 
     public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::Fleet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.Fleet; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-description

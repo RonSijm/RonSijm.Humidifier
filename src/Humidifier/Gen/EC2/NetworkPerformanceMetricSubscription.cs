@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class NetworkPerformanceMetricSubscription : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NetworkPerformanceMetricSubscription";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.NetworkPerformanceMetricSubscription; }
 
         /// <summary>
         /// Destination

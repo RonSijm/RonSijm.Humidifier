@@ -11,14 +11,7 @@ namespace Humidifier.Macie
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Macie::FindingsFilter";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Macie.FindingsFilter; }
         /// <summary>
         /// Action
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-action

@@ -10,13 +10,7 @@ namespace Humidifier.BCMDataExports
             public static string ExportArn =  "ExportArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::BCMDataExports::Export";
-            }
-        }
+        public override string AWSTypeName { get => AWS.BCMDataExports.Export; }
 
         /// <summary>
         /// Export_

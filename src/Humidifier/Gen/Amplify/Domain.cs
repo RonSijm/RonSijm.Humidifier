@@ -19,13 +19,7 @@ namespace Humidifier.Amplify
             public static string Certificate =  "Certificate" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Amplify::Domain";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Amplify.Domain; }
 
         /// <summary>
         /// SubDomainSettings

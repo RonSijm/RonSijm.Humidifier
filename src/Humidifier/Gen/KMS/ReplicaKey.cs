@@ -10,14 +10,7 @@ namespace Humidifier.KMS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KMS::ReplicaKey";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KMS.ReplicaKey; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-description

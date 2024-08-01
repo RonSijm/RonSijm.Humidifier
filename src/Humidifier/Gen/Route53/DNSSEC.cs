@@ -4,13 +4,7 @@ namespace Humidifier.Route53
 
     public class DNSSEC : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53::DNSSEC";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53.DNSSEC; }
 
         /// <summary>
         /// HostedZoneId

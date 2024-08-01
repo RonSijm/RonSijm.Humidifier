@@ -4,14 +4,7 @@ namespace Humidifier.CloudFormation
 
     public class Macro : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::Macro";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.Macro; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-macro.html#cfn-cloudformation-macro-description

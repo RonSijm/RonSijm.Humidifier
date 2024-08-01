@@ -9,13 +9,7 @@ namespace Humidifier.SupportApp
             public static string AccountAliasResourceId =  "AccountAliasResourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SupportApp::AccountAlias";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SupportApp.AccountAlias; }
 
         /// <summary>
         /// AccountAlias_

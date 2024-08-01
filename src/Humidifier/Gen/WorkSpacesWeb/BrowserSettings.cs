@@ -10,14 +10,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string BrowserSettingsArn =  "BrowserSettingsArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::BrowserSettings";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.BrowserSettings; }
         /// <summary>
         /// BrowserPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-browsersettings.html#cfn-workspacesweb-browsersettings-browserpolicy

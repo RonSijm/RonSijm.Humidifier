@@ -10,13 +10,7 @@ namespace Humidifier.Evidently
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Evidently::Launch";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Evidently.Launch; }
 
         /// <summary>
         /// Project

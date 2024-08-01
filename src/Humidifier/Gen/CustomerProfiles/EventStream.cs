@@ -13,13 +13,7 @@ namespace Humidifier.CustomerProfiles
             public static string DestinationDetails =  "DestinationDetails" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CustomerProfiles::EventStream";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CustomerProfiles.EventStream; }
 
         /// <summary>
         /// DomainName

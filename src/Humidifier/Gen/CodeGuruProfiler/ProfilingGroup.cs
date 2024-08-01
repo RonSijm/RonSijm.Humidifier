@@ -10,14 +10,7 @@ namespace Humidifier.CodeGuruProfiler
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeGuruProfiler::ProfilingGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeGuruProfiler.ProfilingGroup; }
         /// <summary>
         /// AnomalyDetectionNotificationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-anomalydetectionnotificationconfiguration

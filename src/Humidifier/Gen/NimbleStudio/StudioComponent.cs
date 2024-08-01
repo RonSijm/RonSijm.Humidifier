@@ -10,14 +10,7 @@ namespace Humidifier.NimbleStudio
             public static string StudioComponentId =  "StudioComponentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NimbleStudio::StudioComponent";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NimbleStudio.StudioComponent; }
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-configuration

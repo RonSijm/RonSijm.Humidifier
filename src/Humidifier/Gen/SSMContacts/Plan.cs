@@ -10,14 +10,7 @@ namespace Humidifier.SSMContacts
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSMContacts::Plan";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSMContacts.Plan; }
         /// <summary>
         /// RotationIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-plan.html#cfn-ssmcontacts-plan-rotationids

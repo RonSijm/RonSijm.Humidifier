@@ -4,13 +4,7 @@ namespace Humidifier.NetworkManager
 
     public class LinkAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::LinkAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.LinkAssociation; }
 
         /// <summary>
         /// GlobalNetworkId

@@ -14,14 +14,7 @@ namespace Humidifier.MWAA
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MWAA::Environment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MWAA.Environment; }
         /// <summary>
         /// AirflowConfigurationOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-airflowconfigurationoptions

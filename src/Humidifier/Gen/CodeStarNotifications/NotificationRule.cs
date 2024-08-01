@@ -10,13 +10,7 @@ namespace Humidifier.CodeStarNotifications
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeStarNotifications::NotificationRule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeStarNotifications.NotificationRule; }
 
         /// <summary>
         /// EventTypeIds

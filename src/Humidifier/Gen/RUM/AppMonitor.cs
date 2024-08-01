@@ -10,14 +10,7 @@ namespace Humidifier.RUM
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RUM::AppMonitor";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RUM.AppMonitor; }
         /// <summary>
         /// CustomEvents
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-customevents

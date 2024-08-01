@@ -11,14 +11,7 @@ namespace Humidifier.S3
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::MultiRegionAccessPoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.S3.MultiRegionAccessPoint; }
         /// <summary>
         /// PublicAccessBlockConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspoint.html#cfn-s3-multiregionaccesspoint-publicaccessblockconfiguration

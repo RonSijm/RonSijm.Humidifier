@@ -10,14 +10,7 @@ namespace Humidifier.InspectorV2
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::InspectorV2::Filter";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.InspectorV2.Filter; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-description

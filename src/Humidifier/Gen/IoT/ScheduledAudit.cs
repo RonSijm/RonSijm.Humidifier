@@ -9,14 +9,7 @@ namespace Humidifier.IoT
             public static string ScheduledAuditArn =  "ScheduledAuditArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::ScheduledAudit";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.ScheduledAudit; }
         /// <summary>
         /// DayOfWeek
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-scheduledaudit.html#cfn-iot-scheduledaudit-dayofweek

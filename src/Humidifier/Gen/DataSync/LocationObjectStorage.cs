@@ -10,14 +10,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationObjectStorage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.LocationObjectStorage; }
         /// <summary>
         /// ServerCertificate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-servercertificate

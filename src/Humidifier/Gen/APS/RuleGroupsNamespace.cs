@@ -9,13 +9,7 @@ namespace Humidifier.APS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::APS::RuleGroupsNamespace";
-            }
-        }
+        public override string AWSTypeName { get => AWS.APS.RuleGroupsNamespace; }
 
         /// <summary>
         /// Data

@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string AppImageConfigArn =  "AppImageConfigArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::AppImageConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.AppImageConfig; }
         /// <summary>
         /// KernelGatewayImageConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig

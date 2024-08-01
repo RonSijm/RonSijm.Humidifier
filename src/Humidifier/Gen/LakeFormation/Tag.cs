@@ -4,13 +4,7 @@ namespace Humidifier.LakeFormation
 
     public class Tag : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::Tag";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LakeFormation.Tag; }
 
         /// <summary>
         /// TagKey

@@ -10,14 +10,7 @@ namespace Humidifier.Connect
             public static string Status =  "Status" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::ContactFlowModule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.ContactFlowModule; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-description

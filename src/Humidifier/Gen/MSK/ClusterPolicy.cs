@@ -9,13 +9,7 @@ namespace Humidifier.MSK
             public static string CurrentVersion =  "CurrentVersion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::ClusterPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MSK.ClusterPolicy; }
 
         /// <summary>
         /// Policy

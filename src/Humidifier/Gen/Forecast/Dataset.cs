@@ -10,14 +10,7 @@ namespace Humidifier.Forecast
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Forecast::Dataset";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Forecast.Dataset; }
         /// <summary>
         /// DataFrequency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datafrequency

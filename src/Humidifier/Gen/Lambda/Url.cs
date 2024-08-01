@@ -11,14 +11,7 @@ namespace Humidifier.Lambda
             public static string FunctionUrl =  "FunctionUrl" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::Url";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lambda.Url; }
         /// <summary>
         /// Qualifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-url.html#cfn-lambda-url-qualifier

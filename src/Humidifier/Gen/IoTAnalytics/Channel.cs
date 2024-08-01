@@ -10,14 +10,7 @@ namespace Humidifier.IoTAnalytics
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTAnalytics::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTAnalytics.Channel; }
         public dynamic ChannelName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ChannelStorage

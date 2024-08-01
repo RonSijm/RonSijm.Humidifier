@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class AcceptedPortfolioShare : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::AcceptedPortfolioShare";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.AcceptedPortfolioShare; }
         /// <summary>
         /// AcceptLanguage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-acceptedportfolioshare.html#cfn-servicecatalog-acceptedportfolioshare-acceptlanguage

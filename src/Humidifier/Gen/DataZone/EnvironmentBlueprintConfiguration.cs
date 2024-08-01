@@ -13,14 +13,7 @@ namespace Humidifier.DataZone
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::EnvironmentBlueprintConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataZone.EnvironmentBlueprintConfiguration; }
         /// <summary>
         /// RegionalParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-regionalparameters

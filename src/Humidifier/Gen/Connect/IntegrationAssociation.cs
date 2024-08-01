@@ -9,13 +9,7 @@ namespace Humidifier.Connect
             public static string IntegrationAssociationId =  "IntegrationAssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::IntegrationAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.IntegrationAssociation; }
 
         /// <summary>
         /// IntegrationArn

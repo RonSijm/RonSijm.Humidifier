@@ -14,14 +14,7 @@ namespace Humidifier.Deadline
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::Fleet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Deadline.Fleet; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-fleet.html#cfn-deadline-fleet-description

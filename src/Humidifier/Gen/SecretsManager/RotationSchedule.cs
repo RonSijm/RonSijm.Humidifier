@@ -5,13 +5,7 @@ namespace Humidifier.SecretsManager
 
     public class RotationSchedule : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecretsManager::RotationSchedule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecretsManager.RotationSchedule; }
 
         /// <summary>
         /// SecretId

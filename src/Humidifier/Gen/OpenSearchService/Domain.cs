@@ -16,14 +16,7 @@ namespace Humidifier.OpenSearchService
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchService::Domain";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpenSearchService.Domain; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-engineversion

@@ -4,14 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class SMSChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::SMSChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.SMSChannel; }
         /// <summary>
         /// ShortCode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-smschannel.html#cfn-pinpoint-smschannel-shortcode

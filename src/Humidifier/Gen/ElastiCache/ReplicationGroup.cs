@@ -9,14 +9,7 @@ namespace Humidifier.ElastiCache
         {
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::ReplicationGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElastiCache.ReplicationGroup; }
         /// <summary>
         /// AtRestEncryptionEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-atrestencryptionenabled

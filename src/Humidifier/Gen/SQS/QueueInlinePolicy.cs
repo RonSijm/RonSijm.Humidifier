@@ -4,13 +4,7 @@ namespace Humidifier.SQS
 
     public class QueueInlinePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SQS::QueueInlinePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SQS.QueueInlinePolicy; }
 
         /// <summary>
         /// PolicyDocument

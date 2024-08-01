@@ -9,14 +9,7 @@ namespace Humidifier.GameLift
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::Location";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.Location; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-location.html#cfn-gamelift-location-tags

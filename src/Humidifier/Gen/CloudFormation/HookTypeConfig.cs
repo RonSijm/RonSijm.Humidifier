@@ -9,14 +9,7 @@ namespace Humidifier.CloudFormation
             public static string ConfigurationArn =  "ConfigurationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::HookTypeConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.HookTypeConfig; }
         /// <summary>
         /// TypeName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hooktypeconfig.html#cfn-cloudformation-hooktypeconfig-typename

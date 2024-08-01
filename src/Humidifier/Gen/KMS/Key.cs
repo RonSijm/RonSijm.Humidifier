@@ -10,14 +10,7 @@ namespace Humidifier.KMS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KMS::Key";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KMS.Key; }
         /// <summary>
         /// Origin
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-origin

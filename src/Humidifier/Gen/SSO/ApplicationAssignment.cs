@@ -4,13 +4,7 @@ namespace Humidifier.SSO
 
     public class ApplicationAssignment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSO::ApplicationAssignment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSO.ApplicationAssignment; }
 
         /// <summary>
         /// ApplicationArn

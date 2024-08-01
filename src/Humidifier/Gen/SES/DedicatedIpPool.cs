@@ -4,14 +4,7 @@ namespace Humidifier.SES
 
     public class DedicatedIpPool : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::DedicatedIpPool";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.DedicatedIpPool; }
         /// <summary>
         /// PoolName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-dedicatedippool.html#cfn-ses-dedicatedippool-poolname

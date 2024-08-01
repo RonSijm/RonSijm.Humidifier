@@ -11,13 +11,7 @@ namespace Humidifier.SageMaker
             public static string CreationTime =  "CreationTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::DataQualityJobDefinition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.DataQualityJobDefinition; }
 
         /// <summary>
         /// DataQualityJobInput

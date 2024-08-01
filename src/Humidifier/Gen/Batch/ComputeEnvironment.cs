@@ -10,14 +10,7 @@ namespace Humidifier.Batch
             public static string ComputeEnvironmentArn =  "ComputeEnvironmentArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Batch::ComputeEnvironment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Batch.ComputeEnvironment; }
         /// <summary>
         /// UnmanagedvCpus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-unmanagedvcpus

@@ -12,14 +12,7 @@ namespace Humidifier.MemoryDB
             public static string ARN =  "ARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MemoryDB::Cluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MemoryDB.Cluster; }
         /// <summary>
         /// NumReplicasPerShard
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-numreplicaspershard

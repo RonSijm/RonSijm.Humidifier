@@ -11,13 +11,7 @@ namespace Humidifier.CE
             public static string SubscriptionArn =  "SubscriptionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CE::AnomalySubscription";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CE.AnomalySubscription; }
 
         /// <summary>
         /// MonitorArnList

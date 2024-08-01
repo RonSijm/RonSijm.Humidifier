@@ -13,14 +13,7 @@ namespace Humidifier.DataSync
             public static string TaskArn =  "TaskArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::Task";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.Task; }
         /// <summary>
         /// Includes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-includes

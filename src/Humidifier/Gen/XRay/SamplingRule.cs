@@ -10,14 +10,7 @@ namespace Humidifier.XRay
             public static string RuleARN =  "RuleARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::XRay::SamplingRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.XRay.SamplingRule; }
         /// <summary>
         /// SamplingRule_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingrule

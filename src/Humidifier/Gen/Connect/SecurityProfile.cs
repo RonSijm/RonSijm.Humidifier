@@ -12,14 +12,7 @@ namespace Humidifier.Connect
             public static string LastModifiedRegion =  "LastModifiedRegion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::SecurityProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.SecurityProfile; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-description

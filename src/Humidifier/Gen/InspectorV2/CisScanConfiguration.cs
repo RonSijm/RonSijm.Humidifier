@@ -10,14 +10,7 @@ namespace Humidifier.InspectorV2
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::InspectorV2::CisScanConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.InspectorV2.CisScanConfiguration; }
         /// <summary>
         /// SecurityLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-securitylevel

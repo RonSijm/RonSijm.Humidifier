@@ -9,14 +9,7 @@ namespace Humidifier.RDS
             public static string DBEngineVersionArn =  "DBEngineVersionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::CustomDBEngineVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.CustomDBEngineVersion; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-status

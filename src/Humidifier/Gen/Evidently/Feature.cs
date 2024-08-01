@@ -10,13 +10,7 @@ namespace Humidifier.Evidently
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Evidently::Feature";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Evidently.Feature; }
 
         /// <summary>
         /// Project

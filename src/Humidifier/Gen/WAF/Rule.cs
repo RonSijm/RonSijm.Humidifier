@@ -5,13 +5,7 @@ namespace Humidifier.WAF
 
     public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAF::Rule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAF.Rule; }
 
         /// <summary>
         /// MetricName

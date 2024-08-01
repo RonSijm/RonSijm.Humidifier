@@ -10,14 +10,7 @@ namespace Humidifier.ResourceExplorer2
             public static string ViewArn =  "ViewArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ResourceExplorer2::View";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ResourceExplorer2.View; }
         /// <summary>
         /// Filters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourceexplorer2-view.html#cfn-resourceexplorer2-view-filters

@@ -4,14 +4,7 @@ namespace Humidifier.AppStream
 
     public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::User";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.User; }
         public dynamic UserName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// FirstName

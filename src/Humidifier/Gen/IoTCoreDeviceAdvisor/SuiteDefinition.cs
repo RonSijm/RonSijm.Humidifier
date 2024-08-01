@@ -12,13 +12,7 @@ namespace Humidifier.IoTCoreDeviceAdvisor
             public static string SuiteDefinitionId =  "SuiteDefinitionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTCoreDeviceAdvisor::SuiteDefinition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTCoreDeviceAdvisor.SuiteDefinition; }
 
         /// <summary>
         /// SuiteDefinitionConfiguration

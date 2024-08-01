@@ -10,13 +10,7 @@ namespace Humidifier.IdentityStore
             public static string MembershipId =  "MembershipId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IdentityStore::GroupMembership";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IdentityStore.GroupMembership; }
 
         /// <summary>
         /// MemberId

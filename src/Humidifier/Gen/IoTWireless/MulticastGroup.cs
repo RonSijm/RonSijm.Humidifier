@@ -12,14 +12,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::MulticastGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTWireless.MulticastGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#cfn-iotwireless-multicastgroup-description

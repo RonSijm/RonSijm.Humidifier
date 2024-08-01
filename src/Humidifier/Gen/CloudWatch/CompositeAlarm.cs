@@ -9,14 +9,7 @@ namespace Humidifier.CloudWatch
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudWatch::CompositeAlarm";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudWatch.CompositeAlarm; }
         /// <summary>
         /// AlarmActions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmactions

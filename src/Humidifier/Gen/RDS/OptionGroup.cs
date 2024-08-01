@@ -5,13 +5,7 @@ namespace Humidifier.RDS
 
     public class OptionGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::OptionGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.RDS.OptionGroup; }
 
         /// <summary>
         /// OptionGroupDescription

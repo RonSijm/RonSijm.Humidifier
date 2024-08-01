@@ -4,14 +4,7 @@ namespace Humidifier.ApiGateway
 
     public class Model : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Model";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.Model; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-model.html#cfn-apigateway-model-description

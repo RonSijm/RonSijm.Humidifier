@@ -10,14 +10,7 @@ namespace Humidifier.Pinpoint
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::InAppTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.InAppTemplate; }
         /// <summary>
         /// CustomConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-inapptemplate.html#cfn-pinpoint-inapptemplate-customconfig

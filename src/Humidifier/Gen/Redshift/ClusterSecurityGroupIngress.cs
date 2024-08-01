@@ -4,14 +4,7 @@ namespace Humidifier.Redshift
 
     public class ClusterSecurityGroupIngress : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::ClusterSecurityGroupIngress";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Redshift.ClusterSecurityGroupIngress; }
         /// <summary>
         /// CIDRIP
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clustersecuritygroupingress.html#cfn-redshift-clustersecuritygroupingress-cidrip

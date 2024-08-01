@@ -9,12 +9,6 @@ namespace Humidifier.DevOpsGuru
             public static string AccountId =  "AccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DevOpsGuru::LogAnomalyDetectionIntegration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DevOpsGuru.LogAnomalyDetectionIntegration; }
     }
 }

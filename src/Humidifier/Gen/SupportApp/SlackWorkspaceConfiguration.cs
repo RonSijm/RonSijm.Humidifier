@@ -4,14 +4,7 @@ namespace Humidifier.SupportApp
 
     public class SlackWorkspaceConfiguration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SupportApp::SlackWorkspaceConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SupportApp.SlackWorkspaceConfiguration; }
         /// <summary>
         /// VersionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackworkspaceconfiguration.html#cfn-supportapp-slackworkspaceconfiguration-versionid

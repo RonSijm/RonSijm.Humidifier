@@ -5,14 +5,7 @@ namespace Humidifier.WAFRegional
 
     public class GeoMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::GeoMatchSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFRegional.GeoMatchSet; }
         /// <summary>
         /// GeoMatchConstraints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-geomatchconstraints

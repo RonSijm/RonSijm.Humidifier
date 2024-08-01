@@ -5,13 +5,7 @@ namespace Humidifier.Redshift
 
     public class ClusterParameterGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::ClusterParameterGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Redshift.ClusterParameterGroup; }
 
         /// <summary>
         /// Description

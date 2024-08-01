@@ -5,14 +5,7 @@ namespace Humidifier.ControlTower
 
     public class EnabledControl : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ControlTower::EnabledControl";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ControlTower.EnabledControl; }
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-enabledcontrol.html#cfn-controltower-enabledcontrol-parameters

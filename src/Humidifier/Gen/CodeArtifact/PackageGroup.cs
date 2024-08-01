@@ -10,13 +10,7 @@ namespace Humidifier.CodeArtifact
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeArtifact::PackageGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeArtifact.PackageGroup; }
 
         /// <summary>
         /// Pattern

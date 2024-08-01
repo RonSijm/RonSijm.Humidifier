@@ -10,14 +10,7 @@ namespace Humidifier.Macie
             public static string AwsAccountId =  "AwsAccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Macie::Session";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Macie.Session; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#cfn-macie-session-status

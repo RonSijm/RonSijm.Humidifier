@@ -12,14 +12,7 @@ namespace Humidifier.Deadline
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::MeteredProduct";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Deadline.MeteredProduct; }
         /// <summary>
         /// LicenseEndpointId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-meteredproduct.html#cfn-deadline-meteredproduct-licenseendpointid

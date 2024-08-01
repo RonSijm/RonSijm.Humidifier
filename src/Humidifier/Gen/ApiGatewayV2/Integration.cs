@@ -5,14 +5,7 @@ namespace Humidifier.ApiGatewayV2
 
     public class Integration : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::Integration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.Integration; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-description

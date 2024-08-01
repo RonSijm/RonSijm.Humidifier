@@ -10,13 +10,7 @@ namespace Humidifier.CodePipeline
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodePipeline::Webhook";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodePipeline.Webhook; }
 
         /// <summary>
         /// AuthenticationConfiguration

@@ -11,14 +11,7 @@ namespace Humidifier.CodeStarConnections
             public static string OwnerAccountId =  "OwnerAccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeStarConnections::Connection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeStarConnections.Connection; }
         public dynamic ConnectionName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// HostArn

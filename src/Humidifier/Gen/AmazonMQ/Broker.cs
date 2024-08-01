@@ -18,14 +18,7 @@ namespace Humidifier.AmazonMQ
             public static string WssEndpoints =  "WssEndpoints" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AmazonMQ::Broker";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AmazonMQ.Broker; }
         /// <summary>
         /// SecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-securitygroups

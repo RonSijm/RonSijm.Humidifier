@@ -12,13 +12,7 @@ namespace Humidifier.SageMaker
             public static string ImageArn =  "ImageArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::ImageVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.ImageVersion; }
 
         /// <summary>
         /// ImageName

@@ -5,13 +5,7 @@ namespace Humidifier.AppConfig
 
     public class DeploymentStrategy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::DeploymentStrategy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppConfig.DeploymentStrategy; }
 
         /// <summary>
         /// ReplicateTo

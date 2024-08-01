@@ -5,14 +5,7 @@ namespace Humidifier.MediaConnect
 
     public class BridgeSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::BridgeSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConnect.BridgeSource; }
         /// <summary>
         /// NetworkSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridgesource.html#cfn-mediaconnect-bridgesource-networksource

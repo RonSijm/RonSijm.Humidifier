@@ -9,14 +9,7 @@ namespace Humidifier.MemoryDB
             public static string ARN =  "ARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MemoryDB::SubnetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MemoryDB.SubnetGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-subnetgroup.html#cfn-memorydb-subnetgroup-description

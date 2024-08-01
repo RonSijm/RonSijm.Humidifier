@@ -10,14 +10,7 @@ namespace Humidifier.SSM
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::PatchBaseline";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSM.PatchBaseline; }
         /// <summary>
         /// OperatingSystem
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-operatingsystem

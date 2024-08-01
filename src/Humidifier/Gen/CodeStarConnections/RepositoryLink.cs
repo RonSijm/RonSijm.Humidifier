@@ -11,13 +11,7 @@ namespace Humidifier.CodeStarConnections
             public static string RepositoryLinkId =  "RepositoryLinkId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeStarConnections::RepositoryLink";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeStarConnections.RepositoryLink; }
 
         /// <summary>
         /// OwnerId

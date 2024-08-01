@@ -10,13 +10,7 @@ namespace Humidifier.GlobalAccelerator
             public static string ListenerArn =  "ListenerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GlobalAccelerator::Listener";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GlobalAccelerator.Listener; }
 
         /// <summary>
         /// PortRanges

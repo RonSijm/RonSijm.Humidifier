@@ -12,14 +12,7 @@ namespace Humidifier.APS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::APS::Workspace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.APS.Workspace; }
         /// <summary>
         /// KmsKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#cfn-aps-workspace-kmskeyarn

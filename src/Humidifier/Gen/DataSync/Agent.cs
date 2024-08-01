@@ -10,14 +10,7 @@ namespace Humidifier.DataSync
             public static string EndpointType =  "EndpointType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::Agent";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.Agent; }
         /// <summary>
         /// SubnetArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#cfn-datasync-agent-subnetarns

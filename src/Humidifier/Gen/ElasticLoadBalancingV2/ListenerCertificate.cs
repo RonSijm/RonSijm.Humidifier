@@ -5,13 +5,7 @@ namespace Humidifier.ElasticLoadBalancingV2
 
     public class ListenerCertificate : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::ListenerCertificate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.ListenerCertificate; }
 
         /// <summary>
         /// Certificates

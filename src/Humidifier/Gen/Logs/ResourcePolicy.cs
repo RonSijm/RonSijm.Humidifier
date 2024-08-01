@@ -4,13 +4,7 @@ namespace Humidifier.Logs
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::ResourcePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Logs.ResourcePolicy; }
 
         /// <summary>
         /// PolicyName

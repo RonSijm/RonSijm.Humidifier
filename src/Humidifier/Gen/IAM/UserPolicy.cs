@@ -4,13 +4,7 @@ namespace Humidifier.IAM
 
     public class UserPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::UserPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IAM.UserPolicy; }
 
         /// <summary>
         /// UserName

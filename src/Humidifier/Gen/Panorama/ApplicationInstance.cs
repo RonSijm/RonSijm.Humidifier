@@ -17,13 +17,7 @@ namespace Humidifier.Panorama
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Panorama::ApplicationInstance";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Panorama.ApplicationInstance; }
 
         /// <summary>
         /// DefaultRuntimeContextDevice

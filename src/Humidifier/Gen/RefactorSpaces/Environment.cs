@@ -11,14 +11,7 @@ namespace Humidifier.RefactorSpaces
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RefactorSpaces::Environment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RefactorSpaces.Environment; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#cfn-refactorspaces-environment-description

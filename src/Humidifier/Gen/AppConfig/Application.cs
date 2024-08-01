@@ -10,14 +10,7 @@ namespace Humidifier.AppConfig
             public static string ApplicationId =  "ApplicationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppConfig.Application; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-application.html#cfn-appconfig-application-description

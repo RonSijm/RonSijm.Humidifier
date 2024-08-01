@@ -12,14 +12,7 @@ namespace Humidifier.VpcLattice
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::ServiceNetwork";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VpcLattice.ServiceNetwork; }
         /// <summary>
         /// AuthType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetwork.html#cfn-vpclattice-servicenetwork-authtype

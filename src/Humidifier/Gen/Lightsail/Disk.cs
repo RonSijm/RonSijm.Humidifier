@@ -18,13 +18,7 @@ namespace Humidifier.Lightsail
             public static string Iops =  "Iops" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Disk";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lightsail.Disk; }
 
         /// <summary>
         /// SizeInGb

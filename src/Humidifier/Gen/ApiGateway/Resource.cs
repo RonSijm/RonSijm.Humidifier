@@ -9,13 +9,7 @@ namespace Humidifier.ApiGateway
             public static string ResourceId =  "ResourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Resource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGateway.Resource; }
 
         /// <summary>
         /// ParentId

@@ -10,13 +10,7 @@ namespace Humidifier.MSK
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::Cluster";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MSK.Cluster; }
 
         /// <summary>
         /// KafkaVersion

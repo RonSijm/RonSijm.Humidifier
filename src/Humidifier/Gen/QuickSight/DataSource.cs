@@ -13,14 +13,7 @@ namespace Humidifier.QuickSight
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QuickSight::DataSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.QuickSight.DataSource; }
         /// <summary>
         /// DataSourceParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceparameters

@@ -16,14 +16,7 @@ namespace Humidifier.IAM
             public static string PolicyId =  "PolicyId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::ManagedPolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.ManagedPolicy; }
         public dynamic ManagedPolicyName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Path

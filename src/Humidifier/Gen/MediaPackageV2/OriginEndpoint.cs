@@ -15,14 +15,7 @@ namespace Humidifier.MediaPackageV2
             public static string DashManifestUrls =  "DashManifestUrls" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackageV2::OriginEndpoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackageV2.OriginEndpoint; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpoint.html#cfn-mediapackagev2-originendpoint-description

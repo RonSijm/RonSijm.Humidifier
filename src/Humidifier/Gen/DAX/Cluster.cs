@@ -12,14 +12,7 @@ namespace Humidifier.DAX
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DAX::Cluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DAX.Cluster; }
         /// <summary>
         /// SSESpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-ssespecification

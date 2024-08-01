@@ -5,14 +5,7 @@ namespace Humidifier.SES
 
     public class ConfigurationSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::ConfigurationSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.ConfigurationSet; }
         /// <summary>
         /// SendingOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-sendingoptions

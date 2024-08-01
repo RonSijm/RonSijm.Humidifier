@@ -16,14 +16,7 @@ namespace Humidifier.Omics
             public static string StoreArn =  "StoreArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Omics::VariantStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Omics.VariantStore; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-variantstore.html#cfn-omics-variantstore-description

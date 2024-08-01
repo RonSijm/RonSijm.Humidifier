@@ -10,14 +10,7 @@ namespace Humidifier.ElasticBeanstalk
             public static string TemplateName =  "TemplateName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticBeanstalk::ConfigurationTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticBeanstalk.ConfigurationTemplate; }
         /// <summary>
         /// EnvironmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid

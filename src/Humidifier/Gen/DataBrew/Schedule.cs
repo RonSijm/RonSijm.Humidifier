@@ -4,14 +4,7 @@ namespace Humidifier.DataBrew
 
     public class Schedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataBrew::Schedule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataBrew.Schedule; }
         /// <summary>
         /// JobNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-jobnames

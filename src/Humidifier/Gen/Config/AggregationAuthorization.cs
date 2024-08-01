@@ -9,13 +9,7 @@ namespace Humidifier.Config
             public static string AggregationAuthorizationArn =  "AggregationAuthorizationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::AggregationAuthorization";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Config.AggregationAuthorization; }
 
         /// <summary>
         /// AuthorizedAccountId

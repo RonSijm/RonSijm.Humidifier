@@ -5,13 +5,7 @@ namespace Humidifier.LakeFormation
 
     public class Permissions : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::Permissions";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LakeFormation.Permissions; }
 
         /// <summary>
         /// DataLakePrincipal

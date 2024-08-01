@@ -4,13 +4,7 @@ namespace Humidifier.IoT
 
     public class Logging : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::Logging";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.Logging; }
 
         /// <summary>
         /// AccountId

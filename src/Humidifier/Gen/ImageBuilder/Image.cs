@@ -13,14 +13,7 @@ namespace Humidifier.ImageBuilder
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ImageBuilder::Image";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ImageBuilder.Image; }
         /// <summary>
         /// ImageScanningConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagescanningconfiguration

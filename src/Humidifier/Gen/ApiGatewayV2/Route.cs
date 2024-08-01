@@ -9,14 +9,7 @@ namespace Humidifier.ApiGatewayV2
             public static string RouteId =  "RouteId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::Route";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.Route; }
         /// <summary>
         /// Target
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-route.html#cfn-apigatewayv2-route-target

@@ -9,14 +9,7 @@ namespace Humidifier.IoT
             public static string MetricArn =  "MetricArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::CustomMetric";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.CustomMetric; }
         /// <summary>
         /// MetricName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-custommetric.html#cfn-iot-custommetric-metricname

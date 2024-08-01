@@ -15,14 +15,7 @@ namespace Humidifier.BillingConductor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::BillingConductor::BillingGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.BillingConductor.BillingGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-description

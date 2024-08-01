@@ -9,14 +9,7 @@ namespace Humidifier.EC2
             public static string ServiceId =  "ServiceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPCEndpointService";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VPCEndpointService; }
         /// <summary>
         /// NetworkLoadBalancerArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-networkloadbalancerarns

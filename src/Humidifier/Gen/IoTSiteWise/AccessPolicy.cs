@@ -11,13 +11,7 @@ namespace Humidifier.IoTSiteWise
             public static string AccessPolicyId =  "AccessPolicyId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::AccessPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTSiteWise.AccessPolicy; }
 
         /// <summary>
         /// AccessPolicyResource

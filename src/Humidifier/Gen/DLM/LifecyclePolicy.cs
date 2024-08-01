@@ -10,14 +10,7 @@ namespace Humidifier.DLM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DLM::LifecyclePolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DLM.LifecyclePolicy; }
         /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-executionrolearn

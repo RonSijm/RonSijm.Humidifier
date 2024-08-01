@@ -11,14 +11,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationAzureBlob";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.LocationAzureBlob; }
         /// <summary>
         /// AzureAccessTier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureaccesstier

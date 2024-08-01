@@ -11,13 +11,7 @@ namespace Humidifier.QLDB
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QLDB::Stream";
-            }
-        }
+        public override string AWSTypeName { get => AWS.QLDB.Stream; }
 
         /// <summary>
         /// InclusiveStartTime

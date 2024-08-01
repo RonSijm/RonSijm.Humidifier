@@ -11,14 +11,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::Thing";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.Thing; }
         /// <summary>
         /// AttributePayload
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload

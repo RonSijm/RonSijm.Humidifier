@@ -13,14 +13,7 @@ namespace Humidifier.Amplify
             public static string AppName =  "AppName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Amplify::App";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Amplify.App; }
         /// <summary>
         /// AutoBranchCreationConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-autobranchcreationconfig

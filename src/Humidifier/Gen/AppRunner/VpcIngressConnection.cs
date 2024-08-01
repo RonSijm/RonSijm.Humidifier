@@ -12,14 +12,7 @@ namespace Humidifier.AppRunner
             public static string VpcIngressConnectionArn =  "VpcIngressConnectionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppRunner::VpcIngressConnection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppRunner.VpcIngressConnection; }
         public dynamic VpcIngressConnectionName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

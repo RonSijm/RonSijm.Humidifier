@@ -11,13 +11,7 @@ namespace Humidifier.Logs
             public static string DeliveryDestinationType =  "DeliveryDestinationType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::Delivery";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Logs.Delivery; }
 
         /// <summary>
         /// DeliveryDestinationArn

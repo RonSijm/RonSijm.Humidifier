@@ -12,14 +12,7 @@ namespace Humidifier.EC2
             public static string VerifiedAccessInstanceId =  "VerifiedAccessInstanceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VerifiedAccessInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VerifiedAccessInstance; }
         /// <summary>
         /// VerifiedAccessTrustProviders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustproviders

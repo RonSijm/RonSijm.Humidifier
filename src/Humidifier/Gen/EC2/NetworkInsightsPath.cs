@@ -14,14 +14,7 @@ namespace Humidifier.EC2
             public static string DestinationArn =  "DestinationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NetworkInsightsPath";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.NetworkInsightsPath; }
         /// <summary>
         /// Destination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination

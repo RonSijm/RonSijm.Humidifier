@@ -10,13 +10,7 @@ namespace Humidifier.EMR
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::Step";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EMR.Step; }
 
         /// <summary>
         /// JobFlowId

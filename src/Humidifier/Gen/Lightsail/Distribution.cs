@@ -12,14 +12,7 @@ namespace Humidifier.Lightsail
             public static string AbleToUpdateBundle =  "AbleToUpdateBundle" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Distribution";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lightsail.Distribution; }
         /// <summary>
         /// IpAddressType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-ipaddresstype

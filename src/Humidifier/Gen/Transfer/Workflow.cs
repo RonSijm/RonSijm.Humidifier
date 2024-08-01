@@ -11,13 +11,7 @@ namespace Humidifier.Transfer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::Workflow";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Transfer.Workflow; }
 
         /// <summary>
         /// Steps

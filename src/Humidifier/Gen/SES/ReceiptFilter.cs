@@ -5,13 +5,7 @@ namespace Humidifier.SES
 
     public class ReceiptFilter : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::ReceiptFilter";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SES.ReceiptFilter; }
 
         /// <summary>
         /// Filter

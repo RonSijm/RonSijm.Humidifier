@@ -10,13 +10,7 @@ namespace Humidifier.EKS
             public static string AssociationId =  "AssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::PodIdentityAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EKS.PodIdentityAssociation; }
 
         /// <summary>
         /// ServiceAccount

@@ -5,14 +5,7 @@ namespace Humidifier.OpsWorks
 
     public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpsWorks::Stack";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpsWorks.Stack; }
         /// <summary>
         /// AgentVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-agentversion

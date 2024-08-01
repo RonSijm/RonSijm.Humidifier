@@ -14,14 +14,7 @@ namespace Humidifier.Organizations
             public static string ManagementAccountEmail =  "ManagementAccountEmail" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Organizations::Organization";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Organizations.Organization; }
         /// <summary>
         /// FeatureSet
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organization.html#cfn-organizations-organization-featureset

@@ -10,13 +10,7 @@ namespace Humidifier.SageMaker
             public static string UserProfileArn =  "UserProfileArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::UserProfile";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.UserProfile; }
 
         /// <summary>
         /// DomainId

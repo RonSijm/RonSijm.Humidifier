@@ -10,14 +10,7 @@ namespace Humidifier.Route53RecoveryReadiness
             public static string CellArn =  "CellArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryReadiness::Cell";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53RecoveryReadiness.Cell; }
         public dynamic CellName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Cells

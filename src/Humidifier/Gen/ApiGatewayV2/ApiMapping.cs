@@ -9,13 +9,7 @@ namespace Humidifier.ApiGatewayV2
             public static string ApiMappingId =  "ApiMappingId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::ApiMapping";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.ApiMapping; }
 
         /// <summary>
         /// DomainName

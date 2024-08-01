@@ -12,14 +12,7 @@ namespace Humidifier.EntityResolution
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EntityResolution::IdMappingWorkflow";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EntityResolution.IdMappingWorkflow; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idmappingworkflow.html#cfn-entityresolution-idmappingworkflow-description

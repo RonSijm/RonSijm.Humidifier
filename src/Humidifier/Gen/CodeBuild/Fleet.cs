@@ -10,14 +10,7 @@ namespace Humidifier.CodeBuild
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeBuild::Fleet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeBuild.Fleet; }
         /// <summary>
         /// FleetServiceRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-fleet.html#cfn-codebuild-fleet-fleetservicerole

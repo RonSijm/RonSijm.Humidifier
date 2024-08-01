@@ -11,14 +11,7 @@ namespace Humidifier.AppIntegrations
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppIntegrations::DataIntegration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppIntegrations.DataIntegration; }
         /// <summary>
         /// ScheduleConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-dataintegration.html#cfn-appintegrations-dataintegration-scheduleconfig

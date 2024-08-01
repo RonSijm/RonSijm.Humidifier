@@ -11,14 +11,7 @@ namespace Humidifier.DirectoryService
             public static string DnsIpAddresses =  "DnsIpAddresses" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DirectoryService::MicrosoftAD";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DirectoryService.MicrosoftAD; }
         /// <summary>
         /// CreateAlias
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-createalias

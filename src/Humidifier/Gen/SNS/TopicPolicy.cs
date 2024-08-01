@@ -9,13 +9,7 @@ namespace Humidifier.SNS
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SNS::TopicPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SNS.TopicPolicy; }
 
         /// <summary>
         /// Topics

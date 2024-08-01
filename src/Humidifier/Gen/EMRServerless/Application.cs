@@ -11,14 +11,7 @@ namespace Humidifier.EMRServerless
             public static string ApplicationId =  "ApplicationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMRServerless::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EMRServerless.Application; }
         /// <summary>
         /// AutoStartConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-autostartconfiguration

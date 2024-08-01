@@ -4,13 +4,7 @@ namespace Humidifier.VpcLattice
 
     public class ResourcePolicy : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::ResourcePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.VpcLattice.ResourcePolicy; }
 
         /// <summary>
         /// Policy

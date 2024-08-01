@@ -4,13 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class BaiduChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::BaiduChannel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Pinpoint.BaiduChannel; }
 
         /// <summary>
         /// SecretKey

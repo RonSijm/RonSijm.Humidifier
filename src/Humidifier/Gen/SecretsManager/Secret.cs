@@ -10,14 +10,7 @@ namespace Humidifier.SecretsManager
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecretsManager::Secret";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecretsManager.Secret; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-description

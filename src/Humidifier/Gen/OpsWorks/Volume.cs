@@ -4,13 +4,7 @@ namespace Humidifier.OpsWorks
 
     public class Volume : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpsWorks::Volume";
-            }
-        }
+        public override string AWSTypeName { get => AWS.OpsWorks.Volume; }
 
         /// <summary>
         /// Ec2VolumeId

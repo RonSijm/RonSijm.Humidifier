@@ -16,13 +16,7 @@ namespace Humidifier.EC2
             public static string IpamRegion =  "IpamRegion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::IPAMResourceDiscoveryAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.IPAMResourceDiscoveryAssociation; }
 
         /// <summary>
         /// IpamId

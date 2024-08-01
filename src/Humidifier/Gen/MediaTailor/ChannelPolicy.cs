@@ -4,13 +4,7 @@ namespace Humidifier.MediaTailor
 
     public class ChannelPolicy : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaTailor::ChannelPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaTailor.ChannelPolicy; }
 
         /// <summary>
         /// Policy

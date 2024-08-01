@@ -10,14 +10,7 @@ namespace Humidifier.ApiGatewayV2
             public static string AuthorizerId =  "AuthorizerId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::Authorizer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.Authorizer; }
         /// <summary>
         /// IdentityValidationExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-identityvalidationexpression

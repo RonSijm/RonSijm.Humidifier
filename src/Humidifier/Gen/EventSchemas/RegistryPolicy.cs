@@ -9,13 +9,7 @@ namespace Humidifier.EventSchemas
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EventSchemas::RegistryPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EventSchemas.RegistryPolicy; }
 
         /// <summary>
         /// Policy

@@ -11,13 +11,7 @@ namespace Humidifier.LakeFormation
             public static string TagsIdentifier =  "TagsIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::TagAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LakeFormation.TagAssociation; }
 
         /// <summary>
         /// LFTags

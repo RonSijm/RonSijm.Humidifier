@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class Connection : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Connection";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.Connection; }
 
         /// <summary>
         /// ConnectionInput

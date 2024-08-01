@@ -12,14 +12,7 @@ namespace Humidifier.SES
             public static string ArchiveState =  "ArchiveState" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::MailManagerArchive";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.MailManagerArchive; }
         /// <summary>
         /// KmsKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-mailmanagerarchive.html#cfn-ses-mailmanagerarchive-kmskeyarn

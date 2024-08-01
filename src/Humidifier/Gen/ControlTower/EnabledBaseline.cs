@@ -10,13 +10,7 @@ namespace Humidifier.ControlTower
             public static string EnabledBaselineIdentifier =  "EnabledBaselineIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ControlTower::EnabledBaseline";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ControlTower.EnabledBaseline; }
 
         /// <summary>
         /// BaselineVersion

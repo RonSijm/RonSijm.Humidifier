@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class Partition : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Partition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.Partition; }
 
         /// <summary>
         /// TableName

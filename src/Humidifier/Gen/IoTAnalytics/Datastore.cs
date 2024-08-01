@@ -10,14 +10,7 @@ namespace Humidifier.IoTAnalytics
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTAnalytics::Datastore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTAnalytics.Datastore; }
         /// <summary>
         /// DatastoreStorage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorestorage

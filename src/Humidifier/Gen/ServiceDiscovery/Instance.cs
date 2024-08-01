@@ -4,13 +4,7 @@ namespace Humidifier.ServiceDiscovery
 
     public class Instance : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceDiscovery::Instance";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceDiscovery.Instance; }
 
         /// <summary>
         /// InstanceAttributes

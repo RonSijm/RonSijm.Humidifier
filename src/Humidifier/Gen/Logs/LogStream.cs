@@ -4,14 +4,7 @@ namespace Humidifier.Logs
 
     public class LogStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::LogStream";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Logs.LogStream; }
         public dynamic LogStreamName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

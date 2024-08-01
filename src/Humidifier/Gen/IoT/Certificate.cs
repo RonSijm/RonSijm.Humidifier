@@ -10,13 +10,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::Certificate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.Certificate; }
 
         /// <summary>
         /// Status

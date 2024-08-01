@@ -10,14 +10,7 @@ namespace Humidifier.IAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::User";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.User; }
         /// <summary>
         /// Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-user.html#cfn-iam-user-path

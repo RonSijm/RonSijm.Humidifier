@@ -10,13 +10,7 @@ namespace Humidifier.Connect
             public static string UserArn =  "UserArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::User";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.User; }
 
         /// <summary>
         /// RoutingProfileArn

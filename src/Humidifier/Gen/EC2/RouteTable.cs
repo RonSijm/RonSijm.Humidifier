@@ -9,13 +9,7 @@ namespace Humidifier.EC2
             public static string RouteTableId =  "RouteTableId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::RouteTable";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.RouteTable; }
 
         /// <summary>
         /// VpcId

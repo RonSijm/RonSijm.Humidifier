@@ -11,14 +11,7 @@ namespace Humidifier.IoT1Click
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT1Click::Project";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT1Click.Project; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-description

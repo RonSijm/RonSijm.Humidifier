@@ -4,13 +4,7 @@ namespace Humidifier.OpenSearchServerless
 
     public class SecurityPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchServerless::SecurityPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.OpenSearchServerless.SecurityPolicy; }
 
         /// <summary>
         /// Policy

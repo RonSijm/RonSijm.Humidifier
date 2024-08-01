@@ -10,14 +10,7 @@ namespace Humidifier.EKS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::Addon";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EKS.Addon; }
         /// <summary>
         /// PreserveOnDelete
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-preserveondelete

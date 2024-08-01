@@ -15,13 +15,7 @@ namespace Humidifier.QBusiness
             public static string DataSourceId =  "DataSourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QBusiness::DataSource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.QBusiness.DataSource; }
 
         /// <summary>
         /// IndexId

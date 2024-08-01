@@ -12,13 +12,7 @@ namespace Humidifier.EntityResolution
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EntityResolution::MatchingWorkflow";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EntityResolution.MatchingWorkflow; }
 
         /// <summary>
         /// ResolutionTechniques

@@ -5,13 +5,7 @@ namespace Humidifier.AppStream
 
     public class DirectoryConfig : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::DirectoryConfig";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppStream.DirectoryConfig; }
 
         /// <summary>
         /// OrganizationalUnitDistinguishedNames

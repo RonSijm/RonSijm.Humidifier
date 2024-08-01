@@ -12,14 +12,7 @@ namespace Humidifier.MediaConnect
             public static string SourceIngestPort =  "SourceIngestPort" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::FlowSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConnect.FlowSource; }
         /// <summary>
         /// StreamId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-streamid

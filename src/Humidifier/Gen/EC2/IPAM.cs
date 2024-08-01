@@ -17,14 +17,7 @@ namespace Humidifier.EC2
             public static string PublicDefaultScopeId =  "PublicDefaultScopeId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::IPAM";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.IPAM; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-description

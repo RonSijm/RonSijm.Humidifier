@@ -11,14 +11,7 @@ namespace Humidifier.Amplify
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Amplify::Branch";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Amplify.Branch; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-description

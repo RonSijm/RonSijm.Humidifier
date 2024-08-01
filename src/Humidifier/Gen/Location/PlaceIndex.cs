@@ -13,13 +13,7 @@ namespace Humidifier.Location
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Location::PlaceIndex";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Location.PlaceIndex; }
 
         /// <summary>
         /// IndexName

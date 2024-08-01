@@ -5,14 +5,7 @@ namespace Humidifier.ApiGatewayV2
 
     public class ApiGatewayManagedOverrides : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::ApiGatewayManagedOverrides";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.ApiGatewayManagedOverrides; }
         /// <summary>
         /// Integration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integration

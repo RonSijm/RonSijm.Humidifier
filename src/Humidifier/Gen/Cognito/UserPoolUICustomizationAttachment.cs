@@ -4,14 +4,7 @@ namespace Humidifier.Cognito
 
     public class UserPoolUICustomizationAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolUICustomizationAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolUICustomizationAttachment; }
         /// <summary>
         /// CSS
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluicustomizationattachment.html#cfn-cognito-userpooluicustomizationattachment-css

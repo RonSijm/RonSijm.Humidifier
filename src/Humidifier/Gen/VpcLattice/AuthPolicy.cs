@@ -9,13 +9,7 @@ namespace Humidifier.VpcLattice
             public static string State =  "State" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::AuthPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.VpcLattice.AuthPolicy; }
 
         /// <summary>
         /// Policy

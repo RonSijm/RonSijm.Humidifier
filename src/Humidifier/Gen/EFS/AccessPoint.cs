@@ -11,13 +11,7 @@ namespace Humidifier.EFS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EFS::AccessPoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EFS.AccessPoint; }
 
         /// <summary>
         /// FileSystemId

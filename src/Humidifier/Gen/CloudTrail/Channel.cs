@@ -10,14 +10,7 @@ namespace Humidifier.CloudTrail
             public static string ChannelArn =  "ChannelArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudTrail::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudTrail.Channel; }
         /// <summary>
         /// Destinations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-channel.html#cfn-cloudtrail-channel-destinations

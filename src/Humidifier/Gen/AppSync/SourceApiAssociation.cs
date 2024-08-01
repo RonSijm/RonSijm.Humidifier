@@ -18,14 +18,7 @@ namespace Humidifier.AppSync
             public static string SourceApiId =  "SourceApiId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::SourceApiAssociation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.SourceApiAssociation; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-sourceapiassociation.html#cfn-appsync-sourceapiassociation-description

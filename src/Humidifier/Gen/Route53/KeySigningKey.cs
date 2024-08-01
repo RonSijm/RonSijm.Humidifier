@@ -4,13 +4,7 @@ namespace Humidifier.Route53
 
     public class KeySigningKey : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53::KeySigningKey";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53.KeySigningKey; }
 
         /// <summary>
         /// Status

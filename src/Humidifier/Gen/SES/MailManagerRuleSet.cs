@@ -11,14 +11,7 @@ namespace Humidifier.SES
             public static string RuleSetArn =  "RuleSetArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::MailManagerRuleSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.MailManagerRuleSet; }
         /// <summary>
         /// RuleSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-mailmanagerruleset.html#cfn-ses-mailmanagerruleset-rulesetname

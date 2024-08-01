@@ -5,14 +5,7 @@ namespace Humidifier.Glue
 
     public class DataQualityRuleset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::DataQualityRuleset";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.DataQualityRuleset; }
         /// <summary>
         /// Ruleset
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-dataqualityruleset.html#cfn-glue-dataqualityruleset-ruleset

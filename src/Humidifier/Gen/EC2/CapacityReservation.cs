@@ -15,14 +15,7 @@ namespace Humidifier.EC2
             public static string InstanceType =  "InstanceType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::CapacityReservation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.CapacityReservation; }
         /// <summary>
         /// Tenancy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-tenancy

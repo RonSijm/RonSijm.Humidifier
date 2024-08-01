@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string AttachmentId =  "AttachmentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NetworkInterfaceAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.NetworkInterfaceAttachment; }
         /// <summary>
         /// EnaSrdSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-enasrdspecification

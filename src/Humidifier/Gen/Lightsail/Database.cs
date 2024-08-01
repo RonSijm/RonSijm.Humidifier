@@ -10,13 +10,7 @@ namespace Humidifier.Lightsail
             public static string DatabaseArn =  "DatabaseArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Database";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lightsail.Database; }
 
         /// <summary>
         /// RelationalDatabaseName

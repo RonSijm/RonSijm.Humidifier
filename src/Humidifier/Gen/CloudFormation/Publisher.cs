@@ -12,13 +12,7 @@ namespace Humidifier.CloudFormation
             public static string PublisherStatus =  "PublisherStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::Publisher";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFormation.Publisher; }
 
         /// <summary>
         /// AcceptTermsAndConditions

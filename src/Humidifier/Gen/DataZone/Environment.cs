@@ -21,13 +21,7 @@ namespace Humidifier.DataZone
             public static string Provider =  "Provider" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::Environment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataZone.Environment; }
 
         /// <summary>
         /// ProjectIdentifier

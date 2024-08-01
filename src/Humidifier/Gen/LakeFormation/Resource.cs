@@ -4,13 +4,7 @@ namespace Humidifier.LakeFormation
 
     public class Resource : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::Resource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LakeFormation.Resource; }
 
         /// <summary>
         /// ResourceArn

@@ -10,13 +10,7 @@ namespace Humidifier.ECR
             public static string RegistryId =  "RegistryId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECR::ReplicationConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ECR.ReplicationConfiguration; }
 
         /// <summary>
         /// ReplicationConfiguration_

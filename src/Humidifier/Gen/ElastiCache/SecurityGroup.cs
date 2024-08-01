@@ -4,13 +4,7 @@ namespace Humidifier.ElastiCache
 
     public class SecurityGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::SecurityGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElastiCache.SecurityGroup; }
 
         /// <summary>
         /// Description

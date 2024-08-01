@@ -11,13 +11,7 @@ namespace Humidifier.ImageBuilder
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ImageBuilder::ImageRecipe";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ImageBuilder.ImageRecipe; }
 
         /// <summary>
         /// Components

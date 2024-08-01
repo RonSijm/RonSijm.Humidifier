@@ -13,14 +13,7 @@ namespace Humidifier.CloudWatch
             public static string LastUpdateDate =  "LastUpdateDate" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudWatch::MetricStream";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudWatch.MetricStream; }
         /// <summary>
         /// StatisticsConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-statisticsconfigurations

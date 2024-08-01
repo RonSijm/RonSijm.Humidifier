@@ -11,14 +11,7 @@ namespace Humidifier.RolesAnywhere
             public static string ProfileArn =  "ProfileArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RolesAnywhere::Profile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RolesAnywhere.Profile; }
         /// <summary>
         /// ManagedPolicyArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-managedpolicyarns

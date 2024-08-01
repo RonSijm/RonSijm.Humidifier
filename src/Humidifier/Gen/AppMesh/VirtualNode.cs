@@ -15,13 +15,7 @@ namespace Humidifier.AppMesh
             public static string VirtualNodeName =  "VirtualNodeName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppMesh::VirtualNode";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppMesh.VirtualNode; }
 
         /// <summary>
         /// MeshName

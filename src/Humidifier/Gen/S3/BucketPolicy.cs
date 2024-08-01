@@ -4,13 +4,7 @@ namespace Humidifier.S3
 
     public class BucketPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::BucketPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3.BucketPolicy; }
 
         /// <summary>
         /// Bucket

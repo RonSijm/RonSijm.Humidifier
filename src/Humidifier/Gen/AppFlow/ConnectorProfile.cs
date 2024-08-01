@@ -11,14 +11,7 @@ namespace Humidifier.AppFlow
             public static string ConnectorProfileArn =  "ConnectorProfileArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppFlow::ConnectorProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppFlow.ConnectorProfile; }
         /// <summary>
         /// ConnectorLabel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectorlabel

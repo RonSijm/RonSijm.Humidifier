@@ -11,13 +11,7 @@ namespace Humidifier.AutoScalingPlans
             public static string ScalingPlanVersion =  "ScalingPlanVersion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScalingPlans::ScalingPlan";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AutoScalingPlans.ScalingPlan; }
 
         /// <summary>
         /// ApplicationSource

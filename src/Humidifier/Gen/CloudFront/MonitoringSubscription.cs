@@ -5,13 +5,7 @@ namespace Humidifier.CloudFront
 
     public class MonitoringSubscription : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFront::MonitoringSubscription";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFront.MonitoringSubscription; }
 
         /// <summary>
         /// MonitoringSubscription_

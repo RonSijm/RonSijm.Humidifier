@@ -11,14 +11,7 @@ namespace Humidifier.IVS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVS::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IVS.Channel; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-type

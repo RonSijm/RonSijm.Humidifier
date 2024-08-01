@@ -4,13 +4,7 @@ namespace Humidifier.QLDB
 
     public class Ledger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QLDB::Ledger";
-            }
-        }
+        public override string AWSTypeName { get => AWS.QLDB.Ledger; }
 
         /// <summary>
         /// PermissionsMode

@@ -11,14 +11,7 @@ namespace Humidifier.Route53
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53::CidrCollection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53.CidrCollection; }
         /// <summary>
         /// Locations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-cidrcollection.html#cfn-route53-cidrcollection-locations

@@ -10,14 +10,7 @@ namespace Humidifier.SSMIncidents
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSMIncidents::ResponsePlan";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSMIncidents.ResponsePlan; }
         /// <summary>
         /// ChatChannel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-chatchannel

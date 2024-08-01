@@ -9,14 +9,7 @@ namespace Humidifier.VerifiedPermissions
             public static string PolicyTemplateId =  "PolicyTemplateId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VerifiedPermissions::PolicyTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VerifiedPermissions.PolicyTemplate; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-policytemplate.html#cfn-verifiedpermissions-policytemplate-description

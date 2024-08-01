@@ -14,14 +14,7 @@ namespace Humidifier.SageMaker
             public static string ModelCardProcessingStatus =  "ModelCardProcessingStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::ModelCard";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.ModelCard; }
         /// <summary>
         /// LastModifiedBy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-lastmodifiedby

@@ -16,14 +16,7 @@ namespace Humidifier.Bedrock
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::FlowVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.FlowVersion; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flowversion.html#cfn-bedrock-flowversion-description

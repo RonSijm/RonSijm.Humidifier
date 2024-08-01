@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class LaunchRoleConstraint : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::LaunchRoleConstraint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.LaunchRoleConstraint; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchroleconstraint.html#cfn-servicecatalog-launchroleconstraint-description

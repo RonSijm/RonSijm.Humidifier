@@ -11,14 +11,7 @@ namespace Humidifier.Config
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::ConfigRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.ConfigRule; }
         /// <summary>
         /// EvaluationModes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-evaluationmodes

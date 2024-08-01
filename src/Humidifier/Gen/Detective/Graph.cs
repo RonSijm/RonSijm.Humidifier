@@ -9,14 +9,7 @@ namespace Humidifier.Detective
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Detective::Graph";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Detective.Graph; }
         /// <summary>
         /// AutoEnableMembers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-detective-graph.html#cfn-detective-graph-autoenablemembers

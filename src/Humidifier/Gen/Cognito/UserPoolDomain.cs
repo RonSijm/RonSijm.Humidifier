@@ -10,13 +10,7 @@ namespace Humidifier.Cognito
             public static string CloudFrontDistribution =  "CloudFrontDistribution" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolDomain";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolDomain; }
 
         /// <summary>
         /// UserPoolId

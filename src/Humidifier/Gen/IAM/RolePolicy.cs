@@ -4,13 +4,7 @@ namespace Humidifier.IAM
 
     public class RolePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::RolePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IAM.RolePolicy; }
 
         /// <summary>
         /// RoleName

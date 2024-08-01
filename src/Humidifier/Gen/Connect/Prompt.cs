@@ -9,14 +9,7 @@ namespace Humidifier.Connect
             public static string PromptArn =  "PromptArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::Prompt";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.Prompt; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-prompt.html#cfn-connect-prompt-description

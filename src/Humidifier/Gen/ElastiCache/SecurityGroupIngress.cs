@@ -4,13 +4,7 @@ namespace Humidifier.ElastiCache
 
     public class SecurityGroupIngress : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::SecurityGroupIngress";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElastiCache.SecurityGroupIngress; }
 
         /// <summary>
         /// CacheSecurityGroupName

@@ -11,14 +11,7 @@ namespace Humidifier.FMS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FMS::Policy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FMS.Policy; }
         /// <summary>
         /// ResourcesCleanUp
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcescleanup

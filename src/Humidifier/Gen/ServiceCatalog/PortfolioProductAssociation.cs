@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class PortfolioProductAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::PortfolioProductAssociation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.PortfolioProductAssociation; }
         /// <summary>
         /// SourcePortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-sourceportfolioid

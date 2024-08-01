@@ -9,14 +9,7 @@ namespace Humidifier.Proton
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Proton::EnvironmentTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Proton.EnvironmentTemplate; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmenttemplate.html#cfn-proton-environmenttemplate-description

@@ -10,13 +10,7 @@ namespace Humidifier.SSM
             public static string Value =  "Value" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::Parameter";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSM.Parameter; }
 
         /// <summary>
         /// Type

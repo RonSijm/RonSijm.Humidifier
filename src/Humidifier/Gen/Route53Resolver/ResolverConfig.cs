@@ -11,13 +11,7 @@ namespace Humidifier.Route53Resolver
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::ResolverConfig";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53Resolver.ResolverConfig; }
 
         /// <summary>
         /// ResourceId

@@ -13,13 +13,7 @@ namespace Humidifier.EC2
             public static string LocalGatewayRouteTableArn =  "LocalGatewayRouteTableArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::LocalGatewayRouteTable";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.LocalGatewayRouteTable; }
 
         /// <summary>
         /// LocalGatewayId

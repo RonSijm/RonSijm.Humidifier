@@ -16,13 +16,7 @@ namespace Humidifier.DataZone
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::Domain";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataZone.Domain; }
 
         /// <summary>
         /// DomainExecutionRole

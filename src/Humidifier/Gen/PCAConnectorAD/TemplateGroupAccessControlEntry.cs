@@ -5,13 +5,7 @@ namespace Humidifier.PCAConnectorAD
 
     public class TemplateGroupAccessControlEntry : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PCAConnectorAD::TemplateGroupAccessControlEntry";
-            }
-        }
+        public override string AWSTypeName { get => AWS.PCAConnectorAD.TemplateGroupAccessControlEntry; }
 
         /// <summary>
         /// AccessRights

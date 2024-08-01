@@ -10,14 +10,7 @@ namespace Humidifier.GameLift
             public static string FleetId =  "FleetId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::Fleet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.Fleet; }
         /// <summary>
         /// ScalingPolicies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-scalingpolicies

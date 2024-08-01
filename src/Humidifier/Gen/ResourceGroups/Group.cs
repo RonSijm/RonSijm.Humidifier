@@ -10,14 +10,7 @@ namespace Humidifier.ResourceGroups
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ResourceGroups::Group";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ResourceGroups.Group; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-description

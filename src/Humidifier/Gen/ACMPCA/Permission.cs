@@ -4,13 +4,7 @@ namespace Humidifier.ACMPCA
 
     public class Permission : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ACMPCA::Permission";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ACMPCA.Permission; }
 
         /// <summary>
         /// CertificateAuthorityArn

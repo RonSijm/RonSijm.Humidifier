@@ -10,13 +10,7 @@ namespace Humidifier.MSK
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::ServerlessCluster";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MSK.ServerlessCluster; }
 
         /// <summary>
         /// VpcConfigs

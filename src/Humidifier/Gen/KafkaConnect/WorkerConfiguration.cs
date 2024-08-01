@@ -10,13 +10,7 @@ namespace Humidifier.KafkaConnect
             public static string WorkerConfigurationArn =  "WorkerConfigurationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KafkaConnect::WorkerConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.KafkaConnect.WorkerConfiguration; }
 
         /// <summary>
         /// PropertiesFileContent

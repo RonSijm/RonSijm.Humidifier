@@ -9,14 +9,7 @@ namespace Humidifier.ApiGateway
             public static string RequestValidatorId =  "RequestValidatorId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::RequestValidator";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.RequestValidator; }
         /// <summary>
         /// ValidateRequestParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-requestvalidator.html#cfn-apigateway-requestvalidator-validaterequestparameters

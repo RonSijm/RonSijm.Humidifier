@@ -10,14 +10,7 @@ namespace Humidifier.IoTAnalytics
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTAnalytics::Pipeline";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTAnalytics.Pipeline; }
         public dynamic PipelineName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Tags

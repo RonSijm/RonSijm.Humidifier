@@ -14,14 +14,7 @@ namespace Humidifier.S3
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::Bucket";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.S3.Bucket; }
         /// <summary>
         /// InventoryConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations

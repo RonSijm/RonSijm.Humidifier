@@ -9,13 +9,7 @@ namespace Humidifier.ECR
             public static string RegistryId =  "RegistryId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECR::RegistryPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ECR.RegistryPolicy; }
 
         /// <summary>
         /// PolicyText

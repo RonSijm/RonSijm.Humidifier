@@ -10,14 +10,7 @@ namespace Humidifier.AppStream
             public static string StreamingUrl =  "StreamingUrl" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::ImageBuilder";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.ImageBuilder; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-description

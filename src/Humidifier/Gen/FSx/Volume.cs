@@ -12,14 +12,7 @@ namespace Humidifier.FSx
             public static string UUID =  "UUID" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FSx::Volume";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FSx.Volume; }
         /// <summary>
         /// OpenZFSConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-volume.html#cfn-fsx-volume-openzfsconfiguration

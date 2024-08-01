@@ -12,14 +12,7 @@ namespace Humidifier.Location
             public static string TrackerArn =  "TrackerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Location::Tracker";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Location.Tracker; }
         public dynamic TrackerName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Description

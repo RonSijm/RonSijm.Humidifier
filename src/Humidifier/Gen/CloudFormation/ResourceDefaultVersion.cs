@@ -9,14 +9,7 @@ namespace Humidifier.CloudFormation
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::ResourceDefaultVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.ResourceDefaultVersion; }
         /// <summary>
         /// VersionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourcedefaultversion.html#cfn-cloudformation-resourcedefaultversion-versionid

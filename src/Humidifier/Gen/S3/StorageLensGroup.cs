@@ -10,13 +10,7 @@ namespace Humidifier.S3
             public static string StorageLensGroupArn =  "StorageLensGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::StorageLensGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3.StorageLensGroup; }
 
         /// <summary>
         /// Filter

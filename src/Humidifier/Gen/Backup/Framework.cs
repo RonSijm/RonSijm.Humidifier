@@ -13,13 +13,7 @@ namespace Humidifier.Backup
             public static string FrameworkArn =  "FrameworkArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::Framework";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Backup.Framework; }
 
         /// <summary>
         /// FrameworkControls

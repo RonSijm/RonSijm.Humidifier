@@ -10,14 +10,7 @@ namespace Humidifier.Logs
             public static string DeliveryDestinationType =  "DeliveryDestinationType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::DeliveryDestination";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Logs.DeliveryDestination; }
         /// <summary>
         /// DestinationResourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-deliverydestination.html#cfn-logs-deliverydestination-destinationresourcearn

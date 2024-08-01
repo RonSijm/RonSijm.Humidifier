@@ -13,14 +13,7 @@ namespace Humidifier.FraudDetector
             public static string DetectorVersionId =  "DetectorVersionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FraudDetector::Detector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FraudDetector.Detector; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-description

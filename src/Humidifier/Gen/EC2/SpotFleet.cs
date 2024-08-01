@@ -10,13 +10,7 @@ namespace Humidifier.EC2
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::SpotFleet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.SpotFleet; }
 
         /// <summary>
         /// SpotFleetRequestConfigData

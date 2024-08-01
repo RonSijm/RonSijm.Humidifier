@@ -4,14 +4,7 @@ namespace Humidifier.Cognito
 
     public class IdentityPoolPrincipalTag : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::IdentityPoolPrincipalTag";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cognito.IdentityPoolPrincipalTag; }
         /// <summary>
         /// PrincipalTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypoolprincipaltag.html#cfn-cognito-identitypoolprincipaltag-principaltags

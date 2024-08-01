@@ -4,13 +4,7 @@ namespace Humidifier.S3ObjectLambda
 
     public class AccessPointPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3ObjectLambda::AccessPointPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3ObjectLambda.AccessPointPolicy; }
 
         /// <summary>
         /// PolicyDocument

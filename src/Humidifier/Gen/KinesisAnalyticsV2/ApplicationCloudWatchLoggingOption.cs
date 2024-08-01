@@ -5,13 +5,7 @@ namespace Humidifier.KinesisAnalyticsV2
 
     public class ApplicationCloudWatchLoggingOption : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption";
-            }
-        }
+        public override string AWSTypeName { get => AWS.KinesisAnalyticsV2.ApplicationCloudWatchLoggingOption; }
 
         /// <summary>
         /// ApplicationName

@@ -11,14 +11,7 @@ namespace Humidifier.NetworkFirewall
             public static string FirewallPolicyId =  "FirewallPolicyId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkFirewall::FirewallPolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkFirewall.FirewallPolicy; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-description

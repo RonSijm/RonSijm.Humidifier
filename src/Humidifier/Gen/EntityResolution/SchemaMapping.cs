@@ -13,14 +13,7 @@ namespace Humidifier.EntityResolution
             public static string SchemaArn =  "SchemaArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EntityResolution::SchemaMapping";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EntityResolution.SchemaMapping; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-schemamapping.html#cfn-entityresolution-schemamapping-description

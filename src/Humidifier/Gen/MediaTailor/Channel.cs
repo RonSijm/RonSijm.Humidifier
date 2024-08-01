@@ -10,14 +10,7 @@ namespace Humidifier.MediaTailor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaTailor::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaTailor.Channel; }
         /// <summary>
         /// FillerSlate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-fillerslate

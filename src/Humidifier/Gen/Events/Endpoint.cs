@@ -14,13 +14,7 @@ namespace Humidifier.Events
             public static string EndpointUrl =  "EndpointUrl" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Events::Endpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Events.Endpoint; }
 
         /// <summary>
         /// EventBuses

@@ -4,13 +4,7 @@ namespace Humidifier.WAFRegional
 
     public class RegexPatternSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::RegexPatternSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAFRegional.RegexPatternSet; }
 
         /// <summary>
         /// RegexPatternStrings

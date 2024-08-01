@@ -4,13 +4,7 @@ namespace Humidifier.SNS
 
     public class TopicInlinePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SNS::TopicInlinePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SNS.TopicInlinePolicy; }
 
         /// <summary>
         /// TopicArn

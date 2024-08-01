@@ -10,14 +10,7 @@ namespace Humidifier.Lambda
             public static string LayerVersionArn =  "LayerVersionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::LayerVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lambda.LayerVersion; }
         /// <summary>
         /// CompatibleRuntimes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-compatibleruntimes

@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string NotebookInstanceName =  "NotebookInstanceName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::NotebookInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.NotebookInstance; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-kmskeyid

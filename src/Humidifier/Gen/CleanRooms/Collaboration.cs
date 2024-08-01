@@ -11,13 +11,7 @@ namespace Humidifier.CleanRooms
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CleanRooms::Collaboration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CleanRooms.Collaboration; }
 
         /// <summary>
         /// CreatorDisplayName

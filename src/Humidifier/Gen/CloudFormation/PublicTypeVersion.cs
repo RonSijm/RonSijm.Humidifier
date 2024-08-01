@@ -11,14 +11,7 @@ namespace Humidifier.CloudFormation
             public static string TypeVersionArn =  "TypeVersionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::PublicTypeVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.PublicTypeVersion; }
         /// <summary>
         /// TypeName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publictypeversion.html#cfn-cloudformation-publictypeversion-typename

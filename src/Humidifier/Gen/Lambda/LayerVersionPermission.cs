@@ -9,13 +9,7 @@ namespace Humidifier.Lambda
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::LayerVersionPermission";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lambda.LayerVersionPermission; }
 
         /// <summary>
         /// Action

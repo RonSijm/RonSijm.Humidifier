@@ -11,13 +11,7 @@ namespace Humidifier.EMR
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::Studio";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EMR.Studio; }
 
         /// <summary>
         /// WorkspaceSecurityGroupId

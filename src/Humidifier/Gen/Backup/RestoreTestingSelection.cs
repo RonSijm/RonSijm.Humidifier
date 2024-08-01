@@ -5,14 +5,7 @@ namespace Humidifier.Backup
 
     public class RestoreTestingSelection : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::RestoreTestingSelection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Backup.RestoreTestingSelection; }
         /// <summary>
         /// ProtectedResourceConditions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingselection.html#cfn-backup-restoretestingselection-protectedresourceconditions

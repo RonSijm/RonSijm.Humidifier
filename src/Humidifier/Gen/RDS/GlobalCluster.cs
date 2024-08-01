@@ -4,14 +4,7 @@ namespace Humidifier.RDS
 
     public class GlobalCluster : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::GlobalCluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.GlobalCluster; }
         /// <summary>
         /// EngineLifecycleSupport
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-enginelifecyclesupport

@@ -5,14 +5,7 @@ namespace Humidifier.Cassandra
 
     public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cassandra::Table";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cassandra.Table; }
         /// <summary>
         /// ReplicaSpecifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-replicaspecifications

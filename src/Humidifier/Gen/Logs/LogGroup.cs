@@ -9,14 +9,7 @@ namespace Humidifier.Logs
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::LogGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Logs.LogGroup; }
         /// <summary>
         /// RetentionInDays
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-retentionindays

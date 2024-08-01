@@ -10,14 +10,7 @@ namespace Humidifier.Batch
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Batch::SchedulingPolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Batch.SchedulingPolicy; }
         /// <summary>
         /// FairsharePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy

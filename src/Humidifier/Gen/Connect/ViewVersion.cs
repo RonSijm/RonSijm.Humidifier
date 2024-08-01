@@ -10,13 +10,7 @@ namespace Humidifier.Connect
             public static string Version =  "Version" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::ViewVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.ViewVersion; }
 
         /// <summary>
         /// ViewArn

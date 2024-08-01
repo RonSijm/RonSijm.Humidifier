@@ -11,14 +11,7 @@ namespace Humidifier.IAM
             public static string RoleId =  "RoleId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::Role";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.Role; }
         /// <summary>
         /// Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-path

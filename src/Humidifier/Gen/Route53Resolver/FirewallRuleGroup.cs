@@ -19,14 +19,7 @@ namespace Humidifier.Route53Resolver
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::FirewallRuleGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53Resolver.FirewallRuleGroup; }
         /// <summary>
         /// FirewallRules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#cfn-route53resolver-firewallrulegroup-firewallrules

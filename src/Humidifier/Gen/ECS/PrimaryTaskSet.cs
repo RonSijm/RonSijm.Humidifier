@@ -4,13 +4,7 @@ namespace Humidifier.ECS
 
     public class PrimaryTaskSet : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECS::PrimaryTaskSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ECS.PrimaryTaskSet; }
 
         /// <summary>
         /// TaskSetId

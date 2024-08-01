@@ -11,14 +11,7 @@ namespace Humidifier.AppStream
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::AppBlockBuilder";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.AppBlockBuilder; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-description

@@ -11,14 +11,7 @@ namespace Humidifier.CustomerProfiles
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CustomerProfiles::Integration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CustomerProfiles.Integration; }
         /// <summary>
         /// ObjectTypeNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-objecttypenames

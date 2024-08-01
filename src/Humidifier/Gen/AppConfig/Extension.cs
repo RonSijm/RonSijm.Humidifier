@@ -12,14 +12,7 @@ namespace Humidifier.AppConfig
             public static string VersionNumber =  "VersionNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::Extension";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppConfig.Extension; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-description

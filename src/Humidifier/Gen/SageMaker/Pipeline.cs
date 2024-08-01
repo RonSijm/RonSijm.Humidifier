@@ -5,14 +5,7 @@ namespace Humidifier.SageMaker
 
     public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Pipeline";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.Pipeline; }
         public dynamic PipelineName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ParallelismConfiguration

@@ -18,14 +18,7 @@ namespace Humidifier.Lightsail
             public static string InstanceArn =  "InstanceArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Instance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lightsail.Instance; }
         public dynamic InstanceName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// KeyPairName

@@ -15,14 +15,7 @@ namespace Humidifier.SES
             public static string DkimDNSTokenValue3 =  "DkimDNSTokenValue3" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::EmailIdentity";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.EmailIdentity; }
         /// <summary>
         /// ConfigurationSetAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-configurationsetattributes

@@ -4,13 +4,7 @@ namespace Humidifier.OpenSearchServerless
 
     public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchServerless::LifecyclePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.OpenSearchServerless.LifecyclePolicy; }
 
         /// <summary>
         /// Policy

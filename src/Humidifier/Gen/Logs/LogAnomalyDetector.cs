@@ -12,14 +12,7 @@ namespace Humidifier.Logs
             public static string LastModifiedTimeStamp =  "LastModifiedTimeStamp" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::LogAnomalyDetector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Logs.LogAnomalyDetector; }
         /// <summary>
         /// AnomalyVisibilityTime
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loganomalydetector.html#cfn-logs-loganomalydetector-anomalyvisibilitytime

@@ -12,14 +12,7 @@ namespace Humidifier.AmplifyUIBuilder
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AmplifyUIBuilder::Theme";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AmplifyUIBuilder.Theme; }
         /// <summary>
         /// AppId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-theme.html#cfn-amplifyuibuilder-theme-appid

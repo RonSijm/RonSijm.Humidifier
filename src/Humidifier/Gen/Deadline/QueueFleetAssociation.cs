@@ -4,13 +4,7 @@ namespace Humidifier.Deadline
 
     public class QueueFleetAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::QueueFleetAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Deadline.QueueFleetAssociation; }
 
         /// <summary>
         /// FleetId

@@ -11,13 +11,7 @@ namespace Humidifier.SES
             public static string RelayArn =  "RelayArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::MailManagerRelay";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SES.MailManagerRelay; }
 
         /// <summary>
         /// Authentication

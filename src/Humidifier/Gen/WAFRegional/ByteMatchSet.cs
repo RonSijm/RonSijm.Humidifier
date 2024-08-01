@@ -5,14 +5,7 @@ namespace Humidifier.WAFRegional
 
     public class ByteMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::ByteMatchSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFRegional.ByteMatchSet; }
         /// <summary>
         /// ByteMatchTuples
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-bytematchtuples

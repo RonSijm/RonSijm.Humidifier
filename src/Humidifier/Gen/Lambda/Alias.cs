@@ -10,13 +10,7 @@ namespace Humidifier.Lambda
             public static string AliasArn =  "AliasArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::Alias";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lambda.Alias; }
 
         /// <summary>
         /// FunctionName

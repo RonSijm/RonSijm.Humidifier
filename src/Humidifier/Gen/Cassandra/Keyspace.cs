@@ -5,14 +5,7 @@ namespace Humidifier.Cassandra
 
     public class Keyspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cassandra::Keyspace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cassandra.Keyspace; }
         public dynamic KeyspaceName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ReplicationSpecification

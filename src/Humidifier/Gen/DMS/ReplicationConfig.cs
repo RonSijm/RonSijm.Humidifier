@@ -10,14 +10,7 @@ namespace Humidifier.DMS
             public static string ReplicationConfigArn =  "ReplicationConfigArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::ReplicationConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DMS.ReplicationConfig; }
         /// <summary>
         /// ReplicationSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationconfig.html#cfn-dms-replicationconfig-replicationsettings

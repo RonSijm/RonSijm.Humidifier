@@ -13,14 +13,7 @@ namespace Humidifier.EC2
             public static string NetworkInsightsAccessScopeId =  "NetworkInsightsAccessScopeId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NetworkInsightsAccessScope";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.NetworkInsightsAccessScope; }
         /// <summary>
         /// ExcludePaths
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#cfn-ec2-networkinsightsaccessscope-excludepaths

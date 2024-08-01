@@ -10,14 +10,7 @@ namespace Humidifier.EKS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::FargateProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EKS.FargateProfile; }
         /// <summary>
         /// Subnets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-subnets

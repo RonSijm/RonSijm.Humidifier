@@ -12,14 +12,7 @@ namespace Humidifier.SageMaker
             public static string LastModifiedTime =  "LastModifiedTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::MonitoringSchedule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.MonitoringSchedule; }
         /// <summary>
         /// MonitoringScheduleStatus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringschedulestatus

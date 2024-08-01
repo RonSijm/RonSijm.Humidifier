@@ -9,13 +9,7 @@ namespace Humidifier.EC2
             public static string TransitGatewayRouteTableId =  "TransitGatewayRouteTableId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TransitGatewayRouteTable";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.TransitGatewayRouteTable; }
 
         /// <summary>
         /// TransitGatewayId

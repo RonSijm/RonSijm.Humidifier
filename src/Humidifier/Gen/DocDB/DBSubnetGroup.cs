@@ -4,14 +4,7 @@ namespace Humidifier.DocDB
 
     public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DocDB::DBSubnetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DocDB.DBSubnetGroup; }
         public dynamic DBSubnetGroupName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

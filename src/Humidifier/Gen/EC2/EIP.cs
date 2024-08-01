@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string AllocationId =  "AllocationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::EIP";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.EIP; }
         /// <summary>
         /// InstanceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-instanceid

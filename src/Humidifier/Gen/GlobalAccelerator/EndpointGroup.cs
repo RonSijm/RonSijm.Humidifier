@@ -10,13 +10,7 @@ namespace Humidifier.GlobalAccelerator
             public static string EndpointGroupArn =  "EndpointGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GlobalAccelerator::EndpointGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GlobalAccelerator.EndpointGroup; }
 
         /// <summary>
         /// ListenerArn

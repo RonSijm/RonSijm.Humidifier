@@ -4,13 +4,7 @@ namespace Humidifier.OpenSearchServerless
 
     public class AccessPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchServerless::AccessPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.OpenSearchServerless.AccessPolicy; }
 
         /// <summary>
         /// Policy

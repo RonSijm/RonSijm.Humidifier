@@ -4,14 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class EmailChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::EmailChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.EmailChannel; }
         /// <summary>
         /// ConfigurationSet
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailchannel.html#cfn-pinpoint-emailchannel-configurationset

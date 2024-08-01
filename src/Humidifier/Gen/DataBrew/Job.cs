@@ -5,14 +5,7 @@ namespace Humidifier.DataBrew
 
     public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataBrew::Job";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataBrew.Job; }
         /// <summary>
         /// MaxRetries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxretries

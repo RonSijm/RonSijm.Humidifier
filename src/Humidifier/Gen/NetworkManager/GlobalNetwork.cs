@@ -10,14 +10,7 @@ namespace Humidifier.NetworkManager
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::GlobalNetwork";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkManager.GlobalNetwork; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-globalnetwork.html#cfn-networkmanager-globalnetwork-description

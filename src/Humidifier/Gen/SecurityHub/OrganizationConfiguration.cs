@@ -12,13 +12,7 @@ namespace Humidifier.SecurityHub
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::OrganizationConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityHub.OrganizationConfiguration; }
 
         /// <summary>
         /// AutoEnable

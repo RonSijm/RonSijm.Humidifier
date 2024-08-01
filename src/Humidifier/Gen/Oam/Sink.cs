@@ -9,14 +9,7 @@ namespace Humidifier.Oam
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Oam::Sink";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Oam.Sink; }
         /// <summary>
         /// Policy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-oam-sink.html#cfn-oam-sink-policy

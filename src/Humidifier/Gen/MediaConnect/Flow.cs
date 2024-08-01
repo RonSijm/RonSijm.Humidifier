@@ -12,14 +12,7 @@ namespace Humidifier.MediaConnect
             public static string FlowArn =  "FlowArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::Flow";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConnect.Flow; }
         /// <summary>
         /// SourceFailoverConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-sourcefailoverconfig

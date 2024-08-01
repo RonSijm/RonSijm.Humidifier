@@ -12,14 +12,7 @@ namespace Humidifier.Rekognition
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Rekognition::StreamProcessor";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Rekognition.StreamProcessor; }
         /// <summary>
         /// S3Destination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-s3destination

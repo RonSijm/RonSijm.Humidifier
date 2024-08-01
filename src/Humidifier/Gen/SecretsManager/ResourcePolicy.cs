@@ -9,14 +9,7 @@ namespace Humidifier.SecretsManager
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecretsManager::ResourcePolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecretsManager.ResourcePolicy; }
         /// <summary>
         /// BlockPublicPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-resourcepolicy.html#cfn-secretsmanager-resourcepolicy-blockpublicpolicy

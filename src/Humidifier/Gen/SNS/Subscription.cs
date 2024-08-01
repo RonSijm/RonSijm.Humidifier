@@ -4,14 +4,7 @@ namespace Humidifier.SNS
 
     public class Subscription : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SNS::Subscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SNS.Subscription; }
         /// <summary>
         /// DeliveryPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-subscription.html#cfn-sns-subscription-deliverypolicy

@@ -9,14 +9,7 @@ namespace Humidifier.Pinpoint
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::EmailTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.EmailTemplate; }
         /// <summary>
         /// HtmlPart
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-emailtemplate.html#cfn-pinpoint-emailtemplate-htmlpart

@@ -14,14 +14,7 @@ namespace Humidifier.AppMesh
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppMesh::Mesh";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppMesh.Mesh; }
         public dynamic MeshName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Spec

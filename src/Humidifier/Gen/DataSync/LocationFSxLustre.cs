@@ -10,14 +10,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationFSxLustre";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.LocationFSxLustre; }
         /// <summary>
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-subdirectory

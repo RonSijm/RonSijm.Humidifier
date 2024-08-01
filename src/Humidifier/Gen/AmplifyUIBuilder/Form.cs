@@ -10,14 +10,7 @@ namespace Humidifier.AmplifyUIBuilder
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AmplifyUIBuilder::Form";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AmplifyUIBuilder.Form; }
         /// <summary>
         /// FormActionType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-form.html#cfn-amplifyuibuilder-form-formactiontype

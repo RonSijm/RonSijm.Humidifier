@@ -5,14 +5,7 @@ namespace Humidifier.Greengrass
 
     public class FunctionDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::FunctionDefinitionVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Greengrass.FunctionDefinitionVersion; }
         /// <summary>
         /// DefaultConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-defaultconfig

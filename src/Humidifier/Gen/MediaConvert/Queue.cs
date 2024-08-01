@@ -10,14 +10,7 @@ namespace Humidifier.MediaConvert
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConvert::Queue";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConvert.Queue; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-status

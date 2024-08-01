@@ -10,14 +10,7 @@ namespace Humidifier.ApplicationAutoScaling
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApplicationAutoScaling::ScalableTarget";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApplicationAutoScaling.ScalableTarget; }
         /// <summary>
         /// ScheduledActions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions

@@ -11,14 +11,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationS3";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.LocationS3; }
         /// <summary>
         /// S3StorageClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3storageclass

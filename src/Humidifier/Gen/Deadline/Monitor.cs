@@ -12,13 +12,7 @@ namespace Humidifier.Deadline
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::Monitor";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Deadline.Monitor; }
 
         /// <summary>
         /// IdentityCenterInstanceArn

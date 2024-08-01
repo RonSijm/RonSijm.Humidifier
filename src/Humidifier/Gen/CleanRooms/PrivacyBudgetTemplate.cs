@@ -14,13 +14,7 @@ namespace Humidifier.CleanRooms
             public static string CollaborationArn =  "CollaborationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CleanRooms::PrivacyBudgetTemplate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CleanRooms.PrivacyBudgetTemplate; }
 
         /// <summary>
         /// PrivacyBudgetType

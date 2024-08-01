@@ -12,14 +12,7 @@ namespace Humidifier.MediaPackageV2
             public static string EgressDomain =  "EgressDomain" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackageV2::ChannelGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackageV2.ChannelGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-channelgroup.html#cfn-mediapackagev2-channelgroup-description

@@ -9,14 +9,7 @@ namespace Humidifier.Athena
             public static string NamedQueryId =  "NamedQueryId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Athena::NamedQuery";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Athena.NamedQuery; }
         /// <summary>
         /// WorkGroup
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-namedquery.html#cfn-athena-namedquery-workgroup

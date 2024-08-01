@@ -4,13 +4,7 @@ namespace Humidifier.CodeBuild
 
     public class SourceCredential : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeBuild::SourceCredential";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeBuild.SourceCredential; }
 
         /// <summary>
         /// ServerType

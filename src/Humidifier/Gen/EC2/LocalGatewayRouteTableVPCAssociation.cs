@@ -11,13 +11,7 @@ namespace Humidifier.EC2
             public static string LocalGatewayRouteTableVpcAssociationId =  "LocalGatewayRouteTableVpcAssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::LocalGatewayRouteTableVPCAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.LocalGatewayRouteTableVPCAssociation; }
 
         /// <summary>
         /// VpcId

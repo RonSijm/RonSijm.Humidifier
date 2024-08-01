@@ -13,13 +13,7 @@ namespace Humidifier.ControlTower
             public static string LandingZoneIdentifier =  "LandingZoneIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ControlTower::LandingZone";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ControlTower.LandingZone; }
 
         /// <summary>
         /// Version

@@ -11,13 +11,7 @@ namespace Humidifier.CustomerProfiles
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CustomerProfiles::ObjectType";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CustomerProfiles.ObjectType; }
 
         /// <summary>
         /// Description

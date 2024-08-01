@@ -12,13 +12,7 @@ namespace Humidifier.Location
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Location::RouteCalculator";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Location.RouteCalculator; }
 
         /// <summary>
         /// CalculatorName

@@ -4,13 +4,7 @@ namespace Humidifier.AppSync
 
     public class ApiCache : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::ApiCache";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppSync.ApiCache; }
 
         /// <summary>
         /// Type

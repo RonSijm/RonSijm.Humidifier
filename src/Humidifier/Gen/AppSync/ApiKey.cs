@@ -10,14 +10,7 @@ namespace Humidifier.AppSync
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::ApiKey";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.ApiKey; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description

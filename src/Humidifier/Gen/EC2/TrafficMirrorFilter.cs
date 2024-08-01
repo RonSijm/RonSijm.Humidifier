@@ -4,14 +4,7 @@ namespace Humidifier.EC2
 
     public class TrafficMirrorFilter : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TrafficMirrorFilter";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.TrafficMirrorFilter; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-description

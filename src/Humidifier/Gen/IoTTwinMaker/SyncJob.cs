@@ -12,13 +12,7 @@ namespace Humidifier.IoTTwinMaker
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTTwinMaker::SyncJob";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTTwinMaker.SyncJob; }
 
         /// <summary>
         /// SyncSource

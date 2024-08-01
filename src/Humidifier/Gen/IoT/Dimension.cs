@@ -9,13 +9,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::Dimension";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.Dimension; }
 
         /// <summary>
         /// Type

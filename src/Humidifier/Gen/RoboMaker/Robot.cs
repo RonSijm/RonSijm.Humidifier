@@ -9,14 +9,7 @@ namespace Humidifier.RoboMaker
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RoboMaker::Robot";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RoboMaker.Robot; }
         /// <summary>
         /// Fleet
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-fleet

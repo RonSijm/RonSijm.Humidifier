@@ -11,14 +11,7 @@ namespace Humidifier.Connect
             public static string QuickConnectType =  "QuickConnectType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::QuickConnect";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.QuickConnect; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-quickconnect.html#cfn-connect-quickconnect-description

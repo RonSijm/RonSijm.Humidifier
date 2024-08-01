@@ -4,13 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class ADMChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::ADMChannel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Pinpoint.ADMChannel; }
 
         /// <summary>
         /// ClientSecret

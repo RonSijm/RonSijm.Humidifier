@@ -14,14 +14,7 @@ namespace Humidifier.EC2
             public static string DefaultSecurityGroup =  "DefaultSecurityGroup" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPC";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VPC; }
         /// <summary>
         /// InstanceTenancy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-instancetenancy

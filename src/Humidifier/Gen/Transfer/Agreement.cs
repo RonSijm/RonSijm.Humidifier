@@ -10,14 +10,7 @@ namespace Humidifier.Transfer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::Agreement";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Transfer.Agreement; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-status

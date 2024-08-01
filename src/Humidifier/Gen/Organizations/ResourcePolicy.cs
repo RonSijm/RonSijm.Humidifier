@@ -10,13 +10,7 @@ namespace Humidifier.Organizations
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Organizations::ResourcePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Organizations.ResourcePolicy; }
 
         /// <summary>
         /// Content

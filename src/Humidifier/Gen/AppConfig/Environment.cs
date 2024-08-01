@@ -10,14 +10,7 @@ namespace Humidifier.AppConfig
             public static string EnvironmentId =  "EnvironmentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::Environment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppConfig.Environment; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-description

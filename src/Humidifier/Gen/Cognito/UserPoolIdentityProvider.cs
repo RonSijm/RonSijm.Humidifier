@@ -4,13 +4,7 @@ namespace Humidifier.Cognito
 
     public class UserPoolIdentityProvider : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolIdentityProvider";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolIdentityProvider; }
 
         /// <summary>
         /// ProviderName

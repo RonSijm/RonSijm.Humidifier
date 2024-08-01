@@ -13,14 +13,7 @@ namespace Humidifier.HealthImaging
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::HealthImaging::Datastore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.HealthImaging.Datastore; }
         /// <summary>
         /// KmsKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthimaging-datastore.html#cfn-healthimaging-datastore-kmskeyarn

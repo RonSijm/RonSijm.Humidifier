@@ -5,13 +5,7 @@ namespace Humidifier.AmazonMQ
 
     public class ConfigurationAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AmazonMQ::ConfigurationAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AmazonMQ.ConfigurationAssociation; }
 
         /// <summary>
         /// Broker

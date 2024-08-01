@@ -10,14 +10,7 @@ namespace Humidifier.LookoutMetrics
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LookoutMetrics::Alert";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LookoutMetrics.Alert; }
         /// <summary>
         /// AlertDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-alertdescription

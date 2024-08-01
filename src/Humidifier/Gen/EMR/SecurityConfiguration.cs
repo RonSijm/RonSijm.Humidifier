@@ -4,13 +4,7 @@ namespace Humidifier.EMR
 
     public class SecurityConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::SecurityConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EMR.SecurityConfiguration; }
 
         /// <summary>
         /// SecurityConfiguration_

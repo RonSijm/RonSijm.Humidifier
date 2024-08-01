@@ -5,14 +5,7 @@ namespace Humidifier.WAF
 
     public class ByteMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAF::ByteMatchSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAF.ByteMatchSet; }
         /// <summary>
         /// ByteMatchTuples
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-bytematchtuples

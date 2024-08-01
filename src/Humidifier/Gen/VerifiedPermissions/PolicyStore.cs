@@ -11,14 +11,7 @@ namespace Humidifier.VerifiedPermissions
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VerifiedPermissions::PolicyStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VerifiedPermissions.PolicyStore; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-policystore.html#cfn-verifiedpermissions-policystore-description

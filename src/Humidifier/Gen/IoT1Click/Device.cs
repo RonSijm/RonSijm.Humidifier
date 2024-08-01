@@ -11,13 +11,7 @@ namespace Humidifier.IoT1Click
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT1Click::Device";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT1Click.Device; }
 
         /// <summary>
         /// DeviceId

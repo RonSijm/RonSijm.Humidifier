@@ -10,14 +10,7 @@ namespace Humidifier.ApplicationInsights
             public static string ApplicationARN =  "ApplicationARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApplicationInsights::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApplicationInsights.Application; }
         /// <summary>
         /// AutoConfigurationEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-autoconfigurationenabled

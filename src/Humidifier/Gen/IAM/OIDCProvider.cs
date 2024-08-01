@@ -9,14 +9,7 @@ namespace Humidifier.IAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::OIDCProvider";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.OIDCProvider; }
         /// <summary>
         /// ClientIdList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-oidcprovider.html#cfn-iam-oidcprovider-clientidlist

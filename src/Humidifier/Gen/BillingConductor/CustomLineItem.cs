@@ -15,14 +15,7 @@ namespace Humidifier.BillingConductor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::BillingConductor::CustomLineItem";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.BillingConductor.CustomLineItem; }
         /// <summary>
         /// BillingPeriodRange
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-billingperiodrange

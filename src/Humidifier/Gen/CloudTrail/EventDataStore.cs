@@ -13,14 +13,7 @@ namespace Humidifier.CloudTrail
             public static string CreatedTimestamp =  "CreatedTimestamp" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudTrail::EventDataStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudTrail.EventDataStore; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-kmskeyid

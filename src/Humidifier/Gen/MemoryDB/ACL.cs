@@ -10,14 +10,7 @@ namespace Humidifier.MemoryDB
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MemoryDB::ACL";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MemoryDB.ACL; }
         public dynamic ACLName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// UserNames

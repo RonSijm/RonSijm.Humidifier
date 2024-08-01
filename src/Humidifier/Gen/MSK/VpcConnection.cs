@@ -9,13 +9,7 @@ namespace Humidifier.MSK
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::VpcConnection";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MSK.VpcConnection; }
 
         /// <summary>
         /// SecurityGroups

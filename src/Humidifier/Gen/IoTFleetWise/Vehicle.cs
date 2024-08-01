@@ -11,14 +11,7 @@ namespace Humidifier.IoTFleetWise
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTFleetWise::Vehicle";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTFleetWise.Vehicle; }
         /// <summary>
         /// AssociationBehavior
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#cfn-iotfleetwise-vehicle-associationbehavior

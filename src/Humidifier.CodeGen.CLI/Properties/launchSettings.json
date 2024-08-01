@@ -9,7 +9,7 @@
     },
     "RonSijm.Humidifier - With Force": {
       "commandName": "Project",
-      "commandLineArgs": "force"
+      "commandLineArgs": "-forceRegenerate"
     }
   }
 }

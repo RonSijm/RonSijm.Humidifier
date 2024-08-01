@@ -4,14 +4,7 @@ namespace Humidifier.Neptune
 
     public class EventSubscription : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Neptune::EventSubscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Neptune.EventSubscription; }
         /// <summary>
         /// SourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-eventsubscription.html#cfn-neptune-eventsubscription-sourcetype

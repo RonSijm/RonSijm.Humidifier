@@ -9,13 +9,7 @@ namespace Humidifier.Connect
             public static string UserHierarchyGroupArn =  "UserHierarchyGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::UserHierarchyGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.UserHierarchyGroup; }
 
         /// <summary>
         /// InstanceArn

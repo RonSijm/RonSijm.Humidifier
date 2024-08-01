@@ -13,14 +13,7 @@ namespace Humidifier.NetworkManager
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::Site";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkManager.Site; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-description

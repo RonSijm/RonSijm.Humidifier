@@ -9,14 +9,7 @@ namespace Humidifier.EC2
             public static string HostId =  "HostId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::Host";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.Host; }
         /// <summary>
         /// HostRecovery
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery

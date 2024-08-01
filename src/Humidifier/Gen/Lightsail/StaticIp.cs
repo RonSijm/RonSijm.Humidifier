@@ -11,14 +11,7 @@ namespace Humidifier.Lightsail
             public static string IpAddress =  "IpAddress" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::StaticIp";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lightsail.StaticIp; }
         public dynamic StaticIpName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AttachedTo

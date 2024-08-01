@@ -4,14 +4,7 @@ namespace Humidifier.CloudFormation
 
     public class ModuleDefaultVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::ModuleDefaultVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.ModuleDefaultVersion; }
         /// <summary>
         /// VersionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduledefaultversion.html#cfn-cloudformation-moduledefaultversion-versionid

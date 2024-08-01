@@ -16,13 +16,7 @@ namespace Humidifier.Route53Resolver
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::FirewallRuleGroupAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53Resolver.FirewallRuleGroupAssociation; }
 
         /// <summary>
         /// VpcId

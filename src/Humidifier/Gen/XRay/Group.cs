@@ -10,14 +10,7 @@ namespace Humidifier.XRay
             public static string GroupARN =  "GroupARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::XRay::Group";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.XRay.Group; }
         public dynamic GroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// InsightsConfiguration

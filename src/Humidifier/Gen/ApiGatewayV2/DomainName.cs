@@ -11,14 +11,7 @@ namespace Humidifier.ApiGatewayV2
             public static string RegionalDomainName =  "RegionalDomainName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::DomainName";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.DomainName; }
         /// <summary>
         /// MutualTlsAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-mutualtlsauthentication

@@ -10,14 +10,7 @@ namespace Humidifier.ApiGateway
             public static string DeploymentId =  "DeploymentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Deployment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.Deployment; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description

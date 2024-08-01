@@ -13,14 +13,7 @@ namespace Humidifier.ServiceCatalog
             public static string RecordId =  "RecordId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::CloudFormationProvisionedProduct";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.CloudFormationProvisionedProduct; }
         /// <summary>
         /// PathId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-pathid

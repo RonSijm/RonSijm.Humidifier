@@ -4,14 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class VoiceChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::VoiceChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.VoiceChannel; }
         /// <summary>
         /// Enabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-voicechannel.html#cfn-pinpoint-voicechannel-enabled

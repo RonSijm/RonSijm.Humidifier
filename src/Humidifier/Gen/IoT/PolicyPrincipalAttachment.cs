@@ -4,13 +4,7 @@ namespace Humidifier.IoT
 
     public class PolicyPrincipalAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::PolicyPrincipalAttachment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.PolicyPrincipalAttachment; }
 
         /// <summary>
         /// PolicyName

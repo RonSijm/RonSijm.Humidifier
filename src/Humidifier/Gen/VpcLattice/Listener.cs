@@ -13,13 +13,7 @@ namespace Humidifier.VpcLattice
             public static string ServiceId =  "ServiceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::Listener";
-            }
-        }
+        public override string AWSTypeName { get => AWS.VpcLattice.Listener; }
 
         /// <summary>
         /// DefaultAction

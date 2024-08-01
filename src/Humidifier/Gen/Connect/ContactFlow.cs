@@ -9,13 +9,7 @@ namespace Humidifier.Connect
             public static string ContactFlowArn =  "ContactFlowArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::ContactFlow";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.ContactFlow; }
 
         /// <summary>
         /// Type

@@ -5,13 +5,7 @@ namespace Humidifier.SageMaker
 
     public class Device : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Device";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.Device; }
 
         /// <summary>
         /// DeviceFleetName

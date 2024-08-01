@@ -14,14 +14,7 @@ namespace Humidifier.VpcLattice
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::Service";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VpcLattice.Service; }
         /// <summary>
         /// DnsEntry
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-service.html#cfn-vpclattice-service-dnsentry

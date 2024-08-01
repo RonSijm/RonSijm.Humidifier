@@ -10,14 +10,7 @@ namespace Humidifier.ECS
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECS::TaskSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ECS.TaskSet; }
         /// <summary>
         /// PlatformVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-platformversion

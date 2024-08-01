@@ -10,14 +10,7 @@ namespace Humidifier.Evidently
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Evidently::Project";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Evidently.Project; }
         /// <summary>
         /// DataDelivery
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-project.html#cfn-evidently-project-datadelivery

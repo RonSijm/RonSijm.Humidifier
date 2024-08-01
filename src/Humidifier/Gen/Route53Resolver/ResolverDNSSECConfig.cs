@@ -11,14 +11,7 @@ namespace Humidifier.Route53Resolver
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::ResolverDNSSECConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53Resolver.ResolverDNSSECConfig; }
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverdnssecconfig.html#cfn-route53resolver-resolverdnssecconfig-resourceid

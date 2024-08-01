@@ -12,14 +12,7 @@ namespace Humidifier.CloudFront
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFront::KeyValueStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFront.KeyValueStore; }
         /// <summary>
         /// Comment
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keyvaluestore.html#cfn-cloudfront-keyvaluestore-comment

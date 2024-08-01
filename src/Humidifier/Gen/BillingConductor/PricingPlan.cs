@@ -12,14 +12,7 @@ namespace Humidifier.BillingConductor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::BillingConductor::PricingPlan";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.BillingConductor.PricingPlan; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#cfn-billingconductor-pricingplan-description

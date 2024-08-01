@@ -14,13 +14,7 @@ namespace Humidifier.SageMaker
             public static string InferenceComponentArn =  "InferenceComponentArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::InferenceComponent";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.InferenceComponent; }
 
         /// <summary>
         /// EndpointName

@@ -11,14 +11,7 @@ namespace Humidifier.ACMPCA
             public static string Certificate =  "Certificate" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ACMPCA::Certificate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ACMPCA.Certificate; }
         /// <summary>
         /// TemplateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-templatearn

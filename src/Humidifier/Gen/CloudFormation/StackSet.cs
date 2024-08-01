@@ -10,14 +10,7 @@ namespace Humidifier.CloudFormation
             public static string StackSetId =  "StackSetId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::StackSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.StackSet; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-description

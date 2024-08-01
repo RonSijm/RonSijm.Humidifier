@@ -5,13 +5,7 @@ namespace Humidifier.DataBrew
 
     public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataBrew::Project";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataBrew.Project; }
 
         /// <summary>
         /// RecipeName

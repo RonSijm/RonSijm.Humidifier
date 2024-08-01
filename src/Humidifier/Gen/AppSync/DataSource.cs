@@ -11,14 +11,7 @@ namespace Humidifier.AppSync
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::DataSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.DataSource; }
         /// <summary>
         /// OpenSearchServiceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-opensearchserviceconfig

@@ -12,13 +12,7 @@ namespace Humidifier.Backup
             public static string BackupPlanArn =  "BackupPlanArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::BackupPlan";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Backup.BackupPlan; }
 
         /// <summary>
         /// BackupPlan_

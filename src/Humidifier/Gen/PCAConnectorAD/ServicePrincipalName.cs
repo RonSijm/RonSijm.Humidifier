@@ -4,14 +4,7 @@ namespace Humidifier.PCAConnectorAD
 
     public class ServicePrincipalName : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PCAConnectorAD::ServicePrincipalName";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.PCAConnectorAD.ServicePrincipalName; }
         /// <summary>
         /// ConnectorArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-serviceprincipalname.html#cfn-pcaconnectorad-serviceprincipalname-connectorarn

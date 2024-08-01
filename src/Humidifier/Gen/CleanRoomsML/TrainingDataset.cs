@@ -11,14 +11,7 @@ namespace Humidifier.CleanRoomsML
             public static string TrainingDatasetArn =  "TrainingDatasetArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CleanRoomsML::TrainingDataset";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CleanRoomsML.TrainingDataset; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanroomsml-trainingdataset.html#cfn-cleanroomsml-trainingdataset-description

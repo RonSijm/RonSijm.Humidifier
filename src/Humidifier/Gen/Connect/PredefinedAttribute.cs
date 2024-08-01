@@ -11,13 +11,7 @@ namespace Humidifier.Connect
             public static string LastModifiedRegion =  "LastModifiedRegion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::PredefinedAttribute";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.PredefinedAttribute; }
 
         /// <summary>
         /// InstanceArn

@@ -5,14 +5,7 @@ namespace Humidifier.MediaLive
 
     public class Multiplexprogram : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaLive::Multiplexprogram";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaLive.Multiplexprogram; }
         /// <summary>
         /// MultiplexId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-multiplexprogram.html#cfn-medialive-multiplexprogram-multiplexid

@@ -14,14 +14,7 @@ namespace Humidifier.Panorama
             public static string RegisteredTime =  "RegisteredTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Panorama::PackageVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Panorama.PackageVersion; }
         /// <summary>
         /// UpdatedLatestPatchVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#cfn-panorama-packageversion-updatedlatestpatchversion

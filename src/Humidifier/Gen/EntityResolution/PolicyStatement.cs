@@ -4,14 +4,7 @@ namespace Humidifier.EntityResolution
 
     public class PolicyStatement : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EntityResolution::PolicyStatement";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EntityResolution.PolicyStatement; }
         /// <summary>
         /// Condition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-policystatement.html#cfn-entityresolution-policystatement-condition

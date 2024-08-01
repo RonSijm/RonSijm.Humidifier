@@ -12,13 +12,7 @@ namespace Humidifier.APS
             public static string RoleArn =  "RoleArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::APS::Scraper";
-            }
-        }
+        public override string AWSTypeName { get => AWS.APS.Scraper; }
 
         /// <summary>
         /// ScrapeConfiguration

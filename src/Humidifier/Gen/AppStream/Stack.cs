@@ -5,14 +5,7 @@ namespace Humidifier.AppStream
 
     public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::Stack";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.Stack; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-description

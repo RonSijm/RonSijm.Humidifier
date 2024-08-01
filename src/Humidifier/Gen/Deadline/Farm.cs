@@ -10,14 +10,7 @@ namespace Humidifier.Deadline
             public static string FarmId =  "FarmId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::Farm";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Deadline.Farm; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-farm.html#cfn-deadline-farm-description

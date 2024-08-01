@@ -15,14 +15,7 @@ namespace Humidifier.Bedrock
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::Flow";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.Flow; }
         /// <summary>
         /// TestAliasTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flow.html#cfn-bedrock-flow-testaliastags

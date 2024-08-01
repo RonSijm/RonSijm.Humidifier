@@ -10,14 +10,7 @@ namespace Humidifier.GuardDuty
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GuardDuty::Detector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GuardDuty.Detector; }
         /// <summary>
         /// FindingPublishingFrequency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-findingpublishingfrequency

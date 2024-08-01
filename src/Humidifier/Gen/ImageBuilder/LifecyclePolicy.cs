@@ -10,14 +10,7 @@ namespace Humidifier.ImageBuilder
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ImageBuilder::LifecyclePolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ImageBuilder.LifecyclePolicy; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-lifecyclepolicy.html#cfn-imagebuilder-lifecyclepolicy-status

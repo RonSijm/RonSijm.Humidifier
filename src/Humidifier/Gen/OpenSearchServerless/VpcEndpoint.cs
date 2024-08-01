@@ -9,13 +9,7 @@ namespace Humidifier.OpenSearchServerless
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchServerless::VpcEndpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.OpenSearchServerless.VpcEndpoint; }
 
         /// <summary>
         /// VpcId

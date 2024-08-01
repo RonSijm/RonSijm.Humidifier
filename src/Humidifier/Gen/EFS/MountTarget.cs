@@ -10,13 +10,7 @@ namespace Humidifier.EFS
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EFS::MountTarget";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EFS.MountTarget; }
 
         /// <summary>
         /// SecurityGroups

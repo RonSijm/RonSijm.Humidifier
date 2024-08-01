@@ -11,13 +11,7 @@ namespace Humidifier.EC2
             public static string ResourceType =  "ResourceType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TransitGatewayMulticastDomainAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.TransitGatewayMulticastDomainAssociation; }
 
         /// <summary>
         /// TransitGatewayMulticastDomainId

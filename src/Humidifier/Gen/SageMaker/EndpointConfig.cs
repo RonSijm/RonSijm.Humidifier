@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string EndpointConfigName =  "EndpointConfigName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::EndpointConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.EndpointConfig; }
         /// <summary>
         /// ShadowProductionVariants
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-shadowproductionvariants

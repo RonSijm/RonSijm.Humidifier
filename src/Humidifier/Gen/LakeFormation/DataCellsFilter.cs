@@ -5,13 +5,7 @@ namespace Humidifier.LakeFormation
 
     public class DataCellsFilter : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::DataCellsFilter";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LakeFormation.DataCellsFilter; }
 
         /// <summary>
         /// TableName

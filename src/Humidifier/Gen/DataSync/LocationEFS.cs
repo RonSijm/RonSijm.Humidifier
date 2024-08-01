@@ -11,14 +11,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationEFS";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.LocationEFS; }
         /// <summary>
         /// EfsFilesystemArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-efsfilesystemarn

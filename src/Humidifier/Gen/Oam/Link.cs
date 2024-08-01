@@ -11,13 +11,7 @@ namespace Humidifier.Oam
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Oam::Link";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Oam.Link; }
 
         /// <summary>
         /// SinkIdentifier

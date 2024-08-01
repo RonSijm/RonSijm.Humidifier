@@ -11,13 +11,7 @@ namespace Humidifier.EC2
             public static string CarrierGatewayId =  "CarrierGatewayId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::CarrierGateway";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.CarrierGateway; }
 
         /// <summary>
         /// VpcId

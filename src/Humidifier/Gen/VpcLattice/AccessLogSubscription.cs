@@ -12,14 +12,7 @@ namespace Humidifier.VpcLattice
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::AccessLogSubscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VpcLattice.AccessLogSubscription; }
         /// <summary>
         /// ResourceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-accesslogsubscription.html#cfn-vpclattice-accesslogsubscription-resourceidentifier

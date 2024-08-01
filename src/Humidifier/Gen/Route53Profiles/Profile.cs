@@ -11,14 +11,7 @@ namespace Humidifier.Route53Profiles
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Profiles::Profile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53Profiles.Profile; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53profiles-profile.html#cfn-route53profiles-profile-tags

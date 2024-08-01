@@ -5,14 +5,7 @@ namespace Humidifier.WAF
 
     public class SizeConstraintSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAF::SizeConstraintSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAF.SizeConstraintSet; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>

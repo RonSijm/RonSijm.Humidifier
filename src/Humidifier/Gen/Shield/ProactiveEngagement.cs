@@ -10,13 +10,7 @@ namespace Humidifier.Shield
             public static string AccountId =  "AccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Shield::ProactiveEngagement";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Shield.ProactiveEngagement; }
 
         /// <summary>
         /// ProactiveEngagementStatus

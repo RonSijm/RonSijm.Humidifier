@@ -4,13 +4,7 @@ namespace Humidifier.NetworkManager
 
     public class CustomerGatewayAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::CustomerGatewayAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.CustomerGatewayAssociation; }
 
         /// <summary>
         /// GlobalNetworkId

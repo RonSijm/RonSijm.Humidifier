@@ -11,13 +11,7 @@ namespace Humidifier.Glue
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Schema";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.Schema; }
 
         /// <summary>
         /// SchemaDefinition

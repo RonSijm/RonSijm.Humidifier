@@ -4,13 +4,7 @@ namespace Humidifier.Athena
 
     public class PreparedStatement : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Athena::PreparedStatement";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Athena.PreparedStatement; }
 
         /// <summary>
         /// StatementName

@@ -4,13 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class PortfolioPrincipalAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::PortfolioPrincipalAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.PortfolioPrincipalAssociation; }
 
         /// <summary>
         /// PrincipalARN

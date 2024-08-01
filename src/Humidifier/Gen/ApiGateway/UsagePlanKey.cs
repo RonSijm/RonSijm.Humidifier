@@ -9,13 +9,7 @@ namespace Humidifier.ApiGateway
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::UsagePlanKey";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGateway.UsagePlanKey; }
 
         /// <summary>
         /// KeyType

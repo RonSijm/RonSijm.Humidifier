@@ -4,14 +4,7 @@ namespace Humidifier.DocDB
 
     public class EventSubscription : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DocDB::EventSubscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DocDB.EventSubscription; }
         /// <summary>
         /// SourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-eventsubscription.html#cfn-docdb-eventsubscription-sourcetype

@@ -16,14 +16,7 @@ namespace Humidifier.Timestream
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Timestream::InfluxDBInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Timestream.InfluxDBInstance; }
         /// <summary>
         /// DbParameterGroupIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-dbparametergroupidentifier

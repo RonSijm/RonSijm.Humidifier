@@ -12,14 +12,7 @@ namespace Humidifier.CustomerProfiles
             public static string Stats =  "Stats" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CustomerProfiles::Domain";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CustomerProfiles.Domain; }
         /// <summary>
         /// Matching
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-matching

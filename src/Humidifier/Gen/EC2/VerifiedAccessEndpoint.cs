@@ -16,13 +16,7 @@ namespace Humidifier.EC2
             public static string VerifiedAccessEndpointId =  "VerifiedAccessEndpointId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VerifiedAccessEndpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.VerifiedAccessEndpoint; }
 
         /// <summary>
         /// AttachmentType

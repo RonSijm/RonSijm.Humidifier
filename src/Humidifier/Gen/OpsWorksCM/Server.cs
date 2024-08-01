@@ -12,14 +12,7 @@ namespace Humidifier.OpsWorksCM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpsWorksCM::Server";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpsWorksCM.Server; }
         /// <summary>
         /// KeyPair
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-keypair

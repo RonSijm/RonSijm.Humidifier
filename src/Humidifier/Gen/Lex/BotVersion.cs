@@ -10,14 +10,7 @@ namespace Humidifier.Lex
             public static string BotVersion =  "BotVersion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lex::BotVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lex.BotVersion; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-description

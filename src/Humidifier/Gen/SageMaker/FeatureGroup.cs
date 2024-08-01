@@ -11,14 +11,7 @@ namespace Humidifier.SageMaker
             public static string CreationTime =  "CreationTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::FeatureGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.FeatureGroup; }
         /// <summary>
         /// ThroughputConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-throughputconfig

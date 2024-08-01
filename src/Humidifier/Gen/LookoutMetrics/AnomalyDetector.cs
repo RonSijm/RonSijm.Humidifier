@@ -10,14 +10,7 @@ namespace Humidifier.LookoutMetrics
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LookoutMetrics::AnomalyDetector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LookoutMetrics.AnomalyDetector; }
         public dynamic AnomalyDetectorName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// KmsKeyArn

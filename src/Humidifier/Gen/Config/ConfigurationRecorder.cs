@@ -5,14 +5,7 @@ namespace Humidifier.Config
 
     public class ConfigurationRecorder : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::ConfigurationRecorder";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.ConfigurationRecorder; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// RecordingGroup

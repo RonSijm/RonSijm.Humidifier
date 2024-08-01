@@ -11,14 +11,7 @@ namespace Humidifier.EventSchemas
             public static string RegistryArn =  "RegistryArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EventSchemas::Registry";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EventSchemas.Registry; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-description

@@ -15,14 +15,7 @@ namespace Humidifier.Bedrock
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::AgentAlias";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.AgentAlias; }
         public dynamic AgentAliasName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Description

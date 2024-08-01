@@ -14,13 +14,7 @@ namespace Humidifier.QuickSight
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QuickSight::Theme";
-            }
-        }
+        public override string AWSTypeName { get => AWS.QuickSight.Theme; }
 
         /// <summary>
         /// ThemeId

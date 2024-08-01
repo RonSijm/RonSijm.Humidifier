@@ -12,14 +12,7 @@ namespace Humidifier.Redshift
             public static string DeferMaintenanceIdentifier =  "DeferMaintenanceIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::Cluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Redshift.Cluster; }
         /// <summary>
         /// RevisionTarget
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-revisiontarget

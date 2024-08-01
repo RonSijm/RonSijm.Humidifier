@@ -9,14 +9,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::Destination";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTWireless.Destination; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-description

@@ -5,14 +5,7 @@ namespace Humidifier.CodeStar
 
     public class GitHubRepository : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeStar::GitHubRepository";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeStar.GitHubRepository; }
         /// <summary>
         /// EnableIssues
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-enableissues

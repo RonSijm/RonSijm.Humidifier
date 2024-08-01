@@ -14,14 +14,7 @@ namespace Humidifier.NimbleStudio
             public static string StreamingImageId =  "StreamingImageId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NimbleStudio::StreamingImage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NimbleStudio.StreamingImage; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#cfn-nimblestudio-streamingimage-description

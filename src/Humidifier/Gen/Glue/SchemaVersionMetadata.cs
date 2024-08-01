@@ -4,13 +4,7 @@ namespace Humidifier.Glue
 
     public class SchemaVersionMetadata : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::SchemaVersionMetadata";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.SchemaVersionMetadata; }
 
         /// <summary>
         /// SchemaVersionId

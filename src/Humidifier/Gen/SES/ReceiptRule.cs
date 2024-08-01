@@ -5,14 +5,7 @@ namespace Humidifier.SES
 
     public class ReceiptRule : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::ReceiptRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.ReceiptRule; }
         /// <summary>
         /// After
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after

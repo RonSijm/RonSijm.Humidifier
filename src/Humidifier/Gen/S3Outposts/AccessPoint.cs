@@ -10,14 +10,7 @@ namespace Humidifier.S3Outposts
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3Outposts::AccessPoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.S3Outposts.AccessPoint; }
         /// <summary>
         /// Policy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-policy

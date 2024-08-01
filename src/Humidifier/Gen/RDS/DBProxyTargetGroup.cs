@@ -10,13 +10,7 @@ namespace Humidifier.RDS
             public static string TargetGroupArn =  "TargetGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBProxyTargetGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.RDS.DBProxyTargetGroup; }
 
         /// <summary>
         /// DBProxyName

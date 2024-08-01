@@ -10,14 +10,7 @@ namespace Humidifier.MSK
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::Configuration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MSK.Configuration; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-description

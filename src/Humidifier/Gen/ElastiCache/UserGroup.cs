@@ -10,13 +10,7 @@ namespace Humidifier.ElastiCache
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::UserGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElastiCache.UserGroup; }
 
         /// <summary>
         /// UserGroupId

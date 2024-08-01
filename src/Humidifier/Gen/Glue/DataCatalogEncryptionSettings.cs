@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class DataCatalogEncryptionSettings : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::DataCatalogEncryptionSettings";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.DataCatalogEncryptionSettings; }
 
         /// <summary>
         /// DataCatalogEncryptionSettings_

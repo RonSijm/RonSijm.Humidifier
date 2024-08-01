@@ -10,13 +10,7 @@ namespace Humidifier.Backup
             public static string ReportPlanArn =  "ReportPlanArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::ReportPlan";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Backup.ReportPlan; }
 
         /// <summary>
         /// ReportSetting

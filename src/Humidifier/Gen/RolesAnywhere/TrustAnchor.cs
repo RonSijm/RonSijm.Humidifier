@@ -11,14 +11,7 @@ namespace Humidifier.RolesAnywhere
             public static string TrustAnchorId =  "TrustAnchorId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RolesAnywhere::TrustAnchor";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RolesAnywhere.TrustAnchor; }
         /// <summary>
         /// NotificationSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html#cfn-rolesanywhere-trustanchor-notificationsettings

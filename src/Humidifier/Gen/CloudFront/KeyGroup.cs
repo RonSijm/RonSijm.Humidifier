@@ -11,13 +11,7 @@ namespace Humidifier.CloudFront
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFront::KeyGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFront.KeyGroup; }
 
         /// <summary>
         /// KeyGroupConfig

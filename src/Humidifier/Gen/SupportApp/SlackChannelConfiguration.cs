@@ -4,14 +4,7 @@ namespace Humidifier.SupportApp
 
     public class SlackChannelConfiguration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SupportApp::SlackChannelConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SupportApp.SlackChannelConfiguration; }
         /// <summary>
         /// ChannelName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-supportapp-slackchannelconfiguration.html#cfn-supportapp-slackchannelconfiguration-channelname

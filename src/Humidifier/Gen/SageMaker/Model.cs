@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string ModelName =  "ModelName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Model";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.Model; }
         /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn

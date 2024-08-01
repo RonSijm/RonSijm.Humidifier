@@ -10,14 +10,7 @@ namespace Humidifier.EKS
             public static string AccessEntryArn =  "AccessEntryArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::AccessEntry";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EKS.AccessEntry; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-accessentry.html#cfn-eks-accessentry-type

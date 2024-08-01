@@ -5,13 +5,7 @@ namespace Humidifier.ASK
 
     public class Skill : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"Alexa::ASK::Skill";
-            }
-        }
+        public override string AWSTypeName { get => Alexa.ASK.Skill; }
 
         /// <summary>
         /// AuthenticationConfiguration

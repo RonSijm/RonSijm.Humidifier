@@ -10,14 +10,7 @@ namespace Humidifier.SES
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::Template";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.Template; }
         /// <summary>
         /// Template_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-template

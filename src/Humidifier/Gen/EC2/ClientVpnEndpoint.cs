@@ -5,13 +5,7 @@ namespace Humidifier.EC2
 
     public class ClientVpnEndpoint : Humidifier.Base.BaseResource, IHaveDescription, IHaveVpcId
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::ClientVpnEndpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.ClientVpnEndpoint; }
 
         /// <summary>
         /// ClientCidrBlock

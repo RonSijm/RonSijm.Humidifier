@@ -12,13 +12,7 @@ namespace Humidifier.GroundStation
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GroundStation::Config";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GroundStation.Config; }
 
         /// <summary>
         /// ConfigData

@@ -4,13 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class EventStream : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::EventStream";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Pinpoint.EventStream; }
 
         /// <summary>
         /// ApplicationId

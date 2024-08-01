@@ -10,13 +10,7 @@ namespace Humidifier.SecurityHub
             public static string InsightArn =  "InsightArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::Insight";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityHub.Insight; }
 
         /// <summary>
         /// Filters

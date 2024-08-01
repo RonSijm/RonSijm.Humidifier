@@ -4,13 +4,7 @@ namespace Humidifier.Location
 
     public class TrackerConsumer : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Location::TrackerConsumer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Location.TrackerConsumer; }
 
         /// <summary>
         /// TrackerName

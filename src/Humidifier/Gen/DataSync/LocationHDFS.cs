@@ -11,14 +11,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationHDFS";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.LocationHDFS; }
         /// <summary>
         /// KmsKeyProviderUri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-kmskeyprovideruri

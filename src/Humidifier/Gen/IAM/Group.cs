@@ -10,14 +10,7 @@ namespace Humidifier.IAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::Group";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.Group; }
         public dynamic GroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Path

@@ -15,14 +15,7 @@ namespace Humidifier.CloudFormation
             public static string TypeArn =  "TypeArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::ResourceVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.ResourceVersion; }
         /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#cfn-cloudformation-resourceversion-executionrolearn

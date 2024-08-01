@@ -4,14 +4,7 @@ namespace Humidifier.SSM
 
     public class MaintenanceWindow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::MaintenanceWindow";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSM.MaintenanceWindow; }
         /// <summary>
         /// StartDate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindow.html#cfn-ssm-maintenancewindow-startdate

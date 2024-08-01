@@ -13,14 +13,7 @@ namespace Humidifier.Greengrass
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::DeviceDefinition";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Greengrass.DeviceDefinition; }
         /// <summary>
         /// InitialVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-initialversion

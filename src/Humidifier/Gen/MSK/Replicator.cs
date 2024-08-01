@@ -10,14 +10,7 @@ namespace Humidifier.MSK
             public static string ReplicatorArn =  "ReplicatorArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::Replicator";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MSK.Replicator; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-replicator.html#cfn-msk-replicator-description

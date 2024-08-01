@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string VpnConnectionId =  "VpnConnectionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPNConnection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VPNConnection; }
         /// <summary>
         /// TransitGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid

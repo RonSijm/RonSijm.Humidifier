@@ -11,14 +11,7 @@ namespace Humidifier.SecurityLake
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityLake::DataLake";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecurityLake.DataLake; }
         /// <summary>
         /// EncryptionConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securitylake-datalake.html#cfn-securitylake-datalake-encryptionconfiguration

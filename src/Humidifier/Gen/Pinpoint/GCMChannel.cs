@@ -4,14 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class GCMChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::GCMChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.GCMChannel; }
         /// <summary>
         /// ApiKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-gcmchannel.html#cfn-pinpoint-gcmchannel-apikey

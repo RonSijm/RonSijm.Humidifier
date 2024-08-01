@@ -13,13 +13,7 @@ namespace Humidifier.SES
             public static string IngressPointArn =  "IngressPointArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::MailManagerIngressPoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SES.MailManagerIngressPoint; }
 
         /// <summary>
         /// RuleSetId

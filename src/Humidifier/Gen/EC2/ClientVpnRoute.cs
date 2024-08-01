@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class ClientVpnRoute : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::ClientVpnRoute";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.ClientVpnRoute; }
 
         /// <summary>
         /// ClientVpnEndpointId

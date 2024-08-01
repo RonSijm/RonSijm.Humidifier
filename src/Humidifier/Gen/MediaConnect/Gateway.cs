@@ -11,13 +11,7 @@ namespace Humidifier.MediaConnect
             public static string GatewayState =  "GatewayState" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::Gateway";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaConnect.Gateway; }
 
         /// <summary>
         /// Networks

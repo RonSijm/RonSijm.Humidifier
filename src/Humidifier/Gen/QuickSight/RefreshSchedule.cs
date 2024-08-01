@@ -10,14 +10,7 @@ namespace Humidifier.QuickSight
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QuickSight::RefreshSchedule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.QuickSight.RefreshSchedule; }
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-refreshschedule.html#cfn-quicksight-refreshschedule-schedule

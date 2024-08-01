@@ -10,14 +10,7 @@ namespace Humidifier.Athena
             public static string CreationTime =  "CreationTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Athena::WorkGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Athena.WorkGroup; }
         /// <summary>
         /// RecursiveDeleteOption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-recursivedeleteoption

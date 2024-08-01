@@ -19,14 +19,7 @@ namespace Humidifier.WorkSpacesThinClient
             public static string SoftwareSetComplianceStatus =  "SoftwareSetComplianceStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesThinClient::Environment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WorkSpacesThinClient.Environment; }
         /// <summary>
         /// DesiredSoftwareSetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesthinclient-environment.html#cfn-workspacesthinclient-environment-desiredsoftwaresetid

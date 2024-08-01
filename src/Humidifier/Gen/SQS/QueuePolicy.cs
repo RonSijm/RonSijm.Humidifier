@@ -9,13 +9,7 @@ namespace Humidifier.SQS
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SQS::QueuePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SQS.QueuePolicy; }
 
         /// <summary>
         /// PolicyDocument

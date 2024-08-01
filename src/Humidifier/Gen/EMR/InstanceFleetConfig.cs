@@ -5,13 +5,7 @@ namespace Humidifier.EMR
 
     public class InstanceFleetConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::InstanceFleetConfig";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EMR.InstanceFleetConfig; }
 
         /// <summary>
         /// ClusterId

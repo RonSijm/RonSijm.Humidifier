@@ -11,14 +11,7 @@ namespace Humidifier.Timestream
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Timestream::Table";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Timestream.Table; }
         public dynamic TableName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// RetentionProperties

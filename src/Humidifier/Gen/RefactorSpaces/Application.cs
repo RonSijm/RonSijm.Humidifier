@@ -17,13 +17,7 @@ namespace Humidifier.RefactorSpaces
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RefactorSpaces::Application";
-            }
-        }
+        public override string AWSTypeName { get => AWS.RefactorSpaces.Application; }
 
         /// <summary>
         /// EnvironmentIdentifier

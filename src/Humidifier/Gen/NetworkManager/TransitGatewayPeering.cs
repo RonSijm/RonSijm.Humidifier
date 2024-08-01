@@ -17,13 +17,7 @@ namespace Humidifier.NetworkManager
             public static string EdgeLocation =  "EdgeLocation" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::TransitGatewayPeering";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.TransitGatewayPeering; }
 
         /// <summary>
         /// CoreNetworkId

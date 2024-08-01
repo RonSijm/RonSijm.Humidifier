@@ -11,14 +11,7 @@ namespace Humidifier.Proton
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Proton::EnvironmentAccountConnection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Proton.EnvironmentAccountConnection; }
         /// <summary>
         /// EnvironmentName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-proton-environmentaccountconnection.html#cfn-proton-environmentaccountconnection-environmentname

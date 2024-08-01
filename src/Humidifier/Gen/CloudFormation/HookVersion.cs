@@ -14,14 +14,7 @@ namespace Humidifier.CloudFormation
             public static string TypeArn =  "TypeArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::HookVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.HookVersion; }
         /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#cfn-cloudformation-hookversion-executionrolearn

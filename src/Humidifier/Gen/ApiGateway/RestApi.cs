@@ -11,14 +11,7 @@ namespace Humidifier.ApiGateway
             public static string RestApiId =  "RestApiId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::RestApi";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.RestApi; }
         /// <summary>
         /// Policy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-policy

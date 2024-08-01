@@ -4,14 +4,7 @@ namespace Humidifier.ECR
 
     public class PullThroughCacheRule : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECR::PullThroughCacheRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ECR.PullThroughCacheRule; }
         /// <summary>
         /// UpstreamRegistryUrl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-upstreamregistryurl

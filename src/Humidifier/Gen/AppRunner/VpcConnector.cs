@@ -10,14 +10,7 @@ namespace Humidifier.AppRunner
             public static string VpcConnectorRevision =  "VpcConnectorRevision" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppRunner::VpcConnector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppRunner.VpcConnector; }
         /// <summary>
         /// SecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcconnector.html#cfn-apprunner-vpcconnector-securitygroups

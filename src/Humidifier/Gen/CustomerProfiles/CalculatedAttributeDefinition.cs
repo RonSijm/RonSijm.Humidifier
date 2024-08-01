@@ -11,14 +11,7 @@ namespace Humidifier.CustomerProfiles
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CustomerProfiles::CalculatedAttributeDefinition";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CustomerProfiles.CalculatedAttributeDefinition; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-description

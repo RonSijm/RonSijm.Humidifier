@@ -4,14 +4,7 @@ namespace Humidifier.CloudWatch
 
     public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudWatch::Dashboard";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudWatch.Dashboard; }
         public dynamic DashboardName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

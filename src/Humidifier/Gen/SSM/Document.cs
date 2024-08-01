@@ -5,14 +5,7 @@ namespace Humidifier.SSM
 
     public class Document : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::Document";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSM.Document; }
         /// <summary>
         /// DocumentFormat
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-documentformat

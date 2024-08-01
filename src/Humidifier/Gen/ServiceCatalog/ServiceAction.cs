@@ -10,14 +10,7 @@ namespace Humidifier.ServiceCatalog
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::ServiceAction";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.ServiceAction; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-description

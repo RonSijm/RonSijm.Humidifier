@@ -11,14 +11,7 @@ namespace Humidifier.CloudTrail
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudTrail::Trail";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudTrail.Trail; }
         /// <summary>
         /// IncludeGlobalServiceEvents
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-includeglobalserviceevents

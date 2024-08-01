@@ -4,13 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class TagOptionAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::TagOptionAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.TagOptionAssociation; }
 
         /// <summary>
         /// TagOptionId

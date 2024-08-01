@@ -11,13 +11,7 @@ namespace Humidifier.EC2
             public static string CertificateS3ObjectKey =  "CertificateS3ObjectKey" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::EnclaveCertificateIamRoleAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.EnclaveCertificateIamRoleAssociation; }
 
         /// <summary>
         /// RoleArn

@@ -10,13 +10,7 @@ namespace Humidifier.ResilienceHub
             public static string PolicyArn =  "PolicyArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ResilienceHub::ResiliencyPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ResilienceHub.ResiliencyPolicy; }
 
         /// <summary>
         /// Policy

@@ -12,14 +12,7 @@ namespace Humidifier.DynamoDB
             public static string StreamArn =  "StreamArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DynamoDB::GlobalTable";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DynamoDB.GlobalTable; }
         /// <summary>
         /// SSESpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-ssespecification

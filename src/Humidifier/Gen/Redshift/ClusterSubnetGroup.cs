@@ -9,13 +9,7 @@ namespace Humidifier.Redshift
             public static string ClusterSubnetGroupName =  "ClusterSubnetGroupName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::ClusterSubnetGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Redshift.ClusterSubnetGroup; }
 
         /// <summary>
         /// Description

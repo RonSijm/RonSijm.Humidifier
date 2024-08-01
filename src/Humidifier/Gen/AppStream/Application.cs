@@ -11,14 +11,7 @@ namespace Humidifier.AppStream
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.Application; }
         /// <summary>
         /// WorkingDirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-application.html#cfn-appstream-application-workingdirectory

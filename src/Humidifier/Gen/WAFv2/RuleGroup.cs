@@ -12,14 +12,7 @@ namespace Humidifier.WAFv2
             public static string LabelNamespace =  "LabelNamespace" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFv2::RuleGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFv2.RuleGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-description

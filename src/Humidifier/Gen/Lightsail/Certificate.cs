@@ -10,13 +10,7 @@ namespace Humidifier.Lightsail
             public static string CertificateArn =  "CertificateArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Certificate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lightsail.Certificate; }
 
         /// <summary>
         /// DomainName

@@ -4,13 +4,7 @@ namespace Humidifier.FIS
 
     public class TargetAccountConfiguration : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FIS::TargetAccountConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.FIS.TargetAccountConfiguration; }
 
         /// <summary>
         /// AccountId

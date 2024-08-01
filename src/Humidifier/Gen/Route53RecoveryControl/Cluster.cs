@@ -12,14 +12,7 @@ namespace Humidifier.Route53RecoveryControl
             public static string ClusterEndpoints =  "ClusterEndpoints" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryControl::Cluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53RecoveryControl.Cluster; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html#cfn-route53recoverycontrol-cluster-tags

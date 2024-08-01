@@ -5,13 +5,7 @@ namespace Humidifier.PinpointEmail
 
     public class ConfigurationSetEventDestination : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PinpointEmail::ConfigurationSetEventDestination";
-            }
-        }
+        public override string AWSTypeName { get => AWS.PinpointEmail.ConfigurationSetEventDestination; }
 
         /// <summary>
         /// EventDestinationName

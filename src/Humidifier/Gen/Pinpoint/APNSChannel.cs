@@ -4,14 +4,7 @@ namespace Humidifier.Pinpoint
 
     public class APNSChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::APNSChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.APNSChannel; }
         /// <summary>
         /// BundleId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-apnschannel.html#cfn-pinpoint-apnschannel-bundleid

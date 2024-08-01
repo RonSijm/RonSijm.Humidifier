@@ -9,14 +9,7 @@ namespace Humidifier.FMS
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FMS::ResourceSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FMS.ResourceSet; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-resourceset.html#cfn-fms-resourceset-description

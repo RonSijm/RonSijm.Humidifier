@@ -12,14 +12,7 @@ namespace Humidifier.EC2
             public static string DnsEntries =  "DnsEntries" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPCEndpoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VPCEndpoint; }
         /// <summary>
         /// PrivateDnsEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-privatednsenabled

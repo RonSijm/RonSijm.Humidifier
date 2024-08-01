@@ -5,14 +5,7 @@ namespace Humidifier.WAFRegional
 
     public class SqlInjectionMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::SqlInjectionMatchSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFRegional.SqlInjectionMatchSet; }
         /// <summary>
         /// SqlInjectionMatchTuples
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples

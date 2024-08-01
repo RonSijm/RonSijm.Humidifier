@@ -21,14 +21,7 @@ namespace Humidifier.NetworkManager
             public static string AttachmentPolicyRuleNumber =  "AttachmentPolicyRuleNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::TransitGatewayRouteTableAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkManager.TransitGatewayRouteTableAttachment; }
         /// <summary>
         /// ProposedSegmentChange
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange

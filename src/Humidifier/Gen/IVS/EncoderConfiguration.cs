@@ -10,14 +10,7 @@ namespace Humidifier.IVS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVS::EncoderConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IVS.EncoderConfiguration; }
         /// <summary>
         /// Video
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-encoderconfiguration.html#cfn-ivs-encoderconfiguration-video

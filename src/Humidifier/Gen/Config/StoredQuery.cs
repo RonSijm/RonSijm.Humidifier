@@ -10,14 +10,7 @@ namespace Humidifier.Config
             public static string QueryId =  "QueryId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::StoredQuery";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.StoredQuery; }
         /// <summary>
         /// QueryDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-querydescription

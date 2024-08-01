@@ -11,14 +11,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public static string RuleArn =  "RuleArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::ListenerRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.ListenerRule; }
         /// <summary>
         /// ListenerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-listenerarn

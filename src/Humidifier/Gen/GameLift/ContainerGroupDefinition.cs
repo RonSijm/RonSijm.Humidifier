@@ -11,13 +11,7 @@ namespace Humidifier.GameLift
             public static string CreationTime =  "CreationTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::ContainerGroupDefinition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GameLift.ContainerGroupDefinition; }
 
         /// <summary>
         /// OperatingSystem

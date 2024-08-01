@@ -11,14 +11,7 @@ namespace Humidifier.Connect
             public static string ViewId =  "ViewId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::View";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.View; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-view.html#cfn-connect-view-description

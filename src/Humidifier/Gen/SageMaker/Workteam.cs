@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string WorkteamName =  "WorkteamName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Workteam";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.Workteam; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-description

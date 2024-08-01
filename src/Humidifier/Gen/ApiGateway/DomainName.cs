@@ -13,14 +13,7 @@ namespace Humidifier.ApiGateway
             public static string DistributionDomainName =  "DistributionDomainName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::DomainName";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.DomainName; }
         /// <summary>
         /// MutualTlsAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication

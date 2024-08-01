@@ -9,14 +9,7 @@ namespace Humidifier.ApiGateway
             public static string ClientCertificateId =  "ClientCertificateId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::ClientCertificate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.ClientCertificate; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-clientcertificate.html#cfn-apigateway-clientcertificate-description

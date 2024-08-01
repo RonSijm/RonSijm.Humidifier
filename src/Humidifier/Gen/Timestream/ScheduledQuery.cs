@@ -18,13 +18,7 @@ namespace Humidifier.Timestream
             public static string SQScheduledQueryExecutionRoleArn =  "SQScheduledQueryExecutionRoleArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Timestream::ScheduledQuery";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Timestream.ScheduledQuery; }
 
         /// <summary>
         /// ScheduledQueryExecutionRoleArn

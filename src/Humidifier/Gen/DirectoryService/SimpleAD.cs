@@ -12,14 +12,7 @@ namespace Humidifier.DirectoryService
             public static string DnsIpAddresses =  "DnsIpAddresses" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DirectoryService::SimpleAD";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DirectoryService.SimpleAD; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description

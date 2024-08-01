@@ -5,14 +5,7 @@ namespace Humidifier.Events
 
     public class EventBusPolicy : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Events::EventBusPolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Events.EventBusPolicy; }
         /// <summary>
         /// EventBusName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-eventbusname

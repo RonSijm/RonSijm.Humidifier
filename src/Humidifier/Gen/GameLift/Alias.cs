@@ -10,14 +10,7 @@ namespace Humidifier.GameLift
             public static string AliasId =  "AliasId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::Alias";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.Alias; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-description

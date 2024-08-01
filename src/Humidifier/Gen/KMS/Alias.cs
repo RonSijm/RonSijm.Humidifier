@@ -4,13 +4,7 @@ namespace Humidifier.KMS
 
     public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KMS::Alias";
-            }
-        }
+        public override string AWSTypeName { get => AWS.KMS.Alias; }
 
         /// <summary>
         /// TargetKeyId

@@ -4,14 +4,7 @@ namespace Humidifier.Glue
 
     public class DevEndpoint : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::DevEndpoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.DevEndpoint; }
         /// <summary>
         /// ExtraJarsS3Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path

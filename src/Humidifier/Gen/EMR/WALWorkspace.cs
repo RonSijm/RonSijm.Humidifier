@@ -4,14 +4,7 @@ namespace Humidifier.EMR
 
     public class WALWorkspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::WALWorkspace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EMR.WALWorkspace; }
         public dynamic WALWorkspaceName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Tags

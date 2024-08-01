@@ -13,14 +13,7 @@ namespace Humidifier.GameLift
             public static string SizeOnDisk =  "SizeOnDisk" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::Script";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.Script; }
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-version

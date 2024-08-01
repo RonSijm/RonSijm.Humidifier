@@ -15,14 +15,7 @@ namespace Humidifier.Route53Resolver
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::OutpostResolver";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53Resolver.OutpostResolver; }
         /// <summary>
         /// InstanceCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-outpostresolver.html#cfn-route53resolver-outpostresolver-instancecount

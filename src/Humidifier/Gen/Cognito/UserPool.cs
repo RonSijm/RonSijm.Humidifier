@@ -13,14 +13,7 @@ namespace Humidifier.Cognito
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPool";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cognito.UserPool; }
         /// <summary>
         /// UserPoolTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltags

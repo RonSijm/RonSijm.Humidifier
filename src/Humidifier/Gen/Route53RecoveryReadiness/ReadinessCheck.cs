@@ -9,14 +9,7 @@ namespace Humidifier.Route53RecoveryReadiness
             public static string ReadinessCheckArn =  "ReadinessCheckArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryReadiness::ReadinessCheck";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53RecoveryReadiness.ReadinessCheck; }
         /// <summary>
         /// ResourceSetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-readinesscheck.html#cfn-route53recoveryreadiness-readinesscheck-resourcesetname

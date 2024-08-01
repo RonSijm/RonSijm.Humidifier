@@ -10,14 +10,7 @@ namespace Humidifier.WAFv2
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFv2::RegexPatternSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFv2.RegexPatternSet; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-regexpatternset.html#cfn-wafv2-regexpatternset-description

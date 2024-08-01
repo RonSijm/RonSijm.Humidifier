@@ -13,13 +13,7 @@ namespace Humidifier.SecurityHub
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::PolicyAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityHub.PolicyAssociation; }
 
         /// <summary>
         /// ConfigurationPolicyId

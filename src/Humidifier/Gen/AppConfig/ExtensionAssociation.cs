@@ -12,14 +12,7 @@ namespace Humidifier.AppConfig
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::ExtensionAssociation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppConfig.ExtensionAssociation; }
         /// <summary>
         /// ResourceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extensionassociation.html#cfn-appconfig-extensionassociation-resourceidentifier

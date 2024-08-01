@@ -5,14 +5,7 @@ namespace Humidifier.WAFRegional
 
     public class SizeConstraintSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::SizeConstraintSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFRegional.SizeConstraintSet; }
         /// <summary>
         /// SizeConstraints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints

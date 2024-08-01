@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class ClientVpnAuthorizationRule : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::ClientVpnAuthorizationRule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.ClientVpnAuthorizationRule; }
 
         /// <summary>
         /// ClientVpnEndpointId

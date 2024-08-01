@@ -4,13 +4,7 @@ namespace Humidifier.Redshift
 
     public class ClusterSecurityGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::ClusterSecurityGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Redshift.ClusterSecurityGroup; }
 
         /// <summary>
         /// Description

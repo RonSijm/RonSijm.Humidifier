@@ -4,14 +4,7 @@ namespace Humidifier.DMS
 
     public class Certificate : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::Certificate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DMS.Certificate; }
         /// <summary>
         /// CertificateIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-certificate.html#cfn-dms-certificate-certificateidentifier

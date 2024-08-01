@@ -5,14 +5,7 @@ namespace Humidifier.WAF
 
     public class XssMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAF::XssMatchSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAF.XssMatchSet; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>

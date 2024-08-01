@@ -13,13 +13,7 @@ namespace Humidifier.B2BI
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::B2BI::Transformer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.B2BI.Transformer; }
 
         /// <summary>
         /// Status

@@ -6,7 +6,7 @@ public class JsonFromServerRetriever
 {
     public async Task<(string, string)> DownloadSpecs()
     {
-            Console.WriteLine($"Downloading spec from {CodeGenConfig.CloudFormationResourceSpecificationUrl}");
+            Console.WriteLine($"Downloading spec from {CodeGeneratorSettings.CloudFormationResourceSpecificationUrl}");
 
             var handler = new HttpClientHandler
             {
@@ -15,7 +15,7 @@ public class JsonFromServerRetriever
 
             var client = new HttpClient(handler);
 
-            var request = new HttpRequestMessage(HttpMethod.Get, CodeGenConfig.CloudFormationResourceSpecificationUrl);
+            var request = new HttpRequestMessage(HttpMethod.Get, CodeGeneratorSettings.CloudFormationResourceSpecificationUrl);
             request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
 
             var response = await client.SendAsync(request);

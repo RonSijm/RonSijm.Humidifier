@@ -9,14 +9,7 @@ namespace Humidifier.ApiGateway
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Account";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.Account; }
         /// <summary>
         /// CloudWatchRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-account.html#cfn-apigateway-account-cloudwatchrolearn

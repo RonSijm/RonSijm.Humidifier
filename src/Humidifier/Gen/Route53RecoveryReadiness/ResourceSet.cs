@@ -10,13 +10,7 @@ namespace Humidifier.Route53RecoveryReadiness
             public static string ResourceSetArn =  "ResourceSetArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryReadiness::ResourceSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53RecoveryReadiness.ResourceSet; }
 
         /// <summary>
         /// ResourceSetType

@@ -11,13 +11,7 @@ namespace Humidifier.Bedrock
             public static string Version =  "Version" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::GuardrailVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Bedrock.GuardrailVersion; }
 
         /// <summary>
         /// GuardrailIdentifier

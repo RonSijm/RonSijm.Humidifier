@@ -10,13 +10,7 @@ namespace Humidifier.IoT
             public static string TemplateArn =  "TemplateArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::ProvisioningTemplate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.ProvisioningTemplate; }
 
         /// <summary>
         /// ProvisioningRoleArn

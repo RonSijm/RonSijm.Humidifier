@@ -12,13 +12,7 @@ namespace Humidifier.PaymentCryptography
             public static string KeyOrigin =  "KeyOrigin" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PaymentCryptography::Key";
-            }
-        }
+        public override string AWSTypeName { get => AWS.PaymentCryptography.Key; }
 
         /// <summary>
         /// Exportable

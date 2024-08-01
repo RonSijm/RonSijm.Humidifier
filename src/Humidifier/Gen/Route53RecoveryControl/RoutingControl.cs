@@ -10,14 +10,7 @@ namespace Humidifier.Route53RecoveryControl
             public static string RoutingControlArn =  "RoutingControlArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryControl::RoutingControl";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53RecoveryControl.RoutingControl; }
         /// <summary>
         /// ClusterArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html#cfn-route53recoverycontrol-routingcontrol-clusterarn

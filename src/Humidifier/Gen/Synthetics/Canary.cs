@@ -11,14 +11,7 @@ namespace Humidifier.Synthetics
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Synthetics::Canary";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Synthetics.Canary; }
         /// <summary>
         /// VisualReference
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference

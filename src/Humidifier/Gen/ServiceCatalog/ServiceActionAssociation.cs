@@ -4,13 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class ServiceActionAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::ServiceActionAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.ServiceActionAssociation; }
 
         /// <summary>
         /// ServiceActionId

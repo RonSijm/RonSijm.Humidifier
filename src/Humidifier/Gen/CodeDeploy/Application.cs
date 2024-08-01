@@ -4,14 +4,7 @@ namespace Humidifier.CodeDeploy
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeDeploy::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeDeploy.Application; }
         public dynamic ApplicationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ComputePlatform

@@ -14,14 +14,7 @@ namespace Humidifier.MediaPackageV2
             public static string IngestEndpointUrls =  "IngestEndpointUrls" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackageV2::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackageV2.Channel; }
         public dynamic ChannelName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Description

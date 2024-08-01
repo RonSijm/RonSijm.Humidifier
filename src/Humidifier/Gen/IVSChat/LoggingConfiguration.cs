@@ -12,13 +12,7 @@ namespace Humidifier.IVSChat
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVSChat::LoggingConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IVSChat.LoggingConfiguration; }
 
         /// <summary>
         /// DestinationConfiguration

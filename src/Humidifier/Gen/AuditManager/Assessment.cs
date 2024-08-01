@@ -12,14 +12,7 @@ namespace Humidifier.AuditManager
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AuditManager::Assessment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AuditManager.Assessment; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-status

@@ -11,14 +11,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::BillingGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.BillingGroup; }
         public dynamic BillingGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// BillingGroupProperties

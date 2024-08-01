@@ -10,13 +10,7 @@ namespace Humidifier.Lightsail
             public static string State =  "State" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Alarm";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lightsail.Alarm; }
 
         /// <summary>
         /// MetricName

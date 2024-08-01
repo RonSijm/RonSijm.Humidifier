@@ -12,14 +12,7 @@ namespace Humidifier.EventSchemas
             public static string State =  "State" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EventSchemas::Discoverer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EventSchemas.Discoverer; }
         /// <summary>
         /// CrossAccount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-crossaccount

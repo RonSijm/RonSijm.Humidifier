@@ -4,13 +4,7 @@ namespace Humidifier.Detective
 
     public class MemberInvitation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Detective::MemberInvitation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Detective.MemberInvitation; }
 
         /// <summary>
         /// MemberId

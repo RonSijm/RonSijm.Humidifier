@@ -10,13 +10,7 @@ namespace Humidifier.Lex
             public static string RevisionId =  "RevisionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lex::ResourcePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lex.ResourcePolicy; }
 
         /// <summary>
         /// Policy

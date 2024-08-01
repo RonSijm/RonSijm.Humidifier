@@ -10,13 +10,7 @@ namespace Humidifier.ServiceCatalogAppRegistry
             public static string AttributeGroupArn =  "AttributeGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalogAppRegistry::AttributeGroupAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalogAppRegistry.AttributeGroupAssociation; }
 
         /// <summary>
         /// AttributeGroup

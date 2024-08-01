@@ -11,14 +11,7 @@ namespace Humidifier.MediaConnect
             public static string BridgeState =  "BridgeState" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::Bridge";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConnect.Bridge; }
         /// <summary>
         /// SourceFailoverConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-bridge.html#cfn-mediaconnect-bridge-sourcefailoverconfig

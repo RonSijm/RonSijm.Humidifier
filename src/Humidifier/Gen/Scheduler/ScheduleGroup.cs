@@ -12,14 +12,7 @@ namespace Humidifier.Scheduler
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Scheduler::ScheduleGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Scheduler.ScheduleGroup; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedulegroup.html#cfn-scheduler-schedulegroup-tags

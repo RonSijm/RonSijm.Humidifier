@@ -9,14 +9,7 @@ namespace Humidifier.EC2
             public static string InternetGatewayId =  "InternetGatewayId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::InternetGateway";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.InternetGateway; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html#cfn-ec2-internetgateway-tags

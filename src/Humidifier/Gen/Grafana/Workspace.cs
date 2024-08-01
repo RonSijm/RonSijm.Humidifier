@@ -17,14 +17,7 @@ namespace Humidifier.Grafana
             public static string ModificationTimestamp =  "ModificationTimestamp" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Grafana::Workspace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Grafana.Workspace; }
         /// <summary>
         /// NotificationDestinations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-notificationdestinations

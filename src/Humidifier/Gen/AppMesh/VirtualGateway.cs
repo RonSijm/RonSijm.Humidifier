@@ -15,14 +15,7 @@ namespace Humidifier.AppMesh
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppMesh::VirtualGateway";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppMesh.VirtualGateway; }
         public dynamic VirtualGatewayName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

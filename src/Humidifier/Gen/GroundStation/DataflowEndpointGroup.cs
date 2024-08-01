@@ -11,14 +11,7 @@ namespace Humidifier.GroundStation
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GroundStation::DataflowEndpointGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GroundStation.DataflowEndpointGroup; }
         /// <summary>
         /// ContactPostPassDurationSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactpostpassdurationseconds

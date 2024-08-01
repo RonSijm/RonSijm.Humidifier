@@ -10,14 +10,7 @@ namespace Humidifier.SystemsManagerSAP
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SystemsManagerSAP::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SystemsManagerSAP.Application; }
         /// <summary>
         /// Instances
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-instances

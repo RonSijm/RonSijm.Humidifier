@@ -10,14 +10,7 @@ namespace Humidifier.CodePipeline
             public static string Version =  "Version" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodePipeline::Pipeline";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodePipeline.Pipeline; }
         /// <summary>
         /// Variables
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-variables

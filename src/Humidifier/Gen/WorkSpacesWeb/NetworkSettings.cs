@@ -10,13 +10,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string NetworkSettingsArn =  "NetworkSettingsArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::NetworkSettings";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.NetworkSettings; }
 
         /// <summary>
         /// VpcId

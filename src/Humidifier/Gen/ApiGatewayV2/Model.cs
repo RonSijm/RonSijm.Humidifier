@@ -9,14 +9,7 @@ namespace Humidifier.ApiGatewayV2
             public static string ModelId =  "ModelId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::Model";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.Model; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-model.html#cfn-apigatewayv2-model-description

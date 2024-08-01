@@ -11,14 +11,7 @@ namespace Humidifier.FraudDetector
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FraudDetector::Outcome";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FraudDetector.Outcome; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-outcome.html#cfn-frauddetector-outcome-description

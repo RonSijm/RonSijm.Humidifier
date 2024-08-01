@@ -13,14 +13,7 @@ namespace Humidifier.Organizations
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Organizations::Account";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Organizations.Account; }
         /// <summary>
         /// RoleName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#cfn-organizations-account-rolename

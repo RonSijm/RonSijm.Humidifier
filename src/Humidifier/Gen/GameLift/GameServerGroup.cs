@@ -11,14 +11,7 @@ namespace Humidifier.GameLift
             public static string GameServerGroupArn =  "GameServerGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::GameServerGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.GameServerGroup; }
         /// <summary>
         /// AutoScalingPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-autoscalingpolicy

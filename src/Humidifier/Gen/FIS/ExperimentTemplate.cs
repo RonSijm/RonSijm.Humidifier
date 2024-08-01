@@ -10,13 +10,7 @@ namespace Humidifier.FIS
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FIS::ExperimentTemplate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.FIS.ExperimentTemplate; }
 
         /// <summary>
         /// Description

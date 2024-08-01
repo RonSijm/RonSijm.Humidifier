@@ -10,14 +10,7 @@ namespace Humidifier.NimbleStudio
             public static string LaunchProfileId =  "LaunchProfileId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NimbleStudio::LaunchProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NimbleStudio.LaunchProfile; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-description

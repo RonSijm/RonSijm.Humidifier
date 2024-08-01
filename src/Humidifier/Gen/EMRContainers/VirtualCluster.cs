@@ -11,13 +11,7 @@ namespace Humidifier.EMRContainers
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMRContainers::VirtualCluster";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EMRContainers.VirtualCluster; }
 
         /// <summary>
         /// ContainerProvider

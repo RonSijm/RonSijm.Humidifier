@@ -13,14 +13,7 @@ namespace Humidifier.SageMaker
             public static string CreationTime =  "CreationTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Project";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.Project; }
         public dynamic ProjectName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ServiceCatalogProvisionedProductDetails

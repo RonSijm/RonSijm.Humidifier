@@ -10,14 +10,7 @@ namespace Humidifier.MediaConnect
             public static string OutputArn =  "OutputArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::FlowOutput";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConnect.FlowOutput; }
         /// <summary>
         /// Destination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-destination

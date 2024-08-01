@@ -9,14 +9,7 @@ namespace Humidifier.Chatbot
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Chatbot::MicrosoftTeamsChannelConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Chatbot.MicrosoftTeamsChannelConfiguration; }
         /// <summary>
         /// UserRoleRequired
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-userrolerequired

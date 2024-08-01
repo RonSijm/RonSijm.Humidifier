@@ -10,13 +10,7 @@ namespace Humidifier.Cognito
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::LogDeliveryConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Cognito.LogDeliveryConfiguration; }
 
         /// <summary>
         /// UserPoolId

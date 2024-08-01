@@ -10,14 +10,7 @@ namespace Humidifier.IoTSiteWise
             public static string DashboardArn =  "DashboardArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::Dashboard";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTSiteWise.Dashboard; }
         public dynamic DashboardName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

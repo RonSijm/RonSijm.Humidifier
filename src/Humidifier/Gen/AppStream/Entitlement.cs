@@ -11,13 +11,7 @@ namespace Humidifier.AppStream
             public static string LastModifiedTime =  "LastModifiedTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::Entitlement";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppStream.Entitlement; }
 
         /// <summary>
         /// AppVisibility

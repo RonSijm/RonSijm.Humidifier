@@ -11,14 +11,7 @@ namespace Humidifier.Connect
             public static string TrafficDistributionGroupArn =  "TrafficDistributionGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::TrafficDistributionGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.TrafficDistributionGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-trafficdistributiongroup.html#cfn-connect-trafficdistributiongroup-description

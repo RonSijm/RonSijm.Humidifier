@@ -11,14 +11,7 @@ namespace Humidifier.Lambda
             public static string CodeSigningConfigArn =  "CodeSigningConfigArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::CodeSigningConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lambda.CodeSigningConfig; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html#cfn-lambda-codesigningconfig-description

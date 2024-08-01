@@ -12,13 +12,7 @@ namespace Humidifier.RAM
             public static string IsResourceTypeDefault =  "IsResourceTypeDefault" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RAM::Permission";
-            }
-        }
+        public override string AWSTypeName { get => AWS.RAM.Permission; }
 
         /// <summary>
         /// ResourceType

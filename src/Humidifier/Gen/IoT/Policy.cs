@@ -10,14 +10,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::Policy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.Policy; }
         public dynamic PolicyName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

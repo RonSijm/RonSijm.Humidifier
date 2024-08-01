@@ -14,14 +14,7 @@ namespace Humidifier.QuickSight
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QuickSight::Dashboard";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.QuickSight.Dashboard; }
         /// <summary>
         /// Parameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-parameters

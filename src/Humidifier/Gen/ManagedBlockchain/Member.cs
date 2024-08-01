@@ -11,13 +11,7 @@ namespace Humidifier.ManagedBlockchain
             public static string NetworkId =  "NetworkId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ManagedBlockchain::Member";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ManagedBlockchain.Member; }
 
         /// <summary>
         /// MemberConfiguration

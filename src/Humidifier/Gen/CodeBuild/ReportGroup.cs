@@ -10,13 +10,7 @@ namespace Humidifier.CodeBuild
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeBuild::ReportGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeBuild.ReportGroup; }
 
         /// <summary>
         /// Type

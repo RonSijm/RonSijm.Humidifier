@@ -12,14 +12,7 @@ namespace Humidifier.FSx
             public static string UUID =  "UUID" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FSx::StorageVirtualMachine";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FSx.StorageVirtualMachine; }
         /// <summary>
         /// SvmAdminPassword
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-storagevirtualmachine.html#cfn-fsx-storagevirtualmachine-svmadminpassword

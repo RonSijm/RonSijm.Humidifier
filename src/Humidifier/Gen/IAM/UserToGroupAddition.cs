@@ -4,13 +4,7 @@ namespace Humidifier.IAM
 
     public class UserToGroupAddition : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::UserToGroupAddition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IAM.UserToGroupAddition; }
 
         /// <summary>
         /// GroupName

@@ -11,13 +11,7 @@ namespace Humidifier.VerifiedPermissions
             public static string PolicyId =  "PolicyId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VerifiedPermissions::Policy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.VerifiedPermissions.Policy; }
 
         /// <summary>
         /// Definition

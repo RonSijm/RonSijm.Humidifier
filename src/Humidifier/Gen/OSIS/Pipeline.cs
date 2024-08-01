@@ -13,13 +13,7 @@ namespace Humidifier.OSIS
             public static string VpcEndpointService =  "VpcEndpointService" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OSIS::Pipeline";
-            }
-        }
+        public override string AWSTypeName { get => AWS.OSIS.Pipeline; }
 
         /// <summary>
         /// PipelineConfigurationBody

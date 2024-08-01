@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class VPCDHCPOptionsAssociation : Humidifier.Base.BaseResource, IHaveVpcId
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPCDHCPOptionsAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.VPCDHCPOptionsAssociation; }
 
         /// <summary>
         /// VpcId

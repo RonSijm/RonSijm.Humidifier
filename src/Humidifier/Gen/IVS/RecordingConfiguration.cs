@@ -11,13 +11,7 @@ namespace Humidifier.IVS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVS::RecordingConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IVS.RecordingConfiguration; }
 
         /// <summary>
         /// DestinationConfiguration

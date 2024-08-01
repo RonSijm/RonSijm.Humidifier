@@ -5,14 +5,7 @@ namespace Humidifier.LakeFormation
 
     public class DataLakeSettings : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::DataLakeSettings";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LakeFormation.DataLakeSettings; }
         /// <summary>
         /// AllowExternalDataFiltering
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-allowexternaldatafiltering

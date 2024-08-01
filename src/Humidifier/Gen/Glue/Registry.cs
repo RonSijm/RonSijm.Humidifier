@@ -9,14 +9,7 @@ namespace Humidifier.Glue
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Registry";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.Registry; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-registry.html#cfn-glue-registry-description

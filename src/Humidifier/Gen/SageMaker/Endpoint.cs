@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string EndpointName =  "EndpointName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Endpoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.Endpoint; }
         /// <summary>
         /// RetainAllVariantProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-retainallvariantproperties

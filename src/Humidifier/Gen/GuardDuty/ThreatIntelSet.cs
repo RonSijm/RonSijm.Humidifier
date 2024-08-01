@@ -10,13 +10,7 @@ namespace Humidifier.GuardDuty
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GuardDuty::ThreatIntelSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GuardDuty.ThreatIntelSet; }
 
         /// <summary>
         /// Format

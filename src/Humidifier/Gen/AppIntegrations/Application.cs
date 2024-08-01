@@ -11,13 +11,7 @@ namespace Humidifier.AppIntegrations
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppIntegrations::Application";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppIntegrations.Application; }
 
         /// <summary>
         /// ApplicationSourceConfig

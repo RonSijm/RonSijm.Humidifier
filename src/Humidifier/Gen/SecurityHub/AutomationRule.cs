@@ -13,14 +13,7 @@ namespace Humidifier.SecurityHub
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::AutomationRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecurityHub.AutomationRule; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-automationrule.html#cfn-securityhub-automationrule-description

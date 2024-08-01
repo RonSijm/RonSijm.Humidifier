@@ -12,14 +12,7 @@ namespace Humidifier.NeptuneGraph
             public static string GraphId =  "GraphId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NeptuneGraph::Graph";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NeptuneGraph.Graph; }
         /// <summary>
         /// PublicConnectivity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-publicconnectivity

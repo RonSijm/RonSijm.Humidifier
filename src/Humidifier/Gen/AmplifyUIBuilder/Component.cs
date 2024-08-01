@@ -12,14 +12,7 @@ namespace Humidifier.AmplifyUIBuilder
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AmplifyUIBuilder::Component";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AmplifyUIBuilder.Component; }
         /// <summary>
         /// ComponentType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplifyuibuilder-component.html#cfn-amplifyuibuilder-component-componenttype

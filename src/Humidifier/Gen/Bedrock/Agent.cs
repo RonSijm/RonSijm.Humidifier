@@ -18,14 +18,7 @@ namespace Humidifier.Bedrock
             public static string RecommendedActions =  "RecommendedActions" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::Agent";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.Agent; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-description

@@ -4,13 +4,7 @@ namespace Humidifier.CloudFormation
 
     public class CustomResource : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::CustomResource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFormation.CustomResource; }
 
         /// <summary>
         /// ServiceToken

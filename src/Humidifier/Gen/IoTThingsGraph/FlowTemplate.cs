@@ -5,14 +5,7 @@ namespace Humidifier.IoTThingsGraph
 
     public class FlowTemplate : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTThingsGraph::FlowTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTThingsGraph.FlowTemplate; }
         /// <summary>
         /// CompatibleNamespaceVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-compatiblenamespaceversion

@@ -11,14 +11,7 @@ namespace Humidifier.IoTFleetWise
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTFleetWise::ModelManifest";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTFleetWise.ModelManifest; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-modelmanifest.html#cfn-iotfleetwise-modelmanifest-status

@@ -14,14 +14,7 @@ namespace Humidifier.Connect
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::Instance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.Instance; }
         /// <summary>
         /// DirectoryId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instance.html#cfn-connect-instance-directoryid

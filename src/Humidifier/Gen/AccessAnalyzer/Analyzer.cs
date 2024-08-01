@@ -10,14 +10,7 @@ namespace Humidifier.AccessAnalyzer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AccessAnalyzer::Analyzer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AccessAnalyzer.Analyzer; }
         /// <summary>
         /// ArchiveRules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-archiverules

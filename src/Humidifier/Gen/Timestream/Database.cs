@@ -9,14 +9,7 @@ namespace Humidifier.Timestream
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Timestream::Database";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Timestream.Database; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html#cfn-timestream-database-kmskeyid

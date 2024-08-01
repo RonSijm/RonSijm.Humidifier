@@ -11,14 +11,7 @@ namespace Humidifier.MediaPackage
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackage::PackagingGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackage.PackagingGroup; }
         /// <summary>
         /// Authorization
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packaginggroup.html#cfn-mediapackage-packaginggroup-authorization

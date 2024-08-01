@@ -10,13 +10,7 @@ namespace Humidifier.ResourceExplorer2
             public static string IndexState =  "IndexState" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ResourceExplorer2::Index";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ResourceExplorer2.Index; }
 
         /// <summary>
         /// Type

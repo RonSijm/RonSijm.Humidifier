@@ -4,13 +4,7 @@ namespace Humidifier.CloudTrail
 
     public class ResourcePolicy : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudTrail::ResourcePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudTrail.ResourcePolicy; }
 
         /// <summary>
         /// ResourceArn

@@ -11,13 +11,7 @@ namespace Humidifier.Route53RecoveryControl
             public static string SafetyRuleArn =  "SafetyRuleArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryControl::SafetyRule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53RecoveryControl.SafetyRule; }
 
         /// <summary>
         /// ControlPanelArn

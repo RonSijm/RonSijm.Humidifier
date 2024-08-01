@@ -12,14 +12,7 @@ namespace Humidifier.Panorama
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Panorama::Package";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Panorama.Package; }
         public dynamic PackageName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// StorageLocation

@@ -5,14 +5,7 @@ namespace Humidifier.GuardDuty
 
     public class Filter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GuardDuty::Filter";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GuardDuty.Filter; }
         /// <summary>
         /// Action
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-action

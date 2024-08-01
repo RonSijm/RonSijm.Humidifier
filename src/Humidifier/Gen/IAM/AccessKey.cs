@@ -9,14 +9,7 @@ namespace Humidifier.IAM
             public static string SecretAccessKey =  "SecretAccessKey" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::AccessKey";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.AccessKey; }
         /// <summary>
         /// Serial
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html#cfn-iam-accesskey-serial

@@ -14,14 +14,7 @@ namespace Humidifier.InternetMonitor
             public static string ProcessingStatus =  "ProcessingStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::InternetMonitor::Monitor";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.InternetMonitor.Monitor; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-internetmonitor-monitor.html#cfn-internetmonitor-monitor-status

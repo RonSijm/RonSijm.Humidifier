@@ -10,13 +10,7 @@ namespace Humidifier.Batch
             public static string JobQueueArn =  "JobQueueArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Batch::JobQueue";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Batch.JobQueue; }
 
         /// <summary>
         /// ComputeEnvironmentOrder

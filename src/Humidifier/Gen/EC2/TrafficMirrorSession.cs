@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class TrafficMirrorSession : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TrafficMirrorSession";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.TrafficMirrorSession; }
 
         /// <summary>
         /// TrafficMirrorTargetId

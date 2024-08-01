@@ -10,13 +10,7 @@ namespace Humidifier.EKS
             public static string IdentityProviderConfigArn =  "IdentityProviderConfigArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::IdentityProviderConfig";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EKS.IdentityProviderConfig; }
 
         /// <summary>
         /// Type

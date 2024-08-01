@@ -11,14 +11,7 @@ namespace Humidifier.ElastiCache
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::User";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElastiCache.User; }
         /// <summary>
         /// AuthenticationMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-authenticationmode

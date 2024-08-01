@@ -9,14 +9,7 @@ namespace Humidifier.ApiGatewayV2
             public static string DeploymentId =  "DeploymentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::Deployment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.Deployment; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-deployment.html#cfn-apigatewayv2-deployment-description

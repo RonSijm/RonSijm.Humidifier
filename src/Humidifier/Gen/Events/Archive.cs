@@ -9,14 +9,7 @@ namespace Humidifier.Events
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Events::Archive";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Events.Archive; }
         /// <summary>
         /// EventPattern
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-eventpattern

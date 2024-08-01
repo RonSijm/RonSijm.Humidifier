@@ -5,14 +5,7 @@ namespace Humidifier.Budgets
 
     public class Budget : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Budgets::Budget";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Budgets.Budget; }
         /// <summary>
         /// NotificationsWithSubscribers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers

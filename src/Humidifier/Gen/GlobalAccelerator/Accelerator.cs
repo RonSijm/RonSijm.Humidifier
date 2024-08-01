@@ -13,14 +13,7 @@ namespace Humidifier.GlobalAccelerator
             public static string Ipv6Addresses =  "Ipv6Addresses" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GlobalAccelerator::Accelerator";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GlobalAccelerator.Accelerator; }
         /// <summary>
         /// IpAddressType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#cfn-globalaccelerator-accelerator-ipaddresstype

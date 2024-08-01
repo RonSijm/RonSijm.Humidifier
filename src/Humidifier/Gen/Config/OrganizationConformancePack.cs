@@ -5,14 +5,7 @@ namespace Humidifier.Config
 
     public class OrganizationConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::OrganizationConformancePack";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.OrganizationConformancePack; }
         /// <summary>
         /// ConformancePackInputParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-conformancepackinputparameters

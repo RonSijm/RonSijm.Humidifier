@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class TagOption : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::TagOption";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.TagOption; }
         /// <summary>
         /// Active
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-tagoption.html#cfn-servicecatalog-tagoption-active

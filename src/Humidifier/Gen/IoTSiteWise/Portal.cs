@@ -13,14 +13,7 @@ namespace Humidifier.IoTSiteWise
             public static string PortalClientId =  "PortalClientId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::Portal";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTSiteWise.Portal; }
         public dynamic PortalName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// PortalAuthMode

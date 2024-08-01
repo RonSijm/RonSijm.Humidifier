@@ -12,13 +12,7 @@ namespace Humidifier.Route53Resolver
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::ResolverRuleAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53Resolver.ResolverRuleAssociation; }
 
         /// <summary>
         /// VPCId

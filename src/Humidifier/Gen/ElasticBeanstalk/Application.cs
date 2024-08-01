@@ -5,14 +5,7 @@ namespace Humidifier.ElasticBeanstalk
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticBeanstalk::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticBeanstalk.Application; }
         public dynamic ApplicationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Description

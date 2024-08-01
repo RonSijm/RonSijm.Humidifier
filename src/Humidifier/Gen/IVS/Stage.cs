@@ -10,14 +10,7 @@ namespace Humidifier.IVS
             public static string ActiveSessionId =  "ActiveSessionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVS::Stage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IVS.Stage; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-stage.html#cfn-ivs-stage-tags

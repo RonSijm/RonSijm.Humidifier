@@ -9,13 +9,7 @@ namespace Humidifier.Connect
             public static string AssociationId =  "AssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::SecurityKey";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.SecurityKey; }
 
         /// <summary>
         /// InstanceId

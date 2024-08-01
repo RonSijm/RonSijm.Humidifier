@@ -9,13 +9,7 @@ namespace Humidifier.SageMaker
             public static string TrackingServerArn =  "TrackingServerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::MlflowTrackingServer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.MlflowTrackingServer; }
 
         /// <summary>
         /// TrackingServerName

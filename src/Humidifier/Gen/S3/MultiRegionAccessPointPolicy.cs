@@ -10,13 +10,7 @@ namespace Humidifier.S3
             public static string PolicyStatus =  "PolicyStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::MultiRegionAccessPointPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3.MultiRegionAccessPointPolicy; }
 
         /// <summary>
         /// Policy

@@ -13,14 +13,7 @@ namespace Humidifier.Signer
             public static string ProfileVersion =  "ProfileVersion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Signer::SigningProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Signer.SigningProfile; }
         /// <summary>
         /// SignatureValidityPeriod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-signaturevalidityperiod

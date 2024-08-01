@@ -4,13 +4,7 @@ namespace Humidifier.ApiGateway
 
     public class BasePathMapping : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::BasePathMapping";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGateway.BasePathMapping; }
 
         /// <summary>
         /// DomainName

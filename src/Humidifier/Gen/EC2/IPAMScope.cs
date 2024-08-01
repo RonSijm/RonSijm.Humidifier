@@ -14,14 +14,7 @@ namespace Humidifier.EC2
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::IPAMScope";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.IPAMScope; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#cfn-ec2-ipamscope-description

@@ -5,13 +5,7 @@ namespace Humidifier.Greengrass
 
     public class DeviceDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::DeviceDefinitionVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Greengrass.DeviceDefinitionVersion; }
 
         /// <summary>
         /// DeviceDefinitionId

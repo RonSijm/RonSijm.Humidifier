@@ -5,14 +5,7 @@ namespace Humidifier.Glue
 
     public class MLTransform : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRole
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::MLTransform";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.MLTransform; }
         /// <summary>
         /// MaxRetries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxretries

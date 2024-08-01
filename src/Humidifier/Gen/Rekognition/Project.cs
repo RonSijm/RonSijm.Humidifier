@@ -9,14 +9,7 @@ namespace Humidifier.Rekognition
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Rekognition::Project";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Rekognition.Project; }
         public dynamic ProjectName { get => GivenName; set => GivenName = value; }
     }
 }

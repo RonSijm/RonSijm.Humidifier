@@ -10,14 +10,7 @@ namespace Humidifier.RedshiftServerless
             public static string Namespace =  "Namespace" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RedshiftServerless::Namespace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RedshiftServerless.Namespace; }
         /// <summary>
         /// ManageAdminPassword
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-manageadminpassword

@@ -9,14 +9,7 @@ namespace Humidifier.Synthetics
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Synthetics::Group";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Synthetics.Group; }
         /// <summary>
         /// ResourceArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-resourcearns

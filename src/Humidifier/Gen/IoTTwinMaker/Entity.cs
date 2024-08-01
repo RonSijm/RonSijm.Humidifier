@@ -14,14 +14,7 @@ namespace Humidifier.IoTTwinMaker
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTTwinMaker::Entity";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTTwinMaker.Entity; }
         /// <summary>
         /// EntityId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#cfn-iottwinmaker-entity-entityid

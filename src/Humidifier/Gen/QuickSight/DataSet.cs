@@ -14,14 +14,7 @@ namespace Humidifier.QuickSight
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QuickSight::DataSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.QuickSight.DataSet; }
         /// <summary>
         /// PhysicalTableMap
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-physicaltablemap

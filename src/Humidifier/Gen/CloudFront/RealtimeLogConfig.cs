@@ -10,13 +10,7 @@ namespace Humidifier.CloudFront
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFront::RealtimeLogConfig";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFront.RealtimeLogConfig; }
 
         /// <summary>
         /// Fields

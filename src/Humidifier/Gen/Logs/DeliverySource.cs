@@ -11,14 +11,7 @@ namespace Humidifier.Logs
             public static string ResourceArns =  "ResourceArns" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::DeliverySource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Logs.DeliverySource; }
         /// <summary>
         /// ResourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-deliverysource.html#cfn-logs-deliverysource-resourcearn

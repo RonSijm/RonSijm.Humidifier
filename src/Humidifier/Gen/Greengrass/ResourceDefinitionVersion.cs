@@ -5,13 +5,7 @@ namespace Humidifier.Greengrass
 
     public class ResourceDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::ResourceDefinitionVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Greengrass.ResourceDefinitionVersion; }
 
         /// <summary>
         /// Resources

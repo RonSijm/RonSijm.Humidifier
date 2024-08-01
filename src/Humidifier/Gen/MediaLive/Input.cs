@@ -12,14 +12,7 @@ namespace Humidifier.MediaLive
             public static string Sources =  "Sources" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaLive::Input";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaLive.Input; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-type

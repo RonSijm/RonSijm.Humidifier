@@ -9,13 +9,7 @@ namespace Humidifier.Logs
             public static string QueryDefinitionId =  "QueryDefinitionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::QueryDefinition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Logs.QueryDefinition; }
 
         /// <summary>
         /// QueryString

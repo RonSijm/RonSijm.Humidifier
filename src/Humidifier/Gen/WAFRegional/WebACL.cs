@@ -5,13 +5,7 @@ namespace Humidifier.WAFRegional
 
     public class WebACL : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::WebACL";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAFRegional.WebACL; }
 
         /// <summary>
         /// MetricName

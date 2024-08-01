@@ -9,14 +9,7 @@ namespace Humidifier.ApiGateway
             public static string AuthorizerId =  "AuthorizerId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Authorizer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.Authorizer; }
         /// <summary>
         /// ProviderARNs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-providerarns

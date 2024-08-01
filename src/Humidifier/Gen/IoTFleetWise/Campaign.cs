@@ -13,13 +13,7 @@ namespace Humidifier.IoTFleetWise
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTFleetWise::Campaign";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTFleetWise.Campaign; }
 
         /// <summary>
         /// Action

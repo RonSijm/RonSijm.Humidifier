@@ -13,14 +13,7 @@ namespace Humidifier.Location
             public static string MapArn =  "MapArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Location::Map";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Location.Map; }
         public dynamic MapName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Description

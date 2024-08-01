@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class VolumeAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VolumeAttachment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.VolumeAttachment; }
 
         /// <summary>
         /// VolumeId

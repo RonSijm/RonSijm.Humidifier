@@ -11,14 +11,7 @@ namespace Humidifier.Kendra
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Kendra::DataSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Kendra.DataSource; }
         /// <summary>
         /// CustomDocumentEnrichmentConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration

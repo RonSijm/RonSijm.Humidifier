@@ -9,13 +9,7 @@ namespace Humidifier.ServiceCatalog
             public static string PortfolioName =  "PortfolioName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::Portfolio";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.Portfolio; }
 
         /// <summary>
         /// ProviderName

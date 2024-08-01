@@ -13,13 +13,7 @@ namespace Humidifier.S3ObjectLambda
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3ObjectLambda::AccessPoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3ObjectLambda.AccessPoint; }
 
         /// <summary>
         /// ObjectLambdaConfiguration

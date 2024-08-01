@@ -9,14 +9,7 @@ namespace Humidifier.CloudFormation
             public static string Data =  "Data" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::WaitCondition";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.WaitCondition; }
         /// <summary>
         /// Count
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waitcondition.html#cfn-waitcondition-count

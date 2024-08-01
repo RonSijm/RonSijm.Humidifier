@@ -15,13 +15,7 @@ namespace Humidifier.Redshift
             public static string VpcSecurityGroups =  "VpcSecurityGroups" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::EndpointAccess";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Redshift.EndpointAccess; }
 
         /// <summary>
         /// EndpointName

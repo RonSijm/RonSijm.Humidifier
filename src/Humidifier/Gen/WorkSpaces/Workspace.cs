@@ -5,13 +5,7 @@ namespace Humidifier.WorkSpaces
 
     public class Workspace : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpaces::Workspace";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpaces.Workspace; }
 
         /// <summary>
         /// BundleId

@@ -11,14 +11,7 @@ namespace Humidifier.DMS
             public static string DataProviderCreationTime =  "DataProviderCreationTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::DataProvider";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DMS.DataProvider; }
         public dynamic DataProviderName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Description

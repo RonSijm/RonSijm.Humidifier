@@ -10,13 +10,7 @@ namespace Humidifier.EC2
             public static string State =  "State" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::LocalGatewayRoute";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.LocalGatewayRoute; }
 
         /// <summary>
         /// LocalGatewayRouteTableId

@@ -11,14 +11,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public static string RevocationId =  "RevocationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::TrustStoreRevocation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.TrustStoreRevocation; }
         /// <summary>
         /// RevocationContents
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-truststorerevocation.html#cfn-elasticloadbalancingv2-truststorerevocation-revocationcontents

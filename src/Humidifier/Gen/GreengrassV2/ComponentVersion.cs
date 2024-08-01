@@ -12,14 +12,7 @@ namespace Humidifier.GreengrassV2
             public static string ComponentVersion =  "ComponentVersion" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GreengrassV2::ComponentVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GreengrassV2.ComponentVersion; }
         /// <summary>
         /// LambdaFunction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-lambdafunction

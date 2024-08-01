@@ -11,14 +11,7 @@ namespace Humidifier.AppRunner
             public static string Latest =  "Latest" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppRunner::AutoScalingConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppRunner.AutoScalingConfiguration; }
         /// <summary>
         /// MinSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-autoscalingconfiguration.html#cfn-apprunner-autoscalingconfiguration-minsize

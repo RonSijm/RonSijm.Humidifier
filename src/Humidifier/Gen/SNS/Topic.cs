@@ -11,14 +11,7 @@ namespace Humidifier.SNS
             public static string TopicName =  "TopicName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SNS::Topic";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SNS.Topic; }
         /// <summary>
         /// SignatureVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-signatureversion

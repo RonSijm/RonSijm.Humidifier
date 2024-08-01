@@ -10,14 +10,7 @@ namespace Humidifier.Lambda
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::EventSourceMapping";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lambda.EventSourceMapping; }
         /// <summary>
         /// StartingPosition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-startingposition

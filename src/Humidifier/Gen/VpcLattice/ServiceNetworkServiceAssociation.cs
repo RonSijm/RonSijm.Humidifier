@@ -19,14 +19,7 @@ namespace Humidifier.VpcLattice
             public static string ServiceId =  "ServiceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::ServiceNetworkServiceAssociation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VpcLattice.ServiceNetworkServiceAssociation; }
         /// <summary>
         /// ServiceNetworkIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-servicenetworkserviceassociation.html#cfn-vpclattice-servicenetworkserviceassociation-servicenetworkidentifier

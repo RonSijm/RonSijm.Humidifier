@@ -9,13 +9,7 @@ namespace Humidifier.Lambda
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::Permission";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lambda.Permission; }
 
         /// <summary>
         /// FunctionName

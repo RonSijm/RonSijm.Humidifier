@@ -9,13 +9,7 @@ namespace Humidifier.IAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::SAMLProvider";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IAM.SAMLProvider; }
 
         /// <summary>
         /// SamlMetadataDocument

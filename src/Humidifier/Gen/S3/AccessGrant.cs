@@ -12,13 +12,7 @@ namespace Humidifier.S3
             public static string AccessGrantArn =  "AccessGrantArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::AccessGrant";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3.AccessGrant; }
 
         /// <summary>
         /// Grantee

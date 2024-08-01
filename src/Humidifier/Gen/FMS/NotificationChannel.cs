@@ -4,13 +4,7 @@ namespace Humidifier.FMS
 
     public class NotificationChannel : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FMS::NotificationChannel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.FMS.NotificationChannel; }
 
         /// <summary>
         /// SnsTopicArn

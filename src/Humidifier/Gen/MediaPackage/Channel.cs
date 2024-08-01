@@ -10,14 +10,7 @@ namespace Humidifier.MediaPackage
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackage::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackage.Channel; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description

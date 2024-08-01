@@ -12,14 +12,7 @@ namespace Humidifier.Cognito
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolClient";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolClient; }
         /// <summary>
         /// AnalyticsConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration

@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class Trigger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Trigger";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.Trigger; }
 
         /// <summary>
         /// Type

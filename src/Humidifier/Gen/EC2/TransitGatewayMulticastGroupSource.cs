@@ -16,13 +16,7 @@ namespace Humidifier.EC2
             public static string TransitGatewayAttachmentId =  "TransitGatewayAttachmentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TransitGatewayMulticastGroupSource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.TransitGatewayMulticastGroupSource; }
 
         /// <summary>
         /// TransitGatewayMulticastDomainId

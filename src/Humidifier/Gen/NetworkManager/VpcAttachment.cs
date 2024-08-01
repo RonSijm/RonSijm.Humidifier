@@ -20,14 +20,7 @@ namespace Humidifier.NetworkManager
             public static string AttachmentPolicyRuleNumber =  "AttachmentPolicyRuleNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::VpcAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkManager.VpcAttachment; }
         /// <summary>
         /// ProposedSegmentChange
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-proposedsegmentchange

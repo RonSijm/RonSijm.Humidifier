@@ -9,13 +9,7 @@ namespace Humidifier.ImageBuilder
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ImageBuilder::Workflow";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ImageBuilder.Workflow; }
 
         /// <summary>
         /// Type

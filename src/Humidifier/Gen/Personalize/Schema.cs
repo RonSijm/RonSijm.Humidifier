@@ -9,13 +9,7 @@ namespace Humidifier.Personalize
             public static string SchemaArn =  "SchemaArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Personalize::Schema";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Personalize.Schema; }
 
         /// <summary>
         /// Schema_

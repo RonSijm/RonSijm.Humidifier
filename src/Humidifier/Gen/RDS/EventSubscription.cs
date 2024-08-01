@@ -4,14 +4,7 @@ namespace Humidifier.RDS
 
     public class EventSubscription : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::EventSubscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.EventSubscription; }
         /// <summary>
         /// SourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-eventsubscription.html#cfn-rds-eventsubscription-sourcetype

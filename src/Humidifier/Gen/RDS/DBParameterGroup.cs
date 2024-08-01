@@ -9,14 +9,7 @@ namespace Humidifier.RDS
             public static string DBParameterGroupName =  "DBParameterGroupName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBParameterGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.DBParameterGroup; }
         public dynamic DBParameterGroupName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

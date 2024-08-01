@@ -10,14 +10,7 @@ namespace Humidifier.AppFlow
             public static string FlowArn =  "FlowArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppFlow::Flow";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppFlow.Flow; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-description

@@ -5,14 +5,7 @@ namespace Humidifier.WAF
 
     public class SqlInjectionMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAF::SqlInjectionMatchSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAF.SqlInjectionMatchSet; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// SqlInjectionMatchTuples

@@ -5,14 +5,7 @@ namespace Humidifier.CodeDeploy
 
     public class DeploymentConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeDeploy::DeploymentConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeDeploy.DeploymentConfig; }
         /// <summary>
         /// ComputePlatform
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-computeplatform

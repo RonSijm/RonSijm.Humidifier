@@ -13,13 +13,7 @@ namespace Humidifier.Deadline
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::LicenseEndpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Deadline.LicenseEndpoint; }
 
         /// <summary>
         /// VpcId

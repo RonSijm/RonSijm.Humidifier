@@ -10,14 +10,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::JobTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.JobTemplate; }
         /// <summary>
         /// TimeoutConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-timeoutconfig

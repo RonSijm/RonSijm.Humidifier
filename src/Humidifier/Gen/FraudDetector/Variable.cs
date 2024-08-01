@@ -11,13 +11,7 @@ namespace Humidifier.FraudDetector
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FraudDetector::Variable";
-            }
-        }
+        public override string AWSTypeName { get => AWS.FraudDetector.Variable; }
 
         /// <summary>
         /// DefaultValue

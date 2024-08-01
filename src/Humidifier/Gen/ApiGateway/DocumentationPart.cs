@@ -10,13 +10,7 @@ namespace Humidifier.ApiGateway
             public static string DocumentationPartId =  "DocumentationPartId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::DocumentationPart";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGateway.DocumentationPart; }
 
         /// <summary>
         /// RestApiId

@@ -10,14 +10,7 @@ namespace Humidifier.S3
             public static string AccessGrantsInstanceId =  "AccessGrantsInstanceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::AccessGrantsInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.S3.AccessGrantsInstance; }
         /// <summary>
         /// IdentityCenterArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accessgrantsinstance.html#cfn-s3-accessgrantsinstance-identitycenterarn

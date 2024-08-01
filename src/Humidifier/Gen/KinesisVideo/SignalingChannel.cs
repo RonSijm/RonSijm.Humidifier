@@ -9,14 +9,7 @@ namespace Humidifier.KinesisVideo
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KinesisVideo::SignalingChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KinesisVideo.SignalingChannel; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-signalingchannel.html#cfn-kinesisvideo-signalingchannel-type

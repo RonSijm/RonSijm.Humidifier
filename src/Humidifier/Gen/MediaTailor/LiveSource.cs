@@ -10,14 +10,7 @@ namespace Humidifier.MediaTailor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaTailor::LiveSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaTailor.LiveSource; }
         public dynamic LiveSourceName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

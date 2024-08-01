@@ -11,14 +11,7 @@ namespace Humidifier.IoTSiteWise
             public static string AssetModelArn =  "AssetModelArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::AssetModel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTSiteWise.AssetModel; }
         /// <summary>
         /// AssetModelDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodeldescription

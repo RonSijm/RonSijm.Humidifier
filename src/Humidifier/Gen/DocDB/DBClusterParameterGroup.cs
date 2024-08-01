@@ -4,13 +4,7 @@ namespace Humidifier.DocDB
 
     public class DBClusterParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DocDB::DBClusterParameterGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DocDB.DBClusterParameterGroup; }
 
         /// <summary>
         /// Description

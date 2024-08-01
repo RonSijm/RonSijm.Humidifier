@@ -10,14 +10,7 @@ namespace Humidifier.SSM
             public static string SyncName =  "SyncName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::ResourceDataSync";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSM.ResourceDataSync; }
         /// <summary>
         /// S3Destination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination

@@ -9,14 +9,7 @@ namespace Humidifier.IoT
             public static string PackageArn =  "PackageArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::SoftwarePackage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.SoftwarePackage; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-softwarepackage.html#cfn-iot-softwarepackage-description

@@ -10,13 +10,7 @@ namespace Humidifier.DevOpsGuru
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DevOpsGuru::NotificationChannel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DevOpsGuru.NotificationChannel; }
 
         /// <summary>
         /// Config

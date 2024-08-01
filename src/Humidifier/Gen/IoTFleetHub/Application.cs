@@ -16,14 +16,7 @@ namespace Humidifier.IoTFleetHub
             public static string ApplicationCreationDate =  "ApplicationCreationDate" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTFleetHub::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTFleetHub.Application; }
         public dynamic ApplicationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ApplicationDescription

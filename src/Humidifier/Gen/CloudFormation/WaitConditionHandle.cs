@@ -4,12 +4,6 @@ namespace Humidifier.CloudFormation
 
     public class WaitConditionHandle : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::WaitConditionHandle";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFormation.WaitConditionHandle; }
     }
 }

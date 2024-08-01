@@ -9,14 +9,7 @@ namespace Humidifier.CloudFormation
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::HookDefaultVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.HookDefaultVersion; }
         /// <summary>
         /// VersionId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookdefaultversion.html#cfn-cloudformation-hookdefaultversion-versionid

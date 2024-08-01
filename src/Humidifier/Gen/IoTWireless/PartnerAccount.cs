@@ -11,14 +11,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::PartnerAccount";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTWireless.PartnerAccount; }
         /// <summary>
         /// PartnerType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-partnertype

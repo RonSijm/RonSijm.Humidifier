@@ -4,13 +4,7 @@ namespace Humidifier.Neptune
 
     public class DBClusterParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Neptune::DBClusterParameterGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Neptune.DBClusterParameterGroup; }
 
         /// <summary>
         /// Description

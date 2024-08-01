@@ -15,13 +15,7 @@ namespace Humidifier.CleanRooms
             public static string AnalysisTemplateIdentifier =  "AnalysisTemplateIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CleanRooms::AnalysisTemplate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CleanRooms.AnalysisTemplate; }
 
         /// <summary>
         /// MembershipIdentifier

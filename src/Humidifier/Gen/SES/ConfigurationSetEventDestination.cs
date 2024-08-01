@@ -10,13 +10,7 @@ namespace Humidifier.SES
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::ConfigurationSetEventDestination";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SES.ConfigurationSetEventDestination; }
 
         /// <summary>
         /// ConfigurationSetName

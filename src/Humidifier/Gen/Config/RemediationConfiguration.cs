@@ -5,14 +5,7 @@ namespace Humidifier.Config
 
     public class RemediationConfiguration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::RemediationConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.RemediationConfiguration; }
         /// <summary>
         /// TargetVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion

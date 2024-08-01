@@ -15,13 +15,7 @@ namespace Humidifier.NetworkManager
             public static string EdgeLocation =  "EdgeLocation" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::ConnectPeer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.ConnectPeer; }
 
         /// <summary>
         /// ConnectAttachmentId

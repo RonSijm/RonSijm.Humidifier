@@ -12,13 +12,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string IpAccessSettingsArn =  "IpAccessSettingsArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::IpAccessSettings";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.IpAccessSettings; }
 
         /// <summary>
         /// IpRules

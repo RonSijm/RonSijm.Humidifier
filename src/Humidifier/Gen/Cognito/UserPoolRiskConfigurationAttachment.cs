@@ -5,14 +5,7 @@ namespace Humidifier.Cognito
 
     public class UserPoolRiskConfigurationAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolRiskConfigurationAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolRiskConfigurationAttachment; }
         /// <summary>
         /// CompromisedCredentialsRiskConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfiguration

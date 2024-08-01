@@ -12,14 +12,7 @@ namespace Humidifier.MediaTailor
             public static string PlaybackEndpointPrefix =  "PlaybackEndpointPrefix" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaTailor::PlaybackConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaTailor.PlaybackConfiguration; }
         /// <summary>
         /// Bumper
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-bumper

@@ -4,13 +4,7 @@ namespace Humidifier.Athena
 
     public class DataCatalog : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Athena::DataCatalog";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Athena.DataCatalog; }
 
         /// <summary>
         /// Type

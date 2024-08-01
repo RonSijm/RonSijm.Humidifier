@@ -5,14 +5,7 @@ namespace Humidifier.AutoScaling
 
     public class LaunchConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSecurityGroups
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScaling::LaunchConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AutoScaling.LaunchConfiguration; }
         /// <summary>
         /// PlacementTenancy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-launchconfiguration.html#cfn-autoscaling-launchconfiguration-placementtenancy

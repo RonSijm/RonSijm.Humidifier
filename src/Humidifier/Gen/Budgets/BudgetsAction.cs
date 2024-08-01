@@ -10,13 +10,7 @@ namespace Humidifier.Budgets
             public static string ActionId =  "ActionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Budgets::BudgetsAction";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Budgets.BudgetsAction; }
 
         /// <summary>
         /// ExecutionRoleArn

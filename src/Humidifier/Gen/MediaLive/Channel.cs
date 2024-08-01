@@ -11,14 +11,7 @@ namespace Humidifier.MediaLive
             public static string Inputs =  "Inputs" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaLive::Channel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaLive.Channel; }
         /// <summary>
         /// InputAttachments
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputattachments

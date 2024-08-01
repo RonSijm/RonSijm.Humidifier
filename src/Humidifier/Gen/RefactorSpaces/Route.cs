@@ -12,14 +12,7 @@ namespace Humidifier.RefactorSpaces
             public static string PathResourceToId =  "PathResourceToId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RefactorSpaces::Route";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RefactorSpaces.Route; }
         /// <summary>
         /// UriPathRoute
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#cfn-refactorspaces-route-uripathroute

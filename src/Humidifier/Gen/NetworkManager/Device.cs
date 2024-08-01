@@ -13,14 +13,7 @@ namespace Humidifier.NetworkManager
             public static string CreatedAt =  "CreatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::Device";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkManager.Device; }
         /// <summary>
         /// SiteId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-siteid

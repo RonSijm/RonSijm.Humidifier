@@ -4,13 +4,7 @@ namespace Humidifier.DMS
 
     public class ReplicationSubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveSubnetIds, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::ReplicationSubnetGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DMS.ReplicationSubnetGroup; }
 
         /// <summary>
         /// ReplicationSubnetGroupDescription

@@ -9,14 +9,7 @@ namespace Humidifier.IAM
             public static string RoleName =  "RoleName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::ServiceLinkedRole";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.ServiceLinkedRole; }
         /// <summary>
         /// CustomSuffix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix

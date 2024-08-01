@@ -14,13 +14,7 @@ namespace Humidifier.SecurityLake
             public static string S3BucketArn =  "S3BucketArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityLake::Subscriber";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityLake.Subscriber; }
 
         /// <summary>
         /// SubscriberIdentity

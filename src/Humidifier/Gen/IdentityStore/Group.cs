@@ -9,14 +9,7 @@ namespace Humidifier.IdentityStore
             public static string GroupId =  "GroupId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IdentityStore::Group";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IdentityStore.Group; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-identitystore-group.html#cfn-identitystore-group-description

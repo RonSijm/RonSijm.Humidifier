@@ -10,14 +10,7 @@ namespace Humidifier.MediaStore
             public static string Endpoint =  "Endpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaStore::Container";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaStore.Container; }
         /// <summary>
         /// Policy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-policy

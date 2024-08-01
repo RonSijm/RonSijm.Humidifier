@@ -14,14 +14,7 @@ namespace Humidifier.Redshift
             public static string CustomerAwsId =  "CustomerAwsId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::EventSubscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Redshift.EventSubscription; }
         /// <summary>
         /// SourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#cfn-redshift-eventsubscription-sourcetype

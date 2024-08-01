@@ -9,14 +9,7 @@ namespace Humidifier.IAM
             public static string SerialNumber =  "SerialNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::VirtualMFADevice";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.VirtualMFADevice; }
         /// <summary>
         /// Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-virtualmfadevice.html#cfn-iam-virtualmfadevice-path

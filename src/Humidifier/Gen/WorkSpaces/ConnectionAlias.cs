@@ -12,13 +12,7 @@ namespace Humidifier.WorkSpaces
             public static string AliasId =  "AliasId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpaces::ConnectionAlias";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpaces.ConnectionAlias; }
 
         /// <summary>
         /// ConnectionString

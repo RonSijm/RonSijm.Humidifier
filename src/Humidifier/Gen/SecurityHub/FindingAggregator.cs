@@ -10,13 +10,7 @@ namespace Humidifier.SecurityHub
             public static string FindingAggregatorArn =  "FindingAggregatorArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::FindingAggregator";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityHub.FindingAggregator; }
 
         /// <summary>
         /// RegionLinkingMode

@@ -10,13 +10,7 @@ namespace Humidifier.PCAConnectorAD
             public static string TemplateArn =  "TemplateArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PCAConnectorAD::Template";
-            }
-        }
+        public override string AWSTypeName { get => AWS.PCAConnectorAD.Template; }
 
         /// <summary>
         /// ConnectorArn

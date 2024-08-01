@@ -16,14 +16,7 @@ namespace Humidifier.FinSpace
             public static string DedicatedServiceAccountId =  "DedicatedServiceAccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FinSpace::Environment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FinSpace.Environment; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-description

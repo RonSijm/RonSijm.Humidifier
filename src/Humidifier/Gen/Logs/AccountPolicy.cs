@@ -9,13 +9,7 @@ namespace Humidifier.Logs
             public static string AccountId =  "AccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::AccountPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Logs.AccountPolicy; }
 
         /// <summary>
         /// PolicyType

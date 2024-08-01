@@ -11,13 +11,7 @@ namespace Humidifier.NetworkFirewall
             public static string RuleGroupArn =  "RuleGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkFirewall::RuleGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkFirewall.RuleGroup; }
 
         /// <summary>
         /// Type

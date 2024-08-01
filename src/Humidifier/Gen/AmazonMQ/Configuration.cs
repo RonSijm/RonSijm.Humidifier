@@ -12,14 +12,7 @@ namespace Humidifier.AmazonMQ
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AmazonMQ::Configuration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AmazonMQ.Configuration; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-engineversion

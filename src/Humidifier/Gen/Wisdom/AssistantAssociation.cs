@@ -12,13 +12,7 @@ namespace Humidifier.Wisdom
             public static string AssistantAssociationId =  "AssistantAssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Wisdom::AssistantAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Wisdom.AssistantAssociation; }
 
         /// <summary>
         /// Association

@@ -9,13 +9,7 @@ namespace Humidifier.Detective
             public static string GraphArn =  "GraphArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Detective::OrganizationAdmin";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Detective.OrganizationAdmin; }
 
         /// <summary>
         /// AccountId

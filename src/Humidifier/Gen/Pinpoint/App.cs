@@ -9,14 +9,7 @@ namespace Humidifier.Pinpoint
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::App";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.App; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-app.html#cfn-pinpoint-app-tags

@@ -13,14 +13,7 @@ namespace Humidifier.EC2
             public static string TransitGatewayMulticastDomainId =  "TransitGatewayMulticastDomainId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TransitGatewayMulticastDomain";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.TransitGatewayMulticastDomain; }
         /// <summary>
         /// Options
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-options

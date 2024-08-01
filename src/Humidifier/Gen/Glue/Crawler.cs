@@ -5,14 +5,7 @@ namespace Humidifier.Glue
 
     public class Crawler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRole
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Crawler";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.Crawler; }
         /// <summary>
         /// Classifiers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers

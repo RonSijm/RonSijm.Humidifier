@@ -4,13 +4,7 @@ namespace Humidifier.Connect
 
     public class ApprovedOrigin : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::ApprovedOrigin";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.ApprovedOrigin; }
 
         /// <summary>
         /// Origin

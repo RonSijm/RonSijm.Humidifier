@@ -10,13 +10,7 @@ namespace Humidifier.SageMaker
             public static string AppArn =  "AppArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::App";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SageMaker.App; }
 
         /// <summary>
         /// DomainId

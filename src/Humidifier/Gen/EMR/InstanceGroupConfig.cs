@@ -5,14 +5,7 @@ namespace Humidifier.EMR
 
     public class InstanceGroupConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::InstanceGroupConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EMR.InstanceGroupConfig; }
         /// <summary>
         /// AutoScalingPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy

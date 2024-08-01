@@ -11,14 +11,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::WirelessGateway";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTWireless.WirelessGateway; }
         /// <summary>
         /// LastUplinkReceivedAt
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-lastuplinkreceivedat

@@ -10,13 +10,7 @@ namespace Humidifier.WAFv2
             public static string ManagedByFirewallManager =  "ManagedByFirewallManager" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFv2::LoggingConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAFv2.LoggingConfiguration; }
 
         /// <summary>
         /// ResourceArn

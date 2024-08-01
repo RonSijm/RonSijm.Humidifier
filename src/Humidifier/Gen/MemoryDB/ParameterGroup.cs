@@ -9,14 +9,7 @@ namespace Humidifier.MemoryDB
             public static string ARN =  "ARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MemoryDB::ParameterGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MemoryDB.ParameterGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-parametergroup.html#cfn-memorydb-parametergroup-description

@@ -9,13 +9,7 @@ namespace Humidifier.MediaConnect
             public static string NetworkInterfaceIds =  "NetworkInterfaceIds" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::FlowVpcInterface";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaConnect.FlowVpcInterface; }
 
         /// <summary>
         /// SubnetId

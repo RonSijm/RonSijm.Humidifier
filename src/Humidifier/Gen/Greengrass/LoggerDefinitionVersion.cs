@@ -5,13 +5,7 @@ namespace Humidifier.Greengrass
 
     public class LoggerDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::LoggerDefinitionVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Greengrass.LoggerDefinitionVersion; }
 
         /// <summary>
         /// LoggerDefinitionId

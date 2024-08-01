@@ -10,14 +10,7 @@ namespace Humidifier.GameLift
             public static string BuildId =  "BuildId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::Build";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.Build; }
         /// <summary>
         /// OperatingSystem
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-operatingsystem

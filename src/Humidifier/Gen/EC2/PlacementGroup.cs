@@ -9,14 +9,7 @@ namespace Humidifier.EC2
             public static string GroupName =  "GroupName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::PlacementGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.PlacementGroup; }
         /// <summary>
         /// SpreadLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-spreadlevel

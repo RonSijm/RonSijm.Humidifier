@@ -11,13 +11,7 @@ namespace Humidifier.Organizations
             public static string AwsManaged =  "AwsManaged" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Organizations::Policy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Organizations.Policy; }
 
         /// <summary>
         /// Type

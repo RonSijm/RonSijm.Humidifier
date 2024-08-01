@@ -13,14 +13,7 @@ namespace Humidifier.FSx
             public static string LustreMountName =  "LustreMountName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FSx::FileSystem";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.FSx.FileSystem; }
         /// <summary>
         /// StorageType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagetype

@@ -9,13 +9,7 @@ namespace Humidifier.EC2
             public static string VPNGatewayId =  "VPNGatewayId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPNGateway";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.VPNGateway; }
 
         /// <summary>
         /// Type

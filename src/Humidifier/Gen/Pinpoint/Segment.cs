@@ -11,14 +11,7 @@ namespace Humidifier.Pinpoint
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::Segment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.Segment; }
         /// <summary>
         /// SegmentGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-segmentgroups

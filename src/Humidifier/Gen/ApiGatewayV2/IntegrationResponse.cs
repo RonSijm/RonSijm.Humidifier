@@ -9,14 +9,7 @@ namespace Humidifier.ApiGatewayV2
             public static string IntegrationResponseId =  "IntegrationResponseId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::IntegrationResponse";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.IntegrationResponse; }
         /// <summary>
         /// ResponseTemplates
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integrationresponse.html#cfn-apigatewayv2-integrationresponse-responsetemplates

@@ -11,13 +11,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::TaskDefinition";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTWireless.TaskDefinition; }
 
         /// <summary>
         /// AutoCreateTasks

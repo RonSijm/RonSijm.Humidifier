@@ -10,13 +10,7 @@ namespace Humidifier.SecurityHub
             public static string DelegatedAdminIdentifier =  "DelegatedAdminIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::DelegatedAdmin";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityHub.DelegatedAdmin; }
 
         /// <summary>
         /// AdminAccountId

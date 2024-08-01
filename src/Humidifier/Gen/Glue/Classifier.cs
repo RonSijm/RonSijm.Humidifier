@@ -5,14 +5,7 @@ namespace Humidifier.Glue
 
     public class Classifier : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Classifier";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.Classifier; }
         /// <summary>
         /// XMLClassifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-xmlclassifier

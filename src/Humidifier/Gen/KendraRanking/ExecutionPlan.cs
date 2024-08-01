@@ -11,14 +11,7 @@ namespace Humidifier.KendraRanking
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KendraRanking::ExecutionPlan";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KendraRanking.ExecutionPlan; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendraranking-executionplan.html#cfn-kendraranking-executionplan-description

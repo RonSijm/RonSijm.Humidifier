@@ -9,14 +9,7 @@ namespace Humidifier.AutoScaling
             public static string ScheduledActionName =  "ScheduledActionName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScaling::ScheduledAction";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AutoScaling.ScheduledAction; }
         /// <summary>
         /// MinSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-minsize

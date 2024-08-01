@@ -4,13 +4,7 @@ namespace Humidifier.Signer
 
     public class ProfilePermission : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Signer::ProfilePermission";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Signer.ProfilePermission; }
 
         /// <summary>
         /// Action

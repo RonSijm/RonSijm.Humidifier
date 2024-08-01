@@ -9,14 +9,7 @@ namespace Humidifier.Personalize
             public static string DatasetGroupArn =  "DatasetGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Personalize::DatasetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Personalize.DatasetGroup; }
         /// <summary>
         /// KmsKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-datasetgroup.html#cfn-personalize-datasetgroup-kmskeyarn

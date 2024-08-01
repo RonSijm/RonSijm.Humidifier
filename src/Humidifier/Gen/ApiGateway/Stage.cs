@@ -5,14 +5,7 @@ namespace Humidifier.ApiGateway
 
     public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Stage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.Stage; }
         /// <summary>
         /// DeploymentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-deploymentid

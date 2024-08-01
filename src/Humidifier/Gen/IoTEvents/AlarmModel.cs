@@ -5,13 +5,7 @@ namespace Humidifier.IoTEvents
 
     public class AlarmModel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTEvents::AlarmModel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTEvents.AlarmModel; }
 
         /// <summary>
         /// AlarmRule

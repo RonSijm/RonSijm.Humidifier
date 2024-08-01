@@ -10,14 +10,7 @@ namespace Humidifier.ApiGateway
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::UsagePlan";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.UsagePlan; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description

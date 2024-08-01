@@ -5,13 +5,7 @@ namespace Humidifier.Cognito
 
     public class UserPoolResourceServer : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Cognito::UserPoolResourceServer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Cognito.UserPoolResourceServer; }
 
         /// <summary>
         /// UserPoolId

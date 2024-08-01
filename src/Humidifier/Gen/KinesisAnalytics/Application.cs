@@ -5,14 +5,7 @@ namespace Humidifier.KinesisAnalytics
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KinesisAnalytics::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KinesisAnalytics.Application; }
         public dynamic ApplicationName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

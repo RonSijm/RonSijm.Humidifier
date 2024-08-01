@@ -5,14 +5,7 @@ namespace Humidifier.PinpointEmail
 
     public class ConfigurationSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PinpointEmail::ConfigurationSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.PinpointEmail.ConfigurationSet; }
         /// <summary>
         /// SendingOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-sendingoptions

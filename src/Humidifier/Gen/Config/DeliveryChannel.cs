@@ -5,14 +5,7 @@ namespace Humidifier.Config
 
     public class DeliveryChannel : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::DeliveryChannel";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.DeliveryChannel; }
         /// <summary>
         /// ConfigSnapshotDeliveryProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties

@@ -10,13 +10,7 @@ namespace Humidifier.Route53
             public static string HealthCheckId =  "HealthCheckId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53::HealthCheck";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Route53.HealthCheck; }
 
         /// <summary>
         /// HealthCheckConfig

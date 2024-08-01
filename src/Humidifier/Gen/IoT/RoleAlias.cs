@@ -9,14 +9,7 @@ namespace Humidifier.IoT
             public static string RoleAliasArn =  "RoleAliasArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::RoleAlias";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.RoleAlias; }
         /// <summary>
         /// RoleAlias_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-rolealias.html#cfn-iot-rolealias-rolealias

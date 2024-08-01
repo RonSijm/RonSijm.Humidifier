@@ -9,13 +9,7 @@ namespace Humidifier.CodeGuruReviewer
             public static string AssociationArn =  "AssociationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeGuruReviewer::RepositoryAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeGuruReviewer.RepositoryAssociation; }
 
         /// <summary>
         /// Type

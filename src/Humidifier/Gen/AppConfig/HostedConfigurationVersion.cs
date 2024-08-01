@@ -9,13 +9,7 @@ namespace Humidifier.AppConfig
             public static string VersionNumber =  "VersionNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::HostedConfigurationVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppConfig.HostedConfigurationVersion; }
 
         /// <summary>
         /// ConfigurationProfileId

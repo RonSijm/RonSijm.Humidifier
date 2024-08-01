@@ -11,14 +11,7 @@ namespace Humidifier.NetworkFirewall
             public static string TLSInspectionConfigurationArn =  "TLSInspectionConfigurationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkFirewall::TLSInspectionConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkFirewall.TLSInspectionConfiguration; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-tlsinspectionconfiguration.html#cfn-networkfirewall-tlsinspectionconfiguration-description

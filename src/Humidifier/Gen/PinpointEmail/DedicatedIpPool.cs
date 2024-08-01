@@ -5,14 +5,7 @@ namespace Humidifier.PinpointEmail
 
     public class DedicatedIpPool : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PinpointEmail::DedicatedIpPool";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.PinpointEmail.DedicatedIpPool; }
         /// <summary>
         /// PoolName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html#cfn-pinpointemail-dedicatedippool-poolname

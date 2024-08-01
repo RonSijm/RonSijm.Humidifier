@@ -10,14 +10,7 @@ namespace Humidifier.VerifiedPermissions
             public static string IdentitySourceId =  "IdentitySourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VerifiedPermissions::IdentitySource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VerifiedPermissions.IdentitySource; }
         /// <summary>
         /// PrincipalEntityType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-verifiedpermissions-identitysource.html#cfn-verifiedpermissions-identitysource-principalentitytype

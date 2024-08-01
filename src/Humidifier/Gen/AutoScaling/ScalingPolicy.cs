@@ -11,14 +11,7 @@ namespace Humidifier.AutoScaling
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScaling::ScalingPolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AutoScaling.ScalingPolicy; }
         /// <summary>
         /// MetricAggregationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scalingpolicy.html#cfn-autoscaling-scalingpolicy-metricaggregationtype

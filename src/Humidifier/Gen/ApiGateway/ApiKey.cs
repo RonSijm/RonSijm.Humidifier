@@ -10,14 +10,7 @@ namespace Humidifier.ApiGateway
             public static string APIKeyId =  "APIKeyId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::ApiKey";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.ApiKey; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-description

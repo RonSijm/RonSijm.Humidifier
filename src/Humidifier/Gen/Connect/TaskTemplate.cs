@@ -10,14 +10,7 @@ namespace Humidifier.Connect
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::TaskTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.TaskTemplate; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-status

@@ -10,14 +10,7 @@ namespace Humidifier.Personalize
             public static string SolutionArn =  "SolutionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Personalize::Solution";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Personalize.Solution; }
         /// <summary>
         /// PerformAutoML
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-performautoml

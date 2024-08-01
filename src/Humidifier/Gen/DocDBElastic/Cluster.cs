@@ -10,13 +10,7 @@ namespace Humidifier.DocDBElastic
             public static string ClusterEndpoint =  "ClusterEndpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DocDBElastic::Cluster";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DocDBElastic.Cluster; }
 
         /// <summary>
         /// AdminUserName

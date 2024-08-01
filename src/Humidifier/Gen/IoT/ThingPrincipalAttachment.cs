@@ -4,13 +4,7 @@ namespace Humidifier.IoT
 
     public class ThingPrincipalAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::ThingPrincipalAttachment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.ThingPrincipalAttachment; }
 
         /// <summary>
         /// Principal

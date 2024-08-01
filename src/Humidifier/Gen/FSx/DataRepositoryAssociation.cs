@@ -11,13 +11,7 @@ namespace Humidifier.FSx
             public static string AssociationId =  "AssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FSx::DataRepositoryAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.FSx.DataRepositoryAssociation; }
 
         /// <summary>
         /// FileSystemPath

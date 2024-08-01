@@ -5,14 +5,7 @@ namespace Humidifier.WAF
 
     public class IPSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAF::IPSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAF.IPSet; }
         /// <summary>
         /// IPSetDescriptors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-ipsetdescriptors

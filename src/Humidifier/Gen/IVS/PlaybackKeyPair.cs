@@ -10,14 +10,7 @@ namespace Humidifier.IVS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVS::PlaybackKeyPair";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IVS.PlaybackKeyPair; }
         /// <summary>
         /// PublicKeyMaterial
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-publickeymaterial

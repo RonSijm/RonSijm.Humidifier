@@ -5,14 +5,7 @@ namespace Humidifier.AutoScaling
 
     public class AutoScalingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScaling::AutoScalingGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AutoScaling.AutoScalingGroup; }
         /// <summary>
         /// LifecycleHookSpecificationList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist

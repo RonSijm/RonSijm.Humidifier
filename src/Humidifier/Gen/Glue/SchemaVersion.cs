@@ -10,13 +10,7 @@ namespace Humidifier.Glue
             public static string VersionId =  "VersionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::SchemaVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.SchemaVersion; }
 
         /// <summary>
         /// SchemaDefinition

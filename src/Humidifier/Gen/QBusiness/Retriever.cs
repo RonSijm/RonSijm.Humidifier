@@ -14,13 +14,7 @@ namespace Humidifier.QBusiness
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QBusiness::Retriever";
-            }
-        }
+        public override string AWSTypeName { get => AWS.QBusiness.Retriever; }
 
         /// <summary>
         /// Type

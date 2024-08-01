@@ -5,14 +5,7 @@ namespace Humidifier.CertificateManager
 
     public class Certificate : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CertificateManager::Certificate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CertificateManager.Certificate; }
         /// <summary>
         /// CertificateAuthorityArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificateauthorityarn

@@ -10,13 +10,7 @@ namespace Humidifier.CleanRooms
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CleanRooms::ConfiguredTableAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CleanRooms.ConfiguredTableAssociation; }
 
         /// <summary>
         /// MembershipIdentifier

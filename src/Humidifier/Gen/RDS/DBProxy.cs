@@ -12,14 +12,7 @@ namespace Humidifier.RDS
             public static string DBProxyArn =  "DBProxyArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBProxy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.DBProxy; }
         /// <summary>
         /// RequireTLS
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-requiretls

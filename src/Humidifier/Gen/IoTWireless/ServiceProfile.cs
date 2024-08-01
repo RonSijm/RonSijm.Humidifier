@@ -11,14 +11,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::ServiceProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTWireless.ServiceProfile; }
         /// <summary>
         /// LoRaWAN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-lorawan

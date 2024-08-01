@@ -16,13 +16,7 @@ namespace Humidifier.Omics
             public static string StoreArn =  "StoreArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Omics::AnnotationStore";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Omics.AnnotationStore; }
 
         /// <summary>
         /// StoreFormat

@@ -9,13 +9,7 @@ namespace Humidifier.ResourceExplorer2
             public static string AssociatedAwsPrincipal =  "AssociatedAwsPrincipal" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ResourceExplorer2::DefaultViewAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ResourceExplorer2.DefaultViewAssociation; }
 
         /// <summary>
         /// ViewArn

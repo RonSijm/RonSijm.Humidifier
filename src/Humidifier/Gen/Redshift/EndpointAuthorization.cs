@@ -16,13 +16,7 @@ namespace Humidifier.Redshift
             public static string ClusterStatus =  "ClusterStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::EndpointAuthorization";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Redshift.EndpointAuthorization; }
 
         /// <summary>
         /// Account

@@ -17,14 +17,7 @@ namespace Humidifier.EC2
             public static string StateMessage =  "StateMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::IPAMPool";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.IPAMPool; }
         /// <summary>
         /// AwsService
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-awsservice

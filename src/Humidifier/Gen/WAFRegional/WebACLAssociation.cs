@@ -4,13 +4,7 @@ namespace Humidifier.WAFRegional
 
     public class WebACLAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::WebACLAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAFRegional.WebACLAssociation; }
 
         /// <summary>
         /// ResourceArn

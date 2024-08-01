@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class ResourceUpdateConstraint : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::ResourceUpdateConstraint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.ResourceUpdateConstraint; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-resourceupdateconstraint.html#cfn-servicecatalog-resourceupdateconstraint-description

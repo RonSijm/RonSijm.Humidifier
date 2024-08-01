@@ -10,13 +10,7 @@ namespace Humidifier.Transfer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::Profile";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Transfer.Profile; }
 
         /// <summary>
         /// As2Id

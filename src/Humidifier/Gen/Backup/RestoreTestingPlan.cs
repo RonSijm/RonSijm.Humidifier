@@ -10,13 +10,7 @@ namespace Humidifier.Backup
             public static string RestoreTestingPlanArn =  "RestoreTestingPlanArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::RestoreTestingPlan";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Backup.RestoreTestingPlan; }
 
         /// <summary>
         /// ScheduleExpression

@@ -12,14 +12,7 @@ namespace Humidifier.IoTFleetWise
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTFleetWise::SignalCatalog";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTFleetWise.SignalCatalog; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-description

@@ -15,13 +15,7 @@ namespace Humidifier.S3Outposts
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3Outposts::Endpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3Outposts.Endpoint; }
 
         /// <summary>
         /// OutpostId

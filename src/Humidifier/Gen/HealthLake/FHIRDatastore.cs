@@ -14,13 +14,7 @@ namespace Humidifier.HealthLake
             public static string DatastoreEndpoint =  "DatastoreEndpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::HealthLake::FHIRDatastore";
-            }
-        }
+        public override string AWSTypeName { get => AWS.HealthLake.FHIRDatastore; }
 
         /// <summary>
         /// DatastoreTypeVersion

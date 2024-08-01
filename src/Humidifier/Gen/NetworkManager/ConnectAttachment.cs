@@ -19,14 +19,7 @@ namespace Humidifier.NetworkManager
             public static string AttachmentPolicyRuleNumber =  "AttachmentPolicyRuleNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::ConnectAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkManager.ConnectAttachment; }
         /// <summary>
         /// ProposedSegmentChange
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-proposedsegmentchange

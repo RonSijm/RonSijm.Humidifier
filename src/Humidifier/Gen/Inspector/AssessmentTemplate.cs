@@ -9,13 +9,7 @@ namespace Humidifier.Inspector
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Inspector::AssessmentTemplate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Inspector.AssessmentTemplate; }
 
         /// <summary>
         /// AssessmentTargetArn

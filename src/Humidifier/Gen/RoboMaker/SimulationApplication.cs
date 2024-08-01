@@ -11,14 +11,7 @@ namespace Humidifier.RoboMaker
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RoboMaker::SimulationApplication";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RoboMaker.SimulationApplication; }
         /// <summary>
         /// RenderingEngine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine

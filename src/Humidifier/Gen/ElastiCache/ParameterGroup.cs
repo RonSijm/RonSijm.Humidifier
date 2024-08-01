@@ -9,13 +9,7 @@ namespace Humidifier.ElastiCache
             public static string CacheParameterGroupName =  "CacheParameterGroupName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::ParameterGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElastiCache.ParameterGroup; }
 
         /// <summary>
         /// Description

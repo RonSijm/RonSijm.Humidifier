@@ -11,14 +11,7 @@ namespace Humidifier.LicenseManager
             public static string LicenseArn =  "LicenseArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LicenseManager::License";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LicenseManager.License; }
         /// <summary>
         /// ProductSKU
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productsku

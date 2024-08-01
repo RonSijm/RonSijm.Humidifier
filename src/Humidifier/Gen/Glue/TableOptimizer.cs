@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class TableOptimizer : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::TableOptimizer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.TableOptimizer; }
 
         /// <summary>
         /// TableName

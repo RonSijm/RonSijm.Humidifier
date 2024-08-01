@@ -12,14 +12,7 @@ namespace Humidifier.CodeArtifact
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeArtifact::Domain";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeArtifact.Domain; }
         /// <summary>
         /// PermissionsPolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-permissionspolicydocument

@@ -12,14 +12,7 @@ namespace Humidifier.CodeArtifact
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeArtifact::Repository";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CodeArtifact.Repository; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#cfn-codeartifact-repository-description

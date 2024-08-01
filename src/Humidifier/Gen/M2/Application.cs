@@ -11,14 +11,7 @@ namespace Humidifier.M2
             public static string ApplicationId =  "ApplicationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::M2::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.M2.Application; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-description

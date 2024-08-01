@@ -9,14 +9,7 @@ namespace Humidifier.ApiGateway
             public static string VpcLinkId =  "VpcLinkId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::VpcLink";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.VpcLink; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-description

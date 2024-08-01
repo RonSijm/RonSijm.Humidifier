@@ -9,13 +9,7 @@ namespace Humidifier.EC2
             public static string VPCEndpointConnectionNotificationId =  "VPCEndpointConnectionNotificationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPCEndpointConnectionNotification";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.VPCEndpointConnectionNotification; }
 
         /// <summary>
         /// ConnectionEvents

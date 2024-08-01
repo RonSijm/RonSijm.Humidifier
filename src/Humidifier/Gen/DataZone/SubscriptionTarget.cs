@@ -17,13 +17,7 @@ namespace Humidifier.DataZone
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::SubscriptionTarget";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataZone.SubscriptionTarget; }
 
         /// <summary>
         /// Type

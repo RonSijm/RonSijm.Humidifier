@@ -10,14 +10,7 @@ namespace Humidifier.RDS
             public static string CreateTime =  "CreateTime" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::Integration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.Integration; }
         /// <summary>
         /// DataFilter
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-integration.html#cfn-rds-integration-datafilter

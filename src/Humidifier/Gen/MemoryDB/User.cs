@@ -11,14 +11,7 @@ namespace Humidifier.MemoryDB
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MemoryDB::User";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MemoryDB.User; }
         /// <summary>
         /// AuthenticationMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-authenticationmode

@@ -4,14 +4,7 @@ namespace Humidifier.CUR
 
     public class ReportDefinition : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CUR::ReportDefinition";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CUR.ReportDefinition; }
         /// <summary>
         /// AdditionalArtifacts
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cur-reportdefinition.html#cfn-cur-reportdefinition-additionalartifacts

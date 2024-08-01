@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class NetworkInterfacePermission : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NetworkInterfacePermission";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.NetworkInterfacePermission; }
 
         /// <summary>
         /// AwsAccountId

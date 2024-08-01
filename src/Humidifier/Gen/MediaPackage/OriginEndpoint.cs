@@ -11,14 +11,7 @@ namespace Humidifier.MediaPackage
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackage::OriginEndpoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackage.OriginEndpoint; }
         /// <summary>
         /// MssPackage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-msspackage

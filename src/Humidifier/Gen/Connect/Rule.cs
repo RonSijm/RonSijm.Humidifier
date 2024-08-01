@@ -10,13 +10,7 @@ namespace Humidifier.Connect
             public static string RuleArn =  "RuleArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::Rule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.Rule; }
 
         /// <summary>
         /// Function

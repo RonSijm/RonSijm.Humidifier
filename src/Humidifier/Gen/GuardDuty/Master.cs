@@ -4,13 +4,7 @@ namespace Humidifier.GuardDuty
 
     public class Master : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GuardDuty::Master";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GuardDuty.Master; }
 
         /// <summary>
         /// DetectorId

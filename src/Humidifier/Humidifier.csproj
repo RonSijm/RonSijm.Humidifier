@@ -35,7 +35,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Gen\" />
+	  <Folder Include="Gen\TypeNames\" />
 	</ItemGroup>
 
 </Project>

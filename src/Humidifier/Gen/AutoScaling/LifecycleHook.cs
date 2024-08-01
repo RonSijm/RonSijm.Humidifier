@@ -4,14 +4,7 @@ namespace Humidifier.AutoScaling
 
     public class LifecycleHook : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScaling::LifecycleHook";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AutoScaling.LifecycleHook; }
         public dynamic LifecycleHookName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

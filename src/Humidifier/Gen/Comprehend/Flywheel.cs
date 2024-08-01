@@ -10,13 +10,7 @@ namespace Humidifier.Comprehend
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Comprehend::Flywheel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Comprehend.Flywheel; }
 
         /// <summary>
         /// DataLakeS3Uri

@@ -10,14 +10,7 @@ namespace Humidifier.RedshiftServerless
             public static string Workgroup =  "Workgroup" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RedshiftServerless::Workgroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RedshiftServerless.Workgroup; }
         /// <summary>
         /// NamespaceName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-namespacename

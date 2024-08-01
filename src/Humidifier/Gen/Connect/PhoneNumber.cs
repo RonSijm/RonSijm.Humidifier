@@ -10,14 +10,7 @@ namespace Humidifier.Connect
             public static string PhoneNumberArn =  "PhoneNumberArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::PhoneNumber";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.PhoneNumber; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-phonenumber.html#cfn-connect-phonenumber-type

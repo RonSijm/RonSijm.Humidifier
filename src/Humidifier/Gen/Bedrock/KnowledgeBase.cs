@@ -15,14 +15,7 @@ namespace Humidifier.Bedrock
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::KnowledgeBase";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.KnowledgeBase; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-knowledgebase.html#cfn-bedrock-knowledgebase-description

@@ -16,14 +16,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string PortalEndpoint =  "PortalEndpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::Portal";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.Portal; }
         /// <summary>
         /// TrustStoreArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-truststorearn

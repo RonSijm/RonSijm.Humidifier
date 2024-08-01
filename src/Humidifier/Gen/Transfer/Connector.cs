@@ -12,14 +12,7 @@ namespace Humidifier.Transfer
             public static string ConnectorId =  "ConnectorId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::Connector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Transfer.Connector; }
         /// <summary>
         /// As2Config
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-as2config

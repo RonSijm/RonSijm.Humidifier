@@ -5,13 +5,7 @@ namespace Humidifier.DataBrew
 
     public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataBrew::Dataset";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataBrew.Dataset; }
 
         /// <summary>
         /// Input

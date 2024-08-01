@@ -11,14 +11,7 @@ namespace Humidifier.M2
             public static string EnvironmentArn =  "EnvironmentArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::M2::Environment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.M2.Environment; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-description

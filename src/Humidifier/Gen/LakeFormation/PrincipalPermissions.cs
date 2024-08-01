@@ -11,13 +11,7 @@ namespace Humidifier.LakeFormation
             public static string PrincipalIdentifier =  "PrincipalIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LakeFormation::PrincipalPermissions";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LakeFormation.PrincipalPermissions; }
 
         /// <summary>
         /// Resource

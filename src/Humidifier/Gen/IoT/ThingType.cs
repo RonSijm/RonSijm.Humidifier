@@ -11,14 +11,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::ThingType";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.ThingType; }
         /// <summary>
         /// DeprecateThingType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thingtype.html#cfn-iot-thingtype-deprecatethingtype

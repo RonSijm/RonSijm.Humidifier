@@ -12,14 +12,7 @@ namespace Humidifier.EC2
             public static string DefaultVersionNumber =  "DefaultVersionNumber" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::LaunchTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.LaunchTemplate; }
         public dynamic LaunchTemplateName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

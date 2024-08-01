@@ -9,14 +9,7 @@ namespace Humidifier.Events
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Events::ApiDestination";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Events.ApiDestination; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-apidestination.html#cfn-events-apidestination-description

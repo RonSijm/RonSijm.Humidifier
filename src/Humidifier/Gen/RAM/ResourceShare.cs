@@ -9,14 +9,7 @@ namespace Humidifier.RAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RAM::ResourceShare";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RAM.ResourceShare; }
         /// <summary>
         /// PermissionArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ram-resourceshare.html#cfn-ram-resourceshare-permissionarns

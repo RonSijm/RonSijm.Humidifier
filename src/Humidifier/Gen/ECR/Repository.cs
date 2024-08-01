@@ -11,14 +11,7 @@ namespace Humidifier.ECR
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECR::Repository";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ECR.Repository; }
         /// <summary>
         /// EmptyOnDelete
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-emptyondelete

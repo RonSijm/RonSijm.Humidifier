@@ -10,13 +10,7 @@ namespace Humidifier.ServiceCatalogAppRegistry
             public static string ApplicationArn =  "ApplicationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalogAppRegistry::ResourceAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalogAppRegistry.ResourceAssociation; }
 
         /// <summary>
         /// Resource

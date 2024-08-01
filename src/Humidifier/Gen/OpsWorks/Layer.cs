@@ -5,14 +5,7 @@ namespace Humidifier.OpsWorks
 
     public class Layer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpsWorks::Layer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpsWorks.Layer; }
         /// <summary>
         /// Attributes_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-attributes

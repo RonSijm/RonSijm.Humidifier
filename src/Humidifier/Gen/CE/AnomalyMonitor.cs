@@ -14,13 +14,7 @@ namespace Humidifier.CE
             public static string DimensionalValueCount =  "DimensionalValueCount" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CE::AnomalyMonitor";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CE.AnomalyMonitor; }
 
         /// <summary>
         /// MonitorType

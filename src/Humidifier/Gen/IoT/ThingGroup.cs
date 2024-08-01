@@ -11,14 +11,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::ThingGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.ThingGroup; }
         /// <summary>
         /// ParentGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thinggroup.html#cfn-iot-thinggroup-parentgroupname

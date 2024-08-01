@@ -4,14 +4,7 @@ namespace Humidifier.RDS
 
     public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBSubnetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.DBSubnetGroup; }
         public dynamic DBSubnetGroupName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

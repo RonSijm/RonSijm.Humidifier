@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string FleetId =  "FleetId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::EC2Fleet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.EC2Fleet; }
         /// <summary>
         /// Context
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-context

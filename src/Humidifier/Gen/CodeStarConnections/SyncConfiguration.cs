@@ -11,13 +11,7 @@ namespace Humidifier.CodeStarConnections
             public static string ProviderType =  "ProviderType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodeStarConnections::SyncConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodeStarConnections.SyncConfiguration; }
 
         /// <summary>
         /// ConfigFile

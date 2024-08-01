@@ -12,14 +12,7 @@ namespace Humidifier.Location
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Location::GeofenceCollection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Location.GeofenceCollection; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-description

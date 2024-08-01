@@ -16,13 +16,7 @@ namespace Humidifier.AppTest
             public static string TestCaseArn =  "TestCaseArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppTest::TestCase";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppTest.TestCase; }
 
         /// <summary>
         /// Steps

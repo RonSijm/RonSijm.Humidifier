@@ -10,14 +10,7 @@ namespace Humidifier.MediaPackage
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackage::PackagingConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaPackage.PackagingConfiguration; }
         /// <summary>
         /// MssPackage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage

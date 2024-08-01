@@ -10,14 +10,7 @@ namespace Humidifier.CloudFormation
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::TypeActivation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudFormation.TypeActivation; }
         /// <summary>
         /// MajorVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-typeactivation.html#cfn-cloudformation-typeactivation-majorversion

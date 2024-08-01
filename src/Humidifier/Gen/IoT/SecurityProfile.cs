@@ -10,14 +10,7 @@ namespace Humidifier.IoT
             public static string SecurityProfileArn =  "SecurityProfileArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::SecurityProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.SecurityProfile; }
         /// <summary>
         /// AdditionalMetricsToRetainV2
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-additionalmetricstoretainv2

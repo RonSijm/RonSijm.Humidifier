@@ -13,14 +13,7 @@ namespace Humidifier.IoT
             public static string Version =  "Version" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::FleetMetric";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.FleetMetric; }
         /// <summary>
         /// IndexName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-fleetmetric.html#cfn-iot-fleetmetric-indexname

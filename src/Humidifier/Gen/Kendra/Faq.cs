@@ -11,13 +11,7 @@ namespace Humidifier.Kendra
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Kendra::Faq";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Kendra.Faq; }
 
         /// <summary>
         /// IndexId

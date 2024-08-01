@@ -12,14 +12,7 @@ namespace Humidifier.Lightsail
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Container";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lightsail.Container; }
         /// <summary>
         /// PublicDomainNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-container.html#cfn-lightsail-container-publicdomainnames

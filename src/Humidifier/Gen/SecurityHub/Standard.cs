@@ -10,13 +10,7 @@ namespace Humidifier.SecurityHub
             public static string StandardsSubscriptionArn =  "StandardsSubscriptionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::Standard";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityHub.Standard; }
 
         /// <summary>
         /// StandardsArn

@@ -4,13 +4,7 @@ namespace Humidifier.AppStream
 
     public class ApplicationEntitlementAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::ApplicationEntitlementAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppStream.ApplicationEntitlementAssociation; }
 
         /// <summary>
         /// EntitlementName

@@ -5,13 +5,7 @@ namespace Humidifier.Greengrass
 
     public class SubscriptionDefinitionVersion : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Greengrass::SubscriptionDefinitionVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Greengrass.SubscriptionDefinitionVersion; }
 
         /// <summary>
         /// SubscriptionDefinitionId

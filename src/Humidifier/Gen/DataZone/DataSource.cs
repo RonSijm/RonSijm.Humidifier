@@ -19,13 +19,7 @@ namespace Humidifier.DataZone
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::DataSource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataZone.DataSource; }
 
         /// <summary>
         /// ProjectIdentifier

@@ -17,14 +17,7 @@ namespace Humidifier.Route53Resolver
             public static string DomainCount =  "DomainCount" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::FirewallDomainList";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53Resolver.FirewallDomainList; }
         /// <summary>
         /// Domains
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#cfn-route53resolver-firewalldomainlist-domains

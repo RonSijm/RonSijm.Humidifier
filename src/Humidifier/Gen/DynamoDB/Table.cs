@@ -11,14 +11,7 @@ namespace Humidifier.DynamoDB
             public static string StreamArn =  "StreamArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DynamoDB::Table";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DynamoDB.Table; }
         /// <summary>
         /// OnDemandThroughput
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ondemandthroughput

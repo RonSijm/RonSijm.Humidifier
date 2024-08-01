@@ -4,14 +4,7 @@ namespace Humidifier.EC2
 
     public class TrafficMirrorTarget : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TrafficMirrorTarget";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.TrafficMirrorTarget; }
         /// <summary>
         /// NetworkLoadBalancerArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkloadbalancerarn

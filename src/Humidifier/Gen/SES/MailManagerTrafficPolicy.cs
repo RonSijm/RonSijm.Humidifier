@@ -11,13 +11,7 @@ namespace Humidifier.SES
             public static string TrafficPolicyArn =  "TrafficPolicyArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::MailManagerTrafficPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SES.MailManagerTrafficPolicy; }
 
         /// <summary>
         /// DefaultAction

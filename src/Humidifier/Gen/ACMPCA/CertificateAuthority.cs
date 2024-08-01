@@ -11,14 +11,7 @@ namespace Humidifier.ACMPCA
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ACMPCA::CertificateAuthority";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ACMPCA.CertificateAuthority; }
         /// <summary>
         /// CsrExtensions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-csrextensions

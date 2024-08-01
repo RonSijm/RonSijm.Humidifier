@@ -5,7 +5,7 @@ namespace Humidifier.CodeGen.Lib.Features.Init;
 
 public class SpecVersionChecker
 {
-    public async Task<string> CheckSpecVersion(string[] args, Specification specification, string sourcePath)
+    public async Task<string> CheckSpecVersion(Specification specification, string sourcePath, bool forceRegenerate)
     {
         Console.WriteLine($"ResourceSpecificationVersion: {specification.ResourceSpecificationVersion}");
 
@@ -17,10 +17,10 @@ public class SpecVersionChecker
             return versionFile;
         }
 
-        if (args != null && args.Any(x => x.Contains("force")))
+        if (forceRegenerate)
         {
             Console.WriteLine($"Current version is already {currentVersion}.");
-            Console.WriteLine($"But used 'Force' argument to regenerate anyways.");
+            Console.WriteLine($"But used '-{nameof(forceRegenerate)}' argument to regenerate anyways.");
 
             return versionFile;
         }
@@ -28,7 +28,7 @@ public class SpecVersionChecker
         // If we're already using this version, we don't have to regenerate
         // Unless something was actually changed to the generator.
         Console.WriteLine($"Current version is already {currentVersion}.");
-        Console.WriteLine($"Use 'Force' argument to regenerate anyways.");
+        Console.WriteLine($"Use '-{nameof(forceRegenerate)}' argument to regenerate anyways.");
 
         return null;
     }

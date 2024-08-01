@@ -11,14 +11,7 @@ namespace Humidifier.SageMaker
             public static string ModelPackageGroupStatus =  "ModelPackageGroupStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::ModelPackageGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.ModelPackageGroup; }
         public dynamic ModelPackageGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ModelPackageGroupDescription

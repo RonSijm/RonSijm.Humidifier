@@ -14,14 +14,7 @@ namespace Humidifier.Bedrock
             public static string DataSourceId =  "DataSourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::DataSource";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.DataSource; }
         /// <summary>
         /// DataDeletionPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-datasource.html#cfn-bedrock-datasource-datadeletionpolicy

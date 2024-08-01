@@ -9,14 +9,7 @@ namespace Humidifier.RolesAnywhere
             public static string CrlId =  "CrlId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RolesAnywhere::CRL";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RolesAnywhere.CRL; }
         /// <summary>
         /// TrustAnchorArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-crl.html#cfn-rolesanywhere-crl-trustanchorarn

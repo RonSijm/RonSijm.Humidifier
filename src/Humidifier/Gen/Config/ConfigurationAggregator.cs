@@ -10,14 +10,7 @@ namespace Humidifier.Config
             public static string ConfigurationAggregatorArn =  "ConfigurationAggregatorArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::ConfigurationAggregator";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.ConfigurationAggregator; }
         /// <summary>
         /// AccountAggregationSources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-accountaggregationsources

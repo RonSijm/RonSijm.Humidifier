@@ -10,14 +10,7 @@ namespace Humidifier.DocDB
             public static string Port =  "Port" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DocDB::DBInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DocDB.DBInstance; }
         /// <summary>
         /// CACertificateIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbinstance.html#cfn-docdb-dbinstance-cacertificateidentifier

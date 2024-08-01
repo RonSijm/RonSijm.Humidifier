@@ -4,13 +4,7 @@ namespace Humidifier.RDS
 
     public class DBClusterParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBClusterParameterGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.RDS.DBClusterParameterGroup; }
 
         /// <summary>
         /// Description

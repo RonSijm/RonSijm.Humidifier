@@ -5,13 +5,7 @@ namespace Humidifier.IoT
 
     public class AccountAuditConfiguration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::AccountAuditConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.AccountAuditConfiguration; }
 
         /// <summary>
         /// AccountId

@@ -4,14 +4,7 @@ namespace Humidifier.DAX
 
     public class SubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSubnetIds
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DAX::SubnetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DAX.SubnetGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-subnetgroup.html#cfn-dax-subnetgroup-description

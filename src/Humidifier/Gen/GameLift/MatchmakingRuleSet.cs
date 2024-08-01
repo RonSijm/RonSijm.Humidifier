@@ -11,13 +11,7 @@ namespace Humidifier.GameLift
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::MatchmakingRuleSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.GameLift.MatchmakingRuleSet; }
 
         /// <summary>
         /// RuleSetBody

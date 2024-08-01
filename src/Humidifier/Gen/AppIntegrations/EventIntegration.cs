@@ -10,14 +10,7 @@ namespace Humidifier.AppIntegrations
             public static string EventIntegrationArn =  "EventIntegrationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppIntegrations::EventIntegration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppIntegrations.EventIntegration; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-description

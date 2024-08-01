@@ -10,14 +10,7 @@ namespace Humidifier.SES
             public static string VdmAttributesResourceId =  "VdmAttributesResourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::VdmAttributes";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SES.VdmAttributes; }
         /// <summary>
         /// DashboardAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-vdmattributes.html#cfn-ses-vdmattributes-dashboardattributes

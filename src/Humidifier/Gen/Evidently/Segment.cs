@@ -9,14 +9,7 @@ namespace Humidifier.Evidently
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Evidently::Segment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Evidently.Segment; }
         /// <summary>
         /// Pattern
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-evidently-segment.html#cfn-evidently-segment-pattern

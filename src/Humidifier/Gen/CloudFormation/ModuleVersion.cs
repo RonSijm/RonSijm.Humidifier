@@ -16,13 +16,7 @@ namespace Humidifier.CloudFormation
             public static string DocumentationUrl =  "DocumentationUrl" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFormation::ModuleVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFormation.ModuleVersion; }
 
         /// <summary>
         /// ModulePackage

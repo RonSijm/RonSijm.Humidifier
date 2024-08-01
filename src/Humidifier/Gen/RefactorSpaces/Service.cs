@@ -11,14 +11,7 @@ namespace Humidifier.RefactorSpaces
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RefactorSpaces::Service";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RefactorSpaces.Service; }
         /// <summary>
         /// LambdaEndpoint
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#cfn-refactorspaces-service-lambdaendpoint

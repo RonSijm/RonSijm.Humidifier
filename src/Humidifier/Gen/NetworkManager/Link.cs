@@ -13,13 +13,7 @@ namespace Humidifier.NetworkManager
             public static string LinkId =  "LinkId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::Link";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.Link; }
 
         /// <summary>
         /// SiteId

@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class Table : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::Table";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.Table; }
 
         /// <summary>
         /// TableInput

@@ -13,14 +13,7 @@ namespace Humidifier.DataZone
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::UserProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataZone.UserProfile; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-userprofile.html#cfn-datazone-userprofile-status

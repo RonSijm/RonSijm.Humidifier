@@ -12,14 +12,7 @@ namespace Humidifier.WorkSpaces
             public static string PoolArn =  "PoolArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpaces::WorkspacesPool";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WorkSpaces.WorkspacesPool; }
         /// <summary>
         /// ApplicationSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-applicationsettings

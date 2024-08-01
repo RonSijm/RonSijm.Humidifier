@@ -10,14 +10,7 @@ namespace Humidifier.IoTSiteWise
             public static string ProjectId =  "ProjectId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::Project";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTSiteWise.Project; }
         /// <summary>
         /// AssetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-assetids

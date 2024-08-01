@@ -4,14 +4,7 @@ namespace Humidifier.ApiGateway
 
     public class DocumentationVersion : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::DocumentationVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.DocumentationVersion; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationversion.html#cfn-apigateway-documentationversion-description

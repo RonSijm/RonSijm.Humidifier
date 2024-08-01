@@ -10,14 +10,7 @@ namespace Humidifier.ServiceDiscovery
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceDiscovery::HttpNamespace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceDiscovery.HttpNamespace; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-description

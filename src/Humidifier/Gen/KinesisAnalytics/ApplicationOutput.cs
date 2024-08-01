@@ -5,13 +5,7 @@ namespace Humidifier.KinesisAnalytics
 
     public class ApplicationOutput : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KinesisAnalytics::ApplicationOutput";
-            }
-        }
+        public override string AWSTypeName { get => AWS.KinesisAnalytics.ApplicationOutput; }
 
         /// <summary>
         /// ApplicationName

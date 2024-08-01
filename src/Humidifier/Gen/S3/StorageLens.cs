@@ -9,13 +9,7 @@ namespace Humidifier.S3
         {
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::StorageLens";
-            }
-        }
+        public override string AWSTypeName { get => AWS.S3.StorageLens; }
 
         /// <summary>
         /// StorageLensConfiguration

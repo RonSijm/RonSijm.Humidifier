@@ -16,14 +16,7 @@ namespace Humidifier.SageMaker
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::Domain";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.Domain; }
         /// <summary>
         /// AppNetworkAccessType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appnetworkaccesstype

@@ -4,13 +4,7 @@ namespace Humidifier.SecretsManager
 
     public class SecretTargetAttachment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecretsManager::SecretTargetAttachment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecretsManager.SecretTargetAttachment; }
 
         /// <summary>
         /// SecretId

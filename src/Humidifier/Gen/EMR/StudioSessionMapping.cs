@@ -4,13 +4,7 @@ namespace Humidifier.EMR
 
     public class StudioSessionMapping : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EMR::StudioSessionMapping";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EMR.StudioSessionMapping; }
 
         /// <summary>
         /// IdentityType

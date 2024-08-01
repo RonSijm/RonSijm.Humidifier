@@ -5,14 +5,7 @@ namespace Humidifier.OpsWorks
 
     public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpsWorks::App";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpsWorks.App; }
         /// <summary>
         /// AppSource
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-appsource

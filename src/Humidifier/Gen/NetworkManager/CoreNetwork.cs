@@ -16,13 +16,7 @@ namespace Humidifier.NetworkManager
             public static string CoreNetworkArn =  "CoreNetworkArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::CoreNetwork";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.CoreNetwork; }
 
         /// <summary>
         /// GlobalNetworkId

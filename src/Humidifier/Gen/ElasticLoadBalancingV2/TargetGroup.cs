@@ -13,14 +13,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public static string TargetGroupName =  "TargetGroupName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::TargetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.TargetGroup; }
         /// <summary>
         /// IpAddressType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-ipaddresstype

@@ -10,13 +10,7 @@ namespace Humidifier.SecurityLake
             public static string SubscriberEndpoint =  "SubscriberEndpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityLake::SubscriberNotification";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityLake.SubscriberNotification; }
 
         /// <summary>
         /// SubscriberArn

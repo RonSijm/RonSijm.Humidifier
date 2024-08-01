@@ -9,14 +9,7 @@ namespace Humidifier.ACMPCA
             public static string CompleteCertificateChain =  "CompleteCertificateChain" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ACMPCA::CertificateAuthorityActivation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ACMPCA.CertificateAuthorityActivation; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-status

@@ -10,13 +10,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string UserAccessLoggingSettingsArn =  "UserAccessLoggingSettingsArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::UserAccessLoggingSettings";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.UserAccessLoggingSettings; }
 
         /// <summary>
         /// KinesisStreamArn

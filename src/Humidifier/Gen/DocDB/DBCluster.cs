@@ -12,14 +12,7 @@ namespace Humidifier.DocDB
             public static string ReadEndpoint =  "ReadEndpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DocDB::DBCluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DocDB.DBCluster; }
         /// <summary>
         /// StorageEncrypted
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-dbcluster.html#cfn-docdb-dbcluster-storageencrypted

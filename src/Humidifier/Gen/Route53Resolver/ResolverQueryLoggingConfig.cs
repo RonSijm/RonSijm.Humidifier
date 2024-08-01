@@ -16,14 +16,7 @@ namespace Humidifier.Route53Resolver
             public static string CreatorRequestId =  "CreatorRequestId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53Resolver::ResolverQueryLoggingConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53Resolver.ResolverQueryLoggingConfig; }
         /// <summary>
         /// DestinationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#cfn-route53resolver-resolverqueryloggingconfig-destinationarn

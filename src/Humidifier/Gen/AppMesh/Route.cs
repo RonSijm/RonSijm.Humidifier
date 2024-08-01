@@ -16,13 +16,7 @@ namespace Humidifier.AppMesh
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppMesh::Route";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppMesh.Route; }
 
         /// <summary>
         /// MeshName

@@ -14,14 +14,7 @@ namespace Humidifier.QBusiness
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QBusiness::Plugin";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.QBusiness.Plugin; }
         /// <summary>
         /// ServerUrl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-plugin.html#cfn-qbusiness-plugin-serverurl

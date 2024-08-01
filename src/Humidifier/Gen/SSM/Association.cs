@@ -10,14 +10,7 @@ namespace Humidifier.SSM
             public static string AssociationId =  "AssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::Association";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSM.Association; }
         public dynamic AssociationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// CalendarNames

@@ -12,13 +12,7 @@ namespace Humidifier.IoTWireless
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTWireless::FuotaTask";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTWireless.FuotaTask; }
 
         /// <summary>
         /// FirmwareUpdateImage

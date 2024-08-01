@@ -5,14 +5,7 @@ namespace Humidifier.EC2
 
     public class TrafficMirrorFilterRule : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TrafficMirrorFilterRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.TrafficMirrorFilterRule; }
         /// <summary>
         /// DestinationPortRange
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationportrange

@@ -4,13 +4,7 @@ namespace Humidifier.Logs
 
     public class SubscriptionFilter : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::SubscriptionFilter";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Logs.SubscriptionFilter; }
 
         /// <summary>
         /// FilterPattern

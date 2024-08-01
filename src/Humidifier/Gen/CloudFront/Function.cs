@@ -11,13 +11,7 @@ namespace Humidifier.CloudFront
             public static string Stage =  "Stage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFront::Function";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFront.Function; }
 
         /// <summary>
         /// FunctionConfig

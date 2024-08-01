@@ -9,13 +9,7 @@ namespace Humidifier.IoT
             public static string TargetId =  "TargetId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::ResourceSpecificLogging";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoT.ResourceSpecificLogging; }
 
         /// <summary>
         /// TargetType

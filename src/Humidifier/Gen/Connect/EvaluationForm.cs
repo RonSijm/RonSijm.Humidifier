@@ -10,14 +10,7 @@ namespace Humidifier.Connect
             public static string EvaluationFormArn =  "EvaluationFormArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::EvaluationForm";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.EvaluationForm; }
         /// <summary>
         /// ScoringStrategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-evaluationform.html#cfn-connect-evaluationform-scoringstrategy

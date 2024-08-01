@@ -10,13 +10,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string TrustStoreArn =  "TrustStoreArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::TrustStore";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.TrustStore; }
 
         /// <summary>
         /// CertificateList

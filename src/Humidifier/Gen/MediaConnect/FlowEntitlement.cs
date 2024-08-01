@@ -10,14 +10,7 @@ namespace Humidifier.MediaConnect
             public static string EntitlementArn =  "EntitlementArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::FlowEntitlement";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaConnect.FlowEntitlement; }
         /// <summary>
         /// DataTransferSubscriberFeePercent
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-datatransfersubscriberfeepercent

@@ -4,13 +4,7 @@ namespace Humidifier.MSK
 
     public class BatchScramSecret : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MSK::BatchScramSecret";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MSK.BatchScramSecret; }
 
         /// <summary>
         /// ClusterArn

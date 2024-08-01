@@ -4,14 +4,7 @@ namespace Humidifier.DMS
 
     public class EventSubscription : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::EventSubscription";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DMS.EventSubscription; }
         /// <summary>
         /// SourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-eventsubscription.html#cfn-dms-eventsubscription-sourcetype

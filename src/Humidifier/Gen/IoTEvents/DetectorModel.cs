@@ -5,13 +5,7 @@ namespace Humidifier.IoTEvents
 
     public class DetectorModel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTEvents::DetectorModel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTEvents.DetectorModel; }
 
         /// <summary>
         /// DetectorModelDefinition

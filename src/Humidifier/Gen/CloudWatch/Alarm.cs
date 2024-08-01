@@ -10,14 +10,7 @@ namespace Humidifier.CloudWatch
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudWatch::Alarm";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudWatch.Alarm; }
         /// <summary>
         /// ThresholdMetricId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-thresholdmetricid

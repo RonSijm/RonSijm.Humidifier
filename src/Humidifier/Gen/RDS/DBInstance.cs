@@ -12,14 +12,7 @@ namespace Humidifier.RDS
             public static string DbiResourceId =  "DbiResourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.DBInstance; }
         /// <summary>
         /// StorageEncrypted
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storageencrypted

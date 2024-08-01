@@ -10,14 +10,7 @@ namespace Humidifier.DataPipeline
             public static string PipelineId =  "PipelineId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataPipeline::Pipeline";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataPipeline.Pipeline; }
         /// <summary>
         /// PipelineTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags

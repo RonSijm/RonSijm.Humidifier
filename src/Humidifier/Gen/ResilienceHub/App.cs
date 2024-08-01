@@ -11,14 +11,7 @@ namespace Humidifier.ResilienceHub
             public static string DriftStatus =  "DriftStatus" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ResilienceHub::App";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ResilienceHub.App; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-description

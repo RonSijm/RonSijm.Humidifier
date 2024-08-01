@@ -16,14 +16,7 @@ namespace Humidifier.AppSync
             public static string GraphQLEndpointArn =  "GraphQLEndpointArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::GraphQLApi";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.GraphQLApi; }
         /// <summary>
         /// QueryDepthLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-querydepthlimit

@@ -10,13 +10,7 @@ namespace Humidifier.Lightsail
             public static string LoadBalancerTlsCertificateArn =  "LoadBalancerTlsCertificateArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::LoadBalancerTlsCertificate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lightsail.LoadBalancerTlsCertificate; }
 
         /// <summary>
         /// LoadBalancerName

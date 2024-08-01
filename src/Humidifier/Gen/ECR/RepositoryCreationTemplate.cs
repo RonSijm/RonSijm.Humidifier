@@ -11,14 +11,7 @@ namespace Humidifier.ECR
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECR::RepositoryCreationTemplate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ECR.RepositoryCreationTemplate; }
         /// <summary>
         /// CustomRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repositorycreationtemplate.html#cfn-ecr-repositorycreationtemplate-customrolearn

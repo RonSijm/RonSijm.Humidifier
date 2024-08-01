@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string NotebookInstanceLifecycleConfigName =  "NotebookInstanceLifecycleConfigName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::NotebookInstanceLifecycleConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.NotebookInstanceLifecycleConfig; }
         /// <summary>
         /// OnStart
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-onstart

@@ -10,13 +10,7 @@ namespace Humidifier.NeptuneGraph
             public static string PrivateGraphEndpointIdentifier =  "PrivateGraphEndpointIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NeptuneGraph::PrivateGraphEndpoint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NeptuneGraph.PrivateGraphEndpoint; }
 
         /// <summary>
         /// VpcId

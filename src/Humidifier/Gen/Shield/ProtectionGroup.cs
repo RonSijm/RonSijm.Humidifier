@@ -9,13 +9,7 @@ namespace Humidifier.Shield
             public static string ProtectionGroupArn =  "ProtectionGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Shield::ProtectionGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Shield.ProtectionGroup; }
 
         /// <summary>
         /// Aggregation

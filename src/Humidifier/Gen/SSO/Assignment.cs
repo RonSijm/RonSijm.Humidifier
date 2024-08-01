@@ -4,13 +4,7 @@ namespace Humidifier.SSO
 
     public class Assignment : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSO::Assignment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSO.Assignment; }
 
         /// <summary>
         /// PrincipalId

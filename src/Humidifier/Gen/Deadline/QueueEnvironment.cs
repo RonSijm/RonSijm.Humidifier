@@ -10,13 +10,7 @@ namespace Humidifier.Deadline
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::QueueEnvironment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Deadline.QueueEnvironment; }
 
         /// <summary>
         /// Priority

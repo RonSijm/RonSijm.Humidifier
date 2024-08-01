@@ -12,14 +12,7 @@ namespace Humidifier.GroundStation
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GroundStation::MissionProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GroundStation.MissionProfile; }
         /// <summary>
         /// StreamsKmsKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-streamskmskey

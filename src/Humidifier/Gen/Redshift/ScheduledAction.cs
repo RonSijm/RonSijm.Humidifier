@@ -11,14 +11,7 @@ namespace Humidifier.Redshift
             public static string NextInvocations =  "NextInvocations" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Redshift::ScheduledAction";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Redshift.ScheduledAction; }
         /// <summary>
         /// ScheduledActionDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactiondescription

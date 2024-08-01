@@ -11,13 +11,7 @@ namespace Humidifier.IoTTwinMaker
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTTwinMaker::Workspace";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTTwinMaker.Workspace; }
 
         /// <summary>
         /// Role

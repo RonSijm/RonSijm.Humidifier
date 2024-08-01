@@ -10,14 +10,7 @@ namespace Humidifier.ECS
             public static string TaskDefinitionArn =  "TaskDefinitionArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECS::TaskDefinition";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ECS.TaskDefinition; }
         /// <summary>
         /// TaskRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn

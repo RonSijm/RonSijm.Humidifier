@@ -9,14 +9,7 @@ namespace Humidifier.ApiGateway
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::GatewayResponse";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.GatewayResponse; }
         /// <summary>
         /// ResponseTemplates
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-gatewayresponse.html#cfn-apigateway-gatewayresponse-responsetemplates

@@ -12,14 +12,7 @@ namespace Humidifier.Macie
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Macie::AllowList";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Macie.AllowList; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-allowlist.html#cfn-macie-allowlist-description

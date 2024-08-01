@@ -5,13 +5,7 @@ namespace Humidifier.WAFRegional
 
     public class RateBasedRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFRegional::RateBasedRule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAFRegional.RateBasedRule; }
 
         /// <summary>
         /// MetricName

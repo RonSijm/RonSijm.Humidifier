@@ -11,14 +11,7 @@ namespace Humidifier.Events
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Events::EventBus";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Events.EventBus; }
         /// <summary>
         /// Policy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-policy

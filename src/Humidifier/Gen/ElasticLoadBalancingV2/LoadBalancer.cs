@@ -15,14 +15,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public static string LoadBalancerFullName =  "LoadBalancerFullName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::LoadBalancer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.LoadBalancer; }
         /// <summary>
         /// IpAddressType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipaddresstype

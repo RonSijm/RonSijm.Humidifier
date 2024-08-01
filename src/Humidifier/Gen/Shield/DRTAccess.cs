@@ -9,14 +9,7 @@ namespace Humidifier.Shield
             public static string AccountId =  "AccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Shield::DRTAccess";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Shield.DRTAccess; }
         /// <summary>
         /// LogBucketList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-shield-drtaccess.html#cfn-shield-drtaccess-logbucketlist

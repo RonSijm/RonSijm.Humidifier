@@ -13,13 +13,7 @@ namespace Humidifier.Kinesis
             public static string StreamARN =  "StreamARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Kinesis::StreamConsumer";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Kinesis.StreamConsumer; }
 
         /// <summary>
         /// ConsumerName

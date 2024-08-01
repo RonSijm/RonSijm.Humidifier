@@ -20,13 +20,7 @@ namespace Humidifier.EC2
             public static string StatusMessage =  "StatusMessage" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NetworkInsightsAnalysis";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.NetworkInsightsAnalysis; }
 
         /// <summary>
         /// NetworkInsightsPathId

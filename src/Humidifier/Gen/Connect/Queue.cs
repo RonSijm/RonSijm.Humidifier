@@ -11,14 +11,7 @@ namespace Humidifier.Connect
             public static string QueueArn =  "QueueArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::Queue";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.Queue; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-status

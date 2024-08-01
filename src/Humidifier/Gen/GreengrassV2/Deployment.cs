@@ -10,14 +10,7 @@ namespace Humidifier.GreengrassV2
             public static string DeploymentId =  "DeploymentId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GreengrassV2::Deployment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GreengrassV2.Deployment; }
         /// <summary>
         /// Components
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-deployment.html#cfn-greengrassv2-deployment-components

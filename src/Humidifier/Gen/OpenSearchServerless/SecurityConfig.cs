@@ -10,14 +10,7 @@ namespace Humidifier.OpenSearchServerless
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchServerless::SecurityConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpenSearchServerless.SecurityConfig; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-securityconfig.html#cfn-opensearchserverless-securityconfig-type

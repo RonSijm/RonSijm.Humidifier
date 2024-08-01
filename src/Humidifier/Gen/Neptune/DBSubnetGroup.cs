@@ -4,14 +4,7 @@ namespace Humidifier.Neptune
 
     public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Neptune::DBSubnetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Neptune.DBSubnetGroup; }
         public dynamic DBSubnetGroupName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

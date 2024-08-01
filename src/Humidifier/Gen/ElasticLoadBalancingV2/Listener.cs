@@ -10,14 +10,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public static string ListenerArn =  "ListenerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::Listener";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.Listener; }
         /// <summary>
         /// MutualAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-mutualauthentication

@@ -5,14 +5,7 @@ namespace Humidifier.SSM
 
     public class MaintenanceWindowTarget : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::MaintenanceWindowTarget";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSM.MaintenanceWindowTarget; }
         /// <summary>
         /// OwnerInformation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-ownerinformation

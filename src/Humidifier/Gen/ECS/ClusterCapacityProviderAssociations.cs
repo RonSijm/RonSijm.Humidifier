@@ -5,13 +5,7 @@ namespace Humidifier.ECS
 
     public class ClusterCapacityProviderAssociations : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECS::ClusterCapacityProviderAssociations";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ECS.ClusterCapacityProviderAssociations; }
 
         /// <summary>
         /// DefaultCapacityProviderStrategy

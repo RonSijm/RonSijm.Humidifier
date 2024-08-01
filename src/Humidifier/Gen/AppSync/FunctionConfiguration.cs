@@ -13,14 +13,7 @@ namespace Humidifier.AppSync
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::FunctionConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.FunctionConfiguration; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-description

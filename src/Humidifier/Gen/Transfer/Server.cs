@@ -11,14 +11,7 @@ namespace Humidifier.Transfer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::Server";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Transfer.Server; }
         /// <summary>
         /// LoggingRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole

@@ -5,13 +5,7 @@ namespace Humidifier.ECS
 
     public class CapacityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECS::CapacityProvider";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ECS.CapacityProvider; }
 
         /// <summary>
         /// AutoScalingGroupProvider

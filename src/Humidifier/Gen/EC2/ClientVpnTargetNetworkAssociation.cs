@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class ClientVpnTargetNetworkAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::ClientVpnTargetNetworkAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.ClientVpnTargetNetworkAssociation; }
 
         /// <summary>
         /// ClientVpnEndpointId

@@ -10,14 +10,7 @@ namespace Humidifier.VoiceID
             public static string DomainId =  "DomainId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VoiceID::Domain";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.VoiceID.Domain; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-voiceid-domain.html#cfn-voiceid-domain-description

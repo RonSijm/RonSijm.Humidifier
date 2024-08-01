@@ -12,14 +12,7 @@ namespace Humidifier.Transfer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::User";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Transfer.User; }
         /// <summary>
         /// Policy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-policy

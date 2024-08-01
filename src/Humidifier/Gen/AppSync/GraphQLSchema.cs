@@ -4,14 +4,7 @@ namespace Humidifier.AppSync
 
     public class GraphQLSchema : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::GraphQLSchema";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.GraphQLSchema; }
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition

@@ -14,13 +14,7 @@ namespace Humidifier.EventSchemas
             public static string SchemaName =  "SchemaName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EventSchemas::Schema";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EventSchemas.Schema; }
 
         /// <summary>
         /// Type

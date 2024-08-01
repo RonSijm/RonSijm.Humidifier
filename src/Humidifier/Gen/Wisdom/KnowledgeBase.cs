@@ -11,14 +11,7 @@ namespace Humidifier.Wisdom
             public static string KnowledgeBaseId =  "KnowledgeBaseId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Wisdom::KnowledgeBase";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Wisdom.KnowledgeBase; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-knowledgebase.html#cfn-wisdom-knowledgebase-description

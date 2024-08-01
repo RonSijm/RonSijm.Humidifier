@@ -13,14 +13,7 @@ namespace Humidifier.EKS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::Nodegroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EKS.Nodegroup; }
         /// <summary>
         /// UpdateConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-updateconfig

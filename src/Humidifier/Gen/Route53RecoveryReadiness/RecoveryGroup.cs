@@ -9,14 +9,7 @@ namespace Humidifier.Route53RecoveryReadiness
             public static string RecoveryGroupArn =  "RecoveryGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Route53RecoveryReadiness::RecoveryGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Route53RecoveryReadiness.RecoveryGroup; }
         public dynamic RecoveryGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Cells

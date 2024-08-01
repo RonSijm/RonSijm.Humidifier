@@ -12,13 +12,7 @@ namespace Humidifier.ServiceCatalog
             public static string ProvisioningArtifactNames =  "ProvisioningArtifactNames" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::CloudFormationProduct";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.CloudFormationProduct; }
 
         /// <summary>
         /// Owner

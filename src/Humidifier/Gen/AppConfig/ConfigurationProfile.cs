@@ -11,13 +11,7 @@ namespace Humidifier.AppConfig
             public static string KmsKeyArn =  "KmsKeyArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppConfig::ConfigurationProfile";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppConfig.ConfigurationProfile; }
 
         /// <summary>
         /// LocationUri

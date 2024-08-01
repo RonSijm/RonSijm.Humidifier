@@ -11,13 +11,7 @@ namespace Humidifier.Wisdom
             public static string AssistantId =  "AssistantId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Wisdom::Assistant";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Wisdom.Assistant; }
 
         /// <summary>
         /// Type

@@ -12,13 +12,7 @@ namespace Humidifier.EC2
             public static string GroupId =  "GroupId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::SecurityGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.SecurityGroup; }
 
         /// <summary>
         /// GroupDescription

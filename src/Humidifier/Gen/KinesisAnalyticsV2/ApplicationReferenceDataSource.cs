@@ -5,13 +5,7 @@ namespace Humidifier.KinesisAnalyticsV2
 
     public class ApplicationReferenceDataSource : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.KinesisAnalyticsV2.ApplicationReferenceDataSource; }
 
         /// <summary>
         /// ApplicationName

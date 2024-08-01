@@ -9,13 +9,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string IdentityProviderArn =  "IdentityProviderArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::IdentityProvider";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.IdentityProvider; }
 
         /// <summary>
         /// IdentityProviderDetails

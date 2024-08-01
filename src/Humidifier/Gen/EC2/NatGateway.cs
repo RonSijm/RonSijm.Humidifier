@@ -9,14 +9,7 @@ namespace Humidifier.EC2
             public static string NatGatewayId =  "NatGatewayId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::NatGateway";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.NatGateway; }
         /// <summary>
         /// SecondaryAllocationIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryallocationids

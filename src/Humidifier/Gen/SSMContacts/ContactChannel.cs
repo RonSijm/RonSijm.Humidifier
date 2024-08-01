@@ -9,13 +9,7 @@ namespace Humidifier.SSMContacts
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSMContacts::ContactChannel";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSMContacts.ContactChannel; }
 
         /// <summary>
         /// ChannelName

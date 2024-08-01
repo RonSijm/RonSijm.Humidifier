@@ -4,13 +4,7 @@ namespace Humidifier.AppStream
 
     public class StackFleetAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::StackFleetAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppStream.StackFleetAssociation; }
 
         /// <summary>
         /// FleetName

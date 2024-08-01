@@ -10,13 +10,7 @@ namespace Humidifier.Connect
             public static string HoursOfOperationArn =  "HoursOfOperationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::HoursOfOperation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Connect.HoursOfOperation; }
 
         /// <summary>
         /// TimeZone

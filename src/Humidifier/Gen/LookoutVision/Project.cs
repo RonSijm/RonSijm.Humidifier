@@ -9,14 +9,7 @@ namespace Humidifier.LookoutVision
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LookoutVision::Project";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.LookoutVision.Project; }
         public dynamic ProjectName { get => GivenName; set => GivenName = value; }
     }
 }

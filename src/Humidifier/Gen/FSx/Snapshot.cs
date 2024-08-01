@@ -9,13 +9,7 @@ namespace Humidifier.FSx
             public static string ResourceARN =  "ResourceARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::FSx::Snapshot";
-            }
-        }
+        public override string AWSTypeName { get => AWS.FSx.Snapshot; }
 
         /// <summary>
         /// VolumeId

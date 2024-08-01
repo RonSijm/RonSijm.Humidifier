@@ -11,13 +11,7 @@ namespace Humidifier.Shield
             public static string ProtectionId =  "ProtectionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Shield::Protection";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Shield.Protection; }
 
         /// <summary>
         /// ResourceArn

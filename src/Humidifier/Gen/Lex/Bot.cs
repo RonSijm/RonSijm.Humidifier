@@ -11,14 +11,7 @@ namespace Humidifier.Lex
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lex::Bot";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lex.Bot; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-description

@@ -15,14 +15,7 @@ namespace Humidifier.PinpointEmail
             public static string IdentityDNSRecordValue1 =  "IdentityDNSRecordValue1" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PinpointEmail::Identity";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.PinpointEmail.Identity; }
         /// <summary>
         /// FeedbackForwardingEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-feedbackforwardingenabled

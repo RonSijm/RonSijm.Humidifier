@@ -5,13 +5,7 @@ namespace Humidifier.MediaConnect
 
     public class BridgeOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaConnect::BridgeOutput";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaConnect.BridgeOutput; }
 
         /// <summary>
         /// BridgeArn

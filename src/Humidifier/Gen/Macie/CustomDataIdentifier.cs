@@ -10,14 +10,7 @@ namespace Humidifier.Macie
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Macie::CustomDataIdentifier";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Macie.CustomDataIdentifier; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#cfn-macie-customdataidentifier-description

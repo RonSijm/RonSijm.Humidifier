@@ -10,14 +10,7 @@ namespace Humidifier.MediaTailor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaTailor::SourceLocation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaTailor.SourceLocation; }
         public dynamic SourceLocationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// DefaultSegmentDeliveryConfiguration

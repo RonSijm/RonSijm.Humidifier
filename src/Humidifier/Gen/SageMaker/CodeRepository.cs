@@ -10,14 +10,7 @@ namespace Humidifier.SageMaker
             public static string CodeRepositoryName =  "CodeRepositoryName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::CodeRepository";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.CodeRepository; }
         public dynamic CodeRepositoryName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

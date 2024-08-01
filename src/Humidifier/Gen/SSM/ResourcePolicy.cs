@@ -10,13 +10,7 @@ namespace Humidifier.SSM
             public static string PolicyId =  "PolicyId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSM::ResourcePolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSM.ResourcePolicy; }
 
         /// <summary>
         /// Policy

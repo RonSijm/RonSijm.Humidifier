@@ -10,14 +10,7 @@ namespace Humidifier.IoTSiteWise
             public static string GatewayId =  "GatewayId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::Gateway";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTSiteWise.Gateway; }
         /// <summary>
         /// GatewayCapabilitySummaries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewaycapabilitysummaries

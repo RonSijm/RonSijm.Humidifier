@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class LaunchNotificationConstraint : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::LaunchNotificationConstraint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.LaunchNotificationConstraint; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchnotificationconstraint.html#cfn-servicecatalog-launchnotificationconstraint-description

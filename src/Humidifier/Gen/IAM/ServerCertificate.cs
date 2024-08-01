@@ -9,14 +9,7 @@ namespace Humidifier.IAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::ServerCertificate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.ServerCertificate; }
         /// <summary>
         /// CertificateBody
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servercertificate.html#cfn-iam-servercertificate-certificatebody

@@ -4,14 +4,7 @@ namespace Humidifier.EC2
 
     public class VPCEndpointServicePermissions : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPCEndpointServicePermissions";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VPCEndpointServicePermissions; }
         /// <summary>
         /// AllowedPrincipals
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-allowedprincipals

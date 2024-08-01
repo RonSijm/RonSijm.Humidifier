@@ -5,13 +5,7 @@ namespace Humidifier.Lambda
 
     public class EventInvokeConfig : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lambda::EventInvokeConfig";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Lambda.EventInvokeConfig; }
 
         /// <summary>
         /// FunctionName

@@ -10,14 +10,7 @@ namespace Humidifier.DMS
             public static string InstanceProfileArn =  "InstanceProfileArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::InstanceProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DMS.InstanceProfile; }
         /// <summary>
         /// SubnetGroupIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-instanceprofile.html#cfn-dms-instanceprofile-subnetgroupidentifier

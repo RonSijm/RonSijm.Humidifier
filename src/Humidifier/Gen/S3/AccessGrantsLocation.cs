@@ -10,14 +10,7 @@ namespace Humidifier.S3
             public static string AccessGrantsLocationId =  "AccessGrantsLocationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3::AccessGrantsLocation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.S3.AccessGrantsLocation; }
         /// <summary>
         /// LocationScope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accessgrantslocation.html#cfn-s3-accessgrantslocation-locationscope

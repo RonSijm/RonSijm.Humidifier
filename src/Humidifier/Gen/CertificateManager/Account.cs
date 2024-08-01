@@ -10,13 +10,7 @@ namespace Humidifier.CertificateManager
             public static string AccountId =  "AccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CertificateManager::Account";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CertificateManager.Account; }
 
         /// <summary>
         /// ExpiryEventsConfiguration

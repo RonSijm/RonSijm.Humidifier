@@ -11,13 +11,7 @@ namespace Humidifier.CloudWatch
             public static string RuleName =  "RuleName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudWatch::InsightRule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudWatch.InsightRule; }
 
         /// <summary>
         /// RuleState

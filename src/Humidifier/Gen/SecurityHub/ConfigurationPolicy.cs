@@ -14,14 +14,7 @@ namespace Humidifier.SecurityHub
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::ConfigurationPolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecurityHub.ConfigurationPolicy; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-configurationpolicy.html#cfn-securityhub-configurationpolicy-description

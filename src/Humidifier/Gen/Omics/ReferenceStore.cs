@@ -12,14 +12,7 @@ namespace Humidifier.Omics
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Omics::ReferenceStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Omics.ReferenceStore; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-referencestore.html#cfn-omics-referencestore-description

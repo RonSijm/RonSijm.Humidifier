@@ -10,14 +10,7 @@ namespace Humidifier.MediaLive
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaLive::InputSecurityGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.MediaLive.InputSecurityGroup; }
         /// <summary>
         /// WhitelistRules
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules

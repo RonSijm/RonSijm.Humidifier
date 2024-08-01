@@ -16,14 +16,7 @@ namespace Humidifier.EKS
             public static string OpenIdConnectIssuerUrl =  "OpenIdConnectIssuerUrl" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EKS::Cluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EKS.Cluster; }
         /// <summary>
         /// Logging
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-logging

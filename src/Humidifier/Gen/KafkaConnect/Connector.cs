@@ -10,13 +10,7 @@ namespace Humidifier.KafkaConnect
             public static string ConnectorArn =  "ConnectorArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KafkaConnect::Connector";
-            }
-        }
+        public override string AWSTypeName { get => AWS.KafkaConnect.Connector; }
 
         /// <summary>
         /// KafkaCluster

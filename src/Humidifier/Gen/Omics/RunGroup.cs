@@ -11,14 +11,7 @@ namespace Humidifier.Omics
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Omics::RunGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Omics.RunGroup; }
         /// <summary>
         /// MaxDuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-rungroup.html#cfn-omics-rungroup-maxduration

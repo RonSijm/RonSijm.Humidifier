@@ -10,14 +10,7 @@ namespace Humidifier.SecurityHub
             public static string ARN =  "ARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::Hub";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecurityHub.Hub; }
         /// <summary>
         /// ControlFindingGenerator
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-controlfindinggenerator

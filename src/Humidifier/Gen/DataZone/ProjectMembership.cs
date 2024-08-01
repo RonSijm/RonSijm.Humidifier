@@ -5,13 +5,7 @@ namespace Humidifier.DataZone
 
     public class ProjectMembership : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::ProjectMembership";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataZone.ProjectMembership; }
 
         /// <summary>
         /// ProjectIdentifier

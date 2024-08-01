@@ -5,14 +5,7 @@ namespace Humidifier.Pinpoint
 
     public class ApplicationSettings : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::ApplicationSettings";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pinpoint.ApplicationSettings; }
         /// <summary>
         /// QuietTime
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-quiettime

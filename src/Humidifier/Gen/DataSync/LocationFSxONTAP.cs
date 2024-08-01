@@ -12,13 +12,7 @@ namespace Humidifier.DataSync
             public static string LocationArn =  "LocationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::LocationFSxONTAP";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DataSync.LocationFSxONTAP; }
 
         /// <summary>
         /// StorageVirtualMachineArn

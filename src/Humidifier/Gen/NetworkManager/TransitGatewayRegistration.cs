@@ -4,13 +4,7 @@ namespace Humidifier.NetworkManager
 
     public class TransitGatewayRegistration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkManager::TransitGatewayRegistration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkManager.TransitGatewayRegistration; }
 
         /// <summary>
         /// GlobalNetworkId

@@ -10,13 +10,7 @@ namespace Humidifier.DevOpsGuru
             public static string ResourceCollectionType =  "ResourceCollectionType" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DevOpsGuru::ResourceCollection";
-            }
-        }
+        public override string AWSTypeName { get => AWS.DevOpsGuru.ResourceCollection; }
 
         /// <summary>
         /// ResourceCollectionFilter

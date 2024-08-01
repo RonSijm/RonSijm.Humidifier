@@ -9,14 +9,7 @@ namespace Humidifier.S3Express
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::S3Express::DirectoryBucket";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.S3Express.DirectoryBucket; }
         /// <summary>
         /// BucketName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-bucketname

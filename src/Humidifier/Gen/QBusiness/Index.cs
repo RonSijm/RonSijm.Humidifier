@@ -15,14 +15,7 @@ namespace Humidifier.QBusiness
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::QBusiness::Index";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.QBusiness.Index; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-index.html#cfn-qbusiness-index-type

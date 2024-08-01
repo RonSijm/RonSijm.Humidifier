@@ -12,14 +12,7 @@ namespace Humidifier.SSO
             public static string OwnerAccountId =  "OwnerAccountId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSO::Instance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSO.Instance; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instance.html#cfn-sso-instance-tags

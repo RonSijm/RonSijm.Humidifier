@@ -10,13 +10,7 @@ namespace Humidifier.IVS
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVS::StreamKey";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IVS.StreamKey; }
 
         /// <summary>
         /// ChannelArn

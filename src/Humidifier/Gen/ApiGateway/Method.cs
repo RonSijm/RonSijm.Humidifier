@@ -5,14 +5,7 @@ namespace Humidifier.ApiGateway
 
     public class Method : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGateway::Method";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGateway.Method; }
         /// <summary>
         /// Integration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration

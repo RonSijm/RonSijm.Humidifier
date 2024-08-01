@@ -13,14 +13,7 @@ namespace Humidifier.EC2
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::PrefixList";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.PrefixList; }
         /// <summary>
         /// MaxEntries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-maxentries

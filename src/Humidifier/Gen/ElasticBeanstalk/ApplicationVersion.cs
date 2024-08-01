@@ -10,13 +10,7 @@ namespace Humidifier.ElasticBeanstalk
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticBeanstalk::ApplicationVersion";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElasticBeanstalk.ApplicationVersion; }
 
         /// <summary>
         /// ApplicationName

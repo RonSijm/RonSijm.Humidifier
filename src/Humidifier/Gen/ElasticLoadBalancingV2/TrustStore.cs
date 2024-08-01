@@ -11,14 +11,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public static string NumberOfCaCertificates =  "NumberOfCaCertificates" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElasticLoadBalancingV2::TrustStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElasticLoadBalancingV2.TrustStore; }
         /// <summary>
         /// CaCertificatesBundleS3Bucket
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-truststore.html#cfn-elasticloadbalancingv2-truststore-cacertificatesbundles3bucket

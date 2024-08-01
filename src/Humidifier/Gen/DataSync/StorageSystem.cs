@@ -12,14 +12,7 @@ namespace Humidifier.DataSync
             public static string SecretsManagerArn =  "SecretsManagerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataSync::StorageSystem";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataSync.StorageSystem; }
         /// <summary>
         /// ServerCredentials
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-storagesystem.html#cfn-datasync-storagesystem-servercredentials

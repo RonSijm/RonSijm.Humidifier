@@ -5,14 +5,7 @@ namespace Humidifier.ApiGatewayV2
 
     public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::Stage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.Stage; }
         /// <summary>
         /// ClientCertificateId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-clientcertificateid

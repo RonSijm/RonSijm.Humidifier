@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string State =  "State" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::IPAMPoolCidr";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.IPAMPoolCidr; }
         /// <summary>
         /// Cidr
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-cidr

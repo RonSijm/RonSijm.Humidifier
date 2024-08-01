@@ -10,14 +10,7 @@ namespace Humidifier.SimSpaceWeaver
             public static string DescribePayload =  "DescribePayload" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SimSpaceWeaver::Simulation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SimSpaceWeaver.Simulation; }
         /// <summary>
         /// SchemaS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-simspaceweaver-simulation.html#cfn-simspaceweaver-simulation-schemas3location

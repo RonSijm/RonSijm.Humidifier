@@ -11,14 +11,7 @@ namespace Humidifier.SQS
             public static string QueueUrl =  "QueueUrl" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SQS::Queue";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SQS.Queue; }
         /// <summary>
         /// ReceiveMessageWaitTimeSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#cfn-sqs-queue-receivemessagewaittimeseconds

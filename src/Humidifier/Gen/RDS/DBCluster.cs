@@ -13,14 +13,7 @@ namespace Humidifier.RDS
             public static string DBClusterResourceId =  "DBClusterResourceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBCluster";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.DBCluster; }
         /// <summary>
         /// StorageEncrypted
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted

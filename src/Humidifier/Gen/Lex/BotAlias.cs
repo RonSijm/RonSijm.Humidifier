@@ -12,14 +12,7 @@ namespace Humidifier.Lex
             public static string BotAliasId =  "BotAliasId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lex::BotAlias";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lex.BotAlias; }
         /// <summary>
         /// BotVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botversion

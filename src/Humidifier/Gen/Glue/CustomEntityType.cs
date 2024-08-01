@@ -4,14 +4,7 @@ namespace Humidifier.Glue
 
     public class CustomEntityType : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::CustomEntityType";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Glue.CustomEntityType; }
         /// <summary>
         /// ContextWords
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-customentitytype.html#cfn-glue-customentitytype-contextwords

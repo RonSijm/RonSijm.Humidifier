@@ -10,14 +10,7 @@ namespace Humidifier.Neptune
             public static string Port =  "Port" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Neptune::DBInstance";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Neptune.DBInstance; }
         /// <summary>
         /// DBParameterGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbparametergroupname

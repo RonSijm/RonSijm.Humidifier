@@ -12,14 +12,7 @@ namespace Humidifier.IoTFleetWise
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTFleetWise::DecoderManifest";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTFleetWise.DecoderManifest; }
         /// <summary>
         /// SignalDecoders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#cfn-iotfleetwise-decodermanifest-signaldecoders

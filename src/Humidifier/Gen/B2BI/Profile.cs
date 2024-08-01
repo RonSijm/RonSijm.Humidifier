@@ -13,13 +13,7 @@ namespace Humidifier.B2BI
             public static string ProfileArn =  "ProfileArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::B2BI::Profile";
-            }
-        }
+        public override string AWSTypeName { get => AWS.B2BI.Profile; }
 
         /// <summary>
         /// Logging

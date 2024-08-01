@@ -4,13 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class StackSetConstraint : Humidifier.Base.BaseResource, IHaveDescription, IHaveExecutionRole
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::StackSetConstraint";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ServiceCatalog.StackSetConstraint; }
 
         /// <summary>
         /// Description

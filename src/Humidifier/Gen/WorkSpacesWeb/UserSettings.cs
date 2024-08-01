@@ -11,14 +11,7 @@ namespace Humidifier.WorkSpacesWeb
             public static string UserSettingsArn =  "UserSettingsArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WorkSpacesWeb::UserSettings";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WorkSpacesWeb.UserSettings; }
         /// <summary>
         /// IdleDisconnectTimeoutInMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-usersettings.html#cfn-workspacesweb-usersettings-idledisconnecttimeoutinminutes

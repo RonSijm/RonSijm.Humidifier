@@ -12,13 +12,7 @@ namespace Humidifier.Backup
             public static string SelectionId =  "SelectionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Backup::BackupSelection";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Backup.BackupSelection; }
 
         /// <summary>
         /// BackupSelection_

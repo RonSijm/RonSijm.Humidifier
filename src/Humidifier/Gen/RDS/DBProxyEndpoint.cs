@@ -13,14 +13,7 @@ namespace Humidifier.RDS
             public static string Endpoint =  "Endpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBProxyEndpoint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.RDS.DBProxyEndpoint; }
         public dynamic DBProxyEndpointName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

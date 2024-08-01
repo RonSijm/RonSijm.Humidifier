@@ -10,13 +10,7 @@ namespace Humidifier.WAFv2
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFv2::IPSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.WAFv2.IPSet; }
 
         /// <summary>
         /// Addresses

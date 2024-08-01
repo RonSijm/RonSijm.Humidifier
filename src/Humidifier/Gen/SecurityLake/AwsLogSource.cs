@@ -4,13 +4,7 @@ namespace Humidifier.SecurityLake
 
     public class AwsLogSource : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityLake::AwsLogSource";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SecurityLake.AwsLogSource; }
 
         /// <summary>
         /// SourceName

@@ -4,13 +4,7 @@ namespace Humidifier.ElastiCache
 
     public class SubnetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSubnetIds
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::SubnetGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ElastiCache.SubnetGroup; }
 
         /// <summary>
         /// Description

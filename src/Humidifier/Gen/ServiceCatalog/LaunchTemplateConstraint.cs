@@ -4,14 +4,7 @@ namespace Humidifier.ServiceCatalog
 
     public class LaunchTemplateConstraint : Humidifier.Base.BaseResource, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ServiceCatalog::LaunchTemplateConstraint";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ServiceCatalog.LaunchTemplateConstraint; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-launchtemplateconstraint.html#cfn-servicecatalog-launchtemplateconstraint-description

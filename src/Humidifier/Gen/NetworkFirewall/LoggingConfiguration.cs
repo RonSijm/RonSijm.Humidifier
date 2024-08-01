@@ -5,14 +5,7 @@ namespace Humidifier.NetworkFirewall
 
     public class LoggingConfiguration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkFirewall::LoggingConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.NetworkFirewall.LoggingConfiguration; }
         /// <summary>
         /// FirewallName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallname

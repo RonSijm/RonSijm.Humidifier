@@ -11,14 +11,7 @@ namespace Humidifier.IVSChat
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IVSChat::Room";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IVSChat.Room; }
         /// <summary>
         /// MaximumMessageRatePerSecond
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivschat-room.html#cfn-ivschat-room-maximummessageratepersecond

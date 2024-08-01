@@ -12,14 +12,7 @@ namespace Humidifier.Lightsail
             public static string Url =  "Url" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::Bucket";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lightsail.Bucket; }
         /// <summary>
         /// ObjectVersioning
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#cfn-lightsail-bucket-objectversioning

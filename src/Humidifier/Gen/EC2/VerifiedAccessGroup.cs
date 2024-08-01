@@ -14,14 +14,7 @@ namespace Humidifier.EC2
             public static string VerifiedAccessGroupArn =  "VerifiedAccessGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VerifiedAccessGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VerifiedAccessGroup; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessgroup.html#cfn-ec2-verifiedaccessgroup-description

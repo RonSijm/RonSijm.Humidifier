@@ -9,14 +9,7 @@ namespace Humidifier.Lightsail
             public static string LoadBalancerArn =  "LoadBalancerArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Lightsail::LoadBalancer";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Lightsail.LoadBalancer; }
         /// <summary>
         /// IpAddressType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancer.html#cfn-lightsail-loadbalancer-ipaddresstype

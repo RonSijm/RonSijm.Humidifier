@@ -9,14 +9,7 @@ namespace Humidifier.BackupGateway
             public static string HypervisorArn =  "HypervisorArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::BackupGateway::Hypervisor";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.BackupGateway.Hypervisor; }
         /// <summary>
         /// KmsKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backupgateway-hypervisor.html#cfn-backupgateway-hypervisor-kmskeyarn

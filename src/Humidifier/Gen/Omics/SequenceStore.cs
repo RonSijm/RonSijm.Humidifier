@@ -12,14 +12,7 @@ namespace Humidifier.Omics
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Omics::SequenceStore";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Omics.SequenceStore; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-omics-sequencestore.html#cfn-omics-sequencestore-description

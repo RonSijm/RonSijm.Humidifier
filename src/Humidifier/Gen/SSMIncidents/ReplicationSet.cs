@@ -10,13 +10,7 @@ namespace Humidifier.SSMIncidents
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSMIncidents::ReplicationSet";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSMIncidents.ReplicationSet; }
 
         /// <summary>
         /// Regions

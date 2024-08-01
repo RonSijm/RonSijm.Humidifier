@@ -5,13 +5,7 @@ namespace Humidifier.SSO
 
     public class InstanceAccessControlAttributeConfiguration : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSO::InstanceAccessControlAttributeConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SSO.InstanceAccessControlAttributeConfiguration; }
 
         /// <summary>
         /// InstanceArn

@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string CapacityReservationFleetId =  "CapacityReservationFleetId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::CapacityReservationFleet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.CapacityReservationFleet; }
         /// <summary>
         /// Tenancy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-tenancy

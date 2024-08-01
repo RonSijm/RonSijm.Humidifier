@@ -12,14 +12,7 @@ namespace Humidifier.EntityResolution
             public static string IdNamespaceArn =  "IdNamespaceArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EntityResolution::IdNamespace";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EntityResolution.IdNamespace; }
         public dynamic IdNamespaceName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

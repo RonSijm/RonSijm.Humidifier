@@ -11,14 +11,7 @@ namespace Humidifier.Deadline
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::Queue";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Deadline.Queue; }
         /// <summary>
         /// JobRunAsUser
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queue.html#cfn-deadline-queue-jobrunasuser

@@ -4,14 +4,7 @@ namespace Humidifier.AppStream
 
     public class StackUserAssociation : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppStream::StackUserAssociation";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppStream.StackUserAssociation; }
         /// <summary>
         /// SendEmailNotification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackuserassociation.html#cfn-appstream-stackuserassociation-sendemailnotification

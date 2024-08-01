@@ -4,13 +4,7 @@ namespace Humidifier.MediaPackageV2
 
     public class OriginEndpointPolicy : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackageV2::OriginEndpointPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaPackageV2.OriginEndpointPolicy; }
 
         /// <summary>
         /// Policy

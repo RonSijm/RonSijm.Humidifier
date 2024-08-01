@@ -5,14 +5,7 @@ namespace Humidifier.CloudWatch
 
     public class AnomalyDetector : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudWatch::AnomalyDetector";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CloudWatch.AnomalyDetector; }
         /// <summary>
         /// MetricCharacteristics
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-metriccharacteristics

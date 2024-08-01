@@ -12,14 +12,7 @@ namespace Humidifier.SageMaker
             public static string ModelPackageArn =  "ModelPackageArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::ModelPackage";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.ModelPackage; }
         /// <summary>
         /// DriftCheckBaselines
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-driftcheckbaselines

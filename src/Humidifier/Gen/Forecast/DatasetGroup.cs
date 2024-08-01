@@ -9,14 +9,7 @@ namespace Humidifier.Forecast
             public static string DatasetGroupArn =  "DatasetGroupArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Forecast::DatasetGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Forecast.DatasetGroup; }
         /// <summary>
         /// DatasetArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-datasetgroup.html#cfn-forecast-datasetgroup-datasetarns

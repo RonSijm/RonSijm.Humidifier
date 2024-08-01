@@ -5,13 +5,7 @@ namespace Humidifier.RDS
 
     public class DBSecurityGroup : Humidifier.Base.BaseResource, IHaveTags
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::RDS::DBSecurityGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.RDS.DBSecurityGroup; }
 
         /// <summary>
         /// DBSecurityGroupIngress

@@ -5,14 +5,7 @@ namespace Humidifier.AutoScaling
 
     public class WarmPool : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AutoScaling::WarmPool";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AutoScaling.WarmPool; }
         /// <summary>
         /// MinSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-warmpool.html#cfn-autoscaling-warmpool-minsize

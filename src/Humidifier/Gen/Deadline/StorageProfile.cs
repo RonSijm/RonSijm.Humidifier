@@ -10,13 +10,7 @@ namespace Humidifier.Deadline
             public static string StorageProfileId =  "StorageProfileId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Deadline::StorageProfile";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Deadline.StorageProfile; }
 
         /// <summary>
         /// DisplayName

@@ -10,14 +10,7 @@ namespace Humidifier.EC2
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::FlowLog";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.FlowLog; }
         /// <summary>
         /// LogFormat
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logformat

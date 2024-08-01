@@ -13,13 +13,7 @@ namespace Humidifier.BillingConductor
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::BillingConductor::PricingRule";
-            }
-        }
+        public override string AWSTypeName { get => AWS.BillingConductor.PricingRule; }
 
         /// <summary>
         /// Type

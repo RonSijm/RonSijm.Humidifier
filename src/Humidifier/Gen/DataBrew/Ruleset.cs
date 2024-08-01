@@ -5,14 +5,7 @@ namespace Humidifier.DataBrew
 
     public class Ruleset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataBrew::Ruleset";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataBrew.Ruleset; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-description

@@ -10,13 +10,7 @@ namespace Humidifier.Comprehend
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Comprehend::DocumentClassifier";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Comprehend.DocumentClassifier; }
 
         /// <summary>
         /// LanguageCode

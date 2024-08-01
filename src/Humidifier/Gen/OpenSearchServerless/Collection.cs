@@ -12,14 +12,7 @@ namespace Humidifier.OpenSearchServerless
             public static string DashboardEndpoint =  "DashboardEndpoint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::OpenSearchServerless::Collection";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.OpenSearchServerless.Collection; }
         /// <summary>
         /// Type
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-collection.html#cfn-opensearchserverless-collection-type

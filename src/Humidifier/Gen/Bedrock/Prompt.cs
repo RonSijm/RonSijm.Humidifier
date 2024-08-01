@@ -14,14 +14,7 @@ namespace Humidifier.Bedrock
             public static string UpdatedAt =  "UpdatedAt" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Bedrock::Prompt";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Bedrock.Prompt; }
         /// <summary>
         /// Variants
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-prompt.html#cfn-bedrock-prompt-variants

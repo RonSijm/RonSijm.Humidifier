@@ -12,13 +12,7 @@ namespace Humidifier.AppSync
             public static string FieldName =  "FieldName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::Resolver";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppSync.Resolver; }
 
         /// <summary>
         /// TypeName

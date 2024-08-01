@@ -10,13 +10,7 @@ namespace Humidifier.ApplicationAutoScaling
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApplicationAutoScaling::ScalingPolicy";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApplicationAutoScaling.ScalingPolicy; }
 
         /// <summary>
         /// PolicyType

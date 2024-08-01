@@ -9,14 +9,7 @@ namespace Humidifier.StepFunctions
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::StepFunctions::StateMachineVersion";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.StepFunctions.StateMachineVersion; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachineversion.html#cfn-stepfunctions-statemachineversion-description

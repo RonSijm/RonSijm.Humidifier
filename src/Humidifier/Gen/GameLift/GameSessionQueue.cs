@@ -11,14 +11,7 @@ namespace Humidifier.GameLift
             public static string Name =  "Name" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GameLift::GameSessionQueue";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GameLift.GameSessionQueue; }
         /// <summary>
         /// TimeoutInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-timeoutinseconds

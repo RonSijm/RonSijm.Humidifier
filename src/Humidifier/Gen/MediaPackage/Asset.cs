@@ -11,13 +11,7 @@ namespace Humidifier.MediaPackage
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaPackage::Asset";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaPackage.Asset; }
 
         /// <summary>
         /// SourceArn

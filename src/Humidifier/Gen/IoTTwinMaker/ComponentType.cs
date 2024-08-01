@@ -15,14 +15,7 @@ namespace Humidifier.IoTTwinMaker
             public static string IsAbstract =  "IsAbstract" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTTwinMaker::ComponentType";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoTTwinMaker.ComponentType; }
         /// <summary>
         /// ExtendsFrom
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#cfn-iottwinmaker-componenttype-extendsfrom

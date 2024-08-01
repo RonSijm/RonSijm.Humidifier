@@ -15,14 +15,7 @@ namespace Humidifier.Transfer
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Transfer::Certificate";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Transfer.Certificate; }
         /// <summary>
         /// InactiveDate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-certificate.html#cfn-transfer-certificate-inactivedate

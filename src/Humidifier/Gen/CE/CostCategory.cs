@@ -10,14 +10,7 @@ namespace Humidifier.CE
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CE::CostCategory";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.CE.CostCategory; }
         /// <summary>
         /// DefaultValue
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-defaultvalue

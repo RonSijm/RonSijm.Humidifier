@@ -12,14 +12,7 @@ namespace Humidifier.KafkaConnect
             public static string Revision =  "Revision" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KafkaConnect::CustomPlugin";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KafkaConnect.CustomPlugin; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-customplugin.html#cfn-kafkaconnect-customplugin-description

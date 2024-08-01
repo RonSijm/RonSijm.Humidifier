@@ -13,14 +13,7 @@ namespace Humidifier.WAFv2
             public static string LabelNamespace =  "LabelNamespace" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::WAFv2::WebACL";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.WAFv2.WebACL; }
         /// <summary>
         /// TokenDomains
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-tokendomains

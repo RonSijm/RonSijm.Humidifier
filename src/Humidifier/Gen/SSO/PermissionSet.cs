@@ -10,14 +10,7 @@ namespace Humidifier.SSO
             public static string PermissionSetArn =  "PermissionSetArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSO::PermissionSet";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSO.PermissionSet; }
         /// <summary>
         /// RelayStateType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#cfn-sso-permissionset-relaystatetype

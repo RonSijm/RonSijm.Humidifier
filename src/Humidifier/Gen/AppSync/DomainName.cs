@@ -11,14 +11,7 @@ namespace Humidifier.AppSync
             public static string HostedZoneId =  "HostedZoneId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::DomainName";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppSync.DomainName; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-description

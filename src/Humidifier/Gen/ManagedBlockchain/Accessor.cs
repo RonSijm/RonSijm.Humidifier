@@ -13,14 +13,7 @@ namespace Humidifier.ManagedBlockchain
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ManagedBlockchain::Accessor";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ManagedBlockchain.Accessor; }
         /// <summary>
         /// NetworkType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-accessor.html#cfn-managedblockchain-accessor-networktype

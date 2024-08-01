@@ -9,13 +9,7 @@ namespace Humidifier.AppSync
             public static string ApiAssociationIdentifier =  "ApiAssociationIdentifier" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppSync::DomainNameApiAssociation";
-            }
-        }
+        public override string AWSTypeName { get => AWS.AppSync.DomainNameApiAssociation; }
 
         /// <summary>
         /// DomainName

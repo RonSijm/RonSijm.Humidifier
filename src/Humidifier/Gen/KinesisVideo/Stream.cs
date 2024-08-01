@@ -9,14 +9,7 @@ namespace Humidifier.KinesisVideo
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::KinesisVideo::Stream";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.KinesisVideo.Stream; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisvideo-stream.html#cfn-kinesisvideo-stream-kmskeyid

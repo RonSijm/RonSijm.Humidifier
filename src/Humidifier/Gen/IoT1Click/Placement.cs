@@ -10,14 +10,7 @@ namespace Humidifier.IoT1Click
             public static string ProjectName =  "ProjectName" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT1Click::Placement";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT1Click.Placement; }
         public dynamic PlacementName { get => GivenName; set => GivenName = value; }
 
         /// <summary>

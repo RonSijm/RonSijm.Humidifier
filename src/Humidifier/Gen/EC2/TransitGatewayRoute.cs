@@ -4,13 +4,7 @@ namespace Humidifier.EC2
 
     public class TransitGatewayRoute : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::TransitGatewayRoute";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.TransitGatewayRoute; }
 
         /// <summary>
         /// TransitGatewayRouteTableId

@@ -9,13 +9,7 @@ namespace Humidifier.Rekognition
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Rekognition::Collection";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Rekognition.Collection; }
 
         /// <summary>
         /// CollectionId

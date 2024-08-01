@@ -10,14 +10,7 @@ namespace Humidifier.ECR
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ECR::PublicRepository";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ECR.PublicRepository; }
         /// <summary>
         /// RepositoryPolicyText
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#cfn-ecr-publicrepository-repositorypolicytext

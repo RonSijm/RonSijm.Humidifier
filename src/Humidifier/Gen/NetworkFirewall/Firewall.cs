@@ -12,13 +12,7 @@ namespace Humidifier.NetworkFirewall
             public static string FirewallId =  "FirewallId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NetworkFirewall::Firewall";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NetworkFirewall.Firewall; }
 
         /// <summary>
         /// FirewallPolicyArn

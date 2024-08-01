@@ -5,14 +5,7 @@ namespace Humidifier.SecurityHub
 
     public class SecurityControl : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SecurityHub::SecurityControl";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SecurityHub.SecurityControl; }
         /// <summary>
         /// SecurityControlId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-securitycontrol.html#cfn-securityhub-securitycontrol-securitycontrolid

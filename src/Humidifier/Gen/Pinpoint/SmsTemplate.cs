@@ -9,13 +9,7 @@ namespace Humidifier.Pinpoint
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pinpoint::SmsTemplate";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Pinpoint.SmsTemplate; }
 
         /// <summary>
         /// TemplateName

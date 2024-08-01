@@ -13,14 +13,7 @@ namespace Humidifier.AppRunner
             public static string ServiceId =  "ServiceId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppRunner::Service";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppRunner.Service; }
         /// <summary>
         /// HealthCheckConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-healthcheckconfiguration

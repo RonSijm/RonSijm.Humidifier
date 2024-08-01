@@ -10,14 +10,7 @@ namespace Humidifier.DMS
             public static string MigrationProjectArn =  "MigrationProjectArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DMS::MigrationProject";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DMS.MigrationProject; }
         /// <summary>
         /// TargetDataProviderDescriptors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-targetdataproviderdescriptors

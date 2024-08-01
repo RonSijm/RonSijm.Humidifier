@@ -9,13 +9,7 @@ namespace Humidifier.ApiGatewayV2
             public static string VpcLinkId =  "VpcLinkId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::VpcLink";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.VpcLink; }
 
         /// <summary>
         /// SubnetIds

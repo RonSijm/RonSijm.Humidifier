@@ -9,13 +9,7 @@ namespace Humidifier.Inspector
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Inspector::ResourceGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Inspector.ResourceGroup; }
 
         /// <summary>
         /// ResourceGroupTags

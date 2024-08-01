@@ -11,13 +11,7 @@ namespace Humidifier.IoTSiteWise
             public static string AssetId =  "AssetId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoTSiteWise::Asset";
-            }
-        }
+        public override string AWSTypeName { get => AWS.IoTSiteWise.Asset; }
 
         /// <summary>
         /// AssetModelId

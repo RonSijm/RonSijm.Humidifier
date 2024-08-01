@@ -10,13 +10,7 @@ namespace Humidifier.CodePipeline
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CodePipeline::CustomActionType";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CodePipeline.CustomActionType; }
 
         /// <summary>
         /// Category

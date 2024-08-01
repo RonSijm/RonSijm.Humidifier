@@ -4,14 +4,7 @@ namespace Humidifier.XRay
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::XRay::ResourcePolicy";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.XRay.ResourcePolicy; }
         /// <summary>
         /// BypassPolicyLockoutCheck
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-resourcepolicy.html#cfn-xray-resourcepolicy-bypasspolicylockoutcheck

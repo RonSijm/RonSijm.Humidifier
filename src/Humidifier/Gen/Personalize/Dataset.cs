@@ -10,13 +10,7 @@ namespace Humidifier.Personalize
             public static string DatasetArn =  "DatasetArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Personalize::Dataset";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Personalize.Dataset; }
 
         /// <summary>
         /// DatasetGroupArn

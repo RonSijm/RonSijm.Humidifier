@@ -11,14 +11,7 @@ namespace Humidifier.ElastiCache
             public static string GlobalReplicationGroupId =  "GlobalReplicationGroupId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::GlobalReplicationGroup";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElastiCache.GlobalReplicationGroup; }
         /// <summary>
         /// GlobalReplicationGroupIdSuffix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupidsuffix

@@ -13,13 +13,7 @@ namespace Humidifier.NimbleStudio
             public static string StudioId =  "StudioId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::NimbleStudio::Studio";
-            }
-        }
+        public override string AWSTypeName { get => AWS.NimbleStudio.Studio; }
 
         /// <summary>
         /// UserRoleArn

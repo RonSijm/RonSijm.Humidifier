@@ -14,13 +14,7 @@ namespace Humidifier.VpcLattice
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::VpcLattice::TargetGroup";
-            }
-        }
+        public override string AWSTypeName { get => AWS.VpcLattice.TargetGroup; }
 
         /// <summary>
         /// Type

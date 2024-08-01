@@ -14,14 +14,7 @@ namespace Humidifier.Pipes
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Pipes::Pipe";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Pipes.Pipe; }
         /// <summary>
         /// Enrichment
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-enrichment

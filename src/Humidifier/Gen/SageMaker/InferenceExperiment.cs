@@ -14,14 +14,7 @@ namespace Humidifier.SageMaker
             public static string EndpointMetadata =  "EndpointMetadata" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SageMaker::InferenceExperiment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SageMaker.InferenceExperiment; }
         /// <summary>
         /// DataStorageConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferenceexperiment.html#cfn-sagemaker-inferenceexperiment-datastorageconfig

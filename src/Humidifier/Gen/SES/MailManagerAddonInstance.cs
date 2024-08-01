@@ -11,13 +11,7 @@ namespace Humidifier.SES
             public static string AddonInstanceArn =  "AddonInstanceArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SES::MailManagerAddonInstance";
-            }
-        }
+        public override string AWSTypeName { get => AWS.SES.MailManagerAddonInstance; }
 
         /// <summary>
         /// AddonSubscriptionId

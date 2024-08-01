@@ -10,14 +10,7 @@ namespace Humidifier.Connect
             public static string AssociationId =  "AssociationId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Connect::InstanceStorageConfig";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Connect.InstanceStorageConfig; }
         /// <summary>
         /// KinesisStreamConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-instancestorageconfig.html#cfn-connect-instancestorageconfig-kinesisstreamconfig

@@ -11,14 +11,7 @@ namespace Humidifier.DataZone
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::DataZone::GroupProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.DataZone.GroupProfile; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-groupprofile.html#cfn-datazone-groupprofile-status

@@ -15,13 +15,7 @@ namespace Humidifier.LaunchWizard
             public static string ResourceGroup =  "ResourceGroup" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::LaunchWizard::Deployment";
-            }
-        }
+        public override string AWSTypeName { get => AWS.LaunchWizard.Deployment; }
 
         /// <summary>
         /// Specifications

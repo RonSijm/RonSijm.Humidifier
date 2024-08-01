@@ -5,13 +5,7 @@ namespace Humidifier.Logs
 
     public class MetricFilter : Humidifier.Base.BaseResource
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Logs::MetricFilter";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Logs.MetricFilter; }
 
         /// <summary>
         /// MetricTransformations

@@ -13,14 +13,7 @@ namespace Humidifier.ElastiCache
             public static string ARN =  "ARN" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ElastiCache::ServerlessCache";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.ElastiCache.ServerlessCache; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-serverlesscache.html#cfn-elasticache-serverlesscache-description

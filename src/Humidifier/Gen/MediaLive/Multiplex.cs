@@ -14,13 +14,7 @@ namespace Humidifier.MediaLive
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::MediaLive::Multiplex";
-            }
-        }
+        public override string AWSTypeName { get => AWS.MediaLive.Multiplex; }
 
         /// <summary>
         /// MultiplexSettings

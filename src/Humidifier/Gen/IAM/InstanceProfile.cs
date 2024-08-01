@@ -9,14 +9,7 @@ namespace Humidifier.IAM
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IAM::InstanceProfile";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IAM.InstanceProfile; }
         /// <summary>
         /// Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-instanceprofile.html#cfn-iam-instanceprofile-path

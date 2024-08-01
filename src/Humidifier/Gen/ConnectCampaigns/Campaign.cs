@@ -10,13 +10,7 @@ namespace Humidifier.ConnectCampaigns
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ConnectCampaigns::Campaign";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ConnectCampaigns.Campaign; }
 
         /// <summary>
         /// OutboundCallConfig

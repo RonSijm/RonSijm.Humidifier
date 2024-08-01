@@ -5,14 +5,7 @@ namespace Humidifier.Config
 
     public class OrganizationConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Config::OrganizationConfigRule";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.Config.OrganizationConfigRule; }
         /// <summary>
         /// OrganizationManagedRuleMetadata
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationmanagedrulemetadata

@@ -10,14 +10,7 @@ namespace Humidifier.SSO
             public static string ApplicationArn =  "ApplicationArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::SSO::Application";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.SSO.Application; }
         /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-application.html#cfn-sso-application-status

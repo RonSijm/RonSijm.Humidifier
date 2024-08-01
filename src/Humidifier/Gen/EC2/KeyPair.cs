@@ -10,13 +10,7 @@ namespace Humidifier.EC2
             public static string KeyFingerprint =  "KeyFingerprint" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::KeyPair";
-            }
-        }
+        public override string AWSTypeName { get => AWS.EC2.KeyPair; }
 
         /// <summary>
         /// KeyName

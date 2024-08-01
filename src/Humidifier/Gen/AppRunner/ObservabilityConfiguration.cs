@@ -12,14 +12,7 @@ namespace Humidifier.AppRunner
             public static string Latest =  "Latest" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::AppRunner::ObservabilityConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.AppRunner.ObservabilityConfiguration; }
         /// <summary>
         /// TraceConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#cfn-apprunner-observabilityconfiguration-traceconfiguration

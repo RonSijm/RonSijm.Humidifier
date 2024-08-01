@@ -12,14 +12,7 @@ namespace Humidifier.IoT
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::DomainConfiguration";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.DomainConfiguration; }
         public dynamic DomainConfigurationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// DomainName

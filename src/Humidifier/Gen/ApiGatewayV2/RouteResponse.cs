@@ -10,13 +10,7 @@ namespace Humidifier.ApiGatewayV2
             public static string RouteResponseId =  "RouteResponseId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApiGatewayV2::RouteResponse";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApiGatewayV2.RouteResponse; }
 
         /// <summary>
         /// RouteResponseKey

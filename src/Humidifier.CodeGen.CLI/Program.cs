@@ -28,6 +28,7 @@ public static class Program
 
         var interfaces = new List<Type>();
 
-        await core.Process(args);
+        var config = ConfigArgParser.CreateConfig(args);
+        await core.Process(config);
     }
 }

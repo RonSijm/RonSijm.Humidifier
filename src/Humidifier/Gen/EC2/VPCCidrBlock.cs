@@ -9,14 +9,7 @@ namespace Humidifier.EC2
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::EC2::VPCCidrBlock";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.EC2.VPCCidrBlock; }
         /// <summary>
         /// Ipv6NetmaskLength
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6netmasklength

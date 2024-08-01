@@ -11,14 +11,7 @@ namespace Humidifier.IoT
             public static string MitigationActionId =  "MitigationActionId" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::IoT::MitigationAction";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.IoT.MitigationAction; }
         /// <summary>
         /// ActionName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-actionname

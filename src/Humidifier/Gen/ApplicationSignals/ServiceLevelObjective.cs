@@ -12,13 +12,7 @@ namespace Humidifier.ApplicationSignals
             public static string Arn =  "Arn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::ApplicationSignals::ServiceLevelObjective";
-            }
-        }
+        public override string AWSTypeName { get => AWS.ApplicationSignals.ServiceLevelObjective; }
 
         /// <summary>
         /// Sli

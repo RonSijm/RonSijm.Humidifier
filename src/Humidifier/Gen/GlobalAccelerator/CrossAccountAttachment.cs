@@ -10,14 +10,7 @@ namespace Humidifier.GlobalAccelerator
             public static string AttachmentArn =  "AttachmentArn" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::GlobalAccelerator::CrossAccountAttachment";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.GlobalAccelerator.CrossAccountAttachment; }
         /// <summary>
         /// Principals
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-crossaccountattachment.html#cfn-globalaccelerator-crossaccountattachment-principals

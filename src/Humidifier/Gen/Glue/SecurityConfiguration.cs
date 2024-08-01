@@ -5,13 +5,7 @@ namespace Humidifier.Glue
 
     public class SecurityConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::Glue::SecurityConfiguration";
-            }
-        }
+        public override string AWSTypeName { get => AWS.Glue.SecurityConfiguration; }
 
         /// <summary>
         /// EncryptionConfiguration

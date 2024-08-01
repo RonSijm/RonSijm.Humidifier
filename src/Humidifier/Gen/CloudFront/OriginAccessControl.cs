@@ -10,13 +10,7 @@ namespace Humidifier.CloudFront
             public static string Id =  "Id" ;
         }
 
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::CloudFront::OriginAccessControl";
-            }
-        }
+        public override string AWSTypeName { get => AWS.CloudFront.OriginAccessControl; }
 
         /// <summary>
         /// OriginAccessControlConfig

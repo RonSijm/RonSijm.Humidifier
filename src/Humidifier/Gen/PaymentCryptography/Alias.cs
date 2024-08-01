@@ -4,14 +4,7 @@ namespace Humidifier.PaymentCryptography
 
     public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {
-        public override string AWSTypeName
-        {
-            get
-            {
-                return @"AWS::PaymentCryptography::Alias";
-            }
-        }
-
+        public override string AWSTypeName { get => AWS.PaymentCryptography.Alias; }
         public dynamic AliasName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// KeyArn

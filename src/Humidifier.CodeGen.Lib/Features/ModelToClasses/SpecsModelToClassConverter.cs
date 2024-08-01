@@ -84,18 +84,31 @@ public class SpecsModelToClassConverter
                 .AddModifiers(Token(SyntaxKind.PublicKeyword))
                 .AddModifiers(Token(SyntaxKind.OverrideKeyword))
                 .AddAccessorListAccessors(
-                    AccessorDeclaration(SyntaxKind.GetAccessorDeclaration).WithBody(Block(
-                            ReturnStatement(
-                                LiteralExpression(
-                                    SyntaxKind.StringLiteralExpression,
-                                    Literal($@"@""{resourceType.Name}""", resourceType.Name)
-                                )
-                            )
-                        )
-                    )
-                );
+                    AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+                        .WithExpressionBody(ArrowExpressionClause(
+                            IdentifierName($"{resourceType.Parts[0]}.{resourceType.Parts[1]}.{resourceType.Parts[2]}")))
+                        .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                    );
 
-            resourceClassDecl = resourceClassDecl.AddMembers(propertyDecAWSType);
+            //var propertyDecAWSType2 = PropertyDeclaration(ParseTypeName("string"), "AWSTypeName")
+            //    .AddModifiers(Token(SyntaxKind.PublicKeyword))
+            //    .AddModifiers(Token(SyntaxKind.OverrideKeyword))
+            //    .AddAccessorListAccessors(
+            //        AccessorDeclaration(SyntaxKind.GetAccessorDeclaration)
+            //            .WithExpressionBody(ArrowExpressionClause(
+            //                IdentifierName("GivenName")))
+            //            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken)),
+            //        AccessorDeclaration(SyntaxKind.SetAccessorDeclaration)
+            //            .WithExpressionBody(ArrowExpressionClause(
+            //                AssignmentExpression(
+            //                    SyntaxKind.SimpleAssignmentExpression,
+            //                    IdentifierName("GivenName"),
+            //                    IdentifierName("value"))))
+            //            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+
+
+
+resourceClassDecl = resourceClassDecl.AddMembers(propertyDecAWSType);
 
 
             var hasImpliedResourceName = false;
