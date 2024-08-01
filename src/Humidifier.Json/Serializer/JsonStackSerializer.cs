@@ -45,8 +45,9 @@ public class JsonStackSerializer : IStackSerializer
         _settings.Converters.Add(new FnStringJoinConverter());
         _settings.Converters.Add(new FFnREFConverter());
         _settings.Converters.Add(new FFnNameConverter());
+        _settings.Converters.Add(new FFnImportValueConverter());
         _settings.Converters.Add(new FFnARNConverter());
-        _settings.Converters.Add(new FnONamedListConverter());
+        _settings.Converters.Add(new FFNamedListConverter());
         _settings.Converters.Add(new FFnREFListConverter());
 
         //if (injectedConverters != null)
@@ -77,6 +78,22 @@ public class JsonStackSerializer : IStackSerializer
         if (stack.Mappings != null && stack.Mappings.Any())
         {
             stackJson.Mappings = stack.Mappings;
+        }
+
+        if (stack.Resources != null)
+        {
+            foreach (var resource in stack.Resources.Where(x => x.Value.Export))
+            {
+                stack.Outputs.Add(resource.Key, new Output
+                {
+                    Value = Fn.Ref(resource.Key),
+                    Export = new { Name = Fn.Sub(resource.Key) }
+                });
+
+                // This has already been exported in this stack.
+                // So setting it to false to prevent importers to accidentally export it again, or something
+                resource.Value.Export = false;
+            }
         }
 
         if (stack.Outputs != null && stack.Outputs.Any())

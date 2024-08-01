@@ -30,4 +30,7 @@ public abstract class BaseResource : BaseHumidifierDTO
 
     [Ignore]
     public dynamic DependsOn { get; set; }
+
+    [Ignore]
+    public bool Export { get; set; }
 }

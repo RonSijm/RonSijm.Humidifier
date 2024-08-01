@@ -16,7 +16,6 @@
 		<PackageIconUrl>https://raw.githubusercontent.com/jakejscott/humidifier/master/img/humidifier.png</PackageIconUrl>
 		<PackageProjectUrl>https://github.com/RonSijm/RonSijm.Humidifier</PackageProjectUrl>
 		<PackageLicenseUrl>https://github.com/RonSijm/RonSijm.Humidifier/blob/master/license.txt</PackageLicenseUrl>
-		<DebugType>None</DebugType>
 		<LangVersion>latest</LangVersion>
 		<PackageReadmeFile>packaging\README.md</PackageReadmeFile>
 	</PropertyGroup>
@@ -24,6 +23,7 @@
 	<PropertyGroup Condition="'$(Configuration)'=='Release'">
 		<WarningLevel>0</WarningLevel>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<DebugType>None</DebugType>
 	</PropertyGroup>
 
 	<ItemGroup>

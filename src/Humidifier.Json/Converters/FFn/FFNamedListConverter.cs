@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace Humidifier.Json.Converters;
 
-public class FnONamedListConverter : JsonConverter
+public class FFNamedListConverter : JsonConverter
 {
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {

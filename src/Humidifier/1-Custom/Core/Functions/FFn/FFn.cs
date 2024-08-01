@@ -21,6 +21,12 @@ namespace Humidifier
             return wrapper;
         }
 
+        public static FFnImportValue ImportValue(IResultFactory factory)
+        {
+            var wrapper = new FFnImportValue(factory);
+            return wrapper;
+        }
+
         public static FFnREF FFnREF<T>(IResultFactory<T> factory) where T : BaseResource
         {
             var wrapper = new FFnREF(factory);

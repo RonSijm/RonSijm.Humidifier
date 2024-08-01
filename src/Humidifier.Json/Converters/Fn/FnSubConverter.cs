@@ -1,20 +1,12 @@
-using System;
 using System.Linq;
 using Newtonsoft.Json;
 
 namespace Humidifier.Json.Converters;
 
-internal class FnSubConverter : JsonConverter
+public class FnSubConverter : BaseTypedJsonConverter<FnSub>
 {
-    public override bool CanConvert(Type objectType) => objectType == typeof(FnSub);
-
-    public override bool CanRead => false;
-    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) => throw new NotImplementedException();
-
-    public override bool CanWrite => true;
-    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    public override void WriteJson(JsonWriter writer, FnSub fn, JsonSerializer serializer)
     {
-        var fn = (FnSub)value;
         writer.WriteStartObject();
         writer.WritePropertyName("Fn::Sub");
 

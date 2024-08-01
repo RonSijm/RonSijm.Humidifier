@@ -23,7 +23,7 @@ namespace Humidifier.Json.Converters
         public override void WriteJson(JsonWriter writer, BaseResource value, JsonSerializer serializer)
         {
             var resourceName = value.ResourceName;
-            writer.WriteToken(JsonToken.String, resourceName);
+            writer.WriteRaw(resourceName);
         }
     }
 

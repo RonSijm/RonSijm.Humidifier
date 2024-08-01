@@ -82,11 +82,11 @@ public class Stack
 
     public void AddDependsOn(string resource, params string[] dependsOn)
     {
-        if (ResourceDependsOn.ContainsKey(resource))
+        if (ResourceDependsOn.TryGetValue(resource, out var value))
         {
             foreach (var item in dependsOn)
             {
-                ResourceDependsOn[resource].Add(item);
+                value.Add(item);
             }
         }
         else
@@ -129,19 +129,14 @@ public class Stack
 
     public string GetCondition(string resource)
     {
-        if (ResourceConditions.ContainsKey(resource))
-        {
-            return ResourceConditions[resource];
-        }
-
-        return null;
+        return ResourceConditions.GetValueOrDefault(resource);
     }
 
     public List<string> GetDependsOn(string resource)
     {
-        if (ResourceDependsOn.ContainsKey(resource))
+        if (ResourceDependsOn.TryGetValue(resource, out var value))
         {
-            return ResourceDependsOn[resource].ToList();
+            return value.ToList();
         }
 
         return null;
@@ -149,29 +144,19 @@ public class Stack
 
     public CreationPolicy GetCreationPolicy(string resource)
     {
-        if (ResourceCreationPolicies.ContainsKey(resource))
-        {
-            return ResourceCreationPolicies[resource];
-        }
-
-        return null;
+        return ResourceCreationPolicies.GetValueOrDefault(resource);
     }
 
     public UpdatePolicy GetUpdatePolicy(string resource)
     {
-        if (ResourceUpdatePolicies.ContainsKey(resource))
-        {
-            return ResourceUpdatePolicies[resource];
-        }
-
-        return null;
+        return ResourceUpdatePolicies.GetValueOrDefault(resource);
     }
 
     public DeletionPolicy? GetDeletionPolicy(string resource)
     {
-        if (ResourceDeletionPolicies.ContainsKey(resource))
+        if (ResourceDeletionPolicies.TryGetValue(resource, out var policy))
         {
-            return ResourceDeletionPolicies[resource];
+            return policy;
         }
 
         return null;
@@ -179,11 +164,6 @@ public class Stack
 
     public dynamic GetMetadata(string resource)
     {
-        if (ResourceMetadata.ContainsKey(resource))
-        {
-            return ResourceMetadata[resource];
-        }
-
-        return null;
+        return ResourceMetadata.GetValueOrDefault(resource);
     }
 }
