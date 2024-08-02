@@ -21,7 +21,7 @@ namespace Humidifier.InspectorV2
         /// <summary>
         /// SecurityLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-securitylevel
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
@@ -29,7 +29,7 @@ namespace Humidifier.InspectorV2
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-schedule
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: Schedule
         /// </summary>
@@ -37,7 +37,7 @@ namespace Humidifier.InspectorV2
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-targets
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: CisTargets
         /// </summary>
@@ -45,7 +45,7 @@ namespace Humidifier.InspectorV2
         /// <summary>
         /// ScanName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-scanname
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>

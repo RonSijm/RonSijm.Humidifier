@@ -146,14 +146,6 @@ namespace Humidifier.EntityResolution
             /// PrimitiveType: String
             /// </summary>
             public dynamic IdMappingType { get; set; }
-            /// <summary>
-            /// NormalizationVersion
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-idmappingworkflow-idmappingtechniques.html#cfn-entityresolution-idmappingworkflow-idmappingtechniques-normalizationversion
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic NormalizationVersion { get; set; }
         }
 
         public class IdMappingWorkflowInputSource

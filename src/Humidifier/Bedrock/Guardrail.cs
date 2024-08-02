@@ -50,6 +50,14 @@ namespace Humidifier.Bedrock
         /// </summary>
         public WordPolicyConfig WordPolicyConfig { get; set; }
         /// <summary>
+        /// ContextualGroundingPolicyConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-guardrail.html#cfn-bedrock-guardrail-contextualgroundingpolicyconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ContextualGroundingPolicyConfig
+        /// </summary>
+        public ContextualGroundingPolicyConfig ContextualGroundingPolicyConfig { get; set; }
+        /// <summary>
         /// KmsKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-guardrail.html#cfn-bedrock-guardrail-kmskeyarn
         /// Required: False
@@ -149,6 +157,39 @@ namespace Humidifier.Bedrock
             /// ItemType: ContentFilterConfig
             /// </summary>
             public List<ContentFilterConfig> FiltersConfig { get; set; }
+        }
+
+        public class ContextualGroundingFilterConfig
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-guardrail-contextualgroundingfilterconfig.html#cfn-bedrock-guardrail-contextualgroundingfilterconfig-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Threshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-guardrail-contextualgroundingfilterconfig.html#cfn-bedrock-guardrail-contextualgroundingfilterconfig-threshold
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Threshold { get; set; }
+        }
+
+        public class ContextualGroundingPolicyConfig
+        {
+            /// <summary>
+            /// FiltersConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-guardrail-contextualgroundingpolicyconfig.html#cfn-bedrock-guardrail-contextualgroundingpolicyconfig-filtersconfig
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ContextualGroundingFilterConfig
+            /// </summary>
+            public List<ContextualGroundingFilterConfig> FiltersConfig { get; set; }
         }
 
         public class ManagedWordsConfig

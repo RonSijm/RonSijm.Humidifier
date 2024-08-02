@@ -166,6 +166,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-jupyterserverappsettings.html#cfn-sagemaker-space-jupyterserverappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class KernelGatewayAppSettings
@@ -187,6 +196,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class OwnershipSettings
@@ -203,6 +221,14 @@ namespace Humidifier.SageMaker
 
         public class ResourceSpec
         {
+            /// <summary>
+            /// LifecycleConfigArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-lifecycleconfigarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LifecycleConfigArn { get; set; }
             /// <summary>
             /// SageMakerImageArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimagearn

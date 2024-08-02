@@ -74,6 +74,14 @@ namespace Humidifier.SageMaker
         public class ResourceSpec
         {
             /// <summary>
+            /// LifecycleConfigArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-app-resourcespec.html#cfn-sagemaker-app-resourcespec-lifecycleconfigarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LifecycleConfigArn { get; set; }
+            /// <summary>
             /// SageMakerImageArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-app-resourcespec.html#cfn-sagemaker-app-resourcespec-sagemakerimagearn
             /// Required: False

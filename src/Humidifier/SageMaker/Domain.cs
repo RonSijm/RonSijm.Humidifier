@@ -441,6 +441,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterserverappsettings.html#cfn-sagemaker-domain-jupyterserverappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class KernelGatewayAppSettings
@@ -462,6 +471,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class RSessionAppSettings

@@ -51,6 +51,14 @@ namespace Humidifier.KinesisFirehose
         /// </summary>
         public dynamic DeliveryStreamType { get; set; }
         /// <summary>
+        /// IcebergDestinationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: IcebergDestinationConfiguration
+        /// </summary>
+        public IcebergDestinationConfiguration IcebergDestinationConfiguration { get; set; }
+        /// <summary>
         /// RedshiftDestinationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration
         /// Required: False
@@ -430,38 +438,42 @@ namespace Humidifier.KinesisFirehose
         public class BufferingHints
         {
             /// <summary>
-            /// IntervalInSeconds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-intervalinseconds
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic IntervalInSeconds { get; set; }
-            /// <summary>
             /// SizeInMBs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-sizeinmbs
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic SizeInMBs { get; set; }
+            /// <summary>
+            /// IntervalInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-intervalinseconds
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic IntervalInSeconds { get; set; }
+        }
+
+        public class CatalogConfiguration
+        {
+            /// <summary>
+            /// CatalogArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-catalogconfiguration.html#cfn-kinesisfirehose-deliverystream-catalogconfiguration-catalogarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogArn { get; set; }
         }
 
         public class CloudWatchLoggingOptions
         {
             /// <summary>
-            /// LogStreamName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LogStreamName { get; set; }
-            /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-enabled
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
@@ -469,10 +481,18 @@ namespace Humidifier.KinesisFirehose
             /// LogGroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-loggroupname
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic LogGroupName { get; set; }
+            /// <summary>
+            /// LogStreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogStreamName { get; set; }
         }
 
         public class CopyCommand
@@ -577,6 +597,43 @@ namespace Humidifier.KinesisFirehose
             /// Type: OpenXJsonSerDe
             /// </summary>
             public OpenXJsonSerDe OpenXJsonSerDe { get; set; }
+        }
+
+        public class DestinationTableConfiguration
+        {
+            /// <summary>
+            /// DestinationDatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-destinationtableconfiguration.html#cfn-kinesisfirehose-deliverystream-destinationtableconfiguration-destinationdatabasename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DestinationDatabaseName { get; set; }
+            /// <summary>
+            /// S3ErrorOutputPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-destinationtableconfiguration.html#cfn-kinesisfirehose-deliverystream-destinationtableconfiguration-s3erroroutputprefix
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3ErrorOutputPrefix { get; set; }
+            /// <summary>
+            /// DestinationTableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-destinationtableconfiguration.html#cfn-kinesisfirehose-deliverystream-destinationtableconfiguration-destinationtablename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DestinationTableName { get; set; }
+            /// <summary>
+            /// UniqueKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-destinationtableconfiguration.html#cfn-kinesisfirehose-deliverystream-destinationtableconfiguration-uniquekeys
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic UniqueKeys { get; set; }
         }
 
         public class DocumentIdOptions
@@ -762,21 +819,21 @@ namespace Humidifier.KinesisFirehose
         public class EncryptionConfiguration
         {
             /// <summary>
-            /// KMSEncryptionConfig
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-kmsencryptionconfig
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: KMSEncryptionConfig
-            /// </summary>
-            public KMSEncryptionConfig KMSEncryptionConfig { get; set; }
-            /// <summary>
             /// NoEncryptionConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-noencryptionconfig
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic NoEncryptionConfig { get; set; }
+            /// <summary>
+            /// KMSEncryptionConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-kmsencryptionconfig
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: KMSEncryptionConfig
+            /// </summary>
+            public KMSEncryptionConfig KMSEncryptionConfig { get; set; }
         }
 
         public class ExtendedS3DestinationConfiguration
@@ -1069,6 +1126,83 @@ namespace Humidifier.KinesisFirehose
             public dynamic ContentEncoding { get; set; }
         }
 
+        public class IcebergDestinationConfiguration
+        {
+            /// <summary>
+            /// CatalogConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-catalogconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: CatalogConfiguration
+            /// </summary>
+            public CatalogConfiguration CatalogConfiguration { get; set; }
+            /// <summary>
+            /// S3Configuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-s3configuration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: S3DestinationConfiguration
+            /// </summary>
+            public S3DestinationConfiguration S3Configuration { get; set; }
+            /// <summary>
+            /// DestinationTableConfigurationList
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-destinationtableconfigurationlist
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: DestinationTableConfiguration
+            /// </summary>
+            public List<DestinationTableConfiguration> DestinationTableConfigurationList { get; set; }
+            /// <summary>
+            /// BufferingHints
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-bufferinghints
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: BufferingHints
+            /// </summary>
+            public BufferingHints BufferingHints { get; set; }
+            /// <summary>
+            /// RetryOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-retryoptions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RetryOptions
+            /// </summary>
+            public RetryOptions RetryOptions { get; set; }
+            /// <summary>
+            /// s3BackupMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-s3backupmode
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic s3BackupMode { get; set; }
+            /// <summary>
+            /// ProcessingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-processingconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProcessingConfiguration
+            /// </summary>
+            public ProcessingConfiguration ProcessingConfiguration { get; set; }
+            /// <summary>
+            /// CloudWatchLoggingOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-cloudwatchloggingoptions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: CloudWatchLoggingOptions
+            /// </summary>
+            public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
+            /// <summary>
+            /// RoleARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleARN { get; set; }
+        }
+
         public class InputFormatConfiguration
         {
             /// <summary>
@@ -1087,7 +1221,7 @@ namespace Humidifier.KinesisFirehose
             /// AWSKMSKeyARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html#cfn-kinesisfirehose-deliverystream-kmsencryptionconfig-awskmskeyarn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AWSKMSKeyARN { get; set; }
@@ -1325,7 +1459,7 @@ namespace Humidifier.KinesisFirehose
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
@@ -1333,7 +1467,7 @@ namespace Humidifier.KinesisFirehose
             /// Processors
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: Processor
             /// </summary>
@@ -1346,7 +1480,7 @@ namespace Humidifier.KinesisFirehose
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-type
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
@@ -1354,7 +1488,7 @@ namespace Humidifier.KinesisFirehose
             /// Parameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-parameters
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: ProcessorParameter
             /// </summary>
@@ -1367,7 +1501,7 @@ namespace Humidifier.KinesisFirehose
             /// ParameterValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametervalue
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterValue { get; set; }
@@ -1375,7 +1509,7 @@ namespace Humidifier.KinesisFirehose
             /// ParameterName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametername
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterName { get; set; }
@@ -1499,7 +1633,7 @@ namespace Humidifier.KinesisFirehose
             /// DurationInSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-retryoptions.html#cfn-kinesisfirehose-deliverystream-retryoptions-durationinseconds
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DurationInSeconds { get; set; }
@@ -1511,7 +1645,7 @@ namespace Humidifier.KinesisFirehose
             /// ErrorOutputPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-erroroutputprefix
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic ErrorOutputPrefix { get; set; }
@@ -1519,7 +1653,7 @@ namespace Humidifier.KinesisFirehose
             /// BucketARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-bucketarn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic BucketARN { get; set; }
@@ -1527,7 +1661,7 @@ namespace Humidifier.KinesisFirehose
             /// BufferingHints
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-bufferinghints
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: BufferingHints
             /// </summary>
             public BufferingHints BufferingHints { get; set; }
@@ -1535,7 +1669,7 @@ namespace Humidifier.KinesisFirehose
             /// CompressionFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-compressionformat
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic CompressionFormat { get; set; }
@@ -1543,7 +1677,7 @@ namespace Humidifier.KinesisFirehose
             /// EncryptionConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-encryptionconfiguration
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: EncryptionConfiguration
             /// </summary>
             public EncryptionConfiguration EncryptionConfiguration { get; set; }
@@ -1551,7 +1685,7 @@ namespace Humidifier.KinesisFirehose
             /// Prefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-prefix
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Prefix { get; set; }
@@ -1559,7 +1693,7 @@ namespace Humidifier.KinesisFirehose
             /// CloudWatchLoggingOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-cloudwatchloggingoptions
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: CloudWatchLoggingOptions
             /// </summary>
             public CloudWatchLoggingOptions CloudWatchLoggingOptions { get; set; }
@@ -1567,7 +1701,7 @@ namespace Humidifier.KinesisFirehose
             /// RoleARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-rolearn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleARN { get; set; }
@@ -1671,6 +1805,26 @@ namespace Humidifier.KinesisFirehose
             /// Type: ParquetSerDe
             /// </summary>
             public ParquetSerDe ParquetSerDe { get; set; }
+        }
+
+        public class SnowflakeBufferingHints
+        {
+            /// <summary>
+            /// IntervalInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-snowflakebufferinghints.html#cfn-kinesisfirehose-deliverystream-snowflakebufferinghints-intervalinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic IntervalInSeconds { get; set; }
+            /// <summary>
+            /// SizeInMBs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-snowflakebufferinghints.html#cfn-kinesisfirehose-deliverystream-snowflakebufferinghints-sizeinmbs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SizeInMBs { get; set; }
         }
 
         public class SnowflakeDestinationConfiguration
@@ -1787,6 +1941,14 @@ namespace Humidifier.KinesisFirehose
             /// Type: S3DestinationConfiguration
             /// </summary>
             public S3DestinationConfiguration S3Configuration { get; set; }
+            /// <summary>
+            /// BufferingHints
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-snowflakedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-snowflakedestinationconfiguration-bufferinghints
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SnowflakeBufferingHints
+            /// </summary>
+            public SnowflakeBufferingHints BufferingHints { get; set; }
             /// <summary>
             /// MetaDataColumnName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-snowflakedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-snowflakedestinationconfiguration-metadatacolumnname
