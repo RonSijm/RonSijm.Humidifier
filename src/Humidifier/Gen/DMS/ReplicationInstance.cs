@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using System.Collections.Generic;
 
-    public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags
+    public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

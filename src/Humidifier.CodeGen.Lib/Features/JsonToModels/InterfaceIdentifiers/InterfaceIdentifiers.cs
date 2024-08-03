@@ -11,3 +11,4 @@ public class HaveIHaveRoleInterfaceIdentifier() : BaseSingleDynamicPropertySingl
 public class HaveIHaveVpcIdInterfaceIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("VpcId", "IHaveVpcId");
 public class HaveIHavePolicyDocumentIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("PolicyDocument", "IHavePolicyDocument");
 public class HaveIHaveSubnetIdsIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("SubnetIds", "IHaveSubnetIds");
+public class HaveKmsKeyIdIdentifier() : BaseSingleDynamicPropertySingleInterfaceIdentifier("KmsKeyId", "IHaveKmsKeyId");

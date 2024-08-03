@@ -2,7 +2,7 @@ namespace Humidifier.Logs
 {
     using System.Collections.Generic;
 
-    public class LogGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class LogGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

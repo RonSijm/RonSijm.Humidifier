@@ -250,7 +250,7 @@ namespace Humidifier.EC2
             public dynamic CpuCredits { get; set; }
         }
 
-        public class Ebs : Humidifier.Base.BaseSubResource
+        public class Ebs : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// SnapshotId

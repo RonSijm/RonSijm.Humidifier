@@ -3,7 +3,7 @@ namespace Humidifier.Rekognition
     using System.Collections.Generic;
     using StreamProcessorTypes;
 
-    public class StreamProcessor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class StreamProcessor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

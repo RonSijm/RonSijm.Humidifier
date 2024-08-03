@@ -217,7 +217,7 @@ namespace Humidifier.SageMaker
             public FeatureGroupTypes.TtlDuration TtlDuration { get; set; }
         }
 
-        public class OnlineStoreSecurityConfig : Humidifier.Base.BaseSubResource
+        public class OnlineStoreSecurityConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId
@@ -229,7 +229,7 @@ namespace Humidifier.SageMaker
             public dynamic KmsKeyId { get; set; }
         }
 
-        public class S3StorageConfig : Humidifier.Base.BaseSubResource
+        public class S3StorageConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

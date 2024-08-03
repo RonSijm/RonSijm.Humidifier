@@ -52,7 +52,7 @@ namespace Humidifier.Wisdom
 
     namespace AssistantTypes
     {
-        public class ServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

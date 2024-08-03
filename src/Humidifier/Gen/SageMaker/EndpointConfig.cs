@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using EndpointConfigTypes;
 
-    public class EndpointConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class EndpointConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -162,7 +162,7 @@ namespace Humidifier.SageMaker
             public dynamic ErrorTopic { get; set; }
         }
 
-        public class AsyncInferenceOutputConfig : Humidifier.Base.BaseSubResource
+        public class AsyncInferenceOutputConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId
@@ -447,7 +447,7 @@ namespace Humidifier.SageMaker
             public dynamic Granularity { get; set; }
         }
 
-        public class DataCaptureConfig : Humidifier.Base.BaseSubResource
+        public class DataCaptureConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// CaptureOptions

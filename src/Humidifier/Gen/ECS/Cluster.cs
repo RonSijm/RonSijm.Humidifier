@@ -136,7 +136,7 @@ namespace Humidifier.ECS
             public dynamic Name { get; set; }
         }
 
-        public class ExecuteCommandConfiguration : Humidifier.Base.BaseSubResource
+        public class ExecuteCommandConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// Logging
@@ -208,7 +208,7 @@ namespace Humidifier.ECS
             public dynamic S3BucketName { get; set; }
         }
 
-        public class ManagedStorageConfiguration : Humidifier.Base.BaseSubResource
+        public class ManagedStorageConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// FargateEphemeralStorageKmsKeyId

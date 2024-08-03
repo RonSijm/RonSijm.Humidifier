@@ -2,7 +2,7 @@ namespace Humidifier.Logs
 {
     using System.Collections.Generic;
 
-    public class LogAnomalyDetector : Humidifier.Base.BaseResource
+    public class LogAnomalyDetector : Humidifier.Base.BaseResource, IHaveKmsKeyId
     {
         public class Attributes
         {

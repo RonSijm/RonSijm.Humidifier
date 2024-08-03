@@ -30,7 +30,7 @@ namespace Humidifier.Glue
 
     namespace DataCatalogEncryptionSettingsTypes
     {
-        public class ConnectionPasswordEncryption : Humidifier.Base.BaseSubResource
+        public class ConnectionPasswordEncryption : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// ReturnConnectionPasswordEncrypted

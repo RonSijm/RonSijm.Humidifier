@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId, IHaveSubnetIds
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcId, IHaveSubnetIds, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -435,6 +435,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public DomainTypes.ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterserverappsettings.html#cfn-sagemaker-domain-jupyterserverappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class KernelGatewayAppSettings : Humidifier.Base.BaseSubResource
@@ -456,6 +465,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public DomainTypes.ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class RSessionAppSettings : Humidifier.Base.BaseSubResource

@@ -43,7 +43,7 @@ namespace Humidifier.VoiceID
 
     namespace DomainTypes
     {
-        public class ServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

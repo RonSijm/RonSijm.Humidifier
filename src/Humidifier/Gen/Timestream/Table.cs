@@ -140,7 +140,7 @@ namespace Humidifier.Timestream
             public dynamic MemoryStoreRetentionPeriodInHours { get; set; }
         }
 
-        public class S3Configuration : Humidifier.Base.BaseSubResource
+        public class S3Configuration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// BucketName

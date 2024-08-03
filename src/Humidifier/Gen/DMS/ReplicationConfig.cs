@@ -108,7 +108,7 @@ namespace Humidifier.DMS
 
     namespace ReplicationConfigTypes
     {
-        public class ComputeConfig : Humidifier.Base.BaseSubResource
+        public class ComputeConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// DnsNameServers

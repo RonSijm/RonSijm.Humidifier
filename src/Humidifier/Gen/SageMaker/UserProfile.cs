@@ -262,6 +262,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public UserProfileTypes.ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-jupyterserverappsettings.html#cfn-sagemaker-userprofile-jupyterserverappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class KernelGatewayAppSettings : Humidifier.Base.BaseSubResource
@@ -283,6 +292,15 @@ namespace Humidifier.SageMaker
             /// Type: ResourceSpec
             /// </summary>
             public UserProfileTypes.ResourceSpec DefaultResourceSpec { get; set; }
+            /// <summary>
+            /// LifecycleConfigArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html#cfn-sagemaker-userprofile-kernelgatewayappsettings-lifecycleconfigarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleConfigArns { get; set; }
         }
 
         public class RStudioServerProAppSettings : Humidifier.Base.BaseSubResource
@@ -307,6 +325,14 @@ namespace Humidifier.SageMaker
 
         public class ResourceSpec : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// LifecycleConfigArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-resourcespec.html#cfn-sagemaker-userprofile-resourcespec-lifecycleconfigarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LifecycleConfigArn { get; set; }
             /// <summary>
             /// SageMakerImageArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-resourcespec.html#cfn-sagemaker-userprofile-resourcespec-sagemakerimagearn

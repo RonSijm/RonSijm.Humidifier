@@ -2,7 +2,7 @@ namespace Humidifier.DocDB
 {
     using System.Collections.Generic;
 
-    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags
+    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

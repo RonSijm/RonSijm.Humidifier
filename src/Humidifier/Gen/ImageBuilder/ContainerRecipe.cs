@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ContainerRecipeTypes;
 
-    public class ContainerRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
+    public class ContainerRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -183,7 +183,7 @@ namespace Humidifier.ImageBuilder
             public dynamic Name { get; set; }
         }
 
-        public class EbsInstanceBlockDeviceSpecification : Humidifier.Base.BaseSubResource
+        public class EbsInstanceBlockDeviceSpecification : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// SnapshotId

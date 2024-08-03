@@ -3,7 +3,7 @@ namespace Humidifier.RedshiftServerless
     using System.Collections.Generic;
     using NamespaceTypes;
 
-    public class Namespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class Namespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -140,7 +140,7 @@ namespace Humidifier.RedshiftServerless
 
     namespace NamespaceTypes
     {
-        public class Namespace : Humidifier.Base.BaseSubResource
+        public class Namespace : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// Status

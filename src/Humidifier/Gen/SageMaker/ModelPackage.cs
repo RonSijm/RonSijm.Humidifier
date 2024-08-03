@@ -947,7 +947,7 @@ namespace Humidifier.SageMaker
             public dynamic BatchStrategy { get; set; }
         }
 
-        public class TransformOutput : Humidifier.Base.BaseSubResource
+        public class TransformOutput : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// AssembleWith

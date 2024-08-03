@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using NotebookInstanceTypes;
 
-    public class NotebookInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class NotebookInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

@@ -229,7 +229,7 @@ namespace Humidifier.Comprehend
             public dynamic TestS3Uri { get; set; }
         }
 
-        public class DocumentClassifierOutputDataConfig : Humidifier.Base.BaseSubResource
+        public class DocumentClassifierOutputDataConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

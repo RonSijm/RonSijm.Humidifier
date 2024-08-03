@@ -16,6 +16,7 @@ public class AWS
     }
     public class ARCZonalShift
     {
+        public const string AutoshiftObserverNotificationStatus = "AWS::ARCZonalShift::AutoshiftObserverNotificationStatus";
         public const string ZonalAutoshiftConfiguration = "AWS::ARCZonalShift::ZonalAutoshiftConfiguration";
     }
     public class AccessAnalyzer
@@ -279,6 +280,8 @@ public class AWS
         public const string Collaboration = "AWS::CleanRooms::Collaboration";
         public const string ConfiguredTable = "AWS::CleanRooms::ConfiguredTable";
         public const string ConfiguredTableAssociation = "AWS::CleanRooms::ConfiguredTableAssociation";
+        public const string IdMappingTable = "AWS::CleanRooms::IdMappingTable";
+        public const string IdNamespaceAssociation = "AWS::CleanRooms::IdNamespaceAssociation";
         public const string Membership = "AWS::CleanRooms::Membership";
         public const string PrivacyBudgetTemplate = "AWS::CleanRooms::PrivacyBudgetTemplate";
     }
@@ -1798,6 +1801,7 @@ public class AWS
         public const string Pipeline = "AWS::SageMaker::Pipeline";
         public const string Project = "AWS::SageMaker::Project";
         public const string Space = "AWS::SageMaker::Space";
+        public const string StudioLifecycleConfig = "AWS::SageMaker::StudioLifecycleConfig";
         public const string UserProfile = "AWS::SageMaker::UserProfile";
         public const string Workteam = "AWS::SageMaker::Workteam";
     }

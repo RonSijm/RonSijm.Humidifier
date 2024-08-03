@@ -449,7 +449,7 @@ namespace Humidifier.OpenSearchService
             public dynamic VolumeSize { get; set; }
         }
 
-        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource
+        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

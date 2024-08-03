@@ -3,7 +3,7 @@ namespace Humidifier.M2
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveKmsKeyId
     {
         public class Attributes
         {

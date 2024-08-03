@@ -210,7 +210,7 @@ namespace Humidifier.AmazonMQ
             public dynamic Id { get; set; }
         }
 
-        public class EncryptionOptions : Humidifier.Base.BaseSubResource
+        public class EncryptionOptions : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

@@ -34,7 +34,7 @@ namespace Humidifier.StepFunctions
 
     namespace ActivityTypes
     {
-        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// Type

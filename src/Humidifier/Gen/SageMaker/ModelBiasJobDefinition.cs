@@ -492,7 +492,7 @@ namespace Humidifier.SageMaker
             public ModelBiasJobDefinitionTypes.S3Output S3Output { get; set; }
         }
 
-        public class MonitoringOutputConfig : Humidifier.Base.BaseSubResource
+        public class MonitoringOutputConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

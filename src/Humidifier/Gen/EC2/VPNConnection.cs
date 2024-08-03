@@ -12,6 +12,14 @@ namespace Humidifier.EC2
 
         public override string AWSTypeName { get => AWS.EC2.VPNConnection; }
         /// <summary>
+        /// EnableAcceleration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-enableacceleration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableAcceleration { get; set; }
+        /// <summary>
         /// TransitGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid
         /// Required: False

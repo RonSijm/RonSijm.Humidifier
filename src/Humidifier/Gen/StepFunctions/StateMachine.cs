@@ -114,7 +114,7 @@ namespace Humidifier.StepFunctions
             public dynamic LogGroupArn { get; set; }
         }
 
-        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// Type

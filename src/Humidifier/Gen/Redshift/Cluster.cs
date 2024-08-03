@@ -3,7 +3,7 @@ namespace Humidifier.Redshift
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags
+    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

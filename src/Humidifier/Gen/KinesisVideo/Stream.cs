@@ -2,7 +2,7 @@ namespace Humidifier.KinesisVideo
 {
     using System.Collections.Generic;
 
-    public class Stream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class Stream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

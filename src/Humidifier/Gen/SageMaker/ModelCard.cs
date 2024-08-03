@@ -673,7 +673,7 @@ namespace Humidifier.SageMaker
             public dynamic Notes { get; set; }
         }
 
-        public class SecurityConfig : Humidifier.Base.BaseSubResource
+        public class SecurityConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

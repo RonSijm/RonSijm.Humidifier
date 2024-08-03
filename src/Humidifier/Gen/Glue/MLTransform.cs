@@ -198,7 +198,7 @@ namespace Humidifier.Glue
             public List<MLTransformTypes.GlueTables> GlueTables { get; set; }
         }
 
-        public class MLUserDataEncryption : Humidifier.Base.BaseSubResource
+        public class MLUserDataEncryption : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// MLUserDataEncryptionMode

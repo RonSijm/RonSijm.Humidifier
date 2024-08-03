@@ -91,6 +91,14 @@ namespace Humidifier.EMRServerless
         /// </summary>
         public List<ApplicationTypes.InitialCapacityConfigKeyValuePair> InitialCapacity { get; set; }
         /// <summary>
+        /// InteractiveConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-interactiveconfiguration
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: InteractiveConfiguration
+        /// </summary>
+        public ApplicationTypes.InteractiveConfiguration InteractiveConfiguration { get; set; }
+        /// <summary>
         /// ImageConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-imageconfiguration
         /// Required: False
@@ -286,6 +294,26 @@ namespace Humidifier.EMRServerless
             /// PrimitiveType: String
             /// </summary>
             public dynamic Key { get; set; }
+        }
+
+        public class InteractiveConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StudioEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-interactiveconfiguration.html#cfn-emrserverless-application-interactiveconfiguration-studioenabled
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic StudioEnabled { get; set; }
+            /// <summary>
+            /// LivyEndpointEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-interactiveconfiguration.html#cfn-emrserverless-application-interactiveconfiguration-livyendpointenabled
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic LivyEndpointEnabled { get; set; }
         }
 
         public class LogTypeMapKeyValuePair : Humidifier.Base.BaseSubResource

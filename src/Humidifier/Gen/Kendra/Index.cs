@@ -313,7 +313,7 @@ namespace Humidifier.Kendra
             public dynamic Searchable { get; set; }
         }
 
-        public class ServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

@@ -17,6 +17,7 @@ public class JsonStackSerializer : IStackSerializer
             Formatting = Formatting.Indented,
             NullValueHandling = NullValueHandling.Ignore,
             DateFormatHandling = DateFormatHandling.IsoDateFormat,
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
             ContractResolver = new JsonStackSerializerContractResolver()
         };
 
@@ -47,6 +48,7 @@ public class JsonStackSerializer : IStackSerializer
         _settings.Converters.Add(new FFnNameConverter());
         _settings.Converters.Add(new FFnImportValueConverter());
         _settings.Converters.Add(new FFnARNConverter());
+        _settings.Converters.Add(new FFnGetAttConverter());
         _settings.Converters.Add(new FFNamedListConverter());
         _settings.Converters.Add(new FFnREFListConverter());
 

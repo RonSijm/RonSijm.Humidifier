@@ -672,7 +672,7 @@ namespace Humidifier.ECS
             public dynamic RoleArn { get; set; }
         }
 
-        public class ServiceManagedEBSVolumeConfiguration : Humidifier.Base.BaseSubResource
+        public class ServiceManagedEBSVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// SnapshotId

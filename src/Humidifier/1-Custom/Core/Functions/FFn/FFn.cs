@@ -8,8 +8,21 @@ namespace Humidifier
     {
         public static FFnARN FFnARN<T>(IResultFactory<T> factory) where T : BaseResource
         {
-            var result = factory;
-            var wrapper = new FFnARN(result);
+            var wrapper = new FFnARN(factory);
+
+            return wrapper;
+        }
+
+        public static FFnGetAtt FFnGetARN<T>(IResultFactory<T> factory) where T : BaseResource
+        {
+            var wrapper = new FFnGetAtt(factory, "Arn");
+
+            return wrapper;
+        }
+
+        public static FFnGetAtt FFnGetAtt<T>(IResultFactory<T> factory, string attributeName) where T : BaseResource
+        {
+            var wrapper = new FFnGetAtt(factory, attributeName);
 
             return wrapper;
         }
@@ -26,6 +39,7 @@ namespace Humidifier
             var wrapper = new FFnImportValue(factory);
             return wrapper;
         }
+
 
         public static FFnREF FFnREF<T>(IResultFactory<T> factory) where T : BaseResource
         {
@@ -67,6 +81,13 @@ namespace Humidifier
         {
             var untyped = factories.Cast<IResultFactory>().ToList();
             var wrapper = new FFnREFList(untyped);
+
+            return wrapper;
+        }
+
+        public static FFnREFList FFnREFList(IResultFactory factory)
+        {
+            var wrapper = new FFnREFList([factory]);
 
             return wrapper;
         }

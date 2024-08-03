@@ -45,7 +45,7 @@ namespace Humidifier.ImageBuilder
 
     namespace DistributionConfigurationTypes
     {
-        public class AmiDistributionConfiguration : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class AmiDistributionConfiguration : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveKmsKeyId
         {
             /// <summary>
             /// AmiTags

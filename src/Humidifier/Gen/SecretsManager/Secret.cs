@@ -3,7 +3,7 @@ namespace Humidifier.SecretsManager
     using System.Collections.Generic;
     using SecretTypes;
 
-    public class Secret : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
+    public class Secret : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -150,7 +150,7 @@ namespace Humidifier.SecretsManager
             public dynamic ExcludeNumbers { get; set; }
         }
 
-        public class ReplicaRegion : Humidifier.Base.BaseSubResource
+        public class ReplicaRegion : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

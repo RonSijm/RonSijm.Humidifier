@@ -11,37 +11,45 @@ namespace Humidifier.InspectorV2
         }
 
         public override string AWSTypeName { get => AWS.InspectorV2.CisScanConfiguration; }
+
         /// <summary>
         /// SecurityLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-securitylevel
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic SecurityLevel { get; set; }
+
         /// <summary>
         /// Schedule
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-schedule
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: Schedule
         /// </summary>
+        [Required]
         public CisScanConfigurationTypes.Schedule Schedule { get; set; }
+
         /// <summary>
         /// Targets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-targets
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: CisTargets
         /// </summary>
+        [Required]
         public CisScanConfigurationTypes.CisTargets Targets { get; set; }
+
         /// <summary>
         /// ScanName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-cisscanconfiguration.html#cfn-inspectorv2-cisscanconfiguration-scanname
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ScanName { get; set; }
         /// <summary>
         /// Tags

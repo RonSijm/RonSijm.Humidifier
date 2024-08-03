@@ -48,7 +48,7 @@ namespace Humidifier.SageMaker
 
     namespace DeviceFleetTypes
     {
-        public class EdgeOutputConfig : Humidifier.Base.BaseSubResource
+        public class EdgeOutputConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

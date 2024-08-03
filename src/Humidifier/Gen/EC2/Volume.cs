@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class Volume : Humidifier.Base.BaseResource, IHaveTags
+    public class Volume : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {

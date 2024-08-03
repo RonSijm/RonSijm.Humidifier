@@ -152,7 +152,7 @@ namespace Humidifier.ImageBuilder
             public dynamic Name { get; set; }
         }
 
-        public class EbsInstanceBlockDeviceSpecification : Humidifier.Base.BaseSubResource
+        public class EbsInstanceBlockDeviceSpecification : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// SnapshotId

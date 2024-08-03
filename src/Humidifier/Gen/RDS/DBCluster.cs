@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using DBClusterTypes;
 
-    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags
+    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -511,7 +511,7 @@ namespace Humidifier.RDS
             public dynamic Port { get; set; }
         }
 
-        public class MasterUserSecret : Humidifier.Base.BaseSubResource
+        public class MasterUserSecret : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// SecretArn

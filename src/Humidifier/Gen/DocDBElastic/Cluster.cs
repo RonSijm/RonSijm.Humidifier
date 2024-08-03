@@ -2,7 +2,7 @@ namespace Humidifier.DocDBElastic
 {
     using System.Collections.Generic;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveKmsKeyId
     {
         public class Attributes
         {

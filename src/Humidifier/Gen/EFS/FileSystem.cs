@@ -3,7 +3,7 @@ namespace Humidifier.EFS
     using System.Collections.Generic;
     using FileSystemTypes;
 
-    public class FileSystem : Humidifier.Base.BaseResource
+    public class FileSystem : Humidifier.Base.BaseResource, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -207,7 +207,7 @@ namespace Humidifier.EFS
             public List<FileSystemTypes.ReplicationDestination> Destinations { get; set; }
         }
 
-        public class ReplicationDestination : Humidifier.Base.BaseSubResource
+        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

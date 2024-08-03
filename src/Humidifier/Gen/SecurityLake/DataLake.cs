@@ -57,7 +57,7 @@ namespace Humidifier.SecurityLake
 
     namespace DataLakeTypes
     {
-        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

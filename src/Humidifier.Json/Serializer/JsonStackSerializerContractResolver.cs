@@ -42,7 +42,7 @@ public class JsonStackSerializerContractResolver : DefaultContractResolver
 
         var propInfo = member as PropertyInfo;
 
-        var baseProperty = member.DeclaringType.BaseType.GetProperty(member.Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
+        var baseProperty = member.DeclaringType.BaseType?.GetProperty(member.Name, BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance);
 
         if (baseProperty == null)
         {

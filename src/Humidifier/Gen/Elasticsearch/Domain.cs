@@ -389,7 +389,7 @@ namespace Humidifier.Elasticsearch
             public dynamic ZoneAwarenessEnabled { get; set; }
         }
 
-        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource
+        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// Enabled

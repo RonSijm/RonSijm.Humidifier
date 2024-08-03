@@ -99,7 +99,7 @@ namespace Humidifier.QBusiness
             public dynamic AttachmentsControlMode { get; set; }
         }
 
-        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource
+        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

@@ -126,7 +126,7 @@ namespace Humidifier.HealthLake
             public dynamic Metadata { get; set; }
         }
 
-        public class KmsEncryptionConfig : Humidifier.Base.BaseSubResource
+        public class KmsEncryptionConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

@@ -119,7 +119,7 @@ namespace Humidifier.LookoutEquipment
             public dynamic InputTimeZoneOffset { get; set; }
         }
 
-        public class DataOutputConfiguration : Humidifier.Base.BaseSubResource
+        public class DataOutputConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
             /// KmsKeyId

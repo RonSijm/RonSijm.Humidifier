@@ -164,6 +164,14 @@ namespace Humidifier.CleanRooms
             /// </summary>
             public dynamic ScalarFunctions { get; set; }
             /// <summary>
+            /// AdditionalAnalyses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-additionalanalyses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AdditionalAnalyses { get; set; }
+            /// <summary>
             /// OutputConstraints
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisruleaggregation.html#cfn-cleanrooms-configuredtable-analysisruleaggregation-outputconstraints
             /// Required: True
@@ -212,6 +220,14 @@ namespace Humidifier.CleanRooms
         public class AnalysisRuleCustom : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// AdditionalAnalyses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-additionalanalyses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AdditionalAnalyses { get; set; }
+            /// <summary>
             /// AllowedAnalysisProviders
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-allowedanalysisproviders
             /// Required: False
@@ -237,6 +253,15 @@ namespace Humidifier.CleanRooms
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AllowedAnalyses { get; set; }
+            /// <summary>
+            /// DisallowedOutputColumns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulecustom.html#cfn-cleanrooms-configuredtable-analysisrulecustom-disallowedoutputcolumns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic DisallowedOutputColumns { get; set; }
         }
 
         public class AnalysisRuleList : Humidifier.Base.BaseSubResource
@@ -259,6 +284,14 @@ namespace Humidifier.CleanRooms
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic ListColumns { get; set; }
+            /// <summary>
+            /// AdditionalAnalyses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-additionalanalyses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AdditionalAnalyses { get; set; }
             /// <summary>
             /// JoinColumns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-analysisrulelist.html#cfn-cleanrooms-configuredtable-analysisrulelist-joincolumns
