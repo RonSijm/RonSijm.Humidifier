@@ -2,7 +2,7 @@
 
 namespace Humidifier.Interfaces;
 
-public interface IHaveTags
+public interface IHaveTags : IResourceInterface
 {
     public List<Tag> Tags { get; set; }
 }

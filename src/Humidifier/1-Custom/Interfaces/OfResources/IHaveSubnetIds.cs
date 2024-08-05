@@ -1,6 +1,6 @@
 ﻿namespace Humidifier.Interfaces;
 
-public interface IHaveSubnetIds
+public interface IHaveSubnetIds : IResourceInterface
 {
     public dynamic SubnetIds { get; set; }
 }

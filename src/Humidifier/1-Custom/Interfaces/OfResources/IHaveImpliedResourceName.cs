@@ -1,6 +1,6 @@
 ﻿namespace Humidifier.Interfaces
 {
-    public interface IHaveImpliedResourceName
+    public interface IHaveImpliedResourceName : IResourceInterface
     {
     }
 }

@@ -1,11 +1,6 @@
 ﻿namespace Humidifier.Interfaces;
 
-public interface IHavePolicyText
+public interface IHavePolicyText : IResourceInterface
 {
     public dynamic PolicyText { get; set; }
-}
-
-public interface IHavePolicyDocument
-{
-    public dynamic PolicyDocument { get; set; }
 }

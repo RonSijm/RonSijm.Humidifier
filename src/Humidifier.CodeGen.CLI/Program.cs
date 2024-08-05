@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Humidifier.CodeGen.CLI.Features.Wiring;
 using Humidifier.CodeGen.Lib;
+using Humidifier.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Humidifier.CodeGen.CLI;
@@ -20,7 +21,14 @@ public static class Program
 #if WithoutReferences
 
 #else
-        var customInterfaces = typeof(Interfaces.IHaveDescription).Assembly.GetTypes().Where(x => x.IsInterface && x.Name.StartsWith("IHave")).ToList();
+        var customInterfaces = typeof(Interfaces.IHaveDescription).Assembly.GetTypes().Where(x => x.IsInterface && typeof(IResourceInterface).IsAssignableFrom(x)).ToList();
+
+        foreach (var customInterface in customInterfaces)
+        {
+            var properties = customInterface.GetProperties().ToList();
+
+        }
+
 #endif
 
 
