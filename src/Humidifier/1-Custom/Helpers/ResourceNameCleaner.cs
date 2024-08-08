@@ -1,4 +1,6 @@
-﻿namespace Humidifier.Helpers
+﻿using System;
+
+namespace Humidifier.Helpers
 {
     internal static class ResourceNameCleaner
     {
@@ -9,7 +11,8 @@
                 return null;
             }
 
-            var cleanName = name.Replace("-", string.Empty).Replace(" ", string.Empty);
+            var cleanName = name.Replace("-", string.Empty).Replace(" ", string.Empty)
+                .Replace("/", string.Empty); // For log groups and paths
             return cleanName;
         }
     }
