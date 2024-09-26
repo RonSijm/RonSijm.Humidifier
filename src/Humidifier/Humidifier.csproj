@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Humidifier allows you to build AWS CloudFormation templates programmatically.</Description>
+    <Copyright>Jake Scott</Copyright>
+    <AssemblyTitle>Humidifier</AssemblyTitle>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>0.3.1</VersionPrefix>
+    <Authors>Jake Scott</Authors>
+    <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <AssemblyName>Humidifier</AssemblyName>
+    <PackageId>Humidifier</PackageId>
+    <PackageTags>aws;cloudformation;</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/jakejscott/humidifier/master/img/humidifier.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/jakejscott/humidifier</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/jakejscott/humidifier/blob/master/license.txt</PackageLicenseUrl>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>

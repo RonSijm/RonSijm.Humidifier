@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Json Serialization support for Humidifier.</Description>
+    <Copyright>Jake Scott</Copyright>
+    <AssemblyTitle>Humidifier.Json</AssemblyTitle>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <VersionPrefix>0.3.1</VersionPrefix>
+    <Authors>Jake Scott</Authors>
+    <TargetFrameworks>net45;netstandard1.3;netstandard2.0</TargetFrameworks>
+    <AssemblyName>Humidifier.Json</AssemblyName>
+    <PackageId>Humidifier.Json</PackageId>
+    <PackageTags>aws;cloudformation;</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/jakejscott/humidifier/master/img/humidifier.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/jakejscott/humidifier</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/jakejscott/humidifier/blob/master/license.txt</PackageLicenseUrl>
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Humidifier\Humidifier.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>
