@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\BuildSettings\SupportedFrameworks.props" />
+	<Import Project="..\..\BuildSettings\NuGetVersioning.props" />
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<LangVersion>preview</LangVersion>
+		<Configurations>Debug;Release;WithoutReferences</Configurations>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="JetBrains.Annotations" Version="2024.2.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.Compilers" Version="4.10.0" />
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.10.0" />
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Humidifier.CodeGen.Lib\Humidifier.CodeGen.Lib.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'WithoutReferences|AnyCPU'">
+		<DefineConstants>DEBUG;TRACE;WithoutReferences</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup Condition="'$(Configuration)|$(Platform)' != 'WithoutReferences|AnyCPU'">
+		<ProjectReference Include="..\Humidifier\Humidifier.csproj" />
+	</ItemGroup>
+
+</Project>
