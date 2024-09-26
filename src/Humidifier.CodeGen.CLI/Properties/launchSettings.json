@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {
+        "BUILD_PATH": "C:\\dev\\Humidifier"
+      },
+      "distributionName": ""
+    },
+    "RonSijm.Humidifier - With Force": {
+      "commandName": "Project",
+      "commandLineArgs": "-forceRegenerate -noUpdateCheck"
+    }
+  }
+}

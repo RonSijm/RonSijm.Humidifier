@@ -1,0 +1,51 @@
+name: Publish NuGet Package
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.x'
+
+    - name: Restore dependencies of Humidifier
+      run: dotnet restore src/Humidifier/Humidifier.csproj
+
+    - name: Restore dependencies of Humidifier.Json
+      run: dotnet restore src/Humidifier.Json/Humidifier.Json.csproj
+
+    - name: Combine version numbers
+      run: |
+        VERSION=$(cat src/version.txt)
+        SPEC_VERSION=$(cat src/spec-version.txt | tr -d '.')
+        FINAL_VERSION="${VERSION}.${SPEC_VERSION}"
+        echo "FINAL_VERSION=$FINAL_VERSION" >> $GITHUB_ENV
+
+    - name: Build Humidifier
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        FINAL_VERSION: ${{ env.FINAL_VERSION }}
+      run: dotnet build src/Humidifier --configuration Release -o "./packages" /p:PackageVersion=$FINAL_VERSION
+    
+    - name: Build Humidifier.Json
+      env:
+        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        FINAL_VERSION: ${{ env.FINAL_VERSION }}
+      run: dotnet build src/Humidifier.Json --configuration Release -o "./packages" /p:PackageVersion=$FINAL_VERSION
+      
+    - name: Publish to NuGet
+      env:
+        NUGET_API_KEY: ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push -s https://www.nuget.org/api/v2/package -k $NUGET_API_KEY --skip-duplicate
+        ./packages/*.nupkg
+        

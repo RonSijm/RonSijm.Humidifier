@@ -43,4 +43,4 @@ Thumbs.db
 *.zip
 *.log
 
-/ExampleProject
+*.received.json

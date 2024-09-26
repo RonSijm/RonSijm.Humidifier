@@ -1,3 +1,9 @@
+Copyright (c) {Current Year}, Ron Sijm
+
+Also
+
+-----------
+
 Copyright (c) 2017, Jake Scott
 All rights reserved.
 
