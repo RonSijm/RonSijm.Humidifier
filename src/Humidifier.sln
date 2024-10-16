@@ -1,13 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2026
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35017.193
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier", "Humidifier\Humidifier.csproj", "{AFA3DDAD-4F9C-46ED-B058-3D40A237EC75}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier.CodeGen", "Humidifier.CodeGen\Humidifier.CodeGen.csproj", "{D8EF802F-ADE5-4164-8A9F-E92A25C7C433}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier.ConsoleTest", "Humidifier.ConsoleTest\Humidifier.ConsoleTest.csproj", "{6262AC22-3F5B-4A27-B47C-1FC29AD99ECD}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier.Json", "Humidifier.Json\Humidifier.Json.csproj", "{174C333D-ED8B-46F4-9923-FADE60A16B3A}"
 EndProject
@@ -16,6 +12,20 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\appveyor.yml = ..\appveyor.yml
 		..\README.md = ..\README.md
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier.Tests", "Humidifier.Tests\Humidifier.Tests.csproj", "{AAED7B73-E1DF-4826-95E5-EC39917A967A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CodeGen", "CodeGen", "{8CBF62D7-591C-471F-9BDD-5D9C88723DE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{223A093B-4ABF-4527-933B-579856C8A1C8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Generated", "Generated", "{66625EAF-5525-4145-8124-B929DED485C5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier.CodeGen.Lib", "Humidifier.CodeGen.Lib\Humidifier.CodeGen.Lib.csproj", "{989E96D6-3039-417F-9417-55EF0D6A9E3B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Humidifier.CodeGen.CLI", "Humidifier.CodeGen.CLI\Humidifier.CodeGen.CLI.csproj", "{E2E703B6-00B4-438E-A022-F5BF667D3052}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentHumidifier.CodeGen.CLI", "FluentHumidifier.CodeGen\FluentHumidifier.CodeGen.CLI.csproj", "{3E558A4D-7B12-43BA-931F-92A5644E11ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,21 +37,37 @@ Global
 		{AFA3DDAD-4F9C-46ED-B058-3D40A237EC75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFA3DDAD-4F9C-46ED-B058-3D40A237EC75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFA3DDAD-4F9C-46ED-B058-3D40A237EC75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8EF802F-ADE5-4164-8A9F-E92A25C7C433}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8EF802F-ADE5-4164-8A9F-E92A25C7C433}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8EF802F-ADE5-4164-8A9F-E92A25C7C433}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8EF802F-ADE5-4164-8A9F-E92A25C7C433}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6262AC22-3F5B-4A27-B47C-1FC29AD99ECD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6262AC22-3F5B-4A27-B47C-1FC29AD99ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6262AC22-3F5B-4A27-B47C-1FC29AD99ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6262AC22-3F5B-4A27-B47C-1FC29AD99ECD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{174C333D-ED8B-46F4-9923-FADE60A16B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{174C333D-ED8B-46F4-9923-FADE60A16B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{174C333D-ED8B-46F4-9923-FADE60A16B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{174C333D-ED8B-46F4-9923-FADE60A16B3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAED7B73-E1DF-4826-95E5-EC39917A967A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAED7B73-E1DF-4826-95E5-EC39917A967A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAED7B73-E1DF-4826-95E5-EC39917A967A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAED7B73-E1DF-4826-95E5-EC39917A967A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{989E96D6-3039-417F-9417-55EF0D6A9E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{989E96D6-3039-417F-9417-55EF0D6A9E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{989E96D6-3039-417F-9417-55EF0D6A9E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{989E96D6-3039-417F-9417-55EF0D6A9E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2E703B6-00B4-438E-A022-F5BF667D3052}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2E703B6-00B4-438E-A022-F5BF667D3052}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2E703B6-00B4-438E-A022-F5BF667D3052}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2E703B6-00B4-438E-A022-F5BF667D3052}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E558A4D-7B12-43BA-931F-92A5644E11ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E558A4D-7B12-43BA-931F-92A5644E11ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E558A4D-7B12-43BA-931F-92A5644E11ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E558A4D-7B12-43BA-931F-92A5644E11ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AFA3DDAD-4F9C-46ED-B058-3D40A237EC75} = {66625EAF-5525-4145-8124-B929DED485C5}
+		{174C333D-ED8B-46F4-9923-FADE60A16B3A} = {66625EAF-5525-4145-8124-B929DED485C5}
+		{AAED7B73-E1DF-4826-95E5-EC39917A967A} = {223A093B-4ABF-4527-933B-579856C8A1C8}
+		{989E96D6-3039-417F-9417-55EF0D6A9E3B} = {8CBF62D7-591C-471F-9BDD-5D9C88723DE1}
+		{E2E703B6-00B4-438E-A022-F5BF667D3052} = {8CBF62D7-591C-471F-9BDD-5D9C88723DE1}
+		{3E558A4D-7B12-43BA-931F-92A5644E11ED} = {8CBF62D7-591C-471F-9BDD-5D9C88723DE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5EB1B2E6-9EAF-4307-8BDC-0D730CB9E05E}
