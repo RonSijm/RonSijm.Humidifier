@@ -18,10 +18,10 @@ jobs:
         dotnet-version: '8.x'
 
     - name: Restore dependencies
-      run: dotnet restore src/Humidifier.CodeGen/Humidifier.CodeGen.csproj 
+      run: dotnet restore src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj 
 
     - name: Run the C# program to generate library and get spec version
-      run: dotnet run --project src/Humidifier.CodeGen/Humidifier.CodeGen.csproj -directory $GITHUB_WORKSPACE --framework net8.0
+      run: dotnet run --project src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj -directory $GITHUB_WORKSPACE --framework net8.0
 
     - name: Combine version numbers
       if: steps.git_diff.outputs.changes == 'true'

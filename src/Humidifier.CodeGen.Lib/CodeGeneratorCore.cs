@@ -32,7 +32,6 @@ public class CodeGeneratorCore(SourceDirectoryLocator sourceDirectoryLocator,
         var humidifierPath = Path.Combine(sourcePath, "Humidifier");
         var outputPath = Path.Combine(humidifierPath, "Gen");
 
-
         WriteSpecsToFile(humidifierPath, json);
 
         var treeResult = specsModelToClassConverter.ParseSpecsToTrees(specification);
@@ -126,7 +125,7 @@ public class CodeGeneratorCore(SourceDirectoryLocator sourceDirectoryLocator,
 
         var typeNames = bob.ToString();
 
-        var typenameResourcePath = Path.Combine(outputPath, "TypeNames\\");
+        var typenameResourcePath = Path.Combine(outputPath, "TypeNames");
         var typenamePath = "TypeNames.cs";
 
         Directory.CreateDirectory(typenameResourcePath);
@@ -137,7 +136,7 @@ public class CodeGeneratorCore(SourceDirectoryLocator sourceDirectoryLocator,
 
     private static void WriteSpecsToFile(string srcPath, string json)
     {
-        var repoPath = Path.Combine(srcPath, "..\\");
+        var repoPath = Path.GetFullPath(Path.Combine(srcPath, ".."));
         var codegenPath = Path.Combine(repoPath, "Humidifier.CodeGen.Lib");
         File.WriteAllText(Path.Combine(codegenPath, "Specification.json"), json);
     }
