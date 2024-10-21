@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using Humidifier.CodeGen.Lib.Features.Extensions;
 using Humidifier.CodeGen.Lib.Features.Init;
 using Humidifier.CodeGen.Lib.Features.InterfaceGenerator;
 using Humidifier.CodeGen.Lib.Features.JsonToModels;
@@ -31,7 +32,6 @@ public class CodeGeneratorCore(SourceDirectoryLocator sourceDirectoryLocator,
 
         var humidifierPath = Path.Combine(sourcePath, "Humidifier");
         var outputPath = Path.Combine(humidifierPath, "Gen");
-
 
         WriteSpecsToFile(humidifierPath, json);
 
@@ -100,33 +100,33 @@ public class CodeGeneratorCore(SourceDirectoryLocator sourceDirectoryLocator,
     {
         var bob = new StringBuilder();
 
-        bob.AppendLine("namespace Humidifier;");
+        bob.AppendLineCRLF("namespace Humidifier;");
 
         foreach (var namespaceName in resultNames)
         {
-            bob.AppendLine($"public class {namespaceName.Key}");
-            bob.AppendLine($"{{");
+            bob.AppendLineCRLF($"public class {namespaceName.Key}");
+            bob.AppendLineCRLF($"{{");
 
             foreach (var subClasses in namespaceName.Value)
             {
-                bob.AppendLine($"    public class {subClasses.Key}");
-                bob.AppendLine($"    {{");
+                bob.AppendLineCRLF($"    public class {subClasses.Key}");
+                bob.AppendLineCRLF($"    {{");
 
                 foreach (var service in subClasses.Value)
                 {
-                    bob.AppendLine($"        public const string {service} = \"{namespaceName.Key}::{subClasses.Key}::{service}\";");
+                    bob.AppendLineCRLF($"        public const string {service} = \"{namespaceName.Key}::{subClasses.Key}::{service}\";");
                 }
 
-                bob.AppendLine($"    }}");
+                bob.AppendLineCRLF($"    }}");
             }
 
 
-            bob.AppendLine($"}}");
+            bob.AppendLineCRLF($"}}");
         }
 
         var typeNames = bob.ToString();
 
-        var typenameResourcePath = Path.Combine(outputPath, "TypeNames\\");
+        var typenameResourcePath = Path.Combine(outputPath, "TypeNames");
         var typenamePath = "TypeNames.cs";
 
         Directory.CreateDirectory(typenameResourcePath);
@@ -137,7 +137,7 @@ public class CodeGeneratorCore(SourceDirectoryLocator sourceDirectoryLocator,
 
     private static void WriteSpecsToFile(string srcPath, string json)
     {
-        var repoPath = Path.Combine(srcPath, "..\\");
+        var repoPath = Path.GetFullPath(Path.Combine(srcPath, ".."));
         var codegenPath = Path.Combine(repoPath, "Humidifier.CodeGen.Lib");
         File.WriteAllText(Path.Combine(codegenPath, "Specification.json"), json);
     }

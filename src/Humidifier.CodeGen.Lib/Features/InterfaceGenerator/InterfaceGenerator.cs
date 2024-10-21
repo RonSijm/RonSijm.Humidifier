@@ -8,7 +8,7 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
         public static async Task CreateInterfaces(this Dictionary<string, List<Property>> propertyList, string outputPath)
         {
             var tryFindMostUsedProperties = propertyList
-                .Where(x => x.Value.Count > 1)
+                .Where(x => x.Value.Count > 0)
                 .OrderByDescending(x => x.Value.Count)
                 .ToList();
 

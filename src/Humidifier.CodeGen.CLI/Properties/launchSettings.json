@@ -7,9 +7,13 @@
       },
       "distributionName": ""
     },
-    "RonSijm.Humidifier - With Force": {
+    "-forceRegenerate -noUpdateCheck": {
       "commandName": "Project",
       "commandLineArgs": "-forceRegenerate -noUpdateCheck"
+    },
+    "-forceRegenerate": {
+      "commandName": "Project",
+      "commandLineArgs": "-forceRegenerate"
     }
   }
 }

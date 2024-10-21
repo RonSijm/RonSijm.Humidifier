@@ -8,33 +8,33 @@ public static class PropertyExtensions
     {
             var sb = new StringBuilder();
 
-            sb.AppendLine("/// <summary>");
-            sb.AppendLine($"/// {property.Name}");
-            sb.AppendLine($"/// {property.Documentation}");
-            sb.AppendLine($"/// Required: {property.Required}");
-            sb.AppendLine($"/// UpdateType: {property.UpdateType}");
+            sb.AppendLineCRLF("/// <summary>");
+            sb.AppendLineCRLF($"/// {property.Name}");
+            sb.AppendLineCRLF($"/// {property.Documentation}");
+            sb.AppendLineCRLF($"/// Required: {property.Required}");
+            sb.AppendLineCRLF($"/// UpdateType: {property.UpdateType}");
 
             if (!string.IsNullOrWhiteSpace(property.Type))
             {
-                sb.AppendLine($"/// Type: {property.Type}");
+                sb.AppendLineCRLF($"/// Type: {property.Type}");
             }
 
             if (!string.IsNullOrWhiteSpace(property.ItemType))
             {
-                sb.AppendLine($"/// ItemType: {property.ItemType}");
+                sb.AppendLineCRLF($"/// ItemType: {property.ItemType}");
             }
 
             if (!string.IsNullOrWhiteSpace(property.PrimitiveItemType))
             {
-                sb.AppendLine($"/// PrimitiveItemType: {property.PrimitiveItemType}");
+                sb.AppendLineCRLF($"/// PrimitiveItemType: {property.PrimitiveItemType}");
             }
 
             if (!string.IsNullOrWhiteSpace(property.PrimitiveType))
             {
-                sb.AppendLine($"/// PrimitiveType: {property.PrimitiveType}");
+                sb.AppendLineCRLF($"/// PrimitiveType: {property.PrimitiveType}");
             }
 
-            sb.AppendLine("/// </summary>");
+            sb.AppendLineCRLF("/// </summary>");
 
             return sb.ToString();
         }

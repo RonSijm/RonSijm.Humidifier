@@ -18,10 +18,10 @@ jobs:
         dotnet-version: '8.x'
 
     - name: Restore dependencies
-      run: dotnet restore src/Humidifier.CodeGen/Humidifier.CodeGen.csproj 
+      run: dotnet restore src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj 
 
     - name: Run the C# program to generate library and get spec version
-      run: dotnet run --project src/Humidifier.CodeGen/Humidifier.CodeGen.csproj -directory $GITHUB_WORKSPACE --framework net8.0
+      run: dotnet run --project src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj -directory $GITHUB_WORKSPACE --framework net8.0
 
     - name: Combine version numbers
       if: steps.git_diff.outputs.changes == 'true'
@@ -47,9 +47,11 @@ jobs:
 
     - name: Commit changes
       if: steps.git_diff.outputs.changes == 'true'
+      env:
+        FINAL_VERSION: ${{ env.FINAL_VERSION }}
       run: |
-        git commit -am "Automated update of generated library version ${{ env.FINAL_VERSION }}"
-        git push origin master
+        git commit -am "Automated update of generated library version $FINAL_VERSION"
+        git push origin main
         
     - name: Restore dependencies of Humidifier
       if: steps.git_diff.outputs.changes == 'true'
@@ -58,14 +60,6 @@ jobs:
     - name: Restore dependencies of Humidifier.Json
       if: steps.git_diff.outputs.changes == 'true'
       run: dotnet restore src/Humidifier.Json/Humidifier.Json.csproj
-
-    - name: Combine version numbers
-      if: steps.git_diff.outputs.changes == 'true'
-      run: |
-        VERSION=$(cat src/version.txt)
-        SPEC_VERSION=$(cat src/spec-version.txt | tr -d '.')
-        FINAL_VERSION="${VERSION}.${SPEC_VERSION}"
-        echo "FINAL_VERSION=$FINAL_VERSION" >> $GITHUB_ENV
 
     - name: Build Humidifier
       if: steps.git_diff.outputs.changes == 'true'
