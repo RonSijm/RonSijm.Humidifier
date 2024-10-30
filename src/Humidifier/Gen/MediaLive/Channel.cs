@@ -2752,6 +2752,14 @@ namespace Humidifier.MediaLive
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.H264FilterSettings FilterSettings { get; set; }
             /// <summary>
+            /// MinQp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-minqp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinQp { get; set; }
+            /// <summary>
             /// ColorSpaceSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-colorspacesettings
             /// Required: False
@@ -3123,6 +3131,14 @@ namespace Humidifier.MediaLive
             /// Type: H265FilterSettings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.H265FilterSettings FilterSettings { get; set; }
+            /// <summary>
+            /// MinQp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-minqp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinQp { get; set; }
             /// <summary>
             /// AlternativeTransferFunction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-alternativetransferfunction

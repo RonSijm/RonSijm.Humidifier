@@ -170,6 +170,18 @@ namespace Humidifier.NetworkFirewall
             public dynamic TLSInspectionConfigurationArn { get; set; }
         }
 
+        public class FlowTimeouts : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TcpIdleTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-flowtimeouts.html#cfn-networkfirewall-firewallpolicy-flowtimeouts-tcpidletimeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TcpIdleTimeoutSeconds { get; set; }
+        }
+
         public class IPSet : Humidifier.Base.BaseSubResource, IHaveDefinition
         {
             /// <summary>
@@ -219,6 +231,14 @@ namespace Humidifier.NetworkFirewall
             /// PrimitiveType: String
             /// </summary>
             public dynamic StreamExceptionPolicy { get; set; }
+            /// <summary>
+            /// FlowTimeouts
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html#cfn-networkfirewall-firewallpolicy-statefulengineoptions-flowtimeouts
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FlowTimeouts
+            /// </summary>
+            public Humidifier.NetworkFirewall.FirewallPolicyTypes.FlowTimeouts FlowTimeouts { get; set; }
             /// <summary>
             /// RuleOrder
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html#cfn-networkfirewall-firewallpolicy-statefulengineoptions-ruleorder

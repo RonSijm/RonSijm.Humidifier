@@ -2,7 +2,7 @@ namespace Humidifier.RDS
 {
     using System.Collections.Generic;
 
-    public class GlobalCluster : Humidifier.Base.BaseResource, IHaveEngineVersion, IHaveEngine, IHaveDeletionProtection, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveEngineLifecycleSupport
+    public class GlobalCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveEngineVersion, IHaveEngine, IHaveDeletionProtection, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveEngineLifecycleSupport
     {
         public override string AWSTypeName { get => AWS.RDS.GlobalCluster; }
         /// <summary>
@@ -61,5 +61,14 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Engine { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

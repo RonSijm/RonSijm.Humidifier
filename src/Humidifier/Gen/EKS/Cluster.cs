@@ -26,22 +26,6 @@ namespace Humidifier.EKS
         /// </summary>
         public Humidifier.EKS.ClusterTypes.Logging Logging { get; set; }
         /// <summary>
-        /// UpgradePolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-upgradepolicy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: UpgradePolicy
-        /// </summary>
-        public Humidifier.EKS.ClusterTypes.UpgradePolicy UpgradePolicy { get; set; }
-        /// <summary>
-        /// Version
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Version { get; set; }
-        /// <summary>
         /// BootstrapSelfManagedAddons
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-bootstrapselfmanagedaddons
         /// Required: False
@@ -50,6 +34,14 @@ namespace Humidifier.EKS
         /// </summary>
         public dynamic BootstrapSelfManagedAddons { get; set; }
         /// <summary>
+        /// ZonalShiftConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-zonalshiftconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ZonalShiftConfig
+        /// </summary>
+        public Humidifier.EKS.ClusterTypes.ZonalShiftConfig ZonalShiftConfig { get; set; }
+        /// <summary>
         /// AccessConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-accessconfig
         /// Required: False
@@ -57,14 +49,6 @@ namespace Humidifier.EKS
         /// Type: AccessConfig
         /// </summary>
         public Humidifier.EKS.ClusterTypes.AccessConfig AccessConfig { get; set; }
-        /// <summary>
-        /// OutpostConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-outpostconfig
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: OutpostConfig
-        /// </summary>
-        public Humidifier.EKS.ClusterTypes.OutpostConfig OutpostConfig { get; set; }
         /// <summary>
         /// EncryptionConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-encryptionconfig
@@ -92,6 +76,31 @@ namespace Humidifier.EKS
         /// </summary>
         [Required]
         public dynamic RoleArn { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// UpgradePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-upgradepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: UpgradePolicy
+        /// </summary>
+        public Humidifier.EKS.ClusterTypes.UpgradePolicy UpgradePolicy { get; set; }
+        /// <summary>
+        /// Version
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Version { get; set; }
+        /// <summary>
+        /// OutpostConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-outpostconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: OutpostConfig
+        /// </summary>
+        public Humidifier.EKS.ClusterTypes.OutpostConfig OutpostConfig { get; set; }
 
         /// <summary>
         /// ResourcesVpcConfig
@@ -111,7 +120,6 @@ namespace Humidifier.EKS
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ClusterTypes
@@ -332,6 +340,18 @@ namespace Humidifier.EKS
             /// PrimitiveType: String
             /// </summary>
             public dynamic SupportType { get; set; }
+        }
+
+        public class ZonalShiftConfig : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-zonalshiftconfig.html#cfn-eks-cluster-zonalshiftconfig-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
     }
 }

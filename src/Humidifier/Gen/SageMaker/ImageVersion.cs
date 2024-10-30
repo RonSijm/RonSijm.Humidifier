@@ -2,12 +2,11 @@ namespace Humidifier.SageMaker
 {
     using System.Collections.Generic;
 
-    public class ImageVersion : Humidifier.Base.BaseResource, IHaveImageName, IHaveAlias, IHaveAliases
+    public class ImageVersion : Humidifier.Base.BaseResource, IHaveVersion, IHaveImageName, IHaveAlias, IHaveAliases
     {
         public class Attributes
         {
             public static string ImageVersionArn =  "ImageVersionArn" ;
-            public static string Version =  "Version" ;
             public static string ContainerImage =  "ContainerImage" ;
             public static string ImageArn =  "ImageArn" ;
         }
@@ -47,6 +46,14 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic JobType { get; set; }
+        /// <summary>
+        /// Version
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-version
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic Version { get; set; }
         /// <summary>
         /// Alias
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#cfn-sagemaker-imageversion-alias

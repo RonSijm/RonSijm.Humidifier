@@ -12,14 +12,6 @@ namespace Humidifier.EC2
 
         public override string AWSTypeName { get => AWS.EC2.TransitGateway; }
         /// <summary>
-        /// DefaultRouteTablePropagation
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetablepropagation
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DefaultRouteTablePropagation { get; set; }
-        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-description
         /// Required: False
@@ -27,15 +19,6 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-        /// <summary>
-        /// TransitGatewayCidrBlocks
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-transitgatewaycidrblocks
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic TransitGatewayCidrBlocks { get; set; }
         /// <summary>
         /// AssociationDefaultRouteTableId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-associationdefaultroutetableid
@@ -52,6 +35,23 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic AutoAcceptSharedAttachments { get; set; }
+        /// <summary>
+        /// DefaultRouteTablePropagation
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetablepropagation
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DefaultRouteTablePropagation { get; set; }
+        /// <summary>
+        /// TransitGatewayCidrBlocks
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-transitgatewaycidrblocks
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic TransitGatewayCidrBlocks { get; set; }
         /// <summary>
         /// PropagationDefaultRouteTableId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-propagationdefaultroutetableid
@@ -76,6 +76,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic VpnEcmpSupport { get; set; }
+        /// <summary>
+        /// SecurityGroupReferencingSupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-securitygroupreferencingsupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SecurityGroupReferencingSupport { get; set; }
         /// <summary>
         /// DnsSupport
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-dnssupport

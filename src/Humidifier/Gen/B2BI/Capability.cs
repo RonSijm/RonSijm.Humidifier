@@ -103,6 +103,14 @@ namespace Humidifier.B2BI
             /// Type: S3Location
             /// </summary>
             public Humidifier.B2BI.CapabilityTypes.S3Location OutputLocation { get; set; }
+            /// <summary>
+            /// CapabilityDirection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-capability-ediconfiguration.html#cfn-b2bi-capability-ediconfiguration-capabilitydirection
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapabilityDirection { get; set; }
         }
 
         public class EdiType : Humidifier.Base.BaseSubResource

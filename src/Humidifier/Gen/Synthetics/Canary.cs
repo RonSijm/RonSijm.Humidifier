@@ -80,6 +80,15 @@ namespace Humidifier.Synthetics
         /// </summary>
         [Required]
         public Humidifier.Synthetics.CanaryTypes.Code Code { get; set; }
+        /// <summary>
+        /// ResourcesToReplicateTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-resourcestoreplicatetags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic ResourcesToReplicateTags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>

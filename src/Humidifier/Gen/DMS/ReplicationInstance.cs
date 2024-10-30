@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using System.Collections.Generic;
 
-    public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveResourceIdentifier, IHaveAutoMinorVersionUpgrade, IHaveAllocatedStorage, IHaveMultiAZ, IHaveAllowMajorVersionUpgrade
+    public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveResourceIdentifier, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveAllocatedStorage, IHaveMultiAZ, IHaveAllowMajorVersionUpgrade
     {
         public class Attributes
         {
@@ -92,6 +92,14 @@ namespace Humidifier.DMS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic VpcSecurityGroupIds { get; set; }
+        /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-networktype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
         /// <summary>
         /// AllowMajorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-allowmajorversionupgrade

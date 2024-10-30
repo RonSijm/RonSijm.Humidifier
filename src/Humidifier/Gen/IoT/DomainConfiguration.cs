@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using DomainConfigurationTypes;
 
-    public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName
+    public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveAuthenticationType
     {
         public class Attributes
         {
@@ -13,6 +13,22 @@ namespace Humidifier.IoT
         }
 
         public override string AWSTypeName { get => AWS.IoT.DomainConfiguration; }
+        /// <summary>
+        /// ApplicationProtocol
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-applicationprotocol
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ApplicationProtocol { get; set; }
+        /// <summary>
+        /// ClientCertificateConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-clientcertificateconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ClientCertificateConfig
+        /// </summary>
+        public Humidifier.IoT.DomainConfigurationTypes.ClientCertificateConfig ClientCertificateConfig { get; set; }
         public dynamic DomainConfigurationName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// DomainName
@@ -30,30 +46,6 @@ namespace Humidifier.IoT
         /// PrimitiveType: String
         /// </summary>
         public dynamic DomainConfigurationStatus { get; set; }
-        /// <summary>
-        /// ServiceType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-servicetype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ServiceType { get; set; }
-        /// <summary>
-        /// ValidationCertificateArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-validationcertificatearn
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ValidationCertificateArn { get; set; }
-        /// <summary>
-        /// TlsConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-tlsconfig
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: TlsConfig
-        /// </summary>
-        public Humidifier.IoT.DomainConfigurationTypes.TlsConfig TlsConfig { get; set; }
         /// <summary>
         /// ServerCertificateArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-servercertificatearns
@@ -80,6 +72,30 @@ namespace Humidifier.IoT
         /// </summary>
         public Humidifier.IoT.DomainConfigurationTypes.AuthorizerConfig AuthorizerConfig { get; set; }
         /// <summary>
+        /// ServiceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-servicetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ServiceType { get; set; }
+        /// <summary>
+        /// ValidationCertificateArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-validationcertificatearn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ValidationCertificateArn { get; set; }
+        /// <summary>
+        /// TlsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-tlsconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TlsConfig
+        /// </summary>
+        public Humidifier.IoT.DomainConfigurationTypes.TlsConfig TlsConfig { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-tags
         /// Required: False
@@ -88,6 +104,14 @@ namespace Humidifier.IoT
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// AuthenticationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-authenticationtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AuthenticationType { get; set; }
     }
 
     namespace DomainConfigurationTypes
@@ -110,6 +134,18 @@ namespace Humidifier.IoT
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AllowAuthorizerOverride { get; set; }
+        }
+
+        public class ClientCertificateConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ClientCertificateCallbackArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-clientcertificateconfig.html#cfn-iot-domainconfiguration-clientcertificateconfig-clientcertificatecallbackarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientCertificateCallbackArn { get; set; }
         }
 
         public class ServerCertificateConfig : Humidifier.Base.BaseSubResource

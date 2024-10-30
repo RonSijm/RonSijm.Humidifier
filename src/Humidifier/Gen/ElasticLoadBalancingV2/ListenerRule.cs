@@ -196,6 +196,14 @@ namespace Humidifier.ElasticLoadBalancingV2
         public class AuthenticateOidcConfig : Humidifier.Base.BaseSubResource, IHaveScope, IHaveClientId, IHaveClientSecret, IHaveIssuer, IHaveSessionTimeout, IHaveAuthorizationEndpoint, IHaveOnUnauthenticatedRequest, IHaveSessionCookieName, IHaveTokenEndpoint, IHaveUserInfoEndpoint
         {
             /// <summary>
+            /// UseExistingClientSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-useexistingclientsecret
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UseExistingClientSecret { get; set; }
+            /// <summary>
             /// OnUnauthenticatedRequest
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-onunauthenticatedrequest
             /// Required: False
@@ -211,14 +219,6 @@ namespace Humidifier.ElasticLoadBalancingV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic TokenEndpoint { get; set; }
-            /// <summary>
-            /// UseExistingClientSecret
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-useexistingclientsecret
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic UseExistingClientSecret { get; set; }
             /// <summary>
             /// SessionTimeout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-sessiontimeout

@@ -4,6 +4,11 @@ namespace Humidifier.SecretsManager
 
     public class SecretTargetAttachment : Humidifier.Base.BaseResource, IHaveTargetType, IHaveSecretId, IHaveTargetId
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.SecretsManager.SecretTargetAttachment; }
 
         /// <summary>

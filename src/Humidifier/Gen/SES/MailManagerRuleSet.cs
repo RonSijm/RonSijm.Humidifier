@@ -500,11 +500,19 @@ namespace Humidifier.SES
             /// <summary>
             /// Attribute
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulestringtoevaluate.html#cfn-ses-mailmanagerruleset-rulestringtoevaluate-attribute
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Attribute { get; set; }
+            /// <summary>
+            /// MimeHeaderAttribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulestringtoevaluate.html#cfn-ses-mailmanagerruleset-rulestringtoevaluate-mimeheaderattribute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MimeHeaderAttribute { get; set; }
         }
 
         public class RuleVerdictExpression : Humidifier.Base.BaseSubResource, IHaveValues, IHaveOperator

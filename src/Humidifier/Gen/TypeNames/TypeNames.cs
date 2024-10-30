@@ -894,6 +894,7 @@ public class AWS
         public const string Table = "AWS::Glue::Table";
         public const string TableOptimizer = "AWS::Glue::TableOptimizer";
         public const string Trigger = "AWS::Glue::Trigger";
+        public const string UsageProfile = "AWS::Glue::UsageProfile";
         public const string Workflow = "AWS::Glue::Workflow";
     }
     public class Grafana
@@ -1143,6 +1144,7 @@ public class AWS
     }
     public class Kinesis
     {
+        public const string ResourcePolicy = "AWS::Kinesis::ResourcePolicy";
         public const string Stream = "AWS::Kinesis::Stream";
         public const string StreamConsumer = "AWS::Kinesis::StreamConsumer";
     }
@@ -1552,6 +1554,7 @@ public class AWS
         public const string Dashboard = "AWS::QuickSight::Dashboard";
         public const string DataSet = "AWS::QuickSight::DataSet";
         public const string DataSource = "AWS::QuickSight::DataSource";
+        public const string Folder = "AWS::QuickSight::Folder";
         public const string RefreshSchedule = "AWS::QuickSight::RefreshSchedule";
         public const string Template = "AWS::QuickSight::Template";
         public const string Theme = "AWS::QuickSight::Theme";

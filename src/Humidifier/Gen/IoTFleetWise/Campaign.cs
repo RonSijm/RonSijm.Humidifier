@@ -14,15 +14,13 @@ namespace Humidifier.IoTFleetWise
         }
 
         public override string AWSTypeName { get => AWS.IoTFleetWise.Campaign; }
-
         /// <summary>
         /// Action
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-action
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic Action { get; set; }
         /// <summary>
         /// Compression

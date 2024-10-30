@@ -100,6 +100,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic ApplianceModeSupport { get; set; }
             /// <summary>
+            /// SecurityGroupReferencingSupport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-securitygroupreferencingsupport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecurityGroupReferencingSupport { get; set; }
+            /// <summary>
             /// DnsSupport
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-dnssupport
             /// Required: False

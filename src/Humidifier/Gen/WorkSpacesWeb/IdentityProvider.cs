@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class IdentityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class IdentityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
@@ -40,5 +40,14 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         [Required]
         public dynamic IdentityProviderType { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-identityprovider.html#cfn-workspacesweb-identityprovider-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

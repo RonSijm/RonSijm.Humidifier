@@ -3625,6 +3625,14 @@ namespace Humidifier.QuickSight
             /// Type: DateTimePickerControlDisplayOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.DateTimePickerControlDisplayOptions DisplayOptions { get; set; }
+            /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultdatetimepickercontroloptions.html#cfn-quicksight-analysis-defaultdatetimepickercontroloptions-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
         }
 
         public class DefaultFilterControlConfiguration : Humidifier.Base.BaseSubResource, IHaveTitle
@@ -3725,6 +3733,14 @@ namespace Humidifier.QuickSight
             /// Type: DropDownControlDisplayOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.DropDownControlDisplayOptions DisplayOptions { get; set; }
+            /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultfilterdropdowncontroloptions.html#cfn-quicksight-analysis-defaultfilterdropdowncontroloptions-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
             /// <summary>
             /// SelectableValues
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultfilterdropdowncontroloptions.html#cfn-quicksight-analysis-defaultfilterdropdowncontroloptions-selectablevalues
@@ -3857,6 +3873,14 @@ namespace Humidifier.QuickSight
             /// Type: RelativeDateTimeControlDisplayOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.RelativeDateTimeControlDisplayOptions DisplayOptions { get; set; }
+            /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-defaultrelativedatetimecontroloptions.html#cfn-quicksight-analysis-defaultrelativedatetimecontroloptions-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
         }
 
         public class DefaultSectionBasedLayoutConfiguration : Humidifier.Base.BaseSubResource
@@ -4792,6 +4816,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Title { get; set; }
             /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterdatetimepickercontrol.html#cfn-quicksight-analysis-filterdatetimepickercontrol-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
+            /// <summary>
             /// SourceFilterId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterdatetimepickercontrol.html#cfn-quicksight-analysis-filterdatetimepickercontrol-sourcefilterid
             /// Required: True
@@ -4843,6 +4875,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Title { get; set; }
+            /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterdropdowncontrol.html#cfn-quicksight-analysis-filterdropdowncontrol-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
             /// <summary>
             /// SourceFilterId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterdropdowncontrol.html#cfn-quicksight-analysis-filterdropdowncontrol-sourcefilterid
@@ -5071,6 +5111,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Title { get; set; }
+            /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterrelativedatetimecontrol.html#cfn-quicksight-analysis-filterrelativedatetimecontrol-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
             /// <summary>
             /// SourceFilterId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filterrelativedatetimecontrol.html#cfn-quicksight-analysis-filterrelativedatetimecontrol-sourcefilterid
@@ -9302,6 +9350,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Title { get; set; }
+            /// <summary>
+            /// CommitMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdropdowncontrol.html#cfn-quicksight-analysis-parameterdropdowncontrol-commitmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitMode { get; set; }
             /// <summary>
             /// SelectableValues
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterdropdowncontrol.html#cfn-quicksight-analysis-parameterdropdowncontrol-selectablevalues

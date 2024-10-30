@@ -30,7 +30,7 @@ namespace Humidifier.EMR
         /// InstanceTypeConfigs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfigs
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: InstanceTypeConfig
         /// </summary>
@@ -44,6 +44,14 @@ namespace Humidifier.EMR
         /// </summary>
         public Humidifier.EMR.InstanceFleetConfigTypes.InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ResizeSpecifications
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-resizespecifications
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: InstanceFleetResizingSpecifications
+        /// </summary>
+        public Humidifier.EMR.InstanceFleetConfigTypes.InstanceFleetResizingSpecifications ResizeSpecifications { get; set; }
         /// <summary>
         /// TargetOnDemandCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-targetondemandcapacity
@@ -155,13 +163,33 @@ namespace Humidifier.EMR
             public Humidifier.EMR.InstanceFleetConfigTypes.SpotProvisioningSpecification SpotSpecification { get; set; }
         }
 
-        public class InstanceTypeConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveWeightedCapacity, IHaveCustomAmiId, IHaveBidPrice
+        public class InstanceFleetResizingSpecifications : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OnDemandResizeSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetresizingspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetresizingspecifications-ondemandresizespecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OnDemandResizingSpecification
+            /// </summary>
+            public Humidifier.EMR.InstanceFleetConfigTypes.OnDemandResizingSpecification OnDemandResizeSpecification { get; set; }
+            /// <summary>
+            /// SpotResizeSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetresizingspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetresizingspecifications-spotresizespecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SpotResizingSpecification
+            /// </summary>
+            public Humidifier.EMR.InstanceFleetConfigTypes.SpotResizingSpecification SpotResizeSpecification { get; set; }
+        }
+
+        public class InstanceTypeConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHavePriority, IHaveWeightedCapacity, IHaveCustomAmiId, IHaveBidPrice
         {
             /// <summary>
             /// BidPrice
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-bidprice
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic BidPrice { get; set; }
@@ -169,7 +197,7 @@ namespace Humidifier.EMR
             /// BidPriceAsPercentageOfOnDemandPrice
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-bidpriceaspercentageofondemandprice
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Double
             /// </summary>
             public dynamic BidPriceAsPercentageOfOnDemandPrice { get; set; }
@@ -177,7 +205,7 @@ namespace Humidifier.EMR
             /// Configurations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-configurations
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Configuration
             /// </summary>
@@ -186,7 +214,7 @@ namespace Humidifier.EMR
             /// CustomAmiId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-customamiid
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CustomAmiId { get; set; }
@@ -194,7 +222,7 @@ namespace Humidifier.EMR
             /// EbsConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-ebsconfiguration
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: EbsConfiguration
             /// </summary>
             public Humidifier.EMR.InstanceFleetConfigTypes.EbsConfiguration EbsConfiguration { get; set; }
@@ -202,18 +230,55 @@ namespace Humidifier.EMR
             /// InstanceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-instancetype
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceType { get; set; }
             /// <summary>
+            /// Priority
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-priority
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Priority { get; set; }
+            /// <summary>
             /// WeightedCapacity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-weightedcapacity
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic WeightedCapacity { get; set; }
+        }
+
+        public class OnDemandCapacityReservationOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CapacityReservationPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandcapacityreservationoptions.html#cfn-elasticmapreduce-instancefleetconfig-ondemandcapacityreservationoptions-capacityreservationpreference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: dynamic
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityReservationPreference { get; set; }
+            /// <summary>
+            /// CapacityReservationResourceGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandcapacityreservationoptions.html#cfn-elasticmapreduce-instancefleetconfig-ondemandcapacityreservationoptions-capacityreservationresourcegrouparn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityReservationResourceGroupArn { get; set; }
+            /// <summary>
+            /// UsageStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandcapacityreservationoptions.html#cfn-elasticmapreduce-instancefleetconfig-ondemandcapacityreservationoptions-usagestrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UsageStrategy { get; set; }
         }
 
         public class OnDemandProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
@@ -226,6 +291,42 @@ namespace Humidifier.EMR
             /// PrimitiveType: String
             /// </summary>
             public dynamic AllocationStrategy { get; set; }
+            /// <summary>
+            /// CapacityReservationOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification-capacityreservationoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OnDemandCapacityReservationOptions
+            /// </summary>
+            public Humidifier.EMR.InstanceFleetConfigTypes.OnDemandCapacityReservationOptions CapacityReservationOptions { get; set; }
+        }
+
+        public class OnDemandResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
+        {
+            /// <summary>
+            /// AllocationStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandresizingspecification.html#cfn-elasticmapreduce-instancefleetconfig-ondemandresizingspecification-allocationstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AllocationStrategy { get; set; }
+            /// <summary>
+            /// CapacityReservationOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandresizingspecification.html#cfn-elasticmapreduce-instancefleetconfig-ondemandresizingspecification-capacityreservationoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OnDemandCapacityReservationOptions
+            /// </summary>
+            public Humidifier.EMR.InstanceFleetConfigTypes.OnDemandCapacityReservationOptions CapacityReservationOptions { get; set; }
+            /// <summary>
+            /// TimeoutDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandresizingspecification.html#cfn-elasticmapreduce-instancefleetconfig-ondemandresizingspecification-timeoutdurationminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TimeoutDurationMinutes { get; set; }
         }
 
         public class SpotProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveBlockDurationMinutes, IHaveTimeoutAction
@@ -258,6 +359,26 @@ namespace Humidifier.EMR
             /// TimeoutDurationMinutes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-timeoutdurationminutes
             /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TimeoutDurationMinutes { get; set; }
+        }
+
+        public class SpotResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
+        {
+            /// <summary>
+            /// AllocationStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotresizingspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotresizingspecification-allocationstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AllocationStrategy { get; set; }
+            /// <summary>
+            /// TimeoutDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotresizingspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotresizingspecification-timeoutdurationminutes
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>

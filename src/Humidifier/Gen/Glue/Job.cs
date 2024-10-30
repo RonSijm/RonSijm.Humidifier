@@ -54,6 +54,14 @@ namespace Humidifier.Glue
         /// PrimitiveType: Double
         /// </summary>
         public dynamic AllocatedCapacity { get; set; }
+        /// <summary>
+        /// JobRunQueuingEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-jobrunqueuingenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic JobRunQueuingEnabled { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>
