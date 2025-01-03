@@ -132,6 +132,42 @@ namespace Humidifier.SES
             public dynamic RoleArn { get; set; }
         }
 
+        public class DeliverToQBusinessAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveApplicationId, IHaveIndexId, IHaveActionFailurePolicy
+        {
+            /// <summary>
+            /// IndexId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-delivertoqbusinessaction.html#cfn-ses-mailmanagerruleset-delivertoqbusinessaction-indexid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IndexId { get; set; }
+            /// <summary>
+            /// ActionFailurePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-delivertoqbusinessaction.html#cfn-ses-mailmanagerruleset-delivertoqbusinessaction-actionfailurepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ActionFailurePolicy { get; set; }
+            /// <summary>
+            /// ApplicationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-delivertoqbusinessaction.html#cfn-ses-mailmanagerruleset-delivertoqbusinessaction-applicationid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApplicationId { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-delivertoqbusinessaction.html#cfn-ses-mailmanagerruleset-delivertoqbusinessaction-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+        }
+
         public class RelayAction : Humidifier.Base.BaseSubResource, IHaveActionFailurePolicy
         {
             /// <summary>
@@ -262,6 +298,14 @@ namespace Humidifier.SES
             /// Type: S3Action
             /// </summary>
             public Humidifier.SES.MailManagerRuleSetTypes.S3Action WriteToS3 { get; set; }
+            /// <summary>
+            /// DeliverToQBusiness
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleaction.html#cfn-ses-mailmanagerruleset-ruleaction-delivertoqbusiness
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DeliverToQBusinessAction
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.DeliverToQBusinessAction DeliverToQBusiness { get; set; }
             /// <summary>
             /// Drop
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleaction.html#cfn-ses-mailmanagerruleset-ruleaction-drop

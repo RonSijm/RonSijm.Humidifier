@@ -12,15 +12,13 @@ namespace Humidifier.Glue
         }
 
         public override string AWSTypeName { get => AWS.Glue.Schema; }
-
         /// <summary>
         /// SchemaDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-schemadefinition
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic SchemaDefinition { get; set; }
         /// <summary>
         /// Description

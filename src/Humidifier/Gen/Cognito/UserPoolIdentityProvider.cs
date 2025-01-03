@@ -30,17 +30,21 @@ namespace Humidifier.Cognito
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-attributemapping
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic AttributeMapping { get; set; }
+        public Dictionary<string, dynamic> AttributeMapping { get; set; }
+
         /// <summary>
         /// ProviderDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolidentityprovider.html#cfn-cognito-userpoolidentityprovider-providerdetails
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ProviderDetails { get; set; }
+        [Required]
+        public Dictionary<string, dynamic> ProviderDetails { get; set; }
 
         /// <summary>
         /// ProviderType

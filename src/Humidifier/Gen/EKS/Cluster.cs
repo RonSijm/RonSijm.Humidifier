@@ -26,6 +26,22 @@ namespace Humidifier.EKS
         /// </summary>
         public Humidifier.EKS.ClusterTypes.Logging Logging { get; set; }
         /// <summary>
+        /// ComputeConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-computeconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ComputeConfig
+        /// </summary>
+        public Humidifier.EKS.ClusterTypes.ComputeConfig ComputeConfig { get; set; }
+        /// <summary>
+        /// StorageConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-storageconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: StorageConfig
+        /// </summary>
+        public Humidifier.EKS.ClusterTypes.StorageConfig StorageConfig { get; set; }
+        /// <summary>
         /// BootstrapSelfManagedAddons
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-bootstrapselfmanagedaddons
         /// Required: False
@@ -86,6 +102,14 @@ namespace Humidifier.EKS
         /// </summary>
         public Humidifier.EKS.ClusterTypes.UpgradePolicy UpgradePolicy { get; set; }
         /// <summary>
+        /// RemoteNetworkConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-remotenetworkconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: RemoteNetworkConfig
+        /// </summary>
+        public Humidifier.EKS.ClusterTypes.RemoteNetworkConfig RemoteNetworkConfig { get; set; }
+        /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-version
         /// Required: False
@@ -144,6 +168,18 @@ namespace Humidifier.EKS
             public dynamic BootstrapClusterCreatorAdminPermissions { get; set; }
         }
 
+        public class BlockStorage : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-blockstorage.html#cfn-eks-cluster-blockstorage-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class ClusterLogging : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -157,6 +193,35 @@ namespace Humidifier.EKS
             public List<Humidifier.EKS.ClusterTypes.LoggingTypeConfig> EnabledTypes { get; set; }
         }
 
+        public class ComputeConfig : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// NodePools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-computeconfig.html#cfn-eks-cluster-computeconfig-nodepools
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic NodePools { get; set; }
+            /// <summary>
+            /// NodeRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-computeconfig.html#cfn-eks-cluster-computeconfig-noderolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NodeRoleArn { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-computeconfig.html#cfn-eks-cluster-computeconfig-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class ControlPlanePlacement : Humidifier.Base.BaseSubResource, IHaveGroupName
         {
             /// <summary>
@@ -167,6 +232,18 @@ namespace Humidifier.EKS
             /// PrimitiveType: String
             /// </summary>
             public dynamic GroupName { get; set; }
+        }
+
+        public class ElasticLoadBalancing : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-elasticloadbalancing.html#cfn-eks-cluster-elasticloadbalancing-enabled
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class EncryptionConfig : Humidifier.Base.BaseSubResource, IHaveResources
@@ -216,6 +293,14 @@ namespace Humidifier.EKS
             /// PrimitiveType: String
             /// </summary>
             public dynamic IpFamily { get; set; }
+            /// <summary>
+            /// ElasticLoadBalancing
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html#cfn-eks-cluster-kubernetesnetworkconfig-elasticloadbalancing
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ElasticLoadBalancing
+            /// </summary>
+            public Humidifier.EKS.ClusterTypes.ElasticLoadBalancing ElasticLoadBalancing { get; set; }
         }
 
         public class Logging : Humidifier.Base.BaseSubResource
@@ -283,6 +368,54 @@ namespace Humidifier.EKS
             public dynamic KeyArn { get; set; }
         }
 
+        public class RemoteNetworkConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RemoteNodeNetworks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-remotenetworkconfig.html#cfn-eks-cluster-remotenetworkconfig-remotenodenetworks
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: RemoteNodeNetwork
+            /// </summary>
+            public List<Humidifier.EKS.ClusterTypes.RemoteNodeNetwork> RemoteNodeNetworks { get; set; }
+            /// <summary>
+            /// RemotePodNetworks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-remotenetworkconfig.html#cfn-eks-cluster-remotenetworkconfig-remotepodnetworks
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: RemotePodNetwork
+            /// </summary>
+            public List<Humidifier.EKS.ClusterTypes.RemotePodNetwork> RemotePodNetworks { get; set; }
+        }
+
+        public class RemoteNodeNetwork : Humidifier.Base.BaseSubResource, IHaveCidrs
+        {
+            /// <summary>
+            /// Cidrs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-remotenodenetwork.html#cfn-eks-cluster-remotenodenetwork-cidrs
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Cidrs { get; set; }
+        }
+
+        public class RemotePodNetwork : Humidifier.Base.BaseSubResource, IHaveCidrs
+        {
+            /// <summary>
+            /// Cidrs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-remotepodnetwork.html#cfn-eks-cluster-remotepodnetwork-cidrs
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Cidrs { get; set; }
+        }
+
         public class ResourcesVpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds
         {
             /// <summary>
@@ -328,6 +461,18 @@ namespace Humidifier.EKS
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SubnetIds { get; set; }
+        }
+
+        public class StorageConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BlockStorage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-storageconfig.html#cfn-eks-cluster-storageconfig-blockstorage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BlockStorage
+            /// </summary>
+            public Humidifier.EKS.ClusterTypes.BlockStorage BlockStorage { get; set; }
         }
 
         public class UpgradePolicy : Humidifier.Base.BaseSubResource

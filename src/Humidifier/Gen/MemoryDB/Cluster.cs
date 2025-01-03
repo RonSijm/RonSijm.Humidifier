@@ -3,7 +3,7 @@ namespace Humidifier.MemoryDB
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHaveClusterName, IHaveSnsTopicArn, IHaveAutoMinorVersionUpgrade, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveNodeType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveFinalSnapshotName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHaveClusterName, IHaveEngine, IHaveSnsTopicArn, IHaveAutoMinorVersionUpgrade, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveNodeType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveFinalSnapshotName
     {
         public class Attributes
         {
@@ -106,6 +106,14 @@ namespace Humidifier.MemoryDB
         /// </summary>
         public dynamic SnsTopicArn { get; set; }
         /// <summary>
+        /// Engine
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-engine
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Engine { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-tags
         /// Required: False
@@ -114,6 +122,14 @@ namespace Humidifier.MemoryDB
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// MultiRegionClusterName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-multiregionclustername
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MultiRegionClusterName { get; set; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-engineversion

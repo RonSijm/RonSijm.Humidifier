@@ -11,6 +11,14 @@ namespace Humidifier.FIS
         }
 
         public override string AWSTypeName { get => AWS.FIS.ExperimentTemplate; }
+        /// <summary>
+        /// ExperimentReportConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-experimentreportconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ExperimentTemplateExperimentReportConfiguration
+        /// </summary>
+        public Humidifier.FIS.ExperimentTemplateTypes.ExperimentTemplateExperimentReportConfiguration ExperimentReportConfiguration { get; set; }
 
         /// <summary>
         /// Description
@@ -93,6 +101,18 @@ namespace Humidifier.FIS
 
     namespace ExperimentTemplateTypes
     {
+        public class CloudWatchDashboard : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DashboardIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-cloudwatchdashboard.html#cfn-fis-experimenttemplate-cloudwatchdashboard-dashboardidentifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DashboardIdentifier { get; set; }
+        }
+
         public class CloudWatchLogsConfiguration : Humidifier.Base.BaseSubResource, IHaveLogGroupArn
         {
             /// <summary>
@@ -103,6 +123,39 @@ namespace Humidifier.FIS
             /// PrimitiveType: String
             /// </summary>
             public dynamic LogGroupArn { get; set; }
+        }
+
+        public class DataSources : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CloudWatchDashboards
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-datasources.html#cfn-fis-experimenttemplate-datasources-cloudwatchdashboards
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CloudWatchDashboard
+            /// </summary>
+            public List<Humidifier.FIS.ExperimentTemplateTypes.CloudWatchDashboard> CloudWatchDashboards { get; set; }
+        }
+
+        public class ExperimentReportS3Configuration : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveBucketName
+        {
+            /// <summary>
+            /// BucketName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimentreports3configuration.html#cfn-fis-experimenttemplate-experimentreports3configuration-bucketname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketName { get; set; }
+            /// <summary>
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimentreports3configuration.html#cfn-fis-experimenttemplate-experimentreports3configuration-prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Prefix { get; set; }
         }
 
         public class ExperimentTemplateAction : Humidifier.Base.BaseSubResource, IHaveDescription
@@ -170,6 +223,42 @@ namespace Humidifier.FIS
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccountTargeting { get; set; }
+        }
+
+        public class ExperimentTemplateExperimentReportConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DataSources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration.html#cfn-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration-datasources
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DataSources
+            /// </summary>
+            public Humidifier.FIS.ExperimentTemplateTypes.DataSources DataSources { get; set; }
+            /// <summary>
+            /// PostExperimentDuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration.html#cfn-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration-postexperimentduration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PostExperimentDuration { get; set; }
+            /// <summary>
+            /// Outputs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration.html#cfn-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration-outputs
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Outputs
+            /// </summary>
+            public Humidifier.FIS.ExperimentTemplateTypes.Outputs Outputs { get; set; }
+            /// <summary>
+            /// PreExperimentDuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration.html#cfn-fis-experimenttemplate-experimenttemplateexperimentreportconfiguration-preexperimentduration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PreExperimentDuration { get; set; }
         }
 
         public class ExperimentTemplateLogConfiguration : Humidifier.Base.BaseSubResource
@@ -295,6 +384,18 @@ namespace Humidifier.FIS
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Values { get; set; }
+        }
+
+        public class Outputs : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ExperimentReportS3Configuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-outputs.html#cfn-fis-experimenttemplate-outputs-experimentreports3configuration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ExperimentReportS3Configuration
+            /// </summary>
+            public Humidifier.FIS.ExperimentTemplateTypes.ExperimentReportS3Configuration ExperimentReportS3Configuration { get; set; }
         }
 
         public class S3Configuration : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveBucketName

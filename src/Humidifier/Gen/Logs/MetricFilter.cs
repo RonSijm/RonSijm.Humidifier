@@ -38,6 +38,14 @@ namespace Humidifier.Logs
         [Required]
         public dynamic LogGroupName { get; set; }
         /// <summary>
+        /// ApplyOnTransformedLogs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-logs-metricfilter-applyontransformedlogs
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ApplyOnTransformedLogs { get; set; }
+        /// <summary>
         /// FilterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-logs-metricfilter-filtername
         /// Required: False

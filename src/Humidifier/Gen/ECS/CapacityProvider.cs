@@ -6,15 +6,13 @@ namespace Humidifier.ECS
     public class CapacityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
     {
         public override string AWSTypeName { get => AWS.ECS.CapacityProvider; }
-
         /// <summary>
         /// AutoScalingGroupProvider
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-capacityprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: AutoScalingGroupProvider
         /// </summary>
-        [Required]
         public Humidifier.ECS.CapacityProviderTypes.AutoScalingGroupProvider AutoScalingGroupProvider { get; set; }
         /// <summary>
         /// Tags

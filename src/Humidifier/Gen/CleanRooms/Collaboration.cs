@@ -12,6 +12,14 @@ namespace Humidifier.CleanRooms
         }
 
         public override string AWSTypeName { get => AWS.CleanRooms.Collaboration; }
+        /// <summary>
+        /// AnalyticsEngine
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-analyticsengine
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AnalyticsEngine { get; set; }
 
         /// <summary>
         /// CreatorDisplayName

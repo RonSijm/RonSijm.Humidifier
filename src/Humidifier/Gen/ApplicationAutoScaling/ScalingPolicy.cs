@@ -79,6 +79,14 @@ namespace Humidifier.ApplicationAutoScaling
         /// Type: StepScalingPolicyConfiguration
         /// </summary>
         public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.StepScalingPolicyConfiguration StepScalingPolicyConfiguration { get; set; }
+        /// <summary>
+        /// PredictiveScalingPolicyConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PredictiveScalingPolicyConfiguration
+        /// </summary>
+        public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingPolicyConfiguration PredictiveScalingPolicyConfiguration { get; set; }
     }
 
     namespace ScalingPolicyTypes
@@ -170,6 +178,331 @@ namespace Humidifier.ApplicationAutoScaling
             /// <summary>
             /// ResourceLabel
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predefinedmetricspecification-resourcelabel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceLabel { get; set; }
+        }
+
+        public class PredictiveScalingCustomizedCapacityMetric : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MetricDataQueries
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingcustomizedcapacitymetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingcustomizedcapacitymetric-metricdataqueries
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PredictiveScalingMetricDataQuery
+            /// </summary>
+            public List<Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetricDataQuery> MetricDataQueries { get; set; }
+        }
+
+        public class PredictiveScalingCustomizedLoadMetric : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MetricDataQueries
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingcustomizedloadmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingcustomizedloadmetric-metricdataqueries
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PredictiveScalingMetricDataQuery
+            /// </summary>
+            public List<Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetricDataQuery> MetricDataQueries { get; set; }
+        }
+
+        public class PredictiveScalingCustomizedScalingMetric : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MetricDataQueries
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingcustomizedscalingmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingcustomizedscalingmetric-metricdataqueries
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PredictiveScalingMetricDataQuery
+            /// </summary>
+            public List<Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetricDataQuery> MetricDataQueries { get; set; }
+        }
+
+        public class PredictiveScalingMetric : Humidifier.Base.BaseSubResource, IHaveMetricName
+        {
+            /// <summary>
+            /// MetricName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetric-metricname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetricName { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetric-dimensions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PredictiveScalingMetricDimension
+            /// </summary>
+            public List<Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetricDimension> Dimensions { get; set; }
+            /// <summary>
+            /// Namespace_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetric-namespace
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Namespace_ { get; set; }
+        }
+
+        public class PredictiveScalingMetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHaveReturnData
+        {
+            /// <summary>
+            /// ReturnData
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-returndata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReturnData { get; set; }
+            /// <summary>
+            /// Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-expression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expression { get; set; }
+            /// <summary>
+            /// Label
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-label
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Label { get; set; }
+            /// <summary>
+            /// MetricStat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-metricstat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingMetricStat
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetricStat MetricStat { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-id
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
+        public class PredictiveScalingMetricDimension : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdimension.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdimension-value
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdimension.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdimension-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class PredictiveScalingMetricSpecification : Humidifier.Base.BaseSubResource, IHaveTargetValue
+        {
+            /// <summary>
+            /// CustomizedLoadMetricSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-customizedloadmetricspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingCustomizedLoadMetric
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingCustomizedLoadMetric CustomizedLoadMetricSpecification { get; set; }
+            /// <summary>
+            /// PredefinedLoadMetricSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-predefinedloadmetricspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingPredefinedLoadMetric
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingPredefinedLoadMetric PredefinedLoadMetricSpecification { get; set; }
+            /// <summary>
+            /// TargetValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-targetvalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic TargetValue { get; set; }
+            /// <summary>
+            /// PredefinedScalingMetricSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-predefinedscalingmetricspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingPredefinedScalingMetric
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingPredefinedScalingMetric PredefinedScalingMetricSpecification { get; set; }
+            /// <summary>
+            /// CustomizedCapacityMetricSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-customizedcapacitymetricspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingCustomizedCapacityMetric
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingCustomizedCapacityMetric CustomizedCapacityMetricSpecification { get; set; }
+            /// <summary>
+            /// CustomizedScalingMetricSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-customizedscalingmetricspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingCustomizedScalingMetric
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingCustomizedScalingMetric CustomizedScalingMetricSpecification { get; set; }
+            /// <summary>
+            /// PredefinedMetricPairSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricspecification-predefinedmetricpairspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingPredefinedMetricPair
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingPredefinedMetricPair PredefinedMetricPairSpecification { get; set; }
+        }
+
+        public class PredictiveScalingMetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveStat
+        {
+            /// <summary>
+            /// Stat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricstat.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricstat-stat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Stat { get; set; }
+            /// <summary>
+            /// Metric
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricstat.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricstat-metric
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PredictiveScalingMetric
+            /// </summary>
+            public Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetric Metric { get; set; }
+            /// <summary>
+            /// Unit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricstat.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricstat-unit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Unit { get; set; }
+        }
+
+        public class PredictiveScalingPolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveMode
+        {
+            /// <summary>
+            /// MaxCapacityBreachBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration-maxcapacitybreachbehavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MaxCapacityBreachBehavior { get; set; }
+            /// <summary>
+            /// MaxCapacityBuffer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration-maxcapacitybuffer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxCapacityBuffer { get; set; }
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration-mode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
+            /// <summary>
+            /// MetricSpecifications
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration-metricspecifications
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PredictiveScalingMetricSpecification
+            /// </summary>
+            public List<Humidifier.ApplicationAutoScaling.ScalingPolicyTypes.PredictiveScalingMetricSpecification> MetricSpecifications { get; set; }
+            /// <summary>
+            /// SchedulingBufferTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpolicyconfiguration-schedulingbuffertime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SchedulingBufferTime { get; set; }
+        }
+
+        public class PredictiveScalingPredefinedLoadMetric : Humidifier.Base.BaseSubResource, IHaveResourceLabel, IHavePredefinedMetricType
+        {
+            /// <summary>
+            /// PredefinedMetricType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpredefinedloadmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpredefinedloadmetric-predefinedmetrictype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PredefinedMetricType { get; set; }
+            /// <summary>
+            /// ResourceLabel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpredefinedloadmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpredefinedloadmetric-resourcelabel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceLabel { get; set; }
+        }
+
+        public class PredictiveScalingPredefinedMetricPair : Humidifier.Base.BaseSubResource, IHaveResourceLabel, IHavePredefinedMetricType
+        {
+            /// <summary>
+            /// PredefinedMetricType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpredefinedmetricpair.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpredefinedmetricpair-predefinedmetrictype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PredefinedMetricType { get; set; }
+            /// <summary>
+            /// ResourceLabel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpredefinedmetricpair.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpredefinedmetricpair-resourcelabel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceLabel { get; set; }
+        }
+
+        public class PredictiveScalingPredefinedScalingMetric : Humidifier.Base.BaseSubResource, IHaveResourceLabel, IHavePredefinedMetricType
+        {
+            /// <summary>
+            /// PredefinedMetricType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpredefinedscalingmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpredefinedscalingmetric-predefinedmetrictype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PredefinedMetricType { get; set; }
+            /// <summary>
+            /// ResourceLabel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingpredefinedscalingmetric.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingpredefinedscalingmetric-resourcelabel
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String

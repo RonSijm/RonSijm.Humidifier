@@ -131,6 +131,14 @@ namespace Humidifier.SageMaker
             /// Type: EFSFileSystemConfig
             /// </summary>
             public Humidifier.SageMaker.UserProfileTypes.EFSFileSystemConfig EFSFileSystemConfig { get; set; }
+            /// <summary>
+            /// FSxLustreFileSystemConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customfilesystemconfig.html#cfn-sagemaker-userprofile-customfilesystemconfig-fsxlustrefilesystemconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FSxLustreFileSystemConfig
+            /// </summary>
+            public Humidifier.SageMaker.UserProfileTypes.FSxLustreFileSystemConfig FSxLustreFileSystemConfig { get; set; }
         }
 
         public class CustomImage : Humidifier.Base.BaseSubResource, IHaveImageName, IHaveAppImageConfigName, IHaveImageVersionNumber
@@ -226,6 +234,26 @@ namespace Humidifier.SageMaker
             /// <summary>
             /// FileSystemId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-efsfilesystemconfig.html#cfn-sagemaker-userprofile-efsfilesystemconfig-filesystemid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FileSystemId { get; set; }
+        }
+
+        public class FSxLustreFileSystemConfig : Humidifier.Base.BaseSubResource, IHaveFileSystemId, IHaveFileSystemPath
+        {
+            /// <summary>
+            /// FileSystemPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-fsxlustrefilesystemconfig.html#cfn-sagemaker-userprofile-fsxlustrefilesystemconfig-filesystempath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FileSystemPath { get; set; }
+            /// <summary>
+            /// FileSystemId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-fsxlustrefilesystemconfig.html#cfn-sagemaker-userprofile-fsxlustrefilesystemconfig-filesystemid
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String

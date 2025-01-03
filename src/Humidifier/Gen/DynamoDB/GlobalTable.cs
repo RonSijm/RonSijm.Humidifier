@@ -22,6 +22,57 @@ namespace Humidifier.DynamoDB
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.SSESpecification SSESpecification { get; set; }
         /// <summary>
+        /// StreamSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: StreamSpecification
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.StreamSpecification StreamSpecification { get; set; }
+        /// <summary>
+        /// PointInTimeRecoverySpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-pointintimerecoveryspecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PointInTimeRecoverySpecification
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
+        /// <summary>
+        /// WarmThroughput
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-warmthroughput
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WarmThroughput
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.WarmThroughput WarmThroughput { get; set; }
+
+        /// <summary>
+        /// Replicas
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-replicas
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ReplicaSpecification
+        /// </summary>
+        [Required]
+        public List<Humidifier.DynamoDB.GlobalTableTypes.ReplicaSpecification> Replicas { get; set; }
+        /// <summary>
+        /// WriteProvisionedThroughputSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WriteProvisionedThroughputSettings
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.WriteProvisionedThroughputSettings WriteProvisionedThroughputSettings { get; set; }
+        /// <summary>
+        /// WriteOnDemandThroughputSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeondemandthroughputsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WriteOnDemandThroughputSettings
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.WriteOnDemandThroughputSettings WriteOnDemandThroughputSettings { get; set; }
+        /// <summary>
         /// TableName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tablename
         /// Required: False
@@ -40,14 +91,6 @@ namespace Humidifier.DynamoDB
         /// </summary>
         [Required]
         public List<Humidifier.DynamoDB.GlobalTableTypes.AttributeDefinition> AttributeDefinitions { get; set; }
-        /// <summary>
-        /// StreamSpecification
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: StreamSpecification
-        /// </summary>
-        public Humidifier.DynamoDB.GlobalTableTypes.StreamSpecification StreamSpecification { get; set; }
         /// <summary>
         /// BillingMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-billingmode
@@ -85,25 +128,6 @@ namespace Humidifier.DynamoDB
         /// ItemType: LocalSecondaryIndex
         /// </summary>
         public List<Humidifier.DynamoDB.GlobalTableTypes.LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
-
-        /// <summary>
-        /// Replicas
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-replicas
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ReplicaSpecification
-        /// </summary>
-        [Required]
-        public List<Humidifier.DynamoDB.GlobalTableTypes.ReplicaSpecification> Replicas { get; set; }
-        /// <summary>
-        /// WriteProvisionedThroughputSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: WriteProvisionedThroughputSettings
-        /// </summary>
-        public Humidifier.DynamoDB.GlobalTableTypes.WriteProvisionedThroughputSettings WriteProvisionedThroughputSettings { get; set; }
         /// <summary>
         /// TimeToLiveSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-timetolivespecification
@@ -112,14 +136,6 @@ namespace Humidifier.DynamoDB
         /// Type: TimeToLiveSpecification
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.TimeToLiveSpecification TimeToLiveSpecification { get; set; }
-        /// <summary>
-        /// WriteOnDemandThroughputSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeondemandthroughputsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: WriteOnDemandThroughputSettings
-        /// </summary>
-        public Humidifier.DynamoDB.GlobalTableTypes.WriteOnDemandThroughputSettings WriteOnDemandThroughputSettings { get; set; }
     }
 
     namespace GlobalTableTypes
@@ -219,6 +235,14 @@ namespace Humidifier.DynamoDB
             /// ItemType: KeySchema
             /// </summary>
             public List<Humidifier.DynamoDB.GlobalTableTypes.KeySchema> KeySchema { get; set; }
+            /// <summary>
+            /// WarmThroughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-warmthroughput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WarmThroughput
+            /// </summary>
+            public Humidifier.DynamoDB.GlobalTableTypes.WarmThroughput WarmThroughput { get; set; }
             /// <summary>
             /// WriteProvisionedThroughputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-writeprovisionedthroughputsettings
@@ -639,6 +663,26 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: String
             /// </summary>
             public dynamic AttributeName { get; set; }
+        }
+
+        public class WarmThroughput : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ReadUnitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-warmthroughput.html#cfn-dynamodb-globaltable-warmthroughput-readunitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ReadUnitsPerSecond { get; set; }
+            /// <summary>
+            /// WriteUnitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-warmthroughput.html#cfn-dynamodb-globaltable-warmthroughput-writeunitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WriteUnitsPerSecond { get; set; }
         }
 
         public class WriteOnDemandThroughputSettings : Humidifier.Base.BaseSubResource

@@ -88,6 +88,14 @@ namespace Humidifier.CloudFront
             /// </summary>
             public dynamic ResponseHeadersPolicyId { get; set; }
             /// <summary>
+            /// GrpcConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-grpcconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GrpcConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.GrpcConfig GrpcConfig { get; set; }
+            /// <summary>
             /// RealtimeLogConfigArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-realtimelogconfigarn
             /// Required: False
@@ -368,6 +376,14 @@ namespace Humidifier.CloudFront
             /// </summary>
             public dynamic ResponseHeadersPolicyId { get; set; }
             /// <summary>
+            /// GrpcConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-grpcconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GrpcConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.GrpcConfig GrpcConfig { get; set; }
+            /// <summary>
             /// RealtimeLogConfigArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-realtimelogconfigarn
             /// Required: False
@@ -520,6 +536,14 @@ namespace Humidifier.CloudFront
             /// Type: ViewerCertificate
             /// </summary>
             public Humidifier.CloudFront.DistributionTypes.ViewerCertificate ViewerCertificate { get; set; }
+            /// <summary>
+            /// AnycastIpListId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-anycastiplistid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AnycastIpListId { get; set; }
             /// <summary>
             /// PriceClass
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass
@@ -733,6 +757,18 @@ namespace Humidifier.CloudFront
             public dynamic RestrictionType { get; set; }
         }
 
+        public class GrpcConfig : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-grpcconfig.html#cfn-cloudfront-distribution-grpcconfig-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class LambdaFunctionAssociation : Humidifier.Base.BaseSubResource, IHaveEventType
         {
             /// <summary>
@@ -839,7 +875,7 @@ namespace Humidifier.CloudFront
             /// <summary>
             /// Bucket
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -961,6 +997,14 @@ namespace Humidifier.CloudFront
 
         public class OriginGroup : Humidifier.Base.BaseSubResource, IHaveId
         {
+            /// <summary>
+            /// SelectionCriteria
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-selectioncriteria
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SelectionCriteria { get; set; }
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-id

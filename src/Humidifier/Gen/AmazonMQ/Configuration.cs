@@ -47,15 +47,13 @@ namespace Humidifier.AmazonMQ
         /// </summary>
         [Required]
         public dynamic EngineType { get; set; }
-
         /// <summary>
         /// Data
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-data
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic Data { get; set; }
         /// <summary>
         /// Tags

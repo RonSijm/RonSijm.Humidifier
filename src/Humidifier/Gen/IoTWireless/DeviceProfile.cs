@@ -16,7 +16,7 @@ namespace Humidifier.IoTWireless
         /// LoRaWAN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-lorawan
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: LoRaWANDeviceProfile
         /// </summary>
         public Humidifier.IoTWireless.DeviceProfileTypes.LoRaWANDeviceProfile LoRaWAN { get; set; }
@@ -40,7 +40,7 @@ namespace Humidifier.IoTWireless
             /// PingSlotPeriod
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotperiod
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic PingSlotPeriod { get; set; }
@@ -48,7 +48,7 @@ namespace Humidifier.IoTWireless
             /// ClassCTimeout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-classctimeout
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ClassCTimeout { get; set; }
@@ -56,7 +56,7 @@ namespace Humidifier.IoTWireless
             /// RxFreq2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rxfreq2
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RxFreq2 { get; set; }
@@ -64,7 +64,7 @@ namespace Humidifier.IoTWireless
             /// RfRegion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rfregion
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic RfRegion { get; set; }
@@ -72,7 +72,7 @@ namespace Humidifier.IoTWireless
             /// ClassBTimeout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-classbtimeout
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ClassBTimeout { get; set; }
@@ -80,7 +80,7 @@ namespace Humidifier.IoTWireless
             /// RxDelay1
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rxdelay1
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RxDelay1 { get; set; }
@@ -88,7 +88,7 @@ namespace Humidifier.IoTWireless
             /// SupportsClassC
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsclassc
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic SupportsClassC { get; set; }
@@ -96,7 +96,7 @@ namespace Humidifier.IoTWireless
             /// SupportsClassB
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsclassb
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic SupportsClassB { get; set; }
@@ -104,7 +104,7 @@ namespace Humidifier.IoTWireless
             /// RxDrOffset1
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rxdroffset1
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RxDrOffset1 { get; set; }
@@ -112,7 +112,7 @@ namespace Humidifier.IoTWireless
             /// MaxEirp
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-maxeirp
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxEirp { get; set; }
@@ -120,7 +120,7 @@ namespace Humidifier.IoTWireless
             /// FactoryPresetFreqsList
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-factorypresetfreqslist
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: Integer
             /// </summary>
@@ -129,7 +129,7 @@ namespace Humidifier.IoTWireless
             /// SupportsJoin
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsjoin
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic SupportsJoin { get; set; }
@@ -137,7 +137,7 @@ namespace Humidifier.IoTWireless
             /// PingSlotDr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotdr
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic PingSlotDr { get; set; }
@@ -145,7 +145,7 @@ namespace Humidifier.IoTWireless
             /// MacVersion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-macversion
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic MacVersion { get; set; }
@@ -153,7 +153,7 @@ namespace Humidifier.IoTWireless
             /// PingSlotFreq
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-pingslotfreq
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic PingSlotFreq { get; set; }
@@ -161,7 +161,7 @@ namespace Humidifier.IoTWireless
             /// RegParamsRevision
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-regparamsrevision
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic RegParamsRevision { get; set; }
@@ -169,7 +169,7 @@ namespace Humidifier.IoTWireless
             /// RxDataRate2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-rxdatarate2
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RxDataRate2 { get; set; }
@@ -177,7 +177,7 @@ namespace Humidifier.IoTWireless
             /// Supports32BitFCnt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supports32bitfcnt
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Supports32BitFCnt { get; set; }
@@ -185,7 +185,7 @@ namespace Humidifier.IoTWireless
             /// MaxDutyCycle
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-maxdutycycle
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxDutyCycle { get; set; }

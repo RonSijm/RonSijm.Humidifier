@@ -78,6 +78,14 @@ namespace Humidifier.SageMaker
         public class ClusterInstanceGroup : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveExecutionRole
         {
             /// <summary>
+            /// OverrideVpcConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-clusterinstancegroup.html#cfn-sagemaker-cluster-clusterinstancegroup-overridevpcconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConfig
+            /// </summary>
+            public Humidifier.SageMaker.ClusterTypes.VpcConfig OverrideVpcConfig { get; set; }
+            /// <summary>
             /// InstanceCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-clusterinstancegroup.html#cfn-sagemaker-cluster-clusterinstancegroup-instancecount
             /// Required: True
@@ -212,23 +220,23 @@ namespace Humidifier.SageMaker
         public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnets
         {
             /// <summary>
-            /// Subnets
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-vpcconfig.html#cfn-sagemaker-cluster-vpcconfig-subnets
-            /// Required: True
-            /// UpdateType: Immutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic Subnets { get; set; }
-            /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-vpcconfig.html#cfn-sagemaker-cluster-vpcconfig-securitygroupids
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SecurityGroupIds { get; set; }
+            /// <summary>
+            /// Subnets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-vpcconfig.html#cfn-sagemaker-cluster-vpcconfig-subnets
+            /// Required: True
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Subnets { get; set; }
         }
     }
 }

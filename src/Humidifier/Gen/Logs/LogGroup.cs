@@ -11,6 +11,15 @@ namespace Humidifier.Logs
 
         public override string AWSTypeName { get => AWS.Logs.LogGroup; }
         /// <summary>
+        /// FieldIndexPolicies
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-fieldindexpolicies
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: Json
+        /// </summary>
+        public List<dynamic> FieldIndexPolicies { get; set; }
+        /// <summary>
         /// RetentionInDays
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-retentionindays
         /// Required: False

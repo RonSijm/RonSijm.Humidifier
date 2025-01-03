@@ -38,6 +38,14 @@ namespace Humidifier.S3Express
         /// </summary>
         [Required]
         public dynamic DataRedundancy { get; set; }
+        /// <summary>
+        /// LifecycleConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-lifecycleconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LifecycleConfiguration
+        /// </summary>
+        public Humidifier.S3Express.DirectoryBucketTypes.LifecycleConfiguration LifecycleConfiguration { get; set; }
 
         /// <summary>
         /// LocationName
@@ -52,6 +60,18 @@ namespace Humidifier.S3Express
 
     namespace DirectoryBucketTypes
     {
+        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DaysAfterInitiation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-abortincompletemultipartupload.html#cfn-s3express-directorybucket-abortincompletemultipartupload-daysafterinitiation
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DaysAfterInitiation { get; set; }
+        }
+
         public class BucketEncryption : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -63,6 +83,79 @@ namespace Humidifier.S3Express
             /// ItemType: ServerSideEncryptionRule
             /// </summary>
             public List<Humidifier.S3Express.DirectoryBucketTypes.ServerSideEncryptionRule> ServerSideEncryptionConfiguration { get; set; }
+        }
+
+        public class LifecycleConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Rules
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-lifecycleconfiguration.html#cfn-s3express-directorybucket-lifecycleconfiguration-rules
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Rule
+            /// </summary>
+            public List<Humidifier.S3Express.DirectoryBucketTypes.Rule> Rules { get; set; }
+        }
+
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHavePrefix, IHaveExpirationInDays
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// ExpirationInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-expirationindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ExpirationInDays { get; set; }
+            /// <summary>
+            /// ObjectSizeGreaterThan
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-objectsizegreaterthan
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ObjectSizeGreaterThan { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-id
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+            /// <summary>
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Prefix { get; set; }
+            /// <summary>
+            /// AbortIncompleteMultipartUpload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-abortincompletemultipartupload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AbortIncompleteMultipartUpload
+            /// </summary>
+            public Humidifier.S3Express.DirectoryBucketTypes.AbortIncompleteMultipartUpload AbortIncompleteMultipartUpload { get; set; }
+            /// <summary>
+            /// ObjectSizeLessThan
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-rule.html#cfn-s3express-directorybucket-rule-objectsizelessthan
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ObjectSizeLessThan { get; set; }
         }
 
         public class ServerSideEncryptionByDefault : Humidifier.Base.BaseSubResource

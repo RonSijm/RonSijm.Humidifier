@@ -20,6 +20,14 @@ namespace Humidifier.RedshiftServerless
         /// </summary>
         public dynamic NamespaceName { get; set; }
         /// <summary>
+        /// Port
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-port
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic Port { get; set; }
+        /// <summary>
         /// ConfigParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-configparameters
         /// Required: False
@@ -28,14 +36,6 @@ namespace Humidifier.RedshiftServerless
         /// ItemType: ConfigParameter
         /// </summary>
         public List<Humidifier.RedshiftServerless.WorkgroupTypes.ConfigParameter> ConfigParameters { get; set; }
-        /// <summary>
-        /// Port
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-port
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic Port { get; set; }
         public dynamic WorkgroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// BaseCapacity
@@ -61,6 +61,14 @@ namespace Humidifier.RedshiftServerless
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PubliclyAccessible { get; set; }
+        /// <summary>
+        /// PricePerformanceTarget
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-priceperformancetarget
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PerformanceTarget
+        /// </summary>
+        public Humidifier.RedshiftServerless.WorkgroupTypes.PerformanceTarget PricePerformanceTarget { get; set; }
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-securitygroupids
@@ -183,6 +191,26 @@ namespace Humidifier.RedshiftServerless
             /// PrimitiveType: String
             /// </summary>
             public dynamic NetworkInterfaceId { get; set; }
+        }
+
+        public class PerformanceTarget : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveLevel
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-performancetarget.html#cfn-redshiftserverless-workgroup-performancetarget-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// Level
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-performancetarget.html#cfn-redshiftserverless-workgroup-performancetarget-level
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Level { get; set; }
         }
 
         public class VpcEndpoint : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveVpcEndpointId
@@ -323,6 +351,14 @@ namespace Humidifier.RedshiftServerless
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic PubliclyAccessible { get; set; }
+            /// <summary>
+            /// PricePerformanceTarget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-priceperformancetarget
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PerformanceTarget
+            /// </summary>
+            public Humidifier.RedshiftServerless.WorkgroupTypes.PerformanceTarget PricePerformanceTarget { get; set; }
             /// <summary>
             /// MaxCapacity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-maxcapacity

@@ -62,6 +62,102 @@ namespace Humidifier.Bedrock
 
     namespace PromptTypes
     {
+        public class ChatPromptTemplateConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Messages
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-chatprompttemplateconfiguration.html#cfn-bedrock-prompt-chatprompttemplateconfiguration-messages
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Message
+            /// </summary>
+            public List<Humidifier.Bedrock.PromptTypes.Message> Messages { get; set; }
+            /// <summary>
+            /// InputVariables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-chatprompttemplateconfiguration.html#cfn-bedrock-prompt-chatprompttemplateconfiguration-inputvariables
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PromptInputVariable
+            /// </summary>
+            public List<Humidifier.Bedrock.PromptTypes.PromptInputVariable> InputVariables { get; set; }
+            /// <summary>
+            /// ToolConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-chatprompttemplateconfiguration.html#cfn-bedrock-prompt-chatprompttemplateconfiguration-toolconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ToolConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.ToolConfiguration ToolConfiguration { get; set; }
+            /// <summary>
+            /// System
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-chatprompttemplateconfiguration.html#cfn-bedrock-prompt-chatprompttemplateconfiguration-system
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SystemContentBlock
+            /// </summary>
+            public List<Humidifier.Bedrock.PromptTypes.SystemContentBlock> System { get; set; }
+        }
+
+        public class ContentBlock : Humidifier.Base.BaseSubResource, IHaveText
+        {
+            /// <summary>
+            /// Text
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-contentblock.html#cfn-bedrock-prompt-contentblock-text
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Text { get; set; }
+        }
+
+        public class Message : Humidifier.Base.BaseSubResource, IHaveRole
+        {
+            /// <summary>
+            /// Role
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-message.html#cfn-bedrock-prompt-message-role
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Role { get; set; }
+            /// <summary>
+            /// Content
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-message.html#cfn-bedrock-prompt-message-content
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ContentBlock
+            /// </summary>
+            public List<Humidifier.Bedrock.PromptTypes.ContentBlock> Content { get; set; }
+        }
+
+        public class PromptAgentResource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AgentIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-promptagentresource.html#cfn-bedrock-prompt-promptagentresource-agentidentifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AgentIdentifier { get; set; }
+        }
+
+        public class PromptGenAiResource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Agent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-promptgenairesource.html#cfn-bedrock-prompt-promptgenairesource-agent
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: PromptAgentResource
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.PromptAgentResource Agent { get; set; }
+        }
+
         public class PromptInferenceConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -86,16 +182,8 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
-        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTopK, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
+        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
         {
-            /// <summary>
-            /// TopK
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-promptmodelinferenceconfiguration.html#cfn-bedrock-prompt-promptmodelinferenceconfiguration-topk
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic TopK { get; set; }
             /// <summary>
             /// Temperature
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-promptmodelinferenceconfiguration.html#cfn-bedrock-prompt-promptmodelinferenceconfiguration-temperature
@@ -134,9 +222,17 @@ namespace Humidifier.Bedrock
         public class PromptTemplateConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// Chat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-prompttemplateconfiguration.html#cfn-bedrock-prompt-prompttemplateconfiguration-chat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ChatPromptTemplateConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.ChatPromptTemplateConfiguration Chat { get; set; }
+            /// <summary>
             /// Text
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-prompttemplateconfiguration.html#cfn-bedrock-prompt-prompttemplateconfiguration-text
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: TextPromptTemplateConfiguration
             /// </summary>
@@ -154,9 +250,17 @@ namespace Humidifier.Bedrock
             /// </summary>
             public Humidifier.Bedrock.PromptTypes.PromptInferenceConfiguration InferenceConfiguration { get; set; }
             /// <summary>
+            /// GenAiResource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-promptvariant.html#cfn-bedrock-prompt-promptvariant-genairesource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PromptGenAiResource
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.PromptGenAiResource GenAiResource { get; set; }
+            /// <summary>
             /// TemplateConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-promptvariant.html#cfn-bedrock-prompt-promptvariant-templateconfiguration
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// Type: PromptTemplateConfiguration
             /// </summary>
@@ -185,6 +289,30 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class SpecificToolChoice : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-specifictoolchoice.html#cfn-bedrock-prompt-specifictoolchoice-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class SystemContentBlock : Humidifier.Base.BaseSubResource, IHaveText
+        {
+            /// <summary>
+            /// Text
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-systemcontentblock.html#cfn-bedrock-prompt-systemcontentblock-text
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Text { get; set; }
         }
 
         public class TextPromptTemplateConfiguration : Humidifier.Base.BaseSubResource, IHaveText
@@ -242,6 +370,107 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic Key { get; set; }
+        }
+
+        public class Tool : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ToolSpec
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-tool.html#cfn-bedrock-prompt-tool-toolspec
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ToolSpecification
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.ToolSpecification ToolSpec { get; set; }
+        }
+
+        public class ToolChoice : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Auto
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolchoice.html#cfn-bedrock-prompt-toolchoice-auto
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Auto { get; set; }
+            /// <summary>
+            /// Any
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolchoice.html#cfn-bedrock-prompt-toolchoice-any
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Any { get; set; }
+            /// <summary>
+            /// Tool
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolchoice.html#cfn-bedrock-prompt-toolchoice-tool
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SpecificToolChoice
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.SpecificToolChoice Tool { get; set; }
+        }
+
+        public class ToolConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ToolChoice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolconfiguration.html#cfn-bedrock-prompt-toolconfiguration-toolchoice
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ToolChoice
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.ToolChoice ToolChoice { get; set; }
+            /// <summary>
+            /// Tools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolconfiguration.html#cfn-bedrock-prompt-toolconfiguration-tools
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tool
+            /// </summary>
+            public List<Humidifier.Bedrock.PromptTypes.Tool> Tools { get; set; }
+        }
+
+        public class ToolInputSchema : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Json
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolinputschema.html#cfn-bedrock-prompt-toolinputschema-json
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Json { get; set; }
+        }
+
+        public class ToolSpecification : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
+        {
+            /// <summary>
+            /// Description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolspecification.html#cfn-bedrock-prompt-toolspecification-description
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Description { get; set; }
+            /// <summary>
+            /// InputSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolspecification.html#cfn-bedrock-prompt-toolspecification-inputschema
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ToolInputSchema
+            /// </summary>
+            public Humidifier.Bedrock.PromptTypes.ToolInputSchema InputSchema { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-prompt-toolspecification.html#cfn-bedrock-prompt-toolspecification-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
     }
 }

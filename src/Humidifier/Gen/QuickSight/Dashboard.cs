@@ -63,6 +63,15 @@ namespace Humidifier.QuickSight
         /// Type: ValidationStrategy
         /// </summary>
         public Humidifier.QuickSight.DashboardTypes.ValidationStrategy ValidationStrategy { get; set; }
+        /// <summary>
+        /// FolderArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-folderarns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic FolderArns { get; set; }
 
         /// <summary>
         /// DashboardId
@@ -868,6 +877,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-barchartvisual.html#cfn-quicksight-dashboard-barchartvisual-columnhierarchies
             /// Required: False
@@ -1189,6 +1206,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
             /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-boxplotvisual.html#cfn-quicksight-dashboard-boxplotvisual-columnhierarchies
@@ -1992,6 +2017,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-combochartvisual.html#cfn-quicksight-dashboard-combochartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-combochartvisual.html#cfn-quicksight-dashboard-combochartvisual-columnhierarchies
             /// Required: False
@@ -2555,6 +2588,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-customcontentvisual.html#cfn-quicksight-dashboard-customcontentvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
         }
 
         public class CustomFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveNullOption, IHaveSelectAllOptions, IHaveMatchOperator, IHaveCategoryValue
@@ -2794,9 +2835,9 @@ namespace Humidifier.QuickSight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-visualmenuoption
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: VisualMenuOption
+            /// PrimitiveType: Json
             /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.VisualMenuOption VisualMenuOption { get; set; }
+            public dynamic VisualMenuOption { get; set; }
             /// <summary>
             /// DataPointTooltipOption
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-datapointtooltipoption
@@ -2970,6 +3011,15 @@ namespace Humidifier.QuickSight
             /// ItemType: FilterGroup
             /// </summary>
             public List<Humidifier.QuickSight.DashboardTypes.FilterGroup> FilterGroups { get; set; }
+            /// <summary>
+            /// StaticFiles
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-staticfiles
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StaticFile
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.StaticFile> StaticFiles { get; set; }
             /// <summary>
             /// CalculatedFields
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversiondefinition.html#cfn-quicksight-dashboard-dashboardversiondefinition-calculatedfields
@@ -4882,6 +4932,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapvisual.html#cfn-quicksight-dashboard-filledmapvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-filledmapvisual.html#cfn-quicksight-dashboard-filledmapvisual-columnhierarchies
             /// Required: False
@@ -5639,6 +5697,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Relative { get; set; }
+            /// <summary>
+            /// Absolute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-fontsize.html#cfn-quicksight-dashboard-fontsize-absolute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Absolute { get; set; }
         }
 
         public class FontWeight : Humidifier.Base.BaseSubResource, IHaveName
@@ -6231,6 +6297,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartvisual.html#cfn-quicksight-dashboard-funnelchartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-funnelchartvisual.html#cfn-quicksight-dashboard-funnelchartvisual-columnhierarchies
             /// Required: False
@@ -6467,6 +6541,147 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-gaugechartvisual.html#cfn-quicksight-dashboard-gaugechartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+        }
+
+        public class GeospatialCategoricalColor : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CategoryDataColors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcategoricalcolor.html#cfn-quicksight-dashboard-geospatialcategoricalcolor-categorydatacolors
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: GeospatialCategoricalDataColor
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.GeospatialCategoricalDataColor> CategoryDataColors { get; set; }
+            /// <summary>
+            /// DefaultOpacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcategoricalcolor.html#cfn-quicksight-dashboard-geospatialcategoricalcolor-defaultopacity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic DefaultOpacity { get; set; }
+            /// <summary>
+            /// NullDataVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcategoricalcolor.html#cfn-quicksight-dashboard-geospatialcategoricalcolor-nulldatavisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NullDataVisibility { get; set; }
+            /// <summary>
+            /// NullDataSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcategoricalcolor.html#cfn-quicksight-dashboard-geospatialcategoricalcolor-nulldatasettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialNullDataSettings
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialNullDataSettings NullDataSettings { get; set; }
+        }
+
+        public class GeospatialCategoricalDataColor : Humidifier.Base.BaseSubResource, IHaveColor, IHaveDataValue
+        {
+            /// <summary>
+            /// DataValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcategoricaldatacolor.html#cfn-quicksight-dashboard-geospatialcategoricaldatacolor-datavalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataValue { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcategoricaldatacolor.html#cfn-quicksight-dashboard-geospatialcategoricaldatacolor-color
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
+        }
+
+        public class GeospatialCircleRadius : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Radius
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcircleradius.html#cfn-quicksight-dashboard-geospatialcircleradius-radius
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Radius { get; set; }
+        }
+
+        public class GeospatialCircleSymbolStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FillColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcirclesymbolstyle.html#cfn-quicksight-dashboard-geospatialcirclesymbolstyle-fillcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialColor FillColor { get; set; }
+            /// <summary>
+            /// StrokeWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcirclesymbolstyle.html#cfn-quicksight-dashboard-geospatialcirclesymbolstyle-strokewidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLineWidth
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLineWidth StrokeWidth { get; set; }
+            /// <summary>
+            /// StrokeColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcirclesymbolstyle.html#cfn-quicksight-dashboard-geospatialcirclesymbolstyle-strokecolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialColor StrokeColor { get; set; }
+            /// <summary>
+            /// CircleRadius
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcirclesymbolstyle.html#cfn-quicksight-dashboard-geospatialcirclesymbolstyle-circleradius
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialCircleRadius
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialCircleRadius CircleRadius { get; set; }
+        }
+
+        public class GeospatialColor : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Gradient
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcolor.html#cfn-quicksight-dashboard-geospatialcolor-gradient
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialGradientColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialGradientColor Gradient { get; set; }
+            /// <summary>
+            /// Categorical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcolor.html#cfn-quicksight-dashboard-geospatialcolor-categorical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialCategoricalColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialCategoricalColor Categorical { get; set; }
+            /// <summary>
+            /// Solid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialcolor.html#cfn-quicksight-dashboard-geospatialcolor-solid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialSolidColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialSolidColor Solid { get; set; }
         }
 
         public class GeospatialCoordinateBounds : Humidifier.Base.BaseSubResource, IHaveWest, IHaveSouth, IHaveNorth, IHaveEast
@@ -6505,6 +6720,75 @@ namespace Humidifier.QuickSight
             public dynamic East { get; set; }
         }
 
+        public class GeospatialDataSourceItem : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StaticFileDataSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialdatasourceitem.html#cfn-quicksight-dashboard-geospatialdatasourceitem-staticfiledatasource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialStaticFileSource
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialStaticFileSource StaticFileDataSource { get; set; }
+        }
+
+        public class GeospatialGradientColor : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DefaultOpacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialgradientcolor.html#cfn-quicksight-dashboard-geospatialgradientcolor-defaultopacity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic DefaultOpacity { get; set; }
+            /// <summary>
+            /// StepColors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialgradientcolor.html#cfn-quicksight-dashboard-geospatialgradientcolor-stepcolors
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: GeospatialGradientStepColor
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.GeospatialGradientStepColor> StepColors { get; set; }
+            /// <summary>
+            /// NullDataVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialgradientcolor.html#cfn-quicksight-dashboard-geospatialgradientcolor-nulldatavisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NullDataVisibility { get; set; }
+            /// <summary>
+            /// NullDataSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialgradientcolor.html#cfn-quicksight-dashboard-geospatialgradientcolor-nulldatasettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialNullDataSettings
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialNullDataSettings NullDataSettings { get; set; }
+        }
+
+        public class GeospatialGradientStepColor : Humidifier.Base.BaseSubResource, IHaveColor, IHaveDataValue
+        {
+            /// <summary>
+            /// DataValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialgradientstepcolor.html#cfn-quicksight-dashboard-geospatialgradientstepcolor-datavalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic DataValue { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialgradientstepcolor.html#cfn-quicksight-dashboard-geospatialgradientstepcolor-color
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
+        }
+
         public class GeospatialHeatmapColorScale : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -6540,6 +6824,262 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Color { get; set; }
+        }
+
+        public class GeospatialLayerColorField : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ColorValuesFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayercolorfield.html#cfn-quicksight-dashboard-geospatiallayercolorfield-colorvaluesfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: MeasureField
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.MeasureField> ColorValuesFields { get; set; }
+            /// <summary>
+            /// ColorDimensionsFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayercolorfield.html#cfn-quicksight-dashboard-geospatiallayercolorfield-colordimensionsfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DimensionField
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.DimensionField> ColorDimensionsFields { get; set; }
+        }
+
+        public class GeospatialLayerDefinition : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PointLayer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayerdefinition.html#cfn-quicksight-dashboard-geospatiallayerdefinition-pointlayer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialPointLayer
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialPointLayer PointLayer { get; set; }
+            /// <summary>
+            /// PolygonLayer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayerdefinition.html#cfn-quicksight-dashboard-geospatiallayerdefinition-polygonlayer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialPolygonLayer
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialPolygonLayer PolygonLayer { get; set; }
+            /// <summary>
+            /// LineLayer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayerdefinition.html#cfn-quicksight-dashboard-geospatiallayerdefinition-linelayer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLineLayer
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLineLayer LineLayer { get; set; }
+        }
+
+        public class GeospatialLayerItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveLabel, IHaveQuickSightDashboardTypesTooltipOptionsTooltip
+        {
+            /// <summary>
+            /// LayerId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-layerid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LayerId { get; set; }
+            /// <summary>
+            /// JoinDefinition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-joindefinition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLayerJoinDefinition
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLayerJoinDefinition JoinDefinition { get; set; }
+            /// <summary>
+            /// Actions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-actions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: LayerCustomAction
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.LayerCustomAction> Actions { get; set; }
+            /// <summary>
+            /// LayerType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-layertype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LayerType { get; set; }
+            /// <summary>
+            /// LayerDefinition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-layerdefinition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLayerDefinition
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLayerDefinition LayerDefinition { get; set; }
+            /// <summary>
+            /// Tooltip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-tooltip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TooltipOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.TooltipOptions Tooltip { get; set; }
+            /// <summary>
+            /// Label
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-label
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Label { get; set; }
+            /// <summary>
+            /// Visibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-visibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Visibility { get; set; }
+            /// <summary>
+            /// DataSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayeritem.html#cfn-quicksight-dashboard-geospatiallayeritem-datasource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialDataSourceItem
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialDataSourceItem DataSource { get; set; }
+        }
+
+        public class GeospatialLayerJoinDefinition : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ColorField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayerjoindefinition.html#cfn-quicksight-dashboard-geospatiallayerjoindefinition-colorfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLayerColorField
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLayerColorField ColorField { get; set; }
+            /// <summary>
+            /// ShapeKeyField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayerjoindefinition.html#cfn-quicksight-dashboard-geospatiallayerjoindefinition-shapekeyfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ShapeKeyField { get; set; }
+            /// <summary>
+            /// DatasetKeyField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayerjoindefinition.html#cfn-quicksight-dashboard-geospatiallayerjoindefinition-datasetkeyfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: UnaggregatedField
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.UnaggregatedField DatasetKeyField { get; set; }
+        }
+
+        public class GeospatialLayerMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend
+        {
+            /// <summary>
+            /// Legend
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayermapconfiguration.html#cfn-quicksight-dashboard-geospatiallayermapconfiguration-legend
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LegendOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.LegendOptions Legend { get; set; }
+            /// <summary>
+            /// MapState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayermapconfiguration.html#cfn-quicksight-dashboard-geospatiallayermapconfiguration-mapstate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialMapState
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialMapState MapState { get; set; }
+            /// <summary>
+            /// MapStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayermapconfiguration.html#cfn-quicksight-dashboard-geospatiallayermapconfiguration-mapstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialMapStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialMapStyle MapStyle { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayermapconfiguration.html#cfn-quicksight-dashboard-geospatiallayermapconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Interactions { get; set; }
+            /// <summary>
+            /// MapLayers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallayermapconfiguration.html#cfn-quicksight-dashboard-geospatiallayermapconfiguration-maplayers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: GeospatialLayerItem
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.GeospatialLayerItem> MapLayers { get; set; }
+        }
+
+        public class GeospatialLineLayer : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Style
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallinelayer.html#cfn-quicksight-dashboard-geospatiallinelayer-style
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GeospatialLineStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLineStyle Style { get; set; }
+        }
+
+        public class GeospatialLineStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LineSymbolStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallinestyle.html#cfn-quicksight-dashboard-geospatiallinestyle-linesymbolstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLineSymbolStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLineSymbolStyle LineSymbolStyle { get; set; }
+        }
+
+        public class GeospatialLineSymbolStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FillColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallinesymbolstyle.html#cfn-quicksight-dashboard-geospatiallinesymbolstyle-fillcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialColor FillColor { get; set; }
+            /// <summary>
+            /// LineWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallinesymbolstyle.html#cfn-quicksight-dashboard-geospatiallinesymbolstyle-linewidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLineWidth
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLineWidth LineWidth { get; set; }
+        }
+
+        public class GeospatialLineWidth : Humidifier.Base.BaseSubResource, IHaveLineWidth
+        {
+            /// <summary>
+            /// LineWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatiallinewidth.html#cfn-quicksight-dashboard-geospatiallinewidth-linewidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic LineWidth { get; set; }
         }
 
         public class GeospatialMapAggregatedFieldWells : Humidifier.Base.BaseSubResource
@@ -6608,6 +7148,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.TooltipOptions Tooltip { get; set; }
             /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapconfiguration.html#cfn-quicksight-dashboard-geospatialmapconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Interactions { get; set; }
+            /// <summary>
             /// WindowOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapconfiguration.html#cfn-quicksight-dashboard-geospatialmapconfiguration-windowoptions
             /// Required: False
@@ -6643,6 +7191,54 @@ namespace Humidifier.QuickSight
             /// Type: GeospatialMapAggregatedFieldWells
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.GeospatialMapAggregatedFieldWells GeospatialMapAggregatedFieldWells { get; set; }
+        }
+
+        public class GeospatialMapState : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Bounds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapstate.html#cfn-quicksight-dashboard-geospatialmapstate-bounds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialCoordinateBounds
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialCoordinateBounds Bounds { get; set; }
+            /// <summary>
+            /// MapNavigation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapstate.html#cfn-quicksight-dashboard-geospatialmapstate-mapnavigation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MapNavigation { get; set; }
+        }
+
+        public class GeospatialMapStyle : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveBaseMapStyle
+        {
+            /// <summary>
+            /// BaseMapStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapstyle.html#cfn-quicksight-dashboard-geospatialmapstyle-basemapstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BaseMapStyle { get; set; }
+            /// <summary>
+            /// BaseMapVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapstyle.html#cfn-quicksight-dashboard-geospatialmapstyle-basemapvisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BaseMapVisibility { get; set; }
+            /// <summary>
+            /// BackgroundColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapstyle.html#cfn-quicksight-dashboard-geospatialmapstyle-backgroundcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BackgroundColor { get; set; }
         }
 
         public class GeospatialMapStyleOptions : Humidifier.Base.BaseSubResource, IHaveBaseMapStyle
@@ -6701,6 +7297,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialmapvisual.html#cfn-quicksight-dashboard-geospatialmapvisual-columnhierarchies
             /// Required: False
@@ -6709,6 +7313,70 @@ namespace Humidifier.QuickSight
             /// ItemType: ColumnHierarchy
             /// </summary>
             public List<Humidifier.QuickSight.DashboardTypes.ColumnHierarchy> ColumnHierarchies { get; set; }
+        }
+
+        public class GeospatialNullDataSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SymbolStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialnulldatasettings.html#cfn-quicksight-dashboard-geospatialnulldatasettings-symbolstyle
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GeospatialNullSymbolStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialNullSymbolStyle SymbolStyle { get; set; }
+        }
+
+        public class GeospatialNullSymbolStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FillColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialnullsymbolstyle.html#cfn-quicksight-dashboard-geospatialnullsymbolstyle-fillcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FillColor { get; set; }
+            /// <summary>
+            /// StrokeWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialnullsymbolstyle.html#cfn-quicksight-dashboard-geospatialnullsymbolstyle-strokewidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic StrokeWidth { get; set; }
+            /// <summary>
+            /// StrokeColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialnullsymbolstyle.html#cfn-quicksight-dashboard-geospatialnullsymbolstyle-strokecolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StrokeColor { get; set; }
+        }
+
+        public class GeospatialPointLayer : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Style
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpointlayer.html#cfn-quicksight-dashboard-geospatialpointlayer-style
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GeospatialPointStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialPointStyle Style { get; set; }
+        }
+
+        public class GeospatialPointStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CircleSymbolStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpointstyle.html#cfn-quicksight-dashboard-geospatialpointstyle-circlesymbolstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialCircleSymbolStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialCircleSymbolStyle CircleSymbolStyle { get; set; }
         }
 
         public class GeospatialPointStyleOptions : Humidifier.Base.BaseSubResource, IHaveSelectedPointStyle
@@ -6737,6 +7405,90 @@ namespace Humidifier.QuickSight
             /// Type: GeospatialHeatmapConfiguration
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.GeospatialHeatmapConfiguration HeatmapConfiguration { get; set; }
+        }
+
+        public class GeospatialPolygonLayer : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Style
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpolygonlayer.html#cfn-quicksight-dashboard-geospatialpolygonlayer-style
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GeospatialPolygonStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialPolygonStyle Style { get; set; }
+        }
+
+        public class GeospatialPolygonStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PolygonSymbolStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpolygonstyle.html#cfn-quicksight-dashboard-geospatialpolygonstyle-polygonsymbolstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialPolygonSymbolStyle
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialPolygonSymbolStyle PolygonSymbolStyle { get; set; }
+        }
+
+        public class GeospatialPolygonSymbolStyle : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FillColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpolygonsymbolstyle.html#cfn-quicksight-dashboard-geospatialpolygonsymbolstyle-fillcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialColor FillColor { get; set; }
+            /// <summary>
+            /// StrokeWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpolygonsymbolstyle.html#cfn-quicksight-dashboard-geospatialpolygonsymbolstyle-strokewidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLineWidth
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLineWidth StrokeWidth { get; set; }
+            /// <summary>
+            /// StrokeColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialpolygonsymbolstyle.html#cfn-quicksight-dashboard-geospatialpolygonsymbolstyle-strokecolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialColor
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialColor StrokeColor { get; set; }
+        }
+
+        public class GeospatialSolidColor : Humidifier.Base.BaseSubResource, IHaveColor, IHaveState
+        {
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialsolidcolor.html#cfn-quicksight-dashboard-geospatialsolidcolor-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialsolidcolor.html#cfn-quicksight-dashboard-geospatialsolidcolor-color
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
+        }
+
+        public class GeospatialStaticFileSource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StaticFileId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-geospatialstaticfilesource.html#cfn-quicksight-dashboard-geospatialstaticfilesource-staticfileid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StaticFileId { get; set; }
         }
 
         public class GeospatialWindowOptions : Humidifier.Base.BaseSubResource, IHaveMapZoomMode
@@ -7190,6 +7942,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapvisual.html#cfn-quicksight-dashboard-heatmapvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-heatmapvisual.html#cfn-quicksight-dashboard-heatmapvisual-columnhierarchies
             /// Required: False
@@ -7372,6 +8132,131 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-histogramvisual.html#cfn-quicksight-dashboard-histogramvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+        }
+
+        public class ImageCustomAction : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveTrigger, IHaveCustomActionId
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomaction.html#cfn-quicksight-dashboard-imagecustomaction-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// Trigger
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomaction.html#cfn-quicksight-dashboard-imagecustomaction-trigger
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Trigger { get; set; }
+            /// <summary>
+            /// CustomActionId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomaction.html#cfn-quicksight-dashboard-imagecustomaction-customactionid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomActionId { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomaction.html#cfn-quicksight-dashboard-imagecustomaction-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// ActionOperations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomaction.html#cfn-quicksight-dashboard-imagecustomaction-actionoperations
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ImageCustomActionOperation
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.ImageCustomActionOperation> ActionOperations { get; set; }
+        }
+
+        public class ImageCustomActionOperation : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NavigationOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomactionoperation.html#cfn-quicksight-dashboard-imagecustomactionoperation-navigationoperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionNavigationOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionNavigationOperation NavigationOperation { get; set; }
+            /// <summary>
+            /// SetParametersOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomactionoperation.html#cfn-quicksight-dashboard-imagecustomactionoperation-setparametersoperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionSetParametersOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionSetParametersOperation SetParametersOperation { get; set; }
+            /// <summary>
+            /// URLOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagecustomactionoperation.html#cfn-quicksight-dashboard-imagecustomactionoperation-urloperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionURLOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionURLOperation URLOperation { get; set; }
+        }
+
+        public class ImageInteractionOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageMenuOption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imageinteractionoptions.html#cfn-quicksight-dashboard-imageinteractionoptions-imagemenuoption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ImageMenuOption
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.ImageMenuOption ImageMenuOption { get; set; }
+        }
+
+        public class ImageMenuOption : Humidifier.Base.BaseSubResource, IHaveAvailabilityStatus
+        {
+            /// <summary>
+            /// AvailabilityStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagemenuoption.html#cfn-quicksight-dashboard-imagemenuoption-availabilitystatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityStatus { get; set; }
+        }
+
+        public class ImageStaticFile : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StaticFileId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagestaticfile.html#cfn-quicksight-dashboard-imagestaticfile-staticfileid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StaticFileId { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-imagestaticfile.html#cfn-quicksight-dashboard-imagestaticfile-source
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StaticFileSource
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.StaticFileSource Source { get; set; }
         }
 
         public class InnerFilter : Humidifier.Base.BaseSubResource
@@ -7458,6 +8343,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-insightvisual.html#cfn-quicksight-dashboard-insightvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
         }
 
         public class IntegerDefaultValues : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesDynamicDefaultValueDynamicValue
@@ -7944,6 +8837,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpivisual.html#cfn-quicksight-dashboard-kpivisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-kpivisual.html#cfn-quicksight-dashboard-kpivisual-columnhierarchies
             /// Required: False
@@ -8006,6 +8907,139 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FontConfiguration FontConfiguration { get; set; }
         }
 
+        public class LayerCustomAction : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveTrigger, IHaveCustomActionId
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomaction.html#cfn-quicksight-dashboard-layercustomaction-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// Trigger
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomaction.html#cfn-quicksight-dashboard-layercustomaction-trigger
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Trigger { get; set; }
+            /// <summary>
+            /// CustomActionId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomaction.html#cfn-quicksight-dashboard-layercustomaction-customactionid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomActionId { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomaction.html#cfn-quicksight-dashboard-layercustomaction-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// ActionOperations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomaction.html#cfn-quicksight-dashboard-layercustomaction-actionoperations
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: LayerCustomActionOperation
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.LayerCustomActionOperation> ActionOperations { get; set; }
+        }
+
+        public class LayerCustomActionOperation : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NavigationOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomactionoperation.html#cfn-quicksight-dashboard-layercustomactionoperation-navigationoperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionNavigationOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionNavigationOperation NavigationOperation { get; set; }
+            /// <summary>
+            /// SetParametersOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomactionoperation.html#cfn-quicksight-dashboard-layercustomactionoperation-setparametersoperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionSetParametersOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionSetParametersOperation SetParametersOperation { get; set; }
+            /// <summary>
+            /// FilterOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomactionoperation.html#cfn-quicksight-dashboard-layercustomactionoperation-filteroperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionFilterOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionFilterOperation FilterOperation { get; set; }
+            /// <summary>
+            /// URLOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layercustomactionoperation.html#cfn-quicksight-dashboard-layercustomactionoperation-urloperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomActionURLOperation
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.CustomActionURLOperation URLOperation { get; set; }
+        }
+
+        public class LayerMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
+        {
+            /// <summary>
+            /// Subtitle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layermapvisual.html#cfn-quicksight-dashboard-layermapvisual-subtitle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualSubtitleLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.VisualSubtitleLabelOptions Subtitle { get; set; }
+            /// <summary>
+            /// VisualId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layermapvisual.html#cfn-quicksight-dashboard-layermapvisual-visualid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualId { get; set; }
+            /// <summary>
+            /// ChartConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layermapvisual.html#cfn-quicksight-dashboard-layermapvisual-chartconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialLayerMapConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialLayerMapConfiguration ChartConfiguration { get; set; }
+            /// <summary>
+            /// DataSetIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layermapvisual.html#cfn-quicksight-dashboard-layermapvisual-datasetidentifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataSetIdentifier { get; set; }
+            /// <summary>
+            /// Title
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layermapvisual.html#cfn-quicksight-dashboard-layermapvisual-title
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualTitleLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-layermapvisual.html#cfn-quicksight-dashboard-layermapvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+        }
+
         public class Layout : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -8056,6 +9090,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Position { get; set; }
+            /// <summary>
+            /// ValueFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-legendoptions.html#cfn-quicksight-dashboard-legendoptions-valuefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.FontConfiguration ValueFontConfiguration { get; set; }
             /// <summary>
             /// Title
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-legendoptions.html#cfn-quicksight-dashboard-legendoptions-title
@@ -8519,6 +9561,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartvisual.html#cfn-quicksight-dashboard-linechartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
             /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-linechartvisual.html#cfn-quicksight-dashboard-linechartvisual-columnhierarchies
@@ -10299,6 +11349,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartvisual.html#cfn-quicksight-dashboard-piechartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-piechartvisual.html#cfn-quicksight-dashboard-piechartvisual-columnhierarchies
             /// Required: False
@@ -10907,6 +11965,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pivottablevisual.html#cfn-quicksight-dashboard-pivottablevisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
         }
 
         public class PivotTotalOptions : Humidifier.Base.BaseSubResource, IHaveCustomLabel, IHaveTotalsVisibility, IHavePlacement, IHaveScrollStatus, IHaveQuickSightDashboardTypesTableCellStyleTotalCellStyle
@@ -10976,6 +12042,204 @@ namespace Humidifier.QuickSight
             /// Type: TableCellStyle
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.TableCellStyle MetricHeaderCellStyle { get; set; }
+        }
+
+        public class PluginVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        {
+            /// <summary>
+            /// Subtitle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisual.html#cfn-quicksight-dashboard-pluginvisual-subtitle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualSubtitleLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.VisualSubtitleLabelOptions Subtitle { get; set; }
+            /// <summary>
+            /// PluginArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisual.html#cfn-quicksight-dashboard-pluginvisual-pluginarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PluginArn { get; set; }
+            /// <summary>
+            /// VisualId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisual.html#cfn-quicksight-dashboard-pluginvisual-visualid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualId { get; set; }
+            /// <summary>
+            /// ChartConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisual.html#cfn-quicksight-dashboard-pluginvisual-chartconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PluginVisualConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.PluginVisualConfiguration ChartConfiguration { get; set; }
+            /// <summary>
+            /// Title
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisual.html#cfn-quicksight-dashboard-pluginvisual-title
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualTitleLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisual.html#cfn-quicksight-dashboard-pluginvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+        }
+
+        public class PluginVisualConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SortConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualconfiguration.html#cfn-quicksight-dashboard-pluginvisualconfiguration-sortconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PluginVisualSortConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.PluginVisualSortConfiguration SortConfiguration { get; set; }
+            /// <summary>
+            /// VisualOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualconfiguration.html#cfn-quicksight-dashboard-pluginvisualconfiguration-visualoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PluginVisualOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.PluginVisualOptions VisualOptions { get; set; }
+            /// <summary>
+            /// FieldWells
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualconfiguration.html#cfn-quicksight-dashboard-pluginvisualconfiguration-fieldwells
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PluginVisualFieldWell
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.PluginVisualFieldWell> FieldWells { get; set; }
+        }
+
+        public class PluginVisualFieldWell : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Unaggregated
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualfieldwell.html#cfn-quicksight-dashboard-pluginvisualfieldwell-unaggregated
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: UnaggregatedField
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.UnaggregatedField> Unaggregated { get; set; }
+            /// <summary>
+            /// AxisName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualfieldwell.html#cfn-quicksight-dashboard-pluginvisualfieldwell-axisname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AxisName { get; set; }
+            /// <summary>
+            /// Measures
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualfieldwell.html#cfn-quicksight-dashboard-pluginvisualfieldwell-measures
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: MeasureField
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.MeasureField> Measures { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualfieldwell.html#cfn-quicksight-dashboard-pluginvisualfieldwell-dimensions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DimensionField
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.DimensionField> Dimensions { get; set; }
+        }
+
+        public class PluginVisualItemsLimitConfiguration : Humidifier.Base.BaseSubResource, IHaveItemsLimit
+        {
+            /// <summary>
+            /// ItemsLimit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualitemslimitconfiguration.html#cfn-quicksight-dashboard-pluginvisualitemslimitconfiguration-itemslimit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic ItemsLimit { get; set; }
+        }
+
+        public class PluginVisualOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VisualProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualoptions.html#cfn-quicksight-dashboard-pluginvisualoptions-visualproperties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PluginVisualProperty
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.PluginVisualProperty> VisualProperties { get; set; }
+        }
+
+        public class PluginVisualProperty : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualproperty.html#cfn-quicksight-dashboard-pluginvisualproperty-value
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualproperty.html#cfn-quicksight-dashboard-pluginvisualproperty-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class PluginVisualSortConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PluginVisualTableQuerySort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualsortconfiguration.html#cfn-quicksight-dashboard-pluginvisualsortconfiguration-pluginvisualtablequerysort
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PluginVisualTableQuerySort
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.PluginVisualTableQuerySort PluginVisualTableQuerySort { get; set; }
+        }
+
+        public class PluginVisualTableQuerySort : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ItemsLimitConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualtablequerysort.html#cfn-quicksight-dashboard-pluginvisualtablequerysort-itemslimitconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PluginVisualItemsLimitConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.PluginVisualItemsLimitConfiguration ItemsLimitConfiguration { get; set; }
+            /// <summary>
+            /// RowSort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-pluginvisualtablequerysort.html#cfn-quicksight-dashboard-pluginvisualtablequerysort-rowsort
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FieldSortOptions
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> RowSort { get; set; }
         }
 
         public class PredefinedHierarchy : Humidifier.Base.BaseSubResource, IHaveHierarchyId
@@ -11292,6 +12556,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartvisual.html#cfn-quicksight-dashboard-radarchartvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
             /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-radarchartvisual.html#cfn-quicksight-dashboard-radarchartvisual-columnhierarchies
@@ -11885,6 +13157,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sankeydiagramvisual.html#cfn-quicksight-dashboard-sankeydiagramvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
         }
 
         public class ScatterPlotCategoricallyAggregatedFieldWells : Humidifier.Base.BaseSubResource
@@ -12124,6 +13404,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
             /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-scatterplotvisual.html#cfn-quicksight-dashboard-scatterplotvisual-columnhierarchies
@@ -12378,6 +13666,15 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic SheetId { get; set; }
             /// <summary>
+            /// Images
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html#cfn-quicksight-dashboard-sheet-images
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SheetImage
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.SheetImage> Images { get; set; }
+            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html#cfn-quicksight-dashboard-sheet-name
             /// Required: False
@@ -12506,6 +13803,15 @@ namespace Humidifier.QuickSight
             /// </summary>
             public List<Humidifier.QuickSight.DashboardTypes.FilterControl> FilterControls { get; set; }
             /// <summary>
+            /// Images
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-images
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SheetImage
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.SheetImage> Images { get; set; }
+            /// <summary>
             /// SheetControlLayouts
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetdefinition.html#cfn-quicksight-dashboard-sheetdefinition-sheetcontrollayouts
             /// Required: False
@@ -12571,6 +13877,135 @@ namespace Humidifier.QuickSight
             /// Type: SheetElementConfigurationOverrides
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.SheetElementConfigurationOverrides ConfigurationOverrides { get; set; }
+        }
+
+        public class SheetImage : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Actions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-actions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ImageCustomAction
+            /// </summary>
+            public List<Humidifier.QuickSight.DashboardTypes.ImageCustomAction> Actions { get; set; }
+            /// <summary>
+            /// SheetImageId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-sheetimageid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SheetImageId { get; set; }
+            /// <summary>
+            /// Tooltip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-tooltip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetImageTooltipConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SheetImageTooltipConfiguration Tooltip { get; set; }
+            /// <summary>
+            /// Scaling
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-scaling
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetImageScalingConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SheetImageScalingConfiguration Scaling { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ImageInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.ImageInteractionOptions Interactions { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-source
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: SheetImageSource
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SheetImageSource Source { get; set; }
+            /// <summary>
+            /// ImageContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimage.html#cfn-quicksight-dashboard-sheetimage-imagecontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageContentAltText { get; set; }
+        }
+
+        public class SheetImageScalingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ScalingType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimagescalingconfiguration.html#cfn-quicksight-dashboard-sheetimagescalingconfiguration-scalingtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScalingType { get; set; }
+        }
+
+        public class SheetImageSource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SheetImageStaticFileSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimagesource.html#cfn-quicksight-dashboard-sheetimagesource-sheetimagestaticfilesource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetImageStaticFileSource
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SheetImageStaticFileSource SheetImageStaticFileSource { get; set; }
+        }
+
+        public class SheetImageStaticFileSource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StaticFileId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimagestaticfilesource.html#cfn-quicksight-dashboard-sheetimagestaticfilesource-staticfileid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StaticFileId { get; set; }
+        }
+
+        public class SheetImageTooltipConfiguration : Humidifier.Base.BaseSubResource, IHaveVisibility
+        {
+            /// <summary>
+            /// Visibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimagetooltipconfiguration.html#cfn-quicksight-dashboard-sheetimagetooltipconfiguration-visibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Visibility { get; set; }
+            /// <summary>
+            /// TooltipText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimagetooltipconfiguration.html#cfn-quicksight-dashboard-sheetimagetooltipconfiguration-tooltiptext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetImageTooltipText
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SheetImageTooltipText TooltipText { get; set; }
+        }
+
+        public class SheetImageTooltipText : Humidifier.Base.BaseSubResource, IHavePlainText
+        {
+            /// <summary>
+            /// PlainText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetimagetooltiptext.html#cfn-quicksight-dashboard-sheetimagetooltiptext-plaintext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PlainText { get; set; }
         }
 
         public class SheetLayoutElementMaximizationOption : Humidifier.Base.BaseSubResource, IHaveAvailabilityStatus
@@ -12796,6 +14231,106 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Bottom { get; set; }
+        }
+
+        public class SpatialStaticFile : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StaticFileId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-spatialstaticfile.html#cfn-quicksight-dashboard-spatialstaticfile-staticfileid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StaticFileId { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-spatialstaticfile.html#cfn-quicksight-dashboard-spatialstaticfile-source
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StaticFileSource
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.StaticFileSource Source { get; set; }
+        }
+
+        public class StaticFile : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageStaticFile
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfile.html#cfn-quicksight-dashboard-staticfile-imagestaticfile
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ImageStaticFile
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.ImageStaticFile ImageStaticFile { get; set; }
+            /// <summary>
+            /// SpatialStaticFile
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfile.html#cfn-quicksight-dashboard-staticfile-spatialstaticfile
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SpatialStaticFile
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SpatialStaticFile SpatialStaticFile { get; set; }
+        }
+
+        public class StaticFileS3SourceOptions : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveRegion
+        {
+            /// <summary>
+            /// BucketName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfiles3sourceoptions.html#cfn-quicksight-dashboard-staticfiles3sourceoptions-bucketname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketName { get; set; }
+            /// <summary>
+            /// ObjectKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfiles3sourceoptions.html#cfn-quicksight-dashboard-staticfiles3sourceoptions-objectkey
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ObjectKey { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfiles3sourceoptions.html#cfn-quicksight-dashboard-staticfiles3sourceoptions-region
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
+        }
+
+        public class StaticFileSource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// UrlOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfilesource.html#cfn-quicksight-dashboard-staticfilesource-urloptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StaticFileUrlSourceOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.StaticFileUrlSourceOptions UrlOptions { get; set; }
+            /// <summary>
+            /// S3Options
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfilesource.html#cfn-quicksight-dashboard-staticfilesource-s3options
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StaticFileS3SourceOptions
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.StaticFileS3SourceOptions S3Options { get; set; }
+        }
+
+        public class StaticFileUrlSourceOptions : Humidifier.Base.BaseSubResource, IHaveUrl
+        {
+            /// <summary>
+            /// Url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-staticfileurlsourceoptions.html#cfn-quicksight-dashboard-staticfileurlsourceoptions-url
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Url { get; set; }
         }
 
         public class StringDefaultValues : Humidifier.Base.BaseSubResource, IHaveStaticValues, IHaveQuickSightDashboardTypesDynamicDefaultValueDynamicValue
@@ -13687,6 +15222,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-tablevisual.html#cfn-quicksight-dashboard-tablevisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
         }
 
         public class TextAreaControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
@@ -14591,6 +16134,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapvisual.html#cfn-quicksight-dashboard-treemapvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-treemapvisual.html#cfn-quicksight-dashboard-treemapvisual-columnhierarchies
             /// Required: False
@@ -14704,14 +16255,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.FunnelChartVisual FunnelChartVisual { get; set; }
             /// <summary>
-            /// FilledMapVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-filledmapvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FilledMapVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.FilledMapVisual FilledMapVisual { get; set; }
-            /// <summary>
             /// BoxPlotVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-boxplotvisual
             /// Required: False
@@ -14719,6 +16262,78 @@ namespace Humidifier.QuickSight
             /// Type: BoxPlotVisual
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.BoxPlotVisual BoxPlotVisual { get; set; }
+            /// <summary>
+            /// LayerMapVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-layermapvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LayerMapVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.LayerMapVisual LayerMapVisual { get; set; }
+            /// <summary>
+            /// GeospatialMapVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-geospatialmapvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialMapVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GeospatialMapVisual GeospatialMapVisual { get; set; }
+            /// <summary>
+            /// ScatterPlotVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-scatterplotvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ScatterPlotVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.ScatterPlotVisual ScatterPlotVisual { get; set; }
+            /// <summary>
+            /// RadarChartVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-radarchartvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RadarChartVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.RadarChartVisual RadarChartVisual { get; set; }
+            /// <summary>
+            /// ComboChartVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-combochartvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ComboChartVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.ComboChartVisual ComboChartVisual { get; set; }
+            /// <summary>
+            /// WordCloudVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-wordcloudvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WordCloudVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.WordCloudVisual WordCloudVisual { get; set; }
+            /// <summary>
+            /// SankeyDiagramVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-sankeydiagramvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SankeyDiagramVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.SankeyDiagramVisual SankeyDiagramVisual { get; set; }
+            /// <summary>
+            /// GaugeChartVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-gaugechartvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GaugeChartVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.GaugeChartVisual GaugeChartVisual { get; set; }
+            /// <summary>
+            /// FilledMapVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-filledmapvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FilledMapVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.FilledMapVisual FilledMapVisual { get; set; }
             /// <summary>
             /// WaterfallVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-waterfallvisual
@@ -14760,6 +16375,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.HistogramVisual HistogramVisual { get; set; }
             /// <summary>
+            /// PluginVisual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-pluginvisual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PluginVisual
+            /// </summary>
+            public Humidifier.QuickSight.DashboardTypes.PluginVisual PluginVisual { get; set; }
+            /// <summary>
             /// TableVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-tablevisual
             /// Required: False
@@ -14776,14 +16399,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.PivotTableVisual PivotTableVisual { get; set; }
             /// <summary>
-            /// GeospatialMapVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-geospatialmapvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: GeospatialMapVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.GeospatialMapVisual GeospatialMapVisual { get; set; }
-            /// <summary>
             /// BarChartVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-barchartvisual
             /// Required: False
@@ -14791,22 +16406,6 @@ namespace Humidifier.QuickSight
             /// Type: BarChartVisual
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.BarChartVisual BarChartVisual { get; set; }
-            /// <summary>
-            /// ScatterPlotVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-scatterplotvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ScatterPlotVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.ScatterPlotVisual ScatterPlotVisual { get; set; }
-            /// <summary>
-            /// RadarChartVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-radarchartvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: RadarChartVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.RadarChartVisual RadarChartVisual { get; set; }
             /// <summary>
             /// HeatMapVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-heatmapvisual
@@ -14824,22 +16423,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.TreeMapVisual TreeMapVisual { get; set; }
             /// <summary>
-            /// ComboChartVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-combochartvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ComboChartVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.ComboChartVisual ComboChartVisual { get; set; }
-            /// <summary>
-            /// WordCloudVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-wordcloudvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: WordCloudVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.WordCloudVisual WordCloudVisual { get; set; }
-            /// <summary>
             /// InsightVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-insightvisual
             /// Required: False
@@ -14847,22 +16430,6 @@ namespace Humidifier.QuickSight
             /// Type: InsightVisual
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.InsightVisual InsightVisual { get; set; }
-            /// <summary>
-            /// SankeyDiagramVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-sankeydiagramvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SankeyDiagramVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.SankeyDiagramVisual SankeyDiagramVisual { get; set; }
-            /// <summary>
-            /// GaugeChartVisual
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-gaugechartvisual
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: GaugeChartVisual
-            /// </summary>
-            public Humidifier.QuickSight.DashboardTypes.GaugeChartVisual GaugeChartVisual { get; set; }
             /// <summary>
             /// LineChartVisual
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visual.html#cfn-quicksight-dashboard-visual-linechartvisual
@@ -14972,18 +16539,6 @@ namespace Humidifier.QuickSight
             /// Type: CustomActionURLOperation
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.CustomActionURLOperation URLOperation { get; set; }
-        }
-
-        public class VisualMenuOption : Humidifier.Base.BaseSubResource, IHaveAvailabilityStatus
-        {
-            /// <summary>
-            /// AvailabilityStatus
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-visualmenuoption.html#cfn-quicksight-dashboard-visualmenuoption-availabilitystatus
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic AvailabilityStatus { get; set; }
         }
 
         public class VisualPalette : Humidifier.Base.BaseSubResource, IHaveChartColor
@@ -15299,6 +16854,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
             /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallvisual.html#cfn-quicksight-dashboard-waterfallvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
+            /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-waterfallvisual.html#cfn-quicksight-dashboard-waterfallvisual-columnhierarchies
             /// Required: False
@@ -15543,6 +17106,14 @@ namespace Humidifier.QuickSight
             /// Type: VisualTitleLabelOptions
             /// </summary>
             public Humidifier.QuickSight.DashboardTypes.VisualTitleLabelOptions Title { get; set; }
+            /// <summary>
+            /// VisualContentAltText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudvisual.html#cfn-quicksight-dashboard-wordcloudvisual-visualcontentalttext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualContentAltText { get; set; }
             /// <summary>
             /// ColumnHierarchies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-wordcloudvisual.html#cfn-quicksight-dashboard-wordcloudvisual-columnhierarchies

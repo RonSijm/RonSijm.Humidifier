@@ -39,6 +39,15 @@ namespace Humidifier.IoTSiteWise
         /// Type: Alarms
         /// </summary>
         public Humidifier.IoTSiteWise.PortalTypes.Alarms Alarms { get; set; }
+        /// <summary>
+        /// PortalTypeConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portaltypeconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// ItemType: PortalTypeEntry
+        /// </summary>
+        public Dictionary<string, Humidifier.IoTSiteWise.PortalTypes.PortalTypeEntry> PortalTypeConfiguration { get; set; }
 
         /// <summary>
         /// PortalContactEmail
@@ -59,6 +68,14 @@ namespace Humidifier.IoTSiteWise
         /// </summary>
         [Required]
         public dynamic RoleArn { get; set; }
+        /// <summary>
+        /// PortalType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portaltype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PortalType { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-tags
@@ -101,6 +118,19 @@ namespace Humidifier.IoTSiteWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic AlarmRoleArn { get; set; }
+        }
+
+        public class PortalTypeEntry : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PortalTools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-portaltypeentry.html#cfn-iotsitewise-portal-portaltypeentry-portaltools
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic PortalTools { get; set; }
         }
     }
 }

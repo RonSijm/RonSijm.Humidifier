@@ -207,8 +207,16 @@ namespace Humidifier.EFS
             public List<Humidifier.EFS.FileSystemTypes.ReplicationDestination> Destinations { get; set; }
         }
 
-        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveKmsKeyId, IHaveRegion, IHaveFileSystemId
+        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveStatus, IHaveKmsKeyId, IHaveRegion, IHaveFileSystemId
         {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-replicationdestination.html#cfn-efs-filesystem-replicationdestination-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
             /// <summary>
             /// KmsKeyId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-replicationdestination.html#cfn-efs-filesystem-replicationdestination-kmskeyid
@@ -241,6 +249,22 @@ namespace Humidifier.EFS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Region { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-replicationdestination.html#cfn-efs-filesystem-replicationdestination-rolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+            /// <summary>
+            /// StatusMessage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-replicationdestination.html#cfn-efs-filesystem-replicationdestination-statusmessage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StatusMessage { get; set; }
         }
     }
 }

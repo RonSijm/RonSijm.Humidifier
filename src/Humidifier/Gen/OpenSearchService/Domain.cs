@@ -125,6 +125,14 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public dynamic IPAddressType { get; set; }
         /// <summary>
+        /// IdentityCenterOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-identitycenteroptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IdentityCenterOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.IdentityCenterOptions IdentityCenterOptions { get; set; }
+        /// <summary>
         /// EBSOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ebsoptions
         /// Required: False
@@ -232,14 +240,6 @@ namespace Humidifier.OpenSearchService
         public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount
         {
             /// <summary>
-            /// InstanceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-instancecount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic InstanceCount { get; set; }
-            /// <summary>
             /// MultiAZWithStandbyEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-multiazwithstandbyenabled
             /// Required: False
@@ -247,22 +247,6 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic MultiAZWithStandbyEnabled { get; set; }
-            /// <summary>
-            /// WarmEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-warmenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic WarmEnabled { get; set; }
-            /// <summary>
-            /// WarmCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-warmcount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic WarmCount { get; set; }
             /// <summary>
             /// DedicatedMasterEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-dedicatedmasterenabled
@@ -280,14 +264,6 @@ namespace Humidifier.OpenSearchService
             /// </summary>
             public Humidifier.OpenSearchService.DomainTypes.ZoneAwarenessConfig ZoneAwarenessConfig { get; set; }
             /// <summary>
-            /// DedicatedMasterCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-dedicatedmastercount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic DedicatedMasterCount { get; set; }
-            /// <summary>
             /// ColdStorageOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-coldstorageoptions
             /// Required: False
@@ -296,13 +272,14 @@ namespace Humidifier.OpenSearchService
             /// </summary>
             public Humidifier.OpenSearchService.DomainTypes.ColdStorageOptions ColdStorageOptions { get; set; }
             /// <summary>
-            /// InstanceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-instancetype
+            /// NodeOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-nodeoptions
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: List
+            /// ItemType: NodeOption
             /// </summary>
-            public dynamic InstanceType { get; set; }
+            public List<Humidifier.OpenSearchService.DomainTypes.NodeOption> NodeOptions { get; set; }
             /// <summary>
             /// WarmType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-warmtype
@@ -311,6 +288,46 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: String
             /// </summary>
             public dynamic WarmType { get; set; }
+            /// <summary>
+            /// InstanceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-instancecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic InstanceCount { get; set; }
+            /// <summary>
+            /// WarmEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-warmenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic WarmEnabled { get; set; }
+            /// <summary>
+            /// WarmCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-warmcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WarmCount { get; set; }
+            /// <summary>
+            /// DedicatedMasterCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-dedicatedmastercount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DedicatedMasterCount { get; set; }
+            /// <summary>
+            /// InstanceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-instancetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceType { get; set; }
             /// <summary>
             /// ZoneAwarenessEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-zoneawarenessenabled
@@ -485,6 +502,58 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
+        public class IdentityCenterOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// IdentityCenterApplicationARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-identitycenteroptions.html#cfn-opensearchservice-domain-identitycenteroptions-identitycenterapplicationarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdentityCenterApplicationARN { get; set; }
+            /// <summary>
+            /// IdentityCenterInstanceARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-identitycenteroptions.html#cfn-opensearchservice-domain-identitycenteroptions-identitycenterinstancearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdentityCenterInstanceARN { get; set; }
+            /// <summary>
+            /// SubjectKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-identitycenteroptions.html#cfn-opensearchservice-domain-identitycenteroptions-subjectkey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SubjectKey { get; set; }
+            /// <summary>
+            /// EnabledAPIAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-identitycenteroptions.html#cfn-opensearchservice-domain-identitycenteroptions-enabledapiaccess
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnabledAPIAccess { get; set; }
+            /// <summary>
+            /// RolesKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-identitycenteroptions.html#cfn-opensearchservice-domain-identitycenteroptions-roleskey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RolesKey { get; set; }
+            /// <summary>
+            /// IdentityStoreId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-identitycenteroptions.html#cfn-opensearchservice-domain-identitycenteroptions-identitystoreid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdentityStoreId { get; set; }
+        }
+
         public class Idp : Humidifier.Base.BaseSubResource, IHaveEntityId
         {
             /// <summary>
@@ -587,6 +656,54 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: String
             /// </summary>
             public dynamic MasterUserName { get; set; }
+        }
+
+        public class NodeConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveEnabled, IHaveCount
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodeconfig.html#cfn-opensearchservice-domain-nodeconfig-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodeconfig.html#cfn-opensearchservice-domain-nodeconfig-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// Count
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodeconfig.html#cfn-opensearchservice-domain-nodeconfig-count
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Count { get; set; }
+        }
+
+        public class NodeOption : Humidifier.Base.BaseSubResource, IHaveNodeType
+        {
+            /// <summary>
+            /// NodeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodeoption.html#cfn-opensearchservice-domain-nodeoption-nodetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NodeType { get; set; }
+            /// <summary>
+            /// NodeConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodeoption.html#cfn-opensearchservice-domain-nodeoption-nodeconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NodeConfig
+            /// </summary>
+            public Humidifier.OpenSearchService.DomainTypes.NodeConfig NodeConfig { get; set; }
         }
 
         public class NodeToNodeEncryptionOptions : Humidifier.Base.BaseSubResource, IHaveEnabled

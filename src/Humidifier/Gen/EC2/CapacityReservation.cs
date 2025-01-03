@@ -41,6 +41,14 @@ namespace Humidifier.EC2
         /// ItemType: TagSpecification
         /// </summary>
         public List<Humidifier.EC2.CapacityReservationTypes.TagSpecification> TagSpecifications { get; set; }
+        /// <summary>
+        /// UnusedReservationBillingOwnerId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-unusedreservationbillingownerid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic UnusedReservationBillingOwnerId { get; set; }
 
         /// <summary>
         /// AvailabilityZone

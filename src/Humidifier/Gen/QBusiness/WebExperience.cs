@@ -17,6 +17,15 @@ namespace Humidifier.QBusiness
 
         public override string AWSTypeName { get => AWS.QBusiness.WebExperience; }
         /// <summary>
+        /// Origins
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-origins
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic Origins { get; set; }
+        /// <summary>
         /// Subtitle
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-subtitle
         /// Required: False
@@ -24,6 +33,14 @@ namespace Humidifier.QBusiness
         /// PrimitiveType: String
         /// </summary>
         public dynamic Subtitle { get; set; }
+        /// <summary>
+        /// CustomizationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-customizationconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomizationConfiguration
+        /// </summary>
+        public Humidifier.QBusiness.WebExperienceTypes.CustomizationConfiguration CustomizationConfiguration { get; set; }
         /// <summary>
         /// SamplePromptsControlMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-samplepromptscontrolmode
@@ -87,6 +104,42 @@ namespace Humidifier.QBusiness
 
     namespace WebExperienceTypes
     {
+        public class CustomizationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FaviconUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-webexperience-customizationconfiguration.html#cfn-qbusiness-webexperience-customizationconfiguration-faviconurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FaviconUrl { get; set; }
+            /// <summary>
+            /// FontUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-webexperience-customizationconfiguration.html#cfn-qbusiness-webexperience-customizationconfiguration-fonturl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontUrl { get; set; }
+            /// <summary>
+            /// CustomCSSUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-webexperience-customizationconfiguration.html#cfn-qbusiness-webexperience-customizationconfiguration-customcssurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomCSSUrl { get; set; }
+            /// <summary>
+            /// LogoUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-webexperience-customizationconfiguration.html#cfn-qbusiness-webexperience-customizationconfiguration-logourl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogoUrl { get; set; }
+        }
+
         public class IdentityProviderConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>

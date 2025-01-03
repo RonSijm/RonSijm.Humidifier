@@ -319,8 +319,54 @@ namespace Humidifier.Batch
             /// </summary>
             public dynamic Version { get; set; }
             /// <summary>
+            /// Overrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-overrides
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: LaunchTemplateSpecificationOverride
+            /// </summary>
+            public List<Humidifier.Batch.ComputeEnvironmentTypes.LaunchTemplateSpecificationOverride> Overrides { get; set; }
+            /// <summary>
             /// LaunchTemplateId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-launchtemplateid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LaunchTemplateId { get; set; }
+        }
+
+        public class LaunchTemplateSpecificationOverride : Humidifier.Base.BaseSubResource, IHaveVersion, IHaveLaunchTemplateName, IHaveLaunchTemplateId
+        {
+            /// <summary>
+            /// TargetInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecificationoverride.html#cfn-batch-computeenvironment-launchtemplatespecificationoverride-targetinstancetypes
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic TargetInstanceTypes { get; set; }
+            /// <summary>
+            /// LaunchTemplateName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecificationoverride.html#cfn-batch-computeenvironment-launchtemplatespecificationoverride-launchtemplatename
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LaunchTemplateName { get; set; }
+            /// <summary>
+            /// Version
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecificationoverride.html#cfn-batch-computeenvironment-launchtemplatespecificationoverride-version
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Version { get; set; }
+            /// <summary>
+            /// LaunchTemplateId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecificationoverride.html#cfn-batch-computeenvironment-launchtemplatespecificationoverride-launchtemplateid
             /// Required: False
             /// UpdateType: Conditional
             /// PrimitiveType: String

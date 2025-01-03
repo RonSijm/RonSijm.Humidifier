@@ -440,6 +440,14 @@ namespace Humidifier.ElasticLoadBalancingV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic TrustStoreArn { get; set; }
+            /// <summary>
+            /// AdvertiseTrustStoreCaNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-mutualauthentication.html#cfn-elasticloadbalancingv2-listener-mutualauthentication-advertisetruststorecanames
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AdvertiseTrustStoreCaNames { get; set; }
         }
 
         public class RedirectConfig : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveHost, IHaveStatusCode

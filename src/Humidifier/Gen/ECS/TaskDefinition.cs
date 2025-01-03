@@ -87,6 +87,14 @@ namespace Humidifier.ECS
         /// </summary>
         public dynamic PidMode { get; set; }
         /// <summary>
+        /// EnableFaultInjection
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-enablefaultinjection
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableFaultInjection { get; set; }
+        /// <summary>
         /// ExecutionRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-executionrolearn
         /// Required: False
@@ -439,6 +447,14 @@ namespace Humidifier.ECS
             /// Type: LinuxParameters
             /// </summary>
             public Humidifier.ECS.TaskDefinitionTypes.LinuxParameters LinuxParameters { get; set; }
+            /// <summary>
+            /// VersionConsistency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinition.html#cfn-ecs-taskdefinition-containerdefinition-versionconsistency
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VersionConsistency { get; set; }
             /// <summary>
             /// RestartPolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinition.html#cfn-ecs-taskdefinition-containerdefinition-restartpolicy

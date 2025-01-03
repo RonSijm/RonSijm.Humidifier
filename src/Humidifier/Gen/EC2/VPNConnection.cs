@@ -141,8 +141,258 @@ namespace Humidifier.EC2
 
     namespace VPNConnectionTypes
     {
+        public class CloudwatchLogOptionsSpecification : Humidifier.Base.BaseSubResource, IHaveLogGroupArn
+        {
+            /// <summary>
+            /// LogEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-logenabled
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic LogEnabled { get; set; }
+            /// <summary>
+            /// LogOutputFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-logoutputformat
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogOutputFormat { get; set; }
+            /// <summary>
+            /// LogGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-loggrouparn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogGroupArn { get; set; }
+        }
+
+        public class IKEVersionsRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-ikeversionsrequestlistvalue.html#cfn-ec2-vpnconnection-ikeversionsrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class Phase1DHGroupNumbersRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase1dhgroupnumbersrequestlistvalue.html#cfn-ec2-vpnconnection-phase1dhgroupnumbersrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class Phase1EncryptionAlgorithmsRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase1encryptionalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase1encryptionalgorithmsrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class Phase1IntegrityAlgorithmsRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase1integrityalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase1integrityalgorithmsrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class Phase2DHGroupNumbersRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase2dhgroupnumbersrequestlistvalue.html#cfn-ec2-vpnconnection-phase2dhgroupnumbersrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class Phase2EncryptionAlgorithmsRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase2encryptionalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase2encryptionalgorithmsrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class Phase2IntegrityAlgorithmsRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase2integrityalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase2integrityalgorithmsrequestlistvalue-value
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class VpnTunnelLogOptionsSpecification : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CloudwatchLogOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunnellogoptionsspecification.html#cfn-ec2-vpnconnection-vpntunnellogoptionsspecification-cloudwatchlogoptions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: CloudwatchLogOptionsSpecification
+            /// </summary>
+            public Humidifier.EC2.VPNConnectionTypes.CloudwatchLogOptionsSpecification CloudwatchLogOptions { get; set; }
+        }
+
         public class VpnTunnelOptionsSpecification : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// Phase2EncryptionAlgorithms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2encryptionalgorithms
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Phase2EncryptionAlgorithmsRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.Phase2EncryptionAlgorithmsRequestListValue> Phase2EncryptionAlgorithms { get; set; }
+            /// <summary>
+            /// Phase2DHGroupNumbers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2dhgroupnumbers
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Phase2DHGroupNumbersRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.Phase2DHGroupNumbersRequestListValue> Phase2DHGroupNumbers { get; set; }
+            /// <summary>
+            /// TunnelInsideIpv6Cidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsideipv6cidr
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TunnelInsideIpv6Cidr { get; set; }
+            /// <summary>
+            /// StartupAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-startupaction
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StartupAction { get; set; }
+            /// <summary>
+            /// TunnelInsideCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TunnelInsideCidr { get; set; }
+            /// <summary>
+            /// IKEVersions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-ikeversions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: IKEVersionsRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.IKEVersionsRequestListValue> IKEVersions { get; set; }
+            /// <summary>
+            /// LogOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-logoptions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: VpnTunnelLogOptionsSpecification
+            /// </summary>
+            public Humidifier.EC2.VPNConnectionTypes.VpnTunnelLogOptionsSpecification LogOptions { get; set; }
+            /// <summary>
+            /// Phase1DHGroupNumbers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1dhgroupnumbers
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Phase1DHGroupNumbersRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.Phase1DHGroupNumbersRequestListValue> Phase1DHGroupNumbers { get; set; }
+            /// <summary>
+            /// ReplayWindowSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-replaywindowsize
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ReplayWindowSize { get; set; }
+            /// <summary>
+            /// EnableTunnelLifecycleControl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-enabletunnellifecyclecontrol
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableTunnelLifecycleControl { get; set; }
+            /// <summary>
+            /// RekeyMarginTimeSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-rekeymargintimeseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RekeyMarginTimeSeconds { get; set; }
+            /// <summary>
+            /// DPDTimeoutAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-dpdtimeoutaction
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DPDTimeoutAction { get; set; }
+            /// <summary>
+            /// Phase2LifetimeSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2lifetimeseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Phase2LifetimeSeconds { get; set; }
+            /// <summary>
+            /// Phase2IntegrityAlgorithms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2integrityalgorithms
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Phase2IntegrityAlgorithmsRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.Phase2IntegrityAlgorithmsRequestListValue> Phase2IntegrityAlgorithms { get; set; }
+            /// <summary>
+            /// Phase1IntegrityAlgorithms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1integrityalgorithms
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Phase1IntegrityAlgorithmsRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.Phase1IntegrityAlgorithmsRequestListValue> Phase1IntegrityAlgorithms { get; set; }
             /// <summary>
             /// PreSharedKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-presharedkey
@@ -152,13 +402,38 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic PreSharedKey { get; set; }
             /// <summary>
-            /// TunnelInsideCidr
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
+            /// Phase1LifetimeSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1lifetimeseconds
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic TunnelInsideCidr { get; set; }
+            public dynamic Phase1LifetimeSeconds { get; set; }
+            /// <summary>
+            /// RekeyFuzzPercentage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-rekeyfuzzpercentage
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RekeyFuzzPercentage { get; set; }
+            /// <summary>
+            /// Phase1EncryptionAlgorithms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1encryptionalgorithms
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Phase1EncryptionAlgorithmsRequestListValue
+            /// </summary>
+            public List<Humidifier.EC2.VPNConnectionTypes.Phase1EncryptionAlgorithmsRequestListValue> Phase1EncryptionAlgorithms { get; set; }
+            /// <summary>
+            /// DPDTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-dpdtimeoutseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DPDTimeoutSeconds { get; set; }
         }
     }
 }

@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class VPCEndpointService : Humidifier.Base.BaseResource
+    public class VPCEndpointService : Humidifier.Base.BaseResource, IHaveTags
     {
         public class Attributes
         {
@@ -52,5 +52,14 @@ namespace Humidifier.EC2
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic GatewayLoadBalancerArns { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
     }
 }

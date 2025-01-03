@@ -58,6 +58,14 @@ namespace Humidifier.IoTFleetWise
         [Required]
         public dynamic ModelManifestArn { get; set; }
         /// <summary>
+        /// DefaultForUnmappedSignals
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#cfn-iotfleetwise-decodermanifest-defaultforunmappedsignals
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DefaultForUnmappedSignals { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#cfn-iotfleetwise-decodermanifest-tags
         /// Required: False
@@ -167,6 +175,30 @@ namespace Humidifier.IoTFleetWise
             public dynamic Name { get; set; }
         }
 
+        public class CustomDecodingInterface : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-customdecodinginterface.html#cfn-iotfleetwise-decodermanifest-customdecodinginterface-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class CustomDecodingSignal : Humidifier.Base.BaseSubResource, IHaveId
+        {
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-customdecodingsignal.html#cfn-iotfleetwise-decodermanifest-customdecodingsignal-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
         public class NetworkInterfacesItems : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
@@ -185,6 +217,14 @@ namespace Humidifier.IoTFleetWise
             /// Type: CanInterface
             /// </summary>
             public Humidifier.IoTFleetWise.DecoderManifestTypes.CanInterface CanInterface { get; set; }
+            /// <summary>
+            /// CustomDecodingInterface
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-customdecodinginterface
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomDecodingInterface
+            /// </summary>
+            public Humidifier.IoTFleetWise.DecoderManifestTypes.CustomDecodingInterface CustomDecodingInterface { get; set; }
             /// <summary>
             /// InterfaceId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-interfaceid
@@ -365,6 +405,14 @@ namespace Humidifier.IoTFleetWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic FullyQualifiedName { get; set; }
+            /// <summary>
+            /// CustomDecodingSignal
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-customdecodingsignal
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomDecodingSignal
+            /// </summary>
+            public Humidifier.IoTFleetWise.DecoderManifestTypes.CustomDecodingSignal CustomDecodingSignal { get; set; }
             /// <summary>
             /// CanSignal
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-cansignal

@@ -116,6 +116,14 @@ namespace Humidifier.KinesisFirehose
         /// </summary>
         public Humidifier.KinesisFirehose.DeliveryStreamTypes.SnowflakeDestinationConfiguration SnowflakeDestinationConfiguration { get; set; }
         /// <summary>
+        /// DatabaseSourceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: DatabaseSourceConfiguration
+        /// </summary>
+        public Humidifier.KinesisFirehose.DeliveryStreamTypes.DatabaseSourceConfiguration DatabaseSourceConfiguration { get; set; }
+        /// <summary>
         /// S3DestinationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration
         /// Required: False
@@ -543,6 +551,205 @@ namespace Humidifier.KinesisFirehose
             /// Type: OutputFormatConfiguration
             /// </summary>
             public Humidifier.KinesisFirehose.DeliveryStreamTypes.OutputFormatConfiguration OutputFormatConfiguration { get; set; }
+        }
+
+        public class DatabaseColumns : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Exclude
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasecolumns.html#cfn-kinesisfirehose-deliverystream-databasecolumns-exclude
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclude { get; set; }
+            /// <summary>
+            /// Include
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasecolumns.html#cfn-kinesisfirehose-deliverystream-databasecolumns-include
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Include { get; set; }
+        }
+
+        public class DatabaseSourceAuthenticationConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration
+        {
+            /// <summary>
+            /// SecretsManagerConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceauthenticationconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceauthenticationconfiguration-secretsmanagerconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: SecretsManagerConfiguration
+            /// </summary>
+            public Humidifier.KinesisFirehose.DeliveryStreamTypes.SecretsManagerConfiguration SecretsManagerConfiguration { get; set; }
+        }
+
+        public class DatabaseSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHaveEndpoint
+        {
+            /// <summary>
+            /// Digest
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-digest
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Digest { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-port
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// PublicCertificate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-publiccertificate
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PublicCertificate { get; set; }
+            /// <summary>
+            /// Columns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-columns
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: DatabaseColumns
+            /// </summary>
+            public Humidifier.KinesisFirehose.DeliveryStreamTypes.DatabaseColumns Columns { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// SurrogateKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-surrogatekeys
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SurrogateKeys { get; set; }
+            /// <summary>
+            /// Databases
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-databases
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: Databases
+            /// </summary>
+            public Humidifier.KinesisFirehose.DeliveryStreamTypes.Databases Databases { get; set; }
+            /// <summary>
+            /// Endpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-endpoint
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Endpoint { get; set; }
+            /// <summary>
+            /// SSLMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-sslmode
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SSLMode { get; set; }
+            /// <summary>
+            /// SnapshotWatermarkTable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-snapshotwatermarktable
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SnapshotWatermarkTable { get; set; }
+            /// <summary>
+            /// DatabaseSourceAuthenticationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-databasesourceauthenticationconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: DatabaseSourceAuthenticationConfiguration
+            /// </summary>
+            public Humidifier.KinesisFirehose.DeliveryStreamTypes.DatabaseSourceAuthenticationConfiguration DatabaseSourceAuthenticationConfiguration { get; set; }
+            /// <summary>
+            /// Tables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-tables
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: DatabaseTables
+            /// </summary>
+            public Humidifier.KinesisFirehose.DeliveryStreamTypes.DatabaseTables Tables { get; set; }
+            /// <summary>
+            /// DatabaseSourceVPCConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourceconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourceconfiguration-databasesourcevpcconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: DatabaseSourceVPCConfiguration
+            /// </summary>
+            public Humidifier.KinesisFirehose.DeliveryStreamTypes.DatabaseSourceVPCConfiguration DatabaseSourceVPCConfiguration { get; set; }
+        }
+
+        public class DatabaseSourceVPCConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VpcEndpointServiceName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasesourcevpcconfiguration.html#cfn-kinesisfirehose-deliverystream-databasesourcevpcconfiguration-vpcendpointservicename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VpcEndpointServiceName { get; set; }
+        }
+
+        public class DatabaseTables : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Exclude
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasetables.html#cfn-kinesisfirehose-deliverystream-databasetables-exclude
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclude { get; set; }
+            /// <summary>
+            /// Include
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databasetables.html#cfn-kinesisfirehose-deliverystream-databasetables-include
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Include { get; set; }
+        }
+
+        public class Databases : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Exclude
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databases.html#cfn-kinesisfirehose-deliverystream-databases-exclude
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclude { get; set; }
+            /// <summary>
+            /// Include
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-databases.html#cfn-kinesisfirehose-deliverystream-databases-include
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Include { get; set; }
         }
 
         public class DeliveryStreamEncryptionConfigurationInput : Humidifier.Base.BaseSubResource, IHaveKeyType
@@ -1759,7 +1966,7 @@ namespace Humidifier.KinesisFirehose
             /// SecretARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-secretsmanagerconfiguration.html#cfn-kinesisfirehose-deliverystream-secretsmanagerconfiguration-secretarn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic SecretARN { get; set; }
@@ -1767,7 +1974,7 @@ namespace Humidifier.KinesisFirehose
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-secretsmanagerconfiguration.html#cfn-kinesisfirehose-deliverystream-secretsmanagerconfiguration-enabled
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
@@ -1775,7 +1982,7 @@ namespace Humidifier.KinesisFirehose
             /// RoleARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-secretsmanagerconfiguration.html#cfn-kinesisfirehose-deliverystream-secretsmanagerconfiguration-rolearn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleARN { get; set; }

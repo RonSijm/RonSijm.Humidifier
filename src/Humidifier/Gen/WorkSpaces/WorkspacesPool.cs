@@ -3,7 +3,7 @@ namespace Humidifier.WorkSpaces
     using System.Collections.Generic;
     using WorkspacesPoolTypes;
 
-    public class WorkspacesPool : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveBundleId, IHaveDirectoryId, IHavePoolName
+    public class WorkspacesPool : Humidifier.Base.BaseResource, IHaveDescription, IHaveBundleId, IHaveDirectoryId, IHavePoolName
     {
         public class Attributes
         {
@@ -77,15 +77,6 @@ namespace Humidifier.WorkSpaces
         /// </summary>
         [Required]
         public dynamic PoolName { get; set; }
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
     }
 
     namespace WorkspacesPoolTypes

@@ -43,14 +43,6 @@ namespace Humidifier.Route53Resolver
         [Required]
         public dynamic RuleType { get; set; }
         /// <summary>
-        /// DelegationRecord
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-delegationrecord
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DelegationRecord { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-tags
         /// Required: False
@@ -107,6 +99,14 @@ namespace Humidifier.Route53Resolver
             /// PrimitiveType: String
             /// </summary>
             public dynamic Protocol { get; set; }
+            /// <summary>
+            /// ServerNameIndication
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-servernameindication
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerNameIndication { get; set; }
         }
     }
 }

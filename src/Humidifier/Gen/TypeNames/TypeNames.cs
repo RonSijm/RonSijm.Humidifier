@@ -47,11 +47,14 @@ public class AWS
         public const string ApiKey = "AWS::ApiGateway::ApiKey";
         public const string Authorizer = "AWS::ApiGateway::Authorizer";
         public const string BasePathMapping = "AWS::ApiGateway::BasePathMapping";
+        public const string BasePathMappingV2 = "AWS::ApiGateway::BasePathMappingV2";
         public const string ClientCertificate = "AWS::ApiGateway::ClientCertificate";
         public const string Deployment = "AWS::ApiGateway::Deployment";
         public const string DocumentationPart = "AWS::ApiGateway::DocumentationPart";
         public const string DocumentationVersion = "AWS::ApiGateway::DocumentationVersion";
         public const string DomainName = "AWS::ApiGateway::DomainName";
+        public const string DomainNameAccessAssociation = "AWS::ApiGateway::DomainNameAccessAssociation";
+        public const string DomainNameV2 = "AWS::ApiGateway::DomainNameV2";
         public const string GatewayResponse = "AWS::ApiGateway::GatewayResponse";
         public const string Method = "AWS::ApiGateway::Method";
         public const string Model = "AWS::ApiGateway::Model";
@@ -138,8 +141,10 @@ public class AWS
     }
     public class AppSync
     {
+        public const string Api = "AWS::AppSync::Api";
         public const string ApiCache = "AWS::AppSync::ApiCache";
         public const string ApiKey = "AWS::AppSync::ApiKey";
+        public const string ChannelNamespace = "AWS::AppSync::ChannelNamespace";
         public const string DataSource = "AWS::AppSync::DataSource";
         public const string DomainName = "AWS::AppSync::DomainName";
         public const string DomainNameApiAssociation = "AWS::AppSync::DomainNameApiAssociation";
@@ -208,6 +213,7 @@ public class AWS
         public const string BackupSelection = "AWS::Backup::BackupSelection";
         public const string BackupVault = "AWS::Backup::BackupVault";
         public const string Framework = "AWS::Backup::Framework";
+        public const string LogicallyAirGappedBackupVault = "AWS::Backup::LogicallyAirGappedBackupVault";
         public const string ReportPlan = "AWS::Backup::ReportPlan";
         public const string RestoreTestingPlan = "AWS::Backup::RestoreTestingPlan";
         public const string RestoreTestingSelection = "AWS::Backup::RestoreTestingSelection";
@@ -227,6 +233,7 @@ public class AWS
     {
         public const string Agent = "AWS::Bedrock::Agent";
         public const string AgentAlias = "AWS::Bedrock::AgentAlias";
+        public const string ApplicationInferenceProfile = "AWS::Bedrock::ApplicationInferenceProfile";
         public const string DataSource = "AWS::Bedrock::DataSource";
         public const string Flow = "AWS::Bedrock::Flow";
         public const string FlowAlias = "AWS::Bedrock::FlowAlias";
@@ -263,6 +270,7 @@ public class AWS
     {
         public const string Keyspace = "AWS::Cassandra::Keyspace";
         public const string Table = "AWS::Cassandra::Table";
+        public const string Type = "AWS::Cassandra::Type";
     }
     public class CertificateManager
     {
@@ -271,6 +279,7 @@ public class AWS
     }
     public class Chatbot
     {
+        public const string CustomAction = "AWS::Chatbot::CustomAction";
         public const string MicrosoftTeamsChannelConfiguration = "AWS::Chatbot::MicrosoftTeamsChannelConfiguration";
         public const string SlackChannelConfiguration = "AWS::Chatbot::SlackChannelConfiguration";
     }
@@ -296,9 +305,11 @@ public class AWS
     public class CloudFormation
     {
         public const string CustomResource = "AWS::CloudFormation::CustomResource";
+        public const string GuardHook = "AWS::CloudFormation::GuardHook";
         public const string HookDefaultVersion = "AWS::CloudFormation::HookDefaultVersion";
         public const string HookTypeConfig = "AWS::CloudFormation::HookTypeConfig";
         public const string HookVersion = "AWS::CloudFormation::HookVersion";
+        public const string LambdaHook = "AWS::CloudFormation::LambdaHook";
         public const string Macro = "AWS::CloudFormation::Macro";
         public const string ModuleDefaultVersion = "AWS::CloudFormation::ModuleDefaultVersion";
         public const string ModuleVersion = "AWS::CloudFormation::ModuleVersion";
@@ -314,6 +325,7 @@ public class AWS
     }
     public class CloudFront
     {
+        public const string AnycastIpList = "AWS::CloudFront::AnycastIpList";
         public const string CachePolicy = "AWS::CloudFront::CachePolicy";
         public const string CloudFrontOriginAccessIdentity = "AWS::CloudFront::CloudFrontOriginAccessIdentity";
         public const string ContinuousDeploymentPolicy = "AWS::CloudFront::ContinuousDeploymentPolicy";
@@ -332,6 +344,7 @@ public class AWS
     public class CloudTrail
     {
         public const string Channel = "AWS::CloudTrail::Channel";
+        public const string Dashboard = "AWS::CloudTrail::Dashboard";
         public const string EventDataStore = "AWS::CloudTrail::EventDataStore";
         public const string ResourcePolicy = "AWS::CloudTrail::ResourcePolicy";
         public const string Trail = "AWS::CloudTrail::Trail";
@@ -406,6 +419,7 @@ public class AWS
         public const string IdentityPoolPrincipalTag = "AWS::Cognito::IdentityPoolPrincipalTag";
         public const string IdentityPoolRoleAttachment = "AWS::Cognito::IdentityPoolRoleAttachment";
         public const string LogDeliveryConfiguration = "AWS::Cognito::LogDeliveryConfiguration";
+        public const string ManagedLoginBranding = "AWS::Cognito::ManagedLoginBranding";
         public const string UserPool = "AWS::Cognito::UserPool";
         public const string UserPoolClient = "AWS::Cognito::UserPoolClient";
         public const string UserPoolDomain = "AWS::Cognito::UserPoolDomain";
@@ -441,6 +455,7 @@ public class AWS
         public const string ApprovedOrigin = "AWS::Connect::ApprovedOrigin";
         public const string ContactFlow = "AWS::Connect::ContactFlow";
         public const string ContactFlowModule = "AWS::Connect::ContactFlowModule";
+        public const string EmailAddress = "AWS::Connect::EmailAddress";
         public const string EvaluationForm = "AWS::Connect::EvaluationForm";
         public const string HoursOfOperation = "AWS::Connect::HoursOfOperation";
         public const string Instance = "AWS::Connect::Instance";
@@ -467,6 +482,10 @@ public class AWS
     {
         public const string Campaign = "AWS::ConnectCampaigns::Campaign";
     }
+    public class ConnectCampaignsV2
+    {
+        public const string Campaign = "AWS::ConnectCampaignsV2::Campaign";
+    }
     public class ControlTower
     {
         public const string EnabledBaseline = "AWS::ControlTower::EnabledBaseline";
@@ -480,6 +499,7 @@ public class AWS
         public const string EventStream = "AWS::CustomerProfiles::EventStream";
         public const string Integration = "AWS::CustomerProfiles::Integration";
         public const string ObjectType = "AWS::CustomerProfiles::ObjectType";
+        public const string SegmentDefinition = "AWS::CustomerProfiles::SegmentDefinition";
     }
     public class DAX
     {
@@ -494,6 +514,7 @@ public class AWS
     public class DMS
     {
         public const string Certificate = "AWS::DMS::Certificate";
+        public const string DataMigration = "AWS::DMS::DataMigration";
         public const string DataProvider = "AWS::DMS::DataProvider";
         public const string Endpoint = "AWS::DMS::Endpoint";
         public const string EventSubscription = "AWS::DMS::EventSubscription";
@@ -647,6 +668,7 @@ public class AWS
         public const string SecurityGroup = "AWS::EC2::SecurityGroup";
         public const string SecurityGroupEgress = "AWS::EC2::SecurityGroupEgress";
         public const string SecurityGroupIngress = "AWS::EC2::SecurityGroupIngress";
+        public const string SecurityGroupVpcAssociation = "AWS::EC2::SecurityGroupVpcAssociation";
         public const string SnapshotBlockPublicAccess = "AWS::EC2::SnapshotBlockPublicAccess";
         public const string SpotFleet = "AWS::EC2::SpotFleet";
         public const string Subnet = "AWS::EC2::Subnet";
@@ -671,6 +693,8 @@ public class AWS
         public const string TransitGatewayRouteTablePropagation = "AWS::EC2::TransitGatewayRouteTablePropagation";
         public const string TransitGatewayVpcAttachment = "AWS::EC2::TransitGatewayVpcAttachment";
         public const string VPC = "AWS::EC2::VPC";
+        public const string VPCBlockPublicAccessExclusion = "AWS::EC2::VPCBlockPublicAccessExclusion";
+        public const string VPCBlockPublicAccessOptions = "AWS::EC2::VPCBlockPublicAccessOptions";
         public const string VPCCidrBlock = "AWS::EC2::VPCCidrBlock";
         public const string VPCDHCPOptionsAssociation = "AWS::EC2::VPCDHCPOptionsAssociation";
         public const string VPCEndpoint = "AWS::EC2::VPCEndpoint";
@@ -857,6 +881,7 @@ public class AWS
     {
         public const string Alias = "AWS::GameLift::Alias";
         public const string Build = "AWS::GameLift::Build";
+        public const string ContainerFleet = "AWS::GameLift::ContainerFleet";
         public const string ContainerGroupDefinition = "AWS::GameLift::ContainerGroupDefinition";
         public const string Fleet = "AWS::GameLift::Fleet";
         public const string GameServerGroup = "AWS::GameLift::GameServerGroup";
@@ -972,6 +997,7 @@ public class AWS
     {
         public const string Channel = "AWS::IVS::Channel";
         public const string EncoderConfiguration = "AWS::IVS::EncoderConfiguration";
+        public const string IngestConfiguration = "AWS::IVS::IngestConfiguration";
         public const string PlaybackKeyPair = "AWS::IVS::PlaybackKeyPair";
         public const string PlaybackRestrictionPolicy = "AWS::IVS::PlaybackRestrictionPolicy";
         public const string PublicKey = "AWS::IVS::PublicKey";
@@ -1017,11 +1043,9 @@ public class AWS
     {
         public const string Monitor = "AWS::InternetMonitor::Monitor";
     }
-    public class IoT1Click
+    public class Invoicing
     {
-        public const string Device = "AWS::IoT1Click::Device";
-        public const string Placement = "AWS::IoT1Click::Placement";
-        public const string Project = "AWS::IoT1Click::Project";
+        public const string InvoiceUnit = "AWS::Invoicing::InvoiceUnit";
     }
     public class IoT
     {
@@ -1031,6 +1055,7 @@ public class AWS
         public const string CACertificate = "AWS::IoT::CACertificate";
         public const string Certificate = "AWS::IoT::Certificate";
         public const string CertificateProvider = "AWS::IoT::CertificateProvider";
+        public const string Command = "AWS::IoT::Command";
         public const string CustomMetric = "AWS::IoT::CustomMetric";
         public const string Dimension = "AWS::IoT::Dimension";
         public const string DomainConfiguration = "AWS::IoT::DomainConfiguration";
@@ -1082,6 +1107,7 @@ public class AWS
         public const string Fleet = "AWS::IoTFleetWise::Fleet";
         public const string ModelManifest = "AWS::IoTFleetWise::ModelManifest";
         public const string SignalCatalog = "AWS::IoTFleetWise::SignalCatalog";
+        public const string StateTemplate = "AWS::IoTFleetWise::StateTemplate";
         public const string Vehicle = "AWS::IoTFleetWise::Vehicle";
     }
     public class IoTSiteWise
@@ -1240,6 +1266,7 @@ public class AWS
         public const string DeliveryDestination = "AWS::Logs::DeliveryDestination";
         public const string DeliverySource = "AWS::Logs::DeliverySource";
         public const string Destination = "AWS::Logs::Destination";
+        public const string Integration = "AWS::Logs::Integration";
         public const string LogAnomalyDetector = "AWS::Logs::LogAnomalyDetector";
         public const string LogGroup = "AWS::Logs::LogGroup";
         public const string LogStream = "AWS::Logs::LogStream";
@@ -1247,6 +1274,7 @@ public class AWS
         public const string QueryDefinition = "AWS::Logs::QueryDefinition";
         public const string ResourcePolicy = "AWS::Logs::ResourcePolicy";
         public const string SubscriptionFilter = "AWS::Logs::SubscriptionFilter";
+        public const string Transformer = "AWS::Logs::Transformer";
     }
     public class LookoutEquipment
     {
@@ -1264,6 +1292,7 @@ public class AWS
     public class M2
     {
         public const string Application = "AWS::M2::Application";
+        public const string Deployment = "AWS::M2::Deployment";
         public const string Environment = "AWS::M2::Environment";
     }
     public class MSK
@@ -1361,6 +1390,7 @@ public class AWS
     {
         public const string ACL = "AWS::MemoryDB::ACL";
         public const string Cluster = "AWS::MemoryDB::Cluster";
+        public const string MultiRegionCluster = "AWS::MemoryDB::MultiRegionCluster";
         public const string ParameterGroup = "AWS::MemoryDB::ParameterGroup";
         public const string SubnetGroup = "AWS::MemoryDB::SubnetGroup";
         public const string User = "AWS::MemoryDB::User";
@@ -1394,6 +1424,7 @@ public class AWS
         public const string CoreNetwork = "AWS::NetworkManager::CoreNetwork";
         public const string CustomerGatewayAssociation = "AWS::NetworkManager::CustomerGatewayAssociation";
         public const string Device = "AWS::NetworkManager::Device";
+        public const string DirectConnectGatewayAttachment = "AWS::NetworkManager::DirectConnectGatewayAttachment";
         public const string GlobalNetwork = "AWS::NetworkManager::GlobalNetwork";
         public const string Link = "AWS::NetworkManager::Link";
         public const string LinkAssociation = "AWS::NetworkManager::LinkAssociation";
@@ -1406,9 +1437,6 @@ public class AWS
     }
     public class NimbleStudio
     {
-        public const string LaunchProfile = "AWS::NimbleStudio::LaunchProfile";
-        public const string StreamingImage = "AWS::NimbleStudio::StreamingImage";
-        public const string Studio = "AWS::NimbleStudio::Studio";
         public const string StudioComponent = "AWS::NimbleStudio::StudioComponent";
     }
     public class OSIS
@@ -1440,6 +1468,7 @@ public class AWS
     }
     public class OpenSearchService
     {
+        public const string Application = "AWS::OpenSearchService::Application";
         public const string Domain = "AWS::OpenSearchService::Domain";
     }
     public class OpsWorks
@@ -1476,6 +1505,12 @@ public class AWS
     {
         public const string Challenge = "AWS::PCAConnectorSCEP::Challenge";
         public const string Connector = "AWS::PCAConnectorSCEP::Connector";
+    }
+    public class PCS
+    {
+        public const string Cluster = "AWS::PCS::Cluster";
+        public const string ComputeNodeGroup = "AWS::PCS::ComputeNodeGroup";
+        public const string Queue = "AWS::PCS::Queue";
     }
     public class Panorama
     {
@@ -1537,8 +1572,10 @@ public class AWS
     public class QBusiness
     {
         public const string Application = "AWS::QBusiness::Application";
+        public const string DataAccessor = "AWS::QBusiness::DataAccessor";
         public const string DataSource = "AWS::QBusiness::DataSource";
         public const string Index = "AWS::QBusiness::Index";
+        public const string Permission = "AWS::QBusiness::Permission";
         public const string Plugin = "AWS::QBusiness::Plugin";
         public const string Retriever = "AWS::QBusiness::Retriever";
         public const string WebExperience = "AWS::QBusiness::WebExperience";
@@ -1551,6 +1588,7 @@ public class AWS
     public class QuickSight
     {
         public const string Analysis = "AWS::QuickSight::Analysis";
+        public const string CustomPermissions = "AWS::QuickSight::CustomPermissions";
         public const string Dashboard = "AWS::QuickSight::Dashboard";
         public const string DataSet = "AWS::QuickSight::DataSet";
         public const string DataSource = "AWS::QuickSight::DataSource";
@@ -1578,6 +1616,7 @@ public class AWS
         public const string DBProxyTargetGroup = "AWS::RDS::DBProxyTargetGroup";
         public const string DBSecurityGroup = "AWS::RDS::DBSecurityGroup";
         public const string DBSecurityGroupIngress = "AWS::RDS::DBSecurityGroupIngress";
+        public const string DBShardGroup = "AWS::RDS::DBShardGroup";
         public const string DBSubnetGroup = "AWS::RDS::DBSubnetGroup";
         public const string EventSubscription = "AWS::RDS::EventSubscription";
         public const string GlobalCluster = "AWS::RDS::GlobalCluster";
@@ -1587,6 +1626,10 @@ public class AWS
     public class RUM
     {
         public const string AppMonitor = "AWS::RUM::AppMonitor";
+    }
+    public class Rbin
+    {
+        public const string Rule = "AWS::Rbin::Rule";
     }
     public class Redshift
     {
@@ -1598,6 +1641,7 @@ public class AWS
         public const string EndpointAccess = "AWS::Redshift::EndpointAccess";
         public const string EndpointAuthorization = "AWS::Redshift::EndpointAuthorization";
         public const string EventSubscription = "AWS::Redshift::EventSubscription";
+        public const string Integration = "AWS::Redshift::Integration";
         public const string ScheduledAction = "AWS::Redshift::ScheduledAction";
     }
     public class RedshiftServerless
@@ -1632,6 +1676,7 @@ public class AWS
     public class ResourceGroups
     {
         public const string Group = "AWS::ResourceGroups::Group";
+        public const string TagSyncTask = "AWS::ResourceGroups::TagSyncTask";
     }
     public class RoboMaker
     {
@@ -1721,6 +1766,11 @@ public class AWS
         public const string Bucket = "AWS::S3Outposts::Bucket";
         public const string BucketPolicy = "AWS::S3Outposts::BucketPolicy";
         public const string Endpoint = "AWS::S3Outposts::Endpoint";
+    }
+    public class S3Tables
+    {
+        public const string TableBucket = "AWS::S3Tables::TableBucket";
+        public const string TableBucketPolicy = "AWS::S3Tables::TableBucketPolicy";
     }
     public class SDB
     {
@@ -1824,6 +1874,7 @@ public class AWS
         public const string MonitoringSchedule = "AWS::SageMaker::MonitoringSchedule";
         public const string NotebookInstance = "AWS::SageMaker::NotebookInstance";
         public const string NotebookInstanceLifecycleConfig = "AWS::SageMaker::NotebookInstanceLifecycleConfig";
+        public const string PartnerApp = "AWS::SageMaker::PartnerApp";
         public const string Pipeline = "AWS::SageMaker::Pipeline";
         public const string Project = "AWS::SageMaker::Project";
         public const string Space = "AWS::SageMaker::Space";
@@ -1969,10 +2020,13 @@ public class AWS
         public const string AccessLogSubscription = "AWS::VpcLattice::AccessLogSubscription";
         public const string AuthPolicy = "AWS::VpcLattice::AuthPolicy";
         public const string Listener = "AWS::VpcLattice::Listener";
+        public const string ResourceConfiguration = "AWS::VpcLattice::ResourceConfiguration";
+        public const string ResourceGateway = "AWS::VpcLattice::ResourceGateway";
         public const string ResourcePolicy = "AWS::VpcLattice::ResourcePolicy";
         public const string Rule = "AWS::VpcLattice::Rule";
         public const string Service = "AWS::VpcLattice::Service";
         public const string ServiceNetwork = "AWS::VpcLattice::ServiceNetwork";
+        public const string ServiceNetworkResourceAssociation = "AWS::VpcLattice::ServiceNetworkResourceAssociation";
         public const string ServiceNetworkServiceAssociation = "AWS::VpcLattice::ServiceNetworkServiceAssociation";
         public const string ServiceNetworkVpcAssociation = "AWS::VpcLattice::ServiceNetworkVpcAssociation";
         public const string TargetGroup = "AWS::VpcLattice::TargetGroup";
@@ -2012,9 +2066,17 @@ public class AWS
     }
     public class Wisdom
     {
+        public const string AIAgent = "AWS::Wisdom::AIAgent";
+        public const string AIAgentVersion = "AWS::Wisdom::AIAgentVersion";
+        public const string AIGuardrail = "AWS::Wisdom::AIGuardrail";
+        public const string AIGuardrailVersion = "AWS::Wisdom::AIGuardrailVersion";
+        public const string AIPrompt = "AWS::Wisdom::AIPrompt";
+        public const string AIPromptVersion = "AWS::Wisdom::AIPromptVersion";
         public const string Assistant = "AWS::Wisdom::Assistant";
         public const string AssistantAssociation = "AWS::Wisdom::AssistantAssociation";
         public const string KnowledgeBase = "AWS::Wisdom::KnowledgeBase";
+        public const string MessageTemplate = "AWS::Wisdom::MessageTemplate";
+        public const string MessageTemplateVersion = "AWS::Wisdom::MessageTemplateVersion";
     }
     public class WorkSpaces
     {
@@ -2029,6 +2091,7 @@ public class AWS
     public class WorkSpacesWeb
     {
         public const string BrowserSettings = "AWS::WorkSpacesWeb::BrowserSettings";
+        public const string DataProtectionSettings = "AWS::WorkSpacesWeb::DataProtectionSettings";
         public const string IdentityProvider = "AWS::WorkSpacesWeb::IdentityProvider";
         public const string IpAccessSettings = "AWS::WorkSpacesWeb::IpAccessSettings";
         public const string NetworkSettings = "AWS::WorkSpacesWeb::NetworkSettings";

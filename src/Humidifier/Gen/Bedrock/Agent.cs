@@ -296,6 +296,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public Dictionary<string, Humidifier.Bedrock.AgentTypes.ParameterDetail> Parameters { get; set; }
             /// <summary>
+            /// RequireConfirmation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-function.html#cfn-bedrock-agent-function-requireconfirmation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RequireConfirmation { get; set; }
+            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-function.html#cfn-bedrock-agent-function-name
             /// Required: True

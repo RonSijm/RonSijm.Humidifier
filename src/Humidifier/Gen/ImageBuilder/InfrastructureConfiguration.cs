@@ -82,6 +82,14 @@ namespace Humidifier.ImageBuilder
         public dynamic SecurityGroupIds { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// Placement
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-placement
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Placement
+        /// </summary>
+        public Humidifier.ImageBuilder.InfrastructureConfigurationTypes.Placement Placement { get; set; }
+        /// <summary>
         /// InstanceMetadataOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-instancemetadataoptions
         /// Required: False
@@ -149,6 +157,42 @@ namespace Humidifier.ImageBuilder
             /// Type: S3Logs
             /// </summary>
             public Humidifier.ImageBuilder.InfrastructureConfigurationTypes.S3Logs S3Logs { get; set; }
+        }
+
+        public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn
+        {
+            /// <summary>
+            /// Tenancy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-placement.html#cfn-imagebuilder-infrastructureconfiguration-placement-tenancy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Tenancy { get; set; }
+            /// <summary>
+            /// AvailabilityZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-placement.html#cfn-imagebuilder-infrastructureconfiguration-placement-availabilityzone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityZone { get; set; }
+            /// <summary>
+            /// HostId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-placement.html#cfn-imagebuilder-infrastructureconfiguration-placement-hostid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostId { get; set; }
+            /// <summary>
+            /// HostResourceGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-placement.html#cfn-imagebuilder-infrastructureconfiguration-placement-hostresourcegrouparn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostResourceGroupArn { get; set; }
         }
 
         public class S3Logs : Humidifier.Base.BaseSubResource, IHaveS3BucketName, IHaveS3KeyPrefix

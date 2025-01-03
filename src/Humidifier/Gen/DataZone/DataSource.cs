@@ -140,6 +140,14 @@ namespace Humidifier.DataZone
             /// Type: GlueRunConfigurationInput
             /// </summary>
             public Humidifier.DataZone.DataSourceTypes.GlueRunConfigurationInput GlueRunConfiguration { get; set; }
+            /// <summary>
+            /// SageMakerRunConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-datasourceconfigurationinput.html#cfn-datazone-datasource-datasourceconfigurationinput-sagemakerrunconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SageMakerRunConfigurationInput
+            /// </summary>
+            public Humidifier.DataZone.DataSourceTypes.SageMakerRunConfigurationInput SageMakerRunConfiguration { get; set; }
         }
 
         public class FilterExpression : Humidifier.Base.BaseSubResource, IHaveType, IHaveExpression
@@ -359,6 +367,18 @@ namespace Humidifier.DataZone
             /// PrimitiveType: String
             /// </summary>
             public dynamic SchemaName { get; set; }
+        }
+
+        public class SageMakerRunConfigurationInput : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TrackingAssets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-sagemakerrunconfigurationinput.html#cfn-datazone-datasource-sagemakerrunconfigurationinput-trackingassets
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic TrackingAssets { get; set; }
         }
 
         public class ScheduleConfiguration : Humidifier.Base.BaseSubResource, IHaveTimezone, IHaveSchedule

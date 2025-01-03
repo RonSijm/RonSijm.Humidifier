@@ -94,6 +94,27 @@ namespace Humidifier.Deadline
 
     namespace FleetTypes
     {
+        public class AcceleratorCapabilities : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Selections
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorcapabilities.html#cfn-deadline-fleet-acceleratorcapabilities-selections
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AcceleratorSelection
+            /// </summary>
+            public List<Humidifier.Deadline.FleetTypes.AcceleratorSelection> Selections { get; set; }
+            /// <summary>
+            /// Count
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorcapabilities.html#cfn-deadline-fleet-acceleratorcapabilities-count
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AcceleratorCountRange
+            /// </summary>
+            public Humidifier.Deadline.FleetTypes.AcceleratorCountRange Count { get; set; }
+        }
+
         public class AcceleratorCountRange : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
         {
             /// <summary>
@@ -112,6 +133,26 @@ namespace Humidifier.Deadline
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Max { get; set; }
+        }
+
+        public class AcceleratorSelection : Humidifier.Base.BaseSubResource, IHaveName, IHaveRuntime
+        {
+            /// <summary>
+            /// Runtime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorselection.html#cfn-deadline-fleet-acceleratorselection-runtime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Runtime { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorselection.html#cfn-deadline-fleet-acceleratorselection-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class AcceleratorTotalMemoryMiBRange : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
@@ -420,6 +461,14 @@ namespace Humidifier.Deadline
             /// ItemType: FleetAttributeCapability
             /// </summary>
             public List<Humidifier.Deadline.FleetTypes.FleetAttributeCapability> CustomAttributes { get; set; }
+            /// <summary>
+            /// AcceleratorCapabilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2instancecapabilities.html#cfn-deadline-fleet-servicemanagedec2instancecapabilities-acceleratorcapabilities
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AcceleratorCapabilities
+            /// </summary>
+            public Humidifier.Deadline.FleetTypes.AcceleratorCapabilities AcceleratorCapabilities { get; set; }
             /// <summary>
             /// CustomAmounts
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2instancecapabilities.html#cfn-deadline-fleet-servicemanagedec2instancecapabilities-customamounts

@@ -108,6 +108,14 @@ namespace Humidifier.SageMaker
         /// Type: DomainSettings
         /// </summary>
         public Humidifier.SageMaker.DomainTypes.DomainSettings DomainSettings { get; set; }
+        /// <summary>
+        /// TagPropagation
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-tagpropagation
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TagPropagation { get; set; }
     }
 
     namespace DomainTypes
@@ -184,6 +192,14 @@ namespace Humidifier.SageMaker
             /// Type: EFSFileSystemConfig
             /// </summary>
             public Humidifier.SageMaker.DomainTypes.EFSFileSystemConfig EFSFileSystemConfig { get; set; }
+            /// <summary>
+            /// FSxLustreFileSystemConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customfilesystemconfig.html#cfn-sagemaker-domain-customfilesystemconfig-fsxlustrefilesystemconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FSxLustreFileSystemConfig
+            /// </summary>
+            public Humidifier.SageMaker.DomainTypes.FSxLustreFileSystemConfig FSxLustreFileSystemConfig { get; set; }
         }
 
         public class CustomImage : Humidifier.Base.BaseSubResource, IHaveImageName, IHaveAppImageConfigName, IHaveImageVersionNumber
@@ -368,6 +384,14 @@ namespace Humidifier.SageMaker
             /// </summary>
             public Humidifier.SageMaker.DomainTypes.DockerSettings DockerSettings { get; set; }
             /// <summary>
+            /// ExecutionRoleIdentityConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-executionroleidentityconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExecutionRoleIdentityConfig { get; set; }
+            /// <summary>
             /// RStudioServerProDomainSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-rstudioserverprodomainsettings
             /// Required: False
@@ -399,6 +423,26 @@ namespace Humidifier.SageMaker
             /// <summary>
             /// FileSystemId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-efsfilesystemconfig.html#cfn-sagemaker-domain-efsfilesystemconfig-filesystemid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FileSystemId { get; set; }
+        }
+
+        public class FSxLustreFileSystemConfig : Humidifier.Base.BaseSubResource, IHaveFileSystemId, IHaveFileSystemPath
+        {
+            /// <summary>
+            /// FileSystemPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-fsxlustrefilesystemconfig.html#cfn-sagemaker-domain-fsxlustrefilesystemconfig-filesystempath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FileSystemPath { get; set; }
+            /// <summary>
+            /// FileSystemId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-fsxlustrefilesystemconfig.html#cfn-sagemaker-domain-fsxlustrefilesystemconfig-filesystemid
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String

@@ -74,6 +74,14 @@ namespace Humidifier.SES
         public class DeliveryOptions : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// MaxDeliverySeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-deliveryoptions.html#cfn-ses-configurationset-deliveryoptions-maxdeliveryseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic MaxDeliverySeconds { get; set; }
+            /// <summary>
             /// SendingPoolName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-deliveryoptions.html#cfn-ses-configurationset-deliveryoptions-sendingpoolname
             /// Required: False

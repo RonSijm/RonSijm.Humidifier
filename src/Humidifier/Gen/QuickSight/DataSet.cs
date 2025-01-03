@@ -51,6 +51,14 @@ namespace Humidifier.QuickSight
         /// </summary>
         public dynamic FolderArns { get; set; }
         /// <summary>
+        /// PerformanceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-performanceconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PerformanceConfiguration
+        /// </summary>
+        public Humidifier.QuickSight.DataSetTypes.PerformanceConfiguration PerformanceConfiguration { get; set; }
+        /// <summary>
         /// RowLevelPermissionDataSet
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset
         /// Required: False
@@ -329,7 +337,7 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// Columns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-columns
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// ItemType: InputColumn
@@ -943,6 +951,19 @@ namespace Humidifier.QuickSight
             public dynamic NewParameterName { get; set; }
         }
 
+        public class PerformanceConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// UniqueKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-performanceconfiguration.html#cfn-quicksight-dataset-performanceconfiguration-uniquekeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: UniqueKey
+            /// </summary>
+            public List<Humidifier.QuickSight.DataSetTypes.UniqueKey> UniqueKeys { get; set; }
+        }
+
         public class PhysicalTable : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -1009,7 +1030,7 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// InputColumns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-inputcolumns
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// ItemType: InputColumn
@@ -1215,9 +1236,9 @@ namespace Humidifier.QuickSight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-uploadsettings
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: UploadSettings
+            /// PrimitiveType: Json
             /// </summary>
-            public Humidifier.QuickSight.DataSetTypes.UploadSettings UploadSettings { get; set; }
+            public dynamic UploadSettings { get; set; }
         }
 
         public class StringDatasetParameter : Humidifier.Base.BaseSubResource, IHaveName, IHaveId, IHaveValueType
@@ -1358,6 +1379,19 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DataSetTypes.ProjectOperation ProjectOperation { get; set; }
         }
 
+        public class UniqueKey : Humidifier.Base.BaseSubResource, IHaveColumnNames
+        {
+            /// <summary>
+            /// ColumnNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uniquekey.html#cfn-quicksight-dataset-uniquekey-columnnames
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ColumnNames { get; set; }
+        }
+
         public class UntagColumnOperation : Humidifier.Base.BaseSubResource, IHaveColumnName
         {
             /// <summary>
@@ -1377,50 +1411,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic TagNames { get; set; }
-        }
-
-        public class UploadSettings : Humidifier.Base.BaseSubResource, IHaveFormat, IHaveDelimiter, IHaveContainsHeader
-        {
-            /// <summary>
-            /// ContainsHeader
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-containsheader
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic ContainsHeader { get; set; }
-            /// <summary>
-            /// TextQualifier
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-textqualifier
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TextQualifier { get; set; }
-            /// <summary>
-            /// Format
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-format
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Format { get; set; }
-            /// <summary>
-            /// StartFromRow
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-startfromrow
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic StartFromRow { get; set; }
-            /// <summary>
-            /// Delimiter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-delimiter
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Delimiter { get; set; }
         }
     }
 }

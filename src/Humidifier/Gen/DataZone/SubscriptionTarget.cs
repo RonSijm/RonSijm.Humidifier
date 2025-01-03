@@ -38,15 +38,13 @@ namespace Humidifier.DataZone
         /// </summary>
         [Required]
         public dynamic EnvironmentIdentifier { get; set; }
-
         /// <summary>
         /// ManageAccessRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-subscriptiontarget.html#cfn-datazone-subscriptiontarget-manageaccessrole
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic ManageAccessRole { get; set; }
 
         /// <summary>

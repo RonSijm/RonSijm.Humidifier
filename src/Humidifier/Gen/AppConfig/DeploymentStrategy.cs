@@ -1,10 +1,14 @@
 namespace Humidifier.AppConfig
 {
     using System.Collections.Generic;
-    using DeploymentStrategyTypes;
 
-    public class DeploymentStrategy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
+    public class DeploymentStrategy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.AppConfig.DeploymentStrategy; }
 
         /// <summary>
@@ -66,32 +70,9 @@ namespace Humidifier.AppConfig
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: Tags
+        /// ItemType: Tag
         /// </summary>
-        public List<Humidifier.AppConfig.DeploymentStrategyTypes.Tags> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
-    }
-
-    namespace DeploymentStrategyTypes
-    {
-        public class Tags : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
-        {
-            /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html#cfn-appconfig-deploymentstrategy-tags-value
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Value { get; set; }
-            /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html#cfn-appconfig-deploymentstrategy-tags-key
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key { get; set; }
-        }
     }
 }

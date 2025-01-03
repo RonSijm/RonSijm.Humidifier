@@ -44,7 +44,7 @@ namespace Humidifier.AccessAnalyzer
         /// AnalyzerConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-analyzerconfiguration
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Conditional
         /// Type: AnalyzerConfiguration
         /// </summary>
         public Humidifier.AccessAnalyzer.AnalyzerTypes.AnalyzerConfiguration AnalyzerConfiguration { get; set; }
@@ -52,13 +52,47 @@ namespace Humidifier.AccessAnalyzer
 
     namespace AnalyzerTypes
     {
+        public class AnalysisRule : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Exclusions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-analysisrule.html#cfn-accessanalyzer-analyzer-analysisrule-exclusions
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: AnalysisRuleCriteria
+            /// </summary>
+            public List<Humidifier.AccessAnalyzer.AnalyzerTypes.AnalysisRuleCriteria> Exclusions { get; set; }
+        }
+
+        public class AnalysisRuleCriteria : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AccountIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-analysisrulecriteria.html#cfn-accessanalyzer-analyzer-analysisrulecriteria-accountids
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AccountIds { get; set; }
+            /// <summary>
+            /// ResourceTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-analysisrulecriteria.html#cfn-accessanalyzer-analyzer-analysisrulecriteria-resourcetags
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic ResourceTags { get; set; }
+        }
+
         public class AnalyzerConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// UnusedAccessConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-analyzerconfiguration.html#cfn-accessanalyzer-analyzer-analyzerconfiguration-unusedaccessconfiguration
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: UnusedAccessConfiguration
             /// </summary>
             public Humidifier.AccessAnalyzer.AnalyzerTypes.UnusedAccessConfiguration UnusedAccessConfiguration { get; set; }
@@ -138,10 +172,18 @@ namespace Humidifier.AccessAnalyzer
             /// UnusedAccessAge
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-unusedaccessconfiguration.html#cfn-accessanalyzer-analyzer-unusedaccessconfiguration-unusedaccessage
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic UnusedAccessAge { get; set; }
+            /// <summary>
+            /// AnalysisRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-unusedaccessconfiguration.html#cfn-accessanalyzer-analyzer-unusedaccessconfiguration-analysisrule
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: AnalysisRule
+            /// </summary>
+            public Humidifier.AccessAnalyzer.AnalyzerTypes.AnalysisRule AnalysisRule { get; set; }
         }
     }
 }

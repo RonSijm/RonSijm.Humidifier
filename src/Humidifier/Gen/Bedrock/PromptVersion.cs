@@ -41,7 +41,7 @@ namespace Humidifier.Bedrock
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-promptversion.html#cfn-bedrock-promptversion-tags
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
@@ -74,16 +74,8 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
-        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTopK, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
+        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
         {
-            /// <summary>
-            /// TopK
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptmodelinferenceconfiguration.html#cfn-bedrock-promptversion-promptmodelinferenceconfiguration-topk
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic TopK { get; set; }
             /// <summary>
             /// Temperature
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptmodelinferenceconfiguration.html#cfn-bedrock-promptversion-promptmodelinferenceconfiguration-temperature
@@ -144,7 +136,7 @@ namespace Humidifier.Bedrock
             /// <summary>
             /// TemplateConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptvariant.html#cfn-bedrock-promptversion-promptvariant-templateconfiguration
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// Type: PromptTemplateConfiguration
             /// </summary>

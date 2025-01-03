@@ -41,6 +41,14 @@ namespace Humidifier.AutoScaling
         /// </summary>
         public dynamic ServiceLinkedRoleARN { get; set; }
         /// <summary>
+        /// AvailabilityZoneImpairmentPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-availabilityzoneimpairmentpolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AvailabilityZoneImpairmentPolicy
+        /// </summary>
+        public Humidifier.AutoScaling.AutoScalingGroupTypes.AvailabilityZoneImpairmentPolicy AvailabilityZoneImpairmentPolicy { get; set; }
+        /// <summary>
         /// TargetGroupARNs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-targetgrouparns
         /// Required: False
@@ -90,6 +98,14 @@ namespace Humidifier.AutoScaling
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DefaultInstanceWarmup { get; set; }
+        /// <summary>
+        /// SkipZonalShiftValidation
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-skipzonalshiftvalidation
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic SkipZonalShiftValidation { get; set; }
         /// <summary>
         /// NewInstancesProtectedFromScaleIn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-newinstancesprotectedfromscalein
@@ -166,6 +182,14 @@ namespace Humidifier.AutoScaling
         /// </summary>
         public dynamic AvailabilityZones { get; set; }
         /// <summary>
+        /// AvailabilityZoneDistribution
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-availabilityzonedistribution
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AvailabilityZoneDistribution
+        /// </summary>
+        public Humidifier.AutoScaling.AutoScalingGroupTypes.AvailabilityZoneDistribution AvailabilityZoneDistribution { get; set; }
+        /// <summary>
         /// MetricsCollection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-metricscollection
         /// Required: False
@@ -213,6 +237,15 @@ namespace Humidifier.AutoScaling
         public dynamic TerminationPolicies { get; set; }
         public dynamic AutoScalingGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// TrafficSources
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-trafficsources
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: TrafficSourceIdentifier
+        /// </summary>
+        public List<Humidifier.AutoScaling.AutoScalingGroupTypes.TrafficSourceIdentifier> TrafficSources { get; set; }
+        /// <summary>
         /// DesiredCapacityType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-desiredcapacitytype
         /// Required: False
@@ -224,10 +257,18 @@ namespace Humidifier.AutoScaling
         /// PlacementGroup
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-placementgroup
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic PlacementGroup { get; set; }
+        /// <summary>
+        /// CapacityReservationSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-capacityreservationspecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CapacityReservationSpecification
+        /// </summary>
+        public Humidifier.AutoScaling.AutoScalingGroupTypes.CapacityReservationSpecification CapacityReservationSpecification { get; set; }
         /// <summary>
         /// HealthCheckType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-healthchecktype
@@ -288,6 +329,38 @@ namespace Humidifier.AutoScaling
             public dynamic Max { get; set; }
         }
 
+        public class AvailabilityZoneDistribution : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CapacityDistributionStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-availabilityzonedistribution.html#cfn-autoscaling-autoscalinggroup-availabilityzonedistribution-capacitydistributionstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityDistributionStrategy { get; set; }
+        }
+
+        public class AvailabilityZoneImpairmentPolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ZonalShiftEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-availabilityzoneimpairmentpolicy.html#cfn-autoscaling-autoscalinggroup-availabilityzoneimpairmentpolicy-zonalshiftenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ZonalShiftEnabled { get; set; }
+            /// <summary>
+            /// ImpairedZoneHealthCheckBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-availabilityzoneimpairmentpolicy.html#cfn-autoscaling-autoscalinggroup-availabilityzoneimpairmentpolicy-impairedzonehealthcheckbehavior
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImpairedZoneHealthCheckBehavior { get; set; }
+        }
+
         public class BaselineEbsBandwidthMbpsRequest : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
         {
             /// <summary>
@@ -306,6 +379,74 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Max { get; set; }
+        }
+
+        public class BaselinePerformanceFactorsRequest : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Cpu
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-baselineperformancefactorsrequest.html#cfn-autoscaling-autoscalinggroup-baselineperformancefactorsrequest-cpu
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: CpuPerformanceFactorRequest
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.CpuPerformanceFactorRequest Cpu { get; set; }
+        }
+
+        public class CapacityReservationSpecification : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CapacityReservationPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-capacityreservationspecification.html#cfn-autoscaling-autoscalinggroup-capacityreservationspecification-capacityreservationpreference
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: dynamic
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityReservationPreference { get; set; }
+            /// <summary>
+            /// CapacityReservationTarget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-capacityreservationspecification.html#cfn-autoscaling-autoscalinggroup-capacityreservationspecification-capacityreservationtarget
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapacityReservationTarget
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.CapacityReservationTarget CapacityReservationTarget { get; set; }
+        }
+
+        public class CapacityReservationTarget : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CapacityReservationIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-capacityreservationtarget.html#cfn-autoscaling-autoscalinggroup-capacityreservationtarget-capacityreservationids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CapacityReservationIds { get; set; }
+            /// <summary>
+            /// CapacityReservationResourceGroupArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-capacityreservationtarget.html#cfn-autoscaling-autoscalinggroup-capacityreservationtarget-capacityreservationresourcegrouparns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CapacityReservationResourceGroupArns { get; set; }
+        }
+
+        public class CpuPerformanceFactorRequest : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// References
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-cpuperformancefactorrequest.html#cfn-autoscaling-autoscalinggroup-cpuperformancefactorrequest-references
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: PerformanceFactorReferenceRequest
+            /// </summary>
+            public List<Humidifier.AutoScaling.AutoScalingGroupTypes.PerformanceFactorReferenceRequest> References { get; set; }
         }
 
         public class InstanceMaintenancePolicy : Humidifier.Base.BaseSubResource
@@ -331,15 +472,6 @@ namespace Humidifier.AutoScaling
         public class InstanceRequirements : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveLocalStorageTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveBurstablePerformance
         {
             /// <summary>
-            /// LocalStorageTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstoragetypes
-            /// Required: False
-            /// UpdateType: Conditional
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic LocalStorageTypes { get; set; }
-            /// <summary>
             /// InstanceGenerations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-instancegenerations
             /// Required: False
@@ -348,14 +480,6 @@ namespace Humidifier.AutoScaling
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic InstanceGenerations { get; set; }
-            /// <summary>
-            /// NetworkInterfaceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkinterfacecount
-            /// Required: False
-            /// UpdateType: Conditional
-            /// Type: NetworkInterfaceCountRequest
-            /// </summary>
-            public Humidifier.AutoScaling.AutoScalingGroupTypes.NetworkInterfaceCountRequest NetworkInterfaceCount { get; set; }
             /// <summary>
             /// AcceleratorTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratortypes
@@ -383,15 +507,6 @@ namespace Humidifier.AutoScaling
             /// </summary>
             public dynamic AcceleratorManufacturers { get; set; }
             /// <summary>
-            /// ExcludedInstanceTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-excludedinstancetypes
-            /// Required: False
-            /// UpdateType: Conditional
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic ExcludedInstanceTypes { get; set; }
-            /// <summary>
             /// VCpuCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-vcpucount
             /// Required: True
@@ -399,15 +514,6 @@ namespace Humidifier.AutoScaling
             /// Type: VCpuCountRequest
             /// </summary>
             public Humidifier.AutoScaling.AutoScalingGroupTypes.VCpuCountRequest VCpuCount { get; set; }
-            /// <summary>
-            /// AllowedInstanceTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-allowedinstancetypes
-            /// Required: False
-            /// UpdateType: Conditional
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic AllowedInstanceTypes { get; set; }
             /// <summary>
             /// LocalStorage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstorage
@@ -425,22 +531,6 @@ namespace Humidifier.AutoScaling
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic CpuManufacturers { get; set; }
-            /// <summary>
-            /// AcceleratorCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratorcount
-            /// Required: False
-            /// UpdateType: Conditional
-            /// Type: AcceleratorCountRequest
-            /// </summary>
-            public Humidifier.AutoScaling.AutoScalingGroupTypes.AcceleratorCountRequest AcceleratorCount { get; set; }
-            /// <summary>
-            /// NetworkBandwidthGbps
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkbandwidthgbps
-            /// Required: False
-            /// UpdateType: Conditional
-            /// Type: NetworkBandwidthGbpsRequest
-            /// </summary>
-            public Humidifier.AutoScaling.AutoScalingGroupTypes.NetworkBandwidthGbpsRequest NetworkBandwidthGbps { get; set; }
             /// <summary>
             /// BareMetal
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baremetal
@@ -465,6 +555,81 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxSpotPriceAsPercentageOfOptimalOnDemandPrice { get; set; }
+            /// <summary>
+            /// OnDemandMaxPricePercentageOverLowestPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-ondemandmaxpricepercentageoverlowestprice
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic OnDemandMaxPricePercentageOverLowestPrice { get; set; }
+            /// <summary>
+            /// MemoryMiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorymib
+            /// Required: True
+            /// UpdateType: Conditional
+            /// Type: MemoryMiBRequest
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.MemoryMiBRequest MemoryMiB { get; set; }
+            /// <summary>
+            /// LocalStorageTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-localstoragetypes
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LocalStorageTypes { get; set; }
+            /// <summary>
+            /// NetworkInterfaceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkinterfacecount
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: NetworkInterfaceCountRequest
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.NetworkInterfaceCountRequest NetworkInterfaceCount { get; set; }
+            /// <summary>
+            /// ExcludedInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-excludedinstancetypes
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludedInstanceTypes { get; set; }
+            /// <summary>
+            /// AllowedInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-allowedinstancetypes
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedInstanceTypes { get; set; }
+            /// <summary>
+            /// AcceleratorCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-acceleratorcount
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: AcceleratorCountRequest
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.AcceleratorCountRequest AcceleratorCount { get; set; }
+            /// <summary>
+            /// NetworkBandwidthGbps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-networkbandwidthgbps
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: NetworkBandwidthGbpsRequest
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.NetworkBandwidthGbpsRequest NetworkBandwidthGbps { get; set; }
+            /// <summary>
+            /// BaselinePerformanceFactors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baselineperformancefactors
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: BaselinePerformanceFactorsRequest
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.BaselinePerformanceFactorsRequest BaselinePerformanceFactors { get; set; }
             /// <summary>
             /// BaselineEbsBandwidthMbps
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-baselineebsbandwidthmbps
@@ -499,14 +664,6 @@ namespace Humidifier.AutoScaling
             /// </summary>
             public Humidifier.AutoScaling.AutoScalingGroupTypes.AcceleratorTotalMemoryMiBRequest AcceleratorTotalMemoryMiB { get; set; }
             /// <summary>
-            /// OnDemandMaxPricePercentageOverLowestPrice
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-ondemandmaxpricepercentageoverlowestprice
-            /// Required: False
-            /// UpdateType: Conditional
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic OnDemandMaxPricePercentageOverLowestPrice { get; set; }
-            /// <summary>
             /// BurstablePerformance
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-burstableperformance
             /// Required: False
@@ -514,14 +671,6 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic BurstablePerformance { get; set; }
-            /// <summary>
-            /// MemoryMiB
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-memorymib
-            /// Required: True
-            /// UpdateType: Conditional
-            /// Type: MemoryMiBRequest
-            /// </summary>
-            public Humidifier.AutoScaling.AutoScalingGroupTypes.MemoryMiBRequest MemoryMiB { get; set; }
             /// <summary>
             /// TotalLocalStorageGB
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancerequirements.html#cfn-autoscaling-autoscalinggroup-instancerequirements-totallocalstoragegb
@@ -872,6 +1021,18 @@ namespace Humidifier.AutoScaling
             public dynamic NotificationTypes { get; set; }
         }
 
+        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InstanceFamily
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-performancefactorreferencerequest.html#cfn-autoscaling-autoscalinggroup-performancefactorreferencerequest-instancefamily
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceFamily { get; set; }
+        }
+
         public class TagProperty : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
         {
             /// <summary>
@@ -918,6 +1079,26 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Max { get; set; }
+        }
+
+        public class TrafficSourceIdentifier : Humidifier.Base.BaseSubResource, IHaveType, IHaveIdentifier
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-trafficsourceidentifier.html#cfn-autoscaling-autoscalinggroup-trafficsourceidentifier-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Identifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-trafficsourceidentifier.html#cfn-autoscaling-autoscalinggroup-trafficsourceidentifier-identifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Identifier { get; set; }
         }
 
         public class VCpuCountRequest : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax

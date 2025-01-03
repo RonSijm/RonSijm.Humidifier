@@ -68,6 +68,22 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// </summary>
         public dynamic Scheme { get; set; }
         /// <summary>
+        /// MinimumLoadBalancerCapacity
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-minimumloadbalancercapacity
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MinimumLoadBalancerCapacity
+        /// </summary>
+        public Humidifier.ElasticLoadBalancingV2.LoadBalancerTypes.MinimumLoadBalancerCapacity MinimumLoadBalancerCapacity { get; set; }
+        /// <summary>
+        /// EnablePrefixForIpv6SourceNat
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-enableprefixforipv6sourcenat
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EnablePrefixForIpv6SourceNat { get; set; }
+        /// <summary>
         /// EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-enforcesecuritygroupinboundrulesonprivatelinktraffic
         /// Required: False
@@ -118,6 +134,18 @@ namespace Humidifier.ElasticLoadBalancingV2
             public dynamic Key { get; set; }
         }
 
+        public class MinimumLoadBalancerCapacity : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CapacityUnits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-minimumloadbalancercapacity.html#cfn-elasticloadbalancingv2-loadbalancer-minimumloadbalancercapacity-capacityunits
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CapacityUnits { get; set; }
+        }
+
         public class SubnetMapping : Humidifier.Base.BaseSubResource, IHaveSubnetId, IHaveAllocationId
         {
             /// <summary>
@@ -144,6 +172,14 @@ namespace Humidifier.ElasticLoadBalancingV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic SubnetId { get; set; }
+            /// <summary>
+            /// SourceNatIpv6Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-sourcenatipv6prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceNatIpv6Prefix { get; set; }
             /// <summary>
             /// PrivateIPv4Address
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-privateipv4address

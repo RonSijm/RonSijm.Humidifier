@@ -82,6 +82,14 @@ namespace Humidifier.EMRServerless
         [Required]
         public dynamic Type { get; set; }
         /// <summary>
+        /// SchedulerConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-schedulerconfiguration
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: SchedulerConfiguration
+        /// </summary>
+        public Humidifier.EMRServerless.ApplicationTypes.SchedulerConfiguration SchedulerConfiguration { get; set; }
+        /// <summary>
         /// InitialCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-initialcapacity
         /// Required: False
@@ -453,6 +461,26 @@ namespace Humidifier.EMRServerless
             /// PrimitiveType: String
             /// </summary>
             public dynamic EncryptionKeyArn { get; set; }
+        }
+
+        public class SchedulerConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QueueTimeoutMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-schedulerconfiguration.html#cfn-emrserverless-application-schedulerconfiguration-queuetimeoutminutes
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic QueueTimeoutMinutes { get; set; }
+            /// <summary>
+            /// MaxConcurrentRuns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-schedulerconfiguration.html#cfn-emrserverless-application-schedulerconfiguration-maxconcurrentruns
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxConcurrentRuns { get; set; }
         }
 
         public class WorkerConfiguration : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu

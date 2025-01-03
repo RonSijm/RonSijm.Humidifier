@@ -85,6 +85,14 @@ namespace Humidifier.DataSync
         /// </summary>
         public List<Humidifier.DataSync.TaskTypes.FilterRule> Excludes { get; set; }
         /// <summary>
+        /// TaskMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-taskmode
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TaskMode { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-tags
         /// Required: False

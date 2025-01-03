@@ -72,6 +72,18 @@ namespace Humidifier.Bedrock
 
     namespace DataSourceTypes
     {
+        public class BedrockDataAutomationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ParsingModality
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-bedrockdataautomationconfiguration.html#cfn-bedrock-datasource-bedrockdataautomationconfiguration-parsingmodality
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParsingModality { get; set; }
+        }
+
         public class BedrockFoundationModelConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -82,6 +94,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic ModelArn { get; set; }
+            /// <summary>
+            /// ParsingModality
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-bedrockfoundationmodelconfiguration.html#cfn-bedrock-datasource-bedrockfoundationmodelconfiguration-parsingmodality
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParsingModality { get; set; }
             /// <summary>
             /// ParsingPrompt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-bedrockfoundationmodelconfiguration.html#cfn-bedrock-datasource-bedrockfoundationmodelconfiguration-parsingprompt
@@ -356,6 +376,14 @@ namespace Humidifier.Bedrock
 
         public class ParsingConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// BedrockDataAutomationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-parsingconfiguration.html#cfn-bedrock-datasource-parsingconfiguration-bedrockdataautomationconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: BedrockDataAutomationConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.BedrockDataAutomationConfiguration BedrockDataAutomationConfiguration { get; set; }
             /// <summary>
             /// BedrockFoundationModelConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-parsingconfiguration.html#cfn-bedrock-datasource-parsingconfiguration-bedrockfoundationmodelconfiguration

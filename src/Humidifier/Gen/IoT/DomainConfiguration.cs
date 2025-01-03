@@ -158,6 +158,22 @@ namespace Humidifier.IoT
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic EnableOCSPCheck { get; set; }
+            /// <summary>
+            /// OcspLambdaArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificateconfig.html#cfn-iot-domainconfiguration-servercertificateconfig-ocsplambdaarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OcspLambdaArn { get; set; }
+            /// <summary>
+            /// OcspAuthorizedResponderArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificateconfig.html#cfn-iot-domainconfiguration-servercertificateconfig-ocspauthorizedresponderarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OcspAuthorizedResponderArn { get; set; }
         }
 
         public class ServerCertificateSummary : Humidifier.Base.BaseSubResource

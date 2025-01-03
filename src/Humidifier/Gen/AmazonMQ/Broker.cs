@@ -427,6 +427,14 @@ namespace Humidifier.AmazonMQ
             /// </summary>
             public dynamic ConsoleAccess { get; set; }
             /// <summary>
+            /// JolokiaApiAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-jolokiaapiaccess
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic JolokiaApiAccess { get; set; }
+            /// <summary>
             /// Password
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-password
             /// Required: True

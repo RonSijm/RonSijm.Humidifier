@@ -107,7 +107,7 @@ namespace Humidifier.AutoScaling
 
     namespace ScalingPolicyTypes
     {
-        public class CustomizedMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveStatistic
+        public class CustomizedMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHavePeriod, IHaveStatistic
         {
             /// <summary>
             /// MetricName
@@ -143,6 +143,14 @@ namespace Humidifier.AutoScaling
             /// ItemType: MetricDimension
             /// </summary>
             public List<Humidifier.AutoScaling.ScalingPolicyTypes.MetricDimension> Dimensions { get; set; }
+            /// <summary>
+            /// Period
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-period
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Period { get; set; }
             /// <summary>
             /// Unit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit
@@ -570,7 +578,7 @@ namespace Humidifier.AutoScaling
             public Humidifier.AutoScaling.ScalingPolicyTypes.PredefinedMetricSpecification PredefinedMetricSpecification { get; set; }
         }
 
-        public class TargetTrackingMetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHaveReturnData
+        public class TargetTrackingMetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHavePeriod, IHaveReturnData
         {
             /// <summary>
             /// ReturnData
@@ -605,6 +613,14 @@ namespace Humidifier.AutoScaling
             /// </summary>
             public Humidifier.AutoScaling.ScalingPolicyTypes.TargetTrackingMetricStat MetricStat { get; set; }
             /// <summary>
+            /// Period
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingmetricdataquery.html#cfn-autoscaling-scalingpolicy-targettrackingmetricdataquery-period
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Period { get; set; }
+            /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingmetricdataquery.html#cfn-autoscaling-scalingpolicy-targettrackingmetricdataquery-id
             /// Required: True
@@ -614,7 +630,7 @@ namespace Humidifier.AutoScaling
             public dynamic Id { get; set; }
         }
 
-        public class TargetTrackingMetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveStat
+        public class TargetTrackingMetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHavePeriod, IHaveStat
         {
             /// <summary>
             /// Stat
@@ -624,6 +640,14 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic Stat { get; set; }
+            /// <summary>
+            /// Period
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingmetricstat.html#cfn-autoscaling-scalingpolicy-targettrackingmetricstat-period
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Period { get; set; }
             /// <summary>
             /// Metric
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingmetricstat.html#cfn-autoscaling-scalingpolicy-targettrackingmetricstat-metric

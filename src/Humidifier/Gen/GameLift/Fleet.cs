@@ -45,6 +45,14 @@ namespace Humidifier.GameLift
         /// </summary>
         public dynamic ApplyCapacity { get; set; }
         /// <summary>
+        /// FleetType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-fleettype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FleetType { get; set; }
+        /// <summary>
         /// EC2InboundPermissions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions
         /// Required: False
@@ -53,71 +61,6 @@ namespace Humidifier.GameLift
         /// ItemType: IpPermission
         /// </summary>
         public List<Humidifier.GameLift.FleetTypes.IpPermission> EC2InboundPermissions { get; set; }
-        /// <summary>
-        /// ContainerGroupsConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-containergroupsconfiguration
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: ContainerGroupsConfiguration
-        /// </summary>
-        public Humidifier.GameLift.FleetTypes.ContainerGroupsConfiguration ContainerGroupsConfiguration { get; set; }
-        /// <summary>
-        /// ComputeType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-computetype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ComputeType { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// AnywhereConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-anywhereconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: AnywhereConfiguration
-        /// </summary>
-        public Humidifier.GameLift.FleetTypes.AnywhereConfiguration AnywhereConfiguration { get; set; }
-        /// <summary>
-        /// InstanceRoleARN
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InstanceRoleARN { get; set; }
-        /// <summary>
-        /// CertificateConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: CertificateConfiguration
-        /// </summary>
-        public Humidifier.GameLift.FleetTypes.CertificateConfiguration CertificateConfiguration { get; set; }
-        /// <summary>
-        /// InstanceRoleCredentialsProvider
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolecredentialsprovider
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InstanceRoleCredentialsProvider { get; set; }
-        /// <summary>
-        /// DesiredEC2Instances
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic DesiredEC2Instances { get; set; }
-        /// <summary>
-        /// FleetType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-fleettype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic FleetType { get; set; }
         /// <summary>
         /// Locations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-locations
@@ -144,6 +87,14 @@ namespace Humidifier.GameLift
         /// </summary>
         public dynamic ScriptId { get; set; }
         /// <summary>
+        /// ComputeType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-computetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ComputeType { get; set; }
+        /// <summary>
         /// MaxSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
         /// Required: False
@@ -159,6 +110,7 @@ namespace Humidifier.GameLift
         /// Type: RuntimeConfiguration
         /// </summary>
         public Humidifier.GameLift.FleetTypes.RuntimeConfiguration RuntimeConfiguration { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// MinSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
@@ -175,6 +127,22 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic PeerVpcAwsAccountId { get; set; }
+        /// <summary>
+        /// AnywhereConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-anywhereconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AnywhereConfiguration
+        /// </summary>
+        public Humidifier.GameLift.FleetTypes.AnywhereConfiguration AnywhereConfiguration { get; set; }
+        /// <summary>
+        /// InstanceRoleARN
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InstanceRoleARN { get; set; }
         /// <summary>
         /// MetricGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-metricgroups
@@ -208,6 +176,30 @@ namespace Humidifier.GameLift
         /// PrimitiveType: String
         /// </summary>
         public dynamic EC2InstanceType { get; set; }
+        /// <summary>
+        /// CertificateConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: CertificateConfiguration
+        /// </summary>
+        public Humidifier.GameLift.FleetTypes.CertificateConfiguration CertificateConfiguration { get; set; }
+        /// <summary>
+        /// InstanceRoleCredentialsProvider
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolecredentialsprovider
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic InstanceRoleCredentialsProvider { get; set; }
+        /// <summary>
+        /// DesiredEC2Instances
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic DesiredEC2Instances { get; set; }
     }
 
     namespace FleetTypes
@@ -234,75 +226,6 @@ namespace Humidifier.GameLift
             /// PrimitiveType: String
             /// </summary>
             public dynamic CertificateType { get; set; }
-        }
-
-        public class ConnectionPortRange : Humidifier.Base.BaseSubResource, IHaveFromPort, IHaveToPort
-        {
-            /// <summary>
-            /// FromPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-connectionportrange.html#cfn-gamelift-fleet-connectionportrange-fromport
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic FromPort { get; set; }
-            /// <summary>
-            /// ToPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-connectionportrange.html#cfn-gamelift-fleet-connectionportrange-toport
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ToPort { get; set; }
-        }
-
-        public class ContainerGroupsConfiguration : Humidifier.Base.BaseSubResource
-        {
-            /// <summary>
-            /// ConnectionPortRange
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-containergroupsconfiguration.html#cfn-gamelift-fleet-containergroupsconfiguration-connectionportrange
-            /// Required: True
-            /// UpdateType: Immutable
-            /// Type: ConnectionPortRange
-            /// </summary>
-            public Humidifier.GameLift.FleetTypes.ConnectionPortRange ConnectionPortRange { get; set; }
-            /// <summary>
-            /// ContainerGroupDefinitionNames
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-containergroupsconfiguration.html#cfn-gamelift-fleet-containergroupsconfiguration-containergroupdefinitionnames
-            /// Required: True
-            /// UpdateType: Immutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic ContainerGroupDefinitionNames { get; set; }
-            /// <summary>
-            /// ContainerGroupsPerInstance
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-containergroupsconfiguration.html#cfn-gamelift-fleet-containergroupsconfiguration-containergroupsperinstance
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: ContainerGroupsPerInstance
-            /// </summary>
-            public Humidifier.GameLift.FleetTypes.ContainerGroupsPerInstance ContainerGroupsPerInstance { get; set; }
-        }
-
-        public class ContainerGroupsPerInstance : Humidifier.Base.BaseSubResource
-        {
-            /// <summary>
-            /// MaxReplicaContainerGroupsPerInstance
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-containergroupsperinstance.html#cfn-gamelift-fleet-containergroupsperinstance-maxreplicacontainergroupsperinstance
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaxReplicaContainerGroupsPerInstance { get; set; }
-            /// <summary>
-            /// DesiredReplicaContainerGroupsPerInstance
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-containergroupsperinstance.html#cfn-gamelift-fleet-containergroupsperinstance-desiredreplicacontainergroupsperinstance
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic DesiredReplicaContainerGroupsPerInstance { get; set; }
         }
 
         public class IpPermission : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveFromPort, IHaveToPort

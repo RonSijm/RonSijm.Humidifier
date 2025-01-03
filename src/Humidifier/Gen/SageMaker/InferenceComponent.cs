@@ -25,15 +25,13 @@ namespace Humidifier.SageMaker
         /// </summary>
         [Required]
         public dynamic EndpointName { get; set; }
-
         /// <summary>
         /// VariantName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferencecomponent.html#cfn-sagemaker-inferencecomponent-variantname
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic VariantName { get; set; }
         public dynamic InferenceComponentName { get => GivenName; set => GivenName = value; }
 
@@ -46,15 +44,13 @@ namespace Humidifier.SageMaker
         /// </summary>
         [Required]
         public Humidifier.SageMaker.InferenceComponentTypes.InferenceComponentSpecification Specification { get; set; }
-
         /// <summary>
         /// RuntimeConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-inferencecomponent.html#cfn-sagemaker-inferencecomponent-runtimeconfig
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: InferenceComponentRuntimeConfig
         /// </summary>
-        [Required]
         public Humidifier.SageMaker.InferenceComponentTypes.InferenceComponentRuntimeConfig RuntimeConfig { get; set; }
         /// <summary>
         /// EndpointArn
@@ -227,11 +223,19 @@ namespace Humidifier.SageMaker
             /// <summary>
             /// ComputeResourceRequirements
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferencecomponent-inferencecomponentspecification.html#cfn-sagemaker-inferencecomponent-inferencecomponentspecification-computeresourcerequirements
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: InferenceComponentComputeResourceRequirements
             /// </summary>
             public Humidifier.SageMaker.InferenceComponentTypes.InferenceComponentComputeResourceRequirements ComputeResourceRequirements { get; set; }
+            /// <summary>
+            /// BaseInferenceComponentName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferencecomponent-inferencecomponentspecification.html#cfn-sagemaker-inferencecomponent-inferencecomponentspecification-baseinferencecomponentname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BaseInferenceComponentName { get; set; }
             /// <summary>
             /// StartupParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-inferencecomponent-inferencecomponentspecification.html#cfn-sagemaker-inferencecomponent-inferencecomponentspecification-startupparameters

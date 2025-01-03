@@ -7,6 +7,7 @@ namespace Humidifier.RDS
     {
         public class Attributes
         {
+            public static string DatabaseInsightsMode =  "DatabaseInsightsMode" ;
             public static string DBSystemId =  "DBSystemId" ;
             public static string DBInstanceArn =  "DBInstanceArn" ;
             public static string DbiResourceId =  "DbiResourceId" ;
@@ -30,6 +31,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic Timezone { get; set; }
         /// <summary>
+        /// DBSystemId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbsystemid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DBSystemId { get; set; }
+        /// <summary>
         /// CertificateDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificatedetails
         /// Required: False
@@ -41,7 +50,7 @@ namespace Humidifier.RDS
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-port
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Port { get; set; }

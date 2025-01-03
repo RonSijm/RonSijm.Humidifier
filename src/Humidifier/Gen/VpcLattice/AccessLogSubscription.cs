@@ -21,6 +21,14 @@ namespace Humidifier.VpcLattice
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceIdentifier { get; set; }
+        /// <summary>
+        /// ServiceNetworkLogType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-accesslogsubscription.html#cfn-vpclattice-accesslogsubscription-servicenetworklogtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ServiceNetworkLogType { get; set; }
 
         /// <summary>
         /// DestinationArn

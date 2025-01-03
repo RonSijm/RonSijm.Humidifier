@@ -69,15 +69,13 @@ namespace Humidifier.QBusiness
         /// </summary>
         [Required]
         public Humidifier.QBusiness.PluginTypes.PluginAuthConfiguration AuthConfiguration { get; set; }
-
         /// <summary>
         /// ApplicationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-plugin.html#cfn-qbusiness-plugin-applicationid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic ApplicationId { get; set; }
         /// <summary>
         /// Tags
@@ -170,6 +168,22 @@ namespace Humidifier.QBusiness
             /// PrimitiveType: String
             /// </summary>
             public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// AuthorizationUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-plugin-oauth2clientcredentialconfiguration.html#cfn-qbusiness-plugin-oauth2clientcredentialconfiguration-authorizationurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthorizationUrl { get; set; }
+            /// <summary>
+            /// TokenUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-plugin-oauth2clientcredentialconfiguration.html#cfn-qbusiness-plugin-oauth2clientcredentialconfiguration-tokenurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TokenUrl { get; set; }
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-plugin-oauth2clientcredentialconfiguration.html#cfn-qbusiness-plugin-oauth2clientcredentialconfiguration-rolearn

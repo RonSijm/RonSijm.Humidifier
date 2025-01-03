@@ -151,6 +151,24 @@ namespace Humidifier.CodePipeline
             /// </summary>
             public List<Humidifier.CodePipeline.PipelineTypes.OutputArtifact> OutputArtifacts { get; set; }
             /// <summary>
+            /// Commands
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-commands
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Commands { get; set; }
+            /// <summary>
+            /// OutputVariables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-outputvariables
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic OutputVariables { get; set; }
+            /// <summary>
             /// Region
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-region
             /// Required: False
@@ -361,6 +379,14 @@ namespace Humidifier.CodePipeline
         public class FailureConditions : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// RetryConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-failureconditions.html#cfn-codepipeline-pipeline-failureconditions-retryconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RetryConfiguration
+            /// </summary>
+            public Humidifier.CodePipeline.PipelineTypes.RetryConfiguration RetryConfiguration { get; set; }
+            /// <summary>
             /// Conditions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-failureconditions.html#cfn-codepipeline-pipeline-failureconditions-conditions
             /// Required: False
@@ -547,6 +573,15 @@ namespace Humidifier.CodePipeline
         public class OutputArtifact : Humidifier.Base.BaseSubResource, IHaveName
         {
             /// <summary>
+            /// Files
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html#cfn-codepipeline-pipeline-outputartifact-files
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Files { get; set; }
+            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-outputartifact.html#cfn-codepipeline-pipeline-outputartifact-name
             /// Required: True
@@ -574,6 +609,18 @@ namespace Humidifier.CodePipeline
             /// PrimitiveType: String
             /// </summary>
             public dynamic ProviderType { get; set; }
+        }
+
+        public class RetryConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RetryMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-retryconfiguration.html#cfn-codepipeline-pipeline-retryconfiguration-retrymode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RetryMode { get; set; }
         }
 
         public class RuleDeclaration : Humidifier.Base.BaseSubResource, IHaveName, IHaveRoleArn, IHaveRegion, IHaveConfiguration

@@ -60,6 +60,14 @@ namespace Humidifier.QBusiness
         /// Type: DocumentEnrichmentConfiguration
         /// </summary>
         public Humidifier.QBusiness.DataSourceTypes.DocumentEnrichmentConfiguration DocumentEnrichmentConfiguration { get; set; }
+        /// <summary>
+        /// MediaExtractionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-datasource.html#cfn-qbusiness-datasource-mediaextractionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MediaExtractionConfiguration
+        /// </summary>
+        public Humidifier.QBusiness.DataSourceTypes.MediaExtractionConfiguration MediaExtractionConfiguration { get; set; }
 
         /// <summary>
         /// DisplayName
@@ -289,6 +297,18 @@ namespace Humidifier.QBusiness
             public dynamic RoleArn { get; set; }
         }
 
+        public class ImageExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageExtractionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-imageextractionconfiguration.html#cfn-qbusiness-datasource-imageextractionconfiguration-imageextractionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageExtractionStatus { get; set; }
+        }
+
         public class InlineDocumentEnrichmentConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -315,6 +335,18 @@ namespace Humidifier.QBusiness
             /// PrimitiveType: String
             /// </summary>
             public dynamic DocumentContentOperator { get; set; }
+        }
+
+        public class MediaExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-mediaextractionconfiguration.html#cfn-qbusiness-datasource-mediaextractionconfiguration-imageextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ImageExtractionConfiguration
+            /// </summary>
+            public Humidifier.QBusiness.DataSourceTypes.ImageExtractionConfiguration ImageExtractionConfiguration { get; set; }
         }
     }
 }

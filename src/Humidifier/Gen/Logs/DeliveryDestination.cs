@@ -2,7 +2,7 @@ namespace Humidifier.Logs
 {
     using System.Collections.Generic;
 
-    public class DeliveryDestination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class DeliveryDestination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveOutputFormat
     {
         public class Attributes
         {
@@ -19,6 +19,14 @@ namespace Humidifier.Logs
         /// PrimitiveType: String
         /// </summary>
         public dynamic DestinationResourceArn { get; set; }
+        /// <summary>
+        /// OutputFormat
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-deliverydestination.html#cfn-logs-deliverydestination-outputformat
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OutputFormat { get; set; }
         /// <summary>
         /// DeliveryDestinationPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-deliverydestination.html#cfn-logs-deliverydestination-deliverydestinationpolicy

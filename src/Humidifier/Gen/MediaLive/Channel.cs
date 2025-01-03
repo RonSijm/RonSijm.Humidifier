@@ -30,22 +30,6 @@ namespace Humidifier.MediaLive
         /// </summary>
         public Humidifier.MediaLive.ChannelTypes.InputSpecification InputSpecification { get; set; }
         /// <summary>
-        /// ChannelClass
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-channelclass
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ChannelClass { get; set; }
-        /// <summary>
-        /// EncoderSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: EncoderSettings
-        /// </summary>
-        public Humidifier.MediaLive.ChannelTypes.EncoderSettings EncoderSettings { get; set; }
-        /// <summary>
         /// Destinations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-destinations
         /// Required: False
@@ -62,14 +46,6 @@ namespace Humidifier.MediaLive
         /// Type: VpcOutputSettings
         /// </summary>
         public Humidifier.MediaLive.ChannelTypes.VpcOutputSettings Vpc { get; set; }
-        /// <summary>
-        /// CdiInputSpecification
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-cdiinputspecification
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: CdiInputSpecification
-        /// </summary>
-        public Humidifier.MediaLive.ChannelTypes.CdiInputSpecification CdiInputSpecification { get; set; }
         /// <summary>
         /// Maintenance
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-maintenance
@@ -94,6 +70,39 @@ namespace Humidifier.MediaLive
         /// PrimitiveType: String
         /// </summary>
         public dynamic RoleArn { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ChannelClass
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-channelclass
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ChannelClass { get; set; }
+        /// <summary>
+        /// EncoderSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EncoderSettings
+        /// </summary>
+        public Humidifier.MediaLive.ChannelTypes.EncoderSettings EncoderSettings { get; set; }
+        /// <summary>
+        /// AnywhereSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-anywheresettings
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: AnywhereSettings
+        /// </summary>
+        public Humidifier.MediaLive.ChannelTypes.AnywhereSettings AnywhereSettings { get; set; }
+        /// <summary>
+        /// CdiInputSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-cdiinputspecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CdiInputSpecification
+        /// </summary>
+        public Humidifier.MediaLive.ChannelTypes.CdiInputSpecification CdiInputSpecification { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-tags
@@ -102,7 +111,6 @@ namespace Humidifier.MediaLive
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ChannelTypes
@@ -261,6 +269,26 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic SourceAncillaryChannelNumber { get; set; }
+        }
+
+        public class AnywhereSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ChannelPlacementGroupId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-anywheresettings.html#cfn-medialive-channel-anywheresettings-channelplacementgroupid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ChannelPlacementGroupId { get; set; }
+            /// <summary>
+            /// ClusterId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-anywheresettings.html#cfn-medialive-channel-anywheresettings-clusterid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClusterId { get; set; }
         }
 
         public class ArchiveCdnSettings : Humidifier.Base.BaseSubResource
@@ -847,6 +875,182 @@ namespace Humidifier.MediaLive
             public dynamic ErrorClearTimeMsec { get; set; }
         }
 
+        public class Av1ColorSpaceSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Rec601Settings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1colorspacesettings.html#cfn-medialive-channel-av1colorspacesettings-rec601settings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Rec601Settings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.Rec601Settings Rec601Settings { get; set; }
+            /// <summary>
+            /// Rec709Settings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1colorspacesettings.html#cfn-medialive-channel-av1colorspacesettings-rec709settings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Rec709Settings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.Rec709Settings Rec709Settings { get; set; }
+            /// <summary>
+            /// ColorSpacePassthroughSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1colorspacesettings.html#cfn-medialive-channel-av1colorspacesettings-colorspacepassthroughsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ColorSpacePassthroughSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.ColorSpacePassthroughSettings ColorSpacePassthroughSettings { get; set; }
+            /// <summary>
+            /// Hdr10Settings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1colorspacesettings.html#cfn-medialive-channel-av1colorspacesettings-hdr10settings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Hdr10Settings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.Hdr10Settings Hdr10Settings { get; set; }
+        }
+
+        public class Av1Settings : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveMaxBitrate, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFramerateNumerator, IHaveFramerateDenominator, IHaveGopSize, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling
+        {
+            /// <summary>
+            /// TimecodeBurninSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-timecodeburninsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TimecodeBurninSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.TimecodeBurninSettings TimecodeBurninSettings { get; set; }
+            /// <summary>
+            /// ColorSpaceSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-colorspacesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Av1ColorSpaceSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.Av1ColorSpaceSettings ColorSpaceSettings { get; set; }
+            /// <summary>
+            /// QvbrQualityLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-qvbrqualitylevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic QvbrQualityLevel { get; set; }
+            /// <summary>
+            /// ParDenominator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-pardenominator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ParDenominator { get; set; }
+            /// <summary>
+            /// FixedAfd
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-fixedafd
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FixedAfd { get; set; }
+            /// <summary>
+            /// GopSizeUnits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-gopsizeunits
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GopSizeUnits { get; set; }
+            /// <summary>
+            /// FramerateNumerator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-frameratenumerator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FramerateNumerator { get; set; }
+            /// <summary>
+            /// AfdSignaling
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-afdsignaling
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AfdSignaling { get; set; }
+            /// <summary>
+            /// ParNumerator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-parnumerator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ParNumerator { get; set; }
+            /// <summary>
+            /// BufSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-bufsize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BufSize { get; set; }
+            /// <summary>
+            /// MinIInterval
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-miniinterval
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinIInterval { get; set; }
+            /// <summary>
+            /// SceneChangeDetect
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-scenechangedetect
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SceneChangeDetect { get; set; }
+            /// <summary>
+            /// FramerateDenominator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-frameratedenominator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FramerateDenominator { get; set; }
+            /// <summary>
+            /// LookAheadRateControl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-lookaheadratecontrol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LookAheadRateControl { get; set; }
+            /// <summary>
+            /// Level
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-level
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Level { get; set; }
+            /// <summary>
+            /// MaxBitrate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-maxbitrate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxBitrate { get; set; }
+            /// <summary>
+            /// GopSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-av1settings.html#cfn-medialive-channel-av1settings-gopsize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic GopSize { get; set; }
+        }
+
         public class AvailBlanking : Humidifier.Base.BaseSubResource, IHaveState
         {
             /// <summary>
@@ -913,6 +1117,26 @@ namespace Humidifier.MediaLive
             /// Type: Esam
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.Esam Esam { get; set; }
+        }
+
+        public class BandwidthReductionFilterSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PostFilterSharpening
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-bandwidthreductionfiltersettings.html#cfn-medialive-channel-bandwidthreductionfiltersettings-postfiltersharpening
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PostFilterSharpening { get; set; }
+            /// <summary>
+            /// Strength
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-bandwidthreductionfiltersettings.html#cfn-medialive-channel-bandwidthreductionfiltersettings-strength
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Strength { get; set; }
         }
 
         public class BlackoutSlate : Humidifier.Base.BaseSubResource, IHaveState, IHaveNetworkId
@@ -2587,6 +2811,14 @@ namespace Humidifier.MediaLive
             /// Type: TemporalFilterSettings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.TemporalFilterSettings TemporalFilterSettings { get; set; }
+            /// <summary>
+            /// BandwidthReductionFilterSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264filtersettings.html#cfn-medialive-channel-h264filtersettings-bandwidthreductionfiltersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BandwidthReductionFilterSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.BandwidthReductionFilterSettings BandwidthReductionFilterSettings { get; set; }
         }
 
         public class H264Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveLevel, IHaveMaxBitrate, IHaveProfile, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveRateControlMode, IHaveFramerateNumerator, IHaveGopClosedCadence, IHaveFramerateDenominator, IHaveGopSize, IHaveAdaptiveQuantization, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata
@@ -2991,6 +3223,14 @@ namespace Humidifier.MediaLive
             /// Type: TemporalFilterSettings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.TemporalFilterSettings TemporalFilterSettings { get; set; }
+            /// <summary>
+            /// BandwidthReductionFilterSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265filtersettings.html#cfn-medialive-channel-h265filtersettings-bandwidthreductionfiltersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BandwidthReductionFilterSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.BandwidthReductionFilterSettings BandwidthReductionFilterSettings { get; set; }
         }
 
         public class H265Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveLevel, IHaveTier, IHaveMaxBitrate, IHaveProfile, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveRateControlMode, IHaveFramerateNumerator, IHaveGopClosedCadence, IHaveFramerateDenominator, IHaveGopSize, IHaveAdaptiveQuantization, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata
@@ -4033,6 +4273,15 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: String
             /// </summary>
             public dynamic InputAttachmentName { get; set; }
+            /// <summary>
+            /// LogicalInterfaceNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-logicalinterfacenames
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LogicalInterfaceNames { get; set; }
             /// <summary>
             /// InputId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid
@@ -5305,8 +5554,148 @@ namespace Humidifier.MediaLive
             public dynamic H265PackagingType { get; set; }
         }
 
+        public class MulticastInputSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SourceIpAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multicastinputsettings.html#cfn-medialive-channel-multicastinputsettings-sourceipaddress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceIpAddress { get; set; }
+        }
+
+        public class MultiplexContainerSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MultiplexM2tsSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexcontainersettings.html#cfn-medialive-channel-multiplexcontainersettings-multiplexm2tssettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MultiplexM2tsSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.MultiplexM2tsSettings MultiplexM2tsSettings { get; set; }
+        }
+
         public class MultiplexGroupSettings : Humidifier.Base.BaseSubResource
         {
+        }
+
+        public class MultiplexM2tsSettings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior
+        {
+            /// <summary>
+            /// Scte35Control
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-scte35control
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Scte35Control { get; set; }
+            /// <summary>
+            /// PcrPeriod
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-pcrperiod
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic PcrPeriod { get; set; }
+            /// <summary>
+            /// NielsenId3Behavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-nielsenid3behavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NielsenId3Behavior { get; set; }
+            /// <summary>
+            /// EsRateInPes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-esrateinpes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EsRateInPes { get; set; }
+            /// <summary>
+            /// CcDescriptor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-ccdescriptor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CcDescriptor { get; set; }
+            /// <summary>
+            /// AudioFramesPerPes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-audioframesperpes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic AudioFramesPerPes { get; set; }
+            /// <summary>
+            /// AbsentInputAudioBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-absentinputaudiobehavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AbsentInputAudioBehavior { get; set; }
+            /// <summary>
+            /// AudioStreamType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-audiostreamtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AudioStreamType { get; set; }
+            /// <summary>
+            /// Klv
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-klv
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Klv { get; set; }
+            /// <summary>
+            /// Arib
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-arib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Arib { get; set; }
+            /// <summary>
+            /// AudioBufferModel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-audiobuffermodel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AudioBufferModel { get; set; }
+            /// <summary>
+            /// Ebif
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-ebif
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ebif { get; set; }
+            /// <summary>
+            /// Scte35PrerollPullupMilliseconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-scte35prerollpullupmilliseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Scte35PrerollPullupMilliseconds { get; set; }
+            /// <summary>
+            /// PcrControl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexm2tssettings.html#cfn-medialive-channel-multiplexm2tssettings-pcrcontrol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PcrControl { get; set; }
         }
 
         public class MultiplexOutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination
@@ -5319,6 +5708,14 @@ namespace Humidifier.MediaLive
             /// Type: OutputLocationRef
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.OutputLocationRef Destination { get; set; }
+            /// <summary>
+            /// ContainerSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexoutputsettings.html#cfn-medialive-channel-multiplexoutputsettings-containersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MultiplexContainerSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.MultiplexContainerSettings ContainerSettings { get; set; }
         }
 
         public class MultiplexProgramChannelDestinationSettings : Humidifier.Base.BaseSubResource
@@ -5359,6 +5756,14 @@ namespace Humidifier.MediaLive
             /// Type: HlsInputSettings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.HlsInputSettings HlsInputSettings { get; set; }
+            /// <summary>
+            /// MulticastInputSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-multicastinputsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MulticastInputSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.MulticastInputSettings MulticastInputSettings { get; set; }
         }
 
         public class NielsenCBET : Humidifier.Base.BaseSubResource
@@ -5514,6 +5919,15 @@ namespace Humidifier.MediaLive
         public class OutputDestination : Humidifier.Base.BaseSubResource, IHaveId
         {
             /// <summary>
+            /// SrtSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-srtsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SrtOutputDestinationSettings
+            /// </summary>
+            public List<Humidifier.MediaLive.ChannelTypes.SrtOutputDestinationSettings> SrtSettings { get; set; }
+            /// <summary>
             /// MultiplexSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-multiplexsettings
             /// Required: False
@@ -5640,6 +6054,14 @@ namespace Humidifier.MediaLive
             /// Type: MultiplexGroupSettings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.MultiplexGroupSettings MultiplexGroupSettings { get; set; }
+            /// <summary>
+            /// SrtGroupSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-srtgroupsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SrtGroupSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.SrtGroupSettings SrtGroupSettings { get; set; }
             /// <summary>
             /// ArchiveGroupSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-archivegroupsettings
@@ -5788,6 +6210,14 @@ namespace Humidifier.MediaLive
             /// Type: CmafIngestOutputSettings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.CmafIngestOutputSettings CmafIngestOutputSettings { get; set; }
+            /// <summary>
+            /// SrtOutputSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-srtoutputsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SrtOutputSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.SrtOutputSettings SrtOutputSettings { get; set; }
             /// <summary>
             /// ArchiveOutputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-archiveoutputsettings
@@ -6062,6 +6492,90 @@ namespace Humidifier.MediaLive
 
         public class SmpteTtDestinationSettings : Humidifier.Base.BaseSubResource
         {
+        }
+
+        public class SrtGroupSettings : Humidifier.Base.BaseSubResource, IHaveInputLossAction
+        {
+            /// <summary>
+            /// InputLossAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtgroupsettings.html#cfn-medialive-channel-srtgroupsettings-inputlossaction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InputLossAction { get; set; }
+        }
+
+        public class SrtOutputDestinationSettings : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveStreamId
+        {
+            /// <summary>
+            /// StreamId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputdestinationsettings.html#cfn-medialive-channel-srtoutputdestinationsettings-streamid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StreamId { get; set; }
+            /// <summary>
+            /// EncryptionPassphraseSecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputdestinationsettings.html#cfn-medialive-channel-srtoutputdestinationsettings-encryptionpassphrasesecretarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionPassphraseSecretArn { get; set; }
+            /// <summary>
+            /// Url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputdestinationsettings.html#cfn-medialive-channel-srtoutputdestinationsettings-url
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Url { get; set; }
+        }
+
+        public class SrtOutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveEncryptionType
+        {
+            /// <summary>
+            /// EncryptionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputsettings.html#cfn-medialive-channel-srtoutputsettings-encryptiontype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionType { get; set; }
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputsettings.html#cfn-medialive-channel-srtoutputsettings-destination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OutputLocationRef
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.OutputLocationRef Destination { get; set; }
+            /// <summary>
+            /// ContainerSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputsettings.html#cfn-medialive-channel-srtoutputsettings-containersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: UdpContainerSettings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.UdpContainerSettings ContainerSettings { get; set; }
+            /// <summary>
+            /// BufferMsec
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputsettings.html#cfn-medialive-channel-srtoutputsettings-buffermsec
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BufferMsec { get; set; }
+            /// <summary>
+            /// Latency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-srtoutputsettings.html#cfn-medialive-channel-srtoutputsettings-latency
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Latency { get; set; }
         }
 
         public class StandardHlsSettings : Humidifier.Base.BaseSubResource
@@ -6350,6 +6864,14 @@ namespace Humidifier.MediaLive
             /// Type: H265Settings
             /// </summary>
             public Humidifier.MediaLive.ChannelTypes.H265Settings H265Settings { get; set; }
+            /// <summary>
+            /// Av1Settings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-av1settings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Av1Settings
+            /// </summary>
+            public Humidifier.MediaLive.ChannelTypes.Av1Settings Av1Settings { get; set; }
         }
 
         public class VideoDescription : Humidifier.Base.BaseSubResource, IHaveName, IHaveHeight, IHaveWidth

@@ -76,6 +76,14 @@ namespace Humidifier.DynamoDB
         /// Type: ProvisionedThroughput
         /// </summary>
         public Humidifier.DynamoDB.TableTypes.ProvisionedThroughput ProvisionedThroughput { get; set; }
+        /// <summary>
+        /// WarmThroughput
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-warmthroughput
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WarmThroughput
+        /// </summary>
+        public Humidifier.DynamoDB.TableTypes.WarmThroughput WarmThroughput { get; set; }
         public dynamic TableName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AttributeDefinitions
@@ -272,6 +280,14 @@ namespace Humidifier.DynamoDB
             /// ItemType: KeySchema
             /// </summary>
             public List<Humidifier.DynamoDB.TableTypes.KeySchema> KeySchema { get; set; }
+            /// <summary>
+            /// WarmThroughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-globalsecondaryindex.html#cfn-dynamodb-table-globalsecondaryindex-warmthroughput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WarmThroughput
+            /// </summary>
+            public Humidifier.DynamoDB.TableTypes.WarmThroughput WarmThroughput { get; set; }
         }
 
         public class ImportSourceSpecification : Humidifier.Base.BaseSubResource, IHaveInputFormat
@@ -421,6 +437,14 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic PointInTimeRecoveryEnabled { get; set; }
+            /// <summary>
+            /// RecoveryPeriodInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html#cfn-dynamodb-table-pointintimerecoveryspecification-recoveryperiodindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecoveryPeriodInDays { get; set; }
         }
 
         public class Projection : Humidifier.Base.BaseSubResource
@@ -570,6 +594,26 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: String
             /// </summary>
             public dynamic AttributeName { get; set; }
+        }
+
+        public class WarmThroughput : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ReadUnitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-warmthroughput.html#cfn-dynamodb-table-warmthroughput-readunitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ReadUnitsPerSecond { get; set; }
+            /// <summary>
+            /// WriteUnitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-warmthroughput.html#cfn-dynamodb-table-warmthroughput-writeunitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WriteUnitsPerSecond { get; set; }
         }
     }
 }

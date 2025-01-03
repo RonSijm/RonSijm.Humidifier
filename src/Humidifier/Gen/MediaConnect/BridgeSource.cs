@@ -60,6 +60,14 @@ namespace Humidifier.MediaConnect
         public class BridgeNetworkSource : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveNetworkName
         {
             /// <summary>
+            /// MulticastSourceSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridgesource-bridgenetworksource.html#cfn-mediaconnect-bridgesource-bridgenetworksource-multicastsourcesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MulticastSourceSettings
+            /// </summary>
+            public Humidifier.MediaConnect.BridgeSourceTypes.MulticastSourceSettings MulticastSourceSettings { get; set; }
+            /// <summary>
             /// NetworkName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridgesource-bridgenetworksource.html#cfn-mediaconnect-bridgesource-bridgenetworksource-networkname
             /// Required: True
@@ -91,6 +99,18 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public dynamic Protocol { get; set; }
+        }
+
+        public class MulticastSourceSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MulticastSourceIp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-bridgesource-multicastsourcesettings.html#cfn-mediaconnect-bridgesource-multicastsourcesettings-multicastsourceip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MulticastSourceIp { get; set; }
         }
 
         public class VpcInterfaceAttachment : Humidifier.Base.BaseSubResource, IHaveVpcInterfaceName

@@ -34,15 +34,13 @@ namespace Humidifier.Bedrock
         /// </summary>
         [Required]
         public Humidifier.Bedrock.KnowledgeBaseTypes.KnowledgeBaseConfiguration KnowledgeBaseConfiguration { get; set; }
-
         /// <summary>
         /// StorageConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-knowledgebase.html#cfn-bedrock-knowledgebase-storageconfiguration
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// Type: StorageConfiguration
         /// </summary>
-        [Required]
         public Humidifier.Bedrock.KnowledgeBaseTypes.StorageConfiguration StorageConfiguration { get; set; }
 
         /// <summary>
@@ -92,6 +90,18 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.KnowledgeBaseTypes.BedrockEmbeddingModelConfiguration BedrockEmbeddingModelConfiguration { get; set; }
         }
 
+        public class KendraKnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// KendraIndexArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-kendraknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-kendraknowledgebaseconfiguration-kendraindexarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KendraIndexArn { get; set; }
+        }
+
         public class KnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
@@ -103,9 +113,17 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic Type { get; set; }
             /// <summary>
+            /// KendraKnowledgeBaseConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-knowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration-kendraknowledgebaseconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: KendraKnowledgeBaseConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.KendraKnowledgeBaseConfiguration KendraKnowledgeBaseConfiguration { get; set; }
+            /// <summary>
             /// VectorKnowledgeBaseConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-knowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration-vectorknowledgebaseconfiguration
-            /// Required: True
+            /// Required: False
             /// UpdateType: Immutable
             /// Type: VectorKnowledgeBaseConfiguration
             /// </summary>
@@ -392,6 +410,18 @@ namespace Humidifier.Bedrock
             public dynamic MetadataField { get; set; }
         }
 
+        public class S3Location : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// URI
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-s3location.html#cfn-bedrock-knowledgebase-s3location-uri
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic URI { get; set; }
+        }
+
         public class StorageConfiguration : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
@@ -436,6 +466,39 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.KnowledgeBaseTypes.PineconeConfiguration PineconeConfiguration { get; set; }
         }
 
+        public class SupplementalDataStorageConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SupplementalDataStorageLocations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-supplementaldatastorageconfiguration.html#cfn-bedrock-knowledgebase-supplementaldatastorageconfiguration-supplementaldatastoragelocations
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: SupplementalDataStorageLocation
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.SupplementalDataStorageLocation> SupplementalDataStorageLocations { get; set; }
+        }
+
+        public class SupplementalDataStorageLocation : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SupplementalDataStorageLocationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-supplementaldatastoragelocation.html#cfn-bedrock-knowledgebase-supplementaldatastoragelocation-supplementaldatastoragelocationtype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SupplementalDataStorageLocationType { get; set; }
+            /// <summary>
+            /// S3Location
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-supplementaldatastoragelocation.html#cfn-bedrock-knowledgebase-supplementaldatastoragelocation-s3location
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: S3Location
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.S3Location S3Location { get; set; }
+        }
+
         public class VectorKnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -454,6 +517,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic EmbeddingModelArn { get; set; }
+            /// <summary>
+            /// SupplementalDataStorageConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-vectorknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-vectorknowledgebaseconfiguration-supplementaldatastorageconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: SupplementalDataStorageConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.SupplementalDataStorageConfiguration SupplementalDataStorageConfiguration { get; set; }
         }
     }
 }

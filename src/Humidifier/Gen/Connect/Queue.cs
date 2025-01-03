@@ -49,6 +49,14 @@ namespace Humidifier.Connect
         [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
+        /// OutboundEmailConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-outboundemailconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: OutboundEmailConfig
+        /// </summary>
+        public Humidifier.Connect.QueueTypes.OutboundEmailConfig OutboundEmailConfig { get; set; }
+        /// <summary>
         /// QuickConnectArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-quickconnectarns
         /// Required: False
@@ -113,6 +121,18 @@ namespace Humidifier.Connect
             /// PrimitiveType: String
             /// </summary>
             public dynamic OutboundCallerIdName { get; set; }
+        }
+
+        public class OutboundEmailConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OutboundEmailAddressId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-queue-outboundemailconfig.html#cfn-connect-queue-outboundemailconfig-outboundemailaddressid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OutboundEmailAddressId { get; set; }
         }
     }
 }

@@ -49,6 +49,14 @@ namespace Humidifier.Cognito
         /// </summary>
         public Humidifier.Cognito.UserPoolTypes.AdminCreateUserConfig AdminCreateUserConfig { get; set; }
         /// <summary>
+        /// UserPoolTier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooltier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic UserPoolTier { get; set; }
+        /// <summary>
         /// UsernameConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameconfiguration
         /// Required: False
@@ -98,6 +106,14 @@ namespace Humidifier.Cognito
         /// </summary>
         public dynamic EmailVerificationSubject { get; set; }
         /// <summary>
+        /// WebAuthnRelyingPartyID
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-webauthnrelyingpartyid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WebAuthnRelyingPartyID { get; set; }
+        /// <summary>
         /// EmailAuthenticationSubject
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailauthenticationsubject
         /// Required: False
@@ -145,6 +161,14 @@ namespace Humidifier.Cognito
         /// PrimitiveType: String
         /// </summary>
         public dynamic SmsAuthenticationMessage { get; set; }
+        /// <summary>
+        /// WebAuthnUserVerification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-webauthnuserverification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WebAuthnUserVerification { get; set; }
         /// <summary>
         /// UserPoolAddOns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons
@@ -616,6 +640,14 @@ namespace Humidifier.Cognito
             /// Type: PasswordPolicy
             /// </summary>
             public Humidifier.Cognito.UserPoolTypes.PasswordPolicy PasswordPolicy { get; set; }
+            /// <summary>
+            /// SignInPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html#cfn-cognito-userpool-policies-signinpolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SignInPolicy
+            /// </summary>
+            public Humidifier.Cognito.UserPoolTypes.SignInPolicy SignInPolicy { get; set; }
         }
 
         public class PreTokenGenerationConfig : Humidifier.Base.BaseSubResource, IHaveLambdaArn, IHaveLambdaVersion
@@ -716,6 +748,19 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class SignInPolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AllowedFirstAuthFactors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-signinpolicy.html#cfn-cognito-userpool-signinpolicy-allowedfirstauthfactors
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedFirstAuthFactors { get; set; }
         }
 
         public class SmsConfiguration : Humidifier.Base.BaseSubResource, IHaveExternalId

@@ -83,6 +83,14 @@ namespace Humidifier.SageMaker
         public class CustomFileSystem : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// FSxLustreFileSystem
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customfilesystem.html#cfn-sagemaker-space-customfilesystem-fsxlustrefilesystem
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FSxLustreFileSystem
+            /// </summary>
+            public Humidifier.SageMaker.SpaceTypes.FSxLustreFileSystem FSxLustreFileSystem { get; set; }
+            /// <summary>
             /// EFSFileSystem
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customfilesystem.html#cfn-sagemaker-space-customfilesystem-efsfilesystem
             /// Required: False
@@ -142,6 +150,18 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic EbsVolumeSizeInGb { get; set; }
+        }
+
+        public class FSxLustreFileSystem : Humidifier.Base.BaseSubResource, IHaveFileSystemId
+        {
+            /// <summary>
+            /// FileSystemId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-fsxlustrefilesystem.html#cfn-sagemaker-space-fsxlustrefilesystem-filesystemid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FileSystemId { get; set; }
         }
 
         public class JupyterServerAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerSpaceTypesResourceSpecDefaultResourceSpec

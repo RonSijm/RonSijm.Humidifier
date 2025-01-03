@@ -64,6 +64,14 @@ namespace Humidifier.EKS
         /// PrimitiveType: String
         /// </summary>
         public dynamic ReleaseVersion { get; set; }
+        /// <summary>
+        /// NodeRepairConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-noderepairconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: NodeRepairConfig
+        /// </summary>
+        public Humidifier.EKS.NodegroupTypes.NodeRepairConfig NodeRepairConfig { get; set; }
         public dynamic NodegroupName { get => GivenName; set => GivenName = value; }
 
         /// <summary>
@@ -192,6 +200,18 @@ namespace Humidifier.EKS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class NodeRepairConfig : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class RemoteAccess : Humidifier.Base.BaseSubResource

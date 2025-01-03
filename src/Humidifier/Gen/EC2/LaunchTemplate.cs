@@ -105,6 +105,18 @@ namespace Humidifier.EC2
             public dynamic Max { get; set; }
         }
 
+        public class BaselinePerformanceFactors : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Cpu
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-baselineperformancefactors.html#cfn-ec2-launchtemplate-baselineperformancefactors-cpu
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Cpu
+            /// </summary>
+            public Humidifier.EC2.LaunchTemplateTypes.Cpu Cpu { get; set; }
+        }
+
         public class BlockDeviceMapping : Humidifier.Base.BaseSubResource, IHaveDeviceName, IHaveNoDevice, IHaveVirtualName
         {
             /// <summary>
@@ -208,6 +220,19 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic UdpStreamTimeout { get; set; }
+        }
+
+        public class Cpu : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// References
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpu.html#cfn-ec2-launchtemplate-cpu-references
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Reference
+            /// </summary>
+            public List<Humidifier.EC2.LaunchTemplateTypes.Reference> References { get; set; }
         }
 
         public class CpuOptions : Humidifier.Base.BaseSubResource
@@ -429,15 +454,6 @@ namespace Humidifier.EC2
         public class InstanceRequirements : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveLocalStorageTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveBurstablePerformance
         {
             /// <summary>
-            /// LocalStorageTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstoragetypes
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic LocalStorageTypes { get; set; }
-            /// <summary>
             /// InstanceGenerations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-instancegenerations
             /// Required: False
@@ -446,14 +462,6 @@ namespace Humidifier.EC2
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic InstanceGenerations { get; set; }
-            /// <summary>
-            /// NetworkInterfaceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-networkinterfacecount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: NetworkInterfaceCount
-            /// </summary>
-            public Humidifier.EC2.LaunchTemplateTypes.NetworkInterfaceCount NetworkInterfaceCount { get; set; }
             /// <summary>
             /// MemoryGiBPerVCpu
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-memorygibpervcpu
@@ -480,15 +488,6 @@ namespace Humidifier.EC2
             /// </summary>
             public Humidifier.EC2.LaunchTemplateTypes.VCpuCount VCpuCount { get; set; }
             /// <summary>
-            /// ExcludedInstanceTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-excludedinstancetypes
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic ExcludedInstanceTypes { get; set; }
-            /// <summary>
             /// AcceleratorManufacturers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratormanufacturers
             /// Required: False
@@ -497,15 +496,6 @@ namespace Humidifier.EC2
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AcceleratorManufacturers { get; set; }
-            /// <summary>
-            /// AllowedInstanceTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-allowedinstancetypes
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic AllowedInstanceTypes { get; set; }
             /// <summary>
             /// LocalStorage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstorage
@@ -523,22 +513,6 @@ namespace Humidifier.EC2
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic CpuManufacturers { get; set; }
-            /// <summary>
-            /// AcceleratorCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratorcount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: AcceleratorCount
-            /// </summary>
-            public Humidifier.EC2.LaunchTemplateTypes.AcceleratorCount AcceleratorCount { get; set; }
-            /// <summary>
-            /// NetworkBandwidthGbps
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-networkbandwidthgbps
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: NetworkBandwidthGbps
-            /// </summary>
-            public Humidifier.EC2.LaunchTemplateTypes.NetworkBandwidthGbps NetworkBandwidthGbps { get; set; }
             /// <summary>
             /// BareMetal
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-baremetal
@@ -564,6 +538,81 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic MaxSpotPriceAsPercentageOfOptimalOnDemandPrice { get; set; }
             /// <summary>
+            /// OnDemandMaxPricePercentageOverLowestPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-ondemandmaxpricepercentageoverlowestprice
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic OnDemandMaxPricePercentageOverLowestPrice { get; set; }
+            /// <summary>
+            /// MemoryMiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-memorymib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MemoryMiB
+            /// </summary>
+            public Humidifier.EC2.LaunchTemplateTypes.MemoryMiB MemoryMiB { get; set; }
+            /// <summary>
+            /// LocalStorageTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-localstoragetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LocalStorageTypes { get; set; }
+            /// <summary>
+            /// NetworkInterfaceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-networkinterfacecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NetworkInterfaceCount
+            /// </summary>
+            public Humidifier.EC2.LaunchTemplateTypes.NetworkInterfaceCount NetworkInterfaceCount { get; set; }
+            /// <summary>
+            /// ExcludedInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-excludedinstancetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludedInstanceTypes { get; set; }
+            /// <summary>
+            /// AllowedInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-allowedinstancetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedInstanceTypes { get; set; }
+            /// <summary>
+            /// AcceleratorCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratorcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AcceleratorCount
+            /// </summary>
+            public Humidifier.EC2.LaunchTemplateTypes.AcceleratorCount AcceleratorCount { get; set; }
+            /// <summary>
+            /// NetworkBandwidthGbps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-networkbandwidthgbps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NetworkBandwidthGbps
+            /// </summary>
+            public Humidifier.EC2.LaunchTemplateTypes.NetworkBandwidthGbps NetworkBandwidthGbps { get; set; }
+            /// <summary>
+            /// BaselinePerformanceFactors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-baselineperformancefactors
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BaselinePerformanceFactors
+            /// </summary>
+            public Humidifier.EC2.LaunchTemplateTypes.BaselinePerformanceFactors BaselinePerformanceFactors { get; set; }
+            /// <summary>
             /// SpotMaxPricePercentageOverLowestPrice
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-spotmaxpricepercentageoverlowestprice
             /// Required: False
@@ -579,14 +628,6 @@ namespace Humidifier.EC2
             /// Type: BaselineEbsBandwidthMbps
             /// </summary>
             public Humidifier.EC2.LaunchTemplateTypes.BaselineEbsBandwidthMbps BaselineEbsBandwidthMbps { get; set; }
-            /// <summary>
-            /// OnDemandMaxPricePercentageOverLowestPrice
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-ondemandmaxpricepercentageoverlowestprice
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic OnDemandMaxPricePercentageOverLowestPrice { get; set; }
             /// <summary>
             /// AcceleratorNames
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-acceleratornames
@@ -612,14 +653,6 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic BurstablePerformance { get; set; }
-            /// <summary>
-            /// MemoryMiB
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-memorymib
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: MemoryMiB
-            /// </summary>
-            public Humidifier.EC2.LaunchTemplateTypes.MemoryMiB MemoryMiB { get; set; }
             /// <summary>
             /// TotalLocalStorageGB
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-instancerequirements.html#cfn-ec2-launchtemplate-instancerequirements-totallocalstoragegb
@@ -686,6 +719,14 @@ namespace Humidifier.EC2
             /// ItemType: TagSpecification
             /// </summary>
             public List<Humidifier.EC2.LaunchTemplateTypes.TagSpecification> TagSpecifications { get; set; }
+            /// <summary>
+            /// NetworkPerformanceOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkperformanceoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic NetworkPerformanceOptions { get; set; }
             /// <summary>
             /// UserData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
@@ -1434,6 +1475,18 @@ namespace Humidifier.EC2
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Primary { get; set; }
+        }
+
+        public class Reference : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InstanceFamily
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-reference.html#cfn-ec2-launchtemplate-reference-instancefamily
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceFamily { get; set; }
         }
 
         public class SpotOptions : Humidifier.Base.BaseSubResource, IHaveValidUntil, IHaveInstanceInterruptionBehavior, IHaveBlockDurationMinutes

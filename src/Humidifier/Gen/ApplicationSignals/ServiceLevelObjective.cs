@@ -15,6 +15,15 @@ namespace Humidifier.ApplicationSignals
 
         public override string AWSTypeName { get => AWS.ApplicationSignals.ServiceLevelObjective; }
         /// <summary>
+        /// BurnRateConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationsignals-servicelevelobjective.html#cfn-applicationsignals-servicelevelobjective-burnrateconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: BurnRateConfiguration
+        /// </summary>
+        public List<Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.BurnRateConfiguration> BurnRateConfigurations { get; set; }
+        /// <summary>
         /// Sli
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationsignals-servicelevelobjective.html#cfn-applicationsignals-servicelevelobjective-sli
         /// Required: False
@@ -60,6 +69,18 @@ namespace Humidifier.ApplicationSignals
 
     namespace ServiceLevelObjectiveTypes
     {
+        public class BurnRateConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LookBackWindowMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-burnrateconfiguration.html#cfn-applicationsignals-servicelevelobjective-burnrateconfiguration-lookbackwindowminutes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic LookBackWindowMinutes { get; set; }
+        }
+
         public class CalendarInterval : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveDuration
         {
             /// <summary>

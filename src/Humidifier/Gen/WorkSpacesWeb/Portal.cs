@@ -91,6 +91,14 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         public dynamic UserSettingsArn { get; set; }
         /// <summary>
+        /// DataProtectionSettingsArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-dataprotectionsettingsarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DataProtectionSettingsArn { get; set; }
+        /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-instancetype
         /// Required: False

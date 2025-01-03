@@ -46,6 +46,14 @@ namespace Humidifier.ServiceDiscovery
         /// </summary>
         public Humidifier.ServiceDiscovery.ServiceTypes.DnsConfig DnsConfig { get; set; }
         /// <summary>
+        /// ServiceAttributes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-serviceattributes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic ServiceAttributes { get; set; }
+        /// <summary>
         /// NamespaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid
         /// Required: False

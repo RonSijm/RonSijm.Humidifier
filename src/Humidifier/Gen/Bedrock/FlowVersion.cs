@@ -397,8 +397,36 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
+        public class GuardrailConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// GuardrailIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-guardrailconfiguration.html#cfn-bedrock-flowversion-guardrailconfiguration-guardrailidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GuardrailIdentifier { get; set; }
+            /// <summary>
+            /// GuardrailVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-guardrailconfiguration.html#cfn-bedrock-flowversion-guardrailconfiguration-guardrailversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GuardrailVersion { get; set; }
+        }
+
         public class KnowledgeBaseFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveModelId, IHaveKnowledgeBaseId
         {
+            /// <summary>
+            /// GuardrailConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flowversion-knowledgebaseflownodeconfiguration-guardrailconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GuardrailConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowVersionTypes.GuardrailConfiguration GuardrailConfiguration { get; set; }
             /// <summary>
             /// KnowledgeBaseId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flowversion-knowledgebaseflownodeconfiguration-knowledgebaseid
@@ -451,6 +479,14 @@ namespace Humidifier.Bedrock
 
         public class PromptFlowNodeConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// GuardrailConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-promptflownodeconfiguration.html#cfn-bedrock-flowversion-promptflownodeconfiguration-guardrailconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GuardrailConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowVersionTypes.GuardrailConfiguration GuardrailConfiguration { get; set; }
             /// <summary>
             /// SourceConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-promptflownodeconfiguration.html#cfn-bedrock-flowversion-promptflownodeconfiguration-sourceconfiguration
@@ -553,16 +589,8 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
-        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTopK, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
+        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
         {
-            /// <summary>
-            /// TopK
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-promptmodelinferenceconfiguration.html#cfn-bedrock-flowversion-promptmodelinferenceconfiguration-topk
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic TopK { get; set; }
             /// <summary>
             /// Temperature
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowversion-promptmodelinferenceconfiguration.html#cfn-bedrock-flowversion-promptmodelinferenceconfiguration-temperature

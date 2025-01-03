@@ -44,6 +44,22 @@ namespace Humidifier.Lambda
         /// Type: FilterCriteria
         /// </summary>
         public Humidifier.Lambda.EventSourceMappingTypes.FilterCriteria FilterCriteria { get; set; }
+        /// <summary>
+        /// ProvisionedPollerConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-provisionedpollerconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ProvisionedPollerConfig
+        /// </summary>
+        public Humidifier.Lambda.EventSourceMappingTypes.ProvisionedPollerConfig ProvisionedPollerConfig { get; set; }
+        /// <summary>
+        /// MetricsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-metricsconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MetricsConfig
+        /// </summary>
+        public Humidifier.Lambda.EventSourceMappingTypes.MetricsConfig MetricsConfig { get; set; }
 
         /// <summary>
         /// FunctionName
@@ -313,6 +329,19 @@ namespace Humidifier.Lambda
             public List<Humidifier.Lambda.EventSourceMappingTypes.Filter> Filters { get; set; }
         }
 
+        public class MetricsConfig : Humidifier.Base.BaseSubResource, IHaveMetrics
+        {
+            /// <summary>
+            /// Metrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-metricsconfig.html#cfn-lambda-eventsourcemapping-metricsconfig-metrics
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Metrics { get; set; }
+        }
+
         public class OnFailure : Humidifier.Base.BaseSubResource, IHaveDestination
         {
             /// <summary>
@@ -323,6 +352,26 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public dynamic Destination { get; set; }
+        }
+
+        public class ProvisionedPollerConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MinimumPollers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-provisionedpollerconfig.html#cfn-lambda-eventsourcemapping-provisionedpollerconfig-minimumpollers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinimumPollers { get; set; }
+            /// <summary>
+            /// MaximumPollers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-provisionedpollerconfig.html#cfn-lambda-eventsourcemapping-provisionedpollerconfig-maximumpollers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumPollers { get; set; }
         }
 
         public class ScalingConfig : Humidifier.Base.BaseSubResource

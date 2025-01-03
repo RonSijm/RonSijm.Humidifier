@@ -15,6 +15,24 @@ namespace Humidifier.QuickSight
 
         public override string AWSTypeName { get => AWS.QuickSight.DataSource; }
         /// <summary>
+        /// ErrorInfo
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-errorinfo
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DataSourceErrorInfo
+        /// </summary>
+        public Humidifier.QuickSight.DataSourceTypes.DataSourceErrorInfo ErrorInfo { get; set; }
+        /// <summary>
+        /// FolderArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-folderarns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic FolderArns { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
         /// DataSourceParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceparameters
         /// Required: False
@@ -49,14 +67,6 @@ namespace Humidifier.QuickSight
         /// ItemType: DataSourceParameters
         /// </summary>
         public List<Humidifier.QuickSight.DataSourceTypes.DataSourceParameters> AlternateDataSourceParameters { get; set; }
-        /// <summary>
-        /// ErrorInfo
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-errorinfo
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: DataSourceErrorInfo
-        /// </summary>
-        public Humidifier.QuickSight.DataSourceTypes.DataSourceErrorInfo ErrorInfo { get; set; }
         /// <summary>
         /// AwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-awsaccountid
@@ -107,7 +117,6 @@ namespace Humidifier.QuickSight
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace DataSourceTypes
@@ -569,6 +578,42 @@ namespace Humidifier.QuickSight
             public dynamic Host { get; set; }
         }
 
+        public class OAuthParameters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TokenProviderUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthparameters.html#cfn-quicksight-datasource-oauthparameters-tokenproviderurl
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TokenProviderUrl { get; set; }
+            /// <summary>
+            /// OAuthScope
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthparameters.html#cfn-quicksight-datasource-oauthparameters-oauthscope
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OAuthScope { get; set; }
+            /// <summary>
+            /// IdentityProviderVpcConnectionProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthparameters.html#cfn-quicksight-datasource-oauthparameters-identityprovidervpcconnectionproperties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConnectionProperties
+            /// </summary>
+            public Humidifier.QuickSight.DataSourceTypes.VpcConnectionProperties IdentityProviderVpcConnectionProperties { get; set; }
+            /// <summary>
+            /// IdentityProviderResourceUri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthparameters.html#cfn-quicksight-datasource-oauthparameters-identityproviderresourceuri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdentityProviderResourceUri { get; set; }
+        }
+
         public class OracleParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveDatabase
         {
             /// <summary>
@@ -811,7 +856,7 @@ namespace Humidifier.QuickSight
             public dynamic RoleArn { get; set; }
         }
 
-        public class SnowflakeParameters : Humidifier.Base.BaseSubResource, IHaveHost, IHaveDatabase
+        public class SnowflakeParameters : Humidifier.Base.BaseSubResource, IHaveHost, IHaveDatabase, IHaveAuthenticationType
         {
             /// <summary>
             /// Warehouse
@@ -822,6 +867,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Warehouse { get; set; }
             /// <summary>
+            /// DatabaseAccessControlRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-databaseaccesscontrolrole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseAccessControlRole { get; set; }
+            /// <summary>
             /// Database
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-database
             /// Required: True
@@ -830,6 +883,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Database { get; set; }
             /// <summary>
+            /// OAuthParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-oauthparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OAuthParameters
+            /// </summary>
+            public Humidifier.QuickSight.DataSourceTypes.OAuthParameters OAuthParameters { get; set; }
+            /// <summary>
             /// Host
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-host
             /// Required: True
@@ -837,6 +898,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Host { get; set; }
+            /// <summary>
+            /// AuthenticationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-authenticationtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthenticationType { get; set; }
         }
 
         public class SparkParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost
@@ -899,7 +968,7 @@ namespace Humidifier.QuickSight
             public dynamic DisableSsl { get; set; }
         }
 
-        public class StarburstParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveCatalog
+        public class StarburstParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveAuthenticationType, IHaveCatalog
         {
             /// <summary>
             /// Port
@@ -910,6 +979,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Port { get; set; }
             /// <summary>
+            /// DatabaseAccessControlRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-starburstparameters.html#cfn-quicksight-datasource-starburstparameters-databaseaccesscontrolrole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseAccessControlRole { get; set; }
+            /// <summary>
             /// ProductType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-starburstparameters.html#cfn-quicksight-datasource-starburstparameters-producttype
             /// Required: False
@@ -917,6 +994,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic ProductType { get; set; }
+            /// <summary>
+            /// OAuthParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-starburstparameters.html#cfn-quicksight-datasource-starburstparameters-oauthparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OAuthParameters
+            /// </summary>
+            public Humidifier.QuickSight.DataSourceTypes.OAuthParameters OAuthParameters { get; set; }
             /// <summary>
             /// Host
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-starburstparameters.html#cfn-quicksight-datasource-starburstparameters-host
@@ -933,6 +1018,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Catalog { get; set; }
+            /// <summary>
+            /// AuthenticationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-starburstparameters.html#cfn-quicksight-datasource-starburstparameters-authenticationtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthenticationType { get; set; }
         }
 
         public class TeradataParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveDatabase

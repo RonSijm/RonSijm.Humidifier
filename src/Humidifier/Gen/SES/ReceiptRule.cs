@@ -41,6 +41,14 @@ namespace Humidifier.SES
         public class Action : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// ConnectAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-connectaction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ConnectAction
+            /// </summary>
+            public Humidifier.SES.ReceiptRuleTypes.ConnectAction ConnectAction { get; set; }
+            /// <summary>
             /// BounceAction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-bounceaction
             /// Required: False
@@ -160,6 +168,26 @@ namespace Humidifier.SES
             /// PrimitiveType: String
             /// </summary>
             public dynamic StatusCode { get; set; }
+        }
+
+        public class ConnectAction : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InstanceARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-connectaction.html#cfn-ses-receiptrule-connectaction-instancearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceARN { get; set; }
+            /// <summary>
+            /// IAMRoleARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-connectaction.html#cfn-ses-receiptrule-connectaction-iamrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IAMRoleARN { get; set; }
         }
 
         public class LambdaAction : Humidifier.Base.BaseSubResource, IHaveTopicArn, IHaveFunctionArn, IHaveInvocationType

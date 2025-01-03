@@ -45,6 +45,14 @@ namespace Humidifier.ApplicationInsights
         /// </summary>
         public List<Humidifier.ApplicationInsights.ApplicationTypes.CustomComponent> CustomComponents { get; set; }
         /// <summary>
+        /// SNSNotificationArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-snsnotificationarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SNSNotificationArn { get; set; }
+        /// <summary>
         /// AttachMissingPermission
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-attachmissingpermission
         /// Required: False

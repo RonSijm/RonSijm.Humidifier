@@ -1,6 +1,7 @@
 namespace Humidifier.RDS
 {
     using System.Collections.Generic;
+    using GlobalClusterTypes;
 
     public class GlobalCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveEngineVersion, IHaveEngine, IHaveDeletionProtection, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveEngineLifecycleSupport
     {
@@ -38,6 +39,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic SourceDBClusterIdentifier { get; set; }
         /// <summary>
+        /// GlobalEndpoint
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-globalendpoint
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: GlobalEndpoint
+        /// </summary>
+        public Humidifier.RDS.GlobalClusterTypes.GlobalEndpoint GlobalEndpoint { get; set; }
+        /// <summary>
         /// DeletionProtection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-deletionprotection
         /// Required: False
@@ -70,5 +79,20 @@ namespace Humidifier.RDS
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+    }
+
+    namespace GlobalClusterTypes
+    {
+        public class GlobalEndpoint : Humidifier.Base.BaseSubResource, IHaveAddress
+        {
+            /// <summary>
+            /// Address
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-globalcluster-globalendpoint.html#cfn-rds-globalcluster-globalendpoint-address
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Address { get; set; }
+        }
     }
 }

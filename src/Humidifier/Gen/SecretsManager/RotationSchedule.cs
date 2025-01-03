@@ -5,7 +5,20 @@ namespace Humidifier.SecretsManager
 
     public class RotationSchedule : Humidifier.Base.BaseResource, IHaveSecretId
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.SecretsManager.RotationSchedule; }
+        /// <summary>
+        /// HostedRotationLambda
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: HostedRotationLambda
+        /// </summary>
+        public Humidifier.SecretsManager.RotationScheduleTypes.HostedRotationLambda HostedRotationLambda { get; set; }
 
         /// <summary>
         /// SecretId
@@ -17,13 +30,13 @@ namespace Humidifier.SecretsManager
         [Required]
         public dynamic SecretId { get; set; }
         /// <summary>
-        /// HostedRotationLambda
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda
+        /// RotateImmediatelyOnUpdate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotateimmediatelyonupdate
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: HostedRotationLambda
+        /// PrimitiveType: Boolean
         /// </summary>
-        public Humidifier.SecretsManager.RotationScheduleTypes.HostedRotationLambda HostedRotationLambda { get; set; }
+        public dynamic RotateImmediatelyOnUpdate { get; set; }
         /// <summary>
         /// RotationLambdaARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationlambdaarn
@@ -40,14 +53,6 @@ namespace Humidifier.SecretsManager
         /// Type: RotationRules
         /// </summary>
         public Humidifier.SecretsManager.RotationScheduleTypes.RotationRules RotationRules { get; set; }
-        /// <summary>
-        /// RotateImmediatelyOnUpdate
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotateimmediatelyonupdate
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic RotateImmediatelyOnUpdate { get; set; }
     }
 
     namespace RotationScheduleTypes
@@ -62,22 +67,6 @@ namespace Humidifier.SecretsManager
             /// PrimitiveType: String
             /// </summary>
             public dynamic Runtime { get; set; }
-            /// <summary>
-            /// RotationType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationtype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RotationType { get; set; }
-            /// <summary>
-            /// RotationLambdaName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationlambdaname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RotationLambdaName { get; set; }
             /// <summary>
             /// KmsKeyArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-kmskeyarn
@@ -95,13 +84,21 @@ namespace Humidifier.SecretsManager
             /// </summary>
             public dynamic MasterSecretArn { get; set; }
             /// <summary>
-            /// VpcSecurityGroupIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsecuritygroupids
+            /// RotationLambdaName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationlambdaname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic VpcSecurityGroupIds { get; set; }
+            public dynamic RotationLambdaName { get; set; }
+            /// <summary>
+            /// RotationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-rotationtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RotationType { get; set; }
             /// <summary>
             /// ExcludeCharacters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-excludecharacters
@@ -110,6 +107,14 @@ namespace Humidifier.SecretsManager
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExcludeCharacters { get; set; }
+            /// <summary>
+            /// VpcSecurityGroupIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsecuritygroupids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VpcSecurityGroupIds { get; set; }
             /// <summary>
             /// MasterSecretKmsKeyArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-mastersecretkmskeyarn

@@ -6,12 +6,20 @@ namespace Humidifier.Cassandra
     public class Keyspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public override string AWSTypeName { get => AWS.Cassandra.Keyspace; }
+        /// <summary>
+        /// ClientSideTimestampsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html#cfn-cassandra-keyspace-clientsidetimestampsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ClientSideTimestampsEnabled { get; set; }
         public dynamic KeyspaceName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ReplicationSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-keyspace.html#cfn-cassandra-keyspace-replicationspecification
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: ReplicationSpecification
         /// </summary>
         public Humidifier.Cassandra.KeyspaceTypes.ReplicationSpecification ReplicationSpecification { get; set; }
@@ -34,7 +42,7 @@ namespace Humidifier.Cassandra
             /// ReplicationStrategy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-keyspace-replicationspecification.html#cfn-cassandra-keyspace-replicationspecification-replicationstrategy
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ReplicationStrategy { get; set; }
@@ -42,7 +50,7 @@ namespace Humidifier.Cassandra
             /// RegionList
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-keyspace-replicationspecification.html#cfn-cassandra-keyspace-replicationspecification-regionlist
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>

@@ -145,6 +145,14 @@ namespace Humidifier.CleanRooms
             /// PrimitiveType: String
             /// </summary>
             public dynamic KeyPrefix { get; set; }
+            /// <summary>
+            /// SingleFileOutput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-protectedquerys3outputconfiguration.html#cfn-cleanrooms-membership-protectedquerys3outputconfiguration-singlefileoutput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic SingleFileOutput { get; set; }
         }
     }
 }

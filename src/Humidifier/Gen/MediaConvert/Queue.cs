@@ -43,6 +43,14 @@ namespace Humidifier.MediaConvert
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Tags { get; set; }
+        /// <summary>
+        /// ConcurrentJobs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-concurrentjobs
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic ConcurrentJobs { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

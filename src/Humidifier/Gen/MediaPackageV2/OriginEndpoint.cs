@@ -335,6 +335,14 @@ namespace Humidifier.MediaPackageV2
             /// </summary>
             public dynamic TimeDelaySeconds { get; set; }
             /// <summary>
+            /// ClipStartTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-clipstarttime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClipStartTime { get; set; }
+            /// <summary>
             /// ManifestFilter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-manifestfilter
             /// Required: False
@@ -415,6 +423,14 @@ namespace Humidifier.MediaPackageV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+            /// <summary>
+            /// StartTag
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-hlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-hlsmanifestconfiguration-starttag
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StartTag
+            /// </summary>
+            public Humidifier.MediaPackageV2.OriginEndpointTypes.StartTag StartTag { get; set; }
         }
 
         public class LowLatencyHlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveManifestName, IHaveManifestWindowSeconds, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration
@@ -475,6 +491,14 @@ namespace Humidifier.MediaPackageV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+            /// <summary>
+            /// StartTag
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-starttag
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StartTag
+            /// </summary>
+            public Humidifier.MediaPackageV2.OriginEndpointTypes.StartTag StartTag { get; set; }
         }
 
         public class Scte : Humidifier.Base.BaseSubResource
@@ -617,6 +641,26 @@ namespace Humidifier.MediaPackageV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+        }
+
+        public class StartTag : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Precise
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-starttag.html#cfn-mediapackagev2-originendpoint-starttag-precise
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Precise { get; set; }
+            /// <summary>
+            /// TimeOffset
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-starttag.html#cfn-mediapackagev2-originendpoint-starttag-timeoffset
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic TimeOffset { get; set; }
         }
     }
 }

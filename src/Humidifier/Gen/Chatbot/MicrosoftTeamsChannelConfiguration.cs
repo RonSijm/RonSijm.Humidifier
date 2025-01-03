@@ -27,6 +27,15 @@ namespace Humidifier.Chatbot
         /// </summary>
         public dynamic LoggingLevel { get; set; }
         /// <summary>
+        /// CustomizationResourceArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-customizationresourcearns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic CustomizationResourceArns { get; set; }
+        /// <summary>
         /// SnsTopicArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-snstopicarns
         /// Required: False

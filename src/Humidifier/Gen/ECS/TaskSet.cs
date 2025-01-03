@@ -67,14 +67,6 @@ namespace Humidifier.ECS
         [Required]
         public dynamic Service { get; set; }
         /// <summary>
-        /// NetworkConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-networkconfiguration
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: NetworkConfiguration
-        /// </summary>
-        public Humidifier.ECS.TaskSetTypes.NetworkConfiguration NetworkConfiguration { get; set; }
-        /// <summary>
         /// Scale
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-scale
         /// Required: False
@@ -82,6 +74,14 @@ namespace Humidifier.ECS
         /// Type: Scale
         /// </summary>
         public Humidifier.ECS.TaskSetTypes.Scale Scale { get; set; }
+        /// <summary>
+        /// NetworkConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-networkconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: NetworkConfiguration
+        /// </summary>
+        public Humidifier.ECS.TaskSetTypes.NetworkConfiguration NetworkConfiguration { get; set; }
         /// <summary>
         /// ServiceRegistries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-serviceregistries
@@ -91,6 +91,15 @@ namespace Humidifier.ECS
         /// ItemType: ServiceRegistry
         /// </summary>
         public List<Humidifier.ECS.TaskSetTypes.ServiceRegistry> ServiceRegistries { get; set; }
+        /// <summary>
+        /// CapacityProviderStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-capacityproviderstrategy
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: CapacityProviderStrategyItem
+        /// </summary>
+        public List<Humidifier.ECS.TaskSetTypes.CapacityProviderStrategyItem> CapacityProviderStrategy { get; set; }
         /// <summary>
         /// LaunchType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-launchtype
@@ -140,6 +149,34 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic AssignPublicIp { get; set; }
+        }
+
+        public class CapacityProviderStrategyItem : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveBase, IHaveCapacityProvider
+        {
+            /// <summary>
+            /// CapacityProvider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-capacityproviderstrategyitem.html#cfn-ecs-taskset-capacityproviderstrategyitem-capacityprovider
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityProvider { get; set; }
+            /// <summary>
+            /// Base
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-capacityproviderstrategyitem.html#cfn-ecs-taskset-capacityproviderstrategyitem-base
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Base { get; set; }
+            /// <summary>
+            /// Weight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-capacityproviderstrategyitem.html#cfn-ecs-taskset-capacityproviderstrategyitem-weight
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Weight { get; set; }
         }
 
         public class LoadBalancer : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveTargetGroupArn, IHaveContainerPort

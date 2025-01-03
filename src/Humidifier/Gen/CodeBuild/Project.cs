@@ -53,22 +53,6 @@ namespace Humidifier.CodeBuild
         /// </summary>
         public dynamic EncryptionKey { get; set; }
         /// <summary>
-        /// SourceVersion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SourceVersion { get; set; }
-        /// <summary>
-        /// Triggers
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ProjectTriggers
-        /// </summary>
-        public Humidifier.CodeBuild.ProjectTypes.ProjectTriggers Triggers { get; set; }
-        /// <summary>
         /// SecondaryArtifacts
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts
         /// Required: False
@@ -88,24 +72,6 @@ namespace Humidifier.CodeBuild
         [Required]
         public Humidifier.CodeBuild.ProjectTypes.Source Source { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
-
-        /// <summary>
-        /// Artifacts
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: Artifacts
-        /// </summary>
-        [Required]
-        public Humidifier.CodeBuild.ProjectTypes.Artifacts Artifacts { get; set; }
-        /// <summary>
-        /// BadgeEnabled
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic BadgeEnabled { get; set; }
         /// <summary>
         /// LogsConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig
@@ -133,6 +99,66 @@ namespace Humidifier.CodeBuild
         /// </summary>
         public dynamic QueuedTimeoutInMinutes { get; set; }
         /// <summary>
+        /// SecondarySourceVersions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ProjectSourceVersion
+        /// </summary>
+        public List<Humidifier.CodeBuild.ProjectTypes.ProjectSourceVersion> SecondarySourceVersions { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// AutoRetryLimit
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-autoretrylimit
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic AutoRetryLimit { get; set; }
+        /// <summary>
+        /// SourceVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-sourceversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceVersion { get; set; }
+        /// <summary>
+        /// Triggers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ProjectTriggers
+        /// </summary>
+        public Humidifier.CodeBuild.ProjectTypes.ProjectTriggers Triggers { get; set; }
+
+        /// <summary>
+        /// Artifacts
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: Artifacts
+        /// </summary>
+        [Required]
+        public Humidifier.CodeBuild.ProjectTypes.Artifacts Artifacts { get; set; }
+        /// <summary>
+        /// BadgeEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic BadgeEnabled { get; set; }
+        /// <summary>
         /// FileSystemLocations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-filesystemlocations
         /// Required: False
@@ -151,15 +177,6 @@ namespace Humidifier.CodeBuild
         /// </summary>
         [Required]
         public Humidifier.CodeBuild.ProjectTypes.Environment Environment { get; set; }
-        /// <summary>
-        /// SecondarySourceVersions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ProjectSourceVersion
-        /// </summary>
-        public List<Humidifier.CodeBuild.ProjectTypes.ProjectSourceVersion> SecondarySourceVersions { get; set; }
         /// <summary>
         /// ConcurrentBuildLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-concurrentbuildlimit
@@ -184,15 +201,6 @@ namespace Humidifier.CodeBuild
         /// Type: ProjectBuildBatchConfig
         /// </summary>
         public Humidifier.CodeBuild.ProjectTypes.ProjectBuildBatchConfig BuildBatchConfig { get; set; }
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
         /// <summary>
         /// TimeoutInMinutes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes

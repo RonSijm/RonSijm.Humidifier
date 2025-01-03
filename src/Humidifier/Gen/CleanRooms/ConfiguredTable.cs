@@ -303,6 +303,42 @@ namespace Humidifier.CleanRooms
             public dynamic JoinColumns { get; set; }
         }
 
+        public class AthenaTableReference : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveWorkGroup
+        {
+            /// <summary>
+            /// WorkGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-athenatablereference.html#cfn-cleanrooms-configuredtable-athenatablereference-workgroup
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WorkGroup { get; set; }
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-athenatablereference.html#cfn-cleanrooms-configuredtable-athenatablereference-tablename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-athenatablereference.html#cfn-cleanrooms-configuredtable-athenatablereference-databasename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// OutputLocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-athenatablereference.html#cfn-cleanrooms-configuredtable-athenatablereference-outputlocation
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OutputLocation { get; set; }
+        }
+
         public class ConfiguredTableAnalysisRulePolicy : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -388,16 +424,117 @@ namespace Humidifier.CleanRooms
             public dynamic DatabaseName { get; set; }
         }
 
+        public class SnowflakeTableReference : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveSecretArn, IHaveSchemaName
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketablereference.html#cfn-cleanrooms-configuredtable-snowflaketablereference-secretarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketablereference.html#cfn-cleanrooms-configuredtable-snowflaketablereference-tablename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// TableSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketablereference.html#cfn-cleanrooms-configuredtable-snowflaketablereference-tableschema
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: SnowflakeTableSchema
+            /// </summary>
+            public Humidifier.CleanRooms.ConfiguredTableTypes.SnowflakeTableSchema TableSchema { get; set; }
+            /// <summary>
+            /// AccountIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketablereference.html#cfn-cleanrooms-configuredtable-snowflaketablereference-accountidentifier
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AccountIdentifier { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketablereference.html#cfn-cleanrooms-configuredtable-snowflaketablereference-databasename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// SchemaName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketablereference.html#cfn-cleanrooms-configuredtable-snowflaketablereference-schemaname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SchemaName { get; set; }
+        }
+
+        public class SnowflakeTableSchema : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// V1
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketableschema.html#cfn-cleanrooms-configuredtable-snowflaketableschema-v1
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: SnowflakeTableSchemaV1
+            /// </summary>
+            public List<Humidifier.CleanRooms.ConfiguredTableTypes.SnowflakeTableSchemaV1> V1 { get; set; }
+        }
+
+        public class SnowflakeTableSchemaV1 : Humidifier.Base.BaseSubResource, IHaveColumnName
+        {
+            /// <summary>
+            /// ColumnName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketableschemav1.html#cfn-cleanrooms-configuredtable-snowflaketableschemav1-columnname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ColumnName { get; set; }
+            /// <summary>
+            /// ColumnType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-snowflaketableschemav1.html#cfn-cleanrooms-configuredtable-snowflaketableschemav1-columntype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ColumnType { get; set; }
+        }
+
         public class TableReference : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// Glue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-tablereference.html#cfn-cleanrooms-configuredtable-tablereference-glue
-            /// Required: True
+            /// Required: False
             /// UpdateType: Immutable
             /// Type: GlueTableReference
             /// </summary>
             public Humidifier.CleanRooms.ConfiguredTableTypes.GlueTableReference Glue { get; set; }
+            /// <summary>
+            /// Snowflake
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-tablereference.html#cfn-cleanrooms-configuredtable-tablereference-snowflake
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: SnowflakeTableReference
+            /// </summary>
+            public Humidifier.CleanRooms.ConfiguredTableTypes.SnowflakeTableReference Snowflake { get; set; }
+            /// <summary>
+            /// Athena
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-tablereference.html#cfn-cleanrooms-configuredtable-tablereference-athena
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: AthenaTableReference
+            /// </summary>
+            public Humidifier.CleanRooms.ConfiguredTableTypes.AthenaTableReference Athena { get; set; }
         }
     }
 }

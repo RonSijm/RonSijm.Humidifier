@@ -15,6 +15,14 @@ namespace Humidifier.RDS
 
         public override string AWSTypeName { get => AWS.RDS.DBCluster; }
         /// <summary>
+        /// DatabaseInsightsMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-databaseinsightsmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DatabaseInsightsMode { get; set; }
+        /// <summary>
         /// StorageEncrypted
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-storageencrypted
         /// Required: False
@@ -304,6 +312,14 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic SnapshotIdentifier { get; set; }
+        /// <summary>
+        /// ClusterScalabilityType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-clusterscalabilitytype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ClusterScalabilityType { get; set; }
         /// <summary>
         /// PreferredBackupWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow
@@ -597,6 +613,14 @@ namespace Humidifier.RDS
 
         public class ServerlessV2ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveMinCapacity
         {
+            /// <summary>
+            /// SecondsUntilAutoPause
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-serverlessv2scalingconfiguration.html#cfn-rds-dbcluster-serverlessv2scalingconfiguration-secondsuntilautopause
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SecondsUntilAutoPause { get; set; }
             /// <summary>
             /// MinCapacity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-serverlessv2scalingconfiguration.html#cfn-rds-dbcluster-serverlessv2scalingconfiguration-mincapacity

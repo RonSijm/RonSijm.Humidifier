@@ -28,15 +28,13 @@ namespace Humidifier.M2
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
-
         /// <summary>
         /// Definition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-definition
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: Definition
         /// </summary>
-        [Required]
         public Humidifier.M2.ApplicationTypes.Definition Definition { get; set; }
 
         /// <summary>

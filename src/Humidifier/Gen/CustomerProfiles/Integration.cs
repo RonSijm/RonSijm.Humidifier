@@ -13,6 +13,15 @@ namespace Humidifier.CustomerProfiles
 
         public override string AWSTypeName { get => AWS.CustomerProfiles.Integration; }
         /// <summary>
+        /// EventTriggerNames
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-eventtriggernames
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic EventTriggerNames { get; set; }
+        /// <summary>
         /// ObjectTypeNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-objecttypenames
         /// Required: False

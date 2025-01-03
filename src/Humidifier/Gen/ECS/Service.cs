@@ -21,6 +21,91 @@ namespace Humidifier.ECS
         /// </summary>
         public dynamic PlatformVersion { get; set; }
         /// <summary>
+        /// PropagateTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-propagatetags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PropagateTags { get; set; }
+        /// <summary>
+        /// PlacementStrategies
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: PlacementStrategy
+        /// </summary>
+        public List<Humidifier.ECS.ServiceTypes.PlacementStrategy> PlacementStrategies { get; set; }
+        /// <summary>
+        /// ServiceRegistries
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ServiceRegistry
+        /// </summary>
+        public List<Humidifier.ECS.ServiceTypes.ServiceRegistry> ServiceRegistries { get; set; }
+        /// <summary>
+        /// VolumeConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-volumeconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ServiceVolumeConfiguration
+        /// </summary>
+        public List<Humidifier.ECS.ServiceTypes.ServiceVolumeConfiguration> VolumeConfigurations { get; set; }
+        /// <summary>
+        /// CapacityProviderStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-capacityproviderstrategy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: CapacityProviderStrategyItem
+        /// </summary>
+        public List<Humidifier.ECS.ServiceTypes.CapacityProviderStrategyItem> CapacityProviderStrategy { get; set; }
+        /// <summary>
+        /// LaunchType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LaunchType { get; set; }
+        /// <summary>
+        /// AvailabilityZoneRebalancing
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-availabilityzonerebalancing
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AvailabilityZoneRebalancing { get; set; }
+        /// <summary>
+        /// SchedulingStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-schedulingstrategy
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SchedulingStrategy { get; set; }
+        /// <summary>
+        /// NetworkConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: NetworkConfiguration
+        /// </summary>
+        public Humidifier.ECS.ServiceTypes.NetworkConfiguration NetworkConfiguration { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Tag> Tags { get; set; }
+        /// <summary>
         /// HealthCheckGracePeriodSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
         /// Required: False
@@ -36,14 +121,6 @@ namespace Humidifier.ECS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableECSManagedTags { get; set; }
-        /// <summary>
-        /// PropagateTags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-propagatetags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic PropagateTags { get; set; }
         /// <summary>
         /// EnableExecuteCommand
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-enableexecutecommand
@@ -87,15 +164,6 @@ namespace Humidifier.ECS
         /// </summary>
         public Humidifier.ECS.ServiceTypes.ServiceConnectConfiguration ServiceConnectConfiguration { get; set; }
         /// <summary>
-        /// PlacementStrategies
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: PlacementStrategy
-        /// </summary>
-        public List<Humidifier.ECS.ServiceTypes.PlacementStrategy> PlacementStrategies { get; set; }
-        /// <summary>
         /// DesiredCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-desiredcount
         /// Required: False
@@ -103,6 +171,15 @@ namespace Humidifier.ECS
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic DesiredCount { get; set; }
+        /// <summary>
+        /// VpcLatticeConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-vpclatticeconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: VpcLatticeConfiguration
+        /// </summary>
+        public List<Humidifier.ECS.ServiceTypes.VpcLatticeConfiguration> VpcLatticeConfigurations { get; set; }
         /// <summary>
         /// DeploymentController
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentcontroller
@@ -112,41 +189,6 @@ namespace Humidifier.ECS
         /// </summary>
         public Humidifier.ECS.ServiceTypes.DeploymentController DeploymentController { get; set; }
         /// <summary>
-        /// ServiceRegistries
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ServiceRegistry
-        /// </summary>
-        public List<Humidifier.ECS.ServiceTypes.ServiceRegistry> ServiceRegistries { get; set; }
-        /// <summary>
-        /// VolumeConfigurations
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-volumeconfigurations
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ServiceVolumeConfiguration
-        /// </summary>
-        public List<Humidifier.ECS.ServiceTypes.ServiceVolumeConfiguration> VolumeConfigurations { get; set; }
-        /// <summary>
-        /// CapacityProviderStrategy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-capacityproviderstrategy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: CapacityProviderStrategyItem
-        /// </summary>
-        public List<Humidifier.ECS.ServiceTypes.CapacityProviderStrategyItem> CapacityProviderStrategy { get; set; }
-        /// <summary>
-        /// LaunchType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic LaunchType { get; set; }
-        /// <summary>
         /// Role
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-role
         /// Required: False
@@ -154,14 +196,6 @@ namespace Humidifier.ECS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Role { get; set; }
-        /// <summary>
-        /// SchedulingStrategy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-schedulingstrategy
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SchedulingStrategy { get; set; }
         /// <summary>
         /// TaskDefinition
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-taskdefinition
@@ -171,23 +205,6 @@ namespace Humidifier.ECS
         /// </summary>
         public dynamic TaskDefinition { get; set; }
         public dynamic ServiceName { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// NetworkConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: NetworkConfiguration
-        /// </summary>
-        public Humidifier.ECS.ServiceTypes.NetworkConfiguration NetworkConfiguration { get; set; }
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
         /// <summary>
         /// DeploymentConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentconfiguration
@@ -831,6 +848,34 @@ namespace Humidifier.ECS
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic IdleTimeoutSeconds { get; set; }
+        }
+
+        public class VpcLatticeConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveTargetGroupArn
+        {
+            /// <summary>
+            /// TargetGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeconfiguration.html#cfn-ecs-service-vpclatticeconfiguration-targetgrouparn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetGroupArn { get; set; }
+            /// <summary>
+            /// PortName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeconfiguration.html#cfn-ecs-service-vpclatticeconfiguration-portname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PortName { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeconfiguration.html#cfn-ecs-service-vpclatticeconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
         }
     }
 }

@@ -81,9 +81,9 @@ namespace Humidifier.Transfer
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: SshPublicKey
+        /// PrimitiveItemType: String
         /// </summary>
-        public List<dynamic> SshPublicKeys { get; set; }
+        public dynamic SshPublicKeys { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-tags

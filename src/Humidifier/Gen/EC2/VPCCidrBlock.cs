@@ -47,6 +47,14 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic Ipv4NetmaskLength { get; set; }
         /// <summary>
+        /// Ipv6CidrBlockNetworkBorderGroup
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6cidrblocknetworkbordergroup
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Ipv6CidrBlockNetworkBorderGroup { get; set; }
+        /// <summary>
         /// CidrBlock
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock
         /// Required: False

@@ -3,11 +3,13 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using ServerTypes;
 
-    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveDomain, IHaveEndpointType, IHaveCertificate
+    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveDomain, IHaveEndpointType, IHaveCertificate, IHaveProtocols
     {
         public class Attributes
         {
             public static string ServerId =  "ServerId" ;
+            public static string As2ServiceManagedEgressIpAddresses =  "As2ServiceManagedEgressIpAddresses" ;
+            public static string State =  "State" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -26,9 +28,9 @@ namespace Humidifier.Transfer
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: Protocol
+        /// PrimitiveItemType: String
         /// </summary>
-        public List<Protocol> Protocols { get; set; }
+        public dynamic Protocols { get; set; }
         /// <summary>
         /// IdentityProviderDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails
@@ -41,7 +43,7 @@ namespace Humidifier.Transfer
         /// EndpointDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Conditional
         /// Type: EndpointDetails
         /// </summary>
         public Humidifier.Transfer.ServerTypes.EndpointDetails EndpointDetails { get; set; }
@@ -51,9 +53,9 @@ namespace Humidifier.Transfer
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: StructuredLogDestination
+        /// PrimitiveItemType: String
         /// </summary>
-        public List<StructuredLogDestination> StructuredLogDestinations { get; set; }
+        public dynamic StructuredLogDestinations { get; set; }
         /// <summary>
         /// PreAuthenticationLoginBanner
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-preauthenticationloginbanner
@@ -162,7 +164,7 @@ namespace Humidifier.Transfer
             /// VpcId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic VpcId { get; set; }
@@ -170,28 +172,28 @@ namespace Humidifier.Transfer
             /// VpcEndpointId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcendpointid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic VpcEndpointId { get; set; }
             /// <summary>
-            /// SecurityGroupIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-securitygroupids
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic SecurityGroupIds { get; set; }
-            /// <summary>
             /// SubnetIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-subnetids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SubnetIds { get; set; }
+            /// <summary>
+            /// SecurityGroupIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-securitygroupids
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SecurityGroupIds { get; set; }
         }
 
         public class IdentityProviderDetails : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveDirectoryId, IHaveFunction
@@ -246,9 +248,9 @@ namespace Humidifier.Transfer
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: As2Transport
+            /// PrimitiveItemType: String
             /// </summary>
-            public List<Humidifier.Transfer.ServerTypes.As2Transport> As2Transports { get; set; }
+            public dynamic As2Transports { get; set; }
             /// <summary>
             /// PassiveIp
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-passiveip

@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using VersionTypes;
 
-    public class Version : Humidifier.Base.BaseResource, IHaveDescription, IHavePolicy, IHaveFunctionName
+    public class Version : Humidifier.Base.BaseResource, IHaveDescription, IHaveFunctionName
     {
         public class Attributes
         {
@@ -12,14 +12,6 @@ namespace Humidifier.Lambda
         }
 
         public override string AWSTypeName { get => AWS.Lambda.Version; }
-        /// <summary>
-        /// Policy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-policy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic Policy { get; set; }
 
         /// <summary>
         /// FunctionName

@@ -39,6 +39,15 @@ namespace Humidifier.IoTFleetWise
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// DataPartitions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-datapartitions
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: DataPartition
+        /// </summary>
+        public List<Humidifier.IoTFleetWise.CampaignTypes.DataPartition> DataPartitions { get; set; }
+        /// <summary>
         /// Priority
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-priority
         /// Required: False
@@ -270,6 +279,82 @@ namespace Humidifier.IoTFleetWise
             public Humidifier.IoTFleetWise.CampaignTypes.TimestreamConfig TimestreamConfig { get; set; }
         }
 
+        public class DataPartition : Humidifier.Base.BaseSubResource, IHaveId
+        {
+            /// <summary>
+            /// UploadOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartition.html#cfn-iotfleetwise-campaign-datapartition-uploadoptions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: DataPartitionUploadOptions
+            /// </summary>
+            public Humidifier.IoTFleetWise.CampaignTypes.DataPartitionUploadOptions UploadOptions { get; set; }
+            /// <summary>
+            /// StorageOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartition.html#cfn-iotfleetwise-campaign-datapartition-storageoptions
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: DataPartitionStorageOptions
+            /// </summary>
+            public Humidifier.IoTFleetWise.CampaignTypes.DataPartitionStorageOptions StorageOptions { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartition.html#cfn-iotfleetwise-campaign-datapartition-id
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
+        public class DataPartitionStorageOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MaximumSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartitionstorageoptions.html#cfn-iotfleetwise-campaign-datapartitionstorageoptions-maximumsize
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: StorageMaximumSize
+            /// </summary>
+            public Humidifier.IoTFleetWise.CampaignTypes.StorageMaximumSize MaximumSize { get; set; }
+            /// <summary>
+            /// StorageLocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartitionstorageoptions.html#cfn-iotfleetwise-campaign-datapartitionstorageoptions-storagelocation
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StorageLocation { get; set; }
+            /// <summary>
+            /// MinimumTimeToLive
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartitionstorageoptions.html#cfn-iotfleetwise-campaign-datapartitionstorageoptions-minimumtimetolive
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: StorageMinimumTimeToLive
+            /// </summary>
+            public Humidifier.IoTFleetWise.CampaignTypes.StorageMinimumTimeToLive MinimumTimeToLive { get; set; }
+        }
+
+        public class DataPartitionUploadOptions : Humidifier.Base.BaseSubResource, IHaveExpression
+        {
+            /// <summary>
+            /// Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartitionuploadoptions.html#cfn-iotfleetwise-campaign-datapartitionuploadoptions-expression
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expression { get; set; }
+            /// <summary>
+            /// ConditionLanguageVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datapartitionuploadoptions.html#cfn-iotfleetwise-campaign-datapartitionuploadoptions-conditionlanguageversion
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ConditionLanguageVersion { get; set; }
+        }
+
         public class MqttTopicConfig : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn
         {
             /// <summary>
@@ -394,6 +479,14 @@ namespace Humidifier.IoTFleetWise
             /// </summary>
             public dynamic MaxSampleCount { get; set; }
             /// <summary>
+            /// DataPartitionId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-datapartitionid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataPartitionId { get; set; }
+            /// <summary>
             /// MinimumSamplingIntervalMs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-minimumsamplingintervalms
             /// Required: False
@@ -409,6 +502,46 @@ namespace Humidifier.IoTFleetWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class StorageMaximumSize : Humidifier.Base.BaseSubResource, IHaveValue, IHaveUnit
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-storagemaximumsize.html#cfn-iotfleetwise-campaign-storagemaximumsize-value
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Unit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-storagemaximumsize.html#cfn-iotfleetwise-campaign-storagemaximumsize-unit
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Unit { get; set; }
+        }
+
+        public class StorageMinimumTimeToLive : Humidifier.Base.BaseSubResource, IHaveValue, IHaveUnit
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-storageminimumtimetolive.html#cfn-iotfleetwise-campaign-storageminimumtimetolive-value
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Unit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-storageminimumtimetolive.html#cfn-iotfleetwise-campaign-storageminimumtimetolive-unit
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Unit { get; set; }
         }
 
         public class TimeBasedCollectionScheme : Humidifier.Base.BaseSubResource

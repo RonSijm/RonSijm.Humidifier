@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using DatasetTypes;
 
-    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveFormat
+    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveSource, IHaveFormat
     {
         public override string AWSTypeName { get => AWS.DataBrew.Dataset; }
 
@@ -32,6 +32,14 @@ namespace Humidifier.DataBrew
         /// Type: FormatOptions
         /// </summary>
         public Humidifier.DataBrew.DatasetTypes.FormatOptions FormatOptions { get; set; }
+        /// <summary>
+        /// Source
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-source
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Source { get; set; }
         /// <summary>
         /// PathOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-pathoptions
@@ -454,7 +462,7 @@ namespace Humidifier.DataBrew
             public Humidifier.DataBrew.DatasetTypes.DatasetParameter DatasetParameter { get; set; }
         }
 
-        public class S3Location : Humidifier.Base.BaseSubResource, IHaveKey, IHaveBucket
+        public class S3Location : Humidifier.Base.BaseSubResource, IHaveKey, IHaveBucket, IHaveBucketOwner
         {
             /// <summary>
             /// Bucket
@@ -464,6 +472,14 @@ namespace Humidifier.DataBrew
             /// PrimitiveType: String
             /// </summary>
             public dynamic Bucket { get; set; }
+            /// <summary>
+            /// BucketOwner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-s3location.html#cfn-databrew-dataset-s3location-bucketowner
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketOwner { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-s3location.html#cfn-databrew-dataset-s3location-key

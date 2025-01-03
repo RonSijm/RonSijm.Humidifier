@@ -90,6 +90,14 @@ namespace Humidifier.Synthetics
         /// </summary>
         public dynamic ResourcesToReplicateTags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ProvisionedResourceCleanup
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-provisionedresourcecleanup
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ProvisionedResourceCleanup { get; set; }
 
         /// <summary>
         /// ExecutionRoleArn
@@ -305,6 +313,14 @@ namespace Humidifier.Synthetics
 
         public class VPCConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId
         {
+            /// <summary>
+            /// Ipv6AllowedForDualStack
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-ipv6allowedfordualstack
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Ipv6AllowedForDualStack { get; set; }
             /// <summary>
             /// VpcId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-vpcid

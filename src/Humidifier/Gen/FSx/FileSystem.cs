@@ -217,6 +217,14 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic AutoImportPolicy { get; set; }
             /// <summary>
+            /// EfaEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-efaenabled
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EfaEnabled { get; set; }
+            /// <summary>
             /// ImportedFileChunkSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importedfilechunksize
             /// Required: False
@@ -492,6 +500,14 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic EndpointIpAddressRange { get; set; }
             /// <summary>
+            /// ReadCacheConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-readcacheconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ReadCacheConfiguration
+            /// </summary>
+            public Humidifier.FSx.FileSystemTypes.ReadCacheConfiguration ReadCacheConfiguration { get; set; }
+            /// <summary>
             /// RouteTableIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-routetableids
             /// Required: False
@@ -548,6 +564,26 @@ namespace Humidifier.FSx
             /// PrimitiveType: String
             /// </summary>
             public dynamic PreferredSubnetId { get; set; }
+        }
+
+        public class ReadCacheConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SizingMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-readcacheconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-readcacheconfiguration-sizingmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SizingMode { get; set; }
+            /// <summary>
+            /// SizeGiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration-readcacheconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-readcacheconfiguration-sizegib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SizeGiB { get; set; }
         }
 
         public class RootVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveDataCompressionType

@@ -16,7 +16,7 @@ namespace Humidifier.IoTWireless
         /// LoRaWAN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-lorawan
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: LoRaWANServiceProfile
         /// </summary>
         public Humidifier.IoTWireless.ServiceProfileTypes.LoRaWANServiceProfile LoRaWAN { get; set; }
@@ -40,7 +40,7 @@ namespace Humidifier.IoTWireless
             /// DlBucketSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-dlbucketsize
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DlBucketSize { get; set; }
@@ -48,7 +48,7 @@ namespace Humidifier.IoTWireless
             /// MinGwDiversity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-mingwdiversity
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MinGwDiversity { get; set; }
@@ -56,7 +56,7 @@ namespace Humidifier.IoTWireless
             /// DrMax
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-drmax
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DrMax { get; set; }
@@ -64,7 +64,7 @@ namespace Humidifier.IoTWireless
             /// ReportDevStatusMargin
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-reportdevstatusmargin
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ReportDevStatusMargin { get; set; }
@@ -72,7 +72,7 @@ namespace Humidifier.IoTWireless
             /// PrAllowed
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-prallowed
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic PrAllowed { get; set; }
@@ -80,7 +80,7 @@ namespace Humidifier.IoTWireless
             /// DlRate
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-dlrate
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DlRate { get; set; }
@@ -88,7 +88,7 @@ namespace Humidifier.IoTWireless
             /// UlRatePolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulratepolicy
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic UlRatePolicy { get; set; }
@@ -96,7 +96,7 @@ namespace Humidifier.IoTWireless
             /// ReportDevStatusBattery
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-reportdevstatusbattery
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ReportDevStatusBattery { get; set; }
@@ -104,7 +104,7 @@ namespace Humidifier.IoTWireless
             /// ChannelMask
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-channelmask
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ChannelMask { get; set; }
@@ -112,7 +112,7 @@ namespace Humidifier.IoTWireless
             /// UlRate
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulrate
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic UlRate { get; set; }
@@ -120,7 +120,7 @@ namespace Humidifier.IoTWireless
             /// AddGwMetadata
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-addgwmetadata
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AddGwMetadata { get; set; }
@@ -128,7 +128,7 @@ namespace Humidifier.IoTWireless
             /// DlRatePolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-dlratepolicy
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DlRatePolicy { get; set; }
@@ -136,7 +136,7 @@ namespace Humidifier.IoTWireless
             /// HrAllowed
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-hrallowed
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic HrAllowed { get; set; }
@@ -144,7 +144,7 @@ namespace Humidifier.IoTWireless
             /// DrMin
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-drmin
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DrMin { get; set; }
@@ -152,7 +152,7 @@ namespace Humidifier.IoTWireless
             /// TargetPer
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-targetper
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic TargetPer { get; set; }
@@ -160,7 +160,7 @@ namespace Humidifier.IoTWireless
             /// NwkGeoLoc
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-nwkgeoloc
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic NwkGeoLoc { get; set; }
@@ -168,7 +168,7 @@ namespace Humidifier.IoTWireless
             /// DevStatusReqFreq
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-devstatusreqfreq
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DevStatusReqFreq { get; set; }
@@ -176,7 +176,7 @@ namespace Humidifier.IoTWireless
             /// UlBucketSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulbucketsize
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic UlBucketSize { get; set; }
@@ -184,7 +184,7 @@ namespace Humidifier.IoTWireless
             /// RaAllowed
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-raallowed
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic RaAllowed { get; set; }

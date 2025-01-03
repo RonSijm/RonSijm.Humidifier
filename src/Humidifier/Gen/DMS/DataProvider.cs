@@ -68,6 +68,86 @@ namespace Humidifier.DMS
 
     namespace DataProviderTypes
     {
+        public class DocDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
+        {
+            /// <summary>
+            /// SslMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-docdbsettings.html#cfn-dms-dataprovider-docdbsettings-sslmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SslMode { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-docdbsettings.html#cfn-dms-dataprovider-docdbsettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-docdbsettings.html#cfn-dms-dataprovider-docdbsettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-docdbsettings.html#cfn-dms-dataprovider-docdbsettings-databasename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// CertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-docdbsettings.html#cfn-dms-dataprovider-docdbsettings-certificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateArn { get; set; }
+        }
+
+        public class MariaDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveCertificateArn, IHaveServerName, IHaveSslMode
+        {
+            /// <summary>
+            /// SslMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mariadbsettings.html#cfn-dms-dataprovider-mariadbsettings-sslmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SslMode { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mariadbsettings.html#cfn-dms-dataprovider-mariadbsettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mariadbsettings.html#cfn-dms-dataprovider-mariadbsettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// CertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mariadbsettings.html#cfn-dms-dataprovider-mariadbsettings-certificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateArn { get; set; }
+        }
+
         public class MicrosoftSqlServerSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
         {
             /// <summary>
@@ -105,6 +185,74 @@ namespace Humidifier.DMS
             /// <summary>
             /// CertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-microsoftsqlserversettings.html#cfn-dms-dataprovider-microsoftsqlserversettings-certificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateArn { get; set; }
+        }
+
+        public class MongoDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveAuthType, IHaveSslMode
+        {
+            /// <summary>
+            /// AuthSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-authsource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthSource { get; set; }
+            /// <summary>
+            /// AuthMechanism
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-authmechanism
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthMechanism { get; set; }
+            /// <summary>
+            /// SslMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-sslmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SslMode { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// AuthType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-authtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthType { get; set; }
+            /// <summary>
+            /// CertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-mongodbsettings.html#cfn-dms-dataprovider-mongodbsettings-certificatearn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -276,8 +424,44 @@ namespace Humidifier.DMS
             public dynamic CertificateArn { get; set; }
         }
 
+        public class RedshiftSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveServerName
+        {
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-redshiftsettings.html#cfn-dms-dataprovider-redshiftsettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-redshiftsettings.html#cfn-dms-dataprovider-redshiftsettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-redshiftsettings.html#cfn-dms-dataprovider-redshiftsettings-databasename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+        }
+
         public class Settings : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// MariaDbSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-mariadbsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MariaDbSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.MariaDbSettings MariaDbSettings { get; set; }
             /// <summary>
             /// OracleSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-oraclesettings
@@ -295,6 +479,14 @@ namespace Humidifier.DMS
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.MicrosoftSqlServerSettings MicrosoftSqlServerSettings { get; set; }
             /// <summary>
+            /// RedshiftSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-redshiftsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RedshiftSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.RedshiftSettings RedshiftSettings { get; set; }
+            /// <summary>
             /// MySqlSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-mysqlsettings
             /// Required: False
@@ -303,6 +495,14 @@ namespace Humidifier.DMS
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.MySqlSettings MySqlSettings { get; set; }
             /// <summary>
+            /// DocDbSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-docdbsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DocDbSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.DocDbSettings DocDbSettings { get; set; }
+            /// <summary>
             /// PostgreSqlSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-postgresqlsettings
             /// Required: False
@@ -310,6 +510,14 @@ namespace Humidifier.DMS
             /// Type: PostgreSqlSettings
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.PostgreSqlSettings PostgreSqlSettings { get; set; }
+            /// <summary>
+            /// MongoDbSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-mongodbsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MongoDbSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.MongoDbSettings MongoDbSettings { get; set; }
         }
     }
 }

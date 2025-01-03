@@ -29,6 +29,14 @@ namespace Humidifier.Events
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// InvocationConnectivityParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-connection.html#cfn-events-connection-invocationconnectivityparameters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: InvocationConnectivityParameters
+        /// </summary>
+        public Humidifier.Events.ConnectionTypes.InvocationConnectivityParameters InvocationConnectivityParameters { get; set; }
+        /// <summary>
         /// AuthorizationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-connection.html#cfn-events-connection-authorizationtype
         /// Required: False
@@ -71,6 +79,14 @@ namespace Humidifier.Events
             /// Type: ConnectionHttpParameters
             /// </summary>
             public Humidifier.Events.ConnectionTypes.ConnectionHttpParameters InvocationHttpParameters { get; set; }
+            /// <summary>
+            /// ConnectivityParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-connectivityparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ConnectivityParameters
+            /// </summary>
+            public Humidifier.Events.ConnectionTypes.ConnectivityParameters ConnectivityParameters { get; set; }
             /// <summary>
             /// BasicAuthParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-basicauthparameters
@@ -168,6 +184,30 @@ namespace Humidifier.Events
             public List<Humidifier.Events.ConnectionTypes.Parameter> BodyParameters { get; set; }
         }
 
+        public class ConnectivityParameters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ResourceParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectivityparameters.html#cfn-events-connection-connectivityparameters-resourceparameters
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ResourceParameters
+            /// </summary>
+            public Humidifier.Events.ConnectionTypes.ResourceParameters ResourceParameters { get; set; }
+        }
+
+        public class InvocationConnectivityParameters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ResourceParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-invocationconnectivityparameters.html#cfn-events-connection-invocationconnectivityparameters-resourceparameters
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ResourceParameters
+            /// </summary>
+            public Humidifier.Events.ConnectionTypes.ResourceParameters ResourceParameters { get; set; }
+        }
+
         public class OAuthParameters : Humidifier.Base.BaseSubResource, IHaveHttpMethod, IHaveAuthorizationEndpoint
         {
             /// <summary>
@@ -230,6 +270,26 @@ namespace Humidifier.Events
             /// PrimitiveType: String
             /// </summary>
             public dynamic Key { get; set; }
+        }
+
+        public class ResourceParameters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ResourceAssociationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-resourceparameters.html#cfn-events-connection-resourceparameters-resourceassociationarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceAssociationArn { get; set; }
+            /// <summary>
+            /// ResourceConfigurationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-resourceparameters.html#cfn-events-connection-resourceparameters-resourceconfigurationarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceConfigurationArn { get; set; }
         }
     }
 }

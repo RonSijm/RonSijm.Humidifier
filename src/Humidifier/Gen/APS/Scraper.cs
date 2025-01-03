@@ -18,7 +18,7 @@ namespace Humidifier.APS
         /// ScrapeConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-scraper.html#cfn-aps-scraper-scrapeconfiguration
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: ScrapeConfiguration
         /// </summary>
         [Required]
@@ -28,7 +28,7 @@ namespace Humidifier.APS
         /// Destination
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-scraper.html#cfn-aps-scraper-destination
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Destination
         /// </summary>
         [Required]
@@ -37,7 +37,7 @@ namespace Humidifier.APS
         /// Alias
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-scraper.html#cfn-aps-scraper-alias
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Alias { get; set; }
@@ -70,7 +70,7 @@ namespace Humidifier.APS
             /// WorkspaceArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-scraper-ampconfiguration.html#cfn-aps-scraper-ampconfiguration-workspacearn
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic WorkspaceArn { get; set; }
@@ -82,7 +82,7 @@ namespace Humidifier.APS
             /// AmpConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-scraper-destination.html#cfn-aps-scraper-destination-ampconfiguration
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: AmpConfiguration
             /// </summary>
             public Humidifier.APS.ScraperTypes.AmpConfiguration AmpConfiguration { get; set; }
@@ -124,7 +124,7 @@ namespace Humidifier.APS
             /// ConfigurationBlob
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-scraper-scrapeconfiguration.html#cfn-aps-scraper-scrapeconfiguration-configurationblob
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConfigurationBlob { get; set; }

@@ -28,6 +28,14 @@ namespace Humidifier.AppConfig
         /// ItemType: Monitor
         /// </summary>
         public List<Humidifier.AppConfig.EnvironmentTypes.Monitor> Monitors { get; set; }
+        /// <summary>
+        /// DeletionProtectionCheck
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-deletionprotectioncheck
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeletionProtectionCheck { get; set; }
 
         /// <summary>
         /// ApplicationId

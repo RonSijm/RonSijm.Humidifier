@@ -63,6 +63,14 @@ namespace Humidifier.AppConfig
         /// PrimitiveType: String
         /// </summary>
         public dynamic RetrievalRoleArn { get; set; }
+        /// <summary>
+        /// DeletionProtectionCheck
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-deletionprotectioncheck
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeletionProtectionCheck { get; set; }
 
         /// <summary>
         /// ApplicationId

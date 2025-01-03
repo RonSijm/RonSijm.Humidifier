@@ -39,6 +39,14 @@ namespace Humidifier.Cognito
         /// </summary>
         [Required]
         public dynamic Domain { get; set; }
+        /// <summary>
+        /// ManagedLoginVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-managedloginversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic ManagedLoginVersion { get; set; }
     }
 
     namespace UserPoolDomainTypes

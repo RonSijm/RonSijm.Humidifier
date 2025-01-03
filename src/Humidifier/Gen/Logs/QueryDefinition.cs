@@ -29,6 +29,14 @@ namespace Humidifier.Logs
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic LogGroupNames { get; set; }
+        /// <summary>
+        /// QueryLanguage
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-querydefinition.html#cfn-logs-querydefinition-querylanguage
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic QueryLanguage { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

@@ -82,6 +82,14 @@ namespace Humidifier.QBusiness
         /// </summary>
         public dynamic ClientIdsForOIDC { get; set; }
         /// <summary>
+        /// QuickSightConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-application.html#cfn-qbusiness-application-quicksightconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: QuickSightConfiguration
+        /// </summary>
+        public Humidifier.QBusiness.ApplicationTypes.QuickSightConfiguration QuickSightConfiguration { get; set; }
+        /// <summary>
         /// PersonalizationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-application.html#cfn-qbusiness-application-personalizationconfiguration
         /// Required: False
@@ -194,6 +202,18 @@ namespace Humidifier.QBusiness
             /// PrimitiveType: String
             /// </summary>
             public dynamic QAppsControlMode { get; set; }
+        }
+
+        public class QuickSightConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ClientNamespace
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-application-quicksightconfiguration.html#cfn-qbusiness-application-quicksightconfiguration-clientnamespace
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientNamespace { get; set; }
         }
     }
 }

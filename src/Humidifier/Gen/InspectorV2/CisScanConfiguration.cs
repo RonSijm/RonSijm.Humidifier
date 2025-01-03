@@ -69,7 +69,7 @@ namespace Humidifier.InspectorV2
             /// <summary>
             /// TargetResourceTags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-cisscanconfiguration-cistargets.html#cfn-inspectorv2-cisscanconfiguration-cistargets-targetresourcetags
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
