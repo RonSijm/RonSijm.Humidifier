@@ -58,7 +58,7 @@ namespace Humidifier.Budgets
             public Humidifier.Budgets.BudgetTypes.HistoricalOptions HistoricalOptions { get; set; }
         }
 
-        public class BudgetData : Humidifier.Base.BaseSubResource
+        public class BudgetData : Humidifier.Base.BaseSubResource, IHaveBudgetName, IHaveTimeUnit
         {
             /// <summary>
             /// BudgetLimit

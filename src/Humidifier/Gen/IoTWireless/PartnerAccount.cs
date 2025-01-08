@@ -73,7 +73,7 @@ namespace Humidifier.IoTWireless
 
     namespace PartnerAccountTypes
     {
-        public class SidewalkAccountInfo : Humidifier.Base.BaseSubResource
+        public class SidewalkAccountInfo : Humidifier.Base.BaseSubResource, IHaveAppServerPrivateKey
         {
             /// <summary>
             /// AppServerPrivateKey
@@ -113,7 +113,7 @@ namespace Humidifier.IoTWireless
             public dynamic Arn { get; set; }
         }
 
-        public class SidewalkUpdateAccount : Humidifier.Base.BaseSubResource
+        public class SidewalkUpdateAccount : Humidifier.Base.BaseSubResource, IHaveAppServerPrivateKey
         {
             /// <summary>
             /// AppServerPrivateKey

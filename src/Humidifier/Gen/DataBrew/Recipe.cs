@@ -59,7 +59,7 @@ namespace Humidifier.DataBrew
             public dynamic Operation { get; set; }
         }
 
-        public class ConditionExpression : Humidifier.Base.BaseSubResource, IHaveValue, IHaveCondition
+        public class ConditionExpression : Humidifier.Base.BaseSubResource, IHaveValue, IHaveCondition, IHaveTargetColumn
         {
             /// <summary>
             /// Condition
@@ -123,7 +123,7 @@ namespace Humidifier.DataBrew
             public dynamic CatalogId { get; set; }
         }
 
-        public class Input : Humidifier.Base.BaseSubResource
+        public class Input : Humidifier.Base.BaseSubResource, IHaveDataBrewRecipeTypesS3LocationS3InputDefinition, IHaveDataBrewRecipeTypesDataCatalogInputDefinitionDataCatalogInputDefinition
         {
             /// <summary>
             /// S3InputDefinition
@@ -143,7 +143,7 @@ namespace Humidifier.DataBrew
             public Humidifier.DataBrew.RecipeTypes.DataCatalogInputDefinition DataCatalogInputDefinition { get; set; }
         }
 
-        public class RecipeParameters : Humidifier.Base.BaseSubResource, IHaveValue, IHaveDelimiter, IHavePosition, IHaveInterval, IHaveCount, IHavePattern, IHaveCustomValue, IHavePeriod, IHaveDateTimeFormat, IHaveBase, IHaveTimeZone, IHaveLimit, IHaveUnits, IHaveStepCount, IHaveStartValue, IHaveSourceColumn
+        public class RecipeParameters : Humidifier.Base.BaseSubResource, IHaveValue, IHaveDelimiter, IHavePeriod, IHavePosition, IHaveInterval, IHaveCount, IHavePattern, IHaveCustomValue, IHaveBase, IHaveDateTimeFormat, IHaveTimeZone, IHaveLimit, IHaveUnits, IHaveStepCount, IHaveStartValue, IHaveSourceColumn, IHaveStrategy, IHaveSheetNames, IHaveMultiLine, IHaveTargetColumn, IHaveSampleSize
         {
             /// <summary>
             /// IgnoreCase
@@ -999,7 +999,7 @@ namespace Humidifier.DataBrew
             public dynamic Key { get; set; }
         }
 
-        public class SecondaryInput : Humidifier.Base.BaseSubResource
+        public class SecondaryInput : Humidifier.Base.BaseSubResource, IHaveDataBrewRecipeTypesS3LocationS3InputDefinition, IHaveDataBrewRecipeTypesDataCatalogInputDefinitionDataCatalogInputDefinition
         {
             /// <summary>
             /// S3InputDefinition

@@ -3,7 +3,7 @@ namespace Humidifier.ApiGatewayV2
     using System.Collections.Generic;
     using AuthorizerTypes;
 
-    public class Authorizer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveApiId, IHaveIdentityValidationExpression, IHaveAuthorizerUri, IHaveAuthorizerResultTtlInSeconds
+    public class Authorizer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveApiId, IHaveIdentityValidationExpression, IHaveAuthorizerUri, IHaveAuthorizerResultTtlInSeconds, IHaveIdentitySource
     {
         public class Attributes
         {
@@ -101,7 +101,7 @@ namespace Humidifier.ApiGatewayV2
 
     namespace AuthorizerTypes
     {
-        public class JWTConfiguration : Humidifier.Base.BaseSubResource, IHaveIssuer
+        public class JWTConfiguration : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveAudience
         {
             /// <summary>
             /// Issuer

@@ -3,7 +3,7 @@ namespace Humidifier.Batch
     using System.Collections.Generic;
     using JobDefinitionTypes;
 
-    public class JobDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveType, IHavePropagateTags, IHaveJobDefinitionName
+    public class JobDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveType, IHavePropagateTags, IHaveJobDefinitionName, IHaveBatchJobDefinitionTypesEksPropertiesEksProperties
     {
         public override string AWSTypeName { get => AWS.Batch.JobDefinition; }
         /// <summary>
@@ -112,7 +112,7 @@ namespace Humidifier.Batch
 
     namespace JobDefinitionTypes
     {
-        public class ContainerProperties : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn, IHaveImage, IHaveCommand, IHaveUser, IHaveMemory, IHavePrivileged, IHaveReadonlyRootFilesystem
+        public class ContainerProperties : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn, IHaveImage, IHaveCommand, IHaveUser, IHaveMemory, IHavePrivileged, IHaveReadonlyRootFilesystem, IHaveBatchJobDefinitionTypesRepositoryCredentialsRepositoryCredentials, IHaveBatchJobDefinitionTypesLinuxParametersLinuxParameters, IHaveBatchJobDefinitionTypesLogConfigurationLogConfiguration, IHaveBatchJobDefinitionTypesRuntimePlatformRuntimePlatform, IHaveBatchJobDefinitionTypesEphemeralStorageEphemeralStorage, IHaveJobRoleArn, IHaveVcpus, IHaveBatchJobDefinitionTypesNetworkConfigurationNetworkConfiguration
         {
             /// <summary>
             /// RepositoryCredentials
@@ -299,7 +299,7 @@ namespace Humidifier.Batch
             public Humidifier.Batch.JobDefinitionTypes.EphemeralStorage EphemeralStorage { get; set; }
         }
 
-        public class Device : Humidifier.Base.BaseSubResource, IHavePermissions, IHaveContainerPath
+        public class Device : Humidifier.Base.BaseSubResource, IHavePermissions, IHaveContainerPath, IHaveHostPath
         {
             /// <summary>
             /// HostPath
@@ -328,7 +328,7 @@ namespace Humidifier.Batch
             public dynamic ContainerPath { get; set; }
         }
 
-        public class EFSAuthorizationConfig : Humidifier.Base.BaseSubResource
+        public class EFSAuthorizationConfig : Humidifier.Base.BaseSubResource, IHaveAccessPointId
         {
             /// <summary>
             /// Iam
@@ -348,7 +348,7 @@ namespace Humidifier.Batch
             public dynamic AccessPointId { get; set; }
         }
 
-        public class EFSVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveFileSystemId, IHaveRootDirectory
+        public class EFSVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveFileSystemId, IHaveRootDirectory, IHaveTransitEncryption, IHaveTransitEncryptionPort
         {
             /// <summary>
             /// TransitEncryption
@@ -405,7 +405,7 @@ namespace Humidifier.Batch
             public List<Humidifier.Batch.JobDefinitionTypes.EcsTaskProperties> TaskProperties { get; set; }
         }
 
-        public class EcsTaskProperties : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn, IHavePlatformVersion, IHaveTaskRoleArn
+        public class EcsTaskProperties : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn, IHavePlatformVersion, IHaveTaskRoleArn, IHaveIpcMode, IHavePidMode, IHaveBatchJobDefinitionTypesRuntimePlatformRuntimePlatform, IHaveBatchJobDefinitionTypesEphemeralStorageEphemeralStorage, IHaveBatchJobDefinitionTypesNetworkConfigurationNetworkConfiguration
         {
             /// <summary>
             /// PlatformVersion
@@ -665,7 +665,7 @@ namespace Humidifier.Batch
             public dynamic RunAsGroup { get; set; }
         }
 
-        public class EksContainerVolumeMount : Humidifier.Base.BaseSubResource, IHaveName, IHaveReadOnly
+        public class EksContainerVolumeMount : Humidifier.Base.BaseSubResource, IHaveName, IHaveReadOnly, IHaveMountPath
         {
             /// <summary>
             /// MountPath
@@ -830,7 +830,7 @@ namespace Humidifier.Batch
             public Humidifier.Batch.JobDefinitionTypes.EksPodProperties PodProperties { get; set; }
         }
 
-        public class EksSecret : Humidifier.Base.BaseSubResource, IHaveSecretName
+        public class EksSecret : Humidifier.Base.BaseSubResource, IHaveSecretName, IHaveOptional
         {
             /// <summary>
             /// SecretName
@@ -1002,7 +1002,7 @@ namespace Humidifier.Batch
             public dynamic AttemptDurationSeconds { get; set; }
         }
 
-        public class LinuxParameters : Humidifier.Base.BaseSubResource
+        public class LinuxParameters : Humidifier.Base.BaseSubResource, IHaveSwappiness, IHaveSharedMemorySize, IHaveInitProcessEnabled, IHaveMaxSwap
         {
             /// <summary>
             /// Swappiness
@@ -1086,7 +1086,7 @@ namespace Humidifier.Batch
             public dynamic LogDriver { get; set; }
         }
 
-        public class MountPoint : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveContainerPath
+        public class MountPoint : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveContainerPath, IHaveSourceVolume
         {
             /// <summary>
             /// ReadOnly
@@ -1114,7 +1114,7 @@ namespace Humidifier.Batch
             public dynamic ContainerPath { get; set; }
         }
 
-        public class MultiNodeContainerProperties : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveExecutionRoleArn, IHaveImage, IHaveCommand, IHaveUser, IHaveMemory, IHavePrivileged, IHaveReadonlyRootFilesystem
+        public class MultiNodeContainerProperties : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveExecutionRoleArn, IHaveImage, IHaveCommand, IHaveUser, IHaveMemory, IHavePrivileged, IHaveReadonlyRootFilesystem, IHaveBatchJobDefinitionTypesRepositoryCredentialsRepositoryCredentials, IHaveBatchJobDefinitionTypesLinuxParametersLinuxParameters, IHaveBatchJobDefinitionTypesLogConfigurationLogConfiguration, IHaveBatchJobDefinitionTypesRuntimePlatformRuntimePlatform, IHaveBatchJobDefinitionTypesEphemeralStorageEphemeralStorage, IHaveJobRoleArn, IHaveVcpus
         {
             /// <summary>
             /// RepositoryCredentials
@@ -1306,7 +1306,7 @@ namespace Humidifier.Batch
             public List<Humidifier.Batch.JobDefinitionTypes.MultiNodeEcsTaskProperties> TaskProperties { get; set; }
         }
 
-        public class MultiNodeEcsTaskProperties : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn, IHaveTaskRoleArn
+        public class MultiNodeEcsTaskProperties : Humidifier.Base.BaseSubResource, IHaveExecutionRoleArn, IHaveTaskRoleArn, IHaveIpcMode, IHavePidMode
         {
             /// <summary>
             /// ExecutionRoleArn
@@ -1401,7 +1401,7 @@ namespace Humidifier.Batch
             public dynamic NumNodes { get; set; }
         }
 
-        public class NodeRangeProperty : Humidifier.Base.BaseSubResource, IHaveInstanceTypes
+        public class NodeRangeProperty : Humidifier.Base.BaseSubResource, IHaveInstanceTypes, IHaveBatchJobDefinitionTypesEksPropertiesEksProperties
         {
             /// <summary>
             /// Container
@@ -1499,7 +1499,7 @@ namespace Humidifier.Batch
             public dynamic Attempts { get; set; }
         }
 
-        public class RuntimePlatform : Humidifier.Base.BaseSubResource
+        public class RuntimePlatform : Humidifier.Base.BaseSubResource, IHaveOperatingSystemFamily, IHaveCpuArchitecture
         {
             /// <summary>
             /// OperatingSystemFamily
@@ -1539,7 +1539,7 @@ namespace Humidifier.Batch
             public dynamic Name { get; set; }
         }
 
-        public class TaskContainerDependency : Humidifier.Base.BaseSubResource, IHaveCondition, IHaveContainerName
+        public class TaskContainerDependency : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveCondition
         {
             /// <summary>
             /// Condition
@@ -1559,7 +1559,7 @@ namespace Humidifier.Batch
             public dynamic ContainerName { get; set; }
         }
 
-        public class TaskContainerProperties : Humidifier.Base.BaseSubResource, IHaveName, IHaveImage, IHaveCommand, IHaveUser, IHavePrivileged, IHaveReadonlyRootFilesystem, IHaveEssential
+        public class TaskContainerProperties : Humidifier.Base.BaseSubResource, IHaveName, IHaveImage, IHaveCommand, IHaveUser, IHavePrivileged, IHaveReadonlyRootFilesystem, IHaveBatchJobDefinitionTypesRepositoryCredentialsRepositoryCredentials, IHaveBatchJobDefinitionTypesLinuxParametersLinuxParameters, IHaveBatchJobDefinitionTypesLogConfigurationLogConfiguration, IHaveEssential
         {
             /// <summary>
             /// RepositoryCredentials

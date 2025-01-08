@@ -2,7 +2,7 @@ namespace Humidifier.AutoScaling
 {
     using System.Collections.Generic;
 
-    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveStartTime, IHaveMinSize, IHaveMaxSize, IHaveTimeZone, IHaveEndTime, IHaveAutoScalingGroupName, IHaveDesiredCapacity
+    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveStartTime, IHaveMinSize, IHaveMaxSize, IHaveEndTime, IHaveTimeZone, IHaveAutoScalingGroupName, IHaveDesiredCapacity
     {
         public class Attributes
         {

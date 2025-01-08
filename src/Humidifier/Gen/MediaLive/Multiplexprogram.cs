@@ -3,7 +3,7 @@ namespace Humidifier.MediaLive
     using System.Collections.Generic;
     using MultiplexprogramTypes;
 
-    public class Multiplexprogram : Humidifier.Base.BaseResource
+    public class Multiplexprogram : Humidifier.Base.BaseResource, IHaveMultiplexId, IHavePreferredChannelPipeline, IHaveProgramName
     {
         public class Attributes
         {
@@ -64,7 +64,7 @@ namespace Humidifier.MediaLive
 
     namespace MultiplexprogramTypes
     {
-        public class MultiplexProgramPacketIdentifiersMap : Humidifier.Base.BaseSubResource, IHaveScte35Pid, IHaveVideoPid, IHavePcrPid, IHavePmtPid, IHaveTimedMetadataPid
+        public class MultiplexProgramPacketIdentifiersMap : Humidifier.Base.BaseSubResource, IHaveScte35Pid, IHaveVideoPid, IHavePcrPid, IHavePmtPid, IHaveTimedMetadataPid, IHaveEtvPlatformPid, IHaveDvbTeletextPid, IHaveEtvSignalPid
         {
             /// <summary>
             /// EtvPlatformPid
@@ -216,7 +216,7 @@ namespace Humidifier.MediaLive
             public dynamic ServiceName { get; set; }
         }
 
-        public class MultiplexProgramSettings : Humidifier.Base.BaseSubResource
+        public class MultiplexProgramSettings : Humidifier.Base.BaseSubResource, IHavePreferredChannelPipeline
         {
             /// <summary>
             /// PreferredChannelPipeline
@@ -252,7 +252,7 @@ namespace Humidifier.MediaLive
             public dynamic ProgramNumber { get; set; }
         }
 
-        public class MultiplexStatmuxVideoSettings : Humidifier.Base.BaseSubResource, IHavePriority
+        public class MultiplexStatmuxVideoSettings : Humidifier.Base.BaseSubResource, IHavePriority, IHaveMaximumBitrate
         {
             /// <summary>
             /// Priority

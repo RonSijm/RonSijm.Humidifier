@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class PolicyPrincipalAttachment : Humidifier.Base.BaseResource, IHavePolicyName, IHavePrincipal
+    public class PolicyPrincipalAttachment : Humidifier.Base.BaseResource, IHavePrincipal, IHavePolicyName
     {
         public override string AWSTypeName { get => AWS.IoT.PolicyPrincipalAttachment; }
 

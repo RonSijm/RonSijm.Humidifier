@@ -3,7 +3,7 @@ namespace Humidifier.Elasticsearch
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveAccessPolicies
     {
         public class Attributes
         {
@@ -133,7 +133,7 @@ namespace Humidifier.Elasticsearch
 
     namespace DomainTypes
     {
-        public class AdvancedSecurityOptionsInput : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class AdvancedSecurityOptionsInput : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveAnonymousAuthEnabled, IHaveInternalUserDatabaseEnabled
         {
             /// <summary>
             /// AnonymousAuthEnabled
@@ -217,7 +217,7 @@ namespace Humidifier.Elasticsearch
             public dynamic Enabled { get; set; }
         }
 
-        public class DomainEndpointOptions : Humidifier.Base.BaseSubResource
+        public class DomainEndpointOptions : Humidifier.Base.BaseSubResource, IHaveCustomEndpoint, IHaveCustomEndpointCertificateArn, IHaveCustomEndpointEnabled, IHaveEnforceHTTPS, IHaveTLSSecurityPolicy
         {
             /// <summary>
             /// CustomEndpoint
@@ -261,7 +261,7 @@ namespace Humidifier.Elasticsearch
             public dynamic TLSSecurityPolicy { get; set; }
         }
 
-        public class EBSOptions : Humidifier.Base.BaseSubResource, IHaveIops, IHaveVolumeType, IHaveVolumeSize
+        public class EBSOptions : Humidifier.Base.BaseSubResource, IHaveIops, IHaveVolumeType, IHaveVolumeSize, IHaveEBSEnabled
         {
             /// <summary>
             /// EBSEnabled
@@ -297,7 +297,7 @@ namespace Humidifier.Elasticsearch
             public dynamic VolumeType { get; set; }
         }
 
-        public class ElasticsearchClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount
+        public class ElasticsearchClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveDedicatedMasterCount, IHaveDedicatedMasterEnabled, IHaveDedicatedMasterType, IHaveWarmCount, IHaveWarmEnabled, IHaveWarmType, IHaveZoneAwarenessEnabled
         {
             /// <summary>
             /// ColdStorageOptions
@@ -429,7 +429,7 @@ namespace Humidifier.Elasticsearch
             public dynamic Enabled { get; set; }
         }
 
-        public class MasterUserOptions : Humidifier.Base.BaseSubResource, IHaveMasterUserPassword, IHaveMasterUserName
+        public class MasterUserOptions : Humidifier.Base.BaseSubResource, IHaveMasterUserPassword, IHaveMasterUserName, IHaveMasterUserARN
         {
             /// <summary>
             /// MasterUserARN
@@ -469,7 +469,7 @@ namespace Humidifier.Elasticsearch
             public dynamic Enabled { get; set; }
         }
 
-        public class SnapshotOptions : Humidifier.Base.BaseSubResource
+        public class SnapshotOptions : Humidifier.Base.BaseSubResource, IHaveAutomatedSnapshotStartHour
         {
             /// <summary>
             /// AutomatedSnapshotStartHour
@@ -503,7 +503,7 @@ namespace Humidifier.Elasticsearch
             public dynamic SubnetIds { get; set; }
         }
 
-        public class ZoneAwarenessConfig : Humidifier.Base.BaseSubResource
+        public class ZoneAwarenessConfig : Humidifier.Base.BaseSubResource, IHaveAvailabilityZoneCount
         {
             /// <summary>
             /// AvailabilityZoneCount

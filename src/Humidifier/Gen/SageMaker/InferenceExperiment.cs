@@ -126,7 +126,7 @@ namespace Humidifier.SageMaker
 
     namespace InferenceExperimentTypes
     {
-        public class CaptureContentTypeHeader : Humidifier.Base.BaseSubResource
+        public class CaptureContentTypeHeader : Humidifier.Base.BaseSubResource, IHaveJsonContentTypes, IHaveCsvContentTypes
         {
             /// <summary>
             /// JsonContentTypes

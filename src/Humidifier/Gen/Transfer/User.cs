@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePolicy, IHaveRole, IHaveUserName
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePolicy, IHaveRole, IHaveUserName, IHaveServerId
     {
         public class Attributes
         {

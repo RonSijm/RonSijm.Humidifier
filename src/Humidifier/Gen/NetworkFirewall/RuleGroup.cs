@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using RuleGroupTypes;
 
-    public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveType
+    public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveType, IHaveCapacity
     {
         public class Attributes
         {
@@ -74,7 +74,7 @@ namespace Humidifier.NetworkFirewall
             public Humidifier.NetworkFirewall.RuleGroupTypes.PublishMetricAction PublishMetricAction { get; set; }
         }
 
-        public class Address : Humidifier.Base.BaseSubResource
+        public class Address : Humidifier.Base.BaseSubResource, IHaveAddressDefinition
         {
             /// <summary>
             /// AddressDefinition
@@ -118,7 +118,7 @@ namespace Humidifier.NetworkFirewall
             public dynamic Value { get; set; }
         }
 
-        public class Header : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveSource, IHaveDirection, IHaveDestination, IHaveDestinationPort
+        public class Header : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveSource, IHaveDestination, IHaveDirection, IHaveDestinationPort
         {
             /// <summary>
             /// Destination
@@ -369,7 +369,7 @@ namespace Humidifier.NetworkFirewall
             public Humidifier.NetworkFirewall.RuleGroupTypes.RuleVariables RuleVariables { get; set; }
         }
 
-        public class RuleOption : Humidifier.Base.BaseSubResource
+        public class RuleOption : Humidifier.Base.BaseSubResource, IHaveSettings
         {
             /// <summary>
             /// Keyword

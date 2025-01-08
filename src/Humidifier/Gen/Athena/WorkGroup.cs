@@ -121,7 +121,7 @@ namespace Humidifier.Athena
             public dynamic EffectiveEngineVersion { get; set; }
         }
 
-        public class ResultConfiguration : Humidifier.Base.BaseSubResource
+        public class ResultConfiguration : Humidifier.Base.BaseSubResource, IHaveOutputLocation, IHaveExpectedBucketOwner
         {
             /// <summary>
             /// EncryptionConfiguration

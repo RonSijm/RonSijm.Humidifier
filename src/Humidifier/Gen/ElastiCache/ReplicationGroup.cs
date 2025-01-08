@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using ReplicationGroupTypes;
 
-    public class ReplicationGroup : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveTransitEncryptionEnabled, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveCacheSubnetGroupName, IHaveNotificationTopicArn, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveReplicationGroupId, IHaveDescription
+    public class ReplicationGroup : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveTransitEncryptionEnabled, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveCacheSubnetGroupName, IHaveNotificationTopicArn, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveReplicationGroupId, IHaveAtRestEncryptionEnabled, IHaveCacheSecurityGroupNames, IHaveIpDiscovery, IHaveAutomaticFailoverEnabled, IHaveDescription
     {
         public class Attributes
         {
@@ -419,7 +419,7 @@ namespace Humidifier.ElastiCache
             public dynamic LogType { get; set; }
         }
 
-        public class NodeGroupConfiguration : Humidifier.Base.BaseSubResource
+        public class NodeGroupConfiguration : Humidifier.Base.BaseSubResource, IHaveReplicaCount, IHaveNodeGroupId
         {
             /// <summary>
             /// NodeGroupId

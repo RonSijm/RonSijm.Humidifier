@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using DomainConfigurationTypes;
 
-    public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveAuthenticationType
+    public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveAuthenticationType, IHaveServiceType
     {
         public class Attributes
         {
@@ -176,7 +176,7 @@ namespace Humidifier.IoT
             public dynamic OcspAuthorizedResponderArn { get; set; }
         }
 
-        public class ServerCertificateSummary : Humidifier.Base.BaseSubResource
+        public class ServerCertificateSummary : Humidifier.Base.BaseSubResource, IHaveServerCertificateArn
         {
             /// <summary>
             /// ServerCertificateStatusDetail

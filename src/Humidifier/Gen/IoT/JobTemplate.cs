@@ -139,7 +139,7 @@ namespace Humidifier.IoT
             public List<Humidifier.IoT.JobTemplateTypes.AbortCriteria> CriteriaList { get; set; }
         }
 
-        public class AbortCriteria : Humidifier.Base.BaseSubResource, IHaveAction, IHaveFailureType, IHaveThresholdPercentage
+        public class AbortCriteria : Humidifier.Base.BaseSubResource, IHaveAction, IHaveFailureType, IHaveThresholdPercentage, IHaveMinNumberOfExecutedThings
         {
             /// <summary>
             /// Action
@@ -175,7 +175,7 @@ namespace Humidifier.IoT
             public dynamic MinNumberOfExecutedThings { get; set; }
         }
 
-        public class ExponentialRolloutRate : Humidifier.Base.BaseSubResource
+        public class ExponentialRolloutRate : Humidifier.Base.BaseSubResource, IHaveBaseRatePerMinute, IHaveIncrementFactor
         {
             /// <summary>
             /// RateIncreaseCriteria
@@ -216,7 +216,7 @@ namespace Humidifier.IoT
             public List<Humidifier.IoT.JobTemplateTypes.RetryCriteria> RetryCriteriaList { get; set; }
         }
 
-        public class JobExecutionsRolloutConfig : Humidifier.Base.BaseSubResource
+        public class JobExecutionsRolloutConfig : Humidifier.Base.BaseSubResource, IHaveMaximumPerMinute
         {
             /// <summary>
             /// MaximumPerMinute
@@ -276,7 +276,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class RateIncreaseCriteria : Humidifier.Base.BaseSubResource
+        public class RateIncreaseCriteria : Humidifier.Base.BaseSubResource, IHaveNumberOfSucceededThings, IHaveNumberOfNotifiedThings
         {
             /// <summary>
             /// NumberOfSucceededThings
@@ -316,7 +316,7 @@ namespace Humidifier.IoT
             public dynamic NumberOfRetries { get; set; }
         }
 
-        public class TimeoutConfig : Humidifier.Base.BaseSubResource
+        public class TimeoutConfig : Humidifier.Base.BaseSubResource, IHaveInProgressTimeoutInMinutes
         {
             /// <summary>
             /// InProgressTimeoutInMinutes

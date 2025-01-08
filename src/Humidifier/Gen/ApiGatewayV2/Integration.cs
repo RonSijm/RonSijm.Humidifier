@@ -3,7 +3,7 @@ namespace Humidifier.ApiGatewayV2
     using System.Collections.Generic;
     using IntegrationTypes;
 
-    public class Integration : Humidifier.Base.BaseResource, IHaveDescription, IHaveApiId, IHaveConnectionType, IHaveTimeoutInMillis
+    public class Integration : Humidifier.Base.BaseResource, IHaveDescription, IHaveApiId, IHaveConnectionType, IHaveTimeoutInMillis, IHaveIntegrationType, IHaveCredentialsArn, IHaveTemplateSelectionExpression, IHaveIntegrationMethod, IHavePassthroughBehavior, IHaveConnectionId, IHavePayloadFormatVersion, IHaveContentHandlingStrategy
     {
         public class Attributes
         {

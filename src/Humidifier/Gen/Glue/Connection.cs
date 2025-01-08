@@ -83,7 +83,7 @@ namespace Humidifier.Glue
             public dynamic Name { get; set; }
         }
 
-        public class PhysicalConnectionRequirements : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveSubnetId
+        public class PhysicalConnectionRequirements : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveSubnetId, IHaveSecurityGroupIdList
         {
             /// <summary>
             /// AvailabilityZone

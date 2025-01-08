@@ -2,7 +2,7 @@ namespace Humidifier.ApiGatewayV2
 {
     using System.Collections.Generic;
 
-    public class IntegrationResponse : Humidifier.Base.BaseResource, IHaveApiId
+    public class IntegrationResponse : Humidifier.Base.BaseResource, IHaveApiId, IHaveTemplateSelectionExpression, IHaveContentHandlingStrategy
     {
         public class Attributes
         {

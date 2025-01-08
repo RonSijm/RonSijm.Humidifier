@@ -151,7 +151,7 @@ namespace Humidifier.Connect
             public dynamic Delay { get; set; }
         }
 
-        public class RoutingProfileQueueReference : Humidifier.Base.BaseSubResource, IHaveChannel
+        public class RoutingProfileQueueReference : Humidifier.Base.BaseSubResource, IHaveChannel, IHaveQueueArn
         {
             /// <summary>
             /// Channel

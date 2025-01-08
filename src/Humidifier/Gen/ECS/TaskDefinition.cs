@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using TaskDefinitionTypes;
 
-    public class TaskDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveExecutionRoleArn, IHaveMemory, IHaveCpu, IHaveFamily, IHaveTaskRoleArn
+    public class TaskDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveExecutionRoleArn, IHaveMemory, IHaveFamily, IHaveCpu, IHaveTaskRoleArn, IHaveIpcMode, IHavePidMode
     {
         public class Attributes
         {
@@ -165,7 +165,7 @@ namespace Humidifier.ECS
 
     namespace TaskDefinitionTypes
     {
-        public class AuthorizationConfig : Humidifier.Base.BaseSubResource
+        public class AuthorizationConfig : Humidifier.Base.BaseSubResource, IHaveAccessPointId
         {
             /// <summary>
             /// IAM
@@ -185,7 +185,7 @@ namespace Humidifier.ECS
             public dynamic AccessPointId { get; set; }
         }
 
-        public class ContainerDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveImage, IHaveCommand, IHaveUser, IHaveMemory, IHaveCpu, IHaveWorkingDirectory, IHaveHostname, IHavePrivileged, IHaveReadonlyRootFilesystem, IHaveEssential, IHaveEntryPoint
+        public class ContainerDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveImage, IHaveCommand, IHaveUser, IHaveMemory, IHaveCpu, IHaveWorkingDirectory, IHaveHostname, IHavePrivileged, IHaveReadonlyRootFilesystem, IHaveEssential, IHaveDnsServers, IHaveEntryPoint, IHaveMemoryReservation
         {
             /// <summary>
             /// User
@@ -544,7 +544,7 @@ namespace Humidifier.ECS
             public dynamic Links { get; set; }
         }
 
-        public class ContainerDependency : Humidifier.Base.BaseSubResource, IHaveCondition, IHaveContainerName
+        public class ContainerDependency : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveCondition
         {
             /// <summary>
             /// Condition
@@ -564,7 +564,7 @@ namespace Humidifier.ECS
             public dynamic ContainerName { get; set; }
         }
 
-        public class Device : Humidifier.Base.BaseSubResource, IHavePermissions, IHaveContainerPath
+        public class Device : Humidifier.Base.BaseSubResource, IHavePermissions, IHaveContainerPath, IHaveHostPath
         {
             /// <summary>
             /// HostPath
@@ -639,7 +639,7 @@ namespace Humidifier.ECS
             public Dictionary<string, dynamic> Labels { get; set; }
         }
 
-        public class EFSVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveRootDirectory
+        public class EFSVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveRootDirectory, IHaveTransitEncryption, IHaveTransitEncryptionPort
         {
             /// <summary>
             /// FilesystemId
@@ -784,7 +784,7 @@ namespace Humidifier.ECS
             public dynamic Type { get; set; }
         }
 
-        public class HealthCheck : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveTimeout, IHaveCommand, IHaveRetries
+        public class HealthCheck : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveTimeout, IHaveCommand, IHaveRetries, IHaveStartPeriod
         {
             /// <summary>
             /// Command
@@ -881,7 +881,7 @@ namespace Humidifier.ECS
             public dynamic DeviceName { get; set; }
         }
 
-        public class KernelCapabilities : Humidifier.Base.BaseSubResource
+        public class KernelCapabilities : Humidifier.Base.BaseSubResource, IHaveDrop
         {
             /// <summary>
             /// Add
@@ -923,7 +923,7 @@ namespace Humidifier.ECS
             public dynamic Name { get; set; }
         }
 
-        public class LinuxParameters : Humidifier.Base.BaseSubResource
+        public class LinuxParameters : Humidifier.Base.BaseSubResource, IHaveSwappiness, IHaveSharedMemorySize, IHaveInitProcessEnabled, IHaveMaxSwap
         {
             /// <summary>
             /// Capabilities
@@ -1015,7 +1015,7 @@ namespace Humidifier.ECS
             public dynamic LogDriver { get; set; }
         }
 
-        public class MountPoint : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveContainerPath
+        public class MountPoint : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveContainerPath, IHaveSourceVolume
         {
             /// <summary>
             /// ReadOnly
@@ -1043,7 +1043,7 @@ namespace Humidifier.ECS
             public dynamic ContainerPath { get; set; }
         }
 
-        public class PortMapping : Humidifier.Base.BaseSubResource, IHaveName, IHaveProtocol, IHaveContainerPort
+        public class PortMapping : Humidifier.Base.BaseSubResource, IHaveName, IHaveProtocol, IHaveContainerPort, IHaveHostPort
         {
             /// <summary>
             /// AppProtocol
@@ -1185,7 +1185,7 @@ namespace Humidifier.ECS
             public dynamic Enabled { get; set; }
         }
 
-        public class RuntimePlatform : Humidifier.Base.BaseSubResource
+        public class RuntimePlatform : Humidifier.Base.BaseSubResource, IHaveOperatingSystemFamily, IHaveCpuArchitecture
         {
             /// <summary>
             /// OperatingSystemFamily
@@ -1225,7 +1225,7 @@ namespace Humidifier.ECS
             public dynamic Name { get; set; }
         }
 
-        public class SystemControl : Humidifier.Base.BaseSubResource, IHaveValue
+        public class SystemControl : Humidifier.Base.BaseSubResource, IHaveValue, IHaveNamespace_
         {
             /// <summary>
             /// Value

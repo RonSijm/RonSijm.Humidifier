@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using InfrastructureConfigurationTypes;
 
-    public class InfrastructureConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveSecurityGroupIds, IHaveSubnetId, IHaveSnsTopicArn, IHaveInstanceProfileName, IHaveInstanceTypes
+    public class InfrastructureConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveSecurityGroupIds, IHaveSubnetId, IHaveSnsTopicArn, IHaveInstanceProfileName, IHaveInstanceTypes, IHaveKeyPair
     {
         public class Attributes
         {

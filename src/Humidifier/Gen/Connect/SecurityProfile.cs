@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using SecurityProfileTypes;
 
-    public class SecurityProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceArn, IHavePermissions
+    public class SecurityProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceArn, IHavePermissions, IHaveSecurityProfileName
     {
         public class Attributes
         {
@@ -98,7 +98,7 @@ namespace Humidifier.Connect
 
     namespace SecurityProfileTypes
     {
-        public class Application : Humidifier.Base.BaseSubResource
+        public class Application : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
             /// <summary>
             /// ApplicationPermissions

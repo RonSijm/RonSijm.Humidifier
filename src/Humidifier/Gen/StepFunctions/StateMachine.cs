@@ -3,7 +3,7 @@ namespace Humidifier.StepFunctions
     using System.Collections.Generic;
     using StateMachineTypes;
 
-    public class StateMachine : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleArn, IHaveDefinition
+    public class StateMachine : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleArn, IHaveDefinition, IHaveDefinitionString, IHaveDefinitionSubstitutions, IHaveStateMachineName
     {
         public class Attributes
         {
@@ -154,7 +154,7 @@ namespace Humidifier.StepFunctions
             public Humidifier.StepFunctions.StateMachineTypes.CloudWatchLogsLogGroup CloudWatchLogsLogGroup { get; set; }
         }
 
-        public class LoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveLevel
+        public class LoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveIncludeExecutionData
         {
             /// <summary>
             /// IncludeExecutionData

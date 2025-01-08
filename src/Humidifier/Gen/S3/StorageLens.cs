@@ -33,7 +33,7 @@ namespace Humidifier.S3
 
     namespace StorageLensTypes
     {
-        public class AccountLevel : Humidifier.Base.BaseSubResource
+        public class AccountLevel : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesAdvancedDataProtectionMetricsAdvancedDataProtectionMetrics, IHaveS3StorageLensTypesActivityMetricsActivityMetrics, IHaveS3StorageLensTypesAdvancedCostOptimizationMetricsAdvancedCostOptimizationMetrics, IHaveS3StorageLensTypesDetailedStatusCodesMetricsDetailedStatusCodesMetrics
         {
             /// <summary>
             /// AdvancedDataProtectionMetrics
@@ -133,7 +133,7 @@ namespace Humidifier.S3
             public dynamic Arn { get; set; }
         }
 
-        public class BucketLevel : Humidifier.Base.BaseSubResource
+        public class BucketLevel : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesAdvancedDataProtectionMetricsAdvancedDataProtectionMetrics, IHaveS3StorageLensTypesActivityMetricsActivityMetrics, IHaveS3StorageLensTypesAdvancedCostOptimizationMetricsAdvancedCostOptimizationMetrics, IHaveS3StorageLensTypesDetailedStatusCodesMetricsDetailedStatusCodesMetrics
         {
             /// <summary>
             /// AdvancedDataProtectionMetrics
@@ -295,7 +295,7 @@ namespace Humidifier.S3
             public Humidifier.S3.StorageLensTypes.SelectionCriteria SelectionCriteria { get; set; }
         }
 
-        public class S3BucketDestination : Humidifier.Base.BaseSubResource, IHaveArn, IHavePrefix, IHaveFormat, IHaveAccountId
+        public class S3BucketDestination : Humidifier.Base.BaseSubResource, IHaveArn, IHavePrefix, IHaveFormat, IHaveAccountId, IHaveOutputSchemaVersion
         {
             /// <summary>
             /// OutputSchemaVersion
@@ -467,7 +467,7 @@ namespace Humidifier.S3
             public Humidifier.S3.StorageLensTypes.StorageLensGroupSelectionCriteria StorageLensGroupSelectionCriteria { get; set; }
         }
 
-        public class StorageLensGroupSelectionCriteria : Humidifier.Base.BaseSubResource
+        public class StorageLensGroupSelectionCriteria : Humidifier.Base.BaseSubResource, IHaveInclude, IHaveExclude
         {
             /// <summary>
             /// Exclude

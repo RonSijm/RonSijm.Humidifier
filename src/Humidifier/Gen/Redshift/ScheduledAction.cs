@@ -3,7 +3,7 @@ namespace Humidifier.Redshift
     using System.Collections.Generic;
     using ScheduledActionTypes;
 
-    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStartTime, IHaveEndTime, IHaveEnable, IHaveSchedule, IHaveDescription
+    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStartTime, IHaveEndTime, IHaveEnable, IHaveSchedule, IHaveScheduledActionName, IHaveDescription
     {
         public class Attributes
         {
@@ -88,7 +88,7 @@ namespace Humidifier.Redshift
             public dynamic ClusterIdentifier { get; set; }
         }
 
-        public class ResizeClusterMessage : Humidifier.Base.BaseSubResource, IHaveClusterIdentifier, IHaveNodeType, IHaveNumberOfNodes
+        public class ResizeClusterMessage : Humidifier.Base.BaseSubResource, IHaveClusterIdentifier, IHaveNodeType, IHaveNumberOfNodes, IHaveClusterType, IHaveClassic
         {
             /// <summary>
             /// NodeType

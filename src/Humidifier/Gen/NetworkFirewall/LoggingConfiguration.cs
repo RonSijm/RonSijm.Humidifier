@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using LoggingConfigurationTypes;
 
-    public class LoggingConfiguration : Humidifier.Base.BaseResource
+    public class LoggingConfiguration : Humidifier.Base.BaseResource, IHaveFirewallName
     {
         public override string AWSTypeName { get => AWS.NetworkFirewall.LoggingConfiguration; }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Humidifier.NetworkFirewall
 
     namespace LoggingConfigurationTypes
     {
-        public class LogDestinationConfig : Humidifier.Base.BaseSubResource, IHaveLogType
+        public class LogDestinationConfig : Humidifier.Base.BaseSubResource, IHaveLogType, IHaveLogDestinationType
         {
             /// <summary>
             /// LogType

@@ -40,7 +40,7 @@ namespace Humidifier.WAFRegional
             public dynamic Data { get; set; }
         }
 
-        public class SizeConstraint : Humidifier.Base.BaseSubResource, IHaveSize, IHaveComparisonOperator, IHaveTextTransformation
+        public class SizeConstraint : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveSize, IHaveTextTransformation
         {
             /// <summary>
             /// ComparisonOperator

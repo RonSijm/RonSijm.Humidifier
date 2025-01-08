@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using System.Collections.Generic;
     using MetricStreamTypes;
 
-    public class MetricStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn, IHaveOutputFormat
+    public class MetricStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn, IHaveOutputFormat, IHaveFirehoseArn
     {
         public class Attributes
         {
@@ -93,7 +93,7 @@ namespace Humidifier.CloudWatch
 
     namespace MetricStreamTypes
     {
-        public class MetricStreamFilter : Humidifier.Base.BaseSubResource
+        public class MetricStreamFilter : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
             /// <summary>
             /// MetricNames
@@ -136,7 +136,7 @@ namespace Humidifier.CloudWatch
             public dynamic AdditionalStatistics { get; set; }
         }
 
-        public class MetricStreamStatisticsMetric : Humidifier.Base.BaseSubResource, IHaveMetricName
+        public class MetricStreamStatisticsMetric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_
         {
             /// <summary>
             /// MetricName

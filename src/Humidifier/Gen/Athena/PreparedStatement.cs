@@ -2,7 +2,7 @@ namespace Humidifier.Athena
 {
     using System.Collections.Generic;
 
-    public class PreparedStatement : Humidifier.Base.BaseResource, IHaveDescription, IHaveWorkGroup, IHaveStatementName
+    public class PreparedStatement : Humidifier.Base.BaseResource, IHaveDescription, IHaveWorkGroup, IHaveStatementName, IHaveQueryStatement
     {
         public override string AWSTypeName { get => AWS.Athena.PreparedStatement; }
 

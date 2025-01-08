@@ -3,7 +3,7 @@ namespace Humidifier.Route53Resolver
     using System.Collections.Generic;
     using ResolverEndpointTypes;
 
-    public class ResolverEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveSecurityGroupIds, IHaveDirection, IHaveOutpostArn, IHaveProtocols
+    public class ResolverEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveSecurityGroupIds, IHaveDirection, IHaveOutpostArn, IHaveProtocols, IHavePreferredInstanceType
     {
         public class Attributes
         {
@@ -98,7 +98,7 @@ namespace Humidifier.Route53Resolver
 
     namespace ResolverEndpointTypes
     {
-        public class IpAddressRequest : Humidifier.Base.BaseSubResource, IHaveSubnetId, IHaveIp
+        public class IpAddressRequest : Humidifier.Base.BaseSubResource, IHaveSubnetId, IHaveIp, IHaveIpv6
         {
             /// <summary>
             /// Ipv6

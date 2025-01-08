@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ProjectTypes;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveProjectName, IHaveDescription
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveProjectName, IHaveProjectDescription, IHaveDescription
     {
         public class Attributes
         {
@@ -97,7 +97,7 @@ namespace Humidifier.SageMaker
             public dynamic ProvisionedProductId { get; set; }
         }
 
-        public class ServiceCatalogProvisioningDetails : Humidifier.Base.BaseSubResource, IHaveProductId, IHaveProvisioningArtifactId
+        public class ServiceCatalogProvisioningDetails : Humidifier.Base.BaseSubResource, IHaveProductId, IHaveProvisioningArtifactId, IHavePathId
         {
             /// <summary>
             /// PathId

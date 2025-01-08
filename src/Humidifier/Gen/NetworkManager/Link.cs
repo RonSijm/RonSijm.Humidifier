@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using LinkTypes;
 
-    public class Link : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveType, IHaveGlobalNetworkId, IHaveProvider
+    public class Link : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveType, IHaveGlobalNetworkId, IHaveProvider, IHaveSiteId
     {
         public class Attributes
         {

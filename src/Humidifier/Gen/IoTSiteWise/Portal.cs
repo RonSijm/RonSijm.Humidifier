@@ -100,7 +100,7 @@ namespace Humidifier.IoTSiteWise
 
     namespace PortalTypes
     {
-        public class Alarms : Humidifier.Base.BaseSubResource
+        public class Alarms : Humidifier.Base.BaseSubResource, IHaveAlarmRoleArn
         {
             /// <summary>
             /// NotificationLambdaArn

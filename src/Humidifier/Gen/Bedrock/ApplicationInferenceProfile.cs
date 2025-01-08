@@ -57,7 +57,7 @@ namespace Humidifier.Bedrock
 
     namespace ApplicationInferenceProfileTypes
     {
-        public class InferenceProfileModel : Humidifier.Base.BaseSubResource
+        public class InferenceProfileModel : Humidifier.Base.BaseSubResource, IHaveModelArn
         {
             /// <summary>
             /// ModelArn

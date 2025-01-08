@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using TrailTypes;
 
-    public class Trail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveS3BucketName, IHaveS3KeyPrefix, IHaveCloudWatchLogsLogGroupArn, IHaveKMSKeyId
+    public class Trail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveS3BucketName, IHaveS3KeyPrefix, IHaveKMSKeyId, IHaveCloudWatchLogsLogGroupArn, IHaveCloudWatchLogsRoleArn
     {
         public class Attributes
         {
@@ -166,7 +166,7 @@ namespace Humidifier.CloudTrail
             public dynamic Name { get; set; }
         }
 
-        public class AdvancedFieldSelector : Humidifier.Base.BaseSubResource, IHaveField, IHaveEquals, IHaveNotEquals
+        public class AdvancedFieldSelector : Humidifier.Base.BaseSubResource, IHaveField, IHaveEquals, IHaveNotEquals, IHaveNotStartsWith, IHaveNotEndsWith, IHaveStartsWith, IHaveEndsWith
         {
             /// <summary>
             /// Field
@@ -291,7 +291,7 @@ namespace Humidifier.CloudTrail
             public List<Humidifier.CloudTrail.TrailTypes.DataResource> DataResources { get; set; }
         }
 
-        public class InsightSelector : Humidifier.Base.BaseSubResource
+        public class InsightSelector : Humidifier.Base.BaseSubResource, IHaveInsightType
         {
             /// <summary>
             /// InsightType

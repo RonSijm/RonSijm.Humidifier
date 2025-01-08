@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class TrafficMirrorSession : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveNetworkInterfaceId
+    public class TrafficMirrorSession : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveNetworkInterfaceId, IHaveTrafficMirrorFilterId
     {
         public override string AWSTypeName { get => AWS.EC2.TrafficMirrorSession; }
 

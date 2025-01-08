@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using FunctionConfigurationTypes;
 
-    public class FunctionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveApiId, IHaveCode, IHaveFunctionVersion
+    public class FunctionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveApiId, IHaveCode, IHaveCodeS3Location, IHaveFunctionVersion, IHaveRequestMappingTemplate, IHaveResponseMappingTemplate, IHaveMaxBatchSize, IHaveResponseMappingTemplateS3Location, IHaveDataSourceName, IHaveRequestMappingTemplateS3Location
     {
         public class Attributes
         {
@@ -147,7 +147,7 @@ namespace Humidifier.AppSync
             public dynamic Name { get; set; }
         }
 
-        public class LambdaConflictHandlerConfig : Humidifier.Base.BaseSubResource
+        public class LambdaConflictHandlerConfig : Humidifier.Base.BaseSubResource, IHaveLambdaConflictHandlerArn
         {
             /// <summary>
             /// LambdaConflictHandlerArn
@@ -159,7 +159,7 @@ namespace Humidifier.AppSync
             public dynamic LambdaConflictHandlerArn { get; set; }
         }
 
-        public class SyncConfig : Humidifier.Base.BaseSubResource
+        public class SyncConfig : Humidifier.Base.BaseSubResource, IHaveConflictHandler, IHaveConflictDetection
         {
             /// <summary>
             /// ConflictHandler

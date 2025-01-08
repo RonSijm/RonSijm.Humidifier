@@ -78,7 +78,7 @@ namespace Humidifier.CleanRooms
             public dynamic AllowUseAsDimensionColumn { get; set; }
         }
 
-        public class IdNamespaceAssociationInputReferenceConfig : Humidifier.Base.BaseSubResource
+        public class IdNamespaceAssociationInputReferenceConfig : Humidifier.Base.BaseSubResource, IHaveInputReferenceArn, IHaveManageResourcePolicies
         {
             /// <summary>
             /// InputReferenceArn

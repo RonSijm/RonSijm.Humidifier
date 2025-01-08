@@ -134,7 +134,7 @@ namespace Humidifier.SES
             public dynamic EmailForwardingEnabled { get; set; }
         }
 
-        public class MailFromAttributes : Humidifier.Base.BaseSubResource
+        public class MailFromAttributes : Humidifier.Base.BaseSubResource, IHaveMailFromDomain, IHaveBehaviorOnMxFailure
         {
             /// <summary>
             /// MailFromDomain

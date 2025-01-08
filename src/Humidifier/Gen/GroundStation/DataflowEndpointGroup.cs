@@ -3,7 +3,7 @@ namespace Humidifier.GroundStation
     using System.Collections.Generic;
     using DataflowEndpointGroupTypes;
 
-    public class DataflowEndpointGroup : Humidifier.Base.BaseResource, IHaveTags
+    public class DataflowEndpointGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveContactPostPassDurationSeconds, IHaveContactPrePassDurationSeconds
     {
         public class Attributes
         {

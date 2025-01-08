@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using LogicallyAirGappedBackupVaultTypes;
 
-    public class LogicallyAirGappedBackupVault : Humidifier.Base.BaseResource
+    public class LogicallyAirGappedBackupVault : Humidifier.Base.BaseResource, IHaveBackupVaultName, IHaveAccessPolicy, IHaveMaxRetentionDays, IHaveMinRetentionDays
     {
         public class Attributes
         {
@@ -87,7 +87,7 @@ namespace Humidifier.Backup
 
     namespace LogicallyAirGappedBackupVaultTypes
     {
-        public class NotificationObjectType : Humidifier.Base.BaseSubResource
+        public class NotificationObjectType : Humidifier.Base.BaseSubResource, IHaveSNSTopicArn, IHaveBackupVaultEvents
         {
             /// <summary>
             /// SNSTopicArn

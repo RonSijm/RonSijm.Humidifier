@@ -31,7 +31,7 @@ namespace Humidifier.SES
 
     namespace VdmAttributesTypes
     {
-        public class DashboardAttributes : Humidifier.Base.BaseSubResource
+        public class DashboardAttributes : Humidifier.Base.BaseSubResource, IHaveEngagementMetrics
         {
             /// <summary>
             /// EngagementMetrics
@@ -43,7 +43,7 @@ namespace Humidifier.SES
             public dynamic EngagementMetrics { get; set; }
         }
 
-        public class GuardianAttributes : Humidifier.Base.BaseSubResource
+        public class GuardianAttributes : Humidifier.Base.BaseSubResource, IHaveOptimizedSharedDelivery
         {
             /// <summary>
             /// OptimizedSharedDelivery

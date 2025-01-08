@@ -3,7 +3,7 @@ namespace Humidifier.S3
     using System.Collections.Generic;
     using BucketTypes;
 
-    public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBucketName
+    public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBucketName, IHaveObjectLockEnabled
     {
         public class Attributes
         {
@@ -177,7 +177,7 @@ namespace Humidifier.S3
 
     namespace BucketTypes
     {
-        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource
+        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource, IHaveDaysAfterInitiation
         {
             /// <summary>
             /// DaysAfterInitiation
@@ -276,7 +276,7 @@ namespace Humidifier.S3
             public List<Humidifier.S3.BucketTypes.CorsRule> CorsRules { get; set; }
         }
 
-        public class CorsRule : Humidifier.Base.BaseSubResource, IHaveId, IHaveAllowedMethods, IHaveAllowedOrigins, IHaveMaxAge
+        public class CorsRule : Humidifier.Base.BaseSubResource, IHaveId, IHaveAllowedMethods, IHaveAllowedOrigins, IHaveMaxAge, IHaveAllowedHeaders
         {
             /// <summary>
             /// ExposedHeaders
@@ -332,7 +332,7 @@ namespace Humidifier.S3
             public dynamic Id { get; set; }
         }
 
-        public class DataExport : Humidifier.Base.BaseSubResource
+        public class DataExport : Humidifier.Base.BaseSubResource, IHaveS3BucketTypesDestinationDestination, IHaveOutputSchemaVersion
         {
             /// <summary>
             /// Destination
@@ -440,7 +440,7 @@ namespace Humidifier.S3
             public dynamic ReplicaKmsKeyID { get; set; }
         }
 
-        public class EventBridgeConfiguration : Humidifier.Base.BaseSubResource
+        public class EventBridgeConfiguration : Humidifier.Base.BaseSubResource, IHaveEventBridgeEnabled
         {
             /// <summary>
             /// EventBridgeEnabled
@@ -518,7 +518,7 @@ namespace Humidifier.S3
             public dynamic Prefix { get; set; }
         }
 
-        public class InventoryConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveId, IHavePrefix
+        public class InventoryConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveId, IHavePrefix, IHaveS3BucketTypesDestinationDestination
         {
             /// <summary>
             /// Destination
@@ -676,7 +676,7 @@ namespace Humidifier.S3
             public Humidifier.S3.BucketTypes.ReplicationTimeValue EventThreshold { get; set; }
         }
 
-        public class MetricsConfiguration : Humidifier.Base.BaseSubResource, IHaveId, IHavePrefix
+        public class MetricsConfiguration : Humidifier.Base.BaseSubResource, IHaveId, IHavePrefix, IHaveAccessPointArn
         {
             /// <summary>
             /// AccessPointArn
@@ -713,7 +713,7 @@ namespace Humidifier.S3
             public dynamic Prefix { get; set; }
         }
 
-        public class NoncurrentVersionExpiration : Humidifier.Base.BaseSubResource
+        public class NoncurrentVersionExpiration : Humidifier.Base.BaseSubResource, IHaveNoncurrentDays, IHaveNewerNoncurrentVersions
         {
             /// <summary>
             /// NoncurrentDays
@@ -733,7 +733,7 @@ namespace Humidifier.S3
             public dynamic NewerNoncurrentVersions { get; set; }
         }
 
-        public class NoncurrentVersionTransition : Humidifier.Base.BaseSubResource, IHaveStorageClass
+        public class NoncurrentVersionTransition : Humidifier.Base.BaseSubResource, IHaveStorageClass, IHaveNewerNoncurrentVersions, IHaveTransitionInDays
         {
             /// <summary>
             /// StorageClass
@@ -812,7 +812,7 @@ namespace Humidifier.S3
             public Humidifier.S3.BucketTypes.S3KeyFilter S3Key { get; set; }
         }
 
-        public class ObjectLockConfiguration : Humidifier.Base.BaseSubResource
+        public class ObjectLockConfiguration : Humidifier.Base.BaseSubResource, IHaveObjectLockEnabled
         {
             /// <summary>
             /// ObjectLockEnabled
@@ -945,7 +945,7 @@ namespace Humidifier.S3
             public dynamic Queue { get; set; }
         }
 
-        public class RedirectAllRequestsTo : Humidifier.Base.BaseSubResource, IHaveProtocol
+        public class RedirectAllRequestsTo : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveHostName
         {
             /// <summary>
             /// Protocol
@@ -965,7 +965,7 @@ namespace Humidifier.S3
             public dynamic HostName { get; set; }
         }
 
-        public class RedirectRule : Humidifier.Base.BaseSubResource, IHaveProtocol
+        public class RedirectRule : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveHostName
         {
             /// <summary>
             /// ReplaceKeyWith
@@ -1042,7 +1042,7 @@ namespace Humidifier.S3
             public List<Humidifier.S3.BucketTypes.ReplicationRule> Rules { get; set; }
         }
 
-        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveBucket, IHaveStorageClass
+        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveBucket, IHaveStorageClass, IHaveAccount
         {
             /// <summary>
             /// AccessControlTranslation
@@ -1291,7 +1291,7 @@ namespace Humidifier.S3
             public dynamic HttpErrorCodeReturnedEquals { get; set; }
         }
 
-        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHavePrefix, IHaveExpirationInDays
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHavePrefix, IHaveExpirationInDays, IHaveObjectSizeGreaterThan, IHaveObjectSizeLessThan, IHaveExpirationDate
         {
             /// <summary>
             /// Status
@@ -1439,7 +1439,7 @@ namespace Humidifier.S3
             public List<Humidifier.S3.BucketTypes.FilterRule> Rules { get; set; }
         }
 
-        public class ServerSideEncryptionByDefault : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionByDefault : Humidifier.Base.BaseSubResource, IHaveSSEAlgorithm, IHaveKMSMasterKeyID
         {
             /// <summary>
             /// SSEAlgorithm
@@ -1459,7 +1459,7 @@ namespace Humidifier.S3
             public dynamic KMSMasterKeyID { get; set; }
         }
 
-        public class ServerSideEncryptionRule : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionRule : Humidifier.Base.BaseSubResource, IHaveBucketKeyEnabled
         {
             /// <summary>
             /// BucketKeyEnabled
@@ -1611,7 +1611,7 @@ namespace Humidifier.S3
             public dynamic Topic { get; set; }
         }
 
-        public class Transition : Humidifier.Base.BaseSubResource, IHaveStorageClass
+        public class Transition : Humidifier.Base.BaseSubResource, IHaveStorageClass, IHaveTransitionInDays
         {
             /// <summary>
             /// TransitionDate

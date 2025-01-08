@@ -3,7 +3,7 @@ namespace Humidifier.AutoScaling
     using System.Collections.Generic;
     using AutoScalingGroupTypes;
 
-    public class AutoScalingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceId, IHaveAvailabilityZones, IHaveMinSize, IHaveMaxSize, IHaveAutoScalingGroupName, IHaveContext, IHaveCooldown, IHaveDesiredCapacity
+    public class AutoScalingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceId, IHaveMinSize, IHaveMaxSize, IHaveAvailabilityZones, IHaveContext, IHaveAutoScalingGroupName, IHaveCooldown, IHaveDesiredCapacity, IHaveLaunchConfigurationName, IHavePlacementGroup
     {
         public override string AWSTypeName { get => AWS.AutoScaling.AutoScalingGroup; }
         /// <summary>
@@ -393,7 +393,7 @@ namespace Humidifier.AutoScaling
             public Humidifier.AutoScaling.AutoScalingGroupTypes.CpuPerformanceFactorRequest Cpu { get; set; }
         }
 
-        public class CapacityReservationSpecification : Humidifier.Base.BaseSubResource
+        public class CapacityReservationSpecification : Humidifier.Base.BaseSubResource, IHaveCapacityReservationPreference
         {
             /// <summary>
             /// CapacityReservationPreference
@@ -469,7 +469,7 @@ namespace Humidifier.AutoScaling
             public dynamic MinHealthyPercentage { get; set; }
         }
 
-        public class InstanceRequirements : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveLocalStorageTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveBurstablePerformance
+        public class InstanceRequirements : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveLocalStorageTypes, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveBurstablePerformance
         {
             /// <summary>
             /// InstanceGenerations
@@ -681,7 +681,7 @@ namespace Humidifier.AutoScaling
             public Humidifier.AutoScaling.AutoScalingGroupTypes.TotalLocalStorageGBRequest TotalLocalStorageGB { get; set; }
         }
 
-        public class InstancesDistribution : Humidifier.Base.BaseSubResource
+        public class InstancesDistribution : Humidifier.Base.BaseSubResource, IHaveOnDemandAllocationStrategy
         {
             /// <summary>
             /// OnDemandAllocationStrategy
@@ -733,7 +733,7 @@ namespace Humidifier.AutoScaling
             public dynamic SpotMaxPrice { get; set; }
         }
 
-        public class LaunchTemplate : Humidifier.Base.BaseSubResource
+        public class LaunchTemplate : Humidifier.Base.BaseSubResource, IHaveAutoScalingAutoScalingGroupTypesLaunchTemplateSpecificationLaunchTemplateSpecification
         {
             /// <summary>
             /// LaunchTemplateSpecification
@@ -754,7 +754,7 @@ namespace Humidifier.AutoScaling
             public List<Humidifier.AutoScaling.AutoScalingGroupTypes.LaunchTemplateOverrides> Overrides { get; set; }
         }
 
-        public class LaunchTemplateOverrides : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveWeightedCapacity
+        public class LaunchTemplateOverrides : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveWeightedCapacity, IHaveAutoScalingAutoScalingGroupTypesLaunchTemplateSpecificationLaunchTemplateSpecification
         {
             /// <summary>
             /// LaunchTemplateSpecification
@@ -818,7 +818,7 @@ namespace Humidifier.AutoScaling
             public dynamic LaunchTemplateId { get; set; }
         }
 
-        public class LifecycleHookSpecification : Humidifier.Base.BaseSubResource, IHaveRoleARN
+        public class LifecycleHookSpecification : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveLifecycleHookName, IHaveLifecycleTransition, IHaveHeartbeatTimeout, IHaveNotificationMetadata, IHaveDefaultResult, IHaveNotificationTargetARN
         {
             /// <summary>
             /// LifecycleHookName
@@ -999,7 +999,7 @@ namespace Humidifier.AutoScaling
             public dynamic Max { get; set; }
         }
 
-        public class NotificationConfiguration : Humidifier.Base.BaseSubResource
+        public class NotificationConfiguration : Humidifier.Base.BaseSubResource, IHaveTopicARN
         {
             /// <summary>
             /// TopicARN
@@ -1021,7 +1021,7 @@ namespace Humidifier.AutoScaling
             public dynamic NotificationTypes { get; set; }
         }
 
-        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource
+        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource, IHaveInstanceFamily
         {
             /// <summary>
             /// InstanceFamily

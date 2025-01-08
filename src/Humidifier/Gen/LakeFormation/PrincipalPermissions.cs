@@ -3,7 +3,7 @@ namespace Humidifier.LakeFormation
     using System.Collections.Generic;
     using PrincipalPermissionsTypes;
 
-    public class PrincipalPermissions : Humidifier.Base.BaseResource, IHavePermissions, IHaveCatalog
+    public class PrincipalPermissions : Humidifier.Base.BaseResource, IHavePermissions, IHaveCatalog, IHavePermissionsWithGrantOption
     {
         public class Attributes
         {
@@ -79,7 +79,7 @@ namespace Humidifier.LakeFormation
             public dynamic ExcludedColumnNames { get; set; }
         }
 
-        public class DataCellsFilterResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveTableName
+        public class DataCellsFilterResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveTableName, IHaveTableCatalogId
         {
             /// <summary>
             /// TableName
@@ -314,7 +314,7 @@ namespace Humidifier.LakeFormation
             public dynamic Catalog { get; set; }
         }
 
-        public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId
+        public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId, IHaveTableWildcard
         {
             /// <summary>
             /// DatabaseName

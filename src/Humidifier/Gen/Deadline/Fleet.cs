@@ -3,7 +3,7 @@ namespace Humidifier.Deadline
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName, IHaveFarmId
+    public class Fleet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName, IHaveFarmId, IHaveMaxWorkerCount, IHaveMinWorkerCount
     {
         public class Attributes
         {
@@ -203,7 +203,7 @@ namespace Humidifier.Deadline
             public Humidifier.Deadline.FleetTypes.CustomerManagedWorkerCapabilities WorkerCapabilities { get; set; }
         }
 
-        public class CustomerManagedWorkerCapabilities : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveOsFamily
+        public class CustomerManagedWorkerCapabilities : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveOsFamily, IHaveDeadlineFleetTypesVCpuCountRangeVCpuCount, IHaveDeadlineFleetTypesMemoryMiBRangeMemoryMiB, IHaveCpuArchitectureType
         {
             /// <summary>
             /// CustomAttributes
@@ -282,7 +282,7 @@ namespace Humidifier.Deadline
             public dynamic CpuArchitectureType { get; set; }
         }
 
-        public class Ec2EbsVolume : Humidifier.Base.BaseSubResource, IHaveIops
+        public class Ec2EbsVolume : Humidifier.Base.BaseSubResource, IHaveIops, IHaveSizeGiB
         {
             /// <summary>
             /// SizeGiB
@@ -441,7 +441,7 @@ namespace Humidifier.Deadline
             public Humidifier.Deadline.FleetTypes.ServiceManagedEc2InstanceCapabilities InstanceCapabilities { get; set; }
         }
 
-        public class ServiceManagedEc2InstanceCapabilities : Humidifier.Base.BaseSubResource, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveOsFamily
+        public class ServiceManagedEc2InstanceCapabilities : Humidifier.Base.BaseSubResource, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveOsFamily, IHaveDeadlineFleetTypesVCpuCountRangeVCpuCount, IHaveDeadlineFleetTypesMemoryMiBRangeMemoryMiB, IHaveCpuArchitectureType
         {
             /// <summary>
             /// AllowedInstanceTypes

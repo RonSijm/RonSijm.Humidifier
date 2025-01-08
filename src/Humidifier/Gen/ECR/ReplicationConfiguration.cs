@@ -38,7 +38,7 @@ namespace Humidifier.ECR
             public List<Humidifier.ECR.ReplicationConfigurationTypes.ReplicationRule> Rules { get; set; }
         }
 
-        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveRegion
+        public class ReplicationDestination : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveRegistryId
         {
             /// <summary>
             /// Region
@@ -80,7 +80,7 @@ namespace Humidifier.ECR
             public List<Humidifier.ECR.ReplicationConfigurationTypes.ReplicationDestination> Destinations { get; set; }
         }
 
-        public class RepositoryFilter : Humidifier.Base.BaseSubResource, IHaveFilterType
+        public class RepositoryFilter : Humidifier.Base.BaseSubResource, IHaveFilterType, IHaveFilter
         {
             /// <summary>
             /// FilterType

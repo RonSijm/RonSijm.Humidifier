@@ -3,7 +3,7 @@ namespace Humidifier.Wisdom
     using System.Collections.Generic;
     using AIGuardrailTypes;
 
-    public class AIGuardrail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
+    public class AIGuardrail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAssistantId, IHaveBlockedInputMessaging, IHaveBlockedOutputsMessaging
     {
         public class Attributes
         {
@@ -188,7 +188,7 @@ namespace Humidifier.Wisdom
             public List<Humidifier.Wisdom.AIGuardrailTypes.GuardrailWordConfig> WordsConfig { get; set; }
         }
 
-        public class GuardrailContentFilterConfig : Humidifier.Base.BaseSubResource, IHaveType
+        public class GuardrailContentFilterConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveOutputStrength, IHaveInputStrength
         {
             /// <summary>
             /// OutputStrength
@@ -304,7 +304,7 @@ namespace Humidifier.Wisdom
             public dynamic Name { get; set; }
         }
 
-        public class GuardrailTopicConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveDefinition
+        public class GuardrailTopicConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveDefinition, IHaveExamples
         {
             /// <summary>
             /// Type

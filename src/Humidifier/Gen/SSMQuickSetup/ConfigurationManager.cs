@@ -100,7 +100,7 @@ namespace Humidifier.SSMQuickSetup
             public dynamic id { get; set; }
         }
 
-        public class StatusSummary : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class StatusSummary : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveLastUpdatedAt, IHaveStatusMessage
         {
             /// <summary>
             /// Status

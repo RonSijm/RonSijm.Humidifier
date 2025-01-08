@@ -2,7 +2,7 @@ namespace Humidifier.Chatbot
 {
     using System.Collections.Generic;
 
-    public class MicrosoftTeamsChannelConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveIamRoleArn, IHaveLoggingLevel, IHaveTeamId
+    public class MicrosoftTeamsChannelConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveIamRoleArn, IHaveLoggingLevel, IHaveTeamId, IHaveUserRoleRequired, IHaveCustomizationResourceArns, IHaveSnsTopicArns, IHaveGuardrailPolicies, IHaveConfigurationName
     {
         public class Attributes
         {

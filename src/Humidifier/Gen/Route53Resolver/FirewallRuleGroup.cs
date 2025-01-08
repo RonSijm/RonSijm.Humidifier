@@ -43,7 +43,7 @@ namespace Humidifier.Route53Resolver
 
     namespace FirewallRuleGroupTypes
     {
-        public class FirewallRule : Humidifier.Base.BaseSubResource, IHavePriority, IHaveAction
+        public class FirewallRule : Humidifier.Base.BaseSubResource, IHaveAction, IHavePriority
         {
             /// <summary>
             /// Qtype

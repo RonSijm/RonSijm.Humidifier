@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using SubnetTypes;
 
-    public class Subnet : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveAvailabilityZone, IHaveCidrBlock, IHaveOutpostArn, IHaveIpv6CidrBlock, IHaveIpv6NetmaskLength, IHaveIpv6IpamPoolId, IHaveIpv4NetmaskLength, IHaveIpv4IpamPoolId
+    public class Subnet : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveAvailabilityZone, IHaveCidrBlock, IHaveOutpostArn, IHaveIpv6CidrBlock, IHaveIpv6NetmaskLength, IHaveIpv6IpamPoolId, IHaveIpv4NetmaskLength, IHaveIpv4IpamPoolId, IHaveAvailabilityZoneId
     {
         public class Attributes
         {

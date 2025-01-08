@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using CrawlerTypes;
 
-    public class Crawler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDatabaseName, IHaveDynamicTags, IHaveRole, IHaveConfiguration
+    public class Crawler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDatabaseName, IHaveDynamicTags, IHaveRole, IHaveConfiguration, IHaveTablePrefix
     {
         public override string AWSTypeName { get => AWS.Glue.Crawler; }
         /// <summary>
@@ -120,7 +120,7 @@ namespace Humidifier.Glue
 
     namespace CrawlerTypes
     {
-        public class CatalogTarget : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveConnectionName
+        public class CatalogTarget : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveConnectionName, IHaveDlqEventQueueArn, IHaveEventQueueArn
         {
             /// <summary>
             /// ConnectionName
@@ -342,7 +342,7 @@ namespace Humidifier.Glue
             public dynamic RecrawlBehavior { get; set; }
         }
 
-        public class S3Target : Humidifier.Base.BaseSubResource, IHavePath, IHaveConnectionName, IHaveExclusions
+        public class S3Target : Humidifier.Base.BaseSubResource, IHavePath, IHaveConnectionName, IHaveExclusions, IHaveSampleSize, IHaveDlqEventQueueArn, IHaveEventQueueArn
         {
             /// <summary>
             /// ConnectionName

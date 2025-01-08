@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using RefreshScheduleTypes;
 
-    public class RefreshSchedule : Humidifier.Base.BaseResource, IHaveAwsAccountId
+    public class RefreshSchedule : Humidifier.Base.BaseResource, IHaveAwsAccountId, IHaveDataSetId
     {
         public class Attributes
         {

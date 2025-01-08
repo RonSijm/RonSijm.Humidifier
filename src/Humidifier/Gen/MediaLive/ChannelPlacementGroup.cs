@@ -3,7 +3,7 @@ namespace Humidifier.MediaLive
     using System.Collections.Generic;
     using ChannelPlacementGroupTypes;
 
-    public class ChannelPlacementGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class ChannelPlacementGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterId, IHaveNodes
     {
         public class Attributes
         {

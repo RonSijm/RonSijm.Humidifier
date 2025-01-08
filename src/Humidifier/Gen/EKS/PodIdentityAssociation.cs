@@ -2,7 +2,7 @@ namespace Humidifier.EKS
 {
     using System.Collections.Generic;
 
-    public class PodIdentityAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveClusterName
+    public class PodIdentityAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveNamespace_, IHaveClusterName, IHaveServiceAccount
     {
         public class Attributes
         {

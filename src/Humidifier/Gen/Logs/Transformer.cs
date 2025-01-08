@@ -31,7 +31,7 @@ namespace Humidifier.Logs
 
     namespace TransformerTypes
     {
-        public class AddKeyEntry : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        public class AddKeyEntry : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey, IHaveOverwriteIfExists
         {
             /// <summary>
             /// OverwriteIfExists
@@ -85,7 +85,7 @@ namespace Humidifier.Logs
             public List<Humidifier.Logs.TransformerTypes.CopyValueEntry> Entries { get; set; }
         }
 
-        public class CopyValueEntry : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget
+        public class CopyValueEntry : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget, IHaveOverwriteIfExists
         {
             /// <summary>
             /// Target
@@ -113,7 +113,7 @@ namespace Humidifier.Logs
             public dynamic Source { get; set; }
         }
 
-        public class Csv : Humidifier.Base.BaseSubResource, IHaveSource, IHaveDelimiter
+        public class Csv : Humidifier.Base.BaseSubResource, IHaveSource, IHaveDelimiter, IHaveColumns
         {
             /// <summary>
             /// QuoteCharacter
@@ -150,7 +150,7 @@ namespace Humidifier.Logs
             public dynamic Source { get; set; }
         }
 
-        public class DateTimeConverter : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget
+        public class DateTimeConverter : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget, IHaveLocale
         {
             /// <summary>
             /// Locale
@@ -211,7 +211,7 @@ namespace Humidifier.Logs
             public dynamic Source { get; set; }
         }
 
-        public class DeleteKeys : Humidifier.Base.BaseSubResource
+        public class DeleteKeys : Humidifier.Base.BaseSubResource, IHaveWithKeys
         {
             /// <summary>
             /// WithKeys
@@ -296,7 +296,7 @@ namespace Humidifier.Logs
             public dynamic Key { get; set; }
         }
 
-        public class LowerCaseString : Humidifier.Base.BaseSubResource
+        public class LowerCaseString : Humidifier.Base.BaseSubResource, IHaveWithKeys
         {
             /// <summary>
             /// WithKeys
@@ -309,7 +309,7 @@ namespace Humidifier.Logs
             public dynamic WithKeys { get; set; }
         }
 
-        public class MoveKeyEntry : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget
+        public class MoveKeyEntry : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget, IHaveOverwriteIfExists
         {
             /// <summary>
             /// Target
@@ -382,7 +382,7 @@ namespace Humidifier.Logs
             public dynamic Source { get; set; }
         }
 
-        public class ParseKeyValue : Humidifier.Base.BaseSubResource, IHaveSource, IHaveDestination, IHaveKeyPrefix
+        public class ParseKeyValue : Humidifier.Base.BaseSubResource, IHaveSource, IHaveDestination, IHaveKeyPrefix, IHaveOverwriteIfExists, IHaveFieldDelimiter
         {
             /// <summary>
             /// Destination
@@ -670,7 +670,7 @@ namespace Humidifier.Logs
             public Humidifier.Logs.TransformerTypes.ListToMap ListToMap { get; set; }
         }
 
-        public class RenameKeyEntry : Humidifier.Base.BaseSubResource, IHaveKey
+        public class RenameKeyEntry : Humidifier.Base.BaseSubResource, IHaveKey, IHaveOverwriteIfExists
         {
             /// <summary>
             /// OverwriteIfExists
@@ -785,7 +785,7 @@ namespace Humidifier.Logs
             public dynamic Source { get; set; }
         }
 
-        public class TrimString : Humidifier.Base.BaseSubResource
+        public class TrimString : Humidifier.Base.BaseSubResource, IHaveWithKeys
         {
             /// <summary>
             /// WithKeys
@@ -831,7 +831,7 @@ namespace Humidifier.Logs
             public dynamic Key { get; set; }
         }
 
-        public class UpperCaseString : Humidifier.Base.BaseSubResource
+        public class UpperCaseString : Humidifier.Base.BaseSubResource, IHaveWithKeys
         {
             /// <summary>
             /// WithKeys

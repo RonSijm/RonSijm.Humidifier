@@ -207,7 +207,7 @@ namespace Humidifier.QBusiness
             public dynamic Name { get; set; }
         }
 
-        public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue
+        public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue, IHaveDateValue, IHaveStringListValue
         {
             /// <summary>
             /// DateValue

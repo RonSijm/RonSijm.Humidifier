@@ -2,7 +2,7 @@ namespace Humidifier.Connect
 {
     using System.Collections.Generic;
 
-    public class IntegrationAssociation : Humidifier.Base.BaseResource, IHaveInstanceId
+    public class IntegrationAssociation : Humidifier.Base.BaseResource, IHaveInstanceId, IHaveIntegrationType
     {
         public class Attributes
         {

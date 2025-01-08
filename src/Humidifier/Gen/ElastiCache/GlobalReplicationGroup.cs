@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using GlobalReplicationGroupTypes;
 
-    public class GlobalReplicationGroup : Humidifier.Base.BaseResource, IHaveEngineVersion, IHaveEngine, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveDescription
+    public class GlobalReplicationGroup : Humidifier.Base.BaseResource, IHaveEngineVersion, IHaveEngine, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveAutomaticFailoverEnabled, IHaveDescription
     {
         public class Attributes
         {
@@ -103,7 +103,7 @@ namespace Humidifier.ElastiCache
 
     namespace GlobalReplicationGroupTypes
     {
-        public class GlobalReplicationGroupMember : Humidifier.Base.BaseSubResource, IHaveRole, IHaveReplicationGroupId
+        public class GlobalReplicationGroupMember : Humidifier.Base.BaseSubResource, IHaveRole, IHaveReplicationGroupId, IHaveReplicationGroupRegion
         {
             /// <summary>
             /// Role
@@ -131,7 +131,7 @@ namespace Humidifier.ElastiCache
             public dynamic ReplicationGroupId { get; set; }
         }
 
-        public class RegionalConfiguration : Humidifier.Base.BaseSubResource, IHaveReplicationGroupId
+        public class RegionalConfiguration : Humidifier.Base.BaseSubResource, IHaveReplicationGroupId, IHaveReplicationGroupRegion
         {
             /// <summary>
             /// ReplicationGroupRegion
@@ -160,7 +160,7 @@ namespace Humidifier.ElastiCache
             public List<Humidifier.ElastiCache.GlobalReplicationGroupTypes.ReshardingConfiguration> ReshardingConfigurations { get; set; }
         }
 
-        public class ReshardingConfiguration : Humidifier.Base.BaseSubResource
+        public class ReshardingConfiguration : Humidifier.Base.BaseSubResource, IHavePreferredAvailabilityZones, IHaveNodeGroupId
         {
             /// <summary>
             /// NodeGroupId

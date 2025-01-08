@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using ApiTypes;
 
-    public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveOwnerContact
     {
         public class Attributes
         {
@@ -91,7 +91,7 @@ namespace Humidifier.AppSync
             public dynamic AuthType { get; set; }
         }
 
-        public class CognitoConfig : Humidifier.Base.BaseSubResource, IHaveUserPoolId, IHaveAwsRegion
+        public class CognitoConfig : Humidifier.Base.BaseSubResource, IHaveUserPoolId, IHaveAwsRegion, IHaveAppIdClientRegex
         {
             /// <summary>
             /// AppIdClientRegex
@@ -187,7 +187,7 @@ namespace Humidifier.AppSync
             public Humidifier.AppSync.ApiTypes.EventLogConfig LogConfig { get; set; }
         }
 
-        public class EventLogConfig : Humidifier.Base.BaseSubResource, IHaveLogLevel
+        public class EventLogConfig : Humidifier.Base.BaseSubResource, IHaveLogLevel, IHaveCloudWatchLogsRoleArn
         {
             /// <summary>
             /// CloudWatchLogsRoleArn
@@ -235,7 +235,7 @@ namespace Humidifier.AppSync
             public dynamic AuthorizerResultTtlInSeconds { get; set; }
         }
 
-        public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveIssuer
+        public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveIssuer, IHaveAuthTTL, IHaveIatTTL
         {
             /// <summary>
             /// Issuer

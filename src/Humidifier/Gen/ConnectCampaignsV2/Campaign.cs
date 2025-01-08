@@ -85,7 +85,7 @@ namespace Humidifier.ConnectCampaignsV2
 
     namespace CampaignTypes
     {
-        public class AnswerMachineDetectionConfig : Humidifier.Base.BaseSubResource
+        public class AnswerMachineDetectionConfig : Humidifier.Base.BaseSubResource, IHaveEnableAnswerMachineDetection, IHaveAwaitAnswerMachinePrompt
         {
             /// <summary>
             /// EnableAnswerMachineDetection
@@ -243,7 +243,7 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic Key { get; set; }
         }
 
-        public class EmailChannelSubtypeConfig : Humidifier.Base.BaseSubResource
+        public class EmailChannelSubtypeConfig : Humidifier.Base.BaseSubResource, IHaveCapacity
         {
             /// <summary>
             /// OutboundMode
@@ -271,7 +271,7 @@ namespace Humidifier.ConnectCampaignsV2
             public Humidifier.ConnectCampaignsV2.CampaignTypes.EmailOutboundConfig DefaultOutboundConfig { get; set; }
         }
 
-        public class EmailOutboundConfig : Humidifier.Base.BaseSubResource
+        public class EmailOutboundConfig : Humidifier.Base.BaseSubResource, IHaveWisdomTemplateArn
         {
             /// <summary>
             /// ConnectSourceEmailAddress
@@ -299,7 +299,7 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic WisdomTemplateArn { get; set; }
         }
 
-        public class EmailOutboundMode : Humidifier.Base.BaseSubResource
+        public class EmailOutboundMode : Humidifier.Base.BaseSubResource, IHaveAgentlessConfig
         {
             /// <summary>
             /// AgentlessConfig
@@ -357,7 +357,7 @@ namespace Humidifier.ConnectCampaignsV2
             public List<Humidifier.ConnectCampaignsV2.CampaignTypes.DailyHour> DailyHours { get; set; }
         }
 
-        public class PredictiveConfig : Humidifier.Base.BaseSubResource
+        public class PredictiveConfig : Humidifier.Base.BaseSubResource, IHaveBandwidthAllocation
         {
             /// <summary>
             /// BandwidthAllocation
@@ -369,7 +369,7 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic BandwidthAllocation { get; set; }
         }
 
-        public class ProgressiveConfig : Humidifier.Base.BaseSubResource
+        public class ProgressiveConfig : Humidifier.Base.BaseSubResource, IHaveBandwidthAllocation
         {
             /// <summary>
             /// BandwidthAllocation
@@ -450,7 +450,7 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic RefreshFrequency { get; set; }
         }
 
-        public class SmsChannelSubtypeConfig : Humidifier.Base.BaseSubResource
+        public class SmsChannelSubtypeConfig : Humidifier.Base.BaseSubResource, IHaveCapacity
         {
             /// <summary>
             /// OutboundMode
@@ -478,7 +478,7 @@ namespace Humidifier.ConnectCampaignsV2
             public Humidifier.ConnectCampaignsV2.CampaignTypes.SmsOutboundConfig DefaultOutboundConfig { get; set; }
         }
 
-        public class SmsOutboundConfig : Humidifier.Base.BaseSubResource
+        public class SmsOutboundConfig : Humidifier.Base.BaseSubResource, IHaveWisdomTemplateArn
         {
             /// <summary>
             /// ConnectSourcePhoneNumberArn
@@ -498,7 +498,7 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic WisdomTemplateArn { get; set; }
         }
 
-        public class SmsOutboundMode : Humidifier.Base.BaseSubResource
+        public class SmsOutboundMode : Humidifier.Base.BaseSubResource, IHaveAgentlessConfig
         {
             /// <summary>
             /// AgentlessConfig
@@ -530,7 +530,7 @@ namespace Humidifier.ConnectCampaignsV2
             public Humidifier.ConnectCampaignsV2.CampaignTypes.EventTrigger EventTrigger { get; set; }
         }
 
-        public class TelephonyChannelSubtypeConfig : Humidifier.Base.BaseSubResource
+        public class TelephonyChannelSubtypeConfig : Humidifier.Base.BaseSubResource, IHaveCapacity
         {
             /// <summary>
             /// OutboundMode
@@ -566,7 +566,7 @@ namespace Humidifier.ConnectCampaignsV2
             public Humidifier.ConnectCampaignsV2.CampaignTypes.TelephonyOutboundConfig DefaultOutboundConfig { get; set; }
         }
 
-        public class TelephonyOutboundConfig : Humidifier.Base.BaseSubResource
+        public class TelephonyOutboundConfig : Humidifier.Base.BaseSubResource, IHaveConnectSourcePhoneNumber
         {
             /// <summary>
             /// ConnectContactFlowId
@@ -594,7 +594,7 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic ConnectSourcePhoneNumber { get; set; }
         }
 
-        public class TelephonyOutboundMode : Humidifier.Base.BaseSubResource
+        public class TelephonyOutboundMode : Humidifier.Base.BaseSubResource, IHaveAgentlessConfig
         {
             /// <summary>
             /// ProgressiveConfig

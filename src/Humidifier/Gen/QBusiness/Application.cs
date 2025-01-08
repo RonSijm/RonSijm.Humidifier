@@ -3,7 +3,7 @@ namespace Humidifier.QBusiness
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName
+    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName, IHaveIdentityCenterInstanceArn, IHaveIdentityType
     {
         public class Attributes
         {

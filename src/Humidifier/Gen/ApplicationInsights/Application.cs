@@ -170,7 +170,7 @@ namespace Humidifier.ApplicationInsights
             public Humidifier.ApplicationInsights.ApplicationTypes.ConfigurationDetails ConfigurationDetails { get; set; }
         }
 
-        public class ComponentMonitoringSetting : Humidifier.Base.BaseSubResource, IHaveComponentName, IHaveTier
+        public class ComponentMonitoringSetting : Humidifier.Base.BaseSubResource, IHaveTier, IHaveComponentName
         {
             /// <summary>
             /// CustomComponentConfiguration
@@ -388,7 +388,7 @@ namespace Humidifier.ApplicationInsights
             public dynamic AgreeToInstallHANADBClient { get; set; }
         }
 
-        public class JMXPrometheusExporter : Humidifier.Base.BaseSubResource, IHavePrometheusPort
+        public class JMXPrometheusExporter : Humidifier.Base.BaseSubResource, IHavePrometheusPort, IHaveHostPort
         {
             /// <summary>
             /// PrometheusPort
@@ -416,7 +416,7 @@ namespace Humidifier.ApplicationInsights
             public dynamic HostPort { get; set; }
         }
 
-        public class Log : Humidifier.Base.BaseSubResource, IHaveLogGroupName, IHaveLogType
+        public class Log : Humidifier.Base.BaseSubResource, IHaveLogGroupName, IHaveLogType, IHaveEncoding, IHavePatternSet
         {
             /// <summary>
             /// LogType
@@ -460,7 +460,7 @@ namespace Humidifier.ApplicationInsights
             public dynamic PatternSet { get; set; }
         }
 
-        public class LogPattern : Humidifier.Base.BaseSubResource, IHavePattern
+        public class LogPattern : Humidifier.Base.BaseSubResource, IHavePattern, IHaveRank, IHavePatternName
         {
             /// <summary>
             /// Pattern
@@ -639,7 +639,7 @@ namespace Humidifier.ApplicationInsights
             public Humidifier.ApplicationInsights.ApplicationTypes.SubComponentConfigurationDetails SubComponentConfigurationDetails { get; set; }
         }
 
-        public class WindowsEvent : Humidifier.Base.BaseSubResource, IHaveLogGroupName, IHaveEventName
+        public class WindowsEvent : Humidifier.Base.BaseSubResource, IHaveLogGroupName, IHaveEventName, IHavePatternSet
         {
             /// <summary>
             /// EventLevels

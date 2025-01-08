@@ -450,7 +450,7 @@ namespace Humidifier.PCAConnectorAD
             public dynamic PropertyType { get; set; }
         }
 
-        public class KeyUsagePropertyFlags : Humidifier.Base.BaseSubResource, IHaveKeyAgreement
+        public class KeyUsagePropertyFlags : Humidifier.Base.BaseSubResource, IHaveKeyAgreement, IHaveDecrypt, IHaveSign
         {
             /// <summary>
             /// Decrypt
@@ -507,7 +507,7 @@ namespace Humidifier.PCAConnectorAD
             public dynamic CryptoProviders { get; set; }
         }
 
-        public class PrivateKeyAttributesV3 : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHaveKeySpec, IHaveMinimalKeyLength, IHaveCryptoProviders
+        public class PrivateKeyAttributesV3 : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHaveKeySpec, IHaveMinimalKeyLength, IHaveCryptoProviders, IHavePCAConnectorADTemplateTypesKeyUsagePropertyKeyUsageProperty
         {
             /// <summary>
             /// MinimalKeyLength
@@ -552,7 +552,7 @@ namespace Humidifier.PCAConnectorAD
             public dynamic CryptoProviders { get; set; }
         }
 
-        public class PrivateKeyAttributesV4 : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHaveKeySpec, IHaveMinimalKeyLength, IHaveCryptoProviders
+        public class PrivateKeyAttributesV4 : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHaveKeySpec, IHaveMinimalKeyLength, IHaveCryptoProviders, IHavePCAConnectorADTemplateTypesKeyUsagePropertyKeyUsageProperty
         {
             /// <summary>
             /// MinimalKeyLength
@@ -625,7 +625,7 @@ namespace Humidifier.PCAConnectorAD
             public dynamic ClientVersion { get; set; }
         }
 
-        public class PrivateKeyFlagsV3 : Humidifier.Base.BaseSubResource, IHaveExportableKey, IHaveStrongKeyProtectionRequired, IHaveClientVersion
+        public class PrivateKeyFlagsV3 : Humidifier.Base.BaseSubResource, IHaveExportableKey, IHaveStrongKeyProtectionRequired, IHaveClientVersion, IHaveRequireAlternateSignatureAlgorithm
         {
             /// <summary>
             /// RequireAlternateSignatureAlgorithm
@@ -661,7 +661,7 @@ namespace Humidifier.PCAConnectorAD
             public dynamic ClientVersion { get; set; }
         }
 
-        public class PrivateKeyFlagsV4 : Humidifier.Base.BaseSubResource, IHaveExportableKey, IHaveStrongKeyProtectionRequired, IHaveClientVersion
+        public class PrivateKeyFlagsV4 : Humidifier.Base.BaseSubResource, IHaveExportableKey, IHaveStrongKeyProtectionRequired, IHaveClientVersion, IHaveRequireAlternateSignatureAlgorithm
         {
             /// <summary>
             /// RequireAlternateSignatureAlgorithm
@@ -1062,7 +1062,7 @@ namespace Humidifier.PCAConnectorAD
             public Humidifier.PCAConnectorAD.TemplateTypes.EnrollmentFlagsV2 EnrollmentFlags { get; set; }
         }
 
-        public class TemplateV3 : Humidifier.Base.BaseSubResource, IHaveSupersededTemplates, IHavePCAConnectorADTemplateTypesCertificateValidityCertificateValidity
+        public class TemplateV3 : Humidifier.Base.BaseSubResource, IHaveSupersededTemplates, IHavePCAConnectorADTemplateTypesCertificateValidityCertificateValidity, IHaveHashAlgorithm
         {
             /// <summary>
             /// SubjectNameFlags
@@ -1139,7 +1139,7 @@ namespace Humidifier.PCAConnectorAD
             public dynamic HashAlgorithm { get; set; }
         }
 
-        public class TemplateV4 : Humidifier.Base.BaseSubResource, IHaveSupersededTemplates, IHavePCAConnectorADTemplateTypesCertificateValidityCertificateValidity
+        public class TemplateV4 : Humidifier.Base.BaseSubResource, IHaveSupersededTemplates, IHavePCAConnectorADTemplateTypesCertificateValidityCertificateValidity, IHaveHashAlgorithm
         {
             /// <summary>
             /// SubjectNameFlags

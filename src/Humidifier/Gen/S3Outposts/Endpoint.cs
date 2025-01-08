@@ -3,7 +3,7 @@ namespace Humidifier.S3Outposts
     using System.Collections.Generic;
     using EndpointTypes;
 
-    public class Endpoint : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveAccessType
+    public class Endpoint : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveAccessType, IHaveOutpostId, IHaveSecurityGroupId
     {
         public class Attributes
         {
@@ -74,7 +74,7 @@ namespace Humidifier.S3Outposts
 
     namespace EndpointTypes
     {
-        public class FailedReason : Humidifier.Base.BaseSubResource, IHaveMessage
+        public class FailedReason : Humidifier.Base.BaseSubResource, IHaveMessage, IHaveErrorCode
         {
             /// <summary>
             /// Message

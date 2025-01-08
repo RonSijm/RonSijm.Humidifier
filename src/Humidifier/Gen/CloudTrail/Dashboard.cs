@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using DashboardTypes;
 
-    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveTerminationProtectionEnabled
     {
         public class Attributes
         {
@@ -74,7 +74,7 @@ namespace Humidifier.CloudTrail
             public dynamic Unit { get; set; }
         }
 
-        public class RefreshSchedule : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class RefreshSchedule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveTimeOfDay
         {
             /// <summary>
             /// Status
@@ -102,7 +102,7 @@ namespace Humidifier.CloudTrail
             public Humidifier.CloudTrail.DashboardTypes.Frequency Frequency { get; set; }
         }
 
-        public class Widget : Humidifier.Base.BaseSubResource
+        public class Widget : Humidifier.Base.BaseSubResource, IHaveQueryStatement
         {
             /// <summary>
             /// QueryStatement

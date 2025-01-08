@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using StageTypes;
 
-    public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRestApiId, IHaveStageName, IHaveDeploymentId, IHaveClientCertificateId
+    public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRestApiId, IHaveStageName, IHaveDeploymentId, IHaveClientCertificateId, IHaveDocumentationVersion, IHaveTracingEnabled, IHaveCacheClusterSize, IHaveCacheClusterEnabled
     {
         public override string AWSTypeName { get => AWS.ApiGateway.Stage; }
         /// <summary>

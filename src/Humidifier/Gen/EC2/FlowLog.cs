@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using FlowLogTypes;
 
-    public class FlowLog : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceType, IHaveResourceId, IHaveLogGroupName, IHaveLogFormat
+    public class FlowLog : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceType, IHaveResourceId, IHaveLogGroupName, IHaveLogFormat, IHaveLogDestinationType, IHaveLogDestination
     {
         public class Attributes
         {

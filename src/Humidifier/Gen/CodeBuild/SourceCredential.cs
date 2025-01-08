@@ -2,7 +2,7 @@ namespace Humidifier.CodeBuild
 {
     using System.Collections.Generic;
 
-    public class SourceCredential : Humidifier.Base.BaseResource, IHaveUsername, IHaveAuthType
+    public class SourceCredential : Humidifier.Base.BaseResource, IHaveUsername, IHaveAuthType, IHaveToken
     {
         public override string AWSTypeName { get => AWS.CodeBuild.SourceCredential; }
 

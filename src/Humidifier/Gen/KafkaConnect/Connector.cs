@@ -3,7 +3,7 @@ namespace Humidifier.KafkaConnect
     using System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
+    public class Connector : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveServiceExecutionRoleArn, IHaveDescription
     {
         public class Attributes
         {
@@ -154,7 +154,7 @@ namespace Humidifier.KafkaConnect
             public dynamic BootstrapServers { get; set; }
         }
 
-        public class AutoScaling : Humidifier.Base.BaseSubResource
+        public class AutoScaling : Humidifier.Base.BaseSubResource, IHaveMaxWorkerCount, IHaveMinWorkerCount, IHaveMcuCount
         {
             /// <summary>
             /// ScaleOutPolicy
@@ -338,7 +338,7 @@ namespace Humidifier.KafkaConnect
             public Humidifier.KafkaConnect.ConnectorTypes.CustomPlugin CustomPlugin { get; set; }
         }
 
-        public class ProvisionedCapacity : Humidifier.Base.BaseSubResource
+        public class ProvisionedCapacity : Humidifier.Base.BaseSubResource, IHaveWorkerCount, IHaveMcuCount
         {
             /// <summary>
             /// WorkerCount
@@ -386,7 +386,7 @@ namespace Humidifier.KafkaConnect
             public dynamic Prefix { get; set; }
         }
 
-        public class ScaleInPolicy : Humidifier.Base.BaseSubResource
+        public class ScaleInPolicy : Humidifier.Base.BaseSubResource, IHaveCpuUtilizationPercentage
         {
             /// <summary>
             /// CpuUtilizationPercentage
@@ -398,7 +398,7 @@ namespace Humidifier.KafkaConnect
             public dynamic CpuUtilizationPercentage { get; set; }
         }
 
-        public class ScaleOutPolicy : Humidifier.Base.BaseSubResource
+        public class ScaleOutPolicy : Humidifier.Base.BaseSubResource, IHaveCpuUtilizationPercentage
         {
             /// <summary>
             /// CpuUtilizationPercentage

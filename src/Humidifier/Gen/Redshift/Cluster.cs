@@ -3,7 +3,7 @@ namespace Humidifier.Redshift
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveEncrypted, IHavePubliclyAccessible, IHaveClusterIdentifier, IHaveMasterUserPassword, IHaveMasterUsername, IHaveNodeType, IHaveMultiAZ, IHaveSnapshotIdentifier, IHaveNumberOfNodes, IHaveIamRoles, IHaveEnhancedVpcRouting
+    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveEncrypted, IHavePubliclyAccessible, IHaveClusterIdentifier, IHaveMasterUserPassword, IHaveNodeType, IHaveMasterUsername, IHaveMultiAZ, IHaveSnapshotIdentifier, IHaveNumberOfNodes, IHaveClusterType, IHaveIamRoles, IHaveEnhancedVpcRouting, IHaveOwnerAccount, IHaveDBName, IHaveDestinationRegion, IHaveNamespaceResourcePolicy, IHaveClassic
     {
         public class Attributes
         {
@@ -465,7 +465,7 @@ namespace Humidifier.Redshift
             public dynamic Port { get; set; }
         }
 
-        public class LoggingProperties : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveS3KeyPrefix
+        public class LoggingProperties : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveS3KeyPrefix, IHaveLogDestinationType, IHaveLogExports
         {
             /// <summary>
             /// BucketName

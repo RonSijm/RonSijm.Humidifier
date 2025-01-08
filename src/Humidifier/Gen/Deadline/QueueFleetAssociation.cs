@@ -2,7 +2,7 @@ namespace Humidifier.Deadline
 {
     using System.Collections.Generic;
 
-    public class QueueFleetAssociation : Humidifier.Base.BaseResource, IHaveFarmId
+    public class QueueFleetAssociation : Humidifier.Base.BaseResource, IHaveFarmId, IHaveQueueId, IHaveFleetId
     {
         public override string AWSTypeName { get => AWS.Deadline.QueueFleetAssociation; }
 

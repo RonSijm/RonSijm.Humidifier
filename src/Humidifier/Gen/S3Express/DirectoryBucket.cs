@@ -60,7 +60,7 @@ namespace Humidifier.S3Express
 
     namespace DirectoryBucketTypes
     {
-        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource
+        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource, IHaveDaysAfterInitiation
         {
             /// <summary>
             /// DaysAfterInitiation
@@ -98,7 +98,7 @@ namespace Humidifier.S3Express
             public List<Humidifier.S3Express.DirectoryBucketTypes.Rule> Rules { get; set; }
         }
 
-        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHavePrefix, IHaveExpirationInDays
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHavePrefix, IHaveExpirationInDays, IHaveObjectSizeGreaterThan, IHaveObjectSizeLessThan
         {
             /// <summary>
             /// Status
@@ -158,7 +158,7 @@ namespace Humidifier.S3Express
             public dynamic ObjectSizeLessThan { get; set; }
         }
 
-        public class ServerSideEncryptionByDefault : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionByDefault : Humidifier.Base.BaseSubResource, IHaveSSEAlgorithm, IHaveKMSMasterKeyID
         {
             /// <summary>
             /// SSEAlgorithm
@@ -178,7 +178,7 @@ namespace Humidifier.S3Express
             public dynamic KMSMasterKeyID { get; set; }
         }
 
-        public class ServerSideEncryptionRule : Humidifier.Base.BaseSubResource
+        public class ServerSideEncryptionRule : Humidifier.Base.BaseSubResource, IHaveBucketKeyEnabled
         {
             /// <summary>
             /// BucketKeyEnabled

@@ -34,7 +34,7 @@ namespace Humidifier.BCMDataExports
 
     namespace ExportTypes
     {
-        public class DataQuery : Humidifier.Base.BaseSubResource
+        public class DataQuery : Humidifier.Base.BaseSubResource, IHaveQueryStatement
         {
             /// <summary>
             /// TableConfigurations
@@ -150,7 +150,7 @@ namespace Humidifier.BCMDataExports
             public dynamic Key { get; set; }
         }
 
-        public class S3Destination : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Prefix
+        public class S3Destination : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Prefix, IHaveS3Region
         {
             /// <summary>
             /// S3Bucket
@@ -186,7 +186,7 @@ namespace Humidifier.BCMDataExports
             public dynamic S3Prefix { get; set; }
         }
 
-        public class S3OutputConfigurations : Humidifier.Base.BaseSubResource, IHaveFormat, IHaveCompression, IHaveOverwrite
+        public class S3OutputConfigurations : Humidifier.Base.BaseSubResource, IHaveFormat, IHaveCompression, IHaveOverwrite, IHaveOutputType
         {
             /// <summary>
             /// Compression

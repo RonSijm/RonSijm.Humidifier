@@ -3,7 +3,7 @@ namespace Humidifier.AmplifyUIBuilder
     using System.Collections.Generic;
     using FormTypes;
 
-    public class Form : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName
+    public class Form : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName, IHaveSchemaVersion
     {
         public class Attributes
         {
@@ -152,7 +152,7 @@ namespace Humidifier.AmplifyUIBuilder
             public dynamic Excluded { get; set; }
         }
 
-        public class FieldInputConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveValue, IHaveDefaultValue, IHaveReadOnly, IHaveMaxValue, IHaveRequired, IHaveMinValue
+        public class FieldInputConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveValue, IHaveDefaultValue, IHaveReadOnly, IHaveMaxValue, IHaveMinValue, IHaveRequired, IHavePlaceholder
         {
             /// <summary>
             /// ReadOnly
@@ -350,7 +350,7 @@ namespace Humidifier.AmplifyUIBuilder
             public List<double> NumValues { get; set; }
         }
 
-        public class FileUploaderFieldConfig : Humidifier.Base.BaseSubResource, IHaveMaxSize
+        public class FileUploaderFieldConfig : Humidifier.Base.BaseSubResource, IHaveMaxSize, IHaveAccessLevel
         {
             /// <summary>
             /// IsResumable

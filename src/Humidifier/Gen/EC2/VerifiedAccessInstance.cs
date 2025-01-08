@@ -188,7 +188,7 @@ namespace Humidifier.EC2
             public dynamic IncludeTrustContext { get; set; }
         }
 
-        public class VerifiedAccessTrustProvider : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class VerifiedAccessTrustProvider : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveDeviceTrustProviderType, IHaveTrustProviderType, IHaveUserTrustProviderType
         {
             /// <summary>
             /// Description

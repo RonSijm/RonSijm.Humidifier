@@ -70,7 +70,7 @@ namespace Humidifier.Backup
             public dynamic ParameterName { get; set; }
         }
 
-        public class ControlScope : Humidifier.Base.BaseSubResource, IHaveTags
+        public class ControlScope : Humidifier.Base.BaseSubResource, IHaveTags, IHaveComplianceResourceTypes
         {
             /// <summary>
             /// ComplianceResourceTypes

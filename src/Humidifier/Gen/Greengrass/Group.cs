@@ -45,7 +45,7 @@ namespace Humidifier.Greengrass
 
     namespace GroupTypes
     {
-        public class GroupVersion : Humidifier.Base.BaseSubResource
+        public class GroupVersion : Humidifier.Base.BaseSubResource, IHaveLoggerDefinitionVersionArn, IHaveDeviceDefinitionVersionArn, IHaveFunctionDefinitionVersionArn, IHaveCoreDefinitionVersionArn, IHaveResourceDefinitionVersionArn, IHaveConnectorDefinitionVersionArn, IHaveSubscriptionDefinitionVersionArn
         {
             /// <summary>
             /// LoggerDefinitionVersionArn

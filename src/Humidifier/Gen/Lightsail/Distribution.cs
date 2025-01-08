@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DistributionTypes;
 
-    public class Distribution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBundleId, IHaveIsEnabled, IHaveIpAddressType, IHaveCertificateName
+    public class Distribution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIpAddressType, IHaveBundleId, IHaveIsEnabled, IHaveCertificateName
     {
         public class Attributes
         {
@@ -130,7 +130,7 @@ namespace Humidifier.Lightsail
             public dynamic Behavior { get; set; }
         }
 
-        public class CacheSettings : Humidifier.Base.BaseSubResource, IHaveDefaultTTL
+        public class CacheSettings : Humidifier.Base.BaseSubResource, IHaveDefaultTTL, IHaveMaximumTTL
         {
             /// <summary>
             /// ForwardedCookies

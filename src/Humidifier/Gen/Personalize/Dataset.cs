@@ -3,7 +3,7 @@ namespace Humidifier.Personalize
     using System.Collections.Generic;
     using DatasetTypes;
 
-    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSchemaArn
+    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSchemaArn, IHaveDatasetType, IHaveDatasetGroupArn
     {
         public class Attributes
         {
@@ -66,7 +66,7 @@ namespace Humidifier.Personalize
             public dynamic DataLocation { get; set; }
         }
 
-        public class DatasetImportJob : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveJobName
+        public class DatasetImportJob : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveJobName, IHaveDatasetArn
         {
             /// <summary>
             /// DatasetArn

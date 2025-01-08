@@ -71,7 +71,7 @@ namespace Humidifier.MediaConnect
 
     namespace FlowEntitlementTypes
     {
-        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveResourceId, IHaveSecretArn, IHaveKeyType, IHaveAlgorithm, IHaveDeviceId, IHaveConstantInitializationVector
+        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveSecretArn, IHaveResourceId, IHaveKeyType, IHaveAlgorithm, IHaveConstantInitializationVector, IHaveDeviceId
         {
             /// <summary>
             /// SecretArn

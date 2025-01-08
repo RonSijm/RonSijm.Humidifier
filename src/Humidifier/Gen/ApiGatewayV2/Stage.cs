@@ -3,7 +3,7 @@ namespace Humidifier.ApiGatewayV2
     using System.Collections.Generic;
     using StageTypes;
 
-    public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveDynamicTags, IHaveApiId, IHaveStageName, IHaveDeploymentId, IHaveClientCertificateId
+    public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveDynamicTags, IHaveApiId, IHaveStageName, IHaveDeploymentId, IHaveClientCertificateId, IHaveAutoDeploy, IHaveRouteSettings, IHaveStageVariables
     {
         public override string AWSTypeName { get => AWS.ApiGatewayV2.Stage; }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic DestinationArn { get; set; }
         }
 
-        public class RouteSettings : Humidifier.Base.BaseSubResource, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit
+        public class RouteSettings : Humidifier.Base.BaseSubResource, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit, IHaveDetailedMetricsEnabled
         {
             /// <summary>
             /// LoggingLevel

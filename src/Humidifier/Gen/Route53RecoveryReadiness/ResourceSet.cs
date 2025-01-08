@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryReadiness
     using System.Collections.Generic;
     using ResourceSetTypes;
 
-    public class ResourceSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class ResourceSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveResourceSetName
     {
         public class Attributes
         {
@@ -46,7 +46,7 @@ namespace Humidifier.Route53RecoveryReadiness
 
     namespace ResourceSetTypes
     {
-        public class DNSTargetResource : Humidifier.Base.BaseSubResource, IHaveDomainName
+        public class DNSTargetResource : Humidifier.Base.BaseSubResource, IHaveDomainName, IHaveRecordSetId
         {
             /// <summary>
             /// TargetResource
@@ -102,7 +102,7 @@ namespace Humidifier.Route53RecoveryReadiness
             public dynamic Arn { get; set; }
         }
 
-        public class R53ResourceRecord : Humidifier.Base.BaseSubResource, IHaveDomainName
+        public class R53ResourceRecord : Humidifier.Base.BaseSubResource, IHaveDomainName, IHaveRecordSetId
         {
             /// <summary>
             /// DomainName
@@ -122,7 +122,7 @@ namespace Humidifier.Route53RecoveryReadiness
             public dynamic RecordSetId { get; set; }
         }
 
-        public class Resource : Humidifier.Base.BaseSubResource, IHaveResourceArn
+        public class Resource : Humidifier.Base.BaseSubResource, IHaveResourceArn, IHaveComponentId
         {
             /// <summary>
             /// ResourceArn

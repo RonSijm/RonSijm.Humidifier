@@ -100,7 +100,7 @@ namespace Humidifier.LookoutMetrics
             public dynamic RoleArn { get; set; }
         }
 
-        public class CsvFormatDescriptor : Humidifier.Base.BaseSubResource, IHaveDelimiter, IHaveContainsHeader
+        public class CsvFormatDescriptor : Humidifier.Base.BaseSubResource, IHaveDelimiter, IHaveHeaderList, IHaveQuoteSymbol, IHaveContainsHeader, IHaveCharset, IHaveFileCompression
         {
             /// <summary>
             /// QuoteSymbol
@@ -173,7 +173,7 @@ namespace Humidifier.LookoutMetrics
             public Humidifier.LookoutMetrics.AnomalyDetectorTypes.CsvFormatDescriptor CsvFormatDescriptor { get; set; }
         }
 
-        public class JsonFormatDescriptor : Humidifier.Base.BaseSubResource
+        public class JsonFormatDescriptor : Humidifier.Base.BaseSubResource, IHaveCharset, IHaveFileCompression
         {
             /// <summary>
             /// Charset
@@ -193,7 +193,7 @@ namespace Humidifier.LookoutMetrics
             public dynamic FileCompression { get; set; }
         }
 
-        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveAggregationFunction
+        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_, IHaveAggregationFunction
         {
             /// <summary>
             /// AggregationFunction
@@ -343,7 +343,7 @@ namespace Humidifier.LookoutMetrics
             public Humidifier.LookoutMetrics.AnomalyDetectorTypes.RedshiftSourceConfig RedshiftSourceConfig { get; set; }
         }
 
-        public class RDSSourceConfig : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveDatabaseName, IHaveTableName, IHaveSecretManagerArn, IHaveDBInstanceIdentifier, IHaveDatabasePort, IHaveDatabaseHost
+        public class RDSSourceConfig : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveDatabaseName, IHaveTableName, IHaveSecretManagerArn, IHaveDBInstanceIdentifier, IHaveDatabasePort, IHaveDatabaseHost, IHaveLookoutMetricsAnomalyDetectorTypesVpcConfigurationVpcConfiguration
         {
             /// <summary>
             /// TableName
@@ -411,7 +411,7 @@ namespace Humidifier.LookoutMetrics
             public dynamic RoleArn { get; set; }
         }
 
-        public class RedshiftSourceConfig : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveDatabaseName, IHaveTableName, IHaveClusterIdentifier, IHaveSecretManagerArn, IHaveDatabasePort, IHaveDatabaseHost
+        public class RedshiftSourceConfig : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveDatabaseName, IHaveTableName, IHaveClusterIdentifier, IHaveSecretManagerArn, IHaveDatabasePort, IHaveDatabaseHost, IHaveLookoutMetricsAnomalyDetectorTypesVpcConfigurationVpcConfiguration
         {
             /// <summary>
             /// TableName
@@ -537,7 +537,7 @@ namespace Humidifier.LookoutMetrics
             public dynamic ColumnFormat { get; set; }
         }
 
-        public class VpcConfiguration : Humidifier.Base.BaseSubResource
+        public class VpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIdList
         {
             /// <summary>
             /// SubnetIdList

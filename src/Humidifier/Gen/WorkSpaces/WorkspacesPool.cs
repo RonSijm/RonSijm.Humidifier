@@ -81,7 +81,7 @@ namespace Humidifier.WorkSpaces
 
     namespace WorkspacesPoolTypes
     {
-        public class ApplicationSettings : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class ApplicationSettings : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveSettingsGroup
         {
             /// <summary>
             /// Status
@@ -113,7 +113,7 @@ namespace Humidifier.WorkSpaces
             public dynamic DesiredUserSessions { get; set; }
         }
 
-        public class TimeoutSettings : Humidifier.Base.BaseSubResource
+        public class TimeoutSettings : Humidifier.Base.BaseSubResource, IHaveMaxUserDurationInSeconds, IHaveIdleDisconnectTimeoutInSeconds, IHaveDisconnectTimeoutInSeconds
         {
             /// <summary>
             /// MaxUserDurationInSeconds

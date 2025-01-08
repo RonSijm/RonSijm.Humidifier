@@ -145,7 +145,7 @@ namespace Humidifier.B2BI
             public dynamic Key { get; set; }
         }
 
-        public class X12Details : Humidifier.Base.BaseSubResource, IHaveVersion
+        public class X12Details : Humidifier.Base.BaseSubResource, IHaveVersion, IHaveTransactionSet
         {
             /// <summary>
             /// Version

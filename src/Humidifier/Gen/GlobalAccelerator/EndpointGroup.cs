@@ -3,7 +3,7 @@ namespace Humidifier.GlobalAccelerator
     using System.Collections.Generic;
     using EndpointGroupTypes;
 
-    public class EndpointGroup : Humidifier.Base.BaseResource, IHaveListenerArn, IHaveHealthCheckIntervalSeconds, IHaveHealthCheckPath
+    public class EndpointGroup : Humidifier.Base.BaseResource, IHaveListenerArn, IHaveHealthCheckIntervalSeconds, IHaveHealthCheckPath, IHaveHealthCheckProtocol, IHaveHealthCheckPort
     {
         public class Attributes
         {

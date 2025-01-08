@@ -3,7 +3,7 @@ namespace Humidifier.ApiGatewayV2
     using System.Collections.Generic;
     using ApiTypes;
 
-    public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveVersion, IHaveTarget, IHaveBody, IHaveBasePath
+    public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveVersion, IHaveTarget, IHaveBody, IHaveBasePath, IHaveDisableExecuteApiEndpoint, IHaveFailOnWarnings, IHaveCredentialsArn, IHaveProtocolType, IHaveRouteKey
     {
         public class Attributes
         {
@@ -182,7 +182,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic Key { get; set; }
         }
 
-        public class Cors : Humidifier.Base.BaseSubResource, IHaveExposeHeaders, IHaveMaxAge
+        public class Cors : Humidifier.Base.BaseSubResource, IHaveExposeHeaders, IHaveMaxAge, IHaveAllowOrigins, IHaveAllowCredentials, IHaveAllowHeaders, IHaveAllowMethods
         {
             /// <summary>
             /// AllowOrigins

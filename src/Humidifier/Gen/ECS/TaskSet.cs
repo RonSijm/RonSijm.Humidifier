@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using TaskSetTypes;
 
-    public class TaskSet : Humidifier.Base.BaseResource, IHaveTags, IHaveExternalId, IHavePlatformVersion, IHaveService, IHaveLaunchType, IHaveCluster
+    public class TaskSet : Humidifier.Base.BaseResource, IHaveTags, IHaveExternalId, IHavePlatformVersion, IHaveService, IHaveLaunchType, IHaveCluster, IHaveTaskDefinition
     {
         public class Attributes
         {
@@ -239,7 +239,7 @@ namespace Humidifier.ECS
             public dynamic Unit { get; set; }
         }
 
-        public class ServiceRegistry : Humidifier.Base.BaseSubResource, IHavePort, IHaveContainerName, IHaveContainerPort
+        public class ServiceRegistry : Humidifier.Base.BaseSubResource, IHavePort, IHaveContainerName, IHaveContainerPort, IHaveRegistryArn
         {
             /// <summary>
             /// ContainerName

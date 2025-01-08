@@ -3,7 +3,7 @@ namespace Humidifier.CodeDeploy
     using System.Collections.Generic;
     using DeploymentGroupTypes;
 
-    public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveApplicationName, IHaveServiceRoleArn
+    public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveApplicationName, IHaveServiceRoleArn, IHaveDeploymentConfigName
     {
         public override string AWSTypeName { get => AWS.CodeDeploy.DeploymentGroup; }
         /// <summary>
@@ -405,7 +405,7 @@ namespace Humidifier.CodeDeploy
             public List<Humidifier.CodeDeploy.DeploymentGroupTypes.EC2TagFilter> Ec2TagGroup { get; set; }
         }
 
-        public class ECSService : Humidifier.Base.BaseSubResource, IHaveServiceName, IHaveClusterName
+        public class ECSService : Humidifier.Base.BaseSubResource, IHaveClusterName, IHaveServiceName
         {
             /// <summary>
             /// ClusterName
@@ -437,7 +437,7 @@ namespace Humidifier.CodeDeploy
             public dynamic Name { get; set; }
         }
 
-        public class GitHubLocation : Humidifier.Base.BaseSubResource, IHaveRepository
+        public class GitHubLocation : Humidifier.Base.BaseSubResource, IHaveRepository, IHaveCommitId
         {
             /// <summary>
             /// CommitId

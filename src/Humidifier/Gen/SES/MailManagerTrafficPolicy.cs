@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using MailManagerTrafficPolicyTypes;
 
-    public class MailManagerTrafficPolicy : Humidifier.Base.BaseResource, IHaveTags
+    public class MailManagerTrafficPolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDefaultAction
     {
         public class Attributes
         {
@@ -62,7 +62,7 @@ namespace Humidifier.SES
 
     namespace MailManagerTrafficPolicyTypes
     {
-        public class IngressAnalysis : Humidifier.Base.BaseSubResource
+        public class IngressAnalysis : Humidifier.Base.BaseSubResource, IHaveAnalyzer, IHaveResultField
         {
             /// <summary>
             /// Analyzer

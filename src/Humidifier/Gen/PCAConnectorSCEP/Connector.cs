@@ -77,7 +77,7 @@ namespace Humidifier.PCAConnectorSCEP
             public Humidifier.PCAConnectorSCEP.ConnectorTypes.IntuneConfiguration Intune { get; set; }
         }
 
-        public class OpenIdConfiguration : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveSubject
+        public class OpenIdConfiguration : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveSubject, IHaveAudience
         {
             /// <summary>
             /// Issuer

@@ -2,7 +2,7 @@ namespace Humidifier.Signer
 {
     using System.Collections.Generic;
 
-    public class ProfilePermission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveStatementId
+    public class ProfilePermission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveStatementId, IHaveProfileName
     {
         public override string AWSTypeName { get => AWS.Signer.ProfilePermission; }
 

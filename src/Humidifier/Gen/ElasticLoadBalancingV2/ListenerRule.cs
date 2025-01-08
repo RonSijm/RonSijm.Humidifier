@@ -124,7 +124,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public Humidifier.ElasticLoadBalancingV2.ListenerRuleTypes.AuthenticateOidcConfig AuthenticateOidcConfig { get; set; }
         }
 
-        public class AuthenticateCognitoConfig : Humidifier.Base.BaseSubResource, IHaveScope, IHaveSessionTimeout, IHaveOnUnauthenticatedRequest, IHaveSessionCookieName, IHaveUserPoolArn
+        public class AuthenticateCognitoConfig : Humidifier.Base.BaseSubResource, IHaveScope, IHaveSessionTimeout, IHaveOnUnauthenticatedRequest, IHaveSessionCookieName, IHaveUserPoolArn, IHaveUserPoolClientId, IHaveUserPoolDomain
         {
             /// <summary>
             /// OnUnauthenticatedRequest
@@ -193,7 +193,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public Dictionary<string, dynamic> AuthenticationRequestExtraParams { get; set; }
         }
 
-        public class AuthenticateOidcConfig : Humidifier.Base.BaseSubResource, IHaveScope, IHaveClientId, IHaveClientSecret, IHaveIssuer, IHaveSessionTimeout, IHaveAuthorizationEndpoint, IHaveOnUnauthenticatedRequest, IHaveSessionCookieName, IHaveTokenEndpoint, IHaveUserInfoEndpoint
+        public class AuthenticateOidcConfig : Humidifier.Base.BaseSubResource, IHaveScope, IHaveClientId, IHaveClientSecret, IHaveIssuer, IHaveSessionTimeout, IHaveAuthorizationEndpoint, IHaveOnUnauthenticatedRequest, IHaveSessionCookieName, IHaveTokenEndpoint, IHaveUserInfoEndpoint, IHaveUseExistingClientSecret
         {
             /// <summary>
             /// UseExistingClientSecret
@@ -294,7 +294,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public Dictionary<string, dynamic> AuthenticationRequestExtraParams { get; set; }
         }
 
-        public class FixedResponseConfig : Humidifier.Base.BaseSubResource, IHaveContentType, IHaveStatusCode
+        public class FixedResponseConfig : Humidifier.Base.BaseSubResource, IHaveContentType, IHaveStatusCode, IHaveMessageBody
         {
             /// <summary>
             /// ContentType
@@ -436,7 +436,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public dynamic Key { get; set; }
         }
 
-        public class RedirectConfig : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveHost, IHaveStatusCode
+        public class RedirectConfig : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveHost, IHaveStatusCode, IHaveQuery
         {
             /// <summary>
             /// Path

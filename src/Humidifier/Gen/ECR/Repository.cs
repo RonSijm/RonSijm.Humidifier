@@ -3,7 +3,7 @@ namespace Humidifier.ECR
     using System.Collections.Generic;
     using RepositoryTypes;
 
-    public class Repository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRepositoryName
+    public class Repository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRepositoryName, IHaveRepositoryPolicyText, IHaveImageTagMutability
     {
         public class Attributes
         {
@@ -106,7 +106,7 @@ namespace Humidifier.ECR
             public dynamic ScanOnPush { get; set; }
         }
 
-        public class LifecyclePolicy : Humidifier.Base.BaseSubResource
+        public class LifecyclePolicy : Humidifier.Base.BaseSubResource, IHaveRegistryId
         {
             /// <summary>
             /// LifecyclePolicyText

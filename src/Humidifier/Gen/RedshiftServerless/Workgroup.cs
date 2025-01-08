@@ -3,7 +3,7 @@ namespace Humidifier.RedshiftServerless
     using System.Collections.Generic;
     using WorkgroupTypes;
 
-    public class Workgroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePort, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveMaxCapacity, IHavePubliclyAccessible, IHaveNamespaceName, IHaveWorkgroupName, IHaveBaseCapacity, IHaveEnhancedVpcRouting
+    public class Workgroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePort, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveMaxCapacity, IHavePubliclyAccessible, IHaveNamespaceName, IHaveWorkgroupName, IHaveBaseCapacity, IHaveEnhancedVpcRouting, IHaveRedshiftServerlessWorkgroupTypesPerformanceTargetPricePerformanceTarget
     {
         public class Attributes
         {
@@ -108,7 +108,7 @@ namespace Humidifier.RedshiftServerless
 
     namespace WorkgroupTypes
     {
-        public class ConfigParameter : Humidifier.Base.BaseSubResource, IHaveParameterValue
+        public class ConfigParameter : Humidifier.Base.BaseSubResource, IHaveParameterValue, IHaveParameterKey
         {
             /// <summary>
             /// ParameterValue
@@ -242,7 +242,7 @@ namespace Humidifier.RedshiftServerless
             public dynamic VpcEndpointId { get; set; }
         }
 
-        public class Workgroup : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveMaxCapacity, IHavePubliclyAccessible, IHaveNamespaceName, IHaveWorkgroupName, IHaveBaseCapacity, IHaveEnhancedVpcRouting
+        public class Workgroup : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveMaxCapacity, IHavePubliclyAccessible, IHaveNamespaceName, IHaveWorkgroupName, IHaveBaseCapacity, IHaveEnhancedVpcRouting, IHaveRedshiftServerlessWorkgroupTypesPerformanceTargetPricePerformanceTarget, IHaveCreationDate
         {
             /// <summary>
             /// Status

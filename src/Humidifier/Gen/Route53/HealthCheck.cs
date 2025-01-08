@@ -54,7 +54,7 @@ namespace Humidifier.Route53
             public dynamic Name { get; set; }
         }
 
-        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHaveRegions, IHaveResourcePath, IHaveSearchString, IHaveFailureThreshold
+        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHaveRegions, IHaveResourcePath, IHaveSearchString, IHaveFailureThreshold, IHaveInverted
         {
             /// <summary>
             /// EnableSNI

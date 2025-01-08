@@ -3,7 +3,7 @@ namespace Humidifier.AmplifyUIBuilder
     using System.Collections.Generic;
     using ComponentTypes;
 
-    public class Component : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName
+    public class Component : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName, IHaveComponentType, IHaveSchemaVersion, IHaveSourceId, IHaveOverrides
     {
         public class Attributes
         {
@@ -303,7 +303,7 @@ namespace Humidifier.AmplifyUIBuilder
             public dynamic Key { get; set; }
         }
 
-        public class ComponentChild : Humidifier.Base.BaseSubResource, IHaveName
+        public class ComponentChild : Humidifier.Base.BaseSubResource, IHaveName, IHaveComponentType, IHaveSourceId
         {
             /// <summary>
             /// ComponentType
@@ -358,7 +358,7 @@ namespace Humidifier.AmplifyUIBuilder
             public dynamic Name { get; set; }
         }
 
-        public class ComponentConditionProperty : Humidifier.Base.BaseSubResource, IHaveOperator, IHaveField, IHaveProperty
+        public class ComponentConditionProperty : Humidifier.Base.BaseSubResource, IHaveOperator, IHaveField, IHaveProperty, IHaveOperand, IHaveOperandType
         {
             /// <summary>
             /// Operator
@@ -630,7 +630,7 @@ namespace Humidifier.AmplifyUIBuilder
             public dynamic Property { get; set; }
         }
 
-        public class ComponentVariant : Humidifier.Base.BaseSubResource
+        public class ComponentVariant : Humidifier.Base.BaseSubResource, IHaveOverrides
         {
             /// <summary>
             /// VariantValues
@@ -699,7 +699,7 @@ namespace Humidifier.AmplifyUIBuilder
             public dynamic Property { get; set; }
         }
 
-        public class Predicate : Humidifier.Base.BaseSubResource, IHaveOperator, IHaveField
+        public class Predicate : Humidifier.Base.BaseSubResource, IHaveOperator, IHaveField, IHaveOperand, IHaveOperandType
         {
             /// <summary>
             /// Operator

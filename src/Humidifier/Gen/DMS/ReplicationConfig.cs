@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using ReplicationConfigTypes;
 
-    public class ReplicationConfig : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceIdentifier
+    public class ReplicationConfig : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceIdentifier, IHaveTableMappings, IHaveSourceEndpointArn, IHaveTargetEndpointArn
     {
         public class Attributes
         {

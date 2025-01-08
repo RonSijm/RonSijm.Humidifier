@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using System.Collections.Generic;
     using FlowSourceTypes;
 
-    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveProtocol, IHaveFlowArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveEntitlementArn
+    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveProtocol, IHaveFlowArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveEntitlementArn, IHaveSenderIpAddress, IHaveIngestPort, IHaveSenderControlPort, IHaveSourceListenerAddress, IHaveSourceListenerPort, IHaveWhitelistCidr
     {
         public class Attributes
         {
@@ -156,7 +156,7 @@ namespace Humidifier.MediaConnect
 
     namespace FlowSourceTypes
     {
-        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveResourceId, IHaveSecretArn, IHaveKeyType, IHaveAlgorithm, IHaveDeviceId, IHaveConstantInitializationVector
+        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveSecretArn, IHaveResourceId, IHaveKeyType, IHaveAlgorithm, IHaveConstantInitializationVector, IHaveDeviceId
         {
             /// <summary>
             /// SecretArn

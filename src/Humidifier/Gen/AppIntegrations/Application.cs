@@ -3,7 +3,7 @@ namespace Humidifier.AppIntegrations
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePermissions
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveNamespace_, IHavePermissions
     {
         public class Attributes
         {

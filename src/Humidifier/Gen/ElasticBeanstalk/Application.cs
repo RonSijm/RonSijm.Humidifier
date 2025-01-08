@@ -67,7 +67,7 @@ namespace Humidifier.ElasticBeanstalk
             public Humidifier.ElasticBeanstalk.ApplicationTypes.MaxAgeRule MaxAgeRule { get; set; }
         }
 
-        public class MaxAgeRule : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class MaxAgeRule : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveDeleteSourceFromS3
         {
             /// <summary>
             /// DeleteSourceFromS3
@@ -95,7 +95,7 @@ namespace Humidifier.ElasticBeanstalk
             public dynamic Enabled { get; set; }
         }
 
-        public class MaxCountRule : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class MaxCountRule : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveDeleteSourceFromS3, IHaveMaxCount
         {
             /// <summary>
             /// DeleteSourceFromS3

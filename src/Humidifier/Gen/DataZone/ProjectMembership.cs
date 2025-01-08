@@ -50,7 +50,7 @@ namespace Humidifier.DataZone
 
     namespace ProjectMembershipTypes
     {
-        public class Member : Humidifier.Base.BaseSubResource
+        public class Member : Humidifier.Base.BaseSubResource, IHaveGroupIdentifier, IHaveUserIdentifier
         {
             /// <summary>
             /// UserIdentifier

@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualGatewayTypes;
 
-    public class VirtualGateway : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner
+    public class VirtualGateway : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner, IHaveVirtualGatewayName
     {
         public class Attributes
         {
@@ -160,7 +160,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualGatewayTypes.VirtualGatewayClientPolicyTls TLS { get; set; }
         }
 
-        public class VirtualGatewayClientPolicyTls : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayClientPolicyTls : Humidifier.Base.BaseSubResource, IHaveEnforce
         {
             /// <summary>
             /// Validation
@@ -197,7 +197,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualGatewayTypes.VirtualGatewayClientTlsCertificate Certificate { get; set; }
         }
 
-        public class VirtualGatewayClientTlsCertificate : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayClientTlsCertificate : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualGatewayTypesVirtualGatewayListenerTlsSdsCertificateSDS, IHaveAppMeshVirtualGatewayTypesVirtualGatewayListenerTlsFileCertificateFile
         {
             /// <summary>
             /// SDS
@@ -277,7 +277,7 @@ namespace Humidifier.AppMesh
             public dynamic MaxRequests { get; set; }
         }
 
-        public class VirtualGatewayHealthCheckPolicy : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveUnhealthyThreshold, IHaveHealthyThreshold
+        public class VirtualGatewayHealthCheckPolicy : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveUnhealthyThreshold, IHaveHealthyThreshold, IHaveTimeoutMillis, IHaveIntervalMillis
         {
             /// <summary>
             /// Path
@@ -349,7 +349,7 @@ namespace Humidifier.AppMesh
             public dynamic MaxRequests { get; set; }
         }
 
-        public class VirtualGatewayHttpConnectionPool : Humidifier.Base.BaseSubResource, IHaveMaxConnections
+        public class VirtualGatewayHttpConnectionPool : Humidifier.Base.BaseSubResource, IHaveMaxConnections, IHaveMaxPendingRequests
         {
             /// <summary>
             /// MaxConnections
@@ -445,7 +445,7 @@ namespace Humidifier.AppMesh
             public dynamic CertificateArn { get; set; }
         }
 
-        public class VirtualGatewayListenerTlsCertificate : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayListenerTlsCertificate : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualGatewayTypesVirtualGatewayListenerTlsSdsCertificateSDS, IHaveAppMeshVirtualGatewayTypesVirtualGatewayListenerTlsFileCertificateFile
         {
             /// <summary>
             /// SDS
@@ -505,7 +505,7 @@ namespace Humidifier.AppMesh
             public dynamic SecretName { get; set; }
         }
 
-        public class VirtualGatewayListenerTlsValidationContext : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayListenerTlsValidationContext : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualGatewayTypesSubjectAlternativeNamesSubjectAlternativeNames
         {
             /// <summary>
             /// SubjectAlternativeNames
@@ -525,7 +525,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualGatewayTypes.VirtualGatewayListenerTlsValidationContextTrust Trust { get; set; }
         }
 
-        public class VirtualGatewayListenerTlsValidationContextTrust : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayListenerTlsValidationContextTrust : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualGatewayTypesVirtualGatewayTlsValidationContextSdsTrustSDS, IHaveAppMeshVirtualGatewayTypesVirtualGatewayTlsValidationContextFileTrustFile
         {
             /// <summary>
             /// SDS
@@ -606,7 +606,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualGatewayTypes.VirtualGatewayBackendDefaults BackendDefaults { get; set; }
         }
 
-        public class VirtualGatewayTlsValidationContext : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayTlsValidationContext : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualGatewayTypesSubjectAlternativeNamesSubjectAlternativeNames
         {
             /// <summary>
             /// SubjectAlternativeNames
@@ -626,7 +626,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualGatewayTypes.VirtualGatewayTlsValidationContextTrust Trust { get; set; }
         }
 
-        public class VirtualGatewayTlsValidationContextAcmTrust : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayTlsValidationContextAcmTrust : Humidifier.Base.BaseSubResource, IHaveCertificateAuthorityArns
         {
             /// <summary>
             /// CertificateAuthorityArns
@@ -663,7 +663,7 @@ namespace Humidifier.AppMesh
             public dynamic SecretName { get; set; }
         }
 
-        public class VirtualGatewayTlsValidationContextTrust : Humidifier.Base.BaseSubResource
+        public class VirtualGatewayTlsValidationContextTrust : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualGatewayTypesVirtualGatewayTlsValidationContextSdsTrustSDS, IHaveAppMeshVirtualGatewayTypesVirtualGatewayTlsValidationContextFileTrustFile
         {
             /// <summary>
             /// SDS

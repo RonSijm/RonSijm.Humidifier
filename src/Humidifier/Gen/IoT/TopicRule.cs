@@ -370,7 +370,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class CloudwatchMetricAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveMetricName
+        public class CloudwatchMetricAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveMetricName, IHaveMetricValue, IHaveMetricNamespace
         {
             /// <summary>
             /// MetricName
@@ -518,7 +518,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class ElasticsearchAction : Humidifier.Base.BaseSubResource, IHaveType, IHaveRoleArn, IHaveId, IHaveEndpoint
+        public class ElasticsearchAction : Humidifier.Base.BaseSubResource, IHaveType, IHaveRoleArn, IHaveId, IHaveEndpoint, IHaveIndex
         {
             /// <summary>
             /// Type
@@ -598,7 +598,7 @@ namespace Humidifier.IoT
             public dynamic Separator { get; set; }
         }
 
-        public class HttpAction : Humidifier.Base.BaseSubResource, IHaveUrl
+        public class HttpAction : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveConfirmationUrl
         {
             /// <summary>
             /// Headers
@@ -695,7 +695,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class IotEventsAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveInputName, IHaveBatchMode
+        public class IotEventsAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveInputName, IHaveBatchMode, IHaveMessageId
         {
             /// <summary>
             /// InputName
@@ -918,7 +918,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class OpenSearchAction : Humidifier.Base.BaseSubResource, IHaveType, IHaveRoleArn, IHaveId, IHaveEndpoint
+        public class OpenSearchAction : Humidifier.Base.BaseSubResource, IHaveType, IHaveRoleArn, IHaveId, IHaveEndpoint, IHaveIndex
         {
             /// <summary>
             /// Type
@@ -1144,7 +1144,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class SigV4Authorization : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveServiceName
+        public class SigV4Authorization : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveServiceName, IHaveSigningRegion
         {
             /// <summary>
             /// ServiceName
@@ -1228,7 +1228,7 @@ namespace Humidifier.IoT
             public dynamic QueueUrl { get; set; }
         }
 
-        public class StepFunctionsAction : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        public class StepFunctionsAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveStateMachineName
         {
             /// <summary>
             /// ExecutionNamePrefix
@@ -1361,7 +1361,7 @@ namespace Humidifier.IoT
             public dynamic Unit { get; set; }
         }
 
-        public class TopicRulePayload : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class TopicRulePayload : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSql
         {
             /// <summary>
             /// RuleDisabled

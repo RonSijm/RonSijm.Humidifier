@@ -3,7 +3,7 @@ namespace Humidifier.EMR
     using System.Collections.Generic;
     using InstanceGroupConfigTypes;
 
-    public class InstanceGroupConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveInstanceType, IHaveInstanceCount, IHaveCustomAmiId, IHaveBidPrice, IHaveMarket, IHaveInstanceRole
+    public class InstanceGroupConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveInstanceType, IHaveInstanceCount, IHaveCustomAmiId, IHaveBidPrice, IHaveMarket, IHaveInstanceRole, IHaveJobFlowId
     {
         public override string AWSTypeName { get => AWS.EMR.InstanceGroupConfig; }
         /// <summary>
@@ -121,7 +121,7 @@ namespace Humidifier.EMR
             public List<Humidifier.EMR.InstanceGroupConfigTypes.ScalingRule> Rules { get; set; }
         }
 
-        public class CloudWatchAlarmDefinition : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveComparisonOperator, IHavePeriod, IHaveStatistic, IHaveThreshold, IHaveEvaluationPeriods
+        public class CloudWatchAlarmDefinition : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHaveComparisonOperator, IHavePeriod, IHaveThreshold, IHaveStatistic, IHaveEvaluationPeriods
         {
             /// <summary>
             /// ComparisonOperator
@@ -377,7 +377,7 @@ namespace Humidifier.EMR
             public Humidifier.EMR.InstanceGroupConfigTypes.CloudWatchAlarmDefinition CloudWatchAlarmDefinition { get; set; }
         }
 
-        public class SimpleScalingPolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment, IHaveAdjustmentType
+        public class SimpleScalingPolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment, IHaveAdjustmentType, IHaveCoolDown
         {
             /// <summary>
             /// AdjustmentType

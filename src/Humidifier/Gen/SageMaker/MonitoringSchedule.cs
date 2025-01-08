@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using MonitoringScheduleTypes;
 
-    public class MonitoringSchedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEndpointName, IHaveFailureReason
+    public class MonitoringSchedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEndpointName, IHaveFailureReason, IHaveMonitoringScheduleName
     {
         public class Attributes
         {
@@ -141,7 +141,7 @@ namespace Humidifier.SageMaker
             public dynamic ExcludeFeaturesAttribute { get; set; }
         }
 
-        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeKmsKeyId, IHaveVolumeSizeInGB
+        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeSizeInGB, IHaveVolumeKmsKeyId
         {
             /// <summary>
             /// InstanceCount
@@ -331,7 +331,7 @@ namespace Humidifier.SageMaker
             public dynamic ContainerArguments { get; set; }
         }
 
-        public class MonitoringExecutionSummary : Humidifier.Base.BaseSubResource, IHaveEndpointName, IHaveCreationTime, IHaveFailureReason
+        public class MonitoringExecutionSummary : Humidifier.Base.BaseSubResource, IHaveEndpointName, IHaveCreationTime, IHaveLastModifiedTime, IHaveFailureReason, IHaveMonitoringScheduleName
         {
             /// <summary>
             /// ScheduledTime

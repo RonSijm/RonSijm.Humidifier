@@ -53,7 +53,7 @@ namespace Humidifier.Transfer
 
     namespace WorkflowTypes
     {
-        public class CopyStepDetails : Humidifier.Base.BaseSubResource, IHaveName, IHaveSourceFileLocation
+        public class CopyStepDetails : Humidifier.Base.BaseSubResource, IHaveName, IHaveSourceFileLocation, IHaveOverwriteExisting
         {
             /// <summary>
             /// DestinationFileLocation
@@ -125,7 +125,7 @@ namespace Humidifier.Transfer
             public dynamic Name { get; set; }
         }
 
-        public class DecryptStepDetails : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveSourceFileLocation
+        public class DecryptStepDetails : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveSourceFileLocation, IHaveOverwriteExisting
         {
             /// <summary>
             /// DestinationFileLocation

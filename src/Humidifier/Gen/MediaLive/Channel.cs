@@ -115,7 +115,7 @@ namespace Humidifier.MediaLive
 
     namespace ChannelTypes
     {
-        public class AacSettings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveProfile, IHaveRateControlMode, IHaveSampleRate
+        public class AacSettings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveProfile, IHaveRateControlMode, IHaveSampleRate, IHaveInputType
         {
             /// <summary>
             /// CodingMode
@@ -191,7 +191,7 @@ namespace Humidifier.MediaLive
             public dynamic Profile { get; set; }
         }
 
-        public class Ac3Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveDialnorm
+        public class Ac3Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveDialnorm, IHaveMetadataControl, IHaveLfeFilter, IHaveBitstreamMode, IHaveAttenuationControl
         {
             /// <summary>
             /// CodingMode
@@ -271,7 +271,7 @@ namespace Humidifier.MediaLive
             public dynamic SourceAncillaryChannelNumber { get; set; }
         }
 
-        public class AnywhereSettings : Humidifier.Base.BaseSubResource
+        public class AnywhereSettings : Humidifier.Base.BaseSubResource, IHaveClusterId
         {
             /// <summary>
             /// ChannelPlacementGroupId
@@ -303,7 +303,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.ArchiveS3Settings ArchiveS3Settings { get; set; }
         }
 
-        public class ArchiveContainerSettings : Humidifier.Base.BaseSubResource
+        public class ArchiveContainerSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesM2tsSettingsM2tsSettings
         {
             /// <summary>
             /// RawSettings
@@ -351,7 +351,7 @@ namespace Humidifier.MediaLive
             public dynamic RolloverInterval { get; set; }
         }
 
-        public class ArchiveOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier
+        public class ArchiveOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier, IHaveExtension
         {
             /// <summary>
             /// Extension
@@ -480,7 +480,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.AacSettings AacSettings { get; set; }
         }
 
-        public class AudioDescription : Humidifier.Base.BaseSubResource, IHaveName, IHaveLanguageCode, IHaveStreamName
+        public class AudioDescription : Humidifier.Base.BaseSubResource, IHaveName, IHaveLanguageCode, IHaveStreamName, IHaveAudioSelectorName, IHaveDvbDashAccessibility
         {
             /// <summary>
             /// AudioDashRoles
@@ -773,7 +773,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.AudioHlsRenditionSelection AudioHlsRenditionSelection { get; set; }
         }
 
-        public class AudioSilenceFailoverSettings : Humidifier.Base.BaseSubResource
+        public class AudioSilenceFailoverSettings : Humidifier.Base.BaseSubResource, IHaveAudioSelectorName
         {
             /// <summary>
             /// AudioSelectorName
@@ -875,7 +875,7 @@ namespace Humidifier.MediaLive
             public dynamic ErrorClearTimeMsec { get; set; }
         }
 
-        public class Av1ColorSpaceSettings : Humidifier.Base.BaseSubResource
+        public class Av1ColorSpaceSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesRec601SettingsRec601Settings, IHaveMediaLiveChannelTypesRec709SettingsRec709Settings, IHaveMediaLiveChannelTypesColorSpacePassthroughSettingsColorSpacePassthroughSettings, IHaveMediaLiveChannelTypesHdr10SettingsHdr10Settings
         {
             /// <summary>
             /// Rec601Settings
@@ -911,7 +911,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.Hdr10Settings Hdr10Settings { get; set; }
         }
 
-        public class Av1Settings : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveMaxBitrate, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFramerateNumerator, IHaveFramerateDenominator, IHaveGopSize, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling
+        public class Av1Settings : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveMaxBitrate, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFixedAfd, IHaveGopSizeUnits, IHaveFramerateNumerator, IHaveAfdSignaling, IHaveFramerateDenominator, IHaveGopSize, IHaveQvbrQualityLevel, IHaveParDenominator, IHaveParNumerator, IHaveBufSize, IHaveMinIInterval, IHaveSceneChangeDetect, IHaveLookAheadRateControl
         {
             /// <summary>
             /// TimecodeBurninSettings
@@ -1119,7 +1119,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.Esam Esam { get; set; }
         }
 
-        public class BandwidthReductionFilterSettings : Humidifier.Base.BaseSubResource
+        public class BandwidthReductionFilterSettings : Humidifier.Base.BaseSubResource, IHavePostFilterSharpening, IHaveStrength
         {
             /// <summary>
             /// PostFilterSharpening
@@ -1183,7 +1183,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.InputLocation BlackoutSlateImage { get; set; }
         }
 
-        public class BurnInDestinationSettings : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveFontColor, IHaveAlignment, IHaveFontSize
+        public class BurnInDestinationSettings : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveFontColor, IHaveAlignment, IHaveFontSize, IHaveBackgroundOpacity, IHaveFontResolution, IHaveOutlineColor, IHaveShadowColor, IHaveShadowOpacity, IHaveMediaLiveChannelTypesInputLocationFont, IHaveShadowYOffset, IHaveXPosition, IHaveYPosition, IHaveOutlineSize, IHaveTeletextGridControl, IHaveFontOpacity, IHaveShadowXOffset
         {
             /// <summary>
             /// BackgroundOpacity
@@ -1323,7 +1323,7 @@ namespace Humidifier.MediaLive
             public dynamic BackgroundColor { get; set; }
         }
 
-        public class CaptionDescription : Humidifier.Base.BaseSubResource, IHaveName, IHaveLanguageCode
+        public class CaptionDescription : Humidifier.Base.BaseSubResource, IHaveName, IHaveLanguageCode, IHaveDvbDashAccessibility, IHaveLanguageDescription
         {
             /// <summary>
             /// DestinationSettings
@@ -1500,7 +1500,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.Scte27DestinationSettings Scte27DestinationSettings { get; set; }
         }
 
-        public class CaptionLanguageMapping : Humidifier.Base.BaseSubResource, IHaveLanguageCode
+        public class CaptionLanguageMapping : Humidifier.Base.BaseSubResource, IHaveLanguageCode, IHaveLanguageDescription
         {
             /// <summary>
             /// LanguageCode
@@ -1664,7 +1664,7 @@ namespace Humidifier.MediaLive
             public dynamic Resolution { get; set; }
         }
 
-        public class CmafIngestGroupSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveNielsenId3Behavior
+        public class CmafIngestGroupSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveNielsenId3Behavior, IHaveSegmentLength, IHaveSendDelayMs
         {
             /// <summary>
             /// Destination
@@ -1777,7 +1777,7 @@ namespace Humidifier.MediaLive
         {
         }
 
-        public class DvbNitSettings : Humidifier.Base.BaseSubResource, IHaveNetworkName, IHaveNetworkId, IHaveRepInterval
+        public class DvbNitSettings : Humidifier.Base.BaseSubResource, IHaveNetworkId, IHaveNetworkName, IHaveRepInterval
         {
             /// <summary>
             /// NetworkName
@@ -1841,7 +1841,7 @@ namespace Humidifier.MediaLive
             public dynamic RepInterval { get; set; }
         }
 
-        public class DvbSubDestinationSettings : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveFontColor, IHaveAlignment, IHaveFontSize
+        public class DvbSubDestinationSettings : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveFontColor, IHaveAlignment, IHaveFontSize, IHaveBackgroundOpacity, IHaveFontResolution, IHaveOutlineColor, IHaveShadowColor, IHaveShadowOpacity, IHaveMediaLiveChannelTypesInputLocationFont, IHaveShadowYOffset, IHaveXPosition, IHaveYPosition, IHaveOutlineSize, IHaveTeletextGridControl, IHaveFontOpacity, IHaveShadowXOffset
         {
             /// <summary>
             /// BackgroundOpacity
@@ -1981,7 +1981,7 @@ namespace Humidifier.MediaLive
             public dynamic BackgroundColor { get; set; }
         }
 
-        public class DvbSubSourceSettings : Humidifier.Base.BaseSubResource, IHavePid
+        public class DvbSubSourceSettings : Humidifier.Base.BaseSubResource, IHavePid, IHaveOcrLanguage
         {
             /// <summary>
             /// OcrLanguage
@@ -2013,7 +2013,7 @@ namespace Humidifier.MediaLive
             public dynamic RepInterval { get; set; }
         }
 
-        public class Eac3AtmosSettings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveDialnorm
+        public class Eac3AtmosSettings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveDialnorm, IHaveDrcRf, IHaveDrcLine
         {
             /// <summary>
             /// CodingMode
@@ -2073,7 +2073,7 @@ namespace Humidifier.MediaLive
             public dynamic HeightTrim { get; set; }
         }
 
-        public class Eac3Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveDialnorm
+        public class Eac3Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveCodingMode, IHaveDialnorm, IHaveMetadataControl, IHaveLfeFilter, IHaveBitstreamMode, IHaveAttenuationControl, IHaveDrcRf, IHaveDrcLine
         {
             /// <summary>
             /// CodingMode
@@ -2237,7 +2237,7 @@ namespace Humidifier.MediaLive
             public dynamic StereoDownmix { get; set; }
         }
 
-        public class EbuTtDDestinationSettings : Humidifier.Base.BaseSubResource, IHaveStyleControl
+        public class EbuTtDDestinationSettings : Humidifier.Base.BaseSubResource, IHaveStyleControl, IHaveFontFamily
         {
             /// <summary>
             /// FontFamily
@@ -2281,7 +2281,7 @@ namespace Humidifier.MediaLive
         {
         }
 
-        public class EmbeddedSourceSettings : Humidifier.Base.BaseSubResource
+        public class EmbeddedSourceSettings : Humidifier.Base.BaseSubResource, IHaveSource608ChannelNumber, IHaveConvert608To708
         {
             /// <summary>
             /// Source608ChannelNumber
@@ -2457,7 +2457,7 @@ namespace Humidifier.MediaLive
             public dynamic CustomEpoch { get; set; }
         }
 
-        public class Esam : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePasswordParam, IHaveAdAvailOffset
+        public class Esam : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePasswordParam, IHaveAdAvailOffset, IHaveAcquisitionPointId
         {
             /// <summary>
             /// AdAvailOffset
@@ -2597,7 +2597,7 @@ namespace Humidifier.MediaLive
             public dynamic IncludeFec { get; set; }
         }
 
-        public class Fmp4HlsSettings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior, IHaveTimedMetadataBehavior
+        public class Fmp4HlsSettings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior, IHaveTimedMetadataBehavior, IHaveAudioRenditionSets
         {
             /// <summary>
             /// AudioRenditionSets
@@ -2773,7 +2773,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.InputLossBehavior InputLossBehavior { get; set; }
         }
 
-        public class H264ColorSpaceSettings : Humidifier.Base.BaseSubResource
+        public class H264ColorSpaceSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesRec601SettingsRec601Settings, IHaveMediaLiveChannelTypesRec709SettingsRec709Settings, IHaveMediaLiveChannelTypesColorSpacePassthroughSettingsColorSpacePassthroughSettings
         {
             /// <summary>
             /// Rec601Settings
@@ -2801,7 +2801,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.ColorSpacePassthroughSettings ColorSpacePassthroughSettings { get; set; }
         }
 
-        public class H264FilterSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTemporalFilterSettingsTemporalFilterSettings
+        public class H264FilterSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTemporalFilterSettingsTemporalFilterSettings, IHaveMediaLiveChannelTypesBandwidthReductionFilterSettingsBandwidthReductionFilterSettings
         {
             /// <summary>
             /// TemporalFilterSettings
@@ -2821,7 +2821,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.BandwidthReductionFilterSettings BandwidthReductionFilterSettings { get; set; }
         }
 
-        public class H264Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveLevel, IHaveMaxBitrate, IHaveProfile, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveRateControlMode, IHaveFramerateNumerator, IHaveGopClosedCadence, IHaveFramerateDenominator, IHaveGopSize, IHaveAdaptiveQuantization, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata
+        public class H264Settings : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveBitrate, IHaveMaxBitrate, IHaveProfile, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFixedAfd, IHaveGopSizeUnits, IHaveFramerateNumerator, IHaveAfdSignaling, IHaveFramerateDenominator, IHaveGopSize, IHaveRateControlMode, IHaveQvbrQualityLevel, IHaveParDenominator, IHaveParNumerator, IHaveBufSize, IHaveMinIInterval, IHaveSceneChangeDetect, IHaveLookAheadRateControl, IHaveGopClosedCadence, IHaveAdaptiveQuantization, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata, IHaveSlices, IHaveFlickerAq, IHaveMinQp, IHaveSubgopLength, IHaveGopNumBFrames
         {
             /// <summary>
             /// TimecodeBurninSettings
@@ -3169,7 +3169,7 @@ namespace Humidifier.MediaLive
             public dynamic GopNumBFrames { get; set; }
         }
 
-        public class H265ColorSpaceSettings : Humidifier.Base.BaseSubResource
+        public class H265ColorSpaceSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesRec601SettingsRec601Settings, IHaveMediaLiveChannelTypesRec709SettingsRec709Settings, IHaveMediaLiveChannelTypesColorSpacePassthroughSettingsColorSpacePassthroughSettings, IHaveMediaLiveChannelTypesHdr10SettingsHdr10Settings
         {
             /// <summary>
             /// Rec601Settings
@@ -3213,7 +3213,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.Hdr10Settings Hdr10Settings { get; set; }
         }
 
-        public class H265FilterSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTemporalFilterSettingsTemporalFilterSettings
+        public class H265FilterSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTemporalFilterSettingsTemporalFilterSettings, IHaveMediaLiveChannelTypesBandwidthReductionFilterSettingsBandwidthReductionFilterSettings
         {
             /// <summary>
             /// TemporalFilterSettings
@@ -3233,7 +3233,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.BandwidthReductionFilterSettings BandwidthReductionFilterSettings { get; set; }
         }
 
-        public class H265Settings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveLevel, IHaveTier, IHaveMaxBitrate, IHaveProfile, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveRateControlMode, IHaveFramerateNumerator, IHaveGopClosedCadence, IHaveFramerateDenominator, IHaveGopSize, IHaveAdaptiveQuantization, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata
+        public class H265Settings : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveBitrate, IHaveTier, IHaveMaxBitrate, IHaveProfile, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFixedAfd, IHaveGopSizeUnits, IHaveFramerateNumerator, IHaveAfdSignaling, IHaveFramerateDenominator, IHaveGopSize, IHaveRateControlMode, IHaveQvbrQualityLevel, IHaveParDenominator, IHaveParNumerator, IHaveBufSize, IHaveMinIInterval, IHaveSceneChangeDetect, IHaveLookAheadRateControl, IHaveGopClosedCadence, IHaveAdaptiveQuantization, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata, IHaveSlices, IHaveFlickerAq, IHaveMinQp
         {
             /// <summary>
             /// MvOverPictureBoundaries
@@ -3553,7 +3553,7 @@ namespace Humidifier.MediaLive
             public dynamic MaxFall { get; set; }
         }
 
-        public class HlsAkamaiSettings : Humidifier.Base.BaseSubResource, IHaveNumRetries, IHaveRestartDelay, IHaveConnectionRetryInterval, IHaveFilecacheDuration
+        public class HlsAkamaiSettings : Humidifier.Base.BaseSubResource, IHaveNumRetries, IHaveRestartDelay, IHaveConnectionRetryInterval, IHaveFilecacheDuration, IHaveToken, IHaveHttpTransferMode
         {
             /// <summary>
             /// Salt
@@ -3693,7 +3693,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.HlsMediaStoreSettings HlsMediaStoreSettings { get; set; }
         }
 
-        public class HlsGroupSettings : Humidifier.Base.BaseSubResource, IHaveMode, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveEncryptionType, IHaveAdMarkers, IHaveInputLossAction
+        public class HlsGroupSettings : Humidifier.Base.BaseSubResource, IHaveMode, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveEncryptionType, IHaveAdMarkers, IHaveInputLossAction, IHaveKeyFormat, IHaveSegmentLength, IHaveSegmentationMode, IHaveTimedMetadataId3Frame, IHaveTimedMetadataId3Period
         {
             /// <summary>
             /// SegmentationMode
@@ -4043,7 +4043,7 @@ namespace Humidifier.MediaLive
             public dynamic BaseUrlManifest { get; set; }
         }
 
-        public class HlsInputSettings : Humidifier.Base.BaseSubResource, IHaveRetries
+        public class HlsInputSettings : Humidifier.Base.BaseSubResource, IHaveRetries, IHaveRetryInterval
         {
             /// <summary>
             /// Scte35Source
@@ -4131,7 +4131,7 @@ namespace Humidifier.MediaLive
             public dynamic ConnectionRetryInterval { get; set; }
         }
 
-        public class HlsOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier
+        public class HlsOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier, IHaveH265PackagingType
         {
             /// <summary>
             /// NameModifier
@@ -4215,7 +4215,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.FrameCaptureHlsSettings FrameCaptureHlsSettings { get; set; }
         }
 
-        public class HlsWebdavSettings : Humidifier.Base.BaseSubResource, IHaveNumRetries, IHaveRestartDelay, IHaveConnectionRetryInterval, IHaveFilecacheDuration
+        public class HlsWebdavSettings : Humidifier.Base.BaseSubResource, IHaveNumRetries, IHaveRestartDelay, IHaveConnectionRetryInterval, IHaveFilecacheDuration, IHaveHttpTransferMode
         {
             /// <summary>
             /// FilecacheDuration
@@ -4506,7 +4506,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.NetworkInputSettings NetworkInputSettings { get; set; }
         }
 
-        public class InputSpecification : Humidifier.Base.BaseSubResource, IHaveResolution
+        public class InputSpecification : Humidifier.Base.BaseSubResource, IHaveResolution, IHaveMaximumBitrate
         {
             /// <summary>
             /// Codec
@@ -4546,7 +4546,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.StaticKeySettings StaticKeySettings { get; set; }
         }
 
-        public class M2tsSettings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveNielsenId3Behavior, IHaveScte35Pid, IHaveTimedMetadataBehavior, IHaveVideoPid, IHaveTransportStreamId, IHavePcrPid, IHavePmtPid, IHaveTimedMetadataPid
+        public class M2tsSettings : Humidifier.Base.BaseSubResource, IHaveBitrate, IHaveNielsenId3Behavior, IHaveScte35Pid, IHaveTimedMetadataBehavior, IHaveVideoPid, IHaveTransportStreamId, IHavePcrPeriod, IHavePcrPid, IHaveAudioFramesPerPes, IHavePmtPid, IHaveTimedMetadataPid, IHavePcrControl, IHaveEtvPlatformPid, IHavePatInterval, IHaveProgramNum, IHaveKlvDataPids, IHavePmtInterval, IHaveEsRateInPes, IHaveAudioStreamType, IHaveKlv, IHaveScte35PrerollPullupMilliseconds, IHaveDvbTeletextPid, IHaveScte35Control, IHaveCcDescriptor, IHaveAbsentInputAudioBehavior, IHaveEtvSignalPid, IHaveArib, IHaveEcmPid, IHaveAudioPids, IHaveAudioBufferModel, IHaveEbif
         {
             /// <summary>
             /// EtvPlatformPid
@@ -4934,7 +4934,7 @@ namespace Humidifier.MediaLive
             public dynamic PcrControl { get; set; }
         }
 
-        public class M3u8Settings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior, IHaveScte35Pid, IHaveTimedMetadataBehavior, IHaveVideoPid, IHaveTransportStreamId, IHavePcrPid, IHavePmtPid, IHaveTimedMetadataPid
+        public class M3u8Settings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior, IHaveScte35Pid, IHaveTimedMetadataBehavior, IHaveVideoPid, IHaveTransportStreamId, IHavePcrPeriod, IHavePcrPid, IHaveAudioFramesPerPes, IHavePmtPid, IHaveTimedMetadataPid, IHavePcrControl, IHavePatInterval, IHaveProgramNum, IHaveKlvDataPids, IHavePmtInterval, IHaveEcmPid, IHaveAudioPids
         {
             /// <summary>
             /// PatInterval
@@ -5090,7 +5090,7 @@ namespace Humidifier.MediaLive
             public dynamic TimedMetadataBehavior { get; set; }
         }
 
-        public class MaintenanceCreateSettings : Humidifier.Base.BaseSubResource, IHaveMaintenanceDay
+        public class MaintenanceCreateSettings : Humidifier.Base.BaseSubResource, IHaveMaintenanceDay, IHaveMaintenanceStartTime
         {
             /// <summary>
             /// MaintenanceDay
@@ -5110,7 +5110,7 @@ namespace Humidifier.MediaLive
             public dynamic MaintenanceStartTime { get; set; }
         }
 
-        public class MaintenanceUpdateSettings : Humidifier.Base.BaseSubResource, IHaveMaintenanceDay
+        public class MaintenanceUpdateSettings : Humidifier.Base.BaseSubResource, IHaveMaintenanceDay, IHaveMaintenanceStartTime
         {
             /// <summary>
             /// MaintenanceDay
@@ -5238,7 +5238,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.TemporalFilterSettings TemporalFilterSettings { get; set; }
         }
 
-        public class Mpeg2Settings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFramerateNumerator, IHaveGopClosedCadence, IHaveFramerateDenominator, IHaveGopSize, IHaveAdaptiveQuantization, IHaveFixedAfd, IHaveGopSizeUnits, IHaveAfdSignaling, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata
+        public class Mpeg2Settings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveFixedAfd, IHaveGopSizeUnits, IHaveFramerateNumerator, IHaveAfdSignaling, IHaveFramerateDenominator, IHaveGopSize, IHaveGopClosedCadence, IHaveAdaptiveQuantization, IHaveScanType, IHaveTimecodeInsertion, IHaveColorMetadata, IHaveSubgopLength, IHaveGopNumBFrames, IHaveColorSpace
         {
             /// <summary>
             /// TimecodeBurninSettings
@@ -5378,7 +5378,7 @@ namespace Humidifier.MediaLive
             public dynamic GopNumBFrames { get; set; }
         }
 
-        public class MsSmoothGroupSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveNumRetries, IHaveRestartDelay, IHaveConnectionRetryInterval, IHaveFilecacheDuration, IHaveCertificateMode, IHaveInputLossAction
+        public class MsSmoothGroupSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveNumRetries, IHaveRestartDelay, IHaveConnectionRetryInterval, IHaveFilecacheDuration, IHaveInputLossAction, IHaveCertificateMode, IHaveSendDelayMs, IHaveAcquisitionPointId, IHaveSegmentationMode
         {
             /// <summary>
             /// SegmentationMode
@@ -5534,7 +5534,7 @@ namespace Humidifier.MediaLive
             public dynamic ConnectionRetryInterval { get; set; }
         }
 
-        public class MsSmoothOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier
+        public class MsSmoothOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier, IHaveH265PackagingType
         {
             /// <summary>
             /// NameModifier
@@ -5582,7 +5582,7 @@ namespace Humidifier.MediaLive
         {
         }
 
-        public class MultiplexM2tsSettings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior
+        public class MultiplexM2tsSettings : Humidifier.Base.BaseSubResource, IHaveNielsenId3Behavior, IHavePcrPeriod, IHaveAudioFramesPerPes, IHavePcrControl, IHaveEsRateInPes, IHaveAudioStreamType, IHaveKlv, IHaveScte35PrerollPullupMilliseconds, IHaveScte35Control, IHaveCcDescriptor, IHaveAbsentInputAudioBehavior, IHaveArib, IHaveAudioBufferModel, IHaveEbif
         {
             /// <summary>
             /// Scte35Control
@@ -5718,7 +5718,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.MultiplexContainerSettings ContainerSettings { get; set; }
         }
 
-        public class MultiplexProgramChannelDestinationSettings : Humidifier.Base.BaseSubResource
+        public class MultiplexProgramChannelDestinationSettings : Humidifier.Base.BaseSubResource, IHaveMultiplexId, IHaveProgramName
         {
             /// <summary>
             /// MultiplexId
@@ -5814,7 +5814,7 @@ namespace Humidifier.MediaLive
             public dynamic NielsenPcmToId3Tagging { get; set; }
         }
 
-        public class NielsenNaesIiNw : Humidifier.Base.BaseSubResource, IHaveTimezone
+        public class NielsenNaesIiNw : Humidifier.Base.BaseSubResource, IHaveTimezone, IHaveSid
         {
             /// <summary>
             /// Timezone
@@ -5963,7 +5963,7 @@ namespace Humidifier.MediaLive
             public List<Humidifier.MediaLive.ChannelTypes.MediaPackageOutputDestinationSettings> MediaPackageSettings { get; set; }
         }
 
-        public class OutputDestinationSettings : Humidifier.Base.BaseSubResource, IHaveUsername, IHaveUrl, IHaveStreamName, IHavePasswordParam
+        public class OutputDestinationSettings : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveUsername, IHaveStreamName, IHavePasswordParam
         {
             /// <summary>
             /// StreamName
@@ -6390,7 +6390,7 @@ namespace Humidifier.MediaLive
         {
         }
 
-        public class Scte20SourceSettings : Humidifier.Base.BaseSubResource
+        public class Scte20SourceSettings : Humidifier.Base.BaseSubResource, IHaveSource608ChannelNumber, IHaveConvert608To708
         {
             /// <summary>
             /// Source608ChannelNumber
@@ -6414,7 +6414,7 @@ namespace Humidifier.MediaLive
         {
         }
 
-        public class Scte27SourceSettings : Humidifier.Base.BaseSubResource, IHavePid
+        public class Scte27SourceSettings : Humidifier.Base.BaseSubResource, IHavePid, IHaveOcrLanguage
         {
             /// <summary>
             /// OcrLanguage
@@ -6434,7 +6434,7 @@ namespace Humidifier.MediaLive
             public dynamic Pid { get; set; }
         }
 
-        public class Scte35SpliceInsert : Humidifier.Base.BaseSubResource, IHaveAdAvailOffset
+        public class Scte35SpliceInsert : Humidifier.Base.BaseSubResource, IHaveAdAvailOffset, IHaveWebDeliveryAllowedFlag, IHaveNoRegionalBlackoutFlag
         {
             /// <summary>
             /// AdAvailOffset
@@ -6462,7 +6462,7 @@ namespace Humidifier.MediaLive
             public dynamic NoRegionalBlackoutFlag { get; set; }
         }
 
-        public class Scte35TimeSignalApos : Humidifier.Base.BaseSubResource, IHaveAdAvailOffset
+        public class Scte35TimeSignalApos : Humidifier.Base.BaseSubResource, IHaveAdAvailOffset, IHaveWebDeliveryAllowedFlag, IHaveNoRegionalBlackoutFlag
         {
             /// <summary>
             /// AdAvailOffset
@@ -6534,7 +6534,7 @@ namespace Humidifier.MediaLive
             public dynamic Url { get; set; }
         }
 
-        public class SrtOutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveEncryptionType
+        public class SrtOutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveEncryptionType, IHaveMediaLiveChannelTypesUdpContainerSettingsContainerSettings, IHaveBufferMsec
         {
             /// <summary>
             /// EncryptionType
@@ -6578,7 +6578,7 @@ namespace Humidifier.MediaLive
             public dynamic Latency { get; set; }
         }
 
-        public class StandardHlsSettings : Humidifier.Base.BaseSubResource
+        public class StandardHlsSettings : Humidifier.Base.BaseSubResource, IHaveAudioRenditionSets
         {
             /// <summary>
             /// AudioRenditionSets
@@ -6642,7 +6642,7 @@ namespace Humidifier.MediaLive
             public dynamic PageNumber { get; set; }
         }
 
-        public class TemporalFilterSettings : Humidifier.Base.BaseSubResource
+        public class TemporalFilterSettings : Humidifier.Base.BaseSubResource, IHavePostFilterSharpening, IHaveStrength
         {
             /// <summary>
             /// PostFilterSharpening
@@ -6734,7 +6734,7 @@ namespace Humidifier.MediaLive
             public dynamic StyleControl { get; set; }
         }
 
-        public class UdpContainerSettings : Humidifier.Base.BaseSubResource
+        public class UdpContainerSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesM2tsSettingsM2tsSettings
         {
             /// <summary>
             /// M2tsSettings
@@ -6746,7 +6746,7 @@ namespace Humidifier.MediaLive
             public Humidifier.MediaLive.ChannelTypes.M2tsSettings M2tsSettings { get; set; }
         }
 
-        public class UdpGroupSettings : Humidifier.Base.BaseSubResource, IHaveInputLossAction
+        public class UdpGroupSettings : Humidifier.Base.BaseSubResource, IHaveInputLossAction, IHaveTimedMetadataId3Frame, IHaveTimedMetadataId3Period
         {
             /// <summary>
             /// TimedMetadataId3Frame
@@ -6774,7 +6774,7 @@ namespace Humidifier.MediaLive
             public dynamic InputLossAction { get; set; }
         }
 
-        public class UdpOutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination
+        public class UdpOutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveMediaLiveChannelTypesUdpContainerSettingsContainerSettings, IHaveBufferMsec
         {
             /// <summary>
             /// Destination
@@ -6934,7 +6934,7 @@ namespace Humidifier.MediaLive
             public dynamic Name { get; set; }
         }
 
-        public class VideoSelector : Humidifier.Base.BaseSubResource
+        public class VideoSelector : Humidifier.Base.BaseSubResource, IHaveColorSpace
         {
             /// <summary>
             /// ColorSpaceSettings
@@ -6970,7 +6970,7 @@ namespace Humidifier.MediaLive
             public dynamic ColorSpaceUsage { get; set; }
         }
 
-        public class VideoSelectorColorSpaceSettings : Humidifier.Base.BaseSubResource
+        public class VideoSelectorColorSpaceSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesHdr10SettingsHdr10Settings
         {
             /// <summary>
             /// Hdr10Settings

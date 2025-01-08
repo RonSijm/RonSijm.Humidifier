@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class PlacementGroup : Humidifier.Base.BaseResource, IHaveTags
+    public class PlacementGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveStrategy
     {
         public class Attributes
         {

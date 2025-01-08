@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelCardTypes;
 
-    public class ModelCard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class ModelCard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveModelCardStatus
     {
         public class Attributes
         {
@@ -130,7 +130,7 @@ namespace Humidifier.SageMaker
             public dynamic BusinessProblem { get; set; }
         }
 
-        public class Container : Humidifier.Base.BaseSubResource, IHaveImage, IHaveModelDataUrl
+        public class Container : Humidifier.Base.BaseSubResource, IHaveImage, IHaveModelDataUrl, IHaveNearestModelName
         {
             /// <summary>
             /// NearestModelName
@@ -302,7 +302,7 @@ namespace Humidifier.SageMaker
             public dynamic Facet { get; set; }
         }
 
-        public class InferenceEnvironment : Humidifier.Base.BaseSubResource
+        public class InferenceEnvironment : Humidifier.Base.BaseSubResource, IHaveContainerImage
         {
             /// <summary>
             /// ContainerImage
@@ -447,7 +447,7 @@ namespace Humidifier.SageMaker
             public List<Humidifier.SageMaker.ModelCardTypes.MetricDataItems> MetricData { get; set; }
         }
 
-        public class ModelOverview : Humidifier.Base.BaseSubResource, IHaveModelId, IHaveModelName
+        public class ModelOverview : Humidifier.Base.BaseSubResource, IHaveModelId, IHaveModelName, IHaveProblemType
         {
             /// <summary>
             /// ModelOwner
@@ -544,7 +544,7 @@ namespace Humidifier.SageMaker
             public dynamic UserProfileName { get; set; }
         }
 
-        public class ModelPackageDetails : Humidifier.Base.BaseSubResource, IHaveDomain, IHaveModelPackageGroupName, IHaveModelPackageName
+        public class ModelPackageDetails : Humidifier.Base.BaseSubResource, IHaveDomain, IHaveModelPackageGroupName, IHaveModelPackageName, IHaveTask, IHaveModelApprovalStatus, IHaveModelPackageVersion, IHaveModelPackageDescription, IHaveApprovalDescription
         {
             /// <summary>
             /// ModelPackageGroupName
@@ -685,7 +685,7 @@ namespace Humidifier.SageMaker
             public dynamic KmsKeyId { get; set; }
         }
 
-        public class SourceAlgorithm : Humidifier.Base.BaseSubResource, IHaveModelDataUrl
+        public class SourceAlgorithm : Humidifier.Base.BaseSubResource, IHaveModelDataUrl, IHaveAlgorithmName
         {
             /// <summary>
             /// ModelDataUrl
@@ -733,7 +733,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelCardTypes.TrainingJobDetails TrainingJobDetails { get; set; }
         }
 
-        public class TrainingEnvironment : Humidifier.Base.BaseSubResource
+        public class TrainingEnvironment : Humidifier.Base.BaseSubResource, IHaveContainerImage
         {
             /// <summary>
             /// ContainerImage

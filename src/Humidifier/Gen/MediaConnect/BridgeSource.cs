@@ -57,7 +57,7 @@ namespace Humidifier.MediaConnect
             public dynamic FlowArn { get; set; }
         }
 
-        public class BridgeNetworkSource : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveNetworkName
+        public class BridgeNetworkSource : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveNetworkName, IHaveMulticastIp
         {
             /// <summary>
             /// MulticastSourceSettings
@@ -101,7 +101,7 @@ namespace Humidifier.MediaConnect
             public dynamic Protocol { get; set; }
         }
 
-        public class MulticastSourceSettings : Humidifier.Base.BaseSubResource
+        public class MulticastSourceSettings : Humidifier.Base.BaseSubResource, IHaveMulticastSourceIp
         {
             /// <summary>
             /// MulticastSourceIp

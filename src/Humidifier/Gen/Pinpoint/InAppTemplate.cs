@@ -3,7 +3,7 @@ namespace Humidifier.Pinpoint
     using System.Collections.Generic;
     using InAppTemplateTypes;
 
-    public class InAppTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveTemplateDescription
+    public class InAppTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveTemplateDescription, IHaveCustomConfig, IHaveLayout
     {
         public class Attributes
         {
@@ -130,7 +130,7 @@ namespace Humidifier.Pinpoint
             public Humidifier.Pinpoint.InAppTemplateTypes.OverrideButtonConfiguration Android { get; set; }
         }
 
-        public class DefaultButtonConfiguration : Humidifier.Base.BaseSubResource, IHaveText, IHaveBackgroundColor, IHaveTextColor, IHaveButtonAction, IHaveLink
+        public class DefaultButtonConfiguration : Humidifier.Base.BaseSubResource, IHaveText, IHaveBackgroundColor, IHaveTextColor, IHaveButtonAction, IHaveLink, IHaveBorderRadius
         {
             /// <summary>
             /// BorderRadius

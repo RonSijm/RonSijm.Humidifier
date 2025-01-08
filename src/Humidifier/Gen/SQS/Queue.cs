@@ -2,7 +2,7 @@ namespace Humidifier.SQS
 {
     using System.Collections.Generic;
 
-    public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsDataKeyReusePeriodSeconds, IHaveQueueName
+    public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsDataKeyReusePeriodSeconds, IHaveQueueName, IHaveRedrivePolicy, IHaveKmsMasterKeyId, IHaveContentBasedDeduplication
     {
         public class Attributes
         {

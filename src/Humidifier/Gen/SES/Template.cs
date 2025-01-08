@@ -23,7 +23,7 @@ namespace Humidifier.SES
 
     namespace TemplateTypes
     {
-        public class Template : Humidifier.Base.BaseSubResource, IHaveTemplateName
+        public class Template : Humidifier.Base.BaseSubResource, IHaveTemplateName, IHaveHtmlPart, IHaveTextPart
         {
             /// <summary>
             /// HtmlPart

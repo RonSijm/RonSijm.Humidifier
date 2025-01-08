@@ -56,7 +56,7 @@ namespace Humidifier.EntityResolution
 
     namespace SchemaMappingTypes
     {
-        public class SchemaInputAttribute : Humidifier.Base.BaseSubResource, IHaveType, IHaveGroupName, IHaveSubType, IHaveFieldName
+        public class SchemaInputAttribute : Humidifier.Base.BaseSubResource, IHaveType, IHaveGroupName, IHaveFieldName, IHaveSubType, IHaveHashed
         {
             /// <summary>
             /// GroupName

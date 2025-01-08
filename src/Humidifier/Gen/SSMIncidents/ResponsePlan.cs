@@ -123,7 +123,7 @@ namespace Humidifier.SSMIncidents
             public dynamic Key { get; set; }
         }
 
-        public class DynamicSsmParameterValue : Humidifier.Base.BaseSubResource
+        public class DynamicSsmParameterValue : Humidifier.Base.BaseSubResource, IHaveVariable
         {
             /// <summary>
             /// Variable

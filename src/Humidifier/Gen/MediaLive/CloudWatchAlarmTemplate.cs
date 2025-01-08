@@ -2,7 +2,7 @@ namespace Humidifier.MediaLive
 {
     using System.Collections.Generic;
 
-    public class CloudWatchAlarmTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveMetricName, IHaveComparisonOperator, IHavePeriod, IHaveStatistic, IHaveThreshold, IHaveEvaluationPeriods
+    public class CloudWatchAlarmTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveMetricName, IHaveComparisonOperator, IHavePeriod, IHaveThreshold, IHaveStatistic, IHaveEvaluationPeriods, IHaveGroupIdentifier, IHaveTreatMissingData, IHaveDatapointsToAlarm
     {
         public class Attributes
         {

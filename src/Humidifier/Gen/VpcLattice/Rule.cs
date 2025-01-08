@@ -145,7 +145,7 @@ namespace Humidifier.VpcLattice
             public Humidifier.VpcLattice.RuleTypes.HeaderMatchType Match { get; set; }
         }
 
-        public class HeaderMatchType : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveExact
+        public class HeaderMatchType : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveExact, IHaveContains
         {
             /// <summary>
             /// Contains
@@ -254,7 +254,7 @@ namespace Humidifier.VpcLattice
             public dynamic Prefix { get; set; }
         }
 
-        public class WeightedTargetGroup : Humidifier.Base.BaseSubResource, IHaveWeight
+        public class WeightedTargetGroup : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveTargetGroupIdentifier
         {
             /// <summary>
             /// Weight

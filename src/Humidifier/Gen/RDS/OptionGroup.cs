@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using OptionGroupTypes;
 
-    public class OptionGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
+    public class OptionGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEngineName, IHaveMajorEngineVersion, IHaveOptionGroupName, IHaveDescription
     {
         public override string AWSTypeName { get => AWS.RDS.OptionGroup; }
 

@@ -3,7 +3,7 @@ namespace Humidifier.CodeDeploy
     using System.Collections.Generic;
     using DeploymentConfigTypes;
 
-    public class DeploymentConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveComputePlatform
+    public class DeploymentConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveComputePlatform, IHaveDeploymentConfigName
     {
         public override string AWSTypeName { get => AWS.CodeDeploy.DeploymentConfig; }
         /// <summary>

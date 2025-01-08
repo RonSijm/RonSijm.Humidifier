@@ -2,7 +2,7 @@ namespace Humidifier.SageMaker
 {
     using System.Collections.Generic;
 
-    public class ImageVersion : Humidifier.Base.BaseResource, IHaveImageName, IHaveAlias, IHaveAliases
+    public class ImageVersion : Humidifier.Base.BaseResource, IHaveAlias, IHaveImageName, IHaveAliases
     {
         public class Attributes
         {

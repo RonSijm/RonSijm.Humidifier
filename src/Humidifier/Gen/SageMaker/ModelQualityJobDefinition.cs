@@ -199,7 +199,7 @@ namespace Humidifier.SageMaker
             public dynamic ProbabilityAttribute { get; set; }
         }
 
-        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeKmsKeyId, IHaveVolumeSizeInGB
+        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeSizeInGB, IHaveVolumeKmsKeyId
         {
             /// <summary>
             /// InstanceCount
@@ -375,7 +375,7 @@ namespace Humidifier.SageMaker
             public dynamic Line { get; set; }
         }
 
-        public class ModelQualityAppSpecification : Humidifier.Base.BaseSubResource, IHaveImageUri, IHaveContainerEntrypoint, IHaveContainerArguments, IHavePostAnalyticsProcessorSourceUri, IHaveRecordPreprocessorSourceUri
+        public class ModelQualityAppSpecification : Humidifier.Base.BaseSubResource, IHaveImageUri, IHaveContainerEntrypoint, IHaveContainerArguments, IHavePostAnalyticsProcessorSourceUri, IHaveRecordPreprocessorSourceUri, IHaveProblemType
         {
             /// <summary>
             /// ContainerEntrypoint

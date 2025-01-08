@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using ModelPackageTypes;
 
-    public class ModelPackage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomain, IHaveClientToken, IHaveModelPackageGroupName, IHaveModelPackageName, IHaveDescription
+    public class ModelPackage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomain, IHaveClientToken, IHaveModelPackageGroupName, IHaveModelPackageName, IHaveLastModifiedTime, IHaveTask, IHaveModelApprovalStatus, IHaveModelPackageVersion, IHaveModelPackageDescription, IHaveApprovalDescription, IHaveDescription
     {
         public class Attributes
         {
@@ -233,7 +233,7 @@ namespace Humidifier.SageMaker
 
     namespace ModelPackageTypes
     {
-        public class AdditionalInferenceSpecificationDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
+        public class AdditionalInferenceSpecificationDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveSupportedContentTypes, IHaveSupportedRealtimeInferenceInstanceTypes, IHaveSupportedTransformInstanceTypes, IHaveSupportedResponseMIMETypes
         {
             /// <summary>
             /// Description
@@ -298,7 +298,7 @@ namespace Humidifier.SageMaker
             public dynamic SupportedResponseMIMETypes { get; set; }
         }
 
-        public class Bias : Humidifier.Base.BaseSubResource
+        public class Bias : Humidifier.Base.BaseSubResource, IHaveSageMakerModelPackageTypesMetricsSourceReport
         {
             /// <summary>
             /// Report
@@ -374,7 +374,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.DriftCheckExplainability Explainability { get; set; }
         }
 
-        public class DriftCheckBias : Humidifier.Base.BaseSubResource
+        public class DriftCheckBias : Humidifier.Base.BaseSubResource, IHaveSageMakerModelPackageTypesFileSourceConfigFile
         {
             /// <summary>
             /// PreTrainingConstraints
@@ -402,7 +402,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.MetricsSource PostTrainingConstraints { get; set; }
         }
 
-        public class DriftCheckExplainability : Humidifier.Base.BaseSubResource, IHaveSageMakerModelPackageTypesMetricsSourceConstraints
+        public class DriftCheckExplainability : Humidifier.Base.BaseSubResource, IHaveSageMakerModelPackageTypesMetricsSourceConstraints, IHaveSageMakerModelPackageTypesFileSourceConfigFile
         {
             /// <summary>
             /// Constraints
@@ -462,7 +462,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.MetricsSource Statistics { get; set; }
         }
 
-        public class Explainability : Humidifier.Base.BaseSubResource
+        public class Explainability : Humidifier.Base.BaseSubResource, IHaveSageMakerModelPackageTypesMetricsSourceReport
         {
             /// <summary>
             /// Report
@@ -474,7 +474,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.MetricsSource Report { get; set; }
         }
 
-        public class FileSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveContentType
+        public class FileSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveContentType, IHaveContentDigest
         {
             /// <summary>
             /// ContentType
@@ -502,7 +502,7 @@ namespace Humidifier.SageMaker
             public dynamic ContentDigest { get; set; }
         }
 
-        public class InferenceSpecification : Humidifier.Base.BaseSubResource
+        public class InferenceSpecification : Humidifier.Base.BaseSubResource, IHaveSupportedContentTypes, IHaveSupportedRealtimeInferenceInstanceTypes, IHaveSupportedTransformInstanceTypes, IHaveSupportedResponseMIMETypes
         {
             /// <summary>
             /// SupportedContentTypes
@@ -551,7 +551,7 @@ namespace Humidifier.SageMaker
             public dynamic SupportedResponseMIMETypes { get; set; }
         }
 
-        public class MetadataProperties : Humidifier.Base.BaseSubResource, IHaveRepository
+        public class MetadataProperties : Humidifier.Base.BaseSubResource, IHaveRepository, IHaveProjectId, IHaveCommitId
         {
             /// <summary>
             /// GeneratedBy
@@ -587,7 +587,7 @@ namespace Humidifier.SageMaker
             public dynamic ProjectId { get; set; }
         }
 
-        public class MetricsSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveContentType
+        public class MetricsSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveContentType, IHaveContentDigest
         {
             /// <summary>
             /// ContentType
@@ -615,7 +615,7 @@ namespace Humidifier.SageMaker
             public dynamic ContentDigest { get; set; }
         }
 
-        public class ModelAccessConfig : Humidifier.Base.BaseSubResource
+        public class ModelAccessConfig : Humidifier.Base.BaseSubResource, IHaveAcceptEula
         {
             /// <summary>
             /// AcceptEula
@@ -627,7 +627,7 @@ namespace Humidifier.SageMaker
             public dynamic AcceptEula { get; set; }
         }
 
-        public class ModelCard : Humidifier.Base.BaseSubResource
+        public class ModelCard : Humidifier.Base.BaseSubResource, IHaveModelCardStatus
         {
             /// <summary>
             /// ModelCardStatus
@@ -727,7 +727,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.Explainability Explainability { get; set; }
         }
 
-        public class ModelPackageContainerDefinition : Humidifier.Base.BaseSubResource, IHaveImage, IHaveModelDataUrl, IHaveFramework
+        public class ModelPackageContainerDefinition : Humidifier.Base.BaseSubResource, IHaveImage, IHaveModelDataUrl, IHaveFramework, IHaveFrameworkVersion, IHaveContainerHostname, IHaveNearestModelName
         {
             /// <summary>
             /// ModelInput
@@ -873,7 +873,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.MetricsSource Statistics { get; set; }
         }
 
-        public class S3DataSource : Humidifier.Base.BaseSubResource, IHaveS3Uri
+        public class S3DataSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveS3DataType
         {
             /// <summary>
             /// S3Uri
@@ -893,7 +893,7 @@ namespace Humidifier.SageMaker
             public dynamic S3DataType { get; set; }
         }
 
-        public class S3ModelDataSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveCompressionType
+        public class S3ModelDataSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveCompressionType, IHaveS3DataType
         {
             /// <summary>
             /// ModelAccessConfig
@@ -941,7 +941,7 @@ namespace Humidifier.SageMaker
             public dynamic KmsKeyId { get; set; }
         }
 
-        public class SourceAlgorithm : Humidifier.Base.BaseSubResource, IHaveModelDataUrl
+        public class SourceAlgorithm : Humidifier.Base.BaseSubResource, IHaveModelDataUrl, IHaveAlgorithmName
         {
             /// <summary>
             /// ModelDataUrl
@@ -1010,7 +1010,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelPackageTypes.DataSource DataSource { get; set; }
         }
 
-        public class TransformJobDefinition : Humidifier.Base.BaseSubResource
+        public class TransformJobDefinition : Humidifier.Base.BaseSubResource, IHaveMaxPayloadInMB
         {
             /// <summary>
             /// TransformResources
@@ -1135,7 +1135,7 @@ namespace Humidifier.SageMaker
             public dynamic InstanceType { get; set; }
         }
 
-        public class ValidationProfile : Humidifier.Base.BaseSubResource
+        public class ValidationProfile : Humidifier.Base.BaseSubResource, IHaveProfileName
         {
             /// <summary>
             /// ProfileName

@@ -2,7 +2,7 @@ namespace Humidifier.AppStream
 {
     using System.Collections.Generic;
 
-    public class ApplicationFleetAssociation : Humidifier.Base.BaseResource, IHaveApplicationArn
+    public class ApplicationFleetAssociation : Humidifier.Base.BaseResource, IHaveApplicationArn, IHaveFleetName
     {
         public override string AWSTypeName { get => AWS.AppStream.ApplicationFleetAssociation; }
 

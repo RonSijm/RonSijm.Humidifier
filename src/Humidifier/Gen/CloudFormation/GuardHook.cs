@@ -3,7 +3,7 @@ namespace Humidifier.CloudFormation
     using System.Collections.Generic;
     using GuardHookTypes;
 
-    public class GuardHook : Humidifier.Base.BaseResource, IHaveExecutionRole, IHaveAlias
+    public class GuardHook : Humidifier.Base.BaseResource, IHaveExecutionRole, IHaveAlias, IHaveHookStatus, IHaveTargetOperations, IHaveFailureMode
     {
         public class Attributes
         {
@@ -108,7 +108,7 @@ namespace Humidifier.CloudFormation
 
     namespace GuardHookTypes
     {
-        public class HookTarget : Humidifier.Base.BaseSubResource, IHaveAction
+        public class HookTarget : Humidifier.Base.BaseSubResource, IHaveAction, IHaveTargetName, IHaveInvocationPoint
         {
             /// <summary>
             /// InvocationPoint
@@ -168,7 +168,7 @@ namespace Humidifier.CloudFormation
             public dynamic Uri { get; set; }
         }
 
-        public class StackFilters : Humidifier.Base.BaseSubResource
+        public class StackFilters : Humidifier.Base.BaseSubResource, IHaveFilteringCriteria
         {
             /// <summary>
             /// FilteringCriteria
@@ -196,7 +196,7 @@ namespace Humidifier.CloudFormation
             public Humidifier.CloudFormation.GuardHookTypes.StackRoles StackRoles { get; set; }
         }
 
-        public class StackNames : Humidifier.Base.BaseSubResource
+        public class StackNames : Humidifier.Base.BaseSubResource, IHaveInclude, IHaveExclude
         {
             /// <summary>
             /// Exclude
@@ -218,7 +218,7 @@ namespace Humidifier.CloudFormation
             public dynamic Include { get; set; }
         }
 
-        public class StackRoles : Humidifier.Base.BaseSubResource
+        public class StackRoles : Humidifier.Base.BaseSubResource, IHaveInclude, IHaveExclude
         {
             /// <summary>
             /// Exclude
@@ -240,7 +240,7 @@ namespace Humidifier.CloudFormation
             public dynamic Include { get; set; }
         }
 
-        public class TargetFilters : Humidifier.Base.BaseSubResource, IHaveActions
+        public class TargetFilters : Humidifier.Base.BaseSubResource, IHaveActions, IHaveTargetNames, IHaveInvocationPoints
         {
             /// <summary>
             /// Actions

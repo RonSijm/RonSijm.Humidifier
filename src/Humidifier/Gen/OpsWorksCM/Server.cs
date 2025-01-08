@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorksCM
     using System.Collections.Generic;
     using ServerTypes;
 
-    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveInstanceType, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHavePreferredBackupWindow, IHaveServiceRoleArn, IHaveAssociatePublicIpAddress, IHaveBackupId
+    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveInstanceType, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHavePreferredBackupWindow, IHaveServiceRoleArn, IHaveAssociatePublicIpAddress, IHaveBackupId, IHaveInstanceProfileArn, IHaveKeyPair
     {
         public class Attributes
         {

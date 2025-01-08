@@ -2,7 +2,7 @@ namespace Humidifier.WAFRegional
 {
     using System.Collections.Generic;
 
-    public class WebACLAssociation : Humidifier.Base.BaseResource, IHaveResourceArn
+    public class WebACLAssociation : Humidifier.Base.BaseResource, IHaveResourceArn, IHaveWebACLId
     {
         public override string AWSTypeName { get => AWS.WAFRegional.WebACLAssociation; }
 

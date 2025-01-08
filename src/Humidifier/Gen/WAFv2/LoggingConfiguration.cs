@@ -162,7 +162,7 @@ namespace Humidifier.WAFv2
             public dynamic LabelName { get; set; }
         }
 
-        public class LoggingFilter : Humidifier.Base.BaseSubResource
+        public class LoggingFilter : Humidifier.Base.BaseSubResource, IHaveDefaultBehavior
         {
             /// <summary>
             /// Filters

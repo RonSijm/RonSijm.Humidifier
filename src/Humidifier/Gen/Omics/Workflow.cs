@@ -3,7 +3,7 @@ namespace Humidifier.Omics
     using System.Collections.Generic;
     using WorkflowTypes;
 
-    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveEngine
+    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveEngine, IHaveStorageCapacity
     {
         public class Attributes
         {
@@ -86,7 +86,7 @@ namespace Humidifier.Omics
 
     namespace WorkflowTypes
     {
-        public class WorkflowParameter : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class WorkflowParameter : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveOptional
         {
             /// <summary>
             /// Description

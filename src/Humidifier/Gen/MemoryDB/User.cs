@@ -3,7 +3,7 @@ namespace Humidifier.MemoryDB
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveUserName
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveUserName, IHaveAccessString
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.WAFv2
 {
     using System.Collections.Generic;
 
-    public class IPSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveScope
+    public class IPSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveScope, IHaveAddresses
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.ApiGateway
 {
     using System.Collections.Generic;
 
-    public class Resource : Humidifier.Base.BaseResource, IHaveRestApiId
+    public class Resource : Humidifier.Base.BaseResource, IHaveRestApiId, IHaveParentId
     {
         public class Attributes
         {

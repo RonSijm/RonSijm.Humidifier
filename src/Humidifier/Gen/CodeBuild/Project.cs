@@ -221,7 +221,7 @@ namespace Humidifier.CodeBuild
 
     namespace ProjectTypes
     {
-        public class Artifacts : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHavePath, IHaveLocation, IHaveEncryptionDisabled
+        public class Artifacts : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHavePath, IHaveLocation, IHaveEncryptionDisabled, IHavePackaging
         {
             /// <summary>
             /// Path

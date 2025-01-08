@@ -42,7 +42,7 @@ namespace Humidifier.Glue
 
     namespace ClassifierTypes
     {
-        public class CsvClassifier : Humidifier.Base.BaseSubResource, IHaveName, IHaveDelimiter, IHaveHeader, IHaveContainsHeader
+        public class CsvClassifier : Humidifier.Base.BaseSubResource, IHaveName, IHaveDelimiter, IHaveHeader, IHaveQuoteSymbol, IHaveContainsHeader
         {
             /// <summary>
             /// ContainsCustomDatatype

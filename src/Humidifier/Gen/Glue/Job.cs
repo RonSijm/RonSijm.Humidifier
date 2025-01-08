@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using JobTypes;
 
-    public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveRole, IHaveMaxCapacity, IHaveTimeout, IHaveMaxRetries, IHaveSecurityConfiguration, IHaveLogUri, IHaveWorkerType, IHaveGlueVersion, IHaveNumberOfWorkers
+    public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveRole, IHaveMaxCapacity, IHaveTimeout, IHaveMaxRetries, IHaveSecurityConfiguration, IHaveLogUri, IHaveWorkerType, IHaveGlueVersion, IHaveNumberOfWorkers, IHaveMaintenanceWindow
     {
         public override string AWSTypeName { get => AWS.Glue.Job; }
         /// <summary>
@@ -204,7 +204,7 @@ namespace Humidifier.Glue
             public dynamic Connections { get; set; }
         }
 
-        public class ExecutionProperty : Humidifier.Base.BaseSubResource
+        public class ExecutionProperty : Humidifier.Base.BaseSubResource, IHaveMaxConcurrentRuns
         {
             /// <summary>
             /// MaxConcurrentRuns
@@ -216,7 +216,7 @@ namespace Humidifier.Glue
             public dynamic MaxConcurrentRuns { get; set; }
         }
 
-        public class JobCommand : Humidifier.Base.BaseSubResource, IHaveName, IHaveRuntime
+        public class JobCommand : Humidifier.Base.BaseSubResource, IHaveName, IHaveRuntime, IHaveScriptLocation
         {
             /// <summary>
             /// Runtime
@@ -252,7 +252,7 @@ namespace Humidifier.Glue
             public dynamic Name { get; set; }
         }
 
-        public class NotificationProperty : Humidifier.Base.BaseSubResource
+        public class NotificationProperty : Humidifier.Base.BaseSubResource, IHaveNotifyDelayAfter
         {
             /// <summary>
             /// NotifyDelayAfter

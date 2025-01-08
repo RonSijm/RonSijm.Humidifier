@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using AssociationTypes;
 
-    public class Association : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveParameters, IHaveScheduleExpression, IHaveInstanceId, IHaveDocumentVersion, IHaveMaxConcurrency, IHaveScheduleOffset
+    public class Association : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveParameters, IHaveScheduleExpression, IHaveInstanceId, IHaveDocumentVersion, IHaveMaxConcurrency, IHaveScheduleOffset, IHaveMaxErrors
     {
         public class Attributes
         {
@@ -151,7 +151,7 @@ namespace Humidifier.SSM
             public Humidifier.SSM.AssociationTypes.S3OutputLocation S3Location { get; set; }
         }
 
-        public class S3OutputLocation : Humidifier.Base.BaseSubResource
+        public class S3OutputLocation : Humidifier.Base.BaseSubResource, IHaveOutputS3KeyPrefix, IHaveOutputS3BucketName
         {
             /// <summary>
             /// OutputS3KeyPrefix

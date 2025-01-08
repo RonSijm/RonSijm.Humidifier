@@ -362,7 +362,7 @@ namespace Humidifier.Cognito
             public dynamic ChallengeRequiredOnNewDevice { get; set; }
         }
 
-        public class EmailConfiguration : Humidifier.Base.BaseSubResource, IHaveSourceArn, IHaveFrom
+        public class EmailConfiguration : Humidifier.Base.BaseSubResource, IHaveSourceArn, IHaveFrom, IHaveConfigurationSet
         {
             /// <summary>
             /// ReplyToEmailAddress
@@ -406,7 +406,7 @@ namespace Humidifier.Cognito
             public dynamic From { get; set; }
         }
 
-        public class InviteMessageTemplate : Humidifier.Base.BaseSubResource
+        public class InviteMessageTemplate : Humidifier.Base.BaseSubResource, IHaveEmailMessage, IHaveEmailSubject
         {
             /// <summary>
             /// EmailMessage
@@ -791,7 +791,7 @@ namespace Humidifier.Cognito
             public dynamic SnsCallerArn { get; set; }
         }
 
-        public class StringAttributeConstraints : Humidifier.Base.BaseSubResource
+        public class StringAttributeConstraints : Humidifier.Base.BaseSubResource, IHaveMaxLength
         {
             /// <summary>
             /// MinLength
@@ -856,7 +856,7 @@ namespace Humidifier.Cognito
             public dynamic CaseSensitive { get; set; }
         }
 
-        public class VerificationMessageTemplate : Humidifier.Base.BaseSubResource
+        public class VerificationMessageTemplate : Humidifier.Base.BaseSubResource, IHaveEmailMessage, IHaveEmailSubject
         {
             /// <summary>
             /// EmailMessageByLink

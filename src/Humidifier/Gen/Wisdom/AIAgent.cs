@@ -3,7 +3,7 @@ namespace Humidifier.Wisdom
     using System.Collections.Generic;
     using AIAgentTypes;
 
-    public class AIAgent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType
+    public class AIAgent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveAssistantId
     {
         public class Attributes
         {
@@ -93,7 +93,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.AIAgentTypes.AnswerRecommendationAIAgentConfiguration AnswerRecommendationAIAgentConfiguration { get; set; }
         }
 
-        public class AnswerRecommendationAIAgentConfiguration : Humidifier.Base.BaseSubResource
+        public class AnswerRecommendationAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveAnswerGenerationAIPromptId, IHaveAnswerGenerationAIGuardrailId
         {
             /// <summary>
             /// AnswerGenerationAIPromptId
@@ -138,7 +138,7 @@ namespace Humidifier.Wisdom
             public List<Humidifier.Wisdom.AIAgentTypes.AssociationConfiguration> AssociationConfigurations { get; set; }
         }
 
-        public class AssociationConfiguration : Humidifier.Base.BaseSubResource
+        public class AssociationConfiguration : Humidifier.Base.BaseSubResource, IHaveAssociationType
         {
             /// <summary>
             /// AssociationType
@@ -206,7 +206,7 @@ namespace Humidifier.Wisdom
             public dynamic OverrideKnowledgeBaseSearchType { get; set; }
         }
 
-        public class ManualSearchAIAgentConfiguration : Humidifier.Base.BaseSubResource
+        public class ManualSearchAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveAnswerGenerationAIPromptId, IHaveAnswerGenerationAIGuardrailId
         {
             /// <summary>
             /// AnswerGenerationAIPromptId
@@ -235,7 +235,7 @@ namespace Humidifier.Wisdom
             public List<Humidifier.Wisdom.AIAgentTypes.AssociationConfiguration> AssociationConfigurations { get; set; }
         }
 
-        public class OrCondition : Humidifier.Base.BaseSubResource
+        public class OrCondition : Humidifier.Base.BaseSubResource, IHaveWisdomAIAgentTypesTagConditionTagCondition
         {
             /// <summary>
             /// AndConditions
@@ -313,7 +313,7 @@ namespace Humidifier.Wisdom
             public dynamic Key { get; set; }
         }
 
-        public class TagFilter : Humidifier.Base.BaseSubResource
+        public class TagFilter : Humidifier.Base.BaseSubResource, IHaveWisdomAIAgentTypesTagConditionTagCondition
         {
             /// <summary>
             /// OrConditions

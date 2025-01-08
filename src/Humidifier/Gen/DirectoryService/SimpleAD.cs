@@ -3,7 +3,7 @@ namespace Humidifier.DirectoryService
     using System.Collections.Generic;
     using SimpleADTypes;
 
-    public class SimpleAD : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePassword, IHaveSize
+    public class SimpleAD : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePassword, IHaveSize, IHaveCreateAlias, IHaveEnableSso, IHaveShortName
     {
         public class Attributes
         {

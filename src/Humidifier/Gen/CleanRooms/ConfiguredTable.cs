@@ -143,7 +143,7 @@ namespace Humidifier.CleanRooms
             public dynamic Type { get; set; }
         }
 
-        public class AnalysisRuleAggregation : Humidifier.Base.BaseSubResource, IHaveAdditionalAnalyses
+        public class AnalysisRuleAggregation : Humidifier.Base.BaseSubResource, IHaveAdditionalAnalyses, IHaveAllowedJoinOperators, IHaveJoinColumns
         {
             /// <summary>
             /// AllowedJoinOperators
@@ -264,7 +264,7 @@ namespace Humidifier.CleanRooms
             public dynamic DisallowedOutputColumns { get; set; }
         }
 
-        public class AnalysisRuleList : Humidifier.Base.BaseSubResource, IHaveAdditionalAnalyses
+        public class AnalysisRuleList : Humidifier.Base.BaseSubResource, IHaveAdditionalAnalyses, IHaveAllowedJoinOperators, IHaveJoinColumns
         {
             /// <summary>
             /// AllowedJoinOperators
@@ -303,7 +303,7 @@ namespace Humidifier.CleanRooms
             public dynamic JoinColumns { get; set; }
         }
 
-        public class AthenaTableReference : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveWorkGroup
+        public class AthenaTableReference : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveWorkGroup, IHaveOutputLocation
         {
             /// <summary>
             /// WorkGroup
@@ -489,7 +489,7 @@ namespace Humidifier.CleanRooms
             public List<Humidifier.CleanRooms.ConfiguredTableTypes.SnowflakeTableSchemaV1> V1 { get; set; }
         }
 
-        public class SnowflakeTableSchemaV1 : Humidifier.Base.BaseSubResource, IHaveColumnName
+        public class SnowflakeTableSchemaV1 : Humidifier.Base.BaseSubResource, IHaveColumnName, IHaveColumnType
         {
             /// <summary>
             /// ColumnName

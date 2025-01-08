@@ -2,7 +2,7 @@ namespace Humidifier.AppStream
 {
     using System.Collections.Generic;
 
-    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveUserName, IHaveAuthenticationType, IHaveFirstName, IHaveLastName
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveAuthenticationType, IHaveUserName, IHaveFirstName, IHaveLastName, IHaveMessageAction
     {
         public override string AWSTypeName { get => AWS.AppStream.User; }
         public dynamic UserName { get => GivenName; set => GivenName = value; }

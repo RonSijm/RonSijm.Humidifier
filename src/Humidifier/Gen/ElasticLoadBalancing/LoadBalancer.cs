@@ -3,7 +3,7 @@ namespace Humidifier.ElasticLoadBalancing
     using System.Collections.Generic;
     using LoadBalancerTypes;
 
-    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnets, IHaveSecurityGroups, IHaveAvailabilityZones, IHaveLoadBalancerName, IHaveScheme
+    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnets, IHaveSecurityGroups, IHaveAvailabilityZones, IHaveLoadBalancerName, IHaveScheme, IHaveInstances
     {
         public class Attributes
         {
@@ -225,7 +225,7 @@ namespace Humidifier.ElasticLoadBalancing
             public dynamic Timeout { get; set; }
         }
 
-        public class ConnectionSettings : Humidifier.Base.BaseSubResource
+        public class ConnectionSettings : Humidifier.Base.BaseSubResource, IHaveIdleTimeout
         {
             /// <summary>
             /// IdleTimeout
@@ -301,7 +301,7 @@ namespace Humidifier.ElasticLoadBalancing
             public dynamic PolicyName { get; set; }
         }
 
-        public class Listeners : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveInstancePort
+        public class Listeners : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveInstancePort, IHaveLoadBalancerPort
         {
             /// <summary>
             /// InstancePort

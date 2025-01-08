@@ -3,7 +3,7 @@ namespace Humidifier.CodeStarNotifications
     using System.Collections.Generic;
     using NotificationRuleTypes;
 
-    public class NotificationRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveStatus, IHaveResource, IHaveDetailType
+    public class NotificationRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveStatus, IHaveResource, IHaveDetailType, IHaveCreatedBy, IHaveTargetAddress
     {
         public class Attributes
         {
@@ -99,7 +99,7 @@ namespace Humidifier.CodeStarNotifications
 
     namespace NotificationRuleTypes
     {
-        public class Target : Humidifier.Base.BaseSubResource, IHaveTargetType
+        public class Target : Humidifier.Base.BaseSubResource, IHaveTargetType, IHaveTargetAddress
         {
             /// <summary>
             /// TargetType

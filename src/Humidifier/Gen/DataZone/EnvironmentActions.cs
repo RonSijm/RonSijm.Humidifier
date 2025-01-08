@@ -3,7 +3,7 @@ namespace Humidifier.DataZone
     using System.Collections.Generic;
     using EnvironmentActionsTypes;
 
-    public class EnvironmentActions : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDomainIdentifier, IHaveIdentifier, IHaveEnvironmentIdentifier
+    public class EnvironmentActions : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveIdentifier, IHaveDomainIdentifier, IHaveEnvironmentIdentifier
     {
         public class Attributes
         {

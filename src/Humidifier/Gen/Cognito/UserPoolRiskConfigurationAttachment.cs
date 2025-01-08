@@ -54,7 +54,7 @@ namespace Humidifier.Cognito
 
     namespace UserPoolRiskConfigurationAttachmentTypes
     {
-        public class AccountTakeoverActionType : Humidifier.Base.BaseSubResource
+        public class AccountTakeoverActionType : Humidifier.Base.BaseSubResource, IHaveEventAction
         {
             /// <summary>
             /// Notify
@@ -122,7 +122,7 @@ namespace Humidifier.Cognito
             public Humidifier.Cognito.UserPoolRiskConfigurationAttachmentTypes.NotifyConfigurationType NotifyConfiguration { get; set; }
         }
 
-        public class CompromisedCredentialsActionsType : Humidifier.Base.BaseSubResource
+        public class CompromisedCredentialsActionsType : Humidifier.Base.BaseSubResource, IHaveEventAction
         {
             /// <summary>
             /// EventAction
@@ -207,7 +207,7 @@ namespace Humidifier.Cognito
             public Humidifier.Cognito.UserPoolRiskConfigurationAttachmentTypes.NotifyEmailType MfaEmail { get; set; }
         }
 
-        public class NotifyEmailType : Humidifier.Base.BaseSubResource, IHaveSubject
+        public class NotifyEmailType : Humidifier.Base.BaseSubResource, IHaveSubject, IHaveHtmlBody
         {
             /// <summary>
             /// TextBody

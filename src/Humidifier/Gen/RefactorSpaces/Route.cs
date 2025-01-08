@@ -82,7 +82,7 @@ namespace Humidifier.RefactorSpaces
 
     namespace RouteTypes
     {
-        public class DefaultRouteInput : Humidifier.Base.BaseSubResource
+        public class DefaultRouteInput : Humidifier.Base.BaseSubResource, IHaveActivationState
         {
             /// <summary>
             /// ActivationState
@@ -94,7 +94,7 @@ namespace Humidifier.RefactorSpaces
             public dynamic ActivationState { get; set; }
         }
 
-        public class UriPathRouteInput : Humidifier.Base.BaseSubResource, IHaveSourcePath
+        public class UriPathRouteInput : Humidifier.Base.BaseSubResource, IHaveSourcePath, IHaveActivationState
         {
             /// <summary>
             /// SourcePath

@@ -3,7 +3,7 @@ namespace Humidifier.PCS
     using System.Collections.Generic;
     using QueueTypes;
 
-    public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterId
     {
         public class Attributes
         {

@@ -43,7 +43,7 @@ namespace Humidifier.Route53
 
     namespace RecordSetGroupTypes
     {
-        public class AliasTarget : Humidifier.Base.BaseSubResource, IHaveHostedZoneId, IHaveDNSName
+        public class AliasTarget : Humidifier.Base.BaseSubResource, IHaveHostedZoneId, IHaveDNSName, IHaveEvaluateTargetHealth
         {
             /// <summary>
             /// DNSName
@@ -111,7 +111,7 @@ namespace Humidifier.Route53
             public dynamic Longitude { get; set; }
         }
 
-        public class GeoLocation : Humidifier.Base.BaseSubResource, IHaveCountryCode
+        public class GeoLocation : Humidifier.Base.BaseSubResource, IHaveCountryCode, IHaveContinentCode, IHaveSubdivisionCode
         {
             /// <summary>
             /// ContinentCode
@@ -139,7 +139,7 @@ namespace Humidifier.Route53
             public dynamic SubdivisionCode { get; set; }
         }
 
-        public class GeoProximityLocation : Humidifier.Base.BaseSubResource
+        public class GeoProximityLocation : Humidifier.Base.BaseSubResource, IHaveAWSRegion, IHaveBias, IHaveLocalZoneGroup
         {
             /// <summary>
             /// AWSRegion
@@ -175,7 +175,7 @@ namespace Humidifier.Route53
             public dynamic LocalZoneGroup { get; set; }
         }
 
-        public class RecordSet : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveRegion, IHaveWeight, IHaveHostedZoneId, IHaveTTL, IHaveHostedZoneName
+        public class RecordSet : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveRegion, IHaveWeight, IHaveHostedZoneId, IHaveTTL, IHaveHostedZoneName, IHaveFailover, IHaveHealthCheckId, IHaveMultiValueAnswer, IHaveResourceRecords, IHaveSetIdentifier
         {
             /// <summary>
             /// AliasTarget

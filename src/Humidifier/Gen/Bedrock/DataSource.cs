@@ -72,7 +72,7 @@ namespace Humidifier.Bedrock
 
     namespace DataSourceTypes
     {
-        public class BedrockDataAutomationConfiguration : Humidifier.Base.BaseSubResource
+        public class BedrockDataAutomationConfiguration : Humidifier.Base.BaseSubResource, IHaveParsingModality
         {
             /// <summary>
             /// ParsingModality
@@ -84,7 +84,7 @@ namespace Humidifier.Bedrock
             public dynamic ParsingModality { get; set; }
         }
 
-        public class BedrockFoundationModelConfiguration : Humidifier.Base.BaseSubResource
+        public class BedrockFoundationModelConfiguration : Humidifier.Base.BaseSubResource, IHaveModelArn, IHaveParsingModality
         {
             /// <summary>
             /// ModelArn
@@ -112,7 +112,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.ParsingPrompt ParsingPrompt { get; set; }
         }
 
-        public class ChunkingConfiguration : Humidifier.Base.BaseSubResource
+        public class ChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveChunkingStrategy
         {
             /// <summary>
             /// ChunkingStrategy
@@ -148,7 +148,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.HierarchicalChunkingConfiguration HierarchicalChunkingConfiguration { get; set; }
         }
 
-        public class ConfluenceCrawlerConfiguration : Humidifier.Base.BaseSubResource
+        public class ConfluenceCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockDataSourceTypesCrawlFilterConfigurationFilterConfiguration
         {
             /// <summary>
             /// FilterConfiguration
@@ -180,7 +180,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.ConfluenceCrawlerConfiguration CrawlerConfiguration { get; set; }
         }
 
-        public class ConfluenceSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveAuthType, IHaveCredentialsSecretArn
+        public class ConfluenceSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveAuthType, IHaveCredentialsSecretArn, IHaveHostUrl, IHaveHostType
         {
             /// <summary>
             /// HostUrl
@@ -309,7 +309,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.WebDataSourceConfiguration WebConfiguration { get; set; }
         }
 
-        public class FixedSizeChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens
+        public class FixedSizeChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveOverlapPercentage
         {
             /// <summary>
             /// OverlapPercentage
@@ -329,7 +329,7 @@ namespace Humidifier.Bedrock
             public dynamic MaxTokens { get; set; }
         }
 
-        public class HierarchicalChunkingConfiguration : Humidifier.Base.BaseSubResource
+        public class HierarchicalChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveOverlapTokens
         {
             /// <summary>
             /// OverlapTokens
@@ -374,7 +374,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.S3Location S3Location { get; set; }
         }
 
-        public class ParsingConfiguration : Humidifier.Base.BaseSubResource
+        public class ParsingConfiguration : Humidifier.Base.BaseSubResource, IHaveParsingStrategy
         {
             /// <summary>
             /// BedrockDataAutomationConfiguration
@@ -402,7 +402,7 @@ namespace Humidifier.Bedrock
             public dynamic ParsingStrategy { get; set; }
         }
 
-        public class ParsingPrompt : Humidifier.Base.BaseSubResource
+        public class ParsingPrompt : Humidifier.Base.BaseSubResource, IHaveParsingPromptText
         {
             /// <summary>
             /// ParsingPromptText
@@ -414,7 +414,7 @@ namespace Humidifier.Bedrock
             public dynamic ParsingPromptText { get; set; }
         }
 
-        public class PatternObjectFilter : Humidifier.Base.BaseSubResource
+        public class PatternObjectFilter : Humidifier.Base.BaseSubResource, IHaveInclusionFilters, IHaveExclusionFilters
         {
             /// <summary>
             /// ObjectType
@@ -457,7 +457,7 @@ namespace Humidifier.Bedrock
             public List<Humidifier.Bedrock.DataSourceTypes.PatternObjectFilter> Filters { get; set; }
         }
 
-        public class S3DataSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveBucketArn
+        public class S3DataSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveBucketArn, IHaveInclusionPrefixes
         {
             /// <summary>
             /// BucketArn
@@ -486,7 +486,7 @@ namespace Humidifier.Bedrock
             public dynamic InclusionPrefixes { get; set; }
         }
 
-        public class S3Location : Humidifier.Base.BaseSubResource
+        public class S3Location : Humidifier.Base.BaseSubResource, IHaveURI
         {
             /// <summary>
             /// URI
@@ -498,7 +498,7 @@ namespace Humidifier.Bedrock
             public dynamic URI { get; set; }
         }
 
-        public class SalesforceCrawlerConfiguration : Humidifier.Base.BaseSubResource
+        public class SalesforceCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockDataSourceTypesCrawlFilterConfigurationFilterConfiguration
         {
             /// <summary>
             /// FilterConfiguration
@@ -530,7 +530,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.SalesforceCrawlerConfiguration CrawlerConfiguration { get; set; }
         }
 
-        public class SalesforceSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveAuthType, IHaveCredentialsSecretArn
+        public class SalesforceSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveAuthType, IHaveCredentialsSecretArn, IHaveHostUrl
         {
             /// <summary>
             /// HostUrl
@@ -570,7 +570,7 @@ namespace Humidifier.Bedrock
             public dynamic Url { get; set; }
         }
 
-        public class SemanticChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens
+        public class SemanticChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveBufferSize, IHaveBreakpointPercentileThreshold
         {
             /// <summary>
             /// BufferSize
@@ -610,7 +610,7 @@ namespace Humidifier.Bedrock
             public dynamic KmsKeyArn { get; set; }
         }
 
-        public class SharePointCrawlerConfiguration : Humidifier.Base.BaseSubResource
+        public class SharePointCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockDataSourceTypesCrawlFilterConfigurationFilterConfiguration
         {
             /// <summary>
             /// FilterConfiguration
@@ -642,7 +642,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.SharePointCrawlerConfiguration CrawlerConfiguration { get; set; }
         }
 
-        public class SharePointSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveDomain, IHaveAuthType, IHaveCredentialsSecretArn
+        public class SharePointSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveDomain, IHaveAuthType, IHaveCredentialsSecretArn, IHaveHostType, IHaveTenantId
         {
             /// <summary>
             /// SiteUrls
@@ -780,7 +780,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.ChunkingConfiguration ChunkingConfiguration { get; set; }
         }
 
-        public class WebCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveScope
+        public class WebCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveScope, IHaveInclusionFilters, IHaveExclusionFilters
         {
             /// <summary>
             /// InclusionFilters
@@ -818,7 +818,7 @@ namespace Humidifier.Bedrock
             public dynamic Scope { get; set; }
         }
 
-        public class WebCrawlerLimits : Humidifier.Base.BaseSubResource
+        public class WebCrawlerLimits : Humidifier.Base.BaseSubResource, IHaveRateLimit
         {
             /// <summary>
             /// RateLimit

@@ -263,7 +263,7 @@ namespace Humidifier.EKS
             public dynamic MaxSize { get; set; }
         }
 
-        public class Taint : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        public class Taint : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey, IHaveEffect
         {
             /// <summary>
             /// Value

@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class TransitGatewayMulticastGroupMember : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveTransitGatewayMulticastDomainId
+    public class TransitGatewayMulticastGroupMember : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveTransitGatewayMulticastDomainId, IHaveGroupIpAddress
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using StackTypes;
 
-    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVpcId, IHaveServiceRoleArn, IHaveAgentVersion
+    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVpcId, IHaveServiceRoleArn, IHaveAgentVersion, IHaveCustomJson
     {
         public override string AWSTypeName { get => AWS.OpsWorks.Stack; }
         /// <summary>
@@ -280,7 +280,7 @@ namespace Humidifier.OpsWorks
             public dynamic RdsDbInstanceArn { get; set; }
         }
 
-        public class Source : Humidifier.Base.BaseSubResource, IHaveType, IHaveUsername, IHavePassword, IHaveUrl, IHaveRevision
+        public class Source : Humidifier.Base.BaseSubResource, IHaveType, IHaveUrl, IHaveUsername, IHavePassword, IHaveRevision, IHaveSshKey
         {
             /// <summary>
             /// Password

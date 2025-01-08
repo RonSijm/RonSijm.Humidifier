@@ -64,7 +64,7 @@ namespace Humidifier.ECS
             public dynamic ManagedDraining { get; set; }
         }
 
-        public class ManagedScaling : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class ManagedScaling : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveTargetCapacity
         {
             /// <summary>
             /// Status

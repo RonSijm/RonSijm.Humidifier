@@ -76,7 +76,7 @@ namespace Humidifier.EMRContainers
             public Humidifier.EMRContainers.VirtualClusterTypes.ContainerInfo Info { get; set; }
         }
 
-        public class EksInfo : Humidifier.Base.BaseSubResource
+        public class EksInfo : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
             /// <summary>
             /// Namespace_

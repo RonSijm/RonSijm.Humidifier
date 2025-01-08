@@ -3,7 +3,7 @@ namespace Humidifier.InternetMonitor
     using System.Collections.Generic;
     using MonitorTypes;
 
-    public class Monitor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStatus, IHaveResources
+    public class Monitor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStatus, IHaveResources, IHaveMonitorName
     {
         public class Attributes
         {

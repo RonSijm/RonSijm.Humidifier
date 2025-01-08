@@ -3,7 +3,7 @@ namespace Humidifier.CertificateManager
     using System.Collections.Generic;
     using CertificateTypes;
 
-    public class Certificate : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveCertificateAuthorityArn, IHaveKeyAlgorithm
+    public class Certificate : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveCertificateAuthorityArn, IHaveKeyAlgorithm, IHaveSubjectAlternativeNames
     {
         public override string AWSTypeName { get => AWS.CertificateManager.Certificate; }
         /// <summary>

@@ -74,7 +74,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.NetworkInsightsAccessScopeTypes.PathStatementRequest Source { get; set; }
         }
 
-        public class PacketHeaderStatementRequest : Humidifier.Base.BaseSubResource, IHaveProtocols
+        public class PacketHeaderStatementRequest : Humidifier.Base.BaseSubResource, IHaveProtocols, IHaveDestinationAddresses, IHaveSourceAddresses
         {
             /// <summary>
             /// Protocols
@@ -141,7 +141,7 @@ namespace Humidifier.EC2
             public dynamic SourcePrefixLists { get; set; }
         }
 
-        public class PathStatementRequest : Humidifier.Base.BaseSubResource
+        public class PathStatementRequest : Humidifier.Base.BaseSubResource, IHaveEC2NetworkInsightsAccessScopeTypesResourceStatementRequestResourceStatement
         {
             /// <summary>
             /// ResourceStatement
@@ -183,7 +183,7 @@ namespace Humidifier.EC2
             public dynamic Resources { get; set; }
         }
 
-        public class ThroughResourcesStatementRequest : Humidifier.Base.BaseSubResource
+        public class ThroughResourcesStatementRequest : Humidifier.Base.BaseSubResource, IHaveEC2NetworkInsightsAccessScopeTypesResourceStatementRequestResourceStatement
         {
             /// <summary>
             /// ResourceStatement

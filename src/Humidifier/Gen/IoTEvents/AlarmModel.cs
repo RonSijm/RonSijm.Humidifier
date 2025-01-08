@@ -548,7 +548,7 @@ namespace Humidifier.IoTEvents
             public Humidifier.IoTEvents.AlarmModelTypes.Payload Payload { get; set; }
         }
 
-        public class Payload : Humidifier.Base.BaseSubResource, IHaveType
+        public class Payload : Humidifier.Base.BaseSubResource, IHaveType, IHaveContentExpression
         {
             /// <summary>
             /// ContentExpression

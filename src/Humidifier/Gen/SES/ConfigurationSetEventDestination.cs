@@ -48,7 +48,7 @@ namespace Humidifier.SES
             public List<Humidifier.SES.ConfigurationSetEventDestinationTypes.DimensionConfiguration> DimensionConfigurations { get; set; }
         }
 
-        public class DimensionConfiguration : Humidifier.Base.BaseSubResource, IHaveDimensionName
+        public class DimensionConfiguration : Humidifier.Base.BaseSubResource, IHaveDimensionName, IHaveDimensionValueSource, IHaveDefaultDimensionValue
         {
             /// <summary>
             /// DimensionValueSource
@@ -88,7 +88,7 @@ namespace Humidifier.SES
             public dynamic EventBusArn { get; set; }
         }
 
-        public class EventDestination : Humidifier.Base.BaseSubResource, IHaveName, IHaveEnabled
+        public class EventDestination : Humidifier.Base.BaseSubResource, IHaveName, IHaveEnabled, IHaveMatchingEventTypes
         {
             /// <summary>
             /// SnsDestination
@@ -149,7 +149,7 @@ namespace Humidifier.SES
             public Humidifier.SES.ConfigurationSetEventDestinationTypes.KinesisFirehoseDestination KinesisFirehoseDestination { get; set; }
         }
 
-        public class KinesisFirehoseDestination : Humidifier.Base.BaseSubResource
+        public class KinesisFirehoseDestination : Humidifier.Base.BaseSubResource, IHaveIAMRoleARN
         {
             /// <summary>
             /// IAMRoleARN
@@ -169,7 +169,7 @@ namespace Humidifier.SES
             public dynamic DeliveryStreamARN { get; set; }
         }
 
-        public class SnsDestination : Humidifier.Base.BaseSubResource
+        public class SnsDestination : Humidifier.Base.BaseSubResource, IHaveTopicARN
         {
             /// <summary>
             /// TopicARN

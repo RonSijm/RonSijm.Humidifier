@@ -58,7 +58,7 @@ namespace Humidifier.Lambda
 
     namespace VersionTypes
     {
-        public class ProvisionedConcurrencyConfiguration : Humidifier.Base.BaseSubResource
+        public class ProvisionedConcurrencyConfiguration : Humidifier.Base.BaseSubResource, IHaveProvisionedConcurrentExecutions
         {
             /// <summary>
             /// ProvisionedConcurrentExecutions
@@ -70,7 +70,7 @@ namespace Humidifier.Lambda
             public dynamic ProvisionedConcurrentExecutions { get; set; }
         }
 
-        public class RuntimePolicy : Humidifier.Base.BaseSubResource
+        public class RuntimePolicy : Humidifier.Base.BaseSubResource, IHaveUpdateRuntimeOn, IHaveRuntimeVersionArn
         {
             /// <summary>
             /// UpdateRuntimeOn

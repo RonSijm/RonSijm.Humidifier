@@ -2,7 +2,7 @@ namespace Humidifier.Lambda
 {
     using System.Collections.Generic;
 
-    public class Permission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveSourceArn, IHaveFunctionName
+    public class Permission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveSourceArn, IHaveFunctionName, IHaveSourceAccount
     {
         public class Attributes
         {

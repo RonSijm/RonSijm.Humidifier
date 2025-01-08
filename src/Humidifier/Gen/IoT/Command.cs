@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using CommandTypes;
 
-    public class Command : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName
+    public class Command : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveNamespace_, IHaveDisplayName, IHaveLastUpdatedAt, IHaveCreatedAt
     {
         public class Attributes
         {

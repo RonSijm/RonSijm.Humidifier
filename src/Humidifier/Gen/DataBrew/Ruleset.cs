@@ -123,7 +123,7 @@ namespace Humidifier.DataBrew
             public Humidifier.DataBrew.RulesetTypes.Threshold Threshold { get; set; }
         }
 
-        public class SubstitutionValue : Humidifier.Base.BaseSubResource, IHaveValue
+        public class SubstitutionValue : Humidifier.Base.BaseSubResource, IHaveValue, IHaveValueReference
         {
             /// <summary>
             /// Value

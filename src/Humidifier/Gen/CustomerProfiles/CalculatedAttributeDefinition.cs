@@ -122,7 +122,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Name { get; set; }
         }
 
-        public class Conditions : Humidifier.Base.BaseSubResource
+        public class Conditions : Humidifier.Base.BaseSubResource, IHaveObjectCount
         {
             /// <summary>
             /// Range

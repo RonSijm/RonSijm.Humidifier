@@ -33,7 +33,7 @@ namespace Humidifier.Connect
 
     namespace UserHierarchyStructureTypes
     {
-        public class LevelFive : Humidifier.Base.BaseSubResource, IHaveName
+        public class LevelFive : Humidifier.Base.BaseSubResource, IHaveName, IHaveHierarchyLevelId, IHaveHierarchyLevelArn
         {
             /// <summary>
             /// HierarchyLevelId
@@ -61,7 +61,7 @@ namespace Humidifier.Connect
             public dynamic Name { get; set; }
         }
 
-        public class LevelFour : Humidifier.Base.BaseSubResource, IHaveName
+        public class LevelFour : Humidifier.Base.BaseSubResource, IHaveName, IHaveHierarchyLevelId, IHaveHierarchyLevelArn
         {
             /// <summary>
             /// HierarchyLevelId
@@ -89,7 +89,7 @@ namespace Humidifier.Connect
             public dynamic Name { get; set; }
         }
 
-        public class LevelOne : Humidifier.Base.BaseSubResource, IHaveName
+        public class LevelOne : Humidifier.Base.BaseSubResource, IHaveName, IHaveHierarchyLevelId, IHaveHierarchyLevelArn
         {
             /// <summary>
             /// HierarchyLevelId
@@ -117,7 +117,7 @@ namespace Humidifier.Connect
             public dynamic Name { get; set; }
         }
 
-        public class LevelThree : Humidifier.Base.BaseSubResource, IHaveName
+        public class LevelThree : Humidifier.Base.BaseSubResource, IHaveName, IHaveHierarchyLevelId, IHaveHierarchyLevelArn
         {
             /// <summary>
             /// HierarchyLevelId
@@ -145,7 +145,7 @@ namespace Humidifier.Connect
             public dynamic Name { get; set; }
         }
 
-        public class LevelTwo : Humidifier.Base.BaseSubResource, IHaveName
+        public class LevelTwo : Humidifier.Base.BaseSubResource, IHaveName, IHaveHierarchyLevelId, IHaveHierarchyLevelArn
         {
             /// <summary>
             /// HierarchyLevelId

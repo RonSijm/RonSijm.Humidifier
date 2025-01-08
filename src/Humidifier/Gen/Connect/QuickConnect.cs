@@ -66,7 +66,7 @@ namespace Humidifier.Connect
             public dynamic PhoneNumber { get; set; }
         }
 
-        public class QueueQuickConnectConfig : Humidifier.Base.BaseSubResource, IHaveContactFlowArn
+        public class QueueQuickConnectConfig : Humidifier.Base.BaseSubResource, IHaveContactFlowArn, IHaveQueueArn
         {
             /// <summary>
             /// ContactFlowArn

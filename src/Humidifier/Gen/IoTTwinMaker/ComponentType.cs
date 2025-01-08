@@ -142,7 +142,7 @@ namespace Humidifier.IoTTwinMaker
             public Humidifier.IoTTwinMaker.ComponentTypeTypes.LambdaFunction Lambda { get; set; }
         }
 
-        public class DataType : Humidifier.Base.BaseSubResource, IHaveType
+        public class DataType : Humidifier.Base.BaseSubResource, IHaveType, IHaveUnitOfMeasure
         {
             /// <summary>
             /// Type
@@ -326,7 +326,7 @@ namespace Humidifier.IoTTwinMaker
             public dynamic Arn { get; set; }
         }
 
-        public class PropertyDefinition : Humidifier.Base.BaseSubResource
+        public class PropertyDefinition : Humidifier.Base.BaseSubResource, IHaveIsExternalId, IHaveIsStoredExternally, IHaveIsTimeSeries, IHaveIsRequiredInEntity
         {
             /// <summary>
             /// DefaultValue
@@ -387,7 +387,7 @@ namespace Humidifier.IoTTwinMaker
             public Dictionary<string, dynamic> Configurations { get; set; }
         }
 
-        public class PropertyGroup : Humidifier.Base.BaseSubResource
+        public class PropertyGroup : Humidifier.Base.BaseSubResource, IHaveGroupType, IHavePropertyNames
         {
             /// <summary>
             /// GroupType
@@ -408,7 +408,7 @@ namespace Humidifier.IoTTwinMaker
             public dynamic PropertyNames { get; set; }
         }
 
-        public class Relationship : Humidifier.Base.BaseSubResource
+        public class Relationship : Humidifier.Base.BaseSubResource, IHaveRelationshipType, IHaveTargetComponentTypeId
         {
             /// <summary>
             /// RelationshipType
@@ -428,7 +428,7 @@ namespace Humidifier.IoTTwinMaker
             public dynamic TargetComponentTypeId { get; set; }
         }
 
-        public class RelationshipValue : Humidifier.Base.BaseSubResource
+        public class RelationshipValue : Humidifier.Base.BaseSubResource, IHaveTargetComponentName, IHaveTargetEntityId
         {
             /// <summary>
             /// TargetComponentName

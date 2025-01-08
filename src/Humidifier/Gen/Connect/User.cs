@@ -116,7 +116,7 @@ namespace Humidifier.Connect
 
     namespace UserTypes
     {
-        public class UserIdentityInfo : Humidifier.Base.BaseSubResource, IHaveEmail, IHaveFirstName, IHaveLastName
+        public class UserIdentityInfo : Humidifier.Base.BaseSubResource, IHaveFirstName, IHaveLastName, IHaveEmail
         {
             /// <summary>
             /// Email
@@ -196,7 +196,7 @@ namespace Humidifier.Connect
             public dynamic AfterContactWorkTimeLimit { get; set; }
         }
 
-        public class UserProficiency : Humidifier.Base.BaseSubResource, IHaveAttributeName, IHaveLevel
+        public class UserProficiency : Humidifier.Base.BaseSubResource, IHaveAttributeName, IHaveLevel, IHaveAttributeValue
         {
             /// <summary>
             /// AttributeValue

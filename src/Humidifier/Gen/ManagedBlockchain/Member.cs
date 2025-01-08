@@ -3,7 +3,7 @@ namespace Humidifier.ManagedBlockchain
     using System.Collections.Generic;
     using MemberTypes;
 
-    public class Member : Humidifier.Base.BaseResource, IHaveNetworkId
+    public class Member : Humidifier.Base.BaseResource, IHaveNetworkId, IHaveInvitationId
     {
         public class Attributes
         {
@@ -138,7 +138,7 @@ namespace Humidifier.ManagedBlockchain
             public Humidifier.ManagedBlockchain.MemberTypes.MemberFabricConfiguration MemberFabricConfiguration { get; set; }
         }
 
-        public class NetworkConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveFramework
+        public class NetworkConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveFramework, IHaveFrameworkVersion
         {
             /// <summary>
             /// Description

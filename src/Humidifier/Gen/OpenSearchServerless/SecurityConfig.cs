@@ -48,7 +48,7 @@ namespace Humidifier.OpenSearchServerless
 
     namespace SecurityConfigTypes
     {
-        public class IamIdentityCenterConfigOptions : Humidifier.Base.BaseSubResource, IHaveInstanceArn, IHaveApplicationName, IHaveApplicationArn, IHaveApplicationDescription, IHaveUserAttribute
+        public class IamIdentityCenterConfigOptions : Humidifier.Base.BaseSubResource, IHaveInstanceArn, IHaveApplicationName, IHaveApplicationArn, IHaveApplicationDescription, IHaveUserAttribute, IHaveGroupAttribute
         {
             /// <summary>
             /// ApplicationArn
@@ -100,7 +100,7 @@ namespace Humidifier.OpenSearchServerless
             public dynamic GroupAttribute { get; set; }
         }
 
-        public class SamlConfigOptions : Humidifier.Base.BaseSubResource, IHaveSessionTimeout, IHaveUserAttribute
+        public class SamlConfigOptions : Humidifier.Base.BaseSubResource, IHaveSessionTimeout, IHaveUserAttribute, IHaveMetadata, IHaveGroupAttribute
         {
             /// <summary>
             /// SessionTimeout

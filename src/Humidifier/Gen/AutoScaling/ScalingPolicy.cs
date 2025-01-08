@@ -3,7 +3,7 @@ namespace Humidifier.AutoScaling
     using System.Collections.Generic;
     using ScalingPolicyTypes;
 
-    public class ScalingPolicy : Humidifier.Base.BaseResource, IHavePolicyType, IHaveScalingAdjustment, IHaveAutoScalingGroupName, IHaveAdjustmentType, IHaveCooldown, IHaveEstimatedInstanceWarmup
+    public class ScalingPolicy : Humidifier.Base.BaseResource, IHavePolicyType, IHaveScalingAdjustment, IHaveAutoScalingGroupName, IHaveAdjustmentType, IHaveCooldown, IHaveEstimatedInstanceWarmup, IHaveMetricAggregationType, IHaveMinAdjustmentMagnitude
     {
         public class Attributes
         {
@@ -107,7 +107,7 @@ namespace Humidifier.AutoScaling
 
     namespace ScalingPolicyTypes
     {
-        public class CustomizedMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHavePeriod, IHaveStatistic
+        public class CustomizedMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHavePeriod, IHaveStatistic
         {
             /// <summary>
             /// MetricName
@@ -169,7 +169,7 @@ namespace Humidifier.AutoScaling
             public dynamic Namespace_ { get; set; }
         }
 
-        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName
+        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_
         {
             /// <summary>
             /// MetricName
@@ -262,7 +262,7 @@ namespace Humidifier.AutoScaling
             public dynamic Name { get; set; }
         }
 
-        public class MetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveStat
+        public class MetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveStat, IHaveAutoScalingScalingPolicyTypesMetricMetric
         {
             /// <summary>
             /// Stat
@@ -310,7 +310,7 @@ namespace Humidifier.AutoScaling
             public dynamic ResourceLabel { get; set; }
         }
 
-        public class PredictiveScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMode
+        public class PredictiveScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMode, IHaveMaxCapacityBreachBehavior, IHaveMaxCapacityBuffer, IHaveSchedulingBufferTime
         {
             /// <summary>
             /// MaxCapacityBreachBehavior
@@ -514,7 +514,7 @@ namespace Humidifier.AutoScaling
             public dynamic ResourceLabel { get; set; }
         }
 
-        public class StepAdjustment : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment
+        public class StepAdjustment : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment, IHaveMetricIntervalUpperBound, IHaveMetricIntervalLowerBound
         {
             /// <summary>
             /// MetricIntervalUpperBound
@@ -630,7 +630,7 @@ namespace Humidifier.AutoScaling
             public dynamic Id { get; set; }
         }
 
-        public class TargetTrackingMetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHavePeriod, IHaveStat
+        public class TargetTrackingMetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHavePeriod, IHaveStat, IHaveAutoScalingScalingPolicyTypesMetricMetric
         {
             /// <summary>
             /// Stat

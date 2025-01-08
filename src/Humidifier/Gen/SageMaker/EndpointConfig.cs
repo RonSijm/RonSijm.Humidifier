@@ -198,7 +198,7 @@ namespace Humidifier.SageMaker
             public dynamic S3FailurePath { get; set; }
         }
 
-        public class CaptureContentTypeHeader : Humidifier.Base.BaseSubResource
+        public class CaptureContentTypeHeader : Humidifier.Base.BaseSubResource, IHaveJsonContentTypes, IHaveCsvContentTypes
         {
             /// <summary>
             /// JsonContentTypes
@@ -260,7 +260,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.EndpointConfigTypes.ClarifyShapConfig ShapConfig { get; set; }
         }
 
-        public class ClarifyInferenceConfig : Humidifier.Base.BaseSubResource, IHaveProbabilityAttribute, IHaveFeaturesAttribute
+        public class ClarifyInferenceConfig : Humidifier.Base.BaseSubResource, IHaveProbabilityAttribute, IHaveFeaturesAttribute, IHaveMaxPayloadInMB
         {
             /// <summary>
             /// ContentTemplate
@@ -512,7 +512,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.EndpointConfigTypes.ClarifyExplainerConfig ClarifyExplainerConfig { get; set; }
         }
 
-        public class ManagedInstanceScaling : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class ManagedInstanceScaling : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveMaxInstanceCount, IHaveMinInstanceCount
         {
             /// <summary>
             /// Status
@@ -540,7 +540,7 @@ namespace Humidifier.SageMaker
             public dynamic MinInstanceCount { get; set; }
         }
 
-        public class ProductionVariant : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveVolumeSizeInGB, IHaveModelName, IHaveVariantName
+        public class ProductionVariant : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveVolumeSizeInGB, IHaveModelName, IHaveVariantName, IHaveModelDataDownloadTimeoutInSeconds, IHaveContainerStartupHealthCheckTimeoutInSeconds
         {
             /// <summary>
             /// ManagedInstanceScaling

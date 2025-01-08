@@ -3,7 +3,7 @@ namespace Humidifier.CE
     using System.Collections.Generic;
     using AnomalySubscriptionTypes;
 
-    public class AnomalySubscription : Humidifier.Base.BaseResource, IHaveThreshold, IHaveSubscriptionName, IHaveFrequency
+    public class AnomalySubscription : Humidifier.Base.BaseResource, IHaveThreshold, IHaveFrequency, IHaveSubscriptionName
     {
         public class Attributes
         {

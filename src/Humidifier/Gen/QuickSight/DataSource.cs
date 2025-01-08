@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveAwsAccountId
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveAwsAccountId, IHaveFolderArns
     {
         public class Attributes
         {
@@ -755,7 +755,7 @@ namespace Humidifier.QuickSight
             public dynamic DatabaseGroups { get; set; }
         }
 
-        public class RedshiftParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveDatabase
+        public class RedshiftParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveDatabase, IHaveClusterId
         {
             /// <summary>
             /// IAMParameters
@@ -856,7 +856,7 @@ namespace Humidifier.QuickSight
             public dynamic RoleArn { get; set; }
         }
 
-        public class SnowflakeParameters : Humidifier.Base.BaseSubResource, IHaveHost, IHaveDatabase, IHaveAuthenticationType
+        public class SnowflakeParameters : Humidifier.Base.BaseSubResource, IHaveHost, IHaveDatabase, IHaveAuthenticationType, IHaveWarehouse, IHaveDatabaseAccessControlRole, IHaveQuickSightDataSourceTypesOAuthParametersOAuthParameters
         {
             /// <summary>
             /// Warehouse
@@ -968,7 +968,7 @@ namespace Humidifier.QuickSight
             public dynamic DisableSsl { get; set; }
         }
 
-        public class StarburstParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveAuthenticationType, IHaveCatalog
+        public class StarburstParameters : Humidifier.Base.BaseSubResource, IHavePort, IHaveHost, IHaveAuthenticationType, IHaveCatalog, IHaveProductType, IHaveDatabaseAccessControlRole, IHaveQuickSightDataSourceTypesOAuthParametersOAuthParameters
         {
             /// <summary>
             /// Port

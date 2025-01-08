@@ -2,7 +2,7 @@ namespace Humidifier.Logs
 {
     using System.Collections.Generic;
 
-    public class AccountPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveScope, IHavePolicyName, IHavePolicyType
+    public class AccountPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveScope, IHavePolicyName, IHavePolicyType, IHaveSelectionCriteria
     {
         public class Attributes
         {

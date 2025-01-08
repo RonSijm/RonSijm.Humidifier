@@ -219,7 +219,7 @@ namespace Humidifier.ApiGateway
             public dynamic ThrottlingRateLimit { get; set; }
         }
 
-        public class StageDescription : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDescription, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit, IHaveClientCertificateId, IHaveCacheTtlInSeconds, IHaveCacheDataEncrypted, IHaveCachingEnabled, IHaveMetricsEnabled
+        public class StageDescription : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDescription, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit, IHaveClientCertificateId, IHaveCacheTtlInSeconds, IHaveCacheDataEncrypted, IHaveCachingEnabled, IHaveMetricsEnabled, IHaveDocumentationVersion, IHaveTracingEnabled, IHaveCacheClusterSize, IHaveCacheClusterEnabled
         {
             /// <summary>
             /// CacheTtlInSeconds

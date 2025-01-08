@@ -35,7 +35,7 @@ namespace Humidifier.S3
 
     namespace MultiRegionAccessPointPolicyTypes
     {
-        public class PolicyStatus : Humidifier.Base.BaseSubResource
+        public class PolicyStatus : Humidifier.Base.BaseSubResource, IHaveIsPublic
         {
             /// <summary>
             /// IsPublic

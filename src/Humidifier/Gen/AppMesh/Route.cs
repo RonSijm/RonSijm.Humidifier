@@ -89,7 +89,7 @@ namespace Humidifier.AppMesh
             public dynamic Unit { get; set; }
         }
 
-        public class GrpcRetryPolicy : Humidifier.Base.BaseSubResource, IHaveMaxRetries
+        public class GrpcRetryPolicy : Humidifier.Base.BaseSubResource, IHaveMaxRetries, IHaveAppMeshRouteTypesDurationPerRetryTimeout, IHaveHttpRetryEvents, IHaveTcpRetryEvents
         {
             /// <summary>
             /// MaxRetries
@@ -250,7 +250,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.RouteTypes.GrpcRouteMetadataMatchMethod Match { get; set; }
         }
 
-        public class GrpcRouteMetadataMatchMethod : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex
+        public class GrpcRouteMetadataMatchMethod : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex, IHaveAppMeshRouteTypesMatchRangeRange
         {
             /// <summary>
             /// Suffix
@@ -294,7 +294,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.RouteTypes.MatchRange Range { get; set; }
         }
 
-        public class GrpcTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshRouteTypesDurationIdle
+        public class GrpcTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshRouteTypesDurationIdle, IHaveAppMeshRouteTypesDurationPerRequest
         {
             /// <summary>
             /// PerRequest
@@ -314,7 +314,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.RouteTypes.Duration Idle { get; set; }
         }
 
-        public class HeaderMatchMethod : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex
+        public class HeaderMatchMethod : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex, IHaveAppMeshRouteTypesMatchRangeRange
         {
             /// <summary>
             /// Suffix
@@ -390,7 +390,7 @@ namespace Humidifier.AppMesh
             public dynamic Exact { get; set; }
         }
 
-        public class HttpRetryPolicy : Humidifier.Base.BaseSubResource, IHaveMaxRetries
+        public class HttpRetryPolicy : Humidifier.Base.BaseSubResource, IHaveMaxRetries, IHaveAppMeshRouteTypesDurationPerRetryTimeout, IHaveHttpRetryEvents, IHaveTcpRetryEvents
         {
             /// <summary>
             /// MaxRetries
@@ -567,7 +567,7 @@ namespace Humidifier.AppMesh
             public List<Humidifier.AppMesh.RouteTypes.QueryParameter> QueryParameters { get; set; }
         }
 
-        public class HttpTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshRouteTypesDurationIdle
+        public class HttpTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshRouteTypesDurationIdle, IHaveAppMeshRouteTypesDurationPerRequest
         {
             /// <summary>
             /// PerRequest

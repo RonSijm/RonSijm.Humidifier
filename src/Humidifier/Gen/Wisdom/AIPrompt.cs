@@ -3,7 +3,7 @@ namespace Humidifier.Wisdom
     using System.Collections.Generic;
     using AIPromptTypes;
 
-    public class AIPrompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveModelId, IHaveTemplateType
+    public class AIPrompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveModelId, IHaveTemplateType, IHaveAssistantId
     {
         public class Attributes
         {

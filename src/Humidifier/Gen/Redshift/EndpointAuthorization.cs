@@ -2,7 +2,7 @@ namespace Humidifier.Redshift
 {
     using System.Collections.Generic;
 
-    public class EndpointAuthorization : Humidifier.Base.BaseResource, IHaveClusterIdentifier
+    public class EndpointAuthorization : Humidifier.Base.BaseResource, IHaveClusterIdentifier, IHaveAccount
     {
         public class Attributes
         {

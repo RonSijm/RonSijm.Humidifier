@@ -3,7 +3,7 @@ namespace Humidifier.MWAA
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDynamicTags, IHaveExecutionRoleArn, IHaveKmsKey
+    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDynamicTags, IHaveExecutionRoleArn, IHaveKmsKey, IHaveWeeklyMaintenanceWindowStart
     {
         public class Attributes
         {

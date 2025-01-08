@@ -3,7 +3,7 @@ namespace Humidifier.Config
     using System.Collections.Generic;
     using RemediationConfigurationTypes;
 
-    public class RemediationConfiguration : Humidifier.Base.BaseResource, IHaveResourceType, IHaveParameters, IHaveTargetType, IHaveTargetId
+    public class RemediationConfiguration : Humidifier.Base.BaseResource, IHaveResourceType, IHaveParameters, IHaveTargetType, IHaveTargetId, IHaveConfigRuleName
     {
         public override string AWSTypeName { get => AWS.Config.RemediationConfiguration; }
         /// <summary>

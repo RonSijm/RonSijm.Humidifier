@@ -2,7 +2,7 @@ namespace Humidifier.ApiGateway
 {
     using System.Collections.Generic;
 
-    public class BasePathMappingV2 : Humidifier.Base.BaseResource, IHaveRestApiId, IHaveStage, IHaveBasePath
+    public class BasePathMappingV2 : Humidifier.Base.BaseResource, IHaveRestApiId, IHaveStage, IHaveBasePath, IHaveDomainNameArn
     {
         public class Attributes
         {

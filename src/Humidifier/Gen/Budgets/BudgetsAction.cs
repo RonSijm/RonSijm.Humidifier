@@ -3,7 +3,7 @@ namespace Humidifier.Budgets
     using System.Collections.Generic;
     using BudgetsActionTypes;
 
-    public class BudgetsAction : Humidifier.Base.BaseResource, IHaveExecutionRoleArn, IHaveActionType, IHaveNotificationType
+    public class BudgetsAction : Humidifier.Base.BaseResource, IHaveExecutionRoleArn, IHaveActionType, IHaveNotificationType, IHaveBudgetName
     {
         public class Attributes
         {
@@ -151,7 +151,7 @@ namespace Humidifier.Budgets
             public Humidifier.Budgets.BudgetsActionTypes.ScpActionDefinition ScpActionDefinition { get; set; }
         }
 
-        public class IamActionDefinition : Humidifier.Base.BaseSubResource, IHaveGroups, IHaveUsers, IHaveRoles
+        public class IamActionDefinition : Humidifier.Base.BaseSubResource, IHaveGroups, IHaveUsers, IHaveRoles, IHavePolicyArn
         {
             /// <summary>
             /// PolicyArn
@@ -210,7 +210,7 @@ namespace Humidifier.Budgets
             public dynamic Key { get; set; }
         }
 
-        public class ScpActionDefinition : Humidifier.Base.BaseSubResource
+        public class ScpActionDefinition : Humidifier.Base.BaseSubResource, IHaveTargetIds
         {
             /// <summary>
             /// TargetIds
@@ -231,7 +231,7 @@ namespace Humidifier.Budgets
             public dynamic PolicyId { get; set; }
         }
 
-        public class SsmActionDefinition : Humidifier.Base.BaseSubResource, IHaveRegion
+        public class SsmActionDefinition : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveSubtype
         {
             /// <summary>
             /// Region

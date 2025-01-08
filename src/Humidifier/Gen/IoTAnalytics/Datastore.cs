@@ -158,7 +158,7 @@ namespace Humidifier.IoTAnalytics
             public List<Humidifier.IoTAnalytics.DatastoreTypes.DatastorePartition> Partitions { get; set; }
         }
 
-        public class DatastoreStorage : Humidifier.Base.BaseSubResource
+        public class DatastoreStorage : Humidifier.Base.BaseSubResource, IHaveServiceManagedS3
         {
             /// <summary>
             /// CustomerManagedS3

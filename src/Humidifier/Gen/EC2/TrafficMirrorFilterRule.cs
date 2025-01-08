@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using TrafficMirrorFilterRuleTypes;
 
-    public class TrafficMirrorFilterRule : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveProtocol, IHaveDestinationCidrBlock, IHaveRuleAction, IHaveRuleNumber
+    public class TrafficMirrorFilterRule : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveProtocol, IHaveDestinationCidrBlock, IHaveRuleAction, IHaveRuleNumber, IHaveTrafficMirrorFilterId
     {
         public override string AWSTypeName { get => AWS.EC2.TrafficMirrorFilterRule; }
         /// <summary>

@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using InstanceTypes;
 
-    public class Instance : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveInstanceType, IHaveAvailabilityZone, IHaveSubnetId, IHaveSecurityGroups, IHavePrivateIpAddress, IHaveEbsOptimized, IHaveImageId, IHaveTenancy, IHaveKeyName, IHaveUserData, IHaveIpv6AddressCount, IHaveKernelId, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity
+    public class Instance : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveInstanceType, IHaveAvailabilityZone, IHaveSubnetId, IHaveSecurityGroups, IHavePrivateIpAddress, IHaveEbsOptimized, IHaveImageId, IHaveTenancy, IHaveKeyName, IHaveUserData, IHaveIpv6AddressCount, IHaveKernelId, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity, IHaveIamInstanceProfile, IHaveAdditionalInfo, IHaveInstanceInitiatedShutdownBehavior, IHaveDisableApiTermination, IHaveRamdiskId, IHaveSourceDestCheck
     {
         public class Attributes
         {
@@ -410,7 +410,7 @@ namespace Humidifier.EC2
             public dynamic DeviceName { get; set; }
         }
 
-        public class CpuOptions : Humidifier.Base.BaseSubResource
+        public class CpuOptions : Humidifier.Base.BaseSubResource, IHaveThreadsPerCore, IHaveCoreCount
         {
             /// <summary>
             /// ThreadsPerCore
@@ -598,7 +598,7 @@ namespace Humidifier.EC2
             public dynamic LaunchTemplateId { get; set; }
         }
 
-        public class LicenseSpecification : Humidifier.Base.BaseSubResource
+        public class LicenseSpecification : Humidifier.Base.BaseSubResource, IHaveLicenseConfigurationArn
         {
             /// <summary>
             /// LicenseConfigurationArn
@@ -610,7 +610,7 @@ namespace Humidifier.EC2
             public dynamic LicenseConfigurationArn { get; set; }
         }
 
-        public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSubnetId, IHaveNetworkInterfaceId, IHavePrivateIpAddress, IHaveDeleteOnTermination, IHaveAssociatePublicIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveDeviceIndex
+        public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSubnetId, IHaveNetworkInterfaceId, IHavePrivateIpAddress, IHaveDeleteOnTermination, IHaveAssociatePublicIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveDeviceIndex, IHaveGroupSet, IHaveAssociateCarrierIpAddress
         {
             /// <summary>
             /// Description
@@ -810,7 +810,7 @@ namespace Humidifier.EC2
             public dynamic Name { get; set; }
         }
 
-        public class Volume : Humidifier.Base.BaseSubResource, IHaveVolumeId
+        public class Volume : Humidifier.Base.BaseSubResource, IHaveVolumeId, IHaveDevice
         {
             /// <summary>
             /// VolumeId

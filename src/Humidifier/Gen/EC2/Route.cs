@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class Route : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveInstanceId, IHaveTransitGatewayId, IHaveVpcEndpointId, IHaveDestinationCidrBlock, IHaveRouteTableId, IHaveDestinationPrefixListId
+    public class Route : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveInstanceId, IHaveTransitGatewayId, IHaveVpcEndpointId, IHaveDestinationCidrBlock, IHaveRouteTableId, IHaveDestinationPrefixListId, IHaveGatewayId, IHaveLocalGatewayId, IHaveVpcPeeringConnectionId, IHaveNatGatewayId
     {
         public class Attributes
         {

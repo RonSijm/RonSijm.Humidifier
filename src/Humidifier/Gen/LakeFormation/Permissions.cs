@@ -3,7 +3,7 @@ namespace Humidifier.LakeFormation
     using System.Collections.Generic;
     using PermissionsTypes;
 
-    public class Permissions : Humidifier.Base.BaseResource
+    public class Permissions : Humidifier.Base.BaseResource, IHavePermissionsWithGrantOption
     {
         public override string AWSTypeName { get => AWS.LakeFormation.Permissions; }
 

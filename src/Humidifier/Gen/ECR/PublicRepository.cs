@@ -3,7 +3,7 @@ namespace Humidifier.ECR
     using System.Collections.Generic;
     using PublicRepositoryTypes;
 
-    public class PublicRepository : Humidifier.Base.BaseResource, IHaveTags, IHaveRepositoryName
+    public class PublicRepository : Humidifier.Base.BaseResource, IHaveTags, IHaveRepositoryName, IHaveRepositoryPolicyText
     {
         public class Attributes
         {
@@ -48,7 +48,7 @@ namespace Humidifier.ECR
 
     namespace PublicRepositoryTypes
     {
-        public class RepositoryCatalogData : Humidifier.Base.BaseSubResource, IHaveRepositoryDescription
+        public class RepositoryCatalogData : Humidifier.Base.BaseSubResource, IHaveRepositoryDescription, IHaveArchitectures
         {
             /// <summary>
             /// AboutText

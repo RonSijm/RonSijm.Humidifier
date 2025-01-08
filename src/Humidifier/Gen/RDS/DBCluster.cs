@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using DBClusterTypes;
 
-    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveDatabaseName, IHaveIops, IHaveDomain, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveDBSubnetGroupName, IHaveStorageType, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveNetworkType, IHaveDBClusterIdentifier, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveMasterUsername, IHaveBackupRetentionPeriod, IHaveAllocatedStorage, IHaveSnapshotIdentifier, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveCopyTagsToSnapshot, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveEngineLifecycleSupport
+    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveDatabaseName, IHaveDomain, IHaveIops, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveNetworkType, IHaveDBSubnetGroupName, IHaveStorageType, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveMasterUsername, IHaveBackupRetentionPeriod, IHaveAllocatedStorage, IHaveSnapshotIdentifier, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveManageMasterUserPassword, IHaveEngineLifecycleSupport, IHaveDBInstanceParameterGroupName, IHaveDBSystemId, IHaveMonitoringInterval, IHavePerformanceInsightsRetentionPeriod, IHaveMonitoringRoleArn, IHaveGlobalClusterIdentifier, IHaveDomainIAMRoleName, IHaveSourceRegion, IHaveEnableIAMDatabaseAuthentication
     {
         public class Attributes
         {
@@ -559,7 +559,7 @@ namespace Humidifier.RDS
             public dynamic Address { get; set; }
         }
 
-        public class ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveMinCapacity, IHaveTimeoutAction
+        public class ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveMinCapacity, IHaveTimeoutAction, IHaveSecondsUntilAutoPause
         {
             /// <summary>
             /// TimeoutAction
@@ -611,7 +611,7 @@ namespace Humidifier.RDS
             public dynamic MaxCapacity { get; set; }
         }
 
-        public class ServerlessV2ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveMinCapacity
+        public class ServerlessV2ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveMinCapacity, IHaveSecondsUntilAutoPause
         {
             /// <summary>
             /// SecondsUntilAutoPause

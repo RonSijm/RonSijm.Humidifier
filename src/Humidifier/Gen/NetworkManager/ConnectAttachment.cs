@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using ConnectAttachmentTypes;
 
-    public class ConnectAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveCoreNetworkId
+    public class ConnectAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveNetworkFunctionGroupName, IHaveCoreNetworkId, IHaveEdgeLocation
     {
         public class Attributes
         {
@@ -109,7 +109,7 @@ namespace Humidifier.NetworkManager
             public dynamic Protocol { get; set; }
         }
 
-        public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber
+        public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveNetworkFunctionGroupName
         {
             /// <summary>
             /// Tags
@@ -138,7 +138,7 @@ namespace Humidifier.NetworkManager
             public dynamic AttachmentPolicyRuleNumber { get; set; }
         }
 
-        public class ProposedSegmentChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveSegmentName, IHaveAttachmentPolicyRuleNumber
+        public class ProposedSegmentChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveSegmentName
         {
             /// <summary>
             /// SegmentName

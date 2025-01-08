@@ -51,7 +51,7 @@ namespace Humidifier.MediaPackage
 
     namespace PackagingGroupTypes
     {
-        public class Authorization : Humidifier.Base.BaseSubResource
+        public class Authorization : Humidifier.Base.BaseSubResource, IHaveSecretsRoleArn, IHaveCdnIdentifierSecret
         {
             /// <summary>
             /// SecretsRoleArn

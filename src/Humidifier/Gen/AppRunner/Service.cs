@@ -126,7 +126,7 @@ namespace Humidifier.AppRunner
             public Humidifier.AppRunner.ServiceTypes.CodeConfigurationValues CodeConfigurationValues { get; set; }
         }
 
-        public class CodeConfigurationValues : Humidifier.Base.BaseSubResource, IHavePort, IHaveRuntime
+        public class CodeConfigurationValues : Humidifier.Base.BaseSubResource, IHavePort, IHaveRuntime, IHaveStartCommand
         {
             /// <summary>
             /// RuntimeEnvironmentSecrets
@@ -300,7 +300,7 @@ namespace Humidifier.AppRunner
             public dynamic Interval { get; set; }
         }
 
-        public class ImageConfiguration : Humidifier.Base.BaseSubResource, IHavePort
+        public class ImageConfiguration : Humidifier.Base.BaseSubResource, IHavePort, IHaveStartCommand
         {
             /// <summary>
             /// RuntimeEnvironmentSecrets
@@ -378,7 +378,7 @@ namespace Humidifier.AppRunner
             public dynamic IsPubliclyAccessible { get; set; }
         }
 
-        public class InstanceConfiguration : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu
+        public class InstanceConfiguration : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu, IHaveInstanceRoleArn
         {
             /// <summary>
             /// InstanceRoleArn

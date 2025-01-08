@@ -2,7 +2,7 @@ namespace Humidifier.CodeStarConnections
 {
     using System.Collections.Generic;
 
-    public class SyncConfiguration : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveResourceName, IHaveBranch
+    public class SyncConfiguration : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveResourceName, IHaveBranch, IHaveSyncType
     {
         public class Attributes
         {

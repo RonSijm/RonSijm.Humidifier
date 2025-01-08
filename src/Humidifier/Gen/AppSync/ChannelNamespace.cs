@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using ChannelNamespaceTypes;
 
-    public class ChannelNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveApiId
+    public class ChannelNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveApiId, IHaveCodeS3Location
     {
         public class Attributes
         {

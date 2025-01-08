@@ -2,7 +2,7 @@ namespace Humidifier.Panorama
 {
     using System.Collections.Generic;
 
-    public class PackageVersion : Humidifier.Base.BaseResource
+    public class PackageVersion : Humidifier.Base.BaseResource, IHaveOwnerAccount
     {
         public class Attributes
         {

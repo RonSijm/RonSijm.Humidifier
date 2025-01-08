@@ -79,7 +79,7 @@ namespace Humidifier.CloudFront
             public Humidifier.CloudFront.ContinuousDeploymentPolicyTypes.SingleWeightPolicyConfig SingleWeightPolicyConfig { get; set; }
         }
 
-        public class SessionStickinessConfig : Humidifier.Base.BaseSubResource
+        public class SessionStickinessConfig : Humidifier.Base.BaseSubResource, IHaveMaximumTTL
         {
             /// <summary>
             /// IdleTTL
@@ -139,7 +139,7 @@ namespace Humidifier.CloudFront
             public dynamic Value { get; set; }
         }
 
-        public class SingleWeightConfig : Humidifier.Base.BaseSubResource, IHaveWeight
+        public class SingleWeightConfig : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveCloudFrontContinuousDeploymentPolicyTypesSessionStickinessConfigSessionStickinessConfig
         {
             /// <summary>
             /// SessionStickinessConfig
@@ -159,7 +159,7 @@ namespace Humidifier.CloudFront
             public dynamic Weight { get; set; }
         }
 
-        public class SingleWeightPolicyConfig : Humidifier.Base.BaseSubResource, IHaveWeight
+        public class SingleWeightPolicyConfig : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveCloudFrontContinuousDeploymentPolicyTypesSessionStickinessConfigSessionStickinessConfig
         {
             /// <summary>
             /// SessionStickinessConfig

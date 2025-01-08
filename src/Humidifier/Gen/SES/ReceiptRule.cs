@@ -170,7 +170,7 @@ namespace Humidifier.SES
             public dynamic StatusCode { get; set; }
         }
 
-        public class ConnectAction : Humidifier.Base.BaseSubResource
+        public class ConnectAction : Humidifier.Base.BaseSubResource, IHaveIAMRoleARN
         {
             /// <summary>
             /// InstanceARN
@@ -218,7 +218,7 @@ namespace Humidifier.SES
             public dynamic InvocationType { get; set; }
         }
 
-        public class Rule : Humidifier.Base.BaseSubResource, IHaveName, IHaveEnabled
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveName, IHaveEnabled, IHaveTlsPolicy
         {
             /// <summary>
             /// ScanEnabled
@@ -316,7 +316,7 @@ namespace Humidifier.SES
             public dynamic IamRoleArn { get; set; }
         }
 
-        public class SNSAction : Humidifier.Base.BaseSubResource, IHaveTopicArn
+        public class SNSAction : Humidifier.Base.BaseSubResource, IHaveTopicArn, IHaveEncoding
         {
             /// <summary>
             /// TopicArn

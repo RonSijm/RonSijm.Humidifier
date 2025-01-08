@@ -85,7 +85,7 @@ namespace Humidifier.EKS
             public dynamic Key { get; set; }
         }
 
-        public class Selector : Humidifier.Base.BaseSubResource
+        public class Selector : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
             /// <summary>
             /// Labels

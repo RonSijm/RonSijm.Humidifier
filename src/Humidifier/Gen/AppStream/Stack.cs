@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using StackTypes;
 
-    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisplayName
+    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveAttributesToDelete
     {
         public override string AWSTypeName { get => AWS.AppStream.Stack; }
         /// <summary>
@@ -141,7 +141,7 @@ namespace Humidifier.AppStream
             public dynamic VpceId { get; set; }
         }
 
-        public class ApplicationSettings : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class ApplicationSettings : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveSettingsGroup
         {
             /// <summary>
             /// SettingsGroup
@@ -202,7 +202,7 @@ namespace Humidifier.AppStream
             public dynamic PreferredProtocol { get; set; }
         }
 
-        public class UserSetting : Humidifier.Base.BaseSubResource, IHaveAction, IHavePermission
+        public class UserSetting : Humidifier.Base.BaseSubResource, IHaveAction, IHavePermission, IHaveMaximumLength
         {
             /// <summary>
             /// Action

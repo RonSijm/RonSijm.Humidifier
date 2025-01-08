@@ -3,7 +3,7 @@ namespace Humidifier.GuardDuty
     using System.Collections.Generic;
     using FilterTypes;
 
-    public class Filter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAction, IHaveDetectorId
+    public class Filter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAction, IHaveDetectorId, IHaveRank
     {
         public override string AWSTypeName { get => AWS.GuardDuty.Filter; }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Humidifier.GuardDuty
 
     namespace FilterTypes
     {
-        public class Condition : Humidifier.Base.BaseSubResource, IHaveEq, IHaveEquals, IHaveNotEquals, IHaveGte, IHaveLte
+        public class Condition : Humidifier.Base.BaseSubResource, IHaveEq, IHaveEquals, IHaveNotEquals, IHaveGte, IHaveLte, IHaveNeq
         {
             /// <summary>
             /// Equals

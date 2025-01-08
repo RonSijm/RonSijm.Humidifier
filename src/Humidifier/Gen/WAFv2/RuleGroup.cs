@@ -3,7 +3,7 @@ namespace Humidifier.WAFv2
     using System.Collections.Generic;
     using RuleGroupTypes;
 
-    public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveScope
+    public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveScope, IHaveCapacity, IHaveWAFv2RuleGroupTypesVisibilityConfigVisibilityConfig
     {
         public class Attributes
         {
@@ -150,7 +150,7 @@ namespace Humidifier.WAFv2
             public dynamic OversizeHandling { get; set; }
         }
 
-        public class ByteMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesFieldToMatchFieldToMatch, IHavePositionalConstraint, IHaveSearchString
+        public class ByteMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesFieldToMatchFieldToMatch, IHavePositionalConstraint, IHaveSearchString, IHaveSearchStringBase64
         {
             /// <summary>
             /// SearchStringBase64
@@ -207,7 +207,7 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.RuleGroupTypes.CustomRequestHandling CustomRequestHandling { get; set; }
         }
 
-        public class CaptchaConfig : Humidifier.Base.BaseSubResource
+        public class CaptchaConfig : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesImmunityTimePropertyImmunityTimeProperty
         {
             /// <summary>
             /// ImmunityTimeProperty
@@ -231,7 +231,7 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.RuleGroupTypes.CustomRequestHandling CustomRequestHandling { get; set; }
         }
 
-        public class ChallengeConfig : Humidifier.Base.BaseSubResource
+        public class ChallengeConfig : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesImmunityTimePropertyImmunityTimeProperty
         {
             /// <summary>
             /// ImmunityTimeProperty
@@ -243,7 +243,7 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.RuleGroupTypes.ImmunityTimeProperty ImmunityTimeProperty { get; set; }
         }
 
-        public class CookieMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll
+        public class CookieMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll, IHaveIncludedCookies, IHaveExcludedCookies
         {
             /// <summary>
             /// All
@@ -346,7 +346,7 @@ namespace Humidifier.WAFv2
             public List<Humidifier.WAFv2.RuleGroupTypes.CustomHTTPHeader> InsertHeaders { get; set; }
         }
 
-        public class CustomResponse : Humidifier.Base.BaseSubResource, IHaveResponseCode
+        public class CustomResponse : Humidifier.Base.BaseSubResource, IHaveResponseCode, IHaveCustomResponseBodyKey
         {
             /// <summary>
             /// ResponseCode
@@ -395,7 +395,7 @@ namespace Humidifier.WAFv2
             public dynamic Content { get; set; }
         }
 
-        public class FieldToMatch : Humidifier.Base.BaseSubResource, IHaveQueryString, IHaveMethod, IHaveUriPath
+        public class FieldToMatch : Humidifier.Base.BaseSubResource, IHaveQueryString, IHaveMethod, IHaveUriPath, IHaveAllQueryArguments
         {
             /// <summary>
             /// JsonBody
@@ -507,7 +507,7 @@ namespace Humidifier.WAFv2
             public dynamic HeaderName { get; set; }
         }
 
-        public class GeoMatchStatement : Humidifier.Base.BaseSubResource
+        public class GeoMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesForwardedIPConfigurationForwardedIPConfig, IHaveCountryCodes
         {
             /// <summary>
             /// ForwardedIPConfig
@@ -528,7 +528,7 @@ namespace Humidifier.WAFv2
             public dynamic CountryCodes { get; set; }
         }
 
-        public class HeaderMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll
+        public class HeaderMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll, IHaveIncludedHeaders, IHaveExcludedHeaders
         {
             /// <summary>
             /// All
@@ -634,7 +634,7 @@ namespace Humidifier.WAFv2
             public dynamic Arn { get; set; }
         }
 
-        public class ImmunityTimeProperty : Humidifier.Base.BaseSubResource
+        public class ImmunityTimeProperty : Humidifier.Base.BaseSubResource, IHaveImmunityTime
         {
             /// <summary>
             /// ImmunityTime
@@ -658,7 +658,7 @@ namespace Humidifier.WAFv2
             public dynamic FallbackBehavior { get; set; }
         }
 
-        public class JsonBody : Humidifier.Base.BaseSubResource, IHaveOversizeHandling, IHaveMatchScope
+        public class JsonBody : Humidifier.Base.BaseSubResource, IHaveOversizeHandling, IHaveMatchScope, IHaveInvalidFallbackBehavior
         {
             /// <summary>
             /// MatchScope
@@ -694,7 +694,7 @@ namespace Humidifier.WAFv2
             public dynamic OversizeHandling { get; set; }
         }
 
-        public class JsonMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll
+        public class JsonMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll, IHaveIncludedPaths
         {
             /// <summary>
             /// All
@@ -759,7 +759,7 @@ namespace Humidifier.WAFv2
             public dynamic Name { get; set; }
         }
 
-        public class NotStatement : Humidifier.Base.BaseSubResource
+        public class NotStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesStatementStatement
         {
             /// <summary>
             /// Statement
@@ -784,7 +784,7 @@ namespace Humidifier.WAFv2
             public List<Humidifier.WAFv2.RuleGroupTypes.Statement> Statements { get; set; }
         }
 
-        public class RateBasedStatement : Humidifier.Base.BaseSubResource, IHaveLimit
+        public class RateBasedStatement : Humidifier.Base.BaseSubResource, IHaveLimit, IHaveWAFv2RuleGroupTypesForwardedIPConfigurationForwardedIPConfig, IHaveAggregateKeyType, IHaveEvaluationWindowSec
         {
             /// <summary>
             /// AggregateKeyType
@@ -837,7 +837,7 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.RuleGroupTypes.Statement ScopeDownStatement { get; set; }
         }
 
-        public class RateBasedStatementCustomKey : Humidifier.Base.BaseSubResource, IHaveHTTPMethod
+        public class RateBasedStatementCustomKey : Humidifier.Base.BaseSubResource, IHaveHTTPMethod, IHaveForwardedIP, IHaveIP
         {
             /// <summary>
             /// Cookie
@@ -955,7 +955,7 @@ namespace Humidifier.WAFv2
             public dynamic Name { get; set; }
         }
 
-        public class RateLimitLabelNamespace : Humidifier.Base.BaseSubResource
+        public class RateLimitLabelNamespace : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
             /// <summary>
             /// Namespace_
@@ -1072,7 +1072,7 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.RuleGroupTypes.FieldToMatch FieldToMatch { get; set; }
         }
 
-        public class Rule : Humidifier.Base.BaseSubResource, IHaveName, IHavePriority
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveName, IHavePriority, IHaveWAFv2RuleGroupTypesVisibilityConfigVisibilityConfig, IHaveWAFv2RuleGroupTypesStatementStatement
         {
             /// <summary>
             /// Action
@@ -1209,7 +1209,7 @@ namespace Humidifier.WAFv2
             public dynamic Name { get; set; }
         }
 
-        public class SizeConstraintStatement : Humidifier.Base.BaseSubResource, IHaveSize, IHaveComparisonOperator, IHaveWAFv2RuleGroupTypesFieldToMatchFieldToMatch
+        public class SizeConstraintStatement : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveSize, IHaveWAFv2RuleGroupTypesFieldToMatchFieldToMatch
         {
             /// <summary>
             /// ComparisonOperator
@@ -1246,7 +1246,7 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.RuleGroupTypes.FieldToMatch FieldToMatch { get; set; }
         }
 
-        public class SqliMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesFieldToMatchFieldToMatch
+        public class SqliMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2RuleGroupTypesFieldToMatchFieldToMatch, IHaveSensitivityLevel
         {
             /// <summary>
             /// SensitivityLevel
@@ -1403,7 +1403,7 @@ namespace Humidifier.WAFv2
             public dynamic Priority { get; set; }
         }
 
-        public class VisibilityConfig : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveCloudWatchMetricsEnabled
+        public class VisibilityConfig : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveCloudWatchMetricsEnabled, IHaveSampledRequestsEnabled
         {
             /// <summary>
             /// MetricName

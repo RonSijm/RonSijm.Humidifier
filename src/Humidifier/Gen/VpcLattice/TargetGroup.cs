@@ -56,7 +56,7 @@ namespace Humidifier.VpcLattice
 
     namespace TargetGroupTypes
     {
-        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHavePort, IHaveProtocol, IHavePath, IHaveProtocolVersion, IHaveHealthCheckIntervalSeconds
+        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHavePort, IHaveProtocol, IHavePath, IHaveProtocolVersion, IHaveHealthCheckIntervalSeconds, IHaveUnhealthyThresholdCount, IHaveHealthCheckTimeoutSeconds, IHaveHealthyThresholdCount
         {
             /// <summary>
             /// Path
@@ -140,7 +140,7 @@ namespace Humidifier.VpcLattice
             public dynamic HealthCheckTimeoutSeconds { get; set; }
         }
 
-        public class Matcher : Humidifier.Base.BaseSubResource
+        public class Matcher : Humidifier.Base.BaseSubResource, IHaveHttpCode
         {
             /// <summary>
             /// HttpCode
@@ -172,7 +172,7 @@ namespace Humidifier.VpcLattice
             public dynamic Id { get; set; }
         }
 
-        public class TargetGroupConfig : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveIpAddressType, IHaveProtocolVersion
+        public class TargetGroupConfig : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveIpAddressType, IHaveProtocolVersion, IHaveVpcIdentifier
         {
             /// <summary>
             /// IpAddressType

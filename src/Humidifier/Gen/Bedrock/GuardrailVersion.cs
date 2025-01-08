@@ -2,7 +2,7 @@ namespace Humidifier.Bedrock
 {
     using System.Collections.Generic;
 
-    public class GuardrailVersion : Humidifier.Base.BaseResource, IHaveDescription
+    public class GuardrailVersion : Humidifier.Base.BaseResource, IHaveDescription, IHaveGuardrailIdentifier
     {
         public class Attributes
         {

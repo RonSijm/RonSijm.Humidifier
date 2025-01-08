@@ -147,7 +147,7 @@ namespace Humidifier.MSK
             public Humidifier.MSK.ClusterTypes.CloudWatchLogs CloudWatchLogs { get; set; }
         }
 
-        public class BrokerNodeGroupInfo : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveSecurityGroups
+        public class BrokerNodeGroupInfo : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveSecurityGroups, IHaveClientSubnets
         {
             /// <summary>
             /// SecurityGroups
@@ -393,7 +393,7 @@ namespace Humidifier.MSK
             public dynamic Enabled { get; set; }
         }
 
-        public class JmxExporter : Humidifier.Base.BaseSubResource
+        public class JmxExporter : Humidifier.Base.BaseSubResource, IHaveEnabledInBroker
         {
             /// <summary>
             /// EnabledInBroker
@@ -417,7 +417,7 @@ namespace Humidifier.MSK
             public Humidifier.MSK.ClusterTypes.BrokerLogs BrokerLogs { get; set; }
         }
 
-        public class NodeExporter : Humidifier.Base.BaseSubResource
+        public class NodeExporter : Humidifier.Base.BaseSubResource, IHaveEnabledInBroker
         {
             /// <summary>
             /// EnabledInBroker

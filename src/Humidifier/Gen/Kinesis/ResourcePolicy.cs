@@ -2,7 +2,7 @@ namespace Humidifier.Kinesis
 {
     using System.Collections.Generic;
 
-    public class ResourcePolicy : Humidifier.Base.BaseResource, IHaveResourceArn
+    public class ResourcePolicy : Humidifier.Base.BaseResource, IHaveResourceArn, IHaveResourcePolicy_
     {
         public override string AWSTypeName { get => AWS.Kinesis.ResourcePolicy; }
 

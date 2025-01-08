@@ -131,7 +131,7 @@ namespace Humidifier.AppFlow
             public dynamic Object { get; set; }
         }
 
-        public class ConnectorOperator : Humidifier.Base.BaseSubResource
+        public class ConnectorOperator : Humidifier.Base.BaseSubResource, IHaveS3, IHaveServiceNow, IHaveMarketo, IHaveZendesk, IHaveSalesforce
         {
             /// <summary>
             /// Amplitude
@@ -470,7 +470,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.FlowTypes.SalesforceDestinationProperties Salesforce { get; set; }
         }
 
-        public class DestinationFlowConfig : Humidifier.Base.BaseSubResource, IHaveConnectorType, IHaveConnectorProfileName
+        public class DestinationFlowConfig : Humidifier.Base.BaseSubResource, IHaveConnectorType, IHaveConnectorProfileName, IHaveApiVersion
         {
             /// <summary>
             /// ConnectorProfileName
@@ -566,7 +566,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.FlowTypes.ErrorHandlingConfig ErrorHandlingConfig { get; set; }
         }
 
-        public class GlueDataCatalog : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveDatabaseName
+        public class GlueDataCatalog : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveDatabaseName, IHaveTablePrefix
         {
             /// <summary>
             /// DatabaseName
@@ -606,7 +606,7 @@ namespace Humidifier.AppFlow
             public dynamic Object { get; set; }
         }
 
-        public class IncrementalPullConfig : Humidifier.Base.BaseSubResource
+        public class IncrementalPullConfig : Humidifier.Base.BaseSubResource, IHaveDatetimeTypeFieldName
         {
             /// <summary>
             /// DatetimeTypeFieldName
@@ -727,7 +727,7 @@ namespace Humidifier.AppFlow
             public dynamic PrefixFormat { get; set; }
         }
 
-        public class RedshiftDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveBucketPrefix, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig
+        public class RedshiftDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveBucketPrefix, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIntermediateBucketName
         {
             /// <summary>
             /// Object
@@ -803,7 +803,7 @@ namespace Humidifier.AppFlow
             public dynamic S3InputFileType { get; set; }
         }
 
-        public class S3OutputFormatConfig : Humidifier.Base.BaseSubResource
+        public class S3OutputFormatConfig : Humidifier.Base.BaseSubResource, IHaveAppFlowFlowTypesPrefixConfigPrefixConfig, IHaveFileType, IHaveAppFlowFlowTypesAggregationConfigAggregationConfig
         {
             /// <summary>
             /// PrefixConfig
@@ -867,7 +867,7 @@ namespace Humidifier.AppFlow
             public dynamic BucketPrefix { get; set; }
         }
 
-        public class SAPODataDestinationProperties : Humidifier.Base.BaseSubResource, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIdFieldNames, IHaveWriteOperationType
+        public class SAPODataDestinationProperties : Humidifier.Base.BaseSubResource, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIdFieldNames, IHaveWriteOperationType, IHaveObjectPath
         {
             /// <summary>
             /// IdFieldNames
@@ -936,7 +936,7 @@ namespace Humidifier.AppFlow
             public dynamic maxParallelism { get; set; }
         }
 
-        public class SAPODataSourceProperties : Humidifier.Base.BaseSubResource
+        public class SAPODataSourceProperties : Humidifier.Base.BaseSubResource, IHaveObjectPath
         {
             /// <summary>
             /// ObjectPath
@@ -964,7 +964,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.FlowTypes.SAPODataParallelismConfig parallelismConfig { get; set; }
         }
 
-        public class SalesforceDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIdFieldNames, IHaveWriteOperationType
+        public class SalesforceDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIdFieldNames, IHaveWriteOperationType, IHaveDataTransferApi
         {
             /// <summary>
             /// IdFieldNames
@@ -1009,7 +1009,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.FlowTypes.ErrorHandlingConfig ErrorHandlingConfig { get; set; }
         }
 
-        public class SalesforceSourceProperties : Humidifier.Base.BaseSubResource, IHaveObject
+        public class SalesforceSourceProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveDataTransferApi, IHaveIncludeDeletedRecords, IHaveEnableDynamicFieldUpdate
         {
             /// <summary>
             /// IncludeDeletedRecords
@@ -1045,7 +1045,7 @@ namespace Humidifier.AppFlow
             public dynamic EnableDynamicFieldUpdate { get; set; }
         }
 
-        public class ScheduledTriggerProperties : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveTimeZone, IHaveScheduleOffset, IHaveFirstExecutionFrom
+        public class ScheduledTriggerProperties : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveTimeZone, IHaveScheduleOffset, IHaveFirstExecutionFrom, IHaveScheduleEndTime, IHaveScheduleStartTime, IHaveDataPullMode
         {
             /// <summary>
             /// ScheduleEndTime
@@ -1149,7 +1149,7 @@ namespace Humidifier.AppFlow
             public dynamic Object { get; set; }
         }
 
-        public class SnowflakeDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveBucketPrefix, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig
+        public class SnowflakeDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveBucketPrefix, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIntermediateBucketName
         {
             /// <summary>
             /// Object
@@ -1325,7 +1325,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.FlowTypes.SalesforceSourceProperties Salesforce { get; set; }
         }
 
-        public class SourceFlowConfig : Humidifier.Base.BaseSubResource, IHaveConnectorType, IHaveConnectorProfileName
+        public class SourceFlowConfig : Humidifier.Base.BaseSubResource, IHaveConnectorType, IHaveConnectorProfileName, IHaveApiVersion
         {
             /// <summary>
             /// ConnectorProfileName
@@ -1389,7 +1389,7 @@ namespace Humidifier.AppFlow
             public dynamic BucketPrefix { get; set; }
         }
 
-        public class Task : Humidifier.Base.BaseSubResource, IHaveTaskType
+        public class Task : Humidifier.Base.BaseSubResource, IHaveTaskType, IHaveSourceFields, IHaveDestinationField
         {
             /// <summary>
             /// SourceFields
@@ -1467,7 +1467,7 @@ namespace Humidifier.AppFlow
             public dynamic Object { get; set; }
         }
 
-        public class TriggerConfig : Humidifier.Base.BaseSubResource
+        public class TriggerConfig : Humidifier.Base.BaseSubResource, IHaveTriggerType
         {
             /// <summary>
             /// TriggerType
@@ -1515,7 +1515,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.FlowTypes.UpsolverS3OutputFormatConfig S3OutputFormatConfig { get; set; }
         }
 
-        public class UpsolverS3OutputFormatConfig : Humidifier.Base.BaseSubResource
+        public class UpsolverS3OutputFormatConfig : Humidifier.Base.BaseSubResource, IHaveAppFlowFlowTypesPrefixConfigPrefixConfig, IHaveFileType, IHaveAppFlowFlowTypesAggregationConfigAggregationConfig
         {
             /// <summary>
             /// PrefixConfig

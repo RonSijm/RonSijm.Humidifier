@@ -3,7 +3,7 @@ namespace Humidifier.S3Outposts
     using System.Collections.Generic;
     using BucketTypes;
 
-    public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBucketName
+    public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBucketName, IHaveOutpostId
     {
         public class Attributes
         {
@@ -43,7 +43,7 @@ namespace Humidifier.S3Outposts
 
     namespace BucketTypes
     {
-        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource
+        public class AbortIncompleteMultipartUpload : Humidifier.Base.BaseSubResource, IHaveDaysAfterInitiation
         {
             /// <summary>
             /// DaysAfterInitiation
@@ -137,7 +137,7 @@ namespace Humidifier.S3Outposts
             public List<Humidifier.S3Outposts.BucketTypes.Rule> Rules { get; set; }
         }
 
-        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHaveExpirationInDays
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHaveExpirationInDays, IHaveExpirationDate
         {
             /// <summary>
             /// Status

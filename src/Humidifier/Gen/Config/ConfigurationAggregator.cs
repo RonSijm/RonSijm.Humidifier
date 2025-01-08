@@ -42,7 +42,7 @@ namespace Humidifier.Config
 
     namespace ConfigurationAggregatorTypes
     {
-        public class AccountAggregationSource : Humidifier.Base.BaseSubResource
+        public class AccountAggregationSource : Humidifier.Base.BaseSubResource, IHaveAccountIds, IHaveAllAwsRegions, IHaveAwsRegions
         {
             /// <summary>
             /// AllAwsRegions
@@ -72,7 +72,7 @@ namespace Humidifier.Config
             public dynamic AccountIds { get; set; }
         }
 
-        public class OrganizationAggregationSource : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        public class OrganizationAggregationSource : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveAllAwsRegions, IHaveAwsRegions
         {
             /// <summary>
             /// AllAwsRegions

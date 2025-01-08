@@ -2,7 +2,7 @@ namespace Humidifier.CodeConnections
 {
     using System.Collections.Generic;
 
-    public class Connection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveConnectionName, IHaveProviderType
+    public class Connection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveConnectionName, IHaveProviderType, IHaveHostArn
     {
         public class Attributes
         {

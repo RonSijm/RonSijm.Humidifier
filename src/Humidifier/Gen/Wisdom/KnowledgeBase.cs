@@ -97,7 +97,7 @@ namespace Humidifier.Wisdom
             public dynamic AppIntegrationArn { get; set; }
         }
 
-        public class BedrockFoundationModelConfiguration : Humidifier.Base.BaseSubResource
+        public class BedrockFoundationModelConfiguration : Humidifier.Base.BaseSubResource, IHaveModelArn
         {
             /// <summary>
             /// ModelArn
@@ -117,7 +117,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.KnowledgeBaseTypes.ParsingPrompt ParsingPrompt { get; set; }
         }
 
-        public class ChunkingConfiguration : Humidifier.Base.BaseSubResource
+        public class ChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveChunkingStrategy
         {
             /// <summary>
             /// ChunkingStrategy
@@ -153,7 +153,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.KnowledgeBaseTypes.HierarchicalChunkingConfiguration HierarchicalChunkingConfiguration { get; set; }
         }
 
-        public class CrawlerLimits : Humidifier.Base.BaseSubResource
+        public class CrawlerLimits : Humidifier.Base.BaseSubResource, IHaveRateLimit
         {
             /// <summary>
             /// RateLimit
@@ -165,7 +165,7 @@ namespace Humidifier.Wisdom
             public dynamic RateLimit { get; set; }
         }
 
-        public class FixedSizeChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens
+        public class FixedSizeChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveOverlapPercentage
         {
             /// <summary>
             /// OverlapPercentage
@@ -185,7 +185,7 @@ namespace Humidifier.Wisdom
             public dynamic MaxTokens { get; set; }
         }
 
-        public class HierarchicalChunkingConfiguration : Humidifier.Base.BaseSubResource
+        public class HierarchicalChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveOverlapTokens
         {
             /// <summary>
             /// OverlapTokens
@@ -230,7 +230,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.KnowledgeBaseTypes.WebCrawlerConfiguration WebCrawlerConfiguration { get; set; }
         }
 
-        public class ParsingConfiguration : Humidifier.Base.BaseSubResource
+        public class ParsingConfiguration : Humidifier.Base.BaseSubResource, IHaveParsingStrategy
         {
             /// <summary>
             /// BedrockFoundationModelConfiguration
@@ -250,7 +250,7 @@ namespace Humidifier.Wisdom
             public dynamic ParsingStrategy { get; set; }
         }
 
-        public class ParsingPrompt : Humidifier.Base.BaseSubResource
+        public class ParsingPrompt : Humidifier.Base.BaseSubResource, IHaveParsingPromptText
         {
             /// <summary>
             /// ParsingPromptText
@@ -286,7 +286,7 @@ namespace Humidifier.Wisdom
             public dynamic Url { get; set; }
         }
 
-        public class SemanticChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens
+        public class SemanticChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveBufferSize, IHaveBreakpointPercentileThreshold
         {
             /// <summary>
             /// BufferSize
@@ -379,7 +379,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.KnowledgeBaseTypes.ChunkingConfiguration ChunkingConfiguration { get; set; }
         }
 
-        public class WebCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveScope
+        public class WebCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveScope, IHaveInclusionFilters, IHaveExclusionFilters
         {
             /// <summary>
             /// UrlConfiguration

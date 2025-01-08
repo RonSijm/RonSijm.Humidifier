@@ -467,7 +467,7 @@ namespace Humidifier.FraudDetector
             public dynamic Name { get; set; }
         }
 
-        public class Rule : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDescription, IHaveExpression, IHaveArn, IHaveCreatedTime, IHaveLastUpdatedTime, IHaveDetectorId, IHaveLanguage, IHaveRuleId
+        public class Rule : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDescription, IHaveExpression, IHaveArn, IHaveCreatedTime, IHaveLastUpdatedTime, IHaveDetectorId, IHaveLanguage, IHaveRuleId, IHaveRuleVersion
         {
             /// <summary>
             /// Description

@@ -2,7 +2,7 @@ namespace Humidifier.B2BI
 {
     using System.Collections.Generic;
 
-    public class Profile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEmail
+    public class Profile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEmail, IHavePhone, IHaveLogging, IHaveBusinessName
     {
         public class Attributes
         {

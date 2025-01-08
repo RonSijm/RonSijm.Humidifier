@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DiskTypes;
 
-    public class Disk : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveAvailabilityZone
+    public class Disk : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveAvailabilityZone, IHaveSizeInGb, IHaveDiskName
     {
         public class Attributes
         {
@@ -68,7 +68,7 @@ namespace Humidifier.Lightsail
 
     namespace DiskTypes
     {
-        public class AddOn : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class AddOn : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveAddOnType
         {
             /// <summary>
             /// Status
@@ -96,7 +96,7 @@ namespace Humidifier.Lightsail
             public Humidifier.Lightsail.DiskTypes.AutoSnapshotAddOn AutoSnapshotAddOnRequest { get; set; }
         }
 
-        public class AutoSnapshotAddOn : Humidifier.Base.BaseSubResource
+        public class AutoSnapshotAddOn : Humidifier.Base.BaseSubResource, IHaveSnapshotTimeOfDay
         {
             /// <summary>
             /// SnapshotTimeOfDay

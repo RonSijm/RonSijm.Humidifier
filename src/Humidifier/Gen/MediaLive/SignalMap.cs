@@ -133,7 +133,7 @@ namespace Humidifier.MediaLive
             public dynamic Name { get; set; }
         }
 
-        public class MonitorDeployment : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class MonitorDeployment : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveDetailsUri, IHaveErrorMessage
         {
             /// <summary>
             /// DetailsUri
@@ -161,7 +161,7 @@ namespace Humidifier.MediaLive
             public dynamic ErrorMessage { get; set; }
         }
 
-        public class SuccessfulMonitorDeployment : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class SuccessfulMonitorDeployment : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveDetailsUri
         {
             /// <summary>
             /// DetailsUri

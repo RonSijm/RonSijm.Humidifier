@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using CollaborationTypes;
 
-    public class Collaboration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
+    public class Collaboration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveQueryLogStatus
     {
         public class Attributes
         {
@@ -187,7 +187,7 @@ namespace Humidifier.CleanRooms
             public Humidifier.CleanRooms.CollaborationTypes.QueryComputePaymentConfig QueryCompute { get; set; }
         }
 
-        public class QueryComputePaymentConfig : Humidifier.Base.BaseSubResource
+        public class QueryComputePaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
         {
             /// <summary>
             /// IsResponsible

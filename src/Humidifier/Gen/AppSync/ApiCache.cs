@@ -2,7 +2,7 @@ namespace Humidifier.AppSync
 {
     using System.Collections.Generic;
 
-    public class ApiCache : Humidifier.Base.BaseResource, IHaveType, IHaveApiId, IHaveTtl, IHaveTransitEncryptionEnabled
+    public class ApiCache : Humidifier.Base.BaseResource, IHaveType, IHaveApiId, IHaveTtl, IHaveTransitEncryptionEnabled, IHaveAtRestEncryptionEnabled
     {
         public override string AWSTypeName { get => AWS.AppSync.ApiCache; }
 

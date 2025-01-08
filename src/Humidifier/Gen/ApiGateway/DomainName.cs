@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using DomainNameTypes;
 
-    public class DomainName : Humidifier.Base.BaseResource, IHaveTags, IHaveCertificateArn, IHaveDomainName_, IHaveSecurityPolicy
+    public class DomainName : Humidifier.Base.BaseResource, IHaveTags, IHaveCertificateArn, IHaveSecurityPolicy, IHaveDomainName_, IHaveOwnershipVerificationCertificateArn
     {
         public class Attributes
         {
@@ -96,7 +96,7 @@ namespace Humidifier.ApiGateway
             public dynamic Types { get; set; }
         }
 
-        public class MutualTlsAuthentication : Humidifier.Base.BaseSubResource
+        public class MutualTlsAuthentication : Humidifier.Base.BaseSubResource, IHaveTruststoreVersion, IHaveTruststoreUri
         {
             /// <summary>
             /// TruststoreVersion

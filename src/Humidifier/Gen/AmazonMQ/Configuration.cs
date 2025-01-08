@@ -3,7 +3,7 @@ namespace Humidifier.AmazonMQ
     using System.Collections.Generic;
     using ConfigurationTypes;
 
-    public class Configuration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveEngineVersion, IHaveData, IHaveEngineType
+    public class Configuration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveEngineVersion, IHaveData, IHaveEngineType, IHaveAuthenticationStrategy
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using DeploymentTypes;
 
-    public class Deployment : Humidifier.Base.BaseResource, IHaveDescription, IHaveApplicationId, IHaveKmsKeyIdentifier, IHaveEnvironmentId
+    public class Deployment : Humidifier.Base.BaseResource, IHaveDescription, IHaveApplicationId, IHaveKmsKeyIdentifier, IHaveEnvironmentId, IHaveConfigurationProfileId
     {
         public override string AWSTypeName { get => AWS.AppConfig.Deployment; }
 

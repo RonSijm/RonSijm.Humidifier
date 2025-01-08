@@ -3,7 +3,7 @@ namespace Humidifier.LakeFormation
     using System.Collections.Generic;
     using DataCellsFilterTypes;
 
-    public class DataCellsFilter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDatabaseName, IHaveTableName, IHaveColumnNames
+    public class DataCellsFilter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDatabaseName, IHaveTableName, IHaveColumnNames, IHaveTableCatalogId
     {
         public override string AWSTypeName { get => AWS.LakeFormation.DataCellsFilter; }
 
@@ -79,7 +79,7 @@ namespace Humidifier.LakeFormation
             public dynamic ExcludedColumnNames { get; set; }
         }
 
-        public class RowFilter : Humidifier.Base.BaseSubResource
+        public class RowFilter : Humidifier.Base.BaseSubResource, IHaveFilterExpression
         {
             /// <summary>
             /// AllRowsWildcard

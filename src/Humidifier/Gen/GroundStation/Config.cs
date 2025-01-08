@@ -37,7 +37,7 @@ namespace Humidifier.GroundStation
 
     namespace ConfigTypes
     {
-        public class AntennaDownlinkConfig : Humidifier.Base.BaseSubResource
+        public class AntennaDownlinkConfig : Humidifier.Base.BaseSubResource, IHaveGroundStationConfigTypesSpectrumConfigSpectrumConfig
         {
             /// <summary>
             /// SpectrumConfig
@@ -49,7 +49,7 @@ namespace Humidifier.GroundStation
             public Humidifier.GroundStation.ConfigTypes.SpectrumConfig SpectrumConfig { get; set; }
         }
 
-        public class AntennaDownlinkDemodDecodeConfig : Humidifier.Base.BaseSubResource
+        public class AntennaDownlinkDemodDecodeConfig : Humidifier.Base.BaseSubResource, IHaveGroundStationConfigTypesSpectrumConfigSpectrumConfig
         {
             /// <summary>
             /// DemodulationConfig
@@ -185,7 +185,7 @@ namespace Humidifier.GroundStation
             public dynamic DataflowEndpointRegion { get; set; }
         }
 
-        public class DecodeConfig : Humidifier.Base.BaseSubResource
+        public class DecodeConfig : Humidifier.Base.BaseSubResource, IHaveUnvalidatedJSON
         {
             /// <summary>
             /// UnvalidatedJSON
@@ -197,7 +197,7 @@ namespace Humidifier.GroundStation
             public dynamic UnvalidatedJSON { get; set; }
         }
 
-        public class DemodulationConfig : Humidifier.Base.BaseSubResource
+        public class DemodulationConfig : Humidifier.Base.BaseSubResource, IHaveUnvalidatedJSON
         {
             /// <summary>
             /// UnvalidatedJSON
@@ -297,7 +297,7 @@ namespace Humidifier.GroundStation
             public dynamic RoleArn { get; set; }
         }
 
-        public class SpectrumConfig : Humidifier.Base.BaseSubResource
+        public class SpectrumConfig : Humidifier.Base.BaseSubResource, IHavePolarization, IHaveGroundStationConfigTypesFrequencyCenterFrequency
         {
             /// <summary>
             /// Polarization
@@ -357,7 +357,7 @@ namespace Humidifier.GroundStation
             public dynamic AntennaUplinkConfigArn { get; set; }
         }
 
-        public class UplinkSpectrumConfig : Humidifier.Base.BaseSubResource
+        public class UplinkSpectrumConfig : Humidifier.Base.BaseSubResource, IHavePolarization, IHaveGroundStationConfigTypesFrequencyCenterFrequency
         {
             /// <summary>
             /// Polarization

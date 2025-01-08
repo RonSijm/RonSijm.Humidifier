@@ -3,7 +3,7 @@ namespace Humidifier.CodePipeline
     using System.Collections.Generic;
     using WebhookTypes;
 
-    public class Webhook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class Webhook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAuthentication
     {
         public class Attributes
         {

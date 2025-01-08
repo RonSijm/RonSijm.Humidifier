@@ -2,7 +2,7 @@ namespace Humidifier.BackupGateway
 {
     using System.Collections.Generic;
 
-    public class Hypervisor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveUsername, IHavePassword, IHaveKmsKeyArn, IHaveHost, IHaveLogGroupArn
+    public class Hypervisor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyArn, IHaveUsername, IHavePassword, IHaveHost, IHaveLogGroupArn
     {
         public class Attributes
         {

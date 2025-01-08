@@ -50,7 +50,7 @@ namespace Humidifier.AppTest
 
     namespace TestCaseTypes
     {
-        public class Batch : Humidifier.Base.BaseSubResource
+        public class Batch : Humidifier.Base.BaseSubResource, IHaveExportDataSetNames
         {
             /// <summary>
             /// BatchJobName
@@ -120,7 +120,7 @@ namespace Humidifier.AppTest
             public Humidifier.AppTest.TestCaseTypes.Output Output { get; set; }
         }
 
-        public class DataSet : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveFormat
+        public class DataSet : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveFormat, IHaveLength
         {
             /// <summary>
             /// Ccsid
@@ -425,7 +425,7 @@ namespace Humidifier.AppTest
             public Humidifier.AppTest.TestCaseTypes.M2NonManagedApplicationAction M2NonManagedApplicationAction { get; set; }
         }
 
-        public class Script : Humidifier.Base.BaseSubResource, IHaveType
+        public class Script : Humidifier.Base.BaseSubResource, IHaveType, IHaveScriptLocation
         {
             /// <summary>
             /// Type
@@ -445,7 +445,7 @@ namespace Humidifier.AppTest
             public dynamic ScriptLocation { get; set; }
         }
 
-        public class SourceDatabaseMetadata : Humidifier.Base.BaseSubResource, IHaveType
+        public class SourceDatabaseMetadata : Humidifier.Base.BaseSubResource, IHaveType, IHaveCaptureTool
         {
             /// <summary>
             /// Type
@@ -521,7 +521,7 @@ namespace Humidifier.AppTest
             public Humidifier.AppTest.TestCaseTypes.ResourceAction ResourceAction { get; set; }
         }
 
-        public class TN3270 : Humidifier.Base.BaseSubResource
+        public class TN3270 : Humidifier.Base.BaseSubResource, IHaveExportDataSetNames
         {
             /// <summary>
             /// Script
@@ -542,7 +542,7 @@ namespace Humidifier.AppTest
             public dynamic ExportDataSetNames { get; set; }
         }
 
-        public class TargetDatabaseMetadata : Humidifier.Base.BaseSubResource, IHaveType
+        public class TargetDatabaseMetadata : Humidifier.Base.BaseSubResource, IHaveType, IHaveCaptureTool
         {
             /// <summary>
             /// Type

@@ -3,7 +3,7 @@ namespace Humidifier.CloudFormation
     using System.Collections.Generic;
     using StackSetTypes;
 
-    public class StackSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveTemplateBody, IHaveCapabilities
+    public class StackSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveTemplateBody, IHaveCapabilities, IHaveTemplateURL, IHaveStackSetName
     {
         public class Attributes
         {
@@ -265,7 +265,7 @@ namespace Humidifier.CloudFormation
             public dynamic RegionOrder { get; set; }
         }
 
-        public class Parameter : Humidifier.Base.BaseSubResource, IHaveParameterValue
+        public class Parameter : Humidifier.Base.BaseSubResource, IHaveParameterValue, IHaveParameterKey
         {
             /// <summary>
             /// ParameterValue

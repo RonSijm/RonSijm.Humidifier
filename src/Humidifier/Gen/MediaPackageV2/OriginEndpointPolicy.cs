@@ -2,7 +2,7 @@ namespace Humidifier.MediaPackageV2
 {
     using System.Collections.Generic;
 
-    public class OriginEndpointPolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveChannelName, IHaveChannelGroupName
+    public class OriginEndpointPolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveChannelName, IHaveChannelGroupName, IHaveOriginEndpointName
     {
         public override string AWSTypeName { get => AWS.MediaPackageV2.OriginEndpointPolicy; }
 

@@ -52,7 +52,7 @@ namespace Humidifier.IoTFleetWise
 
     namespace SignalCatalogTypes
     {
-        public class Actuator : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveMin, IHaveMax, IHaveUnit, IHaveDataType, IHaveFullyQualifiedName, IHaveAllowedValues
+        public class Actuator : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveMin, IHaveMax, IHaveUnit, IHaveDataType, IHaveFullyQualifiedName, IHaveAllowedValues, IHaveAssignedValue
         {
             /// <summary>
             /// Description
@@ -121,7 +121,7 @@ namespace Humidifier.IoTFleetWise
             public dynamic Unit { get; set; }
         }
 
-        public class Attribute : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveMin, IHaveMax, IHaveUnit, IHaveDefaultValue, IHaveDataType, IHaveFullyQualifiedName, IHaveAllowedValues
+        public class Attribute : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveMin, IHaveMax, IHaveUnit, IHaveDefaultValue, IHaveDataType, IHaveFullyQualifiedName, IHaveAllowedValues, IHaveAssignedValue
         {
             /// <summary>
             /// DefaultValue

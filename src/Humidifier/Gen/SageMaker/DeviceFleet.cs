@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using DeviceFleetTypes;
 
-    public class DeviceFleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRoleArn
+    public class DeviceFleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDeviceFleetName
     {
         public override string AWSTypeName { get => AWS.SageMaker.DeviceFleet; }
         public dynamic DeviceFleetName { get => GivenName; set => GivenName = value; }

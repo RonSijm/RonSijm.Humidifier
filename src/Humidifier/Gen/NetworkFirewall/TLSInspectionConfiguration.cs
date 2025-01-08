@@ -44,7 +44,7 @@ namespace Humidifier.NetworkFirewall
 
     namespace TLSInspectionConfigurationTypes
     {
-        public class Address : Humidifier.Base.BaseSubResource
+        public class Address : Humidifier.Base.BaseSubResource, IHaveAddressDefinition
         {
             /// <summary>
             /// AddressDefinition

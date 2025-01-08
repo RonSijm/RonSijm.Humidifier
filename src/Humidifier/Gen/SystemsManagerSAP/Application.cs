@@ -3,7 +3,7 @@ namespace Humidifier.SystemsManagerSAP
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveApplicationId
+    public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveApplicationId, IHaveInstances, IHaveSid
     {
         public class Attributes
         {

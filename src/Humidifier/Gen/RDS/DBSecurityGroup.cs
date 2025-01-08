@@ -3,7 +3,7 @@ namespace Humidifier.RDS
     using System.Collections.Generic;
     using DBSecurityGroupTypes;
 
-    public class DBSecurityGroup : Humidifier.Base.BaseResource, IHaveTags
+    public class DBSecurityGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveGroupDescription
     {
         public override string AWSTypeName { get => AWS.RDS.DBSecurityGroup; }
 
@@ -48,7 +48,7 @@ namespace Humidifier.RDS
 
     namespace DBSecurityGroupTypes
     {
-        public class Ingress : Humidifier.Base.BaseSubResource, IHaveEC2SecurityGroupName, IHaveEC2SecurityGroupOwnerId, IHaveCIDRIP
+        public class Ingress : Humidifier.Base.BaseSubResource, IHaveEC2SecurityGroupName, IHaveEC2SecurityGroupOwnerId, IHaveCIDRIP, IHaveEC2SecurityGroupId
         {
             /// <summary>
             /// CIDRIP

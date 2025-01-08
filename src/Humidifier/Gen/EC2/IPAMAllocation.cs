@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class IPAMAllocation : Humidifier.Base.BaseResource, IHaveDescription, IHaveCidr
+    public class IPAMAllocation : Humidifier.Base.BaseResource, IHaveDescription, IHaveCidr, IHaveIpamPoolId, IHaveNetmaskLength
     {
         public class Attributes
         {

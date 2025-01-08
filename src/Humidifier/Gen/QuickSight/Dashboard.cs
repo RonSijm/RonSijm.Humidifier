@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DashboardTypes;
 
-    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId, IHaveVersionDescription, IHaveThemeArn
+    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId, IHaveVersionDescription, IHaveThemeArn, IHaveFolderArns
     {
         public class Attributes
         {
@@ -833,7 +833,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ItemsLimitConfiguration SmallMultiplesLimitConfiguration { get; set; }
         }
 
-        public class BarChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class BarChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -927,7 +927,7 @@ namespace Humidifier.QuickSight
             public dynamic Value { get; set; }
         }
 
-        public class BodySectionConfiguration : Humidifier.Base.BaseSubResource, IHaveSectionId
+        public class BodySectionConfiguration : Humidifier.Base.BaseSubResource, IHaveSectionId, IHaveQuickSightDashboardTypesSectionStyleStyle
         {
             /// <summary>
             /// Content
@@ -963,7 +963,7 @@ namespace Humidifier.QuickSight
             public dynamic SectionId { get; set; }
         }
 
-        public class BodySectionContent : Humidifier.Base.BaseSubResource
+        public class BodySectionContent : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesSectionLayoutConfigurationLayout
         {
             /// <summary>
             /// Layout
@@ -1130,7 +1130,7 @@ namespace Humidifier.QuickSight
             public dynamic AllDataPointsVisibility { get; set; }
         }
 
-        public class BoxPlotSortConfiguration : Humidifier.Base.BaseSubResource
+        public class BoxPlotSortConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesPaginationConfigurationPaginationConfiguration
         {
             /// <summary>
             /// CategorySort
@@ -1163,7 +1163,7 @@ namespace Humidifier.QuickSight
             public dynamic FillStyle { get; set; }
         }
 
-        public class BoxPlotVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class BoxPlotVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -1306,7 +1306,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ColumnIdentifier ColumnToMatch { get; set; }
         }
 
-        public class CategoricalDimensionField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveHierarchyId
+        public class CategoricalDimensionField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveHierarchyId, IHaveQuickSightDashboardTypesStringFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// HierarchyId
@@ -1342,7 +1342,7 @@ namespace Humidifier.QuickSight
             public dynamic FieldId { get; set; }
         }
 
-        public class CategoricalMeasureField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveAggregationFunction
+        public class CategoricalMeasureField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveAggregationFunction, IHaveQuickSightDashboardTypesStringFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// AggregationFunction
@@ -1399,7 +1399,7 @@ namespace Humidifier.QuickSight
             public dynamic CategoryValues { get; set; }
         }
 
-        public class CategoryFilter : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration
+        public class CategoryFilter : Humidifier.Base.BaseSubResource, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveQuickSightDashboardTypesCategoryFilterConfigurationConfiguration
         {
             /// <summary>
             /// Configuration
@@ -1463,7 +1463,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FilterListConfiguration FilterListConfiguration { get; set; }
         }
 
-        public class CategoryInnerFilter : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration
+        public class CategoryInnerFilter : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveQuickSightDashboardTypesCategoryFilterConfigurationConfiguration
         {
             /// <summary>
             /// Configuration
@@ -1586,7 +1586,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.CustomColor> CustomColors { get; set; }
         }
 
-        public class ColumnConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveRole
+        public class ColumnConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveRole, IHaveQuickSightDashboardTypesFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// Role
@@ -1698,7 +1698,7 @@ namespace Humidifier.QuickSight
             public dynamic Direction { get; set; }
         }
 
-        public class ColumnTooltipItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveLabel
+        public class ColumnTooltipItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveLabel, IHaveTooltipTarget
         {
             /// <summary>
             /// Aggregation
@@ -1782,7 +1782,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.MeasureField> LineValues { get; set; }
         }
 
-        public class ComboChartConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesChartAxisLabelOptionsCategoryLabelOptions, IHaveBarsArrangement, IHaveQuickSightDashboardTypesChartAxisLabelOptionsColorLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsCategoryAxis, IHaveQuickSightDashboardTypesChartAxisLabelOptionsPrimaryYAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsPrimaryYAxisDisplayOptions
+        public class ComboChartConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesChartAxisLabelOptionsCategoryLabelOptions, IHaveBarsArrangement, IHaveQuickSightDashboardTypesChartAxisLabelOptionsColorLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsCategoryAxis, IHaveQuickSightDashboardTypesChartAxisLabelOptionsPrimaryYAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsPrimaryYAxisDisplayOptions, IHaveQuickSightDashboardTypesSingleAxisOptionsSingleAxisOptions, IHaveQuickSightDashboardTypesChartAxisLabelOptionsSecondaryYAxisLabelOptions
         {
             /// <summary>
             /// SortConfiguration
@@ -1973,7 +1973,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> CategorySort { get; set; }
         }
 
-        public class ComboChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class ComboChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -2055,7 +2055,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ComparisonFormatConfiguration ComparisonFormat { get; set; }
         }
 
-        public class ComparisonFormatConfiguration : Humidifier.Base.BaseSubResource
+        public class ComparisonFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesNumberDisplayFormatConfigurationNumberDisplayFormatConfiguration, IHaveQuickSightDashboardTypesPercentageDisplayFormatConfigurationPercentageDisplayFormatConfiguration
         {
             /// <summary>
             /// NumberDisplayFormatConfiguration
@@ -2537,7 +2537,7 @@ namespace Humidifier.QuickSight
             public dynamic ImageScaling { get; set; }
         }
 
-        public class CustomContentVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
+        public class CustomContentVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
         {
             /// <summary>
             /// Subtitle
@@ -2905,7 +2905,7 @@ namespace Humidifier.QuickSight
             public dynamic Arn { get; set; }
         }
 
-        public class DashboardVersion : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveStatus, IHaveArn, IHaveCreatedTime, IHaveThemeArn, IHaveVersionNumber
+        public class DashboardVersion : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveStatus, IHaveArn, IHaveCreatedTime, IHaveThemeArn, IHaveVersionNumber, IHaveSourceEntityArn
         {
             /// <summary>
             /// Status
@@ -3135,7 +3135,7 @@ namespace Humidifier.QuickSight
             public dynamic Color { get; set; }
         }
 
-        public class DataFieldSeriesItem : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveFieldValue, IHaveAxisBinding
+        public class DataFieldSeriesItem : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveFieldValue, IHaveAxisBinding, IHaveQuickSightDashboardTypesLineChartSeriesSettingsSettings
         {
             /// <summary>
             /// FieldId
@@ -3171,7 +3171,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.LineChartSeriesSettings Settings { get; set; }
         }
 
-        public class DataLabelOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHavePosition, IHaveTotalsVisibility, IHaveMeasureLabelVisibility, IHaveCategoryLabelVisibility, IHaveLabelColor, IHaveLabelContent, IHaveOverlap
+        public class DataLabelOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHavePosition, IHaveTotalsVisibility, IHaveMeasureLabelVisibility, IHaveCategoryLabelVisibility, IHaveLabelColor, IHaveLabelContent, IHaveOverlap, IHaveQuickSightDashboardTypesFontConfigurationLabelFontConfiguration
         {
             /// <summary>
             /// DataLabelTypes
@@ -3505,7 +3505,7 @@ namespace Humidifier.QuickSight
             public dynamic MissingDateVisibility { get; set; }
         }
 
-        public class DateDimensionField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveHierarchyId, IHaveDateGranularity
+        public class DateDimensionField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveHierarchyId, IHaveDateGranularity, IHaveQuickSightDashboardTypesDateTimeFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// HierarchyId
@@ -3549,7 +3549,7 @@ namespace Humidifier.QuickSight
             public dynamic DateGranularity { get; set; }
         }
 
-        public class DateMeasureField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveAggregationFunction
+        public class DateMeasureField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveAggregationFunction, IHaveQuickSightDashboardTypesDateTimeFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// AggregationFunction
@@ -3614,7 +3614,7 @@ namespace Humidifier.QuickSight
             public dynamic StaticValues { get; set; }
         }
 
-        public class DateTimeFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveDateTimeFormat, IHaveQuickSightDashboardTypesNullValueFormatConfigurationNullValueFormatConfiguration
+        public class DateTimeFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveDateTimeFormat, IHaveQuickSightDashboardTypesNullValueFormatConfigurationNullValueFormatConfiguration, IHaveQuickSightDashboardTypesNumericFormatConfigurationNumericFormatConfiguration
         {
             /// <summary>
             /// NumericFormatConfiguration
@@ -3896,7 +3896,7 @@ namespace Humidifier.QuickSight
             public dynamic CustomValue { get; set; }
         }
 
-        public class DefaultDateTimePickerControlOptions : Humidifier.Base.BaseSubResource, IHaveType, IHaveQuickSightDashboardTypesDateTimePickerControlDisplayOptionsDisplayOptions
+        public class DefaultDateTimePickerControlOptions : Humidifier.Base.BaseSubResource, IHaveType, IHaveCommitMode, IHaveQuickSightDashboardTypesDateTimePickerControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// Type
@@ -4004,7 +4004,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.DefaultFilterListControlOptions DefaultListOptions { get; set; }
         }
 
-        public class DefaultFilterDropDownControlOptions : Humidifier.Base.BaseSubResource, IHaveType, IHaveQuickSightDashboardTypesFilterSelectableValuesSelectableValues, IHaveQuickSightDashboardTypesDropDownControlDisplayOptionsDisplayOptions
+        public class DefaultFilterDropDownControlOptions : Humidifier.Base.BaseSubResource, IHaveType, IHaveCommitMode, IHaveQuickSightDashboardTypesFilterSelectableValuesSelectableValues, IHaveQuickSightDashboardTypesDropDownControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// Type
@@ -4068,7 +4068,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FilterSelectableValues SelectableValues { get; set; }
         }
 
-        public class DefaultFreeFormLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class DefaultFreeFormLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesFreeFormLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
             /// CanvasSizeOptions
@@ -4080,7 +4080,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FreeFormLayoutCanvasSizeOptions CanvasSizeOptions { get; set; }
         }
 
-        public class DefaultGridLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class DefaultGridLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGridLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
             /// CanvasSizeOptions
@@ -4152,7 +4152,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.DefaultSectionBasedLayoutConfiguration SectionBased { get; set; }
         }
 
-        public class DefaultRelativeDateTimeControlOptions : Humidifier.Base.BaseSubResource
+        public class DefaultRelativeDateTimeControlOptions : Humidifier.Base.BaseSubResource, IHaveCommitMode, IHaveQuickSightDashboardTypesRelativeDateTimeControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// DisplayOptions
@@ -4172,7 +4172,7 @@ namespace Humidifier.QuickSight
             public dynamic CommitMode { get; set; }
         }
 
-        public class DefaultSectionBasedLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class DefaultSectionBasedLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesSectionBasedLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
             /// CanvasSizeOptions
@@ -4392,7 +4392,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.CategoryDrillDownFilter CategoryFilter { get; set; }
         }
 
-        public class DropDownControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
+        public class DropDownControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightDashboardTypesListControlSelectAllOptionsSelectAllOptions
         {
             /// <summary>
             /// TitleOptions
@@ -4632,7 +4632,7 @@ namespace Humidifier.QuickSight
             public dynamic Visibility { get; set; }
         }
 
-        public class FieldSeriesItem : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveAxisBinding
+        public class FieldSeriesItem : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveAxisBinding, IHaveQuickSightDashboardTypesLineChartSeriesSettingsSettings
         {
             /// <summary>
             /// FieldId
@@ -4700,7 +4700,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ColumnSort ColumnSort { get; set; }
         }
 
-        public class FieldTooltipItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveFieldId, IHaveLabel
+        public class FieldTooltipItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveFieldId, IHaveLabel, IHaveTooltipTarget
         {
             /// <summary>
             /// TooltipTarget
@@ -4783,7 +4783,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FilledMapShapeConditionalFormatting Shape { get; set; }
         }
 
-        public class FilledMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip
+        public class FilledMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesGeospatialMapStyleOptionsMapStyleOptions, IHaveQuickSightDashboardTypesGeospatialWindowOptionsWindowOptions
         {
             /// <summary>
             /// SortConfiguration
@@ -4880,7 +4880,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> CategorySort { get; set; }
         }
 
-        public class FilledMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class FilledMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -5114,7 +5114,7 @@ namespace Humidifier.QuickSight
             public dynamic SourceFilterId { get; set; }
         }
 
-        public class FilterDateTimePickerControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveFilterControlId, IHaveSourceFilterId, IHaveQuickSightDashboardTypesDateTimePickerControlDisplayOptionsDisplayOptions
+        public class FilterDateTimePickerControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveFilterControlId, IHaveSourceFilterId, IHaveCommitMode, IHaveQuickSightDashboardTypesDateTimePickerControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// FilterControlId
@@ -5166,7 +5166,7 @@ namespace Humidifier.QuickSight
             public dynamic SourceFilterId { get; set; }
         }
 
-        public class FilterDropDownControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveFilterControlId, IHaveSourceFilterId, IHaveQuickSightDashboardTypesCascadingControlConfigurationCascadingControlConfiguration, IHaveQuickSightDashboardTypesFilterSelectableValuesSelectableValues, IHaveQuickSightDashboardTypesDropDownControlDisplayOptionsDisplayOptions
+        public class FilterDropDownControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveFilterControlId, IHaveSourceFilterId, IHaveCommitMode, IHaveQuickSightDashboardTypesCascadingControlConfigurationCascadingControlConfiguration, IHaveQuickSightDashboardTypesFilterSelectableValuesSelectableValues, IHaveQuickSightDashboardTypesDropDownControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// FilterControlId
@@ -5418,7 +5418,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.SameSheetTargetVisualConfiguration SameSheetTargetVisualConfiguration { get; set; }
         }
 
-        public class FilterRelativeDateTimeControl : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveFilterControlId, IHaveSourceFilterId
+        public class FilterRelativeDateTimeControl : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveFilterControlId, IHaveSourceFilterId, IHaveCommitMode, IHaveQuickSightDashboardTypesRelativeDateTimeControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// FilterControlId
@@ -5687,7 +5687,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FontWeight FontWeight { get; set; }
         }
 
-        public class FontSize : Humidifier.Base.BaseSubResource, IHaveRelative
+        public class FontSize : Humidifier.Base.BaseSubResource, IHaveRelative, IHaveAbsolute
         {
             /// <summary>
             /// Relative
@@ -5891,7 +5891,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FreeFormLayoutScreenCanvasSizeOptions ScreenCanvasSizeOptions { get; set; }
         }
 
-        public class FreeFormLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class FreeFormLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesFreeFormLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
             /// CanvasSizeOptions
@@ -6160,7 +6160,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.VisualPalette VisualPalette { get; set; }
         }
 
-        public class FunnelChartDataLabelOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHavePosition, IHaveMeasureLabelVisibility, IHaveCategoryLabelVisibility, IHaveLabelColor, IHaveMeasureDataLabelStyle
+        public class FunnelChartDataLabelOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHavePosition, IHaveMeasureLabelVisibility, IHaveCategoryLabelVisibility, IHaveLabelColor, IHaveMeasureDataLabelStyle, IHaveQuickSightDashboardTypesFontConfigurationLabelFontConfiguration
         {
             /// <summary>
             /// MeasureLabelVisibility
@@ -6253,7 +6253,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> CategorySort { get; set; }
         }
 
-        public class FunnelChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class FunnelChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -6315,7 +6315,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.ColumnHierarchy> ColumnHierarchies { get; set; }
         }
 
-        public class GaugeChartArcConditionalFormatting : Humidifier.Base.BaseSubResource
+        public class GaugeChartArcConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesConditionalFormattingColorForegroundColor
         {
             /// <summary>
             /// ForegroundColor
@@ -6426,7 +6426,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.MeasureField> Values { get; set; }
         }
 
-        public class GaugeChartOptions : Humidifier.Base.BaseSubResource, IHavePrimaryValueDisplayType
+        public class GaugeChartOptions : Humidifier.Base.BaseSubResource, IHavePrimaryValueDisplayType, IHaveQuickSightDashboardTypesComparisonConfigurationComparison, IHaveQuickSightDashboardTypesFontConfigurationPrimaryValueFontConfiguration
         {
             /// <summary>
             /// Arc
@@ -6490,7 +6490,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ConditionalFormattingIcon Icon { get; set; }
         }
 
-        public class GaugeChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class GaugeChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -6551,7 +6551,7 @@ namespace Humidifier.QuickSight
             public dynamic VisualContentAltText { get; set; }
         }
 
-        public class GeospatialCategoricalColor : Humidifier.Base.BaseSubResource
+        public class GeospatialCategoricalColor : Humidifier.Base.BaseSubResource, IHaveDefaultOpacity, IHaveNullDataVisibility, IHaveQuickSightDashboardTypesGeospatialNullDataSettingsNullDataSettings
         {
             /// <summary>
             /// CategoryDataColors
@@ -6608,7 +6608,7 @@ namespace Humidifier.QuickSight
             public dynamic Color { get; set; }
         }
 
-        public class GeospatialCircleRadius : Humidifier.Base.BaseSubResource
+        public class GeospatialCircleRadius : Humidifier.Base.BaseSubResource, IHaveRadius
         {
             /// <summary>
             /// Radius
@@ -6620,7 +6620,7 @@ namespace Humidifier.QuickSight
             public dynamic Radius { get; set; }
         }
 
-        public class GeospatialCircleSymbolStyle : Humidifier.Base.BaseSubResource
+        public class GeospatialCircleSymbolStyle : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGeospatialColorFillColor, IHaveQuickSightDashboardTypesGeospatialLineWidthStrokeWidth, IHaveQuickSightDashboardTypesGeospatialColorStrokeColor
         {
             /// <summary>
             /// FillColor
@@ -6732,7 +6732,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialStaticFileSource StaticFileDataSource { get; set; }
         }
 
-        public class GeospatialGradientColor : Humidifier.Base.BaseSubResource
+        public class GeospatialGradientColor : Humidifier.Base.BaseSubResource, IHaveDefaultOpacity, IHaveNullDataVisibility, IHaveQuickSightDashboardTypesGeospatialNullDataSettingsNullDataSettings
         {
             /// <summary>
             /// DefaultOpacity
@@ -6876,7 +6876,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialLineLayer LineLayer { get; set; }
         }
 
-        public class GeospatialLayerItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveLabel, IHaveQuickSightDashboardTypesTooltipOptionsTooltip
+        public class GeospatialLayerItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveLabel, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveLayerId, IHaveLayerType
         {
             /// <summary>
             /// LayerId
@@ -6953,7 +6953,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialDataSourceItem DataSource { get; set; }
         }
 
-        public class GeospatialLayerJoinDefinition : Humidifier.Base.BaseSubResource
+        public class GeospatialLayerJoinDefinition : Humidifier.Base.BaseSubResource, IHaveShapeKeyField
         {
             /// <summary>
             /// ColorField
@@ -6981,7 +6981,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.UnaggregatedField DatasetKeyField { get; set; }
         }
 
-        public class GeospatialLayerMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend
+        public class GeospatialLayerMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveInteractions
         {
             /// <summary>
             /// Legend
@@ -7050,7 +7050,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialLineSymbolStyle LineSymbolStyle { get; set; }
         }
 
-        public class GeospatialLineSymbolStyle : Humidifier.Base.BaseSubResource
+        public class GeospatialLineSymbolStyle : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGeospatialColorFillColor
         {
             /// <summary>
             /// FillColor
@@ -7113,7 +7113,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.DimensionField> Geospatial { get; set; }
         }
 
-        public class GeospatialMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette
+        public class GeospatialMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveInteractions, IHaveQuickSightDashboardTypesGeospatialMapStyleOptionsMapStyleOptions, IHaveQuickSightDashboardTypesGeospatialWindowOptionsWindowOptions
         {
             /// <summary>
             /// Legend
@@ -7193,7 +7193,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialMapAggregatedFieldWells GeospatialMapAggregatedFieldWells { get; set; }
         }
 
-        public class GeospatialMapState : Humidifier.Base.BaseSubResource
+        public class GeospatialMapState : Humidifier.Base.BaseSubResource, IHaveMapNavigation, IHaveQuickSightDashboardTypesGeospatialCoordinateBoundsBounds
         {
             /// <summary>
             /// Bounds
@@ -7213,7 +7213,7 @@ namespace Humidifier.QuickSight
             public dynamic MapNavigation { get; set; }
         }
 
-        public class GeospatialMapStyle : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveBaseMapStyle
+        public class GeospatialMapStyle : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveBaseMapStyle, IHaveBaseMapVisibility
         {
             /// <summary>
             /// BaseMapStyle
@@ -7253,7 +7253,7 @@ namespace Humidifier.QuickSight
             public dynamic BaseMapStyle { get; set; }
         }
 
-        public class GeospatialMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class GeospatialMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -7327,7 +7327,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialNullSymbolStyle SymbolStyle { get; set; }
         }
 
-        public class GeospatialNullSymbolStyle : Humidifier.Base.BaseSubResource
+        public class GeospatialNullSymbolStyle : Humidifier.Base.BaseSubResource, IHaveFillColor, IHaveStrokeWidth, IHaveStrokeColor
         {
             /// <summary>
             /// FillColor
@@ -7431,7 +7431,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GeospatialPolygonSymbolStyle PolygonSymbolStyle { get; set; }
         }
 
-        public class GeospatialPolygonSymbolStyle : Humidifier.Base.BaseSubResource
+        public class GeospatialPolygonSymbolStyle : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGeospatialColorFillColor, IHaveQuickSightDashboardTypesGeospatialLineWidthStrokeWidth, IHaveQuickSightDashboardTypesGeospatialColorStrokeColor
         {
             /// <summary>
             /// FillColor
@@ -7479,7 +7479,7 @@ namespace Humidifier.QuickSight
             public dynamic Color { get; set; }
         }
 
-        public class GeospatialStaticFileSource : Humidifier.Base.BaseSubResource
+        public class GeospatialStaticFileSource : Humidifier.Base.BaseSubResource, IHaveStaticFileId
         {
             /// <summary>
             /// StaticFileId
@@ -7491,7 +7491,7 @@ namespace Humidifier.QuickSight
             public dynamic StaticFileId { get; set; }
         }
 
-        public class GeospatialWindowOptions : Humidifier.Base.BaseSubResource, IHaveMapZoomMode
+        public class GeospatialWindowOptions : Humidifier.Base.BaseSubResource, IHaveMapZoomMode, IHaveQuickSightDashboardTypesGeospatialCoordinateBoundsBounds
         {
             /// <summary>
             /// Bounds
@@ -7584,7 +7584,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.GridLayoutScreenCanvasSizeOptions ScreenCanvasSizeOptions { get; set; }
         }
 
-        public class GridLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class GridLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGridLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
             /// CanvasSizeOptions
@@ -7721,7 +7721,7 @@ namespace Humidifier.QuickSight
             public dynamic Name { get; set; }
         }
 
-        public class HeaderFooterSectionConfiguration : Humidifier.Base.BaseSubResource, IHaveSectionId
+        public class HeaderFooterSectionConfiguration : Humidifier.Base.BaseSubResource, IHaveSectionId, IHaveQuickSightDashboardTypesSectionStyleStyle, IHaveQuickSightDashboardTypesSectionLayoutConfigurationLayout
         {
             /// <summary>
             /// Layout
@@ -7780,7 +7780,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.DimensionField> Rows { get; set; }
         }
 
-        public class HeatMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels
+        public class HeatMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesColorScaleColorScale
         {
             /// <summary>
             /// SortConfiguration
@@ -7898,7 +7898,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> HeatMapColumnSort { get; set; }
         }
 
-        public class HeatMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class HeatMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -8009,7 +8009,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.BinCountOptions BinCount { get; set; }
         }
 
-        public class HistogramConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsXAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsXAxisDisplayOptions
+        public class HistogramConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsXAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsXAxisDisplayOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsYAxisDisplayOptions
         {
             /// <summary>
             /// YAxisDisplayOptions
@@ -8089,7 +8089,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.HistogramAggregatedFieldWells HistogramAggregatedFieldWells { get; set; }
         }
 
-        public class HistogramVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class HistogramVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -8187,7 +8187,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.ImageCustomActionOperation> ActionOperations { get; set; }
         }
 
-        public class ImageCustomActionOperation : Humidifier.Base.BaseSubResource
+        public class ImageCustomActionOperation : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesCustomActionNavigationOperationNavigationOperation, IHaveQuickSightDashboardTypesCustomActionSetParametersOperationSetParametersOperation, IHaveQuickSightDashboardTypesCustomActionURLOperationURLOperation
         {
             /// <summary>
             /// NavigationOperation
@@ -8239,7 +8239,7 @@ namespace Humidifier.QuickSight
             public dynamic AvailabilityStatus { get; set; }
         }
 
-        public class ImageStaticFile : Humidifier.Base.BaseSubResource
+        public class ImageStaticFile : Humidifier.Base.BaseSubResource, IHaveStaticFileId, IHaveQuickSightDashboardTypesStaticFileSourceSource
         {
             /// <summary>
             /// StaticFileId
@@ -8292,7 +8292,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.CustomNarrativeOptions CustomNarrative { get; set; }
         }
 
-        public class InsightVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
+        public class InsightVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
         {
             /// <summary>
             /// Subtitle
@@ -8628,7 +8628,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.MeasureField> Values { get; set; }
         }
 
-        public class KPIOptions : Humidifier.Base.BaseSubResource, IHavePrimaryValueDisplayType
+        public class KPIOptions : Humidifier.Base.BaseSubResource, IHavePrimaryValueDisplayType, IHaveQuickSightDashboardTypesComparisonConfigurationComparison, IHaveQuickSightDashboardTypesFontConfigurationPrimaryValueFontConfiguration
         {
             /// <summary>
             /// SecondaryValueFontConfiguration
@@ -8724,7 +8724,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ConditionalFormattingIcon Icon { get; set; }
         }
 
-        public class KPIProgressBarConditionalFormatting : Humidifier.Base.BaseSubResource
+        public class KPIProgressBarConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesConditionalFormattingColorForegroundColor
         {
             /// <summary>
             /// ForegroundColor
@@ -8785,7 +8785,7 @@ namespace Humidifier.QuickSight
             public dynamic Visibility { get; set; }
         }
 
-        public class KPIVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class KPIVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -8952,7 +8952,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.LayerCustomActionOperation> ActionOperations { get; set; }
         }
 
-        public class LayerCustomActionOperation : Humidifier.Base.BaseSubResource
+        public class LayerCustomActionOperation : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesCustomActionNavigationOperationNavigationOperation, IHaveQuickSightDashboardTypesCustomActionSetParametersOperationSetParametersOperation, IHaveQuickSightDashboardTypesCustomActionURLOperationURLOperation, IHaveQuickSightDashboardTypesCustomActionFilterOperationFilterOperation
         {
             /// <summary>
             /// NavigationOperation
@@ -8988,7 +8988,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.CustomActionURLOperation URLOperation { get; set; }
         }
 
-        public class LayerMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
+        public class LayerMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
         {
             /// <summary>
             /// Subtitle
@@ -9052,7 +9052,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.LayoutConfiguration Configuration { get; set; }
         }
 
-        public class LayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class LayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGridLayoutConfigurationGridLayout
         {
             /// <summary>
             /// GridLayout
@@ -9172,7 +9172,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.DimensionField> SmallMultiples { get; set; }
         }
 
-        public class LineChartConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsPrimaryYAxisLabelOptions, IHaveQuickSightDashboardTypesSmallMultiplesOptionsSmallMultiplesOptions, IHaveQuickSightDashboardTypesChartAxisLabelOptionsXAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsXAxisDisplayOptions
+        public class LineChartConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsPrimaryYAxisLabelOptions, IHaveQuickSightDashboardTypesSmallMultiplesOptionsSmallMultiplesOptions, IHaveQuickSightDashboardTypesChartAxisLabelOptionsXAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsXAxisDisplayOptions, IHaveQuickSightDashboardTypesSingleAxisOptionsSingleAxisOptions, IHaveQuickSightDashboardTypesChartAxisLabelOptionsSecondaryYAxisLabelOptions
         {
             /// <summary>
             /// SortConfiguration
@@ -9340,7 +9340,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ChartAxisLabelOptions XAxisLabelOptions { get; set; }
         }
 
-        public class LineChartDefaultSeriesSettings : Humidifier.Base.BaseSubResource, IHaveAxisBinding
+        public class LineChartDefaultSeriesSettings : Humidifier.Base.BaseSubResource, IHaveAxisBinding, IHaveQuickSightDashboardTypesLineChartLineStyleSettingsLineStyleSettings, IHaveQuickSightDashboardTypesLineChartMarkerStyleSettingsMarkerStyleSettings
         {
             /// <summary>
             /// LineStyleSettings
@@ -9380,7 +9380,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.LineChartAggregatedFieldWells LineChartAggregatedFieldWells { get; set; }
         }
 
-        public class LineChartLineStyleSettings : Humidifier.Base.BaseSubResource, IHaveLineInterpolation, IHaveLineStyle, IHaveLineVisibility, IHaveLineWidth
+        public class LineChartLineStyleSettings : Humidifier.Base.BaseSubResource, IHaveLineWidth, IHaveLineInterpolation, IHaveLineStyle, IHaveLineVisibility
         {
             /// <summary>
             /// LineInterpolation
@@ -9452,7 +9452,7 @@ namespace Humidifier.QuickSight
             public dynamic MarkerColor { get; set; }
         }
 
-        public class LineChartSeriesSettings : Humidifier.Base.BaseSubResource
+        public class LineChartSeriesSettings : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLineChartLineStyleSettingsLineStyleSettings, IHaveQuickSightDashboardTypesLineChartMarkerStyleSettingsMarkerStyleSettings
         {
             /// <summary>
             /// LineStyleSettings
@@ -9518,7 +9518,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ItemsLimitConfiguration SmallMultiplesLimitConfiguration { get; set; }
         }
 
-        public class LineChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class LineChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -9614,7 +9614,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.ResourcePermission> Permissions { get; set; }
         }
 
-        public class ListControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
+        public class ListControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightDashboardTypesListControlSelectAllOptionsSelectAllOptions
         {
             /// <summary>
             /// TitleOptions
@@ -9698,7 +9698,7 @@ namespace Humidifier.QuickSight
             public dynamic TargetSheetId { get; set; }
         }
 
-        public class LongFormatText : Humidifier.Base.BaseSubResource, IHaveRichText, IHavePlainText
+        public class LongFormatText : Humidifier.Base.BaseSubResource, IHavePlainText, IHaveRichText
         {
             /// <summary>
             /// RichText
@@ -9910,7 +9910,7 @@ namespace Humidifier.QuickSight
             public dynamic DisplayMode { get; set; }
         }
 
-        public class NestedFilter : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId
+        public class NestedFilter : Humidifier.Base.BaseSubResource, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveIncludeInnerSet
         {
             /// <summary>
             /// Column
@@ -10018,7 +10018,7 @@ namespace Humidifier.QuickSight
             public dynamic Prefix { get; set; }
         }
 
-        public class NumberFormatConfiguration : Humidifier.Base.BaseSubResource
+        public class NumberFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesNumericFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// FormatConfiguration
@@ -10070,7 +10070,7 @@ namespace Humidifier.QuickSight
             public dynamic Value { get; set; }
         }
 
-        public class NumericEqualityFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveParameterName, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveNullOption, IHaveSelectAllOptions, IHaveMatchOperator, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveQuickSightDashboardTypesAggregationFunctionAggregationFunction
+        public class NumericEqualityFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveParameterName, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveNullOption, IHaveSelectAllOptions, IHaveMatchOperator, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveQuickSightDashboardTypesAggregationFunctionAggregationFunction
         {
             /// <summary>
             /// AggregationFunction
@@ -10146,7 +10146,7 @@ namespace Humidifier.QuickSight
             public dynamic FilterId { get; set; }
         }
 
-        public class NumericFormatConfiguration : Humidifier.Base.BaseSubResource
+        public class NumericFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesNumberDisplayFormatConfigurationNumberDisplayFormatConfiguration, IHaveQuickSightDashboardTypesPercentageDisplayFormatConfigurationPercentageDisplayFormatConfiguration
         {
             /// <summary>
             /// NumberDisplayFormatConfiguration
@@ -10174,7 +10174,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.PercentageDisplayFormatConfiguration PercentageDisplayFormatConfiguration { get; set; }
         }
 
-        public class NumericRangeFilter : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveNullOption, IHaveSelectAllOptions, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveIncludeMaximum, IHaveIncludeMinimum, IHaveQuickSightDashboardTypesAggregationFunctionAggregationFunction
+        public class NumericRangeFilter : Humidifier.Base.BaseSubResource, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveNullOption, IHaveSelectAllOptions, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveIncludeMaximum, IHaveIncludeMinimum, IHaveQuickSightDashboardTypesAggregationFunctionAggregationFunction
         {
             /// <summary>
             /// AggregationFunction
@@ -10318,7 +10318,7 @@ namespace Humidifier.QuickSight
             public dynamic SimpleNumericalAggregation { get; set; }
         }
 
-        public class NumericalDimensionField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveHierarchyId
+        public class NumericalDimensionField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveHierarchyId, IHaveQuickSightDashboardTypesNumberFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// HierarchyId
@@ -10354,7 +10354,7 @@ namespace Humidifier.QuickSight
             public dynamic FieldId { get; set; }
         }
 
-        public class NumericalMeasureField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn
+        public class NumericalMeasureField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesNumberFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// AggregationFunction
@@ -10638,7 +10638,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.IntegerParameterDeclaration IntegerParameterDeclaration { get; set; }
         }
 
-        public class ParameterDropDownControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveSourceParameterName, IHaveParameterControlId, IHaveQuickSightDashboardTypesCascadingControlConfigurationCascadingControlConfiguration, IHaveQuickSightDashboardTypesDropDownControlDisplayOptionsDisplayOptions
+        public class ParameterDropDownControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveCommitMode, IHaveSourceParameterName, IHaveParameterControlId, IHaveQuickSightDashboardTypesCascadingControlConfigurationCascadingControlConfiguration, IHaveQuickSightDashboardTypesDropDownControlDisplayOptionsDisplayOptions, IHaveQuickSightDashboardTypesParameterSelectableValuesSelectableValues
         {
             /// <summary>
             /// ParameterControlId
@@ -10706,7 +10706,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ParameterSelectableValues SelectableValues { get; set; }
         }
 
-        public class ParameterListControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveSourceParameterName, IHaveParameterControlId, IHaveQuickSightDashboardTypesCascadingControlConfigurationCascadingControlConfiguration, IHaveQuickSightDashboardTypesListControlDisplayOptionsDisplayOptions
+        public class ParameterListControl : Humidifier.Base.BaseSubResource, IHaveType, IHaveTitle, IHaveSourceParameterName, IHaveParameterControlId, IHaveQuickSightDashboardTypesCascadingControlConfigurationCascadingControlConfiguration, IHaveQuickSightDashboardTypesListControlDisplayOptionsDisplayOptions, IHaveQuickSightDashboardTypesParameterSelectableValuesSelectableValues
         {
             /// <summary>
             /// ParameterControlId
@@ -10847,7 +10847,7 @@ namespace Humidifier.QuickSight
             public dynamic MinimumValue { get; set; }
         }
 
-        public class ParameterTextAreaControl : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveSourceParameterName, IHaveParameterControlId, IHaveDelimiter, IHaveQuickSightDashboardTypesTextAreaControlDisplayOptionsDisplayOptions
+        public class ParameterTextAreaControl : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveSourceParameterName, IHaveDelimiter, IHaveParameterControlId, IHaveQuickSightDashboardTypesTextAreaControlDisplayOptionsDisplayOptions
         {
             /// <summary>
             /// ParameterControlId
@@ -11305,7 +11305,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ItemsLimitConfiguration SmallMultiplesLimitConfiguration { get; set; }
         }
 
-        public class PieChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class PieChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -11418,7 +11418,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.DimensionField> Rows { get; set; }
         }
 
-        public class PivotTableCellConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveFieldId
+        public class PivotTableCellConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesTextConditionalFormatTextFormat
         {
             /// <summary>
             /// Scope
@@ -11689,7 +11689,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.PivotTableAggregatedFieldWells PivotTableAggregatedFieldWells { get; set; }
         }
 
-        public class PivotTableOptions : Humidifier.Base.BaseSubResource, IHaveCollapsedRowDimensionsVisibility, IHaveRowsLayout, IHaveMetricPlacement, IHaveDefaultCellWidth, IHaveColumnNamesVisibility, IHaveSingleMetricVisibility, IHaveToggleButtonsVisibility
+        public class PivotTableOptions : Humidifier.Base.BaseSubResource, IHaveCollapsedRowDimensionsVisibility, IHaveRowsLayout, IHaveMetricPlacement, IHaveDefaultCellWidth, IHaveColumnNamesVisibility, IHaveSingleMetricVisibility, IHaveToggleButtonsVisibility, IHaveQuickSightDashboardTypesTableCellStyleCellStyle, IHaveQuickSightDashboardTypesRowAlternateColorOptionsRowAlternateColorOptions
         {
             /// <summary>
             /// RowFieldNamesStyle
@@ -11914,7 +11914,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.PivotTotalOptions ColumnTotalOptions { get; set; }
         }
 
-        public class PivotTableVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class PivotTableVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -11975,7 +11975,7 @@ namespace Humidifier.QuickSight
             public dynamic VisualContentAltText { get; set; }
         }
 
-        public class PivotTotalOptions : Humidifier.Base.BaseSubResource, IHaveCustomLabel, IHaveTotalsVisibility, IHavePlacement, IHaveScrollStatus, IHaveQuickSightDashboardTypesTableCellStyleTotalCellStyle
+        public class PivotTotalOptions : Humidifier.Base.BaseSubResource, IHaveCustomLabel, IHaveTotalsVisibility, IHavePlacement, IHaveScrollStatus, IHaveQuickSightDashboardTypesTableCellStyleTotalCellStyle, IHaveQuickSightDashboardTypesTableCellStyleValueCellStyle, IHaveQuickSightDashboardTypesTableCellStyleMetricHeaderCellStyle
         {
             /// <summary>
             /// TotalAggregationOptions
@@ -12044,7 +12044,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.TableCellStyle MetricHeaderCellStyle { get; set; }
         }
 
-        public class PluginVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class PluginVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle, IHavePluginArn
         {
             /// <summary>
             /// Subtitle
@@ -12125,7 +12125,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.PluginVisualFieldWell> FieldWells { get; set; }
         }
 
-        public class PluginVisualFieldWell : Humidifier.Base.BaseSubResource
+        public class PluginVisualFieldWell : Humidifier.Base.BaseSubResource, IHaveAxisName
         {
             /// <summary>
             /// Unaggregated
@@ -12513,7 +12513,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> CategorySort { get; set; }
         }
 
-        public class RadarChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class RadarChartVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -12783,7 +12783,7 @@ namespace Humidifier.QuickSight
             public dynamic Color { get; set; }
         }
 
-        public class ReferenceLineValueLabelConfiguration : Humidifier.Base.BaseSubResource, IHaveRelativePosition
+        public class ReferenceLineValueLabelConfiguration : Humidifier.Base.BaseSubResource, IHaveRelativePosition, IHaveQuickSightDashboardTypesNumericFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// FormatConfiguration
@@ -12831,7 +12831,7 @@ namespace Humidifier.QuickSight
             public dynamic DateTimeFormat { get; set; }
         }
 
-        public class RelativeDatesFilter : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveTimeGranularity, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveNullOption, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveRelativeDateValue, IHaveRelativeDateType, IHaveMinimumGranularity
+        public class RelativeDatesFilter : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveTimeGranularity, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveNullOption, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveRelativeDateValue, IHaveRelativeDateType, IHaveMinimumGranularity, IHaveQuickSightDashboardTypesExcludePeriodConfigurationExcludePeriodConfiguration
         {
             /// <summary>
             /// RelativeDateValue
@@ -13114,7 +13114,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ItemsLimitConfiguration DestinationItemsLimit { get; set; }
         }
 
-        public class SankeyDiagramVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class SankeyDiagramVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -13216,7 +13216,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.MeasureField> YAxis { get; set; }
         }
 
-        public class ScatterPlotConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsXAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsXAxisDisplayOptions
+        public class ScatterPlotConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesVisualPaletteVisualPalette, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsXAxisLabelOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsXAxisDisplayOptions, IHaveQuickSightDashboardTypesAxisDisplayOptionsYAxisDisplayOptions
         {
             /// <summary>
             /// YAxisLabelOptions
@@ -13361,7 +13361,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.DimensionField> YAxis { get; set; }
         }
 
-        public class ScatterPlotVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class ScatterPlotVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -13479,7 +13479,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.SectionBasedLayoutPaperCanvasSizeOptions PaperCanvasSizeOptions { get; set; }
         }
 
-        public class SectionBasedLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class SectionBasedLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesSectionBasedLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
             /// CanvasSizeOptions
@@ -13716,7 +13716,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.SheetControlLayoutConfiguration Configuration { get; set; }
         }
 
-        public class SheetControlLayoutConfiguration : Humidifier.Base.BaseSubResource
+        public class SheetControlLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesGridLayoutConfigurationGridLayout
         {
             /// <summary>
             /// GridLayout
@@ -13879,7 +13879,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.SheetElementConfigurationOverrides ConfigurationOverrides { get; set; }
         }
 
-        public class SheetImage : Humidifier.Base.BaseSubResource
+        public class SheetImage : Humidifier.Base.BaseSubResource, IHaveSheetImageId, IHaveImageContentAltText
         {
             /// <summary>
             /// Actions
@@ -13940,7 +13940,7 @@ namespace Humidifier.QuickSight
             public dynamic ImageContentAltText { get; set; }
         }
 
-        public class SheetImageScalingConfiguration : Humidifier.Base.BaseSubResource
+        public class SheetImageScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveScalingType
         {
             /// <summary>
             /// ScalingType
@@ -13964,7 +13964,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.SheetImageStaticFileSource SheetImageStaticFileSource { get; set; }
         }
 
-        public class SheetImageStaticFileSource : Humidifier.Base.BaseSubResource
+        public class SheetImageStaticFileSource : Humidifier.Base.BaseSubResource, IHaveStaticFileId
         {
             /// <summary>
             /// StaticFileId
@@ -14069,7 +14069,7 @@ namespace Humidifier.QuickSight
             public dynamic VisualIds { get; set; }
         }
 
-        public class ShortFormatText : Humidifier.Base.BaseSubResource, IHaveRichText, IHavePlainText
+        public class ShortFormatText : Humidifier.Base.BaseSubResource, IHavePlainText, IHaveRichText
         {
             /// <summary>
             /// RichText
@@ -14233,7 +14233,7 @@ namespace Humidifier.QuickSight
             public dynamic Bottom { get; set; }
         }
 
-        public class SpatialStaticFile : Humidifier.Base.BaseSubResource
+        public class SpatialStaticFile : Humidifier.Base.BaseSubResource, IHaveStaticFileId, IHaveQuickSightDashboardTypesStaticFileSourceSource
         {
             /// <summary>
             /// StaticFileId
@@ -14273,7 +14273,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.SpatialStaticFile SpatialStaticFile { get; set; }
         }
 
-        public class StaticFileS3SourceOptions : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveRegion
+        public class StaticFileS3SourceOptions : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveRegion, IHaveObjectKey
         {
             /// <summary>
             /// BucketName
@@ -14354,7 +14354,7 @@ namespace Humidifier.QuickSight
             public dynamic StaticValues { get; set; }
         }
 
-        public class StringFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesNullValueFormatConfigurationNullValueFormatConfiguration
+        public class StringFormatConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesNullValueFormatConfigurationNullValueFormatConfiguration, IHaveQuickSightDashboardTypesNumericFormatConfigurationNumericFormatConfiguration
         {
             /// <summary>
             /// NumericFormatConfiguration
@@ -14460,7 +14460,7 @@ namespace Humidifier.QuickSight
             public dynamic CustomValue { get; set; }
         }
 
-        public class SubtotalOptions : Humidifier.Base.BaseSubResource, IHaveCustomLabel, IHaveTotalsVisibility, IHaveFieldLevel, IHaveQuickSightDashboardTypesTableCellStyleTotalCellStyle
+        public class SubtotalOptions : Humidifier.Base.BaseSubResource, IHaveCustomLabel, IHaveTotalsVisibility, IHaveFieldLevel, IHaveQuickSightDashboardTypesTableCellStyleTotalCellStyle, IHaveQuickSightDashboardTypesTableCellStyleValueCellStyle, IHaveQuickSightDashboardTypesTableCellStyleMetricHeaderCellStyle
         {
             /// <summary>
             /// CustomLabel
@@ -14580,7 +14580,7 @@ namespace Humidifier.QuickSight
             public dynamic Style { get; set; }
         }
 
-        public class TableCellConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveFieldId
+        public class TableCellConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesTextConditionalFormatTextFormat
         {
             /// <summary>
             /// FieldId
@@ -14984,7 +14984,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.DataBarsOptions DataBars { get; set; }
         }
 
-        public class TableOptions : Humidifier.Base.BaseSubResource, IHaveOrientation
+        public class TableOptions : Humidifier.Base.BaseSubResource, IHaveOrientation, IHaveQuickSightDashboardTypesTableCellStyleCellStyle, IHaveQuickSightDashboardTypesRowAlternateColorOptionsRowAlternateColorOptions
         {
             /// <summary>
             /// HeaderStyle
@@ -15125,7 +15125,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.TableBorderOptions InnerVertical { get; set; }
         }
 
-        public class TableSortConfiguration : Humidifier.Base.BaseSubResource
+        public class TableSortConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesPaginationConfigurationPaginationConfiguration
         {
             /// <summary>
             /// RowSort
@@ -15171,7 +15171,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.UnaggregatedField> Values { get; set; }
         }
 
-        public class TableVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class TableVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -15232,7 +15232,7 @@ namespace Humidifier.QuickSight
             public dynamic VisualContentAltText { get; set; }
         }
 
-        public class TextAreaControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
+        public class TextAreaControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightDashboardTypesTextControlPlaceholderOptionsPlaceholderOptions
         {
             /// <summary>
             /// TitleOptions
@@ -15300,7 +15300,7 @@ namespace Humidifier.QuickSight
             public dynamic Visibility { get; set; }
         }
 
-        public class TextFieldControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
+        public class TextFieldControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLabelOptionsTitleOptions, IHaveQuickSightDashboardTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightDashboardTypesTextControlPlaceholderOptionsPlaceholderOptions
         {
             /// <summary>
             /// TitleOptions
@@ -15400,7 +15400,7 @@ namespace Humidifier.QuickSight
             public dynamic LowerBoundary { get; set; }
         }
 
-        public class TimeEqualityFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveParameterName, IHaveTimeGranularity, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveQuickSightDashboardTypesRollingDateConfigurationRollingDate
+        public class TimeEqualityFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveParameterName, IHaveTimeGranularity, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveQuickSightDashboardTypesRollingDateConfigurationRollingDate
         {
             /// <summary>
             /// Column
@@ -15496,7 +15496,7 @@ namespace Humidifier.QuickSight
             public dynamic RangeMaximum { get; set; }
         }
 
-        public class TimeRangeFilter : Humidifier.Base.BaseSubResource, IHaveTimeGranularity, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveNullOption, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveIncludeMaximum, IHaveIncludeMinimum
+        public class TimeRangeFilter : Humidifier.Base.BaseSubResource, IHaveTimeGranularity, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveNullOption, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveIncludeMaximum, IHaveIncludeMinimum, IHaveQuickSightDashboardTypesExcludePeriodConfigurationExcludePeriodConfiguration
         {
             /// <summary>
             /// RangeMinimumValue
@@ -15656,7 +15656,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.FieldBasedTooltip FieldBasedTooltip { get; set; }
         }
 
-        public class TopBottomFilter : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveTimeGranularity, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveFilterId, IHaveLimit, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration
+        public class TopBottomFilter : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveTimeGranularity, IHaveFilterId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveLimit
         {
             /// <summary>
             /// AggregationSortConfigurations
@@ -15981,7 +15981,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.DimensionField> Groups { get; set; }
         }
 
-        public class TreeMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsColorLabelOptions
+        public class TreeMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesLegendOptionsLegend, IHaveQuickSightDashboardTypesTooltipOptionsTooltip, IHaveQuickSightDashboardTypesDataLabelOptionsDataLabels, IHaveQuickSightDashboardTypesChartAxisLabelOptionsColorLabelOptions, IHaveQuickSightDashboardTypesColorScaleColorScale
         {
             /// <summary>
             /// SortConfiguration
@@ -16090,7 +16090,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.DashboardTypes.ItemsLimitConfiguration TreeMapGroupItemsLimitConfiguration { get; set; }
         }
 
-        public class TreeMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class TreeMapVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -16164,7 +16164,7 @@ namespace Humidifier.QuickSight
             public dynamic Visibility { get; set; }
         }
 
-        public class UnaggregatedField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn
+        public class UnaggregatedField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightDashboardTypesColumnIdentifierColumn, IHaveQuickSightDashboardTypesFormatConfigurationFormatConfiguration
         {
             /// <summary>
             /// FormatConfiguration
@@ -16505,7 +16505,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.VisualCustomActionOperation> ActionOperations { get; set; }
         }
 
-        public class VisualCustomActionOperation : Humidifier.Base.BaseSubResource
+        public class VisualCustomActionOperation : Humidifier.Base.BaseSubResource, IHaveQuickSightDashboardTypesCustomActionNavigationOperationNavigationOperation, IHaveQuickSightDashboardTypesCustomActionSetParametersOperationSetParametersOperation, IHaveQuickSightDashboardTypesCustomActionURLOperationURLOperation, IHaveQuickSightDashboardTypesCustomActionFilterOperationFilterOperation
         {
             /// <summary>
             /// NavigationOperation
@@ -16810,7 +16810,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> CategorySort { get; set; }
         }
 
-        public class WaterfallVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class WaterfallVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -17063,7 +17063,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.FieldSortOptions> CategorySort { get; set; }
         }
 
-        public class WordCloudVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
+        public class WordCloudVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightDashboardTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightDashboardTypesVisualTitleLabelOptionsTitle
         {
             /// <summary>
             /// Subtitle
@@ -17125,7 +17125,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DashboardTypes.ColumnHierarchy> ColumnHierarchies { get; set; }
         }
 
-        public class YAxisOptions : Humidifier.Base.BaseSubResource
+        public class YAxisOptions : Humidifier.Base.BaseSubResource, IHaveYAxis
         {
             /// <summary>
             /// YAxis

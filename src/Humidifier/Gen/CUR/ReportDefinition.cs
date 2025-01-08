@@ -2,7 +2,7 @@ namespace Humidifier.CUR
 {
     using System.Collections.Generic;
 
-    public class ReportDefinition : Humidifier.Base.BaseResource, IHaveFormat, IHaveS3Bucket, IHaveCompression, IHaveS3Prefix
+    public class ReportDefinition : Humidifier.Base.BaseResource, IHaveS3Bucket, IHaveFormat, IHaveCompression, IHaveS3Prefix, IHaveS3Region, IHaveTimeUnit
     {
         public override string AWSTypeName { get => AWS.CUR.ReportDefinition; }
         /// <summary>

@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using BackupVaultTypes;
 
-    public class BackupVault : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveEncryptionKeyArn
+    public class BackupVault : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveEncryptionKeyArn, IHaveBackupVaultName, IHaveAccessPolicy
     {
         public class Attributes
         {
@@ -58,7 +58,7 @@ namespace Humidifier.Backup
 
     namespace BackupVaultTypes
     {
-        public class LockConfigurationType : Humidifier.Base.BaseSubResource
+        public class LockConfigurationType : Humidifier.Base.BaseSubResource, IHaveMaxRetentionDays, IHaveMinRetentionDays
         {
             /// <summary>
             /// ChangeableForDays
@@ -86,7 +86,7 @@ namespace Humidifier.Backup
             public dynamic MinRetentionDays { get; set; }
         }
 
-        public class NotificationObjectType : Humidifier.Base.BaseSubResource
+        public class NotificationObjectType : Humidifier.Base.BaseSubResource, IHaveSNSTopicArn, IHaveBackupVaultEvents
         {
             /// <summary>
             /// SNSTopicArn

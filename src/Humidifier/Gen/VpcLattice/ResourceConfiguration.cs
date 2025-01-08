@@ -3,7 +3,7 @@ namespace Humidifier.VpcLattice
     using System.Collections.Generic;
     using ResourceConfigurationTypes;
 
-    public class ResourceConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class ResourceConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveProtocolType
     {
         public class Attributes
         {

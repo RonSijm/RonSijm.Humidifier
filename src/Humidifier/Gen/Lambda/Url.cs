@@ -60,7 +60,7 @@ namespace Humidifier.Lambda
 
     namespace UrlTypes
     {
-        public class Cors : Humidifier.Base.BaseSubResource, IHaveExposeHeaders, IHaveMaxAge
+        public class Cors : Humidifier.Base.BaseSubResource, IHaveExposeHeaders, IHaveMaxAge, IHaveAllowOrigins, IHaveAllowCredentials, IHaveAllowHeaders, IHaveAllowMethods
         {
             /// <summary>
             /// AllowCredentials

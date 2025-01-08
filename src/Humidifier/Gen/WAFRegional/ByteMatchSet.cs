@@ -20,7 +20,7 @@ namespace Humidifier.WAFRegional
 
     namespace ByteMatchSetTypes
     {
-        public class ByteMatchTuple : Humidifier.Base.BaseSubResource, IHaveTextTransformation, IHavePositionalConstraint
+        public class ByteMatchTuple : Humidifier.Base.BaseSubResource, IHaveTextTransformation, IHavePositionalConstraint, IHaveTargetString, IHaveTargetStringBase64
         {
             /// <summary>
             /// TargetString

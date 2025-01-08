@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using TransitGatewayRouteTableAttachmentTypes;
 
-    public class TransitGatewayRouteTableAttachment : Humidifier.Base.BaseResource, IHaveTags
+    public class TransitGatewayRouteTableAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveNetworkFunctionGroupName
     {
         public class Attributes
         {
@@ -79,7 +79,7 @@ namespace Humidifier.NetworkManager
 
     namespace TransitGatewayRouteTableAttachmentTypes
     {
-        public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber
+        public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveNetworkFunctionGroupName
         {
             /// <summary>
             /// Tags
@@ -108,7 +108,7 @@ namespace Humidifier.NetworkManager
             public dynamic AttachmentPolicyRuleNumber { get; set; }
         }
 
-        public class ProposedSegmentChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveSegmentName, IHaveAttachmentPolicyRuleNumber
+        public class ProposedSegmentChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveSegmentName
         {
             /// <summary>
             /// SegmentName

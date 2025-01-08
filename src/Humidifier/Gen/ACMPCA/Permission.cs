@@ -2,7 +2,7 @@ namespace Humidifier.ACMPCA
 {
     using System.Collections.Generic;
 
-    public class Permission : Humidifier.Base.BaseResource, IHavePrincipal, IHaveActions, IHaveCertificateAuthorityArn
+    public class Permission : Humidifier.Base.BaseResource, IHavePrincipal, IHaveActions, IHaveCertificateAuthorityArn, IHaveSourceAccount
     {
         public override string AWSTypeName { get => AWS.ACMPCA.Permission; }
 

@@ -3,7 +3,7 @@ namespace Humidifier.CleanRooms
     using System.Collections.Generic;
     using MembershipTypes;
 
-    public class Membership : Humidifier.Base.BaseResource, IHaveTags
+    public class Membership : Humidifier.Base.BaseResource, IHaveTags, IHaveQueryLogStatus
     {
         public class Attributes
         {
@@ -107,7 +107,7 @@ namespace Humidifier.CleanRooms
             public dynamic RoleArn { get; set; }
         }
 
-        public class MembershipQueryComputePaymentConfig : Humidifier.Base.BaseSubResource
+        public class MembershipQueryComputePaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
         {
             /// <summary>
             /// IsResponsible

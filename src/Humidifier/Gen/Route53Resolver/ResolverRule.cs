@@ -65,7 +65,7 @@ namespace Humidifier.Route53Resolver
 
     namespace ResolverRuleTypes
     {
-        public class TargetAddress : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveIp
+        public class TargetAddress : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHaveIp, IHaveIpv6
         {
             /// <summary>
             /// Ipv6

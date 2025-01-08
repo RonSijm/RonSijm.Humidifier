@@ -139,7 +139,7 @@ namespace Humidifier.QBusiness
             public dynamic SecurityGroupIds { get; set; }
         }
 
-        public class DocumentAttributeCondition : Humidifier.Base.BaseSubResource, IHaveKey, IHaveOperator
+        public class DocumentAttributeCondition : Humidifier.Base.BaseSubResource, IHaveKey, IHaveOperator, IHaveQBusinessDataSourceTypesDocumentAttributeValueValue
         {
             /// <summary>
             /// Operator
@@ -167,7 +167,7 @@ namespace Humidifier.QBusiness
             public dynamic Key { get; set; }
         }
 
-        public class DocumentAttributeTarget : Humidifier.Base.BaseSubResource, IHaveKey
+        public class DocumentAttributeTarget : Humidifier.Base.BaseSubResource, IHaveKey, IHaveQBusinessDataSourceTypesDocumentAttributeValueValue
         {
             /// <summary>
             /// Value
@@ -195,7 +195,7 @@ namespace Humidifier.QBusiness
             public dynamic Key { get; set; }
         }
 
-        public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue
+        public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue, IHaveDateValue, IHaveStringListValue
         {
             /// <summary>
             /// DateValue

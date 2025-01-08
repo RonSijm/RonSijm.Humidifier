@@ -84,7 +84,7 @@ namespace Humidifier.CloudFront
             public dynamic OriginAccessIdentity { get; set; }
         }
 
-        public class StreamingDistributionConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveComment, IHaveAliases
+        public class StreamingDistributionConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveComment, IHaveAliases, IHavePriceClass
         {
             /// <summary>
             /// Logging

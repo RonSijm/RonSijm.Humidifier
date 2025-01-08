@@ -3,7 +3,7 @@ namespace Humidifier.SSMContacts
     using System.Collections.Generic;
     using PlanTypes;
 
-    public class Plan : Humidifier.Base.BaseResource, IHaveContactId
+    public class Plan : Humidifier.Base.BaseResource, IHaveContactId, IHaveRotationIds
     {
         public class Attributes
         {
@@ -43,7 +43,7 @@ namespace Humidifier.SSMContacts
 
     namespace PlanTypes
     {
-        public class ChannelTargetInfo : Humidifier.Base.BaseSubResource, IHaveChannelId
+        public class ChannelTargetInfo : Humidifier.Base.BaseSubResource, IHaveChannelId, IHaveRetryIntervalInMinutes
         {
             /// <summary>
             /// RetryIntervalInMinutes
@@ -63,7 +63,7 @@ namespace Humidifier.SSMContacts
             public dynamic ChannelId { get; set; }
         }
 
-        public class ContactTargetInfo : Humidifier.Base.BaseSubResource, IHaveContactId
+        public class ContactTargetInfo : Humidifier.Base.BaseSubResource, IHaveContactId, IHaveIsEssential
         {
             /// <summary>
             /// ContactId

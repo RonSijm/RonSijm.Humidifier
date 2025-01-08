@@ -68,7 +68,7 @@ namespace Humidifier.M2
 
     namespace ApplicationTypes
     {
-        public class Definition : Humidifier.Base.BaseSubResource, IHaveContent
+        public class Definition : Humidifier.Base.BaseSubResource, IHaveContent, IHaveS3Location
         {
             /// <summary>
             /// Content

@@ -18,6 +18,7 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
             foreach (var tryFindMostUsedProperty in tryFindMostUsedProperties)
             {
                 var item = tryFindMostUsedProperty.Value.FirstOrDefault();
+
                 string interfaceName = $"IHave{TransformItemName(item)}";
 
                 var interfaceDeclaration = InterfaceDeclaration(interfaceName)

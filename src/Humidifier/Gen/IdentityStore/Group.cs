@@ -2,7 +2,7 @@ namespace Humidifier.IdentityStore
 {
     using System.Collections.Generic;
 
-    public class Group : Humidifier.Base.BaseResource, IHaveDescription, IHaveDisplayName
+    public class Group : Humidifier.Base.BaseResource, IHaveDescription, IHaveDisplayName, IHaveIdentityStoreId
     {
         public class Attributes
         {

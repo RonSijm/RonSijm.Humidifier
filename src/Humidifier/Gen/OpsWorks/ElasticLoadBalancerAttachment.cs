@@ -2,7 +2,7 @@ namespace Humidifier.OpsWorks
 {
     using System.Collections.Generic;
 
-    public class ElasticLoadBalancerAttachment : Humidifier.Base.BaseResource
+    public class ElasticLoadBalancerAttachment : Humidifier.Base.BaseResource, IHaveLayerId
     {
         public override string AWSTypeName { get => AWS.OpsWorks.ElasticLoadBalancerAttachment; }
 

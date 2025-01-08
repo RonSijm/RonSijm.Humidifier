@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using VirtualNodeTypes;
 
-    public class VirtualNode : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner
+    public class VirtualNode : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner, IHaveVirtualNodeName
     {
         public class Attributes
         {
@@ -139,7 +139,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.VirtualServiceBackend VirtualService { get; set; }
         }
 
-        public class BackendDefaults : Humidifier.Base.BaseSubResource
+        public class BackendDefaults : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesClientPolicyClientPolicy
         {
             /// <summary>
             /// ClientPolicy
@@ -163,7 +163,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.ClientPolicyTls TLS { get; set; }
         }
 
-        public class ClientPolicyTls : Humidifier.Base.BaseSubResource
+        public class ClientPolicyTls : Humidifier.Base.BaseSubResource, IHaveEnforce
         {
             /// <summary>
             /// Validation
@@ -200,7 +200,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.ClientTlsCertificate Certificate { get; set; }
         }
 
-        public class ClientTlsCertificate : Humidifier.Base.BaseSubResource
+        public class ClientTlsCertificate : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesListenerTlsSdsCertificateSDS, IHaveAppMeshVirtualNodeTypesListenerTlsFileCertificateFile
         {
             /// <summary>
             /// SDS
@@ -220,7 +220,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.ListenerTlsFileCertificate File { get; set; }
         }
 
-        public class DnsServiceDiscovery : Humidifier.Base.BaseSubResource, IHaveHostname, IHaveIpPreference
+        public class DnsServiceDiscovery : Humidifier.Base.BaseSubResource, IHaveHostname, IHaveIpPreference, IHaveResponseType
         {
             /// <summary>
             /// IpPreference
@@ -288,7 +288,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.LoggingFormat Format { get; set; }
         }
 
-        public class GrpcTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesDurationIdle
+        public class GrpcTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesDurationIdle, IHaveAppMeshVirtualNodeTypesDurationPerRequest
         {
             /// <summary>
             /// PerRequest
@@ -308,7 +308,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.Duration Idle { get; set; }
         }
 
-        public class HealthCheck : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveUnhealthyThreshold, IHaveHealthyThreshold
+        public class HealthCheck : Humidifier.Base.BaseSubResource, IHavePort, IHaveProtocol, IHavePath, IHaveUnhealthyThreshold, IHaveHealthyThreshold, IHaveTimeoutMillis, IHaveIntervalMillis
         {
             /// <summary>
             /// Path
@@ -368,7 +368,7 @@ namespace Humidifier.AppMesh
             public dynamic IntervalMillis { get; set; }
         }
 
-        public class HttpTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesDurationIdle
+        public class HttpTimeout : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesDurationIdle, IHaveAppMeshVirtualNodeTypesDurationPerRequest
         {
             /// <summary>
             /// PerRequest
@@ -536,7 +536,7 @@ namespace Humidifier.AppMesh
             public dynamic CertificateArn { get; set; }
         }
 
-        public class ListenerTlsCertificate : Humidifier.Base.BaseSubResource
+        public class ListenerTlsCertificate : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesListenerTlsSdsCertificateSDS, IHaveAppMeshVirtualNodeTypesListenerTlsFileCertificateFile
         {
             /// <summary>
             /// SDS
@@ -596,7 +596,7 @@ namespace Humidifier.AppMesh
             public dynamic SecretName { get; set; }
         }
 
-        public class ListenerTlsValidationContext : Humidifier.Base.BaseSubResource
+        public class ListenerTlsValidationContext : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesSubjectAlternativeNamesSubjectAlternativeNames
         {
             /// <summary>
             /// SubjectAlternativeNames
@@ -616,7 +616,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.ListenerTlsValidationContextTrust Trust { get; set; }
         }
 
-        public class ListenerTlsValidationContextTrust : Humidifier.Base.BaseSubResource
+        public class ListenerTlsValidationContextTrust : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesTlsValidationContextSdsTrustSDS, IHaveAppMeshVirtualNodeTypesTlsValidationContextFileTrustFile
         {
             /// <summary>
             /// SDS
@@ -782,7 +782,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.Duration Idle { get; set; }
         }
 
-        public class TlsValidationContext : Humidifier.Base.BaseSubResource
+        public class TlsValidationContext : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesSubjectAlternativeNamesSubjectAlternativeNames
         {
             /// <summary>
             /// SubjectAlternativeNames
@@ -802,7 +802,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.VirtualNodeTypes.TlsValidationContextTrust Trust { get; set; }
         }
 
-        public class TlsValidationContextAcmTrust : Humidifier.Base.BaseSubResource
+        public class TlsValidationContextAcmTrust : Humidifier.Base.BaseSubResource, IHaveCertificateAuthorityArns
         {
             /// <summary>
             /// CertificateAuthorityArns
@@ -839,7 +839,7 @@ namespace Humidifier.AppMesh
             public dynamic SecretName { get; set; }
         }
 
-        public class TlsValidationContextTrust : Humidifier.Base.BaseSubResource
+        public class TlsValidationContextTrust : Humidifier.Base.BaseSubResource, IHaveAppMeshVirtualNodeTypesTlsValidationContextSdsTrustSDS, IHaveAppMeshVirtualNodeTypesTlsValidationContextFileTrustFile
         {
             /// <summary>
             /// SDS
@@ -927,7 +927,7 @@ namespace Humidifier.AppMesh
             public dynamic MaxRequests { get; set; }
         }
 
-        public class VirtualNodeHttpConnectionPool : Humidifier.Base.BaseSubResource, IHaveMaxConnections
+        public class VirtualNodeHttpConnectionPool : Humidifier.Base.BaseSubResource, IHaveMaxConnections, IHaveMaxPendingRequests
         {
             /// <summary>
             /// MaxConnections
@@ -1005,7 +1005,7 @@ namespace Humidifier.AppMesh
             public dynamic MaxConnections { get; set; }
         }
 
-        public class VirtualServiceBackend : Humidifier.Base.BaseSubResource, IHaveVirtualServiceName
+        public class VirtualServiceBackend : Humidifier.Base.BaseSubResource, IHaveVirtualServiceName, IHaveAppMeshVirtualNodeTypesClientPolicyClientPolicy
         {
             /// <summary>
             /// ClientPolicy

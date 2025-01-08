@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using FileSystemTypes;
 
-    public class FileSystem : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveStorageType, IHaveBackupId
+    public class FileSystem : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveStorageType, IHaveBackupId, IHaveStorageCapacity
     {
         public class Attributes
         {
@@ -157,7 +157,7 @@ namespace Humidifier.FSx
             public dynamic AuditLogDestination { get; set; }
         }
 
-        public class ClientConfigurations : Humidifier.Base.BaseSubResource, IHaveOptions
+        public class ClientConfigurations : Humidifier.Base.BaseSubResource, IHaveOptions, IHaveClients
         {
             /// <summary>
             /// Options
@@ -198,7 +198,7 @@ namespace Humidifier.FSx
             public dynamic Iops { get; set; }
         }
 
-        public class LustreConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveCopyTagsToBackups, IHaveAutomaticBackupRetentionDays, IHaveDataCompressionType
+        public class LustreConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveCopyTagsToBackups, IHaveAutomaticBackupRetentionDays, IHaveDataCompressionType, IHaveImportedFileChunkSize
         {
             /// <summary>
             /// DriveCacheType
@@ -347,7 +347,7 @@ namespace Humidifier.FSx
             public List<Humidifier.FSx.FileSystemTypes.ClientConfigurations> ClientConfigurations { get; set; }
         }
 
-        public class OntapConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveRouteTableIds, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveAutomaticBackupRetentionDays, IHaveFSxFileSystemTypesDiskIopsConfigurationDiskIopsConfiguration, IHaveThroughputCapacity, IHavePreferredSubnetId
+        public class OntapConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveRouteTableIds, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveAutomaticBackupRetentionDays, IHaveFSxFileSystemTypesDiskIopsConfigurationDiskIopsConfiguration, IHaveThroughputCapacity, IHavePreferredSubnetId, IHaveEndpointIpAddressRange
         {
             /// <summary>
             /// HAPairs
@@ -448,7 +448,7 @@ namespace Humidifier.FSx
             public dynamic PreferredSubnetId { get; set; }
         }
 
-        public class OpenZFSConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveOptions, IHaveRouteTableIds, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveCopyTagsToBackups, IHaveAutomaticBackupRetentionDays, IHaveFSxFileSystemTypesDiskIopsConfigurationDiskIopsConfiguration, IHaveThroughputCapacity, IHavePreferredSubnetId
+        public class OpenZFSConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveRouteTableIds, IHaveOptions, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveCopyTagsToBackups, IHaveAutomaticBackupRetentionDays, IHaveFSxFileSystemTypesDiskIopsConfigurationDiskIopsConfiguration, IHaveThroughputCapacity, IHavePreferredSubnetId, IHaveEndpointIpAddressRange
         {
             /// <summary>
             /// Options
@@ -566,7 +566,7 @@ namespace Humidifier.FSx
             public dynamic PreferredSubnetId { get; set; }
         }
 
-        public class ReadCacheConfiguration : Humidifier.Base.BaseSubResource
+        public class ReadCacheConfiguration : Humidifier.Base.BaseSubResource, IHaveSizeGiB
         {
             /// <summary>
             /// SizingMode
@@ -586,7 +586,7 @@ namespace Humidifier.FSx
             public dynamic SizeGiB { get; set; }
         }
 
-        public class RootVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveDataCompressionType
+        public class RootVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveDataCompressionType, IHaveCopyTagsToSnapshots, IHaveRecordSizeKiB
         {
             /// <summary>
             /// ReadOnly
@@ -640,7 +640,7 @@ namespace Humidifier.FSx
             public List<Humidifier.FSx.FileSystemTypes.UserAndGroupQuotas> UserAndGroupQuotas { get; set; }
         }
 
-        public class SelfManagedActiveDirectoryConfiguration : Humidifier.Base.BaseSubResource, IHavePassword, IHaveDomainName, IHaveUserName, IHaveOrganizationalUnitDistinguishedName
+        public class SelfManagedActiveDirectoryConfiguration : Humidifier.Base.BaseSubResource, IHaveDomainName, IHavePassword, IHaveUserName, IHaveOrganizationalUnitDistinguishedName, IHaveFileSystemAdministratorsGroup, IHaveDnsIps
         {
             /// <summary>
             /// FileSystemAdministratorsGroup

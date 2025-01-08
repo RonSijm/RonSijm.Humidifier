@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using ThemeTypes;
 
-    public class Theme : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId, IHaveVersionDescription
+    public class Theme : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId, IHaveVersionDescription, IHaveQuickSightThemeTypesThemeConfigurationConfiguration, IHaveBaseThemeId
     {
         public class Attributes
         {
@@ -128,7 +128,7 @@ namespace Humidifier.QuickSight
             public dynamic MinMaxGradient { get; set; }
         }
 
-        public class Font : Humidifier.Base.BaseSubResource
+        public class Font : Humidifier.Base.BaseSubResource, IHaveFontFamily
         {
             /// <summary>
             /// FontFamily
@@ -261,7 +261,7 @@ namespace Humidifier.QuickSight
             public dynamic Message { get; set; }
         }
 
-        public class ThemeVersion : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveStatus, IHaveArn, IHaveCreatedTime, IHaveVersionNumber
+        public class ThemeVersion : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveStatus, IHaveArn, IHaveCreatedTime, IHaveVersionNumber, IHaveQuickSightThemeTypesThemeConfigurationConfiguration, IHaveBaseThemeId
         {
             /// <summary>
             /// Status

@@ -3,7 +3,7 @@ namespace Humidifier.GuardDuty
     using System.Collections.Generic;
     using DetectorTypes;
 
-    public class Detector : Humidifier.Base.BaseResource, IHaveEnable
+    public class Detector : Humidifier.Base.BaseResource, IHaveEnable, IHaveFindingPublishingFrequency
     {
         public class Attributes
         {

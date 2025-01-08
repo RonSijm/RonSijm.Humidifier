@@ -3,7 +3,7 @@ namespace Humidifier.NetworkFirewall
     using System.Collections.Generic;
     using FirewallTypes;
 
-    public class Firewall : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveVpcId
+    public class Firewall : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveVpcId, IHaveFirewallName
     {
         public class Attributes
         {
@@ -90,7 +90,7 @@ namespace Humidifier.NetworkFirewall
 
     namespace FirewallTypes
     {
-        public class SubnetMapping : Humidifier.Base.BaseSubResource, IHaveSubnetId
+        public class SubnetMapping : Humidifier.Base.BaseSubResource, IHaveSubnetId, IHaveIPAddressType
         {
             /// <summary>
             /// IPAddressType

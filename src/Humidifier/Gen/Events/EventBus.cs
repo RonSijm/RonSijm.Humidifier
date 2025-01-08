@@ -3,7 +3,7 @@ namespace Humidifier.Events
     using System.Collections.Generic;
     using EventBusTypes;
 
-    public class EventBus : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePolicy, IHaveKmsKeyIdentifier
+    public class EventBus : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePolicy, IHaveKmsKeyIdentifier, IHaveEventSourceName
     {
         public class Attributes
         {

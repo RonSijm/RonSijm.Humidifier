@@ -3,7 +3,7 @@ namespace Humidifier.Comprehend
     using System.Collections.Generic;
     using DocumentClassifierTypes;
 
-    public class DocumentClassifier : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMode, IHaveLanguageCode, IHaveVolumeKmsKeyId, IHaveVersionName
+    public class DocumentClassifier : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMode, IHaveLanguageCode, IHaveVolumeKmsKeyId, IHaveVersionName, IHaveDataAccessRoleArn, IHaveModelKmsKeyId
     {
         public class Attributes
         {
@@ -140,7 +140,7 @@ namespace Humidifier.Comprehend
             public dynamic Split { get; set; }
         }
 
-        public class DocumentClassifierDocuments : Humidifier.Base.BaseSubResource, IHaveS3Uri
+        public class DocumentClassifierDocuments : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveTestS3Uri
         {
             /// <summary>
             /// S3Uri
@@ -160,7 +160,7 @@ namespace Humidifier.Comprehend
             public dynamic TestS3Uri { get; set; }
         }
 
-        public class DocumentClassifierInputDataConfig : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveDataFormat, IHaveDocumentType
+        public class DocumentClassifierInputDataConfig : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveDataFormat, IHaveDocumentType, IHaveTestS3Uri
         {
             /// <summary>
             /// DocumentReaderConfig

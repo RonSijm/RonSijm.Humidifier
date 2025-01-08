@@ -3,7 +3,7 @@ namespace Humidifier.DynamoDB
     using System.Collections.Generic;
     using TableTypes;
 
-    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableName, IHaveBillingMode
+    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableName, IHaveBillingMode, IHaveDynamoDBTableTypesOnDemandThroughputOnDemandThroughput, IHaveDynamoDBTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveDynamoDBTableTypesProvisionedThroughputProvisionedThroughput, IHaveDynamoDBTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBTableTypesResourcePolicyResourcePolicy, IHaveDeletionProtectionEnabled, IHaveTableClass
     {
         public class Attributes
         {
@@ -208,7 +208,7 @@ namespace Humidifier.DynamoDB
             public dynamic Enabled { get; set; }
         }
 
-        public class Csv : Humidifier.Base.BaseSubResource, IHaveDelimiter
+        public class Csv : Humidifier.Base.BaseSubResource, IHaveDelimiter, IHaveHeaderList
         {
             /// <summary>
             /// Delimiter
@@ -229,7 +229,7 @@ namespace Humidifier.DynamoDB
             public dynamic HeaderList { get; set; }
         }
 
-        public class GlobalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName
+        public class GlobalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBTableTypesOnDemandThroughputOnDemandThroughput, IHaveDynamoDBTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveDynamoDBTableTypesProvisionedThroughputProvisionedThroughput, IHaveDynamoDBTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBTableTypesProjectionProjection
         {
             /// <summary>
             /// IndexName
@@ -338,7 +338,7 @@ namespace Humidifier.DynamoDB
             public Humidifier.DynamoDB.TableTypes.Csv Csv { get; set; }
         }
 
-        public class KeySchema : Humidifier.Base.BaseSubResource, IHaveKeyType, IHaveAttributeName
+        public class KeySchema : Humidifier.Base.BaseSubResource, IHaveAttributeName, IHaveKeyType
         {
             /// <summary>
             /// KeyType
@@ -358,7 +358,7 @@ namespace Humidifier.DynamoDB
             public dynamic AttributeName { get; set; }
         }
 
-        public class KinesisStreamSpecification : Humidifier.Base.BaseSubResource, IHaveStreamArn
+        public class KinesisStreamSpecification : Humidifier.Base.BaseSubResource, IHaveStreamArn, IHaveApproximateCreationDateTimePrecision
         {
             /// <summary>
             /// ApproximateCreationDateTimePrecision
@@ -378,7 +378,7 @@ namespace Humidifier.DynamoDB
             public dynamic StreamArn { get; set; }
         }
 
-        public class LocalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName
+        public class LocalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBTableTypesProjectionProjection
         {
             /// <summary>
             /// IndexName
@@ -407,7 +407,7 @@ namespace Humidifier.DynamoDB
             public List<Humidifier.DynamoDB.TableTypes.KeySchema> KeySchema { get; set; }
         }
 
-        public class OnDemandThroughput : Humidifier.Base.BaseSubResource
+        public class OnDemandThroughput : Humidifier.Base.BaseSubResource, IHaveMaxReadRequestUnits, IHaveMaxWriteRequestUnits
         {
             /// <summary>
             /// MaxReadRequestUnits
@@ -447,7 +447,7 @@ namespace Humidifier.DynamoDB
             public dynamic RecoveryPeriodInDays { get; set; }
         }
 
-        public class Projection : Humidifier.Base.BaseSubResource
+        public class Projection : Humidifier.Base.BaseSubResource, IHaveProjectionType, IHaveNonKeyAttributes
         {
             /// <summary>
             /// NonKeyAttributes
@@ -468,7 +468,7 @@ namespace Humidifier.DynamoDB
             public dynamic ProjectionType { get; set; }
         }
 
-        public class ProvisionedThroughput : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits
+        public class ProvisionedThroughput : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits, IHaveWriteCapacityUnits
         {
             /// <summary>
             /// WriteCapacityUnits
@@ -528,7 +528,7 @@ namespace Humidifier.DynamoDB
             public dynamic S3BucketOwner { get; set; }
         }
 
-        public class SSESpecification : Humidifier.Base.BaseSubResource, IHaveSSEEnabled
+        public class SSESpecification : Humidifier.Base.BaseSubResource, IHaveSSEEnabled, IHaveKMSMasterKeyId, IHaveSSEType
         {
             /// <summary>
             /// SSEEnabled
@@ -556,7 +556,7 @@ namespace Humidifier.DynamoDB
             public dynamic KMSMasterKeyId { get; set; }
         }
 
-        public class StreamSpecification : Humidifier.Base.BaseSubResource
+        public class StreamSpecification : Humidifier.Base.BaseSubResource, IHaveDynamoDBTableTypesResourcePolicyResourcePolicy, IHaveStreamViewType
         {
             /// <summary>
             /// StreamViewType
@@ -596,7 +596,7 @@ namespace Humidifier.DynamoDB
             public dynamic AttributeName { get; set; }
         }
 
-        public class WarmThroughput : Humidifier.Base.BaseSubResource
+        public class WarmThroughput : Humidifier.Base.BaseSubResource, IHaveReadUnitsPerSecond, IHaveWriteUnitsPerSecond
         {
             /// <summary>
             /// ReadUnitsPerSecond

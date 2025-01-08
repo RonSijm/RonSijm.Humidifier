@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using TaskTypes;
 
-    public class Task : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveCloudWatchLogGroupArn
+    public class Task : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveCloudWatchLogGroupArn, IHaveSourceLocationArn
     {
         public class Attributes
         {
@@ -406,7 +406,7 @@ namespace Humidifier.DataSync
             public Humidifier.DataSync.TaskTypes.ManifestConfigSourceS3 S3 { get; set; }
         }
 
-        public class TaskReportConfig : Humidifier.Base.BaseSubResource, IHaveReportLevel
+        public class TaskReportConfig : Humidifier.Base.BaseSubResource, IHaveReportLevel, IHaveOutputType
         {
             /// <summary>
             /// Destination

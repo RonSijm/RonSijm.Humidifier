@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class IdentityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class IdentityProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIdentityProviderName, IHaveIdentityProviderType
     {
         public class Attributes
         {

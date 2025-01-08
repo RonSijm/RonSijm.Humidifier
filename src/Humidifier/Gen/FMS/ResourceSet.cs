@@ -2,7 +2,7 @@ namespace Humidifier.FMS
 {
     using System.Collections.Generic;
 
-    public class ResourceSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveResources
+    public class ResourceSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveResources, IHaveResourceTypeList
     {
         public class Attributes
         {

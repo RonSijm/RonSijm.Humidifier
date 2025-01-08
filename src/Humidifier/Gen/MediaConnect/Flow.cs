@@ -78,7 +78,7 @@ namespace Humidifier.MediaConnect
 
     namespace FlowTypes
     {
-        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveResourceId, IHaveSecretArn, IHaveKeyType, IHaveAlgorithm, IHaveDeviceId, IHaveConstantInitializationVector
+        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveSecretArn, IHaveResourceId, IHaveKeyType, IHaveAlgorithm, IHaveConstantInitializationVector, IHaveDeviceId
         {
             /// <summary>
             /// SecretArn
@@ -154,7 +154,7 @@ namespace Humidifier.MediaConnect
             public dynamic Url { get; set; }
         }
 
-        public class FailoverConfig : Humidifier.Base.BaseSubResource, IHaveState
+        public class FailoverConfig : Humidifier.Base.BaseSubResource, IHaveState, IHaveFailoverMode
         {
             /// <summary>
             /// State
@@ -410,7 +410,7 @@ namespace Humidifier.MediaConnect
             public dynamic Lang { get; set; }
         }
 
-        public class MediaStreamSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaStreamName
+        public class MediaStreamSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaStreamName, IHaveEncodingName
         {
             /// <summary>
             /// MediaStreamName
@@ -439,7 +439,7 @@ namespace Humidifier.MediaConnect
             public dynamic EncodingName { get; set; }
         }
 
-        public class Source : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveProtocol, IHaveSourceArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveEntitlementArn
+        public class Source : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveProtocol, IHaveSourceArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveEntitlementArn, IHaveSenderIpAddress, IHaveIngestPort, IHaveSenderControlPort, IHaveSourceListenerAddress, IHaveSourceListenerPort, IHaveWhitelistCidr
         {
             /// <summary>
             /// IngestIp
@@ -632,7 +632,7 @@ namespace Humidifier.MediaConnect
             public dynamic ThumbnailState { get; set; }
         }
 
-        public class SourcePriority : Humidifier.Base.BaseSubResource
+        public class SourcePriority : Humidifier.Base.BaseSubResource, IHavePrimarySource
         {
             /// <summary>
             /// PrimarySource

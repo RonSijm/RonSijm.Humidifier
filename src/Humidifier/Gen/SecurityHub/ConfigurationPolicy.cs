@@ -67,7 +67,7 @@ namespace Humidifier.SecurityHub
             public Humidifier.SecurityHub.ConfigurationPolicyTypes.ParameterValue Value { get; set; }
         }
 
-        public class ParameterValue : Humidifier.Base.BaseSubResource, IHaveStringList
+        public class ParameterValue : Humidifier.Base.BaseSubResource, IHaveStringList, IHaveEnum, IHaveInteger, IHaveEnumList, IHaveString, IHaveBoolean, IHaveDouble
         {
             /// <summary>
             /// Enum
@@ -150,7 +150,7 @@ namespace Humidifier.SecurityHub
             public Humidifier.SecurityHub.ConfigurationPolicyTypes.SecurityHubPolicy SecurityHub { get; set; }
         }
 
-        public class SecurityControlCustomParameter : Humidifier.Base.BaseSubResource
+        public class SecurityControlCustomParameter : Humidifier.Base.BaseSubResource, IHaveSecurityControlId
         {
             /// <summary>
             /// SecurityControlId

@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveSubnetIds, IHaveVpcId, IHaveDomainName
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveSubnetIds, IHaveVpcId, IHaveDomainName, IHaveAuthMode
     {
         public class Attributes
         {
@@ -132,7 +132,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.DomainTypes.IdleSettings IdleSettings { get; set; }
         }
 
-        public class CodeEditorAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerDomainTypesResourceSpecDefaultResourceSpec
+        public class CodeEditorAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerDomainTypesResourceSpecDefaultResourceSpec, IHaveSageMakerDomainTypesAppLifecycleManagementAppLifecycleManagement
         {
             /// <summary>
             /// CustomImages
@@ -250,7 +250,7 @@ namespace Humidifier.SageMaker
             public dynamic Gid { get; set; }
         }
 
-        public class DefaultEbsStorageSettings : Humidifier.Base.BaseSubResource
+        public class DefaultEbsStorageSettings : Humidifier.Base.BaseSubResource, IHaveMaximumEbsVolumeSizeInGb, IHaveDefaultEbsVolumeSizeInGb
         {
             /// <summary>
             /// MaximumEbsVolumeSizeInGb
@@ -270,7 +270,7 @@ namespace Humidifier.SageMaker
             public dynamic DefaultEbsVolumeSizeInGb { get; set; }
         }
 
-        public class DefaultSpaceSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveExecutionRole
+        public class DefaultSpaceSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveExecutionRole, IHaveSageMakerDomainTypesJupyterLabAppSettingsJupyterLabAppSettings, IHaveSageMakerDomainTypesKernelGatewayAppSettingsKernelGatewayAppSettings, IHaveSageMakerDomainTypesJupyterServerAppSettingsJupyterServerAppSettings, IHaveSageMakerDomainTypesDefaultSpaceStorageSettingsSpaceStorageSettings, IHaveSageMakerDomainTypesCustomPosixUserConfigCustomPosixUserConfig
         {
             /// <summary>
             /// SecurityGroups
@@ -450,7 +450,7 @@ namespace Humidifier.SageMaker
             public dynamic FileSystemId { get; set; }
         }
 
-        public class IdleSettings : Humidifier.Base.BaseSubResource
+        public class IdleSettings : Humidifier.Base.BaseSubResource, IHaveIdleTimeoutInMinutes, IHaveMaxIdleTimeoutInMinutes, IHaveMinIdleTimeoutInMinutes, IHaveLifecycleManagement
         {
             /// <summary>
             /// MaxIdleTimeoutInMinutes
@@ -486,7 +486,7 @@ namespace Humidifier.SageMaker
             public dynamic LifecycleManagement { get; set; }
         }
 
-        public class JupyterLabAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerDomainTypesResourceSpecDefaultResourceSpec
+        public class JupyterLabAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerDomainTypesResourceSpecDefaultResourceSpec, IHaveSageMakerDomainTypesAppLifecycleManagementAppLifecycleManagement
         {
             /// <summary>
             /// CustomImages
@@ -605,7 +605,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.DomainTypes.ResourceSpec DefaultResourceSpec { get; set; }
         }
 
-        public class RStudioServerProAppSettings : Humidifier.Base.BaseSubResource
+        public class RStudioServerProAppSettings : Humidifier.Base.BaseSubResource, IHaveAccessStatus, IHaveUserGroup
         {
             /// <summary>
             /// AccessStatus
@@ -697,7 +697,7 @@ namespace Humidifier.SageMaker
             public dynamic SageMakerImageVersionArn { get; set; }
         }
 
-        public class SharingSettings : Humidifier.Base.BaseSubResource, IHaveS3OutputPath
+        public class SharingSettings : Humidifier.Base.BaseSubResource, IHaveS3OutputPath, IHaveNotebookOutputOption, IHaveS3KmsKeyId
         {
             /// <summary>
             /// NotebookOutputOption
@@ -725,7 +725,7 @@ namespace Humidifier.SageMaker
             public dynamic S3OutputPath { get; set; }
         }
 
-        public class StudioWebPortalSettings : Humidifier.Base.BaseSubResource
+        public class StudioWebPortalSettings : Humidifier.Base.BaseSubResource, IHaveHiddenAppTypes, IHaveHiddenMlTools
         {
             /// <summary>
             /// HiddenAppTypes
@@ -747,7 +747,7 @@ namespace Humidifier.SageMaker
             public dynamic HiddenMlTools { get; set; }
         }
 
-        public class UserSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveExecutionRole
+        public class UserSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveExecutionRole, IHaveSageMakerDomainTypesJupyterLabAppSettingsJupyterLabAppSettings, IHaveSageMakerDomainTypesKernelGatewayAppSettingsKernelGatewayAppSettings, IHaveSageMakerDomainTypesJupyterServerAppSettingsJupyterServerAppSettings, IHaveSageMakerDomainTypesDefaultSpaceStorageSettingsSpaceStorageSettings, IHaveSageMakerDomainTypesCustomPosixUserConfigCustomPosixUserConfig, IHaveStudioWebPortal, IHaveDefaultLandingUri
         {
             /// <summary>
             /// SecurityGroups

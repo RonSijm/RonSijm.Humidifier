@@ -59,7 +59,7 @@ namespace Humidifier.SES
 
     namespace ConfigurationSetTypes
     {
-        public class DashboardOptions : Humidifier.Base.BaseSubResource
+        public class DashboardOptions : Humidifier.Base.BaseSubResource, IHaveEngagementMetrics
         {
             /// <summary>
             /// EngagementMetrics
@@ -71,7 +71,7 @@ namespace Humidifier.SES
             public dynamic EngagementMetrics { get; set; }
         }
 
-        public class DeliveryOptions : Humidifier.Base.BaseSubResource
+        public class DeliveryOptions : Humidifier.Base.BaseSubResource, IHaveSendingPoolName, IHaveTlsPolicy
         {
             /// <summary>
             /// MaxDeliverySeconds
@@ -99,7 +99,7 @@ namespace Humidifier.SES
             public dynamic TlsPolicy { get; set; }
         }
 
-        public class GuardianOptions : Humidifier.Base.BaseSubResource
+        public class GuardianOptions : Humidifier.Base.BaseSubResource, IHaveOptimizedSharedDelivery
         {
             /// <summary>
             /// OptimizedSharedDelivery
@@ -111,7 +111,7 @@ namespace Humidifier.SES
             public dynamic OptimizedSharedDelivery { get; set; }
         }
 
-        public class ReputationOptions : Humidifier.Base.BaseSubResource
+        public class ReputationOptions : Humidifier.Base.BaseSubResource, IHaveReputationMetricsEnabled
         {
             /// <summary>
             /// ReputationMetricsEnabled
@@ -123,7 +123,7 @@ namespace Humidifier.SES
             public dynamic ReputationMetricsEnabled { get; set; }
         }
 
-        public class SendingOptions : Humidifier.Base.BaseSubResource
+        public class SendingOptions : Humidifier.Base.BaseSubResource, IHaveSendingEnabled
         {
             /// <summary>
             /// SendingEnabled
@@ -148,7 +148,7 @@ namespace Humidifier.SES
             public dynamic SuppressedReasons { get; set; }
         }
 
-        public class TrackingOptions : Humidifier.Base.BaseSubResource
+        public class TrackingOptions : Humidifier.Base.BaseSubResource, IHaveCustomRedirectDomain
         {
             /// <summary>
             /// CustomRedirectDomain

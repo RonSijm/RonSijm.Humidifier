@@ -2,7 +2,7 @@ namespace Humidifier.Route53Resolver
 {
     using System.Collections.Generic;
 
-    public class ResolverRuleAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class ResolverRuleAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveVPCId
     {
         public class Attributes
         {

@@ -54,7 +54,7 @@ namespace Humidifier.PinpointEmail
 
     namespace IdentityTypes
     {
-        public class MailFromAttributes : Humidifier.Base.BaseSubResource
+        public class MailFromAttributes : Humidifier.Base.BaseSubResource, IHaveMailFromDomain, IHaveBehaviorOnMxFailure
         {
             /// <summary>
             /// MailFromDomain

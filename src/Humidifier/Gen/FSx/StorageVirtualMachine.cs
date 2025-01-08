@@ -81,7 +81,7 @@ namespace Humidifier.FSx
             public dynamic NetBiosName { get; set; }
         }
 
-        public class SelfManagedActiveDirectoryConfiguration : Humidifier.Base.BaseSubResource, IHavePassword, IHaveDomainName, IHaveUserName, IHaveOrganizationalUnitDistinguishedName
+        public class SelfManagedActiveDirectoryConfiguration : Humidifier.Base.BaseSubResource, IHaveDomainName, IHavePassword, IHaveUserName, IHaveOrganizationalUnitDistinguishedName, IHaveFileSystemAdministratorsGroup, IHaveDnsIps
         {
             /// <summary>
             /// FileSystemAdministratorsGroup

@@ -3,7 +3,7 @@ namespace Humidifier.Lightsail
     using System.Collections.Generic;
     using DatabaseTypes;
 
-    public class Database : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHavePubliclyAccessible, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveMasterUsername
+    public class Database : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHavePubliclyAccessible, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveMasterUsername, IHaveRotateMasterUserPassword
     {
         public class Attributes
         {
@@ -147,7 +147,7 @@ namespace Humidifier.Lightsail
 
     namespace DatabaseTypes
     {
-        public class RelationalDatabaseParameter : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveParameterName, IHaveDataType, IHaveParameterValue, IHaveAllowedValues
+        public class RelationalDatabaseParameter : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveParameterName, IHaveParameterValue, IHaveDataType, IHaveAllowedValues
         {
             /// <summary>
             /// ApplyMethod

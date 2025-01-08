@@ -81,7 +81,7 @@ namespace Humidifier.ApplicationSignals
             public dynamic LookBackWindowMinutes { get; set; }
         }
 
-        public class CalendarInterval : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveDuration
+        public class CalendarInterval : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveDuration, IHaveDurationUnit
         {
             /// <summary>
             /// DurationUnit
@@ -177,7 +177,7 @@ namespace Humidifier.ApplicationSignals
             public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.CalendarInterval CalendarInterval { get; set; }
         }
 
-        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName
+        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_
         {
             /// <summary>
             /// MetricName
@@ -308,7 +308,7 @@ namespace Humidifier.ApplicationSignals
             public List<Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricDataQuery> BadCountMetric { get; set; }
         }
 
-        public class RequestBasedSli : Humidifier.Base.BaseSubResource, IHaveComparisonOperator
+        public class RequestBasedSli : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveMetricThreshold
         {
             /// <summary>
             /// ComparisonOperator
@@ -336,7 +336,7 @@ namespace Humidifier.ApplicationSignals
             public dynamic MetricThreshold { get; set; }
         }
 
-        public class RequestBasedSliMetric : Humidifier.Base.BaseSubResource, IHaveOperationName
+        public class RequestBasedSliMetric : Humidifier.Base.BaseSubResource, IHaveOperationName, IHaveMetricType
         {
             /// <summary>
             /// MonitoredRequestCountMetric
@@ -382,7 +382,7 @@ namespace Humidifier.ApplicationSignals
             public dynamic MetricType { get; set; }
         }
 
-        public class RollingInterval : Humidifier.Base.BaseSubResource, IHaveDuration
+        public class RollingInterval : Humidifier.Base.BaseSubResource, IHaveDuration, IHaveDurationUnit
         {
             /// <summary>
             /// DurationUnit
@@ -402,7 +402,7 @@ namespace Humidifier.ApplicationSignals
             public dynamic Duration { get; set; }
         }
 
-        public class Sli : Humidifier.Base.BaseSubResource, IHaveComparisonOperator
+        public class Sli : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveMetricThreshold
         {
             /// <summary>
             /// ComparisonOperator
@@ -430,7 +430,7 @@ namespace Humidifier.ApplicationSignals
             public dynamic MetricThreshold { get; set; }
         }
 
-        public class SliMetric : Humidifier.Base.BaseSubResource, IHaveStatistic, IHaveOperationName
+        public class SliMetric : Humidifier.Base.BaseSubResource, IHaveStatistic, IHaveOperationName, IHaveMetricType
         {
             /// <summary>
             /// Statistic

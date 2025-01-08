@@ -3,7 +3,7 @@ namespace Humidifier.B2BI
     using System.Collections.Generic;
     using PartnershipTypes;
 
-    public class Partnership : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEmail, IHaveProfileId, IHaveCapabilities
+    public class Partnership : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEmail, IHaveProfileId, IHaveCapabilities, IHavePhone
     {
         public class Attributes
         {
@@ -168,7 +168,7 @@ namespace Humidifier.B2BI
             public dynamic ResponsibleAgencyCode { get; set; }
         }
 
-        public class X12InterchangeControlHeaders : Humidifier.Base.BaseSubResource
+        public class X12InterchangeControlHeaders : Humidifier.Base.BaseSubResource, IHaveSenderId
         {
             /// <summary>
             /// ReceiverId

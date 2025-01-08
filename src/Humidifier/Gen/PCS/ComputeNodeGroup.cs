@@ -3,7 +3,7 @@ namespace Humidifier.PCS
     using System.Collections.Generic;
     using ComputeNodeGroupTypes;
 
-    public class ComputeNodeGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSubnetIds
+    public class ComputeNodeGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSubnetIds, IHaveClusterId, IHaveAmiId
     {
         public class Attributes
         {
@@ -174,7 +174,7 @@ namespace Humidifier.PCS
             public dynamic InstanceType { get; set; }
         }
 
-        public class ScalingConfiguration : Humidifier.Base.BaseSubResource
+        public class ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxInstanceCount, IHaveMinInstanceCount
         {
             /// <summary>
             /// MaxInstanceCount

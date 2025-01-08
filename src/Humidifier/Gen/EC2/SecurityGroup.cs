@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using SecurityGroupTypes;
 
-    public class SecurityGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveGroupName
+    public class SecurityGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveGroupName, IHaveGroupDescription
     {
         public class Attributes
         {
@@ -70,7 +70,7 @@ namespace Humidifier.EC2
 
     namespace SecurityGroupTypes
     {
-        public class Egress : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveFromPort, IHaveToPort, IHaveCidrIp, IHaveCidrIpv6, IHaveIpProtocol, IHaveDestinationPrefixListId
+        public class Egress : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveFromPort, IHaveToPort, IHaveCidrIp, IHaveCidrIpv6, IHaveIpProtocol, IHaveDestinationPrefixListId, IHaveDestinationSecurityGroupId
         {
             /// <summary>
             /// CidrIp
@@ -138,7 +138,7 @@ namespace Humidifier.EC2
             public dynamic DestinationPrefixListId { get; set; }
         }
 
-        public class Ingress : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveFromPort, IHaveToPort, IHaveCidrIp, IHaveCidrIpv6, IHaveIpProtocol
+        public class Ingress : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveFromPort, IHaveToPort, IHaveCidrIp, IHaveCidrIpv6, IHaveIpProtocol, IHaveSourceSecurityGroupName, IHaveSourceSecurityGroupOwnerId, IHaveSourceSecurityGroupId, IHaveSourcePrefixListId
         {
             /// <summary>
             /// CidrIp

@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class TransitGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDnsSupport
+    public class TransitGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSecurityGroupReferencingSupport, IHaveDnsSupport, IHaveAmazonSideAsn
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using LaunchTypes;
 
-    public class Launch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveProject
+    public class Launch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveProject, IHaveRandomizationSalt
     {
         public class Attributes
         {
@@ -118,7 +118,7 @@ namespace Humidifier.Evidently
             public dynamic Reason { get; set; }
         }
 
-        public class GroupToWeight : Humidifier.Base.BaseSubResource, IHaveGroupName
+        public class GroupToWeight : Humidifier.Base.BaseSubResource, IHaveGroupName, IHaveSplitWeight
         {
             /// <summary>
             /// GroupName
@@ -138,7 +138,7 @@ namespace Humidifier.Evidently
             public dynamic SplitWeight { get; set; }
         }
 
-        public class LaunchGroupObject : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveGroupName, IHaveVariation
+        public class LaunchGroupObject : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveGroupName, IHaveVariation, IHaveFeature
         {
             /// <summary>
             /// GroupName
@@ -174,7 +174,7 @@ namespace Humidifier.Evidently
             public dynamic Feature { get; set; }
         }
 
-        public class MetricDefinitionObject : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel
+        public class MetricDefinitionObject : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel, IHaveEntityIdKey
         {
             /// <summary>
             /// EntityIdKey
@@ -218,7 +218,7 @@ namespace Humidifier.Evidently
             public dynamic UnitLabel { get; set; }
         }
 
-        public class SegmentOverride : Humidifier.Base.BaseSubResource
+        public class SegmentOverride : Humidifier.Base.BaseSubResource, IHaveSegment
         {
             /// <summary>
             /// Weights

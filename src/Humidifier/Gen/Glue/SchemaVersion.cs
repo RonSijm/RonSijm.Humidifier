@@ -3,7 +3,7 @@ namespace Humidifier.Glue
     using System.Collections.Generic;
     using SchemaVersionTypes;
 
-    public class SchemaVersion : Humidifier.Base.BaseResource
+    public class SchemaVersion : Humidifier.Base.BaseResource, IHaveSchemaDefinition
     {
         public class Attributes
         {

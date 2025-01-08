@@ -3,7 +3,7 @@ namespace Humidifier.Config
     using System.Collections.Generic;
     using ConformancePackTypes;
 
-    public class ConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTemplateBody
+    public class ConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTemplateBody, IHaveDeliveryS3Bucket, IHaveDeliveryS3KeyPrefix, IHaveTemplateS3Uri
     {
         public override string AWSTypeName { get => AWS.Config.ConformancePack; }
         /// <summary>

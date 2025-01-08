@@ -3,7 +3,7 @@ namespace Humidifier.AmazonMQ
     using System.Collections.Generic;
     using BrokerTypes;
 
-    public class Broker : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSubnetIds, IHaveSecurityGroups, IHaveEngineVersion, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveStorageType, IHaveEngineType
+    public class Broker : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSubnetIds, IHaveSecurityGroups, IHaveEngineVersion, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveStorageType, IHaveEngineType, IHaveAuthenticationStrategy
     {
         public class Attributes
         {
@@ -343,7 +343,7 @@ namespace Humidifier.AmazonMQ
             public dynamic General { get; set; }
         }
 
-        public class MaintenanceWindow : Humidifier.Base.BaseSubResource, IHaveTimeZone, IHaveDayOfWeek
+        public class MaintenanceWindow : Humidifier.Base.BaseSubResource, IHaveTimeZone, IHaveDayOfWeek, IHaveTimeOfDay
         {
             /// <summary>
             /// DayOfWeek

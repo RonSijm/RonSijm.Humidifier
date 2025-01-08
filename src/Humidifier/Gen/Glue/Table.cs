@@ -108,7 +108,7 @@ namespace Humidifier.Glue
             public Humidifier.Glue.TableTypes.IcebergInput IcebergInput { get; set; }
         }
 
-        public class Order : Humidifier.Base.BaseSubResource, IHaveSortOrder
+        public class Order : Humidifier.Base.BaseSubResource, IHaveSortOrder, IHaveColumn
         {
             /// <summary>
             /// Column
@@ -156,7 +156,7 @@ namespace Humidifier.Glue
             public dynamic SchemaArn { get; set; }
         }
 
-        public class SchemaReference : Humidifier.Base.BaseSubResource, IHaveSchemaVersionId
+        public class SchemaReference : Humidifier.Base.BaseSubResource, IHaveSchemaVersionId, IHaveSchemaVersionNumber
         {
             /// <summary>
             /// SchemaVersionId
@@ -184,7 +184,7 @@ namespace Humidifier.Glue
             public dynamic SchemaVersionNumber { get; set; }
         }
 
-        public class SerdeInfo : Humidifier.Base.BaseSubResource, IHaveName, IHaveParameters
+        public class SerdeInfo : Humidifier.Base.BaseSubResource, IHaveName, IHaveParameters, IHaveSerializationLibrary
         {
             /// <summary>
             /// Parameters
@@ -212,7 +212,7 @@ namespace Humidifier.Glue
             public dynamic Name { get; set; }
         }
 
-        public class SkewedInfo : Humidifier.Base.BaseSubResource
+        public class SkewedInfo : Humidifier.Base.BaseSubResource, IHaveSkewedColumnNames, IHaveSkewedColumnValues, IHaveSkewedColumnValueLocationMaps
         {
             /// <summary>
             /// SkewedColumnNames
@@ -242,7 +242,7 @@ namespace Humidifier.Glue
             public dynamic SkewedColumnValueLocationMaps { get; set; }
         }
 
-        public class StorageDescriptor : Humidifier.Base.BaseSubResource, IHaveParameters, IHaveLocation, IHaveOutputFormat, IHaveInputFormat
+        public class StorageDescriptor : Humidifier.Base.BaseSubResource, IHaveParameters, IHaveLocation, IHaveOutputFormat, IHaveInputFormat, IHaveStoredAsSubDirectories, IHaveBucketColumns, IHaveNumberOfBuckets, IHaveCompressed
         {
             /// <summary>
             /// StoredAsSubDirectories

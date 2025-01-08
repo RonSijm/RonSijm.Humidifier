@@ -3,7 +3,7 @@ namespace Humidifier.AutoScaling
     using System.Collections.Generic;
     using LaunchConfigurationTypes;
 
-    public class LaunchConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceType, IHaveSecurityGroups, IHaveInstanceId, IHaveEbsOptimized, IHaveImageId, IHaveKeyName, IHaveUserData, IHaveAssociatePublicIpAddress, IHaveKernelId, IHaveSpotPrice
+    public class LaunchConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceType, IHaveSecurityGroups, IHaveInstanceId, IHaveEbsOptimized, IHaveImageId, IHaveKeyName, IHaveUserData, IHaveAssociatePublicIpAddress, IHaveKernelId, IHaveSpotPrice, IHaveLaunchConfigurationName, IHaveIamInstanceProfile, IHaveRamDiskId
     {
         public override string AWSTypeName { get => AWS.AutoScaling.LaunchConfiguration; }
         /// <summary>
@@ -258,7 +258,7 @@ namespace Humidifier.AutoScaling
             public dynamic DeviceName { get; set; }
         }
 
-        public class MetadataOptions : Humidifier.Base.BaseSubResource, IHaveHttpPutResponseHopLimit, IHaveHttpTokens
+        public class MetadataOptions : Humidifier.Base.BaseSubResource, IHaveHttpPutResponseHopLimit, IHaveHttpTokens, IHaveHttpEndpoint
         {
             /// <summary>
             /// HttpPutResponseHopLimit

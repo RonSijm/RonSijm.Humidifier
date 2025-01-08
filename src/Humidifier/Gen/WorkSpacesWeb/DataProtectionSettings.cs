@@ -67,7 +67,7 @@ namespace Humidifier.WorkSpacesWeb
 
     namespace DataProtectionSettingsTypes
     {
-        public class CustomPattern : Humidifier.Base.BaseSubResource
+        public class CustomPattern : Humidifier.Base.BaseSubResource, IHavePatternName
         {
             /// <summary>
             /// KeywordRegex
@@ -142,7 +142,7 @@ namespace Humidifier.WorkSpacesWeb
             public dynamic GlobalEnforcedUrls { get; set; }
         }
 
-        public class InlineRedactionPattern : Humidifier.Base.BaseSubResource
+        public class InlineRedactionPattern : Humidifier.Base.BaseSubResource, IHaveConfidenceLevel
         {
             /// <summary>
             /// EnforcedUrls

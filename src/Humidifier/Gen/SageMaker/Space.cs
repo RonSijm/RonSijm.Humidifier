@@ -275,7 +275,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.SpaceTypes.SpaceIdleSettings IdleSettings { get; set; }
         }
 
-        public class SpaceCodeEditorAppSettings : Humidifier.Base.BaseSubResource, IHaveSageMakerSpaceTypesResourceSpecDefaultResourceSpec
+        public class SpaceCodeEditorAppSettings : Humidifier.Base.BaseSubResource, IHaveSageMakerSpaceTypesResourceSpecDefaultResourceSpec, IHaveSageMakerSpaceTypesSpaceAppLifecycleManagementAppLifecycleManagement
         {
             /// <summary>
             /// DefaultResourceSpec
@@ -295,7 +295,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.SpaceTypes.SpaceAppLifecycleManagement AppLifecycleManagement { get; set; }
         }
 
-        public class SpaceIdleSettings : Humidifier.Base.BaseSubResource
+        public class SpaceIdleSettings : Humidifier.Base.BaseSubResource, IHaveIdleTimeoutInMinutes
         {
             /// <summary>
             /// IdleTimeoutInMinutes
@@ -307,7 +307,7 @@ namespace Humidifier.SageMaker
             public dynamic IdleTimeoutInMinutes { get; set; }
         }
 
-        public class SpaceJupyterLabAppSettings : Humidifier.Base.BaseSubResource, IHaveSageMakerSpaceTypesResourceSpecDefaultResourceSpec
+        public class SpaceJupyterLabAppSettings : Humidifier.Base.BaseSubResource, IHaveSageMakerSpaceTypesResourceSpecDefaultResourceSpec, IHaveSageMakerSpaceTypesSpaceAppLifecycleManagementAppLifecycleManagement
         {
             /// <summary>
             /// DefaultResourceSpec
@@ -336,7 +336,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.SpaceTypes.SpaceAppLifecycleManagement AppLifecycleManagement { get; set; }
         }
 
-        public class SpaceSettings : Humidifier.Base.BaseSubResource
+        public class SpaceSettings : Humidifier.Base.BaseSubResource, IHaveAppType
         {
             /// <summary>
             /// JupyterLabAppSettings

@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePriority, IHaveAction, IHaveStartTime, IHaveTargetArn, IHaveCompression, IHaveSignalCatalogArn
+    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAction, IHavePriority, IHaveStartTime, IHaveTargetArn, IHaveCompression, IHaveSignalCatalogArn, IHaveDataExtraDimensions
     {
         public class Attributes
         {
@@ -195,7 +195,7 @@ namespace Humidifier.IoTFleetWise
             public Humidifier.IoTFleetWise.CampaignTypes.ConditionBasedCollectionScheme ConditionBasedCollectionScheme { get; set; }
         }
 
-        public class ConditionBasedCollectionScheme : Humidifier.Base.BaseSubResource, IHaveExpression
+        public class ConditionBasedCollectionScheme : Humidifier.Base.BaseSubResource, IHaveExpression, IHaveConditionLanguageVersion, IHaveTriggerMode
         {
             /// <summary>
             /// MinimumTriggerIntervalMs
@@ -231,7 +231,7 @@ namespace Humidifier.IoTFleetWise
             public dynamic ConditionLanguageVersion { get; set; }
         }
 
-        public class ConditionBasedSignalFetchConfig : Humidifier.Base.BaseSubResource
+        public class ConditionBasedSignalFetchConfig : Humidifier.Base.BaseSubResource, IHaveTriggerMode, IHaveConditionExpression
         {
             /// <summary>
             /// ConditionExpression
@@ -335,7 +335,7 @@ namespace Humidifier.IoTFleetWise
             public Humidifier.IoTFleetWise.CampaignTypes.StorageMinimumTimeToLive MinimumTimeToLive { get; set; }
         }
 
-        public class DataPartitionUploadOptions : Humidifier.Base.BaseSubResource, IHaveExpression
+        public class DataPartitionUploadOptions : Humidifier.Base.BaseSubResource, IHaveExpression, IHaveConditionLanguageVersion
         {
             /// <summary>
             /// Expression
@@ -431,7 +431,7 @@ namespace Humidifier.IoTFleetWise
             public Humidifier.IoTFleetWise.CampaignTypes.TimeBasedSignalFetchConfig TimeBased { get; set; }
         }
 
-        public class SignalFetchInformation : Humidifier.Base.BaseSubResource, IHaveActions, IHaveFullyQualifiedName
+        public class SignalFetchInformation : Humidifier.Base.BaseSubResource, IHaveActions, IHaveFullyQualifiedName, IHaveConditionLanguageVersion
         {
             /// <summary>
             /// Actions

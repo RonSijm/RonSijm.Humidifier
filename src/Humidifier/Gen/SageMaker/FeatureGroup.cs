@@ -249,7 +249,7 @@ namespace Humidifier.SageMaker
             public dynamic S3Uri { get; set; }
         }
 
-        public class ThroughputConfig : Humidifier.Base.BaseSubResource
+        public class ThroughputConfig : Humidifier.Base.BaseSubResource, IHaveThroughputMode
         {
             /// <summary>
             /// ProvisionedReadCapacityUnits

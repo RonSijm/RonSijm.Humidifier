@@ -62,7 +62,7 @@ namespace Humidifier.PaymentCryptography
 
     namespace KeyTypes
     {
-        public class KeyAttributes : Humidifier.Base.BaseSubResource, IHaveKeyAlgorithm
+        public class KeyAttributes : Humidifier.Base.BaseSubResource, IHaveKeyAlgorithm, IHaveKeyUsage
         {
             /// <summary>
             /// KeyClass
@@ -98,7 +98,7 @@ namespace Humidifier.PaymentCryptography
             public dynamic KeyAlgorithm { get; set; }
         }
 
-        public class KeyModesOfUse : Humidifier.Base.BaseSubResource
+        public class KeyModesOfUse : Humidifier.Base.BaseSubResource, IHaveDecrypt, IHaveSign
         {
             /// <summary>
             /// Unwrap

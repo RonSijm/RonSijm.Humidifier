@@ -100,7 +100,7 @@ namespace Humidifier.GameLift
 
     namespace ContainerGroupDefinitionTypes
     {
-        public class ContainerDependency : Humidifier.Base.BaseSubResource, IHaveCondition, IHaveContainerName
+        public class ContainerDependency : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveCondition
         {
             /// <summary>
             /// Condition
@@ -140,7 +140,7 @@ namespace Humidifier.GameLift
             public dynamic Name { get; set; }
         }
 
-        public class ContainerHealthCheck : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveTimeout, IHaveCommand, IHaveRetries
+        public class ContainerHealthCheck : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveTimeout, IHaveCommand, IHaveRetries, IHaveStartPeriod
         {
             /// <summary>
             /// Command
@@ -185,7 +185,7 @@ namespace Humidifier.GameLift
             public dynamic StartPeriod { get; set; }
         }
 
-        public class ContainerMountPoint : Humidifier.Base.BaseSubResource, IHaveContainerPath
+        public class ContainerMountPoint : Humidifier.Base.BaseSubResource, IHaveContainerPath, IHaveAccessLevel
         {
             /// <summary>
             /// InstancePath
@@ -241,7 +241,7 @@ namespace Humidifier.GameLift
             public dynamic Protocol { get; set; }
         }
 
-        public class GameServerContainerDefinition : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveImageUri
+        public class GameServerContainerDefinition : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveImageUri, IHaveServerSdkVersion, IHaveResolvedImageDigest, IHaveGameLiftContainerGroupDefinitionTypesPortConfigurationPortConfiguration
         {
             /// <summary>
             /// MountPoints
@@ -325,7 +325,7 @@ namespace Humidifier.GameLift
             public List<Humidifier.GameLift.ContainerGroupDefinitionTypes.ContainerPortRange> ContainerPortRanges { get; set; }
         }
 
-        public class SupportContainerDefinition : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveImageUri, IHaveEssential
+        public class SupportContainerDefinition : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveImageUri, IHaveEssential, IHaveResolvedImageDigest, IHaveGameLiftContainerGroupDefinitionTypesPortConfigurationPortConfiguration
         {
             /// <summary>
             /// MountPoints

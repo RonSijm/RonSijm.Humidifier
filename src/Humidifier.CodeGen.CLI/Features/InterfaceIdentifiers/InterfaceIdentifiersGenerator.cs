@@ -14,11 +14,6 @@ public static class InterfaceIdentifiersGenerator
 
         foreach (var customInterface in customInterfaces)
         {
-            if (customInterface.Name == "IHaveDynDicOfOptions")
-            {
-
-            }
-
             var propertyInfo = customInterface.GetProperties().First();
             var isDynamic = propertyInfo.PropertyType.Name == "Object" && propertyInfo.CustomAttributes.Any(x => x.AttributeType == typeof(DynamicAttribute));
 
@@ -53,6 +48,9 @@ public static class InterfaceIdentifiersGenerator
         }
 
         var result = bob.ToString();
+
+        // TODO: This will fail when properties are removed, but the InterfaceIdentifier is not
+        //File.WriteAllText("D:\\RonSijm\\RonSijm.Humidifier\\src\\Humidifier.CodeGen.Lib\\Features\\JsonToModels\\InterfaceIdentifiers\\InterfaceIdentifiers.cs", result);
     }
 }
 #endif

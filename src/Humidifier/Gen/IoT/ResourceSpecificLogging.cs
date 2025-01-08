@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class ResourceSpecificLogging : Humidifier.Base.BaseResource, IHaveLogLevel, IHaveTargetType
+    public class ResourceSpecificLogging : Humidifier.Base.BaseResource, IHaveLogLevel, IHaveTargetType, IHaveTargetName
     {
         public class Attributes
         {

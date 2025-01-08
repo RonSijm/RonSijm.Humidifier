@@ -71,7 +71,7 @@ namespace Humidifier.EntityResolution
 
     namespace IdNamespaceTypes
     {
-        public class IdNamespaceIdMappingWorkflowProperties : Humidifier.Base.BaseSubResource
+        public class IdNamespaceIdMappingWorkflowProperties : Humidifier.Base.BaseSubResource, IHaveIdMappingType
         {
             /// <summary>
             /// RuleBasedProperties

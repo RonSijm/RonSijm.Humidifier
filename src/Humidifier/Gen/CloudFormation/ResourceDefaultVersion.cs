@@ -2,7 +2,7 @@ namespace Humidifier.CloudFormation
 {
     using System.Collections.Generic;
 
-    public class ResourceDefaultVersion : Humidifier.Base.BaseResource, IHaveTypeName, IHaveVersionId
+    public class ResourceDefaultVersion : Humidifier.Base.BaseResource, IHaveTypeName, IHaveVersionId, IHaveTypeVersionArn
     {
         public class Attributes
         {

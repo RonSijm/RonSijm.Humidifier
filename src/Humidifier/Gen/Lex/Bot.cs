@@ -3,7 +3,7 @@ namespace Humidifier.Lex
     using System.Collections.Generic;
     using BotTypes;
 
-    public class Bot : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn
+    public class Bot : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveIdleSessionTTLInSeconds
     {
         public class Attributes
         {
@@ -138,7 +138,7 @@ namespace Humidifier.Lex
             public dynamic AllowAudioInput { get; set; }
         }
 
-        public class AudioAndDTMFInputSpecification : Humidifier.Base.BaseSubResource
+        public class AudioAndDTMFInputSpecification : Humidifier.Base.BaseSubResource, IHaveStartTimeoutMs
         {
             /// <summary>
             /// DTMFSpecification
@@ -198,7 +198,7 @@ namespace Humidifier.Lex
             public dynamic Enabled { get; set; }
         }
 
-        public class AudioSpecification : Humidifier.Base.BaseSubResource
+        public class AudioSpecification : Humidifier.Base.BaseSubResource, IHaveEndTimeoutMs
         {
             /// <summary>
             /// EndTimeoutMs
@@ -384,7 +384,7 @@ namespace Humidifier.Lex
             public dynamic ExpressionString { get; set; }
         }
 
-        public class ConditionalBranch : Humidifier.Base.BaseSubResource, IHaveName, IHaveLexBotTypesDialogStateNextStep
+        public class ConditionalBranch : Humidifier.Base.BaseSubResource, IHaveName, IHaveLexBotTypesDialogStateNextStep, IHaveLexBotTypesResponseSpecificationResponse
         {
             /// <summary>
             /// Condition
@@ -496,7 +496,7 @@ namespace Humidifier.Lex
             public List<Humidifier.Lex.BotTypes.CustomVocabularyItem> CustomVocabularyItems { get; set; }
         }
 
-        public class CustomVocabularyItem : Humidifier.Base.BaseSubResource, IHaveWeight
+        public class CustomVocabularyItem : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveDisplayAs
         {
             /// <summary>
             /// DisplayAs
@@ -524,7 +524,7 @@ namespace Humidifier.Lex
             public dynamic Weight { get; set; }
         }
 
-        public class DTMFSpecification : Humidifier.Base.BaseSubResource
+        public class DTMFSpecification : Humidifier.Base.BaseSubResource, IHaveMaxLength, IHaveEndTimeoutMs
         {
             /// <summary>
             /// DeletionCharacter
@@ -572,7 +572,7 @@ namespace Humidifier.Lex
             public dynamic ChildDirected { get; set; }
         }
 
-        public class DefaultConditionalBranch : Humidifier.Base.BaseSubResource, IHaveLexBotTypesDialogStateNextStep
+        public class DefaultConditionalBranch : Humidifier.Base.BaseSubResource, IHaveLexBotTypesDialogStateNextStep, IHaveLexBotTypesResponseSpecificationResponse
         {
             /// <summary>
             /// Response
@@ -620,7 +620,7 @@ namespace Humidifier.Lex
             public dynamic SuppressNextMessage { get; set; }
         }
 
-        public class DialogCodeHookInvocationSetting : Humidifier.Base.BaseSubResource, IHaveIsActive
+        public class DialogCodeHookInvocationSetting : Humidifier.Base.BaseSubResource, IHaveIsActive, IHaveEnableCodeHookInvocation, IHaveInvocationLabel
         {
             /// <summary>
             /// EnableCodeHookInvocation
@@ -697,7 +697,7 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.IntentOverride Intent { get; set; }
         }
 
-        public class ElicitationCodeHookInvocationSetting : Humidifier.Base.BaseSubResource
+        public class ElicitationCodeHookInvocationSetting : Humidifier.Base.BaseSubResource, IHaveEnableCodeHookInvocation, IHaveInvocationLabel
         {
             /// <summary>
             /// EnableCodeHookInvocation
@@ -794,7 +794,7 @@ namespace Humidifier.Lex
             public dynamic AllowInterrupt { get; set; }
         }
 
-        public class FulfillmentUpdateResponseSpecification : Humidifier.Base.BaseSubResource, IHaveAllowInterrupt
+        public class FulfillmentUpdateResponseSpecification : Humidifier.Base.BaseSubResource, IHaveAllowInterrupt, IHaveFrequencyInSeconds
         {
             /// <summary>
             /// MessageGroups
@@ -899,7 +899,7 @@ namespace Humidifier.Lex
             public dynamic S3ObjectKey { get; set; }
         }
 
-        public class ImageResponseCard : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveImageUrl
+        public class ImageResponseCard : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveImageUrl, IHaveSubtitle
         {
             /// <summary>
             /// Subtitle
@@ -936,7 +936,7 @@ namespace Humidifier.Lex
             public List<Humidifier.Lex.BotTypes.Button> Buttons { get; set; }
         }
 
-        public class InitialResponseSetting : Humidifier.Base.BaseSubResource, IHaveLexBotTypesDialogStateNextStep, IHaveLexBotTypesDialogCodeHookInvocationSettingCodeHook
+        public class InitialResponseSetting : Humidifier.Base.BaseSubResource, IHaveLexBotTypesDialogStateNextStep, IHaveLexBotTypesDialogCodeHookInvocationSettingCodeHook, IHaveLexBotTypesConditionalSpecificationConditional
         {
             /// <summary>
             /// CodeHook
@@ -1105,7 +1105,7 @@ namespace Humidifier.Lex
             public List<Humidifier.Lex.BotTypes.SampleUtterance> SampleUtterances { get; set; }
         }
 
-        public class IntentClosingSetting : Humidifier.Base.BaseSubResource, IHaveIsActive, IHaveLexBotTypesDialogStateNextStep
+        public class IntentClosingSetting : Humidifier.Base.BaseSubResource, IHaveIsActive, IHaveLexBotTypesDialogStateNextStep, IHaveLexBotTypesConditionalSpecificationConditional
         {
             /// <summary>
             /// IsActive
@@ -1141,7 +1141,7 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.DialogState NextStep { get; set; }
         }
 
-        public class IntentConfirmationSetting : Humidifier.Base.BaseSubResource, IHaveIsActive, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep, IHaveLexBotTypesDialogCodeHookInvocationSettingCodeHook
+        public class IntentConfirmationSetting : Humidifier.Base.BaseSubResource, IHaveIsActive, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep, IHaveLexBotTypesDialogCodeHookInvocationSettingCodeHook, IHaveLexBotTypesPromptSpecificationPromptSpecification, IHaveLexBotTypesElicitationCodeHookInvocationSettingElicitationCodeHook
         {
             /// <summary>
             /// PromptSpecification
@@ -1298,7 +1298,7 @@ namespace Humidifier.Lex
             public dynamic KendraIndex { get; set; }
         }
 
-        public class LambdaCodeHook : Humidifier.Base.BaseSubResource, IHaveLambdaArn
+        public class LambdaCodeHook : Humidifier.Base.BaseSubResource, IHaveLambdaArn, IHaveCodeHookInterfaceVersion
         {
             /// <summary>
             /// LambdaArn
@@ -1439,7 +1439,7 @@ namespace Humidifier.Lex
             public dynamic Value { get; set; }
         }
 
-        public class PostDialogCodeHookInvocationSpecification : Humidifier.Base.BaseSubResource, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep
+        public class PostDialogCodeHookInvocationSpecification : Humidifier.Base.BaseSubResource, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep, IHaveLexBotTypesResponseSpecificationSuccessResponse, IHaveLexBotTypesDialogStateTimeoutNextStep, IHaveLexBotTypesConditionalSpecificationSuccessConditional, IHaveLexBotTypesResponseSpecificationTimeoutResponse, IHaveLexBotTypesDialogStateSuccessNextStep, IHaveLexBotTypesConditionalSpecificationTimeoutConditional
         {
             /// <summary>
             /// SuccessResponse
@@ -1515,7 +1515,7 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.ConditionalSpecification TimeoutConditional { get; set; }
         }
 
-        public class PostFulfillmentStatusSpecification : Humidifier.Base.BaseSubResource, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep
+        public class PostFulfillmentStatusSpecification : Humidifier.Base.BaseSubResource, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep, IHaveLexBotTypesResponseSpecificationSuccessResponse, IHaveLexBotTypesDialogStateTimeoutNextStep, IHaveLexBotTypesConditionalSpecificationSuccessConditional, IHaveLexBotTypesResponseSpecificationTimeoutResponse, IHaveLexBotTypesDialogStateSuccessNextStep, IHaveLexBotTypesConditionalSpecificationTimeoutConditional
         {
             /// <summary>
             /// SuccessResponse
@@ -1786,7 +1786,7 @@ namespace Humidifier.Lex
             public dynamic Value { get; set; }
         }
 
-        public class SentimentAnalysisSettings : Humidifier.Base.BaseSubResource
+        public class SentimentAnalysisSettings : Humidifier.Base.BaseSubResource, IHaveDetectSentiment
         {
             /// <summary>
             /// DetectSentiment
@@ -1870,7 +1870,7 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.MultipleValuesSetting MultipleValuesSetting { get; set; }
         }
 
-        public class SlotCaptureSetting : Humidifier.Base.BaseSubResource, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep, IHaveLexBotTypesDialogCodeHookInvocationSettingCodeHook
+        public class SlotCaptureSetting : Humidifier.Base.BaseSubResource, IHaveLexBotTypesConditionalSpecificationFailureConditional, IHaveLexBotTypesResponseSpecificationFailureResponse, IHaveLexBotTypesDialogStateFailureNextStep, IHaveLexBotTypesDialogCodeHookInvocationSettingCodeHook, IHaveLexBotTypesElicitationCodeHookInvocationSettingElicitationCodeHook
         {
             /// <summary>
             /// CaptureConditional
@@ -2069,7 +2069,7 @@ namespace Humidifier.Lex
             public dynamic InterpretedValue { get; set; }
         }
 
-        public class SlotValueElicitationSetting : Humidifier.Base.BaseSubResource
+        public class SlotValueElicitationSetting : Humidifier.Base.BaseSubResource, IHaveLexBotTypesPromptSpecificationPromptSpecification
         {
             /// <summary>
             /// PromptSpecification
@@ -2211,7 +2211,7 @@ namespace Humidifier.Lex
             public dynamic ResolutionStrategy { get; set; }
         }
 
-        public class StillWaitingResponseSpecification : Humidifier.Base.BaseSubResource, IHaveTimeoutInSeconds, IHaveAllowInterrupt
+        public class StillWaitingResponseSpecification : Humidifier.Base.BaseSubResource, IHaveTimeoutInSeconds, IHaveAllowInterrupt, IHaveFrequencyInSeconds
         {
             /// <summary>
             /// MessageGroupsList
@@ -2285,7 +2285,7 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.SentimentAnalysisSettings SentimentAnalysisSettings { get; set; }
         }
 
-        public class TextInputSpecification : Humidifier.Base.BaseSubResource
+        public class TextInputSpecification : Humidifier.Base.BaseSubResource, IHaveStartTimeoutMs
         {
             /// <summary>
             /// StartTimeoutMs

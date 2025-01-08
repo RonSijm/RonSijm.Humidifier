@@ -43,7 +43,7 @@ namespace Humidifier.VerifiedPermissions
 
     namespace IdentitySourceTypes
     {
-        public class CognitoGroupConfiguration : Humidifier.Base.BaseSubResource
+        public class CognitoGroupConfiguration : Humidifier.Base.BaseSubResource, IHaveGroupEntityType
         {
             /// <summary>
             /// GroupEntityType
@@ -55,7 +55,7 @@ namespace Humidifier.VerifiedPermissions
             public dynamic GroupEntityType { get; set; }
         }
 
-        public class CognitoUserPoolConfiguration : Humidifier.Base.BaseSubResource, IHaveUserPoolArn
+        public class CognitoUserPoolConfiguration : Humidifier.Base.BaseSubResource, IHaveUserPoolArn, IHaveClientIds
         {
             /// <summary>
             /// UserPoolArn
@@ -104,7 +104,7 @@ namespace Humidifier.VerifiedPermissions
             public Humidifier.VerifiedPermissions.IdentitySourceTypes.OpenIdConnectConfiguration OpenIdConnectConfiguration { get; set; }
         }
 
-        public class OpenIdConnectAccessTokenConfiguration : Humidifier.Base.BaseSubResource
+        public class OpenIdConnectAccessTokenConfiguration : Humidifier.Base.BaseSubResource, IHaveAudiences, IHavePrincipalIdClaim
         {
             /// <summary>
             /// Audiences
@@ -161,7 +161,7 @@ namespace Humidifier.VerifiedPermissions
             public dynamic EntityIdPrefix { get; set; }
         }
 
-        public class OpenIdConnectGroupConfiguration : Humidifier.Base.BaseSubResource
+        public class OpenIdConnectGroupConfiguration : Humidifier.Base.BaseSubResource, IHaveGroupEntityType
         {
             /// <summary>
             /// GroupEntityType
@@ -181,7 +181,7 @@ namespace Humidifier.VerifiedPermissions
             public dynamic GroupClaim { get; set; }
         }
 
-        public class OpenIdConnectIdentityTokenConfiguration : Humidifier.Base.BaseSubResource
+        public class OpenIdConnectIdentityTokenConfiguration : Humidifier.Base.BaseSubResource, IHaveClientIds, IHavePrincipalIdClaim
         {
             /// <summary>
             /// ClientIds

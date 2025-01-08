@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using ProvisioningTemplateTypes;
 
-    public class ProvisioningTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEnabled, IHaveTemplateName, IHaveTemplateType, IHaveTemplateBody
+    public class ProvisioningTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEnabled, IHaveTemplateName, IHaveTemplateType, IHaveTemplateBody, IHaveProvisioningRoleArn
     {
         public class Attributes
         {

@@ -182,7 +182,7 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
-        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
+        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveTemperature, IHaveStopSequences, IHaveTopP
         {
             /// <summary>
             /// Temperature

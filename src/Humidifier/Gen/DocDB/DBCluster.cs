@@ -3,7 +3,7 @@ namespace Humidifier.DocDB
     using System.Collections.Generic;
     using DBClusterTypes;
 
-    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveDBSubnetGroupName, IHaveStorageType, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveDBClusterIdentifier, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveMasterUsername, IHaveBackupRetentionPeriod, IHaveSnapshotIdentifier, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveCopyTagsToSnapshot, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType
+    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveDBSubnetGroupName, IHaveStorageType, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveMasterUsername, IHaveBackupRetentionPeriod, IHaveSnapshotIdentifier, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveManageMasterUserPassword, IHaveRotateMasterUserPassword
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.MediaStore
     using System.Collections.Generic;
     using ContainerTypes;
 
-    public class Container : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePolicy, IHaveContainerName
+    public class Container : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePolicy, IHaveContainerName, IHaveLifecyclePolicy
     {
         public class Attributes
         {
@@ -66,7 +66,7 @@ namespace Humidifier.MediaStore
 
     namespace ContainerTypes
     {
-        public class CorsRule : Humidifier.Base.BaseSubResource, IHaveAllowedMethods, IHaveAllowedOrigins, IHaveExposeHeaders
+        public class CorsRule : Humidifier.Base.BaseSubResource, IHaveAllowedMethods, IHaveAllowedOrigins, IHaveExposeHeaders, IHaveAllowedHeaders
         {
             /// <summary>
             /// AllowedMethods

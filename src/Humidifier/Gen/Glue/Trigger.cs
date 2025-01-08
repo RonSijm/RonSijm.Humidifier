@@ -88,7 +88,7 @@ namespace Humidifier.Glue
 
     namespace TriggerTypes
     {
-        public class Action : Humidifier.Base.BaseSubResource, IHaveTimeout, IHaveJobName, IHaveSecurityConfiguration
+        public class Action : Humidifier.Base.BaseSubResource, IHaveTimeout, IHaveJobName, IHaveSecurityConfiguration, IHaveArguments, IHaveCrawlerName
         {
             /// <summary>
             /// NotificationProperty
@@ -140,7 +140,7 @@ namespace Humidifier.Glue
             public dynamic SecurityConfiguration { get; set; }
         }
 
-        public class Condition : Humidifier.Base.BaseSubResource, IHaveState, IHaveJobName
+        public class Condition : Humidifier.Base.BaseSubResource, IHaveState, IHaveJobName, IHaveCrawlerName
         {
             /// <summary>
             /// CrawlerName
@@ -204,7 +204,7 @@ namespace Humidifier.Glue
             public dynamic BatchWindow { get; set; }
         }
 
-        public class NotificationProperty : Humidifier.Base.BaseSubResource
+        public class NotificationProperty : Humidifier.Base.BaseSubResource, IHaveNotifyDelayAfter
         {
             /// <summary>
             /// NotifyDelayAfter

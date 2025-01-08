@@ -88,7 +88,7 @@ namespace Humidifier.IoTWireless
             public dynamic PackageVersion { get; set; }
         }
 
-        public class LoRaWANUpdateGatewayTaskCreate : Humidifier.Base.BaseSubResource
+        public class LoRaWANUpdateGatewayTaskCreate : Humidifier.Base.BaseSubResource, IHaveIoTWirelessTaskDefinitionTypesLoRaWANGatewayVersionUpdateVersion, IHaveIoTWirelessTaskDefinitionTypesLoRaWANGatewayVersionCurrentVersion
         {
             /// <summary>
             /// UpdateSignature
@@ -124,7 +124,7 @@ namespace Humidifier.IoTWireless
             public Humidifier.IoTWireless.TaskDefinitionTypes.LoRaWANGatewayVersion CurrentVersion { get; set; }
         }
 
-        public class LoRaWANUpdateGatewayTaskEntry : Humidifier.Base.BaseSubResource
+        public class LoRaWANUpdateGatewayTaskEntry : Humidifier.Base.BaseSubResource, IHaveIoTWirelessTaskDefinitionTypesLoRaWANGatewayVersionUpdateVersion, IHaveIoTWirelessTaskDefinitionTypesLoRaWANGatewayVersionCurrentVersion
         {
             /// <summary>
             /// UpdateVersion

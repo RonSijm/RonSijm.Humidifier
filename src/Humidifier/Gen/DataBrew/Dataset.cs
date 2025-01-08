@@ -62,7 +62,7 @@ namespace Humidifier.DataBrew
 
     namespace DatasetTypes
     {
-        public class CsvOptions : Humidifier.Base.BaseSubResource, IHaveDelimiter
+        public class CsvOptions : Humidifier.Base.BaseSubResource, IHaveDelimiter, IHaveHeaderRow
         {
             /// <summary>
             /// Delimiter
@@ -82,7 +82,7 @@ namespace Humidifier.DataBrew
             public dynamic HeaderRow { get; set; }
         }
 
-        public class DataCatalogInputDefinition : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId
+        public class DataCatalogInputDefinition : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId, IHaveDataBrewDatasetTypesS3LocationTempDirectory
         {
             /// <summary>
             /// TableName
@@ -118,7 +118,7 @@ namespace Humidifier.DataBrew
             public dynamic CatalogId { get; set; }
         }
 
-        public class DatabaseInputDefinition : Humidifier.Base.BaseSubResource, IHaveQueryString
+        public class DatabaseInputDefinition : Humidifier.Base.BaseSubResource, IHaveQueryString, IHaveDataBrewDatasetTypesS3LocationTempDirectory, IHaveGlueConnectionName
         {
             /// <summary>
             /// TempDirectory
@@ -226,7 +226,7 @@ namespace Humidifier.DataBrew
             public dynamic TimezoneOffset { get; set; }
         }
 
-        public class ExcelOptions : Humidifier.Base.BaseSubResource
+        public class ExcelOptions : Humidifier.Base.BaseSubResource, IHaveHeaderRow, IHaveSheetNames
         {
             /// <summary>
             /// HeaderRow
@@ -305,7 +305,7 @@ namespace Humidifier.DataBrew
             public List<Humidifier.DataBrew.DatasetTypes.FilterValue> ValuesMap { get; set; }
         }
 
-        public class FilterValue : Humidifier.Base.BaseSubResource, IHaveValue
+        public class FilterValue : Humidifier.Base.BaseSubResource, IHaveValue, IHaveValueReference
         {
             /// <summary>
             /// Value
@@ -389,7 +389,7 @@ namespace Humidifier.DataBrew
             public Humidifier.DataBrew.DatasetTypes.DataCatalogInputDefinition DataCatalogInputDefinition { get; set; }
         }
 
-        public class JsonOptions : Humidifier.Base.BaseSubResource
+        public class JsonOptions : Humidifier.Base.BaseSubResource, IHaveMultiLine
         {
             /// <summary>
             /// MultiLine

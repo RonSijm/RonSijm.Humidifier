@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveTags, IHaveUrl
+    public class Connector : Humidifier.Base.BaseResource, IHaveTags, IHaveUrl, IHaveAccessRole, IHaveLoggingRole, IHaveSecurityPolicyName
     {
         public class Attributes
         {
@@ -78,7 +78,7 @@ namespace Humidifier.Transfer
 
     namespace ConnectorTypes
     {
-        public class As2Config : Humidifier.Base.BaseSubResource, IHaveCompression, IHaveSigningAlgorithm
+        public class As2Config : Humidifier.Base.BaseSubResource, IHaveCompression, IHaveSigningAlgorithm, IHavePartnerProfileId, IHaveLocalProfileId
         {
             /// <summary>
             /// Compression

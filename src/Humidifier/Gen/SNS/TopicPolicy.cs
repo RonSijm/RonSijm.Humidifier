@@ -2,7 +2,7 @@ namespace Humidifier.SNS
 {
     using System.Collections.Generic;
 
-    public class TopicPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
+    public class TopicPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveTopics
     {
         public class Attributes
         {

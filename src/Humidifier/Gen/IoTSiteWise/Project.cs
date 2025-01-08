@@ -2,7 +2,7 @@ namespace Humidifier.IoTSiteWise
 {
     using System.Collections.Generic;
 
-    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveProjectName, IHaveDescription
+    public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveProjectName, IHaveProjectDescription, IHaveDescription
     {
         public class Attributes
         {

@@ -324,7 +324,7 @@ namespace Humidifier.IoTAnalytics
             public dynamic FileName { get; set; }
         }
 
-        public class QueryAction : Humidifier.Base.BaseSubResource
+        public class QueryAction : Humidifier.Base.BaseSubResource, IHaveSqlQuery
         {
             /// <summary>
             /// Filters
@@ -465,7 +465,7 @@ namespace Humidifier.IoTAnalytics
             public dynamic DatasetName { get; set; }
         }
 
-        public class Variable : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveDoubleValue
+        public class Variable : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveDoubleValue, IHaveVariableName
         {
             /// <summary>
             /// DatasetContentVersionValue

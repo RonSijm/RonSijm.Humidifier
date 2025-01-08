@@ -180,7 +180,7 @@ namespace Humidifier.MediaLive
             public dynamic Id { get; set; }
         }
 
-        public class InputRequestDestinationRoute : Humidifier.Base.BaseSubResource, IHaveCidr
+        public class InputRequestDestinationRoute : Humidifier.Base.BaseSubResource, IHaveCidr, IHaveGateway
         {
             /// <summary>
             /// Cidr
@@ -200,7 +200,7 @@ namespace Humidifier.MediaLive
             public dynamic Gateway { get; set; }
         }
 
-        public class InputSourceRequest : Humidifier.Base.BaseSubResource, IHaveUsername, IHaveUrl, IHavePasswordParam
+        public class InputSourceRequest : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveUsername, IHavePasswordParam
         {
             /// <summary>
             /// Username
@@ -288,7 +288,7 @@ namespace Humidifier.MediaLive
             public List<Humidifier.MediaLive.InputTypes.MulticastSourceUpdateRequest> Sources { get; set; }
         }
 
-        public class MulticastSourceCreateRequest : Humidifier.Base.BaseSubResource, IHaveUrl
+        public class MulticastSourceCreateRequest : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveSourceIp
         {
             /// <summary>
             /// SourceIp
@@ -308,7 +308,7 @@ namespace Humidifier.MediaLive
             public dynamic Url { get; set; }
         }
 
-        public class MulticastSourceUpdateRequest : Humidifier.Base.BaseSubResource, IHaveUrl
+        public class MulticastSourceUpdateRequest : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveSourceIp
         {
             /// <summary>
             /// SourceIp

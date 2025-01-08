@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using ClusterCapacityProviderAssociationsTypes;
 
-    public class ClusterCapacityProviderAssociations : Humidifier.Base.BaseResource, IHaveCluster
+    public class ClusterCapacityProviderAssociations : Humidifier.Base.BaseResource, IHaveCluster, IHaveCapacityProviders
     {
         public override string AWSTypeName { get => AWS.ECS.ClusterCapacityProviderAssociations; }
 

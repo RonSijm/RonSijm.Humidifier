@@ -79,7 +79,7 @@ namespace Humidifier.MediaPackage
             public List<Humidifier.MediaPackage.ChannelTypes.IngestEndpoint> ingestEndpoints { get; set; }
         }
 
-        public class IngestEndpoint : Humidifier.Base.BaseSubResource, IHaveId, IHaveUsername, IHavePassword, IHaveUrl
+        public class IngestEndpoint : Humidifier.Base.BaseSubResource, IHaveId, IHaveUrl, IHaveUsername, IHavePassword
         {
             /// <summary>
             /// Username

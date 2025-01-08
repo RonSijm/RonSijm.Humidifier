@@ -382,7 +382,7 @@ namespace Humidifier.EC2
             public dynamic DeleteOnTermination { get; set; }
         }
 
-        public class InstanceRequirementsRequest : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveLocalStorageTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveBurstablePerformance
+        public class InstanceRequirementsRequest : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveLocalStorageTypes, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveBurstablePerformance
         {
             /// <summary>
             /// InstanceGenerations
@@ -615,7 +615,7 @@ namespace Humidifier.EC2
             public List<Humidifier.EC2.SpotFleetTypes.LaunchTemplateOverrides> Overrides { get; set; }
         }
 
-        public class LaunchTemplateOverrides : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveAvailabilityZone, IHavePriority, IHaveSubnetId, IHaveWeightedCapacity, IHaveSpotPrice
+        public class LaunchTemplateOverrides : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveAvailabilityZone, IHavePriority, IHaveSubnetId, IHaveWeightedCapacity, IHaveSpotPrice, IHaveEC2SpotFleetTypesInstanceRequirementsRequestInstanceRequirements
         {
             /// <summary>
             /// SpotPrice
@@ -775,7 +775,7 @@ namespace Humidifier.EC2
             public dynamic Max { get; set; }
         }
 
-        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource
+        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource, IHaveInstanceFamily
         {
             /// <summary>
             /// InstanceFamily
@@ -807,7 +807,7 @@ namespace Humidifier.EC2
             public dynamic Primary { get; set; }
         }
 
-        public class SpotCapacityRebalance : Humidifier.Base.BaseSubResource
+        public class SpotCapacityRebalance : Humidifier.Base.BaseSubResource, IHaveTerminationDelay, IHaveReplacementStrategy
         {
             /// <summary>
             /// TerminationDelay
@@ -827,7 +827,7 @@ namespace Humidifier.EC2
             public dynamic ReplacementStrategy { get; set; }
         }
 
-        public class SpotFleetLaunchSpecification : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveSubnetId, IHaveEbsOptimized, IHaveImageId, IHaveWeightedCapacity, IHaveKeyName, IHaveUserData, IHaveKernelId, IHaveSpotPrice
+        public class SpotFleetLaunchSpecification : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveSubnetId, IHaveEbsOptimized, IHaveImageId, IHaveWeightedCapacity, IHaveKeyName, IHaveUserData, IHaveKernelId, IHaveSpotPrice, IHaveRamdiskId, IHaveEC2SpotFleetTypesInstanceRequirementsRequestInstanceRequirements
         {
             /// <summary>
             /// SecurityGroups
@@ -991,7 +991,7 @@ namespace Humidifier.EC2
             public dynamic Enabled { get; set; }
         }
 
-        public class SpotFleetRequestConfigData : Humidifier.Base.BaseSubResource, IHaveType, IHaveAllocationStrategy, IHaveContext, IHaveSpotPrice, IHaveValidUntil, IHaveInstanceInterruptionBehavior
+        public class SpotFleetRequestConfigData : Humidifier.Base.BaseSubResource, IHaveType, IHaveAllocationStrategy, IHaveContext, IHaveSpotPrice, IHaveValidUntil, IHaveInstanceInterruptionBehavior, IHaveExcessCapacityTerminationPolicy, IHaveValidFrom, IHaveReplaceUnhealthyInstances, IHaveTerminateInstancesWithExpiration, IHaveOnDemandAllocationStrategy, IHaveInstancePoolsToUseCount, IHaveOnDemandTargetCapacity, IHaveTargetCapacityUnitType, IHaveTargetCapacity
         {
             /// <summary>
             /// Context

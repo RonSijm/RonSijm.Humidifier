@@ -3,7 +3,7 @@ namespace Humidifier.Comprehend
     using System.Collections.Generic;
     using FlywheelTypes;
 
-    public class Flywheel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class Flywheel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataAccessRoleArn
     {
         public class Attributes
         {
@@ -77,7 +77,7 @@ namespace Humidifier.Comprehend
 
     namespace FlywheelTypes
     {
-        public class DataSecurityConfig : Humidifier.Base.BaseSubResource, IHaveVolumeKmsKeyId
+        public class DataSecurityConfig : Humidifier.Base.BaseSubResource, IHaveVolumeKmsKeyId, IHaveModelKmsKeyId
         {
             /// <summary>
             /// VpcConfig

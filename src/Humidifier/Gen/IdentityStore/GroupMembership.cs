@@ -3,7 +3,7 @@ namespace Humidifier.IdentityStore
     using System.Collections.Generic;
     using GroupMembershipTypes;
 
-    public class GroupMembership : Humidifier.Base.BaseResource, IHaveGroupId
+    public class GroupMembership : Humidifier.Base.BaseResource, IHaveGroupId, IHaveIdentityStoreId
     {
         public class Attributes
         {

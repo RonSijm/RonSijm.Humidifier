@@ -2,7 +2,7 @@ namespace Humidifier.GuardDuty
 {
     using System.Collections.Generic;
 
-    public class Master : Humidifier.Base.BaseResource, IHaveDetectorId
+    public class Master : Humidifier.Base.BaseResource, IHaveDetectorId, IHaveInvitationId
     {
         public override string AWSTypeName { get => AWS.GuardDuty.Master; }
 

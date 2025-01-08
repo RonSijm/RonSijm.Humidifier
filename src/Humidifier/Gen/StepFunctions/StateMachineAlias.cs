@@ -41,7 +41,7 @@ namespace Humidifier.StepFunctions
 
     namespace StateMachineAliasTypes
     {
-        public class DeploymentPreference : Humidifier.Base.BaseSubResource, IHaveType, IHaveInterval
+        public class DeploymentPreference : Humidifier.Base.BaseSubResource, IHaveType, IHaveInterval, IHaveStateMachineVersionArn
         {
             /// <summary>
             /// Type
@@ -86,7 +86,7 @@ namespace Humidifier.StepFunctions
             public dynamic Interval { get; set; }
         }
 
-        public class RoutingConfigurationVersion : Humidifier.Base.BaseSubResource, IHaveWeight
+        public class RoutingConfigurationVersion : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveStateMachineVersionArn
         {
             /// <summary>
             /// StateMachineVersionArn

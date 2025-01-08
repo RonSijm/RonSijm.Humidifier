@@ -141,7 +141,7 @@ namespace Humidifier.CodeBuild
             public dynamic machineType { get; set; }
         }
 
-        public class FleetProxyRule : Humidifier.Base.BaseSubResource, IHaveType
+        public class FleetProxyRule : Humidifier.Base.BaseSubResource, IHaveType, IHaveEffect
         {
             /// <summary>
             /// Type
@@ -170,7 +170,7 @@ namespace Humidifier.CodeBuild
             public dynamic Entities { get; set; }
         }
 
-        public class ProxyConfiguration : Humidifier.Base.BaseSubResource
+        public class ProxyConfiguration : Humidifier.Base.BaseSubResource, IHaveDefaultBehavior
         {
             /// <summary>
             /// DefaultBehavior
@@ -191,7 +191,7 @@ namespace Humidifier.CodeBuild
             public List<Humidifier.CodeBuild.FleetTypes.FleetProxyRule> OrderedProxyRules { get; set; }
         }
 
-        public class ScalingConfigurationInput : Humidifier.Base.BaseSubResource, IHaveMaxCapacity
+        public class ScalingConfigurationInput : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveScalingType
         {
             /// <summary>
             /// TargetTrackingScalingConfigs
@@ -220,7 +220,7 @@ namespace Humidifier.CodeBuild
             public dynamic MaxCapacity { get; set; }
         }
 
-        public class TargetTrackingScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveTargetValue
+        public class TargetTrackingScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveTargetValue, IHaveMetricType
         {
             /// <summary>
             /// TargetValue

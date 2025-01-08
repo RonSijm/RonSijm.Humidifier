@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class KeyPair : Humidifier.Base.BaseResource, IHaveTags, IHaveKeyType, IHaveKeyName
+    public class KeyPair : Humidifier.Base.BaseResource, IHaveTags, IHaveKeyType, IHaveKeyName, IHavePublicKeyMaterial, IHaveKeyFormat
     {
         public class Attributes
         {

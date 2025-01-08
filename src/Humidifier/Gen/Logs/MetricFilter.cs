@@ -3,7 +3,7 @@ namespace Humidifier.Logs
     using System.Collections.Generic;
     using MetricFilterTypes;
 
-    public class MetricFilter : Humidifier.Base.BaseResource, IHaveLogGroupName, IHaveFilterPattern, IHaveFilterName
+    public class MetricFilter : Humidifier.Base.BaseResource, IHaveLogGroupName, IHaveFilterPattern, IHaveFilterName, IHaveApplyOnTransformedLogs
     {
         public override string AWSTypeName { get => AWS.Logs.MetricFilter; }
 
@@ -77,7 +77,7 @@ namespace Humidifier.Logs
             public dynamic Key { get; set; }
         }
 
-        public class MetricTransformation : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveDefaultValue
+        public class MetricTransformation : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveDefaultValue, IHaveMetricValue, IHaveMetricNamespace
         {
             /// <summary>
             /// DefaultValue

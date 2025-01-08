@@ -296,7 +296,7 @@ namespace Humidifier.KinesisAnalyticsV2
             public dynamic CheckpointingEnabled { get; set; }
         }
 
-        public class CodeContent : Humidifier.Base.BaseSubResource
+        public class CodeContent : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesS3ContentLocationS3ContentLocation
         {
             /// <summary>
             /// ZipFileContent
@@ -324,7 +324,7 @@ namespace Humidifier.KinesisAnalyticsV2
             public dynamic TextContent { get; set; }
         }
 
-        public class CustomArtifactConfiguration : Humidifier.Base.BaseSubResource
+        public class CustomArtifactConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesS3ContentLocationS3ContentLocation
         {
             /// <summary>
             /// MavenReference
@@ -429,7 +429,7 @@ namespace Humidifier.KinesisAnalyticsV2
             public dynamic DatabaseARN { get; set; }
         }
 
-        public class Input : Humidifier.Base.BaseSubResource
+        public class Input : Humidifier.Base.BaseSubResource, IHaveNamePrefix
         {
             /// <summary>
             /// NamePrefix

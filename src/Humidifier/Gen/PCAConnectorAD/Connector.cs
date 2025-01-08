@@ -3,7 +3,7 @@ namespace Humidifier.PCAConnectorAD
     using System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveDirectoryId, IHaveCertificateAuthorityArn
+    public class Connector : Humidifier.Base.BaseResource, IHaveCertificateAuthorityArn, IHaveDirectoryId
     {
         public class Attributes
         {

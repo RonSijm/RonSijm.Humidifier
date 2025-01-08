@@ -99,7 +99,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisComponent Component { get; set; }
         }
 
-        public class AlternatePathHint : Humidifier.Base.BaseSubResource, IHaveComponentArn
+        public class AlternatePathHint : Humidifier.Base.BaseSubResource, IHaveComponentArn, IHaveComponentId
         {
             /// <summary>
             /// ComponentArn
@@ -119,7 +119,7 @@ namespace Humidifier.EC2
             public dynamic ComponentId { get; set; }
         }
 
-        public class AnalysisAclRule : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveCidr, IHaveRuleAction, IHaveEgress, IHaveRuleNumber
+        public class AnalysisAclRule : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveCidr, IHaveRuleAction, IHaveEgress, IHaveRuleNumber, IHaveEC2NetworkInsightsAnalysisTypesPortRangePortRange
         {
             /// <summary>
             /// PortRange
@@ -191,7 +191,7 @@ namespace Humidifier.EC2
             public dynamic Arn { get; set; }
         }
 
-        public class AnalysisLoadBalancerListener : Humidifier.Base.BaseSubResource, IHaveInstancePort
+        public class AnalysisLoadBalancerListener : Humidifier.Base.BaseSubResource, IHaveInstancePort, IHaveLoadBalancerPort
         {
             /// <summary>
             /// InstancePort
@@ -247,7 +247,7 @@ namespace Humidifier.EC2
             public dynamic AvailabilityZone { get; set; }
         }
 
-        public class AnalysisPacketHeader : Humidifier.Base.BaseSubResource, IHaveProtocol
+        public class AnalysisPacketHeader : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveDestinationAddresses, IHaveSourceAddresses
         {
             /// <summary>
             /// DestinationPortRanges
@@ -295,7 +295,7 @@ namespace Humidifier.EC2
             public dynamic SourceAddresses { get; set; }
         }
 
-        public class AnalysisRouteTableRoute : Humidifier.Base.BaseSubResource, IHaveState, IHaveNetworkInterfaceId, IHaveTransitGatewayId, IHaveOrigin
+        public class AnalysisRouteTableRoute : Humidifier.Base.BaseSubResource, IHaveState, IHaveNetworkInterfaceId, IHaveTransitGatewayId, IHaveOrigin, IHaveVpcPeeringConnectionId, IHaveNatGatewayId
         {
             /// <summary>
             /// Origin
@@ -387,7 +387,7 @@ namespace Humidifier.EC2
             public dynamic gatewayId { get; set; }
         }
 
-        public class AnalysisSecurityGroupRule : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveDirection, IHaveCidr
+        public class AnalysisSecurityGroupRule : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveDirection, IHaveCidr, IHaveSecurityGroupId, IHaveEC2NetworkInsightsAnalysisTypesPortRangePortRange, IHavePrefixListId
         {
             /// <summary>
             /// PortRange
@@ -439,7 +439,7 @@ namespace Humidifier.EC2
             public dynamic Direction { get; set; }
         }
 
-        public class Explanation : Humidifier.Base.BaseSubResource, IHavePort, IHaveState, IHaveAddress, IHaveDirection, IHaveAvailabilityZones, IHaveLoadBalancerArn, IHaveProtocols, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveCidrs
+        public class Explanation : Humidifier.Base.BaseSubResource, IHavePort, IHaveState, IHaveAddress, IHaveDirection, IHaveAvailabilityZones, IHaveCidrs, IHaveProtocols, IHaveLoadBalancerArn, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveAddresses, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule
         {
             /// <summary>
             /// VpnGateway
@@ -858,7 +858,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisAclRule AclRule { get; set; }
         }
 
-        public class PathComponent : Humidifier.Base.BaseSubResource, IHaveServiceName, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent
+        public class PathComponent : Humidifier.Base.BaseSubResource, IHaveServiceName, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule
         {
             /// <summary>
             /// AdditionalDetails
@@ -1020,7 +1020,7 @@ namespace Humidifier.EC2
             public dynamic To { get; set; }
         }
 
-        public class TransitGatewayRouteTableRoute : Humidifier.Base.BaseSubResource, IHaveState, IHaveResourceType, IHaveResourceId
+        public class TransitGatewayRouteTableRoute : Humidifier.Base.BaseSubResource, IHaveState, IHaveResourceType, IHaveResourceId, IHavePrefixListId
         {
             /// <summary>
             /// PrefixListId

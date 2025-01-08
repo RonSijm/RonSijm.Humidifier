@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using SecurityProfileTypes;
 
-    public class SecurityProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
+    public class SecurityProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTargetArns, IHaveSecurityProfileName, IHaveDescription
     {
         public class Attributes
         {
@@ -100,7 +100,7 @@ namespace Humidifier.IoT
             public dynamic RoleArn { get; set; }
         }
 
-        public class Behavior : Humidifier.Base.BaseSubResource, IHaveName, IHaveMetric
+        public class Behavior : Humidifier.Base.BaseSubResource, IHaveName, IHaveMetric, IHaveExportMetric, IHaveIoTSecurityProfileTypesMetricDimensionMetricDimension
         {
             /// <summary>
             /// ExportMetric
@@ -212,7 +212,7 @@ namespace Humidifier.IoT
             public dynamic ConsecutiveDatapointsToClear { get; set; }
         }
 
-        public class MachineLearningDetectionConfig : Humidifier.Base.BaseSubResource
+        public class MachineLearningDetectionConfig : Humidifier.Base.BaseSubResource, IHaveConfidenceLevel
         {
             /// <summary>
             /// ConfidenceLevel
@@ -244,7 +244,7 @@ namespace Humidifier.IoT
             public dynamic DimensionName { get; set; }
         }
 
-        public class MetricToRetain : Humidifier.Base.BaseSubResource, IHaveMetric
+        public class MetricToRetain : Humidifier.Base.BaseSubResource, IHaveMetric, IHaveExportMetric, IHaveIoTSecurityProfileTypesMetricDimensionMetricDimension
         {
             /// <summary>
             /// ExportMetric

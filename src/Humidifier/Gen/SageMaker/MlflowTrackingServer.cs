@@ -2,7 +2,7 @@ namespace Humidifier.SageMaker
 {
     using System.Collections.Generic;
 
-    public class MlflowTrackingServer : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn
+    public class MlflowTrackingServer : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveWeeklyMaintenanceWindowStart
     {
         public class Attributes
         {

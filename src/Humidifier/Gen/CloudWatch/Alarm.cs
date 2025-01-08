@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using System.Collections.Generic;
     using AlarmTypes;
 
-    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveUnit, IHaveMetricName, IHaveComparisonOperator, IHavePeriod, IHaveStatistic, IHaveThreshold, IHaveAlarmName, IHaveEvaluationPeriods, IHaveDescription
+    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHaveComparisonOperator, IHavePeriod, IHaveThreshold, IHaveStatistic, IHaveEvaluationPeriods, IHaveAlarmName, IHaveTreatMissingData, IHaveDatapointsToAlarm, IHaveOKActions, IHaveAlarmActions, IHaveActionsEnabled, IHaveAlarmDescription, IHaveInsufficientDataActions, IHaveDescription
     {
         public class Attributes
         {
@@ -217,7 +217,7 @@ namespace Humidifier.CloudWatch
             public dynamic Name { get; set; }
         }
 
-        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName
+        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_
         {
             /// <summary>
             /// MetricName
@@ -246,7 +246,7 @@ namespace Humidifier.CloudWatch
             public dynamic Namespace_ { get; set; }
         }
 
-        public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveAccountId, IHaveLabel, IHavePeriod, IHaveReturnData
+        public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHaveAccountId, IHavePeriod, IHaveReturnData
         {
             /// <summary>
             /// AccountId

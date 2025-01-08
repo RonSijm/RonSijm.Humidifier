@@ -65,7 +65,7 @@ namespace Humidifier.AccessAnalyzer
             public List<Humidifier.AccessAnalyzer.AnalyzerTypes.AnalysisRuleCriteria> Exclusions { get; set; }
         }
 
-        public class AnalysisRuleCriteria : Humidifier.Base.BaseSubResource
+        public class AnalysisRuleCriteria : Humidifier.Base.BaseSubResource, IHaveAccountIds
         {
             /// <summary>
             /// AccountIds
@@ -119,7 +119,7 @@ namespace Humidifier.AccessAnalyzer
             public dynamic RuleName { get; set; }
         }
 
-        public class Filter : Humidifier.Base.BaseSubResource, IHaveProperty, IHaveEq
+        public class Filter : Humidifier.Base.BaseSubResource, IHaveProperty, IHaveEq, IHaveContains, IHaveNeq
         {
             /// <summary>
             /// Exists

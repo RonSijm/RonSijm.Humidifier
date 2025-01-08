@@ -2,7 +2,7 @@ namespace Humidifier.SSM
 {
     using System.Collections.Generic;
 
-    public class MaintenanceWindow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveEndDate, IHaveSchedule, IHaveStartDate, IHaveDuration, IHaveScheduleOffset
+    public class MaintenanceWindow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveEndDate, IHaveStartDate, IHaveSchedule, IHaveDuration, IHaveScheduleOffset
     {
         public override string AWSTypeName { get => AWS.SSM.MaintenanceWindow; }
         /// <summary>

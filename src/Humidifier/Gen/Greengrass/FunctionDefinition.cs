@@ -35,7 +35,7 @@ namespace Humidifier.Greengrass
 
     namespace FunctionDefinitionTypes
     {
-        public class DefaultConfig : Humidifier.Base.BaseSubResource
+        public class DefaultConfig : Humidifier.Base.BaseSubResource, IHaveGreengrassFunctionDefinitionTypesExecutionExecution
         {
             /// <summary>
             /// Execution
@@ -47,7 +47,7 @@ namespace Humidifier.Greengrass
             public Humidifier.Greengrass.FunctionDefinitionTypes.Execution Execution { get; set; }
         }
 
-        public class Environment : Humidifier.Base.BaseSubResource
+        public class Environment : Humidifier.Base.BaseSubResource, IHaveGreengrassFunctionDefinitionTypesExecutionExecution, IHaveVariables, IHaveAccessSysfs
         {
             /// <summary>
             /// Variables
@@ -132,7 +132,7 @@ namespace Humidifier.Greengrass
             public dynamic Id { get; set; }
         }
 
-        public class FunctionConfiguration : Humidifier.Base.BaseSubResource, IHaveTimeout, IHaveMemorySize, IHaveEncodingType, IHavePinned, IHaveExecArgs
+        public class FunctionConfiguration : Humidifier.Base.BaseSubResource, IHaveTimeout, IHaveMemorySize, IHaveEncodingType, IHavePinned, IHaveExecArgs, IHaveExecutable
         {
             /// <summary>
             /// MemorySize

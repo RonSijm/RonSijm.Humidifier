@@ -2,7 +2,7 @@ namespace Humidifier.LicenseManager
 {
     using System.Collections.Generic;
 
-    public class Grant : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStatus, IHavePrincipals
+    public class Grant : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStatus, IHavePrincipals, IHaveHomeRegion
     {
         public class Attributes
         {

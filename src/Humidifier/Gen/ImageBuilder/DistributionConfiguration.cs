@@ -267,7 +267,7 @@ namespace Humidifier.ImageBuilder
             public dynamic TargetResourceCount { get; set; }
         }
 
-        public class LaunchPermissionConfiguration : Humidifier.Base.BaseSubResource
+        public class LaunchPermissionConfiguration : Humidifier.Base.BaseSubResource, IHaveUserIds
         {
             /// <summary>
             /// OrganizationArns

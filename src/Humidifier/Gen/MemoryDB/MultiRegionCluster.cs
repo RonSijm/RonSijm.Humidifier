@@ -2,7 +2,7 @@ namespace Humidifier.MemoryDB
 {
     using System.Collections.Generic;
 
-    public class MultiRegionCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEngineVersion, IHaveEngine, IHaveNodeType
+    public class MultiRegionCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEngineVersion, IHaveEngine, IHaveNodeType, IHaveNumShards, IHaveTLSEnabled
     {
         public class Attributes
         {

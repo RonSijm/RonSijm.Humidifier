@@ -73,7 +73,7 @@ namespace Humidifier.CodeBuild
             public dynamic ExportConfigType { get; set; }
         }
 
-        public class S3ReportExportConfig : Humidifier.Base.BaseSubResource, IHaveBucket, IHavePath, IHaveEncryptionKey, IHaveBucketOwner, IHaveEncryptionDisabled
+        public class S3ReportExportConfig : Humidifier.Base.BaseSubResource, IHaveBucket, IHavePath, IHaveEncryptionKey, IHaveBucketOwner, IHaveEncryptionDisabled, IHavePackaging
         {
             /// <summary>
             /// Path

@@ -121,7 +121,7 @@ namespace Humidifier.EntityResolution
             public dynamic RecordMatchingModel { get; set; }
         }
 
-        public class IdMappingTechniques : Humidifier.Base.BaseSubResource
+        public class IdMappingTechniques : Humidifier.Base.BaseSubResource, IHaveIdMappingType
         {
             /// <summary>
             /// RuleBasedProperties
@@ -177,7 +177,7 @@ namespace Humidifier.EntityResolution
             public dynamic SchemaArn { get; set; }
         }
 
-        public class IdMappingWorkflowOutputSource : Humidifier.Base.BaseSubResource, IHaveKMSArn
+        public class IdMappingWorkflowOutputSource : Humidifier.Base.BaseSubResource, IHaveKMSArn, IHaveOutputS3Path
         {
             /// <summary>
             /// KMSArn
@@ -197,7 +197,7 @@ namespace Humidifier.EntityResolution
             public dynamic OutputS3Path { get; set; }
         }
 
-        public class IntermediateSourceConfiguration : Humidifier.Base.BaseSubResource
+        public class IntermediateSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveIntermediateS3Path
         {
             /// <summary>
             /// IntermediateS3Path

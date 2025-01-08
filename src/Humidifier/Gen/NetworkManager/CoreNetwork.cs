@@ -57,7 +57,7 @@ namespace Humidifier.NetworkManager
 
     namespace CoreNetworkTypes
     {
-        public class CoreNetworkEdge : Humidifier.Base.BaseSubResource, IHaveInsideCidrBlocks
+        public class CoreNetworkEdge : Humidifier.Base.BaseSubResource, IHaveInsideCidrBlocks, IHaveEdgeLocation
         {
             /// <summary>
             /// InsideCidrBlocks
@@ -86,7 +86,7 @@ namespace Humidifier.NetworkManager
             public dynamic EdgeLocation { get; set; }
         }
 
-        public class CoreNetworkNetworkFunctionGroup : Humidifier.Base.BaseSubResource, IHaveName
+        public class CoreNetworkNetworkFunctionGroup : Humidifier.Base.BaseSubResource, IHaveName, IHaveEdgeLocations
         {
             /// <summary>
             /// EdgeLocations
@@ -115,7 +115,7 @@ namespace Humidifier.NetworkManager
             public dynamic Name { get; set; }
         }
 
-        public class CoreNetworkSegment : Humidifier.Base.BaseSubResource, IHaveName
+        public class CoreNetworkSegment : Humidifier.Base.BaseSubResource, IHaveName, IHaveEdgeLocations
         {
             /// <summary>
             /// EdgeLocations

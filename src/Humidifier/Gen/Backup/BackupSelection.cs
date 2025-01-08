@@ -92,7 +92,7 @@ namespace Humidifier.Backup
             public Humidifier.Backup.BackupSelectionTypes.Conditions Conditions { get; set; }
         }
 
-        public class ConditionParameter : Humidifier.Base.BaseSubResource
+        public class ConditionParameter : Humidifier.Base.BaseSubResource, IHaveConditionValue, IHaveConditionKey
         {
             /// <summary>
             /// ConditionValue
@@ -112,7 +112,7 @@ namespace Humidifier.Backup
             public dynamic ConditionKey { get; set; }
         }
 
-        public class ConditionResourceType : Humidifier.Base.BaseSubResource
+        public class ConditionResourceType : Humidifier.Base.BaseSubResource, IHaveConditionValue, IHaveConditionKey
         {
             /// <summary>
             /// ConditionValue

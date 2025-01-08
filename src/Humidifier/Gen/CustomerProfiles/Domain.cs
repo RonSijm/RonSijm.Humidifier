@@ -69,7 +69,7 @@ namespace Humidifier.CustomerProfiles
 
     namespace DomainTypes
     {
-        public class AttributeTypesSelector : Humidifier.Base.BaseSubResource, IHaveAddress, IHaveEmailAddress, IHaveAttributeMatchingModel, IHavePhoneNumber
+        public class AttributeTypesSelector : Humidifier.Base.BaseSubResource, IHaveAddress, IHaveEmailAddress, IHavePhoneNumber, IHaveAttributeMatchingModel
         {
             /// <summary>
             /// Address
@@ -108,7 +108,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic EmailAddress { get; set; }
         }
 
-        public class AutoMerging : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class AutoMerging : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveCustomerProfilesDomainTypesConflictResolutionConflictResolution
         {
             /// <summary>
             /// Consolidation
@@ -176,7 +176,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic MatchingAttributesList { get; set; }
         }
 
-        public class DomainStats : Humidifier.Base.BaseSubResource
+        public class DomainStats : Humidifier.Base.BaseSubResource, IHaveObjectCount
         {
             /// <summary>
             /// MeteringProfileCount
@@ -224,7 +224,7 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.DomainTypes.S3ExportingConfig S3Exporting { get; set; }
         }
 
-        public class JobSchedule : Humidifier.Base.BaseSubResource
+        public class JobSchedule : Humidifier.Base.BaseSubResource, IHaveTime
         {
             /// <summary>
             /// DayOfTheWeek
@@ -244,7 +244,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Time { get; set; }
         }
 
-        public class Matching : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class Matching : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveCustomerProfilesDomainTypesExportingConfigExportingConfig
         {
             /// <summary>
             /// AutoMerging
@@ -293,7 +293,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Rule { get; set; }
         }
 
-        public class RuleBasedMatching : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveStatus
+        public class RuleBasedMatching : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveStatus, IHaveCustomerProfilesDomainTypesConflictResolutionConflictResolution, IHaveCustomerProfilesDomainTypesExportingConfigExportingConfig
         {
             /// <summary>
             /// Status

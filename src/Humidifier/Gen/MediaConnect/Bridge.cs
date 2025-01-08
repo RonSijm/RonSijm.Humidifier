@@ -151,7 +151,7 @@ namespace Humidifier.MediaConnect
             public dynamic Name { get; set; }
         }
 
-        public class BridgeNetworkSource : Humidifier.Base.BaseSubResource, IHaveName, IHavePort, IHaveProtocol, IHaveNetworkName
+        public class BridgeNetworkSource : Humidifier.Base.BaseSubResource, IHaveName, IHavePort, IHaveProtocol, IHaveNetworkName, IHaveMulticastIp
         {
             /// <summary>
             /// MulticastSourceSettings
@@ -247,7 +247,7 @@ namespace Humidifier.MediaConnect
             public dynamic MaxBitrate { get; set; }
         }
 
-        public class FailoverConfig : Humidifier.Base.BaseSubResource, IHaveState
+        public class FailoverConfig : Humidifier.Base.BaseSubResource, IHaveState, IHaveFailoverMode
         {
             /// <summary>
             /// State
@@ -295,7 +295,7 @@ namespace Humidifier.MediaConnect
             public dynamic MaxBitrate { get; set; }
         }
 
-        public class MulticastSourceSettings : Humidifier.Base.BaseSubResource
+        public class MulticastSourceSettings : Humidifier.Base.BaseSubResource, IHaveMulticastSourceIp
         {
             /// <summary>
             /// MulticastSourceIp
@@ -307,7 +307,7 @@ namespace Humidifier.MediaConnect
             public dynamic MulticastSourceIp { get; set; }
         }
 
-        public class SourcePriority : Humidifier.Base.BaseSubResource
+        public class SourcePriority : Humidifier.Base.BaseSubResource, IHavePrimarySource
         {
             /// <summary>
             /// PrimarySource

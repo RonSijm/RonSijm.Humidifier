@@ -106,7 +106,7 @@ namespace Humidifier.EntityResolution
             public dynamic IncrementalRunType { get; set; }
         }
 
-        public class InputSource : Humidifier.Base.BaseSubResource, IHaveSchemaArn, IHaveInputSourceARN
+        public class InputSource : Humidifier.Base.BaseSubResource, IHaveSchemaArn, IHaveInputSourceARN, IHaveApplyNormalization
         {
             /// <summary>
             /// ApplyNormalization
@@ -134,7 +134,7 @@ namespace Humidifier.EntityResolution
             public dynamic SchemaArn { get; set; }
         }
 
-        public class IntermediateSourceConfiguration : Humidifier.Base.BaseSubResource
+        public class IntermediateSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveIntermediateS3Path
         {
             /// <summary>
             /// IntermediateS3Path
@@ -146,7 +146,7 @@ namespace Humidifier.EntityResolution
             public dynamic IntermediateS3Path { get; set; }
         }
 
-        public class OutputAttribute : Humidifier.Base.BaseSubResource, IHaveName
+        public class OutputAttribute : Humidifier.Base.BaseSubResource, IHaveName, IHaveHashed
         {
             /// <summary>
             /// Hashed
@@ -166,7 +166,7 @@ namespace Humidifier.EntityResolution
             public dynamic Name { get; set; }
         }
 
-        public class OutputSource : Humidifier.Base.BaseSubResource, IHaveKMSArn
+        public class OutputSource : Humidifier.Base.BaseSubResource, IHaveKMSArn, IHaveOutputS3Path, IHaveApplyNormalization
         {
             /// <summary>
             /// KMSArn

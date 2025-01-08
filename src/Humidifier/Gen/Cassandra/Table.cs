@@ -3,7 +3,7 @@ namespace Humidifier.Cassandra
     using System.Collections.Generic;
     using TableTypes;
 
-    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableName, IHavePointInTimeRecoveryEnabled
+    public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableName, IHaveKeyspaceName, IHavePointInTimeRecoveryEnabled, IHaveClientSideTimestampsEnabled
     {
         public override string AWSTypeName { get => AWS.Cassandra.Table; }
         /// <summary>
@@ -152,7 +152,7 @@ namespace Humidifier.Cassandra
             public dynamic AutoScalingDisabled { get; set; }
         }
 
-        public class AutoScalingSpecification : Humidifier.Base.BaseSubResource
+        public class AutoScalingSpecification : Humidifier.Base.BaseSubResource, IHaveCassandraTableTypesAutoScalingSettingReadCapacityAutoScaling
         {
             /// <summary>
             /// ReadCapacityAutoScaling
@@ -212,7 +212,7 @@ namespace Humidifier.Cassandra
             public Humidifier.Cassandra.TableTypes.Column Column { get; set; }
         }
 
-        public class Column : Humidifier.Base.BaseSubResource, IHaveColumnName
+        public class Column : Humidifier.Base.BaseSubResource, IHaveColumnName, IHaveColumnType
         {
             /// <summary>
             /// ColumnName
@@ -252,7 +252,7 @@ namespace Humidifier.Cassandra
             public dynamic KmsKeyIdentifier { get; set; }
         }
 
-        public class ProvisionedThroughput : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits
+        public class ProvisionedThroughput : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits, IHaveWriteCapacityUnits
         {
             /// <summary>
             /// WriteCapacityUnits
@@ -272,7 +272,7 @@ namespace Humidifier.Cassandra
             public dynamic ReadCapacityUnits { get; set; }
         }
 
-        public class ReplicaSpecification : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveReadCapacityUnits
+        public class ReplicaSpecification : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveReadCapacityUnits, IHaveCassandraTableTypesAutoScalingSettingReadCapacityAutoScaling
         {
             /// <summary>
             /// ReadCapacityUnits

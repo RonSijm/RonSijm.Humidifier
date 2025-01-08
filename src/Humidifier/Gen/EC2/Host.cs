@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class Host : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveOutpostArn, IHaveAssetId
+    public class Host : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveInstanceFamily, IHaveOutpostArn, IHaveAssetId
     {
         public class Attributes
         {

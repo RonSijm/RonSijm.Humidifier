@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class VPCEndpointService : Humidifier.Base.BaseResource, IHaveTags
+    public class VPCEndpointService : Humidifier.Base.BaseResource, IHaveTags, IHaveAcceptanceRequired
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.NetworkManager
 {
     using System.Collections.Generic;
 
-    public class LinkAssociation : Humidifier.Base.BaseResource, IHaveDeviceId, IHaveGlobalNetworkId
+    public class LinkAssociation : Humidifier.Base.BaseResource, IHaveGlobalNetworkId, IHaveDeviceId, IHaveLinkId
     {
         public override string AWSTypeName { get => AWS.NetworkManager.LinkAssociation; }
 

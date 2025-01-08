@@ -2,7 +2,7 @@ namespace Humidifier.AppStream
 {
     using System.Collections.Generic;
 
-    public class StackUserAssociation : Humidifier.Base.BaseResource, IHaveUserName, IHaveAuthenticationType, IHaveStackName
+    public class StackUserAssociation : Humidifier.Base.BaseResource, IHaveAuthenticationType, IHaveUserName, IHaveStackName
     {
         public override string AWSTypeName { get => AWS.AppStream.StackUserAssociation; }
         /// <summary>

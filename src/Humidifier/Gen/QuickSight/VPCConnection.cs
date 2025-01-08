@@ -89,7 +89,7 @@ namespace Humidifier.QuickSight
 
     namespace VPCConnectionTypes
     {
-        public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveAvailabilityZone, IHaveSubnetId, IHaveNetworkInterfaceId
+        public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveAvailabilityZone, IHaveSubnetId, IHaveNetworkInterfaceId, IHaveErrorMessage
         {
             /// <summary>
             /// Status

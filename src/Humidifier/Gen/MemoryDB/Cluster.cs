@@ -3,7 +3,7 @@ namespace Humidifier.MemoryDB
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHaveClusterName, IHaveEngine, IHaveSnsTopicArn, IHaveAutoMinorVersionUpgrade, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveNodeType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveFinalSnapshotName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHaveClusterName, IHaveEngine, IHaveSnsTopicArn, IHaveAutoMinorVersionUpgrade, IHaveNodeType, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveFinalSnapshotName, IHaveMaintenanceWindow, IHaveACLName, IHaveNumShards, IHaveTLSEnabled
     {
         public class Attributes
         {

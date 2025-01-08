@@ -2,7 +2,7 @@ namespace Humidifier.Glue
 {
     using System.Collections.Generic;
 
-    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags
+    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveMaxConcurrentRuns
     {
         public override string AWSTypeName { get => AWS.Glue.Workflow; }
         /// <summary>

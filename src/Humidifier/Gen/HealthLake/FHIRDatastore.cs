@@ -70,7 +70,7 @@ namespace Humidifier.HealthLake
 
     namespace FHIRDatastoreTypes
     {
-        public class CreatedAt : Humidifier.Base.BaseSubResource
+        public class CreatedAt : Humidifier.Base.BaseSubResource, IHaveSeconds
         {
             /// <summary>
             /// Nanos
@@ -90,7 +90,7 @@ namespace Humidifier.HealthLake
             public dynamic Seconds { get; set; }
         }
 
-        public class IdentityProviderConfiguration : Humidifier.Base.BaseSubResource
+        public class IdentityProviderConfiguration : Humidifier.Base.BaseSubResource, IHaveMetadata
         {
             /// <summary>
             /// AuthorizationStrategy

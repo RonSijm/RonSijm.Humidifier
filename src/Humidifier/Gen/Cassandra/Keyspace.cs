@@ -3,7 +3,7 @@ namespace Humidifier.Cassandra
     using System.Collections.Generic;
     using KeyspaceTypes;
 
-    public class Keyspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class Keyspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKeyspaceName, IHaveClientSideTimestampsEnabled
     {
         public override string AWSTypeName { get => AWS.Cassandra.Keyspace; }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Humidifier.Cassandra
 
     namespace KeyspaceTypes
     {
-        public class ReplicationSpecification : Humidifier.Base.BaseSubResource
+        public class ReplicationSpecification : Humidifier.Base.BaseSubResource, IHaveRegionList
         {
             /// <summary>
             /// ReplicationStrategy

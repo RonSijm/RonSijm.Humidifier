@@ -3,7 +3,7 @@ namespace Humidifier.DataZone
     using System.Collections.Generic;
     using UserProfileTypes;
 
-    public class UserProfile : Humidifier.Base.BaseResource, IHaveStatus, IHaveDomainIdentifier
+    public class UserProfile : Humidifier.Base.BaseResource, IHaveStatus, IHaveDomainIdentifier, IHaveUserIdentifier
     {
         public class Attributes
         {

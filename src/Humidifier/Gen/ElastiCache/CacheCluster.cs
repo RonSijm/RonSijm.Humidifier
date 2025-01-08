@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using CacheClusterTypes;
 
-    public class CacheCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveClusterName, IHaveEngine, IHaveVpcSecurityGroupIds, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveTransitEncryptionEnabled, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveCacheSubnetGroupName, IHaveNotificationTopicArn, IHaveSnapshotArns, IHaveSnapshotWindow
+    public class CacheCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveClusterName, IHaveEngine, IHaveVpcSecurityGroupIds, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveTransitEncryptionEnabled, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveCacheSubnetGroupName, IHaveNotificationTopicArn, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveCacheSecurityGroupNames, IHaveIpDiscovery, IHavePreferredAvailabilityZones
     {
         public class Attributes
         {

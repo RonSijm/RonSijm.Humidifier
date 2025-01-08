@@ -2,7 +2,7 @@ namespace Humidifier.Macie
 {
     using System.Collections.Generic;
 
-    public class Session : Humidifier.Base.BaseResource, IHaveStatus
+    public class Session : Humidifier.Base.BaseResource, IHaveStatus, IHaveFindingPublishingFrequency
     {
         public class Attributes
         {

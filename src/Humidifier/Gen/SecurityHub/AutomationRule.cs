@@ -636,7 +636,7 @@ namespace Humidifier.SecurityHub
             public dynamic Lte { get; set; }
         }
 
-        public class RelatedFinding : Humidifier.Base.BaseSubResource, IHaveId
+        public class RelatedFinding : Humidifier.Base.BaseSubResource, IHaveId, IHaveProductArn
         {
             /// <summary>
             /// ProductArn

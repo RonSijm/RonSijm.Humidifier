@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using NetworkInterfaceTypes;
 
-    public class NetworkInterface : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSubnetId, IHavePrivateIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount
+    public class NetworkInterface : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSubnetId, IHavePrivateIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveSourceDestCheck, IHaveIpv6PrefixCount, IHaveIpv4PrefixCount, IHaveGroupSet, IHaveInterfaceType
     {
         public class Attributes
         {
@@ -155,7 +155,7 @@ namespace Humidifier.EC2
 
     namespace NetworkInterfaceTypes
     {
-        public class ConnectionTrackingSpecification : Humidifier.Base.BaseSubResource
+        public class ConnectionTrackingSpecification : Humidifier.Base.BaseSubResource, IHaveUdpTimeout, IHaveTcpEstablishedTimeout, IHaveUdpStreamTimeout
         {
             /// <summary>
             /// UdpTimeout
@@ -195,7 +195,7 @@ namespace Humidifier.EC2
             public dynamic Ipv6Address { get; set; }
         }
 
-        public class Ipv4PrefixSpecification : Humidifier.Base.BaseSubResource
+        public class Ipv4PrefixSpecification : Humidifier.Base.BaseSubResource, IHaveIpv4Prefix
         {
             /// <summary>
             /// Ipv4Prefix
@@ -207,7 +207,7 @@ namespace Humidifier.EC2
             public dynamic Ipv4Prefix { get; set; }
         }
 
-        public class Ipv6PrefixSpecification : Humidifier.Base.BaseSubResource
+        public class Ipv6PrefixSpecification : Humidifier.Base.BaseSubResource, IHaveIpv6Prefix
         {
             /// <summary>
             /// Ipv6Prefix

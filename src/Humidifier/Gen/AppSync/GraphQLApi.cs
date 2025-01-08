@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using GraphQLApiTypes;
 
-    public class GraphQLApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVisibility, IHaveAuthenticationType
+    public class GraphQLApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVisibility, IHaveAuthenticationType, IHaveOwnerContact, IHaveAppSyncGraphQLApiTypesOpenIDConnectConfigOpenIDConnectConfig, IHaveAppSyncGraphQLApiTypesLambdaAuthorizerConfigLambdaAuthorizerConfig
     {
         public class Attributes
         {
@@ -162,7 +162,7 @@ namespace Humidifier.AppSync
 
     namespace GraphQLApiTypes
     {
-        public class AdditionalAuthenticationProvider : Humidifier.Base.BaseSubResource, IHaveAuthenticationType
+        public class AdditionalAuthenticationProvider : Humidifier.Base.BaseSubResource, IHaveAuthenticationType, IHaveAppSyncGraphQLApiTypesOpenIDConnectConfigOpenIDConnectConfig, IHaveAppSyncGraphQLApiTypesLambdaAuthorizerConfigLambdaAuthorizerConfig
         {
             /// <summary>
             /// OpenIDConnectConfig
@@ -198,7 +198,7 @@ namespace Humidifier.AppSync
             public dynamic AuthenticationType { get; set; }
         }
 
-        public class CognitoUserPoolConfig : Humidifier.Base.BaseSubResource, IHaveUserPoolId, IHaveAwsRegion
+        public class CognitoUserPoolConfig : Humidifier.Base.BaseSubResource, IHaveUserPoolId, IHaveAwsRegion, IHaveAppIdClientRegex
         {
             /// <summary>
             /// AppIdClientRegex
@@ -282,7 +282,7 @@ namespace Humidifier.AppSync
             public dynamic AuthorizerResultTtlInSeconds { get; set; }
         }
 
-        public class LogConfig : Humidifier.Base.BaseSubResource
+        public class LogConfig : Humidifier.Base.BaseSubResource, IHaveCloudWatchLogsRoleArn
         {
             /// <summary>
             /// CloudWatchLogsRoleArn
@@ -310,7 +310,7 @@ namespace Humidifier.AppSync
             public dynamic FieldLogLevel { get; set; }
         }
 
-        public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveIssuer
+        public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveIssuer, IHaveAuthTTL, IHaveIatTTL
         {
             /// <summary>
             /// Issuer
@@ -346,7 +346,7 @@ namespace Humidifier.AppSync
             public dynamic IatTTL { get; set; }
         }
 
-        public class UserPoolConfig : Humidifier.Base.BaseSubResource, IHaveUserPoolId, IHaveAwsRegion
+        public class UserPoolConfig : Humidifier.Base.BaseSubResource, IHaveUserPoolId, IHaveAwsRegion, IHaveAppIdClientRegex, IHaveDefaultAction
         {
             /// <summary>
             /// AppIdClientRegex

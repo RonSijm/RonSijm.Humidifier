@@ -158,7 +158,7 @@ namespace Humidifier.QBusiness
             public dynamic ApiSchemaType { get; set; }
         }
 
-        public class OAuth2ClientCredentialConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveSecretArn
+        public class OAuth2ClientCredentialConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveSecretArn, IHaveTokenUrl
         {
             /// <summary>
             /// SecretArn

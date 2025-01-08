@@ -3,7 +3,7 @@ namespace Humidifier.AppMesh
     using System.Collections.Generic;
     using GatewayRouteTypes;
 
-    public class GatewayRoute : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner
+    public class GatewayRoute : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner, IHaveVirtualGatewayName
     {
         public class Attributes
         {
@@ -101,7 +101,7 @@ namespace Humidifier.AppMesh
             public dynamic DefaultTargetHostname { get; set; }
         }
 
-        public class GatewayRouteMetadataMatch : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex
+        public class GatewayRouteMetadataMatch : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex, IHaveAppMeshGatewayRouteTypesGatewayRouteRangeMatchRange
         {
             /// <summary>
             /// Suffix
@@ -253,7 +253,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.GatewayRouteTypes.GrpcGatewayRouteMatch Match { get; set; }
         }
 
-        public class GrpcGatewayRouteAction : Humidifier.Base.BaseSubResource
+        public class GrpcGatewayRouteAction : Humidifier.Base.BaseSubResource, IHaveAppMeshGatewayRouteTypesGatewayRouteTargetTarget
         {
             /// <summary>
             /// Target
@@ -273,7 +273,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.GatewayRouteTypes.GrpcGatewayRouteRewrite Rewrite { get; set; }
         }
 
-        public class GrpcGatewayRouteMatch : Humidifier.Base.BaseSubResource, IHavePort, IHaveServiceName
+        public class GrpcGatewayRouteMatch : Humidifier.Base.BaseSubResource, IHavePort, IHaveServiceName, IHaveAppMeshGatewayRouteTypesGatewayRouteHostnameMatchHostname
         {
             /// <summary>
             /// ServiceName
@@ -338,7 +338,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.GatewayRouteTypes.GatewayRouteMetadataMatch Match { get; set; }
         }
 
-        public class GrpcGatewayRouteRewrite : Humidifier.Base.BaseSubResource
+        public class GrpcGatewayRouteRewrite : Humidifier.Base.BaseSubResource, IHaveAppMeshGatewayRouteTypesGatewayRouteHostnameRewriteHostname
         {
             /// <summary>
             /// Hostname
@@ -370,7 +370,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.GatewayRouteTypes.HttpGatewayRouteMatch Match { get; set; }
         }
 
-        public class HttpGatewayRouteAction : Humidifier.Base.BaseSubResource
+        public class HttpGatewayRouteAction : Humidifier.Base.BaseSubResource, IHaveAppMeshGatewayRouteTypesGatewayRouteTargetTarget
         {
             /// <summary>
             /// Target
@@ -418,7 +418,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.GatewayRouteTypes.HttpGatewayRouteHeaderMatch Match { get; set; }
         }
 
-        public class HttpGatewayRouteHeaderMatch : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex
+        public class HttpGatewayRouteHeaderMatch : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveExact, IHaveRegex, IHaveAppMeshGatewayRouteTypesGatewayRouteRangeMatchRange
         {
             /// <summary>
             /// Suffix
@@ -462,7 +462,7 @@ namespace Humidifier.AppMesh
             public Humidifier.AppMesh.GatewayRouteTypes.GatewayRouteRangeMatch Range { get; set; }
         }
 
-        public class HttpGatewayRouteMatch : Humidifier.Base.BaseSubResource, IHavePort, IHavePrefix, IHaveMethod
+        public class HttpGatewayRouteMatch : Humidifier.Base.BaseSubResource, IHavePort, IHavePrefix, IHaveMethod, IHaveAppMeshGatewayRouteTypesGatewayRouteHostnameMatchHostname
         {
             /// <summary>
             /// Path
@@ -556,7 +556,7 @@ namespace Humidifier.AppMesh
             public dynamic DefaultPrefix { get; set; }
         }
 
-        public class HttpGatewayRouteRewrite : Humidifier.Base.BaseSubResource
+        public class HttpGatewayRouteRewrite : Humidifier.Base.BaseSubResource, IHaveAppMeshGatewayRouteTypesGatewayRouteHostnameRewriteHostname
         {
             /// <summary>
             /// Path

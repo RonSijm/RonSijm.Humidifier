@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using FunctionTypes;
 
-    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyArn, IHaveRole, IHaveTimeout, IHaveFunctionName, IHaveRuntime, IHaveMemorySize
+    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyArn, IHaveRole, IHaveTimeout, IHaveFunctionName, IHaveRuntime, IHaveMemorySize, IHaveHandler, IHaveArchitectures
     {
         public class Attributes
         {
@@ -400,7 +400,7 @@ namespace Humidifier.Lambda
             public dynamic SystemLogLevel { get; set; }
         }
 
-        public class RuntimeManagementConfig : Humidifier.Base.BaseSubResource
+        public class RuntimeManagementConfig : Humidifier.Base.BaseSubResource, IHaveUpdateRuntimeOn, IHaveRuntimeVersionArn
         {
             /// <summary>
             /// UpdateRuntimeOn
@@ -420,7 +420,7 @@ namespace Humidifier.Lambda
             public dynamic RuntimeVersionArn { get; set; }
         }
 
-        public class SnapStart : Humidifier.Base.BaseSubResource
+        public class SnapStart : Humidifier.Base.BaseSubResource, IHaveApplyOn
         {
             /// <summary>
             /// ApplyOn
@@ -432,7 +432,7 @@ namespace Humidifier.Lambda
             public dynamic ApplyOn { get; set; }
         }
 
-        public class SnapStartResponse : Humidifier.Base.BaseSubResource
+        public class SnapStartResponse : Humidifier.Base.BaseSubResource, IHaveApplyOn
         {
             /// <summary>
             /// OptimizationStatus
@@ -464,7 +464,7 @@ namespace Humidifier.Lambda
             public dynamic Mode { get; set; }
         }
 
-        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds
+        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveIpv6AllowedForDualStack
         {
             /// <summary>
             /// Ipv6AllowedForDualStack

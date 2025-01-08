@@ -66,7 +66,7 @@ namespace Humidifier.CleanRooms
 
     namespace IdMappingTableTypes
     {
-        public class IdMappingTableInputReferenceConfig : Humidifier.Base.BaseSubResource
+        public class IdMappingTableInputReferenceConfig : Humidifier.Base.BaseSubResource, IHaveInputReferenceArn, IHaveManageResourcePolicies
         {
             /// <summary>
             /// InputReferenceArn

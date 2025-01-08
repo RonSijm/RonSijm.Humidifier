@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using FlowTypes;
 
-    public class Flow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveExecutionRoleArn, IHaveCustomerEncryptionKeyArn
+    public class Flow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveExecutionRoleArn, IHaveCustomerEncryptionKeyArn, IHaveDefinitionString, IHaveDefinitionSubstitutions
     {
         public class Attributes
         {
@@ -99,7 +99,7 @@ namespace Humidifier.Bedrock
 
     namespace FlowTypes
     {
-        public class AgentFlowNodeConfiguration : Humidifier.Base.BaseSubResource
+        public class AgentFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveAgentAliasArn
         {
             /// <summary>
             /// AgentAliasArn
@@ -220,7 +220,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.FlowTypes.FlowConditionalConnectionConfiguration Conditional { get; set; }
         }
 
-        public class FlowDataConnectionConfiguration : Humidifier.Base.BaseSubResource
+        public class FlowDataConnectionConfiguration : Humidifier.Base.BaseSubResource, IHaveSourceOutput, IHaveTargetInput
         {
             /// <summary>
             /// SourceOutput
@@ -308,7 +308,7 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
-        public class FlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveInput
+        public class FlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveInput, IHaveOutput, IHaveIterator, IHaveCollector
         {
             /// <summary>
             /// Condition
@@ -468,7 +468,7 @@ namespace Humidifier.Bedrock
             public dynamic Message { get; set; }
         }
 
-        public class GuardrailConfiguration : Humidifier.Base.BaseSubResource
+        public class GuardrailConfiguration : Humidifier.Base.BaseSubResource, IHaveGuardrailIdentifier, IHaveGuardrailVersion
         {
             /// <summary>
             /// GuardrailIdentifier
@@ -488,7 +488,7 @@ namespace Humidifier.Bedrock
             public dynamic GuardrailVersion { get; set; }
         }
 
-        public class KnowledgeBaseFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveModelId, IHaveKnowledgeBaseId
+        public class KnowledgeBaseFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveModelId, IHaveKnowledgeBaseId, IHaveBedrockFlowTypesGuardrailConfigurationGuardrailConfiguration
         {
             /// <summary>
             /// GuardrailConfiguration
@@ -528,7 +528,7 @@ namespace Humidifier.Bedrock
             public dynamic LambdaArn { get; set; }
         }
 
-        public class LexFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveLocaleId
+        public class LexFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveLocaleId, IHaveBotAliasArn
         {
             /// <summary>
             /// BotAliasArn
@@ -548,7 +548,7 @@ namespace Humidifier.Bedrock
             public dynamic LocaleId { get; set; }
         }
 
-        public class PromptFlowNodeConfiguration : Humidifier.Base.BaseSubResource
+        public class PromptFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockFlowTypesGuardrailConfigurationGuardrailConfiguration
         {
             /// <summary>
             /// GuardrailConfiguration
@@ -660,7 +660,7 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
-        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaxTokens
+        public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveTemperature, IHaveStopSequences, IHaveTopP
         {
             /// <summary>
             /// Temperature

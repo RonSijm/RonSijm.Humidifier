@@ -40,7 +40,7 @@ namespace Humidifier.IoT
 
     namespace TopicRuleDestinationTypes
     {
-        public class HttpUrlDestinationSummary : Humidifier.Base.BaseSubResource
+        public class HttpUrlDestinationSummary : Humidifier.Base.BaseSubResource, IHaveConfirmationUrl
         {
             /// <summary>
             /// ConfirmationUrl

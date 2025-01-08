@@ -3,7 +3,7 @@ namespace Humidifier.SecurityHub
     using System.Collections.Generic;
     using SecurityControlTypes;
 
-    public class SecurityControl : Humidifier.Base.BaseResource
+    public class SecurityControl : Humidifier.Base.BaseResource, IHaveSecurityControlId
     {
         public override string AWSTypeName { get => AWS.SecurityHub.SecurityControl; }
         /// <summary>
@@ -65,7 +65,7 @@ namespace Humidifier.SecurityHub
             public Humidifier.SecurityHub.SecurityControlTypes.ParameterValue Value { get; set; }
         }
 
-        public class ParameterValue : Humidifier.Base.BaseSubResource, IHaveStringList
+        public class ParameterValue : Humidifier.Base.BaseSubResource, IHaveStringList, IHaveEnum, IHaveInteger, IHaveEnumList, IHaveString, IHaveBoolean, IHaveDouble
         {
             /// <summary>
             /// Enum

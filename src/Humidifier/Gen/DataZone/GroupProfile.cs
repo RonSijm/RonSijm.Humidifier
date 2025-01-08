@@ -2,7 +2,7 @@ namespace Humidifier.DataZone
 {
     using System.Collections.Generic;
 
-    public class GroupProfile : Humidifier.Base.BaseResource, IHaveStatus, IHaveDomainIdentifier
+    public class GroupProfile : Humidifier.Base.BaseResource, IHaveStatus, IHaveDomainIdentifier, IHaveGroupIdentifier
     {
         public class Attributes
         {

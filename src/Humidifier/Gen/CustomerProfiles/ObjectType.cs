@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using ObjectTypeTypes;
 
-    public class ObjectType : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDomainName, IHaveEncryptionKey, IHaveTemplateId
+    public class ObjectType : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDomainName, IHaveEncryptionKey, IHaveTemplateId, IHaveObjectTypeName
     {
         public class Attributes
         {
@@ -145,7 +145,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Name { get; set; }
         }
 
-        public class ObjectTypeField : Humidifier.Base.BaseSubResource, IHaveContentType, IHaveSource, IHaveTarget
+        public class ObjectTypeField : Humidifier.Base.BaseSubResource, IHaveSource, IHaveTarget, IHaveContentType
         {
             /// <summary>
             /// Target

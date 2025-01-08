@@ -2,7 +2,7 @@ namespace Humidifier.SecurityHub
 {
     using System.Collections.Generic;
 
-    public class ProductSubscription : Humidifier.Base.BaseResource
+    public class ProductSubscription : Humidifier.Base.BaseResource, IHaveProductArn
     {
         public class Attributes
         {

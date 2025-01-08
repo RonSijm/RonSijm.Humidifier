@@ -3,7 +3,7 @@ namespace Humidifier.Lex
     using System.Collections.Generic;
     using BotVersionTypes;
 
-    public class BotVersion : Humidifier.Base.BaseResource, IHaveDescription
+    public class BotVersion : Humidifier.Base.BaseResource, IHaveDescription, IHaveBotId
     {
         public class Attributes
         {

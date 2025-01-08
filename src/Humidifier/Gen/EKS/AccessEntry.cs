@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using AccessEntryTypes;
 
-    public class AccessEntry : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveUsername, IHaveClusterName
+    public class AccessEntry : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveUsername, IHaveClusterName, IHavePrincipalArn
     {
         public class Attributes
         {
@@ -78,7 +78,7 @@ namespace Humidifier.EKS
 
     namespace AccessEntryTypes
     {
-        public class AccessPolicy : Humidifier.Base.BaseSubResource
+        public class AccessPolicy : Humidifier.Base.BaseSubResource, IHavePolicyArn
         {
             /// <summary>
             /// PolicyArn

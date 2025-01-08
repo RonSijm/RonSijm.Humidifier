@@ -35,7 +35,7 @@ namespace Humidifier.AppRunner
 
     namespace ObservabilityConfigurationTypes
     {
-        public class TraceConfiguration : Humidifier.Base.BaseSubResource
+        public class TraceConfiguration : Humidifier.Base.BaseSubResource, IHaveVendor
         {
             /// <summary>
             /// Vendor

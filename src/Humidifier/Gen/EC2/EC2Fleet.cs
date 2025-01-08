@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using EC2FleetTypes;
 
-    public class EC2Fleet : Humidifier.Base.BaseResource, IHaveType, IHaveContext, IHaveValidUntil
+    public class EC2Fleet : Humidifier.Base.BaseResource, IHaveType, IHaveContext, IHaveValidUntil, IHaveExcessCapacityTerminationPolicy, IHaveValidFrom, IHaveReplaceUnhealthyInstances, IHaveTerminateInstancesWithExpiration
     {
         public class Attributes
         {
@@ -189,7 +189,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.EC2FleetTypes.CpuPerformanceFactorRequest Cpu { get; set; }
         }
 
-        public class CapacityRebalance : Humidifier.Base.BaseSubResource
+        public class CapacityRebalance : Humidifier.Base.BaseSubResource, IHaveTerminationDelay, IHaveReplacementStrategy
         {
             /// <summary>
             /// TerminationDelay
@@ -209,7 +209,7 @@ namespace Humidifier.EC2
             public dynamic ReplacementStrategy { get; set; }
         }
 
-        public class CapacityReservationOptionsRequest : Humidifier.Base.BaseSubResource
+        public class CapacityReservationOptionsRequest : Humidifier.Base.BaseSubResource, IHaveUsageStrategy
         {
             /// <summary>
             /// UsageStrategy
@@ -255,7 +255,7 @@ namespace Humidifier.EC2
             public List<Humidifier.EC2.EC2FleetTypes.FleetLaunchTemplateOverridesRequest> Overrides { get; set; }
         }
 
-        public class FleetLaunchTemplateOverridesRequest : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveAvailabilityZone, IHavePriority, IHaveSubnetId, IHaveWeightedCapacity
+        public class FleetLaunchTemplateOverridesRequest : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveAvailabilityZone, IHavePriority, IHaveSubnetId, IHaveWeightedCapacity, IHaveMaxPrice
         {
             /// <summary>
             /// WeightedCapacity
@@ -351,7 +351,7 @@ namespace Humidifier.EC2
             public dynamic LaunchTemplateId { get; set; }
         }
 
-        public class InstanceRequirementsRequest : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveLocalStorageTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveBurstablePerformance
+        public class InstanceRequirementsRequest : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveLocalStorageTypes, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveBurstablePerformance
         {
             /// <summary>
             /// InstanceGenerations
@@ -655,7 +655,7 @@ namespace Humidifier.EC2
             public dynamic Max { get; set; }
         }
 
-        public class OnDemandOptionsRequest : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
+        public class OnDemandOptionsRequest : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveSingleAvailabilityZone, IHaveSingleInstanceType, IHaveMinTargetCapacity, IHaveMaxTotalPrice
         {
             /// <summary>
             /// SingleAvailabilityZone
@@ -707,7 +707,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.EC2FleetTypes.CapacityReservationOptionsRequest CapacityReservationOptions { get; set; }
         }
 
-        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource
+        public class PerformanceFactorReferenceRequest : Humidifier.Base.BaseSubResource, IHaveInstanceFamily
         {
             /// <summary>
             /// InstanceFamily
@@ -719,7 +719,7 @@ namespace Humidifier.EC2
             public dynamic InstanceFamily { get; set; }
         }
 
-        public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveGroupName, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity
+        public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveGroupName, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity, IHaveSpreadDomain, IHavePartitionNumber
         {
             /// <summary>
             /// GroupName
@@ -787,7 +787,7 @@ namespace Humidifier.EC2
             public dynamic HostResourceGroupArn { get; set; }
         }
 
-        public class SpotOptionsRequest : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveInstanceInterruptionBehavior
+        public class SpotOptionsRequest : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveInstanceInterruptionBehavior, IHaveSingleAvailabilityZone, IHaveSingleInstanceType, IHaveMinTargetCapacity, IHaveMaxTotalPrice, IHaveInstancePoolsToUseCount
         {
             /// <summary>
             /// SingleAvailabilityZone
@@ -876,7 +876,7 @@ namespace Humidifier.EC2
             public List<Tag> Tags { get; set; }
         }
 
-        public class TargetCapacitySpecificationRequest : Humidifier.Base.BaseSubResource
+        public class TargetCapacitySpecificationRequest : Humidifier.Base.BaseSubResource, IHaveTotalTargetCapacity, IHaveOnDemandTargetCapacity, IHaveTargetCapacityUnitType
         {
             /// <summary>
             /// DefaultTargetCapacityType

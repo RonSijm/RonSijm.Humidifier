@@ -2,7 +2,7 @@ namespace Humidifier.CloudWatch
 {
     using System.Collections.Generic;
 
-    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDashboardName
     {
         public override string AWSTypeName { get => AWS.CloudWatch.Dashboard; }
         public dynamic DashboardName { get => GivenName; set => GivenName = value; }

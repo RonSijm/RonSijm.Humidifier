@@ -63,7 +63,7 @@ namespace Humidifier.EC2
 
     namespace TransitGatewayAttachmentTypes
     {
-        public class Options : Humidifier.Base.BaseSubResource, IHaveDnsSupport, IHaveIpv6Support, IHaveApplianceModeSupport
+        public class Options : Humidifier.Base.BaseSubResource, IHaveSecurityGroupReferencingSupport, IHaveDnsSupport, IHaveIpv6Support, IHaveApplianceModeSupport
         {
             /// <summary>
             /// Ipv6Support

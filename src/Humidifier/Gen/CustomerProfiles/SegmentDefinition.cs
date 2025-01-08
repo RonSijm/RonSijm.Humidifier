@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using SegmentDefinitionTypes;
 
-    public class SegmentDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveDomainName
+    public class SegmentDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveDomainName, IHaveSegmentDefinitionName
     {
         public class Attributes
         {
@@ -116,7 +116,7 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension Province { get; set; }
         }
 
-        public class AttributeDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class AttributeDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType
@@ -137,7 +137,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Values { get; set; }
         }
 
-        public class CalculatedAttributeDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class CalculatedAttributeDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType
@@ -178,7 +178,7 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.SegmentDefinitionTypes.RangeOverride Range { get; set; }
         }
 
-        public class DateDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class DateDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType
@@ -220,7 +220,7 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileAttributes ProfileAttributes { get; set; }
         }
 
-        public class ExtraLengthValueProfileDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class ExtraLengthValueProfileDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType
@@ -452,7 +452,7 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.SegmentDefinitionTypes.DateDimension BirthDate { get; set; }
         }
 
-        public class ProfileDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class ProfileDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType
@@ -501,7 +501,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Unit { get; set; }
         }
 
-        public class SegmentGroup : Humidifier.Base.BaseSubResource
+        public class SegmentGroup : Humidifier.Base.BaseSubResource, IHaveInclude
         {
             /// <summary>
             /// Groups
@@ -522,7 +522,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Include { get; set; }
         }
 
-        public class SourceSegment : Humidifier.Base.BaseSubResource
+        public class SourceSegment : Humidifier.Base.BaseSubResource, IHaveSegmentDefinitionName
         {
             /// <summary>
             /// SegmentDefinitionName

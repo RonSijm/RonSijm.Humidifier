@@ -109,7 +109,7 @@ namespace Humidifier.VpcLattice
             public List<Humidifier.VpcLattice.ListenerTypes.WeightedTargetGroup> TargetGroups { get; set; }
         }
 
-        public class WeightedTargetGroup : Humidifier.Base.BaseSubResource, IHaveWeight
+        public class WeightedTargetGroup : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveTargetGroupIdentifier
         {
             /// <summary>
             /// Weight

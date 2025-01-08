@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using PlaybackConfigurationTypes;
 
-    public class PlaybackConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class PlaybackConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAdDecisionServerUrl
     {
         public class Attributes
         {
@@ -216,7 +216,7 @@ namespace Humidifier.MediaTailor
             public dynamic ContentSegmentUrlPrefix { get; set; }
         }
 
-        public class DashConfiguration : Humidifier.Base.BaseSubResource
+        public class DashConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestEndpointPrefix
         {
             /// <summary>
             /// MpdLocation
@@ -244,7 +244,7 @@ namespace Humidifier.MediaTailor
             public dynamic OriginManifestType { get; set; }
         }
 
-        public class HlsConfiguration : Humidifier.Base.BaseSubResource
+        public class HlsConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestEndpointPrefix
         {
             /// <summary>
             /// ManifestEndpointPrefix
@@ -256,7 +256,7 @@ namespace Humidifier.MediaTailor
             public dynamic ManifestEndpointPrefix { get; set; }
         }
 
-        public class LivePreRollConfiguration : Humidifier.Base.BaseSubResource
+        public class LivePreRollConfiguration : Humidifier.Base.BaseSubResource, IHaveAdDecisionServerUrl
         {
             /// <summary>
             /// AdDecisionServerUrl

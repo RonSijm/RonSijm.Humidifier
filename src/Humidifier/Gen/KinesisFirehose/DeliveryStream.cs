@@ -281,7 +281,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic SizeInMBs { get; set; }
         }
 
-        public class AmazonopensearchserviceDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveTypeName, IHaveIndexName, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesVpcConfigurationVpcConfiguration
+        public class AmazonopensearchserviceDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveTypeName, IHaveIndexName, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesVpcConfigurationVpcConfiguration, IHaveIndexRotationPeriod, IHaveClusterEndpoint, IHaveDomainARN, IHaveKinesisFirehoseDeliveryStreamTypesDocumentIdOptionsDocumentIdOptions
         {
             /// <summary>
             /// TypeName
@@ -553,7 +553,7 @@ namespace Humidifier.KinesisFirehose
             public Humidifier.KinesisFirehose.DeliveryStreamTypes.OutputFormatConfiguration OutputFormatConfiguration { get; set; }
         }
 
-        public class DatabaseColumns : Humidifier.Base.BaseSubResource
+        public class DatabaseColumns : Humidifier.Base.BaseSubResource, IHaveInclude, IHaveExclude
         {
             /// <summary>
             /// Exclude
@@ -708,7 +708,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic VpcEndpointServiceName { get; set; }
         }
 
-        public class DatabaseTables : Humidifier.Base.BaseSubResource
+        public class DatabaseTables : Humidifier.Base.BaseSubResource, IHaveInclude, IHaveExclude
         {
             /// <summary>
             /// Exclude
@@ -730,7 +730,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic Include { get; set; }
         }
 
-        public class Databases : Humidifier.Base.BaseSubResource
+        public class Databases : Humidifier.Base.BaseSubResource, IHaveInclude, IHaveExclude
         {
             /// <summary>
             /// Exclude
@@ -881,7 +881,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic SizeInMBs { get; set; }
         }
 
-        public class ElasticsearchDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveTypeName, IHaveIndexName, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesVpcConfigurationVpcConfiguration
+        public class ElasticsearchDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveTypeName, IHaveIndexName, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesVpcConfigurationVpcConfiguration, IHaveIndexRotationPeriod, IHaveClusterEndpoint, IHaveDomainARN, IHaveKinesisFirehoseDeliveryStreamTypesDocumentIdOptionsDocumentIdOptions
         {
             /// <summary>
             /// TypeName
@@ -1029,7 +1029,7 @@ namespace Humidifier.KinesisFirehose
             public Humidifier.KinesisFirehose.DeliveryStreamTypes.KMSEncryptionConfig KMSEncryptionConfig { get; set; }
         }
 
-        public class ExtendedS3DestinationConfiguration : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveS3BackupMode, IHaveBucketARN, IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints, IHaveCompressionFormat
+        public class ExtendedS3DestinationConfiguration : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveS3BackupMode, IHaveBucketARN, IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints, IHaveCompressionFormat, IHaveErrorOutputPrefix, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3BackupConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesEncryptionConfigurationEncryptionConfiguration
         {
             /// <summary>
             /// ErrorOutputPrefix
@@ -1166,7 +1166,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic TimestampFormats { get; set; }
         }
 
-        public class HttpEndpointCommonAttribute : Humidifier.Base.BaseSubResource, IHaveAttributeName
+        public class HttpEndpointCommonAttribute : Humidifier.Base.BaseSubResource, IHaveAttributeName, IHaveAttributeValue
         {
             /// <summary>
             /// AttributeValue
@@ -1186,7 +1186,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic AttributeName { get; set; }
         }
 
-        public class HttpEndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveUrl
+        public class HttpEndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveUrl, IHaveAccessKey
         {
             /// <summary>
             /// AccessKey
@@ -1214,7 +1214,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic Name { get; set; }
         }
 
-        public class HttpEndpointDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesRetryOptionsRetryOptions
+        public class HttpEndpointDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints, IHaveKinesisFirehoseDeliveryStreamTypesRetryOptionsRetryOptions
         {
             /// <summary>
             /// RequestConfiguration
@@ -1505,7 +1505,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic CaseInsensitive { get; set; }
         }
 
-        public class OrcSerDe : Humidifier.Base.BaseSubResource, IHaveCompression
+        public class OrcSerDe : Humidifier.Base.BaseSubResource, IHaveCompression, IHaveFormatVersion, IHaveBlockSizeBytes
         {
             /// <summary>
             /// PaddingTolerance
@@ -1602,7 +1602,7 @@ namespace Humidifier.KinesisFirehose
             public Humidifier.KinesisFirehose.DeliveryStreamTypes.Serializer Serializer { get; set; }
         }
 
-        public class ParquetSerDe : Humidifier.Base.BaseSubResource, IHaveCompression
+        public class ParquetSerDe : Humidifier.Base.BaseSubResource, IHaveCompression, IHaveBlockSizeBytes
         {
             /// <summary>
             /// Compression
@@ -1716,7 +1716,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic ParameterName { get; set; }
         }
 
-        public class RedshiftDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePassword, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration
+        public class RedshiftDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePassword, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3BackupConfiguration
         {
             /// <summary>
             /// S3BackupConfiguration
@@ -1840,7 +1840,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic DurationInSeconds { get; set; }
         }
 
-        public class S3DestinationConfiguration : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveBucketARN, IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints, IHaveCompressionFormat
+        public class S3DestinationConfiguration : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveRoleARN, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveBucketARN, IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints, IHaveCompressionFormat, IHaveErrorOutputPrefix, IHaveKinesisFirehoseDeliveryStreamTypesEncryptionConfigurationEncryptionConfiguration
         {
             /// <summary>
             /// ErrorOutputPrefix
@@ -1908,7 +1908,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic RoleARN { get; set; }
         }
 
-        public class SchemaConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId, IHaveRoleARN, IHaveRegion, IHaveVersionId
+        public class SchemaConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId, IHaveRegion, IHaveRoleARN, IHaveVersionId
         {
             /// <summary>
             /// VersionId
@@ -2028,7 +2028,7 @@ namespace Humidifier.KinesisFirehose
             public dynamic SizeInMBs { get; set; }
         }
 
-        public class SnowflakeDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveDatabase, IHavePrivateKey, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveUser, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveSchema, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration
+        public class SnowflakeDestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveDatabase, IHaveUser, IHavePrivateKey, IHaveKinesisFirehoseDeliveryStreamTypesCloudWatchLoggingOptionsCloudWatchLoggingOptions, IHaveKinesisFirehoseDeliveryStreamTypesProcessingConfigurationProcessingConfiguration, IHaveKinesisFirehoseDeliveryStreamTypesS3DestinationConfigurationS3Configuration, IHaveS3BackupMode, IHaveSchema, IHaveKinesisFirehoseDeliveryStreamTypesSecretsManagerConfigurationSecretsManagerConfiguration
         {
             /// <summary>
             /// PrivateKey

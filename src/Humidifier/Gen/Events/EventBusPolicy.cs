@@ -3,7 +3,7 @@ namespace Humidifier.Events
     using System.Collections.Generic;
     using EventBusPolicyTypes;
 
-    public class EventBusPolicy : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveStatementId, IHaveStatement
+    public class EventBusPolicy : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveStatementId, IHaveStatement, IHaveEventBusName
     {
         public override string AWSTypeName { get => AWS.Events.EventBusPolicy; }
         /// <summary>

@@ -115,7 +115,7 @@ namespace Humidifier.ApiGateway
             public dynamic Offset { get; set; }
         }
 
-        public class ThrottleSettings : Humidifier.Base.BaseSubResource
+        public class ThrottleSettings : Humidifier.Base.BaseSubResource, IHaveRateLimit
         {
             /// <summary>
             /// BurstLimit

@@ -2,7 +2,7 @@ namespace Humidifier.Lightsail
 {
     using System.Collections.Generic;
 
-    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveMetricName, IHaveComparisonOperator, IHaveThreshold, IHaveAlarmName, IHaveEvaluationPeriods
+    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveMetricName, IHaveComparisonOperator, IHaveThreshold, IHaveEvaluationPeriods, IHaveAlarmName, IHaveTreatMissingData, IHaveDatapointsToAlarm
     {
         public class Attributes
         {

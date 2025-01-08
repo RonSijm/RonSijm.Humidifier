@@ -2,7 +2,7 @@ namespace Humidifier.EMR
 {
     using System.Collections.Generic;
 
-    public class StudioSessionMapping : Humidifier.Base.BaseResource, IHaveStudioId
+    public class StudioSessionMapping : Humidifier.Base.BaseResource, IHaveIdentityType, IHaveStudioId
     {
         public override string AWSTypeName { get => AWS.EMR.StudioSessionMapping; }
 

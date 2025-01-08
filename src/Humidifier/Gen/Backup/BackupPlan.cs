@@ -86,7 +86,7 @@ namespace Humidifier.Backup
             public List<Humidifier.Backup.BackupPlanTypes.BackupRuleResourceType> BackupPlanRule { get; set; }
         }
 
-        public class BackupRuleResourceType : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveRuleName, IHaveScheduleExpressionTimezone
+        public class BackupRuleResourceType : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveRuleName, IHaveScheduleExpressionTimezone, IHaveBackupBackupPlanTypesLifecycleResourceTypeLifecycle
         {
             /// <summary>
             /// CompletionWindowMinutes
@@ -172,7 +172,7 @@ namespace Humidifier.Backup
             public dynamic RuleName { get; set; }
         }
 
-        public class CopyActionResourceType : Humidifier.Base.BaseSubResource
+        public class CopyActionResourceType : Humidifier.Base.BaseSubResource, IHaveBackupBackupPlanTypesLifecycleResourceTypeLifecycle
         {
             /// <summary>
             /// Lifecycle

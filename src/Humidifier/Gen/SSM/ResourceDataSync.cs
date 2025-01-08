@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using ResourceDataSyncTypes;
 
-    public class ResourceDataSync : Humidifier.Base.BaseResource, IHaveBucketName, IHaveBucketPrefix
+    public class ResourceDataSync : Humidifier.Base.BaseResource, IHaveBucketName, IHaveBucketPrefix, IHaveSyncType, IHaveKMSKeyArn, IHaveBucketRegion, IHaveSyncFormat
     {
         public class Attributes
         {
@@ -89,7 +89,7 @@ namespace Humidifier.SSM
 
     namespace ResourceDataSyncTypes
     {
-        public class AwsOrganizationsSource : Humidifier.Base.BaseSubResource
+        public class AwsOrganizationsSource : Humidifier.Base.BaseSubResource, IHaveOrganizationalUnits
         {
             /// <summary>
             /// OrganizationSourceType
@@ -110,7 +110,7 @@ namespace Humidifier.SSM
             public dynamic OrganizationalUnits { get; set; }
         }
 
-        public class S3Destination : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveBucketPrefix
+        public class S3Destination : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveBucketPrefix, IHaveKMSKeyArn, IHaveBucketRegion, IHaveSyncFormat
         {
             /// <summary>
             /// KMSKeyArn

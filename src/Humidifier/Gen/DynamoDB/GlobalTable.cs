@@ -3,7 +3,7 @@ namespace Humidifier.DynamoDB
     using System.Collections.Generic;
     using GlobalTableTypes;
 
-    public class GlobalTable : Humidifier.Base.BaseResource, IHaveTableName, IHaveBillingMode
+    public class GlobalTable : Humidifier.Base.BaseResource, IHaveTableName, IHaveBillingMode, IHaveDynamoDBGlobalTableTypesPointInTimeRecoverySpecificationPointInTimeRecoverySpecification, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings
     {
         public class Attributes
         {
@@ -208,7 +208,7 @@ namespace Humidifier.DynamoDB
             public dynamic Enabled { get; set; }
         }
 
-        public class GlobalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName
+        public class GlobalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesProjectionProjection
         {
             /// <summary>
             /// IndexName
@@ -261,7 +261,7 @@ namespace Humidifier.DynamoDB
             public Humidifier.DynamoDB.GlobalTableTypes.WriteOnDemandThroughputSettings WriteOnDemandThroughputSettings { get; set; }
         }
 
-        public class KeySchema : Humidifier.Base.BaseSubResource, IHaveKeyType, IHaveAttributeName
+        public class KeySchema : Humidifier.Base.BaseSubResource, IHaveAttributeName, IHaveKeyType
         {
             /// <summary>
             /// KeyType
@@ -281,7 +281,7 @@ namespace Humidifier.DynamoDB
             public dynamic AttributeName { get; set; }
         }
 
-        public class KinesisStreamSpecification : Humidifier.Base.BaseSubResource, IHaveStreamArn
+        public class KinesisStreamSpecification : Humidifier.Base.BaseSubResource, IHaveStreamArn, IHaveApproximateCreationDateTimePrecision
         {
             /// <summary>
             /// ApproximateCreationDateTimePrecision
@@ -301,7 +301,7 @@ namespace Humidifier.DynamoDB
             public dynamic StreamArn { get; set; }
         }
 
-        public class LocalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName
+        public class LocalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesProjectionProjection
         {
             /// <summary>
             /// IndexName
@@ -342,7 +342,7 @@ namespace Humidifier.DynamoDB
             public dynamic PointInTimeRecoveryEnabled { get; set; }
         }
 
-        public class Projection : Humidifier.Base.BaseSubResource
+        public class Projection : Humidifier.Base.BaseSubResource, IHaveProjectionType, IHaveNonKeyAttributes
         {
             /// <summary>
             /// ProjectionType
@@ -363,7 +363,7 @@ namespace Humidifier.DynamoDB
             public dynamic NonKeyAttributes { get; set; }
         }
 
-        public class ReadOnDemandThroughputSettings : Humidifier.Base.BaseSubResource
+        public class ReadOnDemandThroughputSettings : Humidifier.Base.BaseSubResource, IHaveMaxReadRequestUnits
         {
             /// <summary>
             /// MaxReadRequestUnits
@@ -395,7 +395,7 @@ namespace Humidifier.DynamoDB
             public Humidifier.DynamoDB.GlobalTableTypes.CapacityAutoScalingSettings ReadCapacityAutoScalingSettings { get; set; }
         }
 
-        public class ReplicaGlobalSecondaryIndexSpecification : Humidifier.Base.BaseSubResource, IHaveIndexName
+        public class ReplicaGlobalSecondaryIndexSpecification : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveDynamoDBGlobalTableTypesReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings
         {
             /// <summary>
             /// IndexName
@@ -431,7 +431,7 @@ namespace Humidifier.DynamoDB
             public Humidifier.DynamoDB.GlobalTableTypes.ReadOnDemandThroughputSettings ReadOnDemandThroughputSettings { get; set; }
         }
 
-        public class ReplicaSSESpecification : Humidifier.Base.BaseSubResource
+        public class ReplicaSSESpecification : Humidifier.Base.BaseSubResource, IHaveKMSMasterKeyId
         {
             /// <summary>
             /// KMSMasterKeyId
@@ -443,7 +443,7 @@ namespace Humidifier.DynamoDB
             public dynamic KMSMasterKeyId { get; set; }
         }
 
-        public class ReplicaSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveRegion
+        public class ReplicaSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveRegion, IHaveDynamoDBGlobalTableTypesPointInTimeRecoverySpecificationPointInTimeRecoverySpecification, IHaveDeletionProtectionEnabled, IHaveTableClass, IHaveDynamoDBGlobalTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveDynamoDBGlobalTableTypesReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesResourcePolicyResourcePolicy
         {
             /// <summary>
             /// SSESpecification
@@ -553,7 +553,7 @@ namespace Humidifier.DynamoDB
             public Humidifier.DynamoDB.GlobalTableTypes.ReadOnDemandThroughputSettings ReadOnDemandThroughputSettings { get; set; }
         }
 
-        public class ReplicaStreamSpecification : Humidifier.Base.BaseSubResource
+        public class ReplicaStreamSpecification : Humidifier.Base.BaseSubResource, IHaveDynamoDBGlobalTableTypesResourcePolicyResourcePolicy
         {
             /// <summary>
             /// ResourcePolicy
@@ -577,7 +577,7 @@ namespace Humidifier.DynamoDB
             public dynamic PolicyDocument { get; set; }
         }
 
-        public class SSESpecification : Humidifier.Base.BaseSubResource, IHaveSSEEnabled
+        public class SSESpecification : Humidifier.Base.BaseSubResource, IHaveSSEEnabled, IHaveSSEType
         {
             /// <summary>
             /// SSEEnabled
@@ -597,7 +597,7 @@ namespace Humidifier.DynamoDB
             public dynamic SSEType { get; set; }
         }
 
-        public class StreamSpecification : Humidifier.Base.BaseSubResource
+        public class StreamSpecification : Humidifier.Base.BaseSubResource, IHaveStreamViewType
         {
             /// <summary>
             /// StreamViewType
@@ -665,7 +665,7 @@ namespace Humidifier.DynamoDB
             public dynamic AttributeName { get; set; }
         }
 
-        public class WarmThroughput : Humidifier.Base.BaseSubResource
+        public class WarmThroughput : Humidifier.Base.BaseSubResource, IHaveReadUnitsPerSecond, IHaveWriteUnitsPerSecond
         {
             /// <summary>
             /// ReadUnitsPerSecond
@@ -685,7 +685,7 @@ namespace Humidifier.DynamoDB
             public dynamic WriteUnitsPerSecond { get; set; }
         }
 
-        public class WriteOnDemandThroughputSettings : Humidifier.Base.BaseSubResource
+        public class WriteOnDemandThroughputSettings : Humidifier.Base.BaseSubResource, IHaveMaxWriteRequestUnits
         {
             /// <summary>
             /// MaxWriteRequestUnits

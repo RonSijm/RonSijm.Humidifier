@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using DataProviderTypes;
 
-    public class DataProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveEngine
+    public class DataProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveEngine, IHaveDataProviderName, IHaveDataProviderIdentifier
     {
         public class Attributes
         {
@@ -192,7 +192,7 @@ namespace Humidifier.DMS
             public dynamic CertificateArn { get; set; }
         }
 
-        public class MongoDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveAuthType, IHaveSslMode
+        public class MongoDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveAuthType, IHaveServerName, IHaveSslMode, IHaveAuthSource, IHaveAuthMechanism
         {
             /// <summary>
             /// AuthSource
@@ -296,7 +296,7 @@ namespace Humidifier.DMS
             public dynamic CertificateArn { get; set; }
         }
 
-        public class OracleSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
+        public class OracleSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode, IHaveSecretsManagerOracleAsmAccessRoleArn, IHaveSecretsManagerOracleAsmSecretId, IHaveAsmServer
         {
             /// <summary>
             /// SecretsManagerOracleAsmAccessRoleArn

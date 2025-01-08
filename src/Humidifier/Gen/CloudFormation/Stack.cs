@@ -2,7 +2,7 @@ namespace Humidifier.CloudFormation
 {
     using System.Collections.Generic;
 
-    public class Stack : Humidifier.Base.BaseResource, IHaveTags, IHaveTimeoutInMinutes
+    public class Stack : Humidifier.Base.BaseResource, IHaveTags, IHaveTimeoutInMinutes, IHaveTemplateURL
     {
         public override string AWSTypeName { get => AWS.CloudFormation.Stack; }
         /// <summary>

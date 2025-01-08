@@ -2,7 +2,7 @@ namespace Humidifier.EntityResolution
 {
     using System.Collections.Generic;
 
-    public class PolicyStatement : Humidifier.Base.BaseResource, IHaveArn, IHaveAction, IHavePrincipal, IHaveCondition, IHaveStatementId
+    public class PolicyStatement : Humidifier.Base.BaseResource, IHaveArn, IHaveAction, IHavePrincipal, IHaveCondition, IHaveStatementId, IHaveEffect
     {
         public override string AWSTypeName { get => AWS.EntityResolution.PolicyStatement; }
         /// <summary>

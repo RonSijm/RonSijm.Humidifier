@@ -3,7 +3,7 @@ namespace Humidifier.Cognito
     using System.Collections.Generic;
     using UserPoolUserTypes;
 
-    public class UserPoolUser : Humidifier.Base.BaseResource, IHaveUsername, IHaveUserPoolId
+    public class UserPoolUser : Humidifier.Base.BaseResource, IHaveUsername, IHaveUserPoolId, IHaveMessageAction
     {
         public override string AWSTypeName { get => AWS.Cognito.UserPoolUser; }
         /// <summary>

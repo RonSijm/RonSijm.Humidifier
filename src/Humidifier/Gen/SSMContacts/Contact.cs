@@ -54,7 +54,7 @@ namespace Humidifier.SSMContacts
 
     namespace ContactTypes
     {
-        public class ChannelTargetInfo : Humidifier.Base.BaseSubResource, IHaveChannelId
+        public class ChannelTargetInfo : Humidifier.Base.BaseSubResource, IHaveChannelId, IHaveRetryIntervalInMinutes
         {
             /// <summary>
             /// RetryIntervalInMinutes
@@ -74,7 +74,7 @@ namespace Humidifier.SSMContacts
             public dynamic ChannelId { get; set; }
         }
 
-        public class ContactTargetInfo : Humidifier.Base.BaseSubResource, IHaveContactId
+        public class ContactTargetInfo : Humidifier.Base.BaseSubResource, IHaveContactId, IHaveIsEssential
         {
             /// <summary>
             /// ContactId
@@ -94,7 +94,7 @@ namespace Humidifier.SSMContacts
             public dynamic IsEssential { get; set; }
         }
 
-        public class Stage : Humidifier.Base.BaseSubResource, IHaveDurationInMinutes
+        public class Stage : Humidifier.Base.BaseSubResource, IHaveDurationInMinutes, IHaveRotationIds
         {
             /// <summary>
             /// DurationInMinutes

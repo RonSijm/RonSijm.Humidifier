@@ -3,7 +3,7 @@ namespace Humidifier.DAX
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSecurityGroupIds, IHaveDynamicTags, IHavePreferredMaintenanceWindow, IHaveClusterName, IHaveAvailabilityZones, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveNodeType
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSecurityGroupIds, IHaveDynamicTags, IHavePreferredMaintenanceWindow, IHaveClusterName, IHaveAvailabilityZones, IHaveNodeType, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveIAMRoleARN, IHaveReplicationFactor
     {
         public class Attributes
         {

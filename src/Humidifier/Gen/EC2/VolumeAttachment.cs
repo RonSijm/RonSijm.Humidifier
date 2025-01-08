@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class VolumeAttachment : Humidifier.Base.BaseResource, IHaveInstanceId, IHaveVolumeId
+    public class VolumeAttachment : Humidifier.Base.BaseResource, IHaveInstanceId, IHaveVolumeId, IHaveDevice
     {
         public override string AWSTypeName { get => AWS.EC2.VolumeAttachment; }
 

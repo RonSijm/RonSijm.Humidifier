@@ -3,7 +3,7 @@ namespace Humidifier.MediaLive
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterType, IHaveInstanceRoleArn
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.Pinpoint
 {
     using System.Collections.Generic;
 
-    public class EmailChannel : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveEnabled, IHaveApplicationId
+    public class EmailChannel : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveEnabled, IHaveApplicationId, IHaveConfigurationSet, IHaveFromAddress
     {
         public override string AWSTypeName { get => AWS.Pinpoint.EmailChannel; }
         /// <summary>

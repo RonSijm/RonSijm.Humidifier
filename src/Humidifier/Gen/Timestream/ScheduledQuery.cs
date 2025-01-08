@@ -107,7 +107,7 @@ namespace Humidifier.Timestream
 
     namespace ScheduledQueryTypes
     {
-        public class DimensionMapping : Humidifier.Base.BaseSubResource, IHaveName
+        public class DimensionMapping : Humidifier.Base.BaseSubResource, IHaveName, IHaveDimensionValueType
         {
             /// <summary>
             /// DimensionValueType
@@ -139,7 +139,7 @@ namespace Humidifier.Timestream
             public Humidifier.Timestream.ScheduledQueryTypes.S3Configuration S3Configuration { get; set; }
         }
 
-        public class MixedMeasureMapping : Humidifier.Base.BaseSubResource, IHaveMeasureValueType, IHaveSourceColumn
+        public class MixedMeasureMapping : Humidifier.Base.BaseSubResource, IHaveMeasureValueType, IHaveSourceColumn, IHaveMeasureName
         {
             /// <summary>
             /// MeasureName

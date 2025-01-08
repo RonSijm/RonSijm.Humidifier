@@ -2,7 +2,7 @@ namespace Humidifier.CE
 {
     using System.Collections.Generic;
 
-    public class CostCategory : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDefaultValue
+    public class CostCategory : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDefaultValue, IHaveRuleVersion, IHaveRules
     {
         public class Attributes
         {

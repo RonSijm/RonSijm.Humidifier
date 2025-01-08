@@ -121,7 +121,7 @@ namespace Humidifier.GreengrassV2
             public List<Humidifier.GreengrassV2.ComponentVersionTypes.LambdaDeviceMount> Devices { get; set; }
         }
 
-        public class LambdaDeviceMount : Humidifier.Base.BaseSubResource, IHavePath, IHavePermission
+        public class LambdaDeviceMount : Humidifier.Base.BaseSubResource, IHavePath, IHavePermission, IHaveAddGroupOwner
         {
             /// <summary>
             /// Path
@@ -264,7 +264,7 @@ namespace Humidifier.GreengrassV2
             public dynamic MaxIdleTimeInSeconds { get; set; }
         }
 
-        public class LambdaFunctionRecipeSource : Humidifier.Base.BaseSubResource, IHaveLambdaArn, IHaveComponentName
+        public class LambdaFunctionRecipeSource : Humidifier.Base.BaseSubResource, IHaveLambdaArn, IHaveComponentName, IHaveComponentVersion
         {
             /// <summary>
             /// ComponentDependencies
@@ -338,7 +338,7 @@ namespace Humidifier.GreengrassV2
             public Humidifier.GreengrassV2.ComponentVersionTypes.LambdaContainerParams ContainerParams { get; set; }
         }
 
-        public class LambdaVolumeMount : Humidifier.Base.BaseSubResource, IHaveSourcePath, IHavePermission, IHaveDestinationPath
+        public class LambdaVolumeMount : Humidifier.Base.BaseSubResource, IHaveSourcePath, IHavePermission, IHaveDestinationPath, IHaveAddGroupOwner
         {
             /// <summary>
             /// SourcePath

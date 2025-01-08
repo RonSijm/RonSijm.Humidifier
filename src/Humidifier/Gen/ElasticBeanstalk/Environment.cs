@@ -3,7 +3,7 @@ namespace Humidifier.ElasticBeanstalk
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveApplicationName, IHaveTemplateName, IHaveEnvironmentName
+    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveApplicationName, IHaveTemplateName, IHaveEnvironmentName, IHaveVersionLabel, IHavePlatformArn, IHaveSolutionStackName
     {
         public class Attributes
         {
@@ -108,7 +108,7 @@ namespace Humidifier.ElasticBeanstalk
 
     namespace EnvironmentTypes
     {
-        public class OptionSetting : Humidifier.Base.BaseSubResource, IHaveValue, IHaveResourceName, IHaveOptionName
+        public class OptionSetting : Humidifier.Base.BaseSubResource, IHaveValue, IHaveNamespace_, IHaveResourceName, IHaveOptionName
         {
             /// <summary>
             /// ResourceName

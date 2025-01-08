@@ -184,7 +184,7 @@ namespace Humidifier.Events
             public List<Humidifier.Events.ConnectionTypes.Parameter> BodyParameters { get; set; }
         }
 
-        public class ConnectivityParameters : Humidifier.Base.BaseSubResource
+        public class ConnectivityParameters : Humidifier.Base.BaseSubResource, IHaveEventsConnectionTypesResourceParametersResourceParameters
         {
             /// <summary>
             /// ResourceParameters
@@ -196,7 +196,7 @@ namespace Humidifier.Events
             public Humidifier.Events.ConnectionTypes.ResourceParameters ResourceParameters { get; set; }
         }
 
-        public class InvocationConnectivityParameters : Humidifier.Base.BaseSubResource
+        public class InvocationConnectivityParameters : Humidifier.Base.BaseSubResource, IHaveEventsConnectionTypesResourceParametersResourceParameters
         {
             /// <summary>
             /// ResourceParameters
@@ -272,7 +272,7 @@ namespace Humidifier.Events
             public dynamic Key { get; set; }
         }
 
-        public class ResourceParameters : Humidifier.Base.BaseSubResource
+        public class ResourceParameters : Humidifier.Base.BaseSubResource, IHaveResourceConfigurationArn
         {
             /// <summary>
             /// ResourceAssociationArn

@@ -52,7 +52,7 @@ namespace Humidifier.PinpointEmail
 
     namespace ConfigurationSetTypes
     {
-        public class DeliveryOptions : Humidifier.Base.BaseSubResource
+        public class DeliveryOptions : Humidifier.Base.BaseSubResource, IHaveSendingPoolName
         {
             /// <summary>
             /// SendingPoolName
@@ -64,7 +64,7 @@ namespace Humidifier.PinpointEmail
             public dynamic SendingPoolName { get; set; }
         }
 
-        public class ReputationOptions : Humidifier.Base.BaseSubResource
+        public class ReputationOptions : Humidifier.Base.BaseSubResource, IHaveReputationMetricsEnabled
         {
             /// <summary>
             /// ReputationMetricsEnabled
@@ -76,7 +76,7 @@ namespace Humidifier.PinpointEmail
             public dynamic ReputationMetricsEnabled { get; set; }
         }
 
-        public class SendingOptions : Humidifier.Base.BaseSubResource
+        public class SendingOptions : Humidifier.Base.BaseSubResource, IHaveSendingEnabled
         {
             /// <summary>
             /// SendingEnabled
@@ -108,7 +108,7 @@ namespace Humidifier.PinpointEmail
             public dynamic Key { get; set; }
         }
 
-        public class TrackingOptions : Humidifier.Base.BaseSubResource
+        public class TrackingOptions : Humidifier.Base.BaseSubResource, IHaveCustomRedirectDomain
         {
             /// <summary>
             /// CustomRedirectDomain

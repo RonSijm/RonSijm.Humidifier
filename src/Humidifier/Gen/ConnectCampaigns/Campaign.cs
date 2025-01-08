@@ -67,7 +67,7 @@ namespace Humidifier.ConnectCampaigns
             public dynamic DialingCapacity { get; set; }
         }
 
-        public class AnswerMachineDetectionConfig : Humidifier.Base.BaseSubResource
+        public class AnswerMachineDetectionConfig : Humidifier.Base.BaseSubResource, IHaveEnableAnswerMachineDetection, IHaveAwaitAnswerMachinePrompt
         {
             /// <summary>
             /// EnableAnswerMachineDetection
@@ -115,7 +115,7 @@ namespace Humidifier.ConnectCampaigns
             public Humidifier.ConnectCampaigns.CampaignTypes.ProgressiveDialerConfig ProgressiveDialerConfig { get; set; }
         }
 
-        public class OutboundCallConfig : Humidifier.Base.BaseSubResource
+        public class OutboundCallConfig : Humidifier.Base.BaseSubResource, IHaveConnectSourcePhoneNumber
         {
             /// <summary>
             /// ConnectContactFlowArn
@@ -151,7 +151,7 @@ namespace Humidifier.ConnectCampaigns
             public dynamic ConnectSourcePhoneNumber { get; set; }
         }
 
-        public class PredictiveDialerConfig : Humidifier.Base.BaseSubResource, IHaveDialingCapacity
+        public class PredictiveDialerConfig : Humidifier.Base.BaseSubResource, IHaveBandwidthAllocation, IHaveDialingCapacity
         {
             /// <summary>
             /// DialingCapacity
@@ -171,7 +171,7 @@ namespace Humidifier.ConnectCampaigns
             public dynamic BandwidthAllocation { get; set; }
         }
 
-        public class ProgressiveDialerConfig : Humidifier.Base.BaseSubResource, IHaveDialingCapacity
+        public class ProgressiveDialerConfig : Humidifier.Base.BaseSubResource, IHaveBandwidthAllocation, IHaveDialingCapacity
         {
             /// <summary>
             /// DialingCapacity

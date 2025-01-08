@@ -87,7 +87,7 @@ namespace Humidifier.KafkaConnect
             public Humidifier.KafkaConnect.CustomPluginTypes.S3Location S3Location { get; set; }
         }
 
-        public class S3Location : Humidifier.Base.BaseSubResource, IHaveObjectVersion, IHaveBucketArn, IHaveFileKey
+        public class S3Location : Humidifier.Base.BaseSubResource, IHaveBucketArn, IHaveObjectVersion, IHaveFileKey
         {
             /// <summary>
             /// BucketArn

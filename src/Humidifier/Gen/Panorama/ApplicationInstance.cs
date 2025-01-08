@@ -84,7 +84,7 @@ namespace Humidifier.Panorama
 
     namespace ApplicationInstanceTypes
     {
-        public class ManifestOverridesPayload : Humidifier.Base.BaseSubResource
+        public class ManifestOverridesPayload : Humidifier.Base.BaseSubResource, IHavePayloadData
         {
             /// <summary>
             /// PayloadData
@@ -96,7 +96,7 @@ namespace Humidifier.Panorama
             public dynamic PayloadData { get; set; }
         }
 
-        public class ManifestPayload : Humidifier.Base.BaseSubResource
+        public class ManifestPayload : Humidifier.Base.BaseSubResource, IHavePayloadData
         {
             /// <summary>
             /// PayloadData

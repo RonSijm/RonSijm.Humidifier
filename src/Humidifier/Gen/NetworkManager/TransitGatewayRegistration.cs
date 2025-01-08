@@ -2,7 +2,7 @@ namespace Humidifier.NetworkManager
 {
     using System.Collections.Generic;
 
-    public class TransitGatewayRegistration : Humidifier.Base.BaseResource, IHaveGlobalNetworkId
+    public class TransitGatewayRegistration : Humidifier.Base.BaseResource, IHaveGlobalNetworkId, IHaveTransitGatewayArn
     {
         public override string AWSTypeName { get => AWS.NetworkManager.TransitGatewayRegistration; }
 

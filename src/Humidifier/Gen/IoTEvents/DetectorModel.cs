@@ -605,7 +605,7 @@ namespace Humidifier.IoTEvents
             public List<Humidifier.IoTEvents.DetectorModelTypes.TransitionEvent> TransitionEvents { get; set; }
         }
 
-        public class Payload : Humidifier.Base.BaseSubResource, IHaveType
+        public class Payload : Humidifier.Base.BaseSubResource, IHaveType, IHaveContentExpression
         {
             /// <summary>
             /// ContentExpression
@@ -637,7 +637,7 @@ namespace Humidifier.IoTEvents
             public dynamic TimerName { get; set; }
         }
 
-        public class SetTimer : Humidifier.Base.BaseSubResource, IHaveTimerName
+        public class SetTimer : Humidifier.Base.BaseSubResource, IHaveTimerName, IHaveSeconds
         {
             /// <summary>
             /// Seconds
@@ -665,7 +665,7 @@ namespace Humidifier.IoTEvents
             public dynamic DurationExpression { get; set; }
         }
 
-        public class SetVariable : Humidifier.Base.BaseSubResource, IHaveValue
+        public class SetVariable : Humidifier.Base.BaseSubResource, IHaveValue, IHaveVariableName
         {
             /// <summary>
             /// Value

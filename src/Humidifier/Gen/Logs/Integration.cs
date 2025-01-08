@@ -3,7 +3,7 @@ namespace Humidifier.Logs
     using System.Collections.Generic;
     using IntegrationTypes;
 
-    public class Integration : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Integration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveIntegrationType, IHaveIntegrationName
     {
         public class Attributes
         {
@@ -36,7 +36,7 @@ namespace Humidifier.Logs
 
     namespace IntegrationTypes
     {
-        public class OpenSearchResourceConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn
+        public class OpenSearchResourceConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveRetentionDays
         {
             /// <summary>
             /// DashboardViewerPrincipals

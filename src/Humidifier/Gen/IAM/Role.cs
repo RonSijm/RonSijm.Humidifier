@@ -3,7 +3,7 @@ namespace Humidifier.IAM
     using System.Collections.Generic;
     using RoleTypes;
 
-    public class Role : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePath, IHaveManagedPolicyArns, IHaveRoleName
+    public class Role : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePath, IHaveManagedPolicyArns, IHaveRoleName, IHavePermissionsBoundary
     {
         public class Attributes
         {

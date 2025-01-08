@@ -3,7 +3,7 @@ namespace Humidifier.CloudFormation
     using System.Collections.Generic;
     using HookVersionTypes;
 
-    public class HookVersion : Humidifier.Base.BaseResource, IHaveExecutionRoleArn, IHaveTypeName
+    public class HookVersion : Humidifier.Base.BaseResource, IHaveExecutionRoleArn, IHaveTypeName, IHaveSchemaHandlerPackage
     {
         public class Attributes
         {

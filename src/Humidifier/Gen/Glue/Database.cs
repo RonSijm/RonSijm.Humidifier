@@ -71,7 +71,7 @@ namespace Humidifier.Glue
             public dynamic CatalogId { get; set; }
         }
 
-        public class DatabaseInput : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveParameters
+        public class DatabaseInput : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveParameters, IHaveLocationUri
         {
             /// <summary>
             /// LocationUri

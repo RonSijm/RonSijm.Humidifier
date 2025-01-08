@@ -94,7 +94,7 @@ namespace Humidifier.IoTSiteWise
             public Humidifier.IoTSiteWise.AccessPolicyTypes.Portal Portal { get; set; }
         }
 
-        public class IamRole : Humidifier.Base.BaseSubResource
+        public class IamRole : Humidifier.Base.BaseSubResource, IHavearn
         {
             /// <summary>
             /// arn
@@ -106,7 +106,7 @@ namespace Humidifier.IoTSiteWise
             public dynamic arn { get; set; }
         }
 
-        public class IamUser : Humidifier.Base.BaseSubResource
+        public class IamUser : Humidifier.Base.BaseSubResource, IHavearn
         {
             /// <summary>
             /// arn

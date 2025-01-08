@@ -2,7 +2,7 @@ namespace Humidifier.SSO
 {
     using System.Collections.Generic;
 
-    public class ApplicationAssignment : Humidifier.Base.BaseResource, IHaveApplicationArn, IHavePrincipalType
+    public class ApplicationAssignment : Humidifier.Base.BaseResource, IHaveApplicationArn, IHavePrincipalType, IHavePrincipalId
     {
         public override string AWSTypeName { get => AWS.SSO.ApplicationAssignment; }
 

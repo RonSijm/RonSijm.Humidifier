@@ -49,7 +49,7 @@ namespace Humidifier.SageMaker
 
     namespace AppImageConfigTypes
     {
-        public class CodeEditorAppImageConfig : Humidifier.Base.BaseSubResource
+        public class CodeEditorAppImageConfig : Humidifier.Base.BaseSubResource, IHaveSageMakerAppImageConfigTypesContainerConfigContainerConfig
         {
             /// <summary>
             /// ContainerConfig
@@ -112,7 +112,7 @@ namespace Humidifier.SageMaker
             public dynamic Key { get; set; }
         }
 
-        public class FileSystemConfig : Humidifier.Base.BaseSubResource
+        public class FileSystemConfig : Humidifier.Base.BaseSubResource, IHaveMountPath
         {
             /// <summary>
             /// MountPath
@@ -140,7 +140,7 @@ namespace Humidifier.SageMaker
             public dynamic DefaultUid { get; set; }
         }
 
-        public class JupyterLabAppImageConfig : Humidifier.Base.BaseSubResource
+        public class JupyterLabAppImageConfig : Humidifier.Base.BaseSubResource, IHaveSageMakerAppImageConfigTypesContainerConfigContainerConfig
         {
             /// <summary>
             /// ContainerConfig

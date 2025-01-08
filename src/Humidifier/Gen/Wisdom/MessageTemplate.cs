@@ -129,7 +129,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.MessageTemplateTypes.SmsMessageTemplateContent SmsMessageTemplateContent { get; set; }
         }
 
-        public class CustomerProfileAttributes : Humidifier.Base.BaseSubResource, IHaveState, IHaveFirstName, IHaveLastName, IHaveEmailAddress, IHaveProfileId, IHavePhoneNumber
+        public class CustomerProfileAttributes : Humidifier.Base.BaseSubResource, IHaveState, IHaveFirstName, IHaveLastName, IHaveEmailAddress, IHaveProfileId, IHavePhoneNumber, IHaveCountry, IHaveBusinessName
         {
             /// <summary>
             /// ProfileId
@@ -627,7 +627,7 @@ namespace Humidifier.Wisdom
             public dynamic Subject { get; set; }
         }
 
-        public class EmailMessageTemplateContentBody : Humidifier.Base.BaseSubResource
+        public class EmailMessageTemplateContentBody : Humidifier.Base.BaseSubResource, IHaveWisdomMessageTemplateTypesMessageTemplateBodyContentProviderPlainText
         {
             /// <summary>
             /// PlainText
@@ -749,7 +749,7 @@ namespace Humidifier.Wisdom
             public Humidifier.Wisdom.MessageTemplateTypes.SmsMessageTemplateContentBody Body { get; set; }
         }
 
-        public class SmsMessageTemplateContentBody : Humidifier.Base.BaseSubResource
+        public class SmsMessageTemplateContentBody : Humidifier.Base.BaseSubResource, IHaveWisdomMessageTemplateTypesMessageTemplateBodyContentProviderPlainText
         {
             /// <summary>
             /// PlainText

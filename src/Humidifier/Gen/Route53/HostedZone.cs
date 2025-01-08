@@ -95,7 +95,7 @@ namespace Humidifier.Route53
             public dynamic CloudWatchLogsLogGroupArn { get; set; }
         }
 
-        public class VPC : Humidifier.Base.BaseSubResource
+        public class VPC : Humidifier.Base.BaseSubResource, IHaveVPCId
         {
             /// <summary>
             /// VPCRegion

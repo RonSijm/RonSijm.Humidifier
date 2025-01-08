@@ -58,7 +58,7 @@ namespace Humidifier.AutoScalingPlans
             public List<Humidifier.AutoScalingPlans.ScalingPlanTypes.TagFilter> TagFilters { get; set; }
         }
 
-        public class CustomizedLoadMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveStatistic
+        public class CustomizedLoadMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHaveStatistic
         {
             /// <summary>
             /// MetricName
@@ -103,7 +103,7 @@ namespace Humidifier.AutoScalingPlans
             public dynamic Namespace_ { get; set; }
         }
 
-        public class CustomizedScalingMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveStatistic
+        public class CustomizedScalingMetricSpecification : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHaveStatistic
         {
             /// <summary>
             /// MetricName

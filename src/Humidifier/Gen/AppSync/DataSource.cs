@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using System.Collections.Generic;
     using DataSourceTypes;
 
-    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveApiId, IHaveServiceRoleArn
+    public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveApiId, IHaveServiceRoleArn, IHaveMetricsConfig
     {
         public class Attributes
         {
@@ -137,7 +137,7 @@ namespace Humidifier.AppSync
             public dynamic AuthorizationType { get; set; }
         }
 
-        public class AwsIamConfig : Humidifier.Base.BaseSubResource
+        public class AwsIamConfig : Humidifier.Base.BaseSubResource, IHaveSigningRegion
         {
             /// <summary>
             /// SigningRegion

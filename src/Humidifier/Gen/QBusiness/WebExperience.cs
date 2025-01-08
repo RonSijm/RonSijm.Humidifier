@@ -3,7 +3,7 @@ namespace Humidifier.QBusiness
     using System.Collections.Generic;
     using WebExperienceTypes;
 
-    public class WebExperience : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveTitle, IHaveApplicationId
+    public class WebExperience : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveTitle, IHaveApplicationId, IHaveSubtitle
     {
         public class Attributes
         {

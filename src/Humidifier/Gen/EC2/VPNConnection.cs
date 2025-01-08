@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using VPNConnectionTypes;
 
-    public class VPNConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveTransitGatewayId, IHaveVpnGatewayId
+    public class VPNConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveTransitGatewayId, IHaveVpnGatewayId, IHaveTransportTransitGatewayAttachmentId
     {
         public class Attributes
         {

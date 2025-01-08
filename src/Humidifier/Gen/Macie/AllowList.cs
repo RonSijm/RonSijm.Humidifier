@@ -65,7 +65,7 @@ namespace Humidifier.Macie
             public Humidifier.Macie.AllowListTypes.S3WordsList S3WordsList { get; set; }
         }
 
-        public class S3WordsList : Humidifier.Base.BaseSubResource, IHaveBucketName
+        public class S3WordsList : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveObjectKey
         {
             /// <summary>
             /// BucketName

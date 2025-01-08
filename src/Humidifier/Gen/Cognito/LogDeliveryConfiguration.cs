@@ -58,7 +58,7 @@ namespace Humidifier.Cognito
             public dynamic StreamArn { get; set; }
         }
 
-        public class LogConfiguration : Humidifier.Base.BaseSubResource, IHaveLogLevel
+        public class LogConfiguration : Humidifier.Base.BaseSubResource, IHaveLogLevel, IHaveEventSource
         {
             /// <summary>
             /// FirehoseConfiguration

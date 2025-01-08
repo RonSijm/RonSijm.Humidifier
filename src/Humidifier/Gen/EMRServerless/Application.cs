@@ -3,7 +3,7 @@ namespace Humidifier.EMRServerless
     using System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveArchitecture
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveArchitecture, IHaveReleaseLabel, IHaveEMRServerlessApplicationTypesImageConfigurationInputImageConfiguration
     {
         public class Attributes
         {
@@ -264,7 +264,7 @@ namespace Humidifier.EMRServerless
             public dynamic ImageUri { get; set; }
         }
 
-        public class InitialCapacityConfig : Humidifier.Base.BaseSubResource
+        public class InitialCapacityConfig : Humidifier.Base.BaseSubResource, IHaveWorkerCount
         {
             /// <summary>
             /// WorkerConfiguration
@@ -365,7 +365,7 @@ namespace Humidifier.EMRServerless
             public dynamic Enabled { get; set; }
         }
 
-        public class MaximumAllowedResources : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu
+        public class MaximumAllowedResources : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu, IHaveDisk
         {
             /// <summary>
             /// Memory
@@ -463,7 +463,7 @@ namespace Humidifier.EMRServerless
             public dynamic EncryptionKeyArn { get; set; }
         }
 
-        public class SchedulerConfiguration : Humidifier.Base.BaseSubResource
+        public class SchedulerConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxConcurrentRuns
         {
             /// <summary>
             /// QueueTimeoutMinutes
@@ -483,7 +483,7 @@ namespace Humidifier.EMRServerless
             public dynamic MaxConcurrentRuns { get; set; }
         }
 
-        public class WorkerConfiguration : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu
+        public class WorkerConfiguration : Humidifier.Base.BaseSubResource, IHaveMemory, IHaveCpu, IHaveDisk
         {
             /// <summary>
             /// DiskType
@@ -519,7 +519,7 @@ namespace Humidifier.EMRServerless
             public dynamic Disk { get; set; }
         }
 
-        public class WorkerTypeSpecificationInput : Humidifier.Base.BaseSubResource
+        public class WorkerTypeSpecificationInput : Humidifier.Base.BaseSubResource, IHaveEMRServerlessApplicationTypesImageConfigurationInputImageConfiguration
         {
             /// <summary>
             /// ImageConfiguration

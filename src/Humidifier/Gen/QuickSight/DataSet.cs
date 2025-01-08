@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using DataSetTypes;
 
-    public class DataSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId
+    public class DataSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId, IHaveFolderArns, IHaveDataSetId
     {
         public class Attributes
         {
@@ -316,7 +316,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.DataSetTypes.CalculatedColumn> Columns { get; set; }
         }
 
-        public class CustomSql : Humidifier.Base.BaseSubResource, IHaveName, IHaveDataSourceArn
+        public class CustomSql : Humidifier.Base.BaseSubResource, IHaveName, IHaveDataSourceArn, IHaveSqlQuery
         {
             /// <summary>
             /// DataSourceArn
@@ -527,7 +527,7 @@ namespace Humidifier.QuickSight
             public List<double> StaticValues { get; set; }
         }
 
-        public class FieldFolder : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class FieldFolder : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveColumns
         {
             /// <summary>
             /// Description
@@ -548,7 +548,7 @@ namespace Humidifier.QuickSight
             public dynamic Columns { get; set; }
         }
 
-        public class FilterOperation : Humidifier.Base.BaseSubResource
+        public class FilterOperation : Humidifier.Base.BaseSubResource, IHaveConditionExpression
         {
             /// <summary>
             /// ConditionExpression
@@ -560,7 +560,7 @@ namespace Humidifier.QuickSight
             public dynamic ConditionExpression { get; set; }
         }
 
-        public class GeoSpatialColumnGroup : Humidifier.Base.BaseSubResource, IHaveName, IHaveCountryCode
+        public class GeoSpatialColumnGroup : Humidifier.Base.BaseSubResource, IHaveName, IHaveCountryCode, IHaveColumns
         {
             /// <summary>
             /// Columns
@@ -1103,7 +1103,7 @@ namespace Humidifier.QuickSight
             public dynamic Principal { get; set; }
         }
 
-        public class RowLevelPermissionDataSet : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveArn
+        public class RowLevelPermissionDataSet : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveArn, IHaveNamespace_, IHaveFormatVersion
         {
             /// <summary>
             /// Status

@@ -64,7 +64,7 @@ namespace Humidifier.SES
             public dynamic HeaderName { get; set; }
         }
 
-        public class Analysis : Humidifier.Base.BaseSubResource
+        public class Analysis : Humidifier.Base.BaseSubResource, IHaveAnalyzer, IHaveResultField
         {
             /// <summary>
             /// Analyzer
@@ -248,7 +248,7 @@ namespace Humidifier.SES
             public dynamic Name { get; set; }
         }
 
-        public class RuleAction : Humidifier.Base.BaseSubResource
+        public class RuleAction : Humidifier.Base.BaseSubResource, IHaveDrop
         {
             /// <summary>
             /// AddHeader
@@ -608,7 +608,7 @@ namespace Humidifier.SES
             public Humidifier.SES.MailManagerRuleSetTypes.Analysis Analysis { get; set; }
         }
 
-        public class S3Action : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveS3Bucket, IHaveS3Prefix, IHaveActionFailurePolicy
+        public class S3Action : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveS3Bucket, IHaveActionFailurePolicy, IHaveS3Prefix
         {
             /// <summary>
             /// S3SseKmsKeyId

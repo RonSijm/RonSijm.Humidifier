@@ -3,7 +3,7 @@ namespace Humidifier.Lex
     using System.Collections.Generic;
     using BotAliasTypes;
 
-    public class BotAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
+    public class BotAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveBotId
     {
         public class Attributes
         {
@@ -204,7 +204,7 @@ namespace Humidifier.Lex
             public List<Humidifier.Lex.BotAliasTypes.AudioLogSetting> AudioLogSettings { get; set; }
         }
 
-        public class LambdaCodeHook : Humidifier.Base.BaseSubResource, IHaveLambdaArn
+        public class LambdaCodeHook : Humidifier.Base.BaseSubResource, IHaveLambdaArn, IHaveCodeHookInterfaceVersion
         {
             /// <summary>
             /// LambdaArn
@@ -252,7 +252,7 @@ namespace Humidifier.Lex
             public dynamic S3BucketArn { get; set; }
         }
 
-        public class SentimentAnalysisSettings : Humidifier.Base.BaseSubResource
+        public class SentimentAnalysisSettings : Humidifier.Base.BaseSubResource, IHaveDetectSentiment
         {
             /// <summary>
             /// DetectSentiment

@@ -32,7 +32,7 @@ namespace Humidifier.XRay
 
     namespace SamplingRuleTypes
     {
-        public class SamplingRule : Humidifier.Base.BaseSubResource, IHaveVersion, IHavePriority, IHaveHost, IHaveServiceName, IHaveResourceARN, IHaveRuleName, IHaveHTTPMethod
+        public class SamplingRule : Humidifier.Base.BaseSubResource, IHaveVersion, IHavePriority, IHaveHost, IHaveServiceName, IHaveResourceARN, IHaveRuleName, IHaveHTTPMethod, IHaveServiceType
         {
             /// <summary>
             /// Priority

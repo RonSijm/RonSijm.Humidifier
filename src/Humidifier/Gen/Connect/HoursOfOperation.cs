@@ -73,7 +73,7 @@ namespace Humidifier.Connect
 
     namespace HoursOfOperationTypes
     {
-        public class HoursOfOperationConfig : Humidifier.Base.BaseSubResource
+        public class HoursOfOperationConfig : Humidifier.Base.BaseSubResource, IHaveDay
         {
             /// <summary>
             /// EndTime
@@ -154,7 +154,7 @@ namespace Humidifier.Connect
             public dynamic EffectiveTill { get; set; }
         }
 
-        public class HoursOfOperationOverrideConfig : Humidifier.Base.BaseSubResource
+        public class HoursOfOperationOverrideConfig : Humidifier.Base.BaseSubResource, IHaveDay
         {
             /// <summary>
             /// EndTime
@@ -182,7 +182,7 @@ namespace Humidifier.Connect
             public dynamic Day { get; set; }
         }
 
-        public class HoursOfOperationTimeSlice : Humidifier.Base.BaseSubResource, IHaveMinutes
+        public class HoursOfOperationTimeSlice : Humidifier.Base.BaseSubResource, IHaveMinutes, IHaveHours
         {
             /// <summary>
             /// Hours
@@ -202,7 +202,7 @@ namespace Humidifier.Connect
             public dynamic Minutes { get; set; }
         }
 
-        public class OverrideTimeSlice : Humidifier.Base.BaseSubResource, IHaveMinutes
+        public class OverrideTimeSlice : Humidifier.Base.BaseSubResource, IHaveMinutes, IHaveHours
         {
             /// <summary>
             /// Hours

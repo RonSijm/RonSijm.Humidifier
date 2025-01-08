@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using RestoreTestingSelectionTypes;
 
-    public class RestoreTestingSelection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveIamRoleArn
+    public class RestoreTestingSelection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveIamRoleArn, IHaveRestoreTestingPlanName
     {
         public override string AWSTypeName { get => AWS.Backup.RestoreTestingSelection; }
         /// <summary>

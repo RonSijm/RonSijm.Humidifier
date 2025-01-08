@@ -3,7 +3,7 @@ namespace Humidifier.ElasticLoadBalancingV2
     using System.Collections.Generic;
     using TargetGroupTypes;
 
-    public class TargetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePort, IHaveProtocol, IHaveVpcId, IHaveTargetType, IHaveIpAddressType, IHaveProtocolVersion, IHaveHealthCheckIntervalSeconds, IHaveHealthCheckPath
+    public class TargetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePort, IHaveProtocol, IHaveVpcId, IHaveIpAddressType, IHaveTargetType, IHaveProtocolVersion, IHaveHealthCheckIntervalSeconds, IHaveHealthCheckPath, IHaveUnhealthyThresholdCount, IHaveHealthCheckTimeoutSeconds, IHaveHealthyThresholdCount, IHaveHealthCheckProtocol, IHaveHealthCheckPort
     {
         public class Attributes
         {
@@ -166,7 +166,7 @@ namespace Humidifier.ElasticLoadBalancingV2
 
     namespace TargetGroupTypes
     {
-        public class Matcher : Humidifier.Base.BaseSubResource
+        public class Matcher : Humidifier.Base.BaseSubResource, IHaveHttpCode
         {
             /// <summary>
             /// GrpcCode

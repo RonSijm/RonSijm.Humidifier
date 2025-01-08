@@ -3,7 +3,7 @@ namespace Humidifier.Route53RecoveryControl
     using System.Collections.Generic;
     using SafetyRuleTypes;
 
-    public class SafetyRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class SafetyRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveControlPanelArn
     {
         public class Attributes
         {
@@ -62,7 +62,7 @@ namespace Humidifier.Route53RecoveryControl
 
     namespace SafetyRuleTypes
     {
-        public class AssertionRule : Humidifier.Base.BaseSubResource
+        public class AssertionRule : Humidifier.Base.BaseSubResource, IHaveWaitPeriodMs
         {
             /// <summary>
             /// AssertedControls
@@ -83,7 +83,7 @@ namespace Humidifier.Route53RecoveryControl
             public dynamic WaitPeriodMs { get; set; }
         }
 
-        public class GatingRule : Humidifier.Base.BaseSubResource
+        public class GatingRule : Humidifier.Base.BaseSubResource, IHaveWaitPeriodMs
         {
             /// <summary>
             /// TargetControls
@@ -113,7 +113,7 @@ namespace Humidifier.Route53RecoveryControl
             public dynamic WaitPeriodMs { get; set; }
         }
 
-        public class RuleConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveThreshold
+        public class RuleConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveThreshold, IHaveInverted
         {
             /// <summary>
             /// Type

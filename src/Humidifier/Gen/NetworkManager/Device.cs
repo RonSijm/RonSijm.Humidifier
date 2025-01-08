@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using System.Collections.Generic;
     using DeviceTypes;
 
-    public class Device : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveType, IHaveGlobalNetworkId, IHaveModel, IHaveSerialNumber
+    public class Device : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveType, IHaveGlobalNetworkId, IHaveModel, IHaveSerialNumber, IHaveSiteId, IHaveVendor
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using MatchmakingConfigurationTypes;
 
-    public class MatchmakingConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveCreationTime, IHaveRuleSetName
+    public class MatchmakingConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveCreationTime, IHaveRuleSetName, IHaveAcceptanceRequired, IHaveNotificationTarget, IHaveCustomEventData
     {
         public class Attributes
         {

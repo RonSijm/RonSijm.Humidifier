@@ -282,7 +282,7 @@ namespace Humidifier.Connect
             public dynamic Value { get; set; }
         }
 
-        public class RuleTriggerEventSource : Humidifier.Base.BaseSubResource
+        public class RuleTriggerEventSource : Humidifier.Base.BaseSubResource, IHaveEventSourceName
         {
             /// <summary>
             /// IntegrationAssociationArn

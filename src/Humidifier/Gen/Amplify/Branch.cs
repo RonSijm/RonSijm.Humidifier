@@ -3,7 +3,7 @@ namespace Humidifier.Amplify
     using System.Collections.Generic;
     using BranchTypes;
 
-    public class Branch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveStage, IHaveAppId, IHaveBuildSpec, IHaveFramework, IHaveBranchName
+    public class Branch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveStage, IHaveAppId, IHaveBuildSpec, IHaveFramework, IHaveBranchName, IHaveEnablePerformanceMode, IHavePullRequestEnvironmentName, IHaveEnablePullRequestPreview, IHaveEnableAutoBuild
     {
         public class Attributes
         {
@@ -137,7 +137,7 @@ namespace Humidifier.Amplify
             public dynamic StackArn { get; set; }
         }
 
-        public class BasicAuthConfig : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePassword
+        public class BasicAuthConfig : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePassword, IHaveEnableBasicAuth
         {
             /// <summary>
             /// Username

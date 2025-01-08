@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRole, IHaveServiceName, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveCluster, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRole, IHaveServiceName, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveCluster, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveTaskDefinition
     {
         public class Attributes
         {
@@ -275,7 +275,7 @@ namespace Humidifier.ECS
             public dynamic Weight { get; set; }
         }
 
-        public class DeploymentAlarms : Humidifier.Base.BaseSubResource, IHaveEnable
+        public class DeploymentAlarms : Humidifier.Base.BaseSubResource, IHaveEnable, IHaveRollback
         {
             /// <summary>
             /// AlarmNames
@@ -304,7 +304,7 @@ namespace Humidifier.ECS
             public dynamic Rollback { get; set; }
         }
 
-        public class DeploymentCircuitBreaker : Humidifier.Base.BaseSubResource, IHaveEnable
+        public class DeploymentCircuitBreaker : Humidifier.Base.BaseSubResource, IHaveEnable, IHaveRollback
         {
             /// <summary>
             /// Enable
@@ -559,7 +559,7 @@ namespace Humidifier.ECS
             public dynamic Port { get; set; }
         }
 
-        public class ServiceConnectConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class ServiceConnectConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveNamespace_
         {
             /// <summary>
             /// Services
@@ -596,7 +596,7 @@ namespace Humidifier.ECS
             public dynamic Namespace_ { get; set; }
         }
 
-        public class ServiceConnectService : Humidifier.Base.BaseSubResource
+        public class ServiceConnectService : Humidifier.Base.BaseSubResource, IHavePortName
         {
             /// <summary>
             /// Timeout
@@ -774,7 +774,7 @@ namespace Humidifier.ECS
             public dynamic RoleArn { get; set; }
         }
 
-        public class ServiceRegistry : Humidifier.Base.BaseSubResource, IHavePort, IHaveContainerName, IHaveContainerPort
+        public class ServiceRegistry : Humidifier.Base.BaseSubResource, IHavePort, IHaveContainerName, IHaveContainerPort, IHaveRegistryArn
         {
             /// <summary>
             /// ContainerName
@@ -850,7 +850,7 @@ namespace Humidifier.ECS
             public dynamic IdleTimeoutSeconds { get; set; }
         }
 
-        public class VpcLatticeConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveTargetGroupArn
+        public class VpcLatticeConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveTargetGroupArn, IHavePortName
         {
             /// <summary>
             /// TargetGroupArn

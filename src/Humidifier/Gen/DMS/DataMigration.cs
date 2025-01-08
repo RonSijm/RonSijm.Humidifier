@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using DataMigrationTypes;
 
-    public class DataMigration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveServiceAccessRoleArn
+    public class DataMigration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveServiceAccessRoleArn, IHaveMigrationProjectIdentifier
     {
         public class Attributes
         {

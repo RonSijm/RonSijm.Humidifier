@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class Certificate : Humidifier.Base.BaseResource, IHaveStatus, IHaveCertificateMode
+    public class Certificate : Humidifier.Base.BaseResource, IHaveStatus, IHaveCertificateMode, IHaveCertificateSigningRequest, IHaveCertificatePem, IHaveCACertificatePem
     {
         public class Attributes
         {

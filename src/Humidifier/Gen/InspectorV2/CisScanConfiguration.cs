@@ -64,7 +64,7 @@ namespace Humidifier.InspectorV2
 
     namespace CisScanConfigurationTypes
     {
-        public class CisTargets : Humidifier.Base.BaseSubResource
+        public class CisTargets : Humidifier.Base.BaseSubResource, IHaveAccountIds
         {
             /// <summary>
             /// TargetResourceTags
@@ -97,7 +97,7 @@ namespace Humidifier.InspectorV2
             public Humidifier.InspectorV2.CisScanConfigurationTypes.Time StartTime { get; set; }
         }
 
-        public class MonthlySchedule : Humidifier.Base.BaseSubResource, IHaveInspectorV2CisScanConfigurationTypesTimeStartTime
+        public class MonthlySchedule : Humidifier.Base.BaseSubResource, IHaveDay, IHaveInspectorV2CisScanConfigurationTypesTimeStartTime
         {
             /// <summary>
             /// StartTime
@@ -153,7 +153,7 @@ namespace Humidifier.InspectorV2
             public dynamic OneTime { get; set; }
         }
 
-        public class Time : Humidifier.Base.BaseSubResource, IHaveTimeZone
+        public class Time : Humidifier.Base.BaseSubResource, IHaveTimeZone, IHaveTimeOfDay
         {
             /// <summary>
             /// TimeOfDay

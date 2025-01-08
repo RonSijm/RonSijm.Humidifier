@@ -61,7 +61,7 @@ namespace Humidifier.EC2
 
     namespace NetworkInterfaceAttachmentTypes
     {
-        public class EnaSrdSpecification : Humidifier.Base.BaseSubResource
+        public class EnaSrdSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdEnabled
         {
             /// <summary>
             /// EnaSrdEnabled
@@ -81,7 +81,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.NetworkInterfaceAttachmentTypes.EnaSrdUdpSpecification EnaSrdUdpSpecification { get; set; }
         }
 
-        public class EnaSrdUdpSpecification : Humidifier.Base.BaseSubResource
+        public class EnaSrdUdpSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdUdpEnabled
         {
             /// <summary>
             /// EnaSrdUdpEnabled

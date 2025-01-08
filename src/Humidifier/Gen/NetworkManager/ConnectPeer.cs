@@ -82,7 +82,7 @@ namespace Humidifier.NetworkManager
 
     namespace ConnectPeerTypes
     {
-        public class BgpOptions : Humidifier.Base.BaseSubResource
+        public class BgpOptions : Humidifier.Base.BaseSubResource, IHavePeerAsn
         {
             /// <summary>
             /// PeerAsn
@@ -94,7 +94,7 @@ namespace Humidifier.NetworkManager
             public dynamic PeerAsn { get; set; }
         }
 
-        public class ConnectPeerBgpConfiguration : Humidifier.Base.BaseSubResource, IHavePeerAddress, IHaveCoreNetworkAddress
+        public class ConnectPeerBgpConfiguration : Humidifier.Base.BaseSubResource, IHavePeerAddress, IHaveCoreNetworkAddress, IHavePeerAsn
         {
             /// <summary>
             /// PeerAddress

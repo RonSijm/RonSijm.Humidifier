@@ -130,7 +130,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.KnowledgeBaseTypes.VectorKnowledgeBaseConfiguration VectorKnowledgeBaseConfiguration { get; set; }
         }
 
-        public class MongoDbAtlasConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveEndpoint, IHaveCollectionName, IHaveCredentialsSecretArn
+        public class MongoDbAtlasConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveEndpoint, IHaveCredentialsSecretArn, IHaveCollectionName, IHaveVectorIndexName
         {
             /// <summary>
             /// Endpoint
@@ -218,7 +218,7 @@ namespace Humidifier.Bedrock
             public dynamic MetadataField { get; set; }
         }
 
-        public class OpenSearchServerlessConfiguration : Humidifier.Base.BaseSubResource
+        public class OpenSearchServerlessConfiguration : Humidifier.Base.BaseSubResource, IHaveVectorIndexName
         {
             /// <summary>
             /// CollectionArn
@@ -274,7 +274,7 @@ namespace Humidifier.Bedrock
             public dynamic MetadataField { get; set; }
         }
 
-        public class PineconeConfiguration : Humidifier.Base.BaseSubResource, IHaveCredentialsSecretArn
+        public class PineconeConfiguration : Humidifier.Base.BaseSubResource, IHaveNamespace_, IHaveCredentialsSecretArn, IHaveConnectionString
         {
             /// <summary>
             /// FieldMapping
@@ -410,7 +410,7 @@ namespace Humidifier.Bedrock
             public dynamic MetadataField { get; set; }
         }
 
-        public class S3Location : Humidifier.Base.BaseSubResource
+        public class S3Location : Humidifier.Base.BaseSubResource, IHaveURI
         {
             /// <summary>
             /// URI

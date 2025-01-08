@@ -3,7 +3,7 @@ namespace Humidifier.IoT
     using System.Collections.Generic;
     using CACertificateTypes;
 
-    public class CACertificate : Humidifier.Base.BaseResource, IHaveTags, IHaveStatus, IHaveCertificateMode
+    public class CACertificate : Humidifier.Base.BaseResource, IHaveTags, IHaveStatus, IHaveCertificateMode, IHaveCACertificatePem
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.SecurityLake
 {
     using System.Collections.Generic;
 
-    public class AwsLogSource : Humidifier.Base.BaseResource, IHaveSourceVersion, IHaveSourceName, IHaveAccounts
+    public class AwsLogSource : Humidifier.Base.BaseResource, IHaveSourceVersion, IHaveSourceName, IHaveAccounts, IHaveDataLakeArn
     {
         public override string AWSTypeName { get => AWS.SecurityLake.AwsLogSource; }
 

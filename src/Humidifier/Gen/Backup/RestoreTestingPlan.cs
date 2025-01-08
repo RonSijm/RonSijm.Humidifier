@@ -3,7 +3,7 @@ namespace Humidifier.Backup
     using System.Collections.Generic;
     using RestoreTestingPlanTypes;
 
-    public class RestoreTestingPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveScheduleExpression, IHaveScheduleExpressionTimezone
+    public class RestoreTestingPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveScheduleExpression, IHaveScheduleExpressionTimezone, IHaveRestoreTestingPlanName
     {
         public class Attributes
         {

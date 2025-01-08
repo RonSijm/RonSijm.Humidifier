@@ -157,7 +157,7 @@ namespace Humidifier.Lightsail
             public Humidifier.Lightsail.ContainerTypes.PublicEndpoint PublicEndpoint { get; set; }
         }
 
-        public class EcrImagePullerRole : Humidifier.Base.BaseSubResource, IHaveIsActive
+        public class EcrImagePullerRole : Humidifier.Base.BaseSubResource, IHaveIsActive, IHavePrincipalArn
         {
             /// <summary>
             /// PrincipalArn
@@ -177,7 +177,7 @@ namespace Humidifier.Lightsail
             public dynamic IsActive { get; set; }
         }
 
-        public class EnvironmentVariable : Humidifier.Base.BaseSubResource, IHaveValue
+        public class EnvironmentVariable : Humidifier.Base.BaseSubResource, IHaveValue, IHaveVariable
         {
             /// <summary>
             /// Variable

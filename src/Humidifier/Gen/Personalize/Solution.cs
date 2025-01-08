@@ -3,7 +3,7 @@ namespace Humidifier.Personalize
     using System.Collections.Generic;
     using SolutionTypes;
 
-    public class Solution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveEventType
+    public class Solution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveEventType, IHaveDatasetGroupArn
     {
         public class Attributes
         {

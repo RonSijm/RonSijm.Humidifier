@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using WirelessDeviceTypes;
 
-    public class WirelessDevice : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType, IHaveThingArn, IHaveDestinationName
+    public class WirelessDevice : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType, IHaveThingArn, IHaveDestinationName, IHaveLastUplinkReceivedAt
     {
         public class Attributes
         {
@@ -87,7 +87,7 @@ namespace Humidifier.IoTWireless
 
     namespace WirelessDeviceTypes
     {
-        public class AbpV10x : Humidifier.Base.BaseSubResource
+        public class AbpV10x : Humidifier.Base.BaseSubResource, IHaveDevAddr
         {
             /// <summary>
             /// SessionKeys
@@ -107,7 +107,7 @@ namespace Humidifier.IoTWireless
             public dynamic DevAddr { get; set; }
         }
 
-        public class AbpV11 : Humidifier.Base.BaseSubResource
+        public class AbpV11 : Humidifier.Base.BaseSubResource, IHaveDevAddr
         {
             /// <summary>
             /// SessionKeys
@@ -236,7 +236,7 @@ namespace Humidifier.IoTWireless
             public dynamic ServiceProfileId { get; set; }
         }
 
-        public class OtaaV10x : Humidifier.Base.BaseSubResource
+        public class OtaaV10x : Humidifier.Base.BaseSubResource, IHaveAppKey
         {
             /// <summary>
             /// AppEui
@@ -256,7 +256,7 @@ namespace Humidifier.IoTWireless
             public dynamic AppKey { get; set; }
         }
 
-        public class OtaaV11 : Humidifier.Base.BaseSubResource
+        public class OtaaV11 : Humidifier.Base.BaseSubResource, IHaveAppKey
         {
             /// <summary>
             /// NwkKey
@@ -284,7 +284,7 @@ namespace Humidifier.IoTWireless
             public dynamic JoinEui { get; set; }
         }
 
-        public class SessionKeysAbpV10x : Humidifier.Base.BaseSubResource
+        public class SessionKeysAbpV10x : Humidifier.Base.BaseSubResource, IHaveAppSKey
         {
             /// <summary>
             /// AppSKey
@@ -304,7 +304,7 @@ namespace Humidifier.IoTWireless
             public dynamic NwkSKey { get; set; }
         }
 
-        public class SessionKeysAbpV11 : Humidifier.Base.BaseSubResource
+        public class SessionKeysAbpV11 : Humidifier.Base.BaseSubResource, IHaveAppSKey
         {
             /// <summary>
             /// FNwkSIntKey

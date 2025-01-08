@@ -99,7 +99,7 @@ namespace Humidifier.Batch
 
     namespace ComputeEnvironmentTypes
     {
-        public class ComputeResources : Humidifier.Base.BaseSubResource, IHaveType, IHaveSecurityGroupIds, IHaveSubnets, IHaveAllocationStrategy, IHaveImageId, IHaveInstanceTypes, IHaveInstanceRole
+        public class ComputeResources : Humidifier.Base.BaseSubResource, IHaveType, IHaveSecurityGroupIds, IHaveSubnets, IHaveAllocationStrategy, IHaveImageId, IHaveInstanceTypes, IHaveInstanceRole, IHavePlacementGroup
         {
             /// <summary>
             /// SpotIamFleetRole

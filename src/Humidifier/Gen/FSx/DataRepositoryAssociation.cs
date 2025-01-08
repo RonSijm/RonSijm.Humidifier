@@ -3,7 +3,7 @@ namespace Humidifier.FSx
     using System.Collections.Generic;
     using DataRepositoryAssociationTypes;
 
-    public class DataRepositoryAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveFileSystemId, IHaveFileSystemPath
+    public class DataRepositoryAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveFileSystemId, IHaveFileSystemPath, IHaveImportedFileChunkSize
     {
         public class Attributes
         {

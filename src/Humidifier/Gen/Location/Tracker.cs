@@ -2,7 +2,7 @@ namespace Humidifier.Location
 {
     using System.Collections.Generic;
 
-    public class Tracker : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyId, IHaveTrackerName
+    public class Tracker : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyId, IHaveTrackerName, IHaveEventBridgeEnabled
     {
         public class Attributes
         {

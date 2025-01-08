@@ -89,7 +89,7 @@ namespace Humidifier.Pinpoint
 
     namespace PushTemplateTypes
     {
-        public class APNSPushNotificationTemplate : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveAction, IHaveUrl, IHaveBody, IHaveSound
+        public class APNSPushNotificationTemplate : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveAction, IHaveUrl, IHaveBody, IHaveSound, IHaveMediaUrl
         {
             /// <summary>
             /// Action
@@ -141,7 +141,7 @@ namespace Humidifier.Pinpoint
             public dynamic Url { get; set; }
         }
 
-        public class AndroidPushNotificationTemplate : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveAction, IHaveUrl, IHaveBody, IHaveImageUrl, IHaveSound
+        public class AndroidPushNotificationTemplate : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveAction, IHaveUrl, IHaveBody, IHaveImageUrl, IHaveSound, IHaveImageIconUrl
         {
             /// <summary>
             /// Action

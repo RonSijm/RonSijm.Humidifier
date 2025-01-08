@@ -75,7 +75,7 @@ namespace Humidifier.SageMaker
             public dynamic VolumeSizeInGB { get; set; }
         }
 
-        public class ClusterInstanceGroup : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveExecutionRole
+        public class ClusterInstanceGroup : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveExecutionRole, IHaveThreadsPerCore
         {
             /// <summary>
             /// OverrideVpcConfig

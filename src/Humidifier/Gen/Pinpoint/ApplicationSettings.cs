@@ -52,7 +52,7 @@ namespace Humidifier.Pinpoint
 
     namespace ApplicationSettingsTypes
     {
-        public class CampaignHook : Humidifier.Base.BaseSubResource, IHaveMode
+        public class CampaignHook : Humidifier.Base.BaseSubResource, IHaveMode, IHaveWebUrl, IHaveLambdaFunctionName
         {
             /// <summary>
             /// Mode
@@ -80,7 +80,7 @@ namespace Humidifier.Pinpoint
             public dynamic LambdaFunctionName { get; set; }
         }
 
-        public class Limits : Humidifier.Base.BaseSubResource, IHaveMaximumDuration
+        public class Limits : Humidifier.Base.BaseSubResource, IHaveMaximumDuration, IHaveDaily, IHaveTotal, IHaveMessagesPerSecond
         {
             /// <summary>
             /// Daily

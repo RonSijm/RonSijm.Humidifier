@@ -2,7 +2,7 @@ namespace Humidifier.WorkSpacesWeb
 {
     using System.Collections.Generic;
 
-    public class Portal : Humidifier.Base.BaseResource, IHaveTags, IHaveInstanceType, IHaveDisplayName, IHaveAuthenticationType, IHaveTrustStoreArn, IHaveCustomerManagedKey
+    public class Portal : Humidifier.Base.BaseResource, IHaveTags, IHaveInstanceType, IHaveDisplayName, IHaveAuthenticationType, IHaveCustomerManagedKey, IHaveTrustStoreArn, IHaveMaxConcurrentSessions
     {
         public class Attributes
         {

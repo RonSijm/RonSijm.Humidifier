@@ -328,7 +328,7 @@ namespace Humidifier.Pipes
             public dynamic Arn { get; set; }
         }
 
-        public class DimensionMapping : Humidifier.Base.BaseSubResource, IHaveDimensionName
+        public class DimensionMapping : Humidifier.Base.BaseSubResource, IHaveDimensionName, IHaveDimensionValueType
         {
             /// <summary>
             /// DimensionValueType
@@ -356,7 +356,7 @@ namespace Humidifier.Pipes
             public dynamic DimensionName { get; set; }
         }
 
-        public class EcsContainerOverride : Humidifier.Base.BaseSubResource, IHaveName, IHaveCommand, IHaveMemory, IHaveCpu
+        public class EcsContainerOverride : Humidifier.Base.BaseSubResource, IHaveName, IHaveCommand, IHaveMemory, IHaveCpu, IHaveMemoryReservation
         {
             /// <summary>
             /// MemoryReservation
@@ -607,7 +607,7 @@ namespace Humidifier.Pipes
             public List<Humidifier.Pipes.PipeTypes.Filter> Filters { get; set; }
         }
 
-        public class FirehoseLogDestination : Humidifier.Base.BaseSubResource
+        public class FirehoseLogDestination : Humidifier.Base.BaseSubResource, IHaveDeliveryStreamArn
         {
             /// <summary>
             /// DeliveryStreamArn
@@ -619,7 +619,7 @@ namespace Humidifier.Pipes
             public dynamic DeliveryStreamArn { get; set; }
         }
 
-        public class MQBrokerAccessCredentials : Humidifier.Base.BaseSubResource
+        public class MQBrokerAccessCredentials : Humidifier.Base.BaseSubResource, IHaveBasicAuth
         {
             /// <summary>
             /// BasicAuth
@@ -631,7 +631,7 @@ namespace Humidifier.Pipes
             public dynamic BasicAuth { get; set; }
         }
 
-        public class MSKAccessCredentials : Humidifier.Base.BaseSubResource
+        public class MSKAccessCredentials : Humidifier.Base.BaseSubResource, IHaveClientCertificateTlsAuth, IHaveSaslScram512Auth
         {
             /// <summary>
             /// ClientCertificateTlsAuth
@@ -651,7 +651,7 @@ namespace Humidifier.Pipes
             public dynamic SaslScram512Auth { get; set; }
         }
 
-        public class MultiMeasureAttributeMapping : Humidifier.Base.BaseSubResource, IHaveMeasureValueType
+        public class MultiMeasureAttributeMapping : Humidifier.Base.BaseSubResource, IHaveMeasureValueType, IHaveMeasureValue
         {
             /// <summary>
             /// MultiMeasureAttributeName
@@ -763,7 +763,7 @@ namespace Humidifier.Pipes
             public dynamic InputTemplate { get; set; }
         }
 
-        public class PipeLogConfiguration : Humidifier.Base.BaseSubResource, IHaveLevel
+        public class PipeLogConfiguration : Humidifier.Base.BaseSubResource, IHaveLevel, IHaveIncludeExecutionData
         {
             /// <summary>
             /// FirehoseLogDestination
@@ -808,7 +808,7 @@ namespace Humidifier.Pipes
             public dynamic Level { get; set; }
         }
 
-        public class PipeSourceActiveMQBrokerParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveQueueName
+        public class PipeSourceActiveMQBrokerParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveQueueName, IHavePipesPipeTypesMQBrokerAccessCredentialsCredentials
         {
             /// <summary>
             /// BatchSize
@@ -844,7 +844,7 @@ namespace Humidifier.Pipes
             public dynamic MaximumBatchingWindowInSeconds { get; set; }
         }
 
-        public class PipeSourceDynamoDBStreamParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds
+        public class PipeSourceDynamoDBStreamParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds, IHaveOnPartialBatchItemFailure, IHavePipesPipeTypesDeadLetterConfigDeadLetterConfig
         {
             /// <summary>
             /// StartingPosition
@@ -912,7 +912,7 @@ namespace Humidifier.Pipes
             public dynamic MaximumBatchingWindowInSeconds { get; set; }
         }
 
-        public class PipeSourceKinesisStreamParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds
+        public class PipeSourceKinesisStreamParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds, IHaveStartingPositionTimestamp, IHaveOnPartialBatchItemFailure, IHavePipesPipeTypesDeadLetterConfigDeadLetterConfig
         {
             /// <summary>
             /// StartingPosition
@@ -988,7 +988,7 @@ namespace Humidifier.Pipes
             public dynamic MaximumBatchingWindowInSeconds { get; set; }
         }
 
-        public class PipeSourceManagedStreamingKafkaParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveStartingPosition, IHaveTopicName
+        public class PipeSourceManagedStreamingKafkaParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveStartingPosition, IHaveTopicName, IHaveConsumerGroupID
         {
             /// <summary>
             /// StartingPosition
@@ -1108,7 +1108,7 @@ namespace Humidifier.Pipes
             public Humidifier.Pipes.PipeTypes.PipeSourceActiveMQBrokerParameters ActiveMQBrokerParameters { get; set; }
         }
 
-        public class PipeSourceRabbitMQBrokerParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveQueueName
+        public class PipeSourceRabbitMQBrokerParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveQueueName, IHavePipesPipeTypesMQBrokerAccessCredentialsCredentials
         {
             /// <summary>
             /// BatchSize
@@ -1152,7 +1152,7 @@ namespace Humidifier.Pipes
             public dynamic MaximumBatchingWindowInSeconds { get; set; }
         }
 
-        public class PipeSourceSelfManagedKafkaParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveStartingPosition, IHaveTopicName
+        public class PipeSourceSelfManagedKafkaParameters : Humidifier.Base.BaseSubResource, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveStartingPosition, IHaveTopicName, IHaveConsumerGroupID
         {
             /// <summary>
             /// StartingPosition
@@ -1249,7 +1249,7 @@ namespace Humidifier.Pipes
             public dynamic MaximumBatchingWindowInSeconds { get; set; }
         }
 
-        public class PipeTargetBatchJobParameters : Humidifier.Base.BaseSubResource, IHaveJobName
+        public class PipeTargetBatchJobParameters : Humidifier.Base.BaseSubResource, IHaveJobName, IHaveJobDefinition
         {
             /// <summary>
             /// DependsOn
@@ -1331,7 +1331,7 @@ namespace Humidifier.Pipes
             public dynamic Timestamp { get; set; }
         }
 
-        public class PipeTargetEcsTaskParameters : Humidifier.Base.BaseSubResource, IHaveTags, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveGroup, IHaveTaskCount, IHaveReferenceId, IHaveTaskDefinitionArn
+        public class PipeTargetEcsTaskParameters : Humidifier.Base.BaseSubResource, IHaveTags, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveGroup, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveTaskCount, IHaveReferenceId, IHaveTaskDefinitionArn
         {
             /// <summary>
             /// PlatformVersion
@@ -1459,7 +1459,7 @@ namespace Humidifier.Pipes
             public dynamic TaskDefinitionArn { get; set; }
         }
 
-        public class PipeTargetEventBridgeEventBusParameters : Humidifier.Base.BaseSubResource, IHaveSource, IHaveResources, IHaveDetailType, IHaveEndpointId
+        public class PipeTargetEventBridgeEventBusParameters : Humidifier.Base.BaseSubResource, IHaveSource, IHaveResources, IHaveDetailType, IHaveEndpointId, IHaveTime
         {
             /// <summary>
             /// DetailType
@@ -1667,7 +1667,7 @@ namespace Humidifier.Pipes
             public Humidifier.Pipes.PipeTypes.PipeTargetEcsTaskParameters EcsTaskParameters { get; set; }
         }
 
-        public class PipeTargetRedshiftDataParameters : Humidifier.Base.BaseSubResource, IHaveDatabase, IHaveSecretManagerArn, IHaveStatementName, IHaveDbUser
+        public class PipeTargetRedshiftDataParameters : Humidifier.Base.BaseSubResource, IHaveDatabase, IHaveSecretManagerArn, IHaveStatementName, IHaveDbUser, IHaveSqls, IHaveWithEvent
         {
             /// <summary>
             /// StatementName
@@ -1932,7 +1932,7 @@ namespace Humidifier.Pipes
             public dynamic Name { get; set; }
         }
 
-        public class SelfManagedKafkaAccessConfigurationCredentials : Humidifier.Base.BaseSubResource
+        public class SelfManagedKafkaAccessConfigurationCredentials : Humidifier.Base.BaseSubResource, IHaveBasicAuth, IHaveClientCertificateTlsAuth, IHaveSaslScram512Auth
         {
             /// <summary>
             /// BasicAuth
@@ -1990,7 +1990,7 @@ namespace Humidifier.Pipes
             public dynamic SecurityGroup { get; set; }
         }
 
-        public class SingleMeasureMapping : Humidifier.Base.BaseSubResource, IHaveMeasureValueType
+        public class SingleMeasureMapping : Humidifier.Base.BaseSubResource, IHaveMeasureValueType, IHaveMeasureValue, IHaveMeasureName
         {
             /// <summary>
             /// MeasureName

@@ -41,7 +41,7 @@ namespace Humidifier.IoTAnalytics
 
     namespace ChannelTypes
     {
-        public class ChannelStorage : Humidifier.Base.BaseSubResource
+        public class ChannelStorage : Humidifier.Base.BaseSubResource, IHaveServiceManagedS3
         {
             /// <summary>
             /// CustomerManagedS3

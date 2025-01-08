@@ -93,7 +93,7 @@ namespace Humidifier.SageMaker
             public List<Humidifier.SageMaker.EndpointTypes.Alarm> Alarms { get; set; }
         }
 
-        public class BlueGreenUpdatePolicy : Humidifier.Base.BaseSubResource
+        public class BlueGreenUpdatePolicy : Humidifier.Base.BaseSubResource, IHaveMaximumExecutionTimeoutInSeconds
         {
             /// <summary>
             /// MaximumExecutionTimeoutInSeconds
@@ -169,7 +169,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.EndpointTypes.BlueGreenUpdatePolicy BlueGreenUpdatePolicy { get; set; }
         }
 
-        public class RollingUpdatePolicy : Humidifier.Base.BaseSubResource
+        public class RollingUpdatePolicy : Humidifier.Base.BaseSubResource, IHaveMaximumExecutionTimeoutInSeconds, IHaveWaitIntervalInSeconds
         {
             /// <summary>
             /// MaximumExecutionTimeoutInSeconds
@@ -205,7 +205,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.EndpointTypes.CapacitySize RollbackMaximumBatchSize { get; set; }
         }
 
-        public class TrafficRoutingConfig : Humidifier.Base.BaseSubResource, IHaveType
+        public class TrafficRoutingConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveWaitIntervalInSeconds
         {
             /// <summary>
             /// Type

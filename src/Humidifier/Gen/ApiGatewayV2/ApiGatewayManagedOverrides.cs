@@ -64,7 +64,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic DestinationArn { get; set; }
         }
 
-        public class IntegrationOverrides : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveTimeoutInMillis
+        public class IntegrationOverrides : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveTimeoutInMillis, IHaveIntegrationMethod, IHavePayloadFormatVersion
         {
             /// <summary>
             /// Description
@@ -100,7 +100,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic IntegrationMethod { get; set; }
         }
 
-        public class RouteOverrides : Humidifier.Base.BaseSubResource, IHaveTarget, IHaveAuthorizationType, IHaveOperationName, IHaveAuthorizationScopes, IHaveAuthorizerId
+        public class RouteOverrides : Humidifier.Base.BaseSubResource, IHaveTarget, IHaveOperationName, IHaveAuthorizationType, IHaveAuthorizationScopes, IHaveAuthorizerId
         {
             /// <summary>
             /// Target
@@ -145,7 +145,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic AuthorizationType { get; set; }
         }
 
-        public class RouteSettings : Humidifier.Base.BaseSubResource, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit
+        public class RouteSettings : Humidifier.Base.BaseSubResource, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit, IHaveDetailedMetricsEnabled
         {
             /// <summary>
             /// LoggingLevel
@@ -189,7 +189,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic ThrottlingRateLimit { get; set; }
         }
 
-        public class StageOverrides : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class StageOverrides : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveAutoDeploy, IHaveRouteSettings, IHaveStageVariables
         {
             /// <summary>
             /// Description

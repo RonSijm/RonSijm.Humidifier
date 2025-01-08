@@ -3,7 +3,7 @@ namespace Humidifier.DLM
     using System.Collections.Generic;
     using LifecyclePolicyTypes;
 
-    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveState, IHaveExecutionRoleArn, IHaveCopyTags
+    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveState, IHaveExecutionRoleArn, IHaveCopyTags, IHaveCreateInterval, IHaveExtendDeletion, IHaveDLMLifecyclePolicyTypesExclusionsExclusions, IHaveDLMLifecyclePolicyTypesCrossRegionCopyTargetsCrossRegionCopyTargets, IHaveRetainInterval
     {
         public class Attributes
         {
@@ -157,7 +157,7 @@ namespace Humidifier.DLM
             public Humidifier.DLM.LifecyclePolicyTypes.ArchiveRetainRule RetainRule { get; set; }
         }
 
-        public class CreateRule : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveLocation, IHaveIntervalUnit
+        public class CreateRule : Humidifier.Base.BaseSubResource, IHaveLocation, IHaveInterval, IHaveIntervalUnit, IHaveCronExpression
         {
             /// <summary>
             /// IntervalUnit
@@ -211,7 +211,7 @@ namespace Humidifier.DLM
             public dynamic Location { get; set; }
         }
 
-        public class CrossRegionCopyAction : Humidifier.Base.BaseSubResource, IHaveTarget
+        public class CrossRegionCopyAction : Humidifier.Base.BaseSubResource, IHaveTarget, IHaveDLMLifecyclePolicyTypesCrossRegionCopyRetainRuleRetainRule
         {
             /// <summary>
             /// Target
@@ -279,7 +279,7 @@ namespace Humidifier.DLM
             public dynamic Interval { get; set; }
         }
 
-        public class CrossRegionCopyRule : Humidifier.Base.BaseSubResource, IHaveTarget, IHaveEncrypted, IHaveCopyTags
+        public class CrossRegionCopyRule : Humidifier.Base.BaseSubResource, IHaveTarget, IHaveEncrypted, IHaveCopyTags, IHaveDLMLifecyclePolicyTypesCrossRegionCopyRetainRuleRetainRule, IHaveTargetRegion, IHaveCmkArn
         {
             /// <summary>
             /// TargetRegion
@@ -339,7 +339,7 @@ namespace Humidifier.DLM
             public dynamic CopyTags { get; set; }
         }
 
-        public class CrossRegionCopyTarget : Humidifier.Base.BaseSubResource
+        public class CrossRegionCopyTarget : Humidifier.Base.BaseSubResource, IHaveTargetRegion
         {
             /// <summary>
             /// TargetRegion
@@ -383,7 +383,7 @@ namespace Humidifier.DLM
             public dynamic Interval { get; set; }
         }
 
-        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveEncrypted
+        public class EncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveEncrypted, IHaveCmkArn
         {
             /// <summary>
             /// Encrypted
@@ -554,7 +554,7 @@ namespace Humidifier.DLM
             public dynamic NoReboot { get; set; }
         }
 
-        public class PolicyDetails : Humidifier.Base.BaseSubResource, IHaveResourceType, IHavePolicyType, IHaveResourceTypes, IHaveCopyTags
+        public class PolicyDetails : Humidifier.Base.BaseSubResource, IHaveResourceType, IHavePolicyType, IHaveResourceTypes, IHaveCopyTags, IHaveCreateInterval, IHaveExtendDeletion, IHaveDLMLifecyclePolicyTypesExclusionsExclusions, IHaveDLMLifecyclePolicyTypesCrossRegionCopyTargetsCrossRegionCopyTargets, IHaveRetainInterval
         {
             /// <summary>
             /// PolicyLanguage
@@ -843,7 +843,7 @@ namespace Humidifier.DLM
             public dynamic CopyTags { get; set; }
         }
 
-        public class Script : Humidifier.Base.BaseSubResource
+        public class Script : Humidifier.Base.BaseSubResource, IHaveExecutionTimeout
         {
             /// <summary>
             /// ExecutionHandlerService

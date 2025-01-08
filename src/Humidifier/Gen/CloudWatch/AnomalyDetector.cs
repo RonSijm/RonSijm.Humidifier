@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using System.Collections.Generic;
     using AnomalyDetectorTypes;
 
-    public class AnomalyDetector : Humidifier.Base.BaseResource, IHaveMetricName, IHaveStat
+    public class AnomalyDetector : Humidifier.Base.BaseResource, IHaveMetricName, IHaveNamespace_, IHaveStat
     {
         public override string AWSTypeName { get => AWS.CloudWatch.AnomalyDetector; }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Humidifier.CloudWatch
             public dynamic Name { get; set; }
         }
 
-        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName
+        public class Metric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_
         {
             /// <summary>
             /// MetricName
@@ -161,7 +161,7 @@ namespace Humidifier.CloudWatch
         {
         }
 
-        public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveAccountId, IHaveLabel, IHavePeriod, IHaveReturnData
+        public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHaveAccountId, IHavePeriod, IHaveReturnData
         {
             /// <summary>
             /// AccountId
@@ -290,7 +290,7 @@ namespace Humidifier.CloudWatch
             public dynamic StartTime { get; set; }
         }
 
-        public class SingleMetricAnomalyDetector : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveAccountId, IHaveStat
+        public class SingleMetricAnomalyDetector : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveNamespace_, IHaveAccountId, IHaveStat
         {
             /// <summary>
             /// MetricName

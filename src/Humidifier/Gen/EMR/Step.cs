@@ -3,7 +3,7 @@ namespace Humidifier.EMR
     using System.Collections.Generic;
     using StepTypes;
 
-    public class Step : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class Step : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveJobFlowId, IHaveActionOnFailure
     {
         public class Attributes
         {
@@ -46,7 +46,7 @@ namespace Humidifier.EMR
 
     namespace StepTypes
     {
-        public class HadoopJarStepConfig : Humidifier.Base.BaseSubResource, IHaveArgs
+        public class HadoopJarStepConfig : Humidifier.Base.BaseSubResource, IHaveArgs, IHaveJar, IHaveMainClass
         {
             /// <summary>
             /// Args

@@ -2,7 +2,7 @@ namespace Humidifier.Logs
 {
     using System.Collections.Generic;
 
-    public class SubscriptionFilter : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveLogGroupName, IHaveDestinationArn, IHaveFilterPattern, IHaveFilterName
+    public class SubscriptionFilter : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveLogGroupName, IHaveDestinationArn, IHaveFilterPattern, IHaveFilterName, IHaveApplyOnTransformedLogs
     {
         public override string AWSTypeName { get => AWS.Logs.SubscriptionFilter; }
 

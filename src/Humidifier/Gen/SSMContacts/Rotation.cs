@@ -86,7 +86,7 @@ namespace Humidifier.SSMContacts
             public dynamic StartTime { get; set; }
         }
 
-        public class MonthlySetting : Humidifier.Base.BaseSubResource, IHaveDayOfMonth
+        public class MonthlySetting : Humidifier.Base.BaseSubResource, IHaveDayOfMonth, IHaveHandOffTime
         {
             /// <summary>
             /// DayOfMonth
@@ -183,7 +183,7 @@ namespace Humidifier.SSMContacts
             public List<Humidifier.SSMContacts.RotationTypes.CoverageTime> CoverageTimes { get; set; }
         }
 
-        public class WeeklySetting : Humidifier.Base.BaseSubResource, IHaveDayOfWeek
+        public class WeeklySetting : Humidifier.Base.BaseSubResource, IHaveDayOfWeek, IHaveHandOffTime
         {
             /// <summary>
             /// DayOfWeek

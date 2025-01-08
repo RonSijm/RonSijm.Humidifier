@@ -153,7 +153,7 @@ namespace Humidifier.EC2
             public dynamic DeviceName { get; set; }
         }
 
-        public class CapacityReservationSpecification : Humidifier.Base.BaseSubResource
+        public class CapacityReservationSpecification : Humidifier.Base.BaseSubResource, IHaveCapacityReservationPreference
         {
             /// <summary>
             /// CapacityReservationPreference
@@ -174,7 +174,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.LaunchTemplateTypes.CapacityReservationTarget CapacityReservationTarget { get; set; }
         }
 
-        public class CapacityReservationTarget : Humidifier.Base.BaseSubResource
+        public class CapacityReservationTarget : Humidifier.Base.BaseSubResource, IHaveCapacityReservationResourceGroupArn
         {
             /// <summary>
             /// CapacityReservationResourceGroupArn
@@ -194,7 +194,7 @@ namespace Humidifier.EC2
             public dynamic CapacityReservationId { get; set; }
         }
 
-        public class ConnectionTrackingSpecification : Humidifier.Base.BaseSubResource
+        public class ConnectionTrackingSpecification : Humidifier.Base.BaseSubResource, IHaveUdpTimeout, IHaveTcpEstablishedTimeout, IHaveUdpStreamTimeout
         {
             /// <summary>
             /// UdpTimeout
@@ -235,7 +235,7 @@ namespace Humidifier.EC2
             public List<Humidifier.EC2.LaunchTemplateTypes.Reference> References { get; set; }
         }
 
-        public class CpuOptions : Humidifier.Base.BaseSubResource
+        public class CpuOptions : Humidifier.Base.BaseSubResource, IHaveThreadsPerCore, IHaveCoreCount
         {
             /// <summary>
             /// ThreadsPerCore
@@ -355,7 +355,7 @@ namespace Humidifier.EC2
             public dynamic Type { get; set; }
         }
 
-        public class EnaSrdSpecification : Humidifier.Base.BaseSubResource
+        public class EnaSrdSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdEnabled
         {
             /// <summary>
             /// EnaSrdEnabled
@@ -375,7 +375,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.LaunchTemplateTypes.EnaSrdUdpSpecification EnaSrdUdpSpecification { get; set; }
         }
 
-        public class EnaSrdUdpSpecification : Humidifier.Base.BaseSubResource
+        public class EnaSrdUdpSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdUdpEnabled
         {
             /// <summary>
             /// EnaSrdUdpEnabled
@@ -451,7 +451,7 @@ namespace Humidifier.EC2
             public dynamic MarketType { get; set; }
         }
 
-        public class InstanceRequirements : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveLocalStorageTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveBurstablePerformance
+        public class InstanceRequirements : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveInstanceGenerations, IHaveAcceleratorManufacturers, IHaveLocalStorage, IHaveCpuManufacturers, IHaveBareMetal, IHaveRequireHibernateSupport, IHaveMaxSpotPriceAsPercentageOfOptimalOnDemandPrice, IHaveOnDemandMaxPricePercentageOverLowestPrice, IHaveLocalStorageTypes, IHaveSpotMaxPricePercentageOverLowestPrice, IHaveAcceleratorNames, IHaveBurstablePerformance
         {
             /// <summary>
             /// InstanceGenerations
@@ -663,7 +663,7 @@ namespace Humidifier.EC2
             public Humidifier.EC2.LaunchTemplateTypes.TotalLocalStorageGB TotalLocalStorageGB { get; set; }
         }
 
-        public class Ipv4PrefixSpecification : Humidifier.Base.BaseSubResource
+        public class Ipv4PrefixSpecification : Humidifier.Base.BaseSubResource, IHaveIpv4Prefix
         {
             /// <summary>
             /// Ipv4Prefix
@@ -687,7 +687,7 @@ namespace Humidifier.EC2
             public dynamic Ipv6Address { get; set; }
         }
 
-        public class Ipv6PrefixSpecification : Humidifier.Base.BaseSubResource
+        public class Ipv6PrefixSpecification : Humidifier.Base.BaseSubResource, IHaveIpv6Prefix
         {
             /// <summary>
             /// Ipv6Prefix
@@ -699,7 +699,7 @@ namespace Humidifier.EC2
             public dynamic Ipv6Prefix { get; set; }
         }
 
-        public class LaunchTemplateData : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveInstanceType, IHaveSecurityGroups, IHaveEbsOptimized, IHaveImageId, IHaveKeyName, IHaveUserData, IHaveKernelId
+        public class LaunchTemplateData : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveInstanceType, IHaveSecurityGroups, IHaveEbsOptimized, IHaveImageId, IHaveKeyName, IHaveUserData, IHaveKernelId, IHaveRamDiskId, IHaveInstanceInitiatedShutdownBehavior, IHaveDisableApiTermination
         {
             /// <summary>
             /// SecurityGroups
@@ -1008,7 +1008,7 @@ namespace Humidifier.EC2
             public List<Tag> Tags { get; set; }
         }
 
-        public class LicenseSpecification : Humidifier.Base.BaseSubResource
+        public class LicenseSpecification : Humidifier.Base.BaseSubResource, IHaveLicenseConfigurationArn
         {
             /// <summary>
             /// LicenseConfigurationArn
@@ -1072,7 +1072,7 @@ namespace Humidifier.EC2
             public dynamic Max { get; set; }
         }
 
-        public class MetadataOptions : Humidifier.Base.BaseSubResource, IHaveHttpPutResponseHopLimit, IHaveHttpTokens
+        public class MetadataOptions : Humidifier.Base.BaseSubResource, IHaveHttpPutResponseHopLimit, IHaveHttpTokens, IHaveHttpEndpoint
         {
             /// <summary>
             /// HttpPutResponseHopLimit
@@ -1148,7 +1148,7 @@ namespace Humidifier.EC2
             public dynamic Max { get; set; }
         }
 
-        public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSubnetId, IHaveNetworkInterfaceId, IHavePrivateIpAddress, IHaveDeleteOnTermination, IHaveGroups, IHaveAssociatePublicIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveDeviceIndex
+        public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSubnetId, IHaveNetworkInterfaceId, IHavePrivateIpAddress, IHaveDeleteOnTermination, IHaveGroups, IHaveAssociatePublicIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveDeviceIndex, IHaveIpv6PrefixCount, IHaveIpv4PrefixCount, IHaveInterfaceType, IHaveAssociateCarrierIpAddress
         {
             /// <summary>
             /// Description
@@ -1353,7 +1353,7 @@ namespace Humidifier.EC2
             public dynamic Max { get; set; }
         }
 
-        public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveGroupName, IHaveGroupId, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity
+        public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveGroupName, IHaveGroupId, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity, IHaveSpreadDomain, IHavePartitionNumber
         {
             /// <summary>
             /// GroupName
@@ -1477,7 +1477,7 @@ namespace Humidifier.EC2
             public dynamic Primary { get; set; }
         }
 
-        public class Reference : Humidifier.Base.BaseSubResource
+        public class Reference : Humidifier.Base.BaseSubResource, IHaveInstanceFamily
         {
             /// <summary>
             /// InstanceFamily
@@ -1489,7 +1489,7 @@ namespace Humidifier.EC2
             public dynamic InstanceFamily { get; set; }
         }
 
-        public class SpotOptions : Humidifier.Base.BaseSubResource, IHaveValidUntil, IHaveInstanceInterruptionBehavior, IHaveBlockDurationMinutes
+        public class SpotOptions : Humidifier.Base.BaseSubResource, IHaveValidUntil, IHaveInstanceInterruptionBehavior, IHaveBlockDurationMinutes, IHaveMaxPrice
         {
             /// <summary>
             /// SpotInstanceType

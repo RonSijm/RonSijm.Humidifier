@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using EndpointTypes;
 
-    public class Endpoint : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveCertificateArn, IHaveServerName, IHaveResourceIdentifier, IHaveEndpointType, IHaveSslMode
+    public class Endpoint : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveCertificateArn, IHaveServerName, IHaveResourceIdentifier, IHaveEndpointType, IHaveSslMode, IHaveEngineName
     {
         public class Attributes
         {
@@ -268,7 +268,7 @@ namespace Humidifier.DMS
 
     namespace EndpointTypes
     {
-        public class DocDbSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn
+        public class DocDbSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveDocsToInvestigate, IHaveExtractDocId, IHaveNestingLevel
         {
             /// <summary>
             /// DocsToInvestigate
@@ -324,7 +324,7 @@ namespace Humidifier.DMS
             public dynamic ServiceAccessRoleArn { get; set; }
         }
 
-        public class ElasticsearchSettings : Humidifier.Base.BaseSubResource, IHaveServiceAccessRoleArn
+        public class ElasticsearchSettings : Humidifier.Base.BaseSubResource, IHaveServiceAccessRoleArn, IHaveErrorRetryDuration
         {
             /// <summary>
             /// EndpointUri
@@ -360,7 +360,7 @@ namespace Humidifier.DMS
             public dynamic ServiceAccessRoleArn { get; set; }
         }
 
-        public class GcpMySQLSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveServerName, IHaveMaxFileSize, IHaveAfterConnectScript
+        public class GcpMySQLSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveServerName, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveAfterConnectScript, IHaveCleanSourceMetadataOnMismatch, IHaveServerTimezone, IHaveEventsPollInterval, IHaveParallelLoadThreads
         {
             /// <summary>
             /// AfterConnectScript
@@ -468,7 +468,7 @@ namespace Humidifier.DMS
             public dynamic Password { get; set; }
         }
 
-        public class IbmDb2Settings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize
+        public class IbmDb2Settings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveLoadTimeout, IHaveWriteBufferSize
         {
             /// <summary>
             /// LoadTimeout
@@ -544,7 +544,7 @@ namespace Humidifier.DMS
             public dynamic SecretsManagerAccessRoleArn { get; set; }
         }
 
-        public class KafkaSettings : Humidifier.Base.BaseSubResource, IHaveTopic, IHaveMessageFormat
+        public class KafkaSettings : Humidifier.Base.BaseSubResource, IHaveTopic, IHaveMessageFormat, IHaveBroker, IHaveIncludeTransactionDetails, IHaveIncludeTableAlterOperations, IHaveSslCaCertificateArn, IHaveIncludeControlDetails, IHaveIncludePartitionValue, IHaveNoHexPrefix, IHavePartitionIncludeSchemaTable, IHaveIncludeNullAndEmpty
         {
             /// <summary>
             /// Broker
@@ -692,7 +692,7 @@ namespace Humidifier.DMS
             public dynamic IncludeNullAndEmpty { get; set; }
         }
 
-        public class KinesisSettings : Humidifier.Base.BaseSubResource, IHaveStreamArn, IHaveServiceAccessRoleArn, IHaveMessageFormat
+        public class KinesisSettings : Humidifier.Base.BaseSubResource, IHaveServiceAccessRoleArn, IHaveStreamArn, IHaveMessageFormat, IHaveIncludeTransactionDetails, IHaveIncludeTableAlterOperations, IHaveIncludeControlDetails, IHaveIncludePartitionValue, IHaveNoHexPrefix, IHavePartitionIncludeSchemaTable, IHaveIncludeNullAndEmpty
         {
             /// <summary>
             /// MessageFormat
@@ -776,7 +776,7 @@ namespace Humidifier.DMS
             public dynamic IncludeNullAndEmpty { get; set; }
         }
 
-        public class MicrosoftSqlServerSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveServerName
+        public class MicrosoftSqlServerSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveServerName, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn
         {
             /// <summary>
             /// ReadBackupOnly
@@ -916,7 +916,7 @@ namespace Humidifier.DMS
             public dynamic Password { get; set; }
         }
 
-        public class MongoDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveServerName, IHaveAuthType
+        public class MongoDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveAuthType, IHaveServerName, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveAuthSource, IHaveAuthMechanism, IHaveDocsToInvestigate, IHaveExtractDocId, IHaveNestingLevel
         {
             /// <summary>
             /// Port
@@ -1024,7 +1024,7 @@ namespace Humidifier.DMS
             public dynamic NestingLevel { get; set; }
         }
 
-        public class MySqlSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveAfterConnectScript
+        public class MySqlSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveAfterConnectScript, IHaveCleanSourceMetadataOnMismatch, IHaveServerTimezone, IHaveEventsPollInterval, IHaveParallelLoadThreads
         {
             /// <summary>
             /// ServerTimezone
@@ -1100,7 +1100,7 @@ namespace Humidifier.DMS
             public dynamic CleanSourceMetadataOnMismatch { get; set; }
         }
 
-        public class NeptuneSettings : Humidifier.Base.BaseSubResource, IHaveS3BucketName, IHaveMaxFileSize, IHaveServiceAccessRoleArn
+        public class NeptuneSettings : Humidifier.Base.BaseSubResource, IHaveS3BucketName, IHaveServiceAccessRoleArn, IHaveMaxFileSize, IHaveIamAuthEnabled, IHaveErrorRetryDuration
         {
             /// <summary>
             /// MaxRetryCount
@@ -1160,7 +1160,7 @@ namespace Humidifier.DMS
             public dynamic ServiceAccessRoleArn { get; set; }
         }
 
-        public class OracleSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn
+        public class OracleSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveSecretsManagerOracleAsmAccessRoleArn, IHaveSecretsManagerOracleAsmSecretId, IHaveAsmServer, IHaveFailTasksOnLobTruncation, IHaveRetryInterval
         {
             /// <summary>
             /// AsmPassword
@@ -1445,7 +1445,7 @@ namespace Humidifier.DMS
             public dynamic SecretsManagerAccessRoleArn { get; set; }
         }
 
-        public class PostgreSqlSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveSlotName, IHaveAfterConnectScript
+        public class PostgreSqlSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveSlotName, IHaveAfterConnectScript, IHaveFailTasksOnLobTruncation, IHaveMapBooleanAsBoolean
         {
             /// <summary>
             /// PluginName
@@ -1577,7 +1577,7 @@ namespace Humidifier.DMS
             public dynamic SlotName { get; set; }
         }
 
-        public class RedisSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveServerName, IHaveAuthType
+        public class RedisSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveAuthType, IHaveServerName, IHaveSslCaCertificateArn
         {
             /// <summary>
             /// SslSecurityProtocol
@@ -1637,7 +1637,7 @@ namespace Humidifier.DMS
             public dynamic AuthType { get; set; }
         }
 
-        public class RedshiftSettings : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveServiceAccessRoleArn, IHaveEncryptionMode, IHaveAfterConnectScript
+        public class RedshiftSettings : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveServiceAccessRoleArn, IHaveMaxFileSize, IHaveEncryptionMode, IHaveAfterConnectScript, IHaveConnectionTimeout, IHaveLoadTimeout, IHaveWriteBufferSize, IHaveMapBooleanAsBoolean, IHaveServerSideEncryptionKmsKeyId, IHaveBucketFolder, IHaveDateFormat
         {
             /// <summary>
             /// ConnectionTimeout
@@ -1849,7 +1849,7 @@ namespace Humidifier.DMS
             public dynamic EncryptionMode { get; set; }
         }
 
-        public class S3Settings : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveMaxFileSize, IHaveServiceAccessRoleArn, IHaveEncryptionMode, IHaveDataFormat, IHaveEncodingType, IHaveCompressionType
+        public class S3Settings : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveServiceAccessRoleArn, IHaveMaxFileSize, IHaveEncryptionMode, IHaveDataFormat, IHaveCompressionType, IHaveEncodingType, IHaveExpectedBucketOwner, IHaveServerSideEncryptionKmsKeyId, IHaveBucketFolder
         {
             /// <summary>
             /// TimestampColumnName

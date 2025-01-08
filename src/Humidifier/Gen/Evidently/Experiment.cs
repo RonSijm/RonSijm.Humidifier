@@ -3,7 +3,7 @@ namespace Humidifier.Evidently
     using System.Collections.Generic;
     using ExperimentTypes;
 
-    public class Experiment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveSamplingRate, IHaveProject
+    public class Experiment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveSamplingRate, IHaveProject, IHaveRandomizationSalt, IHaveSegment
     {
         public class Attributes
         {
@@ -115,7 +115,7 @@ namespace Humidifier.Evidently
 
     namespace ExperimentTypes
     {
-        public class MetricGoalObject : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel
+        public class MetricGoalObject : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel, IHaveEntityIdKey
         {
             /// <summary>
             /// EntityIdKey
@@ -224,7 +224,7 @@ namespace Humidifier.Evidently
             public dynamic Reason { get; set; }
         }
 
-        public class TreatmentObject : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveTreatmentName, IHaveVariation
+        public class TreatmentObject : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveTreatmentName, IHaveVariation, IHaveFeature
         {
             /// <summary>
             /// Description
@@ -260,7 +260,7 @@ namespace Humidifier.Evidently
             public dynamic TreatmentName { get; set; }
         }
 
-        public class TreatmentToWeight : Humidifier.Base.BaseSubResource
+        public class TreatmentToWeight : Humidifier.Base.BaseSubResource, IHaveSplitWeight
         {
             /// <summary>
             /// Treatment

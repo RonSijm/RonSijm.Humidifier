@@ -3,7 +3,7 @@ namespace Humidifier.AmazonMQ
     using System.Collections.Generic;
     using ConfigurationAssociationTypes;
 
-    public class ConfigurationAssociation : Humidifier.Base.BaseResource
+    public class ConfigurationAssociation : Humidifier.Base.BaseResource, IHaveBroker
     {
         public override string AWSTypeName { get => AWS.AmazonMQ.ConfigurationAssociation; }
 

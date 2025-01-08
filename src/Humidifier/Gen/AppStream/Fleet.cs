@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveDisplayName, IHaveIamRoleArn, IHaveImageName, IHavePlatform, IHaveEnableDefaultInternetAccess
+    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveDisplayName, IHaveIamRoleArn, IHaveImageName, IHavePlatform, IHaveEnableDefaultInternetAccess, IHaveFleetType, IHaveMaxUserDurationInSeconds, IHaveIdleDisconnectTimeoutInSeconds, IHaveDisconnectTimeoutInSeconds, IHaveMaxConcurrentSessions, IHaveImageArn
     {
         public override string AWSTypeName { get => AWS.AppStream.Fleet; }
         /// <summary>

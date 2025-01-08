@@ -44,7 +44,7 @@ namespace Humidifier.InspectorV2
 
     namespace FilterTypes
     {
-        public class DateFilter : Humidifier.Base.BaseSubResource
+        public class DateFilter : Humidifier.Base.BaseSubResource, IHaveEndInclusive
         {
             /// <summary>
             /// EndInclusive
@@ -447,7 +447,7 @@ namespace Humidifier.InspectorV2
             public Humidifier.InspectorV2.FilterTypes.StringFilter Name { get; set; }
         }
 
-        public class PortRangeFilter : Humidifier.Base.BaseSubResource
+        public class PortRangeFilter : Humidifier.Base.BaseSubResource, IHaveEndInclusive
         {
             /// <summary>
             /// BeginInclusive

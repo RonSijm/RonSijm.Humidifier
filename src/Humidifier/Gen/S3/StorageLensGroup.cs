@@ -35,7 +35,7 @@ namespace Humidifier.S3
 
     namespace StorageLensGroupTypes
     {
-        public class And : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
+        public class And : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnyTag, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
         {
             /// <summary>
             /// MatchObjectAge
@@ -82,7 +82,7 @@ namespace Humidifier.S3
             public Humidifier.S3.StorageLensGroupTypes.MatchObjectSize MatchObjectSize { get; set; }
         }
 
-        public class Filter : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
+        public class Filter : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnyTag, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
         {
             /// <summary>
             /// MatchObjectAge
@@ -185,7 +185,7 @@ namespace Humidifier.S3
             public dynamic BytesGreaterThan { get; set; }
         }
 
-        public class Or : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
+        public class Or : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnyTag, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
         {
             /// <summary>
             /// MatchObjectAge

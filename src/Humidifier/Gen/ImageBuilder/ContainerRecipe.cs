@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ContainerRecipeTypes;
 
-    public class ContainerRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveKmsKeyId, IHaveVersion, IHaveWorkingDirectory
+    public class ContainerRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveKmsKeyId, IHaveVersion, IHaveWorkingDirectory, IHaveParentImage, IHaveContainerType
     {
         public class Attributes
         {

@@ -50,7 +50,7 @@ namespace Humidifier.SimSpaceWeaver
 
     namespace SimulationTypes
     {
-        public class S3Location : Humidifier.Base.BaseSubResource, IHaveBucketName
+        public class S3Location : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveObjectKey
         {
             /// <summary>
             /// BucketName

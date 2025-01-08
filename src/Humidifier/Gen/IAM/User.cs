@@ -3,7 +3,7 @@ namespace Humidifier.IAM
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePath, IHaveUserName, IHaveGroups, IHaveManagedPolicyArns
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePath, IHaveUserName, IHaveGroups, IHaveManagedPolicyArns, IHavePermissionsBoundary
     {
         public class Attributes
         {

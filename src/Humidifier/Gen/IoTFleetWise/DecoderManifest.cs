@@ -3,7 +3,7 @@ namespace Humidifier.IoTFleetWise
     using System.Collections.Generic;
     using DecoderManifestTypes;
 
-    public class DecoderManifest : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveStatus
+    public class DecoderManifest : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveStatus, IHaveModelManifestArn
     {
         public class Attributes
         {
@@ -107,7 +107,7 @@ namespace Humidifier.IoTFleetWise
             public dynamic Name { get; set; }
         }
 
-        public class CanSignal : Humidifier.Base.BaseSubResource, IHaveName, IHaveOffset
+        public class CanSignal : Humidifier.Base.BaseSubResource, IHaveName, IHaveOffset, IHaveLength, IHaveMessageId
         {
             /// <summary>
             /// IsBigEndian
@@ -199,7 +199,7 @@ namespace Humidifier.IoTFleetWise
             public dynamic Id { get; set; }
         }
 
-        public class NetworkInterfacesItems : Humidifier.Base.BaseSubResource, IHaveType
+        public class NetworkInterfacesItems : Humidifier.Base.BaseSubResource, IHaveType, IHaveInterfaceId
         {
             /// <summary>
             /// Type
@@ -379,7 +379,7 @@ namespace Humidifier.IoTFleetWise
             public dynamic Offset { get; set; }
         }
 
-        public class SignalDecodersItems : Humidifier.Base.BaseSubResource, IHaveType, IHaveFullyQualifiedName
+        public class SignalDecodersItems : Humidifier.Base.BaseSubResource, IHaveType, IHaveFullyQualifiedName, IHaveInterfaceId
         {
             /// <summary>
             /// Type

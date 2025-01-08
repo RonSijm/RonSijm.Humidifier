@@ -66,7 +66,7 @@ namespace Humidifier.SecretsManager
 
     namespace SecretTypes
     {
-        public class GenerateSecretString : Humidifier.Base.BaseSubResource
+        public class GenerateSecretString : Humidifier.Base.BaseSubResource, IHaveExcludeCharacters
         {
             /// <summary>
             /// ExcludeUppercase

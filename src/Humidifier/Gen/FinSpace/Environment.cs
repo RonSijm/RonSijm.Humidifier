@@ -91,7 +91,7 @@ namespace Humidifier.FinSpace
             public dynamic Key { get; set; }
         }
 
-        public class FederationParameters : Humidifier.Base.BaseSubResource
+        public class FederationParameters : Humidifier.Base.BaseSubResource, IHaveSamlMetadataDocument
         {
             /// <summary>
             /// AttributeMap

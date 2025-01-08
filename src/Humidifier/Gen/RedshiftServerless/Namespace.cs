@@ -3,7 +3,7 @@ namespace Humidifier.RedshiftServerless
     using System.Collections.Generic;
     using NamespaceTypes;
 
-    public class Namespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveNamespaceName, IHaveFinalSnapshotName, IHaveIamRoles, IHaveAdminUsername
+    public class Namespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveNamespaceName, IHaveFinalSnapshotName, IHaveIamRoles, IHaveAdminUsername, IHaveLogExports, IHaveAdminUserPassword, IHaveNamespaceResourcePolicy, IHaveAdminPasswordSecretKmsKeyId, IHaveDefaultIamRoleArn, IHaveDbName
     {
         public class Attributes
         {
@@ -140,7 +140,7 @@ namespace Humidifier.RedshiftServerless
 
     namespace NamespaceTypes
     {
-        public class Namespace : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveKmsKeyId, IHaveNamespaceName, IHaveIamRoles, IHaveAdminUsername, IHaveNamespaceId
+        public class Namespace : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveKmsKeyId, IHaveNamespaceName, IHaveIamRoles, IHaveAdminUsername, IHaveLogExports, IHaveNamespaceId, IHaveAdminPasswordSecretKmsKeyId, IHaveDefaultIamRoleArn, IHaveDbName, IHaveCreationDate
         {
             /// <summary>
             /// Status
@@ -250,7 +250,7 @@ namespace Humidifier.RedshiftServerless
             public dynamic LogExports { get; set; }
         }
 
-        public class SnapshotCopyConfiguration : Humidifier.Base.BaseSubResource
+        public class SnapshotCopyConfiguration : Humidifier.Base.BaseSubResource, IHaveDestinationRegion
         {
             /// <summary>
             /// SnapshotRetentionPeriod

@@ -102,7 +102,7 @@ namespace Humidifier.ImageBuilder
             public Humidifier.ImageBuilder.LifecyclePolicyTypes.IncludeResources IncludeResources { get; set; }
         }
 
-        public class AmiExclusionRules : Humidifier.Base.BaseSubResource, IHaveRegions
+        public class AmiExclusionRules : Humidifier.Base.BaseSubResource, IHaveRegions, IHaveIsPublic
         {
             /// <summary>
             /// IsPublic

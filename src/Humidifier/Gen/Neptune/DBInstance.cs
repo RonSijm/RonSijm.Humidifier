@@ -2,7 +2,7 @@ namespace Humidifier.Neptune
 {
     using System.Collections.Generic;
 
-    public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveAutoMinorVersionUpgrade, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveAllowMajorVersionUpgrade, IHaveDBInstanceClass, IHaveDBParameterGroupName
+    public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveAutoMinorVersionUpgrade, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveAllowMajorVersionUpgrade, IHaveDBInstanceClass, IHaveDBParameterGroupName, IHaveDBSnapshotIdentifier
     {
         public class Attributes
         {

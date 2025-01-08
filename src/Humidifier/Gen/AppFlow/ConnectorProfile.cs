@@ -3,7 +3,7 @@ namespace Humidifier.AppFlow
     using System.Collections.Generic;
     using ConnectorProfileTypes;
 
-    public class ConnectorProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveConnectorType, IHaveConnectorProfileName, IHaveKMSArn
+    public class ConnectorProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveConnectorType, IHaveConnectorProfileName, IHaveKMSArn, IHaveConnectorLabel
     {
         public class Attributes
         {
@@ -81,7 +81,7 @@ namespace Humidifier.AppFlow
             public dynamic ApiKey { get; set; }
         }
 
-        public class ApiKeyCredentials : Humidifier.Base.BaseSubResource, IHaveApiKey
+        public class ApiKeyCredentials : Humidifier.Base.BaseSubResource, IHaveApiKey, IHaveApiSecretKey
         {
             /// <summary>
             /// ApiSecretKey
@@ -751,7 +751,7 @@ namespace Humidifier.AppFlow
             public dynamic ClientId { get; set; }
         }
 
-        public class OAuth2Properties : Humidifier.Base.BaseSubResource
+        public class OAuth2Properties : Humidifier.Base.BaseSubResource, IHaveTokenUrl, IHaveOAuth2GrantType
         {
             /// <summary>
             /// TokenUrlCustomProperties
@@ -824,7 +824,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.ConnectorProfileTypes.ConnectorOAuthRequest ConnectorOAuthRequest { get; set; }
         }
 
-        public class OAuthProperties : Humidifier.Base.BaseSubResource
+        public class OAuthProperties : Humidifier.Base.BaseSubResource, IHaveTokenUrl
         {
             /// <summary>
             /// AuthCodeUrl
@@ -853,7 +853,7 @@ namespace Humidifier.AppFlow
             public dynamic OAuthScopes { get; set; }
         }
 
-        public class PardotConnectorProfileCredentials : Humidifier.Base.BaseSubResource, IHaveAccessToken, IHaveRefreshToken, IHaveAppFlowConnectorProfileTypesConnectorOAuthRequestConnectorOAuthRequest
+        public class PardotConnectorProfileCredentials : Humidifier.Base.BaseSubResource, IHaveAccessToken, IHaveRefreshToken, IHaveAppFlowConnectorProfileTypesConnectorOAuthRequestConnectorOAuthRequest, IHaveClientCredentialsArn
         {
             /// <summary>
             /// RefreshToken
@@ -1033,7 +1033,7 @@ namespace Humidifier.AppFlow
             public Humidifier.AppFlow.ConnectorProfileTypes.OAuthCredentials OAuthCredentials { get; set; }
         }
 
-        public class SAPODataConnectorProfileProperties : Humidifier.Base.BaseSubResource
+        public class SAPODataConnectorProfileProperties : Humidifier.Base.BaseSubResource, IHavePrivateLinkServiceName
         {
             /// <summary>
             /// ApplicationServicePath
@@ -1101,7 +1101,7 @@ namespace Humidifier.AppFlow
             public dynamic ClientNumber { get; set; }
         }
 
-        public class SalesforceConnectorProfileCredentials : Humidifier.Base.BaseSubResource, IHaveAccessToken, IHaveRefreshToken, IHaveAppFlowConnectorProfileTypesConnectorOAuthRequestConnectorOAuthRequest
+        public class SalesforceConnectorProfileCredentials : Humidifier.Base.BaseSubResource, IHaveAccessToken, IHaveRefreshToken, IHaveAppFlowConnectorProfileTypesConnectorOAuthRequestConnectorOAuthRequest, IHaveOAuth2GrantType, IHaveClientCredentialsArn
         {
             /// <summary>
             /// JwtToken
@@ -1301,7 +1301,7 @@ namespace Humidifier.AppFlow
             public dynamic Password { get; set; }
         }
 
-        public class SnowflakeConnectorProfileProperties : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveRegion, IHaveBucketPrefix, IHaveStage, IHaveAccountName
+        public class SnowflakeConnectorProfileProperties : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveRegion, IHaveBucketPrefix, IHaveStage, IHaveAccountName, IHavePrivateLinkServiceName, IHaveWarehouse
         {
             /// <summary>
             /// Warehouse
@@ -1361,7 +1361,7 @@ namespace Humidifier.AppFlow
             public dynamic AccountName { get; set; }
         }
 
-        public class TrendmicroConnectorProfileCredentials : Humidifier.Base.BaseSubResource
+        public class TrendmicroConnectorProfileCredentials : Humidifier.Base.BaseSubResource, IHaveApiSecretKey
         {
             /// <summary>
             /// ApiSecretKey

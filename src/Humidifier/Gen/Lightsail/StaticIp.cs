@@ -2,7 +2,7 @@ namespace Humidifier.Lightsail
 {
     using System.Collections.Generic;
 
-    public class StaticIp : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class StaticIp : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveAttachedTo
     {
         public class Attributes
         {

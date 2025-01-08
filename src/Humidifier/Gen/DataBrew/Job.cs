@@ -3,7 +3,7 @@ namespace Humidifier.DataBrew
     using System.Collections.Generic;
     using JobTypes;
 
-    public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveRoleArn, IHaveMaxCapacity, IHaveTimeout, IHaveEncryptionKeyArn, IHaveProjectName, IHaveDatasetName, IHaveMaxRetries, IHaveEncryptionMode
+    public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveRoleArn, IHaveMaxCapacity, IHaveTimeout, IHaveEncryptionKeyArn, IHaveDatasetName, IHaveMaxRetries, IHaveProjectName, IHaveEncryptionMode
     {
         public override string AWSTypeName { get => AWS.DataBrew.Job; }
         /// <summary>
@@ -238,7 +238,7 @@ namespace Humidifier.DataBrew
             public dynamic Delimiter { get; set; }
         }
 
-        public class DataCatalogOutput : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId, IHaveOverwrite
+        public class DataCatalogOutput : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId, IHaveOverwrite, IHaveDataBrewJobTypesDatabaseTableOutputOptionsDatabaseOptions
         {
             /// <summary>
             /// TableName
@@ -290,7 +290,7 @@ namespace Humidifier.DataBrew
             public dynamic CatalogId { get; set; }
         }
 
-        public class DatabaseOutput : Humidifier.Base.BaseSubResource
+        public class DatabaseOutput : Humidifier.Base.BaseSubResource, IHaveGlueConnectionName, IHaveDataBrewJobTypesDatabaseTableOutputOptionsDatabaseOptions
         {
             /// <summary>
             /// DatabaseOutputMode
@@ -379,7 +379,7 @@ namespace Humidifier.DataBrew
             public dynamic Mode { get; set; }
         }
 
-        public class Output : Humidifier.Base.BaseSubResource, IHaveFormat, IHaveOverwrite, IHaveCompressionFormat
+        public class Output : Humidifier.Base.BaseSubResource, IHaveFormat, IHaveOverwrite, IHaveCompressionFormat, IHaveDataBrewJobTypesS3LocationLocation
         {
             /// <summary>
             /// Overwrite
@@ -566,7 +566,7 @@ namespace Humidifier.DataBrew
             public dynamic Key { get; set; }
         }
 
-        public class S3TableOutputOptions : Humidifier.Base.BaseSubResource
+        public class S3TableOutputOptions : Humidifier.Base.BaseSubResource, IHaveDataBrewJobTypesS3LocationLocation
         {
             /// <summary>
             /// Location

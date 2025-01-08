@@ -89,7 +89,7 @@ namespace Humidifier.GreengrassV2
             public dynamic Reset { get; set; }
         }
 
-        public class ComponentDeploymentSpecification : Humidifier.Base.BaseSubResource
+        public class ComponentDeploymentSpecification : Humidifier.Base.BaseSubResource, IHaveComponentVersion
         {
             /// <summary>
             /// RunWith
@@ -246,7 +246,7 @@ namespace Humidifier.GreengrassV2
             public List<Humidifier.GreengrassV2.DeploymentTypes.IoTJobAbortCriteria> CriteriaList { get; set; }
         }
 
-        public class IoTJobAbortCriteria : Humidifier.Base.BaseSubResource, IHaveAction, IHaveFailureType, IHaveThresholdPercentage
+        public class IoTJobAbortCriteria : Humidifier.Base.BaseSubResource, IHaveAction, IHaveFailureType, IHaveThresholdPercentage, IHaveMinNumberOfExecutedThings
         {
             /// <summary>
             /// FailureType
@@ -282,7 +282,7 @@ namespace Humidifier.GreengrassV2
             public dynamic MinNumberOfExecutedThings { get; set; }
         }
 
-        public class IoTJobExecutionsRolloutConfig : Humidifier.Base.BaseSubResource
+        public class IoTJobExecutionsRolloutConfig : Humidifier.Base.BaseSubResource, IHaveMaximumPerMinute
         {
             /// <summary>
             /// MaximumPerMinute
@@ -302,7 +302,7 @@ namespace Humidifier.GreengrassV2
             public Humidifier.GreengrassV2.DeploymentTypes.IoTJobExponentialRolloutRate ExponentialRate { get; set; }
         }
 
-        public class IoTJobExponentialRolloutRate : Humidifier.Base.BaseSubResource
+        public class IoTJobExponentialRolloutRate : Humidifier.Base.BaseSubResource, IHaveBaseRatePerMinute, IHaveIncrementFactor
         {
             /// <summary>
             /// RateIncreaseCriteria
@@ -330,7 +330,7 @@ namespace Humidifier.GreengrassV2
             public dynamic IncrementFactor { get; set; }
         }
 
-        public class IoTJobRateIncreaseCriteria : Humidifier.Base.BaseSubResource
+        public class IoTJobRateIncreaseCriteria : Humidifier.Base.BaseSubResource, IHaveNumberOfSucceededThings, IHaveNumberOfNotifiedThings
         {
             /// <summary>
             /// NumberOfSucceededThings
@@ -350,7 +350,7 @@ namespace Humidifier.GreengrassV2
             public dynamic NumberOfNotifiedThings { get; set; }
         }
 
-        public class IoTJobTimeoutConfig : Humidifier.Base.BaseSubResource
+        public class IoTJobTimeoutConfig : Humidifier.Base.BaseSubResource, IHaveInProgressTimeoutInMinutes
         {
             /// <summary>
             /// InProgressTimeoutInMinutes

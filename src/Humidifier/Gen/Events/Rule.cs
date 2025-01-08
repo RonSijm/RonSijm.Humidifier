@@ -3,7 +3,7 @@ namespace Humidifier.Events
     using System.Collections.Generic;
     using RuleTypes;
 
-    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveState, IHaveScheduleExpression, IHaveEventPattern
+    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveState, IHaveScheduleExpression, IHaveEventPattern, IHaveEventBusName
     {
         public class Attributes
         {
@@ -127,7 +127,7 @@ namespace Humidifier.Events
             public dynamic Size { get; set; }
         }
 
-        public class BatchParameters : Humidifier.Base.BaseSubResource, IHaveJobName
+        public class BatchParameters : Humidifier.Base.BaseSubResource, IHaveJobName, IHaveJobDefinition
         {
             /// <summary>
             /// ArrayProperties
@@ -215,7 +215,7 @@ namespace Humidifier.Events
             public dynamic Arn { get; set; }
         }
 
-        public class EcsParameters : Humidifier.Base.BaseSubResource, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveGroup, IHaveTaskCount, IHaveReferenceId, IHaveTaskDefinitionArn
+        public class EcsParameters : Humidifier.Base.BaseSubResource, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveGroup, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveTaskCount, IHaveReferenceId, IHaveTaskDefinitionArn
         {
             /// <summary>
             /// PlatformVersion
@@ -451,7 +451,7 @@ namespace Humidifier.Events
             public dynamic Type { get; set; }
         }
 
-        public class RedshiftDataParameters : Humidifier.Base.BaseSubResource, IHaveDatabase, IHaveSecretManagerArn, IHaveStatementName, IHaveDbUser
+        public class RedshiftDataParameters : Humidifier.Base.BaseSubResource, IHaveDatabase, IHaveSecretManagerArn, IHaveStatementName, IHaveDbUser, IHaveSqls, IHaveSql, IHaveWithEvent
         {
             /// <summary>
             /// StatementName

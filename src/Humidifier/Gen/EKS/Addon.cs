@@ -3,7 +3,7 @@ namespace Humidifier.EKS
     using System.Collections.Generic;
     using AddonTypes;
 
-    public class Addon : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterName
+    public class Addon : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterName, IHaveAddonName
     {
         public class Attributes
         {
@@ -84,7 +84,7 @@ namespace Humidifier.EKS
 
     namespace AddonTypes
     {
-        public class PodIdentityAssociation : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        public class PodIdentityAssociation : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveServiceAccount
         {
             /// <summary>
             /// ServiceAccount

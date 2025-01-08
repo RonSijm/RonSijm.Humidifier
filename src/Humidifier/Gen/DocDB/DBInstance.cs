@@ -2,7 +2,7 @@ namespace Humidifier.DocDB
 {
     using System.Collections.Generic;
 
-    public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveAutoMinorVersionUpgrade, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveDBInstanceClass
+    public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveAutoMinorVersionUpgrade, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveDBInstanceClass, IHaveCACertificateIdentifier, IHaveCertificateRotationRestart, IHaveEnablePerformanceInsights
     {
         public class Attributes
         {

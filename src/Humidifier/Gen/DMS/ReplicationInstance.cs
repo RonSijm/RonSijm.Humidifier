@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using System.Collections.Generic;
 
-    public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveResourceIdentifier, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveAllocatedStorage, IHaveMultiAZ, IHaveAllowMajorVersionUpgrade
+    public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveResourceIdentifier, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveAllocatedStorage, IHaveMultiAZ, IHaveAllowMajorVersionUpgrade, IHaveReplicationSubnetGroupIdentifier
     {
         public class Attributes
         {

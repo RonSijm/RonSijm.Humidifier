@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackage
     using System.Collections.Generic;
     using AssetTypes;
 
-    public class Asset : Humidifier.Base.BaseResource, IHaveTags, IHaveId, IHaveResourceId, IHaveSourceArn
+    public class Asset : Humidifier.Base.BaseResource, IHaveTags, IHaveId, IHaveResourceId, IHaveSourceArn, IHavePackagingGroupId
     {
         public class Attributes
         {

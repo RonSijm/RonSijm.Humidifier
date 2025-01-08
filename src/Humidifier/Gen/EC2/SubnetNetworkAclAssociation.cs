@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class SubnetNetworkAclAssociation : Humidifier.Base.BaseResource, IHaveSubnetId
+    public class SubnetNetworkAclAssociation : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveNetworkAclId
     {
         public class Attributes
         {

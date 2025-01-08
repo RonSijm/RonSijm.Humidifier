@@ -81,7 +81,7 @@ namespace Humidifier.IoTTwinMaker
 
     namespace EntityTypes
     {
-        public class Component : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveComponentName, IHaveComponentTypeId
+        public class Component : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveComponentName, IHaveComponentTypeId, IHaveIoTTwinMakerEntityTypesStatusStatus
         {
             /// <summary>
             /// Status
@@ -143,7 +143,7 @@ namespace Humidifier.IoTTwinMaker
             public Dictionary<string, Humidifier.IoTTwinMaker.EntityTypes.Property> Properties { get; set; }
         }
 
-        public class CompositeComponent : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveComponentName, IHaveComponentTypeId
+        public class CompositeComponent : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveComponentName, IHaveComponentTypeId, IHaveIoTTwinMakerEntityTypesStatusStatus
         {
             /// <summary>
             /// Status
@@ -205,7 +205,7 @@ namespace Humidifier.IoTTwinMaker
             public Dictionary<string, Humidifier.IoTTwinMaker.EntityTypes.Property> Properties { get; set; }
         }
 
-        public class DataType : Humidifier.Base.BaseSubResource, IHaveType
+        public class DataType : Humidifier.Base.BaseSubResource, IHaveType, IHaveUnitOfMeasure
         {
             /// <summary>
             /// Type
@@ -328,7 +328,7 @@ namespace Humidifier.IoTTwinMaker
             public dynamic StringValue { get; set; }
         }
 
-        public class Definition : Humidifier.Base.BaseSubResource
+        public class Definition : Humidifier.Base.BaseSubResource, IHaveIsExternalId, IHaveIsStoredExternally, IHaveIsTimeSeries, IHaveIsRequiredInEntity
         {
             /// <summary>
             /// DefaultValue
@@ -453,7 +453,7 @@ namespace Humidifier.IoTTwinMaker
             public Humidifier.IoTTwinMaker.EntityTypes.DataValue Value { get; set; }
         }
 
-        public class PropertyGroup : Humidifier.Base.BaseSubResource
+        public class PropertyGroup : Humidifier.Base.BaseSubResource, IHaveGroupType, IHavePropertyNames
         {
             /// <summary>
             /// GroupType
@@ -474,7 +474,7 @@ namespace Humidifier.IoTTwinMaker
             public dynamic PropertyNames { get; set; }
         }
 
-        public class Relationship : Humidifier.Base.BaseSubResource
+        public class Relationship : Humidifier.Base.BaseSubResource, IHaveRelationshipType, IHaveTargetComponentTypeId
         {
             /// <summary>
             /// RelationshipType
@@ -494,7 +494,7 @@ namespace Humidifier.IoTTwinMaker
             public dynamic TargetComponentTypeId { get; set; }
         }
 
-        public class RelationshipValue : Humidifier.Base.BaseSubResource
+        public class RelationshipValue : Humidifier.Base.BaseSubResource, IHaveTargetComponentName, IHaveTargetEntityId
         {
             /// <summary>
             /// TargetComponentName

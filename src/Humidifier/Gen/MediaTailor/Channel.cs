@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using System.Collections.Generic;
     using ChannelTypes;
 
-    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveChannelName, IHaveTier
+    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveChannelName, IHaveTier, IHaveAudiences
     {
         public class Attributes
         {
@@ -193,7 +193,7 @@ namespace Humidifier.MediaTailor
             public dynamic SourceGroup { get; set; }
         }
 
-        public class SlateSource : Humidifier.Base.BaseSubResource, IHaveSourceLocationName
+        public class SlateSource : Humidifier.Base.BaseSubResource, IHaveSourceLocationName, IHaveVodSourceName
         {
             /// <summary>
             /// VodSourceName

@@ -140,7 +140,7 @@ namespace Humidifier.QuickSight
             public dynamic DefaultDateColumnName { get; set; }
         }
 
-        public class DatasetMetadata : Humidifier.Base.BaseSubResource, IHaveDatasetName
+        public class DatasetMetadata : Humidifier.Base.BaseSubResource, IHaveDatasetName, IHaveDatasetArn
         {
             /// <summary>
             /// DatasetArn
@@ -232,7 +232,7 @@ namespace Humidifier.QuickSight
             public dynamic DisplayFormat { get; set; }
         }
 
-        public class DisplayFormatOptions : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveDecimalSeparator
+        public class DisplayFormatOptions : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveDecimalSeparator, IHaveDateFormat
         {
             /// <summary>
             /// DecimalSeparator
@@ -437,7 +437,7 @@ namespace Humidifier.QuickSight
             public dynamic Maximum { get; set; }
         }
 
-        public class SemanticEntityType : Humidifier.Base.BaseSubResource, IHaveTypeName
+        public class SemanticEntityType : Humidifier.Base.BaseSubResource, IHaveTypeName, IHaveSubTypeName
         {
             /// <summary>
             /// TypeName
@@ -466,7 +466,7 @@ namespace Humidifier.QuickSight
             public dynamic SubTypeName { get; set; }
         }
 
-        public class SemanticType : Humidifier.Base.BaseSubResource, IHaveTypeName
+        public class SemanticType : Humidifier.Base.BaseSubResource, IHaveTypeName, IHaveSubTypeName
         {
             /// <summary>
             /// TruthyCellValueSynonyms
@@ -529,7 +529,7 @@ namespace Humidifier.QuickSight
             public dynamic FalseyCellValueSynonyms { get; set; }
         }
 
-        public class TopicCalculatedField : Humidifier.Base.BaseSubResource, IHaveExpression, IHaveTimeGranularity, IHaveAggregation
+        public class TopicCalculatedField : Humidifier.Base.BaseSubResource, IHaveExpression, IHaveTimeGranularity, IHaveAggregation, IHaveQuickSightTopicTypesSemanticTypeSemanticType, IHaveNotAllowedAggregations, IHaveQuickSightTopicTypesDefaultFormattingDefaultFormatting, IHaveAllowedAggregations, IHaveIsIncludedInTopic, IHaveColumnDataRole, IHaveNonAdditive, IHaveNeverAggregateInFilter, IHaveDisableIndexing, IHaveQuickSightTopicTypesComparativeOrderComparativeOrder
         {
             /// <summary>
             /// SemanticType
@@ -709,7 +709,7 @@ namespace Humidifier.QuickSight
             public dynamic Inverse { get; set; }
         }
 
-        public class TopicCategoryFilterConstant : Humidifier.Base.BaseSubResource, IHaveConstantType
+        public class TopicCategoryFilterConstant : Humidifier.Base.BaseSubResource, IHaveConstantType, IHaveSingularConstant
         {
             /// <summary>
             /// SingularConstant
@@ -737,7 +737,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.TopicTypes.CollectiveConstant CollectiveConstant { get; set; }
         }
 
-        public class TopicColumn : Humidifier.Base.BaseSubResource, IHaveTimeGranularity, IHaveColumnName, IHaveAggregation
+        public class TopicColumn : Humidifier.Base.BaseSubResource, IHaveTimeGranularity, IHaveColumnName, IHaveAggregation, IHaveQuickSightTopicTypesSemanticTypeSemanticType, IHaveNotAllowedAggregations, IHaveQuickSightTopicTypesDefaultFormattingDefaultFormatting, IHaveAllowedAggregations, IHaveIsIncludedInTopic, IHaveColumnDataRole, IHaveNonAdditive, IHaveNeverAggregateInFilter, IHaveDisableIndexing, IHaveQuickSightTopicTypesComparativeOrderComparativeOrder
         {
             /// <summary>
             /// SemanticType
@@ -881,7 +881,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.TopicTypes.CellValueSynonym> CellValueSynonyms { get; set; }
         }
 
-        public class TopicDateRangeFilter : Humidifier.Base.BaseSubResource
+        public class TopicDateRangeFilter : Humidifier.Base.BaseSubResource, IHaveInclusive, IHaveQuickSightTopicTypesTopicRangeFilterConstantConstant
         {
             /// <summary>
             /// Inclusive
@@ -1040,7 +1040,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.TopicTypes.NamedEntityDefinition> Definition { get; set; }
         }
 
-        public class TopicNumericEqualityFilter : Humidifier.Base.BaseSubResource, IHaveAggregation
+        public class TopicNumericEqualityFilter : Humidifier.Base.BaseSubResource, IHaveAggregation, IHaveQuickSightTopicTypesTopicSingularFilterConstantConstant
         {
             /// <summary>
             /// Aggregation
@@ -1060,7 +1060,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.TopicTypes.TopicSingularFilterConstant Constant { get; set; }
         }
 
-        public class TopicNumericRangeFilter : Humidifier.Base.BaseSubResource, IHaveAggregation
+        public class TopicNumericRangeFilter : Humidifier.Base.BaseSubResource, IHaveAggregation, IHaveInclusive, IHaveQuickSightTopicTypesTopicRangeFilterConstantConstant
         {
             /// <summary>
             /// Aggregation
@@ -1108,7 +1108,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.TopicTypes.RangeConstant RangeConstant { get; set; }
         }
 
-        public class TopicRelativeDateFilter : Humidifier.Base.BaseSubResource, IHaveTimeGranularity
+        public class TopicRelativeDateFilter : Humidifier.Base.BaseSubResource, IHaveTimeGranularity, IHaveQuickSightTopicTypesTopicSingularFilterConstantConstant
         {
             /// <summary>
             /// RelativeDateFilterFunction
@@ -1136,7 +1136,7 @@ namespace Humidifier.QuickSight
             public dynamic TimeGranularity { get; set; }
         }
 
-        public class TopicSingularFilterConstant : Humidifier.Base.BaseSubResource, IHaveConstantType
+        public class TopicSingularFilterConstant : Humidifier.Base.BaseSubResource, IHaveConstantType, IHaveSingularConstant
         {
             /// <summary>
             /// SingularConstant

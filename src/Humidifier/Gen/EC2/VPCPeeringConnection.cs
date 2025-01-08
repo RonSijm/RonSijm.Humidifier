@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class VPCPeeringConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId
+    public class VPCPeeringConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHavePeerRegion, IHavePeerVpcId
     {
         public class Attributes
         {

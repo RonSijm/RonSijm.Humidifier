@@ -31,7 +31,7 @@ namespace Humidifier.Greengrass
 
     namespace ResourceDefinitionVersionTypes
     {
-        public class GroupOwnerSetting : Humidifier.Base.BaseSubResource, IHaveGroupOwner
+        public class GroupOwnerSetting : Humidifier.Base.BaseSubResource, IHaveGroupOwner, IHaveAutoAddGroupOwner
         {
             /// <summary>
             /// AutoAddGroupOwner
@@ -51,7 +51,7 @@ namespace Humidifier.Greengrass
             public dynamic GroupOwner { get; set; }
         }
 
-        public class LocalDeviceResourceData : Humidifier.Base.BaseSubResource, IHaveSourcePath
+        public class LocalDeviceResourceData : Humidifier.Base.BaseSubResource, IHaveSourcePath, IHaveGreengrassResourceDefinitionVersionTypesGroupOwnerSettingGroupOwnerSetting
         {
             /// <summary>
             /// SourcePath
@@ -71,7 +71,7 @@ namespace Humidifier.Greengrass
             public Humidifier.Greengrass.ResourceDefinitionVersionTypes.GroupOwnerSetting GroupOwnerSetting { get; set; }
         }
 
-        public class LocalVolumeResourceData : Humidifier.Base.BaseSubResource, IHaveSourcePath, IHaveDestinationPath
+        public class LocalVolumeResourceData : Humidifier.Base.BaseSubResource, IHaveSourcePath, IHaveDestinationPath, IHaveGreengrassResourceDefinitionVersionTypesGroupOwnerSettingGroupOwnerSetting
         {
             /// <summary>
             /// SourcePath
@@ -143,7 +143,7 @@ namespace Humidifier.Greengrass
             public Humidifier.Greengrass.ResourceDefinitionVersionTypes.S3MachineLearningModelResourceData S3MachineLearningModelResourceData { get; set; }
         }
 
-        public class ResourceDownloadOwnerSetting : Humidifier.Base.BaseSubResource, IHaveGroupOwner
+        public class ResourceDownloadOwnerSetting : Humidifier.Base.BaseSubResource, IHaveGroupOwner, IHaveGroupPermission
         {
             /// <summary>
             /// GroupOwner
@@ -191,7 +191,7 @@ namespace Humidifier.Greengrass
             public dynamic Name { get; set; }
         }
 
-        public class S3MachineLearningModelResourceData : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveDestinationPath
+        public class S3MachineLearningModelResourceData : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveDestinationPath, IHaveGreengrassResourceDefinitionVersionTypesResourceDownloadOwnerSettingOwnerSetting
         {
             /// <summary>
             /// OwnerSetting
@@ -219,7 +219,7 @@ namespace Humidifier.Greengrass
             public dynamic S3Uri { get; set; }
         }
 
-        public class SageMakerMachineLearningModelResourceData : Humidifier.Base.BaseSubResource, IHaveDestinationPath
+        public class SageMakerMachineLearningModelResourceData : Humidifier.Base.BaseSubResource, IHaveDestinationPath, IHaveSageMakerJobArn, IHaveGreengrassResourceDefinitionVersionTypesResourceDownloadOwnerSettingOwnerSetting
         {
             /// <summary>
             /// OwnerSetting
@@ -247,7 +247,7 @@ namespace Humidifier.Greengrass
             public dynamic SageMakerJobArn { get; set; }
         }
 
-        public class SecretsManagerSecretResourceData : Humidifier.Base.BaseSubResource
+        public class SecretsManagerSecretResourceData : Humidifier.Base.BaseSubResource, IHaveARN, IHaveAdditionalStagingLabelsToDownload
         {
             /// <summary>
             /// ARN

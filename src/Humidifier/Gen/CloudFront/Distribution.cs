@@ -35,7 +35,7 @@ namespace Humidifier.CloudFront
 
     namespace DistributionTypes
     {
-        public class CacheBehavior : Humidifier.Base.BaseSubResource, IHaveDefaultTTL, IHaveAllowedMethods, IHaveMinTTL, IHaveMaxTTL
+        public class CacheBehavior : Humidifier.Base.BaseSubResource, IHaveDefaultTTL, IHaveAllowedMethods, IHaveMinTTL, IHaveMaxTTL, IHaveCompress, IHaveTargetOriginId, IHaveViewerProtocolPolicy, IHaveResponseHeadersPolicyId, IHaveCloudFrontDistributionTypesGrpcConfigGrpcConfig, IHaveRealtimeLogConfigArn, IHaveTrustedSigners, IHaveFieldLevelEncryptionId, IHaveTrustedKeyGroups, IHaveCachedMethods, IHaveSmoothStreaming, IHaveCloudFrontDistributionTypesForwardedValuesForwardedValues, IHaveOriginRequestPolicyId, IHaveCachePolicyId
         {
             /// <summary>
             /// Compress
@@ -234,7 +234,7 @@ namespace Humidifier.CloudFront
             public dynamic Forward { get; set; }
         }
 
-        public class CustomErrorResponse : Humidifier.Base.BaseSubResource, IHaveResponseCode
+        public class CustomErrorResponse : Humidifier.Base.BaseSubResource, IHaveResponseCode, IHaveErrorCode
         {
             /// <summary>
             /// ResponseCode
@@ -270,7 +270,7 @@ namespace Humidifier.CloudFront
             public dynamic ResponsePagePath { get; set; }
         }
 
-        public class CustomOriginConfig : Humidifier.Base.BaseSubResource
+        public class CustomOriginConfig : Humidifier.Base.BaseSubResource, IHaveHTTPSPort, IHaveOriginSSLProtocols, IHaveHTTPPort, IHaveOriginProtocolPolicy
         {
             /// <summary>
             /// OriginReadTimeout
@@ -323,7 +323,7 @@ namespace Humidifier.CloudFront
             public dynamic OriginProtocolPolicy { get; set; }
         }
 
-        public class DefaultCacheBehavior : Humidifier.Base.BaseSubResource, IHaveDefaultTTL, IHaveAllowedMethods, IHaveMinTTL, IHaveMaxTTL
+        public class DefaultCacheBehavior : Humidifier.Base.BaseSubResource, IHaveDefaultTTL, IHaveAllowedMethods, IHaveMinTTL, IHaveMaxTTL, IHaveCompress, IHaveTargetOriginId, IHaveViewerProtocolPolicy, IHaveResponseHeadersPolicyId, IHaveCloudFrontDistributionTypesGrpcConfigGrpcConfig, IHaveRealtimeLogConfigArn, IHaveTrustedSigners, IHaveFieldLevelEncryptionId, IHaveTrustedKeyGroups, IHaveCachedMethods, IHaveSmoothStreaming, IHaveCloudFrontDistributionTypesForwardedValuesForwardedValues, IHaveOriginRequestPolicyId, IHaveCachePolicyId
         {
             /// <summary>
             /// Compress
@@ -493,7 +493,7 @@ namespace Humidifier.CloudFront
             public dynamic MaxTTL { get; set; }
         }
 
-        public class DistributionConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveComment, IHaveAliases
+        public class DistributionConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveComment, IHaveAliases, IHaveWebACLId, IHavePriceClass
         {
             /// <summary>
             /// Logging
@@ -716,7 +716,7 @@ namespace Humidifier.CloudFront
             public dynamic QueryStringCacheKeys { get; set; }
         }
 
-        public class FunctionAssociation : Humidifier.Base.BaseSubResource, IHaveEventType
+        public class FunctionAssociation : Humidifier.Base.BaseSubResource, IHaveEventType, IHaveFunctionARN
         {
             /// <summary>
             /// FunctionARN
@@ -797,7 +797,7 @@ namespace Humidifier.CloudFront
             public dynamic LambdaFunctionARN { get; set; }
         }
 
-        public class LegacyCustomOrigin : Humidifier.Base.BaseSubResource, IHaveDNSName
+        public class LegacyCustomOrigin : Humidifier.Base.BaseSubResource, IHaveDNSName, IHaveHTTPSPort, IHaveOriginSSLProtocols, IHaveHTTPPort, IHaveOriginProtocolPolicy
         {
             /// <summary>
             /// HTTPSPort
@@ -890,7 +890,7 @@ namespace Humidifier.CloudFront
             public dynamic Prefix { get; set; }
         }
 
-        public class Origin : Humidifier.Base.BaseSubResource, IHaveId, IHaveDomainName
+        public class Origin : Humidifier.Base.BaseSubResource, IHaveId, IHaveDomainName, IHaveConnectionTimeout
         {
             /// <summary>
             /// ConnectionTimeout
@@ -995,7 +995,7 @@ namespace Humidifier.CloudFront
             public dynamic HeaderName { get; set; }
         }
 
-        public class OriginGroup : Humidifier.Base.BaseSubResource, IHaveId
+        public class OriginGroup : Humidifier.Base.BaseSubResource, IHaveId, IHaveSelectionCriteria
         {
             /// <summary>
             /// SelectionCriteria

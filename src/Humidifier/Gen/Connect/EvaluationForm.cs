@@ -81,7 +81,7 @@ namespace Humidifier.Connect
 
     namespace EvaluationFormTypes
     {
-        public class EvaluationFormBaseItem : Humidifier.Base.BaseSubResource
+        public class EvaluationFormBaseItem : Humidifier.Base.BaseSubResource, IHaveConnectEvaluationFormTypesEvaluationFormSectionSection
         {
             /// <summary>
             /// Section
@@ -93,7 +93,7 @@ namespace Humidifier.Connect
             public Humidifier.Connect.EvaluationFormTypes.EvaluationFormSection Section { get; set; }
         }
 
-        public class EvaluationFormItem : Humidifier.Base.BaseSubResource
+        public class EvaluationFormItem : Humidifier.Base.BaseSubResource, IHaveConnectEvaluationFormTypesEvaluationFormSectionSection
         {
             /// <summary>
             /// Question
@@ -125,7 +125,7 @@ namespace Humidifier.Connect
             public Humidifier.Connect.EvaluationFormTypes.NumericQuestionPropertyValueAutomation PropertyValue { get; set; }
         }
 
-        public class EvaluationFormNumericQuestionOption : Humidifier.Base.BaseSubResource, IHaveMaxValue, IHaveMinValue
+        public class EvaluationFormNumericQuestionOption : Humidifier.Base.BaseSubResource, IHaveMaxValue, IHaveMinValue, IHaveScore, IHaveAutomaticFail
         {
             /// <summary>
             /// Score
@@ -198,7 +198,7 @@ namespace Humidifier.Connect
             public dynamic MaxValue { get; set; }
         }
 
-        public class EvaluationFormQuestion : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveWeight, IHaveRefId
+        public class EvaluationFormQuestion : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveWeight, IHaveRefId, IHaveInstructions
         {
             /// <summary>
             /// NotApplicableEnabled
@@ -278,7 +278,7 @@ namespace Humidifier.Connect
             public Humidifier.Connect.EvaluationFormTypes.EvaluationFormSingleSelectQuestionProperties SingleSelect { get; set; }
         }
 
-        public class EvaluationFormSection : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveWeight, IHaveRefId
+        public class EvaluationFormSection : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveWeight, IHaveRefId, IHaveInstructions
         {
             /// <summary>
             /// Title
@@ -356,7 +356,7 @@ namespace Humidifier.Connect
             public Humidifier.Connect.EvaluationFormTypes.SingleSelectQuestionRuleCategoryAutomation RuleCategory { get; set; }
         }
 
-        public class EvaluationFormSingleSelectQuestionOption : Humidifier.Base.BaseSubResource, IHaveText, IHaveRefId
+        public class EvaluationFormSingleSelectQuestionOption : Humidifier.Base.BaseSubResource, IHaveText, IHaveRefId, IHaveScore, IHaveAutomaticFail
         {
             /// <summary>
             /// Score
@@ -392,7 +392,7 @@ namespace Humidifier.Connect
             public dynamic AutomaticFail { get; set; }
         }
 
-        public class EvaluationFormSingleSelectQuestionProperties : Humidifier.Base.BaseSubResource
+        public class EvaluationFormSingleSelectQuestionProperties : Humidifier.Base.BaseSubResource, IHaveDisplayAs
         {
             /// <summary>
             /// DisplayAs

@@ -82,7 +82,7 @@ namespace Humidifier.CloudFront
             public List<Humidifier.CloudFront.FunctionTypes.KeyValueStoreAssociation> KeyValueStoreAssociations { get; set; }
         }
 
-        public class FunctionMetadata : Humidifier.Base.BaseSubResource
+        public class FunctionMetadata : Humidifier.Base.BaseSubResource, IHaveFunctionARN
         {
             /// <summary>
             /// FunctionARN

@@ -3,7 +3,7 @@ namespace Humidifier.SES
     using System.Collections.Generic;
     using MailManagerArchiveTypes;
 
-    public class MailManagerArchive : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyArn
+    public class MailManagerArchive : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyArn, IHaveArchiveName
     {
         public class Attributes
         {
@@ -50,7 +50,7 @@ namespace Humidifier.SES
 
     namespace MailManagerArchiveTypes
     {
-        public class ArchiveRetention : Humidifier.Base.BaseSubResource
+        public class ArchiveRetention : Humidifier.Base.BaseSubResource, IHaveRetentionPeriod
         {
             /// <summary>
             /// RetentionPeriod

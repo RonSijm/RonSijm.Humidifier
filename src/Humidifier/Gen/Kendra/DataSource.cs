@@ -779,7 +779,7 @@ namespace Humidifier.Kendra
             public Humidifier.Kendra.DataSourceTypes.DocumentAttributeValue TargetDocumentAttributeValue { get; set; }
         }
 
-        public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue
+        public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue, IHaveDateValue, IHaveStringListValue
         {
             /// <summary>
             /// DateValue
@@ -950,7 +950,7 @@ namespace Humidifier.Kendra
             public dynamic DocumentContentDeletion { get; set; }
         }
 
-        public class OneDriveConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveInclusionPatterns, IHaveExclusionPatterns
+        public class OneDriveConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveInclusionPatterns, IHaveExclusionPatterns, IHaveDisableLocalGroups
         {
             /// <summary>
             /// TenantDomain
@@ -1062,7 +1062,7 @@ namespace Humidifier.Kendra
             public dynamic Credentials { get; set; }
         }
 
-        public class S3DataSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveInclusionPatterns, IHaveExclusionPatterns
+        public class S3DataSourceConfiguration : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveInclusionPatterns, IHaveExclusionPatterns, IHaveInclusionPrefixes
         {
             /// <summary>
             /// BucketName
@@ -1408,7 +1408,7 @@ namespace Humidifier.Kendra
             public dynamic DocumentDataFieldName { get; set; }
         }
 
-        public class ServiceNowConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveAuthenticationType
+        public class ServiceNowConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveAuthenticationType, IHaveHostUrl
         {
             /// <summary>
             /// SecretArn
@@ -1578,7 +1578,7 @@ namespace Humidifier.Kendra
             public dynamic DocumentDataFieldName { get; set; }
         }
 
-        public class SharePointConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveDocumentTitleFieldName, IHaveInclusionPatterns, IHaveExclusionPatterns, IHaveCrawlAttachments, IHaveKendraDataSourceTypesDataSourceVpcConfigurationVpcConfiguration
+        public class SharePointConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveDocumentTitleFieldName, IHaveInclusionPatterns, IHaveExclusionPatterns, IHaveCrawlAttachments, IHaveKendraDataSourceTypesDataSourceVpcConfigurationVpcConfiguration, IHaveDisableLocalGroups, IHaveUseChangeLog
         {
             /// <summary>
             /// SecretArn
@@ -1867,7 +1867,7 @@ namespace Humidifier.Kendra
             public Humidifier.Kendra.DataSourceTypes.WebCrawlerSeedUrlConfiguration SeedUrlConfiguration { get; set; }
         }
 
-        public class WorkDocsConfiguration : Humidifier.Base.BaseSubResource, IHaveInclusionPatterns, IHaveExclusionPatterns
+        public class WorkDocsConfiguration : Humidifier.Base.BaseSubResource, IHaveInclusionPatterns, IHaveExclusionPatterns, IHaveOrganizationId, IHaveUseChangeLog
         {
             /// <summary>
             /// CrawlComments

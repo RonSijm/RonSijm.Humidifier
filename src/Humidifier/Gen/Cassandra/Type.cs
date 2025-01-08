@@ -3,7 +3,7 @@ namespace Humidifier.Cassandra
     using System.Collections.Generic;
     using TypeTypes;
 
-    public class Type : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTypeName
+    public class Type : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTypeName, IHaveKeyspaceName
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.ResourceGroups
 {
     using System.Collections.Generic;
 
-    public class TagSyncTask : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveTagKey, IHaveGroup
+    public class TagSyncTask : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveTagKey, IHaveGroup, IHaveTagValue
     {
         public class Attributes
         {

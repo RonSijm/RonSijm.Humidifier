@@ -31,7 +31,7 @@ namespace Humidifier.Greengrass
 
     namespace LoggerDefinitionVersionTypes
     {
-        public class Logger : Humidifier.Base.BaseSubResource, IHaveType, IHaveId, IHaveLevel
+        public class Logger : Humidifier.Base.BaseSubResource, IHaveType, IHaveId, IHaveLevel, IHaveSpace, IHaveComponent
         {
             /// <summary>
             /// Space

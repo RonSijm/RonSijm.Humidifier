@@ -183,7 +183,7 @@ namespace Humidifier.SageMaker
             public dynamic FeaturesAttribute { get; set; }
         }
 
-        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeKmsKeyId, IHaveVolumeSizeInGB
+        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeSizeInGB, IHaveVolumeKmsKeyId
         {
             /// <summary>
             /// InstanceCount
@@ -343,7 +343,7 @@ namespace Humidifier.SageMaker
             public dynamic Line { get; set; }
         }
 
-        public class ModelExplainabilityAppSpecification : Humidifier.Base.BaseSubResource, IHaveImageUri
+        public class ModelExplainabilityAppSpecification : Humidifier.Base.BaseSubResource, IHaveImageUri, IHaveConfigUri
         {
             /// <summary>
             /// ConfigUri

@@ -2,7 +2,7 @@ namespace Humidifier.DataSync
 {
     using System.Collections.Generic;
 
-    public class Agent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcEndpointId, IHaveSecurityGroupArns
+    public class Agent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveVpcEndpointId, IHaveSecurityGroupArns, IHaveAgentName, IHaveSubnetArns
     {
         public class Attributes
         {

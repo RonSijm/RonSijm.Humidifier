@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveMinSize, IHaveMaxSize, IHaveComputeType
+    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveMinSize, IHaveMaxSize, IHaveComputeType, IHaveDesiredEC2Instances, IHaveFleetType, IHavePeerVpcId, IHaveNewGameSessionProtectionPolicy, IHaveMetricGroups
     {
         public class Attributes
         {
@@ -228,7 +228,7 @@ namespace Humidifier.GameLift
             public dynamic CertificateType { get; set; }
         }
 
-        public class IpPermission : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveFromPort, IHaveToPort
+        public class IpPermission : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveFromPort, IHaveToPort, IHaveIpRange
         {
             /// <summary>
             /// IpRange
@@ -264,7 +264,7 @@ namespace Humidifier.GameLift
             public dynamic Protocol { get; set; }
         }
 
-        public class LocationCapacity : Humidifier.Base.BaseSubResource, IHaveMinSize, IHaveMaxSize
+        public class LocationCapacity : Humidifier.Base.BaseSubResource, IHaveMinSize, IHaveMaxSize, IHaveDesiredEC2Instances
         {
             /// <summary>
             /// MinSize
@@ -312,7 +312,7 @@ namespace Humidifier.GameLift
             public dynamic Location { get; set; }
         }
 
-        public class ResourceCreationLimitPolicy : Humidifier.Base.BaseSubResource
+        public class ResourceCreationLimitPolicy : Humidifier.Base.BaseSubResource, IHavePolicyPeriodInMinutes, IHaveNewGameSessionsPerCreator
         {
             /// <summary>
             /// PolicyPeriodInMinutes
@@ -361,7 +361,7 @@ namespace Humidifier.GameLift
             public dynamic GameSessionActivationTimeoutSeconds { get; set; }
         }
 
-        public class ScalingPolicy : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveMetricName, IHaveComparisonOperator, IHaveLocation, IHaveThreshold, IHavePolicyType, IHaveScalingAdjustment, IHaveEvaluationPeriods
+        public class ScalingPolicy : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveMetricName, IHaveComparisonOperator, IHaveLocation, IHaveThreshold, IHavePolicyType, IHaveScalingAdjustment, IHaveEvaluationPeriods, IHaveScalingAdjustmentType, IHaveUpdateStatus
         {
             /// <summary>
             /// Status
@@ -461,7 +461,7 @@ namespace Humidifier.GameLift
             public dynamic Threshold { get; set; }
         }
 
-        public class ServerProcess : Humidifier.Base.BaseSubResource, IHaveParameters
+        public class ServerProcess : Humidifier.Base.BaseSubResource, IHaveParameters, IHaveLaunchPath
         {
             /// <summary>
             /// ConcurrentExecutions

@@ -3,7 +3,7 @@ namespace Humidifier.CodePipeline
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn
+    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn, IHaveCodePipelinePipelineTypesArtifactStoreArtifactStore
     {
         public class Attributes
         {
@@ -114,7 +114,7 @@ namespace Humidifier.CodePipeline
 
     namespace PipelineTypes
     {
-        public class ActionDeclaration : Humidifier.Base.BaseSubResource, IHaveName, IHaveRoleArn, IHaveRegion, IHaveConfiguration, IHaveTimeoutInMinutes
+        public class ActionDeclaration : Humidifier.Base.BaseSubResource, IHaveName, IHaveRoleArn, IHaveNamespace_, IHaveRegion, IHaveConfiguration, IHaveTimeoutInMinutes
         {
             /// <summary>
             /// ActionTypeId
@@ -282,7 +282,7 @@ namespace Humidifier.CodePipeline
             public dynamic Location { get; set; }
         }
 
-        public class ArtifactStoreMap : Humidifier.Base.BaseSubResource, IHaveRegion
+        public class ArtifactStoreMap : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveCodePipelinePipelineTypesArtifactStoreArtifactStore
         {
             /// <summary>
             /// ArtifactStore
@@ -335,7 +335,7 @@ namespace Humidifier.CodePipeline
             public dynamic Name { get; set; }
         }
 
-        public class Condition : Humidifier.Base.BaseSubResource
+        public class Condition : Humidifier.Base.BaseSubResource, IHaveResult
         {
             /// <summary>
             /// Rules
@@ -376,7 +376,7 @@ namespace Humidifier.CodePipeline
             public dynamic Id { get; set; }
         }
 
-        public class FailureConditions : Humidifier.Base.BaseSubResource
+        public class FailureConditions : Humidifier.Base.BaseSubResource, IHaveResult
         {
             /// <summary>
             /// RetryConfiguration
@@ -479,7 +479,7 @@ namespace Humidifier.CodePipeline
             public dynamic Excludes { get; set; }
         }
 
-        public class GitPullRequestFilter : Humidifier.Base.BaseSubResource, IHaveEvents
+        public class GitPullRequestFilter : Humidifier.Base.BaseSubResource, IHaveEvents, IHaveCodePipelinePipelineTypesGitFilePathFilterCriteriaFilePaths, IHaveCodePipelinePipelineTypesGitBranchFilterCriteriaBranches
         {
             /// <summary>
             /// FilePaths
@@ -508,7 +508,7 @@ namespace Humidifier.CodePipeline
             public Humidifier.CodePipeline.PipelineTypes.GitBranchFilterCriteria Branches { get; set; }
         }
 
-        public class GitPushFilter : Humidifier.Base.BaseSubResource
+        public class GitPushFilter : Humidifier.Base.BaseSubResource, IHaveCodePipelinePipelineTypesGitFilePathFilterCriteriaFilePaths, IHaveCodePipelinePipelineTypesGitBranchFilterCriteriaBranches
         {
             /// <summary>
             /// FilePaths

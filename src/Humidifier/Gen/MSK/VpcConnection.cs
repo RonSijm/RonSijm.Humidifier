@@ -2,7 +2,7 @@ namespace Humidifier.MSK
 {
     using System.Collections.Generic;
 
-    public class VpcConnection : Humidifier.Base.BaseResource, IHaveVpcId, IHaveSecurityGroups
+    public class VpcConnection : Humidifier.Base.BaseResource, IHaveVpcId, IHaveSecurityGroups, IHaveAuthentication, IHaveClientSubnets
     {
         public class Attributes
         {

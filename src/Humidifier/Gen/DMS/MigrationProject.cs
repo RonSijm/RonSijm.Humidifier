@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using System.Collections.Generic;
     using MigrationProjectTypes;
 
-    public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceProfileName
+    public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceProfileName, IHaveMigrationProjectIdentifier, IHaveInstanceProfileIdentifier, IHaveInstanceProfileArn
     {
         public class Attributes
         {
@@ -99,7 +99,7 @@ namespace Humidifier.DMS
 
     namespace MigrationProjectTypes
     {
-        public class DataProviderDescriptor : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn
+        public class DataProviderDescriptor : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveDataProviderName, IHaveDataProviderIdentifier
         {
             /// <summary>
             /// DataProviderName

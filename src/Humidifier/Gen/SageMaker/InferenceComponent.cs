@@ -246,7 +246,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.InferenceComponentTypes.InferenceComponentStartupParameters StartupParameters { get; set; }
         }
 
-        public class InferenceComponentStartupParameters : Humidifier.Base.BaseSubResource
+        public class InferenceComponentStartupParameters : Humidifier.Base.BaseSubResource, IHaveModelDataDownloadTimeoutInSeconds, IHaveContainerStartupHealthCheckTimeoutInSeconds
         {
             /// <summary>
             /// ModelDataDownloadTimeoutInSeconds

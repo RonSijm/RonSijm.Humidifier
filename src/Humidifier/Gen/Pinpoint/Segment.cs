@@ -306,7 +306,7 @@ namespace Humidifier.Pinpoint
             public Humidifier.Pinpoint.SegmentTypes.Location Location { get; set; }
         }
 
-        public class SegmentGroups : Humidifier.Base.BaseSubResource
+        public class SegmentGroups : Humidifier.Base.BaseSubResource, IHaveInclude
         {
             /// <summary>
             /// Groups
@@ -327,7 +327,7 @@ namespace Humidifier.Pinpoint
             public dynamic Include { get; set; }
         }
 
-        public class SetDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class SetDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType

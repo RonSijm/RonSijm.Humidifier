@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using VPCEndpointTypes;
 
-    public class VPCEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId, IHavePolicyDocument, IHaveServiceName, IHaveIpAddressType, IHaveRouteTableIds
+    public class VPCEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId, IHavePolicyDocument, IHaveServiceName, IHaveIpAddressType, IHaveRouteTableIds, IHaveResourceConfigurationArn
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.SSM
     using System.Collections.Generic;
     using MaintenanceWindowTaskTypes;
 
-    public class MaintenanceWindowTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePriority, IHaveServiceRoleArn, IHaveMaxConcurrency, IHaveTaskType
+    public class MaintenanceWindowTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePriority, IHaveServiceRoleArn, IHaveMaxConcurrency, IHaveTaskType, IHaveMaxErrors, IHaveWindowId
     {
         public override string AWSTypeName { get => AWS.SSM.MaintenanceWindowTask; }
         /// <summary>
@@ -124,7 +124,7 @@ namespace Humidifier.SSM
 
     namespace MaintenanceWindowTaskTypes
     {
-        public class CloudWatchOutputConfig : Humidifier.Base.BaseSubResource
+        public class CloudWatchOutputConfig : Humidifier.Base.BaseSubResource, IHaveCloudWatchLogGroupName
         {
             /// <summary>
             /// CloudWatchOutputEnabled
@@ -220,7 +220,7 @@ namespace Humidifier.SSM
             public dynamic Payload { get; set; }
         }
 
-        public class MaintenanceWindowRunCommandParameters : Humidifier.Base.BaseSubResource, IHaveParameters, IHaveComment, IHaveServiceRoleArn, IHaveDocumentVersion, IHaveTimeoutSeconds
+        public class MaintenanceWindowRunCommandParameters : Humidifier.Base.BaseSubResource, IHaveParameters, IHaveComment, IHaveServiceRoleArn, IHaveDocumentVersion, IHaveTimeoutSeconds, IHaveOutputS3KeyPrefix, IHaveOutputS3BucketName
         {
             /// <summary>
             /// TimeoutSeconds

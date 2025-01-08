@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using AppTypes;
 
-    public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveStackId, IHaveDomains
+    public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveStackId, IHaveDomains, IHaveShortname
     {
         public override string AWSTypeName { get => AWS.OpsWorks.App; }
         /// <summary>
@@ -107,7 +107,7 @@ namespace Humidifier.OpsWorks
 
     namespace AppTypes
     {
-        public class DataSource : Humidifier.Base.BaseSubResource, IHaveType, IHaveArn, IHaveDatabaseName
+        public class DataSource : Humidifier.Base.BaseSubResource, IHaveType, IHaveDatabaseName, IHaveArn
         {
             /// <summary>
             /// Arn
@@ -163,7 +163,7 @@ namespace Humidifier.OpsWorks
             public dynamic Value { get; set; }
         }
 
-        public class Source : Humidifier.Base.BaseSubResource, IHaveType, IHaveUsername, IHavePassword, IHaveUrl, IHaveRevision
+        public class Source : Humidifier.Base.BaseSubResource, IHaveType, IHaveUrl, IHaveUsername, IHavePassword, IHaveRevision, IHaveSshKey
         {
             /// <summary>
             /// Password

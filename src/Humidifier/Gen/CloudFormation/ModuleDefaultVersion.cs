@@ -2,7 +2,7 @@ namespace Humidifier.CloudFormation
 {
     using System.Collections.Generic;
 
-    public class ModuleDefaultVersion : Humidifier.Base.BaseResource, IHaveArn, IHaveVersionId
+    public class ModuleDefaultVersion : Humidifier.Base.BaseResource, IHaveArn, IHaveVersionId, IHaveModuleName
     {
         public override string AWSTypeName { get => AWS.CloudFormation.ModuleDefaultVersion; }
         /// <summary>

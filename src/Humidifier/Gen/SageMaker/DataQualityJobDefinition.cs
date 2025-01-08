@@ -167,7 +167,7 @@ namespace Humidifier.SageMaker
             public dynamic ExcludeFeaturesAttribute { get; set; }
         }
 
-        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeKmsKeyId, IHaveVolumeSizeInGB
+        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveVolumeSizeInGB, IHaveVolumeKmsKeyId
         {
             /// <summary>
             /// InstanceCount

@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using GuardrailTypes;
 
-    public class Guardrail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyArn
+    public class Guardrail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyArn, IHaveBlockedInputMessaging, IHaveBlockedOutputsMessaging
     {
         public class Attributes
         {
@@ -108,7 +108,7 @@ namespace Humidifier.Bedrock
 
     namespace GuardrailTypes
     {
-        public class ContentFilterConfig : Humidifier.Base.BaseSubResource, IHaveType
+        public class ContentFilterConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveOutputStrength, IHaveInputStrength
         {
             /// <summary>
             /// OutputStrength
@@ -272,7 +272,7 @@ namespace Humidifier.Bedrock
             public List<Humidifier.Bedrock.GuardrailTypes.PiiEntityConfig> PiiEntitiesConfig { get; set; }
         }
 
-        public class TopicConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveDefinition
+        public class TopicConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveDefinition, IHaveExamples
         {
             /// <summary>
             /// Type

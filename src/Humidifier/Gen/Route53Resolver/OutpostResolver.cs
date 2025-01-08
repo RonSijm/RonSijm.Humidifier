@@ -2,7 +2,7 @@ namespace Humidifier.Route53Resolver
 {
     using System.Collections.Generic;
 
-    public class OutpostResolver : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveInstanceCount, IHaveOutpostArn
+    public class OutpostResolver : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveInstanceCount, IHaveOutpostArn, IHavePreferredInstanceType
     {
         public class Attributes
         {

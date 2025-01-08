@@ -70,7 +70,7 @@ namespace Humidifier.WorkSpacesWeb
 
     namespace IpAccessSettingsTypes
     {
-        public class IpRule : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class IpRule : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveIpRange
         {
             /// <summary>
             /// IpRange

@@ -3,7 +3,7 @@ namespace Humidifier.ApiGateway
     using System.Collections.Generic;
     using MethodTypes;
 
-    public class Method : Humidifier.Base.BaseResource, IHaveResourceId, IHaveRestApiId, IHaveHttpMethod, IHaveAuthorizationType, IHaveOperationName, IHaveAuthorizationScopes, IHaveAuthorizerId
+    public class Method : Humidifier.Base.BaseResource, IHaveResourceId, IHaveRestApiId, IHaveHttpMethod, IHaveOperationName, IHaveAuthorizationType, IHaveAuthorizationScopes, IHaveAuthorizerId, IHaveApiKeyRequired
     {
         public override string AWSTypeName { get => AWS.ApiGateway.Method; }
         /// <summary>
@@ -124,7 +124,7 @@ namespace Humidifier.ApiGateway
 
     namespace MethodTypes
     {
-        public class Integration : Humidifier.Base.BaseSubResource, IHaveType, IHaveUri, IHaveConnectionType, IHaveTimeoutInMillis, IHaveCredentials
+        public class Integration : Humidifier.Base.BaseSubResource, IHaveType, IHaveUri, IHaveConnectionType, IHaveTimeoutInMillis, IHaveCredentials, IHavePassthroughBehavior, IHaveConnectionId, IHaveContentHandling
         {
             /// <summary>
             /// CacheNamespace
@@ -244,7 +244,7 @@ namespace Humidifier.ApiGateway
             public dynamic Credentials { get; set; }
         }
 
-        public class IntegrationResponse : Humidifier.Base.BaseSubResource, IHaveStatusCode
+        public class IntegrationResponse : Humidifier.Base.BaseSubResource, IHaveStatusCode, IHaveContentHandling
         {
             /// <summary>
             /// ResponseTemplates

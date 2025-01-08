@@ -24,7 +24,7 @@ namespace Humidifier.S3Tables
 
     namespace TableBucketTypes
     {
-        public class UnreferencedFileRemoval : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class UnreferencedFileRemoval : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveNoncurrentDays
         {
             /// <summary>
             /// Status

@@ -3,7 +3,7 @@ namespace Humidifier.Neptune
     using System.Collections.Generic;
     using DBClusterTypes;
 
-    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveDBSubnetGroupName, IHavePreferredBackupWindow, IHaveDBClusterIdentifier, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveBackupRetentionPeriod, IHaveSnapshotIdentifier, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveCopyTagsToSnapshot, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType
+    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveBackupRetentionPeriod, IHaveSnapshotIdentifier, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveIamAuthEnabled, IHaveDBInstanceParameterGroupName
     {
         public class Attributes
         {

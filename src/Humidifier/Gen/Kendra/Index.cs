@@ -152,7 +152,7 @@ namespace Humidifier.Kendra
             public dynamic Name { get; set; }
         }
 
-        public class JsonTokenTypeConfiguration : Humidifier.Base.BaseSubResource
+        public class JsonTokenTypeConfiguration : Humidifier.Base.BaseSubResource, IHaveGroupAttributeField, IHaveUserNameAttributeField
         {
             /// <summary>
             /// GroupAttributeField
@@ -172,7 +172,7 @@ namespace Humidifier.Kendra
             public dynamic UserNameAttributeField { get; set; }
         }
 
-        public class JwtTokenTypeConfiguration : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveSecretManagerArn
+        public class JwtTokenTypeConfiguration : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveSecretManagerArn, IHaveGroupAttributeField, IHaveUserNameAttributeField
         {
             /// <summary>
             /// ClaimRegex

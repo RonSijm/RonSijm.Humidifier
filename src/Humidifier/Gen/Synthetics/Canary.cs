@@ -182,7 +182,7 @@ namespace Humidifier.Synthetics
             public dynamic ScreenshotName { get; set; }
         }
 
-        public class Code : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Key, IHaveS3ObjectVersion
+        public class Code : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Key, IHaveS3ObjectVersion, IHaveSourceLocationArn, IHaveHandler, IHaveScript
         {
             /// <summary>
             /// Script
@@ -311,7 +311,7 @@ namespace Humidifier.Synthetics
             public dynamic Expression { get; set; }
         }
 
-        public class VPCConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId
+        public class VPCConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId, IHaveIpv6AllowedForDualStack
         {
             /// <summary>
             /// Ipv6AllowedForDualStack

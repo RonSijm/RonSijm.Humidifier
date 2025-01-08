@@ -122,7 +122,7 @@ namespace Humidifier.LakeFormation
             public dynamic Catalog { get; set; }
         }
 
-        public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId
+        public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId, IHaveTableWildcard
         {
             /// <summary>
             /// DatabaseName

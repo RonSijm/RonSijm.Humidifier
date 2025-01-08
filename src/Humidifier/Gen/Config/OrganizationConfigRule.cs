@@ -3,7 +3,7 @@ namespace Humidifier.Config
     using System.Collections.Generic;
     using OrganizationConfigRuleTypes;
 
-    public class OrganizationConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class OrganizationConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveExcludedAccounts
     {
         public override string AWSTypeName { get => AWS.Config.OrganizationConfigRule; }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Humidifier.Config
 
     namespace OrganizationConfigRuleTypes
     {
-        public class OrganizationCustomPolicyRuleMetadata : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveRuntime, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHavePolicyText, IHaveTagKeyScope, IHaveTagValueScope, IHaveResourceIdScope, IHaveResourceTypesScope
+        public class OrganizationCustomPolicyRuleMetadata : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveRuntime, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHavePolicyText, IHaveTagKeyScope, IHaveTagValueScope, IHaveResourceIdScope, IHaveResourceTypesScope, IHaveOrganizationConfigRuleTriggerTypes
         {
             /// <summary>
             /// TagKeyScope
@@ -139,7 +139,7 @@ namespace Humidifier.Config
             public dynamic InputParameters { get; set; }
         }
 
-        public class OrganizationCustomRuleMetadata : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHaveLambdaFunctionArn, IHaveTagKeyScope, IHaveTagValueScope, IHaveResourceIdScope, IHaveResourceTypesScope
+        public class OrganizationCustomRuleMetadata : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHaveLambdaFunctionArn, IHaveTagKeyScope, IHaveTagValueScope, IHaveResourceIdScope, IHaveResourceTypesScope, IHaveOrganizationConfigRuleTriggerTypes
         {
             /// <summary>
             /// TagKeyScope

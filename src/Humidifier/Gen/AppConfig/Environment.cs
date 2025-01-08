@@ -3,7 +3,7 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using EnvironmentTypes;
 
-    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveApplicationId
+    public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveApplicationId, IHaveDeletionProtectionCheck
     {
         public class Attributes
         {
@@ -60,7 +60,7 @@ namespace Humidifier.AppConfig
 
     namespace EnvironmentTypes
     {
-        public class Monitor : Humidifier.Base.BaseSubResource
+        public class Monitor : Humidifier.Base.BaseSubResource, IHaveAlarmRoleArn
         {
             /// <summary>
             /// AlarmArn

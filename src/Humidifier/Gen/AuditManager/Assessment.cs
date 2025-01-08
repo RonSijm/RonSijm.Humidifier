@@ -153,7 +153,7 @@ namespace Humidifier.AuditManager
             public dynamic DestinationType { get; set; }
         }
 
-        public class Delegation : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveStatus, IHaveId, IHaveComment, IHaveCreationTime
+        public class Delegation : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveStatus, IHaveId, IHaveComment, IHaveCreationTime, IHaveCreatedBy, IHaveRoleType
         {
             /// <summary>
             /// Status
@@ -245,7 +245,7 @@ namespace Humidifier.AuditManager
             public dynamic ControlSetId { get; set; }
         }
 
-        public class Role : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        public class Role : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveRoleType
         {
             /// <summary>
             /// RoleType

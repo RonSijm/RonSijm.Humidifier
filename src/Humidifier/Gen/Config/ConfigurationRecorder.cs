@@ -95,7 +95,7 @@ namespace Humidifier.Config
             public dynamic ResourceTypes { get; set; }
         }
 
-        public class RecordingMode : Humidifier.Base.BaseSubResource
+        public class RecordingMode : Humidifier.Base.BaseSubResource, IHaveRecordingFrequency
         {
             /// <summary>
             /// RecordingFrequency
@@ -116,7 +116,7 @@ namespace Humidifier.Config
             public List<Humidifier.Config.ConfigurationRecorderTypes.RecordingModeOverride> RecordingModeOverrides { get; set; }
         }
 
-        public class RecordingModeOverride : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveResourceTypes
+        public class RecordingModeOverride : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveResourceTypes, IHaveRecordingFrequency
         {
             /// <summary>
             /// Description

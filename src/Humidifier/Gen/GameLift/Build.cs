@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using BuildTypes;
 
-    public class Build : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveVersion, IHaveOperatingSystem
+    public class Build : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveVersion, IHaveOperatingSystem, IHaveServerSdkVersion
     {
         public class Attributes
         {

@@ -33,7 +33,7 @@ namespace Humidifier.ElasticLoadBalancingV2
 
     namespace TrustStoreRevocationTypes
     {
-        public class RevocationContent : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Key, IHaveS3ObjectVersion
+        public class RevocationContent : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Key, IHaveS3ObjectVersion, IHaveRevocationType
         {
             /// <summary>
             /// S3ObjectVersion
@@ -69,7 +69,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             public dynamic RevocationType { get; set; }
         }
 
-        public class TrustStoreRevocation : Humidifier.Base.BaseSubResource, IHaveTrustStoreArn
+        public class TrustStoreRevocation : Humidifier.Base.BaseSubResource, IHaveTrustStoreArn, IHaveRevocationType
         {
             /// <summary>
             /// NumberOfRevokedEntries

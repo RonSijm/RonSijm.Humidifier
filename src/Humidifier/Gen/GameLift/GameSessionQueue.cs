@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using System.Collections.Generic;
     using GameSessionQueueTypes;
 
-    public class GameSessionQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveTimeoutInSeconds
+    public class GameSessionQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveTimeoutInSeconds, IHaveNotificationTarget, IHaveCustomEventData
     {
         public class Attributes
         {

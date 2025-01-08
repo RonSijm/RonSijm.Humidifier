@@ -2,7 +2,7 @@ namespace Humidifier.Deadline
 {
     using System.Collections.Generic;
 
-    public class Monitor : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveDisplayName
+    public class Monitor : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveDisplayName, IHaveIdentityCenterInstanceArn
     {
         public class Attributes
         {

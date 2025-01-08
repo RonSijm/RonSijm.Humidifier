@@ -3,7 +3,7 @@ namespace Humidifier.FMS
     using System.Collections.Generic;
     using PolicyTypes;
 
-    public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveResourceType, IHavePolicyName, IHaveDescription
+    public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveResourceType, IHavePolicyName, IHavePolicyDescription, IHaveResourceTypeList, IHaveDescription
     {
         public class Attributes
         {
@@ -286,7 +286,7 @@ namespace Humidifier.FMS
             public dynamic ForceRemediateForLastEntries { get; set; }
         }
 
-        public class NetworkFirewallPolicy : Humidifier.Base.BaseSubResource
+        public class NetworkFirewallPolicy : Humidifier.Base.BaseSubResource, IHaveFirewallDeploymentModel
         {
             /// <summary>
             /// FirewallDeploymentModel
@@ -414,7 +414,7 @@ namespace Humidifier.FMS
             public Humidifier.FMS.PolicyTypes.PolicyOption PolicyOption { get; set; }
         }
 
-        public class ThirdPartyFirewallPolicy : Humidifier.Base.BaseSubResource
+        public class ThirdPartyFirewallPolicy : Humidifier.Base.BaseSubResource, IHaveFirewallDeploymentModel
         {
             /// <summary>
             /// FirewallDeploymentModel

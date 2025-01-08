@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using ClientVpnEndpointTypes;
 
-    public class ClientVpnEndpoint : Humidifier.Base.BaseResource, IHaveDescription, IHaveSecurityGroupIds, IHaveVpcId
+    public class ClientVpnEndpoint : Humidifier.Base.BaseResource, IHaveDescription, IHaveSecurityGroupIds, IHaveVpcId, IHaveServerCertificateArn, IHaveDnsServers
     {
         public override string AWSTypeName { get => AWS.EC2.ClientVpnEndpoint; }
 

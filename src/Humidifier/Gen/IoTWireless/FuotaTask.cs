@@ -3,7 +3,7 @@ namespace Humidifier.IoTWireless
     using System.Collections.Generic;
     using FuotaTaskTypes;
 
-    public class FuotaTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
+    public class FuotaTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisassociateWirelessDevice, IHaveAssociateWirelessDevice
     {
         public class Attributes
         {

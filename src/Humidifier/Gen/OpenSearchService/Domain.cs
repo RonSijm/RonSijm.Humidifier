@@ -3,7 +3,7 @@ namespace Humidifier.OpenSearchService
     using System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveEngineVersion
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveEngineVersion, IHaveAccessPolicies, IHaveIPAddressType
     {
         public class Attributes
         {
@@ -177,7 +177,7 @@ namespace Humidifier.OpenSearchService
 
     namespace DomainTypes
     {
-        public class AdvancedSecurityOptionsInput : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class AdvancedSecurityOptionsInput : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveAnonymousAuthEnabled, IHaveInternalUserDatabaseEnabled
         {
             /// <summary>
             /// AnonymousAuthEnabled
@@ -237,7 +237,7 @@ namespace Humidifier.OpenSearchService
             public Humidifier.OpenSearchService.DomainTypes.MasterUserOptions MasterUserOptions { get; set; }
         }
 
-        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount
+        public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveDedicatedMasterCount, IHaveDedicatedMasterEnabled, IHaveDedicatedMasterType, IHaveWarmCount, IHaveWarmEnabled, IHaveWarmType, IHaveZoneAwarenessEnabled
         {
             /// <summary>
             /// MultiAZWithStandbyEnabled
@@ -394,7 +394,7 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
-        public class DomainEndpointOptions : Humidifier.Base.BaseSubResource
+        public class DomainEndpointOptions : Humidifier.Base.BaseSubResource, IHaveCustomEndpoint, IHaveCustomEndpointCertificateArn, IHaveCustomEndpointEnabled, IHaveEnforceHTTPS, IHaveTLSSecurityPolicy
         {
             /// <summary>
             /// CustomEndpointEnabled
@@ -438,7 +438,7 @@ namespace Humidifier.OpenSearchService
             public dynamic TLSSecurityPolicy { get; set; }
         }
 
-        public class EBSOptions : Humidifier.Base.BaseSubResource, IHaveIops, IHaveVolumeType, IHaveThroughput, IHaveVolumeSize
+        public class EBSOptions : Humidifier.Base.BaseSubResource, IHaveIops, IHaveVolumeType, IHaveThroughput, IHaveVolumeSize, IHaveEBSEnabled
         {
             /// <summary>
             /// EBSEnabled
@@ -502,7 +502,7 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
-        public class IdentityCenterOptions : Humidifier.Base.BaseSubResource
+        public class IdentityCenterOptions : Humidifier.Base.BaseSubResource, IHaveIdentityStoreId, IHaveSubjectKey, IHaveRolesKey
         {
             /// <summary>
             /// IdentityCenterApplicationARN
@@ -574,7 +574,7 @@ namespace Humidifier.OpenSearchService
             public dynamic MetadataContent { get; set; }
         }
 
-        public class JWTOptions : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class JWTOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveSubjectKey, IHaveRolesKey, IHavePublicKey
         {
             /// <summary>
             /// SubjectKey
@@ -630,7 +630,7 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
-        public class MasterUserOptions : Humidifier.Base.BaseSubResource, IHaveMasterUserPassword, IHaveMasterUserName
+        public class MasterUserOptions : Humidifier.Base.BaseSubResource, IHaveMasterUserPassword, IHaveMasterUserName, IHaveMasterUserARN
         {
             /// <summary>
             /// MasterUserPassword
@@ -750,7 +750,7 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
-        public class SAMLOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMasterUserName
+        public class SAMLOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMasterUserName, IHaveSubjectKey, IHaveRolesKey
         {
             /// <summary>
             /// MasterBackendRole
@@ -810,7 +810,7 @@ namespace Humidifier.OpenSearchService
             public dynamic MasterUserName { get; set; }
         }
 
-        public class ServiceSoftwareOptions : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveCurrentVersion
+        public class ServiceSoftwareOptions : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveCurrentVersion, IHaveUpdateStatus
         {
             /// <summary>
             /// NewVersion
@@ -878,7 +878,7 @@ namespace Humidifier.OpenSearchService
             public dynamic OptionalDeployment { get; set; }
         }
 
-        public class SnapshotOptions : Humidifier.Base.BaseSubResource
+        public class SnapshotOptions : Humidifier.Base.BaseSubResource, IHaveAutomatedSnapshotStartHour
         {
             /// <summary>
             /// AutomatedSnapshotStartHour
@@ -924,7 +924,7 @@ namespace Humidifier.OpenSearchService
             public dynamic SubnetIds { get; set; }
         }
 
-        public class WindowStartTime : Humidifier.Base.BaseSubResource, IHaveMinutes
+        public class WindowStartTime : Humidifier.Base.BaseSubResource, IHaveMinutes, IHaveHours
         {
             /// <summary>
             /// Hours
@@ -944,7 +944,7 @@ namespace Humidifier.OpenSearchService
             public dynamic Minutes { get; set; }
         }
 
-        public class ZoneAwarenessConfig : Humidifier.Base.BaseSubResource
+        public class ZoneAwarenessConfig : Humidifier.Base.BaseSubResource, IHaveAvailabilityZoneCount
         {
             /// <summary>
             /// AvailabilityZoneCount

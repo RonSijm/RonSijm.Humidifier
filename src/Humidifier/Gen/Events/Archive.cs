@@ -2,7 +2,7 @@ namespace Humidifier.Events
 {
     using System.Collections.Generic;
 
-    public class Archive : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSourceArn, IHaveEventPattern
+    public class Archive : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSourceArn, IHaveEventPattern, IHaveArchiveName, IHaveRetentionDays
     {
         public class Attributes
         {

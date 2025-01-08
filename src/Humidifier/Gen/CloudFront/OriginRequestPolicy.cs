@@ -26,7 +26,7 @@ namespace Humidifier.CloudFront
 
     namespace OriginRequestPolicyTypes
     {
-        public class CookiesConfig : Humidifier.Base.BaseSubResource
+        public class CookiesConfig : Humidifier.Base.BaseSubResource, IHaveCookies, IHaveCookieBehavior
         {
             /// <summary>
             /// Cookies
@@ -47,7 +47,7 @@ namespace Humidifier.CloudFront
             public dynamic CookieBehavior { get; set; }
         }
 
-        public class HeadersConfig : Humidifier.Base.BaseSubResource, IHaveHeaders
+        public class HeadersConfig : Humidifier.Base.BaseSubResource, IHaveHeaders, IHaveHeaderBehavior
         {
             /// <summary>
             /// Headers
@@ -112,7 +112,7 @@ namespace Humidifier.CloudFront
             public dynamic Name { get; set; }
         }
 
-        public class QueryStringsConfig : Humidifier.Base.BaseSubResource
+        public class QueryStringsConfig : Humidifier.Base.BaseSubResource, IHaveQueryStrings, IHaveQueryStringBehavior
         {
             /// <summary>
             /// QueryStrings

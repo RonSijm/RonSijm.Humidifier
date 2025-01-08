@@ -74,7 +74,7 @@ namespace Humidifier.SageMaker
 
     namespace ModelTypes
     {
-        public class AdditionalModelDataSource : Humidifier.Base.BaseSubResource, IHaveChannelName
+        public class AdditionalModelDataSource : Humidifier.Base.BaseSubResource, IHaveChannelName, IHaveSageMakerModelTypesS3DataSourceS3DataSource
         {
             /// <summary>
             /// ChannelName
@@ -94,7 +94,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelTypes.S3DataSource S3DataSource { get; set; }
         }
 
-        public class ContainerDefinition : Humidifier.Base.BaseSubResource, IHaveMode, IHaveImage, IHaveModelDataUrl, IHaveEnvironment, IHaveModelPackageName
+        public class ContainerDefinition : Humidifier.Base.BaseSubResource, IHaveMode, IHaveImage, IHaveModelDataUrl, IHaveEnvironment, IHaveModelPackageName, IHaveContainerHostname
         {
             /// <summary>
             /// ImageConfig
@@ -222,7 +222,7 @@ namespace Humidifier.SageMaker
             public dynamic Mode { get; set; }
         }
 
-        public class ModelAccessConfig : Humidifier.Base.BaseSubResource
+        public class ModelAccessConfig : Humidifier.Base.BaseSubResource, IHaveAcceptEula
         {
             /// <summary>
             /// AcceptEula
@@ -234,7 +234,7 @@ namespace Humidifier.SageMaker
             public dynamic AcceptEula { get; set; }
         }
 
-        public class ModelDataSource : Humidifier.Base.BaseSubResource
+        public class ModelDataSource : Humidifier.Base.BaseSubResource, IHaveSageMakerModelTypesS3DataSourceS3DataSource
         {
             /// <summary>
             /// S3DataSource
@@ -270,7 +270,7 @@ namespace Humidifier.SageMaker
             public dynamic RepositoryCredentialsProviderArn { get; set; }
         }
 
-        public class S3DataSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveCompressionType
+        public class S3DataSource : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveCompressionType, IHaveS3DataType
         {
             /// <summary>
             /// ModelAccessConfig

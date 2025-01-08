@@ -82,7 +82,7 @@ namespace Humidifier.B2BI
             public Humidifier.B2BI.TransformerTypes.X12Details X12 { get; set; }
         }
 
-        public class InputConversion : Humidifier.Base.BaseSubResource
+        public class InputConversion : Humidifier.Base.BaseSubResource, IHaveB2BITransformerTypesFormatOptionsFormatOptions
         {
             /// <summary>
             /// FormatOptions
@@ -102,7 +102,7 @@ namespace Humidifier.B2BI
             public dynamic FromFormat { get; set; }
         }
 
-        public class Mapping : Humidifier.Base.BaseSubResource
+        public class Mapping : Humidifier.Base.BaseSubResource, IHaveTemplate
         {
             /// <summary>
             /// TemplateLanguage
@@ -122,7 +122,7 @@ namespace Humidifier.B2BI
             public dynamic Template { get; set; }
         }
 
-        public class OutputConversion : Humidifier.Base.BaseSubResource
+        public class OutputConversion : Humidifier.Base.BaseSubResource, IHaveB2BITransformerTypesFormatOptionsFormatOptions
         {
             /// <summary>
             /// ToFormat
@@ -142,7 +142,7 @@ namespace Humidifier.B2BI
             public Humidifier.B2BI.TransformerTypes.FormatOptions FormatOptions { get; set; }
         }
 
-        public class SampleDocumentKeys : Humidifier.Base.BaseSubResource, IHaveInput
+        public class SampleDocumentKeys : Humidifier.Base.BaseSubResource, IHaveInput, IHaveOutput
         {
             /// <summary>
             /// Input
@@ -183,7 +183,7 @@ namespace Humidifier.B2BI
             public List<Humidifier.B2BI.TransformerTypes.SampleDocumentKeys> Keys { get; set; }
         }
 
-        public class X12Details : Humidifier.Base.BaseSubResource, IHaveVersion
+        public class X12Details : Humidifier.Base.BaseSubResource, IHaveVersion, IHaveTransactionSet
         {
             /// <summary>
             /// Version

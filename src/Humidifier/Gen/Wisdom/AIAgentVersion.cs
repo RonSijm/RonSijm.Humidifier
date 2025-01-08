@@ -2,7 +2,7 @@ namespace Humidifier.Wisdom
 {
     using System.Collections.Generic;
 
-    public class AIAgentVersion : Humidifier.Base.BaseResource
+    public class AIAgentVersion : Humidifier.Base.BaseResource, IHaveAssistantId, IHaveModifiedTimeSeconds
     {
         public class Attributes
         {

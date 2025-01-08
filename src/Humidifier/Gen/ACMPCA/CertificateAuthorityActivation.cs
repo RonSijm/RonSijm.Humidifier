@@ -2,7 +2,7 @@ namespace Humidifier.ACMPCA
 {
     using System.Collections.Generic;
 
-    public class CertificateAuthorityActivation : Humidifier.Base.BaseResource, IHaveStatus, IHaveCertificate, IHaveCertificateAuthorityArn, IHaveCertificateChain
+    public class CertificateAuthorityActivation : Humidifier.Base.BaseResource, IHaveStatus, IHaveCertificateAuthorityArn, IHaveCertificate, IHaveCertificateChain
     {
         public class Attributes
         {

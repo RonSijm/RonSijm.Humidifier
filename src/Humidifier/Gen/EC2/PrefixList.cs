@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using PrefixListTypes;
 
-    public class PrefixList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
+    public class PrefixList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveAddressFamily
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.PaymentCryptography
 {
     using System.Collections.Generic;
 
-    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveKeyArn
+    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveKeyArn, IHaveAliasName
     {
         public override string AWSTypeName { get => AWS.PaymentCryptography.Alias; }
         public dynamic AliasName { get => GivenName; set => GivenName = value; }

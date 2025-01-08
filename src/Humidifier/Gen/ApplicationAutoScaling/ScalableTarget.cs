@@ -110,7 +110,7 @@ namespace Humidifier.ApplicationAutoScaling
             public dynamic MaxCapacity { get; set; }
         }
 
-        public class ScheduledAction : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveTimezone, IHaveEndTime, IHaveSchedule
+        public class ScheduledAction : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveEndTime, IHaveTimezone, IHaveSchedule, IHaveScheduledActionName
         {
             /// <summary>
             /// Timezone

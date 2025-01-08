@@ -110,7 +110,7 @@ namespace Humidifier.CloudFront
             public dynamic Override { get; set; }
         }
 
-        public class CorsConfig : Humidifier.Base.BaseSubResource
+        public class CorsConfig : Humidifier.Base.BaseSubResource, IHaveAccessControlMaxAgeSec
         {
             /// <summary>
             /// AccessControlAllowCredentials
@@ -408,7 +408,7 @@ namespace Humidifier.CloudFront
             public dynamic SamplingRate { get; set; }
         }
 
-        public class StrictTransportSecurity : Humidifier.Base.BaseSubResource, IHaveOverride
+        public class StrictTransportSecurity : Humidifier.Base.BaseSubResource, IHaveOverride, IHaveAccessControlMaxAgeSec
         {
             /// <summary>
             /// Preload

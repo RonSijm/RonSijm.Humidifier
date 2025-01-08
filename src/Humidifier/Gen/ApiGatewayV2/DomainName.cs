@@ -52,7 +52,7 @@ namespace Humidifier.ApiGatewayV2
 
     namespace DomainNameTypes
     {
-        public class DomainNameConfiguration : Humidifier.Base.BaseSubResource, IHaveCertificateArn, IHaveEndpointType, IHaveCertificateName, IHaveSecurityPolicy
+        public class DomainNameConfiguration : Humidifier.Base.BaseSubResource, IHaveCertificateArn, IHaveEndpointType, IHaveCertificateName, IHaveSecurityPolicy, IHaveOwnershipVerificationCertificateArn
         {
             /// <summary>
             /// OwnershipVerificationCertificateArn
@@ -96,7 +96,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic CertificateArn { get; set; }
         }
 
-        public class MutualTlsAuthentication : Humidifier.Base.BaseSubResource
+        public class MutualTlsAuthentication : Humidifier.Base.BaseSubResource, IHaveTruststoreVersion, IHaveTruststoreUri
         {
             /// <summary>
             /// TruststoreVersion

@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using System.Collections.Generic;
 
-    public class ReplicationTask : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceIdentifier
+    public class ReplicationTask : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceIdentifier, IHaveTableMappings, IHaveSourceEndpointArn, IHaveTargetEndpointArn
     {
         public override string AWSTypeName { get => AWS.DMS.ReplicationTask; }
         /// <summary>

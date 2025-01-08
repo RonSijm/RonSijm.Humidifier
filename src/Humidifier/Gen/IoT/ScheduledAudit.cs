@@ -2,7 +2,7 @@ namespace Humidifier.IoT
 {
     using System.Collections.Generic;
 
-    public class ScheduledAudit : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDayOfWeek, IHaveFrequency, IHaveDayOfMonth
+    public class ScheduledAudit : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveFrequency, IHaveDayOfWeek, IHaveDayOfMonth
     {
         public class Attributes
         {

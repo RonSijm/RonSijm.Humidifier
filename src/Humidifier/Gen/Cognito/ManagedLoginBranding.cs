@@ -3,7 +3,7 @@ namespace Humidifier.Cognito
     using System.Collections.Generic;
     using ManagedLoginBrandingTypes;
 
-    public class ManagedLoginBranding : Humidifier.Base.BaseResource, IHaveClientId, IHaveUserPoolId
+    public class ManagedLoginBranding : Humidifier.Base.BaseResource, IHaveClientId, IHaveUserPoolId, IHaveSettings
     {
         public class Attributes
         {
@@ -66,7 +66,7 @@ namespace Humidifier.Cognito
 
     namespace ManagedLoginBrandingTypes
     {
-        public class AssetType : Humidifier.Base.BaseSubResource, IHaveResourceId, IHaveCategory
+        public class AssetType : Humidifier.Base.BaseSubResource, IHaveResourceId, IHaveCategory, IHaveExtension
         {
             /// <summary>
             /// Extension

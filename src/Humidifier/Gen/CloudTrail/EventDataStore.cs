@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using System.Collections.Generic;
     using EventDataStoreTypes;
 
-    public class EventDataStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyId, IHaveBillingMode
+    public class EventDataStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyId, IHaveBillingMode, IHaveTerminationProtectionEnabled, IHaveRetentionPeriod
     {
         public class Attributes
         {
@@ -147,7 +147,7 @@ namespace Humidifier.CloudTrail
             public dynamic Name { get; set; }
         }
 
-        public class AdvancedFieldSelector : Humidifier.Base.BaseSubResource, IHaveField, IHaveEquals, IHaveNotEquals
+        public class AdvancedFieldSelector : Humidifier.Base.BaseSubResource, IHaveField, IHaveEquals, IHaveNotEquals, IHaveNotStartsWith, IHaveNotEndsWith, IHaveStartsWith, IHaveEndsWith
         {
             /// <summary>
             /// Field
@@ -213,7 +213,7 @@ namespace Humidifier.CloudTrail
             public dynamic NotEquals { get; set; }
         }
 
-        public class InsightSelector : Humidifier.Base.BaseSubResource
+        public class InsightSelector : Humidifier.Base.BaseSubResource, IHaveInsightType
         {
             /// <summary>
             /// InsightType

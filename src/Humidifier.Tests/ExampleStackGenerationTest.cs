@@ -1,5 +1,4 @@
-﻿using Humidifier.IoT1Click;
-using Humidifier.Lambda.FunctionTypes;
+﻿using Humidifier.Lambda.FunctionTypes;
 using Newtonsoft.Json;
 
 namespace Humidifier.Tests;
@@ -434,14 +433,6 @@ public class ExampleStackGenerationTest : BaseStackBuilderTest
                         Method = "ANY"
                     }
                 }
-            }
-        });
-
-        stack.Resources.Add("IoTPlacement", new Placement
-        {
-            Attributes_ = new
-            {
-                Name = "Test"
             }
         });
 

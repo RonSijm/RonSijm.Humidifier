@@ -142,7 +142,7 @@ namespace Humidifier.MediaConnect
 
     namespace FlowOutputTypes
     {
-        public class DestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveDestinationPort
+        public class DestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveDestinationPort, IHaveDestinationIp
         {
             /// <summary>
             /// DestinationIp
@@ -238,7 +238,7 @@ namespace Humidifier.MediaConnect
             public dynamic Name { get; set; }
         }
 
-        public class MediaStreamOutputConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaStreamName
+        public class MediaStreamOutputConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaStreamName, IHaveEncodingName
         {
             /// <summary>
             /// EncodingParameters

@@ -3,7 +3,7 @@ namespace Humidifier.Scheduler
     using System.Collections.Generic;
     using ScheduleTypes;
 
-    public class Schedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveKmsKeyArn, IHaveState, IHaveGroupName, IHaveScheduleExpression, IHaveEndDate, IHaveStartDate, IHaveScheduleExpressionTimezone
+    public class Schedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveState, IHaveKmsKeyArn, IHaveGroupName, IHaveScheduleExpression, IHaveEndDate, IHaveStartDate, IHaveScheduleExpressionTimezone
     {
         public class Attributes
         {
@@ -172,7 +172,7 @@ namespace Humidifier.Scheduler
             public dynamic Arn { get; set; }
         }
 
-        public class EcsParameters : Humidifier.Base.BaseSubResource, IHaveDynamicTags, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveGroup, IHaveTaskCount, IHaveReferenceId, IHaveTaskDefinitionArn
+        public class EcsParameters : Humidifier.Base.BaseSubResource, IHaveDynamicTags, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveGroup, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveTaskCount, IHaveReferenceId, IHaveTaskDefinitionArn
         {
             /// <summary>
             /// PlatformVersion

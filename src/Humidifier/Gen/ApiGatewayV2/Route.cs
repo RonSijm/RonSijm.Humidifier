@@ -2,7 +2,7 @@ namespace Humidifier.ApiGatewayV2
 {
     using System.Collections.Generic;
 
-    public class Route : Humidifier.Base.BaseResource, IHaveTarget, IHaveApiId, IHaveAuthorizationType, IHaveOperationName, IHaveAuthorizationScopes, IHaveAuthorizerId
+    public class Route : Humidifier.Base.BaseResource, IHaveTarget, IHaveApiId, IHaveOperationName, IHaveAuthorizationType, IHaveAuthorizationScopes, IHaveAuthorizerId, IHaveApiKeyRequired, IHaveRouteKey, IHaveModelSelectionExpression
     {
         public class Attributes
         {

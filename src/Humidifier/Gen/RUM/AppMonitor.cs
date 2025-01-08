@@ -160,7 +160,7 @@ namespace Humidifier.RUM
             public dynamic Status { get; set; }
         }
 
-        public class MetricDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel
+        public class MetricDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveNamespace_, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel
         {
             /// <summary>
             /// EventPattern
@@ -213,7 +213,7 @@ namespace Humidifier.RUM
             public dynamic Name { get; set; }
         }
 
-        public class MetricDestination : Humidifier.Base.BaseSubResource, IHaveDestination, IHaveDestinationArn, IHaveIamRoleArn
+        public class MetricDestination : Humidifier.Base.BaseSubResource, IHaveDestination, IHaveIamRoleArn, IHaveDestinationArn
         {
             /// <summary>
             /// Destination

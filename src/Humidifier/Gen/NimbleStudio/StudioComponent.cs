@@ -3,7 +3,7 @@ namespace Humidifier.NimbleStudio
     using System.Collections.Generic;
     using StudioComponentTypes;
 
-    public class StudioComponent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveStudioId
+    public class StudioComponent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveStudioId, IHaveSubtype
     {
         public class Attributes
         {
@@ -277,7 +277,7 @@ namespace Humidifier.NimbleStudio
             public Humidifier.NimbleStudio.StudioComponentTypes.SharedFileSystemConfiguration SharedFileSystemConfiguration { get; set; }
         }
 
-        public class StudioComponentInitializationScript : Humidifier.Base.BaseSubResource, IHavePlatform
+        public class StudioComponentInitializationScript : Humidifier.Base.BaseSubResource, IHavePlatform, IHaveScript
         {
             /// <summary>
             /// Script

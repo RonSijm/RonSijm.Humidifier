@@ -3,7 +3,7 @@ namespace Humidifier.ElastiCache
     using System.Collections.Generic;
     using UserTypes;
 
-    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEngine, IHaveUserName, IHaveUserId, IHavePasswords
+    public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEngine, IHaveUserName, IHaveUserId, IHavePasswords, IHaveAccessString
     {
         public class Attributes
         {

@@ -242,7 +242,7 @@ namespace Humidifier.ACMPCA
             public dynamic ObjectIdentifier { get; set; }
         }
 
-        public class EdiPartyName : Humidifier.Base.BaseSubResource
+        public class EdiPartyName : Humidifier.Base.BaseSubResource, IHavePartyName, IHaveNameAssigner
         {
             /// <summary>
             /// PartyName
@@ -262,7 +262,7 @@ namespace Humidifier.ACMPCA
             public dynamic NameAssigner { get; set; }
         }
 
-        public class GeneralName : Humidifier.Base.BaseSubResource, IHaveIpAddress, IHaveDnsName
+        public class GeneralName : Humidifier.Base.BaseSubResource, IHaveIpAddress, IHaveDnsName, IHaveUniformResourceIdentifier, IHaveRegisteredId, IHaveRfc822Name
         {
             /// <summary>
             /// UniformResourceIdentifier
@@ -330,7 +330,7 @@ namespace Humidifier.ACMPCA
             public Humidifier.ACMPCA.CertificateAuthorityTypes.Subject DirectoryName { get; set; }
         }
 
-        public class KeyUsage : Humidifier.Base.BaseSubResource, IHaveKeyAgreement, IHaveKeyEncipherment, IHaveDataEncipherment, IHaveDigitalSignature, IHaveNonRepudiation
+        public class KeyUsage : Humidifier.Base.BaseSubResource, IHaveKeyAgreement, IHaveKeyEncipherment, IHaveDataEncipherment, IHaveDigitalSignature, IHaveNonRepudiation, IHaveKeyCertSign, IHaveDecipherOnly, IHaveCRLSign, IHaveEncipherOnly
         {
             /// <summary>
             /// KeyEncipherment
@@ -426,7 +426,7 @@ namespace Humidifier.ACMPCA
             public dynamic Enabled { get; set; }
         }
 
-        public class OtherName : Humidifier.Base.BaseSubResource, IHaveValue
+        public class OtherName : Humidifier.Base.BaseSubResource, IHaveValue, IHaveTypeId
         {
             /// <summary>
             /// TypeId
@@ -466,7 +466,7 @@ namespace Humidifier.ACMPCA
             public Humidifier.ACMPCA.CertificateAuthorityTypes.CrlConfiguration CrlConfiguration { get; set; }
         }
 
-        public class Subject : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveState, IHaveSerialNumber, IHaveOrganization, IHaveCommonName
+        public class Subject : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveState, IHaveSerialNumber, IHaveOrganization, IHaveCountry, IHaveCommonName, IHaveOrganizationalUnit, IHaveLocality, IHaveGivenName, IHaveGenerationQualifier, IHaveInitials, IHaveSurname, IHaveDistinguishedNameQualifier, IHavePseudonym
         {
             /// <summary>
             /// Organization

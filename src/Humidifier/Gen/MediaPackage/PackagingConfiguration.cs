@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackage
     using System.Collections.Generic;
     using PackagingConfigurationTypes;
 
-    public class PackagingConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveId
+    public class PackagingConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveId, IHavePackagingGroupId
     {
         public class Attributes
         {
@@ -88,7 +88,7 @@ namespace Humidifier.MediaPackage
             public Humidifier.MediaPackage.PackagingConfigurationTypes.SpekeKeyProvider SpekeKeyProvider { get; set; }
         }
 
-        public class CmafPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds
+        public class CmafPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds, IHaveIncludeEncoderConfigurationInSegments
         {
             /// <summary>
             /// SegmentDurationSeconds
@@ -137,7 +137,7 @@ namespace Humidifier.MediaPackage
             public Humidifier.MediaPackage.PackagingConfigurationTypes.SpekeKeyProvider SpekeKeyProvider { get; set; }
         }
 
-        public class DashManifest : Humidifier.Base.BaseSubResource, IHaveManifestName, IHaveProfile, IHaveMinBufferTimeSeconds, IHaveMediaPackagePackagingConfigurationTypesStreamSelectionStreamSelection
+        public class DashManifest : Humidifier.Base.BaseSubResource, IHaveManifestName, IHaveProfile, IHaveMinBufferTimeSeconds, IHaveMediaPackagePackagingConfigurationTypesStreamSelectionStreamSelection, IHaveManifestLayout
         {
             /// <summary>
             /// ScteMarkersSource
@@ -189,7 +189,7 @@ namespace Humidifier.MediaPackage
             public dynamic Profile { get; set; }
         }
 
-        public class DashPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds, IHaveIncludeIframeOnlyStream, IHaveSegmentTemplateFormat, IHavePeriodTriggers
+        public class DashPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds, IHaveIncludeIframeOnlyStream, IHaveSegmentTemplateFormat, IHavePeriodTriggers, IHaveIncludeEncoderConfigurationInSegments
         {
             /// <summary>
             /// PeriodTriggers
@@ -251,7 +251,7 @@ namespace Humidifier.MediaPackage
             public List<Humidifier.MediaPackage.PackagingConfigurationTypes.DashManifest> DashManifests { get; set; }
         }
 
-        public class EncryptionContractConfiguration : Humidifier.Base.BaseSubResource
+        public class EncryptionContractConfiguration : Humidifier.Base.BaseSubResource, IHavePresetSpeke20Audio, IHavePresetSpeke20Video
         {
             /// <summary>
             /// PresetSpeke20Audio
@@ -299,7 +299,7 @@ namespace Humidifier.MediaPackage
             public dynamic EncryptionMethod { get; set; }
         }
 
-        public class HlsManifest : Humidifier.Base.BaseSubResource, IHaveManifestName, IHaveAdMarkers, IHaveIncludeIframeOnlyStream, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackagePackagingConfigurationTypesStreamSelectionStreamSelection
+        public class HlsManifest : Humidifier.Base.BaseSubResource, IHaveManifestName, IHaveAdMarkers, IHaveIncludeIframeOnlyStream, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackagePackagingConfigurationTypesStreamSelectionStreamSelection, IHaveRepeatExtXKey
         {
             /// <summary>
             /// AdMarkers
@@ -351,7 +351,7 @@ namespace Humidifier.MediaPackage
             public dynamic IncludeIframeOnlyStream { get; set; }
         }
 
-        public class HlsPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds
+        public class HlsPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds, IHaveUseAudioRenditionGroup, IHaveIncludeDvbSubtitles
         {
             /// <summary>
             /// UseAudioRenditionGroup
@@ -457,7 +457,7 @@ namespace Humidifier.MediaPackage
             public Humidifier.MediaPackage.PackagingConfigurationTypes.MssEncryption Encryption { get; set; }
         }
 
-        public class SpekeKeyProvider : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl
+        public class SpekeKeyProvider : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveSystemIds
         {
             /// <summary>
             /// SystemIds
@@ -494,7 +494,7 @@ namespace Humidifier.MediaPackage
             public dynamic Url { get; set; }
         }
 
-        public class StreamSelection : Humidifier.Base.BaseSubResource
+        public class StreamSelection : Humidifier.Base.BaseSubResource, IHaveMinVideoBitsPerSecond, IHaveStreamOrder, IHaveMaxVideoBitsPerSecond
         {
             /// <summary>
             /// MinVideoBitsPerSecond

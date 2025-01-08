@@ -34,7 +34,7 @@ namespace Humidifier.GameLift
 
     namespace AliasTypes
     {
-        public class RoutingStrategy : Humidifier.Base.BaseSubResource, IHaveType, IHaveMessage
+        public class RoutingStrategy : Humidifier.Base.BaseSubResource, IHaveType, IHaveMessage, IHaveFleetId
         {
             /// <summary>
             /// Type

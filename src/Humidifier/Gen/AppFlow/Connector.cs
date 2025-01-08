@@ -3,7 +3,7 @@ namespace Humidifier.AppFlow
     using System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveDescription
+    public class Connector : Humidifier.Base.BaseResource, IHaveDescription, IHaveConnectorLabel
     {
         public class Attributes
         {

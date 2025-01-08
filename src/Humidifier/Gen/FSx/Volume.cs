@@ -100,7 +100,7 @@ namespace Humidifier.FSx
             public dynamic Value { get; set; }
         }
 
-        public class ClientConfigurations : Humidifier.Base.BaseSubResource, IHaveOptions
+        public class ClientConfigurations : Humidifier.Base.BaseSubResource, IHaveOptions, IHaveClients
         {
             /// <summary>
             /// Options
@@ -242,7 +242,7 @@ namespace Humidifier.FSx
             public dynamic OntapVolumeType { get; set; }
         }
 
-        public class OpenZFSConfiguration : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveOptions, IHaveDataCompressionType, IHaveStorageCapacityQuotaGiB
+        public class OpenZFSConfiguration : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveOptions, IHaveDataCompressionType, IHaveStorageCapacityQuotaGiB, IHaveCopyTagsToSnapshots, IHaveRecordSizeKiB
         {
             /// <summary>
             /// ReadOnly

@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using IPAMPoolTypes;
 
-    public class IPAMPool : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
+    public class IPAMPool : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveLocale, IHaveAddressFamily
     {
         public class Attributes
         {
@@ -169,7 +169,7 @@ namespace Humidifier.EC2
             public dynamic Cidr { get; set; }
         }
 
-        public class SourceResource : Humidifier.Base.BaseSubResource, IHaveResourceType, IHaveResourceId
+        public class SourceResource : Humidifier.Base.BaseSubResource, IHaveResourceType, IHaveResourceId, IHaveResourceOwner
         {
             /// <summary>
             /// ResourceRegion

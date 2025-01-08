@@ -3,7 +3,7 @@ namespace Humidifier.Connect
     using System.Collections.Generic;
     using InstanceStorageConfigTypes;
 
-    public class InstanceStorageConfig : Humidifier.Base.BaseResource, IHaveResourceType, IHaveInstanceArn, IHaveStorageType
+    public class InstanceStorageConfig : Humidifier.Base.BaseResource, IHaveInstanceArn, IHaveResourceType, IHaveStorageType
     {
         public class Attributes
         {
@@ -97,7 +97,7 @@ namespace Humidifier.Connect
             public dynamic KeyId { get; set; }
         }
 
-        public class KinesisFirehoseConfig : Humidifier.Base.BaseSubResource
+        public class KinesisFirehoseConfig : Humidifier.Base.BaseSubResource, IHaveFirehoseArn
         {
             /// <summary>
             /// FirehoseArn
@@ -121,7 +121,7 @@ namespace Humidifier.Connect
             public dynamic StreamArn { get; set; }
         }
 
-        public class KinesisVideoStreamConfig : Humidifier.Base.BaseSubResource, IHavePrefix
+        public class KinesisVideoStreamConfig : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveRetentionPeriodHours, IHaveConnectInstanceStorageConfigTypesEncryptionConfigEncryptionConfig
         {
             /// <summary>
             /// Prefix
@@ -149,7 +149,7 @@ namespace Humidifier.Connect
             public Humidifier.Connect.InstanceStorageConfigTypes.EncryptionConfig EncryptionConfig { get; set; }
         }
 
-        public class S3Config : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveBucketPrefix
+        public class S3Config : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveBucketPrefix, IHaveConnectInstanceStorageConfigTypesEncryptionConfigEncryptionConfig
         {
             /// <summary>
             /// BucketName

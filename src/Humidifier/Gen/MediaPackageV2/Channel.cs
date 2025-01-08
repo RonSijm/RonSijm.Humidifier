@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackageV2
     using System.Collections.Generic;
     using ChannelTypes;
 
-    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveChannelName, IHaveChannelGroupName
+    public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveChannelName, IHaveChannelGroupName, IHaveInputType
     {
         public class Attributes
         {

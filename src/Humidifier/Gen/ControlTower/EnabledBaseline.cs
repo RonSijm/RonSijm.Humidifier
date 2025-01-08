@@ -3,7 +3,7 @@ namespace Humidifier.ControlTower
     using System.Collections.Generic;
     using EnabledBaselineTypes;
 
-    public class EnabledBaseline : Humidifier.Base.BaseResource, IHaveTags
+    public class EnabledBaseline : Humidifier.Base.BaseResource, IHaveTags, IHaveTargetIdentifier
     {
         public class Attributes
         {

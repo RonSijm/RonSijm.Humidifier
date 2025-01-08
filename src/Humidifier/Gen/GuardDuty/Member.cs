@@ -2,7 +2,7 @@ namespace Humidifier.GuardDuty
 {
     using System.Collections.Generic;
 
-    public class Member : Humidifier.Base.BaseResource, IHaveStatus, IHaveMessage, IHaveDetectorId, IHaveEmail, IHaveMemberId
+    public class Member : Humidifier.Base.BaseResource, IHaveStatus, IHaveMessage, IHaveDetectorId, IHaveEmail, IHaveMemberId, IHaveDisableEmailNotification
     {
         public override string AWSTypeName { get => AWS.GuardDuty.Member; }
         /// <summary>

@@ -82,7 +82,7 @@ namespace Humidifier.Oam
             public Humidifier.Oam.LinkTypes.LinkFilter MetricConfiguration { get; set; }
         }
 
-        public class LinkFilter : Humidifier.Base.BaseSubResource
+        public class LinkFilter : Humidifier.Base.BaseSubResource, IHaveFilter
         {
             /// <summary>
             /// Filter

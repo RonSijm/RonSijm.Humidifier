@@ -61,7 +61,7 @@ namespace Humidifier.KinesisAnalytics
             public dynamic RecordColumnDelimiter { get; set; }
         }
 
-        public class Input : Humidifier.Base.BaseSubResource
+        public class Input : Humidifier.Base.BaseSubResource, IHaveNamePrefix
         {
             /// <summary>
             /// NamePrefix

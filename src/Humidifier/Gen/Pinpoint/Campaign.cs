@@ -3,7 +3,7 @@ namespace Humidifier.Pinpoint
     using System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHavePriority, IHaveApplicationId, IHaveTreatmentName
+    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHavePriority, IHaveApplicationId, IHaveTreatmentName, IHavePinpointCampaignTypesTemplateConfigurationTemplateConfiguration, IHaveTreatmentDescription, IHavePinpointCampaignTypesMessageConfigurationMessageConfiguration, IHavePinpointCampaignTypesScheduleSchedule, IHavePinpointCampaignTypesCustomDeliveryConfigurationCustomDeliveryConfiguration
     {
         public class Attributes
         {
@@ -193,7 +193,7 @@ namespace Humidifier.Pinpoint
             public dynamic Data { get; set; }
         }
 
-        public class CampaignEmailMessage : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveBody
+        public class CampaignEmailMessage : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveBody, IHaveFromAddress, IHaveHtmlBody
         {
             /// <summary>
             /// FromAddress
@@ -249,7 +249,7 @@ namespace Humidifier.Pinpoint
             public Humidifier.Pinpoint.CampaignTypes.EventDimensions Dimensions { get; set; }
         }
 
-        public class CampaignHook : Humidifier.Base.BaseSubResource, IHaveMode
+        public class CampaignHook : Humidifier.Base.BaseSubResource, IHaveMode, IHaveWebUrl, IHaveLambdaFunctionName
         {
             /// <summary>
             /// Mode
@@ -277,7 +277,7 @@ namespace Humidifier.Pinpoint
             public dynamic LambdaFunctionName { get; set; }
         }
 
-        public class CampaignInAppMessage : Humidifier.Base.BaseSubResource
+        public class CampaignInAppMessage : Humidifier.Base.BaseSubResource, IHaveCustomConfig, IHaveLayout
         {
             /// <summary>
             /// CustomConfig
@@ -306,7 +306,7 @@ namespace Humidifier.Pinpoint
             public List<Humidifier.Pinpoint.CampaignTypes.InAppMessageContent> Content { get; set; }
         }
 
-        public class CampaignSmsMessage : Humidifier.Base.BaseSubResource, IHaveBody, IHaveEntityId, IHaveTemplateId
+        public class CampaignSmsMessage : Humidifier.Base.BaseSubResource, IHaveBody, IHaveEntityId, IHaveTemplateId, IHaveSenderId, IHaveMessageType
         {
             /// <summary>
             /// EntityId
@@ -379,7 +379,7 @@ namespace Humidifier.Pinpoint
             public dynamic EndpointTypes { get; set; }
         }
 
-        public class DefaultButtonConfiguration : Humidifier.Base.BaseSubResource, IHaveText, IHaveBackgroundColor, IHaveTextColor, IHaveButtonAction, IHaveLink
+        public class DefaultButtonConfiguration : Humidifier.Base.BaseSubResource, IHaveText, IHaveBackgroundColor, IHaveTextColor, IHaveButtonAction, IHaveLink, IHaveBorderRadius
         {
             /// <summary>
             /// ButtonAction
@@ -603,7 +603,7 @@ namespace Humidifier.Pinpoint
             public dynamic TextColor { get; set; }
         }
 
-        public class Limits : Humidifier.Base.BaseSubResource, IHaveMaximumDuration
+        public class Limits : Humidifier.Base.BaseSubResource, IHaveMaximumDuration, IHaveDaily, IHaveTotal, IHaveMessagesPerSecond
         {
             /// <summary>
             /// Daily
@@ -647,7 +647,7 @@ namespace Humidifier.Pinpoint
             public dynamic Session { get; set; }
         }
 
-        public class Message : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveAction, IHaveUrl, IHaveBody, IHaveImageUrl
+        public class Message : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveAction, IHaveUrl, IHaveBody, IHaveImageUrl, IHaveMediaUrl, IHaveImageIconUrl
         {
             /// <summary>
             /// JsonBody
@@ -883,7 +883,7 @@ namespace Humidifier.Pinpoint
             public dynamic End { get; set; }
         }
 
-        public class Schedule : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveTimeZone, IHaveEndTime, IHaveFrequency
+        public class Schedule : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveEndTime, IHaveTimeZone, IHaveFrequency
         {
             /// <summary>
             /// TimeZone
@@ -943,7 +943,7 @@ namespace Humidifier.Pinpoint
             public dynamic IsLocalTime { get; set; }
         }
 
-        public class SetDimension : Humidifier.Base.BaseSubResource, IHaveValues
+        public class SetDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
         {
             /// <summary>
             /// DimensionType
@@ -1020,7 +1020,7 @@ namespace Humidifier.Pinpoint
             public Humidifier.Pinpoint.CampaignTypes.Template VoiceTemplate { get; set; }
         }
 
-        public class WriteTreatmentResource : Humidifier.Base.BaseSubResource, IHaveTreatmentName
+        public class WriteTreatmentResource : Humidifier.Base.BaseSubResource, IHaveTreatmentName, IHavePinpointCampaignTypesTemplateConfigurationTemplateConfiguration, IHaveTreatmentDescription, IHavePinpointCampaignTypesMessageConfigurationMessageConfiguration, IHavePinpointCampaignTypesScheduleSchedule, IHavePinpointCampaignTypesCustomDeliveryConfigurationCustomDeliveryConfiguration
         {
             /// <summary>
             /// TreatmentDescription

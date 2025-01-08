@@ -2,7 +2,7 @@ namespace Humidifier.IoTTwinMaker
 {
     using System.Collections.Generic;
 
-    public class Workspace : Humidifier.Base.BaseResource, IHaveDescription, IHaveRole, IHaveWorkspaceId
+    public class Workspace : Humidifier.Base.BaseResource, IHaveDescription, IHaveRole, IHaveWorkspaceId, IHaveS3Location
     {
         public class Attributes
         {

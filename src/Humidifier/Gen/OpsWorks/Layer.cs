@@ -3,7 +3,7 @@ namespace Humidifier.OpsWorks
     using System.Collections.Generic;
     using LayerTypes;
 
-    public class Layer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveStackId
+    public class Layer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveStackId, IHaveShortname, IHaveInstallUpdatesOnBoot, IHaveCustomJson
     {
         public override string AWSTypeName { get => AWS.OpsWorks.Layer; }
         /// <summary>
@@ -313,7 +313,7 @@ namespace Humidifier.OpsWorks
             public dynamic Undeploy { get; set; }
         }
 
-        public class ShutdownEventConfiguration : Humidifier.Base.BaseSubResource
+        public class ShutdownEventConfiguration : Humidifier.Base.BaseSubResource, IHaveExecutionTimeout
         {
             /// <summary>
             /// DelayUntilElbConnectionsDrained

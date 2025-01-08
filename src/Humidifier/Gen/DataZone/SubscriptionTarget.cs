@@ -102,7 +102,7 @@ namespace Humidifier.DataZone
 
     namespace SubscriptionTargetTypes
     {
-        public class SubscriptionTargetForm : Humidifier.Base.BaseSubResource, IHaveContent
+        public class SubscriptionTargetForm : Humidifier.Base.BaseSubResource, IHaveContent, IHaveFormName
         {
             /// <summary>
             /// Content

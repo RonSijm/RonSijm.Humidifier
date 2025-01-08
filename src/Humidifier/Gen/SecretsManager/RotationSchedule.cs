@@ -57,7 +57,7 @@ namespace Humidifier.SecretsManager
 
     namespace RotationScheduleTypes
     {
-        public class HostedRotationLambda : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveVpcSecurityGroupIds, IHaveRuntime, IHaveVpcSubnetIds
+        public class HostedRotationLambda : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveVpcSecurityGroupIds, IHaveRuntime, IHaveVpcSubnetIds, IHaveExcludeCharacters
         {
             /// <summary>
             /// Runtime

@@ -3,7 +3,7 @@ namespace Humidifier.LicenseManager
     using System.Collections.Generic;
     using LicenseTypes;
 
-    public class License : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStatus
+    public class License : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStatus, IHaveHomeRegion, IHaveProductName
     {
         public class Attributes
         {
@@ -111,7 +111,7 @@ namespace Humidifier.LicenseManager
 
     namespace LicenseTypes
     {
-        public class BorrowConfiguration : Humidifier.Base.BaseSubResource
+        public class BorrowConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTimeToLiveInMinutes
         {
             /// <summary>
             /// AllowEarlyCheckIn
@@ -159,7 +159,7 @@ namespace Humidifier.LicenseManager
             public Humidifier.LicenseManager.LicenseTypes.ProvisionalConfiguration ProvisionalConfiguration { get; set; }
         }
 
-        public class Entitlement : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue, IHaveUnit
+        public class Entitlement : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue, IHaveUnit, IHaveMaxCount
         {
             /// <summary>
             /// AllowCheckIn
@@ -251,7 +251,7 @@ namespace Humidifier.LicenseManager
             public dynamic Name { get; set; }
         }
 
-        public class ProvisionalConfiguration : Humidifier.Base.BaseSubResource
+        public class ProvisionalConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTimeToLiveInMinutes
         {
             /// <summary>
             /// MaxTimeToLiveInMinutes

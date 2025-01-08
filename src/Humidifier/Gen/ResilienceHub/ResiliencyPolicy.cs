@@ -3,7 +3,7 @@ namespace Humidifier.ResilienceHub
     using System.Collections.Generic;
     using ResiliencyPolicyTypes;
 
-    public class ResiliencyPolicy : Humidifier.Base.BaseResource, IHavePolicyName, IHaveTier
+    public class ResiliencyPolicy : Humidifier.Base.BaseResource, IHavePolicyName, IHaveTier, IHavePolicyDescription
     {
         public class Attributes
         {

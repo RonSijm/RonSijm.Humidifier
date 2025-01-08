@@ -3,7 +3,7 @@ namespace Humidifier.ImageBuilder
     using System.Collections.Generic;
     using ImagePipelineTypes;
 
-    public class ImagePipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveStatus, IHaveExecutionRole
+    public class ImagePipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveStatus, IHaveExecutionRole, IHaveInfrastructureConfigurationArn, IHaveImageRecipeArn, IHaveDistributionConfigurationArn, IHaveContainerRecipeArn, IHaveEnhancedImageMetadataEnabled
     {
         public class Attributes
         {
@@ -146,7 +146,7 @@ namespace Humidifier.ImageBuilder
             public dynamic RepositoryName { get; set; }
         }
 
-        public class ImageScanningConfiguration : Humidifier.Base.BaseSubResource
+        public class ImageScanningConfiguration : Humidifier.Base.BaseSubResource, IHaveImageScanningEnabled
         {
             /// <summary>
             /// EcrConfiguration
@@ -166,7 +166,7 @@ namespace Humidifier.ImageBuilder
             public dynamic ImageScanningEnabled { get; set; }
         }
 
-        public class ImageTestsConfiguration : Humidifier.Base.BaseSubResource
+        public class ImageTestsConfiguration : Humidifier.Base.BaseSubResource, IHaveTimeoutMinutes, IHaveImageTestsEnabled
         {
             /// <summary>
             /// TimeoutMinutes
@@ -206,7 +206,7 @@ namespace Humidifier.ImageBuilder
             public dynamic PipelineExecutionStartCondition { get; set; }
         }
 
-        public class WorkflowConfiguration : Humidifier.Base.BaseSubResource
+        public class WorkflowConfiguration : Humidifier.Base.BaseSubResource, IHaveParallelGroup, IHaveWorkflowArn, IHaveOnFailure
         {
             /// <summary>
             /// ParallelGroup

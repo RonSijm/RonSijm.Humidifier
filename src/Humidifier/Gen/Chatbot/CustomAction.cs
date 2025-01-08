@@ -3,7 +3,7 @@ namespace Humidifier.Chatbot
     using System.Collections.Generic;
     using CustomActionTypes;
 
-    public class CustomAction : Humidifier.Base.BaseResource, IHaveTags, IHaveActionName
+    public class CustomAction : Humidifier.Base.BaseResource, IHaveTags, IHaveActionName, IHaveAliasName
     {
         public class Attributes
         {
@@ -99,7 +99,7 @@ namespace Humidifier.Chatbot
             public dynamic ButtonText { get; set; }
         }
 
-        public class CustomActionAttachmentCriteria : Humidifier.Base.BaseSubResource, IHaveValue, IHaveOperator
+        public class CustomActionAttachmentCriteria : Humidifier.Base.BaseSubResource, IHaveValue, IHaveOperator, IHaveVariableName
         {
             /// <summary>
             /// Operator

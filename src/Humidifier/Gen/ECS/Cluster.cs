@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterName
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterName, IHaveCapacityProviders
     {
         public class Attributes
         {
@@ -136,7 +136,7 @@ namespace Humidifier.ECS
             public dynamic Name { get; set; }
         }
 
-        public class ExecuteCommandConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
+        public class ExecuteCommandConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyId, IHaveLogging
         {
             /// <summary>
             /// Logging
@@ -164,7 +164,7 @@ namespace Humidifier.ECS
             public Humidifier.ECS.ClusterTypes.ExecuteCommandLogConfiguration LogConfiguration { get; set; }
         }
 
-        public class ExecuteCommandLogConfiguration : Humidifier.Base.BaseSubResource, IHaveS3BucketName, IHaveS3KeyPrefix
+        public class ExecuteCommandLogConfiguration : Humidifier.Base.BaseSubResource, IHaveS3BucketName, IHaveS3KeyPrefix, IHaveCloudWatchLogGroupName
         {
             /// <summary>
             /// S3EncryptionEnabled
@@ -228,7 +228,7 @@ namespace Humidifier.ECS
             public dynamic KmsKeyId { get; set; }
         }
 
-        public class ServiceConnectDefaults : Humidifier.Base.BaseSubResource
+        public class ServiceConnectDefaults : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
             /// <summary>
             /// Namespace_

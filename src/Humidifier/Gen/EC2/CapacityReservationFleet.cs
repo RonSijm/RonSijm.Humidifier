@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using CapacityReservationFleetTypes;
 
-    public class CapacityReservationFleet : Humidifier.Base.BaseResource, IHaveAllocationStrategy, IHaveEndDate, IHaveTenancy
+    public class CapacityReservationFleet : Humidifier.Base.BaseResource, IHaveAllocationStrategy, IHaveEndDate, IHaveTenancy, IHaveInstanceMatchCriteria, IHaveTotalTargetCapacity
     {
         public class Attributes
         {
@@ -89,7 +89,7 @@ namespace Humidifier.EC2
 
     namespace CapacityReservationFleetTypes
     {
-        public class InstanceTypeSpecification : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveAvailabilityZone, IHavePriority, IHaveWeight, IHaveEbsOptimized
+        public class InstanceTypeSpecification : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveAvailabilityZone, IHavePriority, IHaveWeight, IHaveEbsOptimized, IHaveInstancePlatform, IHaveAvailabilityZoneId
         {
             /// <summary>
             /// Priority

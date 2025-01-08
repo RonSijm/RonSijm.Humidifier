@@ -58,7 +58,7 @@ namespace Humidifier.AppMesh
 
     namespace VirtualServiceTypes
     {
-        public class VirtualNodeServiceProvider : Humidifier.Base.BaseSubResource
+        public class VirtualNodeServiceProvider : Humidifier.Base.BaseSubResource, IHaveVirtualNodeName
         {
             /// <summary>
             /// VirtualNodeName

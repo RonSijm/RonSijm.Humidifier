@@ -3,7 +3,7 @@ namespace Humidifier.ServiceCatalog
     using System.Collections.Generic;
     using CloudFormationProvisionedProductTypes;
 
-    public class CloudFormationProvisionedProduct : Humidifier.Base.BaseResource, IHaveTags, IHaveAcceptLanguage, IHaveProductId, IHaveProvisioningArtifactId
+    public class CloudFormationProvisionedProduct : Humidifier.Base.BaseResource, IHaveTags, IHaveAcceptLanguage, IHaveProductId, IHaveProvisioningArtifactId, IHaveProductName, IHavePathId, IHaveNotificationArns
     {
         public class Attributes
         {

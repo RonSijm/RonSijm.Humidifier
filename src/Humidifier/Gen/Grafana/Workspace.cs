@@ -3,7 +3,7 @@ namespace Humidifier.Grafana
     using System.Collections.Generic;
     using WorkspaceTypes;
 
-    public class Workspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveClientToken
+    public class Workspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveClientToken, IHaveStackSetName, IHaveOrganizationalUnits
     {
         public class Attributes
         {

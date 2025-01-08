@@ -51,7 +51,7 @@ namespace Humidifier.PinpointEmail
             public List<Humidifier.PinpointEmail.ConfigurationSetEventDestinationTypes.DimensionConfiguration> DimensionConfigurations { get; set; }
         }
 
-        public class DimensionConfiguration : Humidifier.Base.BaseSubResource, IHaveDimensionName
+        public class DimensionConfiguration : Humidifier.Base.BaseSubResource, IHaveDimensionName, IHaveDimensionValueSource, IHaveDefaultDimensionValue
         {
             /// <summary>
             /// DimensionValueSource
@@ -79,7 +79,7 @@ namespace Humidifier.PinpointEmail
             public dynamic DimensionName { get; set; }
         }
 
-        public class EventDestination : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class EventDestination : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMatchingEventTypes
         {
             /// <summary>
             /// SnsDestination
@@ -132,7 +132,7 @@ namespace Humidifier.PinpointEmail
             public Humidifier.PinpointEmail.ConfigurationSetEventDestinationTypes.KinesisFirehoseDestination KinesisFirehoseDestination { get; set; }
         }
 
-        public class KinesisFirehoseDestination : Humidifier.Base.BaseSubResource, IHaveIamRoleArn
+        public class KinesisFirehoseDestination : Humidifier.Base.BaseSubResource, IHaveIamRoleArn, IHaveDeliveryStreamArn
         {
             /// <summary>
             /// DeliveryStreamArn

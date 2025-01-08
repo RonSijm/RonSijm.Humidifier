@@ -60,7 +60,7 @@ namespace Humidifier.MediaLive
             public dynamic Cidr { get; set; }
         }
 
-        public class Route : Humidifier.Base.BaseSubResource, IHaveCidr
+        public class Route : Humidifier.Base.BaseSubResource, IHaveCidr, IHaveGateway
         {
             /// <summary>
             /// Cidr

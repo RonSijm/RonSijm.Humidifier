@@ -170,7 +170,7 @@ namespace Humidifier.DataZone
             public dynamic Expression { get; set; }
         }
 
-        public class FormInput : Humidifier.Base.BaseSubResource, IHaveContent
+        public class FormInput : Humidifier.Base.BaseSubResource, IHaveContent, IHaveFormName
         {
             /// <summary>
             /// TypeIdentifier
@@ -206,7 +206,7 @@ namespace Humidifier.DataZone
             public dynamic FormName { get; set; }
         }
 
-        public class GlueRunConfigurationInput : Humidifier.Base.BaseSubResource
+        public class GlueRunConfigurationInput : Humidifier.Base.BaseSubResource, IHaveDataAccessRole
         {
             /// <summary>
             /// DataAccessRole
@@ -271,7 +271,7 @@ namespace Humidifier.DataZone
             public dynamic SecretManagerArn { get; set; }
         }
 
-        public class RedshiftRunConfigurationInput : Humidifier.Base.BaseSubResource
+        public class RedshiftRunConfigurationInput : Humidifier.Base.BaseSubResource, IHaveDataAccessRole
         {
             /// <summary>
             /// DataAccessRole

@@ -2,7 +2,7 @@ namespace Humidifier.Pinpoint
 {
     using System.Collections.Generic;
 
-    public class EmailTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveSubject, IHaveTemplateDescription, IHaveDefaultSubstitutions
+    public class EmailTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveSubject, IHaveTemplateDescription, IHaveDefaultSubstitutions, IHaveHtmlPart, IHaveTextPart
     {
         public class Attributes
         {

@@ -3,7 +3,7 @@ namespace Humidifier.Config
     using System.Collections.Generic;
     using ConfigRuleTypes;
 
-    public class ConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveMaximumExecutionFrequency, IHaveInputParameters
+    public class ConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHaveConfigRuleName
     {
         public class Attributes
         {
@@ -128,7 +128,7 @@ namespace Humidifier.Config
             public dynamic Mode { get; set; }
         }
 
-        public class Scope : Humidifier.Base.BaseSubResource, IHaveTagKey
+        public class Scope : Humidifier.Base.BaseSubResource, IHaveTagKey, IHaveTagValue, IHaveComplianceResourceTypes
         {
             /// <summary>
             /// ComplianceResourceId
@@ -202,7 +202,7 @@ namespace Humidifier.Config
             public List<Humidifier.Config.ConfigRuleTypes.SourceDetail> SourceDetails { get; set; }
         }
 
-        public class SourceDetail : Humidifier.Base.BaseSubResource, IHaveMaximumExecutionFrequency
+        public class SourceDetail : Humidifier.Base.BaseSubResource, IHaveMaximumExecutionFrequency, IHaveEventSource, IHaveMessageType
         {
             /// <summary>
             /// EventSource

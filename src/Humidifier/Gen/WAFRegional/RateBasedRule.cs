@@ -3,7 +3,7 @@ namespace Humidifier.WAFRegional
     using System.Collections.Generic;
     using RateBasedRuleTypes;
 
-    public class RateBasedRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveMetricName
+    public class RateBasedRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveMetricName, IHaveRateLimit
     {
         public override string AWSTypeName { get => AWS.WAFRegional.RateBasedRule; }
 

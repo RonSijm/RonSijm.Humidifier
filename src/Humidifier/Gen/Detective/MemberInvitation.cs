@@ -2,7 +2,7 @@ namespace Humidifier.Detective
 {
     using System.Collections.Generic;
 
-    public class MemberInvitation : Humidifier.Base.BaseResource, IHaveMessage, IHaveMemberId
+    public class MemberInvitation : Humidifier.Base.BaseResource, IHaveMessage, IHaveMemberId, IHaveDisableEmailNotification
     {
         public override string AWSTypeName { get => AWS.Detective.MemberInvitation; }
 

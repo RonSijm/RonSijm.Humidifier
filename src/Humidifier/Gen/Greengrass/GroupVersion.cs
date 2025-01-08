@@ -2,7 +2,7 @@ namespace Humidifier.Greengrass
 {
     using System.Collections.Generic;
 
-    public class GroupVersion : Humidifier.Base.BaseResource, IHaveGroupId
+    public class GroupVersion : Humidifier.Base.BaseResource, IHaveGroupId, IHaveLoggerDefinitionVersionArn, IHaveDeviceDefinitionVersionArn, IHaveFunctionDefinitionVersionArn, IHaveCoreDefinitionVersionArn, IHaveResourceDefinitionVersionArn, IHaveConnectorDefinitionVersionArn, IHaveSubscriptionDefinitionVersionArn
     {
         public override string AWSTypeName { get => AWS.Greengrass.GroupVersion; }
         /// <summary>

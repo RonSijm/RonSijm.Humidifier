@@ -118,7 +118,7 @@ namespace Humidifier.Lightsail
 
     namespace InstanceTypes
     {
-        public class AddOn : Humidifier.Base.BaseSubResource, IHaveStatus
+        public class AddOn : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveAddOnType
         {
             /// <summary>
             /// Status
@@ -146,7 +146,7 @@ namespace Humidifier.Lightsail
             public Humidifier.Lightsail.InstanceTypes.AutoSnapshotAddOn AutoSnapshotAddOnRequest { get; set; }
         }
 
-        public class AutoSnapshotAddOn : Humidifier.Base.BaseSubResource
+        public class AutoSnapshotAddOn : Humidifier.Base.BaseSubResource, IHaveSnapshotTimeOfDay
         {
             /// <summary>
             /// SnapshotTimeOfDay
@@ -158,7 +158,7 @@ namespace Humidifier.Lightsail
             public dynamic SnapshotTimeOfDay { get; set; }
         }
 
-        public class Disk : Humidifier.Base.BaseSubResource, IHavePath
+        public class Disk : Humidifier.Base.BaseSubResource, IHavePath, IHaveSizeInGb, IHaveDiskName, IHaveAttachedTo
         {
             /// <summary>
             /// SizeInGb
@@ -300,7 +300,7 @@ namespace Humidifier.Lightsail
             public Humidifier.Lightsail.InstanceTypes.MonthlyTransfer MonthlyTransfer { get; set; }
         }
 
-        public class Port : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveFromPort, IHaveToPort, IHaveAccessType, IHaveCommonName, IHaveCidrs
+        public class Port : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveFromPort, IHaveToPort, IHaveCidrs, IHaveAccessType, IHaveCommonName
         {
             /// <summary>
             /// FromPort

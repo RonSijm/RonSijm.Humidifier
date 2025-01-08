@@ -2,7 +2,7 @@ namespace Humidifier.KMS
 {
     using System.Collections.Generic;
 
-    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveAliasName
     {
         public override string AWSTypeName { get => AWS.KMS.Alias; }
 

@@ -2,7 +2,7 @@ namespace Humidifier.SNS
 {
     using System.Collections.Generic;
 
-    public class Subscription : Humidifier.Base.BaseResource, IHaveProtocol, IHaveRegion, IHaveEndpoint, IHaveTopicArn
+    public class Subscription : Humidifier.Base.BaseResource, IHaveProtocol, IHaveRegion, IHaveEndpoint, IHaveTopicArn, IHaveRedrivePolicy
     {
         public class Attributes
         {

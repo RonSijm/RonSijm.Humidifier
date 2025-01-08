@@ -3,7 +3,7 @@ namespace Humidifier.CloudFront
     using System.Collections.Generic;
     using AnycastIpListTypes;
 
-    public class AnycastIpList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class AnycastIpList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveIpCount
     {
         public class Attributes
         {
@@ -36,7 +36,7 @@ namespace Humidifier.CloudFront
 
     namespace AnycastIpListTypes
     {
-        public class AnycastIpList : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveId, IHaveArn
+        public class AnycastIpList : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveId, IHaveArn, IHaveLastModifiedTime, IHaveIpCount
         {
             /// <summary>
             /// Status

@@ -2,7 +2,7 @@ namespace Humidifier.EC2
 {
     using System.Collections.Generic;
 
-    public class NetworkPerformanceMetricSubscription : Humidifier.Base.BaseResource, IHaveSource, IHaveStatistic, IHaveDestination, IHaveMetric
+    public class NetworkPerformanceMetricSubscription : Humidifier.Base.BaseResource, IHaveSource, IHaveDestination, IHaveStatistic, IHaveMetric
     {
         public override string AWSTypeName { get => AWS.EC2.NetworkPerformanceMetricSubscription; }
 

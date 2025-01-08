@@ -3,7 +3,7 @@ namespace Humidifier.OSIS
     using System.Collections.Generic;
     using PipelineTypes;
 
-    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePipelineName
+    public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePipelineName, IHaveOSISPipelineTypesVpcOptionsVpcOptions
     {
         public class Attributes
         {
@@ -166,7 +166,7 @@ namespace Humidifier.OSIS
             public dynamic CidrBlock { get; set; }
         }
 
-        public class VpcEndpoint : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveVpcEndpointId
+        public class VpcEndpoint : Humidifier.Base.BaseSubResource, IHaveVpcId, IHaveVpcEndpointId, IHaveOSISPipelineTypesVpcOptionsVpcOptions
         {
             /// <summary>
             /// VpcId

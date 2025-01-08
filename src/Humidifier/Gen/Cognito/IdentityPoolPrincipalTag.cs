@@ -2,7 +2,7 @@ namespace Humidifier.Cognito
 {
     using System.Collections.Generic;
 
-    public class IdentityPoolPrincipalTag : Humidifier.Base.BaseResource, IHaveIdentityPoolId
+    public class IdentityPoolPrincipalTag : Humidifier.Base.BaseResource, IHaveIdentityPoolId, IHaveIdentityProviderName
     {
         public override string AWSTypeName { get => AWS.Cognito.IdentityPoolPrincipalTag; }
         /// <summary>

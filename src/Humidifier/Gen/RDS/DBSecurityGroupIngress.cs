@@ -2,7 +2,7 @@ namespace Humidifier.RDS
 {
     using System.Collections.Generic;
 
-    public class DBSecurityGroupIngress : Humidifier.Base.BaseResource, IHaveEC2SecurityGroupName, IHaveEC2SecurityGroupOwnerId, IHaveCIDRIP
+    public class DBSecurityGroupIngress : Humidifier.Base.BaseResource, IHaveEC2SecurityGroupName, IHaveEC2SecurityGroupOwnerId, IHaveCIDRIP, IHaveEC2SecurityGroupId
     {
         public override string AWSTypeName { get => AWS.RDS.DBSecurityGroupIngress; }
         /// <summary>

@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using System.Collections.Generic;
     using IntegrationTypes;
 
-    public class Integration : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveUri
+    public class Integration : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveUri, IHaveObjectTypeName
     {
         public class Attributes
         {
@@ -77,7 +77,7 @@ namespace Humidifier.CustomerProfiles
 
     namespace IntegrationTypes
     {
-        public class ConnectorOperator : Humidifier.Base.BaseSubResource
+        public class ConnectorOperator : Humidifier.Base.BaseSubResource, IHaveS3, IHaveServiceNow, IHaveMarketo, IHaveZendesk, IHaveSalesforce
         {
             /// <summary>
             /// S3
@@ -174,7 +174,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic KmsArn { get; set; }
         }
 
-        public class IncrementalPullConfig : Humidifier.Base.BaseSubResource
+        public class IncrementalPullConfig : Humidifier.Base.BaseSubResource, IHaveDatetimeTypeFieldName
         {
             /// <summary>
             /// DatetimeTypeFieldName
@@ -238,7 +238,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic BucketPrefix { get; set; }
         }
 
-        public class SalesforceSourceProperties : Humidifier.Base.BaseSubResource, IHaveObject
+        public class SalesforceSourceProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveIncludeDeletedRecords, IHaveEnableDynamicFieldUpdate
         {
             /// <summary>
             /// IncludeDeletedRecords
@@ -266,7 +266,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic EnableDynamicFieldUpdate { get; set; }
         }
 
-        public class ScheduledTriggerProperties : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveTimezone, IHaveScheduleOffset, IHaveFirstExecutionFrom
+        public class ScheduledTriggerProperties : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveTimezone, IHaveScheduleOffset, IHaveFirstExecutionFrom, IHaveScheduleEndTime, IHaveScheduleStartTime, IHaveDataPullMode
         {
             /// <summary>
             /// ScheduleEndTime
@@ -418,7 +418,7 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.IntegrationTypes.IncrementalPullConfig IncrementalPullConfig { get; set; }
         }
 
-        public class Task : Humidifier.Base.BaseSubResource, IHaveTaskType
+        public class Task : Humidifier.Base.BaseSubResource, IHaveTaskType, IHaveSourceFields, IHaveDestinationField
         {
             /// <summary>
             /// SourceFields
@@ -484,7 +484,7 @@ namespace Humidifier.CustomerProfiles
             public dynamic Property { get; set; }
         }
 
-        public class TriggerConfig : Humidifier.Base.BaseSubResource
+        public class TriggerConfig : Humidifier.Base.BaseSubResource, IHaveTriggerType
         {
             /// <summary>
             /// TriggerType

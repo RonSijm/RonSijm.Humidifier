@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using NetworkAclEntryTypes;
 
-    public class NetworkAclEntry : Humidifier.Base.BaseResource, IHaveProtocol, IHaveCidrBlock, IHaveIpv6CidrBlock, IHaveRuleAction, IHaveEgress, IHaveRuleNumber
+    public class NetworkAclEntry : Humidifier.Base.BaseResource, IHaveProtocol, IHaveCidrBlock, IHaveIpv6CidrBlock, IHaveRuleAction, IHaveEgress, IHaveRuleNumber, IHaveNetworkAclId
     {
         public class Attributes
         {

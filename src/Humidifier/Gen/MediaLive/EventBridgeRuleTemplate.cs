@@ -3,7 +3,7 @@ namespace Humidifier.MediaLive
     using System.Collections.Generic;
     using EventBridgeRuleTemplateTypes;
 
-    public class EventBridgeRuleTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveEventType
+    public class EventBridgeRuleTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveEventType, IHaveGroupIdentifier
     {
         public class Attributes
         {

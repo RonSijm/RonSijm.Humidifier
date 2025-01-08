@@ -2,7 +2,7 @@ namespace Humidifier.ServiceCatalog
 {
     using System.Collections.Generic;
 
-    public class StackSetConstraint : Humidifier.Base.BaseResource, IHaveDescription, IHaveAcceptLanguage, IHaveProductId, IHaveExecutionRole, IHavePortfolioId
+    public class StackSetConstraint : Humidifier.Base.BaseResource, IHaveDescription, IHaveAcceptLanguage, IHaveExecutionRole, IHaveProductId, IHavePortfolioId, IHaveRegionList
     {
         public override string AWSTypeName { get => AWS.ServiceCatalog.StackSetConstraint; }
 

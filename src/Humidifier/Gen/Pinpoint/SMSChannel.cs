@@ -2,7 +2,7 @@ namespace Humidifier.Pinpoint
 {
     using System.Collections.Generic;
 
-    public class SMSChannel : Humidifier.Base.BaseResource, IHaveEnabled, IHaveApplicationId
+    public class SMSChannel : Humidifier.Base.BaseResource, IHaveEnabled, IHaveApplicationId, IHaveSenderId
     {
         public override string AWSTypeName { get => AWS.Pinpoint.SMSChannel; }
         /// <summary>

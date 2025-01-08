@@ -3,7 +3,7 @@ namespace Humidifier.EMR
     using System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveServiceRole, IHaveCustomAmiId, IHaveSecurityConfiguration, IHaveLogUri
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveServiceRole, IHaveCustomAmiId, IHaveSecurityConfiguration, IHaveLogUri, IHaveAdditionalInfo, IHaveReleaseLabel
     {
         public class Attributes
         {
@@ -295,7 +295,7 @@ namespace Humidifier.EMR
             public List<Humidifier.EMR.ClusterTypes.ScalingRule> Rules { get; set; }
         }
 
-        public class AutoTerminationPolicy : Humidifier.Base.BaseSubResource
+        public class AutoTerminationPolicy : Humidifier.Base.BaseSubResource, IHaveIdleTimeout
         {
             /// <summary>
             /// IdleTimeout
@@ -327,7 +327,7 @@ namespace Humidifier.EMR
             public Humidifier.EMR.ClusterTypes.ScriptBootstrapActionConfig ScriptBootstrapAction { get; set; }
         }
 
-        public class CloudWatchAlarmDefinition : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveComparisonOperator, IHavePeriod, IHaveStatistic, IHaveThreshold, IHaveEvaluationPeriods
+        public class CloudWatchAlarmDefinition : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHaveComparisonOperator, IHavePeriod, IHaveThreshold, IHaveStatistic, IHaveEvaluationPeriods
         {
             /// <summary>
             /// ComparisonOperator
@@ -519,7 +519,7 @@ namespace Humidifier.EMR
             public dynamic EbsOptimized { get; set; }
         }
 
-        public class HadoopJarStepConfig : Humidifier.Base.BaseSubResource, IHaveArgs
+        public class HadoopJarStepConfig : Humidifier.Base.BaseSubResource, IHaveArgs, IHaveJar, IHaveMainClass
         {
             /// <summary>
             /// Args
@@ -557,7 +557,7 @@ namespace Humidifier.EMR
             public List<Humidifier.EMR.ClusterTypes.KeyValue> StepProperties { get; set; }
         }
 
-        public class InstanceFleetConfig : Humidifier.Base.BaseSubResource, IHaveName
+        public class InstanceFleetConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveTargetOnDemandCapacity, IHaveTargetSpotCapacity
         {
             /// <summary>
             /// InstanceTypeConfigs
@@ -650,7 +650,7 @@ namespace Humidifier.EMR
             public Humidifier.EMR.ClusterTypes.SpotResizingSpecification SpotResizeSpecification { get; set; }
         }
 
-        public class InstanceGroupConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveInstanceType, IHaveInstanceCount, IHaveCustomAmiId, IHaveBidPrice, IHaveMarket
+        public class InstanceGroupConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveInstanceType, IHaveInstanceCount, IHaveCustomAmiId, IHaveBidPrice, IHaveMarket, IHaveEMRClusterTypesEbsConfigurationEbsConfiguration
         {
             /// <summary>
             /// AutoScalingPolicy
@@ -727,7 +727,7 @@ namespace Humidifier.EMR
             public dynamic Name { get; set; }
         }
 
-        public class InstanceTypeConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHavePriority, IHaveWeightedCapacity, IHaveCustomAmiId, IHaveBidPrice
+        public class InstanceTypeConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHavePriority, IHaveWeightedCapacity, IHaveCustomAmiId, IHaveBidPrice, IHaveEMRClusterTypesEbsConfigurationEbsConfiguration, IHaveBidPriceAsPercentageOfOnDemandPrice
         {
             /// <summary>
             /// BidPrice
@@ -1053,7 +1053,7 @@ namespace Humidifier.EMR
             public dynamic Value { get; set; }
         }
 
-        public class OnDemandCapacityReservationOptions : Humidifier.Base.BaseSubResource
+        public class OnDemandCapacityReservationOptions : Humidifier.Base.BaseSubResource, IHaveCapacityReservationPreference, IHaveUsageStrategy, IHaveCapacityReservationResourceGroupArn
         {
             /// <summary>
             /// CapacityReservationPreference
@@ -1082,7 +1082,7 @@ namespace Humidifier.EMR
             public dynamic UsageStrategy { get; set; }
         }
 
-        public class OnDemandProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
+        public class OnDemandProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveEMRClusterTypesOnDemandCapacityReservationOptionsCapacityReservationOptions
         {
             /// <summary>
             /// AllocationStrategy
@@ -1102,7 +1102,7 @@ namespace Humidifier.EMR
             public Humidifier.EMR.ClusterTypes.OnDemandCapacityReservationOptions CapacityReservationOptions { get; set; }
         }
 
-        public class OnDemandResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
+        public class OnDemandResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveTimeoutDurationMinutes, IHaveEMRClusterTypesOnDemandCapacityReservationOptionsCapacityReservationOptions
         {
             /// <summary>
             /// AllocationStrategy
@@ -1271,7 +1271,7 @@ namespace Humidifier.EMR
             public dynamic Path { get; set; }
         }
 
-        public class SimpleScalingPolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment, IHaveAdjustmentType
+        public class SimpleScalingPolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment, IHaveAdjustmentType, IHaveCoolDown
         {
             /// <summary>
             /// AdjustmentType
@@ -1299,7 +1299,7 @@ namespace Humidifier.EMR
             public dynamic ScalingAdjustment { get; set; }
         }
 
-        public class SpotProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveBlockDurationMinutes, IHaveTimeoutAction
+        public class SpotProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveTimeoutDurationMinutes, IHaveBlockDurationMinutes, IHaveTimeoutAction
         {
             /// <summary>
             /// AllocationStrategy
@@ -1335,7 +1335,7 @@ namespace Humidifier.EMR
             public dynamic TimeoutDurationMinutes { get; set; }
         }
 
-        public class SpotResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy
+        public class SpotResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveTimeoutDurationMinutes
         {
             /// <summary>
             /// AllocationStrategy
@@ -1355,7 +1355,7 @@ namespace Humidifier.EMR
             public dynamic TimeoutDurationMinutes { get; set; }
         }
 
-        public class StepConfig : Humidifier.Base.BaseSubResource, IHaveName
+        public class StepConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveActionOnFailure
         {
             /// <summary>
             /// ActionOnFailure

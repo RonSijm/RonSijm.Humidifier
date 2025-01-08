@@ -2,7 +2,7 @@ namespace Humidifier.ResourceExplorer2
 {
     using System.Collections.Generic;
 
-    public class DefaultViewAssociation : Humidifier.Base.BaseResource
+    public class DefaultViewAssociation : Humidifier.Base.BaseResource, IHaveViewArn
     {
         public class Attributes
         {

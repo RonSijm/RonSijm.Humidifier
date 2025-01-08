@@ -2,7 +2,7 @@ namespace Humidifier.AutoScaling
 {
     using System.Collections.Generic;
 
-    public class LifecycleHook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleARN, IHaveAutoScalingGroupName
+    public class LifecycleHook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleARN, IHaveAutoScalingGroupName, IHaveLifecycleHookName, IHaveLifecycleTransition, IHaveHeartbeatTimeout, IHaveNotificationMetadata, IHaveDefaultResult, IHaveNotificationTargetARN
     {
         public override string AWSTypeName { get => AWS.AutoScaling.LifecycleHook; }
         public dynamic LifecycleHookName { get => GivenName; set => GivenName = value; }

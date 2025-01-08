@@ -3,7 +3,7 @@ namespace Humidifier.DataZone
     using System.Collections.Generic;
     using EnvironmentBlueprintConfigurationTypes;
 
-    public class EnvironmentBlueprintConfiguration : Humidifier.Base.BaseResource, IHaveDomainIdentifier
+    public class EnvironmentBlueprintConfiguration : Humidifier.Base.BaseResource, IHaveDomainIdentifier, IHaveProvisioningRoleArn, IHaveEnvironmentBlueprintIdentifier
     {
         public class Attributes
         {

@@ -2,7 +2,7 @@ namespace Humidifier.ImageBuilder
 {
     using System.Collections.Generic;
 
-    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveKmsKeyId, IHaveVersion, IHaveData, IHaveUri
+    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveKmsKeyId, IHaveVersion, IHaveData, IHaveUri, IHaveChangeDescription
     {
         public class Attributes
         {

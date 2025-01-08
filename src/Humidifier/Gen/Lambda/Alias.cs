@@ -73,7 +73,7 @@ namespace Humidifier.Lambda
             public List<Humidifier.Lambda.AliasTypes.VersionWeight> AdditionalVersionWeights { get; set; }
         }
 
-        public class ProvisionedConcurrencyConfiguration : Humidifier.Base.BaseSubResource
+        public class ProvisionedConcurrencyConfiguration : Humidifier.Base.BaseSubResource, IHaveProvisionedConcurrentExecutions
         {
             /// <summary>
             /// ProvisionedConcurrentExecutions

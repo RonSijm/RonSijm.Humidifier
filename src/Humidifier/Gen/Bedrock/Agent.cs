@@ -3,7 +3,7 @@ namespace Humidifier.Bedrock
     using System.Collections.Generic;
     using AgentTypes;
 
-    public class Agent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveCustomerEncryptionKeyArn
+    public class Agent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveCustomerEncryptionKeyArn, IHaveSkipResourceInUseCheckOnDelete, IHaveIdleSessionTTLInSeconds, IHaveAgentName
     {
         public class Attributes
         {
@@ -180,7 +180,7 @@ namespace Humidifier.Bedrock
             public dynamic Lambda { get; set; }
         }
 
-        public class AgentActionGroup : Humidifier.Base.BaseSubResource, IHaveDescription
+        public class AgentActionGroup : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSkipResourceInUseCheckOnDelete
         {
             /// <summary>
             /// Description
@@ -326,7 +326,7 @@ namespace Humidifier.Bedrock
             public List<Humidifier.Bedrock.AgentTypes.Function> Functions { get; set; }
         }
 
-        public class GuardrailConfiguration : Humidifier.Base.BaseSubResource
+        public class GuardrailConfiguration : Humidifier.Base.BaseSubResource, IHaveGuardrailIdentifier, IHaveGuardrailVersion
         {
             /// <summary>
             /// GuardrailIdentifier
@@ -346,7 +346,7 @@ namespace Humidifier.Bedrock
             public dynamic GuardrailVersion { get; set; }
         }
 
-        public class InferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTopK, IHaveTemperature, IHaveStopSequences, IHaveTopP
+        public class InferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveStopSequences, IHaveTopP, IHaveMaximumLength
         {
             /// <summary>
             /// TopK

@@ -3,7 +3,7 @@ namespace Humidifier.MediaPackageV2
     using System.Collections.Generic;
     using OriginEndpointTypes;
 
-    public class OriginEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveChannelName, IHaveChannelGroupName
+    public class OriginEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveChannelName, IHaveChannelGroupName, IHaveContainerType, IHaveStartoverWindowSeconds, IHaveOriginEndpointName
     {
         public class Attributes
         {
@@ -268,7 +268,7 @@ namespace Humidifier.MediaPackageV2
             public Humidifier.MediaPackageV2.OriginEndpointTypes.EncryptionMethod EncryptionMethod { get; set; }
         }
 
-        public class EncryptionContractConfiguration : Humidifier.Base.BaseSubResource
+        public class EncryptionContractConfiguration : Humidifier.Base.BaseSubResource, IHavePresetSpeke20Audio, IHavePresetSpeke20Video
         {
             /// <summary>
             /// PresetSpeke20Audio
@@ -308,7 +308,7 @@ namespace Humidifier.MediaPackageV2
             public dynamic TsEncryptionMethod { get; set; }
         }
 
-        public class FilterConfiguration : Humidifier.Base.BaseSubResource, IHaveEnd, IHaveStart
+        public class FilterConfiguration : Humidifier.Base.BaseSubResource, IHaveEnd, IHaveStart, IHaveTimeDelaySeconds
         {
             /// <summary>
             /// Start
@@ -365,7 +365,7 @@ namespace Humidifier.MediaPackageV2
             public dynamic EndpointErrorConditions { get; set; }
         }
 
-        public class HlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveManifestName, IHaveManifestWindowSeconds, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration
+        public class HlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveManifestName, IHaveManifestWindowSeconds, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration, IHaveChildManifestName, IHaveMediaPackageV2OriginEndpointTypesScteHlsScteHls, IHaveMediaPackageV2OriginEndpointTypesStartTagStartTag
         {
             /// <summary>
             /// ManifestWindowSeconds
@@ -433,7 +433,7 @@ namespace Humidifier.MediaPackageV2
             public Humidifier.MediaPackageV2.OriginEndpointTypes.StartTag StartTag { get; set; }
         }
 
-        public class LowLatencyHlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveManifestName, IHaveManifestWindowSeconds, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration
+        public class LowLatencyHlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveManifestName, IHaveManifestWindowSeconds, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration, IHaveChildManifestName, IHaveMediaPackageV2OriginEndpointTypesScteHlsScteHls, IHaveMediaPackageV2OriginEndpointTypesStartTagStartTag
         {
             /// <summary>
             /// ManifestWindowSeconds

@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using NetworkInsightsPathTypes;
 
-    public class NetworkInsightsPath : Humidifier.Base.BaseResource, IHaveTags, IHaveProtocol, IHaveSource, IHaveDestination, IHaveDestinationPort
+    public class NetworkInsightsPath : Humidifier.Base.BaseResource, IHaveTags, IHaveProtocol, IHaveSource, IHaveDestination, IHaveSourceIp, IHaveDestinationPort, IHaveDestinationIp
     {
         public class Attributes
         {

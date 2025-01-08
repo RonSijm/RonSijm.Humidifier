@@ -3,7 +3,7 @@ namespace Humidifier.Batch
     using System.Collections.Generic;
     using JobQueueTypes;
 
-    public class JobQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHavePriority, IHaveState
+    public class JobQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveState, IHavePriority
     {
         public class Attributes
         {

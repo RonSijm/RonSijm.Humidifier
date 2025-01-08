@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using System.Collections.Generic;
     using EventSourceMappingTypes;
 
-    public class EventSourceMapping : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled, IHaveKmsKeyArn, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveFunctionName, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds
+    public class EventSourceMapping : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled, IHaveKmsKeyArn, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveFunctionName, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds, IHaveTopics, IHaveStartingPositionTimestamp, IHaveQueues
     {
         public class Attributes
         {
@@ -239,7 +239,7 @@ namespace Humidifier.Lambda
 
     namespace EventSourceMappingTypes
     {
-        public class AmazonManagedKafkaEventSourceConfig : Humidifier.Base.BaseSubResource
+        public class AmazonManagedKafkaEventSourceConfig : Humidifier.Base.BaseSubResource, IHaveConsumerGroupId
         {
             /// <summary>
             /// ConsumerGroupId
@@ -398,7 +398,7 @@ namespace Humidifier.Lambda
             public Humidifier.Lambda.EventSourceMappingTypes.Endpoints Endpoints { get; set; }
         }
 
-        public class SelfManagedKafkaEventSourceConfig : Humidifier.Base.BaseSubResource
+        public class SelfManagedKafkaEventSourceConfig : Humidifier.Base.BaseSubResource, IHaveConsumerGroupId
         {
             /// <summary>
             /// ConsumerGroupId
@@ -410,7 +410,7 @@ namespace Humidifier.Lambda
             public dynamic ConsumerGroupId { get; set; }
         }
 
-        public class SourceAccessConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        public class SourceAccessConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHaveURI
         {
             /// <summary>
             /// Type
