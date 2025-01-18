@@ -27,7 +27,7 @@ namespace Humidifier.DataSync
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-subdirectory
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Subdirectory { get; set; }
@@ -35,7 +35,7 @@ namespace Humidifier.DataSync
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-protocol
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Protocol
         /// </summary>
         public Humidifier.DataSync.LocationFSxONTAPTypes.Protocol Protocol { get; set; }
@@ -69,7 +69,7 @@ namespace Humidifier.DataSync
             /// MountOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-nfs.html#cfn-datasync-locationfsxontap-nfs-mountoptions
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: NfsMountOptions
             /// </summary>
             public Humidifier.DataSync.LocationFSxONTAPTypes.NfsMountOptions MountOptions { get; set; }
@@ -81,7 +81,7 @@ namespace Humidifier.DataSync
             /// Version
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-nfsmountoptions.html#cfn-datasync-locationfsxontap-nfsmountoptions-version
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }
@@ -93,7 +93,7 @@ namespace Humidifier.DataSync
             /// SMB
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-protocol.html#cfn-datasync-locationfsxontap-protocol-smb
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: SMB
             /// </summary>
             public Humidifier.DataSync.LocationFSxONTAPTypes.SMB SMB { get; set; }
@@ -101,7 +101,7 @@ namespace Humidifier.DataSync
             /// NFS
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-protocol.html#cfn-datasync-locationfsxontap-protocol-nfs
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: NFS
             /// </summary>
             public Humidifier.DataSync.LocationFSxONTAPTypes.NFS NFS { get; set; }
@@ -113,7 +113,7 @@ namespace Humidifier.DataSync
             /// User
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-user
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic User { get; set; }
@@ -121,7 +121,7 @@ namespace Humidifier.DataSync
             /// Domain
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-domain
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Domain { get; set; }
@@ -129,7 +129,7 @@ namespace Humidifier.DataSync
             /// MountOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-mountoptions
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: SmbMountOptions
             /// </summary>
             public Humidifier.DataSync.LocationFSxONTAPTypes.SmbMountOptions MountOptions { get; set; }
@@ -137,7 +137,7 @@ namespace Humidifier.DataSync
             /// Password
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-password
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Password { get; set; }
@@ -149,7 +149,7 @@ namespace Humidifier.DataSync
             /// Version
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smbmountoptions.html#cfn-datasync-locationfsxontap-smbmountoptions-version
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }

@@ -497,6 +497,7 @@ public class AWS
         public const string CalculatedAttributeDefinition = "AWS::CustomerProfiles::CalculatedAttributeDefinition";
         public const string Domain = "AWS::CustomerProfiles::Domain";
         public const string EventStream = "AWS::CustomerProfiles::EventStream";
+        public const string EventTrigger = "AWS::CustomerProfiles::EventTrigger";
         public const string Integration = "AWS::CustomerProfiles::Integration";
         public const string ObjectType = "AWS::CustomerProfiles::ObjectType";
         public const string SegmentDefinition = "AWS::CustomerProfiles::SegmentDefinition";
@@ -1438,6 +1439,19 @@ public class AWS
     public class NimbleStudio
     {
         public const string StudioComponent = "AWS::NimbleStudio::StudioComponent";
+    }
+    public class Notifications
+    {
+        public const string ChannelAssociation = "AWS::Notifications::ChannelAssociation";
+        public const string EventRule = "AWS::Notifications::EventRule";
+        public const string ManagedNotificationAccountContactAssociation = "AWS::Notifications::ManagedNotificationAccountContactAssociation";
+        public const string ManagedNotificationAdditionalChannelAssociation = "AWS::Notifications::ManagedNotificationAdditionalChannelAssociation";
+        public const string NotificationConfiguration = "AWS::Notifications::NotificationConfiguration";
+        public const string NotificationHub = "AWS::Notifications::NotificationHub";
+    }
+    public class NotificationsContacts
+    {
+        public const string EmailContact = "AWS::NotificationsContacts::EmailContact";
     }
     public class OSIS
     {

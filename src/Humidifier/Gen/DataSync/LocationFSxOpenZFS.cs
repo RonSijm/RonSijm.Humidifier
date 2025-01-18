@@ -16,7 +16,7 @@ namespace Humidifier.DataSync
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-subdirectory
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Subdirectory { get; set; }
@@ -33,7 +33,7 @@ namespace Humidifier.DataSync
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-protocol
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Protocol
         /// </summary>
         [Required]
@@ -68,7 +68,7 @@ namespace Humidifier.DataSync
             /// Version
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-mountoptions.html#cfn-datasync-locationfsxopenzfs-mountoptions-version
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }
@@ -80,7 +80,7 @@ namespace Humidifier.DataSync
             /// MountOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-nfs.html#cfn-datasync-locationfsxopenzfs-nfs-mountoptions
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: MountOptions
             /// </summary>
             public Humidifier.DataSync.LocationFSxOpenZFSTypes.MountOptions MountOptions { get; set; }
@@ -92,7 +92,7 @@ namespace Humidifier.DataSync
             /// NFS
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxopenzfs-protocol.html#cfn-datasync-locationfsxopenzfs-protocol-nfs
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: NFS
             /// </summary>
             public Humidifier.DataSync.LocationFSxOpenZFSTypes.NFS NFS { get; set; }

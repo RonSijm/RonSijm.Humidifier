@@ -8,6 +8,7 @@ namespace Humidifier.Wisdom
         public class Attributes
         {
             public static string AssistantArn =  "AssistantArn" ;
+            public static string ModifiedTimeSeconds =  "ModifiedTimeSeconds" ;
             public static string AIPromptId =  "AIPromptId" ;
             public static string AIPromptArn =  "AIPromptArn" ;
         }

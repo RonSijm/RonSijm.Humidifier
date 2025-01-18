@@ -340,6 +340,14 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic PointInTimeRecoveryEnabled { get; set; }
+            /// <summary>
+            /// RecoveryPeriodInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-pointintimerecoveryspecification.html#cfn-dynamodb-globaltable-pointintimerecoveryspecification-recoveryperiodindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecoveryPeriodInDays { get; set; }
         }
 
         public class Projection : Humidifier.Base.BaseSubResource, IHaveProjectionType, IHaveNonKeyAttributes

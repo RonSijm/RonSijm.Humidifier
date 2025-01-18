@@ -404,6 +404,14 @@ namespace Humidifier.EMRServerless
             /// </summary>
             public Humidifier.EMRServerless.ApplicationTypes.S3MonitoringConfiguration S3MonitoringConfiguration { get; set; }
             /// <summary>
+            /// PrometheusMonitoringConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-monitoringconfiguration.html#cfn-emrserverless-application-monitoringconfiguration-prometheusmonitoringconfiguration
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: PrometheusMonitoringConfiguration
+            /// </summary>
+            public Humidifier.EMRServerless.ApplicationTypes.PrometheusMonitoringConfiguration PrometheusMonitoringConfiguration { get; set; }
+            /// <summary>
             /// ManagedPersistenceMonitoringConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-monitoringconfiguration.html#cfn-emrserverless-application-monitoringconfiguration-managedpersistencemonitoringconfiguration
             /// Required: False
@@ -441,6 +449,18 @@ namespace Humidifier.EMRServerless
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SecurityGroupIds { get; set; }
+        }
+
+        public class PrometheusMonitoringConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RemoteWriteUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-prometheusmonitoringconfiguration.html#cfn-emrserverless-application-prometheusmonitoringconfiguration-remotewriteurl
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RemoteWriteUrl { get; set; }
         }
 
         public class S3MonitoringConfiguration : Humidifier.Base.BaseSubResource, IHaveEncryptionKeyArn, IHaveLogUri

@@ -651,6 +651,15 @@ namespace Humidifier.CodePipeline
             /// </summary>
             public List<Humidifier.CodePipeline.PipelineTypes.InputArtifact> InputArtifacts { get; set; }
             /// <summary>
+            /// Commands
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-ruledeclaration.html#cfn-codepipeline-pipeline-ruledeclaration-commands
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Commands { get; set; }
+            /// <summary>
             /// Region
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-ruledeclaration.html#cfn-codepipeline-pipeline-ruledeclaration-region
             /// Required: False

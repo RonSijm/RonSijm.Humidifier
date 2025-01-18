@@ -13,23 +13,6 @@ namespace Humidifier.SNS
 
         public override string AWSTypeName { get => AWS.SNS.Topic; }
         /// <summary>
-        /// SignatureVersion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-signatureversion
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SignatureVersion { get; set; }
-        /// <summary>
-        /// DeliveryStatusLogging
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-deliverystatuslogging
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: LoggingConfig
-        /// </summary>
-        public List<Humidifier.SNS.TopicTypes.LoggingConfig> DeliveryStatusLogging { get; set; }
-        /// <summary>
         /// KmsMasterKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-kmsmasterkeyid
         /// Required: False
@@ -53,6 +36,32 @@ namespace Humidifier.SNS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic FifoTopic { get; set; }
+        /// <summary>
+        /// DataProtectionPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-dataprotectionpolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic DataProtectionPolicy { get; set; }
+        public dynamic TopicName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// SignatureVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-signatureversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SignatureVersion { get; set; }
+        /// <summary>
+        /// DeliveryStatusLogging
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-deliverystatuslogging
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: LoggingConfig
+        /// </summary>
+        public List<Humidifier.SNS.TopicTypes.LoggingConfig> DeliveryStatusLogging { get; set; }
         /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-displayname
@@ -79,6 +88,14 @@ namespace Humidifier.SNS
         /// </summary>
         public List<Humidifier.SNS.TopicTypes.Subscription> Subscription { get; set; }
         /// <summary>
+        /// FifoThroughputScope
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-fifothroughputscope
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FifoThroughputScope { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-tags
         /// Required: False
@@ -87,15 +104,6 @@ namespace Humidifier.SNS
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
-        /// <summary>
-        /// DataProtectionPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-dataprotectionpolicy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic DataProtectionPolicy { get; set; }
-        public dynamic TopicName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ArchivePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-archivepolicy

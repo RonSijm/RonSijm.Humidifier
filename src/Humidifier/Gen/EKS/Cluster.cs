@@ -78,7 +78,7 @@ namespace Humidifier.EKS
         /// KubernetesNetworkConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-kubernetesnetworkconfig
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: KubernetesNetworkConfig
         /// </summary>
         public Humidifier.EKS.ClusterTypes.KubernetesNetworkConfig KubernetesNetworkConfig { get; set; }
@@ -240,7 +240,7 @@ namespace Humidifier.EKS
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-elasticloadbalancing.html#cfn-eks-cluster-elasticloadbalancing-enabled
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
@@ -281,7 +281,7 @@ namespace Humidifier.EKS
             /// ServiceIpv6Cidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html#cfn-eks-cluster-kubernetesnetworkconfig-serviceipv6cidr
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ServiceIpv6Cidr { get; set; }
@@ -297,7 +297,7 @@ namespace Humidifier.EKS
             /// ElasticLoadBalancing
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html#cfn-eks-cluster-kubernetesnetworkconfig-elasticloadbalancing
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: ElasticLoadBalancing
             /// </summary>
             public Humidifier.EKS.ClusterTypes.ElasticLoadBalancing ElasticLoadBalancing { get; set; }

@@ -10,6 +10,7 @@ namespace Humidifier.Wisdom
             public static string AIAgentArn =  "AIAgentArn" ;
             public static string AssistantArn =  "AssistantArn" ;
             public static string AIAgentId =  "AIAgentId" ;
+            public static string ModifiedTimeSeconds =  "ModifiedTimeSeconds" ;
         }
 
         public override string AWSTypeName { get => AWS.Wisdom.AIAgent; }

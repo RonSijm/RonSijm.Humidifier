@@ -3,8 +3,13 @@ namespace Humidifier.AppConfig
     using System.Collections.Generic;
     using DeploymentTypes;
 
-    public class Deployment : Humidifier.Base.BaseResource, IHaveDescription, IHaveApplicationId, IHaveKmsKeyIdentifier, IHaveEnvironmentId, IHaveConfigurationProfileId
+    public class Deployment : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveApplicationId, IHaveKmsKeyIdentifier, IHaveEnvironmentId, IHaveConfigurationProfileId
     {
+        public class Attributes
+        {
+            public static string DeploymentNumber =  "DeploymentNumber" ;
+        }
+
         public override string AWSTypeName { get => AWS.AppConfig.Deployment; }
 
         /// <summary>
@@ -87,9 +92,9 @@ namespace Humidifier.AppConfig
         /// Required: False
         /// UpdateType: Immutable
         /// Type: List
-        /// ItemType: Tags
+        /// ItemType: Tag
         /// </summary>
-        public List<Humidifier.AppConfig.DeploymentTypes.Tags> Tags { get; set; }
+        public List<Tag> Tags { get; set; }
     }
 
     namespace DeploymentTypes
@@ -100,7 +105,7 @@ namespace Humidifier.AppConfig
             /// ParameterValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-dynamicextensionparameters.html#cfn-appconfig-deployment-dynamicextensionparameters-parametervalue
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterValue { get; set; }
@@ -108,7 +113,7 @@ namespace Humidifier.AppConfig
             /// ExtensionReference
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-dynamicextensionparameters.html#cfn-appconfig-deployment-dynamicextensionparameters-extensionreference
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExtensionReference { get; set; }
@@ -116,30 +121,10 @@ namespace Humidifier.AppConfig
             /// ParameterName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-dynamicextensionparameters.html#cfn-appconfig-deployment-dynamicextensionparameters-parametername
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterName { get; set; }
-        }
-
-        public class Tags : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
-        {
-            /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-tags.html#cfn-appconfig-deployment-tags-value
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Value { get; set; }
-            /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-tags.html#cfn-appconfig-deployment-tags-key
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key { get; set; }
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Humidifier.Bedrock
         /// KnowledgeBaseConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-knowledgebase.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: KnowledgeBaseConfiguration
         /// </summary>
         [Required]
@@ -78,6 +78,26 @@ namespace Humidifier.Bedrock
             public dynamic Dimensions { get; set; }
         }
 
+        public class CuratedQuery : Humidifier.Base.BaseSubResource, IHaveSql
+        {
+            /// <summary>
+            /// NaturalLanguage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-curatedquery.html#cfn-bedrock-knowledgebase-curatedquery-naturallanguage
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NaturalLanguage { get; set; }
+            /// <summary>
+            /// Sql
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-curatedquery.html#cfn-bedrock-knowledgebase-curatedquery-sql
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Sql { get; set; }
+        }
+
         public class EmbeddingModelConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -112,6 +132,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
+            /// <summary>
+            /// SqlKnowledgeBaseConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-knowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration-sqlknowledgebaseconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SqlKnowledgeBaseConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.SqlKnowledgeBaseConfiguration SqlKnowledgeBaseConfiguration { get; set; }
             /// <summary>
             /// KendraKnowledgeBaseConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-knowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration-kendraknowledgebaseconfiguration
@@ -330,6 +358,113 @@ namespace Humidifier.Bedrock
             public dynamic MetadataField { get; set; }
         }
 
+        public class QueryGenerationColumn : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
+        {
+            /// <summary>
+            /// Description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationcolumn.html#cfn-bedrock-knowledgebase-querygenerationcolumn-description
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Description { get; set; }
+            /// <summary>
+            /// Inclusion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationcolumn.html#cfn-bedrock-knowledgebase-querygenerationcolumn-inclusion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Inclusion { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationcolumn.html#cfn-bedrock-knowledgebase-querygenerationcolumn-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class QueryGenerationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// GenerationContext
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationconfiguration.html#cfn-bedrock-knowledgebase-querygenerationconfiguration-generationcontext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: QueryGenerationContext
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.QueryGenerationContext GenerationContext { get; set; }
+            /// <summary>
+            /// ExecutionTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationconfiguration.html#cfn-bedrock-knowledgebase-querygenerationconfiguration-executiontimeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ExecutionTimeoutSeconds { get; set; }
+        }
+
+        public class QueryGenerationContext : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CuratedQueries
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationcontext.html#cfn-bedrock-knowledgebase-querygenerationcontext-curatedqueries
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CuratedQuery
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.CuratedQuery> CuratedQueries { get; set; }
+            /// <summary>
+            /// Tables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationcontext.html#cfn-bedrock-knowledgebase-querygenerationcontext-tables
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: QueryGenerationTable
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.QueryGenerationTable> Tables { get; set; }
+        }
+
+        public class QueryGenerationTable : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
+        {
+            /// <summary>
+            /// Description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationtable.html#cfn-bedrock-knowledgebase-querygenerationtable-description
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Description { get; set; }
+            /// <summary>
+            /// Inclusion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationtable.html#cfn-bedrock-knowledgebase-querygenerationtable-inclusion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Inclusion { get; set; }
+            /// <summary>
+            /// Columns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationtable.html#cfn-bedrock-knowledgebase-querygenerationtable-columns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: QueryGenerationColumn
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.QueryGenerationColumn> Columns { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-querygenerationtable.html#cfn-bedrock-knowledgebase-querygenerationtable-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
         public class RdsConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveResourceArn, IHaveCredentialsSecretArn
         {
             /// <summary>
@@ -410,6 +545,204 @@ namespace Humidifier.Bedrock
             public dynamic MetadataField { get; set; }
         }
 
+        public class RedshiftConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QueryEngineConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftconfiguration.html#cfn-bedrock-knowledgebase-redshiftconfiguration-queryengineconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: RedshiftQueryEngineConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftQueryEngineConfiguration QueryEngineConfiguration { get; set; }
+            /// <summary>
+            /// StorageConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftconfiguration.html#cfn-bedrock-knowledgebase-redshiftconfiguration-storageconfigurations
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: RedshiftQueryEngineStorageConfiguration
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftQueryEngineStorageConfiguration> StorageConfigurations { get; set; }
+            /// <summary>
+            /// QueryGenerationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftconfiguration.html#cfn-bedrock-knowledgebase-redshiftconfiguration-querygenerationconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: QueryGenerationConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.QueryGenerationConfiguration QueryGenerationConfiguration { get; set; }
+        }
+
+        public class RedshiftProvisionedAuthConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftprovisionedauthconfiguration.html#cfn-bedrock-knowledgebase-redshiftprovisionedauthconfiguration-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// DatabaseUser
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftprovisionedauthconfiguration.html#cfn-bedrock-knowledgebase-redshiftprovisionedauthconfiguration-databaseuser
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseUser { get; set; }
+            /// <summary>
+            /// UsernamePasswordSecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftprovisionedauthconfiguration.html#cfn-bedrock-knowledgebase-redshiftprovisionedauthconfiguration-usernamepasswordsecretarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UsernamePasswordSecretArn { get; set; }
+        }
+
+        public class RedshiftProvisionedConfiguration : Humidifier.Base.BaseSubResource, IHaveClusterIdentifier
+        {
+            /// <summary>
+            /// AuthConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftprovisionedconfiguration.html#cfn-bedrock-knowledgebase-redshiftprovisionedconfiguration-authconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: RedshiftProvisionedAuthConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftProvisionedAuthConfiguration AuthConfiguration { get; set; }
+            /// <summary>
+            /// ClusterIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftprovisionedconfiguration.html#cfn-bedrock-knowledgebase-redshiftprovisionedconfiguration-clusteridentifier
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClusterIdentifier { get; set; }
+        }
+
+        public class RedshiftQueryEngineAwsDataCatalogStorageConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TableNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryengineawsdatacatalogstorageconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryengineawsdatacatalogstorageconfiguration-tablenames
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic TableNames { get; set; }
+        }
+
+        public class RedshiftQueryEngineConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryengineconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryengineconfiguration-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// ProvisionedConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryengineconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryengineconfiguration-provisionedconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RedshiftProvisionedConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftProvisionedConfiguration ProvisionedConfiguration { get; set; }
+            /// <summary>
+            /// ServerlessConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryengineconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryengineconfiguration-serverlessconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RedshiftServerlessConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftServerlessConfiguration ServerlessConfiguration { get; set; }
+        }
+
+        public class RedshiftQueryEngineRedshiftStorageConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName
+        {
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryengineredshiftstorageconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryengineredshiftstorageconfiguration-databasename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+        }
+
+        public class RedshiftQueryEngineStorageConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryenginestorageconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryenginestorageconfiguration-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// RedshiftConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryenginestorageconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryenginestorageconfiguration-redshiftconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RedshiftQueryEngineRedshiftStorageConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftQueryEngineRedshiftStorageConfiguration RedshiftConfiguration { get; set; }
+            /// <summary>
+            /// AwsDataCatalogConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftqueryenginestorageconfiguration.html#cfn-bedrock-knowledgebase-redshiftqueryenginestorageconfiguration-awsdatacatalogconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RedshiftQueryEngineAwsDataCatalogStorageConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftQueryEngineAwsDataCatalogStorageConfiguration AwsDataCatalogConfiguration { get; set; }
+        }
+
+        public class RedshiftServerlessAuthConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftserverlessauthconfiguration.html#cfn-bedrock-knowledgebase-redshiftserverlessauthconfiguration-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// UsernamePasswordSecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftserverlessauthconfiguration.html#cfn-bedrock-knowledgebase-redshiftserverlessauthconfiguration-usernamepasswordsecretarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UsernamePasswordSecretArn { get; set; }
+        }
+
+        public class RedshiftServerlessConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// WorkgroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftserverlessconfiguration.html#cfn-bedrock-knowledgebase-redshiftserverlessconfiguration-workgrouparn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WorkgroupArn { get; set; }
+            /// <summary>
+            /// AuthConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-redshiftserverlessconfiguration.html#cfn-bedrock-knowledgebase-redshiftserverlessconfiguration-authconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: RedshiftServerlessAuthConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftServerlessAuthConfiguration AuthConfiguration { get; set; }
+        }
+
         public class S3Location : Humidifier.Base.BaseSubResource, IHaveURI
         {
             /// <summary>
@@ -420,6 +753,26 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic URI { get; set; }
+        }
+
+        public class SqlKnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-sqlknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-sqlknowledgebaseconfiguration-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// RedshiftConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-sqlknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-sqlknowledgebaseconfiguration-redshiftconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RedshiftConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.RedshiftConfiguration RedshiftConfiguration { get; set; }
         }
 
         public class StorageConfiguration : Humidifier.Base.BaseSubResource, IHaveType

@@ -63,6 +63,50 @@ namespace Humidifier.CleanRooms
 
     namespace MembershipTypes
     {
+        public class MembershipMLPaymentConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ModelInference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipmlpaymentconfig.html#cfn-cleanrooms-membership-membershipmlpaymentconfig-modelinference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MembershipModelInferencePaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.MembershipModelInferencePaymentConfig ModelInference { get; set; }
+            /// <summary>
+            /// ModelTraining
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipmlpaymentconfig.html#cfn-cleanrooms-membership-membershipmlpaymentconfig-modeltraining
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MembershipModelTrainingPaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.MembershipModelTrainingPaymentConfig ModelTraining { get; set; }
+        }
+
+        public class MembershipModelInferencePaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
+        {
+            /// <summary>
+            /// IsResponsible
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipmodelinferencepaymentconfig.html#cfn-cleanrooms-membership-membershipmodelinferencepaymentconfig-isresponsible
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsResponsible { get; set; }
+        }
+
+        public class MembershipModelTrainingPaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
+        {
+            /// <summary>
+            /// IsResponsible
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipmodeltrainingpaymentconfig.html#cfn-cleanrooms-membership-membershipmodeltrainingpaymentconfig-isresponsible
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsResponsible { get; set; }
+        }
+
         public class MembershipPaymentConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -73,6 +117,14 @@ namespace Humidifier.CleanRooms
             /// Type: MembershipQueryComputePaymentConfig
             /// </summary>
             public Humidifier.CleanRooms.MembershipTypes.MembershipQueryComputePaymentConfig QueryCompute { get; set; }
+            /// <summary>
+            /// MachineLearning
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershippaymentconfiguration.html#cfn-cleanrooms-membership-membershippaymentconfiguration-machinelearning
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MembershipMLPaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.MembershipMLPaymentConfig MachineLearning { get; set; }
         }
 
         public class MembershipProtectedQueryOutputConfiguration : Humidifier.Base.BaseSubResource

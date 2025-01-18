@@ -34,7 +34,7 @@ namespace Humidifier.DataSync
         /// AccessPointArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-accesspointarn
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic AccessPointArn { get; set; }
@@ -42,7 +42,7 @@ namespace Humidifier.DataSync
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-subdirectory
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Subdirectory { get; set; }
@@ -50,7 +50,7 @@ namespace Humidifier.DataSync
         /// InTransitEncryption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-intransitencryption
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic InTransitEncryption { get; set; }
@@ -58,7 +58,7 @@ namespace Humidifier.DataSync
         /// FileSystemAccessRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-filesystemaccessrolearn
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic FileSystemAccessRoleArn { get; set; }

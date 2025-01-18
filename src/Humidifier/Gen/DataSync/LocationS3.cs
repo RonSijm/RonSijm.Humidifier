@@ -16,7 +16,7 @@ namespace Humidifier.DataSync
         /// S3StorageClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3storageclass
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic S3StorageClass { get; set; }
@@ -25,7 +25,7 @@ namespace Humidifier.DataSync
         /// S3Config
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3config
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: S3Config
         /// </summary>
         [Required]
@@ -34,7 +34,7 @@ namespace Humidifier.DataSync
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-subdirectory
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Subdirectory { get; set; }
@@ -65,7 +65,7 @@ namespace Humidifier.DataSync
             /// BucketAccessRoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locations3-s3config.html#cfn-datasync-locations3-s3config-bucketaccessrolearn
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic BucketAccessRoleArn { get; set; }

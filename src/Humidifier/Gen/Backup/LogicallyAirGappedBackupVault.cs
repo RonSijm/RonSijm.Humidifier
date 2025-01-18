@@ -7,19 +7,13 @@ namespace Humidifier.Backup
     {
         public class Attributes
         {
+            public static string VaultState =  "VaultState" ;
+            public static string VaultType =  "VaultType" ;
             public static string BackupVaultArn =  "BackupVaultArn" ;
             public static string EncryptionKeyArn =  "EncryptionKeyArn" ;
         }
 
         public override string AWSTypeName { get => AWS.Backup.LogicallyAirGappedBackupVault; }
-        /// <summary>
-        /// VaultState
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-logicallyairgappedbackupvault.html#cfn-backup-logicallyairgappedbackupvault-vaultstate
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic VaultState { get; set; }
         /// <summary>
         /// BackupVaultTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-logicallyairgappedbackupvault.html#cfn-backup-logicallyairgappedbackupvault-backupvaulttags
@@ -29,14 +23,6 @@ namespace Humidifier.Backup
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> BackupVaultTags { get; set; }
-        /// <summary>
-        /// VaultType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-logicallyairgappedbackupvault.html#cfn-backup-logicallyairgappedbackupvault-vaulttype
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic VaultType { get; set; }
 
         /// <summary>
         /// BackupVaultName

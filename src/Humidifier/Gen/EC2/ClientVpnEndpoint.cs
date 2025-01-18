@@ -88,6 +88,14 @@ namespace Humidifier.EC2
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+        /// <summary>
+        /// DisconnectOnSessionTimeout
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-disconnectonsessiontimeout
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DisconnectOnSessionTimeout { get; set; }
 
         /// <summary>
         /// ConnectionLogOptions

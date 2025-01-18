@@ -97,6 +97,14 @@ namespace Humidifier.CleanRooms
         /// </summary>
         [Required]
         public List<Humidifier.CleanRooms.CollaborationTypes.MemberSpecification> Members { get; set; }
+        /// <summary>
+        /// CreatorMLMemberAbilities
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-collaboration.html#cfn-cleanrooms-collaboration-creatormlmemberabilities
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: MLMemberAbilities
+        /// </summary>
+        public Humidifier.CleanRooms.CollaborationTypes.MLMemberAbilities CreatorMLMemberAbilities { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -138,6 +146,39 @@ namespace Humidifier.CleanRooms
             public dynamic AllowDuplicates { get; set; }
         }
 
+        public class MLMemberAbilities : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CustomMLMemberAbilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-mlmemberabilities.html#cfn-cleanrooms-collaboration-mlmemberabilities-custommlmemberabilities
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CustomMLMemberAbilities { get; set; }
+        }
+
+        public class MLPaymentConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ModelInference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-mlpaymentconfig.html#cfn-cleanrooms-collaboration-mlpaymentconfig-modelinference
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ModelInferencePaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.CollaborationTypes.ModelInferencePaymentConfig ModelInference { get; set; }
+            /// <summary>
+            /// ModelTraining
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-mlpaymentconfig.html#cfn-cleanrooms-collaboration-mlpaymentconfig-modeltraining
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ModelTrainingPaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.CollaborationTypes.ModelTrainingPaymentConfig ModelTraining { get; set; }
+        }
+
         public class MemberSpecification : Humidifier.Base.BaseSubResource, IHaveDisplayName, IHaveAccountId
         {
             /// <summary>
@@ -148,6 +189,14 @@ namespace Humidifier.CleanRooms
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccountId { get; set; }
+            /// <summary>
+            /// MLMemberAbilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-memberspecification.html#cfn-cleanrooms-collaboration-memberspecification-mlmemberabilities
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: MLMemberAbilities
+            /// </summary>
+            public Humidifier.CleanRooms.CollaborationTypes.MLMemberAbilities MLMemberAbilities { get; set; }
             /// <summary>
             /// DisplayName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-memberspecification.html#cfn-cleanrooms-collaboration-memberspecification-displayname
@@ -175,6 +224,30 @@ namespace Humidifier.CleanRooms
             public Humidifier.CleanRooms.CollaborationTypes.PaymentConfiguration PaymentConfiguration { get; set; }
         }
 
+        public class ModelInferencePaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
+        {
+            /// <summary>
+            /// IsResponsible
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-modelinferencepaymentconfig.html#cfn-cleanrooms-collaboration-modelinferencepaymentconfig-isresponsible
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsResponsible { get; set; }
+        }
+
+        public class ModelTrainingPaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
+        {
+            /// <summary>
+            /// IsResponsible
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-modeltrainingpaymentconfig.html#cfn-cleanrooms-collaboration-modeltrainingpaymentconfig-isresponsible
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsResponsible { get; set; }
+        }
+
         public class PaymentConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -185,6 +258,14 @@ namespace Humidifier.CleanRooms
             /// Type: QueryComputePaymentConfig
             /// </summary>
             public Humidifier.CleanRooms.CollaborationTypes.QueryComputePaymentConfig QueryCompute { get; set; }
+            /// <summary>
+            /// MachineLearning
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-collaboration-paymentconfiguration.html#cfn-cleanrooms-collaboration-paymentconfiguration-machinelearning
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: MLPaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.CollaborationTypes.MLPaymentConfig MachineLearning { get; set; }
         }
 
         public class QueryComputePaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible

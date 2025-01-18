@@ -302,6 +302,14 @@ namespace Humidifier.EKS
             /// </summary>
             public dynamic MaxUnavailablePercentage { get; set; }
             /// <summary>
+            /// UpdateStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html#cfn-eks-nodegroup-updateconfig-updatestrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UpdateStrategy { get; set; }
+            /// <summary>
             /// MaxUnavailable
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html#cfn-eks-nodegroup-updateconfig-maxunavailable
             /// Required: False

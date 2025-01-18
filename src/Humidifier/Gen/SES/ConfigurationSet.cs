@@ -151,6 +151,14 @@ namespace Humidifier.SES
         public class TrackingOptions : Humidifier.Base.BaseSubResource, IHaveCustomRedirectDomain
         {
             /// <summary>
+            /// HttpsPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-trackingoptions.html#cfn-ses-configurationset-trackingoptions-httpspolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpsPolicy { get; set; }
+            /// <summary>
             /// CustomRedirectDomain
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-trackingoptions.html#cfn-ses-configurationset-trackingoptions-customredirectdomain
             /// Required: False

@@ -36,7 +36,7 @@ namespace Humidifier.KafkaConnect
         /// ConnectorConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorconfiguration
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>

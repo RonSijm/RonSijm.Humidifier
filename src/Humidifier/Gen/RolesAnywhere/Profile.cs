@@ -25,7 +25,7 @@ namespace Humidifier.RolesAnywhere
         /// RequireInstanceProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-profile.html#cfn-rolesanywhere-profile-requireinstanceproperties
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic RequireInstanceProperties { get; set; }

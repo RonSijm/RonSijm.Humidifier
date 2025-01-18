@@ -56,6 +56,14 @@ namespace Humidifier.Lex
         /// </summary>
         public Humidifier.Lex.BotTypes.S3Location BotFileS3Location { get; set; }
         /// <summary>
+        /// Replication
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-replication
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Replication
+        /// </summary>
+        public Humidifier.Lex.BotTypes.Replication Replication { get; set; }
+        /// <summary>
         /// TestBotAliasSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings
         /// Required: False
@@ -1671,6 +1679,19 @@ namespace Humidifier.Lex
             /// PrimitiveType: String
             /// </summary>
             public dynamic MessageSelectionStrategy { get; set; }
+        }
+
+        public class Replication : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ReplicaRegions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-replication.html#cfn-lex-bot-replication-replicaregions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ReplicaRegions { get; set; }
         }
 
         public class ResponseSpecification : Humidifier.Base.BaseSubResource, IHaveAllowInterrupt
