@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using System.Collections.Generic;
     using TopicTypes;
 
-    public class Topic : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAwsAccountId
+    public class Topic : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAwsAccountId, IHaveFolderArns
     {
         public class Attributes
         {
@@ -37,6 +37,15 @@ namespace Humidifier.QuickSight
         /// </summary>
         public dynamic AwsAccountId { get; set; }
         /// <summary>
+        /// FolderArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-topic.html#cfn-quicksight-topic-folderarns
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic FolderArns { get; set; }
+        /// <summary>
         /// TopicId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-topic.html#cfn-quicksight-topic-topicid
         /// Required: False
@@ -52,6 +61,14 @@ namespace Humidifier.QuickSight
         /// PrimitiveType: String
         /// </summary>
         public dynamic UserExperienceVersion { get; set; }
+        /// <summary>
+        /// ConfigOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-topic.html#cfn-quicksight-topic-configoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TopicConfigOptions
+        /// </summary>
+        public Humidifier.QuickSight.TopicTypes.TopicConfigOptions ConfigOptions { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -879,6 +896,18 @@ namespace Humidifier.QuickSight
             /// ItemType: CellValueSynonym
             /// </summary>
             public List<Humidifier.QuickSight.TopicTypes.CellValueSynonym> CellValueSynonyms { get; set; }
+        }
+
+        public class TopicConfigOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QBusinessInsightsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-topicconfigoptions.html#cfn-quicksight-topic-topicconfigoptions-qbusinessinsightsenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic QBusinessInsightsEnabled { get; set; }
         }
 
         public class TopicDateRangeFilter : Humidifier.Base.BaseSubResource, IHaveInclusive, IHaveQuickSightTopicTypesTopicRangeFilterConstantConstant

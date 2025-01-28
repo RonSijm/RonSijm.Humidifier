@@ -3,7 +3,7 @@ namespace Humidifier.EC2
     using System.Collections.Generic;
     using CapacityReservationTypes;
 
-    public class CapacityReservation : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveInstanceCount, IHaveEbsOptimized, IHaveEndDate, IHaveTenancy, IHaveInstancePlatform, IHaveInstanceMatchCriteria
+    public class CapacityReservation : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveInstanceCount, IHaveEbsOptimized, IHaveEndDate, IHaveTenancy, IHaveInstancePlatform, IHaveInstanceMatchCriteria, IHaveAvailabilityZoneId
     {
         public class Attributes
         {
@@ -49,15 +49,21 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic UnusedReservationBillingOwnerId { get; set; }
-
         /// <summary>
-        /// AvailabilityZone
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-availabilityzone
-        /// Required: True
+        /// AvailabilityZoneId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-availabilityzoneid
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
+        public dynamic AvailabilityZoneId { get; set; }
+        /// <summary>
+        /// AvailabilityZone
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-availabilityzone
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
         public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// EndDate

@@ -69,6 +69,14 @@ namespace Humidifier.Bedrock
         public class BedrockEmbeddingModelConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// EmbeddingDataType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-embeddingdatatype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EmbeddingDataType { get; set; }
+            /// <summary>
             /// Dimensions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-dimensions
             /// Required: False

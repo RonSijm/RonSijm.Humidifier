@@ -340,6 +340,7 @@ public class AWS
         public const string RealtimeLogConfig = "AWS::CloudFront::RealtimeLogConfig";
         public const string ResponseHeadersPolicy = "AWS::CloudFront::ResponseHeadersPolicy";
         public const string StreamingDistribution = "AWS::CloudFront::StreamingDistribution";
+        public const string VpcOrigin = "AWS::CloudFront::VpcOrigin";
     }
     public class CloudTrail
     {

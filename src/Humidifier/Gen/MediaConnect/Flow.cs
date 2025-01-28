@@ -78,6 +78,38 @@ namespace Humidifier.MediaConnect
 
     namespace FlowTypes
     {
+        public class AudioMonitoringSetting : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SilentAudio
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-audiomonitoringsetting.html#cfn-mediaconnect-flow-audiomonitoringsetting-silentaudio
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SilentAudio
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.SilentAudio SilentAudio { get; set; }
+        }
+
+        public class BlackFrames : Humidifier.Base.BaseSubResource, IHaveState
+        {
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-blackframes.html#cfn-mediaconnect-flow-blackframes-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
+            /// <summary>
+            /// ThresholdSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-blackframes.html#cfn-mediaconnect-flow-blackframes-thresholdseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThresholdSeconds { get; set; }
+        }
+
         public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveSecretArn, IHaveResourceId, IHaveKeyType, IHaveAlgorithm, IHaveConstantInitializationVector, IHaveDeviceId
         {
             /// <summary>
@@ -248,6 +280,26 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public dynamic Range { get; set; }
+        }
+
+        public class FrozenFrames : Humidifier.Base.BaseSubResource, IHaveState
+        {
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-frozenframes.html#cfn-mediaconnect-flow-frozenframes-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
+            /// <summary>
+            /// ThresholdSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-frozenframes.html#cfn-mediaconnect-flow-frozenframes-thresholdseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThresholdSeconds { get; set; }
         }
 
         public class GatewayBridgeSource : Humidifier.Base.BaseSubResource, IHaveBridgeArn
@@ -439,6 +491,26 @@ namespace Humidifier.MediaConnect
             public dynamic EncodingName { get; set; }
         }
 
+        public class SilentAudio : Humidifier.Base.BaseSubResource, IHaveState
+        {
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-silentaudio.html#cfn-mediaconnect-flow-silentaudio-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
+            /// <summary>
+            /// ThresholdSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-silentaudio.html#cfn-mediaconnect-flow-silentaudio-thresholdseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThresholdSeconds { get; set; }
+        }
+
         public class Source : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveProtocol, IHaveSourceArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveEntitlementArn, IHaveSenderIpAddress, IHaveIngestPort, IHaveSenderControlPort, IHaveSourceListenerAddress, IHaveSourceListenerPort, IHaveWhitelistCidr
         {
             /// <summary>
@@ -623,9 +695,35 @@ namespace Humidifier.MediaConnect
         public class SourceMonitoringConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// ContentQualityAnalysisState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcemonitoringconfig.html#cfn-mediaconnect-flow-sourcemonitoringconfig-contentqualityanalysisstate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ContentQualityAnalysisState { get; set; }
+            /// <summary>
+            /// AudioMonitoringSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcemonitoringconfig.html#cfn-mediaconnect-flow-sourcemonitoringconfig-audiomonitoringsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AudioMonitoringSetting
+            /// </summary>
+            public List<Humidifier.MediaConnect.FlowTypes.AudioMonitoringSetting> AudioMonitoringSettings { get; set; }
+            /// <summary>
+            /// VideoMonitoringSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcemonitoringconfig.html#cfn-mediaconnect-flow-sourcemonitoringconfig-videomonitoringsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: VideoMonitoringSetting
+            /// </summary>
+            public List<Humidifier.MediaConnect.FlowTypes.VideoMonitoringSetting> VideoMonitoringSettings { get; set; }
+            /// <summary>
             /// ThumbnailState
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcemonitoringconfig.html#cfn-mediaconnect-flow-sourcemonitoringconfig-thumbnailstate
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -642,6 +740,26 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public dynamic PrimarySource { get; set; }
+        }
+
+        public class VideoMonitoringSetting : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BlackFrames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-videomonitoringsetting.html#cfn-mediaconnect-flow-videomonitoringsetting-blackframes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BlackFrames
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.BlackFrames BlackFrames { get; set; }
+            /// <summary>
+            /// FrozenFrames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-videomonitoringsetting.html#cfn-mediaconnect-flow-videomonitoringsetting-frozenframes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FrozenFrames
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.FrozenFrames FrozenFrames { get; set; }
         }
 
         public class VpcInterface : Humidifier.Base.BaseSubResource, IHaveName, IHaveRoleArn, IHaveSecurityGroupIds, IHaveSubnetId

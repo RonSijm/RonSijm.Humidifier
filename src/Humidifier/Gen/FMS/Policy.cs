@@ -13,6 +13,14 @@ namespace Humidifier.FMS
 
         public override string AWSTypeName { get => AWS.FMS.Policy; }
         /// <summary>
+        /// ResourceTagLogicalOperator
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetaglogicaloperator
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResourceTagLogicalOperator { get; set; }
+        /// <summary>
         /// ResourcesCleanUp
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcescleanup
         /// Required: False

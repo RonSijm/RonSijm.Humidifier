@@ -100,10 +100,31 @@ namespace Humidifier.QBusiness
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// BrowserExtensionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-browserextensionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: BrowserExtensionConfiguration
+        /// </summary>
+        public Humidifier.QBusiness.WebExperienceTypes.BrowserExtensionConfiguration BrowserExtensionConfiguration { get; set; }
     }
 
     namespace WebExperienceTypes
     {
+        public class BrowserExtensionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EnabledBrowserExtensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-webexperience-browserextensionconfiguration.html#cfn-qbusiness-webexperience-browserextensionconfiguration-enabledbrowserextensions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EnabledBrowserExtensions { get; set; }
+        }
+
         public class CustomizationConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>

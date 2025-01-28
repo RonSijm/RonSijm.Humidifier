@@ -20,14 +20,6 @@ namespace Humidifier.ResilienceHub
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-        /// <summary>
-        /// RegulatoryPolicyArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehub-app.html#cfn-resiliencehub-app-regulatorypolicyarn
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic RegulatoryPolicyArn { get; set; }
 
         /// <summary>
         /// AppTemplateBody

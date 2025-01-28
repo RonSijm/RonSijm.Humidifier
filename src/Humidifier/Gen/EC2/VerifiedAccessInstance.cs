@@ -7,6 +7,7 @@ namespace Humidifier.EC2
     {
         public class Attributes
         {
+            public static string CidrEndpointsCustomSubDomainNameServers =  "CidrEndpointsCustomSubDomainNameServers" ;
             public static string CreationTime =  "CreationTime" ;
             public static string LastUpdatedTime =  "LastUpdatedTime" ;
             public static string VerifiedAccessInstanceId =  "VerifiedAccessInstanceId" ;
@@ -46,6 +47,14 @@ namespace Humidifier.EC2
         /// Type: VerifiedAccessLogs
         /// </summary>
         public Humidifier.EC2.VerifiedAccessInstanceTypes.VerifiedAccessLogs LoggingConfigurations { get; set; }
+        /// <summary>
+        /// CidrEndpointsCustomSubDomain
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-cidrendpointscustomsubdomain
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CidrEndpointsCustomSubDomain { get; set; }
         /// <summary>
         /// VerifiedAccessTrustProviderIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessinstance.html#cfn-ec2-verifiedaccessinstance-verifiedaccesstrustproviderids

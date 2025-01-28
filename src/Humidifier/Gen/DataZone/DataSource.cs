@@ -8,6 +8,7 @@ namespace Humidifier.DataZone
         public class Attributes
         {
             public static string Status =  "Status" ;
+            public static string ConnectionId =  "ConnectionId" ;
             public static string EnvironmentId =  "EnvironmentId" ;
             public static string DomainId =  "DomainId" ;
             public static string LastRunAssetCount =  "LastRunAssetCount" ;
@@ -38,16 +39,6 @@ namespace Humidifier.DataZone
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PublishOnImport { get; set; }
-
-        /// <summary>
-        /// Type
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-type
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic Type { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-description
@@ -56,15 +47,13 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-
         /// <summary>
         /// EnvironmentIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-environmentidentifier
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic EnvironmentIdentifier { get; set; }
         /// <summary>
         /// Configuration
@@ -84,22 +73,6 @@ namespace Humidifier.DataZone
         /// </summary>
         public List<Humidifier.DataZone.DataSourceTypes.FormInput> AssetFormsInput { get; set; }
         /// <summary>
-        /// EnableSetting
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-enablesetting
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic EnableSetting { get; set; }
-        /// <summary>
-        /// Schedule
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-schedule
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ScheduleConfiguration
-        /// </summary>
-        public Humidifier.DataZone.DataSourceTypes.ScheduleConfiguration Schedule { get; set; }
-        /// <summary>
         /// Recommendation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-recommendation
         /// Required: False
@@ -108,6 +81,40 @@ namespace Humidifier.DataZone
         /// </summary>
         public Humidifier.DataZone.DataSourceTypes.RecommendationConfiguration Recommendation { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+
+        /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-type
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic Type { get; set; }
+        /// <summary>
+        /// EnableSetting
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-enablesetting
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EnableSetting { get; set; }
+        /// <summary>
+        /// ConnectionIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-connectionidentifier
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConnectionIdentifier { get; set; }
+        /// <summary>
+        /// Schedule
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-datasource.html#cfn-datazone-datasource-schedule
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ScheduleConfiguration
+        /// </summary>
+        public Humidifier.DataZone.DataSourceTypes.ScheduleConfiguration Schedule { get; set; }
 
         /// <summary>
         /// DomainIdentifier
@@ -233,6 +240,14 @@ namespace Humidifier.DataZone
             /// ItemType: RelationalFilterConfiguration
             /// </summary>
             public List<Humidifier.DataZone.DataSourceTypes.RelationalFilterConfiguration> RelationalFilterConfigurations { get; set; }
+            /// <summary>
+            /// CatalogName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-gluerunconfigurationinput.html#cfn-datazone-datasource-gluerunconfigurationinput-catalogname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CatalogName { get; set; }
         }
 
         public class RecommendationConfiguration : Humidifier.Base.BaseSubResource
@@ -293,7 +308,7 @@ namespace Humidifier.DataZone
             /// <summary>
             /// RedshiftCredentialConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-redshiftrunconfigurationinput.html#cfn-datazone-datasource-redshiftrunconfigurationinput-redshiftcredentialconfiguration
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: RedshiftCredentialConfiguration
             /// </summary>
@@ -301,7 +316,7 @@ namespace Humidifier.DataZone
             /// <summary>
             /// RedshiftStorage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-redshiftrunconfigurationinput.html#cfn-datazone-datasource-redshiftrunconfigurationinput-redshiftstorage
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: RedshiftStorage
             /// </summary>
