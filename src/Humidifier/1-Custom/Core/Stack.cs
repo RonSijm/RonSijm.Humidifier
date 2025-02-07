@@ -35,9 +35,9 @@ public class Stack
     public void Add(string name, Output output) => Outputs.Add(name, output);
     public void Add(string name, Mapping mapping) => Mappings.Add(name, mapping);
 
-    public void Add(BaseResource resource, string condition = null, CreationPolicy creationPolicy = null, UpdatePolicy updatePolicy = null, DeletionPolicy? deletionPolicy = null, dynamic metadata = null, string[] dependsOn = null)
+    public void Add(BaseResource resource)
     {
-        Add(resource.ResourceName, resource, condition, creationPolicy, updatePolicy, deletionPolicy, metadata, dependsOn);
+        Add(resource.ResourceName, resource, creationPolicy: resource.CreationPolicy);
     }
 
     public void Add(string name, BaseResource resource, string condition = null, CreationPolicy creationPolicy = null, UpdatePolicy updatePolicy = null, DeletionPolicy? deletionPolicy = null, dynamic metadata = null, string[] dependsOn = null)

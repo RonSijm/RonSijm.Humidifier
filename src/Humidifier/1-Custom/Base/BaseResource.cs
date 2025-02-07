@@ -38,4 +38,7 @@ public abstract class BaseResource : BaseHumidifierDTO, IHaveGivenName
 
     [Ignore]
     public bool Export { get; set; }
+
+    [Ignore]
+    public CreationPolicy CreationPolicy { get; set; }
 }
