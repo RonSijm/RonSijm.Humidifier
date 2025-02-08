@@ -684,6 +684,14 @@ namespace Humidifier.Batch
             /// </summary>
             public dynamic ReadOnly { get; set; }
             /// <summary>
+            /// SubPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainervolumemount.html#cfn-batch-jobdefinition-ekscontainervolumemount-subpath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SubPath { get; set; }
+            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainervolumemount.html#cfn-batch-jobdefinition-ekscontainervolumemount-name
             /// Required: False
@@ -725,8 +733,17 @@ namespace Humidifier.Batch
             public dynamic Path { get; set; }
         }
 
-        public class EksMetadata : Humidifier.Base.BaseSubResource
+        public class EksMetadata : Humidifier.Base.BaseSubResource, IHaveNamespace_
         {
+            /// <summary>
+            /// Annotations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksmetadata.html#cfn-batch-jobdefinition-eksmetadata-annotations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> Annotations { get; set; }
             /// <summary>
             /// Labels
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksmetadata.html#cfn-batch-jobdefinition-eksmetadata-labels
@@ -736,6 +753,34 @@ namespace Humidifier.Batch
             /// PrimitiveItemType: String
             /// </summary>
             public Dictionary<string, dynamic> Labels { get; set; }
+            /// <summary>
+            /// Namespace_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksmetadata.html#cfn-batch-jobdefinition-eksmetadata-namespace
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Namespace_ { get; set; }
+        }
+
+        public class EksPersistentVolumeClaim : Humidifier.Base.BaseSubResource, IHaveReadOnly
+        {
+            /// <summary>
+            /// ReadOnly
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspersistentvolumeclaim.html#cfn-batch-jobdefinition-ekspersistentvolumeclaim-readonly
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReadOnly { get; set; }
+            /// <summary>
+            /// ClaimName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspersistentvolumeclaim.html#cfn-batch-jobdefinition-ekspersistentvolumeclaim-claimname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClaimName { get; set; }
         }
 
         public class EksPodProperties : Humidifier.Base.BaseSubResource
@@ -876,6 +921,14 @@ namespace Humidifier.Batch
             /// Type: EksHostPath
             /// </summary>
             public Humidifier.Batch.JobDefinitionTypes.EksHostPath HostPath { get; set; }
+            /// <summary>
+            /// PersistentVolumeClaim
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksvolume.html#cfn-batch-jobdefinition-eksvolume-persistentvolumeclaim
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EksPersistentVolumeClaim
+            /// </summary>
+            public Humidifier.Batch.JobDefinitionTypes.EksPersistentVolumeClaim PersistentVolumeClaim { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksvolume.html#cfn-batch-jobdefinition-eksvolume-name

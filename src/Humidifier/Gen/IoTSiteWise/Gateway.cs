@@ -32,6 +32,14 @@ namespace Humidifier.IoTSiteWise
         [Required]
         public Humidifier.IoTSiteWise.GatewayTypes.GatewayPlatform GatewayPlatform { get; set; }
         /// <summary>
+        /// GatewayVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewayversion
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic GatewayVersion { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-tags
         /// Required: False
@@ -75,14 +83,6 @@ namespace Humidifier.IoTSiteWise
             /// </summary>
             public Humidifier.IoTSiteWise.GatewayTypes.GreengrassV2 GreengrassV2 { get; set; }
             /// <summary>
-            /// Greengrass
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrass
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: Greengrass
-            /// </summary>
-            public Humidifier.IoTSiteWise.GatewayTypes.Greengrass Greengrass { get; set; }
-            /// <summary>
             /// SiemensIE
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-siemensie
             /// Required: False
@@ -90,18 +90,6 @@ namespace Humidifier.IoTSiteWise
             /// Type: SiemensIE
             /// </summary>
             public Humidifier.IoTSiteWise.GatewayTypes.SiemensIE SiemensIE { get; set; }
-        }
-
-        public class Greengrass : Humidifier.Base.BaseSubResource
-        {
-            /// <summary>
-            /// GroupArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrass.html#cfn-iotsitewise-gateway-greengrass-grouparn
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic GroupArn { get; set; }
         }
 
         public class GreengrassV2 : Humidifier.Base.BaseSubResource
@@ -114,6 +102,14 @@ namespace Humidifier.IoTSiteWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic CoreDeviceThingName { get; set; }
+            /// <summary>
+            /// CoreDeviceOperatingSystem
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrassv2.html#cfn-iotsitewise-gateway-greengrassv2-coredeviceoperatingsystem
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CoreDeviceOperatingSystem { get; set; }
         }
 
         public class SiemensIE : Humidifier.Base.BaseSubResource

@@ -950,6 +950,14 @@ namespace Humidifier.CloudFront
             /// </summary>
             public Humidifier.CloudFront.DistributionTypes.S3OriginConfig S3OriginConfig { get; set; }
             /// <summary>
+            /// VpcOriginConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-vpcoriginconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcOriginConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.VpcOriginConfig VpcOriginConfig { get; set; }
+            /// <summary>
             /// OriginPath
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath
             /// Required: False
@@ -1204,6 +1212,34 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: String
             /// </summary>
             public dynamic AcmCertificateArn { get; set; }
+        }
+
+        public class VpcOriginConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OriginReadTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-vpcoriginconfig.html#cfn-cloudfront-distribution-vpcoriginconfig-originreadtimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic OriginReadTimeout { get; set; }
+            /// <summary>
+            /// VpcOriginId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-vpcoriginconfig.html#cfn-cloudfront-distribution-vpcoriginconfig-vpcoriginid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VpcOriginId { get; set; }
+            /// <summary>
+            /// OriginKeepaliveTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-vpcoriginconfig.html#cfn-cloudfront-distribution-vpcoriginconfig-originkeepalivetimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic OriginKeepaliveTimeout { get; set; }
         }
     }
 }

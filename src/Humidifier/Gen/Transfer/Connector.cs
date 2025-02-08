@@ -152,6 +152,14 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public dynamic MdnSigningAlgorithm { get; set; }
+            /// <summary>
+            /// PreserveContentType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-preservecontenttype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PreserveContentType { get; set; }
         }
 
         public class SftpConfig : Humidifier.Base.BaseSubResource

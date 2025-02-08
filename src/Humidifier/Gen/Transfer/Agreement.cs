@@ -78,6 +78,14 @@ namespace Humidifier.Transfer
         [Required]
         public dynamic LocalProfileId { get; set; }
         /// <summary>
+        /// EnforceMessageSigning
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-enforcemessagesigning
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EnforceMessageSigning { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-tags
         /// Required: False
@@ -86,5 +94,13 @@ namespace Humidifier.Transfer
         /// ItemType: Tag
         /// </summary>
         public List<Tag> Tags { get; set; }
+        /// <summary>
+        /// PreserveFilename
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-preservefilename
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PreserveFilename { get; set; }
     }
 }

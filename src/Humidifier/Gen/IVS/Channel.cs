@@ -1,6 +1,7 @@
 namespace Humidifier.IVS
 {
     using System.Collections.Generic;
+    using ChannelTypes;
 
     public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveInsecureIngest
     {
@@ -37,6 +38,14 @@ namespace Humidifier.IVS
         /// </summary>
         public dynamic Authorized { get; set; }
         /// <summary>
+        /// MultitrackInputConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-multitrackinputconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MultitrackInputConfiguration
+        /// </summary>
+        public Humidifier.IVS.ChannelTypes.MultitrackInputConfiguration MultitrackInputConfiguration { get; set; }
+        /// <summary>
         /// Preset
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-preset
         /// Required: False
@@ -44,6 +53,14 @@ namespace Humidifier.IVS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Preset { get; set; }
+        /// <summary>
+        /// ContainerFormat
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-containerformat
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ContainerFormat { get; set; }
         /// <summary>
         /// InsecureIngest
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#cfn-ivs-channel-insecureingest
@@ -70,5 +87,36 @@ namespace Humidifier.IVS
         /// </summary>
         public List<Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace ChannelTypes
+    {
+        public class MultitrackInputConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHavePolicy
+        {
+            /// <summary>
+            /// MaximumResolution
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-channel-multitrackinputconfiguration.html#cfn-ivs-channel-multitrackinputconfiguration-maximumresolution
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MaximumResolution { get; set; }
+            /// <summary>
+            /// Policy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-channel-multitrackinputconfiguration.html#cfn-ivs-channel-multitrackinputconfiguration-policy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Policy { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-channel-multitrackinputconfiguration.html#cfn-ivs-channel-multitrackinputconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
     }
 }

@@ -576,11 +576,13 @@ public class AWS
         public const string Farm = "AWS::Deadline::Farm";
         public const string Fleet = "AWS::Deadline::Fleet";
         public const string LicenseEndpoint = "AWS::Deadline::LicenseEndpoint";
+        public const string Limit = "AWS::Deadline::Limit";
         public const string MeteredProduct = "AWS::Deadline::MeteredProduct";
         public const string Monitor = "AWS::Deadline::Monitor";
         public const string Queue = "AWS::Deadline::Queue";
         public const string QueueEnvironment = "AWS::Deadline::QueueEnvironment";
         public const string QueueFleetAssociation = "AWS::Deadline::QueueFleetAssociation";
+        public const string QueueLimitAssociation = "AWS::Deadline::QueueLimitAssociation";
         public const string StorageProfile = "AWS::Deadline::StorageProfile";
     }
     public class Detective

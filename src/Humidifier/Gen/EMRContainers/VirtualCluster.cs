@@ -12,6 +12,14 @@ namespace Humidifier.EMRContainers
         }
 
         public override string AWSTypeName { get => AWS.EMRContainers.VirtualCluster; }
+        /// <summary>
+        /// SecurityConfigurationId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-securityconfigurationid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SecurityConfigurationId { get; set; }
 
         /// <summary>
         /// ContainerProvider

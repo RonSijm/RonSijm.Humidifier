@@ -41,6 +41,14 @@ namespace Humidifier.APS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Alias { get; set; }
+        /// <summary>
+        /// RoleConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-scraper.html#cfn-aps-scraper-roleconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RoleConfiguration
+        /// </summary>
+        public Humidifier.APS.ScraperTypes.RoleConfiguration RoleConfiguration { get; set; }
 
         /// <summary>
         /// Source
@@ -116,6 +124,26 @@ namespace Humidifier.APS
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SubnetIds { get; set; }
+        }
+
+        public class RoleConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TargetRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-scraper-roleconfiguration.html#cfn-aps-scraper-roleconfiguration-targetrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetRoleArn { get; set; }
+            /// <summary>
+            /// SourceRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-aps-scraper-roleconfiguration.html#cfn-aps-scraper-roleconfiguration-sourcerolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceRoleArn { get; set; }
         }
 
         public class ScrapeConfiguration : Humidifier.Base.BaseSubResource

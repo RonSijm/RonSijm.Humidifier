@@ -749,14 +749,6 @@ namespace Humidifier.ECS
             /// </summary>
             public dynamic Throughput { get; set; }
             /// <summary>
-            /// VolumeInitializationRate
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-servicemanagedebsvolumeconfiguration.html#cfn-ecs-service-servicemanagedebsvolumeconfiguration-volumeinitializationrate
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic VolumeInitializationRate { get; set; }
-            /// <summary>
             /// Iops
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-servicemanagedebsvolumeconfiguration.html#cfn-ecs-service-servicemanagedebsvolumeconfiguration-iops
             /// Required: False

@@ -82,6 +82,14 @@ namespace Humidifier.S3
         /// </summary>
         public dynamic AccessControl { get; set; }
         /// <summary>
+        /// MetadataTableConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-metadatatableconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MetadataTableConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.MetadataTableConfiguration MetadataTableConfiguration { get; set; }
+        /// <summary>
         /// IntelligentTieringConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-intelligenttieringconfigurations
         /// Required: False
@@ -654,6 +662,18 @@ namespace Humidifier.S3
             /// PrimitiveType: String
             /// </summary>
             public dynamic DestinationBucketName { get; set; }
+        }
+
+        public class MetadataTableConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// S3TablesDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadatatableconfiguration.html#cfn-s3-bucket-metadatatableconfiguration-s3tablesdestination
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: S3TablesDestination
+            /// </summary>
+            public Humidifier.S3.BucketTypes.S3TablesDestination S3TablesDestination { get; set; }
         }
 
         public class Metrics : Humidifier.Base.BaseSubResource, IHaveStatus
@@ -1437,6 +1457,42 @@ namespace Humidifier.S3
             /// ItemType: FilterRule
             /// </summary>
             public List<Humidifier.S3.BucketTypes.FilterRule> Rules { get; set; }
+        }
+
+        public class S3TablesDestination : Humidifier.Base.BaseSubResource, IHaveTableName
+        {
+            /// <summary>
+            /// TableBucketArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-s3tablesdestination.html#cfn-s3-bucket-s3tablesdestination-tablebucketarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableBucketArn { get; set; }
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-s3tablesdestination.html#cfn-s3-bucket-s3tablesdestination-tablename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// TableArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-s3tablesdestination.html#cfn-s3-bucket-s3tablesdestination-tablearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableArn { get; set; }
+            /// <summary>
+            /// TableNamespace
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-s3tablesdestination.html#cfn-s3-bucket-s3tablesdestination-tablenamespace
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableNamespace { get; set; }
         }
 
         public class ServerSideEncryptionByDefault : Humidifier.Base.BaseSubResource, IHaveSSEAlgorithm, IHaveKMSMasterKeyID

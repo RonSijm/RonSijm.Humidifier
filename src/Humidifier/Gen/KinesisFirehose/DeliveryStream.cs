@@ -76,6 +76,14 @@ namespace Humidifier.KinesisFirehose
         /// </summary>
         public Humidifier.KinesisFirehose.DeliveryStreamTypes.MSKSourceConfiguration MSKSourceConfiguration { get; set; }
         /// <summary>
+        /// DirectPutSourceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-directputsourceconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: DirectPutSourceConfiguration
+        /// </summary>
+        public Humidifier.KinesisFirehose.DeliveryStreamTypes.DirectPutSourceConfiguration DirectPutSourceConfiguration { get; set; }
+        /// <summary>
         /// SplunkDestinationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration
         /// Required: False
@@ -829,6 +837,18 @@ namespace Humidifier.KinesisFirehose
             public dynamic UniqueKeys { get; set; }
         }
 
+        public class DirectPutSourceConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ThroughputHintInMBs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-directputsourceconfiguration.html#cfn-kinesisfirehose-deliverystream-directputsourceconfiguration-throughputhintinmbs
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThroughputHintInMBs { get; set; }
+        }
+
         public class DocumentIdOptions : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -1378,6 +1398,14 @@ namespace Humidifier.KinesisFirehose
             /// Type: ProcessingConfiguration
             /// </summary>
             public Humidifier.KinesisFirehose.DeliveryStreamTypes.ProcessingConfiguration ProcessingConfiguration { get; set; }
+            /// <summary>
+            /// AppendOnly
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-appendonly
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AppendOnly { get; set; }
             /// <summary>
             /// CloudWatchLoggingOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-icebergdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-icebergdestinationconfiguration-cloudwatchloggingoptions

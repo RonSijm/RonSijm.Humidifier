@@ -8,6 +8,7 @@ namespace Humidifier.IoTFleetWise
         {
             public static string LastModificationTime =  "LastModificationTime" ;
             public static string CreationTime =  "CreationTime" ;
+            public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
         }
 
