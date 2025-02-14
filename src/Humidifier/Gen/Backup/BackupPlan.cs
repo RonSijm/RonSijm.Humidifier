@@ -139,6 +139,15 @@ namespace Humidifier.Backup
             /// </summary>
             public Humidifier.Backup.BackupPlanTypes.LifecycleResourceType Lifecycle { get; set; }
             /// <summary>
+            /// IndexActions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-indexactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: IndexActionsResourceType
+            /// </summary>
+            public List<Humidifier.Backup.BackupPlanTypes.IndexActionsResourceType> IndexActions { get; set; }
+            /// <summary>
             /// TargetBackupVault
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetbackupvault
             /// Required: True
@@ -190,6 +199,19 @@ namespace Humidifier.Backup
             /// PrimitiveType: String
             /// </summary>
             public dynamic DestinationBackupVaultArn { get; set; }
+        }
+
+        public class IndexActionsResourceType : Humidifier.Base.BaseSubResource, IHaveResourceTypes
+        {
+            /// <summary>
+            /// ResourceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-indexactionsresourcetype.html#cfn-backup-backupplan-indexactionsresourcetype-resourcetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ResourceTypes { get; set; }
         }
 
         public class LifecycleResourceType : Humidifier.Base.BaseSubResource

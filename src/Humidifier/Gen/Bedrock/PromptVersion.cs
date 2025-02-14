@@ -50,6 +50,18 @@ namespace Humidifier.Bedrock
 
     namespace PromptVersionTypes
     {
+        public class CachePointBlock : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-cachepointblock.html#cfn-bedrock-promptversion-cachepointblock-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
         public class ChatPromptTemplateConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -92,9 +104,17 @@ namespace Humidifier.Bedrock
         public class ContentBlock : Humidifier.Base.BaseSubResource, IHaveText
         {
             /// <summary>
+            /// CachePoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-contentblock.html#cfn-bedrock-promptversion-contentblock-cachepoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CachePointBlock
+            /// </summary>
+            public Humidifier.Bedrock.PromptVersionTypes.CachePointBlock CachePoint { get; set; }
+            /// <summary>
             /// Text
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-contentblock.html#cfn-bedrock-promptversion-contentblock-text
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -230,6 +250,14 @@ namespace Humidifier.Bedrock
         public class PromptVariant : Humidifier.Base.BaseSubResource, IHaveName, IHaveModelId, IHaveTemplateType
         {
             /// <summary>
+            /// AdditionalModelRequestFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptvariant.html#cfn-bedrock-promptversion-promptvariant-additionalmodelrequestfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AdditionalModelRequestFields { get; set; }
+            /// <summary>
             /// InferenceConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptvariant.html#cfn-bedrock-promptversion-promptvariant-inferenceconfiguration
             /// Required: False
@@ -294,9 +322,17 @@ namespace Humidifier.Bedrock
         public class SystemContentBlock : Humidifier.Base.BaseSubResource, IHaveText
         {
             /// <summary>
+            /// CachePoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-systemcontentblock.html#cfn-bedrock-promptversion-systemcontentblock-cachepoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CachePointBlock
+            /// </summary>
+            public Humidifier.Bedrock.PromptVersionTypes.CachePointBlock CachePoint { get; set; }
+            /// <summary>
             /// Text
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-systemcontentblock.html#cfn-bedrock-promptversion-systemcontentblock-text
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -315,6 +351,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public List<Humidifier.Bedrock.PromptVersionTypes.PromptInputVariable> InputVariables { get; set; }
             /// <summary>
+            /// CachePoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-textprompttemplateconfiguration.html#cfn-bedrock-promptversion-textprompttemplateconfiguration-cachepoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CachePointBlock
+            /// </summary>
+            public Humidifier.Bedrock.PromptVersionTypes.CachePointBlock CachePoint { get; set; }
+            /// <summary>
             /// Text
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-textprompttemplateconfiguration.html#cfn-bedrock-promptversion-textprompttemplateconfiguration-text
             /// Required: True
@@ -327,9 +371,17 @@ namespace Humidifier.Bedrock
         public class Tool : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// CachePoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-tool.html#cfn-bedrock-promptversion-tool-cachepoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CachePointBlock
+            /// </summary>
+            public Humidifier.Bedrock.PromptVersionTypes.CachePointBlock CachePoint { get; set; }
+            /// <summary>
             /// ToolSpec
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-tool.html#cfn-bedrock-promptversion-tool-toolspec
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: ToolSpecification
             /// </summary>

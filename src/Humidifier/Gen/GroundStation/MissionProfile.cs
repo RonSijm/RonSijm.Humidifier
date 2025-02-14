@@ -128,6 +128,14 @@ namespace Humidifier.GroundStation
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsAliasArn { get; set; }
+            /// <summary>
+            /// KmsAliasName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-streamskmskey.html#cfn-groundstation-missionprofile-streamskmskey-kmsaliasname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsAliasName { get; set; }
         }
     }
 }

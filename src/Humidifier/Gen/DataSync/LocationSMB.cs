@@ -3,7 +3,7 @@ namespace Humidifier.DataSync
     using System.Collections.Generic;
     using LocationSMBTypes;
 
-    public class LocationSMB : Humidifier.Base.BaseResource, IHaveTags, IHavePassword, IHaveDomain, IHaveSubdirectory, IHaveUser, IHaveAgentArns, IHaveServerHostname
+    public class LocationSMB : Humidifier.Base.BaseResource, IHaveTags, IHavePassword, IHaveDomain, IHaveAuthenticationType, IHaveSubdirectory, IHaveUser, IHaveAgentArns, IHaveServerHostname
     {
         public class Attributes
         {
@@ -12,16 +12,30 @@ namespace Humidifier.DataSync
         }
 
         public override string AWSTypeName { get => AWS.DataSync.LocationSMB; }
-
         /// <summary>
-        /// User
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-user
-        /// Required: True
+        /// KerberosPrincipal
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-kerberosprincipal
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
+        public dynamic KerberosPrincipal { get; set; }
+        /// <summary>
+        /// User
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-user
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
         public dynamic User { get; set; }
+        /// <summary>
+        /// KerberosKeytab
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-kerberoskeytab
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KerberosKeytab { get; set; }
         /// <summary>
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-subdirectory
@@ -34,10 +48,18 @@ namespace Humidifier.DataSync
         /// ServerHostname
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-serverhostname
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic ServerHostname { get; set; }
+        /// <summary>
+        /// KerberosKrb5Conf
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-kerberoskrb5conf
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KerberosKrb5Conf { get; set; }
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-domain
@@ -46,6 +68,15 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic Domain { get; set; }
+        /// <summary>
+        /// DnsIpAddresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-dnsipaddresses
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic DnsIpAddresses { get; set; }
         /// <summary>
         /// MountOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-mountoptions
@@ -82,6 +113,14 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic Password { get; set; }
+        /// <summary>
+        /// AuthenticationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-authenticationtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AuthenticationType { get; set; }
     }
 
     namespace LocationSMBTypes

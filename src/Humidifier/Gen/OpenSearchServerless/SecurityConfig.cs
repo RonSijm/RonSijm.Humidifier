@@ -111,6 +111,14 @@ namespace Humidifier.OpenSearchServerless
             /// </summary>
             public dynamic SessionTimeout { get; set; }
             /// <summary>
+            /// OpenSearchServerlessEntityId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html#cfn-opensearchserverless-securityconfig-samlconfigoptions-opensearchserverlessentityid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OpenSearchServerlessEntityId { get; set; }
+            /// <summary>
             /// UserAttribute
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-samlconfigoptions.html#cfn-opensearchserverless-securityconfig-samlconfigoptions-userattribute
             /// Required: False

@@ -337,6 +337,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic Domain { get; set; }
         /// <summary>
+        /// ApplyImmediately
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-applyimmediately
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ApplyImmediately { get; set; }
+        /// <summary>
         /// DomainFqdn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-domainfqdn
         /// Required: False

@@ -214,6 +214,44 @@ namespace Humidifier.Glue
             public dynamic Path { get; set; }
         }
 
+        public class HudiTarget : Humidifier.Base.BaseSubResource, IHaveConnectionName, IHaveExclusions
+        {
+            /// <summary>
+            /// ConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-huditarget.html#cfn-glue-crawler-huditarget-connectionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionName { get; set; }
+            /// <summary>
+            /// Exclusions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-huditarget.html#cfn-glue-crawler-huditarget-exclusions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Exclusions { get; set; }
+            /// <summary>
+            /// Paths
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-huditarget.html#cfn-glue-crawler-huditarget-paths
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Paths { get; set; }
+            /// <summary>
+            /// MaximumTraversalDepth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-huditarget.html#cfn-glue-crawler-huditarget-maximumtraversaldepth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumTraversalDepth { get; set; }
+        }
+
         public class IcebergTarget : Humidifier.Base.BaseSubResource, IHaveConnectionName, IHaveExclusions
         {
             /// <summary>
@@ -429,6 +467,15 @@ namespace Humidifier.Glue
 
         public class Targets : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// HudiTargets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-huditargets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: HudiTarget
+            /// </summary>
+            public List<Humidifier.Glue.CrawlerTypes.HudiTarget> HudiTargets { get; set; }
             /// <summary>
             /// S3Targets
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets

@@ -3,7 +3,7 @@ namespace Humidifier.DynamoDB
     using System.Collections.Generic;
     using GlobalTableTypes;
 
-    public class GlobalTable : Humidifier.Base.BaseResource, IHaveTableName, IHaveBillingMode, IHaveDynamoDBGlobalTableTypesPointInTimeRecoverySpecificationPointInTimeRecoverySpecification, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings
+    public class GlobalTable : Humidifier.Base.BaseResource, IHaveTableName, IHaveBillingMode, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings
     {
         public class Attributes
         {
@@ -29,14 +29,6 @@ namespace Humidifier.DynamoDB
         /// Type: StreamSpecification
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.StreamSpecification StreamSpecification { get; set; }
-        /// <summary>
-        /// PointInTimeRecoverySpecification
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-pointintimerecoveryspecification
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: PointInTimeRecoverySpecification
-        /// </summary>
-        public Humidifier.DynamoDB.GlobalTableTypes.PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
         /// <summary>
         /// WarmThroughput
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-warmthroughput

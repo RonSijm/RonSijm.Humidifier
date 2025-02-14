@@ -456,6 +456,7 @@ public class AWS
         public const string ApprovedOrigin = "AWS::Connect::ApprovedOrigin";
         public const string ContactFlow = "AWS::Connect::ContactFlow";
         public const string ContactFlowModule = "AWS::Connect::ContactFlowModule";
+        public const string ContactFlowVersion = "AWS::Connect::ContactFlowVersion";
         public const string EmailAddress = "AWS::Connect::EmailAddress";
         public const string EvaluationForm = "AWS::Connect::EvaluationForm";
         public const string HoursOfOperation = "AWS::Connect::HoursOfOperation";
@@ -2019,6 +2020,7 @@ public class AWS
         public const string Profile = "AWS::Transfer::Profile";
         public const string Server = "AWS::Transfer::Server";
         public const string User = "AWS::Transfer::User";
+        public const string WebApp = "AWS::Transfer::WebApp";
         public const string Workflow = "AWS::Transfer::Workflow";
     }
     public class VerifiedPermissions

@@ -16,7 +16,7 @@ namespace Humidifier.GroundStation
         /// ContactPostPassDurationSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactpostpassdurationseconds
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ContactPostPassDurationSeconds { get; set; }
@@ -25,7 +25,7 @@ namespace Humidifier.GroundStation
         /// EndpointDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-endpointdetails
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: List
         /// ItemType: EndpointDetails
         /// </summary>
@@ -44,7 +44,7 @@ namespace Humidifier.GroundStation
         /// ContactPrePassDurationSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactprepassdurationseconds
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ContactPrePassDurationSeconds { get; set; }
@@ -58,7 +58,7 @@ namespace Humidifier.GroundStation
             /// AgentStatus
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-agentstatus
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic AgentStatus { get; set; }
@@ -66,7 +66,7 @@ namespace Humidifier.GroundStation
             /// IngressAddress
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-ingressaddress
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: RangedConnectionDetails
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.RangedConnectionDetails IngressAddress { get; set; }
@@ -74,7 +74,7 @@ namespace Humidifier.GroundStation
             /// AuditResults
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-auditresults
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic AuditResults { get; set; }
@@ -82,7 +82,7 @@ namespace Humidifier.GroundStation
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-name
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -90,7 +90,7 @@ namespace Humidifier.GroundStation
             /// EgressAddress
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint.html#cfn-groundstation-dataflowendpointgroup-awsgroundstationagentendpoint-egressaddress
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: ConnectionDetails
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.ConnectionDetails EgressAddress { get; set; }
@@ -102,7 +102,7 @@ namespace Humidifier.GroundStation
             /// SocketAddress
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-connectiondetails.html#cfn-groundstation-dataflowendpointgroup-connectiondetails-socketaddress
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: SocketAddress
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.SocketAddress SocketAddress { get; set; }
@@ -110,7 +110,7 @@ namespace Humidifier.GroundStation
             /// Mtu
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-connectiondetails.html#cfn-groundstation-dataflowendpointgroup-connectiondetails-mtu
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Mtu { get; set; }
@@ -122,7 +122,7 @@ namespace Humidifier.GroundStation
             /// Address
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-address
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: SocketAddress
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.SocketAddress Address { get; set; }
@@ -130,7 +130,7 @@ namespace Humidifier.GroundStation
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-name
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -138,7 +138,7 @@ namespace Humidifier.GroundStation
             /// Mtu
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-mtu
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Mtu { get; set; }
@@ -150,7 +150,7 @@ namespace Humidifier.GroundStation
             /// Endpoint
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-endpoint
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: DataflowEndpoint
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.DataflowEndpoint Endpoint { get; set; }
@@ -158,7 +158,7 @@ namespace Humidifier.GroundStation
             /// AwsGroundStationAgentEndpoint
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-awsgroundstationagentendpoint
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: AwsGroundStationAgentEndpoint
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.AwsGroundStationAgentEndpoint AwsGroundStationAgentEndpoint { get; set; }
@@ -166,7 +166,7 @@ namespace Humidifier.GroundStation
             /// SecurityDetails
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-securitydetails
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: SecurityDetails
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.SecurityDetails SecurityDetails { get; set; }
@@ -178,7 +178,7 @@ namespace Humidifier.GroundStation
             /// Minimum
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-integerrange.html#cfn-groundstation-dataflowendpointgroup-integerrange-minimum
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Minimum { get; set; }
@@ -186,7 +186,7 @@ namespace Humidifier.GroundStation
             /// Maximum
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-integerrange.html#cfn-groundstation-dataflowendpointgroup-integerrange-maximum
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Maximum { get; set; }
@@ -198,7 +198,7 @@ namespace Humidifier.GroundStation
             /// SocketAddress
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedconnectiondetails.html#cfn-groundstation-dataflowendpointgroup-rangedconnectiondetails-socketaddress
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: RangedSocketAddress
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.RangedSocketAddress SocketAddress { get; set; }
@@ -206,7 +206,7 @@ namespace Humidifier.GroundStation
             /// Mtu
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedconnectiondetails.html#cfn-groundstation-dataflowendpointgroup-rangedconnectiondetails-mtu
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Mtu { get; set; }
@@ -218,7 +218,7 @@ namespace Humidifier.GroundStation
             /// PortRange
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedsocketaddress.html#cfn-groundstation-dataflowendpointgroup-rangedsocketaddress-portrange
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: IntegerRange
             /// </summary>
             public Humidifier.GroundStation.DataflowEndpointGroupTypes.IntegerRange PortRange { get; set; }
@@ -226,7 +226,7 @@ namespace Humidifier.GroundStation
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-rangedsocketaddress.html#cfn-groundstation-dataflowendpointgroup-rangedsocketaddress-name
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -238,7 +238,7 @@ namespace Humidifier.GroundStation
             /// SubnetIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-securitydetails.html#cfn-groundstation-dataflowendpointgroup-securitydetails-subnetids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -247,7 +247,7 @@ namespace Humidifier.GroundStation
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-securitydetails.html#cfn-groundstation-dataflowendpointgroup-securitydetails-securitygroupids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -256,7 +256,7 @@ namespace Humidifier.GroundStation
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-securitydetails.html#cfn-groundstation-dataflowendpointgroup-securitydetails-rolearn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
@@ -268,7 +268,7 @@ namespace Humidifier.GroundStation
             /// Port
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html#cfn-groundstation-dataflowendpointgroup-socketaddress-port
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Port { get; set; }
@@ -276,7 +276,7 @@ namespace Humidifier.GroundStation
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html#cfn-groundstation-dataflowendpointgroup-socketaddress-name
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
