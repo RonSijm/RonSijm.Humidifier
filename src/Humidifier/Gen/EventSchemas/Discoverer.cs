@@ -1,6 +1,6 @@
 namespace Humidifier.EventSchemas
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DiscovererTypes;
 
     public class Discoverer : Humidifier.Base.BaseResource, IHaveDescription, IHaveSourceArn

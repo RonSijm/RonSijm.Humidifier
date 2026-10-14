@@ -1,6 +1,6 @@
 namespace Humidifier.Notifications
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EventRuleTypes;
 
     public class EventRule : Humidifier.Base.BaseResource, IHaveSource, IHaveRegions, IHaveEventType, IHaveEventPattern

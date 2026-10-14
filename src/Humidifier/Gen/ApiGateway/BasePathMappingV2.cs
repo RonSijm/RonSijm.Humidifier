@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class BasePathMappingV2 : Humidifier.Base.BaseResource, IHaveRestApiId, IHaveStage, IHaveBasePath, IHaveDomainNameArn
     {

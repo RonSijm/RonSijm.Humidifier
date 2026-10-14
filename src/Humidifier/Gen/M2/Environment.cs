@@ -1,6 +1,6 @@
 namespace Humidifier.M2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentTypes;
 
     public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveInstanceType, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHavePubliclyAccessible, IHaveNetworkType, IHaveEngineType

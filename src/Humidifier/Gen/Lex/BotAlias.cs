@@ -1,6 +1,6 @@
 namespace Humidifier.Lex
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BotAliasTypes;
 
     public class BotAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveBotId
@@ -73,7 +73,7 @@ namespace Humidifier.Lex
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> BotAliasTags { get; set; }
+        public List<Humidifier.Tag> BotAliasTags { get; set; }
     }
 
     namespace BotAliasTypes

@@ -1,6 +1,6 @@
 namespace Humidifier.Route53Resolver
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResolverRuleTypes;
 
     public class ResolverRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDomainName
@@ -43,6 +43,14 @@ namespace Humidifier.Route53Resolver
         [Required]
         public dynamic RuleType { get; set; }
         /// <summary>
+        /// DelegationRecord
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-delegationrecord
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DelegationRecord { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-tags
         /// Required: False
@@ -50,7 +58,7 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TargetIps
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-targetips

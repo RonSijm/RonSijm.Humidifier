@@ -1,6 +1,6 @@
 namespace Humidifier.XRay
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SamplingRuleTypes;
 
     public class SamplingRule : Humidifier.Base.BaseResource, IHaveTags
@@ -27,11 +27,31 @@ namespace Humidifier.XRay
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace SamplingRuleTypes
     {
+        public class SamplingRateBoost : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MaxRate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrateboost.html#cfn-xray-samplingrule-samplingrateboost-maxrate
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic MaxRate { get; set; }
+            /// <summary>
+            /// CooldownWindowMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrateboost.html#cfn-xray-samplingrule-samplingrateboost-cooldownwindowminutes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CooldownWindowMinutes { get; set; }
+        }
+
         public class SamplingRule : Humidifier.Base.BaseSubResource, IHaveVersion, IHavePriority, IHaveHost, IHaveServiceName, IHaveResourceARN, IHaveRuleName, IHaveHTTPMethod, IHaveServiceType
         {
             /// <summary>
@@ -131,6 +151,14 @@ namespace Humidifier.XRay
             /// PrimitiveType: String
             /// </summary>
             public dynamic ServiceType { get; set; }
+            /// <summary>
+            /// SamplingRateBoost
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-samplingrateboost
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SamplingRateBoost
+            /// </summary>
+            public Humidifier.XRay.SamplingRuleTypes.SamplingRateBoost SamplingRateBoost { get; set; }
             /// <summary>
             /// RuleName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-rulename

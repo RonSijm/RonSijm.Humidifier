@@ -1,6 +1,6 @@
 namespace Humidifier.Proton
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ServiceTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveEncryptionKey
     {
@@ -50,7 +50,7 @@ namespace Humidifier.Proton
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

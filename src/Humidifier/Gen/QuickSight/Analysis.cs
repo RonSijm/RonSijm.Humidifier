@@ -1,6 +1,6 @@
 namespace Humidifier.QuickSight
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AnalysisTypes;
 
     public class Analysis : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveStatus, IHaveAwsAccountId, IHaveThemeArn, IHaveFolderArns
@@ -118,7 +118,7 @@ namespace Humidifier.QuickSight
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// Sheets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-sheets
@@ -135,22 +135,6 @@ namespace Humidifier.QuickSight
         public class AggregationFunction : Humidifier.Base.BaseSubResource, IHaveDateAggregationFunction, IHaveCategoricalAggregationFunction
         {
             /// <summary>
-            /// AttributeAggregationFunction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationfunction.html#cfn-quicksight-analysis-aggregationfunction-attributeaggregationfunction
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: AttributeAggregationFunction
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.AttributeAggregationFunction AttributeAggregationFunction { get; set; }
-            /// <summary>
-            /// DateAggregationFunction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationfunction.html#cfn-quicksight-analysis-aggregationfunction-dateaggregationfunction
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DateAggregationFunction { get; set; }
-            /// <summary>
             /// NumericalAggregationFunction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationfunction.html#cfn-quicksight-analysis-aggregationfunction-numericalaggregationfunction
             /// Required: False
@@ -159,6 +143,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.NumericalAggregationFunction NumericalAggregationFunction { get; set; }
             /// <summary>
+            /// AttributeAggregationFunction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationfunction.html#cfn-quicksight-analysis-aggregationfunction-attributeaggregationfunction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AttributeAggregationFunction
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.AttributeAggregationFunction AttributeAggregationFunction { get; set; }
+            /// <summary>
             /// CategoricalAggregationFunction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationfunction.html#cfn-quicksight-analysis-aggregationfunction-categoricalaggregationfunction
             /// Required: False
@@ -166,6 +158,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic CategoricalAggregationFunction { get; set; }
+            /// <summary>
+            /// DateAggregationFunction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-aggregationfunction.html#cfn-quicksight-analysis-aggregationfunction-dateaggregationfunction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DateAggregationFunction { get; set; }
         }
 
         public class AggregationSortConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveQuickSightAnalysisTypesAggregationFunctionAggregationFunction, IHaveSortDirection
@@ -244,6 +244,15 @@ namespace Humidifier.QuickSight
             /// ItemType: StaticFile
             /// </summary>
             public List<Humidifier.QuickSight.AnalysisTypes.StaticFile> StaticFiles { get; set; }
+            /// <summary>
+            /// TopicIdentifierDeclarations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-topicidentifierdeclarations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: TopicIdentifierDeclaration
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.TopicIdentifierDeclaration> TopicIdentifierDeclarations { get; set; }
             /// <summary>
             /// CalculatedFields
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysisdefinition.html#cfn-quicksight-analysis-analysisdefinition-calculatedfields
@@ -359,6 +368,15 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Arn { get; set; }
+            /// <summary>
+            /// TopicReferences
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourcetemplate.html#cfn-quicksight-analysis-analysissourcetemplate-topicreferences
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: TopicReference
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.TopicReference> TopicReferences { get; set; }
         }
 
         public class AnchorDateConfiguration : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveAnchorOption
@@ -544,14 +562,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.AxisDataOptions DataOptions { get; set; }
             /// <summary>
-            /// TickLabelOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-ticklabeloptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: AxisTickLabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.AxisTickLabelOptions TickLabelOptions { get; set; }
-            /// <summary>
             /// AxisOffset
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-axisoffset
             /// Required: False
@@ -559,6 +569,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic AxisOffset { get; set; }
+            /// <summary>
+            /// TickLabelOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-ticklabeloptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AxisTickLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.AxisTickLabelOptions TickLabelOptions { get; set; }
             /// <summary>
             /// AxisLineVisibility
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-axisdisplayoptions.html#cfn-quicksight-analysis-axisdisplayoptions-axislinevisibility
@@ -865,6 +883,23 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic BarsArrangement { get; set; }
             /// <summary>
+            /// DefaultSeriesSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartconfiguration.html#cfn-quicksight-analysis-barchartconfiguration-defaultseriessettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BarChartDefaultSeriesSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BarChartDefaultSeriesSettings DefaultSeriesSettings { get; set; }
+            /// <summary>
+            /// Series
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartconfiguration.html#cfn-quicksight-analysis-barchartconfiguration-series
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public List<dynamic> Series { get; set; }
+            /// <summary>
             /// CategoryAxis
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartconfiguration.html#cfn-quicksight-analysis-barchartconfiguration-categoryaxis
             /// Required: False
@@ -897,6 +932,34 @@ namespace Humidifier.QuickSight
             /// Type: AxisDisplayOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.AxisDisplayOptions ValueAxis { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartconfiguration.html#cfn-quicksight-analysis-barchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
+        }
+
+        public class BarChartDefaultSeriesSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BorderSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartdefaultseriessettings.html#cfn-quicksight-analysis-barchartdefaultseriessettings-bordersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BorderSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BorderSettings BorderSettings { get; set; }
+            /// <summary>
+            /// DecalSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-barchartdefaultseriessettings.html#cfn-quicksight-analysis-barchartdefaultseriessettings-decalsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DecalSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.DecalSettings DecalSettings { get; set; }
         }
 
         public class BarChartFieldWells : Humidifier.Base.BaseSubResource
@@ -1094,6 +1157,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic SectionId { get; set; }
+            /// <summary>
+            /// RepeatConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionconfiguration.html#cfn-quicksight-analysis-bodysectionconfiguration-repeatconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BodySectionRepeatConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BodySectionRepeatConfiguration RepeatConfiguration { get; set; }
         }
 
         public class BodySectionContent : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesSectionLayoutConfigurationLayout
@@ -1106,6 +1177,154 @@ namespace Humidifier.QuickSight
             /// Type: SectionLayoutConfiguration
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SectionLayoutConfiguration Layout { get; set; }
+        }
+
+        public class BodySectionDynamicCategoryDimensionConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveLimit
+        {
+            /// <summary>
+            /// Column
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectiondynamiccategorydimensionconfiguration.html#cfn-quicksight-analysis-bodysectiondynamiccategorydimensionconfiguration-column
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ColumnIdentifier
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier Column { get; set; }
+            /// <summary>
+            /// SortByMetrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectiondynamiccategorydimensionconfiguration.html#cfn-quicksight-analysis-bodysectiondynamiccategorydimensionconfiguration-sortbymetrics
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ColumnSort
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.ColumnSort> SortByMetrics { get; set; }
+            /// <summary>
+            /// Limit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectiondynamiccategorydimensionconfiguration.html#cfn-quicksight-analysis-bodysectiondynamiccategorydimensionconfiguration-limit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Limit { get; set; }
+        }
+
+        public class BodySectionDynamicNumericDimensionConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveLimit
+        {
+            /// <summary>
+            /// Column
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectiondynamicnumericdimensionconfiguration.html#cfn-quicksight-analysis-bodysectiondynamicnumericdimensionconfiguration-column
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ColumnIdentifier
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier Column { get; set; }
+            /// <summary>
+            /// SortByMetrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectiondynamicnumericdimensionconfiguration.html#cfn-quicksight-analysis-bodysectiondynamicnumericdimensionconfiguration-sortbymetrics
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ColumnSort
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.ColumnSort> SortByMetrics { get; set; }
+            /// <summary>
+            /// Limit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectiondynamicnumericdimensionconfiguration.html#cfn-quicksight-analysis-bodysectiondynamicnumericdimensionconfiguration-limit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Limit { get; set; }
+        }
+
+        public class BodySectionRepeatConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DimensionConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionrepeatconfiguration.html#cfn-quicksight-analysis-bodysectionrepeatconfiguration-dimensionconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: BodySectionRepeatDimensionConfiguration
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.BodySectionRepeatDimensionConfiguration> DimensionConfigurations { get; set; }
+            /// <summary>
+            /// NonRepeatingVisuals
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionrepeatconfiguration.html#cfn-quicksight-analysis-bodysectionrepeatconfiguration-nonrepeatingvisuals
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic NonRepeatingVisuals { get; set; }
+            /// <summary>
+            /// PageBreakConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionrepeatconfiguration.html#cfn-quicksight-analysis-bodysectionrepeatconfiguration-pagebreakconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BodySectionRepeatPageBreakConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BodySectionRepeatPageBreakConfiguration PageBreakConfiguration { get; set; }
+        }
+
+        public class BodySectionRepeatDimensionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DynamicNumericDimensionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionrepeatdimensionconfiguration.html#cfn-quicksight-analysis-bodysectionrepeatdimensionconfiguration-dynamicnumericdimensionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BodySectionDynamicNumericDimensionConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BodySectionDynamicNumericDimensionConfiguration DynamicNumericDimensionConfiguration { get; set; }
+            /// <summary>
+            /// DynamicCategoryDimensionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionrepeatdimensionconfiguration.html#cfn-quicksight-analysis-bodysectionrepeatdimensionconfiguration-dynamiccategorydimensionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BodySectionDynamicCategoryDimensionConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BodySectionDynamicCategoryDimensionConfiguration DynamicCategoryDimensionConfiguration { get; set; }
+        }
+
+        public class BodySectionRepeatPageBreakConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// After
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bodysectionrepeatpagebreakconfiguration.html#cfn-quicksight-analysis-bodysectionrepeatpagebreakconfiguration-after
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SectionAfterPageBreak
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.SectionAfterPageBreak After { get; set; }
+        }
+
+        public class BorderSettings : Humidifier.Base.BaseSubResource, IHaveBorderVisibility, IHaveBorderColor
+        {
+            /// <summary>
+            /// BorderVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bordersettings.html#cfn-quicksight-analysis-bordersettings-bordervisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BorderVisibility { get; set; }
+            /// <summary>
+            /// BorderColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bordersettings.html#cfn-quicksight-analysis-bordersettings-bordercolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BorderColor { get; set; }
+            /// <summary>
+            /// BorderWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-bordersettings.html#cfn-quicksight-analysis-bordersettings-borderwidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BorderWidth { get; set; }
         }
 
         public class BoxPlotAggregatedFieldWells : Humidifier.Base.BaseSubResource
@@ -1205,6 +1424,14 @@ namespace Humidifier.QuickSight
             /// Type: BoxPlotOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.BoxPlotOptions BoxPlotOptions { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotchartconfiguration.html#cfn-quicksight-analysis-boxplotchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// PrimaryYAxisDisplayOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-boxplotchartconfiguration.html#cfn-quicksight-analysis-boxplotchartconfiguration-primaryyaxisdisplayoptions
@@ -1371,11 +1598,19 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// DataSetIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-calculatedfield.html#cfn-quicksight-analysis-calculatedfield-datasetidentifier
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataSetIdentifier { get; set; }
+            /// <summary>
+            /// TopicIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-calculatedfield.html#cfn-quicksight-analysis-calculatedfield-topicidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicIdentifier { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-calculatedfield.html#cfn-quicksight-analysis-calculatedfield-name
@@ -1627,6 +1862,15 @@ namespace Humidifier.QuickSight
         public class ChartAxisLabelOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveSortIconVisibility
         {
             /// <summary>
+            /// AxisLabelOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-chartaxislabeloptions.html#cfn-quicksight-analysis-chartaxislabeloptions-axislabeloptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AxisLabelOptions
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.AxisLabelOptions> AxisLabelOptions { get; set; }
+            /// <summary>
             /// Visibility
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-chartaxislabeloptions.html#cfn-quicksight-analysis-chartaxislabeloptions-visibility
             /// Required: False
@@ -1642,15 +1886,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic SortIconVisibility { get; set; }
-            /// <summary>
-            /// AxisLabelOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-chartaxislabeloptions.html#cfn-quicksight-analysis-chartaxislabeloptions-axislabeloptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: AxisLabelOptions
-            /// </summary>
-            public List<Humidifier.QuickSight.AnalysisTypes.AxisLabelOptions> AxisLabelOptions { get; set; }
         }
 
         public class ClusterMarker : Humidifier.Base.BaseSubResource
@@ -1680,6 +1915,14 @@ namespace Humidifier.QuickSight
         public class ColorScale : Humidifier.Base.BaseSubResource, IHaveColorFillType
         {
             /// <summary>
+            /// ColorFillType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-colorscale.html#cfn-quicksight-analysis-colorscale-colorfilltype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ColorFillType { get; set; }
+            /// <summary>
             /// Colors
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-colorscale.html#cfn-quicksight-analysis-colorscale-colors
             /// Required: True
@@ -1688,14 +1931,6 @@ namespace Humidifier.QuickSight
             /// ItemType: DataColor
             /// </summary>
             public List<Humidifier.QuickSight.AnalysisTypes.DataColor> Colors { get; set; }
-            /// <summary>
-            /// ColorFillType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-colorscale.html#cfn-quicksight-analysis-colorscale-colorfilltype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ColorFillType { get; set; }
             /// <summary>
             /// NullValueColor
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-colorscale.html#cfn-quicksight-analysis-colorscale-nullvaluecolor
@@ -1746,6 +1981,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier Column { get; set; }
             /// <summary>
+            /// DecalSettingsConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnconfiguration.html#cfn-quicksight-analysis-columnconfiguration-decalsettingsconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DecalSettingsConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.DecalSettingsConfiguration DecalSettingsConfiguration { get; set; }
+            /// <summary>
             /// ColorsConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnconfiguration.html#cfn-quicksight-analysis-columnconfiguration-colorsconfiguration
             /// Required: False
@@ -1766,14 +2009,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.DateTimeHierarchy DateTimeHierarchy { get; set; }
             /// <summary>
-            /// ExplicitHierarchy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html#cfn-quicksight-analysis-columnhierarchy-explicithierarchy
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ExplicitHierarchy
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.ExplicitHierarchy ExplicitHierarchy { get; set; }
-            /// <summary>
             /// PredefinedHierarchy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html#cfn-quicksight-analysis-columnhierarchy-predefinedhierarchy
             /// Required: False
@@ -1781,10 +2016,26 @@ namespace Humidifier.QuickSight
             /// Type: PredefinedHierarchy
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.PredefinedHierarchy PredefinedHierarchy { get; set; }
+            /// <summary>
+            /// ExplicitHierarchy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnhierarchy.html#cfn-quicksight-analysis-columnhierarchy-explicithierarchy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ExplicitHierarchy
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ExplicitHierarchy ExplicitHierarchy { get; set; }
         }
 
         public class ColumnIdentifier : Humidifier.Base.BaseSubResource, IHaveDataSetIdentifier, IHaveColumnName
         {
+            /// <summary>
+            /// TopicIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnidentifier.html#cfn-quicksight-analysis-columnidentifier-topicidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicIdentifier { get; set; }
             /// <summary>
             /// ColumnName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnidentifier.html#cfn-quicksight-analysis-columnidentifier-columnname
@@ -1796,7 +2047,7 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// DataSetIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnidentifier.html#cfn-quicksight-analysis-columnidentifier-datasetidentifier
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -1814,14 +2065,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.AggregationFunction AggregationFunction { get; set; }
             /// <summary>
-            /// SortBy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html#cfn-quicksight-analysis-columnsort-sortby
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: ColumnIdentifier
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier SortBy { get; set; }
-            /// <summary>
             /// Direction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html#cfn-quicksight-analysis-columnsort-direction
             /// Required: True
@@ -1829,6 +2072,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Direction { get; set; }
+            /// <summary>
+            /// SortBy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-columnsort.html#cfn-quicksight-analysis-columnsort-sortby
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ColumnIdentifier
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier SortBy { get; set; }
         }
 
         public class ColumnTooltipItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveLabel, IHaveTooltipTarget
@@ -2007,6 +2258,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic BarsArrangement { get; set; }
             /// <summary>
+            /// DefaultSeriesSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-defaultseriessettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ComboChartDefaultSeriesSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ComboChartDefaultSeriesSettings DefaultSeriesSettings { get; set; }
+            /// <summary>
             /// SecondaryYAxisLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-secondaryyaxislabeloptions
             /// Required: False
@@ -2014,6 +2273,15 @@ namespace Humidifier.QuickSight
             /// Type: ChartAxisLabelOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ChartAxisLabelOptions SecondaryYAxisLabelOptions { get; set; }
+            /// <summary>
+            /// Series
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-series
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public List<dynamic> Series { get; set; }
             /// <summary>
             /// LineDataLabels
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-linedatalabels
@@ -2054,6 +2322,50 @@ namespace Humidifier.QuickSight
             /// Type: AxisDisplayOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.AxisDisplayOptions SecondaryYAxisDisplayOptions { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartconfiguration.html#cfn-quicksight-analysis-combochartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
+        }
+
+        public class ComboChartDefaultSeriesSettings : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLineChartLineStyleSettingsLineStyleSettings, IHaveQuickSightAnalysisTypesLineChartMarkerStyleSettingsMarkerStyleSettings
+        {
+            /// <summary>
+            /// BorderSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartdefaultseriessettings.html#cfn-quicksight-analysis-combochartdefaultseriessettings-bordersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BorderSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.BorderSettings BorderSettings { get; set; }
+            /// <summary>
+            /// DecalSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartdefaultseriessettings.html#cfn-quicksight-analysis-combochartdefaultseriessettings-decalsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DecalSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.DecalSettings DecalSettings { get; set; }
+            /// <summary>
+            /// LineStyleSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartdefaultseriessettings.html#cfn-quicksight-analysis-combochartdefaultseriessettings-linestylesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineChartLineStyleSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LineChartLineStyleSettings LineStyleSettings { get; set; }
+            /// <summary>
+            /// MarkerStyleSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-combochartdefaultseriessettings.html#cfn-quicksight-analysis-combochartdefaultseriessettings-markerstylesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineChartMarkerStyleSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LineChartMarkerStyleSettings MarkerStyleSettings { get; set; }
         }
 
         public class ComboChartFieldWells : Humidifier.Base.BaseSubResource
@@ -2460,6 +2772,18 @@ namespace Humidifier.QuickSight
             public dynamic Color { get; set; }
         }
 
+        public class ContextMenuOption : Humidifier.Base.BaseSubResource, IHaveAvailabilityStatus
+        {
+            /// <summary>
+            /// AvailabilityStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-contextmenuoption.html#cfn-quicksight-analysis-contextmenuoption-availabilitystatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityStatus { get; set; }
+        }
+
         public class ContributionAnalysisDefault : Humidifier.Base.BaseSubResource, IHaveMeasureFieldId
         {
             /// <summary>
@@ -2668,6 +2992,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic ImageScaling { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentconfiguration.html#cfn-quicksight-analysis-customcontentconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
         }
 
         public class CustomContentVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightAnalysisTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightAnalysisTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
@@ -2708,7 +3040,7 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// DataSetIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html#cfn-quicksight-analysis-customcontentvisual-datasetidentifier
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -2729,6 +3061,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic VisualContentAltText { get; set; }
+            /// <summary>
+            /// TopicIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-customcontentvisual.html#cfn-quicksight-analysis-customcontentvisual-topicidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicIdentifier { get; set; }
         }
 
         public class CustomFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveNullOption, IHaveSelectAllOptions, IHaveMatchOperator, IHaveCategoryValue
@@ -3493,6 +3833,22 @@ namespace Humidifier.QuickSight
         public class DateTimePickerControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveDateTimeFormat, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
         {
             /// <summary>
+            /// InfoIconLabelOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-infoiconlabeloptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetControlInfoIconLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
+            /// HelperTextVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-helpertextvisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HelperTextVisibility { get; set; }
+            /// <summary>
             /// TitleOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-titleoptions
             /// Required: False
@@ -3501,13 +3857,13 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
             /// <summary>
-            /// InfoIconLabelOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-infoiconlabeloptions
+            /// DateIconVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-dateiconvisibility
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SheetControlInfoIconLabelOptions
+            /// PrimitiveType: String
             /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            public dynamic DateIconVisibility { get; set; }
             /// <summary>
             /// DateTimeFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimepickercontroldisplayoptions.html#cfn-quicksight-analysis-datetimepickercontroldisplayoptions-datetimeformat
@@ -3536,6 +3892,63 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic CustomValue { get; set; }
+        }
+
+        public class DecalSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DecalStyleType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decalsettings.html#cfn-quicksight-analysis-decalsettings-decalstyletype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DecalStyleType { get; set; }
+            /// <summary>
+            /// DecalVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decalsettings.html#cfn-quicksight-analysis-decalsettings-decalvisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DecalVisibility { get; set; }
+            /// <summary>
+            /// DecalPatternType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decalsettings.html#cfn-quicksight-analysis-decalsettings-decalpatterntype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DecalPatternType { get; set; }
+            /// <summary>
+            /// DecalColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decalsettings.html#cfn-quicksight-analysis-decalsettings-decalcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DecalColor { get; set; }
+            /// <summary>
+            /// ElementValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decalsettings.html#cfn-quicksight-analysis-decalsettings-elementvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ElementValue { get; set; }
+        }
+
+        public class DecalSettingsConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CustomDecalSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decalsettingsconfiguration.html#cfn-quicksight-analysis-decalsettingsconfiguration-customdecalsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DecalSettings
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.DecalSettings> CustomDecalSettings { get; set; }
         }
 
         public class DecimalDefaultValues : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesDynamicDefaultValueDynamicValue
@@ -4156,14 +4569,6 @@ namespace Humidifier.QuickSight
         public class DropDownControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightAnalysisTypesListControlSelectAllOptionsSelectAllOptions
         {
             /// <summary>
-            /// TitleOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dropdowncontroldisplayoptions.html#cfn-quicksight-analysis-dropdowncontroldisplayoptions-titleoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: LabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
-            /// <summary>
             /// SelectAllOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dropdowncontroldisplayoptions.html#cfn-quicksight-analysis-dropdowncontroldisplayoptions-selectalloptions
             /// Required: False
@@ -4179,6 +4584,14 @@ namespace Humidifier.QuickSight
             /// Type: SheetControlInfoIconLabelOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
+            /// TitleOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-dropdowncontroldisplayoptions.html#cfn-quicksight-analysis-dropdowncontroldisplayoptions-titleoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
         }
 
         public class DynamicDefaultValue : Humidifier.Base.BaseSubResource
@@ -4231,11 +4644,19 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// DataSetIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-emptyvisual.html#cfn-quicksight-analysis-emptyvisual-datasetidentifier
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataSetIdentifier { get; set; }
+            /// <summary>
+            /// TopicIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-emptyvisual.html#cfn-quicksight-analysis-emptyvisual-topicidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicIdentifier { get; set; }
         }
 
         public class Entity : Humidifier.Base.BaseSubResource, IHavePath
@@ -4261,14 +4682,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Status { get; set; }
             /// <summary>
-            /// Amount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-excludeperiodconfiguration.html#cfn-quicksight-analysis-excludeperiodconfiguration-amount
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic Amount { get; set; }
-            /// <summary>
             /// Granularity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-excludeperiodconfiguration.html#cfn-quicksight-analysis-excludeperiodconfiguration-granularity
             /// Required: True
@@ -4276,6 +4689,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Granularity { get; set; }
+            /// <summary>
+            /// Amount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-excludeperiodconfiguration.html#cfn-quicksight-analysis-excludeperiodconfiguration-amount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Amount { get; set; }
         }
 
         public class ExplicitHierarchy : Humidifier.Base.BaseSubResource, IHaveHierarchyId
@@ -4388,14 +4809,6 @@ namespace Humidifier.QuickSight
         public class FieldSort : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveDirection
         {
             /// <summary>
-            /// FieldId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsort.html#cfn-quicksight-analysis-fieldsort-fieldid
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic FieldId { get; set; }
-            /// <summary>
             /// Direction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsort.html#cfn-quicksight-analysis-fieldsort-direction
             /// Required: True
@@ -4403,18 +4816,18 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Direction { get; set; }
+            /// <summary>
+            /// FieldId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsort.html#cfn-quicksight-analysis-fieldsort-fieldid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FieldId { get; set; }
         }
 
         public class FieldSortOptions : Humidifier.Base.BaseSubResource
         {
-            /// <summary>
-            /// FieldSort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsortoptions.html#cfn-quicksight-analysis-fieldsortoptions-fieldsort
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FieldSort
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FieldSort FieldSort { get; set; }
             /// <summary>
             /// ColumnSort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsortoptions.html#cfn-quicksight-analysis-fieldsortoptions-columnsort
@@ -4423,6 +4836,14 @@ namespace Humidifier.QuickSight
             /// Type: ColumnSort
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ColumnSort ColumnSort { get; set; }
+            /// <summary>
+            /// FieldSort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fieldsortoptions.html#cfn-quicksight-analysis-fieldsortoptions-fieldsort
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FieldSort
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FieldSort FieldSort { get; set; }
         }
 
         public class FieldTooltipItem : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveFieldId, IHaveLabel, IHaveTooltipTarget
@@ -4550,6 +4971,14 @@ namespace Humidifier.QuickSight
             /// Type: TooltipOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.TooltipOptions Tooltip { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapconfiguration.html#cfn-quicksight-analysis-filledmapconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// WindowOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-filledmapconfiguration.html#cfn-quicksight-analysis-filledmapconfiguration-windowoptions
@@ -5368,8 +5797,24 @@ namespace Humidifier.QuickSight
             public dynamic SourceFilterId { get; set; }
         }
 
-        public class FontConfiguration : Humidifier.Base.BaseSubResource, IHaveFontColor, IHaveFontStyle, IHaveFontDecoration
+        public class FontConfiguration : Humidifier.Base.BaseSubResource, IHaveFontColor, IHaveFontStyle, IHaveFontDecoration, IHaveFontFamily
         {
+            /// <summary>
+            /// FontColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontColor { get; set; }
+            /// <summary>
+            /// FontFamily
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontfamily
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontFamily { get; set; }
             /// <summary>
             /// FontStyle
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontstyle
@@ -5378,6 +5823,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic FontStyle { get; set; }
+            /// <summary>
+            /// FontWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontweight
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontWeight
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FontWeight FontWeight { get; set; }
             /// <summary>
             /// FontSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontsize
@@ -5394,22 +5847,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic FontDecoration { get; set; }
-            /// <summary>
-            /// FontColor
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontcolor
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic FontColor { get; set; }
-            /// <summary>
-            /// FontWeight
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-fontconfiguration.html#cfn-quicksight-analysis-fontconfiguration-fontweight
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FontWeight
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FontWeight FontWeight { get; set; }
         }
 
         public class FontSize : Humidifier.Base.BaseSubResource, IHaveRelative, IHaveAbsolute
@@ -5579,14 +6016,6 @@ namespace Humidifier.QuickSight
         public class FormatConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// NumberFormatConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-numberformatconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: NumberFormatConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.NumberFormatConfiguration NumberFormatConfiguration { get; set; }
-            /// <summary>
             /// DateTimeFormatConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-datetimeformatconfiguration
             /// Required: False
@@ -5594,6 +6023,14 @@ namespace Humidifier.QuickSight
             /// Type: DateTimeFormatConfiguration
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.DateTimeFormatConfiguration DateTimeFormatConfiguration { get; set; }
+            /// <summary>
+            /// NumberFormatConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-numberformatconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NumberFormatConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.NumberFormatConfiguration NumberFormatConfiguration { get; set; }
             /// <summary>
             /// StringFormatConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-formatconfiguration.html#cfn-quicksight-analysis-formatconfiguration-stringformatconfiguration
@@ -5627,6 +6064,15 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.FreeFormLayoutCanvasSizeOptions CanvasSizeOptions { get; set; }
             /// <summary>
+            /// Groups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutconfiguration.html#cfn-quicksight-analysis-freeformlayoutconfiguration-groups
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SheetLayoutGroup
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.SheetLayoutGroup> Groups { get; set; }
+            /// <summary>
             /// Elements
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutconfiguration.html#cfn-quicksight-analysis-freeformlayoutconfiguration-elements
             /// Required: True
@@ -5637,7 +6083,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.AnalysisTypes.FreeFormLayoutElement> Elements { get; set; }
         }
 
-        public class FreeFormLayoutElement : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveHeight, IHaveWidth, IHaveElementType, IHaveElementId, IHaveYAxisLocation, IHaveXAxisLocation
+        public class FreeFormLayoutElement : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveHeight, IHaveWidth, IHaveElementType, IHaveElementId, IHaveYAxisLocation, IHaveXAxisLocation, IHaveBorderRadius
         {
             /// <summary>
             /// ElementType
@@ -5656,21 +6102,13 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.FreeFormLayoutElementBorderStyle BorderStyle { get; set; }
             /// <summary>
-            /// Height
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-height
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Height { get; set; }
-            /// <summary>
-            /// Visibility
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-visibility
+            /// BorderRadius
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-borderradius
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Visibility { get; set; }
+            public dynamic BorderRadius { get; set; }
             /// <summary>
             /// RenderingRules
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-renderingrules
@@ -5689,6 +6127,46 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic YAxisLocation { get; set; }
             /// <summary>
+            /// BackgroundStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-backgroundstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FreeFormLayoutElementBackgroundStyle
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FreeFormLayoutElementBackgroundStyle BackgroundStyle { get; set; }
+            /// <summary>
+            /// XAxisLocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-xaxislocation
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic XAxisLocation { get; set; }
+            /// <summary>
+            /// Padding
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-padding
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Padding { get; set; }
+            /// <summary>
+            /// Height
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-height
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Height { get; set; }
+            /// <summary>
+            /// Visibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-visibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Visibility { get; set; }
+            /// <summary>
             /// LoadingAnimation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-loadinganimation
             /// Required: False
@@ -5705,14 +6183,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Width { get; set; }
             /// <summary>
-            /// BackgroundStyle
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-backgroundstyle
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FreeFormLayoutElementBackgroundStyle
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FreeFormLayoutElementBackgroundStyle BackgroundStyle { get; set; }
-            /// <summary>
             /// ElementId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-elementid
             /// Required: True
@@ -5720,14 +6190,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic ElementId { get; set; }
-            /// <summary>
-            /// XAxisLocation
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-xaxislocation
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic XAxisLocation { get; set; }
             /// <summary>
             /// SelectedBorderStyle
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelement.html#cfn-quicksight-analysis-freeformlayoutelement-selectedborderstyle
@@ -5758,16 +6220,16 @@ namespace Humidifier.QuickSight
             public dynamic Visibility { get; set; }
         }
 
-        public class FreeFormLayoutElementBorderStyle : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveColor
+        public class FreeFormLayoutElementBorderStyle : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveColor, IHaveWidth
         {
             /// <summary>
-            /// Color
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelementborderstyle.html#cfn-quicksight-analysis-freeformlayoutelementborderstyle-color
+            /// Width
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelementborderstyle.html#cfn-quicksight-analysis-freeformlayoutelementborderstyle-width
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Color { get; set; }
+            public dynamic Width { get; set; }
             /// <summary>
             /// Visibility
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelementborderstyle.html#cfn-quicksight-analysis-freeformlayoutelementborderstyle-visibility
@@ -5776,6 +6238,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Visibility { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-freeformlayoutelementborderstyle.html#cfn-quicksight-analysis-freeformlayoutelementborderstyle-color
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
         }
 
         public class FreeFormLayoutScreenCanvasSizeOptions : Humidifier.Base.BaseSubResource, IHaveOptimizedViewPortWidth
@@ -5867,6 +6337,14 @@ namespace Humidifier.QuickSight
             /// Type: TooltipOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.TooltipOptions Tooltip { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// ValueLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-funnelchartconfiguration.html#cfn-quicksight-analysis-funnelchartconfiguration-valuelabeloptions
@@ -6052,6 +6530,26 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.AnalysisTypes.ConditionalFormattingColor ForegroundColor { get; set; }
         }
 
+        public class GaugeChartColorConfiguration : Humidifier.Base.BaseSubResource, IHaveBackgroundColor
+        {
+            /// <summary>
+            /// ForegroundColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartcolorconfiguration.html#cfn-quicksight-analysis-gaugechartcolorconfiguration-foregroundcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ForegroundColor { get; set; }
+            /// <summary>
+            /// BackgroundColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartcolorconfiguration.html#cfn-quicksight-analysis-gaugechartcolorconfiguration-backgroundcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BackgroundColor { get; set; }
+        }
+
         public class GaugeChartConditionalFormatting : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -6119,6 +6617,22 @@ namespace Humidifier.QuickSight
             /// Type: GaugeChartOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.GaugeChartOptions GaugeChartOptions { get; set; }
+            /// <summary>
+            /// ColorConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartconfiguration.html#cfn-quicksight-analysis-gaugechartconfiguration-colorconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GaugeChartColorConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GaugeChartColorConfiguration ColorConfiguration { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartconfiguration.html#cfn-quicksight-analysis-gaugechartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// VisualPalette
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gaugechartconfiguration.html#cfn-quicksight-analysis-gaugechartconfiguration-visualpalette
@@ -6392,14 +6906,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.GeospatialGradientColor Gradient { get; set; }
             /// <summary>
-            /// Categorical
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcolor.html#cfn-quicksight-analysis-geospatialcolor-categorical
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: GeospatialCategoricalColor
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.GeospatialCategoricalColor Categorical { get; set; }
-            /// <summary>
             /// Solid
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcolor.html#cfn-quicksight-analysis-geospatialcolor-solid
             /// Required: False
@@ -6407,18 +6913,18 @@ namespace Humidifier.QuickSight
             /// Type: GeospatialSolidColor
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.GeospatialSolidColor Solid { get; set; }
+            /// <summary>
+            /// Categorical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcolor.html#cfn-quicksight-analysis-geospatialcolor-categorical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialCategoricalColor
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GeospatialCategoricalColor Categorical { get; set; }
         }
 
         public class GeospatialCoordinateBounds : Humidifier.Base.BaseSubResource, IHaveWest, IHaveSouth, IHaveNorth, IHaveEast
         {
-            /// <summary>
-            /// West
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-west
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic West { get; set; }
             /// <summary>
             /// South
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-south
@@ -6443,6 +6949,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: Double
             /// </summary>
             public dynamic East { get; set; }
+            /// <summary>
+            /// West
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialcoordinatebounds.html#cfn-quicksight-analysis-geospatialcoordinatebounds-west
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic West { get; set; }
         }
 
         public class GeospatialDataSourceItem : Humidifier.Base.BaseSubResource
@@ -6706,7 +7220,7 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.AnalysisTypes.UnaggregatedField DatasetKeyField { get; set; }
         }
 
-        public class GeospatialLayerMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLegendOptionsLegend, IHaveInteractions
+        public class GeospatialLayerMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLegendOptionsLegend
         {
             /// <summary>
             /// Legend
@@ -6737,9 +7251,9 @@ namespace Humidifier.QuickSight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatiallayermapconfiguration.html#cfn-quicksight-analysis-geospatiallayermapconfiguration-interactions
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: VisualInteractionOptions
             /// </summary>
-            public dynamic Interactions { get; set; }
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// MapLayers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatiallayermapconfiguration.html#cfn-quicksight-analysis-geospatiallayermapconfiguration-maplayers
@@ -6838,7 +7352,7 @@ namespace Humidifier.QuickSight
             public List<Humidifier.QuickSight.AnalysisTypes.DimensionField> Geospatial { get; set; }
         }
 
-        public class GeospatialMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLegendOptionsLegend, IHaveQuickSightAnalysisTypesTooltipOptionsTooltip, IHaveQuickSightAnalysisTypesVisualPaletteVisualPalette, IHaveInteractions, IHaveQuickSightAnalysisTypesGeospatialMapStyleOptionsMapStyleOptions, IHaveQuickSightAnalysisTypesGeospatialWindowOptionsWindowOptions
+        public class GeospatialMapConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLegendOptionsLegend, IHaveQuickSightAnalysisTypesTooltipOptionsTooltip, IHaveQuickSightAnalysisTypesVisualPaletteVisualPalette, IHaveQuickSightAnalysisTypesGeospatialMapStyleOptionsMapStyleOptions, IHaveQuickSightAnalysisTypesGeospatialWindowOptionsWindowOptions
         {
             /// <summary>
             /// Legend
@@ -6877,9 +7391,9 @@ namespace Humidifier.QuickSight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapconfiguration.html#cfn-quicksight-analysis-geospatialmapconfiguration-interactions
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: VisualInteractionOptions
             /// </summary>
-            public dynamic Interactions { get; set; }
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// WindowOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialmapconfiguration.html#cfn-quicksight-analysis-geospatialmapconfiguration-windowoptions
@@ -7219,14 +7733,6 @@ namespace Humidifier.QuickSight
         public class GeospatialWindowOptions : Humidifier.Base.BaseSubResource, IHaveMapZoomMode, IHaveQuickSightAnalysisTypesGeospatialCoordinateBoundsBounds
         {
             /// <summary>
-            /// Bounds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialwindowoptions.html#cfn-quicksight-analysis-geospatialwindowoptions-bounds
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: GeospatialCoordinateBounds
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.GeospatialCoordinateBounds Bounds { get; set; }
-            /// <summary>
             /// MapZoomMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialwindowoptions.html#cfn-quicksight-analysis-geospatialwindowoptions-mapzoommode
             /// Required: False
@@ -7234,6 +7740,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic MapZoomMode { get; set; }
+            /// <summary>
+            /// Bounds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-geospatialwindowoptions.html#cfn-quicksight-analysis-geospatialwindowoptions-bounds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GeospatialCoordinateBounds
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GeospatialCoordinateBounds Bounds { get; set; }
         }
 
         public class GlobalTableBorderOptions : Humidifier.Base.BaseSubResource
@@ -7312,14 +7826,6 @@ namespace Humidifier.QuickSight
         public class GridLayoutConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesGridLayoutCanvasSizeOptionsCanvasSizeOptions
         {
             /// <summary>
-            /// CanvasSizeOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutconfiguration.html#cfn-quicksight-analysis-gridlayoutconfiguration-canvassizeoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: GridLayoutCanvasSizeOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.GridLayoutCanvasSizeOptions CanvasSizeOptions { get; set; }
-            /// <summary>
             /// Elements
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutconfiguration.html#cfn-quicksight-analysis-gridlayoutconfiguration-elements
             /// Required: True
@@ -7328,9 +7834,17 @@ namespace Humidifier.QuickSight
             /// ItemType: GridLayoutElement
             /// </summary>
             public List<Humidifier.QuickSight.AnalysisTypes.GridLayoutElement> Elements { get; set; }
+            /// <summary>
+            /// CanvasSizeOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutconfiguration.html#cfn-quicksight-analysis-gridlayoutconfiguration-canvassizeoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GridLayoutCanvasSizeOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GridLayoutCanvasSizeOptions CanvasSizeOptions { get; set; }
         }
 
-        public class GridLayoutElement : Humidifier.Base.BaseSubResource, IHaveElementType, IHaveElementId, IHaveColumnSpan, IHaveColumnIndex, IHaveRowIndex, IHaveRowSpan
+        public class GridLayoutElement : Humidifier.Base.BaseSubResource, IHaveElementType, IHaveElementId, IHaveColumnSpan, IHaveColumnIndex, IHaveRowIndex, IHaveRowSpan, IHaveBorderRadius
         {
             /// <summary>
             /// ElementType
@@ -7365,6 +7879,22 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic RowIndex { get; set; }
             /// <summary>
+            /// BorderStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-borderstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GridLayoutElementBorderStyle
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GridLayoutElementBorderStyle BorderStyle { get; set; }
+            /// <summary>
+            /// BorderRadius
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-borderradius
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BorderRadius { get; set; }
+            /// <summary>
             /// RowSpan
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-rowspan
             /// Required: True
@@ -7373,6 +7903,30 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic RowSpan { get; set; }
             /// <summary>
+            /// Padding
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-padding
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Padding { get; set; }
+            /// <summary>
+            /// LoadingAnimation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-loadinganimation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LoadingAnimation
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LoadingAnimation LoadingAnimation { get; set; }
+            /// <summary>
+            /// BackgroundStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-backgroundstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GridLayoutElementBackgroundStyle
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GridLayoutElementBackgroundStyle BackgroundStyle { get; set; }
+            /// <summary>
             /// ElementId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-elementid
             /// Required: True
@@ -7380,6 +7934,62 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic ElementId { get; set; }
+            /// <summary>
+            /// SelectedBorderStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelement.html#cfn-quicksight-analysis-gridlayoutelement-selectedborderstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GridLayoutElementBorderStyle
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.GridLayoutElementBorderStyle SelectedBorderStyle { get; set; }
+        }
+
+        public class GridLayoutElementBackgroundStyle : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveColor
+        {
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelementbackgroundstyle.html#cfn-quicksight-analysis-gridlayoutelementbackgroundstyle-color
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
+            /// <summary>
+            /// Visibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelementbackgroundstyle.html#cfn-quicksight-analysis-gridlayoutelementbackgroundstyle-visibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Visibility { get; set; }
+        }
+
+        public class GridLayoutElementBorderStyle : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveColor, IHaveWidth
+        {
+            /// <summary>
+            /// Width
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelementborderstyle.html#cfn-quicksight-analysis-gridlayoutelementborderstyle-width
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Width { get; set; }
+            /// <summary>
+            /// Visibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelementborderstyle.html#cfn-quicksight-analysis-gridlayoutelementborderstyle-visibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Visibility { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-gridlayoutelementborderstyle.html#cfn-quicksight-analysis-gridlayoutelementborderstyle-color
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
         }
 
         public class GridLayoutScreenCanvasSizeOptions : Humidifier.Base.BaseSubResource, IHaveOptimizedViewPortWidth, IHaveResizeOption
@@ -7563,6 +8173,14 @@ namespace Humidifier.QuickSight
             /// Type: ColorScale
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ColorScale ColorScale { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapconfiguration.html#cfn-quicksight-analysis-heatmapconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// RowLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-heatmapconfiguration.html#cfn-quicksight-analysis-heatmapconfiguration-rowlabeloptions
@@ -7785,6 +8403,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ChartAxisLabelOptions XAxisLabelOptions { get; set; }
             /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogramconfiguration.html#cfn-quicksight-analysis-histogramconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
+            /// <summary>
             /// VisualPalette
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-histogramconfiguration.html#cfn-quicksight-analysis-histogramconfiguration-visualpalette
             /// Required: False
@@ -7959,7 +8585,7 @@ namespace Humidifier.QuickSight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-imagemenuoption.html#cfn-quicksight-analysis-imagemenuoption-availabilitystatus
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// PrimitiveType: String
             /// </summary>
             public dynamic AvailabilityStatus { get; set; }
         }
@@ -8015,6 +8641,14 @@ namespace Humidifier.QuickSight
             /// Type: CustomNarrativeOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.CustomNarrativeOptions CustomNarrative { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-insightconfiguration.html#cfn-quicksight-analysis-insightconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
         }
 
         public class InsightVisual : Humidifier.Base.BaseSubResource, IHaveVisualId, IHaveVisualContentAltText, IHaveQuickSightAnalysisTypesVisualSubtitleLabelOptionsSubtitle, IHaveQuickSightAnalysisTypesVisualTitleLabelOptionsTitle, IHaveDataSetIdentifier
@@ -8047,7 +8681,7 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// DataSetIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-insightvisual.html#cfn-quicksight-analysis-insightvisual-datasetidentifier
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -8076,6 +8710,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic VisualContentAltText { get; set; }
+            /// <summary>
+            /// TopicIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-insightvisual.html#cfn-quicksight-analysis-insightvisual-topicidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicIdentifier { get; set; }
         }
 
         public class IntegerDefaultValues : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesDynamicDefaultValueDynamicValue
@@ -8320,6 +8962,14 @@ namespace Humidifier.QuickSight
             /// Type: KPIFieldWells
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.KPIFieldWells FieldWells { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-kpiconfiguration.html#cfn-quicksight-analysis-kpiconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
         }
 
         public class KPIFieldWells : Humidifier.Base.BaseSubResource
@@ -8607,6 +9257,14 @@ namespace Humidifier.QuickSight
         public class LabelOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveCustomLabel, IHaveQuickSightAnalysisTypesFontConfigurationFontConfiguration
         {
             /// <summary>
+            /// FontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-labeloptions.html#cfn-quicksight-analysis-labeloptions-fontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FontConfiguration FontConfiguration { get; set; }
+            /// <summary>
             /// CustomLabel
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-labeloptions.html#cfn-quicksight-analysis-labeloptions-customlabel
             /// Required: False
@@ -8622,14 +9280,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Visibility { get; set; }
-            /// <summary>
-            /// FontConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-labeloptions.html#cfn-quicksight-analysis-labeloptions-fontconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FontConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FontConfiguration FontConfiguration { get; set; }
         }
 
         public class LayerCustomAction : Humidifier.Base.BaseSubResource, IHaveName, IHaveStatus, IHaveTrigger, IHaveCustomActionId
@@ -8742,7 +9392,7 @@ namespace Humidifier.QuickSight
             /// <summary>
             /// DataSetIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layermapvisual.html#cfn-quicksight-analysis-layermapvisual-datasetidentifier
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -8763,6 +9413,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic VisualContentAltText { get; set; }
+            /// <summary>
+            /// TopicIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-layermapvisual.html#cfn-quicksight-analysis-layermapvisual-topicidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicIdentifier { get; set; }
         }
 
         public class Layout : Humidifier.Base.BaseSubResource
@@ -8808,22 +9466,6 @@ namespace Humidifier.QuickSight
         public class LegendOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveHeight, IHaveWidth, IHavePosition
         {
             /// <summary>
-            /// Position
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-position
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Position { get; set; }
-            /// <summary>
-            /// ValueFontConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-valuefontconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FontConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FontConfiguration ValueFontConfiguration { get; set; }
-            /// <summary>
             /// Title
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-title
             /// Required: False
@@ -8848,6 +9490,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Height { get; set; }
             /// <summary>
+            /// Position
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-position
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Position { get; set; }
+            /// <summary>
             /// Width
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-width
             /// Required: False
@@ -8855,6 +9505,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Width { get; set; }
+            /// <summary>
+            /// ValueFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-legendoptions.html#cfn-quicksight-analysis-legendoptions-valuefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FontConfiguration ValueFontConfiguration { get; set; }
         }
 
         public class LineChartAggregatedFieldWells : Humidifier.Base.BaseSubResource
@@ -9063,10 +9721,26 @@ namespace Humidifier.QuickSight
             /// Type: ChartAxisLabelOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ChartAxisLabelOptions XAxisLabelOptions { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartconfiguration.html#cfn-quicksight-analysis-linechartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
         }
 
         public class LineChartDefaultSeriesSettings : Humidifier.Base.BaseSubResource, IHaveAxisBinding, IHaveQuickSightAnalysisTypesLineChartLineStyleSettingsLineStyleSettings, IHaveQuickSightAnalysisTypesLineChartMarkerStyleSettingsMarkerStyleSettings
         {
+            /// <summary>
+            /// DecalSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartdefaultseriessettings.html#cfn-quicksight-analysis-linechartdefaultseriessettings-decalsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DecalSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.DecalSettings DecalSettings { get; set; }
             /// <summary>
             /// LineStyleSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartdefaultseriessettings.html#cfn-quicksight-analysis-linechartdefaultseriessettings-linestylesettings
@@ -9116,14 +9790,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic LineInterpolation { get; set; }
             /// <summary>
-            /// LineStyle
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartlinestylesettings.html#cfn-quicksight-analysis-linechartlinestylesettings-linestyle
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LineStyle { get; set; }
-            /// <summary>
             /// LineVisibility
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartlinestylesettings.html#cfn-quicksight-analysis-linechartlinestylesettings-linevisibility
             /// Required: False
@@ -9139,6 +9805,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic LineWidth { get; set; }
+            /// <summary>
+            /// LineStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartlinestylesettings.html#cfn-quicksight-analysis-linechartlinestylesettings-linestyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LineStyle { get; set; }
         }
 
         public class LineChartMarkerStyleSettings : Humidifier.Base.BaseSubResource, IHaveMarkerShape, IHaveMarkerSize, IHaveMarkerVisibility, IHaveMarkerColor
@@ -9152,14 +9826,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic MarkerShape { get; set; }
             /// <summary>
-            /// MarkerSize
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartmarkerstylesettings.html#cfn-quicksight-analysis-linechartmarkerstylesettings-markersize
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MarkerSize { get; set; }
-            /// <summary>
             /// MarkerVisibility
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartmarkerstylesettings.html#cfn-quicksight-analysis-linechartmarkerstylesettings-markervisibility
             /// Required: False
@@ -9167,6 +9833,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic MarkerVisibility { get; set; }
+            /// <summary>
+            /// MarkerSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartmarkerstylesettings.html#cfn-quicksight-analysis-linechartmarkerstylesettings-markersize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MarkerSize { get; set; }
             /// <summary>
             /// MarkerColor
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartmarkerstylesettings.html#cfn-quicksight-analysis-linechartmarkerstylesettings-markercolor
@@ -9180,13 +9854,13 @@ namespace Humidifier.QuickSight
         public class LineChartSeriesSettings : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLineChartLineStyleSettingsLineStyleSettings, IHaveQuickSightAnalysisTypesLineChartMarkerStyleSettingsMarkerStyleSettings
         {
             /// <summary>
-            /// LineStyleSettings
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartseriessettings.html#cfn-quicksight-analysis-linechartseriessettings-linestylesettings
+            /// DecalSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartseriessettings.html#cfn-quicksight-analysis-linechartseriessettings-decalsettings
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: LineChartLineStyleSettings
+            /// Type: DecalSettings
             /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.LineChartLineStyleSettings LineStyleSettings { get; set; }
+            public Humidifier.QuickSight.AnalysisTypes.DecalSettings DecalSettings { get; set; }
             /// <summary>
             /// MarkerStyleSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartseriessettings.html#cfn-quicksight-analysis-linechartseriessettings-markerstylesettings
@@ -9195,6 +9869,14 @@ namespace Humidifier.QuickSight
             /// Type: LineChartMarkerStyleSettings
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.LineChartMarkerStyleSettings MarkerStyleSettings { get; set; }
+            /// <summary>
+            /// LineStyleSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-linechartseriessettings.html#cfn-quicksight-analysis-linechartseriessettings-linestylesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineChartLineStyleSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LineChartLineStyleSettings LineStyleSettings { get; set; }
         }
 
         public class LineChartSortConfiguration : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesItemsLimitConfigurationSmallMultiplesLimitConfiguration
@@ -9329,14 +10011,6 @@ namespace Humidifier.QuickSight
         public class ListControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightAnalysisTypesListControlSelectAllOptionsSelectAllOptions
         {
             /// <summary>
-            /// TitleOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html#cfn-quicksight-analysis-listcontroldisplayoptions-titleoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: LabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
-            /// <summary>
             /// SearchOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html#cfn-quicksight-analysis-listcontroldisplayoptions-searchoptions
             /// Required: False
@@ -9360,6 +10034,14 @@ namespace Humidifier.QuickSight
             /// Type: SheetControlInfoIconLabelOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
+            /// TitleOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-listcontroldisplayoptions.html#cfn-quicksight-analysis-listcontroldisplayoptions-titleoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
         }
 
         public class ListControlSearchOptions : Humidifier.Base.BaseSubResource, IHaveVisibility
@@ -9869,14 +10551,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.NumberDisplayFormatConfiguration NumberDisplayFormatConfiguration { get; set; }
             /// <summary>
-            /// CurrencyDisplayFormatConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericformatconfiguration.html#cfn-quicksight-analysis-numericformatconfiguration-currencydisplayformatconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: CurrencyDisplayFormatConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.CurrencyDisplayFormatConfiguration CurrencyDisplayFormatConfiguration { get; set; }
-            /// <summary>
             /// PercentageDisplayFormatConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericformatconfiguration.html#cfn-quicksight-analysis-numericformatconfiguration-percentagedisplayformatconfiguration
             /// Required: False
@@ -9884,6 +10558,14 @@ namespace Humidifier.QuickSight
             /// Type: PercentageDisplayFormatConfiguration
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.PercentageDisplayFormatConfiguration PercentageDisplayFormatConfiguration { get; set; }
+            /// <summary>
+            /// CurrencyDisplayFormatConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-numericformatconfiguration.html#cfn-quicksight-analysis-numericformatconfiguration-currencydisplayformatconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CurrencyDisplayFormatConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.CurrencyDisplayFormatConfiguration CurrencyDisplayFormatConfiguration { get; set; }
         }
 
         public class NumericRangeFilter : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveFilterId, IHaveNullOption, IHaveSelectAllOptions, IHaveQuickSightAnalysisTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveIncludeMaximum, IHaveIncludeMinimum, IHaveQuickSightAnalysisTypesAggregationFunctionAggregationFunction
@@ -10481,14 +11163,6 @@ namespace Humidifier.QuickSight
         public class ParameterSelectableValues : Humidifier.Base.BaseSubResource, IHaveValues
         {
             /// <summary>
-            /// LinkToDataSetColumn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterselectablevalues.html#cfn-quicksight-analysis-parameterselectablevalues-linktodatasetcolumn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ColumnIdentifier
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier LinkToDataSetColumn { get; set; }
-            /// <summary>
             /// Values
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterselectablevalues.html#cfn-quicksight-analysis-parameterselectablevalues-values
             /// Required: False
@@ -10497,6 +11171,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Values { get; set; }
+            /// <summary>
+            /// LinkToDataSetColumn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameterselectablevalues.html#cfn-quicksight-analysis-parameterselectablevalues-linktodatasetcolumn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ColumnIdentifier
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier LinkToDataSetColumn { get; set; }
         }
 
         public class ParameterSliderControl : Humidifier.Base.BaseSubResource, IHaveTitle, IHaveSourceParameterName, IHaveParameterControlId, IHaveStepSize, IHaveMaximumValue, IHaveMinimumValue, IHaveQuickSightAnalysisTypesSliderControlDisplayOptionsDisplayOptions
@@ -10734,14 +11416,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Suffix { get; set; }
             /// <summary>
-            /// SeparatorConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-separatorconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: NumericSeparatorConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.NumericSeparatorConfiguration SeparatorConfiguration { get; set; }
-            /// <summary>
             /// Prefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-prefix
             /// Required: False
@@ -10749,6 +11423,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Prefix { get; set; }
+            /// <summary>
+            /// SeparatorConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-percentagedisplayformatconfiguration.html#cfn-quicksight-analysis-percentagedisplayformatconfiguration-separatorconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NumericSeparatorConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.NumericSeparatorConfiguration SeparatorConfiguration { get; set; }
         }
 
         public class PercentileAggregation : Humidifier.Base.BaseSubResource, IHavePercentileValue
@@ -10949,6 +11631,14 @@ namespace Humidifier.QuickSight
             /// Type: SmallMultiplesOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SmallMultiplesOptions SmallMultiplesOptions { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-piechartconfiguration.html#cfn-quicksight-analysis-piechartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// ValueLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-piechartconfiguration.html#cfn-quicksight-analysis-piechartconfiguration-valuelabeloptions
@@ -11246,6 +11936,14 @@ namespace Humidifier.QuickSight
             /// Type: PivotTableFieldOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.PivotTableFieldOptions FieldOptions { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// TotalOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-pivottableconfiguration.html#cfn-quicksight-analysis-pivottableconfiguration-totaloptions
@@ -12166,6 +12864,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic AlternateBandOddColor { get; set; }
             /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-radarchartconfiguration.html#cfn-quicksight-analysis-radarchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
+            /// <summary>
             /// AlternateBandEvenColor
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-radarchartconfiguration.html#cfn-quicksight-analysis-radarchartconfiguration-alternatebandevencolor
             /// Required: False
@@ -12530,14 +13236,6 @@ namespace Humidifier.QuickSight
         public class RelativeDateTimeControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveDateTimeFormat, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
         {
             /// <summary>
-            /// TitleOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatetimecontroldisplayoptions.html#cfn-quicksight-analysis-relativedatetimecontroldisplayoptions-titleoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: LabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
-            /// <summary>
             /// InfoIconLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatetimecontroldisplayoptions.html#cfn-quicksight-analysis-relativedatetimecontroldisplayoptions-infoiconlabeloptions
             /// Required: False
@@ -12545,6 +13243,14 @@ namespace Humidifier.QuickSight
             /// Type: SheetControlInfoIconLabelOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
+            /// TitleOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatetimecontroldisplayoptions.html#cfn-quicksight-analysis-relativedatetimecontroldisplayoptions-titleoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
             /// <summary>
             /// DateTimeFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-relativedatetimecontroldisplayoptions.html#cfn-quicksight-analysis-relativedatetimecontroldisplayoptions-datetimeformat
@@ -12795,6 +13501,14 @@ namespace Humidifier.QuickSight
             /// Type: SankeyDiagramFieldWells
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SankeyDiagramFieldWells FieldWells { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sankeydiagramchartconfiguration.html#cfn-quicksight-analysis-sankeydiagramchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
         }
 
         public class SankeyDiagramFieldWells : Humidifier.Base.BaseSubResource
@@ -12951,6 +13665,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ChartAxisLabelOptions YAxisLabelOptions { get; set; }
             /// <summary>
+            /// SortConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotconfiguration.html#cfn-quicksight-analysis-scatterplotconfiguration-sortconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ScatterPlotSortConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ScatterPlotSortConfiguration SortConfiguration { get; set; }
+            /// <summary>
             /// Legend
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotconfiguration.html#cfn-quicksight-analysis-scatterplotconfiguration-legend
             /// Required: False
@@ -12999,6 +13721,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ChartAxisLabelOptions XAxisLabelOptions { get; set; }
             /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotconfiguration.html#cfn-quicksight-analysis-scatterplotconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
+            /// <summary>
             /// VisualPalette
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotconfiguration.html#cfn-quicksight-analysis-scatterplotconfiguration-visualpalette
             /// Required: False
@@ -13034,6 +13764,18 @@ namespace Humidifier.QuickSight
             /// Type: ScatterPlotCategoricallyAggregatedFieldWells
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ScatterPlotCategoricallyAggregatedFieldWells ScatterPlotCategoricallyAggregatedFieldWells { get; set; }
+        }
+
+        public class ScatterPlotSortConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ScatterPlotLimitConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-scatterplotsortconfiguration.html#cfn-quicksight-analysis-scatterplotsortconfiguration-scatterplotlimitconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ItemsLimitConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ItemsLimitConfiguration ScatterPlotLimitConfiguration { get; set; }
         }
 
         public class ScatterPlotUnaggregatedFieldWells : Humidifier.Base.BaseSubResource
@@ -13390,15 +14132,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic SheetId { get; set; }
             /// <summary>
-            /// Images
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheet.html#cfn-quicksight-analysis-sheet-images
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: SheetImage
-            /// </summary>
-            public List<Humidifier.QuickSight.AnalysisTypes.SheetImage> Images { get; set; }
-            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheet.html#cfn-quicksight-analysis-sheet-name
             /// Required: False
@@ -13481,6 +14214,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public List<Humidifier.QuickSight.AnalysisTypes.SheetTextBox> TextBoxes { get; set; }
             /// <summary>
+            /// ContentType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-contenttype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ContentType { get; set; }
+            /// <summary>
             /// Layouts
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-layouts
             /// Required: False
@@ -13489,14 +14230,6 @@ namespace Humidifier.QuickSight
             /// ItemType: Layout
             /// </summary>
             public List<Humidifier.QuickSight.AnalysisTypes.Layout> Layouts { get; set; }
-            /// <summary>
-            /// ContentType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-contenttype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ContentType { get; set; }
             /// <summary>
             /// SheetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetdefinition.html#cfn-quicksight-analysis-sheetdefinition-sheetid
@@ -13720,6 +14453,47 @@ namespace Humidifier.QuickSight
             public dynamic PlainText { get; set; }
         }
 
+        public class SheetLayoutGroup : Humidifier.Base.BaseSubResource, IHaveId
+        {
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetlayoutgroup.html#cfn-quicksight-analysis-sheetlayoutgroup-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+            /// <summary>
+            /// Members
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetlayoutgroup.html#cfn-quicksight-analysis-sheetlayoutgroup-members
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SheetLayoutGroupMember
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.SheetLayoutGroupMember> Members { get; set; }
+        }
+
+        public class SheetLayoutGroupMember : Humidifier.Base.BaseSubResource, IHaveType, IHaveId
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetlayoutgroupmember.html#cfn-quicksight-analysis-sheetlayoutgroupmember-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheetlayoutgroupmember.html#cfn-quicksight-analysis-sheetlayoutgroupmember-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
         public class SheetTextBox : Humidifier.Base.BaseSubResource, IHaveContent, IHaveSheetTextBoxId
         {
             /// <summary>
@@ -13816,14 +14590,6 @@ namespace Humidifier.QuickSight
         public class SliderControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions
         {
             /// <summary>
-            /// TitleOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-slidercontroldisplayoptions.html#cfn-quicksight-analysis-slidercontroldisplayoptions-titleoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: LabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
-            /// <summary>
             /// InfoIconLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-slidercontroldisplayoptions.html#cfn-quicksight-analysis-slidercontroldisplayoptions-infoiconlabeloptions
             /// Required: False
@@ -13831,6 +14597,14 @@ namespace Humidifier.QuickSight
             /// Type: SheetControlInfoIconLabelOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
+            /// TitleOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-slidercontroldisplayoptions.html#cfn-quicksight-analysis-slidercontroldisplayoptions-titleoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LabelOptions TitleOptions { get; set; }
         }
 
         public class SmallMultiplesAxisProperties : Humidifier.Base.BaseSubResource, IHavePlacement, IHaveScale
@@ -13856,22 +14630,6 @@ namespace Humidifier.QuickSight
         public class SmallMultiplesOptions : Humidifier.Base.BaseSubResource, IHaveMaxVisibleRows, IHaveMaxVisibleColumns
         {
             /// <summary>
-            /// MaxVisibleRows
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-maxvisiblerows
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic MaxVisibleRows { get; set; }
-            /// <summary>
-            /// PanelConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-panelconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: PanelConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.PanelConfiguration PanelConfiguration { get; set; }
-            /// <summary>
             /// MaxVisibleColumns
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-maxvisiblecolumns
             /// Required: False
@@ -13880,6 +14638,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic MaxVisibleColumns { get; set; }
             /// <summary>
+            /// MaxVisibleRows
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-maxvisiblerows
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic MaxVisibleRows { get; set; }
+            /// <summary>
             /// XAxis
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-xaxis
             /// Required: False
@@ -13887,6 +14653,14 @@ namespace Humidifier.QuickSight
             /// Type: SmallMultiplesAxisProperties
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.SmallMultiplesAxisProperties XAxis { get; set; }
+            /// <summary>
+            /// PanelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-panelconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PanelConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.PanelConfiguration PanelConfiguration { get; set; }
             /// <summary>
             /// YAxis
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-smallmultiplesoptions.html#cfn-quicksight-analysis-smallmultiplesoptions-yaxis
@@ -13899,22 +14673,6 @@ namespace Humidifier.QuickSight
 
         public class Spacing : Humidifier.Base.BaseSubResource, IHaveLeft, IHaveTop, IHaveRight, IHaveBottom
         {
-            /// <summary>
-            /// Left
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-spacing.html#cfn-quicksight-analysis-spacing-left
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Left { get; set; }
-            /// <summary>
-            /// Top
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-spacing.html#cfn-quicksight-analysis-spacing-top
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Top { get; set; }
             /// <summary>
             /// Right
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-spacing.html#cfn-quicksight-analysis-spacing-right
@@ -13931,6 +14689,98 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Bottom { get; set; }
+            /// <summary>
+            /// Left
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-spacing.html#cfn-quicksight-analysis-spacing-left
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Left { get; set; }
+            /// <summary>
+            /// Top
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-spacing.html#cfn-quicksight-analysis-spacing-top
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Top { get; set; }
+        }
+
+        public class SparklinesOptions : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveLineInterpolation
+        {
+            /// <summary>
+            /// LineInterpolation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-lineinterpolation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LineInterpolation { get; set; }
+            /// <summary>
+            /// MaxValueMarker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-maxvaluemarker
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineChartMarkerStyleSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LineChartMarkerStyleSettings MaxValueMarker { get; set; }
+            /// <summary>
+            /// XAxisField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-xaxisfield
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DimensionField
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.DimensionField XAxisField { get; set; }
+            /// <summary>
+            /// AllPointsMarker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-allpointsmarker
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineChartMarkerStyleSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LineChartMarkerStyleSettings AllPointsMarker { get; set; }
+            /// <summary>
+            /// MinValueMarker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-minvaluemarker
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineChartMarkerStyleSettings
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.LineChartMarkerStyleSettings MinValueMarker { get; set; }
+            /// <summary>
+            /// FieldId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-fieldid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FieldId { get; set; }
+            /// <summary>
+            /// VisualType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-visualtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VisualType { get; set; }
+            /// <summary>
+            /// LineColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-linecolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LineColor { get; set; }
+            /// <summary>
+            /// YAxisBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sparklinesoptions.html#cfn-quicksight-analysis-sparklinesoptions-yaxisbehavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic YAxisBehavior { get; set; }
         }
 
         public class SpatialStaticFile : Humidifier.Base.BaseSubResource, IHaveStaticFileId, IHaveQuickSightAnalysisTypesStaticFileSourceSource
@@ -14263,14 +15113,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Thickness { get; set; }
             /// <summary>
-            /// Color
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableborderoptions.html#cfn-quicksight-analysis-tableborderoptions-color
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Color { get; set; }
-            /// <summary>
             /// Style
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableborderoptions.html#cfn-quicksight-analysis-tableborderoptions-style
             /// Required: False
@@ -14278,6 +15120,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Style { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableborderoptions.html#cfn-quicksight-analysis-tableborderoptions-color
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
         }
 
         public class TableCellConditionalFormatting : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightAnalysisTypesTextConditionalFormatTextFormat
@@ -14465,6 +15315,14 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.TableFieldOptions FieldOptions { get; set; }
             /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
+            /// <summary>
             /// TotalOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableconfiguration.html#cfn-quicksight-analysis-tableconfiguration-totaloptions
             /// Required: False
@@ -14622,6 +15480,15 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.TablePinnedFieldOptions PinnedFieldOptions { get; set; }
             /// <summary>
+            /// TransposedTableOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldoptions.html#cfn-quicksight-analysis-tablefieldoptions-transposedtableoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: TransposedTableOption
+            /// </summary>
+            public List<Humidifier.QuickSight.AnalysisTypes.TransposedTableOption> TransposedTableOptions { get; set; }
+            /// <summary>
             /// SelectedFieldOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tablefieldoptions.html#cfn-quicksight-analysis-tablefieldoptions-selectedfieldoptions
             /// Required: False
@@ -14674,6 +15541,14 @@ namespace Humidifier.QuickSight
 
         public class TableInlineVisualization : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// Sparklines
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableinlinevisualization.html#cfn-quicksight-analysis-tableinlinevisualization-sparklines
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SparklinesOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.SparklinesOptions Sparklines { get; set; }
             /// <summary>
             /// DataBars
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tableinlinevisualization.html#cfn-quicksight-analysis-tableinlinevisualization-databars
@@ -14935,6 +15810,14 @@ namespace Humidifier.QuickSight
         public class TextAreaControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightAnalysisTypesTextControlPlaceholderOptionsPlaceholderOptions
         {
             /// <summary>
+            /// InfoIconLabelOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textareacontroldisplayoptions.html#cfn-quicksight-analysis-textareacontroldisplayoptions-infoiconlabeloptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetControlInfoIconLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
             /// TitleOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textareacontroldisplayoptions.html#cfn-quicksight-analysis-textareacontroldisplayoptions-titleoptions
             /// Required: False
@@ -14950,14 +15833,6 @@ namespace Humidifier.QuickSight
             /// Type: TextControlPlaceholderOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.TextControlPlaceholderOptions PlaceholderOptions { get; set; }
-            /// <summary>
-            /// InfoIconLabelOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textareacontroldisplayoptions.html#cfn-quicksight-analysis-textareacontroldisplayoptions-infoiconlabeloptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SheetControlInfoIconLabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
         }
 
         public class TextConditionalFormat : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesConditionalFormattingColorTextColor, IHaveQuickSightAnalysisTypesConditionalFormattingIconIcon, IHaveQuickSightAnalysisTypesConditionalFormattingColorBackgroundColor
@@ -15003,6 +15878,14 @@ namespace Humidifier.QuickSight
         public class TextFieldControlDisplayOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightAnalysisTypesLabelOptionsTitleOptions, IHaveQuickSightAnalysisTypesSheetControlInfoIconLabelOptionsInfoIconLabelOptions, IHaveQuickSightAnalysisTypesTextControlPlaceholderOptionsPlaceholderOptions
         {
             /// <summary>
+            /// InfoIconLabelOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textfieldcontroldisplayoptions.html#cfn-quicksight-analysis-textfieldcontroldisplayoptions-infoiconlabeloptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetControlInfoIconLabelOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
+            /// <summary>
             /// TitleOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textfieldcontroldisplayoptions.html#cfn-quicksight-analysis-textfieldcontroldisplayoptions-titleoptions
             /// Required: False
@@ -15018,14 +15901,6 @@ namespace Humidifier.QuickSight
             /// Type: TextControlPlaceholderOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.TextControlPlaceholderOptions PlaceholderOptions { get; set; }
-            /// <summary>
-            /// InfoIconLabelOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-textfieldcontroldisplayoptions.html#cfn-quicksight-analysis-textfieldcontroldisplayoptions-infoiconlabeloptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SheetControlInfoIconLabelOptions
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.SheetControlInfoIconLabelOptions InfoIconLabelOptions { get; set; }
         }
 
         public class ThousandSeparatorOptions : Humidifier.Base.BaseSubResource, IHaveVisibility, IHaveSymbol
@@ -15046,6 +15921,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic Visibility { get; set; }
+            /// <summary>
+            /// GroupingStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-thousandseparatoroptions.html#cfn-quicksight-analysis-thousandseparatoroptions-groupingstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupingStyle { get; set; }
         }
 
         public class TimeBasedForecastProperties : Humidifier.Base.BaseSubResource, IHavePeriodsBackward, IHavePeriodsForward, IHavePredictionInterval, IHaveSeasonality, IHaveUpperBoundary, IHaveLowerBoundary
@@ -15283,14 +16166,6 @@ namespace Humidifier.QuickSight
         public class TimeRangeFilterValue : Humidifier.Base.BaseSubResource, IHaveStaticValue, IHaveParameter, IHaveQuickSightAnalysisTypesRollingDateConfigurationRollingDate
         {
             /// <summary>
-            /// RollingDate
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-timerangefiltervalue.html#cfn-quicksight-analysis-timerangefiltervalue-rollingdate
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: RollingDateConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.RollingDateConfiguration RollingDate { get; set; }
-            /// <summary>
             /// StaticValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-timerangefiltervalue.html#cfn-quicksight-analysis-timerangefiltervalue-staticvalue
             /// Required: False
@@ -15298,6 +16173,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic StaticValue { get; set; }
+            /// <summary>
+            /// RollingDate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-timerangefiltervalue.html#cfn-quicksight-analysis-timerangefiltervalue-rollingdate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RollingDateConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.RollingDateConfiguration RollingDate { get; set; }
             /// <summary>
             /// Parameter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-timerangefiltervalue.html#cfn-quicksight-analysis-timerangefiltervalue-parameter
@@ -15331,6 +16214,14 @@ namespace Humidifier.QuickSight
         public class TooltipOptions : Humidifier.Base.BaseSubResource, IHaveTooltipVisibility, IHaveSelectedTooltipType
         {
             /// <summary>
+            /// FieldBasedTooltip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tooltipoptions.html#cfn-quicksight-analysis-tooltipoptions-fieldbasedtooltip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FieldBasedTooltip
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FieldBasedTooltip FieldBasedTooltip { get; set; }
+            /// <summary>
             /// SelectedTooltipType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tooltipoptions.html#cfn-quicksight-analysis-tooltipoptions-selectedtooltiptype
             /// Required: False
@@ -15346,14 +16237,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic TooltipVisibility { get; set; }
-            /// <summary>
-            /// FieldBasedTooltip
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-tooltipoptions.html#cfn-quicksight-analysis-tooltipoptions-fieldbasedtooltip
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FieldBasedTooltip
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FieldBasedTooltip FieldBasedTooltip { get; set; }
         }
 
         public class TopBottomFilter : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveTimeGranularity, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveFilterId, IHaveQuickSightAnalysisTypesDefaultFilterControlConfigurationDefaultFilterControlConfiguration, IHaveLimit
@@ -15537,6 +16420,46 @@ namespace Humidifier.QuickSight
             public dynamic Name { get; set; }
         }
 
+        public class TopicIdentifierDeclaration : Humidifier.Base.BaseSubResource, IHaveTopicArn, IHaveIdentifier
+        {
+            /// <summary>
+            /// Identifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topicidentifierdeclaration.html#cfn-quicksight-analysis-topicidentifierdeclaration-identifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Identifier { get; set; }
+            /// <summary>
+            /// TopicArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topicidentifierdeclaration.html#cfn-quicksight-analysis-topicidentifierdeclaration-topicarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicArn { get; set; }
+        }
+
+        public class TopicReference : Humidifier.Base.BaseSubResource, IHaveTopicArn
+        {
+            /// <summary>
+            /// TopicArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topicreference.html#cfn-quicksight-analysis-topicreference-topicarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicArn { get; set; }
+            /// <summary>
+            /// TopicPlaceholder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-topicreference.html#cfn-quicksight-analysis-topicreference-topicplaceholder
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicPlaceholder { get; set; }
+        }
+
         public class TotalAggregationComputation : Humidifier.Base.BaseSubResource, IHaveName, IHaveComputationId, IHaveQuickSightAnalysisTypesMeasureFieldValue
         {
             /// <summary>
@@ -15650,6 +16573,34 @@ namespace Humidifier.QuickSight
             public dynamic TotalsVisibility { get; set; }
         }
 
+        public class TransposedTableOption : Humidifier.Base.BaseSubResource, IHaveColumnIndex, IHaveColumnType
+        {
+            /// <summary>
+            /// ColumnWidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-transposedtableoption.html#cfn-quicksight-analysis-transposedtableoption-columnwidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ColumnWidth { get; set; }
+            /// <summary>
+            /// ColumnIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-transposedtableoption.html#cfn-quicksight-analysis-transposedtableoption-columnindex
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic ColumnIndex { get; set; }
+            /// <summary>
+            /// ColumnType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-transposedtableoption.html#cfn-quicksight-analysis-transposedtableoption-columntype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ColumnType { get; set; }
+        }
+
         public class TreeMapAggregatedFieldWells : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -15747,6 +16698,14 @@ namespace Humidifier.QuickSight
             /// Type: ColorScale
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ColorScale ColorScale { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// GroupLabelOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-treemapconfiguration.html#cfn-quicksight-analysis-treemapconfiguration-grouplabeloptions
@@ -15867,14 +16826,6 @@ namespace Humidifier.QuickSight
         public class UnaggregatedField : Humidifier.Base.BaseSubResource, IHaveFieldId, IHaveQuickSightAnalysisTypesColumnIdentifierColumn, IHaveQuickSightAnalysisTypesFormatConfigurationFormatConfiguration
         {
             /// <summary>
-            /// FormatConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-unaggregatedfield.html#cfn-quicksight-analysis-unaggregatedfield-formatconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FormatConfiguration
-            /// </summary>
-            public Humidifier.QuickSight.AnalysisTypes.FormatConfiguration FormatConfiguration { get; set; }
-            /// <summary>
             /// Column
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-unaggregatedfield.html#cfn-quicksight-analysis-unaggregatedfield-column
             /// Required: True
@@ -15882,6 +16833,14 @@ namespace Humidifier.QuickSight
             /// Type: ColumnIdentifier
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.ColumnIdentifier Column { get; set; }
+            /// <summary>
+            /// FormatConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-unaggregatedfield.html#cfn-quicksight-analysis-unaggregatedfield-formatconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FormatConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.FormatConfiguration FormatConfiguration { get; set; }
             /// <summary>
             /// FieldId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-unaggregatedfield.html#cfn-quicksight-analysis-unaggregatedfield-fieldid
@@ -16159,14 +17118,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public dynamic Status { get; set; }
             /// <summary>
-            /// Trigger
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualcustomaction.html#cfn-quicksight-analysis-visualcustomaction-trigger
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Trigger { get; set; }
-            /// <summary>
             /// CustomActionId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualcustomaction.html#cfn-quicksight-analysis-visualcustomaction-customactionid
             /// Required: True
@@ -16174,6 +17125,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic CustomActionId { get; set; }
+            /// <summary>
+            /// Trigger
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualcustomaction.html#cfn-quicksight-analysis-visualcustomaction-trigger
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Trigger { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualcustomaction.html#cfn-quicksight-analysis-visualcustomaction-name
@@ -16227,6 +17186,38 @@ namespace Humidifier.QuickSight
             /// Type: CustomActionURLOperation
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.CustomActionURLOperation URLOperation { get; set; }
+        }
+
+        public class VisualInteractionOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VisualMenuOption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualinteractionoptions.html#cfn-quicksight-analysis-visualinteractionoptions-visualmenuoption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualMenuOption
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualMenuOption VisualMenuOption { get; set; }
+            /// <summary>
+            /// ContextMenuOption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualinteractionoptions.html#cfn-quicksight-analysis-visualinteractionoptions-contextmenuoption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ContextMenuOption
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.ContextMenuOption ContextMenuOption { get; set; }
+        }
+
+        public class VisualMenuOption : Humidifier.Base.BaseSubResource, IHaveAvailabilityStatus
+        {
+            /// <summary>
+            /// AvailabilityStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-visualmenuoption.html#cfn-quicksight-analysis-visualmenuoption-availabilitystatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityStatus { get; set; }
         }
 
         public class VisualPalette : Humidifier.Base.BaseSubResource, IHaveChartColor
@@ -16399,6 +17390,14 @@ namespace Humidifier.QuickSight
             /// Type: WaterfallChartColorConfiguration
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.WaterfallChartColorConfiguration ColorConfiguration { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-waterfallchartconfiguration.html#cfn-quicksight-analysis-waterfallchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
             /// <summary>
             /// CategoryAxisDisplayOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-waterfallchartconfiguration.html#cfn-quicksight-analysis-waterfallchartconfiguration-categoryaxisdisplayoptions
@@ -16664,6 +17663,14 @@ namespace Humidifier.QuickSight
             /// Type: WordCloudOptions
             /// </summary>
             public Humidifier.QuickSight.AnalysisTypes.WordCloudOptions WordCloudOptions { get; set; }
+            /// <summary>
+            /// Interactions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-wordcloudchartconfiguration.html#cfn-quicksight-analysis-wordcloudchartconfiguration-interactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualInteractionOptions
+            /// </summary>
+            public Humidifier.QuickSight.AnalysisTypes.VisualInteractionOptions Interactions { get; set; }
         }
 
         public class WordCloudFieldWells : Humidifier.Base.BaseSubResource

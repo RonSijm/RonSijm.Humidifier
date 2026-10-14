@@ -1,6 +1,6 @@
 namespace Humidifier.EntityResolution
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PolicyStatement : Humidifier.Base.BaseResource, IHaveArn, IHaveAction, IHavePrincipal, IHaveCondition, IHaveStatementId, IHaveEffect
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserProfileTypes;
 
     public class UserProfile : Humidifier.Base.BaseResource, IHaveStatus, IHaveDomainIdentifier, IHaveUserIdentifier
@@ -40,6 +40,14 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic UserType { get; set; }
+        /// <summary>
+        /// SessionName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-userprofile.html#cfn-datazone-userprofile-sessionname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SessionName { get; set; }
 
         /// <summary>
         /// DomainIdentifier
@@ -57,6 +65,14 @@ namespace Humidifier.DataZone
         public class IamUserProfileDetails : Humidifier.Base.BaseSubResource, IHaveArn
         {
             /// <summary>
+            /// GroupProfileId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-userprofile-iamuserprofiledetails.html#cfn-datazone-userprofile-iamuserprofiledetails-groupprofileid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupProfileId { get; set; }
+            /// <summary>
             /// Arn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-userprofile-iamuserprofiledetails.html#cfn-datazone-userprofile-iamuserprofiledetails-arn
             /// Required: False
@@ -64,6 +80,14 @@ namespace Humidifier.DataZone
             /// PrimitiveType: String
             /// </summary>
             public dynamic Arn { get; set; }
+            /// <summary>
+            /// SessionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-userprofile-iamuserprofiledetails.html#cfn-datazone-userprofile-iamuserprofiledetails-sessionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SessionName { get; set; }
         }
 
         public class SsoUserProfileDetails : Humidifier.Base.BaseSubResource, IHaveUsername, IHaveFirstName, IHaveLastName

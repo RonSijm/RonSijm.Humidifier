@@ -1,8 +1,9 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using ContactFlowModuleTypes;
 
-    public class ContactFlowModule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveState, IHaveInstanceArn, IHaveContent
+    public class ContactFlowModule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveState, IHaveInstanceArn, IHaveContent, IHaveSettings
     {
         public class Attributes
         {
@@ -11,6 +12,14 @@ namespace Humidifier.Connect
         }
 
         public override string AWSTypeName { get => AWS.Connect.ContactFlowModule; }
+        /// <summary>
+        /// ExternalInvocationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-externalinvocationconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ExternalInvocationConfiguration
+        /// </summary>
+        public Humidifier.Connect.ContactFlowModuleTypes.ExternalInvocationConfiguration ExternalInvocationConfiguration { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-description
@@ -55,7 +64,30 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// Settings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-contactflowmodule.html#cfn-connect-contactflowmodule-settings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Settings { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace ContactFlowModuleTypes
+    {
+        public class ExternalInvocationConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-contactflowmodule-externalinvocationconfiguration.html#cfn-connect-contactflowmodule-externalinvocationconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
     }
 }

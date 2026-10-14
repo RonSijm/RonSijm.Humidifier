@@ -1,6 +1,6 @@
 namespace Humidifier.VpcLattice
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveResourceArn
     {

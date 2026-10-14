@@ -1,11 +1,12 @@
 namespace Humidifier.MemoryDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveSubnetIds, IHaveSubnetGroupName
     {
         public class Attributes
         {
+            public static string SupportedNetworkTypes =  "SupportedNetworkTypes" ;
             public static string ARN =  "ARN" ;
         }
 
@@ -38,6 +39,6 @@ namespace Humidifier.MemoryDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

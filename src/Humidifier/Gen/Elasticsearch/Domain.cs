@@ -1,6 +1,6 @@
 namespace Humidifier.Elasticsearch
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainTypes;
 
     public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveAccessPolicies
@@ -120,7 +120,7 @@ namespace Humidifier.Elasticsearch
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// VPCOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions

@@ -1,6 +1,6 @@
 namespace Humidifier.Redshift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
     public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveEncrypted, IHavePubliclyAccessible, IHaveClusterIdentifier, IHaveMasterUserPassword, IHaveNodeType, IHaveMasterUsername, IHaveMultiAZ, IHaveSnapshotIdentifier, IHaveNumberOfNodes, IHaveClusterType, IHaveIamRoles, IHaveEnhancedVpcRouting, IHaveOwnerAccount, IHaveDBName, IHaveDestinationRegion, IHaveNamespaceResourcePolicy, IHaveClassic
@@ -117,7 +117,7 @@ namespace Humidifier.Redshift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// SnapshotClusterIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-snapshotclusteridentifier

@@ -1,6 +1,6 @@
 namespace Humidifier.WAF
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IPSetTypes;
 
     public class IPSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

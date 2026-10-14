@@ -1,9 +1,9 @@
 namespace Humidifier.RUM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AppMonitorTypes;
 
-    public class AppMonitor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDomain
+    public class AppMonitor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDomain, IHavePlatform
     {
         public class Attributes
         {
@@ -20,6 +20,14 @@ namespace Humidifier.RUM
         /// </summary>
         public Humidifier.RUM.AppMonitorTypes.CustomEvents CustomEvents { get; set; }
         /// <summary>
+        /// Platform
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-platform
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Platform { get; set; }
+        /// <summary>
         /// CwLogEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-cwlogenabled
         /// Required: False
@@ -27,15 +35,38 @@ namespace Humidifier.RUM
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic CwLogEnabled { get; set; }
-
+        /// <summary>
+        /// ResourcePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-resourcepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ResourcePolicy
+        /// </summary>
+        public Humidifier.RUM.AppMonitorTypes.ResourcePolicy ResourcePolicy { get; set; }
+        /// <summary>
+        /// DomainList
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-domainlist
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic DomainList { get; set; }
+        /// <summary>
+        /// DeobfuscationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-deobfuscationconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DeobfuscationConfiguration
+        /// </summary>
+        public Humidifier.RUM.AppMonitorTypes.DeobfuscationConfiguration DeobfuscationConfiguration { get; set; }
         /// <summary>
         /// Domain
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-domain
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic Domain { get; set; }
         /// <summary>
         /// AppMonitorConfiguration
@@ -53,7 +84,7 @@ namespace Humidifier.RUM
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -160,6 +191,38 @@ namespace Humidifier.RUM
             public dynamic Status { get; set; }
         }
 
+        public class DeobfuscationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// JavaScriptSourceMaps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-deobfuscationconfiguration.html#cfn-rum-appmonitor-deobfuscationconfiguration-javascriptsourcemaps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: JavaScriptSourceMaps
+            /// </summary>
+            public Humidifier.RUM.AppMonitorTypes.JavaScriptSourceMaps JavaScriptSourceMaps { get; set; }
+        }
+
+        public class JavaScriptSourceMaps : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveS3Uri
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-javascriptsourcemaps.html#cfn-rum-appmonitor-javascriptsourcemaps-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// S3Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-javascriptsourcemaps.html#cfn-rum-appmonitor-javascriptsourcemaps-s3uri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3Uri { get; set; }
+        }
+
         public class MetricDefinition : Humidifier.Base.BaseSubResource, IHaveName, IHaveNamespace_, IHaveEventPattern, IHaveValueKey, IHaveUnitLabel
         {
             /// <summary>
@@ -248,6 +311,26 @@ namespace Humidifier.RUM
             /// PrimitiveType: String
             /// </summary>
             public dynamic DestinationArn { get; set; }
+        }
+
+        public class ResourcePolicy : Humidifier.Base.BaseSubResource, IHavePolicyDocument
+        {
+            /// <summary>
+            /// PolicyRevisionId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-resourcepolicy.html#cfn-rum-appmonitor-resourcepolicy-policyrevisionid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyRevisionId { get; set; }
+            /// <summary>
+            /// PolicyDocument
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-resourcepolicy.html#cfn-rum-appmonitor-resourcepolicy-policydocument
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyDocument { get; set; }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.InspectorV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CisScanConfigurationTypes;
 
     public class CisScanConfiguration : Humidifier.Base.BaseResource

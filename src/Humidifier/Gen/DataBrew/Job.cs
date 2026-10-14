@@ -1,6 +1,6 @@
 namespace Humidifier.DataBrew
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using JobTypes;
 
     public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveRoleArn, IHaveMaxCapacity, IHaveTimeout, IHaveEncryptionKeyArn, IHaveDatasetName, IHaveMaxRetries, IHaveProjectName, IHaveEncryptionMode
@@ -130,11 +130,11 @@ namespace Humidifier.DataBrew
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// JobSample
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-jobsample
@@ -366,7 +366,7 @@ namespace Humidifier.DataBrew
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-jobsample.html#cfn-databrew-job-jobsample-size
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic Size { get; set; }
             /// <summary>

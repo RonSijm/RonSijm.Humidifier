@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AcceptedPortfolioShare : Humidifier.Base.BaseResource, IHaveAcceptLanguage, IHavePortfolioId
     {

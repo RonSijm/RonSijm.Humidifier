@@ -1,6 +1,6 @@
 namespace Humidifier.EMR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InstanceFleetConfigTypes;
 
     public class InstanceFleetConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterId, IHaveTargetOnDemandCapacity, IHaveTargetSpotCapacity
@@ -214,7 +214,7 @@ namespace Humidifier.EMR
             /// CustomAmiId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-customamiid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CustomAmiId { get; set; }

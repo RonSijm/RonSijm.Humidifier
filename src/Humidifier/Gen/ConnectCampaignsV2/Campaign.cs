@@ -1,9 +1,9 @@
 namespace Humidifier.ConnectCampaignsV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CampaignTypes;
 
-    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
+    public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType
     {
         public class Attributes
         {
@@ -19,16 +19,30 @@ namespace Humidifier.ConnectCampaignsV2
         /// Type: CommunicationLimitsConfig
         /// </summary>
         public Humidifier.ConnectCampaignsV2.CampaignTypes.CommunicationLimitsConfig CommunicationLimitsOverride { get; set; }
-
+        /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaignsv2-campaign.html#cfn-connectcampaignsv2-campaign-type
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Type { get; set; }
         /// <summary>
         /// ChannelSubtypeConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaignsv2-campaign.html#cfn-connectcampaignsv2-campaign-channelsubtypeconfig
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: ChannelSubtypeConfig
         /// </summary>
-        [Required]
         public Humidifier.ConnectCampaignsV2.CampaignTypes.ChannelSubtypeConfig ChannelSubtypeConfig { get; set; }
+        /// <summary>
+        /// EntryLimitsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaignsv2-campaign.html#cfn-connectcampaignsv2-campaign-entrylimitsconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EntryLimitsConfig
+        /// </summary>
+        public Humidifier.ConnectCampaignsV2.CampaignTypes.EntryLimitsConfig EntryLimitsConfig { get; set; }
         /// <summary>
         /// ConnectCampaignFlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connectcampaignsv2-campaign.html#cfn-connectcampaignsv2-campaign-connectcampaignflowarn
@@ -79,7 +93,7 @@ namespace Humidifier.ConnectCampaignsV2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -131,6 +145,14 @@ namespace Humidifier.ConnectCampaignsV2
             /// Type: SmsChannelSubtypeConfig
             /// </summary>
             public Humidifier.ConnectCampaignsV2.CampaignTypes.SmsChannelSubtypeConfig Sms { get; set; }
+            /// <summary>
+            /// WhatsApp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-channelsubtypeconfig.html#cfn-connectcampaignsv2-campaign-channelsubtypeconfig-whatsapp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WhatsAppChannelSubtypeConfig
+            /// </summary>
+            public Humidifier.ConnectCampaignsV2.CampaignTypes.WhatsAppChannelSubtypeConfig WhatsApp { get; set; }
         }
 
         public class CommunicationLimit : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveFrequency
@@ -184,6 +206,14 @@ namespace Humidifier.ConnectCampaignsV2
             /// Type: CommunicationLimits
             /// </summary>
             public Humidifier.ConnectCampaignsV2.CampaignTypes.CommunicationLimits AllChannelsSubtypes { get; set; }
+            /// <summary>
+            /// InstanceLimitsHandling
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-communicationlimitsconfig.html#cfn-connectcampaignsv2-campaign-communicationlimitsconfig-instancelimitshandling
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceLimitsHandling { get; set; }
         }
 
         public class CommunicationTimeConfig : Humidifier.Base.BaseSubResource
@@ -220,6 +250,14 @@ namespace Humidifier.ConnectCampaignsV2
             /// Type: TimeWindow
             /// </summary>
             public Humidifier.ConnectCampaignsV2.CampaignTypes.TimeWindow Sms { get; set; }
+            /// <summary>
+            /// WhatsApp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-communicationtimeconfig.html#cfn-connectcampaignsv2-campaign-communicationtimeconfig-whatsapp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TimeWindow
+            /// </summary>
+            public Humidifier.ConnectCampaignsV2.CampaignTypes.TimeWindow WhatsApp { get; set; }
         }
 
         public class DailyHour : Humidifier.Base.BaseSubResource, IHaveKey
@@ -311,6 +349,26 @@ namespace Humidifier.ConnectCampaignsV2
             public dynamic AgentlessConfig { get; set; }
         }
 
+        public class EntryLimitsConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MaxEntryCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-entrylimitsconfig.html#cfn-connectcampaignsv2-campaign-entrylimitsconfig-maxentrycount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxEntryCount { get; set; }
+            /// <summary>
+            /// MinEntryInterval
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-entrylimitsconfig.html#cfn-connectcampaignsv2-campaign-entrylimitsconfig-minentryinterval
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MinEntryInterval { get; set; }
+        }
+
         public class EventTrigger : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -342,6 +400,14 @@ namespace Humidifier.ConnectCampaignsV2
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic LocalTimeZoneDetection { get; set; }
+            /// <summary>
+            /// LocalTimeZoneDetectionScope
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-localtimezoneconfig.html#cfn-connectcampaignsv2-campaign-localtimezoneconfig-localtimezonedetectionscope
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LocalTimeZoneDetectionScope { get; set; }
         }
 
         public class OpenHours : Humidifier.Base.BaseSubResource
@@ -362,6 +428,35 @@ namespace Humidifier.ConnectCampaignsV2
             /// <summary>
             /// BandwidthAllocation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-predictiveconfig.html#cfn-connectcampaignsv2-campaign-predictiveconfig-bandwidthallocation
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic BandwidthAllocation { get; set; }
+        }
+
+        public class PreviewConfig : Humidifier.Base.BaseSubResource, IHaveBandwidthAllocation
+        {
+            /// <summary>
+            /// TimeoutConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-previewconfig.html#cfn-connectcampaignsv2-campaign-previewconfig-timeoutconfig
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: TimeoutConfig
+            /// </summary>
+            public Humidifier.ConnectCampaignsV2.CampaignTypes.TimeoutConfig TimeoutConfig { get; set; }
+            /// <summary>
+            /// AgentActions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-previewconfig.html#cfn-connectcampaignsv2-campaign-previewconfig-agentactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AgentActions { get; set; }
+            /// <summary>
+            /// BandwidthAllocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-previewconfig.html#cfn-connectcampaignsv2-campaign-previewconfig-bandwidthallocation
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Double
@@ -577,6 +672,14 @@ namespace Humidifier.ConnectCampaignsV2
             /// </summary>
             public dynamic ConnectContactFlowId { get; set; }
             /// <summary>
+            /// RingTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-telephonyoutboundconfig.html#cfn-connectcampaignsv2-campaign-telephonyoutboundconfig-ringtimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RingTimeout { get; set; }
+            /// <summary>
             /// AnswerMachineDetectionConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-telephonyoutboundconfig.html#cfn-connectcampaignsv2-campaign-telephonyoutboundconfig-answermachinedetectionconfig
             /// Required: False
@@ -620,6 +723,14 @@ namespace Humidifier.ConnectCampaignsV2
             /// PrimitiveType: Json
             /// </summary>
             public dynamic AgentlessConfig { get; set; }
+            /// <summary>
+            /// PreviewConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-telephonyoutboundmode.html#cfn-connectcampaignsv2-campaign-telephonyoutboundmode-previewconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PreviewConfig
+            /// </summary>
+            public Humidifier.ConnectCampaignsV2.CampaignTypes.PreviewConfig PreviewConfig { get; set; }
         }
 
         public class TimeRange : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveEndTime
@@ -660,6 +771,78 @@ namespace Humidifier.ConnectCampaignsV2
             /// Type: RestrictedPeriods
             /// </summary>
             public Humidifier.ConnectCampaignsV2.CampaignTypes.RestrictedPeriods RestrictedPeriods { get; set; }
+        }
+
+        public class TimeoutConfig : Humidifier.Base.BaseSubResource, IHaveDurationInSeconds
+        {
+            /// <summary>
+            /// DurationInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-timeoutconfig.html#cfn-connectcampaignsv2-campaign-timeoutconfig-durationinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DurationInSeconds { get; set; }
+        }
+
+        public class WhatsAppChannelSubtypeConfig : Humidifier.Base.BaseSubResource, IHaveCapacity
+        {
+            /// <summary>
+            /// OutboundMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-whatsappchannelsubtypeconfig.html#cfn-connectcampaignsv2-campaign-whatsappchannelsubtypeconfig-outboundmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: WhatsAppOutboundMode
+            /// </summary>
+            public Humidifier.ConnectCampaignsV2.CampaignTypes.WhatsAppOutboundMode OutboundMode { get; set; }
+            /// <summary>
+            /// Capacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-whatsappchannelsubtypeconfig.html#cfn-connectcampaignsv2-campaign-whatsappchannelsubtypeconfig-capacity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Capacity { get; set; }
+            /// <summary>
+            /// DefaultOutboundConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-whatsappchannelsubtypeconfig.html#cfn-connectcampaignsv2-campaign-whatsappchannelsubtypeconfig-defaultoutboundconfig
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: WhatsAppOutboundConfig
+            /// </summary>
+            public Humidifier.ConnectCampaignsV2.CampaignTypes.WhatsAppOutboundConfig DefaultOutboundConfig { get; set; }
+        }
+
+        public class WhatsAppOutboundConfig : Humidifier.Base.BaseSubResource, IHaveWisdomTemplateArn
+        {
+            /// <summary>
+            /// ConnectSourcePhoneNumberArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-whatsappoutboundconfig.html#cfn-connectcampaignsv2-campaign-whatsappoutboundconfig-connectsourcephonenumberarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectSourcePhoneNumberArn { get; set; }
+            /// <summary>
+            /// WisdomTemplateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-whatsappoutboundconfig.html#cfn-connectcampaignsv2-campaign-whatsappoutboundconfig-wisdomtemplatearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WisdomTemplateArn { get; set; }
+        }
+
+        public class WhatsAppOutboundMode : Humidifier.Base.BaseSubResource, IHaveAgentlessConfig
+        {
+            /// <summary>
+            /// AgentlessConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaignsv2-campaign-whatsappoutboundmode.html#cfn-connectcampaignsv2-campaign-whatsappoutboundmode-agentlessconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AgentlessConfig { get; set; }
         }
     }
 }

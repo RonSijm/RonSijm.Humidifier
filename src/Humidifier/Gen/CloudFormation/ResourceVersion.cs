@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResourceVersionTypes;
 
     public class ResourceVersion : Humidifier.Base.BaseResource, IHaveExecutionRoleArn, IHaveTypeName, IHaveSchemaHandlerPackage

@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataSourceTypes;
 
     public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveKnowledgeBaseId
@@ -72,6 +72,18 @@ namespace Humidifier.Bedrock
 
     namespace DataSourceTypes
     {
+        public class AudioExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AudioExtractionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-audioextractionconfiguration.html#cfn-bedrock-datasource-audioextractionconfiguration-audioextractionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AudioExtractionStatus { get; set; }
+        }
+
         public class BedrockDataAutomationConfiguration : Humidifier.Base.BaseSubResource, IHaveParsingModality
         {
             /// <summary>
@@ -110,6 +122,26 @@ namespace Humidifier.Bedrock
             /// Type: ParsingPrompt
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.ParsingPrompt ParsingPrompt { get; set; }
+        }
+
+        public class BedrockFoundationModelContextEnrichmentConfiguration : Humidifier.Base.BaseSubResource, IHaveModelArn
+        {
+            /// <summary>
+            /// EnrichmentStrategyConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-bedrockfoundationmodelcontextenrichmentconfiguration.html#cfn-bedrock-datasource-bedrockfoundationmodelcontextenrichmentconfiguration-enrichmentstrategyconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: EnrichmentStrategyConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.EnrichmentStrategyConfiguration EnrichmentStrategyConfiguration { get; set; }
+            /// <summary>
+            /// ModelArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-bedrockfoundationmodelcontextenrichmentconfiguration.html#cfn-bedrock-datasource-bedrockfoundationmodelcontextenrichmentconfiguration-modelarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ModelArn { get; set; }
         }
 
         public class ChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveChunkingStrategy
@@ -216,16 +248,28 @@ namespace Humidifier.Bedrock
             public dynamic CredentialsSecretArn { get; set; }
         }
 
-        public class CrawlFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        public class ContextEnrichmentConfiguration : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
             /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-crawlfilterconfiguration.html#cfn-bedrock-datasource-crawlfilterconfiguration-type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-contextenrichmentconfiguration.html#cfn-bedrock-datasource-contextenrichmentconfiguration-type
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
+            /// <summary>
+            /// BedrockFoundationModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-contextenrichmentconfiguration.html#cfn-bedrock-datasource-contextenrichmentconfiguration-bedrockfoundationmodelconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockFoundationModelContextEnrichmentConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.BedrockFoundationModelContextEnrichmentConfiguration BedrockFoundationModelConfiguration { get; set; }
+        }
+
+        public class CrawlFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
             /// <summary>
             /// PatternObjectFilter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-crawlfilterconfiguration.html#cfn-bedrock-datasource-crawlfilterconfiguration-patternobjectfilter
@@ -234,6 +278,14 @@ namespace Humidifier.Bedrock
             /// Type: PatternObjectFilterConfiguration
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.PatternObjectFilterConfiguration PatternObjectFilter { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-crawlfilterconfiguration.html#cfn-bedrock-datasource-crawlfilterconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
 
         public class CustomTransformationConfiguration : Humidifier.Base.BaseSubResource
@@ -284,6 +336,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.SalesforceDataSourceConfiguration SalesforceConfiguration { get; set; }
             /// <summary>
+            /// ManagedKnowledgeBaseConnectorConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-datasourceconfiguration.html#cfn-bedrock-datasource-datasourceconfiguration-managedknowledgebaseconnectorconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedKnowledgeBaseConnectorConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.ManagedKnowledgeBaseConnectorConfiguration ManagedKnowledgeBaseConnectorConfiguration { get; set; }
+            /// <summary>
             /// ConfluenceConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-datasourceconfiguration.html#cfn-bedrock-datasource-datasourceconfiguration-confluenceconfiguration
             /// Required: False
@@ -307,6 +367,58 @@ namespace Humidifier.Bedrock
             /// Type: WebDataSourceConfiguration
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.WebDataSourceConfiguration WebConfiguration { get; set; }
+        }
+
+        public class DayOfMonth : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LastDayOfMonth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-dayofmonth.html#cfn-bedrock-datasource-dayofmonth-lastdayofmonth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic LastDayOfMonth { get; set; }
+            /// <summary>
+            /// DayNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-dayofmonth.html#cfn-bedrock-datasource-dayofmonth-daynumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DayNumber { get; set; }
+        }
+
+        public class DeletionProtectionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DeletionProtectionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-deletionprotectionconfiguration.html#cfn-bedrock-datasource-deletionprotectionconfiguration-deletionprotectionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeletionProtectionStatus { get; set; }
+            /// <summary>
+            /// DeletionProtectionThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-deletionprotectionconfiguration.html#cfn-bedrock-datasource-deletionprotectionconfiguration-deletionprotectionthreshold
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DeletionProtectionThreshold { get; set; }
+        }
+
+        public class EnrichmentStrategyConfiguration : Humidifier.Base.BaseSubResource, IHaveMethod
+        {
+            /// <summary>
+            /// Method
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-enrichmentstrategyconfiguration.html#cfn-bedrock-datasource-enrichmentstrategyconfiguration-method
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Method { get; set; }
         }
 
         public class FixedSizeChunkingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveOverlapPercentage
@@ -362,6 +474,18 @@ namespace Humidifier.Bedrock
             public dynamic MaxTokens { get; set; }
         }
 
+        public class ImageExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageExtractionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-imageextractionconfiguration.html#cfn-bedrock-datasource-imageextractionconfiguration-imageextractionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageExtractionStatus { get; set; }
+        }
+
         public class IntermediateStorage : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -372,6 +496,82 @@ namespace Humidifier.Bedrock
             /// Type: S3Location
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.S3Location S3Location { get; set; }
+        }
+
+        public class ManagedKnowledgeBaseConnectorConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SyncSchedule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-managedknowledgebaseconnectorconfiguration.html#cfn-bedrock-datasource-managedknowledgebaseconnectorconfiguration-syncschedule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SyncSchedule
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.SyncSchedule SyncSchedule { get; set; }
+            /// <summary>
+            /// MediaExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-managedknowledgebaseconnectorconfiguration.html#cfn-bedrock-datasource-managedknowledgebaseconnectorconfiguration-mediaextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MediaExtractionConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.MediaExtractionConfiguration MediaExtractionConfiguration { get; set; }
+            /// <summary>
+            /// ConnectorParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-managedknowledgebaseconnectorconfiguration.html#cfn-bedrock-datasource-managedknowledgebaseconnectorconfiguration-connectorparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic ConnectorParameters { get; set; }
+            /// <summary>
+            /// DeletionProtectionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-managedknowledgebaseconnectorconfiguration.html#cfn-bedrock-datasource-managedknowledgebaseconnectorconfiguration-deletionprotectionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DeletionProtectionConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.DeletionProtectionConfiguration DeletionProtectionConfiguration { get; set; }
+        }
+
+        public class MediaExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VideoExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-mediaextractionconfiguration.html#cfn-bedrock-datasource-mediaextractionconfiguration-videoextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VideoExtractionConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.VideoExtractionConfiguration VideoExtractionConfiguration { get; set; }
+            /// <summary>
+            /// AudioExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-mediaextractionconfiguration.html#cfn-bedrock-datasource-mediaextractionconfiguration-audioextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AudioExtractionConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.AudioExtractionConfiguration AudioExtractionConfiguration { get; set; }
+            /// <summary>
+            /// ImageExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-mediaextractionconfiguration.html#cfn-bedrock-datasource-mediaextractionconfiguration-imageextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ImageExtractionConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.ImageExtractionConfiguration ImageExtractionConfiguration { get; set; }
+        }
+
+        public class MonthlySchedule : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DayOfMonth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-monthlyschedule.html#cfn-bedrock-datasource-monthlyschedule-dayofmonth
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DayOfMonth
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.DayOfMonth DayOfMonth { get; set; }
         }
 
         public class ParsingConfiguration : Humidifier.Base.BaseSubResource, IHaveParsingStrategy
@@ -695,6 +895,34 @@ namespace Humidifier.Bedrock
             public dynamic Domain { get; set; }
         }
 
+        public class SyncSchedule : Humidifier.Base.BaseSubResource, IHaveDaily
+        {
+            /// <summary>
+            /// Daily
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-syncschedule.html#cfn-bedrock-datasource-syncschedule-daily
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Daily { get; set; }
+            /// <summary>
+            /// Monthly
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-syncschedule.html#cfn-bedrock-datasource-syncschedule-monthly
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MonthlySchedule
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.MonthlySchedule Monthly { get; set; }
+            /// <summary>
+            /// Weekly
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-syncschedule.html#cfn-bedrock-datasource-syncschedule-weekly
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WeeklySchedule
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.WeeklySchedule Weekly { get; set; }
+        }
+
         public class Transformation : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -763,6 +991,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.ParsingConfiguration ParsingConfiguration { get; set; }
             /// <summary>
+            /// ContextEnrichmentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-vectoringestionconfiguration.html#cfn-bedrock-datasource-vectoringestionconfiguration-contextenrichmentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ContextEnrichmentConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.DataSourceTypes.ContextEnrichmentConfiguration ContextEnrichmentConfiguration { get; set; }
+            /// <summary>
             /// CustomTransformationConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-vectoringestionconfiguration.html#cfn-bedrock-datasource-vectoringestionconfiguration-customtransformationconfiguration
             /// Required: False
@@ -780,6 +1016,18 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.DataSourceTypes.ChunkingConfiguration ChunkingConfiguration { get; set; }
         }
 
+        public class VideoExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VideoExtractionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-videoextractionconfiguration.html#cfn-bedrock-datasource-videoextractionconfiguration-videoextractionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VideoExtractionStatus { get; set; }
+        }
+
         public class WebCrawlerConfiguration : Humidifier.Base.BaseSubResource, IHaveScope, IHaveInclusionFilters, IHaveExclusionFilters
         {
             /// <summary>
@@ -791,6 +1039,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic InclusionFilters { get; set; }
+            /// <summary>
+            /// UserAgentHeader
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-webcrawlerconfiguration.html#cfn-bedrock-datasource-webcrawlerconfiguration-useragentheader
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserAgentHeader { get; set; }
             /// <summary>
             /// CrawlerLimits
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-webcrawlerconfiguration.html#cfn-bedrock-datasource-webcrawlerconfiguration-crawlerlimits
@@ -816,6 +1072,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic Scope { get; set; }
+            /// <summary>
+            /// UserAgent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-webcrawlerconfiguration.html#cfn-bedrock-datasource-webcrawlerconfiguration-useragent
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserAgent { get; set; }
         }
 
         public class WebCrawlerLimits : Humidifier.Base.BaseSubResource, IHaveRateLimit
@@ -828,6 +1092,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RateLimit { get; set; }
+            /// <summary>
+            /// MaxPages
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-webcrawlerlimits.html#cfn-bedrock-datasource-webcrawlerlimits-maxpages
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxPages { get; set; }
         }
 
         public class WebDataSourceConfiguration : Humidifier.Base.BaseSubResource
@@ -860,6 +1132,18 @@ namespace Humidifier.Bedrock
             /// Type: UrlConfiguration
             /// </summary>
             public Humidifier.Bedrock.DataSourceTypes.UrlConfiguration UrlConfiguration { get; set; }
+        }
+
+        public class WeeklySchedule : Humidifier.Base.BaseSubResource, IHaveDayOfWeek
+        {
+            /// <summary>
+            /// DayOfWeek
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-datasource-weeklyschedule.html#cfn-bedrock-datasource-weeklyschedule-dayofweek
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DayOfWeek { get; set; }
         }
     }
 }

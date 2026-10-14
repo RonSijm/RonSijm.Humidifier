@@ -1,9 +1,9 @@
 namespace Humidifier.EMR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StepTypes;
 
-    public class Step : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveJobFlowId, IHaveActionOnFailure
+    public class Step : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveEncryptionKeyArn, IHaveLogUri, IHaveJobFlowId, IHaveActionOnFailure
     {
         public class Attributes
         {
@@ -21,6 +21,14 @@ namespace Humidifier.EMR
         /// </summary>
         [Required]
         public dynamic JobFlowId { get; set; }
+        /// <summary>
+        /// LogUri
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-loguri
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LogUri { get; set; }
 
         /// <summary>
         /// ActionOnFailure
@@ -31,6 +39,14 @@ namespace Humidifier.EMR
         /// </summary>
         [Required]
         public dynamic ActionOnFailure { get; set; }
+        /// <summary>
+        /// EncryptionKeyArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-emr-step-encryptionkeyarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EncryptionKeyArn { get; set; }
 
         /// <summary>
         /// HadoopJarStep

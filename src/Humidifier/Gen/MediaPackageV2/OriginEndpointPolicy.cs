@@ -1,6 +1,7 @@
 namespace Humidifier.MediaPackageV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using OriginEndpointPolicyTypes;
 
     public class OriginEndpointPolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveChannelName, IHaveChannelGroupName, IHaveOriginEndpointName
     {
@@ -45,5 +46,37 @@ namespace Humidifier.MediaPackageV2
         /// </summary>
         [Required]
         public dynamic ChannelGroupName { get; set; }
+        /// <summary>
+        /// CdnAuthConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackagev2-originendpointpolicy.html#cfn-mediapackagev2-originendpointpolicy-cdnauthconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CdnAuthConfiguration
+        /// </summary>
+        public Humidifier.MediaPackageV2.OriginEndpointPolicyTypes.CdnAuthConfiguration CdnAuthConfiguration { get; set; }
+    }
+
+    namespace OriginEndpointPolicyTypes
+    {
+        public class CdnAuthConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretsRoleArn
+        {
+            /// <summary>
+            /// SecretsRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpointpolicy-cdnauthconfiguration.html#cfn-mediapackagev2-originendpointpolicy-cdnauthconfiguration-secretsrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretsRoleArn { get; set; }
+            /// <summary>
+            /// CdnIdentifierSecretArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpointpolicy-cdnauthconfiguration.html#cfn-mediapackagev2-originendpointpolicy-cdnauthconfiguration-cdnidentifiersecretarns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CdnIdentifierSecretArns { get; set; }
+        }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AgentTypes;
 
     public class Agent : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveCustomerEncryptionKeyArn, IHaveSkipResourceInUseCheckOnDelete, IHaveIdleSessionTTLInSeconds, IHaveAgentName
@@ -19,6 +19,15 @@ namespace Humidifier.Bedrock
         }
 
         public override string AWSTypeName { get => AWS.Bedrock.Agent; }
+        /// <summary>
+        /// AgentCollaborators
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-agentcollaborators
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AgentCollaborator
+        /// </summary>
+        public List<Humidifier.Bedrock.AgentTypes.AgentCollaborator> AgentCollaborators { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-description
@@ -52,6 +61,22 @@ namespace Humidifier.Bedrock
         /// </summary>
         public Humidifier.Bedrock.AgentTypes.PromptOverrideConfiguration PromptOverrideConfiguration { get; set; }
         /// <summary>
+        /// MemoryConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-memoryconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MemoryConfiguration
+        /// </summary>
+        public Humidifier.Bedrock.AgentTypes.MemoryConfiguration MemoryConfiguration { get; set; }
+        /// <summary>
+        /// AgentCollaboration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-agentcollaboration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AgentCollaboration { get; set; }
+        /// <summary>
         /// Instruction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-instruction
         /// Required: False
@@ -59,6 +84,14 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic Instruction { get; set; }
+        /// <summary>
+        /// CustomOrchestration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-customorchestration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomOrchestration
+        /// </summary>
+        public Humidifier.Bedrock.AgentTypes.CustomOrchestration CustomOrchestration { get; set; }
         /// <summary>
         /// TestAliasTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-testaliastags
@@ -77,13 +110,13 @@ namespace Humidifier.Bedrock
         /// </summary>
         public dynamic AgentResourceRoleArn { get; set; }
         /// <summary>
-        /// FoundationModel
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-foundationmodel
+        /// OrchestrationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-orchestrationtype
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic FoundationModel { get; set; }
+        public dynamic OrchestrationType { get; set; }
         /// <summary>
         /// IdleSessionTTLInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-idlesessionttlinseconds
@@ -92,6 +125,14 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: Double
         /// </summary>
         public dynamic IdleSessionTTLInSeconds { get; set; }
+        /// <summary>
+        /// FoundationModel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-foundationmodel
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FoundationModel { get; set; }
         /// <summary>
         /// CustomerEncryptionKeyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-agent.html#cfn-bedrock-agent-customerencryptionkeyarn
@@ -248,6 +289,54 @@ namespace Humidifier.Bedrock
             public dynamic ActionGroupState { get; set; }
         }
 
+        public class AgentCollaborator : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AgentDescriptor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-agentcollaborator.html#cfn-bedrock-agent-agentcollaborator-agentdescriptor
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: AgentDescriptor
+            /// </summary>
+            public Humidifier.Bedrock.AgentTypes.AgentDescriptor AgentDescriptor { get; set; }
+            /// <summary>
+            /// CollaborationInstruction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-agentcollaborator.html#cfn-bedrock-agent-agentcollaborator-collaborationinstruction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CollaborationInstruction { get; set; }
+            /// <summary>
+            /// RelayConversationHistory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-agentcollaborator.html#cfn-bedrock-agent-agentcollaborator-relayconversationhistory
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RelayConversationHistory { get; set; }
+            /// <summary>
+            /// CollaboratorName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-agentcollaborator.html#cfn-bedrock-agent-agentcollaborator-collaboratorname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CollaboratorName { get; set; }
+        }
+
+        public class AgentDescriptor : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AliasArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-agentdescriptor.html#cfn-bedrock-agent-agentdescriptor-aliasarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AliasArn { get; set; }
+        }
+
         public class AgentKnowledgeBase : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveKnowledgeBaseId
         {
             /// <summary>
@@ -274,6 +363,18 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic KnowledgeBaseId { get; set; }
+        }
+
+        public class CustomOrchestration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Executor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-customorchestration.html#cfn-bedrock-agent-customorchestration-executor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OrchestrationExecutor
+            /// </summary>
+            public Humidifier.Bedrock.AgentTypes.OrchestrationExecutor Executor { get; set; }
         }
 
         public class Function : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
@@ -391,6 +492,47 @@ namespace Humidifier.Bedrock
             public dynamic TopP { get; set; }
         }
 
+        public class MemoryConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SessionSummaryConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-memoryconfiguration.html#cfn-bedrock-agent-memoryconfiguration-sessionsummaryconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SessionSummaryConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.AgentTypes.SessionSummaryConfiguration SessionSummaryConfiguration { get; set; }
+            /// <summary>
+            /// EnabledMemoryTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-memoryconfiguration.html#cfn-bedrock-agent-memoryconfiguration-enabledmemorytypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EnabledMemoryTypes { get; set; }
+            /// <summary>
+            /// StorageDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-memoryconfiguration.html#cfn-bedrock-agent-memoryconfiguration-storagedays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic StorageDays { get; set; }
+        }
+
+        public class OrchestrationExecutor : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Lambda
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-orchestrationexecutor.html#cfn-bedrock-agent-orchestrationexecutor-lambda
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Lambda { get; set; }
+        }
+
         public class ParameterDetail : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveType, IHaveRequired
         {
             /// <summary>
@@ -438,6 +580,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic PromptState { get; set; }
             /// <summary>
+            /// AdditionalModelRequestFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-promptconfiguration.html#cfn-bedrock-agent-promptconfiguration-additionalmodelrequestfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AdditionalModelRequestFields { get; set; }
+            /// <summary>
             /// BasePromptTemplate
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-promptconfiguration.html#cfn-bedrock-agent-promptconfiguration-baseprompttemplate
             /// Required: False
@@ -445,6 +595,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic BasePromptTemplate { get; set; }
+            /// <summary>
+            /// FoundationModel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-promptconfiguration.html#cfn-bedrock-agent-promptconfiguration-foundationmodel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FoundationModel { get; set; }
             /// <summary>
             /// InferenceConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-promptconfiguration.html#cfn-bedrock-agent-promptconfiguration-inferenceconfiguration
@@ -510,6 +668,18 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3ObjectKey { get; set; }
+        }
+
+        public class SessionSummaryConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MaxRecentSessions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-agent-sessionsummaryconfiguration.html#cfn-bedrock-agent-sessionsummaryconfiguration-maxrecentsessions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic MaxRecentSessions { get; set; }
         }
     }
 }

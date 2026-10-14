@@ -1,6 +1,6 @@
 namespace Humidifier.EFS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccessPointTypes;
 
     public class AccessPoint : Humidifier.Base.BaseResource, IHaveFileSystemId, IHaveClientToken

@@ -1,8 +1,8 @@
 namespace Humidifier.LicenseManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Grant : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStatus, IHavePrincipals, IHaveHomeRegion
+    public class Grant : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStatus, IHavePrincipals, IHaveHomeRegion
     {
         public class Attributes
         {
@@ -54,5 +54,14 @@ namespace Humidifier.LicenseManager
         /// </summary>
         public dynamic LicenseArn { get; set; }
         public dynamic GrantName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-grant.html#cfn-licensemanager-grant-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

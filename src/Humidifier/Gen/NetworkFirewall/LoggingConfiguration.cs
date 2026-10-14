@@ -1,11 +1,19 @@
 namespace Humidifier.NetworkFirewall
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LoggingConfigurationTypes;
 
     public class LoggingConfiguration : Humidifier.Base.BaseResource, IHaveFirewallName
     {
         public override string AWSTypeName { get => AWS.NetworkFirewall.LoggingConfiguration; }
+        /// <summary>
+        /// EnableMonitoringDashboard
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-enablemonitoringdashboard
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableMonitoringDashboard { get; set; }
         /// <summary>
         /// FirewallName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallname

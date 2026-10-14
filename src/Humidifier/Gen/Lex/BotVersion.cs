@@ -1,6 +1,6 @@
 namespace Humidifier.Lex
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BotVersionTypes;
 
     public class BotVersion : Humidifier.Base.BaseResource, IHaveDescription, IHaveBotId

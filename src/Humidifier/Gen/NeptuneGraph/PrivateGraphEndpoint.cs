@@ -1,6 +1,6 @@
 namespace Humidifier.NeptuneGraph
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PrivateGraphEndpoint : Humidifier.Base.BaseResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId
     {

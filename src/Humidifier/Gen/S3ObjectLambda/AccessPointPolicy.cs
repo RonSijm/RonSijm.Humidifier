@@ -1,6 +1,6 @@
 namespace Humidifier.S3ObjectLambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AccessPointPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument
     {

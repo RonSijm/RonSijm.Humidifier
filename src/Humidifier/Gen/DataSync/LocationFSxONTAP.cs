@@ -1,6 +1,6 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LocationFSxONTAPTypes;
 
     public class LocationFSxONTAP : Humidifier.Base.BaseResource, IHaveTags, IHaveSubdirectory, IHaveSecurityGroupArns
@@ -38,7 +38,7 @@ namespace Humidifier.DataSync
         /// UpdateType: Mutable
         /// Type: Protocol
         /// </summary>
-        public Humidifier.DataSync.LocationFSxONTAPTypes.Protocol Protocol { get; set; }
+        public Humidifier.Transfer.Protocol Protocol { get; set; }
 
         /// <summary>
         /// SecurityGroupArns
@@ -58,11 +58,63 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace LocationFSxONTAPTypes
     {
+        public class CmkSecretConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-cmksecretconfig.html#cfn-datasync-locationfsxontap-cmksecretconfig-secretarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-cmksecretconfig.html#cfn-datasync-locationfsxontap-cmksecretconfig-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
+        }
+
+        public class CustomSecretConfig : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-customsecretconfig.html#cfn-datasync-locationfsxontap-customsecretconfig-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// SecretAccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-customsecretconfig.html#cfn-datasync-locationfsxontap-customsecretconfig-secretaccessrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretAccessRoleArn { get; set; }
+        }
+
+        public class ManagedSecretConfig : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-managedsecretconfig.html#cfn-datasync-locationfsxontap-managedsecretconfig-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+        }
+
         public class NFS : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -110,6 +162,14 @@ namespace Humidifier.DataSync
         public class SMB : Humidifier.Base.BaseSubResource, IHavePassword, IHaveDomain, IHaveUser
         {
             /// <summary>
+            /// ManagedSecretConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-managedsecretconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedSecretConfig
+            /// </summary>
+            public Humidifier.DataSync.LocationFSxONTAPTypes.ManagedSecretConfig ManagedSecretConfig { get; set; }
+            /// <summary>
             /// User
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-user
             /// Required: True
@@ -117,6 +177,22 @@ namespace Humidifier.DataSync
             /// PrimitiveType: String
             /// </summary>
             public dynamic User { get; set; }
+            /// <summary>
+            /// CmkSecretConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-cmksecretconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CmkSecretConfig
+            /// </summary>
+            public Humidifier.DataSync.LocationFSxONTAPTypes.CmkSecretConfig CmkSecretConfig { get; set; }
+            /// <summary>
+            /// CustomSecretConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-customsecretconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomSecretConfig
+            /// </summary>
+            public Humidifier.DataSync.LocationFSxONTAPTypes.CustomSecretConfig CustomSecretConfig { get; set; }
             /// <summary>
             /// Domain
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-domain
@@ -136,7 +212,7 @@ namespace Humidifier.DataSync
             /// <summary>
             /// Password
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationfsxontap-smb.html#cfn-datasync-locationfsxontap-smb-password
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceDiscovery
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PublicDnsNamespaceTypes;
 
     public class PublicDnsNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
@@ -37,7 +37,7 @@ namespace Humidifier.ServiceDiscovery
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

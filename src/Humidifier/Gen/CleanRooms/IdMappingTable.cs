@@ -1,6 +1,6 @@
 namespace Humidifier.CleanRooms
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdMappingTableTypes;
 
     public class IdMappingTable : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyArn, IHaveMembershipIdentifier
@@ -60,7 +60,7 @@ namespace Humidifier.CleanRooms
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

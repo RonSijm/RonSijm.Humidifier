@@ -1,6 +1,6 @@
 namespace Humidifier.IoTTwinMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ComponentTypeTypes;
 
     public class ComponentType : Humidifier.Base.BaseResource, IHaveDescription, IHaveWorkspaceId, IHaveComponentTypeId
@@ -170,14 +170,6 @@ namespace Humidifier.IoTTwinMaker
             /// </summary>
             public dynamic UnitOfMeasure { get; set; }
             /// <summary>
-            /// Relationship
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-relationship
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Relationship
-            /// </summary>
-            public Humidifier.IoTTwinMaker.ComponentTypeTypes.Relationship Relationship { get; set; }
-            /// <summary>
             /// NestedType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-nestedtype
             /// Required: False
@@ -185,6 +177,14 @@ namespace Humidifier.IoTTwinMaker
             /// Type: DataType
             /// </summary>
             public Humidifier.IoTTwinMaker.ComponentTypeTypes.DataType NestedType { get; set; }
+            /// <summary>
+            /// Relationship
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-relationship
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Relationship
+            /// </summary>
+            public Humidifier.IoTTwinMaker.ComponentTypeTypes.Relationship Relationship { get; set; }
         }
 
         public class DataValue : Humidifier.Base.BaseSubResource, IHaveExpression, IHaveStringValue, IHaveDoubleValue, IHaveBooleanValue, IHaveLongValue, IHaveIntegerValue

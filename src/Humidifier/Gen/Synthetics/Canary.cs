@@ -1,9 +1,9 @@
 namespace Humidifier.Synthetics
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CanaryTypes;
 
-    public class Canary : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveExecutionRoleArn, IHaveRuntimeVersion
+    public class Canary : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyArn, IHaveExecutionRoleArn, IHaveRuntimeVersion
     {
         public class Attributes
         {
@@ -13,13 +13,23 @@ namespace Humidifier.Synthetics
 
         public override string AWSTypeName { get => AWS.Synthetics.Canary; }
         /// <summary>
-        /// VisualReference
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference
+        /// BrowserConfigs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-browserconfigs
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: VisualReference
+        /// Type: List
+        /// ItemType: BrowserConfig
         /// </summary>
-        public Humidifier.Synthetics.CanaryTypes.VisualReference VisualReference { get; set; }
+        public List<Humidifier.Synthetics.CanaryTypes.BrowserConfig> BrowserConfigs { get; set; }
+        /// <summary>
+        /// VisualReferences
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreferences
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: VisualReference
+        /// </summary>
+        public List<Humidifier.Synthetics.CanaryTypes.VisualReference> VisualReferences { get; set; }
         /// <summary>
         /// ArtifactConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifactconfig
@@ -63,6 +73,14 @@ namespace Humidifier.Synthetics
         /// </summary>
         public Humidifier.Synthetics.CanaryTypes.RunConfig RunConfig { get; set; }
         /// <summary>
+        /// DryRunAndUpdate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-dryrunandupdate
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DryRunAndUpdate { get; set; }
+        /// <summary>
         /// FailureRetentionPeriod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod
         /// Required: False
@@ -70,6 +88,15 @@ namespace Humidifier.Synthetics
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic FailureRetentionPeriod { get; set; }
+        /// <summary>
+        /// Replicas
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-replicas
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Replica
+        /// </summary>
+        public List<Humidifier.Synthetics.CanaryTypes.Replica> Replicas { get; set; }
 
         /// <summary>
         /// Code
@@ -108,6 +135,14 @@ namespace Humidifier.Synthetics
         /// </summary>
         [Required]
         public dynamic ExecutionRoleArn { get; set; }
+        /// <summary>
+        /// KmsKeyArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-kmskeyarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyArn { get; set; }
 
         /// <summary>
         /// Schedule
@@ -136,7 +171,7 @@ namespace Humidifier.Synthetics
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// StartCanaryAfterCreation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation
@@ -182,6 +217,18 @@ namespace Humidifier.Synthetics
             public dynamic ScreenshotName { get; set; }
         }
 
+        public class BrowserConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BrowserType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-browserconfig.html#cfn-synthetics-canary-browserconfig-browsertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BrowserType { get; set; }
+        }
+
         public class Code : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Key, IHaveS3ObjectVersion, IHaveSourceLocationArn, IHaveHandler, IHaveScript
         {
             /// <summary>
@@ -217,9 +264,18 @@ namespace Humidifier.Synthetics
             /// </summary>
             public dynamic S3Key { get; set; }
             /// <summary>
+            /// BlueprintTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html#cfn-synthetics-canary-code-blueprinttypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic BlueprintTypes { get; set; }
+            /// <summary>
             /// Handler
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html#cfn-synthetics-canary-code-handler
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -232,6 +288,129 @@ namespace Humidifier.Synthetics
             /// PrimitiveType: String
             /// </summary>
             public dynamic SourceLocationArn { get; set; }
+            /// <summary>
+            /// Dependencies
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html#cfn-synthetics-canary-code-dependencies
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Dependency
+            /// </summary>
+            public List<Humidifier.Synthetics.CanaryTypes.Dependency> Dependencies { get; set; }
+        }
+
+        public class Dependency : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-dependency.html#cfn-synthetics-canary-dependency-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Reference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-dependency.html#cfn-synthetics-canary-dependency-reference
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Reference { get; set; }
+        }
+
+        public class Replica : Humidifier.Base.BaseSubResource, IHaveTags, IHaveKmsKeyArn, IHaveLocation
+        {
+            /// <summary>
+            /// LastModified
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-lastmodified
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic LastModified { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
+            /// <summary>
+            /// VpcConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-vpcconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VPCConfig
+            /// </summary>
+            public Humidifier.Synthetics.CanaryTypes.VPCConfig VpcConfig { get; set; }
+            /// <summary>
+            /// ReplicationStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-replicationstatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ReplicaReplicationStatus
+            /// </summary>
+            public Humidifier.Synthetics.CanaryTypes.ReplicaReplicationStatus ReplicationStatus { get; set; }
+            /// <summary>
+            /// CanaryState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-canarystate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CanaryState { get; set; }
+            /// <summary>
+            /// ResourcesToReplicateTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-resourcestoreplicatetags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ResourcesToReplicateTags { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Humidifier.Tag> Tags { get; set; }
+            /// <summary>
+            /// Location
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replica.html#cfn-synthetics-canary-replica-location
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Location { get; set; }
+        }
+
+        public class ReplicaReplicationStatus : Humidifier.Base.BaseSubResource, IHaveState
+        {
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-replicareplicationstatus.html#cfn-synthetics-canary-replicareplicationstatus-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
+        }
+
+        public class RetryConfig : Humidifier.Base.BaseSubResource, IHaveMaxRetries
+        {
+            /// <summary>
+            /// MaxRetries
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-retryconfig.html#cfn-synthetics-canary-retryconfig-maxretries
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxRetries { get; set; }
         }
 
         public class RunConfig : Humidifier.Base.BaseSubResource, IHaveTimeoutInSeconds
@@ -261,6 +440,14 @@ namespace Humidifier.Synthetics
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MemoryInMB { get; set; }
+            /// <summary>
+            /// EphemeralStorage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-ephemeralstorage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic EphemeralStorage { get; set; }
             /// <summary>
             /// ActiveTracing
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-activetracing
@@ -301,6 +488,14 @@ namespace Humidifier.Synthetics
             /// PrimitiveType: String
             /// </summary>
             public dynamic DurationInSeconds { get; set; }
+            /// <summary>
+            /// RetryConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-retryconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RetryConfig
+            /// </summary>
+            public Humidifier.Synthetics.CanaryTypes.RetryConfig RetryConfig { get; set; }
             /// <summary>
             /// Expression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-expression
@@ -360,6 +555,14 @@ namespace Humidifier.Synthetics
             /// ItemType: BaseScreenshot
             /// </summary>
             public List<Humidifier.Synthetics.CanaryTypes.BaseScreenshot> BaseScreenshots { get; set; }
+            /// <summary>
+            /// BrowserType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-browsertype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BrowserType { get; set; }
             /// <summary>
             /// BaseCanaryRunId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basecanaryrunid

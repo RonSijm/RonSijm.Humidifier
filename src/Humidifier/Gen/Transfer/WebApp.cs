@@ -1,6 +1,6 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WebAppTypes;
 
     public class WebApp : Humidifier.Base.BaseResource, IHaveTags
@@ -9,6 +9,7 @@ namespace Humidifier.Transfer
         {
             public static string WebAppId =  "WebAppId" ;
             public static string Arn =  "Arn" ;
+            public static string VpcEndpointId =  "VpcEndpointId" ;
         }
 
         public override string AWSTypeName { get => AWS.Transfer.WebApp; }
@@ -39,6 +40,22 @@ namespace Humidifier.Transfer
         /// </summary>
         public Humidifier.Transfer.WebAppTypes.WebAppUnits WebAppUnits { get; set; }
         /// <summary>
+        /// EndpointDetails
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-webapp.html#cfn-transfer-webapp-endpointdetails
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EndpointDetails
+        /// </summary>
+        public Humidifier.Transfer.WebAppTypes.EndpointDetails EndpointDetails { get; set; }
+        /// <summary>
+        /// WebAppEndpointPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-webapp.html#cfn-transfer-webapp-webappendpointpolicy
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WebAppEndpointPolicy { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-webapp.html#cfn-transfer-webapp-tags
         /// Required: False
@@ -46,7 +63,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AccessEndpoint
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-webapp.html#cfn-transfer-webapp-accessendpoint
@@ -59,6 +76,18 @@ namespace Humidifier.Transfer
 
     namespace WebAppTypes
     {
+        public class EndpointDetails : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Vpc
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-webapp-endpointdetails.html#cfn-transfer-webapp-endpointdetails-vpc
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Vpc
+            /// </summary>
+            public Humidifier.Transfer.WebAppTypes.Vpc Vpc { get; set; }
+        }
+
         public class IdentityProviderDetails : Humidifier.Base.BaseSubResource, IHaveInstanceArn, IHaveRole, IHaveApplicationArn
         {
             /// <summary>
@@ -85,6 +114,44 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceArn { get; set; }
+        }
+
+        public class Vpc : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId, IHaveIpAddressType
+        {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-webapp-vpc.html#cfn-transfer-webapp-vpc-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
+            /// <summary>
+            /// VpcId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-webapp-vpc.html#cfn-transfer-webapp-vpc-vpcid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VpcId { get; set; }
+            /// <summary>
+            /// SubnetIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-webapp-vpc.html#cfn-transfer-webapp-vpc-subnetids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SubnetIds { get; set; }
+            /// <summary>
+            /// SecurityGroupIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-webapp-vpc.html#cfn-transfer-webapp-vpc-securitygroupids
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SecurityGroupIds { get; set; }
         }
 
         public class WebAppCustomization : Humidifier.Base.BaseSubResource, IHaveTitle

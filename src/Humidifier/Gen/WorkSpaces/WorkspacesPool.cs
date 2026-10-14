@@ -1,6 +1,6 @@
 namespace Humidifier.WorkSpaces
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WorkspacesPoolTypes;
 
     public class WorkspacesPool : Humidifier.Base.BaseResource, IHaveDescription, IHaveBundleId, IHaveDirectoryId, IHavePoolName
@@ -77,6 +77,14 @@ namespace Humidifier.WorkSpaces
         /// </summary>
         [Required]
         public dynamic PoolName { get; set; }
+        /// <summary>
+        /// RunningMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspacespool.html#cfn-workspaces-workspacespool-runningmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RunningMode { get; set; }
     }
 
     namespace WorkspacesPoolTypes

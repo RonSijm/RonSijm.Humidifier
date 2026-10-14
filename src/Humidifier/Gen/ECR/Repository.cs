@@ -1,6 +1,6 @@
 namespace Humidifier.ECR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RepositoryTypes;
 
     public class Repository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRepositoryName, IHaveRepositoryPolicyText, IHaveImageTagMutability
@@ -28,6 +28,15 @@ namespace Humidifier.ECR
         /// Type: ImageScanningConfiguration
         /// </summary>
         public Humidifier.ECR.RepositoryTypes.ImageScanningConfiguration ImageScanningConfiguration { get; set; }
+        /// <summary>
+        /// ImageTagMutabilityExclusionFilters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutabilityexclusionfilters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ImageTagMutabilityExclusionFilter
+        /// </summary>
+        public List<Humidifier.ECR.RepositoryTypes.ImageTagMutabilityExclusionFilter> ImageTagMutabilityExclusionFilters { get; set; }
         /// <summary>
         /// EncryptionConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration
@@ -61,7 +70,7 @@ namespace Humidifier.ECR
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ImageTagMutability
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability
@@ -104,6 +113,26 @@ namespace Humidifier.ECR
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ScanOnPush { get; set; }
+        }
+
+        public class ImageTagMutabilityExclusionFilter : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageTagMutabilityExclusionFilterType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagetagmutabilityexclusionfilter.html#cfn-ecr-repository-imagetagmutabilityexclusionfilter-imagetagmutabilityexclusionfiltertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageTagMutabilityExclusionFilterType { get; set; }
+            /// <summary>
+            /// ImageTagMutabilityExclusionFilterValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagetagmutabilityexclusionfilter.html#cfn-ecr-repository-imagetagmutabilityexclusionfilter-imagetagmutabilityexclusionfiltervalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageTagMutabilityExclusionFilterValue { get; set; }
         }
 
         public class LifecyclePolicy : Humidifier.Base.BaseSubResource, IHaveRegistryId

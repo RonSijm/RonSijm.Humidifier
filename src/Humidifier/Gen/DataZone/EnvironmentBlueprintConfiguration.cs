@@ -1,6 +1,6 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentBlueprintConfigurationTypes;
 
     public class EnvironmentBlueprintConfiguration : Humidifier.Base.BaseResource, IHaveDomainIdentifier, IHaveProvisioningRoleArn, IHaveEnvironmentBlueprintIdentifier
@@ -24,6 +24,15 @@ namespace Humidifier.DataZone
         /// </summary>
         public List<Humidifier.DataZone.EnvironmentBlueprintConfigurationTypes.RegionalParameter> RegionalParameters { get; set; }
         /// <summary>
+        /// GlobalParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-globalparameters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> GlobalParameters { get; set; }
+        /// <summary>
         /// ProvisioningRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-provisioningrolearn
         /// Required: False
@@ -31,6 +40,15 @@ namespace Humidifier.DataZone
         /// PrimitiveType: String
         /// </summary>
         public dynamic ProvisioningRoleArn { get; set; }
+        /// <summary>
+        /// ProvisioningConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-provisioningconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ProvisioningConfiguration
+        /// </summary>
+        public List<Humidifier.DataZone.EnvironmentBlueprintConfigurationTypes.ProvisioningConfiguration> ProvisioningConfigurations { get; set; }
 
         /// <summary>
         /// EnabledRegions
@@ -63,6 +81,14 @@ namespace Humidifier.DataZone
         [Required]
         public dynamic DomainIdentifier { get; set; }
         /// <summary>
+        /// EnvironmentRolePermissionBoundary
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-environmentrolepermissionboundary
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EnvironmentRolePermissionBoundary { get; set; }
+        /// <summary>
         /// ManageAccessRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-environmentblueprintconfiguration.html#cfn-datazone-environmentblueprintconfiguration-manageaccessrolearn
         /// Required: False
@@ -74,6 +100,39 @@ namespace Humidifier.DataZone
 
     namespace EnvironmentBlueprintConfigurationTypes
     {
+        public class LakeFormationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LocationRegistrationExcludeS3Locations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-environmentblueprintconfiguration-lakeformationconfiguration.html#cfn-datazone-environmentblueprintconfiguration-lakeformationconfiguration-locationregistrationexcludes3locations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LocationRegistrationExcludeS3Locations { get; set; }
+            /// <summary>
+            /// LocationRegistrationRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-environmentblueprintconfiguration-lakeformationconfiguration.html#cfn-datazone-environmentblueprintconfiguration-lakeformationconfiguration-locationregistrationrole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LocationRegistrationRole { get; set; }
+        }
+
+        public class ProvisioningConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LakeFormationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-environmentblueprintconfiguration-provisioningconfiguration.html#cfn-datazone-environmentblueprintconfiguration-provisioningconfiguration-lakeformationconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: LakeFormationConfiguration
+            /// </summary>
+            public Humidifier.DataZone.EnvironmentBlueprintConfigurationTypes.LakeFormationConfiguration LakeFormationConfiguration { get; set; }
+        }
+
         public class RegionalParameter : Humidifier.Base.BaseSubResource, IHaveRegion
         {
             /// <summary>

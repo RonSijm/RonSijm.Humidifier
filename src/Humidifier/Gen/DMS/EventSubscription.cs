@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EventSubscription : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled, IHaveSnsTopicArn, IHaveSourceType, IHaveSubscriptionName, IHaveEventCategories, IHaveSourceIds
     {
@@ -65,6 +65,6 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

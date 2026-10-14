@@ -1,6 +1,6 @@
 namespace Humidifier.VpcLattice
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServiceNetworkServiceAssociationTypes;
 
     public class ServiceNetworkServiceAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveServiceIdentifier, IHaveServiceNetworkIdentifier
@@ -52,7 +52,7 @@ namespace Humidifier.VpcLattice
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ServiceNetworkServiceAssociationTypes

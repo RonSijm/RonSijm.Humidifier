@@ -1,6 +1,6 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class QueueFleetAssociation : Humidifier.Base.BaseResource, IHaveFarmId, IHaveQueueId, IHaveFleetId
     {

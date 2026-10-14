@@ -1,6 +1,6 @@
 namespace Humidifier.SNS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TopicTypes;
 
     public class Topic : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDisplayName, IHaveTopicName, IHaveDataProtectionPolicy, IHaveKmsMasterKeyId, IHaveContentBasedDeduplication
@@ -28,6 +28,14 @@ namespace Humidifier.SNS
         /// PrimitiveType: String
         /// </summary>
         public dynamic TracingConfig { get; set; }
+        /// <summary>
+        /// MaximumMessageSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-maximummessagesize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic MaximumMessageSize { get; set; }
         /// <summary>
         /// FifoTopic
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-fifotopic
@@ -103,7 +111,7 @@ namespace Humidifier.SNS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ArchivePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sns-topic.html#cfn-sns-topic-archivepolicy

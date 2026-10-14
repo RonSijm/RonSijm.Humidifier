@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VPNConnectionTypes;
 
     public class VPNConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveTransitGatewayId, IHaveVpnGatewayId, IHaveTransportTransitGatewayAttachmentId
@@ -31,7 +31,7 @@ namespace Humidifier.EC2
         /// VpnTunnelOptionsSpecifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: VpnTunnelOptionsSpecification
         /// </summary>
@@ -41,7 +41,7 @@ namespace Humidifier.EC2
         /// CustomerGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-customergatewayid
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
@@ -74,7 +74,7 @@ namespace Humidifier.EC2
         /// TransitGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic TransitGatewayId { get; set; }
@@ -89,6 +89,14 @@ namespace Humidifier.EC2
         [Required]
         public dynamic Type { get; set; }
         /// <summary>
+        /// TunnelBandwidth
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-tunnelbandwidth
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TunnelBandwidth { get; set; }
+        /// <summary>
         /// LocalIpv4NetworkCidr
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-localipv4networkcidr
         /// Required: False
@@ -100,10 +108,26 @@ namespace Humidifier.EC2
         /// VpnGatewayId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpngatewayid
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic VpnGatewayId { get; set; }
+        /// <summary>
+        /// VpnConcentratorId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpnconcentratorid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VpnConcentratorId { get; set; }
+        /// <summary>
+        /// PreSharedKeyStorage
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-presharedkeystorage
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PreSharedKeyStorage { get; set; }
         /// <summary>
         /// TransportTransitGatewayAttachmentId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transporttransitgatewayattachmentid
@@ -136,7 +160,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace VPNConnectionTypes
@@ -144,10 +168,18 @@ namespace Humidifier.EC2
         public class CloudwatchLogOptionsSpecification : Humidifier.Base.BaseSubResource, IHaveLogGroupArn
         {
             /// <summary>
+            /// BgpLogEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-bgplogenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic BgpLogEnabled { get; set; }
+            /// <summary>
             /// LogEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-logenabled
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic LogEnabled { get; set; }
@@ -155,18 +187,34 @@ namespace Humidifier.EC2
             /// LogOutputFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-logoutputformat
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic LogOutputFormat { get; set; }
             /// <summary>
+            /// BgpLogGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-bgploggrouparn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BgpLogGroupArn { get; set; }
+            /// <summary>
             /// LogGroupArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-loggrouparn
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic LogGroupArn { get; set; }
+            /// <summary>
+            /// BgpLogOutputFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-cloudwatchlogoptionsspecification.html#cfn-ec2-vpnconnection-cloudwatchlogoptionsspecification-bgplogoutputformat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BgpLogOutputFormat { get; set; }
         }
 
         public class IKEVersionsRequestListValue : Humidifier.Base.BaseSubResource, IHaveValue
@@ -175,7 +223,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-ikeversionsrequestlistvalue.html#cfn-ec2-vpnconnection-ikeversionsrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
@@ -187,7 +235,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase1dhgroupnumbersrequestlistvalue.html#cfn-ec2-vpnconnection-phase1dhgroupnumbersrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Value { get; set; }
@@ -199,7 +247,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase1encryptionalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase1encryptionalgorithmsrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
@@ -211,7 +259,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase1integrityalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase1integrityalgorithmsrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
@@ -223,7 +271,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase2dhgroupnumbersrequestlistvalue.html#cfn-ec2-vpnconnection-phase2dhgroupnumbersrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Value { get; set; }
@@ -235,7 +283,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase2encryptionalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase2encryptionalgorithmsrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
@@ -247,7 +295,7 @@ namespace Humidifier.EC2
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-phase2integrityalgorithmsrequestlistvalue.html#cfn-ec2-vpnconnection-phase2integrityalgorithmsrequestlistvalue-value
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
@@ -259,7 +307,7 @@ namespace Humidifier.EC2
             /// CloudwatchLogOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunnellogoptionsspecification.html#cfn-ec2-vpnconnection-vpntunnellogoptionsspecification-cloudwatchlogoptions
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: CloudwatchLogOptionsSpecification
             /// </summary>
             public Humidifier.EC2.VPNConnectionTypes.CloudwatchLogOptionsSpecification CloudwatchLogOptions { get; set; }
@@ -271,7 +319,7 @@ namespace Humidifier.EC2
             /// Phase2EncryptionAlgorithms
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2encryptionalgorithms
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Phase2EncryptionAlgorithmsRequestListValue
             /// </summary>
@@ -280,7 +328,7 @@ namespace Humidifier.EC2
             /// Phase2DHGroupNumbers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2dhgroupnumbers
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Phase2DHGroupNumbersRequestListValue
             /// </summary>
@@ -289,7 +337,7 @@ namespace Humidifier.EC2
             /// TunnelInsideIpv6Cidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsideipv6cidr
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TunnelInsideIpv6Cidr { get; set; }
@@ -297,7 +345,7 @@ namespace Humidifier.EC2
             /// StartupAction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-startupaction
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic StartupAction { get; set; }
@@ -305,7 +353,7 @@ namespace Humidifier.EC2
             /// TunnelInsideCidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TunnelInsideCidr { get; set; }
@@ -313,7 +361,7 @@ namespace Humidifier.EC2
             /// IKEVersions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-ikeversions
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: IKEVersionsRequestListValue
             /// </summary>
@@ -322,7 +370,7 @@ namespace Humidifier.EC2
             /// LogOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-logoptions
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: VpnTunnelLogOptionsSpecification
             /// </summary>
             public Humidifier.EC2.VPNConnectionTypes.VpnTunnelLogOptionsSpecification LogOptions { get; set; }
@@ -330,7 +378,7 @@ namespace Humidifier.EC2
             /// Phase1DHGroupNumbers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1dhgroupnumbers
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Phase1DHGroupNumbersRequestListValue
             /// </summary>
@@ -339,7 +387,7 @@ namespace Humidifier.EC2
             /// ReplayWindowSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-replaywindowsize
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ReplayWindowSize { get; set; }
@@ -347,7 +395,7 @@ namespace Humidifier.EC2
             /// EnableTunnelLifecycleControl
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-enabletunnellifecyclecontrol
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic EnableTunnelLifecycleControl { get; set; }
@@ -355,7 +403,7 @@ namespace Humidifier.EC2
             /// RekeyMarginTimeSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-rekeymargintimeseconds
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RekeyMarginTimeSeconds { get; set; }
@@ -363,7 +411,7 @@ namespace Humidifier.EC2
             /// DPDTimeoutAction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-dpdtimeoutaction
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DPDTimeoutAction { get; set; }
@@ -371,7 +419,7 @@ namespace Humidifier.EC2
             /// Phase2LifetimeSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2lifetimeseconds
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Phase2LifetimeSeconds { get; set; }
@@ -379,7 +427,7 @@ namespace Humidifier.EC2
             /// Phase2IntegrityAlgorithms
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2integrityalgorithms
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Phase2IntegrityAlgorithmsRequestListValue
             /// </summary>
@@ -388,7 +436,7 @@ namespace Humidifier.EC2
             /// Phase1IntegrityAlgorithms
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1integrityalgorithms
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Phase1IntegrityAlgorithmsRequestListValue
             /// </summary>
@@ -397,7 +445,7 @@ namespace Humidifier.EC2
             /// PreSharedKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-presharedkey
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic PreSharedKey { get; set; }
@@ -405,7 +453,7 @@ namespace Humidifier.EC2
             /// Phase1LifetimeSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1lifetimeseconds
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Phase1LifetimeSeconds { get; set; }
@@ -413,7 +461,7 @@ namespace Humidifier.EC2
             /// RekeyFuzzPercentage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-rekeyfuzzpercentage
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RekeyFuzzPercentage { get; set; }
@@ -421,7 +469,7 @@ namespace Humidifier.EC2
             /// Phase1EncryptionAlgorithms
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1encryptionalgorithms
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Phase1EncryptionAlgorithmsRequestListValue
             /// </summary>
@@ -430,7 +478,7 @@ namespace Humidifier.EC2
             /// DPDTimeoutSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-dpdtimeoutseconds
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DPDTimeoutSeconds { get; set; }

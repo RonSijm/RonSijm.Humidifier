@@ -1,8 +1,8 @@
 namespace Humidifier.Kinesis
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class StreamConsumer : Humidifier.Base.BaseResource
+    public class StreamConsumer : Humidifier.Base.BaseResource, IHaveTags
     {
         public class Attributes
         {
@@ -34,5 +34,14 @@ namespace Humidifier.Kinesis
         /// </summary>
         [Required]
         public dynamic StreamARN { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

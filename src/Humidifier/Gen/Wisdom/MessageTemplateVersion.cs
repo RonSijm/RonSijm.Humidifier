@@ -1,6 +1,6 @@
 namespace Humidifier.Wisdom
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class MessageTemplateVersion : Humidifier.Base.BaseResource
     {

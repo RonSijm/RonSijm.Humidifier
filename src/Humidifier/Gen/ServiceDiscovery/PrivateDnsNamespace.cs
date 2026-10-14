@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceDiscovery
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PrivateDnsNamespaceTypes;
 
     public class PrivateDnsNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
@@ -21,15 +21,13 @@ namespace Humidifier.ServiceDiscovery
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-
         /// <summary>
         /// Vpc
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-vpc
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic Vpc { get; set; }
         /// <summary>
         /// Properties
@@ -47,7 +45,7 @@ namespace Humidifier.ServiceDiscovery
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserPoolTypes;
 
     public class UserPool : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDeletionProtection
@@ -31,6 +31,14 @@ namespace Humidifier.Cognito
         /// Type: Policies
         /// </summary>
         public Humidifier.Cognito.UserPoolTypes.Policies Policies { get; set; }
+        /// <summary>
+        /// KeyConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-keyconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: KeyConfiguration
+        /// </summary>
+        public Humidifier.Cognito.UserPoolTypes.KeyConfiguration KeyConfiguration { get; set; }
         /// <summary>
         /// Schema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema
@@ -138,6 +146,14 @@ namespace Humidifier.Cognito
         /// </summary>
         public Humidifier.Cognito.UserPoolTypes.VerificationMessageTemplate VerificationMessageTemplate { get; set; }
         /// <summary>
+        /// IssuerConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-issuerconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IssuerConfiguration
+        /// </summary>
+        public Humidifier.Cognito.UserPoolTypes.IssuerConfiguration IssuerConfiguration { get; set; }
+        /// <summary>
         /// MfaConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration
         /// Required: False
@@ -153,6 +169,14 @@ namespace Humidifier.Cognito
         /// PrimitiveType: String
         /// </summary>
         public dynamic DeletionProtection { get; set; }
+        /// <summary>
+        /// WebAuthnFactorConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-webauthnfactorconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WebAuthnFactorConfiguration { get; set; }
         /// <summary>
         /// SmsAuthenticationMessage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage
@@ -406,6 +430,86 @@ namespace Humidifier.Cognito
             public dynamic From { get; set; }
         }
 
+        public class EumsSmsConfiguration : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveExternalId, IHaveConfigurationSetName
+        {
+            /// <summary>
+            /// InTemplateId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-intemplateid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InTemplateId { get; set; }
+            /// <summary>
+            /// InEntityId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-inentityid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InEntityId { get; set; }
+            /// <summary>
+            /// ExternalId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-externalid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExternalId { get; set; }
+            /// <summary>
+            /// CallerArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-callerarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CallerArn { get; set; }
+            /// <summary>
+            /// ConfigurationSetName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-configurationsetname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConfigurationSetName { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-region
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
+            /// <summary>
+            /// OriginationIdentity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-eumssmsconfiguration.html#cfn-cognito-userpool-eumssmsconfiguration-originationidentity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OriginationIdentity { get; set; }
+        }
+
+        public class InboundFederation : Humidifier.Base.BaseSubResource, IHaveLambdaArn, IHaveLambdaVersion
+        {
+            /// <summary>
+            /// LambdaArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-inboundfederation.html#cfn-cognito-userpool-inboundfederation-lambdaarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LambdaArn { get; set; }
+            /// <summary>
+            /// LambdaVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-inboundfederation.html#cfn-cognito-userpool-inboundfederation-lambdaversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LambdaVersion { get; set; }
+        }
+
         public class InviteMessageTemplate : Humidifier.Base.BaseSubResource, IHaveEmailMessage, IHaveEmailSubject
         {
             /// <summary>
@@ -432,6 +536,38 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic EmailSubject { get; set; }
+        }
+
+        public class IssuerConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-issuerconfiguration.html#cfn-cognito-userpool-issuerconfiguration-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
+        public class KeyConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveKeyType
+        {
+            /// <summary>
+            /// KeyType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-keyconfiguration.html#cfn-cognito-userpool-keyconfiguration-keytype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KeyType { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-keyconfiguration.html#cfn-cognito-userpool-keyconfiguration-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
         }
 
         public class LambdaConfig : Humidifier.Base.BaseSubResource
@@ -508,6 +644,14 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic PreTokenGeneration { get; set; }
+            /// <summary>
+            /// InboundFederation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-inboundfederation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InboundFederation
+            /// </summary>
+            public Humidifier.Cognito.UserPoolTypes.InboundFederation InboundFederation { get; set; }
             /// <summary>
             /// CustomSMSSender
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customsmssender
@@ -781,6 +925,14 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExternalId { get; set; }
+            /// <summary>
+            /// EumsSms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-eumssms
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EumsSmsConfiguration
+            /// </summary>
+            public Humidifier.Cognito.UserPoolTypes.EumsSmsConfiguration EumsSms { get; set; }
             /// <summary>
             /// SnsCallerArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snscallerarn

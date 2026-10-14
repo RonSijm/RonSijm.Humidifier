@@ -1,6 +1,6 @@
 namespace Humidifier.MediaConnect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BridgeTypes;
 
     public class Bridge : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

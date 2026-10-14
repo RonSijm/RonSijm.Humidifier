@@ -1,6 +1,6 @@
 namespace Humidifier.WAFRegional
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SqlInjectionMatchSetTypes;
 
     public class SqlInjectionMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

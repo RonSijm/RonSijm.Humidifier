@@ -1,8 +1,8 @@
 namespace Humidifier.Route53Resolver
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class ResolverQueryLoggingConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDestinationArn
+    public class ResolverQueryLoggingConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDestinationArn
     {
         public class Attributes
         {
@@ -25,6 +25,15 @@ namespace Humidifier.Route53Resolver
         /// PrimitiveType: String
         /// </summary>
         public dynamic DestinationArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#cfn-route53resolver-resolverqueryloggingconfig-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

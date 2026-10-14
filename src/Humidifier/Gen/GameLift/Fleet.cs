@@ -1,13 +1,14 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveMinSize, IHaveMaxSize, IHaveComputeType, IHaveDesiredEC2Instances, IHaveFleetType, IHavePeerVpcId, IHaveNewGameSessionProtectionPolicy, IHaveMetricGroups
+    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveComputeType, IHaveFleetType, IHavePeerVpcId, IHaveNewGameSessionProtectionPolicy, IHaveMetricGroups
     {
         public class Attributes
         {
             public static string FleetId =  "FleetId" ;
+            public static string FleetArn =  "FleetArn" ;
         }
 
         public override string AWSTypeName { get => AWS.GameLift.Fleet; }
@@ -40,7 +41,7 @@ namespace Humidifier.GameLift
         /// ApplyCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-applycapacity
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic ApplyCapacity { get; set; }
@@ -71,6 +72,14 @@ namespace Humidifier.GameLift
         /// </summary>
         public List<Humidifier.GameLift.FleetTypes.LocationConfiguration> Locations { get; set; }
         /// <summary>
+        /// PlayerGatewayConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-playergatewayconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: PlayerGatewayConfiguration
+        /// </summary>
+        public Humidifier.GameLift.FleetTypes.PlayerGatewayConfiguration PlayerGatewayConfiguration { get; set; }
+        /// <summary>
         /// NewGameSessionProtectionPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-newgamesessionprotectionpolicy
         /// Required: False
@@ -95,14 +104,6 @@ namespace Humidifier.GameLift
         /// </summary>
         public dynamic ComputeType { get; set; }
         /// <summary>
-        /// MaxSize
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-maxsize
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic MaxSize { get; set; }
-        /// <summary>
         /// RuntimeConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration
         /// Required: False
@@ -112,13 +113,13 @@ namespace Humidifier.GameLift
         public Humidifier.GameLift.FleetTypes.RuntimeConfiguration RuntimeConfiguration { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
-        /// MinSize
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-minsize
+        /// PlayerGatewayMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-playergatewaymode
         /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
         /// </summary>
-        public dynamic MinSize { get; set; }
+        public dynamic PlayerGatewayMode { get; set; }
         /// <summary>
         /// PeerVpcAwsAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcawsaccountid
@@ -193,13 +194,14 @@ namespace Humidifier.GameLift
         /// </summary>
         public dynamic InstanceRoleCredentialsProvider { get; set; }
         /// <summary>
-        /// DesiredEC2Instances
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Integer
+        /// Type: List
+        /// ItemType: Tag
         /// </summary>
-        public dynamic DesiredEC2Instances { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace FleetTypes
@@ -269,15 +271,23 @@ namespace Humidifier.GameLift
             /// <summary>
             /// MinSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-minsize
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MinSize { get; set; }
             /// <summary>
+            /// ManagedCapacityConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-managedcapacityconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedCapacityConfiguration
+            /// </summary>
+            public Humidifier.GameLift.FleetTypes.ManagedCapacityConfiguration ManagedCapacityConfiguration { get; set; }
+            /// <summary>
             /// DesiredEC2Instances
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-desiredec2instances
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
@@ -295,6 +305,14 @@ namespace Humidifier.GameLift
         public class LocationConfiguration : Humidifier.Base.BaseSubResource, IHaveLocation
         {
             /// <summary>
+            /// PlayerGatewayStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationconfiguration.html#cfn-gamelift-fleet-locationconfiguration-playergatewaystatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PlayerGatewayStatus { get; set; }
+            /// <summary>
             /// LocationCapacity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationconfiguration.html#cfn-gamelift-fleet-locationconfiguration-locationcapacity
             /// Required: False
@@ -310,6 +328,38 @@ namespace Humidifier.GameLift
             /// PrimitiveType: String
             /// </summary>
             public dynamic Location { get; set; }
+        }
+
+        public class ManagedCapacityConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ScaleInAfterInactivityMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-managedcapacityconfiguration.html#cfn-gamelift-fleet-managedcapacityconfiguration-scaleinafterinactivityminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ScaleInAfterInactivityMinutes { get; set; }
+            /// <summary>
+            /// ZeroCapacityStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-managedcapacityconfiguration.html#cfn-gamelift-fleet-managedcapacityconfiguration-zerocapacitystrategy
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ZeroCapacityStrategy { get; set; }
+        }
+
+        public class PlayerGatewayConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// GameServerIpProtocolSupported
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-playergatewayconfiguration.html#cfn-gamelift-fleet-playergatewayconfiguration-gameserveripprotocolsupported
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GameServerIpProtocolSupported { get; set; }
         }
 
         public class ResourceCreationLimitPolicy : Humidifier.Base.BaseSubResource, IHavePolicyPeriodInMinutes, IHaveNewGameSessionsPerCreator
@@ -374,7 +424,7 @@ namespace Humidifier.GameLift
             /// <summary>
             /// MetricName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-scalingpolicy.html#cfn-gamelift-fleet-scalingpolicy-metricname
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

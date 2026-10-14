@@ -1,13 +1,14 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyIdentifier
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyIdentifier, IHaveServiceRole
     {
         public class Attributes
         {
             public static string Status =  "Status" ;
+            public static string RootDomainUnitId =  "RootDomainUnitId" ;
             public static string LastUpdatedAt =  "LastUpdatedAt" ;
             public static string PortalUrl =  "PortalUrl" ;
             public static string CreatedAt =  "CreatedAt" ;
@@ -17,15 +18,13 @@ namespace Humidifier.DataZone
         }
 
         public override string AWSTypeName { get => AWS.DataZone.Domain; }
-
         /// <summary>
         /// DomainExecutionRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-domain.html#cfn-datazone-domain-domainexecutionrole
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic DomainExecutionRole { get; set; }
         /// <summary>
         /// KmsKeyIdentifier
@@ -44,6 +43,22 @@ namespace Humidifier.DataZone
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// ServiceRole
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-domain.html#cfn-datazone-domain-servicerole
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ServiceRole { get; set; }
+        /// <summary>
+        /// DomainVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-domain.html#cfn-datazone-domain-domainversion
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DomainVersion { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datazone-domain.html#cfn-datazone-domain-tags
         /// Required: False
@@ -51,7 +66,7 @@ namespace Humidifier.DataZone
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// SingleSignOn
@@ -83,6 +98,14 @@ namespace Humidifier.DataZone
             /// PrimitiveType: String
             /// </summary>
             public dynamic UserAssignment { get; set; }
+            /// <summary>
+            /// IdcInstanceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-domain-singlesignon.html#cfn-datazone-domain-singlesignon-idcinstancearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdcInstanceArn { get; set; }
         }
     }
 }

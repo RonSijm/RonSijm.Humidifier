@@ -1,6 +1,6 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Certificate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHavePrivateKey, IHaveCertificateChain
     {
@@ -74,7 +74,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// Certificate_

@@ -1,6 +1,6 @@
 namespace Humidifier.PinpointEmail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DedicatedIpPoolTypes;
 
     public class DedicatedIpPool : Humidifier.Base.BaseResource, IHavePoolName

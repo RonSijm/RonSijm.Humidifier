@@ -1,6 +1,6 @@
 namespace Humidifier.SNS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TopicInlinePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveTopicArn
     {

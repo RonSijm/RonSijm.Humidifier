@@ -1,6 +1,6 @@
 namespace Humidifier.Batch
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using JobQueueTypes;
 
     public class JobQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveState, IHavePriority
@@ -11,16 +11,14 @@ namespace Humidifier.Batch
         }
 
         public override string AWSTypeName { get => AWS.Batch.JobQueue; }
-
         /// <summary>
         /// ComputeEnvironmentOrder
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-computeenvironmentorder
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: ComputeEnvironmentOrder
         /// </summary>
-        [Required]
         public List<Humidifier.Batch.JobQueueTypes.ComputeEnvironmentOrder> ComputeEnvironmentOrder { get; set; }
 
         /// <summary>
@@ -40,6 +38,23 @@ namespace Humidifier.Batch
         /// PrimitiveType: String
         /// </summary>
         public dynamic State { get; set; }
+        /// <summary>
+        /// JobQueueType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-jobqueuetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic JobQueueType { get; set; }
+        /// <summary>
+        /// ServiceEnvironmentOrder
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-serviceenvironmentorder
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ServiceEnvironmentOrder
+        /// </summary>
+        public List<Humidifier.Batch.JobQueueTypes.ServiceEnvironmentOrder> ServiceEnvironmentOrder { get; set; }
         /// <summary>
         /// SchedulingPolicyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-schedulingpolicyarn
@@ -62,7 +77,7 @@ namespace Humidifier.Batch
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
@@ -125,6 +140,26 @@ namespace Humidifier.Batch
             /// PrimitiveType: String
             /// </summary>
             public dynamic Reason { get; set; }
+        }
+
+        public class ServiceEnvironmentOrder : Humidifier.Base.BaseSubResource, IHaveOrder
+        {
+            /// <summary>
+            /// Order
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-serviceenvironmentorder.html#cfn-batch-jobqueue-serviceenvironmentorder-order
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Order { get; set; }
+            /// <summary>
+            /// ServiceEnvironment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-serviceenvironmentorder.html#cfn-batch-jobqueue-serviceenvironmentorder-serviceenvironment
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServiceEnvironment { get; set; }
         }
     }
 }

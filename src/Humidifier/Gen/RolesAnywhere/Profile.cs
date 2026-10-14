@@ -1,6 +1,6 @@
 namespace Humidifier.RolesAnywhere
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ProfileTypes;
 
     public class Profile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEnabled, IHaveManagedPolicyArns, IHaveDurationSeconds
@@ -89,7 +89,7 @@ namespace Humidifier.RolesAnywhere
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

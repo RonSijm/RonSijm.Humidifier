@@ -1,12 +1,13 @@
 namespace Humidifier.CodePipeline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WebhookTypes;
 
-    public class Webhook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAuthentication
+    public class Webhook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAuthentication
     {
         public class Attributes
         {
+            public static string Id =  "Id" ;
             public static string Url =  "Url" ;
         }
 
@@ -62,16 +63,23 @@ namespace Humidifier.CodePipeline
         /// </summary>
         [Required]
         public dynamic TargetAction { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
-
         /// <summary>
         /// TargetPipelineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
-        [Required]
         public dynamic TargetPipelineVersion { get; set; }
         /// <summary>
         /// RegisterWithThirdParty

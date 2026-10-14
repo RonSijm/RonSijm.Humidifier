@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RealtimeLogConfigTypes;
 
     public class RealtimeLogConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSamplingRate

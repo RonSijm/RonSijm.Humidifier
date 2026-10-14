@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdentityPoolTypes;
 
     public class IdentityPool : Humidifier.Base.BaseResource, IHaveImpliedResourceName
@@ -80,7 +80,7 @@ namespace Humidifier.Cognito
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> IdentityPoolTags { get; set; }
+        public List<Humidifier.Tag> IdentityPoolTags { get; set; }
         /// <summary>
         /// SamlProviderARNs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-samlproviderarns

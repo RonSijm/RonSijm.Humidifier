@@ -1,6 +1,6 @@
 namespace Humidifier.ApplicationSignals
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServiceLevelObjectiveTypes;
 
     public class ServiceLevelObjective : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
@@ -56,6 +56,15 @@ namespace Humidifier.ApplicationSignals
         /// </summary>
         public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.RequestBasedSli RequestBasedSli { get; set; }
         /// <summary>
+        /// ExclusionWindows
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationsignals-servicelevelobjective.html#cfn-applicationsignals-servicelevelobjective-exclusionwindows
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ExclusionWindow
+        /// </summary>
+        public List<Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.ExclusionWindow> ExclusionWindows { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationsignals-servicelevelobjective.html#cfn-applicationsignals-servicelevelobjective-tags
         /// Required: False
@@ -63,7 +72,7 @@ namespace Humidifier.ApplicationSignals
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -109,6 +118,60 @@ namespace Humidifier.ApplicationSignals
             public dynamic Duration { get; set; }
         }
 
+        public class CompositeSliComponent : Humidifier.Base.BaseSubResource, IHaveOperationName
+        {
+            /// <summary>
+            /// OperationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-compositeslicomponent.html#cfn-applicationsignals-servicelevelobjective-compositeslicomponent-operationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OperationName { get; set; }
+        }
+
+        public class CompositeSliConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SelectionConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-compositesliconfig.html#cfn-applicationsignals-servicelevelobjective-compositesliconfig-selectionconfig
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: SelectionConfig
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.SelectionConfig SelectionConfig { get; set; }
+            /// <summary>
+            /// CompositeSliComponents
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-compositesliconfig.html#cfn-applicationsignals-servicelevelobjective-compositesliconfig-compositeslicomponents
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CompositeSliComponent
+            /// </summary>
+            public List<Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.CompositeSliComponent> CompositeSliComponents { get; set; }
+        }
+
+        public class DependencyConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DependencyOperationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-dependencyconfig.html#cfn-applicationsignals-servicelevelobjective-dependencyconfig-dependencyoperationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DependencyOperationName { get; set; }
+            /// <summary>
+            /// DependencyKeyAttributes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-dependencyconfig.html#cfn-applicationsignals-servicelevelobjective-dependencyconfig-dependencykeyattributes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> DependencyKeyAttributes { get; set; }
+        }
+
         public class Dimension : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue
         {
             /// <summary>
@@ -127,6 +190,42 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class ExclusionWindow : Humidifier.Base.BaseSubResource, IHaveStartTime, IHaveReason
+        {
+            /// <summary>
+            /// Window
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-exclusionwindow.html#cfn-applicationsignals-servicelevelobjective-exclusionwindow-window
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Window
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.Window Window { get; set; }
+            /// <summary>
+            /// RecurrenceRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-exclusionwindow.html#cfn-applicationsignals-servicelevelobjective-exclusionwindow-recurrencerule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RecurrenceRule
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.RecurrenceRule RecurrenceRule { get; set; }
+            /// <summary>
+            /// StartTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-exclusionwindow.html#cfn-applicationsignals-servicelevelobjective-exclusionwindow-starttime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StartTime { get; set; }
+            /// <summary>
+            /// Reason
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-exclusionwindow.html#cfn-applicationsignals-servicelevelobjective-exclusionwindow-reason
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Reason { get; set; }
         }
 
         public class Goal : Humidifier.Base.BaseSubResource
@@ -209,6 +308,14 @@ namespace Humidifier.ApplicationSignals
         public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveAccountId, IHaveReturnData
         {
             /// <summary>
+            /// MetricStat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricdataquery.html#cfn-applicationsignals-servicelevelobjective-metricdataquery-metricstat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetricStat
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricStat MetricStat { get; set; }
+            /// <summary>
             /// AccountId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricdataquery.html#cfn-applicationsignals-servicelevelobjective-metricdataquery-accountid
             /// Required: False
@@ -216,6 +323,14 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccountId { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricdataquery.html#cfn-applicationsignals-servicelevelobjective-metricdataquery-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
             /// <summary>
             /// ReturnData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricdataquery.html#cfn-applicationsignals-servicelevelobjective-metricdataquery-returndata
@@ -232,22 +347,28 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: String
             /// </summary>
             public dynamic Expression { get; set; }
+        }
+
+        public class MetricSource : Humidifier.Base.BaseSubResource
+        {
             /// <summary>
-            /// MetricStat
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricdataquery.html#cfn-applicationsignals-servicelevelobjective-metricdataquery-metricstat
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: MetricStat
-            /// </summary>
-            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricStat MetricStat { get; set; }
-            /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricdataquery.html#cfn-applicationsignals-servicelevelobjective-metricdataquery-id
+            /// MetricSourceKeyAttributes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricsource.html#cfn-applicationsignals-servicelevelobjective-metricsource-metricsourcekeyattributes
             /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: Map
+            /// PrimitiveItemType: String
             /// </summary>
-            public dynamic Id { get; set; }
+            public Dictionary<string, dynamic> MetricSourceKeyAttributes { get; set; }
+            /// <summary>
+            /// MetricSourceAttributes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-metricsource.html#cfn-applicationsignals-servicelevelobjective-metricsource-metricsourceattributes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> MetricSourceAttributes { get; set; }
         }
 
         public class MetricStat : Humidifier.Base.BaseSubResource, IHaveUnit, IHavePeriod, IHaveStat
@@ -308,6 +429,18 @@ namespace Humidifier.ApplicationSignals
             public List<Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricDataQuery> BadCountMetric { get; set; }
         }
 
+        public class RecurrenceRule : Humidifier.Base.BaseSubResource, IHaveExpression
+        {
+            /// <summary>
+            /// Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-recurrencerule.html#cfn-applicationsignals-servicelevelobjective-recurrencerule-expression
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expression { get; set; }
+        }
+
         public class RequestBasedSli : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveMetricThreshold
         {
             /// <summary>
@@ -336,7 +469,7 @@ namespace Humidifier.ApplicationSignals
             public dynamic MetricThreshold { get; set; }
         }
 
-        public class RequestBasedSliMetric : Humidifier.Base.BaseSubResource, IHaveOperationName, IHaveMetricType
+        public class RequestBasedSliMetric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveOperationName, IHaveMetricType
         {
             /// <summary>
             /// MonitoredRequestCountMetric
@@ -347,6 +480,14 @@ namespace Humidifier.ApplicationSignals
             /// </summary>
             public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MonitoredRequestCountMetric MonitoredRequestCountMetric { get; set; }
             /// <summary>
+            /// MetricName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-requestbasedslimetric.html#cfn-applicationsignals-servicelevelobjective-requestbasedslimetric-metricname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetricName { get; set; }
+            /// <summary>
             /// OperationName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-requestbasedslimetric.html#cfn-applicationsignals-servicelevelobjective-requestbasedslimetric-operationname
             /// Required: False
@@ -354,6 +495,14 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: String
             /// </summary>
             public dynamic OperationName { get; set; }
+            /// <summary>
+            /// CompositeSliConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-requestbasedslimetric.html#cfn-applicationsignals-servicelevelobjective-requestbasedslimetric-compositesliconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CompositeSliConfig
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.CompositeSliConfig CompositeSliConfig { get; set; }
             /// <summary>
             /// TotalRequestCountMetric
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-requestbasedslimetric.html#cfn-applicationsignals-servicelevelobjective-requestbasedslimetric-totalrequestcountmetric
@@ -380,6 +529,22 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: String
             /// </summary>
             public dynamic MetricType { get; set; }
+            /// <summary>
+            /// MetricSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-requestbasedslimetric.html#cfn-applicationsignals-servicelevelobjective-requestbasedslimetric-metricsource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetricSource
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricSource MetricSource { get; set; }
+            /// <summary>
+            /// DependencyConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-requestbasedslimetric.html#cfn-applicationsignals-servicelevelobjective-requestbasedslimetric-dependencyconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DependencyConfig
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.DependencyConfig DependencyConfig { get; set; }
         }
 
         public class RollingInterval : Humidifier.Base.BaseSubResource, IHaveDuration, IHaveDurationUnit
@@ -400,6 +565,26 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Duration { get; set; }
+        }
+
+        public class SelectionConfig : Humidifier.Base.BaseSubResource, IHaveType, IHavePattern
+        {
+            /// <summary>
+            /// Pattern
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-selectionconfig.html#cfn-applicationsignals-servicelevelobjective-selectionconfig-pattern
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Pattern { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-selectionconfig.html#cfn-applicationsignals-servicelevelobjective-selectionconfig-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
 
         public class Sli : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveMetricThreshold
@@ -430,8 +615,16 @@ namespace Humidifier.ApplicationSignals
             public dynamic MetricThreshold { get; set; }
         }
 
-        public class SliMetric : Humidifier.Base.BaseSubResource, IHaveStatistic, IHaveOperationName, IHaveMetricType
+        public class SliMetric : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveStatistic, IHaveOperationName, IHaveMetricType
         {
+            /// <summary>
+            /// MetricName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-metricname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetricName { get; set; }
             /// <summary>
             /// Statistic
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-statistic
@@ -448,6 +641,14 @@ namespace Humidifier.ApplicationSignals
             /// PrimitiveType: String
             /// </summary>
             public dynamic OperationName { get; set; }
+            /// <summary>
+            /// CompositeSliConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-compositesliconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CompositeSliConfig
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.CompositeSliConfig CompositeSliConfig { get; set; }
             /// <summary>
             /// KeyAttributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-keyattributes
@@ -474,6 +675,14 @@ namespace Humidifier.ApplicationSignals
             /// </summary>
             public dynamic PeriodSeconds { get; set; }
             /// <summary>
+            /// MetricSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-metricsource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetricSource
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricSource MetricSource { get; set; }
+            /// <summary>
             /// MetricDataQueries
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-metricdataqueries
             /// Required: False
@@ -482,6 +691,34 @@ namespace Humidifier.ApplicationSignals
             /// ItemType: MetricDataQuery
             /// </summary>
             public List<Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.MetricDataQuery> MetricDataQueries { get; set; }
+            /// <summary>
+            /// DependencyConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-slimetric.html#cfn-applicationsignals-servicelevelobjective-slimetric-dependencyconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DependencyConfig
+            /// </summary>
+            public Humidifier.ApplicationSignals.ServiceLevelObjectiveTypes.DependencyConfig DependencyConfig { get; set; }
+        }
+
+        public class Window : Humidifier.Base.BaseSubResource, IHaveDuration, IHaveDurationUnit
+        {
+            /// <summary>
+            /// DurationUnit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-window.html#cfn-applicationsignals-servicelevelobjective-window-durationunit
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DurationUnit { get; set; }
+            /// <summary>
+            /// Duration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationsignals-servicelevelobjective-window.html#cfn-applicationsignals-servicelevelobjective-window-duration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Duration { get; set; }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.Forecast
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DatasetTypes;
 
     public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDomain, IHaveDatasetName, IHaveDatasetType

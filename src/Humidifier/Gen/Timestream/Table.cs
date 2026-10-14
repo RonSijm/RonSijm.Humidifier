@@ -1,6 +1,6 @@
 namespace Humidifier.Timestream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TableTypes;
 
     public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDatabaseName, IHaveTableName
@@ -47,7 +47,7 @@ namespace Humidifier.Timestream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MagneticStoreWriteProperties
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-magneticstorewriteproperties

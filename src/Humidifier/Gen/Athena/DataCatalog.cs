@@ -1,10 +1,18 @@
 namespace Humidifier.Athena
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class DataCatalog : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType
+    public class DataCatalog : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType, IHaveStatus, IHaveConnectionType
     {
         public override string AWSTypeName { get => AWS.Athena.DataCatalog; }
+        /// <summary>
+        /// Status
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-status
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Status { get; set; }
 
         /// <summary>
         /// Type
@@ -33,6 +41,22 @@ namespace Humidifier.Athena
         /// </summary>
         public Dictionary<string, dynamic> Parameters { get; set; }
         /// <summary>
+        /// ConnectionType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-connectiontype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConnectionType { get; set; }
+        /// <summary>
+        /// Error
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-error
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Error { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-datacatalog.html#cfn-athena-datacatalog-tags
         /// Required: False
@@ -40,7 +64,7 @@ namespace Humidifier.Athena
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

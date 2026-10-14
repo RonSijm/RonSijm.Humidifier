@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BackupVaultTypes;
 
     public class BackupVault : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveEncryptionKeyArn, IHaveBackupVaultName, IHaveAccessPolicy

@@ -1,6 +1,6 @@
 namespace Humidifier.IoTFleetWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CampaignTypes;
 
     public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAction, IHavePriority, IHaveStartTime, IHaveTargetArn, IHaveCompression, IHaveSignalCatalogArn, IHaveDataExtraDimensions
@@ -59,7 +59,7 @@ namespace Humidifier.IoTFleetWise
         /// SignalsToCollect
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-signalstocollect
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: List
         /// ItemType: SignalInformation
         /// </summary>
@@ -76,7 +76,7 @@ namespace Humidifier.IoTFleetWise
         /// SignalsToFetch
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-signalstofetch
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: List
         /// ItemType: SignalFetchInformation
         /// </summary>
@@ -101,7 +101,7 @@ namespace Humidifier.IoTFleetWise
         /// DataDestinationConfigs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#cfn-iotfleetwise-campaign-datadestinationconfigs
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: List
         /// ItemType: DataDestinationConfig
         /// </summary>
@@ -170,7 +170,7 @@ namespace Humidifier.IoTFleetWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace CampaignTypes
@@ -237,7 +237,7 @@ namespace Humidifier.IoTFleetWise
             /// ConditionExpression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedsignalfetchconfig.html#cfn-iotfleetwise-campaign-conditionbasedsignalfetchconfig-conditionexpression
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConditionExpression { get; set; }
@@ -245,7 +245,7 @@ namespace Humidifier.IoTFleetWise
             /// TriggerMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedsignalfetchconfig.html#cfn-iotfleetwise-campaign-conditionbasedsignalfetchconfig-triggermode
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TriggerMode { get; set; }
@@ -257,7 +257,7 @@ namespace Humidifier.IoTFleetWise
             /// S3Config
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datadestinationconfig.html#cfn-iotfleetwise-campaign-datadestinationconfig-s3config
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: S3Config
             /// </summary>
             public Humidifier.IoTFleetWise.CampaignTypes.S3Config S3Config { get; set; }
@@ -265,7 +265,7 @@ namespace Humidifier.IoTFleetWise
             /// MqttTopicConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datadestinationconfig.html#cfn-iotfleetwise-campaign-datadestinationconfig-mqtttopicconfig
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: MqttTopicConfig
             /// </summary>
             public Humidifier.IoTFleetWise.CampaignTypes.MqttTopicConfig MqttTopicConfig { get; set; }
@@ -273,7 +273,7 @@ namespace Humidifier.IoTFleetWise
             /// TimestreamConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-datadestinationconfig.html#cfn-iotfleetwise-campaign-datadestinationconfig-timestreamconfig
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: TimestreamConfig
             /// </summary>
             public Humidifier.IoTFleetWise.CampaignTypes.TimestreamConfig TimestreamConfig { get; set; }
@@ -361,7 +361,7 @@ namespace Humidifier.IoTFleetWise
             /// ExecutionRoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-mqtttopicconfig.html#cfn-iotfleetwise-campaign-mqtttopicconfig-executionrolearn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExecutionRoleArn { get; set; }
@@ -369,7 +369,7 @@ namespace Humidifier.IoTFleetWise
             /// MqttTopicArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-mqtttopicconfig.html#cfn-iotfleetwise-campaign-mqtttopicconfig-mqtttopicarn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic MqttTopicArn { get; set; }
@@ -381,7 +381,7 @@ namespace Humidifier.IoTFleetWise
             /// BucketArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-bucketarn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic BucketArn { get; set; }
@@ -389,7 +389,7 @@ namespace Humidifier.IoTFleetWise
             /// DataFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-dataformat
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataFormat { get; set; }
@@ -397,7 +397,7 @@ namespace Humidifier.IoTFleetWise
             /// StorageCompressionFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-storagecompressionformat
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic StorageCompressionFormat { get; set; }
@@ -405,7 +405,7 @@ namespace Humidifier.IoTFleetWise
             /// Prefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-s3config.html#cfn-iotfleetwise-campaign-s3config-prefix
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Prefix { get; set; }
@@ -417,7 +417,7 @@ namespace Humidifier.IoTFleetWise
             /// ConditionBased
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalfetchconfig.html#cfn-iotfleetwise-campaign-signalfetchconfig-conditionbased
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: ConditionBasedSignalFetchConfig
             /// </summary>
             public Humidifier.IoTFleetWise.CampaignTypes.ConditionBasedSignalFetchConfig ConditionBased { get; set; }
@@ -425,7 +425,7 @@ namespace Humidifier.IoTFleetWise
             /// TimeBased
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalfetchconfig.html#cfn-iotfleetwise-campaign-signalfetchconfig-timebased
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: TimeBasedSignalFetchConfig
             /// </summary>
             public Humidifier.IoTFleetWise.CampaignTypes.TimeBasedSignalFetchConfig TimeBased { get; set; }
@@ -437,7 +437,7 @@ namespace Humidifier.IoTFleetWise
             /// Actions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalfetchinformation.html#cfn-iotfleetwise-campaign-signalfetchinformation-actions
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -446,7 +446,7 @@ namespace Humidifier.IoTFleetWise
             /// FullyQualifiedName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalfetchinformation.html#cfn-iotfleetwise-campaign-signalfetchinformation-fullyqualifiedname
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic FullyQualifiedName { get; set; }
@@ -454,7 +454,7 @@ namespace Humidifier.IoTFleetWise
             /// SignalFetchConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalfetchinformation.html#cfn-iotfleetwise-campaign-signalfetchinformation-signalfetchconfig
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: SignalFetchConfig
             /// </summary>
             public Humidifier.IoTFleetWise.CampaignTypes.SignalFetchConfig SignalFetchConfig { get; set; }
@@ -462,7 +462,7 @@ namespace Humidifier.IoTFleetWise
             /// ConditionLanguageVersion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalfetchinformation.html#cfn-iotfleetwise-campaign-signalfetchinformation-conditionlanguageversion
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
             public dynamic ConditionLanguageVersion { get; set; }
@@ -474,7 +474,7 @@ namespace Humidifier.IoTFleetWise
             /// MaxSampleCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-maxsamplecount
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
             public dynamic MaxSampleCount { get; set; }
@@ -482,7 +482,7 @@ namespace Humidifier.IoTFleetWise
             /// DataPartitionId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-datapartitionid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataPartitionId { get; set; }
@@ -490,7 +490,7 @@ namespace Humidifier.IoTFleetWise
             /// MinimumSamplingIntervalMs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-minimumsamplingintervalms
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
             public dynamic MinimumSamplingIntervalMs { get; set; }
@@ -498,7 +498,7 @@ namespace Humidifier.IoTFleetWise
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-signalinformation.html#cfn-iotfleetwise-campaign-signalinformation-name
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -562,7 +562,7 @@ namespace Humidifier.IoTFleetWise
             /// ExecutionFrequencyMs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timebasedsignalfetchconfig.html#cfn-iotfleetwise-campaign-timebasedsignalfetchconfig-executionfrequencyms
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
             public dynamic ExecutionFrequencyMs { get; set; }
@@ -574,7 +574,7 @@ namespace Humidifier.IoTFleetWise
             /// ExecutionRoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timestreamconfig.html#cfn-iotfleetwise-campaign-timestreamconfig-executionrolearn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExecutionRoleArn { get; set; }
@@ -582,7 +582,7 @@ namespace Humidifier.IoTFleetWise
             /// TimestreamTableArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-timestreamconfig.html#cfn-iotfleetwise-campaign-timestreamconfig-timestreamtablearn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TimestreamTableArn { get; set; }

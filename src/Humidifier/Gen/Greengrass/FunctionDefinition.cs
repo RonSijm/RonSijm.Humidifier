@@ -1,6 +1,6 @@
 namespace Humidifier.Greengrass
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FunctionDefinitionTypes;
 
     public class FunctionDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDynamicTags

@@ -1,6 +1,6 @@
 namespace Humidifier.SecretsManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHaveBlockPublicPolicy, IHaveSecretId, IHaveResourcePolicy_
     {

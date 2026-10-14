@@ -1,9 +1,9 @@
 namespace Humidifier.S3Express
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DirectoryBucketTypes;
 
-    public class DirectoryBucket : Humidifier.Base.BaseResource, IHaveBucketName, IHaveLocationName
+    public class DirectoryBucket : Humidifier.Base.BaseResource, IHaveTags, IHaveBucketName, IHaveLocationName
     {
         public class Attributes
         {
@@ -12,6 +12,15 @@ namespace Humidifier.S3Express
         }
 
         public override string AWSTypeName { get => AWS.S3Express.DirectoryBucket; }
+        /// <summary>
+        /// InventoryConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-inventoryconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: InventoryConfiguration
+        /// </summary>
+        public List<Humidifier.S3Express.DirectoryBucketTypes.InventoryConfiguration> InventoryConfigurations { get; set; }
         /// <summary>
         /// BucketName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-bucketname
@@ -46,6 +55,24 @@ namespace Humidifier.S3Express
         /// Type: LifecycleConfiguration
         /// </summary>
         public Humidifier.S3Express.DirectoryBucketTypes.LifecycleConfiguration LifecycleConfiguration { get; set; }
+        /// <summary>
+        /// MetricsConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-metricsconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: MetricsConfiguration
+        /// </summary>
+        public List<Humidifier.S3Express.DirectoryBucketTypes.MetricsConfiguration> MetricsConfigurations { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3express-directorybucket.html#cfn-s3express-directorybucket-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// LocationName
@@ -85,6 +112,103 @@ namespace Humidifier.S3Express
             public List<Humidifier.S3Express.DirectoryBucketTypes.ServerSideEncryptionRule> ServerSideEncryptionConfiguration { get; set; }
         }
 
+        public class Destination : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveFormat, IHaveBucketArn, IHaveBucketAccountId
+        {
+            /// <summary>
+            /// BucketArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-destination.html#cfn-s3express-directorybucket-destination-bucketarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketArn { get; set; }
+            /// <summary>
+            /// Format
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-destination.html#cfn-s3express-directorybucket-destination-format
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Format { get; set; }
+            /// <summary>
+            /// BucketAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-destination.html#cfn-s3express-directorybucket-destination-bucketaccountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketAccountId { get; set; }
+            /// <summary>
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-destination.html#cfn-s3express-directorybucket-destination-prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Prefix { get; set; }
+        }
+
+        public class InventoryConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveId, IHavePrefix
+        {
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-destination
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Destination
+            /// </summary>
+            public Humidifier.S3Express.DirectoryBucketTypes.Destination Destination { get; set; }
+            /// <summary>
+            /// OptionalFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-optionalfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic OptionalFields { get; set; }
+            /// <summary>
+            /// IncludedObjectVersions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-includedobjectversions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IncludedObjectVersions { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+            /// <summary>
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Prefix { get; set; }
+            /// <summary>
+            /// ScheduleFrequency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-inventoryconfiguration.html#cfn-s3express-directorybucket-inventoryconfiguration-schedulefrequency
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScheduleFrequency { get; set; }
+        }
+
         public class LifecycleConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -96,6 +220,34 @@ namespace Humidifier.S3Express
             /// ItemType: Rule
             /// </summary>
             public List<Humidifier.S3Express.DirectoryBucketTypes.Rule> Rules { get; set; }
+        }
+
+        public class MetricsConfiguration : Humidifier.Base.BaseSubResource, IHaveId, IHavePrefix, IHaveAccessPointArn
+        {
+            /// <summary>
+            /// AccessPointArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-metricsconfiguration.html#cfn-s3express-directorybucket-metricsconfiguration-accesspointarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AccessPointArn { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-metricsconfiguration.html#cfn-s3express-directorybucket-metricsconfiguration-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+            /// <summary>
+            /// Prefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3express-directorybucket-metricsconfiguration.html#cfn-s3express-directorybucket-metricsconfiguration-prefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Prefix { get; set; }
         }
 
         public class Rule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveId, IHavePrefix, IHaveExpirationInDays, IHaveObjectSizeGreaterThan, IHaveObjectSizeLessThan

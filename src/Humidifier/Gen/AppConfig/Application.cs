@@ -1,6 +1,6 @@
 namespace Humidifier.AppConfig
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationTypes;
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

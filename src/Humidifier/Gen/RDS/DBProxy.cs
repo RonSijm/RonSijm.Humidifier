@@ -1,6 +1,6 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DBProxyTypes;
 
     public class DBProxy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleArn, IHaveVpcSecurityGroupIds, IHaveVpcSubnetIds, IHaveDBProxyName
@@ -13,43 +13,7 @@ namespace Humidifier.RDS
         }
 
         public override string AWSTypeName { get => AWS.RDS.DBProxy; }
-        /// <summary>
-        /// RequireTLS
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-requiretls
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic RequireTLS { get; set; }
         public dynamic DBProxyName { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// IdleClientTimeout
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-idleclienttimeout
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic IdleClientTimeout { get; set; }
-        /// <summary>
-        /// VpcSecurityGroupIds
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-vpcsecuritygroupids
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic VpcSecurityGroupIds { get; set; }
-
-        /// <summary>
-        /// Auth
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-auth
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: AuthFormat
-        /// </summary>
-        [Required]
-        public List<Humidifier.RDS.DBProxyTypes.AuthFormat> Auth { get; set; }
         /// <summary>
         /// DebugLogging
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-debuglogging
@@ -79,6 +43,56 @@ namespace Humidifier.RDS
         /// </summary>
         [Required]
         public dynamic RoleArn { get; set; }
+        /// <summary>
+        /// RequireTLS
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-requiretls
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic RequireTLS { get; set; }
+        /// <summary>
+        /// IdleClientTimeout
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-idleclienttimeout
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic IdleClientTimeout { get; set; }
+        /// <summary>
+        /// TargetConnectionNetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-targetconnectionnetworktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TargetConnectionNetworkType { get; set; }
+        /// <summary>
+        /// DefaultAuthScheme
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-defaultauthscheme
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DefaultAuthScheme { get; set; }
+        /// <summary>
+        /// VpcSecurityGroupIds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-vpcsecuritygroupids
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic VpcSecurityGroupIds { get; set; }
+        /// <summary>
+        /// Auth
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-auth
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AuthFormat
+        /// </summary>
+        public List<Humidifier.RDS.DBProxyTypes.AuthFormat> Auth { get; set; }
 
         /// <summary>
         /// EngineFamily
@@ -98,6 +112,14 @@ namespace Humidifier.RDS
         /// ItemType: TagFormat
         /// </summary>
         public List<Humidifier.RDS.DBProxyTypes.TagFormat> Tags { get; set; }
+        /// <summary>
+        /// EndpointNetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-endpointnetworktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointNetworkType { get; set; }
     }
 
     namespace DBProxyTypes

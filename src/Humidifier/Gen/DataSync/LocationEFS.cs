@@ -1,6 +1,6 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LocationEFSTypes;
 
     public class LocationEFS : Humidifier.Base.BaseResource, IHaveTags, IHaveSubdirectory, IHaveAccessPointArn
@@ -70,7 +70,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace LocationEFSTypes

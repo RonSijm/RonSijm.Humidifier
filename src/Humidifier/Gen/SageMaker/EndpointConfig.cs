@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EndpointConfigTypes;
 
     public class EndpointConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveExecutionRoleArn, IHaveEnableNetworkIsolation, IHaveEndpointConfigName
@@ -8,6 +8,7 @@ namespace Humidifier.SageMaker
         public class Attributes
         {
             public static string EndpointConfigName =  "EndpointConfigName" ;
+            public static string EndpointConfigArn =  "EndpointConfigArn" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.EndpointConfig; }
@@ -89,6 +90,14 @@ namespace Humidifier.SageMaker
         /// </summary>
         public Humidifier.SageMaker.EndpointConfigTypes.ExplainerConfig ExplainerConfig { get; set; }
         /// <summary>
+        /// MetricsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-metricsconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: MetricsConfig
+        /// </summary>
+        public Humidifier.SageMaker.EndpointConfigTypes.MetricsConfig MetricsConfig { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-tags
         /// Required: False
@@ -96,7 +105,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace EndpointConfigTypes
@@ -198,11 +207,32 @@ namespace Humidifier.SageMaker
             public dynamic S3FailurePath { get; set; }
         }
 
+        public class CapacityReservationConfig : Humidifier.Base.BaseSubResource, IHaveCapacityReservationPreference
+        {
+            /// <summary>
+            /// MlReservationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-capacityreservationconfig.html#cfn-sagemaker-endpointconfig-capacityreservationconfig-mlreservationarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MlReservationArn { get; set; }
+            /// <summary>
+            /// CapacityReservationPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-capacityreservationconfig.html#cfn-sagemaker-endpointconfig-capacityreservationconfig-capacityreservationpreference
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: dynamic
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityReservationPreference { get; set; }
+        }
+
         public class CaptureContentTypeHeader : Humidifier.Base.BaseSubResource, IHaveJsonContentTypes, IHaveCsvContentTypes
         {
             /// <summary>
             /// JsonContentTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader-jsoncontenttypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-capturecontenttypeheader-jsoncontenttypes
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -211,7 +241,7 @@ namespace Humidifier.SageMaker
             public dynamic JsonContentTypes { get; set; }
             /// <summary>
             /// CsvContentTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader-csvcontenttypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-capturecontenttypeheader-csvcontenttypes
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -276,9 +306,9 @@ namespace Humidifier.SageMaker
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
-            /// ItemType: ClarifyHeader
+            /// PrimitiveItemType: String
             /// </summary>
-            public List<Humidifier.SageMaker.EndpointConfigTypes.ClarifyHeader> LabelHeaders { get; set; }
+            public dynamic LabelHeaders { get; set; }
             /// <summary>
             /// MaxPayloadInMB
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-maxpayloadinmb
@@ -309,18 +339,18 @@ namespace Humidifier.SageMaker
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
-            /// ItemType: ClarifyFeatureType
+            /// PrimitiveItemType: String
             /// </summary>
-            public List<Humidifier.SageMaker.EndpointConfigTypes.ClarifyFeatureType> FeatureTypes { get; set; }
+            public dynamic FeatureTypes { get; set; }
             /// <summary>
             /// FeatureHeaders
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-featureheaders
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
-            /// ItemType: ClarifyHeader
+            /// PrimitiveItemType: String
             /// </summary>
-            public List<Humidifier.SageMaker.EndpointConfigTypes.ClarifyHeader> FeatureHeaders { get; set; }
+            public dynamic FeatureHeaders { get; set; }
             /// <summary>
             /// LabelIndex
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-clarifyinferenceconfig.html#cfn-sagemaker-endpointconfig-clarifyinferenceconfig-labelindex
@@ -447,6 +477,26 @@ namespace Humidifier.SageMaker
             public dynamic Granularity { get; set; }
         }
 
+        public class CoreDumpConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
+        {
+            /// <summary>
+            /// KmsKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-coredumpconfig.html#cfn-sagemaker-endpointconfig-coredumpconfig-kmskeyid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyId { get; set; }
+            /// <summary>
+            /// DestinationS3Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-coredumpconfig.html#cfn-sagemaker-endpointconfig-coredumpconfig-destinations3uri
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DestinationS3Uri { get; set; }
+        }
+
         public class DataCaptureConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId
         {
             /// <summary>
@@ -512,11 +562,39 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.EndpointConfigTypes.ClarifyExplainerConfig ClarifyExplainerConfig { get; set; }
         }
 
+        public class InstancePool : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHavePriority
+        {
+            /// <summary>
+            /// ModelNameOverride
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-instancepool.html#cfn-sagemaker-endpointconfig-instancepool-modelnameoverride
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ModelNameOverride { get; set; }
+            /// <summary>
+            /// Priority
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-instancepool.html#cfn-sagemaker-endpointconfig-instancepool-priority
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Priority { get; set; }
+            /// <summary>
+            /// InstanceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-instancepool.html#cfn-sagemaker-endpointconfig-instancepool-instancetype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceType { get; set; }
+        }
+
         public class ManagedInstanceScaling : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveMaxInstanceCount, IHaveMinInstanceCount
         {
             /// <summary>
             /// Status
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-managedinstancescaling.html#cfn-sagemaker-endpointconfig-productionvariant-managedinstancescaling-status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-managedinstancescaling.html#cfn-sagemaker-endpointconfig-managedinstancescaling-status
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -524,20 +602,76 @@ namespace Humidifier.SageMaker
             public dynamic Status { get; set; }
             /// <summary>
             /// MaxInstanceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-managedinstancescaling.html#cfn-sagemaker-endpointconfig-productionvariant-managedinstancescaling-maxinstancecount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-managedinstancescaling.html#cfn-sagemaker-endpointconfig-managedinstancescaling-maxinstancecount
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxInstanceCount { get; set; }
             /// <summary>
+            /// ScaleInPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-managedinstancescaling.html#cfn-sagemaker-endpointconfig-managedinstancescaling-scaleinpolicy
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ScaleInPolicy
+            /// </summary>
+            public Humidifier.SageMaker.EndpointConfigTypes.ScaleInPolicy ScaleInPolicy { get; set; }
+            /// <summary>
             /// MinInstanceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-managedinstancescaling.html#cfn-sagemaker-endpointconfig-productionvariant-managedinstancescaling-mininstancecount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-managedinstancescaling.html#cfn-sagemaker-endpointconfig-managedinstancescaling-mininstancecount
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MinInstanceCount { get; set; }
+        }
+
+        public class MetricsConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EnableEnhancedMetrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-metricsconfig.html#cfn-sagemaker-endpointconfig-metricsconfig-enableenhancedmetrics
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableEnhancedMetrics { get; set; }
+            /// <summary>
+            /// EnableDetailedObservability
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-metricsconfig.html#cfn-sagemaker-endpointconfig-metricsconfig-enabledetailedobservability
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableDetailedObservability { get; set; }
+            /// <summary>
+            /// MetricPublishFrequencyInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-metricsconfig.html#cfn-sagemaker-endpointconfig-metricsconfig-metricpublishfrequencyinseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MetricPublishFrequencyInSeconds { get; set; }
+        }
+
+        public class PrefixAwareRoutingConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ConcurrencyThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-prefixawareroutingconfig.html#cfn-sagemaker-endpointconfig-prefixawareroutingconfig-concurrencythreshold
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ConcurrencyThreshold { get; set; }
+            /// <summary>
+            /// PrefixLength
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-prefixawareroutingconfig.html#cfn-sagemaker-endpointconfig-prefixawareroutingconfig-prefixlength
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic PrefixLength { get; set; }
         }
 
         public class ProductionVariant : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveVolumeSizeInGB, IHaveModelName, IHaveVariantName, IHaveModelDataDownloadTimeoutInSeconds, IHaveContainerStartupHealthCheckTimeoutInSeconds
@@ -546,18 +680,19 @@ namespace Humidifier.SageMaker
             /// ManagedInstanceScaling
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-managedinstancescaling
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: ManagedInstanceScaling
             /// </summary>
             public Humidifier.SageMaker.EndpointConfigTypes.ManagedInstanceScaling ManagedInstanceScaling { get; set; }
             /// <summary>
-            /// ModelDataDownloadTimeoutInSeconds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-modeldatadownloadtimeoutinseconds
+            /// InstancePools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-instancepools
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// Type: List
+            /// ItemType: InstancePool
             /// </summary>
-            public dynamic ModelDataDownloadTimeoutInSeconds { get; set; }
+            public List<Humidifier.SageMaker.EndpointConfigTypes.InstancePool> InstancePools { get; set; }
             /// <summary>
             /// ModelName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-modelname
@@ -591,14 +726,6 @@ namespace Humidifier.SageMaker
             /// </summary>
             public dynamic VariantName { get; set; }
             /// <summary>
-            /// ContainerStartupHealthCheckTimeoutInSeconds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-containerstartuphealthchecktimeoutinseconds
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ContainerStartupHealthCheckTimeoutInSeconds { get; set; }
-            /// <summary>
             /// InitialInstanceCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialinstancecount
             /// Required: False
@@ -607,10 +734,74 @@ namespace Humidifier.SageMaker
             /// </summary>
             public dynamic InitialInstanceCount { get; set; }
             /// <summary>
+            /// VariantInstanceProvisionTimeoutInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-variantinstanceprovisiontimeoutinseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VariantInstanceProvisionTimeoutInSeconds { get; set; }
+            /// <summary>
+            /// RoutingConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-routingconfig
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RoutingConfig
+            /// </summary>
+            public Humidifier.SageMaker.EndpointConfigTypes.RoutingConfig RoutingConfig { get; set; }
+            /// <summary>
+            /// CoreDumpConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-coredumpconfig
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: CoreDumpConfig
+            /// </summary>
+            public Humidifier.SageMaker.EndpointConfigTypes.CoreDumpConfig CoreDumpConfig { get; set; }
+            /// <summary>
+            /// InitialVariantWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialvariantweight
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic InitialVariantWeight { get; set; }
+            /// <summary>
+            /// ModelDataDownloadTimeoutInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-modeldatadownloadtimeoutinseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ModelDataDownloadTimeoutInSeconds { get; set; }
+            /// <summary>
+            /// CapacityReservationConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-capacityreservationconfig
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: CapacityReservationConfig
+            /// </summary>
+            public Humidifier.SageMaker.EndpointConfigTypes.CapacityReservationConfig CapacityReservationConfig { get; set; }
+            /// <summary>
+            /// InferenceAmiVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-inferenceamiversion
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InferenceAmiVersion { get; set; }
+            /// <summary>
+            /// ContainerStartupHealthCheckTimeoutInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-containerstartuphealthchecktimeoutinseconds
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ContainerStartupHealthCheckTimeoutInSeconds { get; set; }
+            /// <summary>
             /// ServerlessConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: ServerlessConfig
             /// </summary>
             public Humidifier.SageMaker.EndpointConfigTypes.ServerlessConfig ServerlessConfig { get; set; }
@@ -622,41 +813,61 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceType { get; set; }
-            /// <summary>
-            /// RoutingConfig
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-routingconfig
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: RoutingConfig
-            /// </summary>
-            public Humidifier.SageMaker.EndpointConfigTypes.RoutingConfig RoutingConfig { get; set; }
-            /// <summary>
-            /// InitialVariantWeight
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-initialvariantweight
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic InitialVariantWeight { get; set; }
         }
 
         public class RoutingConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// RoutingStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-routingconfig.html#cfn-sagemaker-endpointconfig-productionvariant-routingconfig-routingstrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-routingconfig.html#cfn-sagemaker-endpointconfig-routingconfig-routingstrategy
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoutingStrategy { get; set; }
+            /// <summary>
+            /// PrefixAwareRoutingConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-routingconfig.html#cfn-sagemaker-endpointconfig-routingconfig-prefixawareroutingconfig
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: PrefixAwareRoutingConfig
+            /// </summary>
+            public Humidifier.SageMaker.EndpointConfigTypes.PrefixAwareRoutingConfig PrefixAwareRoutingConfig { get; set; }
+        }
+
+        public class ScaleInPolicy : Humidifier.Base.BaseSubResource, IHaveStrategy
+        {
+            /// <summary>
+            /// Strategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-scaleinpolicy.html#cfn-sagemaker-endpointconfig-scaleinpolicy-strategy
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Strategy { get; set; }
+            /// <summary>
+            /// CooldownInMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-scaleinpolicy.html#cfn-sagemaker-endpointconfig-scaleinpolicy-cooldowninminutes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CooldownInMinutes { get; set; }
+            /// <summary>
+            /// MaximumStepSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-scaleinpolicy.html#cfn-sagemaker-endpointconfig-scaleinpolicy-maximumstepsize
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumStepSize { get; set; }
         }
 
         public class ServerlessConfig : Humidifier.Base.BaseSubResource, IHaveMaxConcurrency
         {
             /// <summary>
             /// MaxConcurrency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-maxconcurrency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-serverlessconfig.html#cfn-sagemaker-endpointconfig-serverlessconfig-maxconcurrency
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
@@ -664,7 +875,7 @@ namespace Humidifier.SageMaker
             public dynamic MaxConcurrency { get; set; }
             /// <summary>
             /// MemorySizeInMB
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-memorysizeinmb
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-serverlessconfig.html#cfn-sagemaker-endpointconfig-serverlessconfig-memorysizeinmb
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
@@ -672,7 +883,7 @@ namespace Humidifier.SageMaker
             public dynamic MemorySizeInMB { get; set; }
             /// <summary>
             /// ProvisionedConcurrency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-provisionedconcurrency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-serverlessconfig.html#cfn-sagemaker-endpointconfig-serverlessconfig-provisionedconcurrency
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: Integer

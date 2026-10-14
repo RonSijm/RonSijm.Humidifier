@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VPCCidrBlock : Humidifier.Base.BaseResource, IHaveVpcId, IHaveCidrBlock, IHaveIpv6CidrBlock, IHaveIpv6NetmaskLength, IHaveIpv6IpamPoolId, IHaveIpv4NetmaskLength, IHaveIpv4IpamPoolId
     {

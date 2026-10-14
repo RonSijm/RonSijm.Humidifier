@@ -1,6 +1,6 @@
 namespace Humidifier.Cassandra
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using KeyspaceTypes;
 
     public class Keyspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKeyspaceName, IHaveClientSideTimestampsEnabled
@@ -31,7 +31,7 @@ namespace Humidifier.Cassandra
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace KeyspaceTypes

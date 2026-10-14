@@ -1,9 +1,9 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataQualityRulesetTypes;
 
-    public class DataQualityRuleset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveClientToken
+    public class DataQualityRuleset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveClientToken
     {
         public override string AWSTypeName { get => AWS.Glue.DataQualityRuleset; }
         /// <summary>
@@ -43,9 +43,10 @@ namespace Humidifier.Glue
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-dataqualityruleset.html#cfn-glue-dataqualityruleset-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags { get; set; }
+        public Dictionary<string, dynamic> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -56,7 +57,7 @@ namespace Humidifier.Glue
             /// <summary>
             /// TableName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-dataqualityruleset-dataqualitytargettable.html#cfn-glue-dataqualityruleset-dataqualitytargettable-tablename
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -64,7 +65,7 @@ namespace Humidifier.Glue
             /// <summary>
             /// DatabaseName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-dataqualityruleset-dataqualitytargettable.html#cfn-glue-dataqualityruleset-dataqualitytargettable-databasename
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

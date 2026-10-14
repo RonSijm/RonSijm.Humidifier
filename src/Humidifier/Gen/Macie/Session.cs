@@ -1,6 +1,6 @@
 namespace Humidifier.Macie
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Session : Humidifier.Base.BaseResource, IHaveStatus, IHaveFindingPublishingFrequency
     {
@@ -8,6 +8,7 @@ namespace Humidifier.Macie
         {
             public static string ServiceRole =  "ServiceRole" ;
             public static string AwsAccountId =  "AwsAccountId" ;
+            public static string AutomatedDiscoveryStatus =  "AutomatedDiscoveryStatus" ;
         }
 
         public override string AWSTypeName { get => AWS.Macie.Session; }

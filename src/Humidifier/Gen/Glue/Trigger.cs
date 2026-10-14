@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TriggerTypes;
 
     public class Trigger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveDynamicTags, IHaveSchedule, IHaveWorkflowName

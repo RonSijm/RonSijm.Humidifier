@@ -1,6 +1,6 @@
 namespace Humidifier.Notifications
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ManagedNotificationAccountContactAssociation : Humidifier.Base.BaseResource
     {
@@ -25,5 +25,13 @@ namespace Humidifier.Notifications
         /// </summary>
         [Required]
         public dynamic ManagedNotificationConfigurationArn { get; set; }
+        /// <summary>
+        /// IsSensitiveEventsSubscribed
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-notifications-managednotificationaccountcontactassociation.html#cfn-notifications-managednotificationaccountcontactassociation-issensitiveeventssubscribed
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic IsSensitiveEventsSubscribed { get; set; }
     }
 }

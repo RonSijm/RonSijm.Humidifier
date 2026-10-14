@@ -1,6 +1,6 @@
 namespace Humidifier.KinesisAnalyticsV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationReferenceDataSourceTypes;
 
     public class ApplicationReferenceDataSource : Humidifier.Base.BaseResource, IHaveApplicationName

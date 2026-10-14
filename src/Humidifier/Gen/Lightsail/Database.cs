@@ -1,6 +1,6 @@
 namespace Humidifier.Lightsail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DatabaseTypes;
 
     public class Database : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHavePubliclyAccessible, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveMasterUsername, IHaveRotateMasterUserPassword
@@ -142,7 +142,7 @@ namespace Humidifier.Lightsail
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DatabaseTypes

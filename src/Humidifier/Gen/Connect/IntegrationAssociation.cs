@@ -1,8 +1,8 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class IntegrationAssociation : Humidifier.Base.BaseResource, IHaveInstanceId, IHaveIntegrationType
+    public class IntegrationAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveInstanceId, IHaveSourceType, IHaveIntegrationType
     {
         public class Attributes
         {
@@ -30,6 +30,22 @@ namespace Humidifier.Connect
         /// </summary>
         [Required]
         public dynamic InstanceId { get; set; }
+        /// <summary>
+        /// SourceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-integrationassociation.html#cfn-connect-integrationassociation-sourcetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceType { get; set; }
+        /// <summary>
+        /// SourceApplicationUrl
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-integrationassociation.html#cfn-connect-integrationassociation-sourceapplicationurl
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceApplicationUrl { get; set; }
 
         /// <summary>
         /// IntegrationType
@@ -40,5 +56,22 @@ namespace Humidifier.Connect
         /// </summary>
         [Required]
         public dynamic IntegrationType { get; set; }
+        /// <summary>
+        /// SourceApplicationName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-integrationassociation.html#cfn-connect-integrationassociation-sourceapplicationname
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceApplicationName { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-integrationassociation.html#cfn-connect-integrationassociation-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.IoT
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainConfigurationTypes;
 
     public class DomainConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveAuthenticationType, IHaveServiceType
@@ -103,7 +103,7 @@ namespace Humidifier.IoT
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-authenticationtype

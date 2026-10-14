@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class APNSVoipChannel : Humidifier.Base.BaseResource, IHaveEnabled, IHaveApplicationId, IHavePrivateKey, IHaveBundleId, IHaveCertificate, IHaveTeamId, IHaveDefaultAuthenticationMethod, IHaveTokenKey, IHaveTokenKeyId
     {

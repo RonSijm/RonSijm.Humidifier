@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityHub
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationPolicyTypes;
 
     public class ConfigurationPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

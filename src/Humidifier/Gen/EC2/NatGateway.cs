@@ -1,11 +1,16 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using NatGatewayTypes;
 
-    public class NatGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveSubnetId, IHavePrivateIpAddress, IHaveSecondaryPrivateIpAddressCount, IHaveAllocationId
+    public class NatGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveSubnetId, IHavePrivateIpAddress, IHaveSecondaryPrivateIpAddressCount, IHaveAllocationId
     {
         public class Attributes
         {
+            public static string RouteTableId =  "RouteTableId" ;
+            public static string EniId =  "EniId" ;
+            public static string AutoProvisionZones =  "AutoProvisionZones" ;
+            public static string AutoScalingIps =  "AutoScalingIps" ;
             public static string NatGatewayId =  "NatGatewayId" ;
         }
 
@@ -28,6 +33,14 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic PrivateIpAddress { get; set; }
         /// <summary>
+        /// SecondaryPrivateIpAddressCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresscount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic SecondaryPrivateIpAddressCount { get; set; }
+        /// <summary>
         /// ConnectivityType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-connectivitytype
         /// Required: False
@@ -45,13 +58,30 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic SecondaryPrivateIpAddresses { get; set; }
         /// <summary>
-        /// SecondaryPrivateIpAddressCount
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresscount
+        /// VpcId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-vpcid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VpcId { get; set; }
+        /// <summary>
+        /// AvailabilityZoneAddresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-availabilityzoneaddresses
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Integer
+        /// Type: List
+        /// ItemType: AvailabilityZoneAddress
         /// </summary>
-        public dynamic SecondaryPrivateIpAddressCount { get; set; }
+        public List<Humidifier.EC2.NatGatewayTypes.AvailabilityZoneAddress> AvailabilityZoneAddresses { get; set; }
+        /// <summary>
+        /// AvailabilityMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-availabilitymode
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AvailabilityMode { get; set; }
         /// <summary>
         /// AllocationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid
@@ -60,15 +90,13 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic AllocationId { get; set; }
-
         /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic SubnetId { get; set; }
         /// <summary>
         /// Tags
@@ -78,7 +106,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MaxDrainDurationSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-maxdraindurationseconds
@@ -87,5 +115,37 @@ namespace Humidifier.EC2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MaxDrainDurationSeconds { get; set; }
+    }
+
+    namespace NatGatewayTypes
+    {
+        public class AvailabilityZoneAddress : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveAvailabilityZoneId
+        {
+            /// <summary>
+            /// AvailabilityZoneId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-natgateway-availabilityzoneaddress.html#cfn-ec2-natgateway-availabilityzoneaddress-availabilityzoneid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityZoneId { get; set; }
+            /// <summary>
+            /// AvailabilityZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-natgateway-availabilityzoneaddress.html#cfn-ec2-natgateway-availabilityzoneaddress-availabilityzone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityZone { get; set; }
+            /// <summary>
+            /// AllocationIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-natgateway-availabilityzoneaddress.html#cfn-ec2-natgateway-availabilityzoneaddress-allocationids
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllocationIds { get; set; }
+        }
     }
 }

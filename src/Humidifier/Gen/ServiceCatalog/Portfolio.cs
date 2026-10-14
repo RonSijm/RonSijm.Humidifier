@@ -1,11 +1,12 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Portfolio : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveAcceptLanguage, IHaveProviderName
     {
         public class Attributes
         {
+            public static string Id =  "Id" ;
             public static string PortfolioName =  "PortfolioName" ;
         }
 
@@ -54,6 +55,6 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

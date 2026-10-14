@@ -1,6 +1,6 @@
 namespace Humidifier.BillingConductor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BillingGroupTypes;
 
     public class BillingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
@@ -24,15 +24,13 @@ namespace Humidifier.BillingConductor
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-
         /// <summary>
         /// PrimaryAccountId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#cfn-billingconductor-billinggroup-primaryaccountid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic PrimaryAccountId { get; set; }
 
         /// <summary>
@@ -62,7 +60,7 @@ namespace Humidifier.BillingConductor
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -71,9 +69,17 @@ namespace Humidifier.BillingConductor
         public class AccountGrouping : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// ResponsibilityTransferArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-billinggroup-accountgrouping.html#cfn-billingconductor-billinggroup-accountgrouping-responsibilitytransferarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResponsibilityTransferArn { get; set; }
+            /// <summary>
             /// LinkedAccountIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-billinggroup-accountgrouping.html#cfn-billingconductor-billinggroup-accountgrouping-linkedaccountids
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String

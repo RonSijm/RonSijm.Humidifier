@@ -1,6 +1,6 @@
 namespace Humidifier.IoTFleetWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Fleet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveId, IHaveSignalCatalogArn
     {
@@ -48,6 +48,6 @@ namespace Humidifier.IoTFleetWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

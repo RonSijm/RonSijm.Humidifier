@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityHub
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InsightTypes;
 
     public class Insight : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
@@ -955,14 +955,6 @@ namespace Humidifier.SecurityHub
         public class DateFilter : Humidifier.Base.BaseSubResource, IHaveEnd, IHaveStart
         {
             /// <summary>
-            /// DateRange
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-datefilter.html#cfn-securityhub-insight-datefilter-daterange
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: DateRange
-            /// </summary>
-            public Humidifier.SecurityHub.InsightTypes.DateRange DateRange { get; set; }
-            /// <summary>
             /// Start
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-datefilter.html#cfn-securityhub-insight-datefilter-start
             /// Required: False
@@ -970,6 +962,14 @@ namespace Humidifier.SecurityHub
             /// PrimitiveType: String
             /// </summary>
             public dynamic Start { get; set; }
+            /// <summary>
+            /// DateRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-datefilter.html#cfn-securityhub-insight-datefilter-daterange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DateRange
+            /// </summary>
+            public Humidifier.SecurityHub.InsightTypes.DateRange DateRange { get; set; }
             /// <summary>
             /// End
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-datefilter.html#cfn-securityhub-insight-datefilter-end
@@ -1015,14 +1015,6 @@ namespace Humidifier.SecurityHub
         public class MapFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey, IHaveComparison
         {
             /// <summary>
-            /// Comparison
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-mapfilter.html#cfn-securityhub-insight-mapfilter-comparison
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Comparison { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-mapfilter.html#cfn-securityhub-insight-mapfilter-value
             /// Required: True
@@ -1030,6 +1022,14 @@ namespace Humidifier.SecurityHub
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Comparison
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-mapfilter.html#cfn-securityhub-insight-mapfilter-comparison
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Comparison { get; set; }
             /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-mapfilter.html#cfn-securityhub-insight-mapfilter-key
@@ -1042,14 +1042,6 @@ namespace Humidifier.SecurityHub
 
         public class NumberFilter : Humidifier.Base.BaseSubResource, IHaveEq, IHaveGte, IHaveLte
         {
-            /// <summary>
-            /// Gte
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-numberfilter.html#cfn-securityhub-insight-numberfilter-gte
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic Gte { get; set; }
             /// <summary>
             /// Eq
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-numberfilter.html#cfn-securityhub-insight-numberfilter-eq
@@ -1066,18 +1058,18 @@ namespace Humidifier.SecurityHub
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Lte { get; set; }
+            /// <summary>
+            /// Gte
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-numberfilter.html#cfn-securityhub-insight-numberfilter-gte
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Gte { get; set; }
         }
 
         public class StringFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveComparison
         {
-            /// <summary>
-            /// Comparison
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-stringfilter.html#cfn-securityhub-insight-stringfilter-comparison
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Comparison { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-stringfilter.html#cfn-securityhub-insight-stringfilter-value
@@ -1086,6 +1078,14 @@ namespace Humidifier.SecurityHub
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Comparison
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-insight-stringfilter.html#cfn-securityhub-insight-stringfilter-comparison
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Comparison { get; set; }
         }
     }
 }

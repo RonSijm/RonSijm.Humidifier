@@ -7,52 +7,57 @@ on:
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
 
     - name: Set up .NET
-      uses: actions/setup-dotnet@v3
+      uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: '8.x'
+        dotnet-version: '10.0.x'
 
     - name: Restore dependencies
       run: dotnet restore src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj 
 
     - name: Run the C# program to generate library and get spec version
-      run: dotnet run --project src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj -directory $GITHUB_WORKSPACE --framework net8.0
-
-    - name: Combine version numbers
-      if: steps.git_diff.outputs.changes == 'true'
-      run: |
-        VERSION=$(cat src/version.txt)
-        SPEC_VERSION=$(cat src/spec-version.txt | tr -d '.')
-        FINAL_VERSION="${VERSION}.${SPEC_VERSION}"
-        echo "FINAL_VERSION=$FINAL_VERSION" >> $GITHUB_ENV
+      run: dotnet run --project src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj --configuration WithoutReferences --framework net10.0 -- -directory $GITHUB_WORKSPACE
 
     - name: Check for changes
       id: git_diff
       run: |
         git config --global user.email "RonSijm@Github.Action"
         git config --global user.name "Ron Sijm"
-        git add *
+        git add --all
         if git diff-index --quiet HEAD --; then
           echo "No changes detected"
-          echo "::set-output name=changes::false"
+          echo "changes=false" >> "$GITHUB_OUTPUT"
         else
           echo "Changes detected"
-          echo "::set-output name=changes::true"
+          echo "changes=true" >> "$GITHUB_OUTPUT"
         fi
+
+    - name: Combine version numbers
+      if: steps.git_diff.outputs.changes == 'true'
+      run: |
+        VERSION=$(cat src/version.txt)
+        SPEC_VERSION=$(cat src/spec-version.txt)
+        SPEC_VERSION_COMPACT=$(echo "$SPEC_VERSION" | tr -d '.')
+        FINAL_VERSION="${VERSION}.${SPEC_VERSION_COMPACT}"
+        echo "SPEC_VERSION=$SPEC_VERSION" >> "$GITHUB_ENV"
+        echo "FINAL_VERSION=$FINAL_VERSION" >> "$GITHUB_ENV"
 
     - name: Commit changes
       if: steps.git_diff.outputs.changes == 'true'
       env:
-        FINAL_VERSION: ${{ env.FINAL_VERSION }}
+        SPEC_VERSION: ${{ env.SPEC_VERSION }}
       run: |
-        git commit -am "Automated update of generated library version $FINAL_VERSION"
+        git commit -am "Automated update of generated library version to $SPEC_VERSION"
         git push origin main
-        
+
     - name: Restore dependencies of Humidifier
       if: steps.git_diff.outputs.changes == 'true'
       run: dotnet restore src/Humidifier/Humidifier.csproj
@@ -64,21 +69,22 @@ jobs:
     - name: Build Humidifier
       if: steps.git_diff.outputs.changes == 'true'
       env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         FINAL_VERSION: ${{ env.FINAL_VERSION }}
-      run: dotnet build src/Humidifier --configuration Release -o "./packages" /p:PackageVersion=$FINAL_VERSION
-    
+      run: dotnet build src/Humidifier --configuration Release /p:PackageVersion=$FINAL_VERSION /p:PackageOutputPath="$GITHUB_WORKSPACE/packages"
+
     - name: Build Humidifier.Json
       if: steps.git_diff.outputs.changes == 'true'
       env:
-        NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         FINAL_VERSION: ${{ env.FINAL_VERSION }}
-      run: dotnet build src/Humidifier.Json --configuration Release -o "./packages" /p:PackageVersion=$FINAL_VERSION
-      
+      run: dotnet build src/Humidifier.Json --configuration Release /p:PackageVersion=$FINAL_VERSION /p:PackageOutputPath="$GITHUB_WORKSPACE/packages"
+
+    - name: Log in to NuGet with trusted publishing
+      if: steps.git_diff.outputs.changes == 'true'
+      id: login
+      uses: NuGet/login@v1
+      with:
+        user: Ron.Sijm
+
     - name: Publish to NuGet
       if: steps.git_diff.outputs.changes == 'true'
-      env:
-        NUGET_API_KEY: ${{secrets.NUGET_API_KEY}}
-      run: dotnet nuget push -s https://www.nuget.org/api/v2/package -k $NUGET_API_KEY --skip-duplicate
-        ./packages/*.nupkg
-        
+      run: dotnet nuget push "./packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --skip-duplicate

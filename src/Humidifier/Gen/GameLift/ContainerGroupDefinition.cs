@@ -1,6 +1,6 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ContainerGroupDefinitionTypes;
 
     public class ContainerGroupDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVersionDescription, IHaveOperatingSystem
@@ -59,15 +59,13 @@ namespace Humidifier.GameLift
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic SourceVersionNumber { get; set; }
-
         /// <summary>
         /// TotalVcpuLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-containergroupdefinition.html#cfn-gamelift-containergroupdefinition-totalvcpulimit
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: Double
         /// </summary>
-        [Required]
         public dynamic TotalVcpuLimit { get; set; }
         /// <summary>
         /// Tags
@@ -77,7 +75,7 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ContainerGroupType
@@ -188,14 +186,6 @@ namespace Humidifier.GameLift
         public class ContainerMountPoint : Humidifier.Base.BaseSubResource, IHaveContainerPath, IHaveAccessLevel
         {
             /// <summary>
-            /// InstancePath
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-containermountpoint.html#cfn-gamelift-containergroupdefinition-containermountpoint-instancepath
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic InstancePath { get; set; }
-            /// <summary>
             /// ContainerPath
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-containermountpoint.html#cfn-gamelift-containergroupdefinition-containermountpoint-containerpath
             /// Required: False
@@ -211,6 +201,14 @@ namespace Humidifier.GameLift
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccessLevel { get; set; }
+            /// <summary>
+            /// InstancePath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-containermountpoint.html#cfn-gamelift-containergroupdefinition-containermountpoint-instancepath
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstancePath { get; set; }
         }
 
         public class ContainerPortRange : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveFromPort, IHaveToPort
@@ -279,6 +277,14 @@ namespace Humidifier.GameLift
             /// </summary>
             public List<Humidifier.GameLift.ContainerGroupDefinitionTypes.ContainerEnvironment> EnvironmentOverride { get; set; }
             /// <summary>
+            /// LinuxCapabilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-gameservercontainerdefinition.html#cfn-gamelift-containergroupdefinition-gameservercontainerdefinition-linuxcapabilities
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LinuxCapabilities
+            /// </summary>
+            public Humidifier.GameLift.ContainerGroupDefinitionTypes.LinuxCapabilities LinuxCapabilities { get; set; }
+            /// <summary>
             /// ServerSdkVersion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-gameservercontainerdefinition.html#cfn-gamelift-containergroupdefinition-gameservercontainerdefinition-serversdkversion
             /// Required: True
@@ -310,6 +316,19 @@ namespace Humidifier.GameLift
             /// Type: PortConfiguration
             /// </summary>
             public Humidifier.GameLift.ContainerGroupDefinitionTypes.PortConfiguration PortConfiguration { get; set; }
+        }
+
+        public class LinuxCapabilities : Humidifier.Base.BaseSubResource, IHaveInclude
+        {
+            /// <summary>
+            /// Include
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-linuxcapabilities.html#cfn-gamelift-containergroupdefinition-linuxcapabilities-include
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Include { get; set; }
         }
 
         public class PortConfiguration : Humidifier.Base.BaseSubResource
@@ -378,6 +397,14 @@ namespace Humidifier.GameLift
             /// Type: ContainerHealthCheck
             /// </summary>
             public Humidifier.GameLift.ContainerGroupDefinitionTypes.ContainerHealthCheck HealthCheck { get; set; }
+            /// <summary>
+            /// LinuxCapabilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-supportcontainerdefinition.html#cfn-gamelift-containergroupdefinition-supportcontainerdefinition-linuxcapabilities
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LinuxCapabilities
+            /// </summary>
+            public Humidifier.GameLift.ContainerGroupDefinitionTypes.LinuxCapabilities LinuxCapabilities { get; set; }
             /// <summary>
             /// Vcpu
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-supportcontainerdefinition.html#cfn-gamelift-containergroupdefinition-supportcontainerdefinition-vcpu

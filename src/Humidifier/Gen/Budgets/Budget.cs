@@ -1,6 +1,6 @@
 namespace Humidifier.Budgets
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BudgetTypes;
 
     public class Budget : Humidifier.Base.BaseResource
@@ -58,8 +58,17 @@ namespace Humidifier.Budgets
             public Humidifier.Budgets.BudgetTypes.HistoricalOptions HistoricalOptions { get; set; }
         }
 
-        public class BudgetData : Humidifier.Base.BaseSubResource, IHaveBudgetName, IHaveTimeUnit
+        public class BudgetData : Humidifier.Base.BaseSubResource, IHaveMetrics, IHaveBudgetName, IHaveTimeUnit
         {
+            /// <summary>
+            /// Metrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-metrics
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Metrics { get; set; }
             /// <summary>
             /// BudgetLimit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetlimit
@@ -77,10 +86,18 @@ namespace Humidifier.Budgets
             /// </summary>
             public Humidifier.Budgets.BudgetTypes.TimePeriod TimePeriod { get; set; }
             /// <summary>
+            /// BillingViewArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-billingviewarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BillingViewArn { get; set; }
+            /// <summary>
             /// AutoAdjustData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-autoadjustdata
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: AutoAdjustData
             /// </summary>
             public Humidifier.Budgets.BudgetTypes.AutoAdjustData AutoAdjustData { get; set; }
@@ -96,7 +113,7 @@ namespace Humidifier.Budgets
             /// PlannedBudgetLimits
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-plannedbudgetlimits
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
             public dynamic PlannedBudgetLimits { get; set; }
@@ -108,6 +125,14 @@ namespace Humidifier.Budgets
             /// PrimitiveType: Json
             /// </summary>
             public dynamic CostFilters { get; set; }
+            /// <summary>
+            /// FilterExpression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-filterexpression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Expression
+            /// </summary>
+            public Humidifier.Budgets.BudgetTypes.Expression FilterExpression { get; set; }
             /// <summary>
             /// BudgetName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetname
@@ -132,6 +157,36 @@ namespace Humidifier.Budgets
             /// PrimitiveType: String
             /// </summary>
             public dynamic BudgetType { get; set; }
+        }
+
+        public class CostCategoryValues : Humidifier.Base.BaseSubResource, IHaveKey, IHaveValues
+        {
+            /// <summary>
+            /// MatchOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costcategoryvalues.html#cfn-budgets-budget-costcategoryvalues-matchoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic MatchOptions { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costcategoryvalues.html#cfn-budgets-budget-costcategoryvalues-values
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costcategoryvalues.html#cfn-budgets-budget-costcategoryvalues-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class CostTypes : Humidifier.Base.BaseSubResource
@@ -224,6 +279,90 @@ namespace Humidifier.Budgets
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic IncludeRefund { get; set; }
+        }
+
+        public class Expression : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Not
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-not
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Expression
+            /// </summary>
+            public Humidifier.Budgets.BudgetTypes.Expression Not { get; set; }
+            /// <summary>
+            /// Or
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-or
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Expression
+            /// </summary>
+            public List<Humidifier.Budgets.BudgetTypes.Expression> Or { get; set; }
+            /// <summary>
+            /// And
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-and
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Expression
+            /// </summary>
+            public List<Humidifier.Budgets.BudgetTypes.Expression> And { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-dimensions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ExpressionDimensionValues
+            /// </summary>
+            public Humidifier.Budgets.BudgetTypes.ExpressionDimensionValues Dimensions { get; set; }
+            /// <summary>
+            /// CostCategories
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-costcategories
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostCategoryValues
+            /// </summary>
+            public Humidifier.Budgets.BudgetTypes.CostCategoryValues CostCategories { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TagValues
+            /// </summary>
+            public Humidifier.Budgets.BudgetTypes.TagValues Tags { get; set; }
+        }
+
+        public class ExpressionDimensionValues : Humidifier.Base.BaseSubResource, IHaveKey, IHaveValues
+        {
+            /// <summary>
+            /// MatchOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expressiondimensionvalues.html#cfn-budgets-budget-expressiondimensionvalues-matchoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic MatchOptions { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expressiondimensionvalues.html#cfn-budgets-budget-expressiondimensionvalues-values
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expressiondimensionvalues.html#cfn-budgets-budget-expressiondimensionvalues-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class HistoricalOptions : Humidifier.Base.BaseSubResource
@@ -353,6 +492,36 @@ namespace Humidifier.Budgets
             /// PrimitiveType: String
             /// </summary>
             public dynamic Address { get; set; }
+        }
+
+        public class TagValues : Humidifier.Base.BaseSubResource, IHaveKey, IHaveValues
+        {
+            /// <summary>
+            /// MatchOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-tagvalues.html#cfn-budgets-budget-tagvalues-matchoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic MatchOptions { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-tagvalues.html#cfn-budgets-budget-tagvalues-values
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-tagvalues.html#cfn-budgets-budget-tagvalues-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class TimePeriod : Humidifier.Base.BaseSubResource, IHaveEnd, IHaveStart

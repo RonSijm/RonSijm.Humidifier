@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VpcOriginTypes;
 
     public class VpcOrigin : Humidifier.Base.BaseResource, IHaveTags
@@ -8,6 +8,7 @@ namespace Humidifier.CloudFront
         public class Attributes
         {
             public static string Status =  "Status" ;
+            public static string AccountId =  "AccountId" ;
             public static string CreatedTime =  "CreatedTime" ;
             public static string LastModifiedTime =  "LastModifiedTime" ;
             public static string Id =  "Id" ;
@@ -33,13 +34,21 @@ namespace Humidifier.CloudFront
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace VpcOriginTypes
     {
-        public class VpcOriginEndpointConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveArn, IHaveHTTPSPort, IHaveOriginSSLProtocols, IHaveHTTPPort, IHaveOriginProtocolPolicy
+        public class VpcOriginEndpointConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveArn, IHaveIpAddressType, IHaveHTTPSPort, IHaveOriginSSLProtocols, IHaveHTTPPort, IHaveOriginProtocolPolicy
         {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-vpcorigin-vpcoriginendpointconfig.html#cfn-cloudfront-vpcorigin-vpcoriginendpointconfig-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// HTTPSPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-vpcorigin-vpcoriginendpointconfig.html#cfn-cloudfront-vpcorigin-vpcoriginendpointconfig-httpsport

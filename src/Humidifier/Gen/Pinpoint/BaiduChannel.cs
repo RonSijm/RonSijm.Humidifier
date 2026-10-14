@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class BaiduChannel : Humidifier.Base.BaseResource, IHaveEnabled, IHaveApplicationId, IHaveApiKey, IHaveSecretKey
     {

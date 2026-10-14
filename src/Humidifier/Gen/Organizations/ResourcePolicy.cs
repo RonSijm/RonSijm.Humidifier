@@ -1,6 +1,6 @@
 namespace Humidifier.Organizations
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveContent
     {
@@ -29,6 +29,6 @@ namespace Humidifier.Organizations
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

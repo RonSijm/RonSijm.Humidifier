@@ -1,9 +1,9 @@
 namespace Humidifier.PCAConnectorSCEP
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveCertificateAuthorityArn
+    public class Connector : Humidifier.Base.BaseResource, IHaveCertificateAuthorityArn, IHaveVpcEndpointId
     {
         public class Attributes
         {
@@ -32,6 +32,14 @@ namespace Humidifier.PCAConnectorSCEP
         /// Type: MobileDeviceManagement
         /// </summary>
         public Humidifier.PCAConnectorSCEP.ConnectorTypes.MobileDeviceManagement MobileDeviceManagement { get; set; }
+        /// <summary>
+        /// VpcEndpointId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorscep-connector.html#cfn-pcaconnectorscep-connector-vpcendpointid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VpcEndpointId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorscep-connector.html#cfn-pcaconnectorscep-connector-tags

@@ -1,6 +1,6 @@
 namespace Humidifier.DevOpsGuru
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LogAnomalyDetectionIntegration : Humidifier.Base.BaseResource
     {

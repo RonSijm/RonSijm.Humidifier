@@ -1,6 +1,6 @@
 namespace Humidifier.SSMContacts
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PlanTypes;
 
     public class Plan : Humidifier.Base.BaseResource, IHaveContactId, IHaveRotationIds

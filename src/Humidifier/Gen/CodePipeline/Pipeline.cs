@@ -1,6 +1,6 @@
 namespace Humidifier.CodePipeline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PipelineTypes;
 
     public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn, IHaveCodePipelinePipelineTypesArtifactStoreArtifactStore
@@ -8,6 +8,7 @@ namespace Humidifier.CodePipeline
         public class Attributes
         {
             public static string Version =  "Version" ;
+            public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName { get => AWS.CodePipeline.Pipeline; }
@@ -108,7 +109,7 @@ namespace Humidifier.CodePipeline
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -133,15 +134,6 @@ namespace Humidifier.CodePipeline
             /// </summary>
             public dynamic Configuration { get; set; }
             /// <summary>
-            /// InputArtifacts
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-inputartifacts
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: InputArtifact
-            /// </summary>
-            public List<Humidifier.CodePipeline.PipelineTypes.InputArtifact> InputArtifacts { get; set; }
-            /// <summary>
             /// OutputArtifacts
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-outputartifacts
             /// Required: False
@@ -151,15 +143,6 @@ namespace Humidifier.CodePipeline
             /// </summary>
             public List<Humidifier.CodePipeline.PipelineTypes.OutputArtifact> OutputArtifacts { get; set; }
             /// <summary>
-            /// Commands
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-commands
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic Commands { get; set; }
-            /// <summary>
             /// OutputVariables
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-outputvariables
             /// Required: False
@@ -168,14 +151,6 @@ namespace Humidifier.CodePipeline
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic OutputVariables { get; set; }
-            /// <summary>
-            /// Region
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-region
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Region { get; set; }
             /// <summary>
             /// Namespace_
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-namespace
@@ -193,14 +168,6 @@ namespace Humidifier.CodePipeline
             /// </summary>
             public dynamic RoleArn { get; set; }
             /// <summary>
-            /// RunOrder
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-runorder
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic RunOrder { get; set; }
-            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-name
             /// Required: True
@@ -208,6 +175,49 @@ namespace Humidifier.CodePipeline
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+            /// <summary>
+            /// EnvironmentVariables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-environmentvariables
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: EnvironmentVariable
+            /// </summary>
+            public List<Humidifier.CodePipeline.PipelineTypes.EnvironmentVariable> EnvironmentVariables { get; set; }
+            /// <summary>
+            /// InputArtifacts
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-inputartifacts
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: InputArtifact
+            /// </summary>
+            public List<Humidifier.CodePipeline.PipelineTypes.InputArtifact> InputArtifacts { get; set; }
+            /// <summary>
+            /// Commands
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-commands
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Commands { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-region
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
+            /// <summary>
+            /// RunOrder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-runorder
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RunOrder { get; set; }
             /// <summary>
             /// TimeoutInMinutes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-actiondeclaration.html#cfn-codepipeline-pipeline-actiondeclaration-timeoutinminutes
@@ -374,6 +384,34 @@ namespace Humidifier.CodePipeline
             /// PrimitiveType: String
             /// </summary>
             public dynamic Id { get; set; }
+        }
+
+        public class EnvironmentVariable : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveValue
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-environmentvariable.html#cfn-codepipeline-pipeline-environmentvariable-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-environmentvariable.html#cfn-codepipeline-pipeline-environmentvariable-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-environmentvariable.html#cfn-codepipeline-pipeline-environmentvariable-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class FailureConditions : Humidifier.Base.BaseSubResource, IHaveResult

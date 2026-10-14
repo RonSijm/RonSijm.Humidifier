@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VPCEndpointTypes;
 
     public class VPCEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId, IHavePolicyDocument, IHaveServiceName, IHaveIpAddressType, IHaveRouteTableIds, IHaveResourceConfigurationArn
@@ -30,6 +30,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic IpAddressType { get; set; }
+        /// <summary>
+        /// ServiceRegion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-serviceregion
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ServiceRegion { get; set; }
         /// <summary>
         /// DnsOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-dnsoptions
@@ -123,7 +131,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace VPCEndpointTypes
@@ -139,6 +147,15 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic PrivateDnsOnlyForInboundResolverEndpoint { get; set; }
             /// <summary>
+            /// PrivateDnsSpecifiedDomains
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpcendpoint-dnsoptionsspecification.html#cfn-ec2-vpcendpoint-dnsoptionsspecification-privatednsspecifieddomains
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic PrivateDnsSpecifiedDomains { get; set; }
+            /// <summary>
             /// DnsRecordIpType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpcendpoint-dnsoptionsspecification.html#cfn-ec2-vpcendpoint-dnsoptionsspecification-dnsrecordiptype
             /// Required: False
@@ -146,6 +163,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic DnsRecordIpType { get; set; }
+            /// <summary>
+            /// PrivateDnsPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpcendpoint-dnsoptionsspecification.html#cfn-ec2-vpcendpoint-dnsoptionsspecification-privatednspreference
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrivateDnsPreference { get; set; }
         }
     }
 }

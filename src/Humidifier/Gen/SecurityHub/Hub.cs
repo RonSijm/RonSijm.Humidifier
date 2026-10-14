@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityHub
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Hub : Humidifier.Base.BaseResource
     {

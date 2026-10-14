@@ -1,6 +1,6 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserTypes;
 
     public class User : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePolicy, IHaveRole, IHaveUserName, IHaveServerId
@@ -92,7 +92,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace UserTypes

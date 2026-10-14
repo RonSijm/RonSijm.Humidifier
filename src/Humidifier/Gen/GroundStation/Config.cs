@@ -1,6 +1,6 @@
 namespace Humidifier.GroundStation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigTypes;
 
     public class Config : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -31,7 +31,7 @@ namespace Humidifier.GroundStation
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -123,6 +123,14 @@ namespace Humidifier.GroundStation
             /// Type: UplinkEchoConfig
             /// </summary>
             public Humidifier.GroundStation.ConfigTypes.UplinkEchoConfig UplinkEchoConfig { get; set; }
+            /// <summary>
+            /// TelemetrySinkConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-telemetrysinkconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TelemetrySinkConfig
+            /// </summary>
+            public Humidifier.GroundStation.ConfigTypes.TelemetrySinkConfig TelemetrySinkConfig { get; set; }
             /// <summary>
             /// AntennaDownlinkConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennadownlinkconfig
@@ -269,6 +277,26 @@ namespace Humidifier.GroundStation
             public dynamic Units { get; set; }
         }
 
+        public class KinesisDataStreamData : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// KinesisDataStreamArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-kinesisdatastreamdata.html#cfn-groundstation-config-kinesisdatastreamdata-kinesisdatastreamarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KinesisDataStreamArn { get; set; }
+            /// <summary>
+            /// KinesisRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-kinesisdatastreamdata.html#cfn-groundstation-config-kinesisdatastreamdata-kinesisrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KinesisRoleArn { get; set; }
+        }
+
         public class S3RecordingConfig : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHavePrefix, IHaveBucketArn
         {
             /// <summary>
@@ -308,14 +336,6 @@ namespace Humidifier.GroundStation
             /// </summary>
             public dynamic Polarization { get; set; }
             /// <summary>
-            /// Bandwidth
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-bandwidth
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FrequencyBandwidth
-            /// </summary>
-            public Humidifier.GroundStation.ConfigTypes.FrequencyBandwidth Bandwidth { get; set; }
-            /// <summary>
             /// CenterFrequency
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-centerfrequency
             /// Required: False
@@ -323,6 +343,46 @@ namespace Humidifier.GroundStation
             /// Type: Frequency
             /// </summary>
             public Humidifier.GroundStation.ConfigTypes.Frequency CenterFrequency { get; set; }
+            /// <summary>
+            /// Bandwidth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-bandwidth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FrequencyBandwidth
+            /// </summary>
+            public Humidifier.GroundStation.ConfigTypes.FrequencyBandwidth Bandwidth { get; set; }
+        }
+
+        public class TelemetrySinkConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TelemetrySinkData
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-telemetrysinkconfig.html#cfn-groundstation-config-telemetrysinkconfig-telemetrysinkdata
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: TelemetrySinkData
+            /// </summary>
+            public Humidifier.GroundStation.ConfigTypes.TelemetrySinkData TelemetrySinkData { get; set; }
+            /// <summary>
+            /// TelemetrySinkType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-telemetrysinkconfig.html#cfn-groundstation-config-telemetrysinkconfig-telemetrysinktype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TelemetrySinkType { get; set; }
+        }
+
+        public class TelemetrySinkData : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// KinesisDataStreamData
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-telemetrysinkdata.html#cfn-groundstation-config-telemetrysinkdata-kinesisdatastreamdata
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: KinesisDataStreamData
+            /// </summary>
+            public Humidifier.GroundStation.ConfigTypes.KinesisDataStreamData KinesisDataStreamData { get; set; }
         }
 
         public class TrackingConfig : Humidifier.Base.BaseSubResource

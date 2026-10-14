@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VPNGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveAmazonSideAsn
     {
@@ -25,7 +25,7 @@ namespace Humidifier.EC2
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-amazonsideasn
         /// Required: False
         /// UpdateType: Immutable
-        /// PrimitiveType: Integer
+        /// PrimitiveType: Long
         /// </summary>
         public dynamic AmazonSideAsn { get; set; }
         /// <summary>
@@ -36,6 +36,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

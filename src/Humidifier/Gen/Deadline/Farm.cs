@@ -1,6 +1,6 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Farm : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveKmsKeyArn
     {
@@ -27,6 +27,14 @@ namespace Humidifier.Deadline
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyArn { get; set; }
+        /// <summary>
+        /// CostScaleFactor
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-farm.html#cfn-deadline-farm-costscalefactor
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Double
+        /// </summary>
+        public dynamic CostScaleFactor { get; set; }
 
         /// <summary>
         /// DisplayName
@@ -45,6 +53,6 @@ namespace Humidifier.Deadline
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

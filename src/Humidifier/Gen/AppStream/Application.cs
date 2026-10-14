@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationTypes;
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveWorkingDirectory, IHaveAttributesToDelete, IHaveLaunchPath
@@ -103,7 +103,7 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>

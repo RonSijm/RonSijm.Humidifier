@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class GlobalNetwork : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveState, IHaveCreatedAt
     {
@@ -43,6 +43,6 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

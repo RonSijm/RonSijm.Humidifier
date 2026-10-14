@@ -1,6 +1,6 @@
 namespace Humidifier.ElasticLoadBalancingV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TargetGroupTypes;
 
     public class TargetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePort, IHaveProtocol, IHaveVpcId, IHaveIpAddressType, IHaveTargetType, IHaveProtocolVersion, IHaveHealthCheckIntervalSeconds, IHaveHealthCheckPath, IHaveUnhealthyThresholdCount, IHaveHealthCheckTimeoutSeconds, IHaveHealthyThresholdCount, IHaveHealthCheckProtocol, IHaveHealthCheckPort
@@ -30,6 +30,14 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic HealthCheckIntervalSeconds { get; set; }
+        /// <summary>
+        /// TargetControlPort
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targetcontrolport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic TargetControlPort { get; set; }
         /// <summary>
         /// Matcher
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-matcher
@@ -161,7 +169,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TargetGroupTypes
@@ -188,6 +196,14 @@ namespace Humidifier.ElasticLoadBalancingV2
 
         public class TargetDescription : Humidifier.Base.BaseSubResource, IHavePort, IHaveId, IHaveAvailabilityZone
         {
+            /// <summary>
+            /// QuicServerId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-quicserverid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic QuicServerId { get; set; }
             /// <summary>
             /// Port
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port

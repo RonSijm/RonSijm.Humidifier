@@ -1,6 +1,6 @@
 namespace Humidifier.Redshift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Integration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTargetArn, IHaveSourceArn, IHaveKMSKeyId, IHaveIntegrationName
     {
@@ -57,6 +57,6 @@ namespace Humidifier.Redshift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

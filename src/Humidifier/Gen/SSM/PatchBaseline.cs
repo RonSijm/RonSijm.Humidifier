@@ -1,6 +1,6 @@
 namespace Humidifier.SSM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PatchBaselineTypes;
 
     public class PatchBaseline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveOperatingSystem
@@ -89,6 +89,14 @@ namespace Humidifier.SSM
         /// </summary>
         public dynamic ApprovedPatchesComplianceLevel { get; set; }
         /// <summary>
+        /// AvailableSecurityUpdatesComplianceStatus
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-availablesecurityupdatescompliancestatus
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AvailableSecurityUpdatesComplianceStatus { get; set; }
+        /// <summary>
         /// ApprovedPatchesEnableNonSecurity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvedpatchesenablenonsecurity
         /// Required: False
@@ -120,7 +128,7 @@ namespace Humidifier.SSM
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PatchBaselineTypes

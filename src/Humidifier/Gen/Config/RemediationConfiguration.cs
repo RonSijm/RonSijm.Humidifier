@@ -1,6 +1,6 @@
 namespace Humidifier.Config
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RemediationConfigurationTypes;
 
     public class RemediationConfiguration : Humidifier.Base.BaseResource, IHaveResourceType, IHaveParameters, IHaveTargetType, IHaveTargetId, IHaveConfigRuleName
@@ -108,38 +108,6 @@ namespace Humidifier.Config
             public Humidifier.Config.RemediationConfigurationTypes.SsmControls SsmControls { get; set; }
         }
 
-        public class RemediationParameterValue : Humidifier.Base.BaseSubResource
-        {
-            /// <summary>
-            /// ResourceValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResourceValue
-            /// </summary>
-            public Humidifier.Config.RemediationConfigurationTypes.ResourceValue ResourceValue { get; set; }
-            /// <summary>
-            /// StaticValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: StaticValue
-            /// </summary>
-            public Humidifier.Config.RemediationConfigurationTypes.StaticValue StaticValue { get; set; }
-        }
-
-        public class ResourceValue : Humidifier.Base.BaseSubResource, IHaveValue
-        {
-            /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Value { get; set; }
-        }
-
         public class SsmControls : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -158,19 +126,6 @@ namespace Humidifier.Config
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ConcurrentExecutionRatePercentage { get; set; }
-        }
-
-        public class StaticValue : Humidifier.Base.BaseSubResource, IHaveValues
-        {
-            /// <summary>
-            /// Values
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic Values { get; set; }
         }
     }
 }

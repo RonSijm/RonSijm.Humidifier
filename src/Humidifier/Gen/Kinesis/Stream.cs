@@ -1,12 +1,13 @@
 namespace Humidifier.Kinesis
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StreamTypes;
 
     public class Stream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveShardCount, IHaveRetentionPeriodHours
     {
         public class Attributes
         {
+            public static string WarmThroughputObject =  "WarmThroughputObject" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -28,6 +29,22 @@ namespace Humidifier.Kinesis
         /// </summary>
         public Humidifier.Kinesis.StreamTypes.StreamEncryption StreamEncryption { get; set; }
         /// <summary>
+        /// WarmThroughputMiBps
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-warmthroughputmibps
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic WarmThroughputMiBps { get; set; }
+        /// <summary>
+        /// MaxRecordSizeInKiB
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-maxrecordsizeinkib
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic MaxRecordSizeInKiB { get; set; }
+        /// <summary>
         /// RetentionPeriodHours
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
         /// Required: False
@@ -36,6 +53,15 @@ namespace Humidifier.Kinesis
         /// </summary>
         public dynamic RetentionPeriodHours { get; set; }
         /// <summary>
+        /// DesiredShardLevelMetrics
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-desiredshardlevelmetrics
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic DesiredShardLevelMetrics { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags
         /// Required: False
@@ -43,7 +69,15 @@ namespace Humidifier.Kinesis
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// RecordDistributionStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-recorddistributionstrategy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RecordDistributionStrategy { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ShardCount
@@ -87,6 +121,26 @@ namespace Humidifier.Kinesis
             /// PrimitiveType: String
             /// </summary>
             public dynamic StreamMode { get; set; }
+        }
+
+        public class WarmThroughputObject : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CurrentMiBps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-warmthroughputobject.html#cfn-kinesis-stream-warmthroughputobject-currentmibps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CurrentMiBps { get; set; }
+            /// <summary>
+            /// TargetMiBps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-warmthroughputobject.html#cfn-kinesis-stream-warmthroughputobject-targetmibps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TargetMiBps { get; set; }
         }
     }
 }

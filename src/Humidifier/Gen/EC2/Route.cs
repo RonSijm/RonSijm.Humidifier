@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Route : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveInstanceId, IHaveTransitGatewayId, IHaveVpcEndpointId, IHaveDestinationCidrBlock, IHaveRouteTableId, IHaveDestinationPrefixListId, IHaveGatewayId, IHaveLocalGatewayId, IHaveVpcPeeringConnectionId, IHaveNatGatewayId
     {
@@ -84,6 +84,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic VpcEndpointId { get; set; }
+        /// <summary>
+        /// OdbNetworkArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-odbnetworkarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OdbNetworkArn { get; set; }
         /// <summary>
         /// CoreNetworkArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-corenetworkarn

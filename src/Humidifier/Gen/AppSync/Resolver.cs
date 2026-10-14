@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResolverTypes;
 
     public class Resolver : Humidifier.Base.BaseResource, IHaveApiId, IHaveTypeName, IHaveCode, IHaveFieldName, IHaveCodeS3Location, IHaveMetricsConfig, IHaveRequestMappingTemplate, IHaveResponseMappingTemplate, IHaveMaxBatchSize, IHaveResponseMappingTemplateS3Location, IHaveDataSourceName, IHaveRequestMappingTemplateS3Location

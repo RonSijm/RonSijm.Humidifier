@@ -1,6 +1,6 @@
 namespace Humidifier.AppFlow
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectorTypes;
 
     public class Connector : Humidifier.Base.BaseResource, IHaveDescription, IHaveConnectorLabel

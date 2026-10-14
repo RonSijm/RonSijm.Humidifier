@@ -1,10 +1,15 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MLTransformTypes;
 
-    public class MLTransform : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveRole, IHaveMaxCapacity, IHaveTimeout, IHaveMaxRetries, IHaveWorkerType, IHaveGlueVersion, IHaveNumberOfWorkers
+    public class MLTransform : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRole, IHaveMaxCapacity, IHaveTimeout, IHaveMaxRetries, IHaveWorkerType, IHaveGlueVersion, IHaveNumberOfWorkers
     {
+        public class Attributes
+        {
+            public static string TransformId =  "TransformId" ;
+        }
+
         public override string AWSTypeName { get => AWS.Glue.MLTransform; }
         /// <summary>
         /// MaxRetries
@@ -26,7 +31,7 @@ namespace Humidifier.Glue
         /// TransformEncryption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformencryption
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: TransformEncryption
         /// </summary>
         public Humidifier.Glue.MLTransformTypes.TransformEncryption TransformEncryption { get; set; }
@@ -75,6 +80,14 @@ namespace Humidifier.Glue
         /// </summary>
         [Required]
         public Humidifier.Glue.MLTransformTypes.TransformParameters TransformParameters { get; set; }
+        /// <summary>
+        /// NumberOfWorkers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic NumberOfWorkers { get; set; }
 
         /// <summary>
         /// InputRecordTables
@@ -86,21 +99,14 @@ namespace Humidifier.Glue
         [Required]
         public Humidifier.Glue.MLTransformTypes.InputRecordTables InputRecordTables { get; set; }
         /// <summary>
-        /// NumberOfWorkers
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic NumberOfWorkers { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags { get; set; }
+        public Dictionary<string, dynamic> Tags { get; set; }
         /// <summary>
         /// MaxCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxcapacity
@@ -117,7 +123,7 @@ namespace Humidifier.Glue
         {
             /// <summary>
             /// PrecisionRecallTradeoff
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-precisionrecalltradeoff
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-findmatchesparameters.html#cfn-glue-mltransform-findmatchesparameters-precisionrecalltradeoff
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Double
@@ -125,7 +131,7 @@ namespace Humidifier.Glue
             public dynamic PrecisionRecallTradeoff { get; set; }
             /// <summary>
             /// EnforceProvidedLabels
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-enforceprovidedlabels
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-findmatchesparameters.html#cfn-glue-mltransform-findmatchesparameters-enforceprovidedlabels
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
@@ -133,7 +139,7 @@ namespace Humidifier.Glue
             public dynamic EnforceProvidedLabels { get; set; }
             /// <summary>
             /// PrimaryKeyColumnName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-primarykeycolumnname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-findmatchesparameters.html#cfn-glue-mltransform-findmatchesparameters-primarykeycolumnname
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -141,7 +147,7 @@ namespace Humidifier.Glue
             public dynamic PrimaryKeyColumnName { get; set; }
             /// <summary>
             /// AccuracyCostTradeoff
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformparameters-findmatchesparameters.html#cfn-glue-mltransform-transformparameters-findmatchesparameters-accuracycosttradeoff
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-findmatchesparameters.html#cfn-glue-mltransform-findmatchesparameters-accuracycosttradeoff
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Double
@@ -153,33 +159,33 @@ namespace Humidifier.Glue
         {
             /// <summary>
             /// ConnectionName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-connectionname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-gluetables.html#cfn-glue-mltransform-gluetables-connectionname
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConnectionName { get; set; }
             /// <summary>
             /// TableName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-tablename
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-gluetables.html#cfn-glue-mltransform-gluetables-tablename
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TableName { get; set; }
             /// <summary>
             /// DatabaseName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-databasename
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-gluetables.html#cfn-glue-mltransform-gluetables-databasename
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DatabaseName { get; set; }
             /// <summary>
             /// CatalogId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-catalogid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-gluetables.html#cfn-glue-mltransform-gluetables-catalogid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CatalogId { get; set; }
@@ -191,7 +197,7 @@ namespace Humidifier.Glue
             /// GlueTables
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html#cfn-glue-mltransform-inputrecordtables-gluetables
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: GlueTables
             /// </summary>
@@ -202,17 +208,17 @@ namespace Humidifier.Glue
         {
             /// <summary>
             /// MLUserDataEncryptionMode
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption-mluserdataencryption.html#cfn-glue-mltransform-transformencryption-mluserdataencryption-mluserdataencryptionmode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-mluserdataencryption.html#cfn-glue-mltransform-mluserdataencryption-mluserdataencryptionmode
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic MLUserDataEncryptionMode { get; set; }
             /// <summary>
             /// KmsKeyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption-mluserdataencryption.html#cfn-glue-mltransform-transformencryption-mluserdataencryption-kmskeyid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-mluserdataencryption.html#cfn-glue-mltransform-mluserdataencryption-kmskeyid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKeyId { get; set; }
@@ -224,7 +230,7 @@ namespace Humidifier.Glue
             /// MLUserDataEncryption
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption.html#cfn-glue-mltransform-transformencryption-mluserdataencryption
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: MLUserDataEncryption
             /// </summary>
             public Humidifier.Glue.MLTransformTypes.MLUserDataEncryption MLUserDataEncryption { get; set; }
@@ -232,7 +238,7 @@ namespace Humidifier.Glue
             /// TaskRunSecurityConfigurationName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption.html#cfn-glue-mltransform-transformencryption-taskrunsecurityconfigurationname
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TaskRunSecurityConfigurationName { get; set; }

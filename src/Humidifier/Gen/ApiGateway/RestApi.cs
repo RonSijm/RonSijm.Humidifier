@@ -1,9 +1,9 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RestApiTypes;
 
-    public class RestApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveMode, IHavePolicy, IHaveBody, IHaveDisableExecuteApiEndpoint, IHaveFailOnWarnings
+    public class RestApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveVersion, IHaveMode, IHavePolicy, IHaveBody, IHaveSecurityPolicy, IHaveDisableExecuteApiEndpoint, IHaveFailOnWarnings
     {
         public class Attributes
         {
@@ -96,6 +96,22 @@ namespace Humidifier.ApiGateway
         public dynamic BinaryMediaTypes { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// Version
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-version
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Version { get; set; }
+        /// <summary>
+        /// SecurityPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-securitypolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SecurityPolicy { get; set; }
+        /// <summary>
         /// ApiKeySourceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-apikeysourcetype
         /// Required: False
@@ -127,13 +143,29 @@ namespace Humidifier.ApiGateway
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// EndpointAccessMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointaccessmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointAccessMode { get; set; }
     }
 
     namespace RestApiTypes
     {
-        public class EndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveTypes
+        public class EndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveIpAddressType, IHaveTypes
         {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// Types
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-types

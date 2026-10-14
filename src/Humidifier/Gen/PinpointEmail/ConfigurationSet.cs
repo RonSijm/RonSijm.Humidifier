@@ -1,6 +1,6 @@
 namespace Humidifier.PinpointEmail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationSetTypes;
 
     public class ConfigurationSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

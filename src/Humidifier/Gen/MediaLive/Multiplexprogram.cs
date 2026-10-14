@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MultiplexprogramTypes;
 
     public class Multiplexprogram : Humidifier.Base.BaseResource, IHaveMultiplexId, IHavePreferredChannelPipeline, IHaveProgramName

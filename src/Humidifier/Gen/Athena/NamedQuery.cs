@@ -1,6 +1,6 @@
 namespace Humidifier.Athena
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class NamedQuery : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDatabase, IHaveQueryString, IHaveWorkGroup
     {

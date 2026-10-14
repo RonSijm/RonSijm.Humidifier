@@ -1,6 +1,6 @@
 namespace Humidifier.Redshift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EndpointAccessTypes;
 
     public class EndpointAccess : Humidifier.Base.BaseResource, IHaveEndpointName, IHaveVpcSecurityGroupIds, IHaveClusterIdentifier, IHaveSubnetGroupName, IHaveResourceOwner

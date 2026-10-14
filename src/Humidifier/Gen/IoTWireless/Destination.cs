@@ -1,6 +1,6 @@
 namespace Humidifier.IoTWireless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Destination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveExpression
     {
@@ -46,7 +46,7 @@ namespace Humidifier.IoTWireless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-destination.html#cfn-iotwireless-destination-rolearn

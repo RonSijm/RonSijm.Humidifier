@@ -1,6 +1,6 @@
 namespace Humidifier.ControlTower
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LandingZone : Humidifier.Base.BaseResource, IHaveTags, IHaveVersion, IHaveManifest
     {
@@ -24,6 +24,15 @@ namespace Humidifier.ControlTower
         /// </summary>
         [Required]
         public dynamic Version { get; set; }
+        /// <summary>
+        /// RemediationTypes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-controltower-landingzone.html#cfn-controltower-landingzone-remediationtypes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic RemediationTypes { get; set; }
 
         /// <summary>
         /// Manifest
@@ -42,6 +51,6 @@ namespace Humidifier.ControlTower
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

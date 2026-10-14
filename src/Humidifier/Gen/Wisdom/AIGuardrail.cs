@@ -1,6 +1,6 @@
 namespace Humidifier.Wisdom
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AIGuardrailTypes;
 
     public class AIGuardrail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAssistantId, IHaveBlockedInputMessaging, IHaveBlockedOutputsMessaging
@@ -9,6 +9,7 @@ namespace Humidifier.Wisdom
         {
             public static string AIGuardrailId =  "AIGuardrailId" ;
             public static string AssistantArn =  "AssistantArn" ;
+            public static string ModifiedTimeSeconds =  "ModifiedTimeSeconds" ;
             public static string AIGuardrailArn =  "AIGuardrailArn" ;
         }
 

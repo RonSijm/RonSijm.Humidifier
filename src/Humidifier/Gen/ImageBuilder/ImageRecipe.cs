@@ -1,27 +1,35 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ImageRecipeTypes;
 
     public class ImageRecipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveVersion, IHaveWorkingDirectory, IHaveParentImage
     {
         public class Attributes
         {
+            public static string LatestVersion =  "LatestVersion" ;
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
         }
 
         public override string AWSTypeName { get => AWS.ImageBuilder.ImageRecipe; }
-
+        /// <summary>
+        /// AmiWatermarks
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-amiwatermarks
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic AmiWatermarks { get; set; }
         /// <summary>
         /// Components
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-components
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// Type: List
         /// ItemType: ComponentConfiguration
         /// </summary>
-        [Required]
         public List<Humidifier.ImageBuilder.ImageRecipeTypes.ComponentConfiguration> Components { get; set; }
         /// <summary>
         /// WorkingDirectory
@@ -41,6 +49,15 @@ namespace Humidifier.ImageBuilder
         /// </summary>
         [Required]
         public dynamic ParentImage { get; set; }
+        /// <summary>
+        /// AmiTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-amitags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> AmiTags { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-description
@@ -72,7 +89,7 @@ namespace Humidifier.ImageBuilder
         /// AdditionalInstanceConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-additionalinstanceconfiguration
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: AdditionalInstanceConfiguration
         /// </summary>
         public Humidifier.ImageBuilder.ImageRecipeTypes.AdditionalInstanceConfiguration AdditionalInstanceConfiguration { get; set; }
@@ -80,7 +97,7 @@ namespace Humidifier.ImageBuilder
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
@@ -96,7 +113,7 @@ namespace Humidifier.ImageBuilder
             /// UserDataOverride
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-additionalinstanceconfiguration.html#cfn-imagebuilder-imagerecipe-additionalinstanceconfiguration-userdataoverride
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic UserDataOverride { get; set; }
@@ -104,7 +121,7 @@ namespace Humidifier.ImageBuilder
             /// SystemsManagerAgent
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-additionalinstanceconfiguration.html#cfn-imagebuilder-imagerecipe-additionalinstanceconfiguration-systemsmanageragent
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: SystemsManagerAgent
             /// </summary>
             public Humidifier.ImageBuilder.ImageRecipeTypes.SystemsManagerAgent SystemsManagerAgent { get; set; }
@@ -256,13 +273,49 @@ namespace Humidifier.ImageBuilder
             public dynamic DeviceName { get; set; }
         }
 
+        public class LatestVersion : Humidifier.Base.BaseSubResource, IHaveArn
+        {
+            /// <summary>
+            /// Major
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-latestversion.html#cfn-imagebuilder-imagerecipe-latestversion-major
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Major { get; set; }
+            /// <summary>
+            /// Minor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-latestversion.html#cfn-imagebuilder-imagerecipe-latestversion-minor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Minor { get; set; }
+            /// <summary>
+            /// Arn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-latestversion.html#cfn-imagebuilder-imagerecipe-latestversion-arn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Arn { get; set; }
+            /// <summary>
+            /// Patch
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-latestversion.html#cfn-imagebuilder-imagerecipe-latestversion-patch
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Patch { get; set; }
+        }
+
         public class SystemsManagerAgent : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// UninstallAfterBuild
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-systemsmanageragent.html#cfn-imagebuilder-imagerecipe-systemsmanageragent-uninstallafterbuild
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic UninstallAfterBuild { get; set; }

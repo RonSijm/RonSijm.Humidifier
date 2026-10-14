@@ -1,6 +1,7 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using EmailAddressTypes;
 
     public class EmailAddress : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveInstanceArn
     {
@@ -54,6 +55,30 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// AliasConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-emailaddress.html#cfn-connect-emailaddress-aliasconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AliasConfiguration
+        /// </summary>
+        public List<Humidifier.Connect.EmailAddressTypes.AliasConfiguration> AliasConfigurations { get; set; }
+    }
+
+    namespace EmailAddressTypes
+    {
+        public class AliasConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EmailAddressArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-emailaddress-aliasconfiguration.html#cfn-connect-emailaddress-aliasconfiguration-emailaddressarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EmailAddressArn { get; set; }
+        }
     }
 }

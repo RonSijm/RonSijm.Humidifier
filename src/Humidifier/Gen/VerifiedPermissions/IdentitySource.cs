@@ -1,6 +1,6 @@
 namespace Humidifier.VerifiedPermissions
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdentitySourceTypes;
 
     public class IdentitySource : Humidifier.Base.BaseResource, IHavePolicyStoreId

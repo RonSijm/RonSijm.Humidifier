@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class KeyPair : Humidifier.Base.BaseResource, IHaveTags, IHaveKeyType, IHaveKeyName, IHavePublicKeyMaterial, IHaveKeyFormat
     {
@@ -53,6 +53,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.AutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScalingPolicyTypes;
 
     public class ScalingPolicy : Humidifier.Base.BaseResource, IHavePolicyType, IHaveScalingAdjustment, IHaveAutoScalingGroupName, IHaveAdjustmentType, IHaveCooldown, IHaveEstimatedInstanceWarmup, IHaveMetricAggregationType, IHaveMinAdjustmentMagnitude
@@ -201,22 +201,6 @@ namespace Humidifier.AutoScaling
         public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHaveReturnData
         {
             /// <summary>
-            /// ReturnData
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-returndata
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic ReturnData { get; set; }
-            /// <summary>
-            /// Expression
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-expression
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Expression { get; set; }
-            /// <summary>
             /// Label
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-label
             /// Required: False
@@ -240,6 +224,22 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic Id { get; set; }
+            /// <summary>
+            /// ReturnData
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-returndata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReturnData { get; set; }
+            /// <summary>
+            /// Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdataquery.html#cfn-autoscaling-scalingpolicy-metricdataquery-expression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expression { get; set; }
         }
 
         public class MetricDimension : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue

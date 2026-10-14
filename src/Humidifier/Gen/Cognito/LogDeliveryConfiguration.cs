@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LogDeliveryConfigurationTypes;
 
     public class LogDeliveryConfiguration : Humidifier.Base.BaseResource, IHaveUserPoolId

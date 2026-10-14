@@ -1,6 +1,6 @@
 namespace Humidifier.ECR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PullThroughCacheRule : Humidifier.Base.BaseResource
     {
@@ -13,6 +13,22 @@ namespace Humidifier.ECR
         /// PrimitiveType: String
         /// </summary>
         public dynamic UpstreamRegistryUrl { get; set; }
+        /// <summary>
+        /// CustomRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-customrolearn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CustomRoleArn { get; set; }
+        /// <summary>
+        /// UpstreamRepositoryPrefix
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-upstreamrepositoryprefix
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic UpstreamRepositoryPrefix { get; set; }
         /// <summary>
         /// UpstreamRegistry
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-pullthroughcacherule.html#cfn-ecr-pullthroughcacherule-upstreamregistry

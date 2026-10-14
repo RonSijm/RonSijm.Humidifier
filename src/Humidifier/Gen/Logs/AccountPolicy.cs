@@ -1,6 +1,6 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AccountPolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveScope, IHavePolicyName, IHavePolicyType, IHaveSelectionCriteria
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.Panorama
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PackageTypes;
 
     public class Package : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePackageName
@@ -30,7 +30,7 @@ namespace Humidifier.Panorama
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PackageTypes

@@ -1,6 +1,6 @@
 namespace Humidifier.EntityResolution
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MatchingWorkflowTypes;
 
     public class MatchingWorkflow : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveWorkflowName
@@ -89,11 +89,31 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace MatchingWorkflowTypes
     {
+        public class CustomerProfilesIntegrationConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DomainArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-customerprofilesintegrationconfig.html#cfn-entityresolution-matchingworkflow-customerprofilesintegrationconfig-domainarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainArn { get; set; }
+            /// <summary>
+            /// ObjectTypeArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-customerprofilesintegrationconfig.html#cfn-entityresolution-matchingworkflow-customerprofilesintegrationconfig-objecttypearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ObjectTypeArn { get; set; }
+        }
+
         public class IncrementalRunConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -146,6 +166,18 @@ namespace Humidifier.EntityResolution
             public dynamic IntermediateS3Path { get; set; }
         }
 
+        public class MatchingConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EnableTransitiveMatching
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-matchingconfig.html#cfn-entityresolution-matchingworkflow-matchingconfig-enabletransitivematching
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableTransitiveMatching { get; set; }
+        }
+
         public class OutputAttribute : Humidifier.Base.BaseSubResource, IHaveName, IHaveHashed
         {
             /// <summary>
@@ -179,7 +211,7 @@ namespace Humidifier.EntityResolution
             /// <summary>
             /// OutputS3Path
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-outputsource.html#cfn-entityresolution-matchingworkflow-outputsource-outputs3path
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -201,6 +233,14 @@ namespace Humidifier.EntityResolution
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ApplyNormalization { get; set; }
+            /// <summary>
+            /// CustomerProfilesIntegrationConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-outputsource.html#cfn-entityresolution-matchingworkflow-outputsource-customerprofilesintegrationconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomerProfilesIntegrationConfig
+            /// </summary>
+            public Humidifier.EntityResolution.MatchingWorkflowTypes.CustomerProfilesIntegrationConfig CustomerProfilesIntegrationConfig { get; set; }
         }
 
         public class ProviderProperties : Humidifier.Base.BaseSubResource, IHaveProviderServiceArn
@@ -258,6 +298,22 @@ namespace Humidifier.EntityResolution
             /// PrimitiveType: String
             /// </summary>
             public dynamic ResolutionType { get; set; }
+            /// <summary>
+            /// RuleConditionProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-resolutiontechniques.html#cfn-entityresolution-matchingworkflow-resolutiontechniques-ruleconditionproperties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RuleConditionProperties
+            /// </summary>
+            public Humidifier.EntityResolution.MatchingWorkflowTypes.RuleConditionProperties RuleConditionProperties { get; set; }
+            /// <summary>
+            /// EnableRealTimeMatching
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-resolutiontechniques.html#cfn-entityresolution-matchingworkflow-resolutiontechniques-enablerealtimematching
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableRealTimeMatching { get; set; }
         }
 
         public class Rule : Humidifier.Base.BaseSubResource, IHaveRuleName, IHaveMatchingKeys
@@ -308,6 +364,47 @@ namespace Humidifier.EntityResolution
             /// ItemType: Rule
             /// </summary>
             public List<Humidifier.EntityResolution.MatchingWorkflowTypes.Rule> Rules { get; set; }
+        }
+
+        public class RuleCondition : Humidifier.Base.BaseSubResource, IHaveCondition, IHaveRuleName
+        {
+            /// <summary>
+            /// Condition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-rulecondition.html#cfn-entityresolution-matchingworkflow-rulecondition-condition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Condition { get; set; }
+            /// <summary>
+            /// RuleName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-rulecondition.html#cfn-entityresolution-matchingworkflow-rulecondition-rulename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RuleName { get; set; }
+        }
+
+        public class RuleConditionProperties : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MatchingConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-ruleconditionproperties.html#cfn-entityresolution-matchingworkflow-ruleconditionproperties-matchingconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MatchingConfig
+            /// </summary>
+            public Humidifier.EntityResolution.MatchingWorkflowTypes.MatchingConfig MatchingConfig { get; set; }
+            /// <summary>
+            /// Rules
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-matchingworkflow-ruleconditionproperties.html#cfn-entityresolution-matchingworkflow-ruleconditionproperties-rules
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: RuleCondition
+            /// </summary>
+            public List<Humidifier.EntityResolution.MatchingWorkflowTypes.RuleCondition> Rules { get; set; }
         }
     }
 }

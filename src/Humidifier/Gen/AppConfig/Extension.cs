@@ -1,6 +1,6 @@
 namespace Humidifier.AppConfig
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ExtensionTypes;
 
     public class Extension : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveActions, IHaveLatestVersionNumber
@@ -52,11 +52,11 @@ namespace Humidifier.AppConfig
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-extension.html#cfn-appconfig-extension-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

@@ -1,6 +1,6 @@
 namespace Humidifier.ElasticBeanstalk
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationTemplateTypes;
 
     public class ConfigurationTemplate : Humidifier.Base.BaseResource, IHaveDescription, IHaveApplicationName, IHaveEnvironmentId, IHavePlatformArn, IHaveSolutionStackName

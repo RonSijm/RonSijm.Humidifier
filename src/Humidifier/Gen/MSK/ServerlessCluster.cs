@@ -1,6 +1,6 @@
 namespace Humidifier.MSK
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServerlessClusterTypes;
 
     public class ServerlessCluster : Humidifier.Base.BaseResource, IHaveClusterName

@@ -1,13 +1,14 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NotebookInstanceLifecycleConfigTypes;
 
-    public class NotebookInstanceLifecycleConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName
+    public class NotebookInstanceLifecycleConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
         public class Attributes
         {
             public static string NotebookInstanceLifecycleConfigName =  "NotebookInstanceLifecycleConfigName" ;
+            public static string NotebookInstanceLifecycleConfigArn =  "NotebookInstanceLifecycleConfigArn" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.NotebookInstanceLifecycleConfig; }
@@ -21,6 +22,15 @@ namespace Humidifier.SageMaker
         /// </summary>
         public List<Humidifier.SageMaker.NotebookInstanceLifecycleConfigTypes.NotebookInstanceLifecycleHook> OnStart { get; set; }
         public dynamic NotebookInstanceLifecycleConfigName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// OnCreate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-oncreate

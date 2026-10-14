@@ -1,6 +1,6 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentActionsTypes;
 
     public class EnvironmentActions : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveIdentifier, IHaveDomainIdentifier, IHaveEnvironmentIdentifier

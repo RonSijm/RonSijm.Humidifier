@@ -1,6 +1,6 @@
 namespace Humidifier.SecretsManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SecretTargetAttachment : Humidifier.Base.BaseResource, IHaveTargetType, IHaveSecretId, IHaveTargetId
     {

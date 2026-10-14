@@ -1,6 +1,6 @@
 namespace Humidifier.FSx
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StorageVirtualMachineTypes;
 
     public class StorageVirtualMachine : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveFileSystemId
@@ -55,7 +55,7 @@ namespace Humidifier.FSx
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -115,6 +115,14 @@ namespace Humidifier.FSx
             /// PrimitiveType: String
             /// </summary>
             public dynamic OrganizationalUnitDistinguishedName { get; set; }
+            /// <summary>
+            /// DomainJoinServiceAccountSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-domainjoinserviceaccountsecret
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainJoinServiceAccountSecret { get; set; }
             /// <summary>
             /// DnsIps
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-dnsips

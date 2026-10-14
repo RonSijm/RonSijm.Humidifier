@@ -1,9 +1,9 @@
 namespace Humidifier.SecretsManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SecretTypes;
 
-    public class Secret : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyId
+    public class Secret : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType, IHaveKmsKeyId
     {
         public class Attributes
         {
@@ -11,6 +11,14 @@ namespace Humidifier.SecretsManager
         }
 
         public override string AWSTypeName { get => AWS.SecretsManager.Secret; }
+        /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-type
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Type { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-description
@@ -60,7 +68,7 @@ namespace Humidifier.SecretsManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

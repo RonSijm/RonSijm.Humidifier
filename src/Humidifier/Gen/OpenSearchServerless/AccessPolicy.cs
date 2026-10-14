@@ -1,6 +1,6 @@
 namespace Humidifier.OpenSearchServerless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AccessPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHavePolicy
     {

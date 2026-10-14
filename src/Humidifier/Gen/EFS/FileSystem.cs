@@ -1,6 +1,6 @@
 namespace Humidifier.EFS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FileSystemTypes;
 
     public class FileSystem : Humidifier.Base.BaseResource, IHaveKmsKeyId, IHaveEncrypted, IHaveBypassPolicyLockoutSafetyCheck, IHaveThroughputMode, IHaveAvailabilityZoneName

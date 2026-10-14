@@ -1,6 +1,6 @@
 namespace Humidifier.Events
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EndpointTypes;
 
     public class Endpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn

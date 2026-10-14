@@ -1,9 +1,9 @@
 namespace Humidifier.Personalize
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DatasetTypes;
 
-    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSchemaArn, IHaveDatasetType, IHaveDatasetGroupArn
+    public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveSchemaArn, IHaveDatasetType, IHaveDatasetGroupArn
     {
         public class Attributes
         {
@@ -49,6 +49,15 @@ namespace Humidifier.Personalize
         /// </summary>
         [Required]
         public dynamic SchemaArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-dataset.html#cfn-personalize-dataset-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

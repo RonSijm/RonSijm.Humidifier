@@ -1,34 +1,29 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DirectConnectGatewayAttachmentTypes;
 
     public class DirectConnectGatewayAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveCoreNetworkId, IHaveEdgeLocations
     {
         public class Attributes
         {
-            public static string ResourceArn =  "ResourceArn" ;
+            public static string ProposedSegmentChange =  "ProposedSegmentChange" ;
             public static string AttachmentType =  "AttachmentType" ;
+            public static string ProposedNetworkFunctionGroupChange =  "ProposedNetworkFunctionGroupChange" ;
             public static string SegmentName =  "SegmentName" ;
-            public static string State =  "State" ;
             public static string CreatedAt =  "CreatedAt" ;
-            public static string OwnerAccountId =  "OwnerAccountId" ;
             public static string UpdatedAt =  "UpdatedAt" ;
             public static string AttachmentId =  "AttachmentId" ;
             public static string NetworkFunctionGroupName =  "NetworkFunctionGroupName" ;
             public static string CoreNetworkArn =  "CoreNetworkArn" ;
+            public static string ResourceArn =  "ResourceArn" ;
+            public static string State =  "State" ;
+            public static string LastModificationErrors =  "LastModificationErrors" ;
+            public static string OwnerAccountId =  "OwnerAccountId" ;
             public static string AttachmentPolicyRuleNumber =  "AttachmentPolicyRuleNumber" ;
         }
 
         public override string AWSTypeName { get => AWS.NetworkManager.DirectConnectGatewayAttachment; }
-        /// <summary>
-        /// ProposedSegmentChange
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-proposedsegmentchange
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ProposedSegmentChange
-        /// </summary>
-        public Humidifier.NetworkManager.DirectConnectGatewayAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
 
         /// <summary>
         /// CoreNetworkId
@@ -39,14 +34,6 @@ namespace Humidifier.NetworkManager
         /// </summary>
         [Required]
         public dynamic CoreNetworkId { get; set; }
-        /// <summary>
-        /// ProposedNetworkFunctionGroupChange
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-proposednetworkfunctiongroupchange
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ProposedNetworkFunctionGroupChange
-        /// </summary>
-        public Humidifier.NetworkManager.DirectConnectGatewayAttachmentTypes.ProposedNetworkFunctionGroupChange ProposedNetworkFunctionGroupChange { get; set; }
 
         /// <summary>
         /// EdgeLocations
@@ -69,6 +56,14 @@ namespace Humidifier.NetworkManager
         [Required]
         public dynamic DirectConnectGatewayArn { get; set; }
         /// <summary>
+        /// RoutingPolicyLabel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-routingpolicylabel
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RoutingPolicyLabel { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-tags
         /// Required: False
@@ -76,7 +71,7 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DirectConnectGatewayAttachmentTypes
@@ -91,7 +86,7 @@ namespace Humidifier.NetworkManager
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// NetworkFunctionGroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-directconnectgatewayattachment-proposednetworkfunctiongroupchange.html#cfn-networkmanager-directconnectgatewayattachment-proposednetworkfunctiongroupchange-networkfunctiongroupname
@@ -128,7 +123,7 @@ namespace Humidifier.NetworkManager
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// AttachmentPolicyRuleNumber
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-directconnectgatewayattachment-proposedsegmentchange.html#cfn-networkmanager-directconnectgatewayattachment-proposedsegmentchange-attachmentpolicyrulenumber

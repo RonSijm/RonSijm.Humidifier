@@ -1,6 +1,6 @@
 namespace Humidifier.Signer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ProfilePermission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveStatementId, IHaveProfileName
     {

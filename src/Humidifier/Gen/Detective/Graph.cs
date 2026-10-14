@@ -1,6 +1,6 @@
 namespace Humidifier.Detective
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Graph : Humidifier.Base.BaseResource, IHaveTags
     {
@@ -26,6 +26,6 @@ namespace Humidifier.Detective
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

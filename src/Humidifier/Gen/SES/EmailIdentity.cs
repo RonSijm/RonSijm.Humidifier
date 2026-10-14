@@ -1,9 +1,9 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EmailIdentityTypes;
 
-    public class EmailIdentity : Humidifier.Base.BaseResource
+    public class EmailIdentity : Humidifier.Base.BaseResource, IHaveTags
     {
         public class Attributes
         {
@@ -58,6 +58,15 @@ namespace Humidifier.SES
         /// Type: FeedbackAttributes
         /// </summary>
         public Humidifier.SES.EmailIdentityTypes.FeedbackAttributes FeedbackAttributes { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MailFromAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#cfn-ses-emailidentity-mailfromattributes

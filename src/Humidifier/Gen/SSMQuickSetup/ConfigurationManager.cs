@@ -1,6 +1,6 @@
 namespace Humidifier.SSMQuickSetup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationManagerTypes;
 
     public class ConfigurationManager : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

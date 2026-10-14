@@ -1,6 +1,6 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DistributionConfigurationTypes;
 
     public class DistributionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
@@ -181,6 +181,15 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic Region { get; set; }
+            /// <summary>
+            /// SsmParameterConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-ssmparameterconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SsmParameterConfiguration
+            /// </summary>
+            public List<Humidifier.ImageBuilder.DistributionConfigurationTypes.SsmParameterConfiguration> SsmParameterConfigurations { get; set; }
         }
 
         public class FastLaunchConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveAccountId
@@ -333,6 +342,34 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic LaunchTemplateId { get; set; }
+        }
+
+        public class SsmParameterConfiguration : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveDataType
+        {
+            /// <summary>
+            /// DataType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-ssmparameterconfiguration.html#cfn-imagebuilder-distributionconfiguration-ssmparameterconfiguration-datatype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataType { get; set; }
+            /// <summary>
+            /// ParameterName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-ssmparameterconfiguration.html#cfn-imagebuilder-distributionconfiguration-ssmparameterconfiguration-parametername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterName { get; set; }
+            /// <summary>
+            /// AmiAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-ssmparameterconfiguration.html#cfn-imagebuilder-distributionconfiguration-ssmparameterconfiguration-amiaccountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AmiAccountId { get; set; }
         }
 
         public class TargetContainerRepository : Humidifier.Base.BaseSubResource, IHaveRepositoryName, IHaveService

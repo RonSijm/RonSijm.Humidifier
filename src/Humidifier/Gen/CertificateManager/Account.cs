@@ -1,6 +1,6 @@
 namespace Humidifier.CertificateManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccountTypes;
 
     public class Account : Humidifier.Base.BaseResource

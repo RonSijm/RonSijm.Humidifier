@@ -1,9 +1,14 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Certificate : Humidifier.Base.BaseResource, IHaveCertificatePem
     {
+        public class Attributes
+        {
+            public static string CertificateArn =  "CertificateArn" ;
+        }
+
         public override string AWSTypeName { get => AWS.DMS.Certificate; }
         /// <summary>
         /// CertificateIdentifier

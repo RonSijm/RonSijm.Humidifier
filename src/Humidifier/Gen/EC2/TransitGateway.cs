@@ -1,11 +1,12 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TransitGateway : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSecurityGroupReferencingSupport, IHaveDnsSupport, IHaveAmazonSideAsn
     {
         public class Attributes
         {
+            public static string EncryptionSupportState =  "EncryptionSupportState" ;
             public static string TransitGatewayArn =  "TransitGatewayArn" ;
             public static string Id =  "Id" ;
         }
@@ -105,7 +106,7 @@ namespace Humidifier.EC2
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn
         /// Required: False
         /// UpdateType: Immutable
-        /// PrimitiveType: Integer
+        /// PrimitiveType: Long
         /// </summary>
         public dynamic AmazonSideAsn { get; set; }
         /// <summary>
@@ -116,6 +117,14 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// EncryptionSupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-encryptionsupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EncryptionSupport { get; set; }
     }
 }

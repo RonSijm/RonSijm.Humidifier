@@ -1,6 +1,6 @@
 namespace Humidifier.EventSchemas
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RegistryTypes;
 
     public class Registry : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRegistryName

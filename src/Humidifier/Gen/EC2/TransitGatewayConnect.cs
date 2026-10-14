@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TransitGatewayConnectTypes;
 
     public class TransitGatewayConnect : Humidifier.Base.BaseResource, IHaveTags, IHaveTransportTransitGatewayAttachmentId
@@ -42,7 +42,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TransitGatewayConnectTypes

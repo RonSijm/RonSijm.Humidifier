@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGatewayV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainNameTypes;
 
     public class DomainName : Humidifier.Base.BaseResource, IHaveDomainName_
@@ -9,6 +9,7 @@ namespace Humidifier.ApiGatewayV2
         {
             public static string RegionalHostedZoneId =  "RegionalHostedZoneId" ;
             public static string RegionalDomainName =  "RegionalDomainName" ;
+            public static string DomainNameArn =  "DomainNameArn" ;
         }
 
         public override string AWSTypeName { get => AWS.ApiGatewayV2.DomainName; }
@@ -20,6 +21,14 @@ namespace Humidifier.ApiGatewayV2
         /// Type: MutualTlsAuthentication
         /// </summary>
         public Humidifier.ApiGatewayV2.DomainNameTypes.MutualTlsAuthentication MutualTlsAuthentication { get; set; }
+        /// <summary>
+        /// RoutingMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-routingmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RoutingMode { get; set; }
 
         /// <summary>
         /// DomainName_
@@ -52,7 +61,7 @@ namespace Humidifier.ApiGatewayV2
 
     namespace DomainNameTypes
     {
-        public class DomainNameConfiguration : Humidifier.Base.BaseSubResource, IHaveCertificateArn, IHaveEndpointType, IHaveCertificateName, IHaveSecurityPolicy, IHaveOwnershipVerificationCertificateArn
+        public class DomainNameConfiguration : Humidifier.Base.BaseSubResource, IHaveCertificateArn, IHaveIpAddressType, IHaveEndpointType, IHaveCertificateName, IHaveSecurityPolicy, IHaveOwnershipVerificationCertificateArn
         {
             /// <summary>
             /// OwnershipVerificationCertificateArn
@@ -62,6 +71,14 @@ namespace Humidifier.ApiGatewayV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic OwnershipVerificationCertificateArn { get; set; }
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// SecurityPolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-securitypolicy

@@ -1,9 +1,9 @@
 namespace Humidifier.FSx
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FileSystemTypes;
 
-    public class FileSystem : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveStorageType, IHaveBackupId, IHaveStorageCapacity
+    public class FileSystem : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveNetworkType, IHaveStorageType, IHaveBackupId, IHaveStorageCapacity
     {
         public class Attributes
         {
@@ -106,6 +106,14 @@ namespace Humidifier.FSx
         /// Type: OpenZFSConfiguration
         /// </summary>
         public Humidifier.FSx.FileSystemTypes.OpenZFSConfiguration OpenZFSConfiguration { get; set; }
+        /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-networktype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
 
         /// <summary>
         /// FileSystemType
@@ -124,7 +132,7 @@ namespace Humidifier.FSx
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace FileSystemTypes
@@ -178,6 +186,26 @@ namespace Humidifier.FSx
             public dynamic Clients { get; set; }
         }
 
+        public class DataReadCacheConfiguration : Humidifier.Base.BaseSubResource, IHaveSizeGiB
+        {
+            /// <summary>
+            /// SizingMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration-datareadcacheconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-datareadcacheconfiguration-sizingmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SizingMode { get; set; }
+            /// <summary>
+            /// SizeGiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration-datareadcacheconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-datareadcacheconfiguration-sizegib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SizeGiB { get; set; }
+        }
+
         public class DiskIopsConfiguration : Humidifier.Base.BaseSubResource, IHaveMode, IHaveIops
         {
             /// <summary>
@@ -198,7 +226,47 @@ namespace Humidifier.FSx
             public dynamic Iops { get; set; }
         }
 
-        public class LustreConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveCopyTagsToBackups, IHaveAutomaticBackupRetentionDays, IHaveDataCompressionType, IHaveImportedFileChunkSize
+        public class FsrmConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FsrmServiceEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-fsrmconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-fsrmconfiguration-fsrmserviceenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic FsrmServiceEnabled { get; set; }
+            /// <summary>
+            /// EventLogDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-fsrmconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-fsrmconfiguration-eventlogdestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventLogDestination { get; set; }
+        }
+
+        public class LogConfiguration : Humidifier.Base.BaseSubResource, IHaveDestination, IHaveLevel
+        {
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration-logconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-logconfiguration-destination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Destination { get; set; }
+            /// <summary>
+            /// Level
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration-logconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-logconfiguration-level
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Level { get; set; }
+        }
+
+        public class LustreConfiguration : Humidifier.Base.BaseSubResource, IHaveDeploymentType, IHaveWeeklyMaintenanceStartTime, IHaveDailyAutomaticBackupStartTime, IHaveCopyTagsToBackups, IHaveAutomaticBackupRetentionDays, IHaveDataCompressionType, IHaveThroughputCapacity, IHaveImportedFileChunkSize
         {
             /// <summary>
             /// DriveCacheType
@@ -241,6 +309,22 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic DeploymentType { get; set; }
             /// <summary>
+            /// ThroughputCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-throughputcapacity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThroughputCapacity { get; set; }
+            /// <summary>
+            /// LogConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-logconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LogConfiguration
+            /// </summary>
+            public Humidifier.FSx.FileSystemTypes.LogConfiguration LogConfiguration { get; set; }
+            /// <summary>
             /// DataCompressionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-datacompressiontype
             /// Required: False
@@ -248,6 +332,14 @@ namespace Humidifier.FSx
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataCompressionType { get; set; }
+            /// <summary>
+            /// DataReadCacheConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-datareadcacheconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DataReadCacheConfiguration
+            /// </summary>
+            public Humidifier.FSx.FileSystemTypes.DataReadCacheConfiguration DataReadCacheConfiguration { get; set; }
             /// <summary>
             /// ImportPath
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-importpath
@@ -374,6 +466,30 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic ThroughputCapacityPerHAPair { get; set; }
             /// <summary>
+            /// DeploymentType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-deploymenttype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeploymentType { get; set; }
+            /// <summary>
+            /// ThroughputCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-throughputcapacity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThroughputCapacity { get; set; }
+            /// <summary>
+            /// EndpointIpAddressRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-endpointipaddressrange
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndpointIpAddressRange { get; set; }
+            /// <summary>
             /// RouteTableIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-routetableids
             /// Required: False
@@ -399,14 +515,6 @@ namespace Humidifier.FSx
             /// </summary>
             public Humidifier.FSx.FileSystemTypes.DiskIopsConfiguration DiskIopsConfiguration { get; set; }
             /// <summary>
-            /// DeploymentType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-deploymenttype
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DeploymentType { get; set; }
-            /// <summary>
             /// DailyAutomaticBackupStartTime
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-dailyautomaticbackupstarttime
             /// Required: False
@@ -414,14 +522,6 @@ namespace Humidifier.FSx
             /// PrimitiveType: String
             /// </summary>
             public dynamic DailyAutomaticBackupStartTime { get; set; }
-            /// <summary>
-            /// ThroughputCapacity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-throughputcapacity
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ThroughputCapacity { get; set; }
             /// <summary>
             /// AutomaticBackupRetentionDays
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-automaticbackupretentiondays
@@ -431,13 +531,13 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic AutomaticBackupRetentionDays { get; set; }
             /// <summary>
-            /// EndpointIpAddressRange
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-endpointipaddressrange
+            /// EndpointIpv6AddressRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-endpointipv6addressrange
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic EndpointIpAddressRange { get; set; }
+            public dynamic EndpointIpv6AddressRange { get; set; }
             /// <summary>
             /// PreferredSubnetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-ontapconfiguration.html#cfn-fsx-filesystem-ontapconfiguration-preferredsubnetid
@@ -557,6 +657,14 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic AutomaticBackupRetentionDays { get; set; }
             /// <summary>
+            /// EndpointIpv6AddressRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-endpointipv6addressrange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndpointIpv6AddressRange { get; set; }
+            /// <summary>
             /// PreferredSubnetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-openzfsconfiguration.html#cfn-fsx-filesystem-openzfsconfiguration-preferredsubnetid
             /// Required: False
@@ -675,6 +783,14 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic OrganizationalUnitDistinguishedName { get; set; }
             /// <summary>
+            /// DomainJoinServiceAccountSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-domainjoinserviceaccountsecret
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainJoinServiceAccountSecret { get; set; }
+            /// <summary>
             /// DnsIps
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-dnsips
             /// Required: False
@@ -740,14 +856,6 @@ namespace Humidifier.FSx
             /// </summary>
             public Humidifier.FSx.FileSystemTypes.AuditLogConfiguration AuditLogConfiguration { get; set; }
             /// <summary>
-            /// WeeklyMaintenanceStartTime
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-weeklymaintenancestarttime
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic WeeklyMaintenanceStartTime { get; set; }
-            /// <summary>
             /// ActiveDirectoryId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-activedirectoryid
             /// Required: False
@@ -755,14 +863,6 @@ namespace Humidifier.FSx
             /// PrimitiveType: String
             /// </summary>
             public dynamic ActiveDirectoryId { get; set; }
-            /// <summary>
-            /// DiskIopsConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-diskiopsconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: DiskIopsConfiguration
-            /// </summary>
-            public Humidifier.FSx.FileSystemTypes.DiskIopsConfiguration DiskIopsConfiguration { get; set; }
             /// <summary>
             /// DeploymentType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-deploymenttype
@@ -789,6 +889,22 @@ namespace Humidifier.FSx
             /// </summary>
             public dynamic ThroughputCapacity { get; set; }
             /// <summary>
+            /// WeeklyMaintenanceStartTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-weeklymaintenancestarttime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WeeklyMaintenanceStartTime { get; set; }
+            /// <summary>
+            /// DiskIopsConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-diskiopsconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DiskIopsConfiguration
+            /// </summary>
+            public Humidifier.FSx.FileSystemTypes.DiskIopsConfiguration DiskIopsConfiguration { get; set; }
+            /// <summary>
             /// CopyTagsToBackups
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-copytagstobackups
             /// Required: False
@@ -812,6 +928,14 @@ namespace Humidifier.FSx
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic AutomaticBackupRetentionDays { get; set; }
+            /// <summary>
+            /// FsrmConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-fsrmconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FsrmConfiguration
+            /// </summary>
+            public Humidifier.FSx.FileSystemTypes.FsrmConfiguration FsrmConfiguration { get; set; }
             /// <summary>
             /// PreferredSubnetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-preferredsubnetid

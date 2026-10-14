@@ -1,6 +1,6 @@
 namespace Humidifier.Organizations
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Account : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEmail, IHaveRoleName, IHaveAccountName
     {
@@ -10,6 +10,8 @@ namespace Humidifier.Organizations
             public static string Status =  "Status" ;
             public static string JoinedTimestamp =  "JoinedTimestamp" ;
             public static string AccountId =  "AccountId" ;
+            public static string State =  "State" ;
+            public static string Paths =  "Paths" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -49,7 +51,7 @@ namespace Humidifier.Organizations
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic AccountName { get => GivenName; set => GivenName = value; }
     }
 }

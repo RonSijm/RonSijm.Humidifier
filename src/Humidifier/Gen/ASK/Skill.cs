@@ -1,6 +1,6 @@
 namespace Humidifier.ASK
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SkillTypes;
 
     public class Skill : Humidifier.Base.BaseResource

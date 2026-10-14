@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainNameV2Types;
 
     public class DomainNameV2 : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveCertificateArn, IHavePolicy, IHaveSecurityPolicy
@@ -20,6 +20,14 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Policy { get; set; }
+        /// <summary>
+        /// RoutingMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainnamev2.html#cfn-apigateway-domainnamev2-routingmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RoutingMode { get; set; }
         /// <summary>
         /// DomainName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainnamev2.html#cfn-apigateway-domainnamev2-domainname
@@ -52,7 +60,7 @@ namespace Humidifier.ApiGateway
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CertificateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainnamev2.html#cfn-apigateway-domainnamev2-certificatearn
@@ -61,12 +69,28 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: String
         /// </summary>
         public dynamic CertificateArn { get; set; }
+        /// <summary>
+        /// EndpointAccessMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainnamev2.html#cfn-apigateway-domainnamev2-endpointaccessmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointAccessMode { get; set; }
     }
 
     namespace DomainNameV2Types
     {
-        public class EndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveTypes
+        public class EndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveIpAddressType, IHaveTypes
         {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainnamev2-endpointconfiguration.html#cfn-apigateway-domainnamev2-endpointconfiguration-ipaddresstype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// Types
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainnamev2-endpointconfiguration.html#cfn-apigateway-domainnamev2-endpointconfiguration-types

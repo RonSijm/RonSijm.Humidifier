@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SecurityKey : Humidifier.Base.BaseResource, IHaveKey, IHaveInstanceId
     {

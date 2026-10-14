@@ -1,6 +1,6 @@
 namespace Humidifier.FraudDetector
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DetectorTypes;
 
     public class Detector : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDetectorId
@@ -86,7 +86,7 @@ namespace Humidifier.FraudDetector
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DetectorTypes
@@ -141,7 +141,7 @@ namespace Humidifier.FraudDetector
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-entitytype.html#cfn-frauddetector-detector-entitytype-name
@@ -229,7 +229,7 @@ namespace Humidifier.FraudDetector
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-name
@@ -314,7 +314,7 @@ namespace Humidifier.FraudDetector
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventvariable.html#cfn-frauddetector-detector-eventvariable-name
@@ -383,7 +383,7 @@ namespace Humidifier.FraudDetector
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-label.html#cfn-frauddetector-detector-label-name
@@ -456,7 +456,7 @@ namespace Humidifier.FraudDetector
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-outcome.html#cfn-frauddetector-detector-outcome-name
@@ -558,7 +558,7 @@ namespace Humidifier.FraudDetector
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
         }
     }
 }

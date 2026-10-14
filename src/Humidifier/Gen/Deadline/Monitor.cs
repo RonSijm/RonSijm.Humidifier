@@ -1,8 +1,8 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Monitor : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveDisplayName, IHaveIdentityCenterInstanceArn
+    public class Monitor : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveDisplayName, IHaveIdentityCenterInstanceArn
     {
         public class Attributes
         {
@@ -53,5 +53,22 @@ namespace Humidifier.Deadline
         /// </summary>
         [Required]
         public dynamic RoleArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-monitor.html#cfn-deadline-monitor-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// IdentityCenterRegion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-monitor.html#cfn-deadline-monitor-identitycenterregion
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IdentityCenterRegion { get; set; }
     }
 }

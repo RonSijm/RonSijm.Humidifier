@@ -1,6 +1,6 @@
 namespace Humidifier.ECS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TaskSetTypes;
 
     public class TaskSet : Humidifier.Base.BaseResource, IHaveTags, IHaveExternalId, IHavePlatformVersion, IHaveService, IHaveLaunchType, IHaveCluster, IHaveTaskDefinition
@@ -116,7 +116,7 @@ namespace Humidifier.ECS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TaskSetTypes

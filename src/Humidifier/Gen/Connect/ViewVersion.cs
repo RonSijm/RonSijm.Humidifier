@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ViewVersion : Humidifier.Base.BaseResource, IHaveVersionDescription, IHaveViewArn
     {

@@ -1,9 +1,14 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ClientVpnAuthorizationRule : Humidifier.Base.BaseResource, IHaveDescription, IHaveClientVpnEndpointId
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.EC2.ClientVpnAuthorizationRule; }
 
         /// <summary>

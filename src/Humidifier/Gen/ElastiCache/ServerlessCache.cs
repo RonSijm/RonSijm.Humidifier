@@ -1,9 +1,9 @@
 namespace Humidifier.ElastiCache
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServerlessCacheTypes;
 
-    public class ServerlessCache : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveEngine, IHaveSnapshotRetentionLimit, IHaveFinalSnapshotName, IHaveUserGroupId, IHaveMajorEngineVersion
+    public class ServerlessCache : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveEngine, IHaveNetworkType, IHaveConnectionType, IHaveSnapshotRetentionLimit, IHaveFinalSnapshotName, IHaveUserGroupId, IHaveMajorEngineVersion
     {
         public class Attributes
         {
@@ -30,6 +30,14 @@ namespace Humidifier.ElastiCache
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+        /// <summary>
+        /// ConnectionType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-serverlesscache.html#cfn-elasticache-serverlesscache-connectiontype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ConnectionType { get; set; }
         /// <summary>
         /// FinalSnapshotName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-serverlesscache.html#cfn-elasticache-serverlesscache-finalsnapshotname
@@ -113,6 +121,14 @@ namespace Humidifier.ElastiCache
         /// Type: Endpoint
         /// </summary>
         public Humidifier.ElastiCache.ServerlessCacheTypes.Endpoint Endpoint { get; set; }
+        /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-serverlesscache.html#cfn-elasticache-serverlesscache-networktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
         public dynamic ServerlessCacheName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// MajorEngineVersion
@@ -140,7 +156,7 @@ namespace Humidifier.ElastiCache
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ServerlessCacheTypes

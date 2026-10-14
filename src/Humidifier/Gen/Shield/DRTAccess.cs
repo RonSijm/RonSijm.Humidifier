@@ -1,6 +1,6 @@
 namespace Humidifier.Shield
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DRTAccess : Humidifier.Base.BaseResource, IHaveRoleArn
     {

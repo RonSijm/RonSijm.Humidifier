@@ -1,6 +1,6 @@
 namespace Humidifier.EntityResolution
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdMappingWorkflowTypes;
 
     public class IdMappingWorkflow : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveWorkflowName
@@ -61,6 +61,14 @@ namespace Humidifier.EntityResolution
         /// ItemType: IdMappingWorkflowOutputSource
         /// </summary>
         public List<Humidifier.EntityResolution.IdMappingWorkflowTypes.IdMappingWorkflowOutputSource> OutputSourceConfig { get; set; }
+        /// <summary>
+        /// IdMappingIncrementalRunConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-entityresolution-idmappingworkflow.html#cfn-entityresolution-idmappingworkflow-idmappingincrementalrunconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IdMappingIncrementalRunConfig
+        /// </summary>
+        public Humidifier.EntityResolution.IdMappingWorkflowTypes.IdMappingIncrementalRunConfig IdMappingIncrementalRunConfig { get; set; }
 
         /// <summary>
         /// RoleArn
@@ -79,11 +87,23 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace IdMappingWorkflowTypes
     {
+        public class IdMappingIncrementalRunConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// IncrementalRunType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-idmappingworkflow-idmappingincrementalrunconfig.html#cfn-entityresolution-idmappingworkflow-idmappingincrementalrunconfig-incrementalruntype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IncrementalRunType { get; set; }
+        }
+
         public class IdMappingRuleBasedProperties : Humidifier.Base.BaseSubResource, IHaveAttributeMatchingModel
         {
             /// <summary>
@@ -147,6 +167,14 @@ namespace Humidifier.EntityResolution
             /// PrimitiveType: String
             /// </summary>
             public dynamic IdMappingType { get; set; }
+            /// <summary>
+            /// NormalizationVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-entityresolution-idmappingworkflow-idmappingtechniques.html#cfn-entityresolution-idmappingworkflow-idmappingtechniques-normalizationversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NormalizationVersion { get; set; }
         }
 
         public class IdMappingWorkflowInputSource : Humidifier.Base.BaseSubResource, IHaveType, IHaveSchemaArn, IHaveInputSourceARN

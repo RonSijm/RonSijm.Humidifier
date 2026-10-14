@@ -1,6 +1,6 @@
 namespace Humidifier.LakeFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TagAssociationTypes;
 
     public class TagAssociation : Humidifier.Base.BaseResource
@@ -86,7 +86,7 @@ namespace Humidifier.LakeFormation
             public dynamic TagValues { get; set; }
         }
 
-        public class Resource : Humidifier.Base.BaseSubResource, IHaveCatalog
+        public class Resource : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// Table
@@ -112,17 +112,9 @@ namespace Humidifier.LakeFormation
             /// Type: DatabaseResource
             /// </summary>
             public Humidifier.LakeFormation.TagAssociationTypes.DatabaseResource Database { get; set; }
-            /// <summary>
-            /// Catalog
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-resource.html#cfn-lakeformation-tagassociation-resource-catalog
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic Catalog { get; set; }
         }
 
-        public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId, IHaveTableWildcard
+        public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId
         {
             /// <summary>
             /// DatabaseName
@@ -140,14 +132,6 @@ namespace Humidifier.LakeFormation
             /// PrimitiveType: String
             /// </summary>
             public dynamic CatalogId { get; set; }
-            /// <summary>
-            /// TableWildcard
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-tableresource.html#cfn-lakeformation-tagassociation-tableresource-tablewildcard
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic TableWildcard { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-tableresource.html#cfn-lakeformation-tagassociation-tableresource-name

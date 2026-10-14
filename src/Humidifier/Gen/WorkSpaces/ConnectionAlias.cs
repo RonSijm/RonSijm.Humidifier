@@ -1,6 +1,6 @@
 namespace Humidifier.WorkSpaces
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectionAliasTypes;
 
     public class ConnectionAlias : Humidifier.Base.BaseResource, IHaveTags, IHaveConnectionString
@@ -31,7 +31,7 @@ namespace Humidifier.WorkSpaces
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ConnectionAliasTypes

@@ -1,6 +1,6 @@
 namespace Humidifier.Wisdom
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AssistantAssociationTypes;
 
     public class AssistantAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveAssistantId, IHaveAssociationType
@@ -51,7 +51,7 @@ namespace Humidifier.Wisdom
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace AssistantAssociationTypes
@@ -59,13 +59,41 @@ namespace Humidifier.Wisdom
         public class AssociationData : Humidifier.Base.BaseSubResource, IHaveKnowledgeBaseId
         {
             /// <summary>
+            /// ExternalBedrockKnowledgeBaseConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-assistantassociation-associationdata.html#cfn-wisdom-assistantassociation-associationdata-externalbedrockknowledgebaseconfig
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ExternalBedrockKnowledgeBaseConfig
+            /// </summary>
+            public Humidifier.Wisdom.AssistantAssociationTypes.ExternalBedrockKnowledgeBaseConfig ExternalBedrockKnowledgeBaseConfig { get; set; }
+            /// <summary>
             /// KnowledgeBaseId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-assistantassociation-associationdata.html#cfn-wisdom-assistantassociation-associationdata-knowledgebaseid
-            /// Required: True
+            /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic KnowledgeBaseId { get; set; }
+        }
+
+        public class ExternalBedrockKnowledgeBaseConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-assistantassociation-externalbedrockknowledgebaseconfig.html#cfn-wisdom-assistantassociation-externalbedrockknowledgebaseconfig-accessrolearn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AccessRoleArn { get; set; }
+            /// <summary>
+            /// BedrockKnowledgeBaseArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-assistantassociation-externalbedrockknowledgebaseconfig.html#cfn-wisdom-assistantassociation-externalbedrockknowledgebaseconfig-bedrockknowledgebasearn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockKnowledgeBaseArn { get; set; }
         }
     }
 }

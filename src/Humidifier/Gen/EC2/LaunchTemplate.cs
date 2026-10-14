@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LaunchTemplateTypes;
 
     public class LaunchTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveLaunchTemplateName, IHaveVersionDescription
@@ -254,6 +254,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic AmdSevSnp { get; set; }
             /// <summary>
+            /// NestedVirtualization
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpuoptions.html#cfn-ec2-launchtemplate-cpuoptions-nestedvirtualization
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NestedVirtualization { get; set; }
+            /// <summary>
             /// CoreCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-cpuoptions.html#cfn-ec2-launchtemplate-cpuoptions-corecount
             /// Required: False
@@ -310,6 +318,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic Encrypted { get; set; }
             /// <summary>
+            /// EbsCardIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-ebscardindex
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic EbsCardIndex { get; set; }
+            /// <summary>
             /// Throughput
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-throughput
             /// Required: False
@@ -326,6 +342,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic Iops { get; set; }
             /// <summary>
+            /// VolumeInitializationRate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-volumeinitializationrate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeInitializationRate { get; set; }
+            /// <summary>
             /// VolumeSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ebs.html#cfn-ec2-launchtemplate-ebs-volumesize
             /// Required: False
@@ -341,18 +365,6 @@ namespace Humidifier.EC2
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic DeleteOnTermination { get; set; }
-        }
-
-        public class ElasticGpuSpecification : Humidifier.Base.BaseSubResource, IHaveType
-        {
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-elasticgpuspecification.html#cfn-ec2-launchtemplate-elasticgpuspecification-type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
         }
 
         public class EnaSrdSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdEnabled
@@ -724,9 +736,9 @@ namespace Humidifier.EC2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkperformanceoptions
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: NetworkPerformanceOptions
             /// </summary>
-            public dynamic NetworkPerformanceOptions { get; set; }
+            public Humidifier.EC2.LaunchTemplateTypes.NetworkPerformanceOptions NetworkPerformanceOptions { get; set; }
             /// <summary>
             /// UserData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
@@ -776,24 +788,6 @@ namespace Humidifier.EC2
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic EbsOptimized { get; set; }
-            /// <summary>
-            /// ElasticGpuSpecifications
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: ElasticGpuSpecification
-            /// </summary>
-            public List<Humidifier.EC2.LaunchTemplateTypes.ElasticGpuSpecification> ElasticGpuSpecifications { get; set; }
-            /// <summary>
-            /// ElasticInferenceAccelerators
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: LaunchTemplateElasticInferenceAccelerator
-            /// </summary>
-            public List<Humidifier.EC2.LaunchTemplateTypes.LaunchTemplateElasticInferenceAccelerator> ElasticInferenceAccelerators { get; set; }
             /// <summary>
             /// Placement
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement
@@ -967,26 +961,6 @@ namespace Humidifier.EC2
             public Humidifier.EC2.LaunchTemplateTypes.CreditSpecification CreditSpecification { get; set; }
         }
 
-        public class LaunchTemplateElasticInferenceAccelerator : Humidifier.Base.BaseSubResource, IHaveType, IHaveCount
-        {
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
-            /// Count
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-count
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Count { get; set; }
-        }
-
         public class LaunchTemplateTagSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveResourceType
         {
             /// <summary>
@@ -1005,7 +979,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
         }
 
         public class LicenseSpecification : Humidifier.Base.BaseSubResource, IHaveLicenseConfigurationArn
@@ -1225,6 +1199,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic Ipv4PrefixCount { get; set; }
             /// <summary>
+            /// EnaQueueCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-enaqueuecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic EnaQueueCount { get; set; }
+            /// <summary>
             /// Ipv6Prefixes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixes
             /// Required: False
@@ -1351,6 +1333,18 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Max { get; set; }
+        }
+
+        public class NetworkPerformanceOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BandwidthWeighting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkperformanceoptions.html#cfn-ec2-launchtemplate-networkperformanceoptions-bandwidthweighting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BandwidthWeighting { get; set; }
         }
 
         public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveGroupName, IHaveGroupId, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity, IHaveSpreadDomain, IHavePartitionNumber
@@ -1551,7 +1545,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
         }
 
         public class TotalLocalStorageGB : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax

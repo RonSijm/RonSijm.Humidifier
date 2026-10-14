@@ -1,6 +1,6 @@
 namespace Humidifier.IoTTwinMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EntityTypes;
 
     public class Entity : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveWorkspaceId, IHaveEntityId, IHaveEntityName
@@ -233,14 +233,6 @@ namespace Humidifier.IoTTwinMaker
             /// </summary>
             public dynamic UnitOfMeasure { get; set; }
             /// <summary>
-            /// Relationship
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-relationship
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Relationship
-            /// </summary>
-            public Humidifier.IoTTwinMaker.EntityTypes.Relationship Relationship { get; set; }
-            /// <summary>
             /// NestedType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-nestedtype
             /// Required: False
@@ -248,6 +240,14 @@ namespace Humidifier.IoTTwinMaker
             /// Type: DataType
             /// </summary>
             public Humidifier.IoTTwinMaker.EntityTypes.DataType NestedType { get; set; }
+            /// <summary>
+            /// Relationship
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-relationship
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Relationship
+            /// </summary>
+            public Humidifier.IoTTwinMaker.EntityTypes.Relationship Relationship { get; set; }
         }
 
         public class DataValue : Humidifier.Base.BaseSubResource, IHaveExpression, IHaveStringValue, IHaveDoubleValue, IHaveBooleanValue, IHaveLongValue, IHaveIntegerValue
@@ -517,14 +517,6 @@ namespace Humidifier.IoTTwinMaker
         public class Status : Humidifier.Base.BaseSubResource, IHaveState
         {
             /// <summary>
-            /// State
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-status.html#cfn-iottwinmaker-entity-status-state
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic State { get; set; }
-            /// <summary>
             /// Error
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-status.html#cfn-iottwinmaker-entity-status-error
             /// Required: False
@@ -532,6 +524,14 @@ namespace Humidifier.IoTTwinMaker
             /// Type: Error
             /// </summary>
             public Humidifier.IoTTwinMaker.EntityTypes.Error Error { get; set; }
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-status.html#cfn-iottwinmaker-entity-status-state
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic State { get; set; }
         }
     }
 }

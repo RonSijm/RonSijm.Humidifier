@@ -1,12 +1,13 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ImagePipelineTypes;
 
     public class ImagePipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveStatus, IHaveExecutionRole, IHaveInfrastructureConfigurationArn, IHaveImageRecipeArn, IHaveDistributionConfigurationArn, IHaveContainerRecipeArn, IHaveEnhancedImageMetadataEnabled
     {
         public class Attributes
         {
+            public static string DeploymentId =  "DeploymentId" ;
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
         }
@@ -53,6 +54,15 @@ namespace Humidifier.ImageBuilder
         /// ItemType: WorkflowConfiguration
         /// </summary>
         public List<Humidifier.ImageBuilder.ImagePipelineTypes.WorkflowConfiguration> Workflows { get; set; }
+        /// <summary>
+        /// ImageTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagetags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> ImageTags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>
@@ -88,6 +98,14 @@ namespace Humidifier.ImageBuilder
         /// Type: Schedule
         /// </summary>
         public Humidifier.ImageBuilder.ImagePipelineTypes.Schedule Schedule { get; set; }
+        /// <summary>
+        /// LoggingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-loggingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PipelineLoggingConfiguration
+        /// </summary>
+        public Humidifier.ImageBuilder.ImagePipelineTypes.PipelineLoggingConfiguration LoggingConfiguration { get; set; }
         /// <summary>
         /// ImageTestsConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration
@@ -125,6 +143,18 @@ namespace Humidifier.ImageBuilder
 
     namespace ImagePipelineTypes
     {
+        public class AutoDisablePolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FailureCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-autodisablepolicy.html#cfn-imagebuilder-imagepipeline-autodisablepolicy-failurecount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FailureCount { get; set; }
+        }
+
         public class EcrConfiguration : Humidifier.Base.BaseSubResource, IHaveRepositoryName, IHaveContainerTags
         {
             /// <summary>
@@ -186,8 +216,36 @@ namespace Humidifier.ImageBuilder
             public dynamic ImageTestsEnabled { get; set; }
         }
 
-        public class Schedule : Humidifier.Base.BaseSubResource, IHaveScheduleExpression
+        public class PipelineLoggingConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// PipelineLogGroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-pipelineloggingconfiguration.html#cfn-imagebuilder-imagepipeline-pipelineloggingconfiguration-pipelineloggroupname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PipelineLogGroupName { get; set; }
+            /// <summary>
+            /// ImageLogGroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-pipelineloggingconfiguration.html#cfn-imagebuilder-imagepipeline-pipelineloggingconfiguration-imageloggroupname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageLogGroupName { get; set; }
+        }
+
+        public class Schedule : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveTimezone
+        {
+            /// <summary>
+            /// Timezone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-timezone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Timezone { get; set; }
             /// <summary>
             /// ScheduleExpression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-scheduleexpression
@@ -204,6 +262,14 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic PipelineExecutionStartCondition { get; set; }
+            /// <summary>
+            /// AutoDisablePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-autodisablepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AutoDisablePolicy
+            /// </summary>
+            public Humidifier.ImageBuilder.ImagePipelineTypes.AutoDisablePolicy AutoDisablePolicy { get; set; }
         }
 
         public class WorkflowConfiguration : Humidifier.Base.BaseSubResource, IHaveParallelGroup, IHaveWorkflowArn, IHaveOnFailure

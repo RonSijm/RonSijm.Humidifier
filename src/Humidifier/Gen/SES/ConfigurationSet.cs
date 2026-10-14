@@ -1,9 +1,9 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationSetTypes;
 
-    public class ConfigurationSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class ConfigurationSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
     {
         public override string AWSTypeName { get => AWS.SES.ConfigurationSet; }
         /// <summary>
@@ -47,6 +47,14 @@ namespace Humidifier.SES
         /// </summary>
         public Humidifier.SES.ConfigurationSetTypes.VdmOptions VdmOptions { get; set; }
         /// <summary>
+        /// ArchivingOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-archivingoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ArchivingOptions
+        /// </summary>
+        public Humidifier.SES.ConfigurationSetTypes.ArchivingOptions ArchivingOptions { get; set; }
+        /// <summary>
         /// DeliveryOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-deliveryoptions
         /// Required: False
@@ -54,11 +62,52 @@ namespace Humidifier.SES
         /// Type: DeliveryOptions
         /// </summary>
         public Humidifier.SES.ConfigurationSetTypes.DeliveryOptions DeliveryOptions { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationset.html#cfn-ses-configurationset-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ConfigurationSetTypes
     {
+        public class ArchivingOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ArchiveArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-archivingoptions.html#cfn-ses-configurationset-archivingoptions-archivearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ArchiveArn { get; set; }
+        }
+
+        public class ConditionThreshold : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OverallConfidenceThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-conditionthreshold.html#cfn-ses-configurationset-conditionthreshold-overallconfidencethreshold
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OverallConfidenceThreshold
+            /// </summary>
+            public Humidifier.SES.ConfigurationSetTypes.OverallConfidenceThreshold OverallConfidenceThreshold { get; set; }
+            /// <summary>
+            /// ConditionThresholdEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-conditionthreshold.html#cfn-ses-configurationset-conditionthreshold-conditionthresholdenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConditionThresholdEnabled { get; set; }
+        }
+
         public class DashboardOptions : Humidifier.Base.BaseSubResource, IHaveEngagementMetrics
         {
             /// <summary>
@@ -111,6 +160,18 @@ namespace Humidifier.SES
             public dynamic OptimizedSharedDelivery { get; set; }
         }
 
+        public class OverallConfidenceThreshold : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ConfidenceVerdictThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-overallconfidencethreshold.html#cfn-ses-configurationset-overallconfidencethreshold-confidenceverdictthreshold
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConfidenceVerdictThreshold { get; set; }
+        }
+
         public class ReputationOptions : Humidifier.Base.BaseSubResource, IHaveReputationMetricsEnabled
         {
             /// <summary>
@@ -146,6 +207,14 @@ namespace Humidifier.SES
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SuppressedReasons { get; set; }
+            /// <summary>
+            /// ValidationOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-suppressionoptions.html#cfn-ses-configurationset-suppressionoptions-validationoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ValidationOptions
+            /// </summary>
+            public Humidifier.SES.ConfigurationSetTypes.ValidationOptions ValidationOptions { get; set; }
         }
 
         public class TrackingOptions : Humidifier.Base.BaseSubResource, IHaveCustomRedirectDomain
@@ -166,6 +235,18 @@ namespace Humidifier.SES
             /// PrimitiveType: String
             /// </summary>
             public dynamic CustomRedirectDomain { get; set; }
+        }
+
+        public class ValidationOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ConditionThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationset-validationoptions.html#cfn-ses-configurationset-validationoptions-conditionthreshold
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ConditionThreshold
+            /// </summary>
+            public Humidifier.SES.ConfigurationSetTypes.ConditionThreshold ConditionThreshold { get; set; }
         }
 
         public class VdmOptions : Humidifier.Base.BaseSubResource

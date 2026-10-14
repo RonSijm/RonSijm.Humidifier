@@ -1,6 +1,6 @@
 namespace Humidifier.Amplify
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainTypes;
 
     public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDomainName, IHaveAppId

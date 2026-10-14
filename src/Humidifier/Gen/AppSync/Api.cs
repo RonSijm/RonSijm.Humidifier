@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApiTypes;
 
     public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveOwnerContact
@@ -37,7 +37,7 @@ namespace Humidifier.AppSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

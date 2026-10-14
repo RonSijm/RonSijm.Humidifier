@@ -1,6 +1,6 @@
 namespace Humidifier.Chatbot
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class MicrosoftTeamsChannelConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveIamRoleArn, IHaveLoggingLevel, IHaveTeamId, IHaveUserRoleRequired, IHaveCustomizationResourceArns, IHaveSnsTopicArns, IHaveGuardrailPolicies, IHaveConfigurationName
     {
@@ -26,6 +26,14 @@ namespace Humidifier.Chatbot
         /// PrimitiveType: String
         /// </summary>
         public dynamic LoggingLevel { get; set; }
+        /// <summary>
+        /// TeamsChannelName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-teamschannelname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TeamsChannelName { get; set; }
         /// <summary>
         /// CustomizationResourceArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-chatbot-microsoftteamschannelconfiguration.html#cfn-chatbot-microsoftteamschannelconfiguration-customizationresourcearns
@@ -101,7 +109,7 @@ namespace Humidifier.Chatbot
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// TeamsChannelId

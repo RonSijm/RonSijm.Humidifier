@@ -1,6 +1,6 @@
 namespace Humidifier.EKS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AddonTypes;
 
     public class Addon : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterName, IHaveAddonName
@@ -11,6 +11,14 @@ namespace Humidifier.EKS
         }
 
         public override string AWSTypeName { get => AWS.EKS.Addon; }
+        /// <summary>
+        /// NamespaceConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-namespaceconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: NamespaceConfig
+        /// </summary>
+        public Humidifier.EKS.AddonTypes.NamespaceConfig NamespaceConfig { get; set; }
         /// <summary>
         /// PreserveOnDelete
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-preserveondelete
@@ -71,7 +79,7 @@ namespace Humidifier.EKS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ConfigurationValues
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-configurationvalues
@@ -84,6 +92,18 @@ namespace Humidifier.EKS
 
     namespace AddonTypes
     {
+        public class NamespaceConfig : Humidifier.Base.BaseSubResource, IHaveNamespace_
+        {
+            /// <summary>
+            /// Namespace_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-addon-namespaceconfig.html#cfn-eks-addon-namespaceconfig-namespace
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Namespace_ { get; set; }
+        }
+
         public class PodIdentityAssociation : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveServiceAccount
         {
             /// <summary>

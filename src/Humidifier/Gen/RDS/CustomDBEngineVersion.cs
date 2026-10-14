@@ -1,6 +1,6 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class CustomDBEngineVersion : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveStatus, IHaveEngineVersion, IHaveEngine, IHaveImageId, IHaveKMSKeyId, IHaveManifest
     {
@@ -18,14 +18,6 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Status { get; set; }
-        /// <summary>
-        /// DatabaseInstallationFilesS3BucketName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-databaseinstallationfiless3bucketname
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DatabaseInstallationFilesS3BucketName { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-description
@@ -53,22 +45,6 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic KMSKeyId { get; set; }
         /// <summary>
-        /// UseAwsProvidedLatestImage
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-useawsprovidedlatestimage
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic UseAwsProvidedLatestImage { get; set; }
-        /// <summary>
-        /// ImageId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-imageid
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ImageId { get; set; }
-        /// <summary>
         /// DatabaseInstallationFilesS3Prefix
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-databaseinstallationfiless3prefix
         /// Required: False
@@ -84,6 +60,39 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Manifest { get; set; }
+        /// <summary>
+        /// DatabaseInstallationFiles
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-databaseinstallationfiles
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic DatabaseInstallationFiles { get; set; }
+        /// <summary>
+        /// DatabaseInstallationFilesS3BucketName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-databaseinstallationfiless3bucketname
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DatabaseInstallationFilesS3BucketName { get; set; }
+        /// <summary>
+        /// UseAwsProvidedLatestImage
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-useawsprovidedlatestimage
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic UseAwsProvidedLatestImage { get; set; }
+        /// <summary>
+        /// ImageId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-imageid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ImageId { get; set; }
         /// <summary>
         /// SourceCustomDbEngineVersionIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-customdbengineversion.html#cfn-rds-customdbengineversion-sourcecustomdbengineversionidentifier
@@ -110,6 +119,6 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

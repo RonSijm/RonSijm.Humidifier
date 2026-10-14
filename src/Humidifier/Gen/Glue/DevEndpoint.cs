@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DevEndpoint : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveSecurityGroupIds, IHaveDynamicTags, IHaveSubnetId, IHaveEndpointName, IHaveSecurityConfiguration, IHaveNumberOfNodes, IHaveWorkerType, IHaveGlueVersion, IHaveNumberOfWorkers, IHavePublicKey, IHaveArguments
     {

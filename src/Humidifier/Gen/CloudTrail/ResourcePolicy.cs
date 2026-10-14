@@ -1,6 +1,6 @@
 namespace Humidifier.CloudTrail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHaveResourceArn, IHaveResourcePolicy_
     {

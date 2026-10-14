@@ -1,6 +1,6 @@
 namespace Humidifier.Greengrass
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GroupTypes;
 
     public class Group : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveRoleArn, IHaveDynamicTags

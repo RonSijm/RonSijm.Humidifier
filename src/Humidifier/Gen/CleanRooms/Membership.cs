@@ -1,6 +1,6 @@
 namespace Humidifier.CleanRooms
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MembershipTypes;
 
     public class Membership : Humidifier.Base.BaseResource, IHaveTags, IHaveQueryLogStatus
@@ -25,6 +25,14 @@ namespace Humidifier.CleanRooms
         [Required]
         public dynamic CollaborationIdentifier { get; set; }
         /// <summary>
+        /// JobLogStatus
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-joblogstatus
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic JobLogStatus { get; set; }
+        /// <summary>
         /// DefaultResultConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-defaultresultconfiguration
         /// Required: False
@@ -32,6 +40,14 @@ namespace Humidifier.CleanRooms
         /// Type: MembershipProtectedQueryResultConfiguration
         /// </summary>
         public Humidifier.CleanRooms.MembershipTypes.MembershipProtectedQueryResultConfiguration DefaultResultConfiguration { get; set; }
+        /// <summary>
+        /// IsMetricsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-ismetricsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic IsMetricsEnabled { get; set; }
 
         /// <summary>
         /// QueryLogStatus
@@ -43,6 +59,14 @@ namespace Humidifier.CleanRooms
         [Required]
         public dynamic QueryLogStatus { get; set; }
         /// <summary>
+        /// DefaultJobResultConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-defaultjobresultconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MembershipProtectedJobResultConfiguration
+        /// </summary>
+        public Humidifier.CleanRooms.MembershipTypes.MembershipProtectedJobResultConfiguration DefaultJobResultConfiguration { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-tags
         /// Required: False
@@ -50,7 +74,7 @@ namespace Humidifier.CleanRooms
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// PaymentConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cleanrooms-membership.html#cfn-cleanrooms-membership-paymentconfiguration
@@ -63,6 +87,18 @@ namespace Humidifier.CleanRooms
 
     namespace MembershipTypes
     {
+        public class MembershipJobComputePaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
+        {
+            /// <summary>
+            /// IsResponsible
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipjobcomputepaymentconfig.html#cfn-cleanrooms-membership-membershipjobcomputepaymentconfig-isresponsible
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsResponsible { get; set; }
+        }
+
         public class MembershipMLPaymentConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -73,6 +109,14 @@ namespace Humidifier.CleanRooms
             /// Type: MembershipModelInferencePaymentConfig
             /// </summary>
             public Humidifier.CleanRooms.MembershipTypes.MembershipModelInferencePaymentConfig ModelInference { get; set; }
+            /// <summary>
+            /// SyntheticDataGeneration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipmlpaymentconfig.html#cfn-cleanrooms-membership-membershipmlpaymentconfig-syntheticdatageneration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MembershipSyntheticDataGenerationPaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.MembershipSyntheticDataGenerationPaymentConfig SyntheticDataGeneration { get; set; }
             /// <summary>
             /// ModelTraining
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipmlpaymentconfig.html#cfn-cleanrooms-membership-membershipmlpaymentconfig-modeltraining
@@ -110,6 +154,14 @@ namespace Humidifier.CleanRooms
         public class MembershipPaymentConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// JobCompute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershippaymentconfiguration.html#cfn-cleanrooms-membership-membershippaymentconfiguration-jobcompute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MembershipJobComputePaymentConfig
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.MembershipJobComputePaymentConfig JobCompute { get; set; }
+            /// <summary>
             /// QueryCompute
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershippaymentconfiguration.html#cfn-cleanrooms-membership-membershippaymentconfiguration-querycompute
             /// Required: True
@@ -125,6 +177,38 @@ namespace Humidifier.CleanRooms
             /// Type: MembershipMLPaymentConfig
             /// </summary>
             public Humidifier.CleanRooms.MembershipTypes.MembershipMLPaymentConfig MachineLearning { get; set; }
+        }
+
+        public class MembershipProtectedJobOutputConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// S3
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipprotectedjoboutputconfiguration.html#cfn-cleanrooms-membership-membershipprotectedjoboutputconfiguration-s3
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ProtectedJobS3OutputConfigurationInput
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.ProtectedJobS3OutputConfigurationInput S3 { get; set; }
+        }
+
+        public class MembershipProtectedJobResultConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        {
+            /// <summary>
+            /// OutputConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipprotectedjobresultconfiguration.html#cfn-cleanrooms-membership-membershipprotectedjobresultconfiguration-outputconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: MembershipProtectedJobOutputConfiguration
+            /// </summary>
+            public Humidifier.CleanRooms.MembershipTypes.MembershipProtectedJobOutputConfiguration OutputConfiguration { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipprotectedjobresultconfiguration.html#cfn-cleanrooms-membership-membershipprotectedjobresultconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
         }
 
         public class MembershipProtectedQueryOutputConfiguration : Humidifier.Base.BaseSubResource
@@ -169,6 +253,38 @@ namespace Humidifier.CleanRooms
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic IsResponsible { get; set; }
+        }
+
+        public class MembershipSyntheticDataGenerationPaymentConfig : Humidifier.Base.BaseSubResource, IHaveIsResponsible
+        {
+            /// <summary>
+            /// IsResponsible
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-membershipsyntheticdatagenerationpaymentconfig.html#cfn-cleanrooms-membership-membershipsyntheticdatagenerationpaymentconfig-isresponsible
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsResponsible { get; set; }
+        }
+
+        public class ProtectedJobS3OutputConfigurationInput : Humidifier.Base.BaseSubResource, IHaveBucket, IHaveKeyPrefix
+        {
+            /// <summary>
+            /// Bucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-protectedjobs3outputconfigurationinput.html#cfn-cleanrooms-membership-protectedjobs3outputconfigurationinput-bucket
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Bucket { get; set; }
+            /// <summary>
+            /// KeyPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-protectedjobs3outputconfigurationinput.html#cfn-cleanrooms-membership-protectedjobs3outputconfigurationinput-keyprefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KeyPrefix { get; set; }
         }
 
         public class ProtectedQueryS3OutputConfiguration : Humidifier.Base.BaseSubResource, IHaveBucket, IHaveKeyPrefix

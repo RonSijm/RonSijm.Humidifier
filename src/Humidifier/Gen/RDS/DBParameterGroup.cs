@@ -1,12 +1,13 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DBParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveParameters, IHaveFamily, IHaveDBParameterGroupName
     {
         public class Attributes
         {
             public static string DBParameterGroupName =  "DBParameterGroupName" ;
+            public static string DBParameterGroupArn =  "DBParameterGroupArn" ;
         }
 
         public override string AWSTypeName { get => AWS.RDS.DBParameterGroup; }
@@ -47,6 +48,6 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

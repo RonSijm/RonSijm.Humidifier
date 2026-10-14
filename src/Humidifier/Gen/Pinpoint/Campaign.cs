@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CampaignTypes;
 
     public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHavePriority, IHaveApplicationId, IHaveTreatmentName, IHavePinpointCampaignTypesTemplateConfigurationTemplateConfiguration, IHaveTreatmentDescription, IHavePinpointCampaignTypesMessageConfigurationMessageConfiguration, IHavePinpointCampaignTypesScheduleSchedule, IHavePinpointCampaignTypesCustomDeliveryConfigurationCustomDeliveryConfiguration

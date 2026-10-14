@@ -1,6 +1,6 @@
 namespace Humidifier.WAFRegional
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RateBasedRuleTypes;
 
     public class RateBasedRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveMetricName, IHaveRateLimit

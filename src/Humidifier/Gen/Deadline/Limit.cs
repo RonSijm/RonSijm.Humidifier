@@ -1,6 +1,6 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Limit : Humidifier.Base.BaseResource, IHaveDescription, IHaveDisplayName, IHaveFarmId, IHaveMaxCount
     {

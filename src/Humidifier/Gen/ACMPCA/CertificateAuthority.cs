@@ -1,6 +1,6 @@
 namespace Humidifier.ACMPCA
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CertificateAuthorityTypes;
 
     public class CertificateAuthority : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveSigningAlgorithm, IHaveKeyAlgorithm
@@ -82,7 +82,7 @@ namespace Humidifier.ACMPCA
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// KeyAlgorithm
@@ -164,6 +164,14 @@ namespace Humidifier.ACMPCA
             /// </summary>
             public dynamic S3ObjectAcl { get; set; }
             /// <summary>
+            /// CrlType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-crltype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CrlType { get; set; }
+            /// <summary>
             /// ExpirationInDays
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-expirationindays
             /// Required: False
@@ -187,6 +195,14 @@ namespace Humidifier.ACMPCA
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3BucketName { get; set; }
+            /// <summary>
+            /// CustomPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-custompath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomPath { get; set; }
         }
 
         public class CrlDistributionPointExtensionConfiguration : Humidifier.Base.BaseSubResource

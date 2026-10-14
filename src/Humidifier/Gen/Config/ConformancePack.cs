@@ -1,10 +1,15 @@
 namespace Humidifier.Config
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConformancePackTypes;
 
-    public class ConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTemplateBody, IHaveDeliveryS3Bucket, IHaveDeliveryS3KeyPrefix, IHaveTemplateS3Uri
+    public class ConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTemplateBody, IHaveDeliveryS3Bucket, IHaveDeliveryS3KeyPrefix, IHaveTemplateS3Uri
     {
+        public class Attributes
+        {
+            public static string ConformancePackArn =  "ConformancePackArn" ;
+        }
+
         public override string AWSTypeName { get => AWS.Config.ConformancePack; }
         /// <summary>
         /// ConformancePackInputParameters
@@ -48,6 +53,15 @@ namespace Humidifier.Config
         /// PrimitiveType: String
         /// </summary>
         public dynamic TemplateBody { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TemplateS3Uri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri

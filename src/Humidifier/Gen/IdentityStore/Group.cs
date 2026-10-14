@@ -1,6 +1,6 @@
 namespace Humidifier.IdentityStore
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Group : Humidifier.Base.BaseResource, IHaveDescription, IHaveDisplayName, IHaveIdentityStoreId
     {

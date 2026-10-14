@@ -1,6 +1,6 @@
 namespace Humidifier.DataBrew
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DatasetTypes;
 
     public class Dataset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveSource, IHaveFormat
@@ -52,11 +52,11 @@ namespace Humidifier.DataBrew
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

@@ -1,6 +1,6 @@
 namespace Humidifier.FraudDetector
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Variable : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDefaultValue, IHaveDataType, IHaveDataSource, IHaveVariableType
     {
@@ -56,7 +56,7 @@ namespace Humidifier.FraudDetector
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>

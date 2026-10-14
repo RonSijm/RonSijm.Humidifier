@@ -1,6 +1,6 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DBClusterTypes;
 
     public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveDatabaseName, IHaveDomain, IHaveIops, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveNetworkType, IHaveDBSubnetGroupName, IHaveStorageType, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveMasterUsername, IHaveBackupRetentionPeriod, IHaveAllocatedStorage, IHaveSnapshotIdentifier, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveManageMasterUserPassword, IHaveEngineLifecycleSupport, IHaveDBInstanceParameterGroupName, IHaveDBSystemId, IHaveMonitoringInterval, IHavePerformanceInsightsRetentionPeriod, IHaveMonitoringRoleArn, IHaveGlobalClusterIdentifier, IHaveDomainIAMRoleName, IHaveSourceRegion, IHaveEnableIAMDatabaseAuthentication
@@ -8,7 +8,9 @@ namespace Humidifier.RDS
         public class Attributes
         {
             public static string Endpoint =  "Endpoint" ;
+            public static string StorageEncryptionType =  "StorageEncryptionType" ;
             public static string DBClusterArn =  "DBClusterArn" ;
+            public static string ReadEndpoint =  "ReadEndpoint" ;
             public static string StorageThroughput =  "StorageThroughput" ;
             public static string DBClusterResourceId =  "DBClusterResourceId" ;
         }
@@ -71,6 +73,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic DBClusterIdentifier { get; set; }
         /// <summary>
+        /// MasterUserAuthenticationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserauthenticationtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MasterUserAuthenticationType { get; set; }
+        /// <summary>
         /// MonitoringInterval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-monitoringinterval
         /// Required: False
@@ -102,7 +112,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion
@@ -135,6 +145,14 @@ namespace Humidifier.RDS
         /// Type: ServerlessV2ScalingConfiguration
         /// </summary>
         public Humidifier.RDS.DBClusterTypes.ServerlessV2ScalingConfiguration ServerlessV2ScalingConfiguration { get; set; }
+        /// <summary>
+        /// DeleteAutomatedBackups
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-deleteautomatedbackups
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DeleteAutomatedBackups { get; set; }
         /// <summary>
         /// PerformanceInsightsRetentionPeriod
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-performanceinsightsretentionperiod
@@ -191,6 +209,14 @@ namespace Humidifier.RDS
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AllocatedStorage { get; set; }
+        /// <summary>
+        /// SourceDbClusterResourceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-sourcedbclusterresourceid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceDbClusterResourceId { get; set; }
         /// <summary>
         /// MasterUserPassword
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
@@ -397,7 +423,7 @@ namespace Humidifier.RDS
         /// AvailabilityZones
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-availabilityzones
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Conditional
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>

@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AppImageConfigTypes;
 
     public class AppImageConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveAppImageConfigName
@@ -40,11 +40,11 @@ namespace Humidifier.SageMaker
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace AppImageConfigTypes
@@ -64,15 +64,6 @@ namespace Humidifier.SageMaker
         public class ContainerConfig : Humidifier.Base.BaseSubResource, IHaveContainerEntrypoint, IHaveContainerArguments
         {
             /// <summary>
-            /// ContainerEntrypoint
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-containerconfig.html#cfn-sagemaker-appimageconfig-containerconfig-containerentrypoint
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic ContainerEntrypoint { get; set; }
-            /// <summary>
             /// ContainerEnvironmentVariables
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-containerconfig.html#cfn-sagemaker-appimageconfig-containerconfig-containerenvironmentvariables
             /// Required: False
@@ -81,6 +72,15 @@ namespace Humidifier.SageMaker
             /// ItemType: CustomImageContainerEnvironmentVariable
             /// </summary>
             public List<Humidifier.SageMaker.AppImageConfigTypes.CustomImageContainerEnvironmentVariable> ContainerEnvironmentVariables { get; set; }
+            /// <summary>
+            /// ContainerEntrypoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-containerconfig.html#cfn-sagemaker-appimageconfig-containerconfig-containerentrypoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ContainerEntrypoint { get; set; }
             /// <summary>
             /// ContainerArguments
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-containerconfig.html#cfn-sagemaker-appimageconfig-containerconfig-containerarguments

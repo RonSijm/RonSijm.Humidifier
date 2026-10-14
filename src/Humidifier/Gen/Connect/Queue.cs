@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using QueueTypes;
 
     public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveStatus, IHaveInstanceArn
@@ -8,7 +8,9 @@ namespace Humidifier.Connect
         public class Attributes
         {
             public static string Type =  "Type" ;
+            public static string LastModifiedTime =  "LastModifiedTime" ;
             public static string QueueArn =  "QueueArn" ;
+            public static string LastModifiedRegion =  "LastModifiedRegion" ;
         }
 
         public override string AWSTypeName { get => AWS.Connect.Queue; }
@@ -38,6 +40,15 @@ namespace Humidifier.Connect
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// QuickConnectArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-quickconnectarns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic QuickConnectArns { get; set; }
 
         /// <summary>
         /// InstanceArn
@@ -57,15 +68,6 @@ namespace Humidifier.Connect
         /// </summary>
         public Humidifier.Connect.QueueTypes.OutboundEmailConfig OutboundEmailConfig { get; set; }
         /// <summary>
-        /// QuickConnectArns
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-quickconnectarns
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic QuickConnectArns { get; set; }
-        /// <summary>
         /// OutboundCallerConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-outboundcallerconfig
         /// Required: False
@@ -73,6 +75,15 @@ namespace Humidifier.Connect
         /// Type: OutboundCallerConfig
         /// </summary>
         public Humidifier.Connect.QueueTypes.OutboundCallerConfig OutboundCallerConfig { get; set; }
+        /// <summary>
+        /// AdditionalEmailAddresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-additionalemailaddresses
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: EmailAddress
+        /// </summary>
+        public List<Humidifier.Connect.QueueTypes.EmailAddress> AdditionalEmailAddresses { get; set; }
         /// <summary>
         /// MaxContacts
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-queue.html#cfn-connect-queue-maxcontacts
@@ -89,12 +100,24 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace QueueTypes
     {
+        public class EmailAddress : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EmailAddressArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-queue-emailaddress.html#cfn-connect-queue-emailaddress-emailaddressarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EmailAddressArn { get; set; }
+        }
+
         public class OutboundCallerConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>

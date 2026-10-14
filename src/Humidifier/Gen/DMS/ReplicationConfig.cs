@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ReplicationConfigTypes;
 
     public class ReplicationConfig : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceIdentifier, IHaveTableMappings, IHaveSourceEndpointArn, IHaveTargetEndpointArn
@@ -103,7 +103,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ReplicationConfigTypes

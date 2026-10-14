@@ -1,6 +1,6 @@
 namespace Humidifier.QuickSight
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ThemeTypes;
 
     public class Theme : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAwsAccountId, IHaveVersionDescription, IHaveQuickSightThemeTypesThemeConfigurationConfiguration, IHaveBaseThemeId
@@ -80,14 +80,22 @@ namespace Humidifier.QuickSight
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ThemeTypes
     {
-        public class BorderStyle : Humidifier.Base.BaseSubResource, IHaveShow
+        public class BorderStyle : Humidifier.Base.BaseSubResource, IHaveColor, IHaveWidth, IHaveShow
         {
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-borderstyle.html#cfn-quicksight-theme-borderstyle-color
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
             /// <summary>
             /// Show
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-borderstyle.html#cfn-quicksight-theme-borderstyle-show
@@ -96,6 +104,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Show { get; set; }
+            /// <summary>
+            /// Width
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-borderstyle.html#cfn-quicksight-theme-borderstyle-width
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Width { get; set; }
         }
 
         public class DataColorPalette : Humidifier.Base.BaseSubResource
@@ -138,6 +154,82 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic FontFamily { get; set; }
+        }
+
+        public class FontConfiguration : Humidifier.Base.BaseSubResource, IHaveFontColor, IHaveFontStyle, IHaveFontDecoration, IHaveFontFamily
+        {
+            /// <summary>
+            /// FontColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontconfiguration.html#cfn-quicksight-theme-fontconfiguration-fontcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontColor { get; set; }
+            /// <summary>
+            /// FontFamily
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontconfiguration.html#cfn-quicksight-theme-fontconfiguration-fontfamily
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontFamily { get; set; }
+            /// <summary>
+            /// FontStyle
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontconfiguration.html#cfn-quicksight-theme-fontconfiguration-fontstyle
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontStyle { get; set; }
+            /// <summary>
+            /// FontWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontconfiguration.html#cfn-quicksight-theme-fontconfiguration-fontweight
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontWeight
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontWeight FontWeight { get; set; }
+            /// <summary>
+            /// FontSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontconfiguration.html#cfn-quicksight-theme-fontconfiguration-fontsize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontSize
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontSize FontSize { get; set; }
+            /// <summary>
+            /// FontDecoration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontconfiguration.html#cfn-quicksight-theme-fontconfiguration-fontdecoration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FontDecoration { get; set; }
+        }
+
+        public class FontSize : Humidifier.Base.BaseSubResource, IHaveAbsolute
+        {
+            /// <summary>
+            /// Absolute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontsize.html#cfn-quicksight-theme-fontsize-absolute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Absolute { get; set; }
+        }
+
+        public class FontWeight : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-fontweight.html#cfn-quicksight-theme-fontweight-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class GutterStyle : Humidifier.Base.BaseSubResource, IHaveShow
@@ -185,8 +277,36 @@ namespace Humidifier.QuickSight
             public dynamic Principal { get; set; }
         }
 
+        public class SheetBackgroundStyle : Humidifier.Base.BaseSubResource, IHaveColor
+        {
+            /// <summary>
+            /// Gradient
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetbackgroundstyle.html#cfn-quicksight-theme-sheetbackgroundstyle-gradient
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Gradient { get; set; }
+            /// <summary>
+            /// Color
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetbackgroundstyle.html#cfn-quicksight-theme-sheetbackgroundstyle-color
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Color { get; set; }
+        }
+
         public class SheetStyle : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// Background
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-background
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SheetBackgroundStyle
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.SheetBackgroundStyle Background { get; set; }
             /// <summary>
             /// TileLayout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-tilelayout
@@ -350,8 +470,24 @@ namespace Humidifier.QuickSight
             public Humidifier.QuickSight.ThemeTypes.MarginStyle Margin { get; set; }
         }
 
-        public class TileStyle : Humidifier.Base.BaseSubResource
+        public class TileStyle : Humidifier.Base.BaseSubResource, IHaveBackgroundColor, IHaveBorderRadius
         {
+            /// <summary>
+            /// BorderRadius
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html#cfn-quicksight-theme-tilestyle-borderradius
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BorderRadius { get; set; }
+            /// <summary>
+            /// Padding
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html#cfn-quicksight-theme-tilestyle-padding
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Padding { get; set; }
             /// <summary>
             /// Border
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html#cfn-quicksight-theme-tilestyle-border
@@ -360,10 +496,34 @@ namespace Humidifier.QuickSight
             /// Type: BorderStyle
             /// </summary>
             public Humidifier.QuickSight.ThemeTypes.BorderStyle Border { get; set; }
+            /// <summary>
+            /// BackgroundColor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html#cfn-quicksight-theme-tilestyle-backgroundcolor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BackgroundColor { get; set; }
         }
 
         public class Typography : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// VisualTitleFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-visualtitlefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualTitleFontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.VisualTitleFontConfiguration VisualTitleFontConfiguration { get; set; }
+            /// <summary>
+            /// VisualSubtitleFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-visualsubtitlefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualSubtitleFontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.VisualSubtitleFontConfiguration VisualSubtitleFontConfiguration { get; set; }
             /// <summary>
             /// FontFamilies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-fontfamilies
@@ -373,6 +533,46 @@ namespace Humidifier.QuickSight
             /// ItemType: Font
             /// </summary>
             public List<Humidifier.QuickSight.ThemeTypes.Font> FontFamilies { get; set; }
+            /// <summary>
+            /// LegendValueFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-legendvaluefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration LegendValueFontConfiguration { get; set; }
+            /// <summary>
+            /// AxisTitleFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-axistitlefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration AxisTitleFontConfiguration { get; set; }
+            /// <summary>
+            /// AxisLabelFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-axislabelfontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration AxisLabelFontConfiguration { get; set; }
+            /// <summary>
+            /// LegendTitleFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-legendtitlefontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration LegendTitleFontConfiguration { get; set; }
+            /// <summary>
+            /// DataLabelFontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-datalabelfontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration DataLabelFontConfiguration { get; set; }
         }
 
         public class UIColorPalette : Humidifier.Base.BaseSubResource
@@ -505,6 +705,62 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic MeasureForeground { get; set; }
+        }
+
+        public class VisualSubtitleFontConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TextTransform
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-visualsubtitlefontconfiguration.html#cfn-quicksight-theme-visualsubtitlefontconfiguration-texttransform
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextTransform { get; set; }
+            /// <summary>
+            /// TextAlignment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-visualsubtitlefontconfiguration.html#cfn-quicksight-theme-visualsubtitlefontconfiguration-textalignment
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextAlignment { get; set; }
+            /// <summary>
+            /// FontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-visualsubtitlefontconfiguration.html#cfn-quicksight-theme-visualsubtitlefontconfiguration-fontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration FontConfiguration { get; set; }
+        }
+
+        public class VisualTitleFontConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TextTransform
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-visualtitlefontconfiguration.html#cfn-quicksight-theme-visualtitlefontconfiguration-texttransform
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextTransform { get; set; }
+            /// <summary>
+            /// TextAlignment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-visualtitlefontconfiguration.html#cfn-quicksight-theme-visualtitlefontconfiguration-textalignment
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextAlignment { get; set; }
+            /// <summary>
+            /// FontConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-visualtitlefontconfiguration.html#cfn-quicksight-theme-visualtitlefontconfiguration-fontconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FontConfiguration
+            /// </summary>
+            public Humidifier.QuickSight.ThemeTypes.FontConfiguration FontConfiguration { get; set; }
         }
     }
 }

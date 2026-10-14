@@ -1,17 +1,27 @@
 namespace Humidifier.CustomerProfiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CalculatedAttributeDefinitionTypes;
 
     public class CalculatedAttributeDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveDomainName, IHaveStatistic
     {
         public class Attributes
         {
+            public static string Status =  "Status" ;
             public static string LastUpdatedAt =  "LastUpdatedAt" ;
+            public static string Readiness =  "Readiness" ;
             public static string CreatedAt =  "CreatedAt" ;
         }
 
         public override string AWSTypeName { get => AWS.CustomerProfiles.CalculatedAttributeDefinition; }
+        /// <summary>
+        /// UseHistoricalData
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-usehistoricaldata
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic UseHistoricalData { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-description
@@ -84,7 +94,7 @@ namespace Humidifier.CustomerProfiles
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace CalculatedAttributeDefinitionTypes
@@ -150,16 +160,40 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.Threshold Threshold { get; set; }
         }
 
-        public class Range : Humidifier.Base.BaseSubResource, IHaveValue, IHaveUnit
+        public class Range : Humidifier.Base.BaseSubResource, IHaveValue, IHaveUnit, IHaveTimestampFormat
         {
+            /// <summary>
+            /// ValueRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-valuerange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ValueRange
+            /// </summary>
+            public Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.ValueRange ValueRange { get; set; }
+            /// <summary>
+            /// TimestampSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-timestampsource
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimestampSource { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-value
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// TimestampFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-timestampformat
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TimestampFormat { get; set; }
             /// <summary>
             /// Unit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-unit
@@ -168,6 +202,26 @@ namespace Humidifier.CustomerProfiles
             /// PrimitiveType: String
             /// </summary>
             public dynamic Unit { get; set; }
+        }
+
+        public class Readiness : Humidifier.Base.BaseSubResource, IHaveMessage
+        {
+            /// <summary>
+            /// Message
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-readiness.html#cfn-customerprofiles-calculatedattributedefinition-readiness-message
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Message { get; set; }
+            /// <summary>
+            /// ProgressPercentage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-readiness.html#cfn-customerprofiles-calculatedattributedefinition-readiness-progresspercentage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ProgressPercentage { get; set; }
         }
 
         public class Threshold : Humidifier.Base.BaseSubResource, IHaveValue, IHaveOperator
@@ -188,6 +242,26 @@ namespace Humidifier.CustomerProfiles
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+        }
+
+        public class ValueRange : Humidifier.Base.BaseSubResource, IHaveEnd, IHaveStart
+        {
+            /// <summary>
+            /// Start
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-valuerange.html#cfn-customerprofiles-calculatedattributedefinition-valuerange-start
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Start { get; set; }
+            /// <summary>
+            /// End
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-valuerange.html#cfn-customerprofiles-calculatedattributedefinition-valuerange-end
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic End { get; set; }
         }
     }
 }

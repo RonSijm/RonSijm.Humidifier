@@ -1,6 +1,6 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GameServerGroupTypes;
 
     public class GameServerGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveMinSize, IHaveMaxSize
@@ -107,7 +107,7 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace GameServerGroupTypes

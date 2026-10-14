@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ApplicationEntitlementAssociation : Humidifier.Base.BaseResource, IHaveStackName, IHaveApplicationIdentifier
     {

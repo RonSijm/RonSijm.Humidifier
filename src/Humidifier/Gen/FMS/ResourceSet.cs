@@ -1,6 +1,6 @@
 namespace Humidifier.FMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourceSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveResources, IHaveResourceTypeList
     {
@@ -46,7 +46,7 @@ namespace Humidifier.FMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

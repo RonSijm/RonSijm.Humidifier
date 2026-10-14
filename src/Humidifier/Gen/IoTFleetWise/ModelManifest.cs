@@ -1,6 +1,6 @@
 namespace Humidifier.IoTFleetWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ModelManifest : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveStatus, IHaveSignalCatalogArn, IHaveNodes
     {
@@ -33,7 +33,7 @@ namespace Humidifier.IoTFleetWise
         /// SignalCatalogArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-modelmanifest.html#cfn-iotfleetwise-modelmanifest-signalcatalogarn
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
@@ -55,7 +55,7 @@ namespace Humidifier.IoTFleetWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

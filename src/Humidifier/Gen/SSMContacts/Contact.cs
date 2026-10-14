@@ -1,9 +1,9 @@
 namespace Humidifier.SSMContacts
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ContactTypes;
 
-    public class Contact : Humidifier.Base.BaseResource, IHaveType, IHaveDisplayName, IHaveAlias
+    public class Contact : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveDisplayName, IHaveAlias
     {
         public class Attributes
         {
@@ -50,6 +50,15 @@ namespace Humidifier.SSMContacts
         /// ItemType: Stage
         /// </summary>
         public List<Humidifier.SSMContacts.ContactTypes.Stage> Plan { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ContactTypes

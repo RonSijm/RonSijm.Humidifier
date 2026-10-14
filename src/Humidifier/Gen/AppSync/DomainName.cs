@@ -1,14 +1,15 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class DomainName : Humidifier.Base.BaseResource, IHaveDescription, IHaveCertificateArn, IHaveDomainName_
+    public class DomainName : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveCertificateArn, IHaveDomainName_
     {
         public class Attributes
         {
             public static string AppSyncDomainName =  "AppSyncDomainName" ;
             public static string DomainName =  "DomainName" ;
             public static string HostedZoneId =  "HostedZoneId" ;
+            public static string DomainNameArn =  "DomainNameArn" ;
         }
 
         public override string AWSTypeName { get => AWS.AppSync.DomainName; }
@@ -30,6 +31,15 @@ namespace Humidifier.AppSync
         /// </summary>
         [Required]
         public dynamic DomainName_ { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// CertificateArn

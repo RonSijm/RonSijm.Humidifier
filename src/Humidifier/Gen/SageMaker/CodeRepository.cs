@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CodeRepositoryTypes;
 
     public class CodeRepository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
@@ -8,6 +8,7 @@ namespace Humidifier.SageMaker
         public class Attributes
         {
             public static string CodeRepositoryName =  "CodeRepositoryName" ;
+            public static string CodeRepositoryArn =  "CodeRepositoryArn" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.CodeRepository; }
@@ -30,7 +31,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace CodeRepositoryTypes

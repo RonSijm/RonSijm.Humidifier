@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Authorizer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveType, IHaveAuthType, IHaveRestApiId, IHaveIdentityValidationExpression, IHaveAuthorizerUri, IHaveAuthorizerResultTtlInSeconds, IHaveIdentitySource
     {

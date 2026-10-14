@@ -1,10 +1,15 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PartitionTypes;
 
     public class Partition : Humidifier.Base.BaseResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId
     {
+        public class Attributes
+        {
+            public static string IdentifierPartitionInputValues =  "IdentifierPartitionInputValues" ;
+        }
+
         public override string AWSTypeName { get => AWS.Glue.Partition; }
 
         /// <summary>

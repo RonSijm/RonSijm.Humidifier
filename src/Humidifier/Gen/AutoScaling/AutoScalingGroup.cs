@@ -1,10 +1,15 @@
 namespace Humidifier.AutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AutoScalingGroupTypes;
 
-    public class AutoScalingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceId, IHaveMinSize, IHaveMaxSize, IHaveAvailabilityZones, IHaveContext, IHaveAutoScalingGroupName, IHaveCooldown, IHaveDesiredCapacity, IHaveLaunchConfigurationName, IHavePlacementGroup
+    public class AutoScalingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceId, IHaveMinSize, IHaveMaxSize, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveContext, IHaveAutoScalingGroupName, IHaveCooldown, IHaveDesiredCapacity, IHaveLaunchConfigurationName, IHavePlacementGroup
     {
+        public class Attributes
+        {
+            public static string AutoScalingGroupARN =  "AutoScalingGroupARN" ;
+        }
+
         public override string AWSTypeName { get => AWS.AutoScaling.AutoScalingGroup; }
         /// <summary>
         /// LifecycleHookSpecificationList
@@ -58,6 +63,15 @@ namespace Humidifier.AutoScaling
         /// </summary>
         public dynamic TargetGroupARNs { get; set; }
         /// <summary>
+        /// AvailabilityZoneIds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-availabilityzoneids
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic AvailabilityZoneIds { get; set; }
+        /// <summary>
         /// Cooldown
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-cooldown
         /// Required: False
@@ -90,6 +104,14 @@ namespace Humidifier.AutoScaling
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic HealthCheckGracePeriod { get; set; }
+        /// <summary>
+        /// InstanceLifecyclePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-instancelifecyclepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: InstanceLifecyclePolicy
+        /// </summary>
+        public Humidifier.AutoScaling.AutoScalingGroupTypes.InstanceLifecyclePolicy InstanceLifecyclePolicy { get; set; }
         /// <summary>
         /// DefaultInstanceWarmup
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-defaultinstancewarmup
@@ -198,6 +220,14 @@ namespace Humidifier.AutoScaling
         /// ItemType: MetricsCollection
         /// </summary>
         public List<Humidifier.AutoScaling.AutoScalingGroupTypes.MetricsCollection> MetricsCollection { get; set; }
+        /// <summary>
+        /// DeletionProtection
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-deletionprotection
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeletionProtection { get; set; }
         /// <summary>
         /// InstanceMaintenancePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-autoscalinggroup.html#cfn-autoscaling-autoscalinggroup-instancemaintenancepolicy
@@ -447,6 +477,31 @@ namespace Humidifier.AutoScaling
             /// ItemType: PerformanceFactorReferenceRequest
             /// </summary>
             public List<Humidifier.AutoScaling.AutoScalingGroupTypes.PerformanceFactorReferenceRequest> References { get; set; }
+        }
+
+        public class DistributionSegment : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TargetCapacityTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-distributionsegment.html#cfn-autoscaling-autoscalinggroup-distributionsegment-targetcapacitytypes
+            /// Required: True
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic TargetCapacityTypes { get; set; }
+        }
+
+        public class InstanceLifecyclePolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RetentionTriggers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancelifecyclepolicy.html#cfn-autoscaling-autoscalinggroup-instancelifecyclepolicy-retentiontriggers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RetentionTriggers
+            /// </summary>
+            public Humidifier.AutoScaling.AutoScalingGroupTypes.RetentionTriggers RetentionTriggers { get; set; }
         }
 
         public class InstanceMaintenancePolicy : Humidifier.Base.BaseSubResource
@@ -700,6 +755,15 @@ namespace Humidifier.AutoScaling
             /// </summary>
             public dynamic OnDemandBaseCapacity { get; set; }
             /// <summary>
+            /// DistributionSegments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-distributionsegments
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: DistributionSegment
+            /// </summary>
+            public List<Humidifier.AutoScaling.AutoScalingGroupTypes.DistributionSegment> DistributionSegments { get; set; }
+            /// <summary>
             /// OnDemandPercentageAboveBaseCapacity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-ondemandpercentageabovebasecapacity
             /// Required: False
@@ -754,7 +818,7 @@ namespace Humidifier.AutoScaling
             public List<Humidifier.AutoScaling.AutoScalingGroupTypes.LaunchTemplateOverrides> Overrides { get; set; }
         }
 
-        public class LaunchTemplateOverrides : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveWeightedCapacity, IHaveAutoScalingAutoScalingGroupTypesLaunchTemplateSpecificationLaunchTemplateSpecification
+        public class LaunchTemplateOverrides : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveImageId, IHaveWeightedCapacity, IHaveAutoScalingAutoScalingGroupTypesLaunchTemplateSpecificationLaunchTemplateSpecification
         {
             /// <summary>
             /// LaunchTemplateSpecification
@@ -772,6 +836,14 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic WeightedCapacity { get; set; }
+            /// <summary>
+            /// ImageId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-imageid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageId { get; set; }
             /// <summary>
             /// InstanceRequirements
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-instancerequirements
@@ -793,14 +865,6 @@ namespace Humidifier.AutoScaling
         public class LaunchTemplateSpecification : Humidifier.Base.BaseSubResource, IHaveVersion, IHaveLaunchTemplateName, IHaveLaunchTemplateId
         {
             /// <summary>
-            /// LaunchTemplateName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-launchtemplatename
-            /// Required: False
-            /// UpdateType: Conditional
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LaunchTemplateName { get; set; }
-            /// <summary>
             /// Version
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-version
             /// Required: True
@@ -808,6 +872,14 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }
+            /// <summary>
+            /// LaunchTemplateName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-launchtemplatename
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LaunchTemplateName { get; set; }
             /// <summary>
             /// LaunchTemplateId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-launchtemplateid
@@ -1031,6 +1103,18 @@ namespace Humidifier.AutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceFamily { get; set; }
+        }
+
+        public class RetentionTriggers : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TerminateHookAbandon
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-retentiontriggers.html#cfn-autoscaling-autoscalinggroup-retentiontriggers-terminatehookabandon
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TerminateHookAbandon { get; set; }
         }
 
         public class TagProperty : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey

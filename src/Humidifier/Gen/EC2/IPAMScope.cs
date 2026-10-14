@@ -1,6 +1,7 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using IPAMScopeTypes;
 
     public class IPAMScope : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveIpamId
     {
@@ -34,6 +35,14 @@ namespace Humidifier.EC2
         [Required]
         public dynamic IpamId { get; set; }
         /// <summary>
+        /// ExternalAuthorityConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#cfn-ec2-ipamscope-externalauthorityconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IpamScopeExternalAuthorityConfiguration
+        /// </summary>
+        public Humidifier.EC2.IPAMScopeTypes.IpamScopeExternalAuthorityConfiguration ExternalAuthorityConfiguration { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#cfn-ec2-ipamscope-tags
         /// Required: False
@@ -41,6 +50,29 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+    }
+
+    namespace IPAMScopeTypes
+    {
+        public class IpamScopeExternalAuthorityConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ExternalResourceIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipamscope-ipamscopeexternalauthorityconfiguration.html#cfn-ec2-ipamscope-ipamscopeexternalauthorityconfiguration-externalresourceidentifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExternalResourceIdentifier { get; set; }
+            /// <summary>
+            /// IpamScopeExternalAuthorityType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipamscope-ipamscopeexternalauthorityconfiguration.html#cfn-ec2-ipamscope-ipamscopeexternalauthorityconfiguration-ipamscopeexternalauthoritytype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpamScopeExternalAuthorityType { get; set; }
+        }
     }
 }

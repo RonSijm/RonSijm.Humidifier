@@ -1,10 +1,15 @@
 namespace Humidifier.ApiGatewayV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApiGatewayManagedOverridesTypes;
 
     public class ApiGatewayManagedOverrides : Humidifier.Base.BaseResource, IHaveApiId
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.ApiGatewayV2.ApiGatewayManagedOverrides; }
         /// <summary>
         /// Integration
@@ -145,24 +150,8 @@ namespace Humidifier.ApiGatewayV2
             public dynamic AuthorizationType { get; set; }
         }
 
-        public class RouteSettings : Humidifier.Base.BaseSubResource, IHaveLoggingLevel, IHaveDataTraceEnabled, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit, IHaveDetailedMetricsEnabled
+        public class RouteSettings : Humidifier.Base.BaseSubResource, IHaveThrottlingBurstLimit, IHaveThrottlingRateLimit, IHaveDetailedMetricsEnabled
         {
-            /// <summary>
-            /// LoggingLevel
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-logginglevel
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LoggingLevel { get; set; }
-            /// <summary>
-            /// DataTraceEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-datatraceenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic DataTraceEnabled { get; set; }
             /// <summary>
             /// ThrottlingBurstLimit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-throttlingburstlimit
@@ -189,7 +178,7 @@ namespace Humidifier.ApiGatewayV2
             public dynamic ThrottlingRateLimit { get; set; }
         }
 
-        public class StageOverrides : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveAutoDeploy, IHaveRouteSettings, IHaveStageVariables
+        public class StageOverrides : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveAutoDeploy
         {
             /// <summary>
             /// Description
@@ -220,17 +209,19 @@ namespace Humidifier.ApiGatewayV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-routesettings
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: Map
+            /// ItemType: RouteSettings
             /// </summary>
-            public dynamic RouteSettings { get; set; }
+            public Dictionary<string, Humidifier.ApiGatewayV2.ApiGatewayManagedOverridesTypes.RouteSettings> RouteSettings { get; set; }
             /// <summary>
             /// StageVariables
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-stagevariables
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: Map
+            /// PrimitiveItemType: String
             /// </summary>
-            public dynamic StageVariables { get; set; }
+            public Dictionary<string, dynamic> StageVariables { get; set; }
             /// <summary>
             /// DefaultRouteSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-defaultroutesettings

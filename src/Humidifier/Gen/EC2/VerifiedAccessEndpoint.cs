@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VerifiedAccessEndpointTypes;
 
     public class VerifiedAccessEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSecurityGroupIds, IHavePolicyDocument, IHaveEndpointType, IHavePolicyEnabled
@@ -144,7 +144,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// NetworkInterfaceOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-verifiedaccessendpoint.html#cfn-ec2-verifiedaccessendpoint-networkinterfaceoptions
@@ -281,14 +281,6 @@ namespace Humidifier.EC2
         public class PortRange : Humidifier.Base.BaseSubResource, IHaveFromPort, IHaveToPort
         {
             /// <summary>
-            /// FromPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-portrange.html#cfn-ec2-verifiedaccessendpoint-portrange-fromport
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic FromPort { get; set; }
-            /// <summary>
             /// ToPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-portrange.html#cfn-ec2-verifiedaccessendpoint-portrange-toport
             /// Required: False
@@ -296,6 +288,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ToPort { get; set; }
+            /// <summary>
+            /// FromPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-verifiedaccessendpoint-portrange.html#cfn-ec2-verifiedaccessendpoint-portrange-fromport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FromPort { get; set; }
         }
 
         public class RdsOptions : Humidifier.Base.BaseSubResource, IHavePort, IHaveSubnetIds, IHaveProtocol

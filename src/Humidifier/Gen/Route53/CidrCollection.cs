@@ -1,6 +1,6 @@
 namespace Humidifier.Route53
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CidrCollectionTypes;
 
     public class CidrCollection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

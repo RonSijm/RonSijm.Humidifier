@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MethodTypes;
 
     public class Method : Humidifier.Base.BaseResource, IHaveResourceId, IHaveRestApiId, IHaveHttpMethod, IHaveOperationName, IHaveAuthorizationType, IHaveAuthorizationScopes, IHaveAuthorizerId, IHaveApiKeyRequired
@@ -160,6 +160,14 @@ namespace Humidifier.ApiGateway
             /// </summary>
             public dynamic IntegrationHttpMethod { get; set; }
             /// <summary>
+            /// ResponseTransferMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-method-integration.html#cfn-apigateway-method-integration-responsetransfermode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResponseTransferMode { get; set; }
+            /// <summary>
             /// Uri
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-method-integration.html#cfn-apigateway-method-integration-uri
             /// Required: False
@@ -209,6 +217,14 @@ namespace Humidifier.ApiGateway
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic CacheKeyParameters { get; set; }
+            /// <summary>
+            /// IntegrationTarget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-method-integration.html#cfn-apigateway-method-integration-integrationtarget
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IntegrationTarget { get; set; }
             /// <summary>
             /// ContentHandling
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-method-integration.html#cfn-apigateway-method-integration-contenthandling

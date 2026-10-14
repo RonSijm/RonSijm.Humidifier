@@ -1,6 +1,6 @@
 namespace Humidifier.EKS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NodegroupTypes;
 
     public class Nodegroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveVersion, IHaveSubnets, IHaveClusterName, IHaveInstanceTypes
@@ -39,6 +39,14 @@ namespace Humidifier.EKS
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Labels { get; set; }
+        /// <summary>
+        /// WarmPoolConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-warmpoolconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WarmPoolConfig
+        /// </summary>
+        public Humidifier.EKS.NodegroupTypes.WarmPoolConfig WarmPoolConfig { get; set; }
         /// <summary>
         /// Taints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-taints
@@ -205,6 +213,23 @@ namespace Humidifier.EKS
         public class NodeRepairConfig : Humidifier.Base.BaseSubResource, IHaveEnabled
         {
             /// <summary>
+            /// NodeRepairConfigOverrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-noderepairconfigoverrides
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NodeRepairConfigOverrides
+            /// </summary>
+            public List<Humidifier.EKS.NodegroupTypes.NodeRepairConfigOverrides> NodeRepairConfigOverrides { get; set; }
+            /// <summary>
+            /// MaxParallelNodesRepairedCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-maxparallelnodesrepairedcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxParallelNodesRepairedCount { get; set; }
+            /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-enabled
             /// Required: False
@@ -212,6 +237,66 @@ namespace Humidifier.EKS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// MaxUnhealthyNodeThresholdPercentage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-maxunhealthynodethresholdpercentage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxUnhealthyNodeThresholdPercentage { get; set; }
+            /// <summary>
+            /// MaxParallelNodesRepairedPercentage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-maxparallelnodesrepairedpercentage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxParallelNodesRepairedPercentage { get; set; }
+            /// <summary>
+            /// MaxUnhealthyNodeThresholdCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfig.html#cfn-eks-nodegroup-noderepairconfig-maxunhealthynodethresholdcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxUnhealthyNodeThresholdCount { get; set; }
+        }
+
+        public class NodeRepairConfigOverrides : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NodeUnhealthyReason
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfigoverrides.html#cfn-eks-nodegroup-noderepairconfigoverrides-nodeunhealthyreason
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NodeUnhealthyReason { get; set; }
+            /// <summary>
+            /// RepairAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfigoverrides.html#cfn-eks-nodegroup-noderepairconfigoverrides-repairaction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RepairAction { get; set; }
+            /// <summary>
+            /// MinRepairWaitTimeMins
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfigoverrides.html#cfn-eks-nodegroup-noderepairconfigoverrides-minrepairwaittimemins
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinRepairWaitTimeMins { get; set; }
+            /// <summary>
+            /// NodeMonitoringCondition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-noderepairconfigoverrides.html#cfn-eks-nodegroup-noderepairconfigoverrides-nodemonitoringcondition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NodeMonitoringCondition { get; set; }
         }
 
         public class RemoteAccess : Humidifier.Base.BaseSubResource
@@ -317,6 +402,50 @@ namespace Humidifier.EKS
             /// PrimitiveType: Double
             /// </summary>
             public dynamic MaxUnavailable { get; set; }
+        }
+
+        public class WarmPoolConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMinSize
+        {
+            /// <summary>
+            /// MinSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-warmpoolconfig.html#cfn-eks-nodegroup-warmpoolconfig-minsize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinSize { get; set; }
+            /// <summary>
+            /// MaxGroupPreparedCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-warmpoolconfig.html#cfn-eks-nodegroup-warmpoolconfig-maxgrouppreparedcapacity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxGroupPreparedCapacity { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-warmpoolconfig.html#cfn-eks-nodegroup-warmpoolconfig-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// PoolState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-warmpoolconfig.html#cfn-eks-nodegroup-warmpoolconfig-poolstate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PoolState { get; set; }
+            /// <summary>
+            /// ReuseOnScaleIn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-warmpoolconfig.html#cfn-eks-nodegroup-warmpoolconfig-reuseonscalein
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReuseOnScaleIn { get; set; }
         }
     }
 }

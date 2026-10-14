@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UsageProfileTypes;
 
     public class UsageProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
@@ -35,7 +35,7 @@ namespace Humidifier.Glue
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -43,6 +43,14 @@ namespace Humidifier.Glue
     {
         public class ConfigurationObject : Humidifier.Base.BaseSubResource, IHaveDefaultValue, IHaveMaxValue, IHaveMinValue, IHaveAllowedValues
         {
+            /// <summary>
+            /// MinValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-usageprofile-configurationobject.html#cfn-glue-usageprofile-configurationobject-minvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MinValue { get; set; }
             /// <summary>
             /// DefaultValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-usageprofile-configurationobject.html#cfn-glue-usageprofile-configurationobject-defaultvalue
@@ -60,14 +68,6 @@ namespace Humidifier.Glue
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AllowedValues { get; set; }
-            /// <summary>
-            /// MinValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-usageprofile-configurationobject.html#cfn-glue-usageprofile-configurationobject-minvalue
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MinValue { get; set; }
             /// <summary>
             /// MaxValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-usageprofile-configurationobject.html#cfn-glue-usageprofile-configurationobject-maxvalue

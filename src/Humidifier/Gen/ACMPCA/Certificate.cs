@@ -1,6 +1,6 @@
 namespace Humidifier.ACMPCA
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CertificateTypes;
 
     public class Certificate : Humidifier.Base.BaseResource, IHaveCertificateAuthorityArn, IHaveSigningAlgorithm, IHaveTemplateArn, IHaveCertificateSigningRequest
@@ -581,14 +581,6 @@ namespace Humidifier.ACMPCA
         public class Validity : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue
         {
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html#cfn-acmpca-certificate-validity-type
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html#cfn-acmpca-certificate-validity-value
             /// Required: True
@@ -596,6 +588,14 @@ namespace Humidifier.ACMPCA
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html#cfn-acmpca-certificate-validity-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
     }
 }

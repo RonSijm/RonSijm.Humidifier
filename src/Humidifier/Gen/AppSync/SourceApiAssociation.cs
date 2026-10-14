@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SourceApiAssociationTypes;
 
     public class SourceApiAssociation : Humidifier.Base.BaseResource, IHaveDescription

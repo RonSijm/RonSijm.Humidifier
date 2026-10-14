@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EmailChannel : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveEnabled, IHaveApplicationId, IHaveConfigurationSet, IHaveFromAddress
     {

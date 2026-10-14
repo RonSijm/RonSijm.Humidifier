@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VersionTypes;
 
     public class Version : Humidifier.Base.BaseResource, IHaveDescription, IHaveFunctionName
@@ -12,6 +12,14 @@ namespace Humidifier.Lambda
         }
 
         public override string AWSTypeName { get => AWS.Lambda.Version; }
+        /// <summary>
+        /// FunctionScalingConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-functionscalingconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: FunctionScalingConfig
+        /// </summary>
+        public Humidifier.Lambda.VersionTypes.FunctionScalingConfig FunctionScalingConfig { get; set; }
 
         /// <summary>
         /// FunctionName
@@ -58,6 +66,26 @@ namespace Humidifier.Lambda
 
     namespace VersionTypes
     {
+        public class FunctionScalingConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MinExecutionEnvironments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-functionscalingconfig.html#cfn-lambda-version-functionscalingconfig-minexecutionenvironments
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinExecutionEnvironments { get; set; }
+            /// <summary>
+            /// MaxExecutionEnvironments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-functionscalingconfig.html#cfn-lambda-version-functionscalingconfig-maxexecutionenvironments
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxExecutionEnvironments { get; set; }
+        }
+
         public class ProvisionedConcurrencyConfiguration : Humidifier.Base.BaseSubResource, IHaveProvisionedConcurrentExecutions
         {
             /// <summary>

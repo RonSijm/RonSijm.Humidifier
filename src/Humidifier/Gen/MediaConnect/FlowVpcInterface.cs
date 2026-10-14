@@ -1,8 +1,8 @@
 namespace Humidifier.MediaConnect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class FlowVpcInterface : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveRoleArn, IHaveSecurityGroupIds, IHaveSubnetId, IHaveFlowArn
+    public class FlowVpcInterface : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn, IHaveSecurityGroupIds, IHaveSubnetId, IHaveFlowArn
     {
         public class Attributes
         {
@@ -51,6 +51,15 @@ namespace Humidifier.MediaConnect
         /// </summary>
         [Required]
         public dynamic RoleArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowvpcinterface.html#cfn-mediaconnect-flowvpcinterface-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

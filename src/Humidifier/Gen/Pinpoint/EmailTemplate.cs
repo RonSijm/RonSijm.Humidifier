@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EmailTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveSubject, IHaveTemplateDescription, IHaveDefaultSubstitutions, IHaveHtmlPart, IHaveTextPart
     {

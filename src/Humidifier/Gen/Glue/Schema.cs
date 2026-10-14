@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SchemaTypes;
 
     public class Schema : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDataFormat, IHaveSchemaDefinition
@@ -64,7 +64,7 @@ namespace Humidifier.Glue
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// CheckpointVersion

@@ -1,6 +1,6 @@
 namespace Humidifier.ECR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class RegistryPolicy : Humidifier.Base.BaseResource, IHavePolicyText
     {

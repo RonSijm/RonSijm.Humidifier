@@ -1,12 +1,14 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using ComponentTypes;
 
     public class Component : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveKmsKeyId, IHaveVersion, IHaveData, IHaveUri, IHavePlatform, IHaveChangeDescription
     {
         public class Attributes
         {
             public static string Type =  "Type" ;
+            public static string LatestVersion =  "LatestVersion" ;
             public static string Encrypted =  "Encrypted" ;
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
@@ -86,11 +88,50 @@ namespace Humidifier.ImageBuilder
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#cfn-imagebuilder-component-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace ComponentTypes
+    {
+        public class LatestVersion : Humidifier.Base.BaseSubResource, IHaveArn
+        {
+            /// <summary>
+            /// Major
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-component-latestversion.html#cfn-imagebuilder-component-latestversion-major
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Major { get; set; }
+            /// <summary>
+            /// Minor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-component-latestversion.html#cfn-imagebuilder-component-latestversion-minor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Minor { get; set; }
+            /// <summary>
+            /// Arn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-component-latestversion.html#cfn-imagebuilder-component-latestversion-arn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Arn { get; set; }
+            /// <summary>
+            /// Patch
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-component-latestversion.html#cfn-imagebuilder-component-latestversion-patch
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Patch { get; set; }
+        }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.ResilienceHub
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResiliencyPolicyTypes;
 
     public class ResiliencyPolicy : Humidifier.Base.BaseResource, IHavePolicyName, IHaveTier, IHavePolicyDescription

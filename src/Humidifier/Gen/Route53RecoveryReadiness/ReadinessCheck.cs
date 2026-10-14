@@ -1,6 +1,6 @@
 namespace Humidifier.Route53RecoveryReadiness
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ReadinessCheck : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveResourceSetName
     {
@@ -27,6 +27,6 @@ namespace Humidifier.Route53RecoveryReadiness
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

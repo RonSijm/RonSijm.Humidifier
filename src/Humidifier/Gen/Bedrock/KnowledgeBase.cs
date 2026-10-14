@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using KnowledgeBaseTypes;
 
     public class KnowledgeBase : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn
@@ -66,6 +66,30 @@ namespace Humidifier.Bedrock
 
     namespace KnowledgeBaseTypes
     {
+        public class AudioConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SegmentationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-audioconfiguration.html#cfn-bedrock-knowledgebase-audioconfiguration-segmentationconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: AudioSegmentationConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.AudioSegmentationConfiguration SegmentationConfiguration { get; set; }
+        }
+
+        public class AudioSegmentationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FixedLengthDuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-audiosegmentationconfiguration.html#cfn-bedrock-knowledgebase-audiosegmentationconfiguration-fixedlengthduration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FixedLengthDuration { get; set; }
+        }
+
         public class BedrockEmbeddingModelConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -77,6 +101,15 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic EmbeddingDataType { get; set; }
             /// <summary>
+            /// Video
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-video
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: VideoConfiguration
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.VideoConfiguration> Video { get; set; }
+            /// <summary>
             /// Dimensions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-dimensions
             /// Required: False
@@ -84,6 +117,23 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Dimensions { get; set; }
+            /// <summary>
+            /// ModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-modelconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic ModelConfiguration { get; set; }
+            /// <summary>
+            /// Audio
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-bedrockembeddingmodelconfiguration.html#cfn-bedrock-knowledgebase-bedrockembeddingmodelconfiguration-audio
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: AudioConfiguration
+            /// </summary>
+            public List<Humidifier.Bedrock.KnowledgeBaseTypes.AudioConfiguration> Audio { get; set; }
         }
 
         public class CuratedQuery : Humidifier.Base.BaseSubResource, IHaveSql
@@ -164,6 +214,70 @@ namespace Humidifier.Bedrock
             /// Type: VectorKnowledgeBaseConfiguration
             /// </summary>
             public Humidifier.Bedrock.KnowledgeBaseTypes.VectorKnowledgeBaseConfiguration VectorKnowledgeBaseConfiguration { get; set; }
+            /// <summary>
+            /// ManagedKnowledgeBaseConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-knowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-knowledgebaseconfiguration-managedknowledgebaseconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ManagedKnowledgeBaseConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.ManagedKnowledgeBaseConfiguration ManagedKnowledgeBaseConfiguration { get; set; }
+        }
+
+        public class ManagedKnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EmbeddingModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-managedknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-managedknowledgebaseconfiguration-embeddingmodelconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: EmbeddingModelConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.EmbeddingModelConfiguration EmbeddingModelConfiguration { get; set; }
+            /// <summary>
+            /// EmbeddingModelArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-managedknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-managedknowledgebaseconfiguration-embeddingmodelarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EmbeddingModelArn { get; set; }
+            /// <summary>
+            /// SupplementalDataStorageConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-managedknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-managedknowledgebaseconfiguration-supplementaldatastorageconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: SupplementalDataStorageConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.SupplementalDataStorageConfiguration SupplementalDataStorageConfiguration { get; set; }
+            /// <summary>
+            /// ServerSideEncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-managedknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-managedknowledgebaseconfiguration-serversideencryptionconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ManagedKnowledgeBaseServerSideEncryptionConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.ManagedKnowledgeBaseServerSideEncryptionConfiguration ServerSideEncryptionConfiguration { get; set; }
+            /// <summary>
+            /// EmbeddingModelType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-managedknowledgebaseconfiguration.html#cfn-bedrock-knowledgebase-managedknowledgebaseconfiguration-embeddingmodeltype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EmbeddingModelType { get; set; }
+        }
+
+        public class ManagedKnowledgeBaseServerSideEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn
+        {
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-managedknowledgebaseserversideencryptionconfiguration.html#cfn-bedrock-knowledgebase-managedknowledgebaseserversideencryptionconfiguration-kmskeyarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
         }
 
         public class MongoDbAtlasConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveEndpoint, IHaveCredentialsSecretArn, IHaveCollectionName, IHaveVectorIndexName
@@ -224,6 +338,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic CredentialsSecretArn { get; set; }
+            /// <summary>
+            /// TextIndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasconfiguration.html#cfn-bedrock-knowledgebase-mongodbatlasconfiguration-textindexname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextIndexName { get; set; }
         }
 
         public class MongoDbAtlasFieldMapping : Humidifier.Base.BaseSubResource, IHaveTextField, IHaveMetadataField, IHaveVectorField
@@ -247,6 +369,110 @@ namespace Humidifier.Bedrock
             /// <summary>
             /// MetadataField
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-mongodbatlasfieldmapping.html#cfn-bedrock-knowledgebase-mongodbatlasfieldmapping-metadatafield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetadataField { get; set; }
+        }
+
+        public class NeptuneAnalyticsConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// GraphArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-neptuneanalyticsconfiguration.html#cfn-bedrock-knowledgebase-neptuneanalyticsconfiguration-grapharn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GraphArn { get; set; }
+            /// <summary>
+            /// FieldMapping
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-neptuneanalyticsconfiguration.html#cfn-bedrock-knowledgebase-neptuneanalyticsconfiguration-fieldmapping
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: NeptuneAnalyticsFieldMapping
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.NeptuneAnalyticsFieldMapping FieldMapping { get; set; }
+        }
+
+        public class NeptuneAnalyticsFieldMapping : Humidifier.Base.BaseSubResource, IHaveTextField, IHaveMetadataField
+        {
+            /// <summary>
+            /// TextField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-neptuneanalyticsfieldmapping.html#cfn-bedrock-knowledgebase-neptuneanalyticsfieldmapping-textfield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextField { get; set; }
+            /// <summary>
+            /// MetadataField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-neptuneanalyticsfieldmapping.html#cfn-bedrock-knowledgebase-neptuneanalyticsfieldmapping-metadatafield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetadataField { get; set; }
+        }
+
+        public class OpenSearchManagedClusterConfiguration : Humidifier.Base.BaseSubResource, IHaveVectorIndexName
+        {
+            /// <summary>
+            /// DomainEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterconfiguration.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterconfiguration-domainendpoint
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainEndpoint { get; set; }
+            /// <summary>
+            /// VectorIndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterconfiguration.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterconfiguration-vectorindexname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VectorIndexName { get; set; }
+            /// <summary>
+            /// FieldMapping
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterconfiguration.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterconfiguration-fieldmapping
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: OpenSearchManagedClusterFieldMapping
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.OpenSearchManagedClusterFieldMapping FieldMapping { get; set; }
+            /// <summary>
+            /// DomainArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterconfiguration.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterconfiguration-domainarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainArn { get; set; }
+        }
+
+        public class OpenSearchManagedClusterFieldMapping : Humidifier.Base.BaseSubResource, IHaveTextField, IHaveMetadataField, IHaveVectorField
+        {
+            /// <summary>
+            /// VectorField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterfieldmapping.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterfieldmapping-vectorfield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VectorField { get; set; }
+            /// <summary>
+            /// TextField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterfieldmapping.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterfieldmapping-textfield
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextField { get; set; }
+            /// <summary>
+            /// MetadataField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-opensearchmanagedclusterfieldmapping.html#cfn-bedrock-knowledgebase-opensearchmanagedclusterfieldmapping-metadatafield
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -544,6 +770,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic TextField { get; set; }
             /// <summary>
+            /// CustomMetadataField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-rdsfieldmapping.html#cfn-bedrock-knowledgebase-rdsfieldmapping-custommetadatafield
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomMetadataField { get; set; }
+            /// <summary>
             /// MetadataField
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-rdsfieldmapping.html#cfn-bedrock-knowledgebase-rdsfieldmapping-metadatafield
             /// Required: True
@@ -763,6 +997,34 @@ namespace Humidifier.Bedrock
             public dynamic URI { get; set; }
         }
 
+        public class S3VectorsConfiguration : Humidifier.Base.BaseSubResource, IHaveIndexName
+        {
+            /// <summary>
+            /// IndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-s3vectorsconfiguration.html#cfn-bedrock-knowledgebase-s3vectorsconfiguration-indexname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IndexName { get; set; }
+            /// <summary>
+            /// VectorBucketArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-s3vectorsconfiguration.html#cfn-bedrock-knowledgebase-s3vectorsconfiguration-vectorbucketarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VectorBucketArn { get; set; }
+            /// <summary>
+            /// IndexArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-s3vectorsconfiguration.html#cfn-bedrock-knowledgebase-s3vectorsconfiguration-indexarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IndexArn { get; set; }
+        }
+
         public class SqlKnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
@@ -786,6 +1048,22 @@ namespace Humidifier.Bedrock
         public class StorageConfiguration : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
+            /// S3VectorsConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-s3vectorsconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: S3VectorsConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.S3VectorsConfiguration S3VectorsConfiguration { get; set; }
+            /// <summary>
+            /// OpensearchManagedClusterConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-opensearchmanagedclusterconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: OpenSearchManagedClusterConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.OpenSearchManagedClusterConfiguration OpensearchManagedClusterConfiguration { get; set; }
+            /// <summary>
             /// OpensearchServerlessConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-opensearchserverlessconfiguration
             /// Required: False
@@ -793,6 +1071,14 @@ namespace Humidifier.Bedrock
             /// Type: OpenSearchServerlessConfiguration
             /// </summary>
             public Humidifier.Bedrock.KnowledgeBaseTypes.OpenSearchServerlessConfiguration OpensearchServerlessConfiguration { get; set; }
+            /// <summary>
+            /// NeptuneAnalyticsConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-neptuneanalyticsconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: NeptuneAnalyticsConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.NeptuneAnalyticsConfiguration NeptuneAnalyticsConfiguration { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-storageconfiguration.html#cfn-bedrock-knowledgebase-storageconfiguration-type
@@ -886,6 +1172,30 @@ namespace Humidifier.Bedrock
             /// Type: SupplementalDataStorageConfiguration
             /// </summary>
             public Humidifier.Bedrock.KnowledgeBaseTypes.SupplementalDataStorageConfiguration SupplementalDataStorageConfiguration { get; set; }
+        }
+
+        public class VideoConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SegmentationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-videoconfiguration.html#cfn-bedrock-knowledgebase-videoconfiguration-segmentationconfiguration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: VideoSegmentationConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.KnowledgeBaseTypes.VideoSegmentationConfiguration SegmentationConfiguration { get; set; }
+        }
+
+        public class VideoSegmentationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FixedLengthDuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-knowledgebase-videosegmentationconfiguration.html#cfn-bedrock-knowledgebase-videosegmentationconfiguration-fixedlengthduration
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FixedLengthDuration { get; set; }
         }
     }
 }

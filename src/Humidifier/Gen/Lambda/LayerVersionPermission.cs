@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LayerVersionPermission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveOrganizationId
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.Inspector
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AssessmentTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDurationInSeconds
     {
@@ -50,6 +50,6 @@ namespace Humidifier.Inspector
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> UserAttributesForFindings { get; set; }
+        public List<Humidifier.Tag> UserAttributesForFindings { get; set; }
     }
 }

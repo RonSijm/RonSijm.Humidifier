@@ -1,6 +1,6 @@
 namespace Humidifier.BCMDataExports
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ExportTypes;
 
     public class Export : Humidifier.Base.BaseResource
@@ -40,7 +40,7 @@ namespace Humidifier.BCMDataExports
             /// TableConfigurations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bcmdataexports-export-dataquery.html#cfn-bcmdataexports-export-dataquery-tableconfigurations
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
             public dynamic TableConfigurations { get; set; }
@@ -176,6 +176,14 @@ namespace Humidifier.BCMDataExports
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3Region { get; set; }
+            /// <summary>
+            /// S3BucketOwner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bcmdataexports-export-s3destination.html#cfn-bcmdataexports-export-s3destination-s3bucketowner
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3BucketOwner { get; set; }
             /// <summary>
             /// S3Prefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bcmdataexports-export-s3destination.html#cfn-bcmdataexports-export-s3destination-s3prefix

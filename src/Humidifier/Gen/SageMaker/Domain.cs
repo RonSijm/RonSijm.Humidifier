@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainTypes;
 
     public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveSubnetIds, IHaveVpcId, IHaveDomainName, IHaveAuthMode
@@ -41,16 +41,6 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
-
-        /// <summary>
-        /// VpcId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-vpcid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic VpcId { get; set; }
         public dynamic DomainName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AppSecurityGroupManagement
@@ -70,17 +60,39 @@ namespace Humidifier.SageMaker
         /// </summary>
         [Required]
         public Humidifier.SageMaker.DomainTypes.UserSettings DefaultUserSettings { get; set; }
-
         /// <summary>
         /// SubnetIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-subnetids
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public dynamic SubnetIds { get; set; }
+        /// <summary>
+        /// DomainSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DomainSettings
+        /// </summary>
+        public Humidifier.SageMaker.DomainTypes.DomainSettings DomainSettings { get; set; }
+        /// <summary>
+        /// VpcId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-vpcid
+        /// Required: False
+        /// UpdateType: Conditional
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VpcId { get; set; }
+        /// <summary>
+        /// HomeEfsFileSystemCreation
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-homeefsfilesystemcreation
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic HomeEfsFileSystemCreation { get; set; }
 
         /// <summary>
         /// AuthMode
@@ -95,19 +107,11 @@ namespace Humidifier.SageMaker
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-        /// <summary>
-        /// DomainSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: DomainSettings
-        /// </summary>
-        public Humidifier.SageMaker.DomainTypes.DomainSettings DomainSettings { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TagPropagation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-tagpropagation
@@ -161,6 +165,14 @@ namespace Humidifier.SageMaker
             /// </summary>
             public dynamic LifecycleConfigArns { get; set; }
             /// <summary>
+            /// BuiltInLifecycleConfigArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-codeeditorappsettings.html#cfn-sagemaker-domain-codeeditorappsettings-builtinlifecycleconfigarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BuiltInLifecycleConfigArn { get; set; }
+            /// <summary>
             /// AppLifecycleManagement
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-codeeditorappsettings.html#cfn-sagemaker-domain-codeeditorappsettings-applifecyclemanagement
             /// Required: False
@@ -200,6 +212,14 @@ namespace Humidifier.SageMaker
             /// Type: FSxLustreFileSystemConfig
             /// </summary>
             public Humidifier.SageMaker.DomainTypes.FSxLustreFileSystemConfig FSxLustreFileSystemConfig { get; set; }
+            /// <summary>
+            /// S3FileSystemConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customfilesystemconfig.html#cfn-sagemaker-domain-customfilesystemconfig-s3filesystemconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3FileSystemConfig
+            /// </summary>
+            public Humidifier.SageMaker.DomainTypes.S3FileSystemConfig S3FileSystemConfig { get; set; }
         }
 
         public class CustomImage : Humidifier.Base.BaseSubResource, IHaveImageName, IHaveAppImageConfigName, IHaveImageVersionNumber
@@ -373,7 +393,7 @@ namespace Humidifier.SageMaker
             public dynamic EnableDockerAccess { get; set; }
         }
 
-        public class DomainSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds
+        public class DomainSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveIpAddressType
         {
             /// <summary>
             /// DockerSettings
@@ -384,6 +404,14 @@ namespace Humidifier.SageMaker
             /// </summary>
             public Humidifier.SageMaker.DomainTypes.DockerSettings DockerSettings { get; set; }
             /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
+            /// <summary>
             /// ExecutionRoleIdentityConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-executionroleidentityconfig
             /// Required: False
@@ -391,6 +419,14 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExecutionRoleIdentityConfig { get; set; }
+            /// <summary>
+            /// UnifiedStudioSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-unifiedstudiosettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: UnifiedStudioSettings
+            /// </summary>
+            public Humidifier.SageMaker.DomainTypes.UnifiedStudioSettings UnifiedStudioSettings { get; set; }
             /// <summary>
             /// RStudioServerProDomainSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-domainsettings.html#cfn-sagemaker-domain-domainsettings-rstudioserverprodomainsettings
@@ -450,6 +486,27 @@ namespace Humidifier.SageMaker
             public dynamic FileSystemId { get; set; }
         }
 
+        public class HiddenSageMakerImage : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SageMakerImageName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-hiddensagemakerimage.html#cfn-sagemaker-domain-hiddensagemakerimage-sagemakerimagename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SageMakerImageName { get; set; }
+            /// <summary>
+            /// VersionAliases
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-hiddensagemakerimage.html#cfn-sagemaker-domain-hiddensagemakerimage-versionaliases
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic VersionAliases { get; set; }
+        }
+
         public class IdleSettings : Humidifier.Base.BaseSubResource, IHaveIdleTimeoutInMinutes, IHaveMaxIdleTimeoutInMinutes, IHaveMinIdleTimeoutInMinutes, IHaveLifecycleManagement
         {
             /// <summary>
@@ -489,6 +546,23 @@ namespace Humidifier.SageMaker
         public class JupyterLabAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerDomainTypesResourceSpecDefaultResourceSpec, IHaveSageMakerDomainTypesAppLifecycleManagementAppLifecycleManagement
         {
             /// <summary>
+            /// BuiltInLifecycleConfigArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-builtinlifecycleconfigarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BuiltInLifecycleConfigArn { get; set; }
+            /// <summary>
+            /// CodeRepositories
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-coderepositories
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CodeRepository
+            /// </summary>
+            public List<Humidifier.SageMaker.DomainTypes.CodeRepository> CodeRepositories { get; set; }
+            /// <summary>
             /// CustomImages
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-customimages
             /// Required: False
@@ -497,6 +571,14 @@ namespace Humidifier.SageMaker
             /// ItemType: CustomImage
             /// </summary>
             public List<Humidifier.SageMaker.DomainTypes.CustomImage> CustomImages { get; set; }
+            /// <summary>
+            /// AppLifecycleManagement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-applifecyclemanagement
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AppLifecycleManagement
+            /// </summary>
+            public Humidifier.SageMaker.DomainTypes.AppLifecycleManagement AppLifecycleManagement { get; set; }
             /// <summary>
             /// DefaultResourceSpec
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-defaultresourcespec
@@ -514,23 +596,6 @@ namespace Humidifier.SageMaker
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic LifecycleConfigArns { get; set; }
-            /// <summary>
-            /// CodeRepositories
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-coderepositories
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: CodeRepository
-            /// </summary>
-            public List<Humidifier.SageMaker.DomainTypes.CodeRepository> CodeRepositories { get; set; }
-            /// <summary>
-            /// AppLifecycleManagement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterlabappsettings.html#cfn-sagemaker-domain-jupyterlabappsettings-applifecyclemanagement
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: AppLifecycleManagement
-            /// </summary>
-            public Humidifier.SageMaker.DomainTypes.AppLifecycleManagement AppLifecycleManagement { get; set; }
         }
 
         public class JupyterServerAppSettings : Humidifier.Base.BaseSubResource, IHaveLifecycleConfigArns, IHaveSageMakerDomainTypesResourceSpecDefaultResourceSpec
@@ -672,6 +737,14 @@ namespace Humidifier.SageMaker
             /// </summary>
             public dynamic SageMakerImageArn { get; set; }
             /// <summary>
+            /// TrainingPlanArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-trainingplanarn
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TrainingPlanArn { get; set; }
+            /// <summary>
             /// InstanceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-instancetype
             /// Required: False
@@ -695,6 +768,26 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic SageMakerImageVersionArn { get; set; }
+        }
+
+        public class S3FileSystemConfig : Humidifier.Base.BaseSubResource, IHaveS3Uri, IHaveMountPath
+        {
+            /// <summary>
+            /// MountPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-s3filesystemconfig.html#cfn-sagemaker-domain-s3filesystemconfig-mountpath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MountPath { get; set; }
+            /// <summary>
+            /// S3Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-s3filesystemconfig.html#cfn-sagemaker-domain-s3filesystemconfig-s3uri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3Uri { get; set; }
         }
 
         public class SharingSettings : Humidifier.Base.BaseSubResource, IHaveS3OutputPath, IHaveNotebookOutputOption, IHaveS3KmsKeyId
@@ -728,6 +821,15 @@ namespace Humidifier.SageMaker
         public class StudioWebPortalSettings : Humidifier.Base.BaseSubResource, IHaveHiddenAppTypes, IHaveHiddenMlTools
         {
             /// <summary>
+            /// HiddenSageMakerImageVersionAliases
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-studiowebportalsettings.html#cfn-sagemaker-domain-studiowebportalsettings-hiddensagemakerimageversionaliases
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: HiddenSageMakerImage
+            /// </summary>
+            public List<Humidifier.SageMaker.DomainTypes.HiddenSageMakerImage> HiddenSageMakerImageVersionAliases { get; set; }
+            /// <summary>
             /// HiddenAppTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-studiowebportalsettings.html#cfn-sagemaker-domain-studiowebportalsettings-hiddenapptypes
             /// Required: False
@@ -737,6 +839,15 @@ namespace Humidifier.SageMaker
             /// </summary>
             public dynamic HiddenAppTypes { get; set; }
             /// <summary>
+            /// HiddenInstanceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-studiowebportalsettings.html#cfn-sagemaker-domain-studiowebportalsettings-hiddeninstancetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic HiddenInstanceTypes { get; set; }
+            /// <summary>
             /// HiddenMlTools
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-studiowebportalsettings.html#cfn-sagemaker-domain-studiowebportalsettings-hiddenmltools
             /// Required: False
@@ -745,6 +856,66 @@ namespace Humidifier.SageMaker
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic HiddenMlTools { get; set; }
+        }
+
+        public class UnifiedStudioSettings : Humidifier.Base.BaseSubResource, IHaveEnvironmentId, IHaveDomainId, IHaveProjectId
+        {
+            /// <summary>
+            /// EnvironmentId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-environmentid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EnvironmentId { get; set; }
+            /// <summary>
+            /// DomainId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-domainid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainId { get; set; }
+            /// <summary>
+            /// ProjectS3Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-projects3path
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProjectS3Path { get; set; }
+            /// <summary>
+            /// DomainAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-domainaccountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainAccountId { get; set; }
+            /// <summary>
+            /// ProjectId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-projectid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProjectId { get; set; }
+            /// <summary>
+            /// DomainRegion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-domainregion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainRegion { get; set; }
+            /// <summary>
+            /// StudioWebPortalAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-unifiedstudiosettings.html#cfn-sagemaker-domain-unifiedstudiosettings-studiowebportalaccess
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StudioWebPortalAccess { get; set; }
         }
 
         public class UserSettings : Humidifier.Base.BaseSubResource, IHaveSecurityGroups, IHaveExecutionRole, IHaveSageMakerDomainTypesJupyterLabAppSettingsJupyterLabAppSettings, IHaveSageMakerDomainTypesKernelGatewayAppSettingsKernelGatewayAppSettings, IHaveSageMakerDomainTypesJupyterServerAppSettingsJupyterServerAppSettings, IHaveSageMakerDomainTypesDefaultSpaceStorageSettingsSpaceStorageSettings, IHaveSageMakerDomainTypesCustomPosixUserConfigCustomPosixUserConfig, IHaveStudioWebPortal, IHaveDefaultLandingUri
@@ -839,6 +1010,14 @@ namespace Humidifier.SageMaker
             /// Type: JupyterServerAppSettings
             /// </summary>
             public Humidifier.SageMaker.DomainTypes.JupyterServerAppSettings JupyterServerAppSettings { get; set; }
+            /// <summary>
+            /// AutoMountHomeEFS
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-automounthomeefs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AutoMountHomeEFS { get; set; }
             /// <summary>
             /// DefaultLandingUri
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-defaultlandinguri

@@ -1,6 +1,6 @@
 namespace Humidifier.EntityResolution
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdNamespaceTypes;
 
     public class IdNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveType, IHaveRoleArn
@@ -66,7 +66,7 @@ namespace Humidifier.EntityResolution
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace IdNamespaceTypes

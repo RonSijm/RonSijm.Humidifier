@@ -1,6 +1,6 @@
 namespace Humidifier.DynamoDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TableTypes;
 
     public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableName, IHaveBillingMode, IHaveDynamoDBTableTypesOnDemandThroughputOnDemandThroughput, IHaveDynamoDBTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveDynamoDBTableTypesProvisionedThroughputProvisionedThroughput, IHaveDynamoDBTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBTableTypesResourcePolicyResourcePolicy, IHaveDeletionProtectionEnabled, IHaveTableClass
@@ -84,6 +84,15 @@ namespace Humidifier.DynamoDB
         /// Type: WarmThroughput
         /// </summary>
         public Humidifier.DynamoDB.TableTypes.WarmThroughput WarmThroughput { get; set; }
+        /// <summary>
+        /// VectorIndexes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-vectorindexes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: VectorIndex
+        /// </summary>
+        public List<Humidifier.DynamoDB.TableTypes.VectorIndex> VectorIndexes { get; set; }
         public dynamic TableName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AttributeDefinitions
@@ -95,14 +104,6 @@ namespace Humidifier.DynamoDB
         /// </summary>
         public List<Humidifier.DynamoDB.TableTypes.AttributeDefinition> AttributeDefinitions { get; set; }
         /// <summary>
-        /// BillingMode
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic BillingMode { get; set; }
-        /// <summary>
         /// GlobalSecondaryIndexes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-globalsecondaryindexes
         /// Required: False
@@ -112,6 +113,14 @@ namespace Humidifier.DynamoDB
         /// </summary>
         public List<Humidifier.DynamoDB.TableTypes.GlobalSecondaryIndex> GlobalSecondaryIndexes { get; set; }
         /// <summary>
+        /// BillingMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic BillingMode { get; set; }
+        /// <summary>
         /// ResourcePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-resourcepolicy
         /// Required: False
@@ -119,6 +128,15 @@ namespace Humidifier.DynamoDB
         /// Type: ResourcePolicy
         /// </summary>
         public Humidifier.DynamoDB.TableTypes.ResourcePolicy ResourcePolicy { get; set; }
+        /// <summary>
+        /// LocalSecondaryIndexes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-localsecondaryindexes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: LocalSecondaryIndex
+        /// </summary>
+        public List<Humidifier.DynamoDB.TableTypes.LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
 
         /// <summary>
         /// KeySchema
@@ -130,15 +148,6 @@ namespace Humidifier.DynamoDB
         /// </summary>
         [Required]
         public List<Humidifier.DynamoDB.TableTypes.KeySchema> KeySchema { get; set; }
-        /// <summary>
-        /// LocalSecondaryIndexes
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-localsecondaryindexes
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: LocalSecondaryIndex
-        /// </summary>
-        public List<Humidifier.DynamoDB.TableTypes.LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
         /// <summary>
         /// DeletionProtectionEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-deletionprotectionenabled
@@ -163,7 +172,7 @@ namespace Humidifier.DynamoDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TimeToLiveSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification
@@ -196,7 +205,7 @@ namespace Humidifier.DynamoDB
             public dynamic AttributeName { get; set; }
         }
 
-        public class ContributorInsightsSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class ContributorInsightsSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMode
         {
             /// <summary>
             /// Enabled
@@ -206,6 +215,14 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-contributorinsightsspecification.html#cfn-dynamodb-table-contributorinsightsspecification-mode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
         }
 
         public class Csv : Humidifier.Base.BaseSubResource, IHaveDelimiter, IHaveHeaderList
@@ -450,6 +467,14 @@ namespace Humidifier.DynamoDB
         public class Projection : Humidifier.Base.BaseSubResource, IHaveProjectionType, IHaveNonKeyAttributes
         {
             /// <summary>
+            /// ProjectionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-projection.html#cfn-dynamodb-table-projection-projectiontype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProjectionType { get; set; }
+            /// <summary>
             /// NonKeyAttributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-projection.html#cfn-dynamodb-table-projection-nonkeyattributes
             /// Required: False
@@ -458,14 +483,6 @@ namespace Humidifier.DynamoDB
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic NonKeyAttributes { get; set; }
-            /// <summary>
-            /// ProjectionType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-projection.html#cfn-dynamodb-table-projection-projectiontype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ProjectionType { get; set; }
         }
 
         public class ProvisionedThroughput : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits, IHaveWriteCapacityUnits
@@ -556,7 +573,27 @@ namespace Humidifier.DynamoDB
             public dynamic KMSMasterKeyId { get; set; }
         }
 
-        public class StreamSpecification : Humidifier.Base.BaseSubResource, IHaveDynamoDBTableTypesResourcePolicyResourcePolicy, IHaveStreamViewType
+        public class SearchSchemaElement : Humidifier.Base.BaseSubResource, IHaveAttributeName
+        {
+            /// <summary>
+            /// AttributeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-searchschemaelement.html#cfn-dynamodb-table-searchschemaelement-attributename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttributeName { get; set; }
+            /// <summary>
+            /// SearchSchemaElementType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-searchschemaelement.html#cfn-dynamodb-table-searchschemaelement-searchschemaelementtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SearchSchemaElementType { get; set; }
+        }
+
+        public class StreamSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDynamoDBTableTypesResourcePolicyResourcePolicy, IHaveStreamViewType
         {
             /// <summary>
             /// StreamViewType
@@ -574,6 +611,15 @@ namespace Humidifier.DynamoDB
             /// Type: ResourcePolicy
             /// </summary>
             public Humidifier.DynamoDB.TableTypes.ResourcePolicy ResourcePolicy { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-streamspecification.html#cfn-dynamodb-table-streamspecification-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Humidifier.Tag> Tags { get; set; }
         }
 
         public class TimeToLiveSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveAttributeName
@@ -594,6 +640,71 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: String
             /// </summary>
             public dynamic AttributeName { get; set; }
+        }
+
+        public class VectorAttribute : Humidifier.Base.BaseSubResource, IHaveAttributeName
+        {
+            /// <summary>
+            /// AttributeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorattribute.html#cfn-dynamodb-table-vectorattribute-attributename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttributeName { get; set; }
+        }
+
+        public class VectorIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBTableTypesProjectionProjection
+        {
+            /// <summary>
+            /// IndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorindex.html#cfn-dynamodb-table-vectorindex-indexname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IndexName { get; set; }
+            /// <summary>
+            /// VectorAttribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorindex.html#cfn-dynamodb-table-vectorindex-vectorattribute
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: VectorAttribute
+            /// </summary>
+            public Humidifier.DynamoDB.TableTypes.VectorAttribute VectorAttribute { get; set; }
+            /// <summary>
+            /// Projection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorindex.html#cfn-dynamodb-table-vectorindex-projection
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Projection
+            /// </summary>
+            public Humidifier.DynamoDB.TableTypes.Projection Projection { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorindex.html#cfn-dynamodb-table-vectorindex-dimensions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Dimensions { get; set; }
+            /// <summary>
+            /// SearchSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorindex.html#cfn-dynamodb-table-vectorindex-searchschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SearchSchemaElement
+            /// </summary>
+            public List<Humidifier.DynamoDB.TableTypes.SearchSchemaElement> SearchSchema { get; set; }
+            /// <summary>
+            /// DistanceFunction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-vectorindex.html#cfn-dynamodb-table-vectorindex-distancefunction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DistanceFunction { get; set; }
         }
 
         public class WarmThroughput : Humidifier.Base.BaseSubResource, IHaveReadUnitsPerSecond, IHaveWriteUnitsPerSecond

@@ -1,12 +1,13 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AliasTypes;
 
-    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
+    public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
+            public static string AliasArn =  "AliasArn" ;
             public static string AliasId =  "AliasId" ;
         }
 
@@ -29,6 +30,15 @@ namespace Humidifier.GameLift
         /// </summary>
         [Required]
         public Humidifier.GameLift.AliasTypes.RoutingStrategy RoutingStrategy { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

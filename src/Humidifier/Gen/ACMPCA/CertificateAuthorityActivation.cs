@@ -1,6 +1,6 @@
 namespace Humidifier.ACMPCA
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class CertificateAuthorityActivation : Humidifier.Base.BaseResource, IHaveStatus, IHaveCertificateAuthorityArn, IHaveCertificate, IHaveCertificateChain
     {

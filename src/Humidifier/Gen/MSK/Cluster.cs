@@ -1,12 +1,13 @@
 namespace Humidifier.MSK
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveClusterName, IHaveCurrentVersion
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveClusterName
     {
         public class Attributes
         {
+            public static string CurrentVersion =  "CurrentVersion" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -32,6 +33,14 @@ namespace Humidifier.MSK
         [Required]
         public dynamic NumberOfBrokerNodes { get; set; }
         /// <summary>
+        /// Rebalancing
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-rebalancing
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Rebalancing
+        /// </summary>
+        public Humidifier.MSK.ClusterTypes.Rebalancing Rebalancing { get; set; }
+        /// <summary>
         /// EncryptionInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo
         /// Required: False
@@ -47,14 +56,6 @@ namespace Humidifier.MSK
         /// Type: OpenMonitoring
         /// </summary>
         public Humidifier.MSK.ClusterTypes.OpenMonitoring OpenMonitoring { get; set; }
-        /// <summary>
-        /// CurrentVersion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-currentversion
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic CurrentVersion { get; set; }
         /// <summary>
         /// StorageMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-storagemode
@@ -91,6 +92,14 @@ namespace Humidifier.MSK
         public dynamic EnhancedMonitoring { get; set; }
         public dynamic ClusterName { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// ZookeeperAccess
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-zookeeperaccess
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ZookeeperAccess
+        /// </summary>
+        public Humidifier.MSK.ClusterTypes.ZookeeperAccess ZookeeperAccess { get; set; }
+        /// <summary>
         /// ClientAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication
         /// Required: False
@@ -119,6 +128,34 @@ namespace Humidifier.MSK
 
     namespace ClusterTypes
     {
+        public class AuthorizerLogs : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// S3
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-authorizerlogs.html#cfn-msk-cluster-authorizerlogs-s3
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3
+            /// </summary>
+            public Humidifier.MSK.ClusterTypes.S3 S3 { get; set; }
+            /// <summary>
+            /// Firehose
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-authorizerlogs.html#cfn-msk-cluster-authorizerlogs-firehose
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Firehose
+            /// </summary>
+            public Humidifier.MSK.ClusterTypes.Firehose Firehose { get; set; }
+            /// <summary>
+            /// CloudWatchLogs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-authorizerlogs.html#cfn-msk-cluster-authorizerlogs-cloudwatchlogs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CloudWatchLogs
+            /// </summary>
+            public Humidifier.MSK.ClusterTypes.CloudWatchLogs CloudWatchLogs { get; set; }
+        }
+
         public class BrokerLogs : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -269,8 +306,16 @@ namespace Humidifier.MSK
             public dynamic Arn { get; set; }
         }
 
-        public class ConnectivityInfo : Humidifier.Base.BaseSubResource
+        public class ConnectivityInfo : Humidifier.Base.BaseSubResource, IHaveNetworkType
         {
+            /// <summary>
+            /// NetworkType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-networktype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NetworkType { get; set; }
             /// <summary>
             /// VpcConnectivity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-vpcconnectivity
@@ -364,14 +409,6 @@ namespace Humidifier.MSK
         public class Firehose : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveDeliveryStream
         {
             /// <summary>
-            /// DeliveryStream
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DeliveryStream { get; set; }
-            /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled
             /// Required: True
@@ -379,6 +416,14 @@ namespace Humidifier.MSK
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// DeliveryStream
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeliveryStream { get; set; }
         }
 
         public class Iam : Humidifier.Base.BaseSubResource, IHaveEnabled
@@ -410,11 +455,19 @@ namespace Humidifier.MSK
             /// <summary>
             /// BrokerLogs
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: BrokerLogs
             /// </summary>
             public Humidifier.MSK.ClusterTypes.BrokerLogs BrokerLogs { get; set; }
+            /// <summary>
+            /// AuthorizerLogs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-authorizerlogs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AuthorizerLogs
+            /// </summary>
+            public Humidifier.MSK.ClusterTypes.AuthorizerLogs AuthorizerLogs { get; set; }
         }
 
         public class NodeExporter : Humidifier.Base.BaseSubResource, IHaveEnabledInBroker
@@ -491,6 +544,18 @@ namespace Humidifier.MSK
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
+        }
+
+        public class Rebalancing : Humidifier.Base.BaseSubResource, IHaveStatus
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-rebalancing.html#cfn-msk-cluster-rebalancing-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
         }
 
         public class S3 : Humidifier.Base.BaseSubResource, IHaveEnabled, IHavePrefix, IHaveBucket
@@ -680,6 +745,18 @@ namespace Humidifier.MSK
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html#cfn-msk-cluster-vpcconnectivitytls-enabled
             /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class ZookeeperAccess : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-zookeeperaccess.html#cfn-msk-cluster-zookeeperaccess-enabled
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>

@@ -1,9 +1,9 @@
 namespace Humidifier.Personalize
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SolutionTypes;
 
-    public class Solution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveEventType, IHaveDatasetGroupArn
+    public class Solution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEventType, IHaveDatasetGroupArn
     {
         public class Attributes
         {
@@ -61,6 +61,15 @@ namespace Humidifier.Personalize
         /// PrimitiveType: String
         /// </summary>
         public dynamic RecipeArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-solution.html#cfn-personalize-solution-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

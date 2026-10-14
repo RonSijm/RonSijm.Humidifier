@@ -1,6 +1,6 @@
 namespace Humidifier.ControlTower
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnabledBaselineTypes;
 
     public class EnabledBaseline : Humidifier.Base.BaseResource, IHaveTags, IHaveTargetIdentifier
@@ -58,7 +58,7 @@ namespace Humidifier.ControlTower
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace EnabledBaselineTypes

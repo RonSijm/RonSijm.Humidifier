@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RoutingProfileTypes;
 
     public class RoutingProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceArn
@@ -11,6 +11,15 @@ namespace Humidifier.Connect
         }
 
         public override string AWSTypeName { get => AWS.Connect.RoutingProfile; }
+        /// <summary>
+        /// ManualAssignmentQueueConfigs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-routingprofile.html#cfn-connect-routingprofile-manualassignmentqueueconfigs
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: RoutingProfileManualAssignmentQueueConfig
+        /// </summary>
+        public List<Humidifier.Connect.RoutingProfileTypes.RoutingProfileManualAssignmentQueueConfig> ManualAssignmentQueueConfigs { get; set; }
 
         /// <summary>
         /// Description
@@ -77,7 +86,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -123,6 +132,18 @@ namespace Humidifier.Connect
             public Humidifier.Connect.RoutingProfileTypes.CrossChannelBehavior CrossChannelBehavior { get; set; }
         }
 
+        public class RoutingProfileManualAssignmentQueueConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QueueReference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-routingprofile-routingprofilemanualassignmentqueueconfig.html#cfn-connect-routingprofile-routingprofilemanualassignmentqueueconfig-queuereference
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: RoutingProfileQueueReference
+            /// </summary>
+            public Humidifier.Connect.RoutingProfileTypes.RoutingProfileQueueReference QueueReference { get; set; }
+        }
+
         public class RoutingProfileQueueConfig : Humidifier.Base.BaseSubResource, IHavePriority
         {
             /// <summary>
@@ -154,14 +175,6 @@ namespace Humidifier.Connect
         public class RoutingProfileQueueReference : Humidifier.Base.BaseSubResource, IHaveChannel, IHaveQueueArn
         {
             /// <summary>
-            /// Channel
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-routingprofile-routingprofilequeuereference.html#cfn-connect-routingprofile-routingprofilequeuereference-channel
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Channel { get; set; }
-            /// <summary>
             /// QueueArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-routingprofile-routingprofilequeuereference.html#cfn-connect-routingprofile-routingprofilequeuereference-queuearn
             /// Required: True
@@ -169,6 +182,14 @@ namespace Humidifier.Connect
             /// PrimitiveType: String
             /// </summary>
             public dynamic QueueArn { get; set; }
+            /// <summary>
+            /// Channel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-routingprofile-routingprofilequeuereference.html#cfn-connect-routingprofile-routingprofilequeuereference-channel
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Channel { get; set; }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.ECS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterCapacityProviderAssociationsTypes;
 
     public class ClusterCapacityProviderAssociations : Humidifier.Base.BaseResource, IHaveCluster, IHaveCapacityProviders
@@ -17,16 +17,14 @@ namespace Humidifier.ECS
         /// </summary>
         [Required]
         public List<Humidifier.ECS.ClusterCapacityProviderAssociationsTypes.CapacityProviderStrategy> DefaultCapacityProviderStrategy { get; set; }
-
         /// <summary>
         /// CapacityProviders
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-capacityproviders
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public dynamic CapacityProviders { get; set; }
 
         /// <summary>

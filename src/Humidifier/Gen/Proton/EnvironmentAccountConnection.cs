@@ -1,6 +1,6 @@
 namespace Humidifier.Proton
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EnvironmentAccountConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveEnvironmentName
     {
@@ -68,6 +68,6 @@ namespace Humidifier.Proton
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

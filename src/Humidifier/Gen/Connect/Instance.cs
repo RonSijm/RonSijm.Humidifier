@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InstanceTypes;
 
     public class Instance : Humidifier.Base.BaseResource, IHaveTags, IHaveDirectoryId
@@ -59,7 +59,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace InstanceTypes
@@ -67,21 +67,13 @@ namespace Humidifier.Connect
         public class Attributes : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// InboundCalls
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-inboundcalls
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic InboundCalls { get; set; }
-            /// <summary>
-            /// UseCustomTTSVoices
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-usecustomttsvoices
+            /// EnhancedContactMonitoring
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-enhancedcontactmonitoring
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic UseCustomTTSVoices { get; set; }
+            public dynamic EnhancedContactMonitoring { get; set; }
             /// <summary>
             /// OutboundCalls
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-outboundcalls
@@ -99,13 +91,21 @@ namespace Humidifier.Connect
             /// </summary>
             public dynamic EarlyMedia { get; set; }
             /// <summary>
-            /// ContactflowLogs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-contactflowlogs
+            /// MessageStreaming
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-messagestreaming
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic ContactflowLogs { get; set; }
+            public dynamic MessageStreaming { get; set; }
+            /// <summary>
+            /// MultiPartyConference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-multipartyconference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic MultiPartyConference { get; set; }
             /// <summary>
             /// ContactLens
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-contactlens
@@ -122,6 +122,54 @@ namespace Humidifier.Connect
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AutoResolveBestVoices { get; set; }
+            /// <summary>
+            /// InboundCalls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-inboundcalls
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic InboundCalls { get; set; }
+            /// <summary>
+            /// EnhancedChatMonitoring
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-enhancedchatmonitoring
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnhancedChatMonitoring { get; set; }
+            /// <summary>
+            /// UseCustomTTSVoices
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-usecustomttsvoices
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UseCustomTTSVoices { get; set; }
+            /// <summary>
+            /// ContactflowLogs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-contactflowlogs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ContactflowLogs { get; set; }
+            /// <summary>
+            /// MultiPartyChatConference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-multipartychatconference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic MultiPartyChatConference { get; set; }
+            /// <summary>
+            /// HighVolumeOutBound
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-highvolumeoutbound
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic HighVolumeOutBound { get; set; }
         }
     }
 }

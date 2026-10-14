@@ -1,6 +1,6 @@
 namespace Humidifier.MediaTailor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ChannelPolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveChannelName
     {

@@ -1,10 +1,15 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ReceiptFilterTypes;
 
     public class ReceiptFilter : Humidifier.Base.BaseResource
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.SES.ReceiptFilter; }
 
         /// <summary>
@@ -26,7 +31,7 @@ namespace Humidifier.SES
             /// IpFilter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-ipfilter
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: IpFilter
             /// </summary>
             public Humidifier.SES.ReceiptFilterTypes.IpFilter IpFilter { get; set; }
@@ -34,7 +39,7 @@ namespace Humidifier.SES
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -46,7 +51,7 @@ namespace Humidifier.SES
             /// Policy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-policy
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Policy { get; set; }
@@ -54,7 +59,7 @@ namespace Humidifier.SES
             /// Cidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-cidr
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Cidr { get; set; }

@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class CustomerGatewayAssociation : Humidifier.Base.BaseResource, IHaveGlobalNetworkId, IHaveDeviceId, IHaveLinkId
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.ECR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RepositoryCreationTemplateTypes;
 
     public class RepositoryCreationTemplate : Humidifier.Base.BaseResource, IHaveDescription, IHavePrefix, IHaveImageTagMutability, IHaveLifecyclePolicy
@@ -12,6 +12,15 @@ namespace Humidifier.ECR
         }
 
         public override string AWSTypeName { get => AWS.ECR.RepositoryCreationTemplate; }
+        /// <summary>
+        /// ImageTagMutabilityExclusionFilters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repositorycreationtemplate.html#cfn-ecr-repositorycreationtemplate-imagetagmutabilityexclusionfilters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ImageTagMutabilityExclusionFilter
+        /// </summary>
+        public List<Humidifier.ECR.RepositoryCreationTemplateTypes.ImageTagMutabilityExclusionFilter> ImageTagMutabilityExclusionFilters { get; set; }
         /// <summary>
         /// CustomRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repositorycreationtemplate.html#cfn-ecr-repositorycreationtemplate-customrolearn
@@ -44,7 +53,7 @@ namespace Humidifier.ECR
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> ResourceTags { get; set; }
+        public List<Humidifier.Tag> ResourceTags { get; set; }
         /// <summary>
         /// RepositoryPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repositorycreationtemplate.html#cfn-ecr-repositorycreationtemplate-repositorypolicy
@@ -112,6 +121,26 @@ namespace Humidifier.ECR
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKey { get; set; }
+        }
+
+        public class ImageTagMutabilityExclusionFilter : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ImageTagMutabilityExclusionFilterType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repositorycreationtemplate-imagetagmutabilityexclusionfilter.html#cfn-ecr-repositorycreationtemplate-imagetagmutabilityexclusionfilter-imagetagmutabilityexclusionfiltertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageTagMutabilityExclusionFilterType { get; set; }
+            /// <summary>
+            /// ImageTagMutabilityExclusionFilterValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repositorycreationtemplate-imagetagmutabilityexclusionfilter.html#cfn-ecr-repositorycreationtemplate-imagetagmutabilityexclusionfilter-imagetagmutabilityexclusionfiltervalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageTagMutabilityExclusionFilterValue { get; set; }
         }
     }
 }

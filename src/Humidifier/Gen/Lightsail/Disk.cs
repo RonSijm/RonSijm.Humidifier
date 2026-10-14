@@ -1,6 +1,6 @@
 namespace Humidifier.Lightsail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DiskTypes;
 
     public class Disk : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveAvailabilityZone, IHaveSizeInGb, IHaveDiskName
@@ -55,7 +55,7 @@ namespace Humidifier.Lightsail
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#cfn-lightsail-disk-location

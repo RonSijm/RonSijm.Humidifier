@@ -1,6 +1,6 @@
 namespace Humidifier.IoTSiteWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccessPolicyTypes;
 
     public class AccessPolicy : Humidifier.Base.BaseResource

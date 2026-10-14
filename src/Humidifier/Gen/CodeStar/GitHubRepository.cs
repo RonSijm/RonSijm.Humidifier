@@ -1,6 +1,6 @@
 namespace Humidifier.CodeStar
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GitHubRepositoryTypes;
 
     public class GitHubRepository : Humidifier.Base.BaseResource, IHaveRepositoryName, IHaveConnectionArn, IHaveRepositoryDescription

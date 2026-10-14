@@ -1,6 +1,6 @@
 namespace Humidifier.InternetMonitor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MonitorTypes;
 
     public class Monitor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStatus, IHaveResources, IHaveMonitorName
@@ -107,7 +107,7 @@ namespace Humidifier.InternetMonitor
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace MonitorTypes

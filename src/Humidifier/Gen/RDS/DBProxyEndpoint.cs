@@ -1,6 +1,6 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DBProxyEndpointTypes;
 
     public class DBProxyEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveVpcSecurityGroupIds, IHaveVpcSubnetIds, IHaveDBProxyName
@@ -62,6 +62,14 @@ namespace Humidifier.RDS
         /// ItemType: TagFormat
         /// </summary>
         public List<Humidifier.RDS.DBProxyEndpointTypes.TagFormat> Tags { get; set; }
+        /// <summary>
+        /// EndpointNetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-endpointnetworktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointNetworkType { get; set; }
     }
 
     namespace DBProxyEndpointTypes

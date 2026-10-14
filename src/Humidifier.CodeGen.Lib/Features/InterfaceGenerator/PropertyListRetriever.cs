@@ -17,12 +17,17 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
 
                 foreach (var property in resource.Properties)
                 {
+                    if (string.IsNullOrWhiteSpace(property.CsFullTypeName))
+                    {
+                        continue;
+                    }
+
                     var propertyName = $"{property.Name}{property.CsFullTypeName}";
                     var getList = propertyList.TryGetValue(propertyName, out var list);
                     if (!getList)
                     {
                         list = new List<Property>();
-                        propertyList.Add(propertyName, new List<Property>());
+                        propertyList.Add(propertyName, list);
                     }
 
                     list.Add(property);
@@ -38,12 +43,17 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
 
                 foreach (var property in resource.Properties)
                 {
+                    if (string.IsNullOrWhiteSpace(property.CsFullTypeName))
+                    {
+                        continue;
+                    }
+
                     var propertyName = $"{property.Name}{property.CsFullTypeName}";
                     var getList = propertyList.TryGetValue(propertyName, out var list);
                     if (!getList)
                     {
                         list = new List<Property>();
-                        propertyList.Add(propertyName, new List<Property>());
+                        propertyList.Add(propertyName, list);
                     }
 
                     list.Add(property);

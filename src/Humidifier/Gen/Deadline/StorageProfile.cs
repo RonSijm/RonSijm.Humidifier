@@ -1,6 +1,6 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StorageProfileTypes;
 
     public class StorageProfile : Humidifier.Base.BaseResource, IHaveDisplayName, IHaveFarmId, IHaveOsFamily

@@ -1,6 +1,6 @@
 namespace Humidifier.IoTTwinMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SyncJob : Humidifier.Base.BaseResource, IHaveWorkspaceId
     {

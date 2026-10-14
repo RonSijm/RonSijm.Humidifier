@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
     public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterType, IHaveInstanceRoleArn

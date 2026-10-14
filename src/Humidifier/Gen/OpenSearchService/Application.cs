@@ -1,9 +1,9 @@
 namespace Humidifier.OpenSearchService
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationTypes;
 
-    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEndpoint
+    public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyArn, IHaveEndpoint
     {
         public class Attributes
         {
@@ -39,6 +39,14 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public dynamic Endpoint { get; set; }
         /// <summary>
+        /// KmsKeyArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-application.html#cfn-opensearchservice-application-kmskeyarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyArn { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-application.html#cfn-opensearchservice-application-tags
         /// Required: False
@@ -46,7 +54,7 @@ namespace Humidifier.OpenSearchService
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// IamIdentityCenterOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-application.html#cfn-opensearchservice-application-iamidentitycenteroptions

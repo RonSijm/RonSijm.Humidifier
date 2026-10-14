@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityLake
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AwsLogSource : Humidifier.Base.BaseResource, IHaveSourceVersion, IHaveSourceName, IHaveAccounts, IHaveDataLakeArn
     {

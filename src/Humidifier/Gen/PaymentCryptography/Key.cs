@@ -1,18 +1,35 @@
 namespace Humidifier.PaymentCryptography
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using KeyTypes;
 
-    public class Key : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled
+    public class Key : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled, IHavePolicy
     {
         public class Attributes
         {
             public static string KeyIdentifier =  "KeyIdentifier" ;
+            public static string ReplicationStatus =  "ReplicationStatus" ;
             public static string KeyState =  "KeyState" ;
             public static string KeyOrigin =  "KeyOrigin" ;
         }
 
         public override string AWSTypeName { get => AWS.PaymentCryptography.Key; }
+        /// <summary>
+        /// DeriveKeyUsage
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-paymentcryptography-key.html#cfn-paymentcryptography-key-derivekeyusage
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DeriveKeyUsage { get; set; }
+        /// <summary>
+        /// Policy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-paymentcryptography-key.html#cfn-paymentcryptography-key-policy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Policy { get; set; }
 
         /// <summary>
         /// Exportable
@@ -23,6 +40,15 @@ namespace Humidifier.PaymentCryptography
         /// </summary>
         [Required]
         public dynamic Exportable { get; set; }
+        /// <summary>
+        /// ReplicationRegions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-paymentcryptography-key.html#cfn-paymentcryptography-key-replicationregions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic ReplicationRegions { get; set; }
 
         /// <summary>
         /// KeyAttributes
@@ -57,7 +83,7 @@ namespace Humidifier.PaymentCryptography
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace KeyTypes
@@ -172,6 +198,26 @@ namespace Humidifier.PaymentCryptography
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Encrypt { get; set; }
+        }
+
+        public class ReplicationStatusType : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveStatusMessage
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// StatusMessage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-statusmessage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StatusMessage { get; set; }
         }
     }
 }

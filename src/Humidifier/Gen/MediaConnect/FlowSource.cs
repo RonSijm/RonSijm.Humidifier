@@ -1,9 +1,9 @@
 namespace Humidifier.MediaConnect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowSourceTypes;
 
-    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveProtocol, IHaveFlowArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveEntitlementArn, IHaveSenderIpAddress, IHaveIngestPort, IHaveSenderControlPort, IHaveSourceListenerAddress, IHaveSourceListenerPort, IHaveWhitelistCidr
+    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveProtocol, IHaveFlowArn, IHaveVpcInterfaceName, IHaveMaxBitrate, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency, IHaveIngestPort, IHaveSourceListenerAddress, IHaveSourceListenerPort, IHaveWhitelistCidr
     {
         public class Attributes
         {
@@ -32,14 +32,6 @@ namespace Humidifier.MediaConnect
         [Required]
         public dynamic Description { get; set; }
         /// <summary>
-        /// SenderIpAddress
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-senderipaddress
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SenderIpAddress { get; set; }
-        /// <summary>
         /// IngestPort
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-ingestport
         /// Required: False
@@ -47,14 +39,6 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic IngestPort { get; set; }
-        /// <summary>
-        /// SenderControlPort
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-sendercontrolport
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic SenderControlPort { get; set; }
         /// <summary>
         /// Decryption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-decryption
@@ -97,14 +81,6 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public dynamic WhitelistCidr { get; set; }
         /// <summary>
-        /// EntitlementArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-entitlementarn
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic EntitlementArn { get; set; }
-        /// <summary>
         /// MinLatency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-minlatency
         /// Required: False
@@ -132,17 +108,19 @@ namespace Humidifier.MediaConnect
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-protocol
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Protocol { get; set; }
+
         /// <summary>
         /// FlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-flowarn
-        /// Required: False
-        /// UpdateType: Mutable
+        /// Required: True
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FlowArn { get; set; }
         /// <summary>
         /// MaxLatency
@@ -152,11 +130,20 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MaxLatency { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace FlowSourceTypes
     {
-        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveRegion, IHaveSecretArn, IHaveResourceId, IHaveKeyType, IHaveAlgorithm, IHaveConstantInitializationVector, IHaveDeviceId
+        public class Encryption : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveSecretArn, IHaveKeyType, IHaveAlgorithm
         {
             /// <summary>
             /// SecretArn
@@ -175,38 +162,6 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public dynamic KeyType { get; set; }
             /// <summary>
-            /// ResourceId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-resourceid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ResourceId { get; set; }
-            /// <summary>
-            /// DeviceId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-deviceid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DeviceId { get; set; }
-            /// <summary>
-            /// Region
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-region
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Region { get; set; }
-            /// <summary>
-            /// ConstantInitializationVector
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-constantinitializationvector
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ConstantInitializationVector { get; set; }
-            /// <summary>
             /// Algorithm
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-algorithm
             /// Required: False
@@ -222,14 +177,6 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
-            /// <summary>
-            /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-url
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Url { get; set; }
         }
 
         public class GatewayBridgeSource : Humidifier.Base.BaseSubResource, IHaveBridgeArn

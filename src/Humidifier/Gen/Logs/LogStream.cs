@@ -1,6 +1,6 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LogStream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveLogGroupName, IHaveLogStreamName
     {

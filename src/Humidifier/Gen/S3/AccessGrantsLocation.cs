@@ -1,6 +1,6 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AccessGrantsLocation : Humidifier.Base.BaseResource, IHaveTags, IHaveIamRoleArn
     {
@@ -11,21 +11,25 @@ namespace Humidifier.S3
         }
 
         public override string AWSTypeName { get => AWS.S3.AccessGrantsLocation; }
+
         /// <summary>
         /// LocationScope
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accessgrantslocation.html#cfn-s3-accessgrantslocation-locationscope
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic LocationScope { get; set; }
+
         /// <summary>
         /// IamRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accessgrantslocation.html#cfn-s3-accessgrantslocation-iamrolearn
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic IamRoleArn { get; set; }
         /// <summary>
         /// Tags
@@ -35,6 +39,6 @@ namespace Humidifier.S3
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

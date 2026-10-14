@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StackSetTypes;
 
     public class StackSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveTemplateBody, IHaveCapabilities, IHaveTemplateURL, IHaveStackSetName
@@ -129,13 +129,22 @@ namespace Humidifier.CloudFormation
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace StackSetTypes
     {
         public class AutoDeployment : Humidifier.Base.BaseSubResource, IHaveEnabled
         {
+            /// <summary>
+            /// DependsOn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-autodeployment.html#cfn-cloudformation-stackset-autodeployment-dependson
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic DependsOn { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-autodeployment.html#cfn-cloudformation-stackset-autodeployment-enabled

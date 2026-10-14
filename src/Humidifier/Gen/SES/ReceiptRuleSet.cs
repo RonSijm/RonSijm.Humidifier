@@ -1,6 +1,6 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ReceiptRuleSet : Humidifier.Base.BaseResource, IHaveRuleSetName
     {

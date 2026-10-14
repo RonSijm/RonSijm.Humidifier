@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SdiSourceTypes;
 
     public class SdiSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveType, IHaveMode

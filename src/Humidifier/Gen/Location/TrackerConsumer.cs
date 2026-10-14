@@ -1,6 +1,6 @@
 namespace Humidifier.Location
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TrackerConsumer : Humidifier.Base.BaseResource, IHaveTrackerName
     {

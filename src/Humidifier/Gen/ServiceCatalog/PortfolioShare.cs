@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PortfolioShare : Humidifier.Base.BaseResource, IHaveAccountId, IHaveAcceptLanguage, IHavePortfolioId
     {
@@ -19,7 +19,7 @@ namespace Humidifier.ServiceCatalog
         /// AcceptLanguage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioshare.html#cfn-servicecatalog-portfolioshare-acceptlanguage
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic AcceptLanguage { get; set; }

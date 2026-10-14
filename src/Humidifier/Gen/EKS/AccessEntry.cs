@@ -1,6 +1,6 @@
 namespace Humidifier.EKS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccessEntryTypes;
 
     public class AccessEntry : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveUsername, IHaveClusterName, IHavePrincipalArn
@@ -73,7 +73,7 @@ namespace Humidifier.EKS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace AccessEntryTypes

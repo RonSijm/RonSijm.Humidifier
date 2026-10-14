@@ -1,6 +1,6 @@
 namespace Humidifier.RolesAnywhere
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TrustAnchorTypes;
 
     public class TrustAnchor : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEnabled
@@ -47,7 +47,7 @@ namespace Humidifier.RolesAnywhere
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -94,7 +94,7 @@ namespace Humidifier.RolesAnywhere
             /// <summary>
             /// SourceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-source.html#cfn-rolesanywhere-trustanchor-source-sourcetype
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -102,7 +102,7 @@ namespace Humidifier.RolesAnywhere
             /// <summary>
             /// SourceData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rolesanywhere-trustanchor-source.html#cfn-rolesanywhere-trustanchor-source-sourcedata
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// Type: SourceData
             /// </summary>

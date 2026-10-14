@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class HookTypeConfig : Humidifier.Base.BaseResource, IHaveTypeName, IHaveConfiguration
     {

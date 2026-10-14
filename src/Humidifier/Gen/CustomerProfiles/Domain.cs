@@ -1,6 +1,6 @@
 namespace Humidifier.CustomerProfiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainTypes;
 
     public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName
@@ -41,6 +41,14 @@ namespace Humidifier.CustomerProfiles
         /// </summary>
         public dynamic DeadLetterQueueUrl { get; set; }
         /// <summary>
+        /// DataStore
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-datastore
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DataStore
+        /// </summary>
+        public Humidifier.CustomerProfiles.DomainTypes.DataStore DataStore { get; set; }
+        /// <summary>
         /// DefaultEncryptionKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#cfn-customerprofiles-domain-defaultencryptionkey
         /// Required: False
@@ -64,7 +72,7 @@ namespace Humidifier.CustomerProfiles
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DomainTypes
@@ -174,6 +182,26 @@ namespace Humidifier.CustomerProfiles
             /// PrimitiveType: Json
             /// </summary>
             public dynamic MatchingAttributesList { get; set; }
+        }
+
+        public class DataStore : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Readiness
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-domain-datastore.html#cfn-customerprofiles-domain-datastore-readiness
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Readiness
+            /// </summary>
+            public Humidifier.CustomerProfiles.DomainTypes.Readiness Readiness { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-domain-datastore.html#cfn-customerprofiles-domain-datastore-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class DomainStats : Humidifier.Base.BaseSubResource, IHaveObjectCount
@@ -291,6 +319,26 @@ namespace Humidifier.CustomerProfiles
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Rule { get; set; }
+        }
+
+        public class Readiness : Humidifier.Base.BaseSubResource, IHaveMessage
+        {
+            /// <summary>
+            /// Message
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-domain-readiness.html#cfn-customerprofiles-domain-readiness-message
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Message { get; set; }
+            /// <summary>
+            /// ProgressPercentage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-domain-readiness.html#cfn-customerprofiles-domain-readiness-progresspercentage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ProgressPercentage { get; set; }
         }
 
         public class RuleBasedMatching : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveStatus, IHaveCustomerProfilesDomainTypesConflictResolutionConflictResolution, IHaveCustomerProfilesDomainTypesExportingConfigExportingConfig

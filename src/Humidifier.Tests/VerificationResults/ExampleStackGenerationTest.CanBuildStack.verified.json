@@ -462,14 +462,6 @@
           }
         }
       }
-    },
-    "IoTPlacement": {
-      "Type": "AWS::IoT1Click::Placement",
-      "Properties": {
-        "Attributes": {
-          "Name": "Test"
-        }
-      }
     }
   },
   "Outputs": {

@@ -1,6 +1,6 @@
 namespace Humidifier.GroundStation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataflowEndpointGroupTypes;
 
     public class DataflowEndpointGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveContactPostPassDurationSeconds, IHaveContactPrePassDurationSeconds
@@ -39,7 +39,7 @@ namespace Humidifier.GroundStation
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ContactPrePassDurationSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactprepassdurationseconds

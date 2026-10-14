@@ -1,6 +1,6 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StorageLensTypes;
 
     public class StorageLens : Humidifier.Base.BaseResource, IHaveTags
@@ -28,7 +28,7 @@ namespace Humidifier.S3
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace StorageLensTypes
@@ -59,6 +59,14 @@ namespace Humidifier.S3
             /// Type: ActivityMetrics
             /// </summary>
             public Humidifier.S3.StorageLensTypes.ActivityMetrics ActivityMetrics { get; set; }
+            /// <summary>
+            /// AdvancedPerformanceMetrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-accountlevel.html#cfn-s3-storagelens-accountlevel-advancedperformancemetrics
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AdvancedPerformanceMetrics
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.AdvancedPerformanceMetrics AdvancedPerformanceMetrics { get; set; }
             /// <summary>
             /// BucketLevel
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-accountlevel.html#cfn-s3-storagelens-accountlevel-bucketlevel
@@ -121,6 +129,18 @@ namespace Humidifier.S3
             public dynamic IsEnabled { get; set; }
         }
 
+        public class AdvancedPerformanceMetrics : Humidifier.Base.BaseSubResource, IHaveIsEnabled
+        {
+            /// <summary>
+            /// IsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-advancedperformancemetrics.html#cfn-s3-storagelens-advancedperformancemetrics-isenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsEnabled { get; set; }
+        }
+
         public class AwsOrg : Humidifier.Base.BaseSubResource, IHaveArn
         {
             /// <summary>
@@ -159,6 +179,14 @@ namespace Humidifier.S3
             /// Type: ActivityMetrics
             /// </summary>
             public Humidifier.S3.StorageLensTypes.ActivityMetrics ActivityMetrics { get; set; }
+            /// <summary>
+            /// AdvancedPerformanceMetrics
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-advancedperformancemetrics
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AdvancedPerformanceMetrics
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.AdvancedPerformanceMetrics AdvancedPerformanceMetrics { get; set; }
             /// <summary>
             /// AdvancedCostOptimizationMetrics
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-advancedcostoptimizationmetrics
@@ -213,6 +241,14 @@ namespace Humidifier.S3
 
         public class DataExport : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// StorageLensTableDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-storagelenstabledestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StorageLensTableDestination
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.StorageLensTableDestination StorageLensTableDestination { get; set; }
             /// <summary>
             /// S3BucketDestination
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-s3bucketdestination
@@ -422,6 +458,14 @@ namespace Humidifier.S3
             /// </summary>
             public Humidifier.S3.StorageLensTypes.BucketsAndRegions Include { get; set; }
             /// <summary>
+            /// PrefixDelimiter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-prefixdelimiter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrefixDelimiter { get; set; }
+            /// <summary>
             /// AwsOrg
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-awsorg
             /// Required: False
@@ -453,6 +497,34 @@ namespace Humidifier.S3
             /// Type: DataExport
             /// </summary>
             public Humidifier.S3.StorageLensTypes.DataExport DataExport { get; set; }
+            /// <summary>
+            /// ExpandedPrefixesDataExport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-expandedprefixesdataexport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StorageLensExpandedPrefixesDataExport
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.StorageLensExpandedPrefixesDataExport ExpandedPrefixesDataExport { get; set; }
+        }
+
+        public class StorageLensExpandedPrefixesDataExport : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StorageLensTableDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensexpandedprefixesdataexport.html#cfn-s3-storagelens-storagelensexpandedprefixesdataexport-storagelenstabledestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StorageLensTableDestination
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.StorageLensTableDestination StorageLensTableDestination { get; set; }
+            /// <summary>
+            /// S3BucketDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensexpandedprefixesdataexport.html#cfn-s3-storagelens-storagelensexpandedprefixesdataexport-s3bucketdestination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3BucketDestination
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.S3BucketDestination S3BucketDestination { get; set; }
         }
 
         public class StorageLensGroupLevel : Humidifier.Base.BaseSubResource
@@ -487,6 +559,26 @@ namespace Humidifier.S3
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Include { get; set; }
+        }
+
+        public class StorageLensTableDestination : Humidifier.Base.BaseSubResource, IHaveIsEnabled
+        {
+            /// <summary>
+            /// IsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelenstabledestination.html#cfn-s3-storagelens-storagelenstabledestination-isenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsEnabled { get; set; }
+            /// <summary>
+            /// Encryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelenstabledestination.html#cfn-s3-storagelens-storagelenstabledestination-encryption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Encryption
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.Encryption Encryption { get; set; }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.FSx
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataRepositoryAssociationTypes;
 
     public class DataRepositoryAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveFileSystemId, IHaveFileSystemPath, IHaveImportedFileChunkSize
@@ -74,7 +74,7 @@ namespace Humidifier.FSx
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DataRepositoryAssociationTypes

@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EventSourceMappingTypes;
 
     public class EventSourceMapping : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled, IHaveKmsKeyArn, IHaveBatchSize, IHaveMaximumBatchingWindowInSeconds, IHaveFunctionName, IHaveMaximumRetryAttempts, IHaveStartingPosition, IHaveParallelizationFactor, IHaveMaximumRecordAgeInSeconds, IHaveTopics, IHaveStartingPositionTimestamp, IHaveQueues
@@ -90,7 +90,7 @@ namespace Humidifier.Lambda
         /// AmazonManagedKafkaEventSourceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-amazonmanagedkafkaeventsourceconfig
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: AmazonManagedKafkaEventSourceConfig
         /// </summary>
         public Humidifier.Lambda.EventSourceMappingTypes.AmazonManagedKafkaEventSourceConfig AmazonManagedKafkaEventSourceConfig { get; set; }
@@ -111,7 +111,7 @@ namespace Humidifier.Lambda
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MaximumBatchingWindowInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumbatchingwindowinseconds
@@ -173,7 +173,7 @@ namespace Humidifier.Lambda
         /// SelfManagedKafkaEventSourceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: SelfManagedKafkaEventSourceConfig
         /// </summary>
         public Humidifier.Lambda.EventSourceMappingTypes.SelfManagedKafkaEventSourceConfig SelfManagedKafkaEventSourceConfig { get; set; }
@@ -218,6 +218,14 @@ namespace Humidifier.Lambda
         /// </summary>
         public dynamic StartingPositionTimestamp { get; set; }
         /// <summary>
+        /// LoggingConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-loggingconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LoggingConfig
+        /// </summary>
+        public Humidifier.Lambda.EventSourceMappingTypes.LoggingConfig LoggingConfig { get; set; }
+        /// <summary>
         /// Queues
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-queues
         /// Required: False
@@ -245,10 +253,18 @@ namespace Humidifier.Lambda
             /// ConsumerGroupId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-amazonmanagedkafkaeventsourceconfig.html#cfn-lambda-eventsourcemapping-amazonmanagedkafkaeventsourceconfig-consumergroupid
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConsumerGroupId { get; set; }
+            /// <summary>
+            /// SchemaRegistryConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-amazonmanagedkafkaeventsourceconfig.html#cfn-lambda-eventsourcemapping-amazonmanagedkafkaeventsourceconfig-schemaregistryconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SchemaRegistryConfig
+            /// </summary>
+            public Humidifier.Lambda.EventSourceMappingTypes.SchemaRegistryConfig SchemaRegistryConfig { get; set; }
         }
 
         public class DestinationConfig : Humidifier.Base.BaseSubResource
@@ -329,6 +345,18 @@ namespace Humidifier.Lambda
             public List<Humidifier.Lambda.EventSourceMappingTypes.Filter> Filters { get; set; }
         }
 
+        public class LoggingConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SystemLogLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-loggingconfig.html#cfn-lambda-eventsourcemapping-loggingconfig-systemloglevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SystemLogLevel { get; set; }
+        }
+
         public class MetricsConfig : Humidifier.Base.BaseSubResource, IHaveMetrics
         {
             /// <summary>
@@ -356,6 +384,14 @@ namespace Humidifier.Lambda
 
         public class ProvisionedPollerConfig : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// PollerGroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-provisionedpollerconfig.html#cfn-lambda-eventsourcemapping-provisionedpollerconfig-pollergroupname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PollerGroupName { get; set; }
             /// <summary>
             /// MinimumPollers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-provisionedpollerconfig.html#cfn-lambda-eventsourcemapping-provisionedpollerconfig-minimumpollers
@@ -386,6 +422,76 @@ namespace Humidifier.Lambda
             public dynamic MaximumConcurrency { get; set; }
         }
 
+        public class SchemaRegistryAccessConfig : Humidifier.Base.BaseSubResource, IHaveType, IHaveURI
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemaregistryaccessconfig.html#cfn-lambda-eventsourcemapping-schemaregistryaccessconfig-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// URI
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemaregistryaccessconfig.html#cfn-lambda-eventsourcemapping-schemaregistryaccessconfig-uri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic URI { get; set; }
+        }
+
+        public class SchemaRegistryConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SchemaValidationConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemaregistryconfig.html#cfn-lambda-eventsourcemapping-schemaregistryconfig-schemavalidationconfigs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SchemaValidationConfig
+            /// </summary>
+            public List<Humidifier.Lambda.EventSourceMappingTypes.SchemaValidationConfig> SchemaValidationConfigs { get; set; }
+            /// <summary>
+            /// SchemaRegistryURI
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemaregistryconfig.html#cfn-lambda-eventsourcemapping-schemaregistryconfig-schemaregistryuri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SchemaRegistryURI { get; set; }
+            /// <summary>
+            /// EventRecordFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemaregistryconfig.html#cfn-lambda-eventsourcemapping-schemaregistryconfig-eventrecordformat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventRecordFormat { get; set; }
+            /// <summary>
+            /// AccessConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemaregistryconfig.html#cfn-lambda-eventsourcemapping-schemaregistryconfig-accessconfigs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SchemaRegistryAccessConfig
+            /// </summary>
+            public List<Humidifier.Lambda.EventSourceMappingTypes.SchemaRegistryAccessConfig> AccessConfigs { get; set; }
+        }
+
+        public class SchemaValidationConfig : Humidifier.Base.BaseSubResource, IHaveAttribute
+        {
+            /// <summary>
+            /// Attribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-schemavalidationconfig.html#cfn-lambda-eventsourcemapping-schemavalidationconfig-attribute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Attribute { get; set; }
+        }
+
         public class SelfManagedEventSource : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -404,10 +510,26 @@ namespace Humidifier.Lambda
             /// ConsumerGroupId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig.html#cfn-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig-consumergroupid
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConsumerGroupId { get; set; }
+            /// <summary>
+            /// SchemaRegistryConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig.html#cfn-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig-schemaregistryconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SchemaRegistryConfig
+            /// </summary>
+            public Humidifier.Lambda.EventSourceMappingTypes.SchemaRegistryConfig SchemaRegistryConfig { get; set; }
+            /// <summary>
+            /// ConsumptionMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig.html#cfn-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig-consumptionmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConsumptionMode { get; set; }
         }
 
         public class SourceAccessConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHaveURI

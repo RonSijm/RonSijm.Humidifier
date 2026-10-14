@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AliasTypes;
 
     public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveFunctionName, IHaveFunctionVersion

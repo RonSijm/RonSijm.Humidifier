@@ -1,6 +1,6 @@
 namespace Humidifier.ECS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PrimaryTaskSet : Humidifier.Base.BaseResource, IHaveService, IHaveCluster
     {

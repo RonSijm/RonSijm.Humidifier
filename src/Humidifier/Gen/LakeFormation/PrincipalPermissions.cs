@@ -1,6 +1,6 @@
 namespace Humidifier.LakeFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PrincipalPermissionsTypes;
 
     public class PrincipalPermissions : Humidifier.Base.BaseResource, IHavePermissions, IHaveCatalog, IHavePermissionsWithGrantOption
@@ -66,6 +66,18 @@ namespace Humidifier.LakeFormation
 
     namespace PrincipalPermissionsTypes
     {
+        public class CatalogResource : Humidifier.Base.BaseSubResource, IHaveId
+        {
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-catalogresource.html#cfn-lakeformation-principalpermissions-catalogresource-id
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
         public class ColumnWildcard : Humidifier.Base.BaseSubResource, IHaveExcludedColumnNames
         {
             /// <summary>
@@ -246,7 +258,7 @@ namespace Humidifier.LakeFormation
             public dynamic CatalogId { get; set; }
         }
 
-        public class Resource : Humidifier.Base.BaseSubResource, IHaveCatalog
+        public class Resource : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// LFTag
@@ -309,9 +321,9 @@ namespace Humidifier.LakeFormation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-resource.html#cfn-lakeformation-principalpermissions-resource-catalog
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: Json
+            /// Type: CatalogResource
             /// </summary>
-            public dynamic Catalog { get; set; }
+            public Humidifier.LakeFormation.PrincipalPermissionsTypes.CatalogResource Catalog { get; set; }
         }
 
         public class TableResource : Humidifier.Base.BaseSubResource, IHaveName, IHaveDatabaseName, IHaveCatalogId, IHaveTableWildcard

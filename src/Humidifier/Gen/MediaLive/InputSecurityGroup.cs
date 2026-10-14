@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InputSecurityGroupTypes;
 
     public class InputSecurityGroup : Humidifier.Base.BaseResource, IHaveDynamicTags

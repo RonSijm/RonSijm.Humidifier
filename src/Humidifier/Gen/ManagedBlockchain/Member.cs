@@ -1,6 +1,6 @@
 namespace Humidifier.ManagedBlockchain
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MemberTypes;
 
     public class Member : Humidifier.Base.BaseResource, IHaveNetworkId, IHaveInvitationId

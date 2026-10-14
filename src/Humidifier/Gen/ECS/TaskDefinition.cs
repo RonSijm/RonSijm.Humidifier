@@ -1,6 +1,6 @@
 namespace Humidifier.ECS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TaskDefinitionTypes;
 
     public class TaskDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveExecutionRoleArn, IHaveMemory, IHaveFamily, IHaveCpu, IHaveTaskRoleArn, IHaveIpcMode, IHavePidMode
@@ -27,15 +27,6 @@ namespace Humidifier.ECS
         /// PrimitiveType: String
         /// </summary>
         public dynamic IpcMode { get; set; }
-        /// <summary>
-        /// InferenceAccelerators
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-inferenceaccelerators
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// ItemType: InferenceAccelerator
-        /// </summary>
-        public List<Humidifier.ECS.TaskDefinitionTypes.InferenceAccelerator> InferenceAccelerators { get; set; }
         /// <summary>
         /// Memory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory
@@ -160,7 +151,7 @@ namespace Humidifier.ECS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TaskDefinitionTypes
@@ -861,26 +852,6 @@ namespace Humidifier.ECS
             public dynamic SourcePath { get; set; }
         }
 
-        public class InferenceAccelerator : Humidifier.Base.BaseSubResource, IHaveDeviceName, IHaveDeviceType
-        {
-            /// <summary>
-            /// DeviceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html#cfn-ecs-taskdefinition-inferenceaccelerator-devicetype
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DeviceType { get; set; }
-            /// <summary>
-            /// DeviceName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html#cfn-ecs-taskdefinition-inferenceaccelerator-devicename
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DeviceName { get; set; }
-        }
-
         public class KernelCapabilities : Humidifier.Base.BaseSubResource, IHaveDrop
         {
             /// <summary>
@@ -1205,6 +1176,42 @@ namespace Humidifier.ECS
             public dynamic CpuArchitecture { get; set; }
         }
 
+        public class S3FilesVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveRootDirectory, IHaveAccessPointArn, IHaveTransitEncryptionPort
+        {
+            /// <summary>
+            /// FileSystemArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-s3filesvolumeconfiguration.html#cfn-ecs-taskdefinition-s3filesvolumeconfiguration-filesystemarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FileSystemArn { get; set; }
+            /// <summary>
+            /// AccessPointArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-s3filesvolumeconfiguration.html#cfn-ecs-taskdefinition-s3filesvolumeconfiguration-accesspointarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AccessPointArn { get; set; }
+            /// <summary>
+            /// RootDirectory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-s3filesvolumeconfiguration.html#cfn-ecs-taskdefinition-s3filesvolumeconfiguration-rootdirectory
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RootDirectory { get; set; }
+            /// <summary>
+            /// TransitEncryptionPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-s3filesvolumeconfiguration.html#cfn-ecs-taskdefinition-s3filesvolumeconfiguration-transitencryptionport
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TransitEncryptionPort { get; set; }
+        }
+
         public class Secret : Humidifier.Base.BaseSubResource, IHaveName, IHaveValueFrom
         {
             /// <summary>
@@ -1332,6 +1339,14 @@ namespace Humidifier.ECS
             /// Type: EFSVolumeConfiguration
             /// </summary>
             public Humidifier.ECS.TaskDefinitionTypes.EFSVolumeConfiguration EFSVolumeConfiguration { get; set; }
+            /// <summary>
+            /// S3FilesVolumeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volume.html#cfn-ecs-taskdefinition-volume-s3filesvolumeconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: S3FilesVolumeConfiguration
+            /// </summary>
+            public Humidifier.ECS.TaskDefinitionTypes.S3FilesVolumeConfiguration S3FilesVolumeConfiguration { get; set; }
             /// <summary>
             /// Host
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volume.html#cfn-ecs-taskdefinition-volume-host

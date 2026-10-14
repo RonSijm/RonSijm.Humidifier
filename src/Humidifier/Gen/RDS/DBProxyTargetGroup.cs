@@ -1,9 +1,9 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DBProxyTargetGroupTypes;
 
-    public class DBProxyTargetGroup : Humidifier.Base.BaseResource, IHaveDBProxyName
+    public class DBProxyTargetGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDBProxyName
     {
         public class Attributes
         {
@@ -57,6 +57,15 @@ namespace Humidifier.RDS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic DBClusterIdentifiers { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DBProxyTargetGroupTypes

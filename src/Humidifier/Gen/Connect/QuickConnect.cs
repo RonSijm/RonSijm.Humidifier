@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using QuickConnectTypes;
 
     public class QuickConnect : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceArn
@@ -48,12 +48,24 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace QuickConnectTypes
     {
+        public class FlowQuickConnectConfig : Humidifier.Base.BaseSubResource, IHaveContactFlowArn
+        {
+            /// <summary>
+            /// ContactFlowArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-flowquickconnectconfig.html#cfn-connect-quickconnect-flowquickconnectconfig-contactflowarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ContactFlowArn { get; set; }
+        }
+
         public class PhoneNumberQuickConnectConfig : Humidifier.Base.BaseSubResource, IHavePhoneNumber
         {
             /// <summary>
@@ -88,6 +100,14 @@ namespace Humidifier.Connect
 
         public class QuickConnectConfig : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// FlowConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-flowconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FlowQuickConnectConfig
+            /// </summary>
+            public Humidifier.Connect.QuickConnectTypes.FlowQuickConnectConfig FlowConfig { get; set; }
             /// <summary>
             /// QueueConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-quickconnect-quickconnectconfig.html#cfn-connect-quickconnect-quickconnectconfig-queueconfig

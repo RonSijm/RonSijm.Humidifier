@@ -1,6 +1,6 @@
 namespace Humidifier.MediaTailor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SourceLocationTypes;
 
     public class SourceLocation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSourceLocationName
@@ -55,7 +55,7 @@ namespace Humidifier.MediaTailor
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace SourceLocationTypes

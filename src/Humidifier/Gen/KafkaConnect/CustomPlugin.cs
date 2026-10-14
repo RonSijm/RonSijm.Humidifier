@@ -1,6 +1,6 @@
 namespace Humidifier.KafkaConnect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CustomPluginTypes;
 
     public class CustomPlugin : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveContentType
@@ -39,7 +39,7 @@ namespace Humidifier.KafkaConnect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Humidifier.KafkaConnect
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-customplugin-custompluginfiledescription.html#cfn-kafkaconnect-customplugin-custompluginfiledescription-filesize
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic FileSize { get; set; }
         }

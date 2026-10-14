@@ -1,6 +1,6 @@
 namespace Humidifier.OpenSearchService
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainTypes;
 
     public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveEngineVersion, IHaveAccessPolicies, IHaveIPAddressType
@@ -25,6 +25,80 @@ namespace Humidifier.OpenSearchService
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic SkipShardMigrationWait { get; set; }
+        /// <summary>
+        /// EngineMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-enginemode
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EngineMode { get; set; }
+        /// <summary>
+        /// SnapshotOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-snapshotoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SnapshotOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.SnapshotOptions SnapshotOptions { get; set; }
+        /// <summary>
+        /// NodeToNodeEncryptionOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: NodeToNodeEncryptionOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
+        /// <summary>
+        /// DomainEndpointOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainendpointoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DomainEndpointOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.DomainEndpointOptions DomainEndpointOptions { get; set; }
+        /// <summary>
+        /// CognitoOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-cognitooptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CognitoOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.CognitoOptions CognitoOptions { get; set; }
+        /// <summary>
+        /// AdvancedOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-advancedoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> AdvancedOptions { get; set; }
+        /// <summary>
+        /// IPAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ipaddresstype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IPAddressType { get; set; }
+        /// <summary>
+        /// EBSOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ebsoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: EBSOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.EBSOptions EBSOptions { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-engineversion
@@ -52,13 +126,13 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public Dictionary<string, Humidifier.OpenSearchService.DomainTypes.LogPublishingOption> LogPublishingOptions { get; set; }
         /// <summary>
-        /// SnapshotOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-snapshotoptions
+        /// AIMLOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-aimloptions
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: SnapshotOptions
+        /// Type: AIMLOptions
         /// </summary>
-        public Humidifier.OpenSearchService.DomainTypes.SnapshotOptions SnapshotOptions { get; set; }
+        public Humidifier.OpenSearchService.DomainTypes.AIMLOptions AIMLOptions { get; set; }
         /// <summary>
         /// VPCOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-vpcoptions
@@ -68,13 +142,29 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public Humidifier.OpenSearchService.DomainTypes.VPCOptions VPCOptions { get; set; }
         /// <summary>
-        /// NodeToNodeEncryptionOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions
+        /// AutomatedSnapshotPauseOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-automatedsnapshotpauseoptions
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: NodeToNodeEncryptionOptions
+        /// Type: AutomatedSnapshotPauseOptions
         /// </summary>
-        public Humidifier.OpenSearchService.DomainTypes.NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
+        public Humidifier.OpenSearchService.DomainTypes.AutomatedSnapshotPauseOptions AutomatedSnapshotPauseOptions { get; set; }
+        /// <summary>
+        /// UseCase
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-usecase
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic UseCase { get; set; }
+        /// <summary>
+        /// DeploymentStrategyOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-deploymentstrategyoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DeploymentStrategyOptions
+        /// </summary>
+        public Humidifier.OpenSearchService.DomainTypes.DeploymentStrategyOptions DeploymentStrategyOptions { get; set; }
         /// <summary>
         /// AccessPolicies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-accesspolicies
@@ -84,31 +174,6 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public dynamic AccessPolicies { get; set; }
         /// <summary>
-        /// DomainEndpointOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainendpointoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: DomainEndpointOptions
-        /// </summary>
-        public Humidifier.OpenSearchService.DomainTypes.DomainEndpointOptions DomainEndpointOptions { get; set; }
-        /// <summary>
-        /// CognitoOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-cognitooptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: CognitoOptions
-        /// </summary>
-        public Humidifier.OpenSearchService.DomainTypes.CognitoOptions CognitoOptions { get; set; }
-        /// <summary>
-        /// AdvancedOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-advancedoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: Map
-        /// PrimitiveItemType: String
-        /// </summary>
-        public Dictionary<string, dynamic> AdvancedOptions { get; set; }
-        /// <summary>
         /// AdvancedSecurityOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-advancedsecurityoptions
         /// Required: False
@@ -117,14 +182,6 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public Humidifier.OpenSearchService.DomainTypes.AdvancedSecurityOptionsInput AdvancedSecurityOptions { get; set; }
         /// <summary>
-        /// IPAddressType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ipaddresstype
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic IPAddressType { get; set; }
-        /// <summary>
         /// IdentityCenterOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-identitycenteroptions
         /// Required: False
@@ -132,14 +189,6 @@ namespace Humidifier.OpenSearchService
         /// Type: IdentityCenterOptions
         /// </summary>
         public Humidifier.OpenSearchService.DomainTypes.IdentityCenterOptions IdentityCenterOptions { get; set; }
-        /// <summary>
-        /// EBSOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ebsoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: EBSOptions
-        /// </summary>
-        public Humidifier.OpenSearchService.DomainTypes.EBSOptions EBSOptions { get; set; }
         /// <summary>
         /// EncryptionAtRestOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-encryptionatrestoptions
@@ -157,15 +206,6 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public Humidifier.OpenSearchService.DomainTypes.OffPeakWindowOptions OffPeakWindowOptions { get; set; }
         /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
-        /// <summary>
         /// ClusterConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-clusterconfig
         /// Required: False
@@ -177,8 +217,36 @@ namespace Humidifier.OpenSearchService
 
     namespace DomainTypes
     {
+        public class AIMLOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// S3VectorsEngine
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-aimloptions.html#cfn-opensearchservice-domain-aimloptions-s3vectorsengine
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3VectorsEngine
+            /// </summary>
+            public Humidifier.OpenSearchService.DomainTypes.S3VectorsEngine S3VectorsEngine { get; set; }
+            /// <summary>
+            /// ServerlessVectorAcceleration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-aimloptions.html#cfn-opensearchservice-domain-aimloptions-serverlessvectoracceleration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ServerlessVectorAcceleration
+            /// </summary>
+            public Humidifier.OpenSearchService.DomainTypes.ServerlessVectorAcceleration ServerlessVectorAcceleration { get; set; }
+        }
+
         public class AdvancedSecurityOptionsInput : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveAnonymousAuthEnabled, IHaveInternalUserDatabaseEnabled
         {
+            /// <summary>
+            /// IAMFederationOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-advancedsecurityoptionsinput.html#cfn-opensearchservice-domain-advancedsecurityoptionsinput-iamfederationoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IAMFederationOptions
+            /// </summary>
+            public Humidifier.OpenSearchService.DomainTypes.IAMFederationOptions IAMFederationOptions { get; set; }
             /// <summary>
             /// AnonymousAuthEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-advancedsecurityoptionsinput.html#cfn-opensearchservice-domain-advancedsecurityoptionsinput-anonymousauthenabled
@@ -235,6 +303,34 @@ namespace Humidifier.OpenSearchService
             /// Type: MasterUserOptions
             /// </summary>
             public Humidifier.OpenSearchService.DomainTypes.MasterUserOptions MasterUserOptions { get; set; }
+        }
+
+        public class AutomatedSnapshotPauseOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveStartTime, IHaveEndTime
+        {
+            /// <summary>
+            /// EndTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-automatedsnapshotpauseoptions.html#cfn-opensearchservice-domain-automatedsnapshotpauseoptions-endtime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndTime { get; set; }
+            /// <summary>
+            /// StartTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-automatedsnapshotpauseoptions.html#cfn-opensearchservice-domain-automatedsnapshotpauseoptions-starttime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StartTime { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-automatedsnapshotpauseoptions.html#cfn-opensearchservice-domain-automatedsnapshotpauseoptions-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class ClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveDedicatedMasterCount, IHaveDedicatedMasterEnabled, IHaveDedicatedMasterType, IHaveWarmCount, IHaveWarmEnabled, IHaveWarmType, IHaveZoneAwarenessEnabled
@@ -394,6 +490,18 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
+        public class DeploymentStrategyOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DeploymentStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-deploymentstrategyoptions.html#cfn-opensearchservice-domain-deploymentstrategyoptions-deploymentstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeploymentStrategy { get; set; }
+        }
+
         public class DomainEndpointOptions : Humidifier.Base.BaseSubResource, IHaveCustomEndpoint, IHaveCustomEndpointCertificateArn, IHaveCustomEndpointEnabled, IHaveEnforceHTTPS, IHaveTLSSecurityPolicy
         {
             /// <summary>
@@ -495,6 +603,34 @@ namespace Humidifier.OpenSearchService
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class IAMFederationOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveSubjectKey, IHaveRolesKey
+        {
+            /// <summary>
+            /// SubjectKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-iamfederationoptions.html#cfn-opensearchservice-domain-iamfederationoptions-subjectkey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SubjectKey { get; set; }
+            /// <summary>
+            /// RolesKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-iamfederationoptions.html#cfn-opensearchservice-domain-iamfederationoptions-roleskey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RolesKey { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-iamfederationoptions.html#cfn-opensearchservice-domain-iamfederationoptions-enabled
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
@@ -750,6 +886,18 @@ namespace Humidifier.OpenSearchService
             public dynamic Enabled { get; set; }
         }
 
+        public class S3VectorsEngine : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-s3vectorsengine.html#cfn-opensearchservice-domain-s3vectorsengine-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class SAMLOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMasterUserName, IHaveSubjectKey, IHaveRolesKey
         {
             /// <summary>
@@ -808,6 +956,18 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: String
             /// </summary>
             public dynamic MasterUserName { get; set; }
+        }
+
+        public class ServerlessVectorAcceleration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-serverlessvectoracceleration.html#cfn-opensearchservice-domain-serverlessvectoracceleration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class ServiceSoftwareOptions : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveCurrentVersion, IHaveUpdateStatus
@@ -900,10 +1060,26 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AutoSoftwareUpdateEnabled { get; set; }
+            /// <summary>
+            /// UseLatestServiceSoftwareForBlueGreen
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-softwareupdateoptions.html#cfn-opensearchservice-domain-softwareupdateoptions-uselatestservicesoftwareforbluegreen
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UseLatestServiceSoftwareForBlueGreen { get; set; }
         }
 
         public class VPCOptions : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds
         {
+            /// <summary>
+            /// EgressEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-vpcoptions.html#cfn-opensearchservice-domain-vpcoptions-egressenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EgressEnabled { get; set; }
             /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-vpcoptions.html#cfn-opensearchservice-domain-vpcoptions-securitygroupids

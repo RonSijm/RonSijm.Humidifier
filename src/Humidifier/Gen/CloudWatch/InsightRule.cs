@@ -1,9 +1,8 @@
 namespace Humidifier.CloudWatch
 {
-    using System.Collections.Generic;
-    using InsightRuleTypes;
+    using global::System.Collections.Generic;
 
-    public class InsightRule : Humidifier.Base.BaseResource, IHaveRuleName
+    public class InsightRule : Humidifier.Base.BaseResource, IHaveTags, IHaveRuleName, IHaveApplyOnTransformedLogs
     {
         public class Attributes
         {
@@ -32,6 +31,14 @@ namespace Humidifier.CloudWatch
         /// </summary>
         [Required]
         public dynamic RuleBody { get; set; }
+        /// <summary>
+        /// ApplyOnTransformedLogs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-applyontransformedlogs
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ApplyOnTransformedLogs { get; set; }
 
         /// <summary>
         /// RuleName
@@ -47,15 +54,9 @@ namespace Humidifier.CloudWatch
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: Tags
+        /// Type: List
+        /// ItemType: Tag
         /// </summary>
-        public Humidifier.CloudWatch.InsightRuleTypes.Tags Tags { get; set; }
-    }
-
-    namespace InsightRuleTypes
-    {
-        public class Tags : Humidifier.Base.BaseSubResource
-        {
-        }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

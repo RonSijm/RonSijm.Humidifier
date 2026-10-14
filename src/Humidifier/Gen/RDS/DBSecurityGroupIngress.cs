@@ -1,6 +1,6 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DBSecurityGroupIngress : Humidifier.Base.BaseResource, IHaveEC2SecurityGroupName, IHaveEC2SecurityGroupOwnerId, IHaveCIDRIP, IHaveEC2SecurityGroupId
     {

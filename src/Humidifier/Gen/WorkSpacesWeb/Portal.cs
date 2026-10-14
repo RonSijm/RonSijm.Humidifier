@@ -1,6 +1,6 @@
 namespace Humidifier.WorkSpacesWeb
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Portal : Humidifier.Base.BaseResource, IHaveTags, IHaveInstanceType, IHaveDisplayName, IHaveAuthenticationType, IHaveCustomerManagedKey, IHaveTrustStoreArn, IHaveMaxConcurrentSessions
     {
@@ -58,6 +58,14 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         public dynamic NetworkSettingsArn { get; set; }
         /// <summary>
+        /// PortalCustomDomain
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-portalcustomdomain
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PortalCustomDomain { get; set; }
+        /// <summary>
         /// CustomerManagedKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-customermanagedkey
         /// Required: False
@@ -107,6 +115,14 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         public dynamic InstanceType { get; set; }
         /// <summary>
+        /// SessionLoggerArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-sessionloggerarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SessionLoggerArn { get; set; }
+        /// <summary>
         /// MaxConcurrentSessions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-maxconcurrentsessions
         /// Required: False
@@ -122,7 +138,7 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AuthenticationType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-portal.html#cfn-workspacesweb-portal-authenticationtype

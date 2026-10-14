@@ -1,6 +1,6 @@
 namespace Humidifier.CodeStarConnections
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SyncConfiguration : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveResourceName, IHaveBranch, IHaveSyncType
     {

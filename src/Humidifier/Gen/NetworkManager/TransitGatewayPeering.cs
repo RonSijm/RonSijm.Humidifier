@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TransitGatewayPeering : Humidifier.Base.BaseResource, IHaveTags, IHaveCoreNetworkId, IHaveTransitGatewayArn
     {
@@ -9,6 +9,7 @@ namespace Humidifier.NetworkManager
             public static string ResourceArn =  "ResourceArn" ;
             public static string PeeringType =  "PeeringType" ;
             public static string State =  "State" ;
+            public static string LastModificationErrors =  "LastModificationErrors" ;
             public static string CreatedAt =  "CreatedAt" ;
             public static string PeeringId =  "PeeringId" ;
             public static string TransitGatewayPeeringAttachmentId =  "TransitGatewayPeeringAttachmentId" ;
@@ -46,6 +47,6 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

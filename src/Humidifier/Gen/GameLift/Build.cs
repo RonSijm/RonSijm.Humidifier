@@ -1,13 +1,14 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BuildTypes;
 
-    public class Build : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveVersion, IHaveOperatingSystem, IHaveServerSdkVersion
+    public class Build : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVersion, IHaveOperatingSystem, IHaveServerSdkVersion
     {
         public class Attributes
         {
             public static string BuildId =  "BuildId" ;
+            public static string BuildArn =  "BuildArn" ;
         }
 
         public override string AWSTypeName { get => AWS.GameLift.Build; }
@@ -43,6 +44,15 @@ namespace Humidifier.GameLift
         /// Type: StorageLocation
         /// </summary>
         public Humidifier.GameLift.BuildTypes.StorageLocation StorageLocation { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

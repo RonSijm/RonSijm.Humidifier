@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class StackFleetAssociation : Humidifier.Base.BaseResource, IHaveStackName, IHaveFleetName
     {
@@ -10,7 +10,7 @@ namespace Humidifier.AppStream
         /// FleetName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html#cfn-appstream-stackfleetassociation-fleetname
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
@@ -20,7 +20,7 @@ namespace Humidifier.AppStream
         /// StackName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stackfleetassociation.html#cfn-appstream-stackfleetassociation-stackname
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]

@@ -1,6 +1,6 @@
 namespace Humidifier.CloudWatch
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class CompositeAlarm : Humidifier.Base.BaseResource, IHaveTags, IHaveAlarmName, IHaveOKActions, IHaveAlarmActions, IHaveActionsEnabled, IHaveAlarmDescription, IHaveInsufficientDataActions
     {
@@ -11,6 +11,14 @@ namespace Humidifier.CloudWatch
 
         public override string AWSTypeName { get => AWS.CloudWatch.CompositeAlarm; }
         /// <summary>
+        /// ActionsSuppressorWaitPeriod
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressorwaitperiod
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic ActionsSuppressorWaitPeriod { get; set; }
+        /// <summary>
         /// AlarmActions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-alarmactions
         /// Required: False
@@ -19,14 +27,6 @@ namespace Humidifier.CloudWatch
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic AlarmActions { get; set; }
-        /// <summary>
-        /// ActionsSuppressorWaitPeriod
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionssuppressorwaitperiod
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic ActionsSuppressorWaitPeriod { get; set; }
         /// <summary>
         /// ActionsEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionsenabled
@@ -103,6 +103,6 @@ namespace Humidifier.CloudWatch
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

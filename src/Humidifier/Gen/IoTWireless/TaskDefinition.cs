@@ -1,6 +1,6 @@
 namespace Humidifier.IoTWireless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TaskDefinitionTypes;
 
     public class TaskDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -54,7 +54,7 @@ namespace Humidifier.IoTWireless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -103,7 +103,7 @@ namespace Humidifier.IoTWireless
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-sigkeycrc
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic SigKeyCrc { get; set; }
             /// <summary>

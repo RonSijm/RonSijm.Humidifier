@@ -1,6 +1,6 @@
 namespace Humidifier.EMR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
     public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveServiceRole, IHaveCustomAmiId, IHaveSecurityConfiguration, IHaveLogUri, IHaveAdditionalInfo, IHaveReleaseLabel
@@ -223,7 +223,7 @@ namespace Humidifier.EMR
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// VisibleToAllUsers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
@@ -758,7 +758,7 @@ namespace Humidifier.EMR
             /// CustomAmiId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-customamiid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CustomAmiId { get; set; }
@@ -1031,6 +1031,22 @@ namespace Humidifier.EMR
             /// Type: ComputeLimits
             /// </summary>
             public Humidifier.EMR.ClusterTypes.ComputeLimits ComputeLimits { get; set; }
+            /// <summary>
+            /// ScalingStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-scalingstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScalingStrategy { get; set; }
+            /// <summary>
+            /// UtilizationPerformanceIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-utilizationperformanceindex
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic UtilizationPerformanceIndex { get; set; }
         }
 
         public class MetricDimension : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey

@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EndpointTypes;
 
     public class Endpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveEndpointName, IHaveEndpointConfigName
@@ -8,6 +8,7 @@ namespace Humidifier.SageMaker
         public class Attributes
         {
             public static string EndpointName =  "EndpointName" ;
+            public static string EndpointArn =  "EndpointArn" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.Endpoint; }
@@ -63,7 +64,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace EndpointTypes
@@ -124,14 +125,6 @@ namespace Humidifier.SageMaker
         public class CapacitySize : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue
         {
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-value
             /// Required: True
@@ -139,6 +132,14 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
 
         public class DeploymentConfig : Humidifier.Base.BaseSubResource

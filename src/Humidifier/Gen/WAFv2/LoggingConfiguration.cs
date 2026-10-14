@@ -1,6 +1,6 @@
 namespace Humidifier.WAFv2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LoggingConfigurationTypes;
 
     public class LoggingConfiguration : Humidifier.Base.BaseResource, IHaveResourceArn

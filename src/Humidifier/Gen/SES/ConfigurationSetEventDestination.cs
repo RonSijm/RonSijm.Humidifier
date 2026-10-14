@@ -1,6 +1,6 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationSetEventDestinationTypes;
 
     public class ConfigurationSetEventDestination : Humidifier.Base.BaseResource, IHaveConfigurationSetName

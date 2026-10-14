@@ -1,6 +1,6 @@
 namespace Humidifier.SSO
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Assignment : Humidifier.Base.BaseResource, IHaveInstanceArn, IHaveTargetType, IHaveTargetId, IHavePrincipalType, IHavePrincipalId
     {

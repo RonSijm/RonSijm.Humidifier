@@ -1,6 +1,6 @@
 namespace Humidifier.Invoicing
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InvoiceUnitTypes;
 
     public class InvoiceUnit : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

@@ -1,6 +1,6 @@
 namespace Humidifier.InspectorV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FilterTypes;
 
     public class Filter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
@@ -39,6 +39,15 @@ namespace Humidifier.InspectorV2
         /// </summary>
         [Required]
         public dynamic FilterAction { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -51,7 +60,7 @@ namespace Humidifier.InspectorV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-endinclusive
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic EndInclusive { get; set; }
             /// <summary>
@@ -59,7 +68,7 @@ namespace Humidifier.InspectorV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-datefilter.html#cfn-inspectorv2-filter-datefilter-startinclusive
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic StartInclusive { get; set; }
         }
@@ -112,6 +121,24 @@ namespace Humidifier.InspectorV2
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.StringFilter> Ec2InstanceVpcId { get; set; }
             /// <summary>
+            /// LambdaFunctionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lambdafunctionname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> LambdaFunctionName { get; set; }
+            /// <summary>
+            /// LambdaFunctionRuntime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lambdafunctionruntime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> LambdaFunctionRuntime { get; set; }
+            /// <summary>
             /// LastObservedAt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lastobservedat
             /// Required: False
@@ -129,6 +156,33 @@ namespace Humidifier.InspectorV2
             /// ItemType: DateFilter
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.DateFilter> EcrImagePushedAt { get; set; }
+            /// <summary>
+            /// LambdaFunctionLayers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lambdafunctionlayers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> LambdaFunctionLayers { get; set; }
+            /// <summary>
+            /// FixAvailable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-fixavailable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> FixAvailable { get; set; }
+            /// <summary>
+            /// ExploitAvailable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-exploitavailable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> ExploitAvailable { get; set; }
             /// <summary>
             /// EcrImageArchitecture
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagearchitecture
@@ -175,6 +229,15 @@ namespace Humidifier.InspectorV2
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.StringFilter> ComponentType { get; set; }
             /// <summary>
+            /// LambdaFunctionExecutionRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lambdafunctionexecutionrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> LambdaFunctionExecutionRoleArn { get; set; }
+            /// <summary>
             /// VendorSeverity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-vendorseverity
             /// Required: False
@@ -183,6 +246,24 @@ namespace Humidifier.InspectorV2
             /// ItemType: StringFilter
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.StringFilter> VendorSeverity { get; set; }
+            /// <summary>
+            /// CodeVulnerabilityDetectorTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-codevulnerabilitydetectortags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> CodeVulnerabilityDetectorTags { get; set; }
+            /// <summary>
+            /// CodeVulnerabilityDetectorName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-codevulnerabilitydetectorname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> CodeVulnerabilityDetectorName { get; set; }
             /// <summary>
             /// EcrImageRepositoryName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagerepositoryname
@@ -238,6 +319,15 @@ namespace Humidifier.InspectorV2
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.DateFilter> UpdatedAt { get; set; }
             /// <summary>
+            /// CodeVulnerabilityFilePath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-codevulnerabilityfilepath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: StringFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.StringFilter> CodeVulnerabilityFilePath { get; set; }
+            /// <summary>
             /// EcrImageHash
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimagehash
             /// Required: False
@@ -246,6 +336,15 @@ namespace Humidifier.InspectorV2
             /// ItemType: StringFilter
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.StringFilter> EcrImageHash { get; set; }
+            /// <summary>
+            /// LambdaFunctionLastModifiedAt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-lambdafunctionlastmodifiedat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DateFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.DateFilter> LambdaFunctionLastModifiedAt { get; set; }
             /// <summary>
             /// PortRange
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-portrange
@@ -318,6 +417,15 @@ namespace Humidifier.InspectorV2
             /// ItemType: StringFilter
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.StringFilter> AwsAccountId { get; set; }
+            /// <summary>
+            /// EpssScore
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-epssscore
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NumberFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.NumberFilter> EpssScore { get; set; }
             /// <summary>
             /// ComponentId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-componentid
@@ -398,6 +506,14 @@ namespace Humidifier.InspectorV2
         public class PackageFilter : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// FilePath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-filepath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StringFilter
+            /// </summary>
+            public Humidifier.InspectorV2.FilterTypes.StringFilter FilePath { get; set; }
+            /// <summary>
             /// Architecture
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-architecture
             /// Required: False
@@ -429,6 +545,14 @@ namespace Humidifier.InspectorV2
             /// Type: StringFilter
             /// </summary>
             public Humidifier.InspectorV2.FilterTypes.StringFilter SourceLayerHash { get; set; }
+            /// <summary>
+            /// SourceLambdaLayerArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-sourcelambdalayerarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StringFilter
+            /// </summary>
+            public Humidifier.InspectorV2.FilterTypes.StringFilter SourceLambdaLayerArn { get; set; }
             /// <summary>
             /// Release
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-release
@@ -470,14 +594,6 @@ namespace Humidifier.InspectorV2
         public class StringFilter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveComparison
         {
             /// <summary>
-            /// Comparison
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-comparison
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Comparison { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-value
             /// Required: True
@@ -485,6 +601,14 @@ namespace Humidifier.InspectorV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Comparison
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-comparison
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Comparison { get; set; }
         }
     }
 }

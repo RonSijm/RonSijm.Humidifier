@@ -1,9 +1,9 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccessPointTypes;
 
-    public class AccessPoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveBucket, IHavePolicy, IHaveBucketAccountId
+    public class AccessPoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveBucket, IHavePolicy, IHaveBucketAccountId
     {
         public class Attributes
         {
@@ -56,6 +56,15 @@ namespace Humidifier.S3
         /// Type: VpcConfiguration
         /// </summary>
         public Humidifier.S3.AccessPointTypes.VpcConfiguration VpcConfiguration { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

@@ -1,6 +1,6 @@
 namespace Humidifier.ECR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PublicRepositoryTypes;
 
     public class PublicRepository : Humidifier.Base.BaseResource, IHaveTags, IHaveRepositoryName, IHaveRepositoryPolicyText
@@ -43,7 +43,7 @@ namespace Humidifier.ECR
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PublicRepositoryTypes

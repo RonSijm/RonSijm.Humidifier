@@ -1,6 +1,6 @@
 namespace Humidifier.IoTSiteWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AssetModelTypes;
 
     public class AssetModel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
@@ -32,6 +32,15 @@ namespace Humidifier.IoTSiteWise
         /// ItemType: AssetModelCompositeModel
         /// </summary>
         public List<Humidifier.IoTSiteWise.AssetModelTypes.AssetModelCompositeModel> AssetModelCompositeModels { get; set; }
+        /// <summary>
+        /// EnforcedAssetModelInterfaceRelationships
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-enforcedassetmodelinterfacerelationships
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: EnforcedAssetModelInterfaceRelationship
+        /// </summary>
+        public List<Humidifier.IoTSiteWise.AssetModelTypes.EnforcedAssetModelInterfaceRelationship> EnforcedAssetModelInterfaceRelationships { get; set; }
         /// <summary>
         /// AssetModelType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodeltype
@@ -75,7 +84,7 @@ namespace Humidifier.IoTSiteWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace AssetModelTypes
@@ -280,6 +289,55 @@ namespace Humidifier.IoTSiteWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic DefaultValue { get; set; }
+        }
+
+        public class EnforcedAssetModelInterfacePropertyMapping : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InterfaceAssetModelPropertyExternalId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-enforcedassetmodelinterfacepropertymapping.html#cfn-iotsitewise-assetmodel-enforcedassetmodelinterfacepropertymapping-interfaceassetmodelpropertyexternalid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InterfaceAssetModelPropertyExternalId { get; set; }
+            /// <summary>
+            /// AssetModelPropertyLogicalId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-enforcedassetmodelinterfacepropertymapping.html#cfn-iotsitewise-assetmodel-enforcedassetmodelinterfacepropertymapping-assetmodelpropertylogicalid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AssetModelPropertyLogicalId { get; set; }
+            /// <summary>
+            /// AssetModelPropertyExternalId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-enforcedassetmodelinterfacepropertymapping.html#cfn-iotsitewise-assetmodel-enforcedassetmodelinterfacepropertymapping-assetmodelpropertyexternalid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AssetModelPropertyExternalId { get; set; }
+        }
+
+        public class EnforcedAssetModelInterfaceRelationship : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InterfaceAssetModelId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-enforcedassetmodelinterfacerelationship.html#cfn-iotsitewise-assetmodel-enforcedassetmodelinterfacerelationship-interfaceassetmodelid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InterfaceAssetModelId { get; set; }
+            /// <summary>
+            /// PropertyMappings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-enforcedassetmodelinterfacerelationship.html#cfn-iotsitewise-assetmodel-enforcedassetmodelinterfacerelationship-propertymappings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: EnforcedAssetModelInterfacePropertyMapping
+            /// </summary>
+            public List<Humidifier.IoTSiteWise.AssetModelTypes.EnforcedAssetModelInterfacePropertyMapping> PropertyMappings { get; set; }
         }
 
         public class ExpressionVariable : Humidifier.Base.BaseSubResource, IHaveName

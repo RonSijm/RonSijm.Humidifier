@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using HoursOfOperationTypes;
 
     public class HoursOfOperation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceArn, IHaveTimeZone
@@ -51,6 +51,24 @@ namespace Humidifier.Connect
         [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
+        /// ChildHoursOfOperations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-childhoursofoperations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: HoursOfOperationsIdentifier
+        /// </summary>
+        public List<Humidifier.Connect.HoursOfOperationTypes.HoursOfOperationsIdentifier> ChildHoursOfOperations { get; set; }
+        /// <summary>
+        /// ParentHoursOfOperations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-parenthoursofoperations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: HoursOfOperationsIdentifier
+        /// </summary>
+        public List<Humidifier.Connect.HoursOfOperationTypes.HoursOfOperationsIdentifier> ParentHoursOfOperations { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-tags
         /// Required: False
@@ -58,7 +76,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// HoursOfOperationOverrides
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-hoursofoperation.html#cfn-connect-hoursofoperation-hoursofoperationoverrides
@@ -104,6 +122,14 @@ namespace Humidifier.Connect
         public class HoursOfOperationOverride : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// RecurrenceConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationoverride.html#cfn-connect-hoursofoperation-hoursofoperationoverride-recurrenceconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RecurrenceConfig
+            /// </summary>
+            public Humidifier.Connect.HoursOfOperationTypes.RecurrenceConfig RecurrenceConfig { get; set; }
+            /// <summary>
             /// HoursOfOperationOverrideId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationoverride.html#cfn-connect-hoursofoperation-hoursofoperationoverride-hoursofoperationoverrideid
             /// Required: False
@@ -120,6 +146,14 @@ namespace Humidifier.Connect
             /// ItemType: HoursOfOperationOverrideConfig
             /// </summary>
             public List<Humidifier.Connect.HoursOfOperationTypes.HoursOfOperationOverrideConfig> OverrideConfig { get; set; }
+            /// <summary>
+            /// OverrideType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationoverride.html#cfn-connect-hoursofoperation-hoursofoperationoverride-overridetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OverrideType { get; set; }
             /// <summary>
             /// EffectiveFrom
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationoverride.html#cfn-connect-hoursofoperation-hoursofoperationoverride-effectivefrom
@@ -202,6 +236,26 @@ namespace Humidifier.Connect
             public dynamic Minutes { get; set; }
         }
 
+        public class HoursOfOperationsIdentifier : Humidifier.Base.BaseSubResource, IHaveName, IHaveId
+        {
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationsidentifier.html#cfn-connect-hoursofoperation-hoursofoperationsidentifier-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-hoursofoperationsidentifier.html#cfn-connect-hoursofoperation-hoursofoperationsidentifier-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
         public class OverrideTimeSlice : Humidifier.Base.BaseSubResource, IHaveMinutes, IHaveHours
         {
             /// <summary>
@@ -220,6 +274,65 @@ namespace Humidifier.Connect
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Minutes { get; set; }
+        }
+
+        public class RecurrenceConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RecurrencePattern
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-recurrenceconfig.html#cfn-connect-hoursofoperation-recurrenceconfig-recurrencepattern
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: RecurrencePattern
+            /// </summary>
+            public Humidifier.Connect.HoursOfOperationTypes.RecurrencePattern RecurrencePattern { get; set; }
+        }
+
+        public class RecurrencePattern : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveFrequency
+        {
+            /// <summary>
+            /// Frequency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-recurrencepattern.html#cfn-connect-hoursofoperation-recurrencepattern-frequency
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Frequency { get; set; }
+            /// <summary>
+            /// ByWeekdayOccurrence
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-recurrencepattern.html#cfn-connect-hoursofoperation-recurrencepattern-byweekdayoccurrence
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Integer
+            /// </summary>
+            public List<int> ByWeekdayOccurrence { get; set; }
+            /// <summary>
+            /// ByMonthDay
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-recurrencepattern.html#cfn-connect-hoursofoperation-recurrencepattern-bymonthday
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Integer
+            /// </summary>
+            public List<int> ByMonthDay { get; set; }
+            /// <summary>
+            /// Interval
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-recurrencepattern.html#cfn-connect-hoursofoperation-recurrencepattern-interval
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Interval { get; set; }
+            /// <summary>
+            /// ByMonth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-hoursofoperation-recurrencepattern.html#cfn-connect-hoursofoperation-recurrencepattern-bymonth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Integer
+            /// </summary>
+            public List<int> ByMonth { get; set; }
         }
     }
 }

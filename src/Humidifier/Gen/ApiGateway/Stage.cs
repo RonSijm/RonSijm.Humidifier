@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StageTypes;
 
     public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRestApiId, IHaveStageName, IHaveDeploymentId, IHaveClientCertificateId, IHaveDocumentationVersion, IHaveTracingEnabled, IHaveCacheClusterSize, IHaveCacheClusterEnabled
@@ -107,7 +107,7 @@ namespace Humidifier.ApiGateway
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CacheClusterEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclusterenabled

@@ -1,6 +1,6 @@
 namespace Humidifier.LakeFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataCellsFilterTypes;
 
     public class DataCellsFilter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDatabaseName, IHaveTableName, IHaveColumnNames, IHaveTableCatalogId

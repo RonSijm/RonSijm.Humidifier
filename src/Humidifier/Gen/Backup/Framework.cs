@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FrameworkTypes;
 
     public class Framework : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
@@ -34,7 +34,7 @@ namespace Humidifier.Backup
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> FrameworkTags { get; set; }
+        public List<Humidifier.Tag> FrameworkTags { get; set; }
         /// <summary>
         /// FrameworkDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkdescription
@@ -89,7 +89,7 @@ namespace Humidifier.Backup
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// ComplianceResourceIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourceids

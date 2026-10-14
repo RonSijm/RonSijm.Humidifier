@@ -1,9 +1,14 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LaunchTemplateConstraint : Humidifier.Base.BaseResource, IHaveDescription, IHaveAcceptLanguage, IHaveProductId, IHavePortfolioId, IHaveRules
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.ServiceCatalog.LaunchTemplateConstraint; }
         /// <summary>
         /// Description

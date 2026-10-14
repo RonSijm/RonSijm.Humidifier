@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VPNGatewayRoutePropagation : Humidifier.Base.BaseResource, IHaveRouteTableIds, IHaveVpnGatewayId
     {

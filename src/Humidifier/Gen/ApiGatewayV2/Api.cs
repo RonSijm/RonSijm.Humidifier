@@ -1,17 +1,26 @@
 namespace Humidifier.ApiGatewayV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApiTypes;
 
-    public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveVersion, IHaveTarget, IHaveBody, IHaveBasePath, IHaveDisableExecuteApiEndpoint, IHaveFailOnWarnings, IHaveCredentialsArn, IHaveProtocolType, IHaveRouteKey
+    public class Api : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveVersion, IHaveTarget, IHaveBody, IHaveIpAddressType, IHaveBasePath, IHaveDisableExecuteApiEndpoint, IHaveFailOnWarnings, IHaveCredentialsArn, IHaveProtocolType, IHaveRouteKey
     {
         public class Attributes
         {
             public static string ApiEndpoint =  "ApiEndpoint" ;
+            public static string ExecuteApiArn =  "ExecuteApiArn" ;
             public static string ApiId =  "ApiId" ;
         }
 
         public override string AWSTypeName { get => AWS.ApiGatewayV2.Api; }
+        /// <summary>
+        /// IpAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-ipaddresstype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpAddressType { get; set; }
         /// <summary>
         /// RouteSelectionExpression
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-routeselectionexpression

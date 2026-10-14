@@ -1,6 +1,6 @@
 namespace Humidifier.PCS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using QueueTypes;
 
     public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterId
@@ -33,6 +33,14 @@ namespace Humidifier.PCS
         /// ItemType: ComputeNodeGroupConfiguration
         /// </summary>
         public List<Humidifier.PCS.QueueTypes.ComputeNodeGroupConfiguration> ComputeNodeGroupConfigurations { get; set; }
+        /// <summary>
+        /// SlurmConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-queue.html#cfn-pcs-queue-slurmconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SlurmConfiguration
+        /// </summary>
+        public Humidifier.PCS.QueueTypes.SlurmConfiguration SlurmConfiguration { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-queue.html#cfn-pcs-queue-tags
@@ -77,6 +85,39 @@ namespace Humidifier.PCS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Code { get; set; }
+        }
+
+        public class SlurmConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SlurmCustomSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-queue-slurmconfiguration.html#cfn-pcs-queue-slurmconfiguration-slurmcustomsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SlurmCustomSetting
+            /// </summary>
+            public List<Humidifier.PCS.QueueTypes.SlurmCustomSetting> SlurmCustomSettings { get; set; }
+        }
+
+        public class SlurmCustomSetting : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveParameterValue
+        {
+            /// <summary>
+            /// ParameterValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-queue-slurmcustomsetting.html#cfn-pcs-queue-slurmcustomsetting-parametervalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterValue { get; set; }
+            /// <summary>
+            /// ParameterName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-queue-slurmcustomsetting.html#cfn-pcs-queue-slurmcustomsetting-parametername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterName { get; set; }
         }
     }
 }

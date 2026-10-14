@@ -1,6 +1,6 @@
 namespace Humidifier.MediaPackageV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ChannelPolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveChannelName, IHaveChannelGroupName
     {

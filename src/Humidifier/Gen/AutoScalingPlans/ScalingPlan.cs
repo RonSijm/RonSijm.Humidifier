@@ -1,6 +1,6 @@
 namespace Humidifier.AutoScalingPlans
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScalingPlanTypes;
 
     public class ScalingPlan : Humidifier.Base.BaseResource

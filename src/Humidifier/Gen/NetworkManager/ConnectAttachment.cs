@@ -1,33 +1,28 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectAttachmentTypes;
 
     public class ConnectAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveNetworkFunctionGroupName, IHaveCoreNetworkId, IHaveEdgeLocation
     {
         public class Attributes
         {
-            public static string ResourceArn =  "ResourceArn" ;
+            public static string ProposedSegmentChange =  "ProposedSegmentChange" ;
             public static string AttachmentType =  "AttachmentType" ;
+            public static string ProposedNetworkFunctionGroupChange =  "ProposedNetworkFunctionGroupChange" ;
             public static string SegmentName =  "SegmentName" ;
-            public static string State =  "State" ;
             public static string CreatedAt =  "CreatedAt" ;
-            public static string OwnerAccountId =  "OwnerAccountId" ;
             public static string UpdatedAt =  "UpdatedAt" ;
             public static string AttachmentId =  "AttachmentId" ;
             public static string CoreNetworkArn =  "CoreNetworkArn" ;
+            public static string ResourceArn =  "ResourceArn" ;
+            public static string State =  "State" ;
+            public static string LastModificationErrors =  "LastModificationErrors" ;
+            public static string OwnerAccountId =  "OwnerAccountId" ;
             public static string AttachmentPolicyRuleNumber =  "AttachmentPolicyRuleNumber" ;
         }
 
         public override string AWSTypeName { get => AWS.NetworkManager.ConnectAttachment; }
-        /// <summary>
-        /// ProposedSegmentChange
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-proposedsegmentchange
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ProposedSegmentChange
-        /// </summary>
-        public Humidifier.NetworkManager.ConnectAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
 
         /// <summary>
         /// Options
@@ -59,13 +54,13 @@ namespace Humidifier.NetworkManager
         [Required]
         public dynamic CoreNetworkId { get; set; }
         /// <summary>
-        /// ProposedNetworkFunctionGroupChange
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-proposednetworkfunctiongroupchange
+        /// RoutingPolicyLabel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-routingpolicylabel
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: ProposedNetworkFunctionGroupChange
+        /// PrimitiveType: String
         /// </summary>
-        public Humidifier.NetworkManager.ConnectAttachmentTypes.ProposedNetworkFunctionGroupChange ProposedNetworkFunctionGroupChange { get; set; }
+        public dynamic RoutingPolicyLabel { get; set; }
         /// <summary>
         /// NetworkFunctionGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-networkfunctiongroupname
@@ -82,7 +77,7 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// EdgeLocation
@@ -119,7 +114,7 @@ namespace Humidifier.NetworkManager
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// NetworkFunctionGroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposednetworkfunctiongroupchange.html#cfn-networkmanager-connectattachment-proposednetworkfunctiongroupchange-networkfunctiongroupname
@@ -156,7 +151,7 @@ namespace Humidifier.NetworkManager
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// AttachmentPolicyRuleNumber
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-attachmentpolicyrulenumber

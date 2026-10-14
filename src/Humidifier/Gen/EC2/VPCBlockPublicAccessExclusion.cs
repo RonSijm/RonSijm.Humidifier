@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VPCBlockPublicAccessExclusion : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveSubnetId
     {
@@ -44,6 +44,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

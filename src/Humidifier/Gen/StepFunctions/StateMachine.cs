@@ -1,6 +1,6 @@
 namespace Humidifier.StepFunctions
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StateMachineTypes;
 
     public class StateMachine : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleArn, IHaveDefinition, IHaveDefinitionString, IHaveDefinitionSubstitutions, IHaveStateMachineName

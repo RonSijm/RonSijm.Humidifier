@@ -1,6 +1,6 @@
 namespace Humidifier.Amplify
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BranchTypes;
 
     public class Branch : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveStage, IHaveAppId, IHaveBuildSpec, IHaveFramework, IHaveBranchName, IHaveEnablePerformanceMode, IHavePullRequestEnvironmentName, IHaveEnablePullRequestPreview, IHaveEnableAutoBuild
@@ -28,6 +28,14 @@ namespace Humidifier.Amplify
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnablePerformanceMode { get; set; }
+        /// <summary>
+        /// ComputeRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-computerolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ComputeRoleArn { get; set; }
         /// <summary>
         /// Backend
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-backend
@@ -71,6 +79,14 @@ namespace Humidifier.Amplify
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnablePullRequestPreview { get; set; }
+        /// <summary>
+        /// EnableSkewProtection
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableskewprotection
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableSkewProtection { get; set; }
         /// <summary>
         /// EnableAutoBuild
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enableautobuild
@@ -120,7 +136,7 @@ namespace Humidifier.Amplify
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace BranchTypes

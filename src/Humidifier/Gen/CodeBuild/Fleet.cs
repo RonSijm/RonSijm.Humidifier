@@ -1,6 +1,6 @@
 namespace Humidifier.CodeBuild
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FleetTypes;
 
     public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveImageId, IHaveComputeType, IHaveBaseCapacity
@@ -91,7 +91,7 @@ namespace Humidifier.CodeBuild
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// FleetVpcConfig
@@ -131,6 +131,14 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic vCpu { get; set; }
+            /// <summary>
+            /// instanceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-fleet-computeconfiguration.html#cfn-codebuild-fleet-computeconfiguration-instancetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic instanceType { get; set; }
             /// <summary>
             /// machineType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-fleet-computeconfiguration.html#cfn-codebuild-fleet-computeconfiguration-machinetype

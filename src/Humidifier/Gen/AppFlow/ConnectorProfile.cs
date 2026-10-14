@@ -1,6 +1,6 @@
 namespace Humidifier.AppFlow
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectorProfileTypes;
 
     public class ConnectorProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveConnectorType, IHaveConnectorProfileName, IHaveKMSArn, IHaveConnectorLabel
@@ -718,6 +718,14 @@ namespace Humidifier.AppFlow
             /// </summary>
             public Humidifier.AppFlow.ConnectorProfileTypes.ConnectorOAuthRequest OAuthRequest { get; set; }
             /// <summary>
+            /// ClientId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2credentials.html#cfn-appflow-connectorprofile-oauth2credentials-clientid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientId { get; set; }
+            /// <summary>
             /// RefreshToken
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2credentials.html#cfn-appflow-connectorprofile-oauth2credentials-refreshtoken
             /// Required: False
@@ -741,14 +749,6 @@ namespace Humidifier.AppFlow
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccessToken { get; set; }
-            /// <summary>
-            /// ClientId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-oauth2credentials.html#cfn-appflow-connectorprofile-oauth2credentials-clientid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ClientId { get; set; }
         }
 
         public class OAuth2Properties : Humidifier.Base.BaseSubResource, IHaveTokenUrl, IHaveOAuth2GrantType

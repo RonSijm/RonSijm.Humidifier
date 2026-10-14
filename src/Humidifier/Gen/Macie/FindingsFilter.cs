@@ -1,6 +1,6 @@
 namespace Humidifier.Macie
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FindingsFilterTypes;
 
     public class FindingsFilter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAction, IHavePosition
@@ -54,7 +54,7 @@ namespace Humidifier.Macie
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -67,7 +67,7 @@ namespace Humidifier.Macie
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lt
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic lt { get; set; }
             /// <summary>
@@ -75,7 +75,7 @@ namespace Humidifier.Macie
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gte
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic gte { get; set; }
             /// <summary>
@@ -92,7 +92,7 @@ namespace Humidifier.Macie
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lte
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic lte { get; set; }
             /// <summary>
@@ -109,7 +109,7 @@ namespace Humidifier.Macie
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gt
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic gt { get; set; }
         }

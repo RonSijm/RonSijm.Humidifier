@@ -1,9 +1,9 @@
 namespace Humidifier.DirectoryService
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SimpleADTypes;
 
-    public class SimpleAD : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePassword, IHaveSize, IHaveCreateAlias, IHaveEnableSso, IHaveShortName
+    public class SimpleAD : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePassword, IHaveSize, IHaveCreateAlias, IHaveEnableSso, IHaveShortName
     {
         public class Attributes
         {
@@ -65,6 +65,15 @@ namespace Humidifier.DirectoryService
         /// PrimitiveType: String
         /// </summary>
         public dynamic ShortName { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Password

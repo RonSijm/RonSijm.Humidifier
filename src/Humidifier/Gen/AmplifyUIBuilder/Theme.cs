@@ -1,6 +1,6 @@
 namespace Humidifier.AmplifyUIBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ThemeTypes;
 
     public class Theme : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName

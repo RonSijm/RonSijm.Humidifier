@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PushTemplateTypes;
 
     public class PushTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveTemplateDescription, IHaveDefaultSubstitutions

@@ -1,6 +1,6 @@
 namespace Humidifier.GuardDuty
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DetectorTypes;
 
     public class Detector : Humidifier.Base.BaseResource, IHaveEnable, IHaveFindingPublishingFrequency

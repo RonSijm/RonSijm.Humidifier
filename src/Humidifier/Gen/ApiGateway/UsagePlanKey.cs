@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class UsagePlanKey : Humidifier.Base.BaseResource, IHaveKeyType, IHaveKeyId
     {

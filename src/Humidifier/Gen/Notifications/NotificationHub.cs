@@ -1,6 +1,6 @@
 namespace Humidifier.Notifications
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NotificationHubTypes;
 
     public class NotificationHub : Humidifier.Base.BaseResource, IHaveRegion

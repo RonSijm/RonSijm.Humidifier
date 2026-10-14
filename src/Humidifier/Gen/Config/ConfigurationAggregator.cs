@@ -1,6 +1,6 @@
 namespace Humidifier.Config
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationAggregatorTypes;
 
     public class ConfigurationAggregator : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
@@ -37,7 +37,7 @@ namespace Humidifier.Config
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ConfigurationAggregatorTypes

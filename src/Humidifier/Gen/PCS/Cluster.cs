@@ -1,6 +1,6 @@
 namespace Humidifier.PCS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
     public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSize
@@ -30,7 +30,7 @@ namespace Humidifier.PCS
         /// Scheduler
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-cluster.html#cfn-pcs-cluster-scheduler
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Scheduler
         /// </summary>
         [Required]
@@ -49,7 +49,7 @@ namespace Humidifier.PCS
         /// SlurmConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-cluster.html#cfn-pcs-cluster-slurmconfiguration
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: SlurmConfiguration
         /// </summary>
         public Humidifier.PCS.ClusterTypes.SlurmConfiguration SlurmConfiguration { get; set; }
@@ -67,13 +67,33 @@ namespace Humidifier.PCS
 
     namespace ClusterTypes
     {
+        public class Accounting : Humidifier.Base.BaseSubResource, IHaveMode
+        {
+            /// <summary>
+            /// DefaultPurgeTimeInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-accounting.html#cfn-pcs-cluster-accounting-defaultpurgetimeindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DefaultPurgeTimeInDays { get; set; }
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-accounting.html#cfn-pcs-cluster-accounting-mode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
+        }
+
         public class AuthKey : Humidifier.Base.BaseSubResource, IHaveSecretArn
         {
             /// <summary>
             /// SecretArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-authkey.html#cfn-pcs-cluster-authkey-secretarn
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic SecretArn { get; set; }
@@ -81,13 +101,33 @@ namespace Humidifier.PCS
             /// SecretVersion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-authkey.html#cfn-pcs-cluster-authkey-secretversion
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic SecretVersion { get; set; }
         }
 
-        public class Endpoint : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHavePrivateIpAddress
+        public class CgroupCustomSetting : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveParameterValue
+        {
+            /// <summary>
+            /// ParameterValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-cgroupcustomsetting.html#cfn-pcs-cluster-cgroupcustomsetting-parametervalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterValue { get; set; }
+            /// <summary>
+            /// ParameterName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-cgroupcustomsetting.html#cfn-pcs-cluster-cgroupcustomsetting-parametername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterName { get; set; }
+        }
+
+        public class Endpoint : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHavePrivateIpAddress, IHaveIpv6Address
         {
             /// <summary>
             /// PublicIpAddress
@@ -121,6 +161,14 @@ namespace Humidifier.PCS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Port { get; set; }
+            /// <summary>
+            /// Ipv6Address
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-endpoint.html#cfn-pcs-cluster-endpoint-ipv6address
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ipv6Address { get; set; }
         }
 
         public class ErrorInfo : Humidifier.Base.BaseSubResource, IHaveMessage, IHaveCode
@@ -143,8 +191,48 @@ namespace Humidifier.PCS
             public dynamic Code { get; set; }
         }
 
-        public class Networking : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds
+        public class JwtAuth : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// JwtKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-jwtauth.html#cfn-pcs-cluster-jwtauth-jwtkey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: JwtKey
+            /// </summary>
+            public Humidifier.PCS.ClusterTypes.JwtKey JwtKey { get; set; }
+        }
+
+        public class JwtKey : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-jwtkey.html#cfn-pcs-cluster-jwtkey-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// SecretVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-jwtkey.html#cfn-pcs-cluster-jwtkey-secretversion
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretVersion { get; set; }
+        }
+
+        public class Networking : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveNetworkType
+        {
+            /// <summary>
+            /// NetworkType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-networking.html#cfn-pcs-cluster-networking-networktype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NetworkType { get; set; }
             /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-networking.html#cfn-pcs-cluster-networking-securitygroupids
@@ -171,7 +259,7 @@ namespace Humidifier.PCS
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-scheduler.html#cfn-pcs-cluster-scheduler-type
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
@@ -179,7 +267,7 @@ namespace Humidifier.PCS
             /// Version
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-scheduler.html#cfn-pcs-cluster-scheduler-version
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }
@@ -188,10 +276,44 @@ namespace Humidifier.PCS
         public class SlurmConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// JwtAuth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-jwtauth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: JwtAuth
+            /// </summary>
+            public Humidifier.PCS.ClusterTypes.JwtAuth JwtAuth { get; set; }
+            /// <summary>
+            /// SlurmdbdCustomSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-slurmdbdcustomsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SlurmdbdCustomSetting
+            /// </summary>
+            public List<Humidifier.PCS.ClusterTypes.SlurmdbdCustomSetting> SlurmdbdCustomSettings { get; set; }
+            /// <summary>
+            /// CgroupCustomSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-cgroupcustomsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CgroupCustomSetting
+            /// </summary>
+            public List<Humidifier.PCS.ClusterTypes.CgroupCustomSetting> CgroupCustomSettings { get; set; }
+            /// <summary>
+            /// Accounting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-accounting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Accounting
+            /// </summary>
+            public Humidifier.PCS.ClusterTypes.Accounting Accounting { get; set; }
+            /// <summary>
             /// AuthKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-authkey
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: AuthKey
             /// </summary>
             public Humidifier.PCS.ClusterTypes.AuthKey AuthKey { get; set; }
@@ -199,7 +321,7 @@ namespace Humidifier.PCS
             /// ScaleDownIdleTimeInSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-scaledownidletimeinseconds
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ScaleDownIdleTimeInSeconds { get; set; }
@@ -207,11 +329,19 @@ namespace Humidifier.PCS
             /// SlurmCustomSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-slurmcustomsettings
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: SlurmCustomSetting
             /// </summary>
             public List<Humidifier.PCS.ClusterTypes.SlurmCustomSetting> SlurmCustomSettings { get; set; }
+            /// <summary>
+            /// SlurmRest
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmconfiguration.html#cfn-pcs-cluster-slurmconfiguration-slurmrest
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SlurmRest
+            /// </summary>
+            public Humidifier.PCS.ClusterTypes.SlurmRest SlurmRest { get; set; }
         }
 
         public class SlurmCustomSetting : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveParameterValue
@@ -220,7 +350,7 @@ namespace Humidifier.PCS
             /// ParameterValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmcustomsetting.html#cfn-pcs-cluster-slurmcustomsetting-parametervalue
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterValue { get; set; }
@@ -228,7 +358,39 @@ namespace Humidifier.PCS
             /// ParameterName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmcustomsetting.html#cfn-pcs-cluster-slurmcustomsetting-parametername
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterName { get; set; }
+        }
+
+        public class SlurmRest : Humidifier.Base.BaseSubResource, IHaveMode
+        {
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmrest.html#cfn-pcs-cluster-slurmrest-mode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
+        }
+
+        public class SlurmdbdCustomSetting : Humidifier.Base.BaseSubResource, IHaveParameterName, IHaveParameterValue
+        {
+            /// <summary>
+            /// ParameterValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmdbdcustomsetting.html#cfn-pcs-cluster-slurmdbdcustomsetting-parametervalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ParameterValue { get; set; }
+            /// <summary>
+            /// ParameterName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-cluster-slurmdbdcustomsetting.html#cfn-pcs-cluster-slurmdbdcustomsetting-parametername
+            /// Required: True
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterName { get; set; }

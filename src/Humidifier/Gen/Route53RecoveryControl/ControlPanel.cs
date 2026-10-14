@@ -1,6 +1,6 @@
 namespace Humidifier.Route53RecoveryControl
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ControlPanel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveClusterArn
     {
@@ -29,7 +29,7 @@ namespace Humidifier.Route53RecoveryControl
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

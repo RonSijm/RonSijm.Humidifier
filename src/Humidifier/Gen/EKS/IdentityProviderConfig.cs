@@ -1,6 +1,6 @@
 namespace Humidifier.EKS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdentityProviderConfigTypes;
 
     public class IdentityProviderConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveType, IHaveClusterName
@@ -48,7 +48,7 @@ namespace Humidifier.EKS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace IdentityProviderConfigTypes

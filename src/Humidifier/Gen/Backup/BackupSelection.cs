@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BackupSelectionTypes;
 
     public class BackupSelection : Humidifier.Base.BaseResource
@@ -95,14 +95,6 @@ namespace Humidifier.Backup
         public class ConditionParameter : Humidifier.Base.BaseSubResource, IHaveConditionValue, IHaveConditionKey
         {
             /// <summary>
-            /// ConditionValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionvalue
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ConditionValue { get; set; }
-            /// <summary>
             /// ConditionKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionkey
             /// Required: False
@@ -110,6 +102,14 @@ namespace Humidifier.Backup
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConditionKey { get; set; }
+            /// <summary>
+            /// ConditionValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionvalue
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConditionValue { get; set; }
         }
 
         public class ConditionResourceType : Humidifier.Base.BaseSubResource, IHaveConditionValue, IHaveConditionKey

@@ -1,13 +1,14 @@
 namespace Humidifier.Events
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RuleTypes;
 
-    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveState, IHaveScheduleExpression, IHaveEventPattern, IHaveEventBusName
+    public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveState, IHaveScheduleExpression, IHaveEventPattern, IHaveEventBusName
     {
         public class Attributes
         {
             public static string Arn =  "Arn" ;
+            public static string RuleName =  "RuleName" ;
         }
 
         public override string AWSTypeName { get => AWS.Events.Rule; }
@@ -68,6 +69,15 @@ namespace Humidifier.Events
         /// PrimitiveType: String
         /// </summary>
         public dynamic RoleArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -316,7 +326,7 @@ namespace Humidifier.Events
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> TagList { get; set; }
+            public List<Humidifier.Tag> TagList { get; set; }
             /// <summary>
             /// NetworkConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-networkconfiguration

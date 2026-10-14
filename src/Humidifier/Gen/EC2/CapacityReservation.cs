@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CapacityReservationTypes;
 
     public class CapacityReservation : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveInstanceCount, IHaveEbsOptimized, IHaveEndDate, IHaveTenancy, IHaveInstancePlatform, IHaveInstanceMatchCriteria, IHaveAvailabilityZoneId
@@ -8,10 +8,20 @@ namespace Humidifier.EC2
         public class Attributes
         {
             public static string Tenancy =  "Tenancy" ;
-            public static string AvailableInstanceCount =  "AvailableInstanceCount" ;
+            public static string CapacityReservationFleetId =  "CapacityReservationFleetId" ;
             public static string AvailabilityZone =  "AvailabilityZone" ;
             public static string TotalInstanceCount =  "TotalInstanceCount" ;
+            public static string CreateDate =  "CreateDate" ;
+            public static string StartDate =  "StartDate" ;
+            public static string CapacityReservationArn =  "CapacityReservationArn" ;
+            public static string DeliveryPreference =  "DeliveryPreference" ;
+            public static string CommitmentInfo =  "CommitmentInfo" ;
+            public static string OwnerId =  "OwnerId" ;
+            public static string State =  "State" ;
+            public static string AvailableInstanceCount =  "AvailableInstanceCount" ;
+            public static string ReservationType =  "ReservationType" ;
             public static string Id =  "Id" ;
+            public static string CapacityAllocationSet =  "CapacityAllocationSet" ;
             public static string InstanceType =  "InstanceType" ;
         }
 
@@ -147,6 +157,46 @@ namespace Humidifier.EC2
 
     namespace CapacityReservationTypes
     {
+        public class CapacityAllocation : Humidifier.Base.BaseSubResource, IHaveCount
+        {
+            /// <summary>
+            /// AllocationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-capacityallocation.html#cfn-ec2-capacityreservation-capacityallocation-allocationtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AllocationType { get; set; }
+            /// <summary>
+            /// Count
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-capacityallocation.html#cfn-ec2-capacityreservation-capacityallocation-count
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Count { get; set; }
+        }
+
+        public class CommitmentInfo : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CommittedInstanceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-commitmentinfo.html#cfn-ec2-capacityreservation-commitmentinfo-committedinstancecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CommittedInstanceCount { get; set; }
+            /// <summary>
+            /// CommitmentEndDate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-commitmentinfo.html#cfn-ec2-capacityreservation-commitmentinfo-commitmentenddate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitmentEndDate { get; set; }
+        }
+
         public class TagSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveResourceType
         {
             /// <summary>
@@ -165,7 +215,7 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
         }
     }
 }

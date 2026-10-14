@@ -1,9 +1,14 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TagOption : Humidifier.Base.BaseResource, IHaveValue, IHaveKey, IHaveActive
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.ServiceCatalog.TagOption; }
         /// <summary>
         /// Active

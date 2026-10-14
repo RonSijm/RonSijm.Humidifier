@@ -1,6 +1,6 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataSourceTypes;
 
     public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveDomainIdentifier, IHaveEnvironmentIdentifier, IHaveProjectIdentifier
@@ -358,15 +358,6 @@ namespace Humidifier.DataZone
         public class RelationalFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveSchemaName
         {
             /// <summary>
-            /// FilterExpressions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-relationalfilterconfiguration.html#cfn-datazone-datasource-relationalfilterconfiguration-filterexpressions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: FilterExpression
-            /// </summary>
-            public List<Humidifier.DataZone.DataSourceTypes.FilterExpression> FilterExpressions { get; set; }
-            /// <summary>
             /// DatabaseName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-relationalfilterconfiguration.html#cfn-datazone-datasource-relationalfilterconfiguration-databasename
             /// Required: True
@@ -382,6 +373,15 @@ namespace Humidifier.DataZone
             /// PrimitiveType: String
             /// </summary>
             public dynamic SchemaName { get; set; }
+            /// <summary>
+            /// FilterExpressions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datazone-datasource-relationalfilterconfiguration.html#cfn-datazone-datasource-relationalfilterconfiguration-filterexpressions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FilterExpression
+            /// </summary>
+            public List<Humidifier.DataZone.DataSourceTypes.FilterExpression> FilterExpressions { get; set; }
         }
 
         public class SageMakerRunConfigurationInput : Humidifier.Base.BaseSubResource

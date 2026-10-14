@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowTypes;
 
     public class Flow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveExecutionRoleArn, IHaveCustomerEncryptionKeyArn, IHaveDefinitionString, IHaveDefinitionSubstitutions
@@ -122,6 +122,18 @@ namespace Humidifier.Bedrock
             /// ItemType: FlowCondition
             /// </summary>
             public List<Humidifier.Bedrock.FlowTypes.FlowCondition> Conditions { get; set; }
+        }
+
+        public class FieldForReranking : Humidifier.Base.BaseSubResource, IHaveFieldName
+        {
+            /// <summary>
+            /// FieldName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-fieldforreranking.html#cfn-bedrock-flow-fieldforreranking-fieldname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FieldName { get; set; }
         }
 
         public class FlowCondition : Humidifier.Base.BaseSubResource, IHaveName, IHaveExpression
@@ -327,6 +339,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public Humidifier.Bedrock.FlowTypes.RetrievalFlowNodeConfiguration Retrieval { get; set; }
             /// <summary>
+            /// Loop
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-loop
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LoopFlowNodeConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.LoopFlowNodeConfiguration Loop { get; set; }
+            /// <summary>
             /// Agent
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-agent
             /// Required: False
@@ -334,6 +354,30 @@ namespace Humidifier.Bedrock
             /// Type: AgentFlowNodeConfiguration
             /// </summary>
             public Humidifier.Bedrock.FlowTypes.AgentFlowNodeConfiguration Agent { get; set; }
+            /// <summary>
+            /// LambdaFunction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-lambdafunction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LambdaFunctionFlowNodeConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.LambdaFunctionFlowNodeConfiguration LambdaFunction { get; set; }
+            /// <summary>
+            /// InlineCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-inlinecode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InlineCodeFlowNodeConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.InlineCodeFlowNodeConfiguration InlineCode { get; set; }
+            /// <summary>
+            /// LoopController
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-loopcontroller
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LoopControllerFlowNodeConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.LoopControllerFlowNodeConfiguration LoopController { get; set; }
             /// <summary>
             /// Input
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-input
@@ -383,6 +427,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic Collector { get; set; }
             /// <summary>
+            /// LoopInput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-loopinput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic LoopInput { get; set; }
+            /// <summary>
             /// Prompt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-prompt
             /// Required: False
@@ -390,14 +442,6 @@ namespace Humidifier.Bedrock
             /// Type: PromptFlowNodeConfiguration
             /// </summary>
             public Humidifier.Bedrock.FlowTypes.PromptFlowNodeConfiguration Prompt { get; set; }
-            /// <summary>
-            /// LambdaFunction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-lambdafunction
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: LambdaFunctionFlowNodeConfiguration
-            /// </summary>
-            public Humidifier.Bedrock.FlowTypes.LambdaFunctionFlowNodeConfiguration LambdaFunction { get; set; }
             /// <summary>
             /// Lex
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeconfiguration.html#cfn-bedrock-flow-flownodeconfiguration-lex
@@ -408,7 +452,7 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.FlowTypes.LexFlowNodeConfiguration Lex { get; set; }
         }
 
-        public class FlowNodeInput : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveExpression
+        public class FlowNodeInput : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveExpression, IHaveCategory
         {
             /// <summary>
             /// Type
@@ -418,6 +462,14 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
+            /// <summary>
+            /// Category
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeinput.html#cfn-bedrock-flow-flownodeinput-category
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Category { get; set; }
             /// <summary>
             /// Expression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-flownodeinput.html#cfn-bedrock-flow-flownodeinput-expression
@@ -488,8 +540,36 @@ namespace Humidifier.Bedrock
             public dynamic GuardrailVersion { get; set; }
         }
 
+        public class InlineCodeFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveCode, IHaveLanguage
+        {
+            /// <summary>
+            /// Language
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-inlinecodeflownodeconfiguration.html#cfn-bedrock-flow-inlinecodeflownodeconfiguration-language
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Language { get; set; }
+            /// <summary>
+            /// Code
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-inlinecodeflownodeconfiguration.html#cfn-bedrock-flow-inlinecodeflownodeconfiguration-code
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Code { get; set; }
+        }
+
         public class KnowledgeBaseFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveModelId, IHaveKnowledgeBaseId, IHaveBedrockFlowTypesGuardrailConfigurationGuardrailConfiguration
         {
+            /// <summary>
+            /// OrchestrationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-orchestrationconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: KnowledgeBaseOrchestrationConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.KnowledgeBaseOrchestrationConfiguration OrchestrationConfiguration { get; set; }
             /// <summary>
             /// GuardrailConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-guardrailconfiguration
@@ -499,6 +579,14 @@ namespace Humidifier.Bedrock
             /// </summary>
             public Humidifier.Bedrock.FlowTypes.GuardrailConfiguration GuardrailConfiguration { get; set; }
             /// <summary>
+            /// InferenceConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-inferenceconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PromptInferenceConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.PromptInferenceConfiguration InferenceConfiguration { get; set; }
+            /// <summary>
             /// KnowledgeBaseId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-knowledgebaseid
             /// Required: True
@@ -507,6 +595,30 @@ namespace Humidifier.Bedrock
             /// </summary>
             public dynamic KnowledgeBaseId { get; set; }
             /// <summary>
+            /// PromptTemplate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-prompttemplate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: KnowledgeBasePromptTemplate
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.KnowledgeBasePromptTemplate PromptTemplate { get; set; }
+            /// <summary>
+            /// RerankingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-rerankingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VectorSearchRerankingConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.VectorSearchRerankingConfiguration RerankingConfiguration { get; set; }
+            /// <summary>
+            /// NumberOfResults
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-numberofresults
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic NumberOfResults { get; set; }
+            /// <summary>
             /// ModelId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseflownodeconfiguration.html#cfn-bedrock-flow-knowledgebaseflownodeconfiguration-modelid
             /// Required: False
@@ -514,6 +626,54 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic ModelId { get; set; }
+        }
+
+        public class KnowledgeBaseOrchestrationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InferenceConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseorchestrationconfiguration.html#cfn-bedrock-flow-knowledgebaseorchestrationconfiguration-inferenceconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PromptInferenceConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.PromptInferenceConfiguration InferenceConfig { get; set; }
+            /// <summary>
+            /// AdditionalModelRequestFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseorchestrationconfiguration.html#cfn-bedrock-flow-knowledgebaseorchestrationconfiguration-additionalmodelrequestfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AdditionalModelRequestFields { get; set; }
+            /// <summary>
+            /// PerformanceConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseorchestrationconfiguration.html#cfn-bedrock-flow-knowledgebaseorchestrationconfiguration-performanceconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PerformanceConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.PerformanceConfiguration PerformanceConfig { get; set; }
+            /// <summary>
+            /// PromptTemplate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseorchestrationconfiguration.html#cfn-bedrock-flow-knowledgebaseorchestrationconfiguration-prompttemplate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: KnowledgeBasePromptTemplate
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.KnowledgeBasePromptTemplate PromptTemplate { get; set; }
+        }
+
+        public class KnowledgeBasePromptTemplate : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TextPromptTemplate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-knowledgebaseprompttemplate.html#cfn-bedrock-flow-knowledgebaseprompttemplate-textprompttemplate
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TextPromptTemplate { get; set; }
         }
 
         public class LambdaFunctionFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveLambdaArn
@@ -546,6 +706,70 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic LocaleId { get; set; }
+        }
+
+        public class LoopControllerFlowNodeConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ContinueCondition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-loopcontrollerflownodeconfiguration.html#cfn-bedrock-flow-loopcontrollerflownodeconfiguration-continuecondition
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FlowCondition
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.FlowCondition ContinueCondition { get; set; }
+            /// <summary>
+            /// MaxIterations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-loopcontrollerflownodeconfiguration.html#cfn-bedrock-flow-loopcontrollerflownodeconfiguration-maxiterations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic MaxIterations { get; set; }
+        }
+
+        public class LoopFlowNodeConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Definition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-loopflownodeconfiguration.html#cfn-bedrock-flow-loopflownodeconfiguration-definition
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FlowDefinition
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.FlowDefinition Definition { get; set; }
+        }
+
+        public class MetadataConfigurationForReranking : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SelectiveModeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-metadataconfigurationforreranking.html#cfn-bedrock-flow-metadataconfigurationforreranking-selectivemodeconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RerankingMetadataSelectiveModeConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.RerankingMetadataSelectiveModeConfiguration SelectiveModeConfiguration { get; set; }
+            /// <summary>
+            /// SelectionMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-metadataconfigurationforreranking.html#cfn-bedrock-flow-metadataconfigurationforreranking-selectionmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SelectionMode { get; set; }
+        }
+
+        public class PerformanceConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Latency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-performanceconfiguration.html#cfn-bedrock-flow-performanceconfiguration-latency
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Latency { get; set; }
         }
 
         public class PromptFlowNodeConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockFlowTypesGuardrailConfigurationGuardrailConfiguration
@@ -709,6 +933,28 @@ namespace Humidifier.Bedrock
             public Humidifier.Bedrock.FlowTypes.TextPromptTemplateConfiguration Text { get; set; }
         }
 
+        public class RerankingMetadataSelectiveModeConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FieldsToInclude
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-rerankingmetadataselectivemodeconfiguration.html#cfn-bedrock-flow-rerankingmetadataselectivemodeconfiguration-fieldstoinclude
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FieldForReranking
+            /// </summary>
+            public List<Humidifier.Bedrock.FlowTypes.FieldForReranking> FieldsToInclude { get; set; }
+            /// <summary>
+            /// FieldsToExclude
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-rerankingmetadataselectivemodeconfiguration.html#cfn-bedrock-flow-rerankingmetadataselectivemodeconfiguration-fieldstoexclude
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FieldForReranking
+            /// </summary>
+            public List<Humidifier.Bedrock.FlowTypes.FieldForReranking> FieldsToExclude { get; set; }
+        }
+
         public class RetrievalFlowNodeConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -828,6 +1074,74 @@ namespace Humidifier.Bedrock
             /// PrimitiveType: String
             /// </summary>
             public dynamic Text { get; set; }
+        }
+
+        public class VectorSearchBedrockRerankingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NumberOfRerankedResults
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchbedrockrerankingconfiguration.html#cfn-bedrock-flow-vectorsearchbedrockrerankingconfiguration-numberofrerankedresults
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic NumberOfRerankedResults { get; set; }
+            /// <summary>
+            /// MetadataConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchbedrockrerankingconfiguration.html#cfn-bedrock-flow-vectorsearchbedrockrerankingconfiguration-metadataconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetadataConfigurationForReranking
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.MetadataConfigurationForReranking MetadataConfiguration { get; set; }
+            /// <summary>
+            /// ModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchbedrockrerankingconfiguration.html#cfn-bedrock-flow-vectorsearchbedrockrerankingconfiguration-modelconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: VectorSearchBedrockRerankingModelConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.VectorSearchBedrockRerankingModelConfiguration ModelConfiguration { get; set; }
+        }
+
+        public class VectorSearchBedrockRerankingModelConfiguration : Humidifier.Base.BaseSubResource, IHaveModelArn
+        {
+            /// <summary>
+            /// ModelArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchbedrockrerankingmodelconfiguration.html#cfn-bedrock-flow-vectorsearchbedrockrerankingmodelconfiguration-modelarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ModelArn { get; set; }
+            /// <summary>
+            /// AdditionalModelRequestFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchbedrockrerankingmodelconfiguration.html#cfn-bedrock-flow-vectorsearchbedrockrerankingmodelconfiguration-additionalmodelrequestfields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AdditionalModelRequestFields { get; set; }
+        }
+
+        public class VectorSearchRerankingConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchrerankingconfiguration.html#cfn-bedrock-flow-vectorsearchrerankingconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// BedrockRerankingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flow-vectorsearchrerankingconfiguration.html#cfn-bedrock-flow-vectorsearchrerankingconfiguration-bedrockrerankingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VectorSearchBedrockRerankingConfiguration
+            /// </summary>
+            public Humidifier.Bedrock.FlowTypes.VectorSearchBedrockRerankingConfiguration BedrockRerankingConfiguration { get; set; }
         }
     }
 }

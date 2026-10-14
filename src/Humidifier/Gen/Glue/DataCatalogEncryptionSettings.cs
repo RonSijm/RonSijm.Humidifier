@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataCatalogEncryptionSettingsTypes;
 
     public class DataCatalogEncryptionSettings : Humidifier.Base.BaseResource, IHaveCatalogId

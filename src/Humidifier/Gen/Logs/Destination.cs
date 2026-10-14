@@ -1,8 +1,8 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Destination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleArn, IHaveTargetArn, IHaveDestinationName
+    public class Destination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveTargetArn, IHaveDestinationName
     {
         public class Attributes
         {
@@ -29,6 +29,15 @@ namespace Humidifier.Logs
         /// </summary>
         [Required]
         public dynamic TargetArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-destination.html#cfn-logs-destination-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// RoleArn

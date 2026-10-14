@@ -1,10 +1,15 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectionTypes;
 
-    public class Connection : Humidifier.Base.BaseResource, IHaveCatalogId
+    public class Connection : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveCatalogId
     {
+        public class Attributes
+        {
+            public static string Name =  "Name" ;
+        }
+
         public override string AWSTypeName { get => AWS.Glue.Connection; }
 
         /// <summary>
@@ -26,15 +31,23 @@ namespace Humidifier.Glue
         /// </summary>
         [Required]
         public dynamic CatalogId { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic Tags { get; set; }
     }
 
     namespace ConnectionTypes
     {
-        public class AuthenticationConfigurationInput : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveSecretArn, IHaveAuthenticationType
+        public class AuthenticationConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveSecretArn, IHaveAuthenticationType
         {
             /// <summary>
             /// SecretArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfigurationinput.html#cfn-glue-connection-authenticationconfigurationinput-secretarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfiguration.html#cfn-glue-connection-authenticationconfiguration-secretarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -42,31 +55,31 @@ namespace Humidifier.Glue
             public dynamic SecretArn { get; set; }
             /// <summary>
             /// KmsKeyArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfigurationinput.html#cfn-glue-connection-authenticationconfigurationinput-kmskeyarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfiguration.html#cfn-glue-connection-authenticationconfiguration-kmskeyarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKeyArn { get; set; }
             /// <summary>
-            /// OAuth2Properties
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfigurationinput.html#cfn-glue-connection-authenticationconfigurationinput-oauth2properties
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OAuth2PropertiesInput
-            /// </summary>
-            public Humidifier.Glue.ConnectionTypes.OAuth2PropertiesInput OAuth2Properties { get; set; }
-            /// <summary>
             /// CustomAuthenticationCredentials
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfigurationinput.html#cfn-glue-connection-authenticationconfigurationinput-customauthenticationcredentials
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfiguration.html#cfn-glue-connection-authenticationconfiguration-customauthenticationcredentials
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Json
             /// </summary>
             public dynamic CustomAuthenticationCredentials { get; set; }
             /// <summary>
+            /// OAuth2Properties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfiguration.html#cfn-glue-connection-authenticationconfiguration-oauth2properties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OAuth2Properties
+            /// </summary>
+            public Humidifier.Glue.ConnectionTypes.OAuth2Properties OAuth2Properties { get; set; }
+            /// <summary>
             /// BasicAuthenticationCredentials
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfigurationinput.html#cfn-glue-connection-authenticationconfigurationinput-basicauthenticationcredentials
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfiguration.html#cfn-glue-connection-authenticationconfiguration-basicauthenticationcredentials
             /// Required: False
             /// UpdateType: Mutable
             /// Type: BasicAuthenticationCredentials
@@ -74,7 +87,7 @@ namespace Humidifier.Glue
             public Humidifier.Glue.ConnectionTypes.BasicAuthenticationCredentials BasicAuthenticationCredentials { get; set; }
             /// <summary>
             /// AuthenticationType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfigurationinput.html#cfn-glue-connection-authenticationconfigurationinput-authenticationtype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-authenticationconfiguration.html#cfn-glue-connection-authenticationconfiguration-authenticationtype
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -129,9 +142,9 @@ namespace Humidifier.Glue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-authenticationconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: AuthenticationConfigurationInput
+            /// Type: AuthenticationConfiguration
             /// </summary>
-            public Humidifier.Glue.ConnectionTypes.AuthenticationConfigurationInput AuthenticationConfiguration { get; set; }
+            public Humidifier.Glue.ConnectionTypes.AuthenticationConfiguration AuthenticationConfiguration { get; set; }
             /// <summary>
             /// PythonProperties
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-pythonproperties
@@ -247,14 +260,6 @@ namespace Humidifier.Glue
         public class OAuth2Credentials : Humidifier.Base.BaseSubResource, IHaveAccessToken, IHaveRefreshToken
         {
             /// <summary>
-            /// UserManagedClientApplicationClientSecret
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2credentials.html#cfn-glue-connection-oauth2credentials-usermanagedclientapplicationclientsecret
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic UserManagedClientApplicationClientSecret { get; set; }
-            /// <summary>
             /// JwtToken
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2credentials.html#cfn-glue-connection-oauth2credentials-jwttoken
             /// Required: False
@@ -262,6 +267,14 @@ namespace Humidifier.Glue
             /// PrimitiveType: String
             /// </summary>
             public dynamic JwtToken { get; set; }
+            /// <summary>
+            /// UserManagedClientApplicationClientSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2credentials.html#cfn-glue-connection-oauth2credentials-usermanagedclientapplicationclientsecret
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserManagedClientApplicationClientSecret { get; set; }
             /// <summary>
             /// RefreshToken
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2credentials.html#cfn-glue-connection-oauth2credentials-refreshtoken
@@ -280,11 +293,11 @@ namespace Humidifier.Glue
             public dynamic AccessToken { get; set; }
         }
 
-        public class OAuth2PropertiesInput : Humidifier.Base.BaseSubResource, IHaveTokenUrl, IHaveOAuth2GrantType
+        public class OAuth2Properties : Humidifier.Base.BaseSubResource, IHaveTokenUrl, IHaveOAuth2GrantType
         {
             /// <summary>
             /// AuthorizationCodeProperties
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2propertiesinput.html#cfn-glue-connection-oauth2propertiesinput-authorizationcodeproperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2properties.html#cfn-glue-connection-oauth2properties-authorizationcodeproperties
             /// Required: False
             /// UpdateType: Mutable
             /// Type: AuthorizationCodeProperties
@@ -292,7 +305,7 @@ namespace Humidifier.Glue
             public Humidifier.Glue.ConnectionTypes.AuthorizationCodeProperties AuthorizationCodeProperties { get; set; }
             /// <summary>
             /// OAuth2ClientApplication
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2propertiesinput.html#cfn-glue-connection-oauth2propertiesinput-oauth2clientapplication
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2properties.html#cfn-glue-connection-oauth2properties-oauth2clientapplication
             /// Required: False
             /// UpdateType: Mutable
             /// Type: OAuth2ClientApplication
@@ -300,7 +313,7 @@ namespace Humidifier.Glue
             public Humidifier.Glue.ConnectionTypes.OAuth2ClientApplication OAuth2ClientApplication { get; set; }
             /// <summary>
             /// TokenUrl
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2propertiesinput.html#cfn-glue-connection-oauth2propertiesinput-tokenurl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2properties.html#cfn-glue-connection-oauth2properties-tokenurl
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -308,7 +321,7 @@ namespace Humidifier.Glue
             public dynamic TokenUrl { get; set; }
             /// <summary>
             /// OAuth2Credentials
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2propertiesinput.html#cfn-glue-connection-oauth2propertiesinput-oauth2credentials
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2properties.html#cfn-glue-connection-oauth2properties-oauth2credentials
             /// Required: False
             /// UpdateType: Mutable
             /// Type: OAuth2Credentials
@@ -316,7 +329,7 @@ namespace Humidifier.Glue
             public Humidifier.Glue.ConnectionTypes.OAuth2Credentials OAuth2Credentials { get; set; }
             /// <summary>
             /// OAuth2GrantType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2propertiesinput.html#cfn-glue-connection-oauth2propertiesinput-oauth2granttype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2properties.html#cfn-glue-connection-oauth2properties-oauth2granttype
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -324,7 +337,7 @@ namespace Humidifier.Glue
             public dynamic OAuth2GrantType { get; set; }
             /// <summary>
             /// TokenUrlParametersMap
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2propertiesinput.html#cfn-glue-connection-oauth2propertiesinput-tokenurlparametersmap
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-oauth2properties.html#cfn-glue-connection-oauth2properties-tokenurlparametersmap
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Json

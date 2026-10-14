@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PromptVersionTypes;
 
     public class PromptVersion : Humidifier.Base.BaseResource, IHaveDescription, IHavePromptArn
@@ -190,6 +190,26 @@ namespace Humidifier.Bedrock
             public dynamic Name { get; set; }
         }
 
+        public class PromptMetadataEntry : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptmetadataentry.html#cfn-bedrock-promptversion-promptmetadataentry-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptmetadataentry.html#cfn-bedrock-promptversion-promptmetadataentry-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+
         public class PromptModelInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveTemperature, IHaveStopSequences, IHaveTopP
         {
             /// <summary>
@@ -265,6 +285,15 @@ namespace Humidifier.Bedrock
             /// Type: PromptInferenceConfiguration
             /// </summary>
             public Humidifier.Bedrock.PromptVersionTypes.PromptInferenceConfiguration InferenceConfiguration { get; set; }
+            /// <summary>
+            /// Metadata
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptvariant.html#cfn-bedrock-promptversion-promptvariant-metadata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PromptMetadataEntry
+            /// </summary>
+            public List<Humidifier.Bedrock.PromptVersionTypes.PromptMetadataEntry> Metadata { get; set; }
             /// <summary>
             /// GenAiResource
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-promptversion-promptvariant.html#cfn-bedrock-promptversion-promptvariant-genairesource

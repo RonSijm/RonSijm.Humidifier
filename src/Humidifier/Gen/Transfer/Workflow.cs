@@ -1,6 +1,6 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WorkflowTypes;
 
     public class Workflow : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
@@ -48,7 +48,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace WorkflowTypes

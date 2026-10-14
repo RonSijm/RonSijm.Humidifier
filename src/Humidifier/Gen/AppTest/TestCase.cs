@@ -1,6 +1,6 @@
 namespace Humidifier.AppTest
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TestCaseTypes;
 
     public class TestCase : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

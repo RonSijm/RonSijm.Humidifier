@@ -1,12 +1,13 @@
 namespace Humidifier.AppConfig
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DeploymentTypes;
 
     public class Deployment : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveApplicationId, IHaveKmsKeyIdentifier, IHaveEnvironmentId, IHaveConfigurationProfileId
     {
         public class Attributes
         {
+            public static string State =  "State" ;
             public static string DeploymentNumber =  "DeploymentNumber" ;
         }
 
@@ -94,7 +95,7 @@ namespace Humidifier.AppConfig
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DeploymentTypes

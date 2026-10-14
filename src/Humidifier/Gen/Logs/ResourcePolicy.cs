@@ -1,6 +1,6 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHavePolicyName
     {
@@ -21,7 +21,7 @@ namespace Humidifier.Logs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-resourcepolicy.html#cfn-logs-resourcepolicy-policydocument
         /// Required: True
         /// UpdateType: Mutable
-        /// PrimitiveType: String
+        /// PrimitiveType: Json
         /// </summary>
         [Required]
         public dynamic PolicyDocument { get; set; }

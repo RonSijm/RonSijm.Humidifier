@@ -1,6 +1,6 @@
 namespace Humidifier.Lex
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourcePolicy : Humidifier.Base.BaseResource, IHavePolicy, IHaveResourceArn
     {
@@ -26,7 +26,7 @@ namespace Humidifier.Lex
         /// ResourceArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-resourcearn
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]

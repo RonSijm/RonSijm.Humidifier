@@ -1,6 +1,6 @@
 namespace Humidifier.DocDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EventSubscription : Humidifier.Base.BaseResource, IHaveEnabled, IHaveSnsTopicArn, IHaveSourceType, IHaveSubscriptionName, IHaveEventCategories, IHaveSourceIds
     {
@@ -30,14 +30,6 @@ namespace Humidifier.DocDB
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic EventCategories { get; set; }
-        /// <summary>
-        /// SubscriptionName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-eventsubscription.html#cfn-docdb-eventsubscription-subscriptionname
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SubscriptionName { get; set; }
 
         /// <summary>
         /// SnsTopicArn
@@ -48,6 +40,14 @@ namespace Humidifier.DocDB
         /// </summary>
         [Required]
         public dynamic SnsTopicArn { get; set; }
+        /// <summary>
+        /// SubscriptionName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-eventsubscription.html#cfn-docdb-eventsubscription-subscriptionname
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SubscriptionName { get; set; }
         /// <summary>
         /// SourceIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-docdb-eventsubscription.html#cfn-docdb-eventsubscription-sourceids

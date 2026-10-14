@@ -1,6 +1,6 @@
 namespace Humidifier.Route53
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using HostedZoneTypes;
 
     public class HostedZone : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
@@ -30,6 +30,14 @@ namespace Humidifier.Route53
         /// ItemType: VPC
         /// </summary>
         public List<Humidifier.Route53.HostedZoneTypes.VPC> VPCs { get; set; }
+        /// <summary>
+        /// HostedZoneFeatures
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzonefeatures
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: HostedZoneFeatures
+        /// </summary>
+        public Humidifier.Route53.HostedZoneTypes.HostedZoneFeatures HostedZoneFeatures { get; set; }
         /// <summary>
         /// HostedZoneConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzoneconfig
@@ -61,6 +69,18 @@ namespace Humidifier.Route53
             /// PrimitiveType: String
             /// </summary>
             public dynamic Comment { get; set; }
+        }
+
+        public class HostedZoneFeatures : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EnableAcceleratedRecovery
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonefeatures.html#cfn-route53-hostedzone-hostedzonefeatures-enableacceleratedrecovery
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableAcceleratedRecovery { get; set; }
         }
 
         public class HostedZoneTag : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey

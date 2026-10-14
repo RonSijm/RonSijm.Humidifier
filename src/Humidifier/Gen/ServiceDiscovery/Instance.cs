@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceDiscovery
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Instance : Humidifier.Base.BaseResource, IHaveInstanceId, IHaveServiceId
     {

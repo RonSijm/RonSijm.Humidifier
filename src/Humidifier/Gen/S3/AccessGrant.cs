@@ -1,6 +1,6 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccessGrantTypes;
 
     public class AccessGrant : Humidifier.Base.BaseResource, IHaveTags, IHavePermission, IHaveApplicationArn
@@ -65,7 +65,7 @@ namespace Humidifier.S3
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// AccessGrantsLocationId

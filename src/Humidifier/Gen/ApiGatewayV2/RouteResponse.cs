@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGatewayV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RouteResponseTypes;
 
     public class RouteResponse : Humidifier.Base.BaseResource, IHaveApiId, IHaveModelSelectionExpression

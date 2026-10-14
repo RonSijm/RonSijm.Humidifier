@@ -1,6 +1,6 @@
 namespace Humidifier.AccessAnalyzer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AnalyzerTypes;
 
     public class Analyzer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveType
@@ -39,7 +39,7 @@ namespace Humidifier.AccessAnalyzer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AnalyzerConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-analyzerconfiguration
@@ -88,6 +88,14 @@ namespace Humidifier.AccessAnalyzer
 
         public class AnalyzerConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// InternalAccessConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-analyzerconfiguration.html#cfn-accessanalyzer-analyzer-analyzerconfiguration-internalaccessconfiguration
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: InternalAccessConfiguration
+            /// </summary>
+            public Humidifier.AccessAnalyzer.AnalyzerTypes.InternalAccessConfiguration InternalAccessConfiguration { get; set; }
             /// <summary>
             /// UnusedAccessConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-analyzerconfiguration.html#cfn-accessanalyzer-analyzer-analyzerconfiguration-unusedaccessconfiguration
@@ -164,6 +172,62 @@ namespace Humidifier.AccessAnalyzer
             /// PrimitiveType: String
             /// </summary>
             public dynamic Property { get; set; }
+        }
+
+        public class InternalAccessAnalysisRule : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Inclusions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-internalaccessanalysisrule.html#cfn-accessanalyzer-analyzer-internalaccessanalysisrule-inclusions
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: InternalAccessAnalysisRuleCriteria
+            /// </summary>
+            public List<Humidifier.AccessAnalyzer.AnalyzerTypes.InternalAccessAnalysisRuleCriteria> Inclusions { get; set; }
+        }
+
+        public class InternalAccessAnalysisRuleCriteria : Humidifier.Base.BaseSubResource, IHaveResourceTypes, IHaveResourceArns, IHaveAccountIds
+        {
+            /// <summary>
+            /// ResourceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-internalaccessanalysisrulecriteria.html#cfn-accessanalyzer-analyzer-internalaccessanalysisrulecriteria-resourcetypes
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ResourceTypes { get; set; }
+            /// <summary>
+            /// AccountIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-internalaccessanalysisrulecriteria.html#cfn-accessanalyzer-analyzer-internalaccessanalysisrulecriteria-accountids
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AccountIds { get; set; }
+            /// <summary>
+            /// ResourceArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-internalaccessanalysisrulecriteria.html#cfn-accessanalyzer-analyzer-internalaccessanalysisrulecriteria-resourcearns
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ResourceArns { get; set; }
+        }
+
+        public class InternalAccessConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InternalAccessAnalysisRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-internalaccessconfiguration.html#cfn-accessanalyzer-analyzer-internalaccessconfiguration-internalaccessanalysisrule
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: InternalAccessAnalysisRule
+            /// </summary>
+            public Humidifier.AccessAnalyzer.AnalyzerTypes.InternalAccessAnalysisRule InternalAccessAnalysisRule { get; set; }
         }
 
         public class UnusedAccessConfiguration : Humidifier.Base.BaseSubResource

@@ -1,6 +1,6 @@
 namespace Humidifier.FIS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TargetAccountConfiguration : Humidifier.Base.BaseResource, IHaveDescription, IHaveRoleArn, IHaveAccountId
     {

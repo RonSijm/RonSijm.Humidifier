@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MonitoringSubscriptionTypes;
 
     public class MonitoringSubscription : Humidifier.Base.BaseResource

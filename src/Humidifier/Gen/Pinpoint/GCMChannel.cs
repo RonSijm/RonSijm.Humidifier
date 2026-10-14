@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class GCMChannel : Humidifier.Base.BaseResource, IHaveEnabled, IHaveApplicationId, IHaveApiKey, IHaveDefaultAuthenticationMethod
     {

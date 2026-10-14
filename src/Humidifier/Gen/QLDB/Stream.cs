@@ -1,6 +1,6 @@
 namespace Humidifier.QLDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StreamTypes;
 
     public class Stream : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveStreamName
@@ -69,7 +69,7 @@ namespace Humidifier.QLDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace StreamTypes

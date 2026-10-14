@@ -1,6 +1,6 @@
 namespace Humidifier.MediaConvert
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using JobTemplateTypes;
 
     public class JobTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHavePriority, IHaveCategory, IHaveQueue, IHaveSettingsJson
@@ -44,14 +44,6 @@ namespace Humidifier.MediaConvert
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic Priority { get; set; }
-        /// <summary>
-        /// StatusUpdateInterval
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-statusupdateinterval
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic StatusUpdateInterval { get; set; }
 
         /// <summary>
         /// SettingsJson
@@ -62,6 +54,14 @@ namespace Humidifier.MediaConvert
         /// </summary>
         [Required]
         public dynamic SettingsJson { get; set; }
+        /// <summary>
+        /// StatusUpdateInterval
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-statusupdateinterval
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StatusUpdateInterval { get; set; }
         /// <summary>
         /// Queue
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-queue

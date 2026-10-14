@@ -1,6 +1,6 @@
 namespace Humidifier.GroundStation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MissionProfileTypes;
 
     public class MissionProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveContactPostPassDurationSeconds, IHaveContactPrePassDurationSeconds
@@ -14,6 +14,14 @@ namespace Humidifier.GroundStation
 
         public override string AWSTypeName { get => AWS.GroundStation.MissionProfile; }
         /// <summary>
+        /// TelemetrySinkConfigArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-telemetrysinkconfigarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TelemetrySinkConfigArn { get; set; }
+        /// <summary>
         /// StreamsKmsKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-streamskmskey
         /// Required: False
@@ -21,14 +29,6 @@ namespace Humidifier.GroundStation
         /// Type: StreamsKmsKey
         /// </summary>
         public Humidifier.GroundStation.MissionProfileTypes.StreamsKmsKey StreamsKmsKey { get; set; }
-        /// <summary>
-        /// ContactPostPassDurationSeconds
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactpostpassdurationseconds
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic ContactPostPassDurationSeconds { get; set; }
 
         /// <summary>
         /// MinimumViableContactDurationSeconds
@@ -39,6 +39,14 @@ namespace Humidifier.GroundStation
         /// </summary>
         [Required]
         public dynamic MinimumViableContactDurationSeconds { get; set; }
+        /// <summary>
+        /// ContactPostPassDurationSeconds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-contactpostpassdurationseconds
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic ContactPostPassDurationSeconds { get; set; }
 
         /// <summary>
         /// DataflowEdges
@@ -50,14 +58,6 @@ namespace Humidifier.GroundStation
         /// </summary>
         [Required]
         public List<Humidifier.GroundStation.MissionProfileTypes.DataflowEdge> DataflowEdges { get; set; }
-        /// <summary>
-        /// StreamsKmsRole
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-streamskmsrole
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic StreamsKmsRole { get; set; }
 
         /// <summary>
         /// TrackingConfigArn
@@ -69,6 +69,14 @@ namespace Humidifier.GroundStation
         [Required]
         public dynamic TrackingConfigArn { get; set; }
         /// <summary>
+        /// StreamsKmsRole
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-streamskmsrole
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StreamsKmsRole { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-tags
         /// Required: False
@@ -76,7 +84,7 @@ namespace Humidifier.GroundStation
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ContactPrePassDurationSeconds

@@ -1,6 +1,6 @@
 namespace Humidifier.IoTSiteWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveProjectName, IHaveProjectDescription, IHaveDescription
     {
@@ -50,6 +50,6 @@ namespace Humidifier.IoTSiteWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

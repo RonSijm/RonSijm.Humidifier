@@ -4,7 +4,7 @@ namespace Humidifier.Base;
 
 public interface IHaveGivenName
 {
-    string GivenName { get; set; }
+    dynamic GivenName { get; set; }
 }
 
 public abstract class BaseResource : BaseHumidifierDTO, IHaveGivenName
@@ -12,17 +12,20 @@ public abstract class BaseResource : BaseHumidifierDTO, IHaveGivenName
     [Ignore]
     public abstract string AWSTypeName { get; }
 
-    private string _givenName;
+    private dynamic _givenName;
     private string _resourceName;
 
     [Ignore]
-    public virtual string GivenName
+    public virtual dynamic GivenName
     {
         get => _givenName;
         set
         {
             _givenName = value;
-            ResourceName = value;
+            if (value is string name)
+            {
+                ResourceName = name;
+            }
         }
     }
 

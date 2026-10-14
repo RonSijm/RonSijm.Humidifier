@@ -1,6 +1,6 @@
 namespace Humidifier.Rekognition
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Collection : Humidifier.Base.BaseResource, IHaveTags, IHaveCollectionId
     {
@@ -28,6 +28,6 @@ namespace Humidifier.Rekognition
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

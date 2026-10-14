@@ -1,9 +1,14 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ApiCache : Humidifier.Base.BaseResource, IHaveType, IHaveApiId, IHaveTtl, IHaveTransitEncryptionEnabled, IHaveAtRestEncryptionEnabled
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.AppSync.ApiCache; }
 
         /// <summary>
@@ -19,7 +24,7 @@ namespace Humidifier.AppSync
         /// TransitEncryptionEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-transitencryptionenabled
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic TransitEncryptionEnabled { get; set; }
@@ -35,20 +40,10 @@ namespace Humidifier.AppSync
         /// AtRestEncryptionEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-atrestencryptionenabled
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AtRestEncryptionEnabled { get; set; }
-
-        /// <summary>
-        /// ApiId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apiid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic ApiId { get; set; }
 
         /// <summary>
         /// ApiCachingBehavior
@@ -61,11 +56,21 @@ namespace Humidifier.AppSync
         public dynamic ApiCachingBehavior { get; set; }
 
         /// <summary>
+        /// ApiId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apiid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic ApiId { get; set; }
+
+        /// <summary>
         /// Ttl
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-ttl
         /// Required: True
         /// UpdateType: Mutable
-        /// PrimitiveType: Double
+        /// PrimitiveType: Integer
         /// </summary>
         [Required]
         public dynamic Ttl { get; set; }

@@ -1,6 +1,6 @@
 namespace Humidifier.OSIS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PipelineTypes;
 
     public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePipelineName, IHaveOSISPipelineTypesVpcOptionsVpcOptions
@@ -32,6 +32,14 @@ namespace Humidifier.OSIS
         /// Type: BufferOptions
         /// </summary>
         public Humidifier.OSIS.PipelineTypes.BufferOptions BufferOptions { get; set; }
+        /// <summary>
+        /// PipelineRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-pipelinerolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PipelineRoleArn { get; set; }
 
         /// <summary>
         /// MinUnits
@@ -70,6 +78,14 @@ namespace Humidifier.OSIS
         /// </summary>
         public Humidifier.OSIS.PipelineTypes.LogPublishingOptions LogPublishingOptions { get; set; }
         /// <summary>
+        /// ResourcePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-resourcepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ResourcePolicy
+        /// </summary>
+        public Humidifier.OSIS.PipelineTypes.ResourcePolicy ResourcePolicy { get; set; }
+        /// <summary>
         /// EncryptionAtRestOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-osis-pipeline.html#cfn-osis-pipeline-encryptionatrestoptions
         /// Required: False
@@ -85,7 +101,7 @@ namespace Humidifier.OSIS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PipelineTypes
@@ -144,6 +160,18 @@ namespace Humidifier.OSIS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic IsLoggingEnabled { get; set; }
+        }
+
+        public class ResourcePolicy : Humidifier.Base.BaseSubResource, IHavePolicy
+        {
+            /// <summary>
+            /// Policy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-osis-pipeline-resourcepolicy.html#cfn-osis-pipeline-resourcepolicy-policy
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Policy { get; set; }
         }
 
         public class VpcAttachmentOptions : Humidifier.Base.BaseSubResource, IHaveCidrBlock

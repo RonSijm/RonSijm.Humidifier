@@ -1,6 +1,6 @@
 namespace Humidifier.FMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PolicyTypes;
 
     public class Policy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveResourceType, IHavePolicyName, IHavePolicyDescription, IHaveResourceTypeList, IHaveDescription

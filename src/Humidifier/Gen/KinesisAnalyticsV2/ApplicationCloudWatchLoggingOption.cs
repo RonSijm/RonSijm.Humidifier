@@ -1,6 +1,6 @@
 namespace Humidifier.KinesisAnalyticsV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationCloudWatchLoggingOptionTypes;
 
     public class ApplicationCloudWatchLoggingOption : Humidifier.Base.BaseResource, IHaveApplicationName

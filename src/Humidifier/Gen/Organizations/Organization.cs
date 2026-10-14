@@ -1,6 +1,6 @@
 namespace Humidifier.Organizations
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Organization : Humidifier.Base.BaseResource
     {

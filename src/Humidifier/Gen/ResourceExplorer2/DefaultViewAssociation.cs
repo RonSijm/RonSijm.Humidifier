@@ -1,6 +1,6 @@
 namespace Humidifier.ResourceExplorer2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DefaultViewAssociation : Humidifier.Base.BaseResource, IHaveViewArn
     {

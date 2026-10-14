@@ -1,6 +1,6 @@
 namespace Humidifier.SSM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResourceDataSyncTypes;
 
     public class ResourceDataSync : Humidifier.Base.BaseResource, IHaveBucketName, IHaveBucketPrefix, IHaveSyncType, IHaveKMSKeyArn, IHaveBucketRegion, IHaveSyncFormat

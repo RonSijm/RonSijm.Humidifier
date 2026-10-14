@@ -1,6 +1,6 @@
 namespace Humidifier.GreengrassV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DeploymentTypes;
 
     public class Deployment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTargetArn
@@ -369,7 +369,7 @@ namespace Humidifier.GreengrassV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-deployment-systemresourcelimits.html#cfn-greengrassv2-deployment-systemresourcelimits-memory
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic Memory { get; set; }
             /// <summary>

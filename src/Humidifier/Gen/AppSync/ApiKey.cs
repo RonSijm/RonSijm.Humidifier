@@ -1,12 +1,13 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ApiKey : Humidifier.Base.BaseResource, IHaveDescription, IHaveApiId
     {
         public class Attributes
         {
             public static string ApiKey =  "ApiKey" ;
+            public static string ApiKeyId =  "ApiKeyId" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -19,14 +20,6 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-        /// <summary>
-        /// ApiKeyId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apikeyid
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ApiKeyId { get; set; }
         /// <summary>
         /// Expires
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires

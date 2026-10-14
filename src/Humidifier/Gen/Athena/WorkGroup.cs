@@ -1,6 +1,6 @@
 namespace Humidifier.Athena
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WorkGroupTypes;
 
     public class WorkGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveState
@@ -51,7 +51,7 @@ namespace Humidifier.Athena
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -67,6 +67,63 @@ namespace Humidifier.Athena
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3AclOption { get; set; }
+        }
+
+        public class Classification : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Properties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-classification.html#cfn-athena-workgroup-classification-properties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> Properties { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-classification.html#cfn-athena-workgroup-classification-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class CloudWatchLoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveLogGroup
+        {
+            /// <summary>
+            /// LogGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-cloudwatchloggingconfiguration.html#cfn-athena-workgroup-cloudwatchloggingconfiguration-loggroup
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogGroup { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-cloudwatchloggingconfiguration.html#cfn-athena-workgroup-cloudwatchloggingconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// LogStreamNamePrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-cloudwatchloggingconfiguration.html#cfn-athena-workgroup-cloudwatchloggingconfiguration-logstreamnameprefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogStreamNamePrefix { get; set; }
+            /// <summary>
+            /// LogTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-cloudwatchloggingconfiguration.html#cfn-athena-workgroup-cloudwatchloggingconfiguration-logtypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic LogTypes { get; set; }
         }
 
         public class CustomerContentEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKey
@@ -101,6 +158,61 @@ namespace Humidifier.Athena
             public dynamic KmsKey { get; set; }
         }
 
+        public class EngineConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SparkProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineconfiguration.html#cfn-athena-workgroup-engineconfiguration-sparkproperties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> SparkProperties { get; set; }
+            /// <summary>
+            /// Classifications
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineconfiguration.html#cfn-athena-workgroup-engineconfiguration-classifications
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Classification
+            /// </summary>
+            public List<Humidifier.Athena.WorkGroupTypes.Classification> Classifications { get; set; }
+            /// <summary>
+            /// MaxConcurrentDpus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineconfiguration.html#cfn-athena-workgroup-engineconfiguration-maxconcurrentdpus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxConcurrentDpus { get; set; }
+            /// <summary>
+            /// CoordinatorDpuSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineconfiguration.html#cfn-athena-workgroup-engineconfiguration-coordinatordpusize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CoordinatorDpuSize { get; set; }
+            /// <summary>
+            /// DefaultExecutorDpuSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineconfiguration.html#cfn-athena-workgroup-engineconfiguration-defaultexecutordpusize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DefaultExecutorDpuSize { get; set; }
+            /// <summary>
+            /// AdditionalConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineconfiguration.html#cfn-athena-workgroup-engineconfiguration-additionalconfigs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> AdditionalConfigs { get; set; }
+        }
+
         public class EngineVersion : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -119,6 +231,86 @@ namespace Humidifier.Athena
             /// PrimitiveType: String
             /// </summary>
             public dynamic EffectiveEngineVersion { get; set; }
+        }
+
+        public class ManagedLoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveKmsKey
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-managedloggingconfiguration.html#cfn-athena-workgroup-managedloggingconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// KmsKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-managedloggingconfiguration.html#cfn-athena-workgroup-managedloggingconfiguration-kmskey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKey { get; set; }
+        }
+
+        public class ManagedQueryResultsConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// EncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-managedqueryresultsconfiguration.html#cfn-athena-workgroup-managedqueryresultsconfiguration-encryptionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedStorageEncryptionConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.ManagedStorageEncryptionConfiguration EncryptionConfiguration { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-managedqueryresultsconfiguration.html#cfn-athena-workgroup-managedqueryresultsconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class ManagedStorageEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKey
+        {
+            /// <summary>
+            /// KmsKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-managedstorageencryptionconfiguration.html#cfn-athena-workgroup-managedstorageencryptionconfiguration-kmskey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKey { get; set; }
+        }
+
+        public class MonitoringConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// S3LoggingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-monitoringconfiguration.html#cfn-athena-workgroup-monitoringconfiguration-s3loggingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3LoggingConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.S3LoggingConfiguration S3LoggingConfiguration { get; set; }
+            /// <summary>
+            /// ManagedLoggingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-monitoringconfiguration.html#cfn-athena-workgroup-monitoringconfiguration-managedloggingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedLoggingConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.ManagedLoggingConfiguration ManagedLoggingConfiguration { get; set; }
+            /// <summary>
+            /// CloudWatchLoggingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-monitoringconfiguration.html#cfn-athena-workgroup-monitoringconfiguration-cloudwatchloggingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CloudWatchLoggingConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.CloudWatchLoggingConfiguration CloudWatchLoggingConfiguration { get; set; }
         }
 
         public class ResultConfiguration : Humidifier.Base.BaseSubResource, IHaveOutputLocation, IHaveExpectedBucketOwner
@@ -155,6 +347,34 @@ namespace Humidifier.Athena
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExpectedBucketOwner { get; set; }
+        }
+
+        public class S3LoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveKmsKey
+        {
+            /// <summary>
+            /// LogLocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-s3loggingconfiguration.html#cfn-athena-workgroup-s3loggingconfiguration-loglocation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogLocation { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-s3loggingconfiguration.html#cfn-athena-workgroup-s3loggingconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// KmsKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-s3loggingconfiguration.html#cfn-athena-workgroup-s3loggingconfiguration-kmskey
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKey { get; set; }
         }
 
         public class WorkGroupConfiguration : Humidifier.Base.BaseSubResource, IHaveExecutionRole
@@ -200,6 +420,14 @@ namespace Humidifier.Athena
             /// </summary>
             public dynamic AdditionalConfiguration { get; set; }
             /// <summary>
+            /// EngineConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-engineconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EngineConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.EngineConfiguration EngineConfiguration { get; set; }
+            /// <summary>
             /// CustomerContentEncryptionConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-customercontentencryptionconfiguration
             /// Required: False
@@ -212,9 +440,17 @@ namespace Humidifier.Athena
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-bytesscannedcutoffperquery
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic BytesScannedCutoffPerQuery { get; set; }
+            /// <summary>
+            /// MonitoringConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-monitoringconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MonitoringConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.MonitoringConfiguration MonitoringConfiguration { get; set; }
             /// <summary>
             /// RequesterPaysEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-requesterpaysenabled
@@ -223,6 +459,14 @@ namespace Humidifier.Athena
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic RequesterPaysEnabled { get; set; }
+            /// <summary>
+            /// ManagedQueryResultsConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-managedqueryresultsconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedQueryResultsConfiguration
+            /// </summary>
+            public Humidifier.Athena.WorkGroupTypes.ManagedQueryResultsConfiguration ManagedQueryResultsConfiguration { get; set; }
             /// <summary>
             /// ExecutionRole
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-executionrole

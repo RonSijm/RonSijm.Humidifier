@@ -1,6 +1,6 @@
 namespace Humidifier.KMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ReplicaKey : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEnabled, IHavePendingWindowInDays, IHaveKeyPolicy
     {
@@ -63,6 +63,6 @@ namespace Humidifier.KMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

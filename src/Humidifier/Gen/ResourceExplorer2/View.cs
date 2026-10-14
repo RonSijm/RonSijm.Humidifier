@@ -1,6 +1,6 @@
 namespace Humidifier.ResourceExplorer2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ViewTypes;
 
     public class View : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveScope

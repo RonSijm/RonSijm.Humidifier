@@ -1,10 +1,18 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SubscriptionFilter : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveLogGroupName, IHaveDestinationArn, IHaveFilterPattern, IHaveFilterName, IHaveApplyOnTransformedLogs
     {
         public override string AWSTypeName { get => AWS.Logs.SubscriptionFilter; }
+        /// <summary>
+        /// FieldSelectionCriteria
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-logs-subscriptionfilter-fieldselectioncriteria
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FieldSelectionCriteria { get; set; }
 
         /// <summary>
         /// FilterPattern
@@ -15,6 +23,15 @@ namespace Humidifier.Logs
         /// </summary>
         [Required]
         public dynamic FilterPattern { get; set; }
+        /// <summary>
+        /// EmitSystemFields
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-logs-subscriptionfilter-emitsystemfields
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic EmitSystemFields { get; set; }
         /// <summary>
         /// Distribution
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-subscriptionfilter.html#cfn-logs-subscriptionfilter-distribution

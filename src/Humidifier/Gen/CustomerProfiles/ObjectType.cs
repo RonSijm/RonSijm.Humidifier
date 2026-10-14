@@ -1,6 +1,6 @@
 namespace Humidifier.CustomerProfiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ObjectTypeTypes;
 
     public class ObjectType : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDomainName, IHaveEncryptionKey, IHaveTemplateId, IHaveObjectTypeName
@@ -9,9 +9,18 @@ namespace Humidifier.CustomerProfiles
         {
             public static string LastUpdatedAt =  "LastUpdatedAt" ;
             public static string CreatedAt =  "CreatedAt" ;
+            public static string MaxAvailableProfileObjectCount =  "MaxAvailableProfileObjectCount" ;
         }
 
         public override string AWSTypeName { get => AWS.CustomerProfiles.ObjectType; }
+        /// <summary>
+        /// MaxProfileObjectCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-maxprofileobjectcount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic MaxProfileObjectCount { get; set; }
 
         /// <summary>
         /// Description
@@ -22,15 +31,6 @@ namespace Humidifier.CustomerProfiles
         /// </summary>
         [Required]
         public dynamic Description { get; set; }
-        /// <summary>
-        /// Fields
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-fields
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: FieldMap
-        /// </summary>
-        public List<Humidifier.CustomerProfiles.ObjectTypeTypes.FieldMap> Fields { get; set; }
 
         /// <summary>
         /// DomainName
@@ -42,6 +42,31 @@ namespace Humidifier.CustomerProfiles
         [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
+        /// EncryptionKey
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-encryptionkey
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EncryptionKey { get; set; }
+        /// <summary>
+        /// ExpirationDays
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-expirationdays
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic ExpirationDays { get; set; }
+        /// <summary>
+        /// Fields
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-fields
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: FieldMap
+        /// </summary>
+        public List<Humidifier.CustomerProfiles.ObjectTypeTypes.FieldMap> Fields { get; set; }
+        /// <summary>
         /// AllowProfileCreation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-allowprofilecreation
         /// Required: False
@@ -49,6 +74,14 @@ namespace Humidifier.CustomerProfiles
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AllowProfileCreation { get; set; }
+        /// <summary>
+        /// SourcePriority
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-sourcepriority
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic SourcePriority { get; set; }
         public dynamic ObjectTypeName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// Keys
@@ -68,14 +101,6 @@ namespace Humidifier.CustomerProfiles
         /// </summary>
         public dynamic SourceLastUpdatedTimestampFormat { get; set; }
         /// <summary>
-        /// EncryptionKey
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-encryptionkey
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic EncryptionKey { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-tags
         /// Required: False
@@ -83,7 +108,7 @@ namespace Humidifier.CustomerProfiles
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TemplateId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-templateid
@@ -92,14 +117,6 @@ namespace Humidifier.CustomerProfiles
         /// PrimitiveType: String
         /// </summary>
         public dynamic TemplateId { get; set; }
-        /// <summary>
-        /// ExpirationDays
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-expirationdays
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic ExpirationDays { get; set; }
     }
 
     namespace ObjectTypeTypes

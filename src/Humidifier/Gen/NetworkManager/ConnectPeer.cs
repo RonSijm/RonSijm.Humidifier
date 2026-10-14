@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectPeerTypes;
 
     public class ConnectPeer : Humidifier.Base.BaseResource, IHaveTags, IHavePeerAddress, IHaveSubnetArn, IHaveCoreNetworkAddress, IHaveInsideCidrBlocks
@@ -10,6 +10,7 @@ namespace Humidifier.NetworkManager
             public static string CoreNetworkId =  "CoreNetworkId" ;
             public static string Configuration =  "Configuration" ;
             public static string State =  "State" ;
+            public static string LastModificationErrors =  "LastModificationErrors" ;
             public static string CreatedAt =  "CreatedAt" ;
             public static string ConnectPeerId =  "ConnectPeerId" ;
             public static string EdgeLocation =  "EdgeLocation" ;
@@ -77,7 +78,7 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ConnectPeerTypes

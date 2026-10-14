@@ -1,6 +1,6 @@
 namespace Humidifier.EMR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class WALWorkspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags
     {
@@ -14,6 +14,6 @@ namespace Humidifier.EMR
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

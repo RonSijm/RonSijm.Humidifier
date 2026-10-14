@@ -1,6 +1,6 @@
 namespace Humidifier.StepFunctions
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StateMachineAliasTypes;
 
     public class StateMachineAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
@@ -28,6 +28,14 @@ namespace Humidifier.StepFunctions
         /// ItemType: RoutingConfigurationVersion
         /// </summary>
         public List<Humidifier.StepFunctions.StateMachineAliasTypes.RoutingConfigurationVersion> RoutingConfiguration { get; set; }
+        /// <summary>
+        /// StateMachineArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachinealias.html#cfn-stepfunctions-statemachinealias-statemachinearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StateMachineArn { get; set; }
         /// <summary>
         /// DeploymentPreference
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachinealias.html#cfn-stepfunctions-statemachinealias-deploymentpreference

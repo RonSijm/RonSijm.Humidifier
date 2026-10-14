@@ -1,6 +1,6 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MultiRegionAccessPointTypes;
 
     public class MultiRegionAccessPoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

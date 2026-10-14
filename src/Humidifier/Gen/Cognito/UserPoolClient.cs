@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserPoolClientTypes;
 
     public class UserPoolClient : Humidifier.Base.BaseResource, IHaveUserPoolId
@@ -62,6 +62,14 @@ namespace Humidifier.Cognito
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AuthSessionValidity { get; set; }
+        /// <summary>
+        /// RefreshTokenRotation
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-refreshtokenrotation
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RefreshTokenRotation
+        /// </summary>
+        public Humidifier.Cognito.UserPoolClientTypes.RefreshTokenRotation RefreshTokenRotation { get; set; }
         /// <summary>
         /// AllowedOAuthScopes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthscopes
@@ -245,6 +253,26 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
+        }
+
+        public class RefreshTokenRotation : Humidifier.Base.BaseSubResource, IHaveFeature
+        {
+            /// <summary>
+            /// RetryGracePeriodSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-refreshtokenrotation.html#cfn-cognito-userpoolclient-refreshtokenrotation-retrygraceperiodseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RetryGracePeriodSeconds { get; set; }
+            /// <summary>
+            /// Feature
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-refreshtokenrotation.html#cfn-cognito-userpoolclient-refreshtokenrotation-feature
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Feature { get; set; }
         }
 
         public class TokenValidityUnits : Humidifier.Base.BaseSubResource, IHaveAccessToken, IHaveRefreshToken

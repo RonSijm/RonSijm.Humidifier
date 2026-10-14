@@ -1,6 +1,6 @@
 namespace Humidifier.IoTWireless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PartnerAccountTypes;
 
     public class PartnerAccount : Humidifier.Base.BaseResource, IHaveTags
@@ -68,7 +68,7 @@ namespace Humidifier.IoTWireless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PartnerAccountTypes

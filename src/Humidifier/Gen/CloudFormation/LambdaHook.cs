@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LambdaHookTypes;
 
     public class LambdaHook : Humidifier.Base.BaseResource, IHaveExecutionRole, IHaveAlias, IHaveHookStatus, IHaveTargetOperations, IHaveFailureMode
@@ -11,6 +11,14 @@ namespace Humidifier.CloudFormation
         }
 
         public override string AWSTypeName { get => AWS.CloudFormation.LambdaHook; }
+        /// <summary>
+        /// AutoUpdate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-lambdahook.html#cfn-cloudformation-lambdahook-autoupdate
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic AutoUpdate { get; set; }
 
         /// <summary>
         /// HookStatus
@@ -31,6 +39,14 @@ namespace Humidifier.CloudFormation
         /// </summary>
         [Required]
         public dynamic Alias { get; set; }
+        /// <summary>
+        /// LoggingConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-lambdahook.html#cfn-cloudformation-lambdahook-loggingconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: LoggingConfig
+        /// </summary>
+        public Humidifier.CloudFormation.LambdaHookTypes.LoggingConfig LoggingConfig { get; set; }
         /// <summary>
         /// StackFilters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-lambdahook.html#cfn-cloudformation-lambdahook-stackfilters
@@ -118,6 +134,26 @@ namespace Humidifier.CloudFormation
             /// PrimitiveType: String
             /// </summary>
             public dynamic TargetName { get; set; }
+        }
+
+        public class LoggingConfig : Humidifier.Base.BaseSubResource, IHaveLogGroupName, IHaveLogRoleArn
+        {
+            /// <summary>
+            /// LogGroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-lambdahook-loggingconfig.html#cfn-cloudformation-lambdahook-loggingconfig-loggroupname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogGroupName { get; set; }
+            /// <summary>
+            /// LogRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-lambdahook-loggingconfig.html#cfn-cloudformation-lambdahook-loggingconfig-logrolearn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogRoleArn { get; set; }
         }
 
         public class StackFilters : Humidifier.Base.BaseSubResource, IHaveFilteringCriteria

@@ -1,15 +1,10 @@
 namespace Humidifier.CodePipeline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CustomActionTypeTypes;
 
     public class CustomActionType : Humidifier.Base.BaseResource, IHaveTags, IHaveVersion, IHaveCategory, IHaveProvider
     {
-        public class Attributes
-        {
-            public static string Id =  "Id" ;
-        }
-
         public override string AWSTypeName { get => AWS.CodePipeline.CustomActionType; }
 
         /// <summary>
@@ -76,7 +71,7 @@ namespace Humidifier.CodePipeline
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// Provider

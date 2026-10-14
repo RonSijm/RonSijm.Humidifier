@@ -1,6 +1,6 @@
 namespace Humidifier.IoTWireless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WirelessDeviceImportTaskTypes;
 
     public class WirelessDeviceImportTask : Humidifier.Base.BaseResource, IHaveTags, IHaveDestinationName
@@ -47,7 +47,7 @@ namespace Humidifier.IoTWireless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace WirelessDeviceImportTaskTypes

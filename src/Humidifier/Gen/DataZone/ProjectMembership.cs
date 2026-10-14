@@ -1,10 +1,16 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ProjectMembershipTypes;
 
     public class ProjectMembership : Humidifier.Base.BaseResource, IHaveDomainIdentifier, IHaveProjectIdentifier
     {
+        public class Attributes
+        {
+            public static string MemberIdentifier =  "MemberIdentifier" ;
+            public static string MemberIdentifierType =  "MemberIdentifierType" ;
+        }
+
         public override string AWSTypeName { get => AWS.DataZone.ProjectMembership; }
 
         /// <summary>

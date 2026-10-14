@@ -1,9 +1,9 @@
 namespace Humidifier.DAX
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSecurityGroupIds, IHaveDynamicTags, IHavePreferredMaintenanceWindow, IHaveClusterName, IHaveAvailabilityZones, IHaveNodeType, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveIAMRoleARN, IHaveReplicationFactor
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSecurityGroupIds, IHaveDynamicTags, IHavePreferredMaintenanceWindow, IHaveClusterName, IHaveAvailabilityZones, IHaveNetworkType, IHaveNodeType, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveIAMRoleARN, IHaveReplicationFactor
     {
         public class Attributes
         {
@@ -107,6 +107,14 @@ namespace Humidifier.DAX
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SecurityGroupIds { get; set; }
+        /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-networktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
 
         /// <summary>
         /// NodeType

@@ -1,9 +1,9 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TemplateTypes;
 
-    public class Template : Humidifier.Base.BaseResource
+    public class Template : Humidifier.Base.BaseResource, IHaveTags
     {
         public class Attributes
         {
@@ -11,6 +11,15 @@ namespace Humidifier.SES
         }
 
         public override string AWSTypeName { get => AWS.SES.Template; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// Template_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-template

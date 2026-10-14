@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationSettingsTypes;
 
     public class ApplicationSettings : Humidifier.Base.BaseResource, IHaveApplicationId, IHaveCloudWatchMetricsEnabled

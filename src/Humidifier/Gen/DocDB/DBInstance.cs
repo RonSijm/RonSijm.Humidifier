@@ -1,6 +1,6 @@
 namespace Humidifier.DocDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveAutoMinorVersionUpgrade, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveDBInstanceClass, IHaveCACertificateIdentifier, IHaveCertificateRotationRestart, IHaveEnablePerformanceInsights
     {
@@ -95,6 +95,6 @@ namespace Humidifier.DocDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

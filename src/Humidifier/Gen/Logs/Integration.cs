@@ -1,6 +1,6 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IntegrationTypes;
 
     public class Integration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveIntegrationType, IHaveIntegrationName

@@ -1,6 +1,6 @@
 namespace Humidifier.Route53
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RecordSetGroupTypes;
 
     public class RecordSetGroup : Humidifier.Base.BaseResource, IHaveComment, IHaveHostedZoneId, IHaveHostedZoneName

@@ -1,6 +1,6 @@
 namespace Humidifier.IAM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class InstanceProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHavePath, IHaveInstanceProfileName, IHaveRoles
     {

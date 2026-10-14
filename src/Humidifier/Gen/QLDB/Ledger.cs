@@ -1,6 +1,6 @@
 namespace Humidifier.QLDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Ledger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKey, IHaveDeletionProtection
     {
@@ -39,7 +39,7 @@ namespace Humidifier.QLDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

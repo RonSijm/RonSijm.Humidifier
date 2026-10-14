@@ -1,6 +1,6 @@
 namespace Humidifier.Route53RecoveryControl
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class RoutingControl : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveClusterArn, IHaveControlPanelArn
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.Notifications
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ChannelAssociation : Humidifier.Base.BaseResource, IHaveArn
     {

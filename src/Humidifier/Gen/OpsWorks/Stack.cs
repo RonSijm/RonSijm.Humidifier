@@ -1,6 +1,6 @@
 namespace Humidifier.OpsWorks
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StackTypes;
 
     public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVpcId, IHaveServiceRoleArn, IHaveAgentVersion, IHaveCustomJson
@@ -183,7 +183,7 @@ namespace Humidifier.OpsWorks
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// UseCustomCookbooks
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#usecustcookbooks

@@ -1,6 +1,6 @@
 namespace Humidifier.IVS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PlaybackRestrictionPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveAllowedOrigins
     {
@@ -10,16 +10,14 @@ namespace Humidifier.IVS
         }
 
         public override string AWSTypeName { get => AWS.IVS.PlaybackRestrictionPolicy; }
-
         /// <summary>
         /// AllowedOrigins
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackrestrictionpolicy.html#cfn-ivs-playbackrestrictionpolicy-allowedorigins
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public dynamic AllowedOrigins { get; set; }
         /// <summary>
         /// EnableStrictOriginEnforcement
@@ -29,16 +27,14 @@ namespace Humidifier.IVS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableStrictOriginEnforcement { get; set; }
-
         /// <summary>
         /// AllowedCountries
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackrestrictionpolicy.html#cfn-ivs-playbackrestrictionpolicy-allowedcountries
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public dynamic AllowedCountries { get; set; }
         /// <summary>
         /// Tags
@@ -48,7 +44,7 @@ namespace Humidifier.IVS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

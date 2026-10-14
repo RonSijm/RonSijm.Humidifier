@@ -1,6 +1,6 @@
 namespace Humidifier.CustomerProfiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EventTriggerTypes;
 
     public class EventTrigger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDomainName, IHaveObjectTypeName
@@ -76,7 +76,7 @@ namespace Humidifier.CustomerProfiles
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace EventTriggerTypes
@@ -131,7 +131,7 @@ namespace Humidifier.CustomerProfiles
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-eventtriggerlimits.html#cfn-customerprofiles-eventtrigger-eventtriggerlimits-eventexpiration
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic EventExpiration { get; set; }
         }

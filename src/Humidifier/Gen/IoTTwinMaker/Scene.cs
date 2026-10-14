@@ -1,6 +1,6 @@
 namespace Humidifier.IoTTwinMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Scene : Humidifier.Base.BaseResource, IHaveDescription, IHaveWorkspaceId, IHaveCapabilities
     {

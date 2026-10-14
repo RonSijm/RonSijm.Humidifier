@@ -1,10 +1,15 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GlobalClusterTypes;
 
     public class GlobalCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveEngineVersion, IHaveEngine, IHaveDeletionProtection, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveEngineLifecycleSupport, IHaveGlobalClusterIdentifier
     {
+        public class Attributes
+        {
+            public static string GlobalEndpoint =  "GlobalEndpoint" ;
+        }
+
         public override string AWSTypeName { get => AWS.RDS.GlobalCluster; }
         /// <summary>
         /// EngineLifecycleSupport
@@ -39,14 +44,6 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic SourceDBClusterIdentifier { get; set; }
         /// <summary>
-        /// GlobalEndpoint
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-globalendpoint
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: GlobalEndpoint
-        /// </summary>
-        public Humidifier.RDS.GlobalClusterTypes.GlobalEndpoint GlobalEndpoint { get; set; }
-        /// <summary>
         /// DeletionProtection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-globalcluster.html#cfn-rds-globalcluster-deletionprotection
         /// Required: False
@@ -78,7 +75,7 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace GlobalClusterTypes

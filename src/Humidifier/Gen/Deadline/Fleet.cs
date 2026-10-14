@@ -1,6 +1,6 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FleetTypes;
 
     public class Fleet : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName, IHaveFarmId, IHaveMaxWorkerCount, IHaveMinWorkerCount
@@ -12,6 +12,7 @@ namespace Humidifier.Deadline
             public static string FleetId =  "FleetId" ;
             public static string WorkerCount =  "WorkerCount" ;
             public static string Arn =  "Arn" ;
+            public static string StatusMessage =  "StatusMessage" ;
         }
 
         public override string AWSTypeName { get => AWS.Deadline.Fleet; }
@@ -33,6 +34,14 @@ namespace Humidifier.Deadline
         /// </summary>
         [Required]
         public Humidifier.Deadline.FleetTypes.FleetConfiguration Configuration { get; set; }
+        /// <summary>
+        /// HostConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-fleet.html#cfn-deadline-fleet-hostconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: HostConfiguration
+        /// </summary>
+        public Humidifier.Deadline.FleetTypes.HostConfiguration HostConfiguration { get; set; }
 
         /// <summary>
         /// MaxWorkerCount
@@ -89,7 +98,7 @@ namespace Humidifier.Deadline
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace FleetTypes
@@ -118,14 +127,6 @@ namespace Humidifier.Deadline
         public class AcceleratorCountRange : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
         {
             /// <summary>
-            /// Min
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorcountrange.html#cfn-deadline-fleet-acceleratorcountrange-min
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Min { get; set; }
-            /// <summary>
             /// Max
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorcountrange.html#cfn-deadline-fleet-acceleratorcountrange-max
             /// Required: False
@@ -133,6 +134,14 @@ namespace Humidifier.Deadline
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Max { get; set; }
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-acceleratorcountrange.html#cfn-deadline-fleet-acceleratorcountrange-min
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
         }
 
         public class AcceleratorSelection : Humidifier.Base.BaseSubResource, IHaveName, IHaveRuntime
@@ -175,6 +184,34 @@ namespace Humidifier.Deadline
             public dynamic Max { get; set; }
         }
 
+        public class CustomerManagedAutoScalingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StandbyWorkerCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-customermanagedautoscalingconfiguration.html#cfn-deadline-fleet-customermanagedautoscalingconfiguration-standbyworkercount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic StandbyWorkerCount { get; set; }
+            /// <summary>
+            /// ScaleOutWorkersPerMinute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-customermanagedautoscalingconfiguration.html#cfn-deadline-fleet-customermanagedautoscalingconfiguration-scaleoutworkersperminute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ScaleOutWorkersPerMinute { get; set; }
+            /// <summary>
+            /// WorkerIdleDurationSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-customermanagedautoscalingconfiguration.html#cfn-deadline-fleet-customermanagedautoscalingconfiguration-workeridledurationseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WorkerIdleDurationSeconds { get; set; }
+        }
+
         public class CustomerManagedFleetConfiguration : Humidifier.Base.BaseSubResource, IHaveMode
         {
             /// <summary>
@@ -201,6 +238,22 @@ namespace Humidifier.Deadline
             /// Type: CustomerManagedWorkerCapabilities
             /// </summary>
             public Humidifier.Deadline.FleetTypes.CustomerManagedWorkerCapabilities WorkerCapabilities { get; set; }
+            /// <summary>
+            /// TagPropagationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-customermanagedfleetconfiguration.html#cfn-deadline-fleet-customermanagedfleetconfiguration-tagpropagationmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TagPropagationMode { get; set; }
+            /// <summary>
+            /// AutoScalingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-customermanagedfleetconfiguration.html#cfn-deadline-fleet-customermanagedfleetconfiguration-autoscalingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CustomerManagedAutoScalingConfiguration
+            /// </summary>
+            public Humidifier.Deadline.FleetTypes.CustomerManagedAutoScalingConfiguration AutoScalingConfiguration { get; set; }
         }
 
         public class CustomerManagedWorkerCapabilities : Humidifier.Base.BaseSubResource, IHaveAcceleratorTypes, IHaveOsFamily, IHaveDeadlineFleetTypesVCpuCountRangeVCpuCount, IHaveDeadlineFleetTypesMemoryMiBRangeMemoryMiB, IHaveCpuArchitectureType
@@ -313,14 +366,6 @@ namespace Humidifier.Deadline
         public class FleetAmountCapability : Humidifier.Base.BaseSubResource, IHaveName, IHaveMin, IHaveMax
         {
             /// <summary>
-            /// Min
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-fleetamountcapability.html#cfn-deadline-fleet-fleetamountcapability-min
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic Min { get; set; }
-            /// <summary>
             /// Max
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-fleetamountcapability.html#cfn-deadline-fleet-fleetamountcapability-max
             /// Required: False
@@ -328,6 +373,14 @@ namespace Humidifier.Deadline
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Max { get; set; }
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-fleetamountcapability.html#cfn-deadline-fleet-fleetamountcapability-min
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Min { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-fleetamountcapability.html#cfn-deadline-fleet-fleetamountcapability-name
@@ -401,16 +454,28 @@ namespace Humidifier.Deadline
             public Humidifier.Deadline.FleetTypes.CustomerManagedFleetConfiguration CustomerManaged { get; set; }
         }
 
-        public class MemoryMiBRange : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
+        public class HostConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// Min
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-memorymibrange.html#cfn-deadline-fleet-memorymibrange-min
-            /// Required: True
+            /// ScriptTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-hostconfiguration.html#cfn-deadline-fleet-hostconfiguration-scripttimeoutseconds
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Min { get; set; }
+            public dynamic ScriptTimeoutSeconds { get; set; }
+            /// <summary>
+            /// ScriptBody
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-hostconfiguration.html#cfn-deadline-fleet-hostconfiguration-scriptbody
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScriptBody { get; set; }
+        }
+
+        public class MemoryMiBRange : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
+        {
             /// <summary>
             /// Max
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-memorymibrange.html#cfn-deadline-fleet-memorymibrange-max
@@ -419,10 +484,106 @@ namespace Humidifier.Deadline
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Max { get; set; }
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-memorymibrange.html#cfn-deadline-fleet-memorymibrange-min
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+        }
+
+        public class PersistentVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveIops, IHaveMountPath, IHaveSizeGiB
+        {
+            /// <summary>
+            /// MountPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-persistentvolumeconfiguration.html#cfn-deadline-fleet-persistentvolumeconfiguration-mountpath
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MountPath { get; set; }
+            /// <summary>
+            /// SizeGiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-persistentvolumeconfiguration.html#cfn-deadline-fleet-persistentvolumeconfiguration-sizegib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SizeGiB { get; set; }
+            /// <summary>
+            /// ThroughputMiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-persistentvolumeconfiguration.html#cfn-deadline-fleet-persistentvolumeconfiguration-throughputmib
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ThroughputMiB { get; set; }
+            /// <summary>
+            /// Iops
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-persistentvolumeconfiguration.html#cfn-deadline-fleet-persistentvolumeconfiguration-iops
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Iops { get; set; }
+            /// <summary>
+            /// LastUsedTtlHours
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-persistentvolumeconfiguration.html#cfn-deadline-fleet-persistentvolumeconfiguration-lastusedttlhours
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic LastUsedTtlHours { get; set; }
+        }
+
+        public class ServiceManagedEc2AutoScalingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StandbyWorkerCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2autoscalingconfiguration.html#cfn-deadline-fleet-servicemanagedec2autoscalingconfiguration-standbyworkercount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic StandbyWorkerCount { get; set; }
+            /// <summary>
+            /// ScaleOutWorkersPerMinute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2autoscalingconfiguration.html#cfn-deadline-fleet-servicemanagedec2autoscalingconfiguration-scaleoutworkersperminute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ScaleOutWorkersPerMinute { get; set; }
+            /// <summary>
+            /// WorkerIdleDurationSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2autoscalingconfiguration.html#cfn-deadline-fleet-servicemanagedec2autoscalingconfiguration-workeridledurationseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WorkerIdleDurationSeconds { get; set; }
         }
 
         public class ServiceManagedEc2FleetConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// PersistentVolumeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2fleetconfiguration.html#cfn-deadline-fleet-servicemanagedec2fleetconfiguration-persistentvolumeconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PersistentVolumeConfiguration
+            /// </summary>
+            public Humidifier.Deadline.FleetTypes.PersistentVolumeConfiguration PersistentVolumeConfiguration { get; set; }
+            /// <summary>
+            /// StorageProfileId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2fleetconfiguration.html#cfn-deadline-fleet-servicemanagedec2fleetconfiguration-storageprofileid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StorageProfileId { get; set; }
             /// <summary>
             /// InstanceMarketOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2fleetconfiguration.html#cfn-deadline-fleet-servicemanagedec2fleetconfiguration-instancemarketoptions
@@ -439,6 +600,22 @@ namespace Humidifier.Deadline
             /// Type: ServiceManagedEc2InstanceCapabilities
             /// </summary>
             public Humidifier.Deadline.FleetTypes.ServiceManagedEc2InstanceCapabilities InstanceCapabilities { get; set; }
+            /// <summary>
+            /// VpcConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2fleetconfiguration.html#cfn-deadline-fleet-servicemanagedec2fleetconfiguration-vpcconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcConfiguration
+            /// </summary>
+            public Humidifier.Deadline.FleetTypes.VpcConfiguration VpcConfiguration { get; set; }
+            /// <summary>
+            /// AutoScalingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2fleetconfiguration.html#cfn-deadline-fleet-servicemanagedec2fleetconfiguration-autoscalingconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ServiceManagedEc2AutoScalingConfiguration
+            /// </summary>
+            public Humidifier.Deadline.FleetTypes.ServiceManagedEc2AutoScalingConfiguration AutoScalingConfiguration { get; set; }
         }
 
         public class ServiceManagedEc2InstanceCapabilities : Humidifier.Base.BaseSubResource, IHaveExcludedInstanceTypes, IHaveAllowedInstanceTypes, IHaveOsFamily, IHaveDeadlineFleetTypesVCpuCountRangeVCpuCount, IHaveDeadlineFleetTypesMemoryMiBRangeMemoryMiB, IHaveCpuArchitectureType
@@ -544,14 +721,6 @@ namespace Humidifier.Deadline
         public class VCpuCountRange : Humidifier.Base.BaseSubResource, IHaveMin, IHaveMax
         {
             /// <summary>
-            /// Min
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-vcpucountrange.html#cfn-deadline-fleet-vcpucountrange-min
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Min { get; set; }
-            /// <summary>
             /// Max
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-vcpucountrange.html#cfn-deadline-fleet-vcpucountrange-max
             /// Required: False
@@ -559,6 +728,27 @@ namespace Humidifier.Deadline
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Max { get; set; }
+            /// <summary>
+            /// Min
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-vcpucountrange.html#cfn-deadline-fleet-vcpucountrange-min
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Min { get; set; }
+        }
+
+        public class VpcConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ResourceConfigurationArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-vpcconfiguration.html#cfn-deadline-fleet-vpcconfiguration-resourceconfigurationarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ResourceConfigurationArns { get; set; }
         }
     }
 }

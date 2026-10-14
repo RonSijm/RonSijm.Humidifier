@@ -1,6 +1,6 @@
 namespace Humidifier.SQS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsDataKeyReusePeriodSeconds, IHaveQueueName, IHaveRedrivePolicy, IHaveKmsMasterKeyId, IHaveContentBasedDeduplication
     {
@@ -133,6 +133,6 @@ namespace Humidifier.SQS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

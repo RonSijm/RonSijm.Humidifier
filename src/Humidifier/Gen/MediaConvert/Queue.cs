@@ -1,6 +1,6 @@
 namespace Humidifier.MediaConvert
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Queue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveStatus, IHaveDynamicTags, IHavePricingPlan
     {
@@ -36,6 +36,14 @@ namespace Humidifier.MediaConvert
         /// </summary>
         public dynamic PricingPlan { get; set; }
         /// <summary>
+        /// MaximumConcurrentFeeds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-maximumconcurrentfeeds
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic MaximumConcurrentFeeds { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-tags
         /// Required: False
@@ -43,6 +51,7 @@ namespace Humidifier.MediaConvert
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Tags { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ConcurrentJobs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-queue.html#cfn-mediaconvert-queue-concurrentjobs
@@ -51,6 +60,5 @@ namespace Humidifier.MediaConvert
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic ConcurrentJobs { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

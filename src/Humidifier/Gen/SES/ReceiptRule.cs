@@ -1,10 +1,15 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ReceiptRuleTypes;
 
     public class ReceiptRule : Humidifier.Base.BaseResource, IHaveRuleSetName
     {
+        public class Attributes
+        {
+            public static string RuleName =  "RuleName" ;
+        }
+
         public override string AWSTypeName { get => AWS.SES.ReceiptRule; }
         /// <summary>
         /// After

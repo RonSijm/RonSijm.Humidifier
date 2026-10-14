@@ -1,6 +1,6 @@
 namespace Humidifier.PaymentCryptography
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Alias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveKeyArn, IHaveAliasName
     {

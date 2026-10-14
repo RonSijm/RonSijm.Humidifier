@@ -1,6 +1,6 @@
 namespace Humidifier.Greengrass
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class GroupVersion : Humidifier.Base.BaseResource, IHaveGroupId, IHaveLoggerDefinitionVersionArn, IHaveDeviceDefinitionVersionArn, IHaveFunctionDefinitionVersionArn, IHaveCoreDefinitionVersionArn, IHaveResourceDefinitionVersionArn, IHaveConnectorDefinitionVersionArn, IHaveSubscriptionDefinitionVersionArn
     {

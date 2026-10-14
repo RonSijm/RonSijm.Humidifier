@@ -1,6 +1,6 @@
 namespace Humidifier.CodeConnections
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Connection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveConnectionName, IHaveProviderType, IHaveHostArn
     {
@@ -37,6 +37,6 @@ namespace Humidifier.CodeConnections
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

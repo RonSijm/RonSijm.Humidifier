@@ -1,6 +1,6 @@
 namespace Humidifier.EMRServerless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationTypes;
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveArchitecture, IHaveReleaseLabel, IHaveEMRServerlessApplicationTypesImageConfigurationInputImageConfiguration
@@ -133,6 +133,14 @@ namespace Humidifier.EMRServerless
         [Required]
         public dynamic ReleaseLabel { get; set; }
         /// <summary>
+        /// IdentityCenterConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-identitycenterconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IdentityCenterConfiguration
+        /// </summary>
+        public Humidifier.EMRServerless.ApplicationTypes.IdentityCenterConfiguration IdentityCenterConfiguration { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-tags
         /// Required: False
@@ -140,7 +148,7 @@ namespace Humidifier.EMRServerless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ApplicationTypes
@@ -225,14 +233,6 @@ namespace Humidifier.EMRServerless
         public class ConfigurationObject : Humidifier.Base.BaseSubResource, IHaveClassification
         {
             /// <summary>
-            /// Classification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-configurationobject.html#cfn-emrserverless-application-configurationobject-classification
-            /// Required: True
-            /// UpdateType: Conditional
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Classification { get; set; }
-            /// <summary>
             /// Properties
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-configurationobject.html#cfn-emrserverless-application-configurationobject-properties
             /// Required: False
@@ -250,6 +250,26 @@ namespace Humidifier.EMRServerless
             /// ItemType: ConfigurationObject
             /// </summary>
             public List<Humidifier.EMRServerless.ApplicationTypes.ConfigurationObject> Configurations { get; set; }
+            /// <summary>
+            /// Classification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-configurationobject.html#cfn-emrserverless-application-configurationobject-classification
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Classification { get; set; }
+        }
+
+        public class IdentityCenterConfiguration : Humidifier.Base.BaseSubResource, IHaveIdentityCenterInstanceArn
+        {
+            /// <summary>
+            /// IdentityCenterInstanceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-identitycenterconfiguration.html#cfn-emrserverless-application-identitycenterconfiguration-identitycenterinstancearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdentityCenterInstanceArn { get; set; }
         }
 
         public class ImageConfigurationInput : Humidifier.Base.BaseSubResource, IHaveImageUri
@@ -279,7 +299,7 @@ namespace Humidifier.EMRServerless
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-initialcapacityconfig.html#cfn-emrserverless-application-initialcapacityconfig-workercount
             /// Required: True
             /// UpdateType: Conditional
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic WorkerCount { get; set; }
         }
@@ -306,6 +326,14 @@ namespace Humidifier.EMRServerless
 
         public class InteractiveConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// SessionEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-interactiveconfiguration.html#cfn-emrserverless-application-interactiveconfiguration-sessionenabled
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic SessionEnabled { get; set; }
             /// <summary>
             /// StudioEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-interactiveconfiguration.html#cfn-emrserverless-application-interactiveconfiguration-studioenabled

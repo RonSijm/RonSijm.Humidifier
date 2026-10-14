@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ImageBuilderTypes;
 
     public class ImageBuilder : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveDisplayName, IHaveIamRoleArn, IHaveImageName, IHaveEnableDefaultInternetAccess, IHaveImageArn
@@ -28,6 +28,22 @@ namespace Humidifier.AppStream
         /// </summary>
         public Humidifier.AppStream.ImageBuilderTypes.VpcConfig VpcConfig { get; set; }
         /// <summary>
+        /// RootVolumeConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-rootvolumeconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: VolumeConfig
+        /// </summary>
+        public Humidifier.AppStream.ImageBuilderTypes.VolumeConfig RootVolumeConfig { get; set; }
+        /// <summary>
+        /// DisableIMDSV1
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-disableimdsv1
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DisableIMDSV1 { get; set; }
+        /// <summary>
         /// EnableDefaultInternetAccess
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-enabledefaultinternetaccess
         /// Required: False
@@ -51,6 +67,15 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic AppstreamAgentVersion { get; set; }
+        /// <summary>
+        /// SoftwaresToUninstall
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-softwarestouninstall
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic SoftwaresToUninstall { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ImageName
@@ -68,6 +93,15 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic DisplayName { get; set; }
+        /// <summary>
+        /// SoftwaresToInstall
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-softwarestoinstall
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic SoftwaresToInstall { get; set; }
         /// <summary>
         /// IamRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-iamrolearn
@@ -94,7 +128,7 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ImageArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagearn
@@ -154,6 +188,18 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public dynamic DirectoryName { get; set; }
+        }
+
+        public class VolumeConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VolumeSizeInGb
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-volumeconfig.html#cfn-appstream-imagebuilder-volumeconfig-volumesizeingb
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeSizeInGb { get; set; }
         }
 
         public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds

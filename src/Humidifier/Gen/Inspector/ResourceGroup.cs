@@ -1,6 +1,6 @@
 namespace Humidifier.Inspector
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResourceGroup : Humidifier.Base.BaseResource
     {
@@ -20,6 +20,6 @@ namespace Humidifier.Inspector
         /// ItemType: Tag
         /// </summary>
         [Required]
-        public List<Tag> ResourceGroupTags { get; set; }
+        public List<Humidifier.Tag> ResourceGroupTags { get; set; }
     }
 }

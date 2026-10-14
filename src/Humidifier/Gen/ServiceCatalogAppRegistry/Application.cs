@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalogAppRegistry
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
     {

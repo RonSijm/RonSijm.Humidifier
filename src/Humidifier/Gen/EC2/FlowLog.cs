@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowLogTypes;
 
     public class FlowLog : Humidifier.Base.BaseResource, IHaveTags, IHaveResourceType, IHaveResourceId, IHaveLogGroupName, IHaveLogFormat, IHaveLogDestinationType, IHaveLogDestination
@@ -19,16 +19,6 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic LogFormat { get; set; }
-
-        /// <summary>
-        /// ResourceId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic ResourceId { get; set; }
         /// <summary>
         /// MaxAggregationInterval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-maxaggregationinterval
@@ -55,6 +45,33 @@ namespace Humidifier.EC2
         /// </summary>
         [Required]
         public dynamic ResourceType { get; set; }
+        /// <summary>
+        /// LogDestinationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestinationtype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LogDestinationType { get; set; }
+
+        /// <summary>
+        /// ResourceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic ResourceId { get; set; }
+        /// <summary>
+        /// TagFieldSpecifications
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-tagfieldspecifications
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: TagFieldSpecification
+        /// </summary>
+        public List<Humidifier.EC2.FlowLogTypes.TagFieldSpecification> TagFieldSpecifications { get; set; }
         /// <summary>
         /// DeliverCrossAccountRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-delivercrossaccountrole
@@ -88,14 +105,6 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic DeliverLogsPermissionArn { get; set; }
         /// <summary>
-        /// LogDestinationType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestinationtype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic LogDestinationType { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-tags
         /// Required: False
@@ -103,7 +112,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TrafficType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype
@@ -142,6 +151,27 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic FileFormat { get; set; }
+        }
+
+        public class TagFieldSpecification : Humidifier.Base.BaseSubResource, IHaveResourceType
+        {
+            /// <summary>
+            /// ResourceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-tagfieldspecification.html#cfn-ec2-flowlog-tagfieldspecification-resourcetype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceType { get; set; }
+            /// <summary>
+            /// TagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-tagfieldspecification.html#cfn-ec2-flowlog-tagfieldspecification-tagkeys
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic TagKeys { get; set; }
         }
     }
 }

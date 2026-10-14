@@ -1,6 +1,7 @@
 namespace Humidifier.WorkSpacesWeb
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using BrowserSettingsTypes;
 
     public class BrowserSettings : Humidifier.Base.BaseResource, IHaveTags, IHaveCustomerManagedKey
     {
@@ -37,6 +38,14 @@ namespace Humidifier.WorkSpacesWeb
         /// </summary>
         public Dictionary<string, dynamic> AdditionalEncryptionContext { get; set; }
         /// <summary>
+        /// WebContentFilteringPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-browsersettings.html#cfn-workspacesweb-browsersettings-webcontentfilteringpolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WebContentFilteringPolicy
+        /// </summary>
+        public Humidifier.WorkSpacesWeb.BrowserSettingsTypes.WebContentFilteringPolicy WebContentFilteringPolicy { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesweb-browsersettings.html#cfn-workspacesweb-browsersettings-tags
         /// Required: False
@@ -44,6 +53,40 @@ namespace Humidifier.WorkSpacesWeb
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+    }
+
+    namespace BrowserSettingsTypes
+    {
+        public class WebContentFilteringPolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BlockedUrls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspacesweb-browsersettings-webcontentfilteringpolicy.html#cfn-workspacesweb-browsersettings-webcontentfilteringpolicy-blockedurls
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic BlockedUrls { get; set; }
+            /// <summary>
+            /// AllowedUrls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspacesweb-browsersettings-webcontentfilteringpolicy.html#cfn-workspacesweb-browsersettings-webcontentfilteringpolicy-allowedurls
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedUrls { get; set; }
+            /// <summary>
+            /// BlockedCategories
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspacesweb-browsersettings-webcontentfilteringpolicy.html#cfn-workspacesweb-browsersettings-webcontentfilteringpolicy-blockedcategories
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic BlockedCategories { get; set; }
+        }
     }
 }

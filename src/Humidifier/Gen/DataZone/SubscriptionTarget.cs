@@ -1,6 +1,6 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SubscriptionTargetTypes;
 
     public class SubscriptionTarget : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveType, IHaveDomainIdentifier, IHaveEnvironmentIdentifier, IHaveProvider

@@ -1,6 +1,6 @@
 namespace Humidifier.B2BI
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Profile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEmail, IHavePhone, IHaveLogging, IHaveBusinessName
     {
@@ -60,7 +60,7 @@ namespace Humidifier.B2BI
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserPoolDomainTypes;
 
     public class UserPoolDomain : Humidifier.Base.BaseResource, IHaveDomain, IHaveUserPoolId
@@ -29,6 +29,14 @@ namespace Humidifier.Cognito
         /// Type: CustomDomainConfigType
         /// </summary>
         public Humidifier.Cognito.UserPoolDomainTypes.CustomDomainConfigType CustomDomainConfig { get; set; }
+        /// <summary>
+        /// Routing
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-routing
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RoutingType
+        /// </summary>
+        public Humidifier.Cognito.UserPoolDomainTypes.RoutingType Routing { get; set; }
 
         /// <summary>
         /// Domain
@@ -51,8 +59,16 @@ namespace Humidifier.Cognito
 
     namespace UserPoolDomainTypes
     {
-        public class CustomDomainConfigType : Humidifier.Base.BaseSubResource, IHaveCertificateArn
+        public class CustomDomainConfigType : Humidifier.Base.BaseSubResource, IHaveCertificateArn, IHaveSecurityPolicy
         {
+            /// <summary>
+            /// SecurityPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html#cfn-cognito-userpooldomain-customdomainconfigtype-securitypolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecurityPolicy { get; set; }
             /// <summary>
             /// CertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html#cfn-cognito-userpooldomain-customdomainconfigtype-certificatearn
@@ -61,6 +77,38 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic CertificateArn { get; set; }
+        }
+
+        public class FailoverType : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PrimaryRoute53HealthCheckId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-failovertype.html#cfn-cognito-userpooldomain-failovertype-primaryroute53healthcheckid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrimaryRoute53HealthCheckId { get; set; }
+            /// <summary>
+            /// SecondaryRegion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-failovertype.html#cfn-cognito-userpooldomain-failovertype-secondaryregion
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecondaryRegion { get; set; }
+        }
+
+        public class RoutingType : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Failover
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-routingtype.html#cfn-cognito-userpooldomain-routingtype-failover
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FailoverType
+            /// </summary>
+            public Humidifier.Cognito.UserPoolDomainTypes.FailoverType Failover { get; set; }
         }
     }
 }

@@ -1,24 +1,17 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ModelTypes;
 
     public class Model : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveExecutionRoleArn, IHaveEnableNetworkIsolation, IHaveModelName
     {
         public class Attributes
         {
+            public static string ModelArn =  "ModelArn" ;
             public static string ModelName =  "ModelName" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.Model; }
-        /// <summary>
-        /// ExecutionRoleArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ExecutionRoleArn { get; set; }
         /// <summary>
         /// EnableNetworkIsolation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-enablenetworkisolation
@@ -27,6 +20,14 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableNetworkIsolation { get; set; }
+        /// <summary>
+        /// ExecutionRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ExecutionRoleArn { get; set; }
         /// <summary>
         /// PrimaryContainer
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer
@@ -69,31 +70,11 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ModelTypes
     {
-        public class AdditionalModelDataSource : Humidifier.Base.BaseSubResource, IHaveChannelName, IHaveSageMakerModelTypesS3DataSourceS3DataSource
-        {
-            /// <summary>
-            /// ChannelName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-additionalmodeldatasource.html#cfn-sagemaker-model-additionalmodeldatasource-channelname
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ChannelName { get; set; }
-            /// <summary>
-            /// S3DataSource
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-additionalmodeldatasource.html#cfn-sagemaker-model-additionalmodeldatasource-s3datasource
-            /// Required: True
-            /// UpdateType: Immutable
-            /// Type: S3DataSource
-            /// </summary>
-            public Humidifier.SageMaker.ModelTypes.S3DataSource S3DataSource { get; set; }
-        }
-
         public class ContainerDefinition : Humidifier.Base.BaseSubResource, IHaveMode, IHaveImage, IHaveModelDataUrl, IHaveEnvironment, IHaveModelPackageName, IHaveContainerHostname
         {
             /// <summary>
@@ -182,7 +163,7 @@ namespace Humidifier.SageMaker
         {
             /// <summary>
             /// HubContentArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-s3datasource-hubaccessconfig.html#cfn-sagemaker-model-s3datasource-hubaccessconfig-hubcontentarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-hubaccessconfig.html#cfn-sagemaker-model-hubaccessconfig-hubcontentarn
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -194,7 +175,7 @@ namespace Humidifier.SageMaker
         {
             /// <summary>
             /// RepositoryAuthConfig
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-imageconfig.html#cfn-sagemaker-model-imageconfig-repositoryauthconfig
             /// Required: False
             /// UpdateType: Immutable
             /// Type: RepositoryAuthConfig
@@ -202,7 +183,7 @@ namespace Humidifier.SageMaker
             public Humidifier.SageMaker.ModelTypes.RepositoryAuthConfig RepositoryAuthConfig { get; set; }
             /// <summary>
             /// RepositoryAccessMode
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryaccessmode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-imageconfig.html#cfn-sagemaker-model-imageconfig-repositoryaccessmode
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -226,7 +207,7 @@ namespace Humidifier.SageMaker
         {
             /// <summary>
             /// AcceptEula
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-s3datasource-modelaccessconfig.html#cfn-sagemaker-model-s3datasource-modelaccessconfig-accepteula
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-modelaccessconfig.html#cfn-sagemaker-model-modelaccessconfig-accepteula
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: Boolean
@@ -238,7 +219,7 @@ namespace Humidifier.SageMaker
         {
             /// <summary>
             /// S3DataSource
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-modeldatasource.html#cfn-sagemaker-model-containerdefinition-modeldatasource-s3datasource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-modeldatasource.html#cfn-sagemaker-model-modeldatasource-s3datasource
             /// Required: True
             /// UpdateType: Immutable
             /// Type: S3DataSource
@@ -250,7 +231,7 @@ namespace Humidifier.SageMaker
         {
             /// <summary>
             /// ModelCacheSetting
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-multimodelconfig.html#cfn-sagemaker-model-containerdefinition-multimodelconfig-modelcachesetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-multimodelconfig.html#cfn-sagemaker-model-multimodelconfig-modelcachesetting
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -262,7 +243,7 @@ namespace Humidifier.SageMaker
         {
             /// <summary>
             /// RepositoryCredentialsProviderArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryauthconfig-repositorycredentialsproviderarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-repositoryauthconfig.html#cfn-sagemaker-model-repositoryauthconfig-repositorycredentialsproviderarn
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String

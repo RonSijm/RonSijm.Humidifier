@@ -1,6 +1,6 @@
 namespace Humidifier.Cassandra
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TableTypes;
 
     public class Table : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableName, IHaveKeyspaceName, IHavePointInTimeRecoveryEnabled, IHaveClientSideTimestampsEnabled
@@ -24,6 +24,14 @@ namespace Humidifier.Cassandra
         /// ItemType: ClusteringKeyColumn
         /// </summary>
         public List<Humidifier.Cassandra.TableTypes.ClusteringKeyColumn> ClusteringKeyColumns { get; set; }
+        /// <summary>
+        /// WarmThroughput
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-warmthroughput
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WarmThroughput
+        /// </summary>
+        public Humidifier.Cassandra.TableTypes.WarmThroughput WarmThroughput { get; set; }
 
         /// <summary>
         /// KeyspaceName
@@ -51,6 +59,14 @@ namespace Humidifier.Cassandra
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic PointInTimeRecoveryEnabled { get; set; }
+        /// <summary>
+        /// CdcSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-cdcspecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CdcSpecification
+        /// </summary>
+        public Humidifier.Cassandra.TableTypes.CdcSpecification CdcSpecification { get; set; }
         /// <summary>
         /// AutoScalingSpecifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-autoscalingspecifications
@@ -111,7 +127,7 @@ namespace Humidifier.Cassandra
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TableTypes
@@ -190,6 +206,35 @@ namespace Humidifier.Cassandra
             /// Type: ProvisionedThroughput
             /// </summary>
             public Humidifier.Cassandra.TableTypes.ProvisionedThroughput ProvisionedThroughput { get; set; }
+        }
+
+        public class CdcSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveStatus
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-cdcspecification.html#cfn-cassandra-table-cdcspecification-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// ViewType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-cdcspecification.html#cfn-cassandra-table-cdcspecification-viewtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ViewType { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-cdcspecification.html#cfn-cassandra-table-cdcspecification-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Humidifier.Tag> Tags { get; set; }
         }
 
         public class ClusteringKeyColumn : Humidifier.Base.BaseSubResource
@@ -346,6 +391,26 @@ namespace Humidifier.Cassandra
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ScaleInCooldown { get; set; }
+        }
+
+        public class WarmThroughput : Humidifier.Base.BaseSubResource, IHaveReadUnitsPerSecond, IHaveWriteUnitsPerSecond
+        {
+            /// <summary>
+            /// ReadUnitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-warmthroughput.html#cfn-cassandra-table-warmthroughput-readunitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ReadUnitsPerSecond { get; set; }
+            /// <summary>
+            /// WriteUnitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-warmthroughput.html#cfn-cassandra-table-warmthroughput-writeunitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WriteUnitsPerSecond { get; set; }
         }
     }
 }

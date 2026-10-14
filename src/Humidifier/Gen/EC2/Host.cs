@@ -1,8 +1,8 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Host : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveInstanceFamily, IHaveOutpostArn, IHaveAssetId
+    public class Host : Humidifier.Base.BaseResource, IHaveTags, IHaveInstanceType, IHaveAvailabilityZone, IHaveInstanceFamily, IHaveOutpostArn, IHaveAssetId
     {
         public class Attributes
         {
@@ -76,5 +76,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic AssetId { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

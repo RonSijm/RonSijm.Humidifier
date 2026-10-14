@@ -1,12 +1,13 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PlacementGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveStrategy
     {
         public class Attributes
         {
             public static string GroupName =  "GroupName" ;
+            public static string GroupId =  "GroupId" ;
         }
 
         public override string AWSTypeName { get => AWS.EC2.PlacementGroup; }
@@ -18,6 +19,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic SpreadLevel { get; set; }
+        /// <summary>
+        /// ParentGroupId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-parentgroupid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ParentGroupId { get; set; }
         /// <summary>
         /// Strategy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
@@ -42,6 +51,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

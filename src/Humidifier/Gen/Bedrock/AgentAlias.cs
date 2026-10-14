@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AgentAliasTypes;
 
     public class AgentAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription

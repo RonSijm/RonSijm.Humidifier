@@ -1,6 +1,6 @@
 namespace Humidifier.FSx
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VolumeTypes;
 
     public class Volume : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVolumeType, IHaveBackupId
@@ -53,7 +53,7 @@ namespace Humidifier.FSx
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

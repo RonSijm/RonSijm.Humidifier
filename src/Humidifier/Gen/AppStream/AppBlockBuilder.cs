@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AppBlockBuilderTypes;
 
     public class AppBlockBuilder : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveDisplayName, IHaveIamRoleArn, IHavePlatform, IHaveEnableDefaultInternetAccess
@@ -40,6 +40,14 @@ namespace Humidifier.AppStream
         /// </summary>
         [Required]
         public Humidifier.AppStream.AppBlockBuilderTypes.VpcConfig VpcConfig { get; set; }
+        /// <summary>
+        /// DisableIMDSV1
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-disableimdsv1
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DisableIMDSV1 { get; set; }
         /// <summary>
         /// AppBlockArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-appblockbuilder.html#cfn-appstream-appblockbuilder-appblockarns
@@ -91,7 +99,7 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AccessEndpoints

@@ -1,6 +1,6 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MailManagerRelayTypes;
 
     public class MailManagerRelay : Humidifier.Base.BaseResource, IHaveTags, IHaveServerName, IHaveServerPort
@@ -58,7 +58,7 @@ namespace Humidifier.SES
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace MailManagerRelayTypes

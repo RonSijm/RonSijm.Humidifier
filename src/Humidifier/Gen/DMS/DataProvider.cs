@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataProviderTypes;
 
     public class DataProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveEngine, IHaveDataProviderName, IHaveDataProviderIdentifier
@@ -29,6 +29,14 @@ namespace Humidifier.DMS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic ExactSettings { get; set; }
+        /// <summary>
+        /// Virtual
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-dataprovider.html#cfn-dms-dataprovider-virtual
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic Virtual { get; set; }
 
         /// <summary>
         /// Engine
@@ -55,7 +63,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// DataProviderIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-dataprovider.html#cfn-dms-dataprovider-dataprovideridentifier
@@ -112,6 +120,110 @@ namespace Humidifier.DMS
             public dynamic CertificateArn { get; set; }
         }
 
+        public class IbmDb2LuwSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
+        {
+            /// <summary>
+            /// SecurityMechanism
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-securitymechanism
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SecurityMechanism { get; set; }
+            /// <summary>
+            /// SslMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-sslmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SslMode { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-databasename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// EncryptionAlgorithm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-encryptionalgorithm
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic EncryptionAlgorithm { get; set; }
+            /// <summary>
+            /// CertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2luwsettings.html#cfn-dms-dataprovider-ibmdb2luwsettings-certificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateArn { get; set; }
+        }
+
+        public class IbmDb2zOsSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
+        {
+            /// <summary>
+            /// SslMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2zossettings.html#cfn-dms-dataprovider-ibmdb2zossettings-sslmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SslMode { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2zossettings.html#cfn-dms-dataprovider-ibmdb2zossettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2zossettings.html#cfn-dms-dataprovider-ibmdb2zossettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2zossettings.html#cfn-dms-dataprovider-ibmdb2zossettings-databasename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// CertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-ibmdb2zossettings.html#cfn-dms-dataprovider-ibmdb2zossettings-certificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateArn { get; set; }
+        }
+
         public class MariaDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveCertificateArn, IHaveServerName, IHaveSslMode
         {
             /// <summary>
@@ -150,6 +262,22 @@ namespace Humidifier.DMS
 
         public class MicrosoftSqlServerSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
         {
+            /// <summary>
+            /// S3AccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-microsoftsqlserversettings.html#cfn-dms-dataprovider-microsoftsqlserversettings-s3accessrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3AccessRoleArn { get; set; }
+            /// <summary>
+            /// S3Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-microsoftsqlserversettings.html#cfn-dms-dataprovider-microsoftsqlserversettings-s3path
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3Path { get; set; }
             /// <summary>
             /// SslMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-microsoftsqlserversettings.html#cfn-dms-dataprovider-microsoftsqlserversettings-sslmode
@@ -471,6 +599,14 @@ namespace Humidifier.DMS
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.OracleSettings OracleSettings { get; set; }
             /// <summary>
+            /// SybaseAseSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-sybaseasesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SybaseAseSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.SybaseAseSettings SybaseAseSettings { get; set; }
+            /// <summary>
             /// MicrosoftSqlServerSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-microsoftsqlserversettings
             /// Required: False
@@ -487,6 +623,14 @@ namespace Humidifier.DMS
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.RedshiftSettings RedshiftSettings { get; set; }
             /// <summary>
+            /// IbmDb2zOsSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-ibmdb2zossettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IbmDb2zOsSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.IbmDb2zOsSettings IbmDb2zOsSettings { get; set; }
+            /// <summary>
             /// MySqlSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-mysqlsettings
             /// Required: False
@@ -494,6 +638,14 @@ namespace Humidifier.DMS
             /// Type: MySqlSettings
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.MySqlSettings MySqlSettings { get; set; }
+            /// <summary>
+            /// IbmDb2LuwSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-ibmdb2luwsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IbmDb2LuwSettings
+            /// </summary>
+            public Humidifier.DMS.DataProviderTypes.IbmDb2LuwSettings IbmDb2LuwSettings { get; set; }
             /// <summary>
             /// DocDbSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-settings.html#cfn-dms-dataprovider-settings-docdbsettings
@@ -518,6 +670,58 @@ namespace Humidifier.DMS
             /// Type: MongoDbSettings
             /// </summary>
             public Humidifier.DMS.DataProviderTypes.MongoDbSettings MongoDbSettings { get; set; }
+        }
+
+        public class SybaseAseSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveCertificateArn, IHaveServerName, IHaveSslMode
+        {
+            /// <summary>
+            /// SslMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-sybaseasesettings.html#cfn-dms-dataprovider-sybaseasesettings-sslmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SslMode { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-sybaseasesettings.html#cfn-dms-dataprovider-sybaseasesettings-servername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-sybaseasesettings.html#cfn-dms-dataprovider-sybaseasesettings-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
+            /// EncryptPassword
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-sybaseasesettings.html#cfn-dms-dataprovider-sybaseasesettings-encryptpassword
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EncryptPassword { get; set; }
+            /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-sybaseasesettings.html#cfn-dms-dataprovider-sybaseasesettings-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
+            /// CertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-sybaseasesettings.html#cfn-dms-dataprovider-sybaseasesettings-certificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateArn { get; set; }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.CodeDeploy
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DeploymentConfigTypes;
 
     public class DeploymentConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveComputePlatform, IHaveDeploymentConfigName
@@ -158,7 +158,7 @@ namespace Humidifier.CodeDeploy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-zonalconfig.html#cfn-codedeploy-deploymentconfig-zonalconfig-monitordurationinseconds
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic MonitorDurationInSeconds { get; set; }
             /// <summary>
@@ -174,7 +174,7 @@ namespace Humidifier.CodeDeploy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-zonalconfig.html#cfn-codedeploy-deploymentconfig-zonalconfig-firstzonemonitordurationinseconds
             /// Required: False
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic FirstZoneMonitorDurationInSeconds { get; set; }
         }

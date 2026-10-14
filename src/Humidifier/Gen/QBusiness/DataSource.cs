@@ -1,6 +1,6 @@
 namespace Humidifier.QBusiness
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataSourceTypes;
 
     public class DataSource : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName, IHaveApplicationId, IHaveConfiguration, IHaveIndexId
@@ -112,11 +112,23 @@ namespace Humidifier.QBusiness
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DataSourceTypes
     {
+        public class AudioExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AudioExtractionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-audioextractionconfiguration.html#cfn-qbusiness-datasource-audioextractionconfiguration-audioextractionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AudioExtractionStatus { get; set; }
+        }
+
         public class DataSourceVpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds
         {
             /// <summary>
@@ -198,14 +210,6 @@ namespace Humidifier.QBusiness
         public class DocumentAttributeValue : Humidifier.Base.BaseSubResource, IHaveStringValue, IHaveLongValue, IHaveDateValue, IHaveStringListValue
         {
             /// <summary>
-            /// DateValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-documentattributevalue.html#cfn-qbusiness-datasource-documentattributevalue-datevalue
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DateValue { get; set; }
-            /// <summary>
             /// LongValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-documentattributevalue.html#cfn-qbusiness-datasource-documentattributevalue-longvalue
             /// Required: False
@@ -230,6 +234,14 @@ namespace Humidifier.QBusiness
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic StringListValue { get; set; }
+            /// <summary>
+            /// DateValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-documentattributevalue.html#cfn-qbusiness-datasource-documentattributevalue-datevalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DateValue { get; set; }
         }
 
         public class DocumentEnrichmentConfiguration : Humidifier.Base.BaseSubResource
@@ -264,14 +276,6 @@ namespace Humidifier.QBusiness
         public class HookConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveS3BucketName, IHaveLambdaArn
         {
             /// <summary>
-            /// LambdaArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-hookconfiguration.html#cfn-qbusiness-datasource-hookconfiguration-lambdaarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LambdaArn { get; set; }
-            /// <summary>
             /// InvocationCondition
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-hookconfiguration.html#cfn-qbusiness-datasource-hookconfiguration-invocationcondition
             /// Required: False
@@ -287,6 +291,14 @@ namespace Humidifier.QBusiness
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3BucketName { get; set; }
+            /// <summary>
+            /// LambdaArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-hookconfiguration.html#cfn-qbusiness-datasource-hookconfiguration-lambdaarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LambdaArn { get; set; }
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-hookconfiguration.html#cfn-qbusiness-datasource-hookconfiguration-rolearn
@@ -340,6 +352,22 @@ namespace Humidifier.QBusiness
         public class MediaExtractionConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// VideoExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-mediaextractionconfiguration.html#cfn-qbusiness-datasource-mediaextractionconfiguration-videoextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VideoExtractionConfiguration
+            /// </summary>
+            public Humidifier.QBusiness.DataSourceTypes.VideoExtractionConfiguration VideoExtractionConfiguration { get; set; }
+            /// <summary>
+            /// AudioExtractionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-mediaextractionconfiguration.html#cfn-qbusiness-datasource-mediaextractionconfiguration-audioextractionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AudioExtractionConfiguration
+            /// </summary>
+            public Humidifier.QBusiness.DataSourceTypes.AudioExtractionConfiguration AudioExtractionConfiguration { get; set; }
+            /// <summary>
             /// ImageExtractionConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-mediaextractionconfiguration.html#cfn-qbusiness-datasource-mediaextractionconfiguration-imageextractionconfiguration
             /// Required: False
@@ -347,6 +375,18 @@ namespace Humidifier.QBusiness
             /// Type: ImageExtractionConfiguration
             /// </summary>
             public Humidifier.QBusiness.DataSourceTypes.ImageExtractionConfiguration ImageExtractionConfiguration { get; set; }
+        }
+
+        public class VideoExtractionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VideoExtractionStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-datasource-videoextractionconfiguration.html#cfn-qbusiness-datasource-videoextractionconfiguration-videoextractionstatus
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VideoExtractionStatus { get; set; }
         }
     }
 }

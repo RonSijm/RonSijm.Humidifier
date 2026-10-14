@@ -1,6 +1,6 @@
 namespace Humidifier.MediaTailor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ChannelTypes;
 
     public class Channel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveChannelName, IHaveTier, IHaveAudiences
@@ -74,7 +74,7 @@ namespace Humidifier.MediaTailor
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// TimeShiftConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-channel.html#cfn-mediatailor-channel-timeshiftconfiguration

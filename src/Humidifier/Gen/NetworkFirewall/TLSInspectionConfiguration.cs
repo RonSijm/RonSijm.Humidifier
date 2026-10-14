@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkFirewall
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TLSInspectionConfigurationTypes;
 
     public class TLSInspectionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
@@ -29,7 +29,7 @@ namespace Humidifier.NetworkFirewall
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// TLSInspectionConfiguration_
@@ -79,14 +79,6 @@ namespace Humidifier.NetworkFirewall
         public class PortRange : Humidifier.Base.BaseSubResource, IHaveFromPort, IHaveToPort
         {
             /// <summary>
-            /// FromPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-tlsinspectionconfiguration-portrange.html#cfn-networkfirewall-tlsinspectionconfiguration-portrange-fromport
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic FromPort { get; set; }
-            /// <summary>
             /// ToPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-tlsinspectionconfiguration-portrange.html#cfn-networkfirewall-tlsinspectionconfiguration-portrange-toport
             /// Required: True
@@ -94,6 +86,14 @@ namespace Humidifier.NetworkFirewall
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ToPort { get; set; }
+            /// <summary>
+            /// FromPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-tlsinspectionconfiguration-portrange.html#cfn-networkfirewall-tlsinspectionconfiguration-portrange-fromport
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FromPort { get; set; }
         }
 
         public class ServerCertificate : Humidifier.Base.BaseSubResource, IHaveResourceArn

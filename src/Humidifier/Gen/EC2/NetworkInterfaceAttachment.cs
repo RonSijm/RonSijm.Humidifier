@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkInterfaceAttachmentTypes;
 
     public class NetworkInterfaceAttachment : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveInstanceId, IHaveDeleteOnTermination, IHaveDeviceIndex
@@ -39,6 +39,14 @@ namespace Humidifier.EC2
         /// </summary>
         [Required]
         public dynamic DeviceIndex { get; set; }
+        /// <summary>
+        /// EnaQueueCount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfaceattachment.html#cfn-ec2-networkinterfaceattachment-enaqueuecount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic EnaQueueCount { get; set; }
 
         /// <summary>
         /// NetworkInterfaceId

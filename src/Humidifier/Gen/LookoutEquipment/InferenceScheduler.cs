@@ -1,6 +1,6 @@
 namespace Humidifier.LookoutEquipment
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InferenceSchedulerTypes;
 
     public class InferenceScheduler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveModelName
@@ -86,7 +86,7 @@ namespace Humidifier.LookoutEquipment
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace InferenceSchedulerTypes

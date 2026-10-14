@@ -1,6 +1,6 @@
 namespace Humidifier.ElasticLoadBalancingV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ListenerCertificateTypes;
 
     public class ListenerCertificate : Humidifier.Base.BaseResource, IHaveListenerArn

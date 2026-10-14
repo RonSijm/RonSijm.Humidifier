@@ -1,17 +1,34 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LocationAzureBlobTypes;
 
     public class LocationAzureBlob : Humidifier.Base.BaseResource, IHaveTags, IHaveSubdirectory, IHaveAgentArns
     {
         public class Attributes
         {
+            public static string ManagedSecretConfig =  "ManagedSecretConfig" ;
             public static string LocationUri =  "LocationUri" ;
             public static string LocationArn =  "LocationArn" ;
         }
 
         public override string AWSTypeName { get => AWS.DataSync.LocationAzureBlob; }
+        /// <summary>
+        /// CmkSecretConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-cmksecretconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CmkSecretConfig
+        /// </summary>
+        public Humidifier.DataSync.LocationAzureBlobTypes.CmkSecretConfig CmkSecretConfig { get; set; }
+        /// <summary>
+        /// FederatedIdentity
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-federatedidentity
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AzureFederatedIdentityConfig
+        /// </summary>
+        public Humidifier.DataSync.LocationAzureBlobTypes.AzureFederatedIdentityConfig FederatedIdentity { get; set; }
         /// <summary>
         /// AzureAccessTier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-azureaccesstier
@@ -52,16 +69,22 @@ namespace Humidifier.DataSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic AzureBlobContainerUrl { get; set; }
-
+        /// <summary>
+        /// CustomSecretConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-customsecretconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomSecretConfig
+        /// </summary>
+        public Humidifier.DataSync.LocationAzureBlobTypes.CustomSecretConfig CustomSecretConfig { get; set; }
         /// <summary>
         /// AgentArns
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationazureblob.html#cfn-datasync-locationazureblob-agentarns
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public dynamic AgentArns { get; set; }
         /// <summary>
         /// Tags
@@ -71,7 +94,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// AzureBlobAuthenticationType
@@ -96,6 +119,98 @@ namespace Humidifier.DataSync
             /// PrimitiveType: String
             /// </summary>
             public dynamic AzureBlobSasToken { get; set; }
+        }
+
+        public class AzureFederatedIdentityConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AzureOidc
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-azurefederatedidentityconfig.html#cfn-datasync-locationazureblob-azurefederatedidentityconfig-azureoidc
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AzureOidcConfig
+            /// </summary>
+            public Humidifier.DataSync.LocationAzureBlobTypes.AzureOidcConfig AzureOidc { get; set; }
+            /// <summary>
+            /// AwsIamRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-azurefederatedidentityconfig.html#cfn-datasync-locationazureblob-azurefederatedidentityconfig-awsiamrole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AwsIamRole { get; set; }
+        }
+
+        public class AzureOidcConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveTenantId
+        {
+            /// <summary>
+            /// TenantId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-azureoidcconfig.html#cfn-datasync-locationazureblob-azureoidcconfig-tenantid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TenantId { get; set; }
+            /// <summary>
+            /// ClientId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-azureoidcconfig.html#cfn-datasync-locationazureblob-azureoidcconfig-clientid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientId { get; set; }
+        }
+
+        public class CmkSecretConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-cmksecretconfig.html#cfn-datasync-locationazureblob-cmksecretconfig-secretarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-cmksecretconfig.html#cfn-datasync-locationazureblob-cmksecretconfig-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
+        }
+
+        public class CustomSecretConfig : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-customsecretconfig.html#cfn-datasync-locationazureblob-customsecretconfig-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// SecretAccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-customsecretconfig.html#cfn-datasync-locationazureblob-customsecretconfig-secretaccessrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretAccessRoleArn { get; set; }
+        }
+
+        public class ManagedSecretConfig : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationazureblob-managedsecretconfig.html#cfn-datasync-locationazureblob-managedsecretconfig-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
         }
     }
 }

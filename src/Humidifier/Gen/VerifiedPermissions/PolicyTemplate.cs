@@ -1,8 +1,8 @@
 namespace Humidifier.VerifiedPermissions
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class PolicyTemplate : Humidifier.Base.BaseResource, IHaveDescription, IHaveStatement, IHavePolicyStoreId
+    public class PolicyTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveStatement, IHavePolicyStoreId
     {
         public class Attributes
         {
@@ -38,5 +38,6 @@ namespace Humidifier.VerifiedPermissions
         /// </summary>
         [Required]
         public dynamic PolicyStoreId { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

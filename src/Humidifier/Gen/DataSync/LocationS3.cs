@@ -1,6 +1,6 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LocationS3Types;
 
     public class LocationS3 : Humidifier.Base.BaseResource, IHaveTags, IHaveSubdirectory, IHaveS3BucketArn
@@ -54,7 +54,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace LocationS3Types

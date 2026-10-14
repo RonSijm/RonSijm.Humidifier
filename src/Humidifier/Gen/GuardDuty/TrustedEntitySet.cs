@@ -1,0 +1,96 @@
+namespace Humidifier.GuardDuty
+{
+    using global::System.Collections.Generic;
+    using TrustedEntitySetTypes;
+
+    public class TrustedEntitySet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveFormat, IHaveLocation, IHaveDetectorId, IHaveActivate, IHaveExpectedBucketOwner
+    {
+        public class Attributes
+        {
+            public static string Status =  "Status" ;
+            public static string CreatedAt =  "CreatedAt" ;
+            public static string Id =  "Id" ;
+            public static string ErrorDetails =  "ErrorDetails" ;
+            public static string UpdatedAt =  "UpdatedAt" ;
+        }
+
+        public override string AWSTypeName { get => AWS.GuardDuty.TrustedEntitySet; }
+
+        /// <summary>
+        /// Format
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-trustedentityset.html#cfn-guardduty-trustedentityset-format
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic Format { get; set; }
+        /// <summary>
+        /// Activate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-trustedentityset.html#cfn-guardduty-trustedentityset-activate
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic Activate { get; set; }
+        /// <summary>
+        /// DetectorId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-trustedentityset.html#cfn-guardduty-trustedentityset-detectorid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DetectorId { get; set; }
+        /// <summary>
+        /// ExpectedBucketOwner
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-trustedentityset.html#cfn-guardduty-trustedentityset-expectedbucketowner
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ExpectedBucketOwner { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-trustedentityset.html#cfn-guardduty-trustedentityset-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: TagItem
+        /// </summary>
+        public List<Humidifier.GuardDuty.TrustedEntitySetTypes.TagItem> Tags { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+
+        /// <summary>
+        /// Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-trustedentityset.html#cfn-guardduty-trustedentityset-location
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic Location { get; set; }
+    }
+
+    namespace TrustedEntitySetTypes
+    {
+        public class TagItem : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-trustedentityset-tagitem.html#cfn-guardduty-trustedentityset-tagitem-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-trustedentityset-tagitem.html#cfn-guardduty-trustedentityset-tagitem-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+    }
+}

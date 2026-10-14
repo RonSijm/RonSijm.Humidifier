@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SecurityProfileTypes;
 
     public class SecurityProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceArn, IHavePermissions, IHaveSecurityProfileName
@@ -29,7 +29,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> AllowedAccessControlTags { get; set; }
+        public List<Humidifier.Tag> AllowedAccessControlTags { get; set; }
         /// <summary>
         /// Applications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-applications
@@ -58,6 +58,14 @@ namespace Humidifier.Connect
         [Required]
         public dynamic InstanceArn { get; set; }
         /// <summary>
+        /// GranularAccessControlConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-granularaccesscontrolconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: GranularAccessControlConfiguration
+        /// </summary>
+        public Humidifier.Connect.SecurityProfileTypes.GranularAccessControlConfiguration GranularAccessControlConfiguration { get; set; }
+        /// <summary>
         /// Permissions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-permissions
         /// Required: False
@@ -67,6 +75,15 @@ namespace Humidifier.Connect
         /// </summary>
         public dynamic Permissions { get; set; }
         public dynamic SecurityProfileName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// AllowedFlowModules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-allowedflowmodules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: FlowModule
+        /// </summary>
+        public List<Humidifier.Connect.SecurityProfileTypes.FlowModule> AllowedFlowModules { get; set; }
         /// <summary>
         /// TagRestrictedResources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-tagrestrictedresources
@@ -84,7 +101,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// HierarchyRestrictedResources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-securityprofile.html#cfn-connect-securityprofile-hierarchyrestrictedresources
@@ -98,12 +115,20 @@ namespace Humidifier.Connect
 
     namespace SecurityProfileTypes
     {
-        public class Application : Humidifier.Base.BaseSubResource, IHaveNamespace_
+        public class Application : Humidifier.Base.BaseSubResource, IHaveType, IHaveNamespace_
         {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-application.html#cfn-connect-securityprofile-application-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
             /// <summary>
             /// ApplicationPermissions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-application.html#cfn-connect-securityprofile-application-applicationpermissions
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String
@@ -112,11 +137,97 @@ namespace Humidifier.Connect
             /// <summary>
             /// Namespace_
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-application.html#cfn-connect-securityprofile-application-namespace
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Namespace_ { get; set; }
+        }
+
+        public class DataTableAccessControlConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PrimaryAttributeAccessControlConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-datatableaccesscontrolconfiguration.html#cfn-connect-securityprofile-datatableaccesscontrolconfiguration-primaryattributeaccesscontrolconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PrimaryAttributeAccessControlConfigurationItem
+            /// </summary>
+            public Humidifier.Connect.SecurityProfileTypes.PrimaryAttributeAccessControlConfigurationItem PrimaryAttributeAccessControlConfiguration { get; set; }
+        }
+
+        public class FlowModule : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-flowmodule.html#cfn-connect-securityprofile-flowmodule-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// FlowModuleId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-flowmodule.html#cfn-connect-securityprofile-flowmodule-flowmoduleid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FlowModuleId { get; set; }
+        }
+
+        public class GranularAccessControlConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DataTableAccessControlConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-granularaccesscontrolconfiguration.html#cfn-connect-securityprofile-granularaccesscontrolconfiguration-datatableaccesscontrolconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DataTableAccessControlConfiguration
+            /// </summary>
+            public Humidifier.Connect.SecurityProfileTypes.DataTableAccessControlConfiguration DataTableAccessControlConfiguration { get; set; }
+        }
+
+        public class PrimaryAttributeAccessControlConfigurationItem : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PrimaryAttributeValues
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-primaryattributeaccesscontrolconfigurationitem.html#cfn-connect-securityprofile-primaryattributeaccesscontrolconfigurationitem-primaryattributevalues
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PrimaryAttributeValue
+            /// </summary>
+            public List<Humidifier.Connect.SecurityProfileTypes.PrimaryAttributeValue> PrimaryAttributeValues { get; set; }
+        }
+
+        public class PrimaryAttributeValue : Humidifier.Base.BaseSubResource, IHaveValues, IHaveAttributeName, IHaveAccessType
+        {
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-primaryattributevalue.html#cfn-connect-securityprofile-primaryattributevalue-values
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+            /// <summary>
+            /// AttributeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-primaryattributevalue.html#cfn-connect-securityprofile-primaryattributevalue-attributename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttributeName { get; set; }
+            /// <summary>
+            /// AccessType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-securityprofile-primaryattributevalue.html#cfn-connect-securityprofile-primaryattributevalue-accesstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AccessType { get; set; }
         }
     }
 }

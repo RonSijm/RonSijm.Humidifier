@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RestoreTestingPlanTypes;
 
     public class RestoreTestingPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveScheduleExpression, IHaveScheduleExpressionTimezone, IHaveRestoreTestingPlanName
@@ -49,14 +49,6 @@ namespace Humidifier.Backup
         /// </summary>
         public dynamic ScheduleExpressionTimezone { get; set; }
         /// <summary>
-        /// ScheduleStatus
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingplan.html#cfn-backup-restoretestingplan-schedulestatus
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ScheduleStatus { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-restoretestingplan.html#cfn-backup-restoretestingplan-tags
         /// Required: False
@@ -64,7 +56,7 @@ namespace Humidifier.Backup
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace RestoreTestingPlanTypes

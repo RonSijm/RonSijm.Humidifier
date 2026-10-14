@@ -1,6 +1,6 @@
 namespace Humidifier.Oam
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LinkTypes;
 
     public class Link : Humidifier.Base.BaseResource, IHaveResourceTypes

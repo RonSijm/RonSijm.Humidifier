@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IdentityPoolRoleAttachmentTypes;
 
     public class IdentityPoolRoleAttachment : Humidifier.Base.BaseResource, IHaveIdentityPoolId

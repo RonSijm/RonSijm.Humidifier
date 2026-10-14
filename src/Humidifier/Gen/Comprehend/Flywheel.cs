@@ -1,6 +1,6 @@
 namespace Humidifier.Comprehend
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlywheelTypes;
 
     public class Flywheel : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataAccessRoleArn
@@ -72,7 +72,7 @@ namespace Humidifier.Comprehend
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace FlywheelTypes

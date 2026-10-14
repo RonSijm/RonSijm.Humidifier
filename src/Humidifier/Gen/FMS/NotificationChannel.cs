@@ -1,6 +1,6 @@
 namespace Humidifier.FMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class NotificationChannel : Humidifier.Base.BaseResource, IHaveSnsTopicArn
     {
@@ -10,7 +10,7 @@ namespace Humidifier.FMS
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-notificationchannel.html#cfn-fms-notificationchannel-snstopicarn
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]

@@ -1,6 +1,6 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScriptTypes;
 
     public class Script : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVersion
@@ -14,6 +14,14 @@ namespace Humidifier.GameLift
         }
 
         public override string AWSTypeName { get => AWS.GameLift.Script; }
+        /// <summary>
+        /// NodeJsVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-nodejsversion
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NodeJsVersion { get; set; }
         /// <summary>
         /// Version
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-version
@@ -40,7 +48,7 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

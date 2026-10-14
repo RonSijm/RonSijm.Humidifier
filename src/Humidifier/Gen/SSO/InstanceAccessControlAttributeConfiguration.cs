@@ -1,6 +1,6 @@
 namespace Humidifier.SSO
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InstanceAccessControlAttributeConfigurationTypes;
 
     public class InstanceAccessControlAttributeConfiguration : Humidifier.Base.BaseResource, IHaveInstanceArn

@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DatabaseTypes;
 
     public class Database : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDatabaseName, IHaveCatalogId

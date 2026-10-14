@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LayerVersionTypes;
 
     public class LayerVersion : Humidifier.Base.BaseResource, IHaveDescription
@@ -93,6 +93,14 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3Key { get; set; }
+            /// <summary>
+            /// S3ObjectStorageMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectstoragemode
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3ObjectStorageMode { get; set; }
         }
     }
 }

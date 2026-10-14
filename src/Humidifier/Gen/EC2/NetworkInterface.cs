@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkInterfaceTypes;
 
     public class NetworkInterface : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveSubnetId, IHavePrivateIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveSourceDestCheck, IHaveIpv6PrefixCount, IHaveIpv4PrefixCount, IHaveGroupSet, IHaveInterfaceType
@@ -12,6 +12,7 @@ namespace Humidifier.EC2
             public static string VpcId =  "VpcId" ;
             public static string PrimaryPrivateIpAddress =  "PrimaryPrivateIpAddress" ;
             public static string Id =  "Id" ;
+            public static string PublicIpDnsNameOptions =  "PublicIpDnsNameOptions" ;
         }
 
         public override string AWSTypeName { get => AWS.EC2.NetworkInterface; }
@@ -48,6 +49,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic SecondaryPrivateIpAddressCount { get; set; }
+        /// <summary>
+        /// PublicIpDnsHostnameTypeSpecification
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-publicipdnshostnametypespecification
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PublicIpDnsHostnameTypeSpecification { get; set; }
         /// <summary>
         /// Ipv6PrefixCount
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6prefixcount
@@ -142,7 +151,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ConnectionTrackingSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-connectiontrackingspecification
@@ -237,6 +246,42 @@ namespace Humidifier.EC2
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Primary { get; set; }
+        }
+
+        public class PublicIpDnsNameOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DnsHostnameType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-publicipdnsnameoptions.html#cfn-ec2-networkinterface-publicipdnsnameoptions-dnshostnametype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DnsHostnameType { get; set; }
+            /// <summary>
+            /// PublicIpv4DnsName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-publicipdnsnameoptions.html#cfn-ec2-networkinterface-publicipdnsnameoptions-publicipv4dnsname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PublicIpv4DnsName { get; set; }
+            /// <summary>
+            /// PublicDualStackDnsName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-publicipdnsnameoptions.html#cfn-ec2-networkinterface-publicipdnsnameoptions-publicdualstackdnsname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PublicDualStackDnsName { get; set; }
+            /// <summary>
+            /// PublicIpv6DnsName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-publicipdnsnameoptions.html#cfn-ec2-networkinterface-publicipdnsnameoptions-publicipv6dnsname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PublicIpv6DnsName { get; set; }
         }
     }
 }

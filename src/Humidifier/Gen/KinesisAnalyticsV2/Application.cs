@@ -1,6 +1,6 @@
 namespace Humidifier.KinesisAnalyticsV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationTypes;
 
     public class Application : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveApplicationName, IHaveApplicationDescription, IHaveDescription
@@ -68,7 +68,7 @@ namespace Humidifier.KinesisAnalyticsV2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// ServiceExecutionRole
@@ -113,6 +113,14 @@ namespace Humidifier.KinesisAnalyticsV2
             /// Type: ApplicationCodeConfiguration
             /// </summary>
             public Humidifier.KinesisAnalyticsV2.ApplicationTypes.ApplicationCodeConfiguration ApplicationCodeConfiguration { get; set; }
+            /// <summary>
+            /// ApplicationEncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-applicationencryptionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ApplicationEncryptionConfiguration
+            /// </summary>
+            public Humidifier.KinesisAnalyticsV2.ApplicationTypes.ApplicationEncryptionConfiguration ApplicationEncryptionConfiguration { get; set; }
             /// <summary>
             /// EnvironmentProperties
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-environmentproperties
@@ -170,6 +178,26 @@ namespace Humidifier.KinesisAnalyticsV2
             /// Type: ApplicationSystemRollbackConfiguration
             /// </summary>
             public Humidifier.KinesisAnalyticsV2.ApplicationTypes.ApplicationSystemRollbackConfiguration ApplicationSystemRollbackConfiguration { get; set; }
+        }
+
+        public class ApplicationEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKeyType, IHaveKeyId
+        {
+            /// <summary>
+            /// KeyType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationencryptionconfiguration.html#cfn-kinesisanalyticsv2-application-applicationencryptionconfiguration-keytype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KeyType { get; set; }
+            /// <summary>
+            /// KeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationencryptionconfiguration.html#cfn-kinesisanalyticsv2-application-applicationencryptionconfiguration-keyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KeyId { get; set; }
         }
 
         public class ApplicationMaintenanceConfiguration : Humidifier.Base.BaseSubResource
@@ -275,7 +303,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-checkpointinterval
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic CheckpointInterval { get; set; }
             /// <summary>
@@ -283,7 +311,7 @@ namespace Humidifier.KinesisAnalyticsV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-checkpointconfiguration.html#cfn-kinesisanalyticsv2-application-checkpointconfiguration-minpausebetweencheckpoints
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic MinPauseBetweenCheckpoints { get; set; }
             /// <summary>

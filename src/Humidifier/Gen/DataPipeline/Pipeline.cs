@@ -1,6 +1,6 @@
 namespace Humidifier.DataPipeline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PipelineTypes;
 
     public class Pipeline : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveActivate

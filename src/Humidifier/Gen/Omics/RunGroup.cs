@@ -1,6 +1,6 @@
 namespace Humidifier.Omics
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class RunGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
     {

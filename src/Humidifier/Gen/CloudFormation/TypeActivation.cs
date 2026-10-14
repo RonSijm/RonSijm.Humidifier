@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TypeActivationTypes;
 
     public class TypeActivation : Humidifier.Base.BaseResource, IHaveType, IHaveExecutionRoleArn, IHaveTypeName

@@ -1,12 +1,13 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NotebookInstanceTypes;
 
-    public class NotebookInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveInstanceType, IHaveSubnetId, IHaveVolumeSizeInGB, IHaveAcceleratorTypes
+    public class NotebookInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveInstanceType, IHaveSubnetId, IHaveVolumeSizeInGB
     {
         public class Attributes
         {
+            public static string NotebookInstanceArn =  "NotebookInstanceArn" ;
             public static string NotebookInstanceName =  "NotebookInstanceName" ;
         }
 
@@ -61,15 +62,6 @@ namespace Humidifier.SageMaker
         /// </summary>
         public dynamic PlatformIdentifier { get; set; }
         /// <summary>
-        /// AcceleratorTypes
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-acceleratortypes
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic AcceleratorTypes { get; set; }
-        /// <summary>
         /// SubnetId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-subnetid
         /// Required: False
@@ -112,7 +104,6 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: String
         /// </summary>
         public dynamic RootAccess { get; set; }
-        public dynamic NotebookInstanceName { get => GivenName; set => GivenName = value; }
 
         /// <summary>
         /// InstanceType
@@ -123,6 +114,7 @@ namespace Humidifier.SageMaker
         /// </summary>
         [Required]
         public dynamic InstanceType { get; set; }
+        public dynamic NotebookInstanceName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// LifecycleConfigName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstance.html#cfn-sagemaker-notebookinstance-lifecycleconfigname
@@ -139,7 +131,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace NotebookInstanceTypes

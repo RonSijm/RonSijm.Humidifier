@@ -1,6 +1,6 @@
 namespace Humidifier.RedshiftServerless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NamespaceTypes;
 
     public class Namespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveNamespaceName, IHaveFinalSnapshotName, IHaveIamRoles, IHaveAdminUsername, IHaveLogExports, IHaveAdminUserPassword, IHaveNamespaceResourcePolicy, IHaveAdminPasswordSecretKmsKeyId, IHaveDefaultIamRoleArn, IHaveDbName
@@ -122,11 +122,11 @@ namespace Humidifier.RedshiftServerless
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// LogExports
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-namespace.html#cfn-redshiftserverless-namespace-logexports

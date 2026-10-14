@@ -1,6 +1,6 @@
 namespace Humidifier.GameLift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MatchmakingConfigurationTypes;
 
     public class MatchmakingConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveCreationTime, IHaveRuleSetName, IHaveAcceptanceRequired, IHaveNotificationTarget, IHaveCustomEventData
@@ -141,7 +141,7 @@ namespace Humidifier.GameLift
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// RuleSetArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-rulesetarn

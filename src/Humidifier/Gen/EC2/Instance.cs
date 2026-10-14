@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InstanceTypes;
 
     public class Instance : Humidifier.Base.BaseResource, IHaveTags, IHaveSecurityGroupIds, IHaveInstanceType, IHaveAvailabilityZone, IHaveSubnetId, IHaveSecurityGroups, IHavePrivateIpAddress, IHaveEbsOptimized, IHaveImageId, IHaveTenancy, IHaveKeyName, IHaveUserData, IHaveIpv6AddressCount, IHaveKernelId, IHaveHostId, IHaveHostResourceGroupArn, IHaveAffinity, IHaveIamInstanceProfile, IHaveAdditionalInfo, IHaveInstanceInitiatedShutdownBehavior, IHaveDisableApiTermination, IHaveRamdiskId, IHaveSourceDestCheck
@@ -186,14 +186,6 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic InstanceType { get; set; }
         /// <summary>
-        /// Monitoring
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-instance.html#cfn-ec2-instance-monitoring
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic Monitoring { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-instance.html#cfn-ec2-instance-tags
         /// Required: False
@@ -201,7 +193,15 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// Monitoring
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-instance.html#cfn-ec2-instance-monitoring
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic Monitoring { get; set; }
         /// <summary>
         /// AdditionalInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-instance.html#cfn-ec2-instance-additionalinfo
@@ -227,6 +227,14 @@ namespace Humidifier.EC2
         /// ItemType: LicenseSpecification
         /// </summary>
         public List<Humidifier.EC2.InstanceTypes.LicenseSpecification> LicenseSpecifications { get; set; }
+        /// <summary>
+        /// MetadataOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-instance.html#cfn-ec2-instance-metadataoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MetadataOptions
+        /// </summary>
+        public Humidifier.EC2.InstanceTypes.MetadataOptions MetadataOptions { get; set; }
         /// <summary>
         /// InstanceInitiatedShutdownBehavior
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-instance.html#cfn-ec2-instance-instanceinitiatedshutdownbehavior
@@ -534,6 +542,38 @@ namespace Humidifier.EC2
             public dynamic Count { get; set; }
         }
 
+        public class EnaSrdSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdEnabled
+        {
+            /// <summary>
+            /// EnaSrdEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enasrdspecification.html#cfn-ec2-instance-enasrdspecification-enasrdenabled
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnaSrdEnabled { get; set; }
+            /// <summary>
+            /// EnaSrdUdpSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enasrdspecification.html#cfn-ec2-instance-enasrdspecification-enasrdudpspecification
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: EnaSrdUdpSpecification
+            /// </summary>
+            public Humidifier.EC2.InstanceTypes.EnaSrdUdpSpecification EnaSrdUdpSpecification { get; set; }
+        }
+
+        public class EnaSrdUdpSpecification : Humidifier.Base.BaseSubResource, IHaveEnaSrdUdpEnabled
+        {
+            /// <summary>
+            /// EnaSrdUdpEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enasrdudpspecification.html#cfn-ec2-instance-enasrdudpspecification-enasrdudpenabled
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnaSrdUdpEnabled { get; set; }
+        }
+
         public class EnclaveOptions : Humidifier.Base.BaseSubResource, IHaveEnabled
         {
             /// <summary>
@@ -608,6 +648,50 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic LicenseConfigurationArn { get; set; }
+        }
+
+        public class MetadataOptions : Humidifier.Base.BaseSubResource, IHaveHttpPutResponseHopLimit, IHaveHttpTokens, IHaveHttpEndpoint
+        {
+            /// <summary>
+            /// HttpPutResponseHopLimit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-metadataoptions.html#cfn-ec2-instance-metadataoptions-httpputresponsehoplimit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HttpPutResponseHopLimit { get; set; }
+            /// <summary>
+            /// HttpProtocolIpv6
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-metadataoptions.html#cfn-ec2-instance-metadataoptions-httpprotocolipv6
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpProtocolIpv6 { get; set; }
+            /// <summary>
+            /// HttpTokens
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-metadataoptions.html#cfn-ec2-instance-metadataoptions-httptokens
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpTokens { get; set; }
+            /// <summary>
+            /// InstanceMetadataTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-metadataoptions.html#cfn-ec2-instance-metadataoptions-instancemetadatatags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceMetadataTags { get; set; }
+            /// <summary>
+            /// HttpEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-metadataoptions.html#cfn-ec2-instance-metadataoptions-httpendpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpEndpoint { get; set; }
         }
 
         public class NetworkInterface : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveSubnetId, IHaveNetworkInterfaceId, IHavePrivateIpAddress, IHaveDeleteOnTermination, IHaveAssociatePublicIpAddress, IHaveIpv6AddressCount, IHaveSecondaryPrivateIpAddressCount, IHaveDeviceIndex, IHaveGroupSet, IHaveAssociateCarrierIpAddress
@@ -703,6 +787,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AssociateCarrierIpAddress { get; set; }
+            /// <summary>
+            /// EnaSrdSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-networkinterface.html#cfn-ec2-instance-networkinterface-enasrdspecification
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: EnaSrdSpecification
+            /// </summary>
+            public Humidifier.EC2.InstanceTypes.EnaSrdSpecification EnaSrdSpecification { get; set; }
             /// <summary>
             /// Ipv6AddressCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-networkinterface.html#cfn-ec2-instance-networkinterface-ipv6addresscount

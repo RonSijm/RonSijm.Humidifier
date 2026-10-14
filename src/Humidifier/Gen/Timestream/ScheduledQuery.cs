@@ -1,6 +1,6 @@
 namespace Humidifier.Timestream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScheduledQueryTypes;
 
     public class ScheduledQuery : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveQueryString, IHaveClientToken
@@ -90,7 +90,7 @@ namespace Humidifier.Timestream
         /// ClientToken
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-clienttoken
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic ClientToken { get; set; }
@@ -102,7 +102,7 @@ namespace Humidifier.Timestream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ScheduledQueryTypes

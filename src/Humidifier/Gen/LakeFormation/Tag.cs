@@ -1,6 +1,6 @@
 namespace Humidifier.LakeFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Tag : Humidifier.Base.BaseResource, IHaveCatalogId, IHaveTagKey, IHaveTagValues
     {

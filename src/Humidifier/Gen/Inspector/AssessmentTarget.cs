@@ -1,6 +1,6 @@
 namespace Humidifier.Inspector
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AssessmentTarget : Humidifier.Base.BaseResource, IHaveImpliedResourceName
     {

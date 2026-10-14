@@ -1,12 +1,13 @@
 namespace Humidifier.Cloud9
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentEC2Types;
 
     public class EnvironmentEC2 : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveSubnetId, IHaveImageId, IHaveConnectionType
     {
         public class Attributes
         {
+            public static string EnvironmentId =  "EnvironmentId" ;
             public static string Arn =  "Arn" ;
             public static string Name =  "Name" ;
         }
@@ -53,15 +54,13 @@ namespace Humidifier.Cloud9
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AutomaticStopTimeMinutes { get; set; }
-
         /// <summary>
         /// ImageId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-imageid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic ImageId { get; set; }
         /// <summary>
         /// SubnetId
@@ -71,15 +70,13 @@ namespace Humidifier.Cloud9
         /// PrimitiveType: String
         /// </summary>
         public dynamic SubnetId { get; set; }
-
         /// <summary>
         /// InstanceType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-instancetype
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic InstanceType { get; set; }
         /// <summary>
         /// Tags
@@ -89,7 +86,7 @@ namespace Humidifier.Cloud9
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -101,7 +98,7 @@ namespace Humidifier.Cloud9
             /// PathComponent
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-pathcomponent
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic PathComponent { get; set; }
@@ -109,7 +106,7 @@ namespace Humidifier.Cloud9
             /// RepositoryUrl
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloud9-environmentec2-repository.html#cfn-cloud9-environmentec2-repository-repositoryurl
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic RepositoryUrl { get; set; }

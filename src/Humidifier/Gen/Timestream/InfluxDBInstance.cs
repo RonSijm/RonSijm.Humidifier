@@ -1,6 +1,6 @@
 namespace Humidifier.Timestream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InfluxDBInstanceTypes;
 
     public class InfluxDBInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePort, IHaveBucket, IHaveUsername, IHavePassword, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveNetworkType, IHaveDeploymentType, IHaveAllocatedStorage, IHaveVpcSubnetIds, IHaveOrganization
@@ -10,6 +10,7 @@ namespace Humidifier.Timestream
             public static string Status =  "Status" ;
             public static string Endpoint =  "Endpoint" ;
             public static string InfluxAuthParametersSecretArn =  "InfluxAuthParametersSecretArn" ;
+            public static string NextMaintenanceTime =  "NextMaintenanceTime" ;
             public static string AvailabilityZone =  "AvailabilityZone" ;
             public static string SecondaryAvailabilityZone =  "SecondaryAvailabilityZone" ;
             public static string Id =  "Id" ;
@@ -66,20 +67,20 @@ namespace Humidifier.Timestream
         /// PrimitiveType: String
         /// </summary>
         public dynamic DeploymentType { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AllocatedStorage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-allocatedstorage
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic AllocatedStorage { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// DbStorageType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-dbstoragetype
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic DbStorageType { get; set; }
@@ -140,7 +141,15 @@ namespace Humidifier.Timestream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// MaintenanceSchedule
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-maintenanceschedule
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MaintenanceSchedule
+        /// </summary>
+        public Humidifier.Timestream.InfluxDBInstanceTypes.MaintenanceSchedule MaintenanceSchedule { get; set; }
         /// <summary>
         /// Password
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-password
@@ -163,6 +172,26 @@ namespace Humidifier.Timestream
             /// Type: S3Configuration
             /// </summary>
             public Humidifier.Timestream.InfluxDBInstanceTypes.S3Configuration S3Configuration { get; set; }
+        }
+
+        public class MaintenanceSchedule : Humidifier.Base.BaseSubResource, IHavePreferredMaintenanceWindow, IHaveTimezone
+        {
+            /// <summary>
+            /// Timezone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-influxdbinstance-maintenanceschedule.html#cfn-timestream-influxdbinstance-maintenanceschedule-timezone
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Timezone { get; set; }
+            /// <summary>
+            /// PreferredMaintenanceWindow
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-influxdbinstance-maintenanceschedule.html#cfn-timestream-influxdbinstance-maintenanceschedule-preferredmaintenancewindow
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PreferredMaintenanceWindow { get; set; }
         }
 
         public class S3Configuration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveBucketName

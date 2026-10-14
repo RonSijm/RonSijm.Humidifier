@@ -1,6 +1,6 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MailManagerTrafficPolicyTypes;
 
     public class MailManagerTrafficPolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDefaultAction
@@ -57,7 +57,7 @@ namespace Humidifier.SES
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace MailManagerTrafficPolicyTypes
@@ -105,9 +105,17 @@ namespace Humidifier.SES
         public class IngressBooleanToEvaluate : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// IsInAddressList
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressbooleantoevaluate.html#cfn-ses-mailmanagertrafficpolicy-ingressbooleantoevaluate-isinaddresslist
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IngressIsInAddressList
+            /// </summary>
+            public Humidifier.SES.MailManagerTrafficPolicyTypes.IngressIsInAddressList IsInAddressList { get; set; }
+            /// <summary>
             /// Analysis
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressbooleantoevaluate.html#cfn-ses-mailmanagertrafficpolicy-ingressbooleantoevaluate-analysis
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: IngressAnalysis
             /// </summary>
@@ -155,6 +163,68 @@ namespace Humidifier.SES
             public dynamic Values { get; set; }
         }
 
+        public class IngressIpv6Expression : Humidifier.Base.BaseSubResource, IHaveValues, IHaveOperator
+        {
+            /// <summary>
+            /// Operator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressipv6expression.html#cfn-ses-mailmanagertrafficpolicy-ingressipv6expression-operator
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Operator { get; set; }
+            /// <summary>
+            /// Evaluate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressipv6expression.html#cfn-ses-mailmanagertrafficpolicy-ingressipv6expression-evaluate
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: IngressIpv6ToEvaluate
+            /// </summary>
+            public Humidifier.SES.MailManagerTrafficPolicyTypes.IngressIpv6ToEvaluate Evaluate { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressipv6expression.html#cfn-ses-mailmanagertrafficpolicy-ingressipv6expression-values
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+        }
+
+        public class IngressIpv6ToEvaluate : Humidifier.Base.BaseSubResource, IHaveAttribute
+        {
+            /// <summary>
+            /// Attribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressipv6toevaluate.html#cfn-ses-mailmanagertrafficpolicy-ingressipv6toevaluate-attribute
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Attribute { get; set; }
+        }
+
+        public class IngressIsInAddressList : Humidifier.Base.BaseSubResource, IHaveAttribute
+        {
+            /// <summary>
+            /// Attribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressisinaddresslist.html#cfn-ses-mailmanagertrafficpolicy-ingressisinaddresslist-attribute
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Attribute { get; set; }
+            /// <summary>
+            /// AddressLists
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressisinaddresslist.html#cfn-ses-mailmanagertrafficpolicy-ingressisinaddresslist-addresslists
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AddressLists { get; set; }
+        }
+
         public class IngressStringExpression : Humidifier.Base.BaseSubResource, IHaveValues, IHaveOperator
         {
             /// <summary>
@@ -189,11 +259,19 @@ namespace Humidifier.SES
             /// <summary>
             /// Attribute
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressstringtoevaluate.html#cfn-ses-mailmanagertrafficpolicy-ingressstringtoevaluate-attribute
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Attribute { get; set; }
+            /// <summary>
+            /// Analysis
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-ingressstringtoevaluate.html#cfn-ses-mailmanagertrafficpolicy-ingressstringtoevaluate-analysis
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IngressAnalysis
+            /// </summary>
+            public Humidifier.SES.MailManagerTrafficPolicyTypes.IngressAnalysis Analysis { get; set; }
         }
 
         public class IngressTlsProtocolExpression : Humidifier.Base.BaseSubResource, IHaveValue, IHaveOperator
@@ -238,6 +316,14 @@ namespace Humidifier.SES
 
         public class PolicyCondition : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// Ipv6Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-policycondition.html#cfn-ses-mailmanagertrafficpolicy-policycondition-ipv6expression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IngressIpv6Expression
+            /// </summary>
+            public Humidifier.SES.MailManagerTrafficPolicyTypes.IngressIpv6Expression Ipv6Expression { get; set; }
             /// <summary>
             /// BooleanExpression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagertrafficpolicy-policycondition.html#cfn-ses-mailmanagertrafficpolicy-policycondition-booleanexpression

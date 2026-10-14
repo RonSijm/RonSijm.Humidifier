@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StreamingDistributionTypes;
 
     public class StreamingDistribution : Humidifier.Base.BaseResource, IHaveTags
@@ -31,7 +31,7 @@ namespace Humidifier.CloudFront
         /// ItemType: Tag
         /// </summary>
         [Required]
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace StreamingDistributionTypes

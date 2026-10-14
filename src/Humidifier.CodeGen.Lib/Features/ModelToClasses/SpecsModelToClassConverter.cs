@@ -34,7 +34,7 @@ public class SpecsModelToClassConverter
             var propsNamespace = $"{resourceType.ClassName}Types";
 
             var namespaceDecl = NamespaceDeclaration(ParseName($"Humidifier.{resourceType.Group}"))
-                .AddUsings(UsingDirective(ParseName("System.Collections.Generic")));
+                .AddUsings(UsingDirective(ParseName("global::System.Collections.Generic")));
 
             var propertyTypes = specification.PropertyTypes.Where(x => x.Name.StartsWith($"{resourceType.Name}.")).ToList();
 
@@ -63,6 +63,10 @@ public class SpecsModelToClassConverter
 
                     var tokens = attribute.Name.Split(new[] { '.' }, StringSplitOptions.RemoveEmptyEntries);
                     var attributeName = tokens.Length == 2 ? tokens[1] : tokens[0];
+                    if (attributeName == "Attributes")
+                    {
+                        attributeName += "_";
+                    }
 
                     var propertyDecl = PropertyDeclaration(ParseTypeName("string"), attributeName)
                         .WithTrailingTrivia(

@@ -1,6 +1,6 @@
 namespace Humidifier.WAFv2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WebACLTypes;
 
     public class WebACL : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveScope, IHaveWAFv2WebACLTypesChallengeConfigChallengeConfig, IHaveWAFv2WebACLTypesVisibilityConfigVisibilityConfig, IHaveWAFv2WebACLTypesCaptchaConfigCaptchaConfig
@@ -14,15 +14,6 @@ namespace Humidifier.WAFv2
         }
 
         public override string AWSTypeName { get => AWS.WAFv2.WebACL; }
-        /// <summary>
-        /// TokenDomains
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-tokendomains
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic TokenDomains { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-description
@@ -39,6 +30,67 @@ namespace Humidifier.WAFv2
         /// Type: AssociationConfig
         /// </summary>
         public Humidifier.WAFv2.WebACLTypes.AssociationConfig AssociationConfig { get; set; }
+        /// <summary>
+        /// ChallengeConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-challengeconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ChallengeConfig
+        /// </summary>
+        public Humidifier.WAFv2.WebACLTypes.ChallengeConfig ChallengeConfig { get; set; }
+        /// <summary>
+        /// DataProtectionConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-dataprotectionconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DataProtectionConfig
+        /// </summary>
+        public Humidifier.WAFv2.WebACLTypes.DataProtectionConfig DataProtectionConfig { get; set; }
+        /// <summary>
+        /// MonetizationConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-monetizationconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MonetizationConfig
+        /// </summary>
+        public Humidifier.WAFv2.WebACLTypes.MonetizationConfig MonetizationConfig { get; set; }
+        /// <summary>
+        /// OnSourceDDoSProtectionConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-onsourceddosprotectionconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: OnSourceDDoSProtectionConfig
+        /// </summary>
+        public Humidifier.WAFv2.WebACLTypes.OnSourceDDoSProtectionConfig OnSourceDDoSProtectionConfig { get; set; }
+        /// <summary>
+        /// Rules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-rules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Rule
+        /// </summary>
+        public List<Humidifier.WAFv2.WebACLTypes.Rule> Rules { get; set; }
+
+        /// <summary>
+        /// VisibilityConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: VisibilityConfig
+        /// </summary>
+        [Required]
+        public Humidifier.WAFv2.WebACLTypes.VisibilityConfig VisibilityConfig { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// TokenDomains
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-tokendomains
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic TokenDomains { get; set; }
 
         /// <summary>
         /// DefaultAction
@@ -60,6 +112,14 @@ namespace Humidifier.WAFv2
         [Required]
         public dynamic Scope { get; set; }
         /// <summary>
+        /// ApplicationConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-applicationconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ApplicationConfig
+        /// </summary>
+        public Humidifier.WAFv2.WebACLTypes.ApplicationConfig ApplicationConfig { get; set; }
+        /// <summary>
         /// CustomResponseBodies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-customresponsebodies
         /// Required: False
@@ -68,33 +128,6 @@ namespace Humidifier.WAFv2
         /// ItemType: CustomResponseBody
         /// </summary>
         public Dictionary<string, Humidifier.WAFv2.WebACLTypes.CustomResponseBody> CustomResponseBodies { get; set; }
-        /// <summary>
-        /// ChallengeConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-challengeconfig
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ChallengeConfig
-        /// </summary>
-        public Humidifier.WAFv2.WebACLTypes.ChallengeConfig ChallengeConfig { get; set; }
-        /// <summary>
-        /// Rules
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-rules
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Rule
-        /// </summary>
-        public List<Humidifier.WAFv2.WebACLTypes.Rule> Rules { get; set; }
-
-        /// <summary>
-        /// VisibilityConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: VisibilityConfig
-        /// </summary>
-        [Required]
-        public Humidifier.WAFv2.WebACLTypes.VisibilityConfig VisibilityConfig { get; set; }
         /// <summary>
         /// CaptchaConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-captchaconfig
@@ -111,8 +144,7 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace WebACLTypes
@@ -197,6 +229,26 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.WebACLTypes.RequestInspection RequestInspection { get; set; }
         }
 
+        public class AWSManagedRulesAntiDDoSRuleSet : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ClientSideActionConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesantiddosruleset.html#cfn-wafv2-webacl-awsmanagedrulesantiddosruleset-clientsideactionconfig
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ClientSideActionConfig
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.ClientSideActionConfig ClientSideActionConfig { get; set; }
+            /// <summary>
+            /// SensitivityToBlock
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-awsmanagedrulesantiddosruleset.html#cfn-wafv2-webacl-awsmanagedrulesantiddosruleset-sensitivitytoblock
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SensitivityToBlock { get; set; }
+        }
+
         public class AWSManagedRulesBotControlRuleSet : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -240,6 +292,61 @@ namespace Humidifier.WAFv2
             /// ItemType: Statement
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.Statement> Statements { get; set; }
+        }
+
+        public class ApplicationAttribute : Humidifier.Base.BaseSubResource, IHaveName, IHaveValues
+        {
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-applicationattribute.html#cfn-wafv2-webacl-applicationattribute-values
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-applicationattribute.html#cfn-wafv2-webacl-applicationattribute-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class ApplicationConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Attributes_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-applicationconfig.html#cfn-wafv2-webacl-applicationconfig-attributes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ApplicationAttribute
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.ApplicationAttribute> Attributes_ { get; set; }
+        }
+
+        public class AsnMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2WebACLTypesForwardedIPConfigurationForwardedIPConfig
+        {
+            /// <summary>
+            /// ForwardedIPConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-asnmatchstatement.html#cfn-wafv2-webacl-asnmatchstatement-forwardedipconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ForwardedIPConfiguration
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.ForwardedIPConfiguration ForwardedIPConfig { get; set; }
+            /// <summary>
+            /// AsnList
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-asnmatchstatement.html#cfn-wafv2-webacl-asnmatchstatement-asnlist
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Integer
+            /// </summary>
+            public List<int> AsnList { get; set; }
         }
 
         public class AssociationConfig : Humidifier.Base.BaseSubResource
@@ -298,6 +405,15 @@ namespace Humidifier.WAFv2
             /// ItemType: TextTransformation
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
+            /// <summary>
+            /// PreParseTextTransformations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-preparsetexttransformations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreParseTextTransformation
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PreParseTextTransformation> PreParseTextTransformations { get; set; }
             /// <summary>
             /// PositionalConstraint
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-positionalconstraint
@@ -372,6 +488,47 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.WebACLTypes.ImmunityTimeProperty ImmunityTimeProperty { get; set; }
         }
 
+        public class ClientSideAction : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// UsageOfAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-clientsideaction.html#cfn-wafv2-webacl-clientsideaction-usageofaction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UsageOfAction { get; set; }
+            /// <summary>
+            /// Sensitivity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-clientsideaction.html#cfn-wafv2-webacl-clientsideaction-sensitivity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Sensitivity { get; set; }
+            /// <summary>
+            /// ExemptUriRegularExpressions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-clientsideaction.html#cfn-wafv2-webacl-clientsideaction-exempturiregularexpressions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Regex
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.Regex> ExemptUriRegularExpressions { get; set; }
+        }
+
+        public class ClientSideActionConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Challenge
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-clientsideactionconfig.html#cfn-wafv2-webacl-clientsideactionconfig-challenge
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ClientSideAction
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.ClientSideAction Challenge { get; set; }
+        }
+
         public class CookieMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll, IHaveIncludedCookies, IHaveExcludedCookies
         {
             /// <summary>
@@ -440,6 +597,19 @@ namespace Humidifier.WAFv2
             /// Type: CustomRequestHandling
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.CustomRequestHandling CustomRequestHandling { get; set; }
+        }
+
+        public class CryptoConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PaymentNetworks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-cryptoconfig.html#cfn-wafv2-webacl-cryptoconfig-paymentnetworks
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PaymentNetwork
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PaymentNetwork> PaymentNetworks { get; set; }
         }
 
         public class CustomHTTPHeader : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue
@@ -524,6 +694,55 @@ namespace Humidifier.WAFv2
             public dynamic Content { get; set; }
         }
 
+        public class DataProtect : Humidifier.Base.BaseSubResource, IHaveAction
+        {
+            /// <summary>
+            /// Field
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-dataprotect.html#cfn-wafv2-webacl-dataprotect-field
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FieldToProtect
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.FieldToProtect Field { get; set; }
+            /// <summary>
+            /// Action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-dataprotect.html#cfn-wafv2-webacl-dataprotect-action
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Action { get; set; }
+            /// <summary>
+            /// ExcludeRateBasedDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-dataprotect.html#cfn-wafv2-webacl-dataprotect-excluderatebaseddetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ExcludeRateBasedDetails { get; set; }
+            /// <summary>
+            /// ExcludeRuleMatchDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-dataprotect.html#cfn-wafv2-webacl-dataprotect-excluderulematchdetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ExcludeRuleMatchDetails { get; set; }
+        }
+
+        public class DataProtectionConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DataProtections
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-dataprotectionconfig.html#cfn-wafv2-webacl-dataprotectionconfig-dataprotections
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DataProtect
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.DataProtect> DataProtections { get; set; }
+        }
+
         public class DefaultAction : Humidifier.Base.BaseSubResource, IHaveWAFv2WebACLTypesBlockActionBlock, IHaveWAFv2WebACLTypesAllowActionAllow
         {
             /// <summary>
@@ -571,14 +790,6 @@ namespace Humidifier.WAFv2
         public class FieldToMatch : Humidifier.Base.BaseSubResource, IHaveQueryString, IHaveMethod, IHaveUriPath, IHaveAllQueryArguments
         {
             /// <summary>
-            /// JsonBody
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-jsonbody
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: JsonBody
-            /// </summary>
-            public Humidifier.WAFv2.WebACLTypes.JsonBody JsonBody { get; set; }
-            /// <summary>
             /// AllQueryArguments
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-allqueryarguments
             /// Required: False
@@ -603,14 +814,6 @@ namespace Humidifier.WAFv2
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.SingleQueryArgument SingleQueryArgument { get; set; }
             /// <summary>
-            /// UriPath
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-uripath
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Json
-            /// </summary>
-            public dynamic UriPath { get; set; }
-            /// <summary>
             /// QueryString
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-querystring
             /// Required: False
@@ -627,6 +830,38 @@ namespace Humidifier.WAFv2
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.Headers Headers { get; set; }
             /// <summary>
+            /// Method
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-method
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Method { get; set; }
+            /// <summary>
+            /// UriFragment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-urifragment
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: UriFragment
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.UriFragment UriFragment { get; set; }
+            /// <summary>
+            /// JsonBody
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-jsonbody
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: JsonBody
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.JsonBody JsonBody { get; set; }
+            /// <summary>
+            /// UriPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-uripath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic UriPath { get; set; }
+            /// <summary>
             /// Cookies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-cookies
             /// Required: False
@@ -635,13 +870,21 @@ namespace Humidifier.WAFv2
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.Cookies Cookies { get; set; }
             /// <summary>
-            /// Method
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-method
+            /// JA4Fingerprint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-ja4fingerprint
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: JA4Fingerprint
             /// </summary>
-            public dynamic Method { get; set; }
+            public Humidifier.WAFv2.WebACLTypes.JA4Fingerprint JA4Fingerprint { get; set; }
+            /// <summary>
+            /// HeaderOrder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-headerorder
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HeaderOrder
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.HeaderOrder HeaderOrder { get; set; }
             /// <summary>
             /// Body
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-body
@@ -658,6 +901,27 @@ namespace Humidifier.WAFv2
             /// Type: SingleHeader
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.SingleHeader SingleHeader { get; set; }
+        }
+
+        public class FieldToProtect : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FieldKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtoprotect.html#cfn-wafv2-webacl-fieldtoprotect-fieldkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic FieldKeys { get; set; }
+            /// <summary>
+            /// FieldType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtoprotect.html#cfn-wafv2-webacl-fieldtoprotect-fieldtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FieldType { get; set; }
         }
 
         public class ForwardedIPConfiguration : Humidifier.Base.BaseSubResource, IHaveHeaderName, IHaveFallbackBehavior
@@ -729,6 +993,18 @@ namespace Humidifier.WAFv2
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic ExcludedHeaders { get; set; }
+        }
+
+        public class HeaderOrder : Humidifier.Base.BaseSubResource, IHaveOversizeHandling
+        {
+            /// <summary>
+            /// OversizeHandling
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-headerorder.html#cfn-wafv2-webacl-headerorder-oversizehandling
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OversizeHandling { get; set; }
         }
 
         public class Headers : Humidifier.Base.BaseSubResource, IHaveOversizeHandling, IHaveMatchScope
@@ -831,6 +1107,18 @@ namespace Humidifier.WAFv2
             public dynamic FallbackBehavior { get; set; }
         }
 
+        public class JA4Fingerprint : Humidifier.Base.BaseSubResource, IHaveFallbackBehavior
+        {
+            /// <summary>
+            /// FallbackBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ja4fingerprint.html#cfn-wafv2-webacl-ja4fingerprint-fallbackbehavior
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FallbackBehavior { get; set; }
+        }
+
         public class JsonBody : Humidifier.Base.BaseSubResource, IHaveOversizeHandling, IHaveMatchScope, IHaveInvalidFallbackBehavior
         {
             /// <summary>
@@ -922,6 +1210,14 @@ namespace Humidifier.WAFv2
 
         public class ManagedRuleGroupConfig : Humidifier.Base.BaseSubResource, IHaveWAFv2WebACLTypesFieldIdentifierUsernameField, IHaveWAFv2WebACLTypesFieldIdentifierPasswordField, IHavePayloadType, IHaveLoginPath
         {
+            /// <summary>
+            /// AWSManagedRulesAntiDDoSRuleSet
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-awsmanagedrulesantiddosruleset
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AWSManagedRulesAntiDDoSRuleSet
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.AWSManagedRulesAntiDDoSRuleSet AWSManagedRulesAntiDDoSRuleSet { get; set; }
             /// <summary>
             /// UsernameField
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-usernamefield
@@ -1043,6 +1339,38 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.WebACLTypes.Statement ScopeDownStatement { get; set; }
         }
 
+        public class MonetizationConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CurrencyMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizationconfig.html#cfn-wafv2-webacl-monetizationconfig-currencymode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CurrencyMode { get; set; }
+            /// <summary>
+            /// CryptoConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizationconfig.html#cfn-wafv2-webacl-monetizationconfig-cryptoconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CryptoConfig
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.CryptoConfig CryptoConfig { get; set; }
+        }
+
+        public class MonetizeAction : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PriceMultiplier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizeaction.html#cfn-wafv2-webacl-monetizeaction-pricemultiplier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PriceMultiplier { get; set; }
+        }
+
         public class NotStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2WebACLTypesStatementStatement
         {
             /// <summary>
@@ -1053,6 +1381,18 @@ namespace Humidifier.WAFv2
             /// Type: Statement
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.Statement Statement { get; set; }
+        }
+
+        public class OnSourceDDoSProtectionConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ALBLowReputationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-onsourceddosprotectionconfig.html#cfn-wafv2-webacl-onsourceddosprotectionconfig-alblowreputationmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ALBLowReputationMode { get; set; }
         }
 
         public class OrStatement : Humidifier.Base.BaseSubResource
@@ -1086,6 +1426,75 @@ namespace Humidifier.WAFv2
             /// PrimitiveType: Json
             /// </summary>
             public dynamic None { get; set; }
+        }
+
+        public class PaymentNetwork : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Chain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-paymentnetwork.html#cfn-wafv2-webacl-paymentnetwork-chain
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Chain { get; set; }
+            /// <summary>
+            /// Prices
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-paymentnetwork.html#cfn-wafv2-webacl-paymentnetwork-prices
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Price
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.Price> Prices { get; set; }
+            /// <summary>
+            /// WalletAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-paymentnetwork.html#cfn-wafv2-webacl-paymentnetwork-walletaddress
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WalletAddress { get; set; }
+        }
+
+        public class PreParseTextTransformation : Humidifier.Base.BaseSubResource, IHaveType, IHavePriority
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-preparsetexttransformation.html#cfn-wafv2-webacl-preparsetexttransformation-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Priority
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-preparsetexttransformation.html#cfn-wafv2-webacl-preparsetexttransformation-priority
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Priority { get; set; }
+        }
+
+        public class Price : Humidifier.Base.BaseSubResource, IHaveAmount
+        {
+            /// <summary>
+            /// Amount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-price.html#cfn-wafv2-webacl-price-amount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Amount { get; set; }
+            /// <summary>
+            /// Currency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-price.html#cfn-wafv2-webacl-price-currency
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Currency { get; set; }
         }
 
         public class RateBasedStatement : Humidifier.Base.BaseSubResource, IHaveLimit, IHaveAggregateKeyType, IHaveEvaluationWindowSec, IHaveWAFv2WebACLTypesForwardedIPConfigurationForwardedIPConfig, IHaveWAFv2WebACLTypesStatementScopeDownStatement
@@ -1168,6 +1577,14 @@ namespace Humidifier.WAFv2
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.RateLimitQueryArgument QueryArgument { get; set; }
             /// <summary>
+            /// JA3Fingerprint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementcustomkey.html#cfn-wafv2-webacl-ratebasedstatementcustomkey-ja3fingerprint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RateLimitJA3Fingerprint
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.RateLimitJA3Fingerprint JA3Fingerprint { get; set; }
+            /// <summary>
             /// Header
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementcustomkey.html#cfn-wafv2-webacl-ratebasedstatementcustomkey-header
             /// Required: False
@@ -1207,6 +1624,22 @@ namespace Humidifier.WAFv2
             /// PrimitiveType: Json
             /// </summary>
             public dynamic IP { get; set; }
+            /// <summary>
+            /// JA4Fingerprint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementcustomkey.html#cfn-wafv2-webacl-ratebasedstatementcustomkey-ja4fingerprint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RateLimitJA4Fingerprint
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.RateLimitJA4Fingerprint JA4Fingerprint { get; set; }
+            /// <summary>
+            /// ASN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementcustomkey.html#cfn-wafv2-webacl-ratebasedstatementcustomkey-asn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic ASN { get; set; }
             /// <summary>
             /// LabelNamespace
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatementcustomkey.html#cfn-wafv2-webacl-ratebasedstatementcustomkey-labelnamespace
@@ -1257,6 +1690,30 @@ namespace Humidifier.WAFv2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class RateLimitJA3Fingerprint : Humidifier.Base.BaseSubResource, IHaveFallbackBehavior
+        {
+            /// <summary>
+            /// FallbackBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratelimitja3fingerprint.html#cfn-wafv2-webacl-ratelimitja3fingerprint-fallbackbehavior
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FallbackBehavior { get; set; }
+        }
+
+        public class RateLimitJA4Fingerprint : Humidifier.Base.BaseSubResource, IHaveFallbackBehavior
+        {
+            /// <summary>
+            /// FallbackBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratelimitja4fingerprint.html#cfn-wafv2-webacl-ratelimitja4fingerprint-fallbackbehavior
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FallbackBehavior { get; set; }
         }
 
         public class RateLimitLabelNamespace : Humidifier.Base.BaseSubResource, IHaveNamespace_
@@ -1318,6 +1775,18 @@ namespace Humidifier.WAFv2
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
         }
 
+        public class Regex : Humidifier.Base.BaseSubResource, IHaveRegexString
+        {
+            /// <summary>
+            /// RegexString
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regex.html#cfn-wafv2-webacl-regex-regexstring
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RegexString { get; set; }
+        }
+
         public class RegexMatchStatement : Humidifier.Base.BaseSubResource, IHaveWAFv2WebACLTypesFieldToMatchFieldToMatch, IHaveRegexString
         {
             /// <summary>
@@ -1329,6 +1798,15 @@ namespace Humidifier.WAFv2
             /// ItemType: TextTransformation
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
+            /// <summary>
+            /// PreParseTextTransformations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-preparsetexttransformations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreParseTextTransformation
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PreParseTextTransformation> PreParseTextTransformations { get; set; }
             /// <summary>
             /// RegexString
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-regexstring
@@ -1358,6 +1836,15 @@ namespace Humidifier.WAFv2
             /// ItemType: TextTransformation
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
+            /// <summary>
+            /// PreParseTextTransformations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexpatternsetreferencestatement.html#cfn-wafv2-webacl-regexpatternsetreferencestatement-preparsetexttransformations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreParseTextTransformation
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PreParseTextTransformation> PreParseTextTransformations { get; set; }
             /// <summary>
             /// Arn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexpatternsetreferencestatement.html#cfn-wafv2-webacl-regexpatternsetreferencestatement-arn
@@ -1473,22 +1960,6 @@ namespace Humidifier.WAFv2
         public class ResponseInspection : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// Header
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-header
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResponseInspectionHeader
-            /// </summary>
-            public Humidifier.WAFv2.WebACLTypes.ResponseInspectionHeader Header { get; set; }
-            /// <summary>
-            /// BodyContains
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-bodycontains
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ResponseInspectionBodyContains
-            /// </summary>
-            public Humidifier.WAFv2.WebACLTypes.ResponseInspectionBodyContains BodyContains { get; set; }
-            /// <summary>
             /// Json
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-json
             /// Required: False
@@ -1497,6 +1968,14 @@ namespace Humidifier.WAFv2
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.ResponseInspectionJson Json { get; set; }
             /// <summary>
+            /// Header
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-header
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ResponseInspectionHeader
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.ResponseInspectionHeader Header { get; set; }
+            /// <summary>
             /// StatusCode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-statuscode
             /// Required: False
@@ -1504,6 +1983,14 @@ namespace Humidifier.WAFv2
             /// Type: ResponseInspectionStatusCode
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.ResponseInspectionStatusCode StatusCode { get; set; }
+            /// <summary>
+            /// BodyContains
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-responseinspection.html#cfn-wafv2-webacl-responseinspection-bodycontains
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ResponseInspectionBodyContains
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.ResponseInspectionBodyContains BodyContains { get; set; }
         }
 
         public class ResponseInspectionBodyContains : Humidifier.Base.BaseSubResource
@@ -1690,13 +2177,13 @@ namespace Humidifier.WAFv2
         public class RuleAction : Humidifier.Base.BaseSubResource, IHaveWAFv2WebACLTypesBlockActionBlock, IHaveWAFv2WebACLTypesAllowActionAllow
         {
             /// <summary>
-            /// Captcha
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-captcha
+            /// Monetize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-monetize
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: CaptchaAction
+            /// Type: MonetizeAction
             /// </summary>
-            public Humidifier.WAFv2.WebACLTypes.CaptchaAction Captcha { get; set; }
+            public Humidifier.WAFv2.WebACLTypes.MonetizeAction Monetize { get; set; }
             /// <summary>
             /// Block
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block
@@ -1705,6 +2192,14 @@ namespace Humidifier.WAFv2
             /// Type: BlockAction
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.BlockAction Block { get; set; }
+            /// <summary>
+            /// Captcha
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-captcha
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CaptchaAction
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.CaptchaAction Captcha { get; set; }
             /// <summary>
             /// Count
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count
@@ -1825,6 +2320,15 @@ namespace Humidifier.WAFv2
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
             /// <summary>
+            /// PreParseTextTransformations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-preparsetexttransformations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreParseTextTransformation
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PreParseTextTransformation> PreParseTextTransformations { get; set; }
+            /// <summary>
             /// Size
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-size
             /// Required: True
@@ -1861,6 +2365,15 @@ namespace Humidifier.WAFv2
             /// ItemType: TextTransformation
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
+            /// <summary>
+            /// PreParseTextTransformations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html#cfn-wafv2-webacl-sqlimatchstatement-preparsetexttransformations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreParseTextTransformation
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PreParseTextTransformation> PreParseTextTransformations { get; set; }
             /// <summary>
             /// FieldToMatch
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html#cfn-wafv2-webacl-sqlimatchstatement-fieldtomatch
@@ -1978,6 +2491,14 @@ namespace Humidifier.WAFv2
             /// </summary>
             public Humidifier.WAFv2.WebACLTypes.OrStatement OrStatement { get; set; }
             /// <summary>
+            /// AsnMatchStatement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-asnmatchstatement
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AsnMatchStatement
+            /// </summary>
+            public Humidifier.WAFv2.WebACLTypes.AsnMatchStatement AsnMatchStatement { get; set; }
+            /// <summary>
             /// ManagedRuleGroupStatement
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-managedrulegroupstatement
             /// Required: False
@@ -2015,16 +2536,20 @@ namespace Humidifier.WAFv2
             public dynamic Priority { get; set; }
         }
 
-        public class VisibilityConfig : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveCloudWatchMetricsEnabled, IHaveSampledRequestsEnabled
+        public class UriFragment : Humidifier.Base.BaseSubResource, IHaveFallbackBehavior
         {
             /// <summary>
-            /// MetricName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname
-            /// Required: True
+            /// FallbackBehavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-urifragment.html#cfn-wafv2-webacl-urifragment-fallbackbehavior
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MetricName { get; set; }
+            public dynamic FallbackBehavior { get; set; }
+        }
+
+        public class VisibilityConfig : Humidifier.Base.BaseSubResource, IHaveMetricName, IHaveCloudWatchMetricsEnabled, IHaveSampledRequestsEnabled
+        {
             /// <summary>
             /// SampledRequestsEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-sampledrequestsenabled
@@ -2033,6 +2558,14 @@ namespace Humidifier.WAFv2
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic SampledRequestsEnabled { get; set; }
+            /// <summary>
+            /// MetricName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-metricname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetricName { get; set; }
             /// <summary>
             /// CloudWatchMetricsEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-cloudwatchmetricsenabled
@@ -2054,6 +2587,15 @@ namespace Humidifier.WAFv2
             /// ItemType: TextTransformation
             /// </summary>
             public List<Humidifier.WAFv2.WebACLTypes.TextTransformation> TextTransformations { get; set; }
+            /// <summary>
+            /// PreParseTextTransformations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-xssmatchstatement.html#cfn-wafv2-webacl-xssmatchstatement-preparsetexttransformations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreParseTextTransformation
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.PreParseTextTransformation> PreParseTextTransformations { get; set; }
             /// <summary>
             /// FieldToMatch
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-xssmatchstatement.html#cfn-wafv2-webacl-xssmatchstatement-fieldtomatch

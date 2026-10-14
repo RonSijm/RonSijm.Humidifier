@@ -1,6 +1,6 @@
 namespace Humidifier.CE
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AnomalySubscriptionTypes;
 
     public class AnomalySubscription : Humidifier.Base.BaseResource, IHaveThreshold, IHaveFrequency, IHaveSubscriptionName

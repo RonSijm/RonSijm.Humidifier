@@ -1,9 +1,9 @@
 namespace Humidifier.QuickSight
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TopicTypes;
 
-    public class Topic : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAwsAccountId, IHaveFolderArns
+    public class Topic : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAwsAccountId, IHaveFolderArns
     {
         public class Attributes
         {
@@ -11,6 +11,14 @@ namespace Humidifier.QuickSight
         }
 
         public override string AWSTypeName { get => AWS.QuickSight.Topic; }
+        /// <summary>
+        /// CustomInstructions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-topic.html#cfn-quicksight-topic-custominstructions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomInstructions
+        /// </summary>
+        public Humidifier.QuickSight.TopicTypes.CustomInstructions CustomInstructions { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-topic.html#cfn-quicksight-topic-description
@@ -69,6 +77,15 @@ namespace Humidifier.QuickSight
         /// Type: TopicConfigOptions
         /// </summary>
         public Humidifier.QuickSight.TopicTypes.TopicConfigOptions ConfigOptions { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-topic.html#cfn-quicksight-topic-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -135,6 +152,18 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic TreatUndefinedSpecifiedValues { get; set; }
+        }
+
+        public class CustomInstructions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CustomInstructionsString
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-custominstructions.html#cfn-quicksight-topic-custominstructions-custominstructionsstring
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomInstructionsString { get; set; }
         }
 
         public class DataAggregation : Humidifier.Base.BaseSubResource
@@ -232,14 +261,6 @@ namespace Humidifier.QuickSight
         public class DefaultFormatting : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// DisplayFormatOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-defaultformatting.html#cfn-quicksight-topic-defaultformatting-displayformatoptions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: DisplayFormatOptions
-            /// </summary>
-            public Humidifier.QuickSight.TopicTypes.DisplayFormatOptions DisplayFormatOptions { get; set; }
-            /// <summary>
             /// DisplayFormat
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-defaultformatting.html#cfn-quicksight-topic-defaultformatting-displayformat
             /// Required: False
@@ -247,6 +268,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public dynamic DisplayFormat { get; set; }
+            /// <summary>
+            /// DisplayFormatOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-topic-defaultformatting.html#cfn-quicksight-topic-defaultformatting-displayformatoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DisplayFormatOptions
+            /// </summary>
+            public Humidifier.QuickSight.TopicTypes.DisplayFormatOptions DisplayFormatOptions { get; set; }
         }
 
         public class DisplayFormatOptions : Humidifier.Base.BaseSubResource, IHavePrefix, IHaveSuffix, IHaveDecimalSeparator, IHaveDateFormat

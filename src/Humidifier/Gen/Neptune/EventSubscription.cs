@@ -1,8 +1,8 @@
 namespace Humidifier.Neptune
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class EventSubscription : Humidifier.Base.BaseResource, IHaveEnabled, IHaveSnsTopicArn, IHaveSourceType, IHaveEventCategories, IHaveSourceIds
+    public class EventSubscription : Humidifier.Base.BaseResource, IHaveTags, IHaveEnabled, IHaveSnsTopicArn, IHaveSourceType, IHaveSubscriptionName, IHaveEventCategories, IHaveSourceIds
     {
         public override string AWSTypeName { get => AWS.Neptune.EventSubscription; }
         /// <summary>
@@ -30,14 +30,24 @@ namespace Humidifier.Neptune
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic EventCategories { get; set; }
+
         /// <summary>
         /// SnsTopicArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-eventsubscription.html#cfn-neptune-eventsubscription-snstopicarn
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic SnsTopicArn { get; set; }
+        /// <summary>
+        /// SubscriptionName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-eventsubscription.html#cfn-neptune-eventsubscription-subscriptionname
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic SnsTopicArn { get; set; }
+        public dynamic SubscriptionName { get; set; }
         /// <summary>
         /// SourceIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-eventsubscription.html#cfn-neptune-eventsubscription-sourceids
@@ -47,5 +57,14 @@ namespace Humidifier.Neptune
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic SourceIds { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-eventsubscription.html#cfn-neptune-eventsubscription-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

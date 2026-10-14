@@ -1,8 +1,8 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class ClientVpnTargetNetworkAssociation : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveClientVpnEndpointId
+    public class ClientVpnTargetNetworkAssociation : Humidifier.Base.BaseResource, IHaveAvailabilityZone, IHaveSubnetId, IHaveClientVpnEndpointId, IHaveAvailabilityZoneId
     {
         public override string AWSTypeName { get => AWS.EC2.ClientVpnTargetNetworkAssociation; }
 
@@ -15,15 +15,29 @@ namespace Humidifier.EC2
         /// </summary>
         [Required]
         public dynamic ClientVpnEndpointId { get; set; }
-
         /// <summary>
-        /// SubnetId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-subnetid
-        /// Required: True
+        /// AvailabilityZoneId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-availabilityzoneid
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
+        public dynamic AvailabilityZoneId { get; set; }
+        /// <summary>
+        /// AvailabilityZone
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-availabilityzone
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AvailabilityZone { get; set; }
+        /// <summary>
+        /// SubnetId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-subnetid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
         public dynamic SubnetId { get; set; }
     }
 }

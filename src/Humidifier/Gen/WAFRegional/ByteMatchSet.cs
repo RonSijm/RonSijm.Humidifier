@@ -1,6 +1,6 @@
 namespace Humidifier.WAFRegional
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ByteMatchSetTypes;
 
     public class ByteMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

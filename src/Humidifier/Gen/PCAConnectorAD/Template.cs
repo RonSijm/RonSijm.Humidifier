@@ -1,6 +1,6 @@
 namespace Humidifier.PCAConnectorAD
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TemplateTypes;
 
     public class Template : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveConnectorArn
@@ -56,6 +56,14 @@ namespace Humidifier.PCAConnectorAD
         public class ApplicationPolicies : Humidifier.Base.BaseSubResource, IHaveCritical
         {
             /// <summary>
+            /// Critical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-applicationpolicies.html#cfn-pcaconnectorad-template-applicationpolicies-critical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Critical { get; set; }
+            /// <summary>
             /// Policies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-applicationpolicies.html#cfn-pcaconnectorad-template-applicationpolicies-policies
             /// Required: True
@@ -64,14 +72,6 @@ namespace Humidifier.PCAConnectorAD
             /// ItemType: ApplicationPolicy
             /// </summary>
             public List<Humidifier.PCAConnectorAD.TemplateTypes.ApplicationPolicy> Policies { get; set; }
-            /// <summary>
-            /// Critical
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-applicationpolicies.html#cfn-pcaconnectorad-template-applicationpolicies-critical
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Critical { get; set; }
         }
 
         public class ApplicationPolicy : Humidifier.Base.BaseSubResource, IHavePolicyType
@@ -369,14 +369,6 @@ namespace Humidifier.PCAConnectorAD
         public class KeyUsage : Humidifier.Base.BaseSubResource, IHaveCritical
         {
             /// <summary>
-            /// Critical
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-keyusage.html#cfn-pcaconnectorad-template-keyusage-critical
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Critical { get; set; }
-            /// <summary>
             /// UsageFlags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-keyusage.html#cfn-pcaconnectorad-template-keyusage-usageflags
             /// Required: True
@@ -384,6 +376,14 @@ namespace Humidifier.PCAConnectorAD
             /// Type: KeyUsageFlags
             /// </summary>
             public Humidifier.PCAConnectorAD.TemplateTypes.KeyUsageFlags UsageFlags { get; set; }
+            /// <summary>
+            /// Critical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-template-keyusage.html#cfn-pcaconnectorad-template-keyusage-critical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Critical { get; set; }
         }
 
         public class KeyUsageFlags : Humidifier.Base.BaseSubResource, IHaveKeyAgreement, IHaveKeyEncipherment, IHaveDataEncipherment, IHaveDigitalSignature, IHaveNonRepudiation

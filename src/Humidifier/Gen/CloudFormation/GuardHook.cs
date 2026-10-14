@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GuardHookTypes;
 
     public class GuardHook : Humidifier.Base.BaseResource, IHaveExecutionRole, IHaveAlias, IHaveHookStatus, IHaveTargetOperations, IHaveFailureMode

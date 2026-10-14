@@ -1,8 +1,8 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class DedicatedIpPool : Humidifier.Base.BaseResource, IHavePoolName
+    public class DedicatedIpPool : Humidifier.Base.BaseResource, IHaveTags, IHavePoolName
     {
         public override string AWSTypeName { get => AWS.SES.DedicatedIpPool; }
         /// <summary>
@@ -21,5 +21,14 @@ namespace Humidifier.SES
         /// PrimitiveType: String
         /// </summary>
         public dynamic ScalingMode { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-dedicatedippool.html#cfn-ses-dedicatedippool-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

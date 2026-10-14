@@ -1,11 +1,19 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MetricFilterTypes;
 
     public class MetricFilter : Humidifier.Base.BaseResource, IHaveLogGroupName, IHaveFilterPattern, IHaveFilterName, IHaveApplyOnTransformedLogs
     {
         public override string AWSTypeName { get => AWS.Logs.MetricFilter; }
+        /// <summary>
+        /// FieldSelectionCriteria
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-logs-metricfilter-fieldselectioncriteria
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FieldSelectionCriteria { get; set; }
 
         /// <summary>
         /// MetricTransformations
@@ -27,6 +35,15 @@ namespace Humidifier.Logs
         /// </summary>
         [Required]
         public dynamic FilterPattern { get; set; }
+        /// <summary>
+        /// EmitSystemFieldDimensions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-logs-metricfilter-emitsystemfielddimensions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic EmitSystemFieldDimensions { get; set; }
 
         /// <summary>
         /// LogGroupName

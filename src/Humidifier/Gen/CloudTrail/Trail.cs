@@ -1,6 +1,6 @@
 namespace Humidifier.CloudTrail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TrailTypes;
 
     public class Trail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveS3BucketName, IHaveS3KeyPrefix, IHaveKMSKeyId, IHaveCloudWatchLogsLogGroupArn, IHaveCloudWatchLogsRoleArn
@@ -37,6 +37,15 @@ namespace Humidifier.CloudTrail
         /// PrimitiveType: String
         /// </summary>
         public dynamic KMSKeyId { get; set; }
+        /// <summary>
+        /// AggregationConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-aggregationconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AggregationConfiguration
+        /// </summary>
+        public List<Humidifier.CloudTrail.TrailTypes.AggregationConfiguration> AggregationConfigurations { get; set; }
         /// <summary>
         /// CloudWatchLogsRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-cloudwatchlogsrolearn
@@ -130,7 +139,7 @@ namespace Humidifier.CloudTrail
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// IsLogging
@@ -232,6 +241,27 @@ namespace Humidifier.CloudTrail
             public dynamic NotEquals { get; set; }
         }
 
+        public class AggregationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EventCategory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-aggregationconfiguration.html#cfn-cloudtrail-trail-aggregationconfiguration-eventcategory
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventCategory { get; set; }
+            /// <summary>
+            /// Templates
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-aggregationconfiguration.html#cfn-cloudtrail-trail-aggregationconfiguration-templates
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Templates { get; set; }
+        }
+
         public class DataResource : Humidifier.Base.BaseSubResource, IHaveType, IHaveValues
         {
             /// <summary>
@@ -291,7 +321,7 @@ namespace Humidifier.CloudTrail
             public List<Humidifier.CloudTrail.TrailTypes.DataResource> DataResources { get; set; }
         }
 
-        public class InsightSelector : Humidifier.Base.BaseSubResource, IHaveInsightType
+        public class InsightSelector : Humidifier.Base.BaseSubResource, IHaveEventCategories, IHaveInsightType
         {
             /// <summary>
             /// InsightType
@@ -301,6 +331,15 @@ namespace Humidifier.CloudTrail
             /// PrimitiveType: String
             /// </summary>
             public dynamic InsightType { get; set; }
+            /// <summary>
+            /// EventCategories
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-insightselector.html#cfn-cloudtrail-trail-insightselector-eventcategories
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EventCategories { get; set; }
         }
     }
 }

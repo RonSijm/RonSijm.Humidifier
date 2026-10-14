@@ -1,6 +1,6 @@
 namespace Humidifier.IoT
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AccountAuditConfigurationTypes;
 
     public class AccountAuditConfiguration : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveAccountId
@@ -147,9 +147,9 @@ namespace Humidifier.IoT
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-devicecertificateexpiringcheck
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: AuditCheckConfiguration
+            /// Type: DeviceCertExpirationAuditCheckConfiguration
             /// </summary>
-            public Humidifier.IoT.AccountAuditConfigurationTypes.AuditCheckConfiguration DeviceCertificateExpiringCheck { get; set; }
+            public Humidifier.IoT.AccountAuditConfigurationTypes.DeviceCertExpirationAuditCheckConfiguration DeviceCertificateExpiringCheck { get; set; }
             /// <summary>
             /// IoTPolicyPotentialMisConfigurationCheck
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-iotpolicypotentialmisconfigurationcheck
@@ -158,6 +158,14 @@ namespace Humidifier.IoT
             /// Type: AuditCheckConfiguration
             /// </summary>
             public Humidifier.IoT.AccountAuditConfigurationTypes.AuditCheckConfiguration IoTPolicyPotentialMisConfigurationCheck { get; set; }
+            /// <summary>
+            /// DeviceCertificateAgeCheck
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-devicecertificateagecheck
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DeviceCertAgeAuditCheckConfiguration
+            /// </summary>
+            public Humidifier.IoT.AccountAuditConfigurationTypes.DeviceCertAgeAuditCheckConfiguration DeviceCertificateAgeCheck { get; set; }
             /// <summary>
             /// IotPolicyOverlyPermissiveCheck
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-iotpolicyoverlypermissivecheck
@@ -230,6 +238,70 @@ namespace Humidifier.IoT
             /// Type: AuditNotificationTarget
             /// </summary>
             public Humidifier.IoT.AccountAuditConfigurationTypes.AuditNotificationTarget Sns { get; set; }
+        }
+
+        public class CertAgeCheckCustomConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CertAgeThresholdInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-certagecheckcustomconfiguration.html#cfn-iot-accountauditconfiguration-certagecheckcustomconfiguration-certagethresholdindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertAgeThresholdInDays { get; set; }
+        }
+
+        public class CertExpirationCheckCustomConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CertExpirationThresholdInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-certexpirationcheckcustomconfiguration.html#cfn-iot-accountauditconfiguration-certexpirationcheckcustomconfiguration-certexpirationthresholdindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertExpirationThresholdInDays { get; set; }
+        }
+
+        public class DeviceCertAgeAuditCheckConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Configuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-devicecertageauditcheckconfiguration.html#cfn-iot-accountauditconfiguration-devicecertageauditcheckconfiguration-configuration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CertAgeCheckCustomConfiguration
+            /// </summary>
+            public Humidifier.IoT.AccountAuditConfigurationTypes.CertAgeCheckCustomConfiguration Configuration { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-devicecertageauditcheckconfiguration.html#cfn-iot-accountauditconfiguration-devicecertageauditcheckconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class DeviceCertExpirationAuditCheckConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Configuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-devicecertexpirationauditcheckconfiguration.html#cfn-iot-accountauditconfiguration-devicecertexpirationauditcheckconfiguration-configuration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CertExpirationCheckCustomConfiguration
+            /// </summary>
+            public Humidifier.IoT.AccountAuditConfigurationTypes.CertExpirationCheckCustomConfiguration Configuration { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-devicecertexpirationauditcheckconfiguration.html#cfn-iot-accountauditconfiguration-devicecertexpirationauditcheckconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
     }
 }

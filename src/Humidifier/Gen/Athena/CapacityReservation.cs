@@ -1,6 +1,6 @@
 namespace Humidifier.Athena
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CapacityReservationTypes;
 
     public class CapacityReservation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -21,7 +21,7 @@ namespace Humidifier.Athena
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-capacityreservation.html#cfn-athena-capacityreservation-targetdpus
         /// Required: True
         /// UpdateType: Mutable
-        /// PrimitiveType: Integer
+        /// PrimitiveType: Long
         /// </summary>
         [Required]
         public dynamic TargetDpus { get; set; }
@@ -41,7 +41,7 @@ namespace Humidifier.Athena
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

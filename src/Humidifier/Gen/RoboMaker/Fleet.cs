@@ -1,6 +1,6 @@
 namespace Humidifier.RoboMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
     {

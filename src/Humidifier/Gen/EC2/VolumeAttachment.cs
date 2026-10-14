@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VolumeAttachment : Humidifier.Base.BaseResource, IHaveInstanceId, IHaveVolumeId, IHaveDevice
     {
@@ -33,5 +33,13 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Device { get; set; }
+        /// <summary>
+        /// EbsCardIndex
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volumeattachment.html#cfn-ec2-volumeattachment-ebscardindex
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic EbsCardIndex { get; set; }
     }
 }

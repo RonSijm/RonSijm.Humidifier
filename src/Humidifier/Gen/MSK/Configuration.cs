@@ -1,6 +1,6 @@
 namespace Humidifier.MSK
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationTypes;
 
     public class Configuration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

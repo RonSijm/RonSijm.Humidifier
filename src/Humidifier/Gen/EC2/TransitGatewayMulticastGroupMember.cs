@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TransitGatewayMulticastGroupMember : Humidifier.Base.BaseResource, IHaveNetworkInterfaceId, IHaveTransitGatewayMulticastDomainId, IHaveGroupIpAddress
     {

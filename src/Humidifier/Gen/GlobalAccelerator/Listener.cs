@@ -1,6 +1,6 @@
 namespace Humidifier.GlobalAccelerator
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ListenerTypes;
 
     public class Listener : Humidifier.Base.BaseResource, IHaveProtocol

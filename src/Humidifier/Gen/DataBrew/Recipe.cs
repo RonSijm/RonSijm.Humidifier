@@ -1,6 +1,6 @@
 namespace Humidifier.DataBrew
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RecipeTypes;
 
     public class Recipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
@@ -29,11 +29,11 @@ namespace Humidifier.DataBrew
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -90,6 +90,14 @@ namespace Humidifier.DataBrew
         public class DataCatalogInputDefinition : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveTableName, IHaveCatalogId
         {
             /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
             /// TableName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tablename
             /// Required: False
@@ -105,14 +113,6 @@ namespace Humidifier.DataBrew
             /// Type: S3Location
             /// </summary>
             public Humidifier.DataBrew.RecipeTypes.S3Location TempDirectory { get; set; }
-            /// <summary>
-            /// DatabaseName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-databasename
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DatabaseName { get; set; }
             /// <summary>
             /// CatalogId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-catalogid

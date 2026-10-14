@@ -1,10 +1,15 @@
 namespace Humidifier.SSM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MaintenanceWindowTaskTypes;
 
     public class MaintenanceWindowTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePriority, IHaveServiceRoleArn, IHaveMaxConcurrency, IHaveTaskType, IHaveMaxErrors, IHaveWindowId
     {
+        public class Attributes
+        {
+            public static string WindowTaskId =  "WindowTaskId" ;
+        }
+
         public override string AWSTypeName { get => AWS.SSM.MaintenanceWindowTask; }
         /// <summary>
         /// MaxErrors

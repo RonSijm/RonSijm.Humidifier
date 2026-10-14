@@ -1,6 +1,6 @@
 namespace Humidifier.DataBrew
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ProjectTypes;
 
     public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveRoleArn, IHaveDatasetName
@@ -48,11 +48,11 @@ namespace Humidifier.DataBrew
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

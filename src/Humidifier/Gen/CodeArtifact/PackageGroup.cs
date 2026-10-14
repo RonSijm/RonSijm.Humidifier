@@ -1,6 +1,6 @@
 namespace Humidifier.CodeArtifact
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PackageGroupTypes;
 
     public class PackageGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDomainName, IHavePattern, IHaveDomainOwner
@@ -71,7 +71,7 @@ namespace Humidifier.CodeArtifact
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PackageGroupTypes

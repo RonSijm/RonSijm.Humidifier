@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityHub
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SecurityControlTypes;
 
     public class SecurityControl : Humidifier.Base.BaseResource, IHaveSecurityControlId

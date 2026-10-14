@@ -1,24 +1,31 @@
 namespace Humidifier.RedshiftServerless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WorkgroupTypes;
 
-    public class Workgroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePort, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveMaxCapacity, IHavePubliclyAccessible, IHaveNamespaceName, IHaveWorkgroupName, IHaveBaseCapacity, IHaveEnhancedVpcRouting, IHaveRedshiftServerlessWorkgroupTypesPerformanceTargetPricePerformanceTarget
+    public class Workgroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePort, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveMaxCapacity, IHavePubliclyAccessible, IHaveNamespaceName, IHaveSnapshotName, IHaveWorkgroupName, IHaveBaseCapacity, IHaveEnhancedVpcRouting, IHaveRedshiftServerlessWorkgroupTypesPerformanceTargetPricePerformanceTarget
     {
         public class Attributes
         {
-            public static string Workgroup =  "Workgroup" ;
         }
 
         public override string AWSTypeName { get => AWS.RedshiftServerless.Workgroup; }
         /// <summary>
-        /// NamespaceName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-namespacename
+        /// SnapshotArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-snapshotarn
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic NamespaceName { get; set; }
+        public dynamic SnapshotArn { get; set; }
+        /// <summary>
+        /// SnapshotOwnerAccount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-snapshotowneraccount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SnapshotOwnerAccount { get; set; }
         /// <summary>
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-port
@@ -28,14 +35,13 @@ namespace Humidifier.RedshiftServerless
         /// </summary>
         public dynamic Port { get; set; }
         /// <summary>
-        /// ConfigParameters
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-configparameters
+        /// RecoveryPointId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-recoverypointid
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ConfigParameter
+        /// PrimitiveType: String
         /// </summary>
-        public List<Humidifier.RedshiftServerless.WorkgroupTypes.ConfigParameter> ConfigParameters { get; set; }
+        public dynamic RecoveryPointId { get; set; }
         public dynamic WorkgroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// BaseCapacity
@@ -54,21 +60,13 @@ namespace Humidifier.RedshiftServerless
         /// </summary>
         public dynamic EnhancedVpcRouting { get; set; }
         /// <summary>
-        /// PubliclyAccessible
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-publiclyaccessible
+        /// Workgroup_
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-workgroup
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
+        /// Type: Workgroup
         /// </summary>
-        public dynamic PubliclyAccessible { get; set; }
-        /// <summary>
-        /// PricePerformanceTarget
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-priceperformancetarget
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: PerformanceTarget
-        /// </summary>
-        public Humidifier.RedshiftServerless.WorkgroupTypes.PerformanceTarget PricePerformanceTarget { get; set; }
+        public Humidifier.RedshiftServerless.WorkgroupTypes.Workgroup Workgroup_ { get; set; }
         /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-securitygroupids
@@ -88,6 +86,55 @@ namespace Humidifier.RedshiftServerless
         /// </summary>
         public dynamic SubnetIds { get; set; }
         /// <summary>
+        /// SnapshotName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-snapshotname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SnapshotName { get; set; }
+        /// <summary>
+        /// NamespaceName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-namespacename
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NamespaceName { get; set; }
+        /// <summary>
+        /// ConfigParameters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-configparameters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ConfigParameter
+        /// </summary>
+        public List<Humidifier.RedshiftServerless.WorkgroupTypes.ConfigParameter> ConfigParameters { get; set; }
+        /// <summary>
+        /// TrackName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-trackname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TrackName { get; set; }
+        /// <summary>
+        /// PubliclyAccessible
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-publiclyaccessible
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic PubliclyAccessible { get; set; }
+        /// <summary>
+        /// PricePerformanceTarget
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-priceperformancetarget
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PerformanceTarget
+        /// </summary>
+        public Humidifier.RedshiftServerless.WorkgroupTypes.PerformanceTarget PricePerformanceTarget { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-tags
         /// Required: False
@@ -95,7 +142,7 @@ namespace Humidifier.RedshiftServerless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MaxCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshiftserverless-workgroup.html#cfn-redshiftserverless-workgroup-maxcapacity
@@ -343,6 +390,14 @@ namespace Humidifier.RedshiftServerless
             /// ItemType: ConfigParameter
             /// </summary>
             public List<Humidifier.RedshiftServerless.WorkgroupTypes.ConfigParameter> ConfigParameters { get; set; }
+            /// <summary>
+            /// TrackName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-trackname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TrackName { get; set; }
             /// <summary>
             /// PubliclyAccessible
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshiftserverless-workgroup-workgroup.html#cfn-redshiftserverless-workgroup-workgroup-publiclyaccessible

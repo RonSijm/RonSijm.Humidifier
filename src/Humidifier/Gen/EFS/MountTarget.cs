@@ -1,8 +1,8 @@
 namespace Humidifier.EFS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class MountTarget : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveSecurityGroups, IHaveFileSystemId, IHaveIpAddress
+    public class MountTarget : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveSecurityGroups, IHaveFileSystemId, IHaveIpAddressType, IHaveIpAddress, IHaveIpv6Address
     {
         public class Attributes
         {
@@ -11,6 +11,14 @@ namespace Humidifier.EFS
         }
 
         public override string AWSTypeName { get => AWS.EFS.MountTarget; }
+        /// <summary>
+        /// IpAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipaddresstype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpAddressType { get; set; }
 
         /// <summary>
         /// SecurityGroups
@@ -50,5 +58,13 @@ namespace Humidifier.EFS
         /// </summary>
         [Required]
         public dynamic SubnetId { get; set; }
+        /// <summary>
+        /// Ipv6Address
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#cfn-efs-mounttarget-ipv6address
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Ipv6Address { get; set; }
     }
 }

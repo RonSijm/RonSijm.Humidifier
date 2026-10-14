@@ -1,6 +1,6 @@
 namespace Humidifier.Oam
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Sink : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHavePolicy
     {

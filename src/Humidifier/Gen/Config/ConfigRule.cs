@@ -1,6 +1,6 @@
 namespace Humidifier.Config
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigRuleTypes;
 
     public class ConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHaveConfigRuleName

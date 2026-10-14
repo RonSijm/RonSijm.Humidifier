@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FunctionTypes;
 
     public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKmsKeyArn, IHaveRole, IHaveTimeout, IHaveFunctionName, IHaveRuntime, IHaveMemorySize, IHaveHandler, IHaveArchitectures
@@ -12,6 +12,14 @@ namespace Humidifier.Lambda
         }
 
         public override string AWSTypeName { get => AWS.Lambda.Function; }
+        /// <summary>
+        /// FunctionScalingConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-functionscalingconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: FunctionScalingConfig
+        /// </summary>
+        public Humidifier.Lambda.FunctionTypes.FunctionScalingConfig FunctionScalingConfig { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description
@@ -44,6 +52,14 @@ namespace Humidifier.Lambda
         /// Type: RuntimeManagementConfig
         /// </summary>
         public Humidifier.Lambda.FunctionTypes.RuntimeManagementConfig RuntimeManagementConfig { get; set; }
+        /// <summary>
+        /// DurableConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-durableconfig
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: DurableConfig
+        /// </summary>
+        public Humidifier.Lambda.FunctionTypes.DurableConfig DurableConfig { get; set; }
         /// <summary>
         /// ReservedConcurrentExecutions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
@@ -87,10 +103,18 @@ namespace Humidifier.Lambda
         /// </summary>
         public dynamic KmsKeyArn { get; set; }
         /// <summary>
+        /// PublishToLatestPublished
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-publishtolatestpublished
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic PublishToLatestPublished { get; set; }
+        /// <summary>
         /// PackageType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-packagetype
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic PackageType { get; set; }
@@ -112,6 +136,14 @@ namespace Humidifier.Lambda
         /// </summary>
         public dynamic Layers { get; set; }
         /// <summary>
+        /// TenancyConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tenancyconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: TenancyConfig
+        /// </summary>
+        public Humidifier.Lambda.FunctionTypes.TenancyConfig TenancyConfig { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags
         /// Required: False
@@ -119,7 +151,7 @@ namespace Humidifier.Lambda
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ImageConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig
@@ -152,6 +184,14 @@ namespace Humidifier.Lambda
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic Timeout { get; set; }
+        /// <summary>
+        /// CapacityProviderConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-capacityproviderconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CapacityProviderConfig
+        /// </summary>
+        public Humidifier.Lambda.FunctionTypes.CapacityProviderConfig CapacityProviderConfig { get; set; }
         /// <summary>
         /// Handler
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler
@@ -225,6 +265,18 @@ namespace Humidifier.Lambda
 
     namespace FunctionTypes
     {
+        public class CapacityProviderConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LambdaManagedInstancesCapacityProviderConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-capacityproviderconfig.html#cfn-lambda-function-capacityproviderconfig-lambdamanagedinstancescapacityproviderconfig
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: LambdaManagedInstancesCapacityProviderConfig
+            /// </summary>
+            public Humidifier.Lambda.FunctionTypes.LambdaManagedInstancesCapacityProviderConfig LambdaManagedInstancesCapacityProviderConfig { get; set; }
+        }
+
         public class Code : Humidifier.Base.BaseSubResource, IHaveS3Bucket, IHaveS3Key, IHaveImageUri, IHaveS3ObjectVersion
         {
             /// <summary>
@@ -268,6 +320,14 @@ namespace Humidifier.Lambda
             /// </summary>
             public dynamic S3Key { get; set; }
             /// <summary>
+            /// S3ObjectStorageMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-s3objectstoragemode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3ObjectStorageMode { get; set; }
+            /// <summary>
             /// ImageUri
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-imageuri
             /// Required: False
@@ -287,6 +347,34 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public dynamic TargetArn { get; set; }
+        }
+
+        public class DurableConfig : Humidifier.Base.BaseSubResource, IHaveKMSKeyArn, IHaveExecutionTimeout
+        {
+            /// <summary>
+            /// KMSKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-durableconfig.html#cfn-lambda-function-durableconfig-kmskeyarn
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KMSKeyArn { get; set; }
+            /// <summary>
+            /// ExecutionTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-durableconfig.html#cfn-lambda-function-durableconfig-executiontimeout
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ExecutionTimeout { get; set; }
+            /// <summary>
+            /// RetentionPeriodInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-durableconfig.html#cfn-lambda-function-durableconfig-retentionperiodindays
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RetentionPeriodInDays { get; set; }
         }
 
         public class Environment : Humidifier.Base.BaseSubResource
@@ -317,6 +405,14 @@ namespace Humidifier.Lambda
         public class FileSystemConfig : Humidifier.Base.BaseSubResource, IHaveArn
         {
             /// <summary>
+            /// S3FilesConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html#cfn-lambda-function-filesystemconfig-s3filesconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3FilesConfig
+            /// </summary>
+            public Humidifier.Lambda.FunctionTypes.S3FilesConfig S3FilesConfig { get; set; }
+            /// <summary>
             /// Arn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html#cfn-lambda-function-filesystemconfig-arn
             /// Required: True
@@ -332,6 +428,26 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public dynamic LocalMountPath { get; set; }
+        }
+
+        public class FunctionScalingConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MinExecutionEnvironments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-functionscalingconfig.html#cfn-lambda-function-functionscalingconfig-minexecutionenvironments
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinExecutionEnvironments { get; set; }
+            /// <summary>
+            /// MaxExecutionEnvironments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-functionscalingconfig.html#cfn-lambda-function-functionscalingconfig-maxexecutionenvironments
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxExecutionEnvironments { get; set; }
         }
 
         public class ImageConfig : Humidifier.Base.BaseSubResource, IHaveCommand, IHaveWorkingDirectory, IHaveEntryPoint
@@ -362,6 +478,34 @@ namespace Humidifier.Lambda
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic EntryPoint { get; set; }
+        }
+
+        public class LambdaManagedInstancesCapacityProviderConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ExecutionEnvironmentMemoryGiBPerVCpu
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-lambdamanagedinstancescapacityproviderconfig.html#cfn-lambda-function-lambdamanagedinstancescapacityproviderconfig-executionenvironmentmemorygibpervcpu
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic ExecutionEnvironmentMemoryGiBPerVCpu { get; set; }
+            /// <summary>
+            /// CapacityProviderArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-lambdamanagedinstancescapacityproviderconfig.html#cfn-lambda-function-lambdamanagedinstancescapacityproviderconfig-capacityproviderarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CapacityProviderArn { get; set; }
+            /// <summary>
+            /// PerExecutionEnvironmentMaxConcurrency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-lambdamanagedinstancescapacityproviderconfig.html#cfn-lambda-function-lambdamanagedinstancescapacityproviderconfig-perexecutionenvironmentmaxconcurrency
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic PerExecutionEnvironmentMaxConcurrency { get; set; }
         }
 
         public class LoggingConfig : Humidifier.Base.BaseSubResource, IHaveLogGroup, IHaveLogFormat
@@ -420,6 +564,18 @@ namespace Humidifier.Lambda
             public dynamic RuntimeVersionArn { get; set; }
         }
 
+        public class S3FilesConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DirectS3Read
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-s3filesconfig.html#cfn-lambda-function-s3filesconfig-directs3read
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DirectS3Read { get; set; }
+        }
+
         public class SnapStart : Humidifier.Base.BaseSubResource, IHaveApplyOn
         {
             /// <summary>
@@ -450,6 +606,18 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public dynamic ApplyOn { get; set; }
+        }
+
+        public class TenancyConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TenantIsolationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tenancyconfig.html#cfn-lambda-function-tenancyconfig-tenantisolationmode
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TenantIsolationMode { get; set; }
         }
 
         public class TracingConfig : Humidifier.Base.BaseSubResource, IHaveMode

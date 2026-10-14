@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataMigrationTypes;
 
     public class DataMigration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveServiceAccessRoleArn, IHaveMigrationProjectIdentifier
@@ -68,7 +68,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// DataMigrationIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-datamigration.html#cfn-dms-datamigration-datamigrationidentifier

@@ -1,6 +1,6 @@
 namespace Humidifier.FIS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ExperimentTemplateTypes;
 
     public class ExperimentTemplate : Humidifier.Base.BaseResource, IHaveDescription, IHaveRoleArn
@@ -86,16 +86,14 @@ namespace Humidifier.FIS
         /// </summary>
         [Required]
         public dynamic RoleArn { get; set; }
-
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-tags
-        /// Required: True
-        /// UpdateType: Immutable
+        /// Required: False
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public Dictionary<string, dynamic> Tags { get; set; }
     }
 

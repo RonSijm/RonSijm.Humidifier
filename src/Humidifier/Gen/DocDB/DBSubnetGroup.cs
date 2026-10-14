@@ -1,6 +1,6 @@
 namespace Humidifier.DocDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveDBSubnetGroupName, IHaveDBSubnetGroupDescription, IHaveDescription
     {
@@ -38,6 +38,6 @@ namespace Humidifier.DocDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

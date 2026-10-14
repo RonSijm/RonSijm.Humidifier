@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AppTypes;
 
     public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainId, IHaveUserProfileName, IHaveAppType
@@ -8,9 +8,18 @@ namespace Humidifier.SageMaker
         public class Attributes
         {
             public static string AppArn =  "AppArn" ;
+            public static string BuiltInLifecycleConfigArn =  "BuiltInLifecycleConfigArn" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.App; }
+        /// <summary>
+        /// RecoveryMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-recoverymode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic RecoveryMode { get; set; }
 
         /// <summary>
         /// DomainId
@@ -43,11 +52,11 @@ namespace Humidifier.SageMaker
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// UserProfileName

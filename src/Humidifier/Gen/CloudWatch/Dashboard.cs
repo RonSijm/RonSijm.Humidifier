@@ -1,8 +1,8 @@
 namespace Humidifier.CloudWatch
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDashboardName
+    public class Dashboard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDashboardName
     {
         public override string AWSTypeName { get => AWS.CloudWatch.Dashboard; }
         public dynamic DashboardName { get => GivenName; set => GivenName = value; }
@@ -16,5 +16,14 @@ namespace Humidifier.CloudWatch
         /// </summary>
         [Required]
         public dynamic DashboardBody { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-dashboard.html#cfn-cloudwatch-dashboard-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

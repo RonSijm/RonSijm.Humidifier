@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DomainNameTypes;
 
     public class DomainName : Humidifier.Base.BaseResource, IHaveTags, IHaveCertificateArn, IHaveSecurityPolicy, IHaveDomainName_, IHaveOwnershipVerificationCertificateArn
@@ -9,11 +9,20 @@ namespace Humidifier.ApiGateway
         {
             public static string RegionalHostedZoneId =  "RegionalHostedZoneId" ;
             public static string RegionalDomainName =  "RegionalDomainName" ;
+            public static string DomainNameArn =  "DomainNameArn" ;
             public static string DistributionHostedZoneId =  "DistributionHostedZoneId" ;
             public static string DistributionDomainName =  "DistributionDomainName" ;
         }
 
         public override string AWSTypeName { get => AWS.ApiGateway.DomainName; }
+        /// <summary>
+        /// OwnershipVerificationCertificateArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-ownershipverificationcertificatearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OwnershipVerificationCertificateArn { get; set; }
         /// <summary>
         /// MutualTlsAuthentication
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication
@@ -23,13 +32,13 @@ namespace Humidifier.ApiGateway
         /// </summary>
         public Humidifier.ApiGateway.DomainNameTypes.MutualTlsAuthentication MutualTlsAuthentication { get; set; }
         /// <summary>
-        /// OwnershipVerificationCertificateArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-ownershipverificationcertificatearn
+        /// RoutingMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-routingmode
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic OwnershipVerificationCertificateArn { get; set; }
+        public dynamic RoutingMode { get; set; }
         /// <summary>
         /// DomainName_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname
@@ -70,7 +79,7 @@ namespace Humidifier.ApiGateway
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CertificateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-certificatearn
@@ -79,12 +88,28 @@ namespace Humidifier.ApiGateway
         /// PrimitiveType: String
         /// </summary>
         public dynamic CertificateArn { get; set; }
+        /// <summary>
+        /// EndpointAccessMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointaccessmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointAccessMode { get; set; }
     }
 
     namespace DomainNameTypes
     {
-        public class EndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveTypes
+        public class EndpointConfiguration : Humidifier.Base.BaseSubResource, IHaveIpAddressType, IHaveTypes
         {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html#cfn-apigateway-domainname-endpointconfiguration-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// Types
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html#cfn-apigateway-domainname-endpointconfiguration-types

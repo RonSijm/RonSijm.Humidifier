@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserHierarchyStructureTypes;
 
     public class UserHierarchyStructure : Humidifier.Base.BaseResource, IHaveInstanceArn

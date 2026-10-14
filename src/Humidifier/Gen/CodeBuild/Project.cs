@@ -1,6 +1,6 @@
 namespace Humidifier.CodeBuild
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ProjectTypes;
 
     public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveVisibility, IHaveServiceRole, IHaveEncryptionKey, IHaveSourceVersion, IHaveTimeoutInMinutes
@@ -115,7 +115,7 @@ namespace Humidifier.CodeBuild
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AutoRetryLimit
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-autoretrylimit
@@ -366,6 +366,27 @@ namespace Humidifier.CodeBuild
             public dynamic StreamName { get; set; }
         }
 
+        public class DockerServer : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveComputeType
+        {
+            /// <summary>
+            /// ComputeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-dockerserver.html#cfn-codebuild-project-dockerserver-computetype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ComputeType { get; set; }
+            /// <summary>
+            /// SecurityGroupIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-dockerserver.html#cfn-codebuild-project-dockerserver-securitygroupids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SecurityGroupIds { get; set; }
+        }
+
         public class Environment : Humidifier.Base.BaseSubResource, IHaveType, IHaveImage, IHaveCertificate, IHaveComputeType
         {
             /// <summary>
@@ -410,6 +431,14 @@ namespace Humidifier.CodeBuild
             /// </summary>
             public dynamic ImagePullCredentialsType { get; set; }
             /// <summary>
+            /// HostKernel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-hostkernel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostKernel { get; set; }
+            /// <summary>
             /// Image
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-image
             /// Required: True
@@ -433,6 +462,14 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: String
             /// </summary>
             public dynamic ComputeType { get; set; }
+            /// <summary>
+            /// DockerServer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-dockerserver
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DockerServer
+            /// </summary>
+            public Humidifier.CodeBuild.ProjectTypes.DockerServer DockerServer { get; set; }
             /// <summary>
             /// Certificate
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-certificate
@@ -571,6 +608,14 @@ namespace Humidifier.CodeBuild
             /// </summary>
             public dynamic Type { get; set; }
             /// <summary>
+            /// CacheNamespace
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-cachenamespace
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CacheNamespace { get; set; }
+            /// <summary>
             /// Location
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-location
             /// Required: False
@@ -691,6 +736,35 @@ namespace Humidifier.CodeBuild
             /// Type: ScopeConfiguration
             /// </summary>
             public Humidifier.CodeBuild.ProjectTypes.ScopeConfiguration ScopeConfiguration { get; set; }
+            /// <summary>
+            /// PullRequestBuildPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-pullrequestbuildpolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PullRequestBuildPolicy
+            /// </summary>
+            public Humidifier.CodeBuild.ProjectTypes.PullRequestBuildPolicy PullRequestBuildPolicy { get; set; }
+        }
+
+        public class PullRequestBuildPolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RequiresCommentApproval
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-pullrequestbuildpolicy.html#cfn-codebuild-project-pullrequestbuildpolicy-requirescommentapproval
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RequiresCommentApproval { get; set; }
+            /// <summary>
+            /// ApproverRoles
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-pullrequestbuildpolicy.html#cfn-codebuild-project-pullrequestbuildpolicy-approverroles
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ApproverRoles { get; set; }
         }
 
         public class RegistryCredential : Humidifier.Base.BaseSubResource
@@ -741,8 +815,24 @@ namespace Humidifier.CodeBuild
             public dynamic Location { get; set; }
         }
 
-        public class ScopeConfiguration : Humidifier.Base.BaseSubResource, IHaveName
+        public class ScopeConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveScope, IHaveDomain
         {
+            /// <summary>
+            /// Scope
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-scopeconfiguration.html#cfn-codebuild-project-scopeconfiguration-scope
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Scope { get; set; }
+            /// <summary>
+            /// Domain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-scopeconfiguration.html#cfn-codebuild-project-scopeconfiguration-domain
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Domain { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-scopeconfiguration.html#cfn-codebuild-project-scopeconfiguration-name

@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Permission : Humidifier.Base.BaseResource, IHaveAction, IHavePrincipal, IHaveSourceArn, IHaveFunctionName, IHaveSourceAccount
     {
@@ -30,6 +30,14 @@ namespace Humidifier.Lambda
         /// </summary>
         [Required]
         public dynamic Action { get; set; }
+        /// <summary>
+        /// InvokedViaFunctionUrl
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-invokedviafunctionurl
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic InvokedViaFunctionUrl { get; set; }
         /// <summary>
         /// EventSourceToken
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-permission.html#cfn-lambda-permission-eventsourcetoken

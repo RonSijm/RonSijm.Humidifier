@@ -1,6 +1,6 @@
 namespace Humidifier.Cassandra
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TypeTypes;
 
     public class Type : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTypeName, IHaveKeyspaceName

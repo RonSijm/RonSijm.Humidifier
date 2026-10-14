@@ -1,6 +1,6 @@
 namespace Humidifier.WAFv2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class IPSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveScope, IHaveAddresses
     {
@@ -58,7 +58,7 @@ namespace Humidifier.WAFv2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

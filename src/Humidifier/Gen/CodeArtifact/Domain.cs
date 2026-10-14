@@ -1,6 +1,6 @@
 namespace Humidifier.CodeArtifact
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainName, IHaveEncryptionKey, IHavePermissionsPolicyDocument
     {
@@ -30,7 +30,7 @@ namespace Humidifier.CodeArtifact
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// EncryptionKey
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-encryptionkey

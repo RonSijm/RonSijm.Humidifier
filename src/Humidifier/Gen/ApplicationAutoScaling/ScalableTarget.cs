@@ -1,9 +1,9 @@
 namespace Humidifier.ApplicationAutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScalableTargetTypes;
 
-    public class ScalableTarget : Humidifier.Base.BaseResource, IHaveRoleARN, IHaveResourceId, IHaveMaxCapacity, IHaveMinCapacity, IHaveServiceNamespace, IHaveScalableDimension
+    public class ScalableTarget : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleARN, IHaveResourceId, IHaveMaxCapacity, IHaveMinCapacity, IHaveServiceNamespace, IHaveScalableDimension
     {
         public class Attributes
         {
@@ -76,6 +76,15 @@ namespace Humidifier.ApplicationAutoScaling
         /// PrimitiveType: String
         /// </summary>
         public dynamic RoleARN { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// MaxCapacity

@@ -1,6 +1,6 @@
 namespace Humidifier.GreengrassV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ComponentVersionTypes;
 
     public class ComponentVersion : Humidifier.Base.BaseResource

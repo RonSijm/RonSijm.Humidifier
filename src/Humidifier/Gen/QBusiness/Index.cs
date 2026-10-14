@@ -1,6 +1,6 @@
 namespace Humidifier.QBusiness
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IndexTypes;
 
     public class Index : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveType, IHaveDisplayName, IHaveApplicationId
@@ -69,7 +69,7 @@ namespace Humidifier.QBusiness
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CapacityConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-index.html#cfn-qbusiness-index-capacityconfiguration

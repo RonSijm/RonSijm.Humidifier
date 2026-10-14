@@ -1,6 +1,6 @@
 namespace Humidifier.AppConfig
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConfigurationProfileTypes;
 
     public class ConfigurationProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveApplicationId, IHaveKmsKeyIdentifier, IHaveLocationUri, IHaveDeletionProtectionCheck

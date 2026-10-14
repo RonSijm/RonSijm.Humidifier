@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LinkTypes;
 
     public class Link : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveType, IHaveGlobalNetworkId, IHaveProvider, IHaveSiteId
@@ -68,7 +68,7 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// Provider
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-provider

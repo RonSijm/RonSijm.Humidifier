@@ -1,6 +1,6 @@
 namespace Humidifier.RoboMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class RobotApplicationVersion : Humidifier.Base.BaseResource, IHaveCurrentRevisionId, IHaveApplication
     {

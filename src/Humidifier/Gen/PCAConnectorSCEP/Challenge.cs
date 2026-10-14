@@ -1,6 +1,6 @@
 namespace Humidifier.PCAConnectorSCEP
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Challenge : Humidifier.Base.BaseResource, IHaveConnectorArn
     {

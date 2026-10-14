@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using OriginRequestPolicyTypes;
 
     public class OriginRequestPolicy : Humidifier.Base.BaseResource

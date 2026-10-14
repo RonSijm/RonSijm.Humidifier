@@ -1,6 +1,6 @@
 namespace Humidifier.Detective
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class MemberInvitation : Humidifier.Base.BaseResource, IHaveMessage, IHaveMemberId, IHaveDisableEmailNotification
     {

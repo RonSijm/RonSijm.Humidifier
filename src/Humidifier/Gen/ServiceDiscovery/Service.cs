@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceDiscovery
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServiceTypes;
 
     public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType, IHaveNamespaceId
@@ -50,9 +50,10 @@ namespace Humidifier.ServiceDiscovery
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-serviceattributes
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic ServiceAttributes { get; set; }
+        public Dictionary<string, dynamic> ServiceAttributes { get; set; }
         /// <summary>
         /// NamespaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid
@@ -77,7 +78,7 @@ namespace Humidifier.ServiceDiscovery
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -106,7 +107,7 @@ namespace Humidifier.ServiceDiscovery
             /// NamespaceId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-namespaceid
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic NamespaceId { get; set; }
@@ -166,7 +167,7 @@ namespace Humidifier.ServiceDiscovery
             /// FailureThreshold
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckcustomconfig.html#cfn-servicediscovery-service-healthcheckcustomconfig-failurethreshold
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
             public dynamic FailureThreshold { get; set; }

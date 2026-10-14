@@ -1,14 +1,15 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ModelPackageTypes;
 
-    public class ModelPackage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomain, IHaveClientToken, IHaveModelPackageGroupName, IHaveModelPackageName, IHaveLastModifiedTime, IHaveTask, IHaveModelApprovalStatus, IHaveModelPackageVersion, IHaveModelPackageDescription, IHaveApprovalDescription, IHaveDescription
+    public class ModelPackage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomain, IHaveClientToken, IHaveModelPackageGroupName, IHaveModelPackageName, IHaveTask, IHaveModelApprovalStatus, IHaveModelPackageVersion, IHaveModelPackageDescription, IHaveApprovalDescription, IHaveDescription
     {
         public class Attributes
         {
             public static string ModelPackageStatus =  "ModelPackageStatus" ;
             public static string CreationTime =  "CreationTime" ;
+            public static string LastModifiedTime =  "LastModifiedTime" ;
             public static string ModelPackageArn =  "ModelPackageArn" ;
         }
 
@@ -146,7 +147,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CertifyForMarketplace
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-certifyformarketplace
@@ -196,14 +197,6 @@ namespace Humidifier.SageMaker
         /// </summary>
         public dynamic SkipModelValidation { get; set; }
         public dynamic ModelPackageName { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// LastModifiedTime
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-lastmodifiedtime
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic LastModifiedTime { get; set; }
         /// <summary>
         /// ClientToken
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#cfn-sagemaker-modelpackage-clienttoken
@@ -621,7 +614,7 @@ namespace Humidifier.SageMaker
             /// AcceptEula
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelaccessconfig.html#cfn-sagemaker-modelpackage-modelaccessconfig-accepteula
             /// Required: True
-            /// UpdateType: Conditional
+            /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AcceptEula { get; set; }
@@ -673,7 +666,7 @@ namespace Humidifier.SageMaker
             /// S3DataSource
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modeldatasource.html#cfn-sagemaker-modelpackage-modeldatasource-s3datasource
             /// Required: False
-            /// UpdateType: Conditional
+            /// UpdateType: Mutable
             /// Type: S3ModelDataSource
             /// </summary>
             public Humidifier.SageMaker.ModelPackageTypes.S3ModelDataSource S3DataSource { get; set; }
@@ -685,7 +678,7 @@ namespace Humidifier.SageMaker
             /// DataInputConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelinput.html#cfn-sagemaker-modelpackage-modelinput-datainputconfig
             /// Required: True
-            /// UpdateType: Conditional
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataInputConfig { get; set; }
@@ -899,15 +892,23 @@ namespace Humidifier.SageMaker
             /// ModelAccessConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3modeldatasource.html#cfn-sagemaker-modelpackage-s3modeldatasource-modelaccessconfig
             /// Required: False
-            /// UpdateType: Conditional
+            /// UpdateType: Mutable
             /// Type: ModelAccessConfig
             /// </summary>
             public Humidifier.SageMaker.ModelPackageTypes.ModelAccessConfig ModelAccessConfig { get; set; }
             /// <summary>
+            /// S3Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3modeldatasource.html#cfn-sagemaker-modelpackage-s3modeldatasource-s3uri
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3Uri { get; set; }
+            /// <summary>
             /// S3DataType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3modeldatasource.html#cfn-sagemaker-modelpackage-s3modeldatasource-s3datatype
             /// Required: True
-            /// UpdateType: Conditional
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3DataType { get; set; }
@@ -915,18 +916,10 @@ namespace Humidifier.SageMaker
             /// CompressionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3modeldatasource.html#cfn-sagemaker-modelpackage-s3modeldatasource-compressiontype
             /// Required: True
-            /// UpdateType: Conditional
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CompressionType { get; set; }
-            /// <summary>
-            /// S3Uri
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-s3modeldatasource.html#cfn-sagemaker-modelpackage-s3modeldatasource-s3uri
-            /// Required: True
-            /// UpdateType: Conditional
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic S3Uri { get; set; }
         }
 
         public class SecurityConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyId

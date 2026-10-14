@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CloudFormationProvisionedProductTypes;
 
     public class CloudFormationProvisionedProduct : Humidifier.Base.BaseResource, IHaveTags, IHaveAcceptLanguage, IHaveProductId, IHaveProvisioningArtifactId, IHaveProductName, IHavePathId, IHaveNotificationArns
@@ -96,7 +96,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ProvisionedProductName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisionedproductname

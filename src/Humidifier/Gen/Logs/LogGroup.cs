@@ -1,8 +1,8 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class LogGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveLogGroupName, IHaveDataProtectionPolicy
+    public class LogGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveLogGroupName, IHaveDeletionProtectionEnabled, IHaveDataProtectionPolicy
     {
         public class Attributes
         {
@@ -36,6 +36,14 @@ namespace Humidifier.Logs
         /// </summary>
         public dynamic KmsKeyId { get; set; }
         /// <summary>
+        /// BearerTokenAuthenticationEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-bearertokenauthenticationenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic BearerTokenAuthenticationEnabled { get; set; }
+        /// <summary>
         /// LogGroupClass
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-loggroupclass
         /// Required: False
@@ -43,7 +51,23 @@ namespace Humidifier.Logs
         /// PrimitiveType: String
         /// </summary>
         public dynamic LogGroupClass { get; set; }
+        /// <summary>
+        /// ResourcePolicyDocument
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-resourcepolicydocument
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic ResourcePolicyDocument { get; set; }
         public dynamic LogGroupName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// DeletionProtectionEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-deletionprotectionenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DeletionProtectionEnabled { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-tags
@@ -52,7 +76,7 @@ namespace Humidifier.Logs
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// DataProtectionPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-loggroup.html#cfn-logs-loggroup-dataprotectionpolicy

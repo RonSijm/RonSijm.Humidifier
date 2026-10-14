@@ -1,16 +1,15 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LogicallyAirGappedBackupVaultTypes;
 
-    public class LogicallyAirGappedBackupVault : Humidifier.Base.BaseResource, IHaveBackupVaultName, IHaveAccessPolicy, IHaveMaxRetentionDays, IHaveMinRetentionDays
+    public class LogicallyAirGappedBackupVault : Humidifier.Base.BaseResource, IHaveEncryptionKeyArn, IHaveBackupVaultName, IHaveAccessPolicy, IHaveMaxRetentionDays, IHaveMinRetentionDays
     {
         public class Attributes
         {
             public static string VaultState =  "VaultState" ;
             public static string VaultType =  "VaultType" ;
             public static string BackupVaultArn =  "BackupVaultArn" ;
-            public static string EncryptionKeyArn =  "EncryptionKeyArn" ;
         }
 
         public override string AWSTypeName { get => AWS.Backup.LogicallyAirGappedBackupVault; }
@@ -33,6 +32,14 @@ namespace Humidifier.Backup
         /// </summary>
         [Required]
         public dynamic BackupVaultName { get; set; }
+        /// <summary>
+        /// EncryptionKeyArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-logicallyairgappedbackupvault.html#cfn-backup-logicallyairgappedbackupvault-encryptionkeyarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EncryptionKeyArn { get; set; }
 
         /// <summary>
         /// MaxRetentionDays
@@ -61,6 +68,14 @@ namespace Humidifier.Backup
         /// Type: NotificationObjectType
         /// </summary>
         public Humidifier.Backup.LogicallyAirGappedBackupVaultTypes.NotificationObjectType Notifications { get; set; }
+        /// <summary>
+        /// MpaApprovalTeamArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-logicallyairgappedbackupvault.html#cfn-backup-logicallyairgappedbackupvault-mpaapprovalteamarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MpaApprovalTeamArn { get; set; }
         /// <summary>
         /// AccessPolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-logicallyairgappedbackupvault.html#cfn-backup-logicallyairgappedbackupvault-accesspolicy

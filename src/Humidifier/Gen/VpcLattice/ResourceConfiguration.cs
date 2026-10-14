@@ -1,6 +1,6 @@
 namespace Humidifier.VpcLattice
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResourceConfigurationTypes;
 
     public class ResourceConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveProtocolType
@@ -13,29 +13,13 @@ namespace Humidifier.VpcLattice
 
         public override string AWSTypeName { get => AWS.VpcLattice.ResourceConfiguration; }
         /// <summary>
-        /// AllowAssociationToSharableServiceNetwork
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-allowassociationtosharableservicenetwork
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic AllowAssociationToSharableServiceNetwork { get; set; }
-        /// <summary>
-        /// ProtocolType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-protocoltype
+        /// CustomDomainName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-customdomainname
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ProtocolType { get; set; }
-        /// <summary>
-        /// ResourceConfigurationType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-resourceconfigurationtype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ResourceConfigurationType { get; set; }
+        public dynamic CustomDomainName { get; set; }
         /// <summary>
         /// PortRanges
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-portranges
@@ -54,13 +38,13 @@ namespace Humidifier.VpcLattice
         /// </summary>
         public Humidifier.VpcLattice.ResourceConfigurationTypes.ResourceConfigurationDefinition ResourceConfigurationDefinition { get; set; }
         /// <summary>
-        /// ResourceGatewayId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-resourcegatewayid
+        /// GroupDomain
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-groupdomain
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ResourceGatewayId { get; set; }
+        public dynamic GroupDomain { get; set; }
         /// <summary>
         /// ResourceConfigurationAuthType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-resourceconfigurationauthtype
@@ -77,6 +61,49 @@ namespace Humidifier.VpcLattice
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceConfigurationGroupId { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// AllowAssociationToSharableServiceNetwork
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-allowassociationtosharableservicenetwork
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic AllowAssociationToSharableServiceNetwork { get; set; }
+        /// <summary>
+        /// ProtocolType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-protocoltype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ProtocolType { get; set; }
+
+        /// <summary>
+        /// ResourceConfigurationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-resourceconfigurationtype
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic ResourceConfigurationType { get; set; }
+        /// <summary>
+        /// DomainVerificationId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-domainverificationid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DomainVerificationId { get; set; }
+        /// <summary>
+        /// ResourceGatewayId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-resourcegatewayid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ResourceGatewayId { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourceconfiguration.html#cfn-vpclattice-resourceconfiguration-tags
@@ -85,12 +112,24 @@ namespace Humidifier.VpcLattice
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ResourceConfigurationTypes
     {
+        public class CidrResource : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CidrRanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-resourceconfiguration-cidrresource.html#cfn-vpclattice-resourceconfiguration-cidrresource-cidrranges
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CidrRanges { get; set; }
+        }
+
         public class DnsResource : Humidifier.Base.BaseSubResource, IHaveDomainName, IHaveIpAddressType
         {
             /// <summary>
@@ -137,6 +176,14 @@ namespace Humidifier.VpcLattice
             /// PrimitiveType: String
             /// </summary>
             public dynamic ArnResource { get; set; }
+            /// <summary>
+            /// CidrResource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-vpclattice-resourceconfiguration-resourceconfigurationdefinition.html#cfn-vpclattice-resourceconfiguration-resourceconfigurationdefinition-cidrresource
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CidrResource
+            /// </summary>
+            public Humidifier.VpcLattice.ResourceConfigurationTypes.CidrResource CidrResource { get; set; }
         }
     }
 }

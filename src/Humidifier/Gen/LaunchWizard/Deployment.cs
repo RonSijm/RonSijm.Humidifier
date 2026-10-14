@@ -1,6 +1,6 @@
 namespace Humidifier.LaunchWizard
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DeploymentTypes;
 
     public class Deployment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
@@ -16,16 +16,14 @@ namespace Humidifier.LaunchWizard
         }
 
         public override string AWSTypeName { get => AWS.LaunchWizard.Deployment; }
-
         /// <summary>
         /// Specifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-launchwizard-deployment.html#cfn-launchwizard-deployment-specifications
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
-        [Required]
         public Dictionary<string, dynamic> Specifications { get; set; }
 
         /// <summary>

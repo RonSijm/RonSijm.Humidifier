@@ -1,6 +1,6 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Delivery : Humidifier.Base.BaseResource, IHaveTags, IHaveFieldDelimiter
     {
@@ -73,6 +73,6 @@ namespace Humidifier.Logs
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

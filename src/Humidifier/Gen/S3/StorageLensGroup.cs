@@ -1,6 +1,6 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StorageLensGroupTypes;
 
     public class StorageLensGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -29,7 +29,7 @@ namespace Humidifier.S3
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -62,7 +62,7 @@ namespace Humidifier.S3
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> MatchAnyTag { get; set; }
+            public List<Humidifier.Tag> MatchAnyTag { get; set; }
             /// <summary>
             /// MatchAnySuffix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelensgroup-and.html#cfn-s3-storagelensgroup-and-matchanysuffix
@@ -125,7 +125,7 @@ namespace Humidifier.S3
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> MatchAnyTag { get; set; }
+            public List<Humidifier.Tag> MatchAnyTag { get; set; }
             /// <summary>
             /// MatchAnySuffix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelensgroup-filter.html#cfn-s3-storagelensgroup-filter-matchanysuffix
@@ -168,21 +168,21 @@ namespace Humidifier.S3
         public class MatchObjectSize : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// BytesLessThan
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelensgroup-matchobjectsize.html#cfn-s3-storagelensgroup-matchobjectsize-byteslessthan
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic BytesLessThan { get; set; }
-            /// <summary>
             /// BytesGreaterThan
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelensgroup-matchobjectsize.html#cfn-s3-storagelensgroup-matchobjectsize-bytesgreaterthan
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic BytesGreaterThan { get; set; }
+            /// <summary>
+            /// BytesLessThan
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelensgroup-matchobjectsize.html#cfn-s3-storagelensgroup-matchobjectsize-byteslessthan
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Long
+            /// </summary>
+            public dynamic BytesLessThan { get; set; }
         }
 
         public class Or : Humidifier.Base.BaseSubResource, IHaveS3StorageLensGroupTypesMatchObjectAgeMatchObjectAge, IHaveMatchAnyPrefix, IHaveMatchAnyTag, IHaveMatchAnySuffix, IHaveS3StorageLensGroupTypesMatchObjectSizeMatchObjectSize
@@ -212,7 +212,7 @@ namespace Humidifier.S3
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> MatchAnyTag { get; set; }
+            public List<Humidifier.Tag> MatchAnyTag { get; set; }
             /// <summary>
             /// MatchAnySuffix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelensgroup-or.html#cfn-s3-storagelensgroup-or-matchanysuffix

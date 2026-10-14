@@ -1,6 +1,6 @@
 namespace Humidifier.ConnectCampaigns
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CampaignTypes;
 
     public class Campaign : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -49,7 +49,7 @@ namespace Humidifier.ConnectCampaigns
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

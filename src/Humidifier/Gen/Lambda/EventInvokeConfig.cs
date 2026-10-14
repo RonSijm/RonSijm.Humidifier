@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EventInvokeConfigTypes;
 
     public class EventInvokeConfig : Humidifier.Base.BaseResource, IHaveFunctionName, IHaveMaximumRetryAttempts, IHaveQualifier, IHaveMaximumEventAgeInSeconds

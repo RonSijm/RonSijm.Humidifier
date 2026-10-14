@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IPAMResourceDiscoveryTypes;
 
     public class IPAMResourceDiscovery : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
@@ -17,6 +17,15 @@ namespace Humidifier.EC2
 
         public override string AWSTypeName { get => AWS.EC2.IPAMResourceDiscovery; }
         /// <summary>
+        /// OrganizationalUnitExclusions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-organizationalunitexclusions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: IpamResourceDiscoveryOrganizationalUnitExclusion
+        /// </summary>
+        public List<Humidifier.EC2.IPAMResourceDiscoveryTypes.IpamResourceDiscoveryOrganizationalUnitExclusion> OrganizationalUnitExclusions { get; set; }
+        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-description
         /// Required: False
@@ -32,7 +41,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// OperatingRegions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-operatingregions
@@ -56,6 +65,18 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic RegionName { get; set; }
+        }
+
+        public class IpamResourceDiscoveryOrganizationalUnitExclusion : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OrganizationsEntityPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipamresourcediscovery-ipamresourcediscoveryorganizationalunitexclusion.html#cfn-ec2-ipamresourcediscovery-ipamresourcediscoveryorganizationalunitexclusion-organizationsentitypath
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OrganizationsEntityPath { get; set; }
         }
     }
 }

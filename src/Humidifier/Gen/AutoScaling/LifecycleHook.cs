@@ -1,6 +1,6 @@
 namespace Humidifier.AutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LifecycleHook : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveRoleARN, IHaveAutoScalingGroupName, IHaveLifecycleHookName, IHaveLifecycleTransition, IHaveHeartbeatTimeout, IHaveNotificationMetadata, IHaveDefaultResult, IHaveNotificationTargetARN
     {

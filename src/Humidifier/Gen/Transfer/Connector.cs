@@ -1,18 +1,28 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveTags, IHaveUrl, IHaveAccessRole, IHaveLoggingRole, IHaveSecurityPolicyName
+    public class Connector : Humidifier.Base.BaseResource, IHaveTags, IHaveUrl, IHaveIpAddressType, IHaveAccessRole, IHaveLoggingRole, IHaveSecurityPolicyName
     {
         public class Attributes
         {
+            public static string Status =  "Status" ;
             public static string Arn =  "Arn" ;
+            public static string ErrorMessage =  "ErrorMessage" ;
             public static string ServiceManagedEgressIpAddresses =  "ServiceManagedEgressIpAddresses" ;
             public static string ConnectorId =  "ConnectorId" ;
         }
 
         public override string AWSTypeName { get => AWS.Transfer.Connector; }
+        /// <summary>
+        /// IpAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-ipaddresstype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpAddressType { get; set; }
         /// <summary>
         /// As2Config
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-as2config
@@ -40,6 +50,22 @@ namespace Humidifier.Transfer
         [Required]
         public dynamic AccessRole { get; set; }
         /// <summary>
+        /// EgressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-egresstype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EgressType { get; set; }
+        /// <summary>
+        /// EgressConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-egressconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ConnectorEgressConfig
+        /// </summary>
+        public Humidifier.Transfer.ConnectorTypes.ConnectorEgressConfig EgressConfig { get; set; }
+        /// <summary>
         /// SecurityPolicyName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-securitypolicyname
         /// Required: False
@@ -56,6 +82,14 @@ namespace Humidifier.Transfer
         /// </summary>
         public Humidifier.Transfer.ConnectorTypes.SftpConfig SftpConfig { get; set; }
         /// <summary>
+        /// Url
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-url
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Url { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-tags
         /// Required: False
@@ -63,17 +97,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-
-        /// <summary>
-        /// Url
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-connector.html#cfn-transfer-connector-url
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic Url { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ConnectorTypes
@@ -96,6 +120,14 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public dynamic MessageSubject { get; set; }
+            /// <summary>
+            /// AsyncMdnConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-asyncmdnconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ConnectorAsyncMdnConfig
+            /// </summary>
+            public Humidifier.Transfer.ConnectorTypes.ConnectorAsyncMdnConfig AsyncMdnConfig { get; set; }
             /// <summary>
             /// BasicAuthSecretId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-as2config.html#cfn-transfer-connector-as2config-basicauthsecretid
@@ -162,6 +194,59 @@ namespace Humidifier.Transfer
             public dynamic PreserveContentType { get; set; }
         }
 
+        public class ConnectorAsyncMdnConfig : Humidifier.Base.BaseSubResource, IHaveUrl
+        {
+            /// <summary>
+            /// ServerIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-connectorasyncmdnconfig.html#cfn-transfer-connector-connectorasyncmdnconfig-serverids
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ServerIds { get; set; }
+            /// <summary>
+            /// Url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-connectorasyncmdnconfig.html#cfn-transfer-connector-connectorasyncmdnconfig-url
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Url { get; set; }
+        }
+
+        public class ConnectorEgressConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VpcLattice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-connectoregressconfig.html#cfn-transfer-connector-connectoregressconfig-vpclattice
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ConnectorVpcLatticeEgressConfig
+            /// </summary>
+            public Humidifier.Transfer.ConnectorTypes.ConnectorVpcLatticeEgressConfig VpcLattice { get; set; }
+        }
+
+        public class ConnectorVpcLatticeEgressConfig : Humidifier.Base.BaseSubResource, IHaveResourceConfigurationArn
+        {
+            /// <summary>
+            /// ResourceConfigurationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-connectorvpclatticeegressconfig.html#cfn-transfer-connector-connectorvpclatticeegressconfig-resourceconfigurationarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceConfigurationArn { get; set; }
+            /// <summary>
+            /// PortNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-connectorvpclatticeegressconfig.html#cfn-transfer-connector-connectorvpclatticeegressconfig-portnumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic PortNumber { get; set; }
+        }
+
         public class SftpConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -181,6 +266,23 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public dynamic UserSecretId { get; set; }
+            /// <summary>
+            /// OrderedUserSecretVersionStages
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-sftpconfig.html#cfn-transfer-connector-sftpconfig-orderedusersecretversionstages
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic OrderedUserSecretVersionStages { get; set; }
+            /// <summary>
+            /// MaxConcurrentConnections
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-connector-sftpconfig.html#cfn-transfer-connector-sftpconfig-maxconcurrentconnections
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxConcurrentConnections { get; set; }
         }
     }
 }

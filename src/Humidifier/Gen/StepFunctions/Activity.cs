@@ -1,6 +1,6 @@
 namespace Humidifier.StepFunctions
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ActivityTypes;
 
     public class Activity : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

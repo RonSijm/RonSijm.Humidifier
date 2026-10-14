@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SpaceTypes;
 
     public class Space : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDomainId
@@ -47,7 +47,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// SpaceSharingSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-spacesharingsettings
@@ -98,6 +98,14 @@ namespace Humidifier.SageMaker
             /// Type: EFSFileSystem
             /// </summary>
             public Humidifier.SageMaker.SpaceTypes.EFSFileSystem EFSFileSystem { get; set; }
+            /// <summary>
+            /// S3FileSystem
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customfilesystem.html#cfn-sagemaker-space-customfilesystem-s3filesystem
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3FileSystem
+            /// </summary>
+            public Humidifier.SageMaker.SpaceTypes.S3FileSystem S3FileSystem { get; set; }
         }
 
         public class CustomImage : Humidifier.Base.BaseSubResource, IHaveImageName, IHaveAppImageConfigName, IHaveImageVersionNumber
@@ -230,14 +238,6 @@ namespace Humidifier.SageMaker
         public class ResourceSpec : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveLifecycleConfigArn, IHaveSageMakerImageArn, IHaveSageMakerImageVersionArn
         {
             /// <summary>
-            /// LifecycleConfigArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-lifecycleconfigarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LifecycleConfigArn { get; set; }
-            /// <summary>
             /// SageMakerImageArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimagearn
             /// Required: False
@@ -254,6 +254,14 @@ namespace Humidifier.SageMaker
             /// </summary>
             public dynamic InstanceType { get; set; }
             /// <summary>
+            /// LifecycleConfigArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-lifecycleconfigarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LifecycleConfigArn { get; set; }
+            /// <summary>
             /// SageMakerImageVersionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimageversionarn
             /// Required: False
@@ -261,6 +269,18 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic SageMakerImageVersionArn { get; set; }
+        }
+
+        public class S3FileSystem : Humidifier.Base.BaseSubResource, IHaveS3Uri
+        {
+            /// <summary>
+            /// S3Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-s3filesystem.html#cfn-sagemaker-space-s3filesystem-s3uri
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3Uri { get; set; }
         }
 
         public class SpaceAppLifecycleManagement : Humidifier.Base.BaseSubResource
@@ -362,6 +382,22 @@ namespace Humidifier.SageMaker
             /// Type: SpaceCodeEditorAppSettings
             /// </summary>
             public Humidifier.SageMaker.SpaceTypes.SpaceCodeEditorAppSettings CodeEditorAppSettings { get; set; }
+            /// <summary>
+            /// SpaceManagedResources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-spacemanagedresources
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SpaceManagedResources { get; set; }
+            /// <summary>
+            /// RemoteAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-remoteaccess
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RemoteAccess { get; set; }
             /// <summary>
             /// JupyterServerAppSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-jupyterserverappsettings

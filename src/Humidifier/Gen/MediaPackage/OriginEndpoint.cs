@@ -1,6 +1,6 @@
 namespace Humidifier.MediaPackage
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using OriginEndpointTypes;
 
     public class OriginEndpoint : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveId, IHaveManifestName, IHaveChannelId, IHaveTimeDelaySeconds, IHaveStartoverWindowSeconds
@@ -121,7 +121,7 @@ namespace Humidifier.MediaPackage
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// StartoverWindowSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-startoverwindowseconds
@@ -674,23 +674,6 @@ namespace Humidifier.MediaPackage
         public class SpekeKeyProvider : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveCertificateArn, IHaveResourceId, IHaveSystemIds
         {
             /// <summary>
-            /// ResourceId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-resourceid
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ResourceId { get; set; }
-            /// <summary>
-            /// SystemIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-systemids
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic SystemIds { get; set; }
-            /// <summary>
             /// EncryptionContractConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-encryptioncontractconfiguration
             /// Required: False
@@ -698,6 +681,14 @@ namespace Humidifier.MediaPackage
             /// Type: EncryptionContractConfiguration
             /// </summary>
             public Humidifier.MediaPackage.OriginEndpointTypes.EncryptionContractConfiguration EncryptionContractConfiguration { get; set; }
+            /// <summary>
+            /// ResourceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-resourceid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceId { get; set; }
             /// <summary>
             /// Url
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-url
@@ -715,6 +706,15 @@ namespace Humidifier.MediaPackage
             /// </summary>
             public dynamic RoleArn { get; set; }
             /// <summary>
+            /// SystemIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-systemids
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SystemIds { get; set; }
+            /// <summary>
             /// CertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-certificatearn
             /// Required: False
@@ -726,6 +726,14 @@ namespace Humidifier.MediaPackage
 
         public class StreamSelection : Humidifier.Base.BaseSubResource, IHaveMinVideoBitsPerSecond, IHaveStreamOrder, IHaveMaxVideoBitsPerSecond
         {
+            /// <summary>
+            /// MaxVideoBitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-maxvideobitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxVideoBitsPerSecond { get; set; }
             /// <summary>
             /// MinVideoBitsPerSecond
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-minvideobitspersecond
@@ -742,14 +750,6 @@ namespace Humidifier.MediaPackage
             /// PrimitiveType: String
             /// </summary>
             public dynamic StreamOrder { get; set; }
-            /// <summary>
-            /// MaxVideoBitsPerSecond
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-maxvideobitspersecond
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaxVideoBitsPerSecond { get; set; }
         }
     }
 }

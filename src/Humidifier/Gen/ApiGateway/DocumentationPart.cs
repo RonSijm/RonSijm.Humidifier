@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DocumentationPartTypes;
 
     public class DocumentationPart : Humidifier.Base.BaseResource, IHaveRestApiId

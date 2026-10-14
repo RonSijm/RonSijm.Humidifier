@@ -1,6 +1,6 @@
 namespace Humidifier.KinesisAnalytics
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationOutputTypes;
 
     public class ApplicationOutput : Humidifier.Base.BaseResource, IHaveApplicationName

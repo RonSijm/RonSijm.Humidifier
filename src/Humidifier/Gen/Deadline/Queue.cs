@@ -1,6 +1,6 @@
 namespace Humidifier.Deadline
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using QueueTypes;
 
     public class Queue : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveRoleArn, IHaveDisplayName, IHaveFarmId
@@ -46,6 +46,23 @@ namespace Humidifier.Deadline
         /// </summary>
         public Humidifier.Deadline.QueueTypes.JobAttachmentSettings JobAttachmentSettings { get; set; }
         /// <summary>
+        /// SchedulingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queue.html#cfn-deadline-queue-schedulingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SchedulingConfiguration
+        /// </summary>
+        public Humidifier.Deadline.QueueTypes.SchedulingConfiguration SchedulingConfiguration { get; set; }
+        /// <summary>
+        /// RequiredFileSystemLocationNames
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queue.html#cfn-deadline-queue-requiredfilesystemlocationnames
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic RequiredFileSystemLocationNames { get; set; }
+        /// <summary>
         /// DefaultBudgetAction
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queue.html#cfn-deadline-queue-defaultbudgetaction
         /// Required: False
@@ -63,15 +80,6 @@ namespace Humidifier.Deadline
         /// </summary>
         [Required]
         public dynamic DisplayName { get; set; }
-        /// <summary>
-        /// RequiredFileSystemLocationNames
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-deadline-queue.html#cfn-deadline-queue-requiredfilesystemlocationnames
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic RequiredFileSystemLocationNames { get; set; }
 
         /// <summary>
         /// FarmId
@@ -98,7 +106,7 @@ namespace Humidifier.Deadline
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace QueueTypes
@@ -169,6 +177,130 @@ namespace Humidifier.Deadline
             /// PrimitiveType: String
             /// </summary>
             public dynamic User { get; set; }
+        }
+
+        public class PriorityBalancedSchedulingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RenderingTaskBuffer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-prioritybalancedschedulingconfiguration.html#cfn-deadline-queue-prioritybalancedschedulingconfiguration-renderingtaskbuffer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RenderingTaskBuffer { get; set; }
+        }
+
+        public class SchedulingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PriorityBalanced
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-schedulingconfiguration.html#cfn-deadline-queue-schedulingconfiguration-prioritybalanced
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PriorityBalancedSchedulingConfiguration
+            /// </summary>
+            public Humidifier.Deadline.QueueTypes.PriorityBalancedSchedulingConfiguration PriorityBalanced { get; set; }
+            /// <summary>
+            /// PriorityFifo
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-schedulingconfiguration.html#cfn-deadline-queue-schedulingconfiguration-priorityfifo
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic PriorityFifo { get; set; }
+            /// <summary>
+            /// WeightedBalanced
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-schedulingconfiguration.html#cfn-deadline-queue-schedulingconfiguration-weightedbalanced
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WeightedBalancedSchedulingConfiguration
+            /// </summary>
+            public Humidifier.Deadline.QueueTypes.WeightedBalancedSchedulingConfiguration WeightedBalanced { get; set; }
+        }
+
+        public class SchedulingMaxPriorityOverride : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AlwaysScheduleFirst
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-schedulingmaxpriorityoverride.html#cfn-deadline-queue-schedulingmaxpriorityoverride-alwaysschedulefirst
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AlwaysScheduleFirst { get; set; }
+        }
+
+        public class SchedulingMinPriorityOverride : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AlwaysScheduleLast
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-schedulingminpriorityoverride.html#cfn-deadline-queue-schedulingminpriorityoverride-alwaysschedulelast
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic AlwaysScheduleLast { get; set; }
+        }
+
+        public class WeightedBalancedSchedulingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ErrorWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-errorweight
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic ErrorWeight { get; set; }
+            /// <summary>
+            /// MaxPriorityOverride
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-maxpriorityoverride
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SchedulingMaxPriorityOverride
+            /// </summary>
+            public Humidifier.Deadline.QueueTypes.SchedulingMaxPriorityOverride MaxPriorityOverride { get; set; }
+            /// <summary>
+            /// PriorityWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-priorityweight
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic PriorityWeight { get; set; }
+            /// <summary>
+            /// SubmissionTimeWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-submissiontimeweight
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic SubmissionTimeWeight { get; set; }
+            /// <summary>
+            /// MinPriorityOverride
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-minpriorityoverride
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SchedulingMinPriorityOverride
+            /// </summary>
+            public Humidifier.Deadline.QueueTypes.SchedulingMinPriorityOverride MinPriorityOverride { get; set; }
+            /// <summary>
+            /// RenderingTaskWeight
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-renderingtaskweight
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic RenderingTaskWeight { get; set; }
+            /// <summary>
+            /// RenderingTaskBuffer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-queue-weightedbalancedschedulingconfiguration.html#cfn-deadline-queue-weightedbalancedschedulingconfiguration-renderingtaskbuffer
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RenderingTaskBuffer { get; set; }
         }
 
         public class WindowsUser : Humidifier.Base.BaseSubResource, IHaveUser

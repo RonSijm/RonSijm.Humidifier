@@ -1,8 +1,8 @@
 namespace Humidifier.Events
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Archive : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSourceArn, IHaveEventPattern, IHaveArchiveName, IHaveRetentionDays
+    public class Archive : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSourceArn, IHaveKmsKeyIdentifier, IHaveEventPattern, IHaveArchiveName, IHaveRetentionDays
     {
         public class Attributes
         {
@@ -18,6 +18,14 @@ namespace Humidifier.Events
         /// PrimitiveType: Json
         /// </summary>
         public dynamic EventPattern { get; set; }
+        /// <summary>
+        /// KmsKeyIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-kmskeyidentifier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyIdentifier { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#cfn-events-archive-description

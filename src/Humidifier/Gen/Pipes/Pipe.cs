@@ -1,6 +1,6 @@
 namespace Humidifier.Pipes
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PipeTypes;
 
     public class Pipe : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveSource, IHaveTarget, IHaveKmsKeyIdentifier, IHaveDesiredState
@@ -1448,7 +1448,7 @@ namespace Humidifier.Pipes
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// TaskDefinitionArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-taskdefinitionarn

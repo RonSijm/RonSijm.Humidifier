@@ -1,6 +1,6 @@
 namespace Humidifier.SimSpaceWeaver
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SimulationTypes;
 
     public class Simulation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveRoleArn, IHaveMaximumDuration
@@ -53,14 +53,6 @@ namespace Humidifier.SimSpaceWeaver
         public class S3Location : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveObjectKey
         {
             /// <summary>
-            /// BucketName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simspaceweaver-simulation-s3location.html#cfn-simspaceweaver-simulation-s3location-bucketname
-            /// Required: True
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic BucketName { get; set; }
-            /// <summary>
             /// ObjectKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simspaceweaver-simulation-s3location.html#cfn-simspaceweaver-simulation-s3location-objectkey
             /// Required: True
@@ -68,6 +60,14 @@ namespace Humidifier.SimSpaceWeaver
             /// PrimitiveType: String
             /// </summary>
             public dynamic ObjectKey { get; set; }
+            /// <summary>
+            /// BucketName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-simspaceweaver-simulation-s3location.html#cfn-simspaceweaver-simulation-s3location-bucketname
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketName { get; set; }
         }
     }
 }

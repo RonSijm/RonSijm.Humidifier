@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServiceActionTypes;
 
     public class ServiceAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAcceptLanguage

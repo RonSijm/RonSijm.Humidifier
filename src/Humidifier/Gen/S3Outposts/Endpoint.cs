@@ -1,6 +1,6 @@
 namespace Humidifier.S3Outposts
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EndpointTypes;
 
     public class Endpoint : Humidifier.Base.BaseResource, IHaveSubnetId, IHaveAccessType, IHaveOutpostId, IHaveSecurityGroupId

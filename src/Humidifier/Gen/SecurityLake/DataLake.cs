@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityLake
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataLakeTypes;
 
     public class DataLake : Humidifier.Base.BaseResource, IHaveTags
@@ -52,7 +52,7 @@ namespace Humidifier.SecurityLake
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DataLakeTypes

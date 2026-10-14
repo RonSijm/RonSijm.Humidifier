@@ -1,9 +1,9 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FunctionTypes;
 
-    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
+    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
     {
         public class Attributes
         {
@@ -48,6 +48,15 @@ namespace Humidifier.CloudFront
         /// </summary>
         [Required]
         public dynamic FunctionCode { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

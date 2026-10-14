@@ -1,12 +1,13 @@
 namespace Humidifier.Events
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ApiDestination : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveConnectionArn, IHaveHttpMethod
     {
         public class Attributes
         {
             public static string Arn =  "Arn" ;
+            public static string ArnForPolicy =  "ArnForPolicy" ;
         }
 
         public override string AWSTypeName { get => AWS.Events.ApiDestination; }

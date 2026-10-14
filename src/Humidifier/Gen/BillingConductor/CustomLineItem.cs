@@ -1,6 +1,6 @@
 namespace Humidifier.BillingConductor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CustomLineItemTypes;
 
     public class CustomLineItem : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAccountId
@@ -40,6 +40,14 @@ namespace Humidifier.BillingConductor
         /// PrimitiveType: String
         /// </summary>
         public dynamic AccountId { get; set; }
+        /// <summary>
+        /// PresentationDetails
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-presentationdetails
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: PresentationDetails
+        /// </summary>
+        public Humidifier.BillingConductor.CustomLineItemTypes.PresentationDetails PresentationDetails { get; set; }
 
         /// <summary>
         /// BillingGroupArn
@@ -50,6 +58,14 @@ namespace Humidifier.BillingConductor
         /// </summary>
         [Required]
         public dynamic BillingGroupArn { get; set; }
+        /// <summary>
+        /// ComputationRule
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-computationrule
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ComputationRule { get; set; }
         /// <summary>
         /// CustomLineItemChargeDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#cfn-billingconductor-customlineitem-customlineitemchargedetails
@@ -66,7 +82,7 @@ namespace Humidifier.BillingConductor
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -181,14 +197,35 @@ namespace Humidifier.BillingConductor
             /// </summary>
             public dynamic Attribute { get; set; }
             /// <summary>
+            /// AttributeValues
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-lineitemfilter.html#cfn-billingconductor-customlineitem-lineitemfilter-attributevalues
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AttributeValues { get; set; }
+            /// <summary>
             /// Values
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-lineitemfilter.html#cfn-billingconductor-customlineitem-lineitemfilter-values
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Values { get; set; }
+        }
+
+        public class PresentationDetails : Humidifier.Base.BaseSubResource, IHaveService
+        {
+            /// <summary>
+            /// Service
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-presentationdetails.html#cfn-billingconductor-customlineitem-presentationdetails-service
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Service { get; set; }
         }
     }
 }

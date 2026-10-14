@@ -1,19 +1,17 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PortfolioPrincipalAssociation : Humidifier.Base.BaseResource, IHaveAcceptLanguage, IHavePortfolioId, IHavePrincipalType
     {
         public override string AWSTypeName { get => AWS.ServiceCatalog.PortfolioPrincipalAssociation; }
-
         /// <summary>
         /// PrincipalARN
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-principalarn
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic PrincipalARN { get; set; }
         /// <summary>
         /// AcceptLanguage
@@ -23,15 +21,13 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: String
         /// </summary>
         public dynamic AcceptLanguage { get; set; }
-
         /// <summary>
         /// PortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioprincipalassociation.html#cfn-servicecatalog-portfolioprincipalassociation-portfolioid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic PortfolioId { get; set; }
 
         /// <summary>

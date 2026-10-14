@@ -1,6 +1,6 @@
 namespace Humidifier.Lambda
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UrlTypes;
 
     public class Url : Humidifier.Base.BaseResource, IHaveAuthType, IHaveQualifier

@@ -1,9 +1,9 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using KeyValueStoreTypes;
 
-    public class KeyValueStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveComment
+    public class KeyValueStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveComment
     {
         public class Attributes
         {
@@ -29,6 +29,15 @@ namespace Humidifier.CloudFront
         /// Type: ImportSource
         /// </summary>
         public Humidifier.CloudFront.KeyValueStoreTypes.ImportSource ImportSource { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keyvaluestore.html#cfn-cloudfront-keyvaluestore-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

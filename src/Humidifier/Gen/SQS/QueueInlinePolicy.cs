@@ -1,6 +1,6 @@
 namespace Humidifier.SQS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class QueueInlinePolicy : Humidifier.Base.BaseResource, IHavePolicyDocument, IHaveQueue
     {

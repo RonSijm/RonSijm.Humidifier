@@ -1,6 +1,6 @@
 namespace Humidifier.CodeGuruReviewer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class RepositoryAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveBucketName, IHaveConnectionArn, IHaveOwner
     {
@@ -52,7 +52,7 @@ namespace Humidifier.CodeGuruReviewer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ReplicationInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveResourceIdentifier, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveAllocatedStorage, IHaveMultiAZ, IHaveAllowMajorVersionUpgrade, IHaveReplicationSubnetGroupIdentifier
     {
@@ -11,6 +11,14 @@ namespace Humidifier.DMS
         }
 
         public override string AWSTypeName { get => AWS.DMS.ReplicationInstance; }
+        /// <summary>
+        /// DnsNameServers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-dnsnameservers
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DnsNameServers { get; set; }
         /// <summary>
         /// ReplicationInstanceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-replicationinstance.html#cfn-dms-replicationinstance-replicationinstanceidentifier
@@ -142,6 +150,6 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

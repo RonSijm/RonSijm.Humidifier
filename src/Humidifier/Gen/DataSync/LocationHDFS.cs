@@ -1,12 +1,13 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LocationHDFSTypes;
 
     public class LocationHDFS : Humidifier.Base.BaseResource, IHaveTags, IHaveAuthenticationType, IHaveSubdirectory, IHaveAgentArns, IHaveReplicationFactor
     {
         public class Attributes
         {
+            public static string ManagedSecretConfig =  "ManagedSecretConfig" ;
             public static string LocationUri =  "LocationUri" ;
             public static string LocationArn =  "LocationArn" ;
         }
@@ -49,7 +50,7 @@ namespace Humidifier.DataSync
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-replicationfactor
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Integer
+        /// PrimitiveType: Long
         /// </summary>
         public dynamic ReplicationFactor { get; set; }
         /// <summary>
@@ -72,6 +73,14 @@ namespace Humidifier.DataSync
         [Required]
         public List<Humidifier.DataSync.LocationHDFSTypes.NameNode> NameNodes { get; set; }
         /// <summary>
+        /// CmkSecretConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-cmksecretconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CmkSecretConfig
+        /// </summary>
+        public Humidifier.DataSync.LocationHDFSTypes.CmkSecretConfig CmkSecretConfig { get; set; }
+        /// <summary>
         /// Subdirectory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-subdirectory
         /// Required: False
@@ -88,11 +97,19 @@ namespace Humidifier.DataSync
         /// </summary>
         public dynamic KerberosKrb5Conf { get; set; }
         /// <summary>
+        /// CustomSecretConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-customsecretconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomSecretConfig
+        /// </summary>
+        public Humidifier.DataSync.LocationHDFSTypes.CustomSecretConfig CustomSecretConfig { get; set; }
+        /// <summary>
         /// BlockSize
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#cfn-datasync-locationhdfs-blocksize
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Integer
+        /// PrimitiveType: Long
         /// </summary>
         public dynamic BlockSize { get; set; }
         /// <summary>
@@ -103,7 +120,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// AgentArns
@@ -129,6 +146,58 @@ namespace Humidifier.DataSync
 
     namespace LocationHDFSTypes
     {
+        public class CmkSecretConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-cmksecretconfig.html#cfn-datasync-locationhdfs-cmksecretconfig-secretarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-cmksecretconfig.html#cfn-datasync-locationhdfs-cmksecretconfig-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
+        }
+
+        public class CustomSecretConfig : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-customsecretconfig.html#cfn-datasync-locationhdfs-customsecretconfig-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// SecretAccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-customsecretconfig.html#cfn-datasync-locationhdfs-customsecretconfig-secretaccessrolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretAccessRoleArn { get; set; }
+        }
+
+        public class ManagedSecretConfig : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationhdfs-managedsecretconfig.html#cfn-datasync-locationhdfs-managedsecretconfig-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+        }
+
         public class NameNode : Humidifier.Base.BaseSubResource, IHavePort, IHaveHostname
         {
             /// <summary>

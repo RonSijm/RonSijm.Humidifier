@@ -1,6 +1,6 @@
 namespace Humidifier.BillingConductor
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PricingRuleTypes;
 
     public class PricingRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveType, IHaveScope, IHaveService, IHaveOperation
@@ -98,12 +98,40 @@ namespace Humidifier.BillingConductor
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace PricingRuleTypes
     {
+        public class CustomTier : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RateValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-customtier.html#cfn-billingconductor-pricingrule-customtier-ratevalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic RateValue { get; set; }
+            /// <summary>
+            /// EndRangeExclusive
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-customtier.html#cfn-billingconductor-pricingrule-customtier-endrangeexclusive
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic EndRangeExclusive { get; set; }
+            /// <summary>
+            /// BeginRangeInclusive
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-customtier.html#cfn-billingconductor-pricingrule-customtier-beginrangeinclusive
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic BeginRangeInclusive { get; set; }
+        }
+
         public class FreeTier : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -118,6 +146,15 @@ namespace Humidifier.BillingConductor
 
         public class Tiering : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// CustomTiers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html#cfn-billingconductor-pricingrule-tiering-customtiers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CustomTier
+            /// </summary>
+            public List<Humidifier.BillingConductor.PricingRuleTypes.CustomTier> CustomTiers { get; set; }
             /// <summary>
             /// FreeTier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html#cfn-billingconductor-pricingrule-tiering-freetier

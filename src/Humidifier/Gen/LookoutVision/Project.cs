@@ -1,6 +1,6 @@
 namespace Humidifier.LookoutVision
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveProjectName
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.AmazonMQ
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BrokerTypes;
 
     public class Broker : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSubnetIds, IHaveSecurityGroups, IHaveEngineVersion, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveStorageType, IHaveEngineType, IHaveAuthenticationStrategy
@@ -9,16 +9,27 @@ namespace Humidifier.AmazonMQ
         {
             public static string IpAddresses =  "IpAddresses" ;
             public static string OpenWireEndpoints =  "OpenWireEndpoints" ;
-            public static string ConfigurationRevision =  "ConfigurationRevision" ;
             public static string StompEndpoints =  "StompEndpoints" ;
             public static string MqttEndpoints =  "MqttEndpoints" ;
+            public static string ConfigurationRevision =  "ConfigurationRevision" ;
             public static string AmqpEndpoints =  "AmqpEndpoints" ;
+            public static string Id =  "Id" ;
+            public static string ConsoleURLs =  "ConsoleURLs" ;
             public static string Arn =  "Arn" ;
             public static string ConfigurationId =  "ConfigurationId" ;
+            public static string EngineVersionCurrent =  "EngineVersionCurrent" ;
             public static string WssEndpoints =  "WssEndpoints" ;
         }
 
         public override string AWSTypeName { get => AWS.AmazonMQ.Broker; }
+        /// <summary>
+        /// DataReplicationPrimaryBrokerArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-datareplicationprimarybrokerarn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DataReplicationPrimaryBrokerArn { get; set; }
         /// <summary>
         /// SecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-securitygroups
@@ -29,13 +40,13 @@ namespace Humidifier.AmazonMQ
         /// </summary>
         public dynamic SecurityGroups { get; set; }
         /// <summary>
-        /// DataReplicationPrimaryBrokerArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-datareplicationprimarybrokerarn
+        /// EngineVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic DataReplicationPrimaryBrokerArn { get; set; }
+        public dynamic EngineVersion { get; set; }
         /// <summary>
         /// StorageType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-storagetype
@@ -44,14 +55,6 @@ namespace Humidifier.AmazonMQ
         /// PrimitiveType: String
         /// </summary>
         public dynamic StorageType { get; set; }
-        /// <summary>
-        /// EngineVersion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-engineversion
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic EngineVersion { get; set; }
         /// <summary>
         /// Configuration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-configuration
@@ -76,6 +79,14 @@ namespace Humidifier.AmazonMQ
         /// Type: MaintenanceWindow
         /// </summary>
         public Humidifier.AmazonMQ.BrokerTypes.MaintenanceWindow MaintenanceWindowStartTime { get; set; }
+        /// <summary>
+        /// StorageSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-storagesize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic StorageSize { get; set; }
 
         /// <summary>
         /// HostInstanceType
@@ -87,6 +98,15 @@ namespace Humidifier.AmazonMQ
         [Required]
         public dynamic HostInstanceType { get; set; }
         /// <summary>
+        /// Users
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-users
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: User
+        /// </summary>
+        public List<Humidifier.AmazonMQ.BrokerTypes.User> Users { get; set; }
+        /// <summary>
         /// AutoMinorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-autominorversionupgrade
         /// Required: False
@@ -94,17 +114,6 @@ namespace Humidifier.AmazonMQ
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutoMinorVersionUpgrade { get; set; }
-
-        /// <summary>
-        /// Users
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-users
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: User
-        /// </summary>
-        [Required]
-        public List<Humidifier.AmazonMQ.BrokerTypes.User> Users { get; set; }
         /// <summary>
         /// Logs
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-logs
@@ -131,6 +140,15 @@ namespace Humidifier.AmazonMQ
         /// </summary>
         public dynamic DataReplicationMode { get; set; }
         public dynamic BrokerName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ResourceShareArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-resourcesharearns
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic ResourceShareArns { get; set; }
         /// <summary>
         /// LdapServerMetadata
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-ldapservermetadata
@@ -216,7 +234,7 @@ namespace Humidifier.AmazonMQ
             /// KmsKeyId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-kmskeyid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKeyId { get; set; }
@@ -224,7 +242,7 @@ namespace Humidifier.AmazonMQ
             /// UseAwsOwnedKey
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-useawsownedkey
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic UseAwsOwnedKey { get; set; }
@@ -308,7 +326,7 @@ namespace Humidifier.AmazonMQ
             /// <summary>
             /// ServiceAccountPassword
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-serviceaccountpassword
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -426,14 +444,6 @@ namespace Humidifier.AmazonMQ
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ConsoleAccess { get; set; }
-            /// <summary>
-            /// JolokiaApiAccess
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-jolokiaapiaccess
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic JolokiaApiAccess { get; set; }
             /// <summary>
             /// Password
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-password

@@ -1,6 +1,6 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LocationFSxLustre : Humidifier.Base.BaseResource, IHaveTags, IHaveSubdirectory, IHaveSecurityGroupArns, IHaveFsxFilesystemArn
     {
@@ -46,6 +46,6 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

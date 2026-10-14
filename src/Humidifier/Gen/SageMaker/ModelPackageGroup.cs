@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ModelPackageGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveModelPackageGroupName, IHaveDescription
     {
@@ -40,6 +40,6 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

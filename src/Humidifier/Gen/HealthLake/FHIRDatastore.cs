@@ -1,6 +1,6 @@
 namespace Humidifier.HealthLake
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FHIRDatastoreTypes;
 
     public class FHIRDatastore : Humidifier.Base.BaseResource, IHaveTags, IHaveDatastoreName
@@ -49,7 +49,7 @@ namespace Humidifier.HealthLake
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// PreloadDataConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-preloaddataconfig

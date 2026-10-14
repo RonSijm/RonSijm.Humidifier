@@ -1,6 +1,6 @@
 namespace Humidifier.SystemsManagerSAP
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ApplicationTypes;
 
     public class Application : Humidifier.Base.BaseResource, IHaveTags, IHaveApplicationId, IHaveInstances, IHaveSid
@@ -73,7 +73,16 @@ namespace Humidifier.SystemsManagerSAP
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// ComponentsInfo
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-componentsinfo
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: ComponentInfo
+        /// </summary>
+        public List<Humidifier.SystemsManagerSAP.ApplicationTypes.ComponentInfo> ComponentsInfo { get; set; }
         /// <summary>
         /// Sid
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-systemsmanagersap-application.html#cfn-systemsmanagersap-application-sid
@@ -86,6 +95,34 @@ namespace Humidifier.SystemsManagerSAP
 
     namespace ApplicationTypes
     {
+        public class ComponentInfo : Humidifier.Base.BaseSubResource, IHaveComponentType, IHaveSid
+        {
+            /// <summary>
+            /// Ec2InstanceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-systemsmanagersap-application-componentinfo.html#cfn-systemsmanagersap-application-componentinfo-ec2instanceid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ec2InstanceId { get; set; }
+            /// <summary>
+            /// ComponentType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-systemsmanagersap-application-componentinfo.html#cfn-systemsmanagersap-application-componentinfo-componenttype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ComponentType { get; set; }
+            /// <summary>
+            /// Sid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-systemsmanagersap-application-componentinfo.html#cfn-systemsmanagersap-application-componentinfo-sid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Sid { get; set; }
+        }
+
         public class Credential : Humidifier.Base.BaseSubResource, IHaveDatabaseName, IHaveSecretId
         {
             /// <summary>

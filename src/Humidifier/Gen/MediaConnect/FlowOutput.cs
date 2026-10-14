@@ -1,9 +1,9 @@
 namespace Humidifier.MediaConnect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowOutputTypes;
 
-    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHavePort, IHaveProtocol, IHaveDestination, IHaveFlowArn, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency
+    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePort, IHaveProtocol, IHaveDestination, IHaveFlowArn, IHaveStreamId, IHaveMinLatency, IHaveMaxLatency
     {
         public class Attributes
         {
@@ -44,6 +44,14 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// NdiSpeedHqQuality
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndispeedhqquality
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic NdiSpeedHqQuality { get; set; }
+        /// <summary>
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-port
         /// Required: False
@@ -77,6 +85,14 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public Humidifier.MediaConnect.FlowOutputTypes.Encryption Encryption { get; set; }
         /// <summary>
+        /// RouterIntegrationState
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-routerintegrationstate
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic RouterIntegrationState { get; set; }
+        /// <summary>
         /// OutputStatus
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-outputstatus
         /// Required: False
@@ -94,6 +110,14 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public Humidifier.MediaConnect.FlowOutputTypes.VpcInterfaceAttachment VpcInterfaceAttachment { get; set; }
         /// <summary>
+        /// NdiOutputTimecodeSource
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndioutputtimecodesource
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NdiOutputTimecodeSource { get; set; }
+        /// <summary>
         /// MinLatency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-minlatency
         /// Required: False
@@ -101,26 +125,40 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MinLatency { get; set; }
-
+        /// <summary>
+        /// RouterIntegrationTransitEncryption
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-routerintegrationtransitencryption
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: FlowTransitEncryption
+        /// </summary>
+        public Humidifier.MediaConnect.FlowOutputTypes.FlowTransitEncryption RouterIntegrationTransitEncryption { get; set; }
         /// <summary>
         /// Protocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-protocol
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic Protocol { get; set; }
 
         /// <summary>
         /// FlowArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-flowarn
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
         public dynamic FlowArn { get; set; }
+        /// <summary>
+        /// NdiProgramName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndiprogramname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NdiProgramName { get; set; }
         /// <summary>
         /// MaxLatency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-maxlatency
@@ -129,6 +167,15 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic MaxLatency { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CidrAllowList
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-cidrallowlist
@@ -226,6 +273,46 @@ namespace Humidifier.MediaConnect
             public dynamic RoleArn { get; set; }
         }
 
+        public class FlowTransitEncryption : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EncryptionKeyType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-flowtransitencryption.html#cfn-mediaconnect-flowoutput-flowtransitencryption-encryptionkeytype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionKeyType { get; set; }
+            /// <summary>
+            /// EncryptionKeyConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-flowtransitencryption.html#cfn-mediaconnect-flowoutput-flowtransitencryption-encryptionkeyconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FlowTransitEncryptionKeyConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.FlowOutputTypes.FlowTransitEncryptionKeyConfiguration EncryptionKeyConfiguration { get; set; }
+        }
+
+        public class FlowTransitEncryptionKeyConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SecretsManager
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-flowtransitencryptionkeyconfiguration.html#cfn-mediaconnect-flowoutput-flowtransitencryptionkeyconfiguration-secretsmanager
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SecretsManagerEncryptionKeyConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.FlowOutputTypes.SecretsManagerEncryptionKeyConfiguration SecretsManager { get; set; }
+            /// <summary>
+            /// Automatic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-flowtransitencryptionkeyconfiguration.html#cfn-mediaconnect-flowoutput-flowtransitencryptionkeyconfiguration-automatic
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Automatic { get; set; }
+        }
+
         public class Interface : Humidifier.Base.BaseSubResource, IHaveName
         {
             /// <summary>
@@ -273,6 +360,26 @@ namespace Humidifier.MediaConnect
             /// ItemType: DestinationConfiguration
             /// </summary>
             public List<Humidifier.MediaConnect.FlowOutputTypes.DestinationConfiguration> DestinationConfigurations { get; set; }
+        }
+
+        public class SecretsManagerEncryptionKeyConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-secretsmanagerencryptionkeyconfiguration.html#cfn-mediaconnect-flowoutput-secretsmanagerencryptionkeyconfiguration-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-secretsmanagerencryptionkeyconfiguration.html#cfn-mediaconnect-flowoutput-secretsmanagerencryptionkeyconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
         }
 
         public class VpcInterfaceAttachment : Humidifier.Base.BaseSubResource, IHaveVpcInterfaceName

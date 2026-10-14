@@ -1,6 +1,6 @@
 namespace Humidifier.MemoryDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ACL : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveACLName
     {
@@ -29,6 +29,6 @@ namespace Humidifier.MemoryDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

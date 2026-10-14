@@ -1,6 +1,6 @@
 namespace Humidifier.MediaPackage
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AssetTypes;
 
     public class Asset : Humidifier.Base.BaseResource, IHaveTags, IHaveId, IHaveResourceId, IHaveSourceArn, IHavePackagingGroupId
@@ -35,7 +35,7 @@ namespace Humidifier.MediaPackage
         /// Id
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-id
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
@@ -63,11 +63,11 @@ namespace Humidifier.MediaPackage
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-tags
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// SourceRoleArn

@@ -1,6 +1,6 @@
 namespace Humidifier.IoT
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ThingGroupTypes;
 
     public class ThingGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveQueryString
@@ -45,7 +45,7 @@ namespace Humidifier.IoT
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ThingGroupTypes

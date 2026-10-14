@@ -1,6 +1,6 @@
 namespace Humidifier.DAX
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ParameterGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveParameterGroupName
     {
@@ -17,7 +17,7 @@ namespace Humidifier.DAX
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-parametergroup.html#cfn-dax-parametergroup-description
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }

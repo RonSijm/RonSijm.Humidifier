@@ -1,6 +1,6 @@
 namespace Humidifier.OpenSearchServerless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VpcEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcId
     {

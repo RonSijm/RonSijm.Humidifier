@@ -1,6 +1,6 @@
 namespace Humidifier.S3Outposts
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BucketTypes;
 
     public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBucketName, IHaveOutpostId
@@ -38,7 +38,7 @@ namespace Humidifier.S3Outposts
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace BucketTypes

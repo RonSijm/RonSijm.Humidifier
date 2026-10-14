@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RuleTypes;
 
     public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveInstanceArn, IHaveFunction
@@ -59,7 +59,7 @@ namespace Humidifier.Connect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>
@@ -105,6 +105,15 @@ namespace Humidifier.Connect
             /// </summary>
             public List<Humidifier.Connect.RuleTypes.CreateCaseAction> CreateCaseActions { get; set; }
             /// <summary>
+            /// AssignSlaActions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-assignslaactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AssignSlaAction
+            /// </summary>
+            public List<Humidifier.Connect.RuleTypes.AssignSlaAction> AssignSlaActions { get; set; }
+            /// <summary>
             /// AssignContactCategoryActions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-assigncontactcategoryactions
             /// Required: False
@@ -149,6 +158,71 @@ namespace Humidifier.Connect
             /// PrimitiveItemType: Json
             /// </summary>
             public List<dynamic> EndAssociatedTasksActions { get; set; }
+        }
+
+        public class AssignSlaAction : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SlaAssignmentType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-assignslaaction.html#cfn-connect-rule-assignslaaction-slaassignmenttype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SlaAssignmentType { get; set; }
+            /// <summary>
+            /// CaseSlaConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-assignslaaction.html#cfn-connect-rule-assignslaaction-caseslaconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: CaseSlaConfiguration
+            /// </summary>
+            public Humidifier.Connect.RuleTypes.CaseSlaConfiguration CaseSlaConfiguration { get; set; }
+        }
+
+        public class CaseSlaConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveType, IHaveFieldId
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-caseslaconfiguration.html#cfn-connect-rule-caseslaconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// FieldId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-caseslaconfiguration.html#cfn-connect-rule-caseslaconfiguration-fieldid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FieldId { get; set; }
+            /// <summary>
+            /// TargetSlaMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-caseslaconfiguration.html#cfn-connect-rule-caseslaconfiguration-targetslaminutes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic TargetSlaMinutes { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-caseslaconfiguration.html#cfn-connect-rule-caseslaconfiguration-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// TargetFieldValues
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-caseslaconfiguration.html#cfn-connect-rule-caseslaconfiguration-targetfieldvalues
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SlaTargetFieldValue
+            /// </summary>
+            public List<Humidifier.Connect.RuleTypes.SlaTargetFieldValue> TargetFieldValues { get; set; }
         }
 
         public class CreateCaseAction : Humidifier.Base.BaseSubResource, IHaveTemplateId
@@ -329,6 +403,14 @@ namespace Humidifier.Connect
             /// </summary>
             public dynamic Content { get; set; }
             /// <summary>
+            /// Exclusion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-exclusion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NotificationRecipientType
+            /// </summary>
+            public Humidifier.Connect.RuleTypes.NotificationRecipientType Exclusion { get; set; }
+            /// <summary>
             /// Recipient
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendnotificationaction.html#cfn-connect-rule-sendnotificationaction-recipient
             /// Required: True
@@ -344,6 +426,18 @@ namespace Humidifier.Connect
             /// PrimitiveType: String
             /// </summary>
             public dynamic Subject { get; set; }
+        }
+
+        public class SlaTargetFieldValue : Humidifier.Base.BaseSubResource, IHaveStringValue
+        {
+            /// <summary>
+            /// StringValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-slatargetfieldvalue.html#cfn-connect-rule-slatargetfieldvalue-stringvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StringValue { get; set; }
         }
 
         public class SubmitAutoEvaluationAction : Humidifier.Base.BaseSubResource

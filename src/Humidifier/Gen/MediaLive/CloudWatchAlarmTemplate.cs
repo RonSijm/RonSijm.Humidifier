@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class CloudWatchAlarmTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveMetricName, IHaveComparisonOperator, IHavePeriod, IHaveThreshold, IHaveStatistic, IHaveEvaluationPeriods, IHaveGroupIdentifier, IHaveTreatMissingData, IHaveDatapointsToAlarm
     {
@@ -73,15 +73,13 @@ namespace Humidifier.MediaLive
         /// </summary>
         [Required]
         public dynamic EvaluationPeriods { get; set; }
-
         /// <summary>
         /// GroupIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-cloudwatchalarmtemplate.html#cfn-medialive-cloudwatchalarmtemplate-groupidentifier
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic GroupIdentifier { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 

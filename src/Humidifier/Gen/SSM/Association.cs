@@ -1,9 +1,9 @@
 namespace Humidifier.SSM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AssociationTypes;
 
-    public class Association : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveParameters, IHaveScheduleExpression, IHaveInstanceId, IHaveDocumentVersion, IHaveMaxConcurrency, IHaveScheduleOffset, IHaveMaxErrors
+    public class Association : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveParameters, IHaveScheduleExpression, IHaveInstanceId, IHaveDocumentVersion, IHaveMaxConcurrency, IHaveScheduleOffset, IHaveMaxErrors
     {
         public class Attributes
         {
@@ -49,10 +49,18 @@ namespace Humidifier.SSM
         /// InstanceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-instanceid
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic InstanceId { get; set; }
+        /// <summary>
+        /// AssociationDispatchAssumeRole
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-associationdispatchassumerole
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AssociationDispatchAssumeRole { get; set; }
         /// <summary>
         /// WaitForSuccessTimeoutSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-waitforsuccesstimeoutseconds
@@ -135,6 +143,15 @@ namespace Humidifier.SSM
         /// PrimitiveType: String
         /// </summary>
         public dynamic AutomationTargetParameterName { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace AssociationTypes

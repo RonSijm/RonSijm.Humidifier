@@ -1,6 +1,6 @@
 namespace Humidifier.AmplifyUIBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ComponentTypes;
 
     public class Component : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName, IHaveComponentType, IHaveSchemaVersion, IHaveSourceId, IHaveOverrides
@@ -314,23 +314,6 @@ namespace Humidifier.AmplifyUIBuilder
             /// </summary>
             public dynamic ComponentType { get; set; }
             /// <summary>
-            /// Events
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-events
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Map
-            /// ItemType: ComponentEvent
-            /// </summary>
-            public Dictionary<string, Humidifier.AmplifyUIBuilder.ComponentTypes.ComponentEvent> Events { get; set; }
-            /// <summary>
-            /// SourceId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-sourceid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SourceId { get; set; }
-            /// <summary>
             /// Children
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-children
             /// Required: False
@@ -348,6 +331,23 @@ namespace Humidifier.AmplifyUIBuilder
             /// ItemType: ComponentProperty
             /// </summary>
             public Dictionary<string, Humidifier.AmplifyUIBuilder.ComponentTypes.ComponentProperty> Properties { get; set; }
+            /// <summary>
+            /// Events
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-events
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// ItemType: ComponentEvent
+            /// </summary>
+            public Dictionary<string, Humidifier.AmplifyUIBuilder.ComponentTypes.ComponentEvent> Events { get; set; }
+            /// <summary>
+            /// SourceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-sourceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceId { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentchild.html#cfn-amplifyuibuilder-component-componentchild-name
@@ -467,14 +467,6 @@ namespace Humidifier.AmplifyUIBuilder
             /// </summary>
             public dynamic Action { get; set; }
             /// <summary>
-            /// Parameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html#cfn-amplifyuibuilder-component-componentevent-parameters
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ActionParameters
-            /// </summary>
-            public Humidifier.AmplifyUIBuilder.ComponentTypes.ActionParameters Parameters { get; set; }
-            /// <summary>
             /// BindingEvent
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html#cfn-amplifyuibuilder-component-componentevent-bindingevent
             /// Required: False
@@ -482,6 +474,14 @@ namespace Humidifier.AmplifyUIBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic BindingEvent { get; set; }
+            /// <summary>
+            /// Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-component-componentevent.html#cfn-amplifyuibuilder-component-componentevent-parameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ActionParameters
+            /// </summary>
+            public Humidifier.AmplifyUIBuilder.ComponentTypes.ActionParameters Parameters { get; set; }
         }
 
         public class ComponentProperty : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue, IHaveDefaultValue, IHaveProperty, IHaveModel, IHaveComponentName, IHaveEvent, IHaveUserAttribute, IHaveConfigured

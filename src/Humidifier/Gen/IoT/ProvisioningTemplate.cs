@@ -1,6 +1,6 @@
 namespace Humidifier.IoT
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ProvisioningTemplateTypes;
 
     public class ProvisioningTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEnabled, IHaveTemplateName, IHaveTemplateType, IHaveTemplateBody, IHaveProvisioningRoleArn
@@ -79,7 +79,7 @@ namespace Humidifier.IoT
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ProvisioningTemplateTypes

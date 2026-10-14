@@ -1,9 +1,9 @@
 namespace Humidifier.ElasticLoadBalancingV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LoadBalancerTypes;
 
-    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveSubnets, IHaveSecurityGroups, IHaveIpAddressType, IHaveScheme
+    public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveSubnets, IHaveSecurityGroups, IHaveIpAddressType, IHaveIpv4IpamPoolId, IHaveScheme
     {
         public class Attributes
         {
@@ -43,6 +43,23 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// </summary>
         public List<Humidifier.ElasticLoadBalancingV2.LoadBalancerTypes.LoadBalancerAttribute> LoadBalancerAttributes { get; set; }
         /// <summary>
+        /// Scheme
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Scheme { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// EnableCapacityReservationProvisionStabilize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-enablecapacityreservationprovisionstabilize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableCapacityReservationProvisionStabilize { get; set; }
+        /// <summary>
         /// Subnets
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnets
         /// Required: False
@@ -60,14 +77,6 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// </summary>
         public dynamic Type { get; set; }
         /// <summary>
-        /// Scheme
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-scheme
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Scheme { get; set; }
-        /// <summary>
         /// MinimumLoadBalancerCapacity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-minimumloadbalancercapacity
         /// Required: False
@@ -84,6 +93,14 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// </summary>
         public dynamic EnablePrefixForIpv6SourceNat { get; set; }
         /// <summary>
+        /// Ipv4IpamPoolId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipv4ipampoolid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Ipv4IpamPoolId { get; set; }
+        /// <summary>
         /// EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-enforcesecuritygroupinboundrulesonprivatelinktraffic
         /// Required: False
@@ -99,8 +116,7 @@ namespace Humidifier.ElasticLoadBalancingV2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// SubnetMappings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings

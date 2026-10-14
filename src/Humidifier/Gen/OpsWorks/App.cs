@@ -1,6 +1,6 @@
 namespace Humidifier.OpsWorks
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AppTypes;
 
     public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveStackId, IHaveDomains, IHaveShortname

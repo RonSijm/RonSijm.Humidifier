@@ -1,6 +1,6 @@
 namespace Humidifier.EMR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class StudioSessionMapping : Humidifier.Base.BaseResource, IHaveIdentityType, IHaveStudioId
     {

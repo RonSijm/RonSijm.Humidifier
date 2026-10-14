@@ -1,6 +1,6 @@
 namespace Humidifier.VpcLattice
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RuleTypes;
 
     public class Rule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePriority, IHaveServiceIdentifier
@@ -56,7 +56,7 @@ namespace Humidifier.VpcLattice
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// Match

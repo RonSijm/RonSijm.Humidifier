@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGateway
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ClientCertificate : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription
     {
@@ -26,6 +26,6 @@ namespace Humidifier.ApiGateway
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

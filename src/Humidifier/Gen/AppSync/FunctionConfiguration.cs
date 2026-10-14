@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FunctionConfigurationTypes;
 
     public class FunctionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveApiId, IHaveCode, IHaveCodeS3Location, IHaveFunctionVersion, IHaveRequestMappingTemplate, IHaveResponseMappingTemplate, IHaveMaxBatchSize, IHaveResponseMappingTemplateS3Location, IHaveDataSourceName, IHaveRequestMappingTemplateS3Location

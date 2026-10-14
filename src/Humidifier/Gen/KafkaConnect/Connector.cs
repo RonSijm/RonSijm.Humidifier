@@ -1,9 +1,9 @@
 namespace Humidifier.KafkaConnect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectorTypes;
 
-    public class Connector : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveServiceExecutionRoleArn, IHaveDescription
+    public class Connector : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveNetworkType, IHaveServiceExecutionRoleArn, IHaveDescription
     {
         public class Attributes
         {
@@ -79,6 +79,14 @@ namespace Humidifier.KafkaConnect
         [Required]
         public Humidifier.KafkaConnect.ConnectorTypes.KafkaClusterEncryptionInTransit KafkaClusterEncryptionInTransit { get; set; }
         /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-networktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
+        /// <summary>
         /// ConnectorDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectordescription
         /// Required: False
@@ -118,7 +126,7 @@ namespace Humidifier.KafkaConnect
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// Plugins
@@ -180,6 +188,14 @@ namespace Humidifier.KafkaConnect
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxWorkerCount { get; set; }
+            /// <summary>
+            /// MaxAutoscalingTaskCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-maxautoscalingtaskcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxAutoscalingTaskCount { get; set; }
             /// <summary>
             /// MinWorkerCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-minworkercount
@@ -253,7 +269,7 @@ namespace Humidifier.KafkaConnect
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-customplugin.html#cfn-kafkaconnect-connector-customplugin-revision
             /// Required: True
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic Revision { get; set; }
         }
@@ -351,7 +367,7 @@ namespace Humidifier.KafkaConnect
             /// <summary>
             /// McuCount
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-provisionedcapacity.html#cfn-kafkaconnect-connector-provisionedcapacity-mcucount
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
@@ -439,7 +455,7 @@ namespace Humidifier.KafkaConnect
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision
             /// Required: True
             /// UpdateType: Immutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic Revision { get; set; }
             /// <summary>

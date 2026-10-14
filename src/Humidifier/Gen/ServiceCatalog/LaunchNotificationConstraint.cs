@@ -1,9 +1,14 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LaunchNotificationConstraint : Humidifier.Base.BaseResource, IHaveDescription, IHaveAcceptLanguage, IHaveProductId, IHavePortfolioId, IHaveNotificationArns
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.ServiceCatalog.LaunchNotificationConstraint; }
         /// <summary>
         /// Description

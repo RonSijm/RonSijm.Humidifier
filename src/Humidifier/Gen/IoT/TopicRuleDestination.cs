@@ -1,6 +1,6 @@
 namespace Humidifier.IoT
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TopicRuleDestinationTypes;
 
     public class TopicRuleDestination : Humidifier.Base.BaseResource, IHaveStatus
@@ -36,6 +36,14 @@ namespace Humidifier.IoT
         /// Type: VpcDestinationProperties
         /// </summary>
         public Humidifier.IoT.TopicRuleDestinationTypes.VpcDestinationProperties VpcProperties { get; set; }
+        /// <summary>
+        /// InfluxDBProperties
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-influxdbproperties
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: InfluxDBDestinationProperties
+        /// </summary>
+        public Humidifier.IoT.TopicRuleDestinationTypes.InfluxDBDestinationProperties InfluxDBProperties { get; set; }
     }
 
     namespace TopicRuleDestinationTypes
@@ -50,6 +58,50 @@ namespace Humidifier.IoT
             /// PrimitiveType: String
             /// </summary>
             public dynamic ConfirmationUrl { get; set; }
+        }
+
+        public class InfluxDBDestinationProperties : Humidifier.Base.BaseSubResource, IHaveEndpoint, IHaveSecretId, IHaveSecretKey
+        {
+            /// <summary>
+            /// SecretKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-influxdbdestinationproperties.html#cfn-iot-topicruledestination-influxdbdestinationproperties-secretkey
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretKey { get; set; }
+            /// <summary>
+            /// InfluxDBVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-influxdbdestinationproperties.html#cfn-iot-topicruledestination-influxdbdestinationproperties-influxdbversion
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InfluxDBVersion { get; set; }
+            /// <summary>
+            /// Endpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-influxdbdestinationproperties.html#cfn-iot-topicruledestination-influxdbdestinationproperties-endpoint
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Endpoint { get; set; }
+            /// <summary>
+            /// SecretType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-influxdbdestinationproperties.html#cfn-iot-topicruledestination-influxdbdestinationproperties-secrettype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretType { get; set; }
+            /// <summary>
+            /// SecretId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-influxdbdestinationproperties.html#cfn-iot-topicruledestination-influxdbdestinationproperties-secretid
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretId { get; set; }
         }
 
         public class VpcDestinationProperties : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveSubnetIds, IHaveVpcId, IHaveSecurityGroups

@@ -1,6 +1,6 @@
 namespace Humidifier.ElasticLoadBalancingV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TrustStoreRevocationTypes;
 
     public class TrustStoreRevocation : Humidifier.Base.BaseResource, IHaveTrustStoreArn
@@ -76,7 +76,7 @@ namespace Humidifier.ElasticLoadBalancingV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-truststorerevocation-truststorerevocation.html#cfn-elasticloadbalancingv2-truststorerevocation-truststorerevocation-numberofrevokedentries
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic NumberOfRevokedEntries { get; set; }
             /// <summary>

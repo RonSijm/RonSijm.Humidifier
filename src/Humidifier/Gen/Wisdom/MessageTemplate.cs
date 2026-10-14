@@ -1,6 +1,6 @@
 namespace Humidifier.Wisdom
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MessageTemplateTypes;
 
     public class MessageTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveLanguage
@@ -13,6 +13,15 @@ namespace Humidifier.Wisdom
         }
 
         public override string AWSTypeName { get => AWS.Wisdom.MessageTemplate; }
+        /// <summary>
+        /// MessageTemplateAttachments
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-messagetemplate.html#cfn-wisdom-messagetemplate-messagetemplateattachments
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: MessageTemplateAttachment
+        /// </summary>
+        public List<Humidifier.Wisdom.MessageTemplateTypes.MessageTemplateAttachment> MessageTemplateAttachments { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-messagetemplate.html#cfn-wisdom-messagetemplate-description
@@ -83,7 +92,7 @@ namespace Humidifier.Wisdom
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -686,6 +695,34 @@ namespace Humidifier.Wisdom
             /// PrimitiveType: String
             /// </summary>
             public dynamic Criteria { get; set; }
+        }
+
+        public class MessageTemplateAttachment : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AttachmentName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-messagetemplate-messagetemplateattachment.html#cfn-wisdom-messagetemplate-messagetemplateattachment-attachmentname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttachmentName { get; set; }
+            /// <summary>
+            /// S3PresignedUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-messagetemplate-messagetemplateattachment.html#cfn-wisdom-messagetemplate-messagetemplateattachment-s3presignedurl
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3PresignedUrl { get; set; }
+            /// <summary>
+            /// AttachmentId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-messagetemplate-messagetemplateattachment.html#cfn-wisdom-messagetemplate-messagetemplateattachment-attachmentid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttachmentId { get; set; }
         }
 
         public class MessageTemplateAttributes : Humidifier.Base.BaseSubResource

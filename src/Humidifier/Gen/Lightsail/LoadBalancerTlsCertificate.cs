@@ -1,6 +1,6 @@
 namespace Humidifier.Lightsail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class LoadBalancerTlsCertificate : Humidifier.Base.BaseResource, IHaveCertificateName, IHaveLoadBalancerName
     {

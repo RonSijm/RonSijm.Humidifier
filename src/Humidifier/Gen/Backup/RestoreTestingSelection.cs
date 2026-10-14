@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RestoreTestingSelectionTypes;
 
     public class RestoreTestingSelection : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveIamRoleArn, IHaveRestoreTestingPlanName

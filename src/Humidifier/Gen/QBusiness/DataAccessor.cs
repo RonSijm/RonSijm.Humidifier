@@ -1,6 +1,6 @@
 namespace Humidifier.QBusiness
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataAccessorTypes;
 
     public class DataAccessor : Humidifier.Base.BaseResource, IHaveTags, IHaveDisplayName, IHaveApplicationId, IHavePrincipal
@@ -64,7 +64,15 @@ namespace Humidifier.QBusiness
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// AuthenticationDetail
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-dataaccessor.html#cfn-qbusiness-dataaccessor-authenticationdetail
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DataAccessorAuthenticationDetail
+        /// </summary>
+        public Humidifier.QBusiness.DataAccessorTypes.DataAccessorAuthenticationDetail AuthenticationDetail { get; set; }
     }
 
     namespace DataAccessorTypes
@@ -185,6 +193,59 @@ namespace Humidifier.QBusiness
             /// Type: DocumentAttribute
             /// </summary>
             public Humidifier.QBusiness.DataAccessorTypes.DocumentAttribute ContainsAll { get; set; }
+        }
+
+        public class DataAccessorAuthenticationConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// IdcTrustedTokenIssuerConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-dataaccessor-dataaccessorauthenticationconfiguration.html#cfn-qbusiness-dataaccessor-dataaccessorauthenticationconfiguration-idctrustedtokenissuerconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DataAccessorIdcTrustedTokenIssuerConfiguration
+            /// </summary>
+            public Humidifier.QBusiness.DataAccessorTypes.DataAccessorIdcTrustedTokenIssuerConfiguration IdcTrustedTokenIssuerConfiguration { get; set; }
+        }
+
+        public class DataAccessorAuthenticationDetail : Humidifier.Base.BaseSubResource, IHaveAuthenticationType
+        {
+            /// <summary>
+            /// AuthenticationConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-dataaccessor-dataaccessorauthenticationdetail.html#cfn-qbusiness-dataaccessor-dataaccessorauthenticationdetail-authenticationconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DataAccessorAuthenticationConfiguration
+            /// </summary>
+            public Humidifier.QBusiness.DataAccessorTypes.DataAccessorAuthenticationConfiguration AuthenticationConfiguration { get; set; }
+            /// <summary>
+            /// ExternalIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-dataaccessor-dataaccessorauthenticationdetail.html#cfn-qbusiness-dataaccessor-dataaccessorauthenticationdetail-externalids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExternalIds { get; set; }
+            /// <summary>
+            /// AuthenticationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-dataaccessor-dataaccessorauthenticationdetail.html#cfn-qbusiness-dataaccessor-dataaccessorauthenticationdetail-authenticationtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthenticationType { get; set; }
+        }
+
+        public class DataAccessorIdcTrustedTokenIssuerConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// IdcTrustedTokenIssuerArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-qbusiness-dataaccessor-dataaccessoridctrustedtokenissuerconfiguration.html#cfn-qbusiness-dataaccessor-dataaccessoridctrustedtokenissuerconfiguration-idctrustedtokenissuerarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdcTrustedTokenIssuerArn { get; set; }
         }
 
         public class DocumentAttribute : Humidifier.Base.BaseSubResource, IHaveName

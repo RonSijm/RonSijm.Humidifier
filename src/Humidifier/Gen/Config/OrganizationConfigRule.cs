@@ -1,10 +1,15 @@
 namespace Humidifier.Config
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using OrganizationConfigRuleTypes;
 
     public class OrganizationConfigRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveExcludedAccounts
     {
+        public class Attributes
+        {
+            public static string OrganizationConfigRuleArn =  "OrganizationConfigRuleArn" ;
+        }
+
         public override string AWSTypeName { get => AWS.Config.OrganizationConfigRule; }
         /// <summary>
         /// OrganizationManagedRuleMetadata
@@ -44,7 +49,7 @@ namespace Humidifier.Config
 
     namespace OrganizationConfigRuleTypes
     {
-        public class OrganizationCustomPolicyRuleMetadata : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveRuntime, IHaveMaximumExecutionFrequency, IHaveInputParameters, IHavePolicyText, IHaveTagKeyScope, IHaveTagValueScope, IHaveResourceIdScope, IHaveResourceTypesScope, IHaveOrganizationConfigRuleTriggerTypes
+        public class OrganizationCustomPolicyRuleMetadata : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveRuntime, IHaveInputParameters, IHavePolicyText, IHaveTagKeyScope, IHaveTagValueScope, IHaveResourceIdScope, IHaveResourceTypesScope, IHaveOrganizationConfigRuleTriggerTypes
         {
             /// <summary>
             /// TagKeyScope
@@ -121,14 +126,6 @@ namespace Humidifier.Config
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic ResourceTypesScope { get; set; }
-            /// <summary>
-            /// MaximumExecutionFrequency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-maximumexecutionfrequency
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MaximumExecutionFrequency { get; set; }
             /// <summary>
             /// InputParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustompolicyrulemetadata.html#cfn-config-organizationconfigrule-organizationcustompolicyrulemetadata-inputparameters

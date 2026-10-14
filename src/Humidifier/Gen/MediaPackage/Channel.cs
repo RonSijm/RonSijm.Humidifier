@@ -1,6 +1,6 @@
 namespace Humidifier.MediaPackage
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ChannelTypes;
 
     public class Channel : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveId
@@ -61,7 +61,7 @@ namespace Humidifier.MediaPackage
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ChannelTypes
@@ -84,7 +84,7 @@ namespace Humidifier.MediaPackage
             /// <summary>
             /// Username
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-ingestendpoint.html#cfn-mediapackage-channel-ingestendpoint-username
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -92,7 +92,7 @@ namespace Humidifier.MediaPackage
             /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-ingestendpoint.html#cfn-mediapackage-channel-ingestendpoint-id
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -100,7 +100,7 @@ namespace Humidifier.MediaPackage
             /// <summary>
             /// Url
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-ingestendpoint.html#cfn-mediapackage-channel-ingestendpoint-url
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -108,7 +108,7 @@ namespace Humidifier.MediaPackage
             /// <summary>
             /// Password
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-ingestendpoint.html#cfn-mediapackage-channel-ingestendpoint-password
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

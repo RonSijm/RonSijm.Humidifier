@@ -1,12 +1,13 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VPCBlockPublicAccessOptions : Humidifier.Base.BaseResource
     {
         public class Attributes
         {
             public static string AccountId =  "AccountId" ;
+            public static string ExclusionsAllowed =  "ExclusionsAllowed" ;
         }
 
         public override string AWSTypeName { get => AWS.EC2.VPCBlockPublicAccessOptions; }

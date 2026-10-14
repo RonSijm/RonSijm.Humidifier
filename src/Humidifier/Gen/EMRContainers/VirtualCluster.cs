@@ -1,6 +1,6 @@
 namespace Humidifier.EMRContainers
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VirtualClusterTypes;
 
     public class VirtualCluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -16,7 +16,7 @@ namespace Humidifier.EMRContainers
         /// SecurityConfigurationId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-securityconfigurationid
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic SecurityConfigurationId { get; set; }
@@ -31,6 +31,14 @@ namespace Humidifier.EMRContainers
         [Required]
         public Humidifier.EMRContainers.VirtualClusterTypes.ContainerProvider ContainerProvider { get; set; }
         /// <summary>
+        /// SessionEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-sessionenabled
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic SessionEnabled { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-tags
         /// Required: False
@@ -38,7 +46,7 @@ namespace Humidifier.EMRContainers
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

@@ -1,6 +1,6 @@
 namespace Humidifier.SSM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Parameter : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveValue, IHaveDataType, IHaveTier
     {
@@ -8,6 +8,7 @@ namespace Humidifier.SSM
         {
             public static string Type =  "Type" ;
             public static string Value =  "Value" ;
+            public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName { get => AWS.SSM.Parameter; }

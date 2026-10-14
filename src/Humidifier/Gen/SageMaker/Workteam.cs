@@ -1,23 +1,26 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WorkteamTypes;
 
     public class Workteam : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
     {
         public class Attributes
         {
+            public static string WorkteamArn =  "WorkteamArn" ;
             public static string WorkteamName =  "WorkteamName" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.Workteam; }
+
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-description
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Description { get; set; }
         /// <summary>
         /// NotificationConfiguration
@@ -28,14 +31,16 @@ namespace Humidifier.SageMaker
         /// </summary>
         public Humidifier.SageMaker.WorkteamTypes.NotificationConfiguration NotificationConfiguration { get; set; }
         public dynamic WorkteamName { get => GivenName; set => GivenName = value; }
+
         /// <summary>
         /// MemberDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-memberdefinitions
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: MemberDefinition
         /// </summary>
+        [Required]
         public List<Humidifier.SageMaker.WorkteamTypes.MemberDefinition> MemberDefinitions { get; set; }
         /// <summary>
         /// WorkforceName
@@ -53,7 +58,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace WorkteamTypes
@@ -64,7 +69,7 @@ namespace Humidifier.SageMaker
             /// CognitoUserPool
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CognitoUserPool { get; set; }

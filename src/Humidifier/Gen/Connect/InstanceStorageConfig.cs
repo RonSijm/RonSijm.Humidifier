@@ -1,6 +1,6 @@
 namespace Humidifier.Connect
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InstanceStorageConfigTypes;
 
     public class InstanceStorageConfig : Humidifier.Base.BaseResource, IHaveInstanceArn, IHaveResourceType, IHaveStorageType

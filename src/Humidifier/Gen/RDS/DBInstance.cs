@@ -1,27 +1,34 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DBInstanceTypes;
 
     public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveDomain, IHaveIops, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveEngine, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveTimezone, IHaveDeletionProtection, IHaveNetworkType, IHaveDBSubnetGroupName, IHaveStorageType, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveMasterUserPassword, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveMasterUsername, IHaveBackupRetentionPeriod, IHaveAllocatedStorage, IHaveMultiAZ, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveEnableCloudwatchLogsExports, IHaveDBInstanceIdentifier, IHaveAllowMajorVersionUpgrade, IHaveManageMasterUserPassword, IHaveDBInstanceClass, IHaveDBParameterGroupName, IHaveEngineLifecycleSupport, IHaveCACertificateIdentifier, IHaveCertificateRotationRestart, IHaveEnablePerformanceInsights, IHaveDBSnapshotIdentifier, IHaveDBSystemId, IHaveMonitoringInterval, IHavePerformanceInsightsRetentionPeriod, IHaveMonitoringRoleArn, IHaveDomainIAMRoleName, IHaveSourceRegion, IHaveEnableIAMDatabaseAuthentication, IHaveOptionGroupName, IHaveDBName
     {
         public class Attributes
         {
-            public static string DatabaseInsightsMode =  "DatabaseInsightsMode" ;
             public static string DBSystemId =  "DBSystemId" ;
-            public static string DBInstanceArn =  "DBInstanceArn" ;
+            public static string StatusInfos =  "StatusInfos" ;
+            public static string InstanceCreateTime =  "InstanceCreateTime" ;
+            public static string CertificateDetails =  "CertificateDetails" ;
+            public static string AutomaticRestartTime =  "AutomaticRestartTime" ;
             public static string DbiResourceId =  "DbiResourceId" ;
+            public static string ReadReplicaDBClusterIdentifiers =  "ReadReplicaDBClusterIdentifiers" ;
+            public static string ResumeFullAutomationModeTime =  "ResumeFullAutomationModeTime" ;
+            public static string DBInstanceArn =  "DBInstanceArn" ;
+            public static string Endpoint =  "Endpoint" ;
+            public static string LatestRestorableTime =  "LatestRestorableTime" ;
+            public static string StorageOperationPercentProgress =  "StorageOperationPercentProgress" ;
+            public static string IsStorageConfigUpgradeAvailable =  "IsStorageConfigUpgradeAvailable" ;
+            public static string DBInstanceStatus =  "DBInstanceStatus" ;
+            public static string ReadReplicaDBInstanceIdentifiers =  "ReadReplicaDBInstanceIdentifiers" ;
+            public static string PercentProgress =  "PercentProgress" ;
+            public static string StorageOperationStatus =  "StorageOperationStatus" ;
+            public static string ListenerEndpoint =  "ListenerEndpoint" ;
+            public static string SecondaryAvailabilityZone =  "SecondaryAvailabilityZone" ;
         }
 
         public override string AWSTypeName { get => AWS.RDS.DBInstance; }
-        /// <summary>
-        /// StorageEncrypted
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storageencrypted
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic StorageEncrypted { get; set; }
         /// <summary>
         /// Timezone
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-timezone
@@ -31,6 +38,22 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic Timezone { get; set; }
         /// <summary>
+        /// DatabaseInsightsMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-databaseinsightsmode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DatabaseInsightsMode { get; set; }
+        /// <summary>
+        /// StorageEncrypted
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storageencrypted
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic StorageEncrypted { get; set; }
+        /// <summary>
         /// DBSystemId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbsystemid
         /// Required: False
@@ -38,14 +61,6 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic DBSystemId { get; set; }
-        /// <summary>
-        /// CertificateDetails
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificatedetails
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: CertificateDetails
-        /// </summary>
-        public Humidifier.RDS.DBInstanceTypes.CertificateDetails CertificateDetails { get; set; }
         /// <summary>
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-port
@@ -63,6 +78,15 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic DBClusterIdentifier { get; set; }
         /// <summary>
+        /// AdditionalStorageVolumes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-additionalstoragevolumes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AdditionalStorageVolume
+        /// </summary>
+        public List<Humidifier.RDS.DBInstanceTypes.AdditionalStorageVolume> AdditionalStorageVolumes { get; set; }
+        /// <summary>
         /// StorageThroughput
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storagethroughput
         /// Required: False
@@ -70,6 +94,22 @@ namespace Humidifier.RDS
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic StorageThroughput { get; set; }
+        /// <summary>
+        /// AutomaticBackupReplicationRetentionPeriod
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-automaticbackupreplicationretentionperiod
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic AutomaticBackupReplicationRetentionPeriod { get; set; }
+        /// <summary>
+        /// MasterUserAuthenticationType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masteruserauthenticationtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MasterUserAuthenticationType { get; set; }
         /// <summary>
         /// MonitoringInterval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-monitoringinterval
@@ -87,13 +127,13 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic DBParameterGroupName { get; set; }
         /// <summary>
-        /// Endpoint
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-endpoint
+        /// MultiAZ
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-multiaz
         /// Required: False
-        /// UpdateType: Mutable
-        /// Type: Endpoint
+        /// UpdateType: Conditional
+        /// PrimitiveType: Boolean
         /// </summary>
-        public Humidifier.RDS.DBInstanceTypes.Endpoint Endpoint { get; set; }
+        public dynamic MultiAZ { get; set; }
         /// <summary>
         /// AutomaticBackupReplicationKmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-automaticbackupreplicationkmskeyid
@@ -103,13 +143,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic AutomaticBackupReplicationKmsKeyId { get; set; }
         /// <summary>
-        /// MultiAZ
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-multiaz
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-tags
         /// Required: False
-        /// UpdateType: Conditional
-        /// PrimitiveType: Boolean
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
         /// </summary>
-        public dynamic MultiAZ { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// Engine
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-engine
@@ -118,15 +159,6 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Engine { get; set; }
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
         /// <summary>
         /// PerformanceInsightsKMSKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-performanceinsightskmskeyid
@@ -155,7 +187,7 @@ namespace Humidifier.RDS
         /// StorageType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storagetype
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic StorageType { get; set; }
@@ -216,14 +248,6 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic EnablePerformanceInsights { get; set; }
         /// <summary>
-        /// AutoMinorVersionUpgrade
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-autominorversionupgrade
-        /// Required: False
-        /// UpdateType: Conditional
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic AutoMinorVersionUpgrade { get; set; }
-        /// <summary>
         /// DBSubnetGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbsubnetgroupname
         /// Required: False
@@ -231,6 +255,14 @@ namespace Humidifier.RDS
         /// PrimitiveType: String
         /// </summary>
         public dynamic DBSubnetGroupName { get; set; }
+        /// <summary>
+        /// AutoMinorVersionUpgrade
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-autominorversionupgrade
+        /// Required: False
+        /// UpdateType: Conditional
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic AutoMinorVersionUpgrade { get; set; }
         /// <summary>
         /// DeletionProtection
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-deletionprotection
@@ -524,6 +556,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic SourceRegion { get; set; }
         /// <summary>
+        /// BackupTarget
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-backuptarget
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic BackupTarget { get; set; }
+        /// <summary>
         /// UseLatestRestorableTime
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-uselatestrestorabletime
         /// Required: False
@@ -564,14 +604,6 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic DomainAuthSecretArn { get; set; }
         /// <summary>
-        /// AutomaticBackupReplicationRegion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-automaticbackupreplicationregion
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic AutomaticBackupReplicationRegion { get; set; }
-        /// <summary>
         /// VPCSecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-vpcsecuritygroups
         /// Required: False
@@ -580,6 +612,14 @@ namespace Humidifier.RDS
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic VPCSecurityGroups { get; set; }
+        /// <summary>
+        /// AutomaticBackupReplicationRegion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-automaticbackupreplicationregion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AutomaticBackupReplicationRegion { get; set; }
         /// <summary>
         /// AllowMajorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-allowmajorversionupgrade
@@ -649,6 +689,74 @@ namespace Humidifier.RDS
 
     namespace DBInstanceTypes
     {
+        public class AdditionalStorageVolume : Humidifier.Base.BaseSubResource, IHaveIops, IHaveStorageType, IHaveAllocatedStorage
+        {
+            /// <summary>
+            /// VolumeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-volumename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VolumeName { get; set; }
+            /// <summary>
+            /// StorageType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-storagetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StorageType { get; set; }
+            /// <summary>
+            /// MaxAllocatedStorage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-maxallocatedstorage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxAllocatedStorage { get; set; }
+            /// <summary>
+            /// StorageThroughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-storagethroughput
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic StorageThroughput { get; set; }
+            /// <summary>
+            /// Iops
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-iops
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Iops { get; set; }
+            /// <summary>
+            /// StorageOperationPercentProgress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-storageoperationpercentprogress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic StorageOperationPercentProgress { get; set; }
+            /// <summary>
+            /// StorageOperationStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-storageoperationstatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StorageOperationStatus { get; set; }
+            /// <summary>
+            /// AllocatedStorage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-additionalstoragevolume.html#cfn-rds-dbinstance-additionalstoragevolume-allocatedstorage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AllocatedStorage { get; set; }
+        }
+
         public class CertificateDetails : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -687,6 +795,42 @@ namespace Humidifier.RDS
             /// PrimitiveType: String
             /// </summary>
             public dynamic FeatureName { get; set; }
+        }
+
+        public class DBInstanceStatusInfo : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveMessage
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancestatusinfo.html#cfn-rds-dbinstance-dbinstancestatusinfo-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// Message
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancestatusinfo.html#cfn-rds-dbinstance-dbinstancestatusinfo-message
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Message { get; set; }
+            /// <summary>
+            /// StatusType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancestatusinfo.html#cfn-rds-dbinstance-dbinstancestatusinfo-statustype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StatusType { get; set; }
+            /// <summary>
+            /// Normal
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancestatusinfo.html#cfn-rds-dbinstance-dbinstancestatusinfo-normal
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Normal { get; set; }
         }
 
         public class Endpoint : Humidifier.Base.BaseSubResource, IHavePort, IHaveAddress, IHaveHostedZoneId

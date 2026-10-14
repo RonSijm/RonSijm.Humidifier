@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PortfolioProductAssociation : Humidifier.Base.BaseResource, IHaveAcceptLanguage, IHaveProductId, IHavePortfolioId
     {
@@ -21,25 +21,21 @@ namespace Humidifier.ServiceCatalog
         /// PrimitiveType: String
         /// </summary>
         public dynamic AcceptLanguage { get; set; }
-
         /// <summary>
         /// PortfolioId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-portfolioid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic PortfolioId { get; set; }
-
         /// <summary>
         /// ProductId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-portfolioproductassociation.html#cfn-servicecatalog-portfolioproductassociation-productid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic ProductId { get; set; }
     }
 }

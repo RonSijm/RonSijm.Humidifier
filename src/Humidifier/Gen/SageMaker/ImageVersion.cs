@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ImageVersion : Humidifier.Base.BaseResource, IHaveAlias, IHaveImageName, IHaveAliases
     {

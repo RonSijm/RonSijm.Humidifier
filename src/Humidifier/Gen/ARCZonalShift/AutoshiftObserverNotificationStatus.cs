@@ -1,6 +1,6 @@
 namespace Humidifier.ARCZonalShift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AutoshiftObserverNotificationStatus : Humidifier.Base.BaseResource, IHaveStatus
     {

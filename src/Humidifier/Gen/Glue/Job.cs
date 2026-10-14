@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using JobTypes;
 
     public class Job : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveRole, IHaveMaxCapacity, IHaveTimeout, IHaveMaxRetries, IHaveSecurityConfiguration, IHaveLogUri, IHaveWorkerType, IHaveGlueVersion, IHaveNumberOfWorkers, IHaveMaintenanceWindow

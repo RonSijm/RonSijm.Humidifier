@@ -1,13 +1,14 @@
 namespace Humidifier.DLM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LifecyclePolicyTypes;
 
-    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveState, IHaveExecutionRoleArn, IHaveCopyTags, IHaveCreateInterval, IHaveExtendDeletion, IHaveDLMLifecyclePolicyTypesExclusionsExclusions, IHaveDLMLifecyclePolicyTypesCrossRegionCopyTargetsCrossRegionCopyTargets, IHaveRetainInterval
+    public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveState, IHaveExecutionRoleArn, IHaveCopyTags, IHaveCreateInterval, IHaveExtendDeletion, IHaveDLMLifecyclePolicyTypesExclusionsExclusions, IHaveRetainInterval
     {
         public class Attributes
         {
             public static string Arn =  "Arn" ;
+            public static string PolicyId =  "PolicyId" ;
         }
 
         public override string AWSTypeName { get => AWS.DLM.LifecyclePolicy; }
@@ -72,9 +73,10 @@ namespace Humidifier.DLM
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-crossregioncopytargets
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: CrossRegionCopyTargets
+        /// Type: List
+        /// ItemType: CrossRegionCopyTarget
         /// </summary>
-        public Humidifier.DLM.LifecyclePolicyTypes.CrossRegionCopyTargets CrossRegionCopyTargets { get; set; }
+        public List<Humidifier.DLM.LifecyclePolicyTypes.CrossRegionCopyTarget> CrossRegionCopyTargets { get; set; }
         /// <summary>
         /// PolicyDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-policydetails
@@ -84,15 +86,6 @@ namespace Humidifier.DLM
         /// </summary>
         public Humidifier.DLM.LifecyclePolicyTypes.PolicyDetails PolicyDetails { get; set; }
         /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
-        /// <summary>
         /// RetainInterval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-retaininterval
         /// Required: False
@@ -100,6 +93,15 @@ namespace Humidifier.DLM
         /// PrimitiveType: Integer
         /// </summary>
         public dynamic RetainInterval { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CopyTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-copytags
@@ -351,10 +353,6 @@ namespace Humidifier.DLM
             public dynamic TargetRegion { get; set; }
         }
 
-        public class CrossRegionCopyTargets : Humidifier.Base.BaseSubResource
-        {
-        }
-
         public class DeprecateRule : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveCount, IHaveIntervalUnit
         {
             /// <summary>
@@ -452,16 +450,26 @@ namespace Humidifier.DLM
             public Humidifier.DLM.LifecyclePolicyTypes.EventParameters Parameters { get; set; }
         }
 
-        public class ExcludeTags : Humidifier.Base.BaseSubResource
-        {
-        }
-
-        public class ExcludeVolumeTypesList : Humidifier.Base.BaseSubResource
-        {
-        }
-
         public class Exclusions : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// ExcludeTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-exclusions.html#cfn-dlm-lifecyclepolicy-exclusions-excludetags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Humidifier.Tag> ExcludeTags { get; set; }
+            /// <summary>
+            /// ExcludeVolumeTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-exclusions.html#cfn-dlm-lifecyclepolicy-exclusions-excludevolumetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludeVolumeTypes { get; set; }
             /// <summary>
             /// ExcludeBootVolumes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-exclusions.html#cfn-dlm-lifecyclepolicy-exclusions-excludebootvolumes
@@ -470,22 +478,6 @@ namespace Humidifier.DLM
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ExcludeBootVolumes { get; set; }
-            /// <summary>
-            /// ExcludeTags
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-exclusions.html#cfn-dlm-lifecyclepolicy-exclusions-excludetags
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ExcludeTags
-            /// </summary>
-            public Humidifier.DLM.LifecyclePolicyTypes.ExcludeTags ExcludeTags { get; set; }
-            /// <summary>
-            /// ExcludeVolumeTypes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-exclusions.html#cfn-dlm-lifecyclepolicy-exclusions-excludevolumetypes
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ExcludeVolumeTypesList
-            /// </summary>
-            public Humidifier.DLM.LifecyclePolicyTypes.ExcludeVolumeTypesList ExcludeVolumeTypes { get; set; }
         }
 
         public class FastRestoreRule : Humidifier.Base.BaseSubResource, IHaveInterval, IHaveCount, IHaveAvailabilityZones, IHaveIntervalUnit
@@ -498,6 +490,15 @@ namespace Humidifier.DLM
             /// PrimitiveType: String
             /// </summary>
             public dynamic IntervalUnit { get; set; }
+            /// <summary>
+            /// AvailabilityZoneIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-availabilityzoneids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AvailabilityZoneIds { get; set; }
             /// <summary>
             /// AvailabilityZones
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-availabilityzones
@@ -543,7 +544,7 @@ namespace Humidifier.DLM
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> ExcludeDataVolumeTags { get; set; }
+            public List<Humidifier.Tag> ExcludeDataVolumeTags { get; set; }
             /// <summary>
             /// NoReboot
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html#cfn-dlm-lifecyclepolicy-parameters-noreboot
@@ -554,7 +555,7 @@ namespace Humidifier.DLM
             public dynamic NoReboot { get; set; }
         }
 
-        public class PolicyDetails : Humidifier.Base.BaseSubResource, IHaveResourceType, IHavePolicyType, IHaveResourceTypes, IHaveCopyTags, IHaveCreateInterval, IHaveExtendDeletion, IHaveDLMLifecyclePolicyTypesExclusionsExclusions, IHaveDLMLifecyclePolicyTypesCrossRegionCopyTargetsCrossRegionCopyTargets, IHaveRetainInterval
+        public class PolicyDetails : Humidifier.Base.BaseSubResource, IHaveResourceType, IHavePolicyType, IHaveResourceTypes, IHaveCopyTags, IHaveCreateInterval, IHaveExtendDeletion, IHaveDLMLifecyclePolicyTypesExclusionsExclusions, IHaveRetainInterval
         {
             /// <summary>
             /// PolicyLanguage
@@ -660,9 +661,10 @@ namespace Humidifier.DLM
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-crossregioncopytargets
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: CrossRegionCopyTargets
+            /// Type: List
+            /// ItemType: CrossRegionCopyTarget
             /// </summary>
-            public Humidifier.DLM.LifecyclePolicyTypes.CrossRegionCopyTargets CrossRegionCopyTargets { get; set; }
+            public List<Humidifier.DLM.LifecyclePolicyTypes.CrossRegionCopyTarget> CrossRegionCopyTargets { get; set; }
             /// <summary>
             /// TargetTags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-targettags
@@ -671,7 +673,7 @@ namespace Humidifier.DLM
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> TargetTags { get; set; }
+            public List<Humidifier.Tag> TargetTags { get; set; }
             /// <summary>
             /// ResourceLocations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcelocations
@@ -774,7 +776,7 @@ namespace Humidifier.DLM
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> TagsToAdd { get; set; }
+            public List<Humidifier.Tag> TagsToAdd { get; set; }
             /// <summary>
             /// CreateRule
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-createrule
@@ -791,7 +793,7 @@ namespace Humidifier.DLM
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> VariableTags { get; set; }
+            public List<Humidifier.Tag> VariableTags { get; set; }
             /// <summary>
             /// FastRestoreRule
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-fastrestorerule

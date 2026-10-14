@@ -1,6 +1,6 @@
 namespace Humidifier.CE
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AnomalyMonitorTypes;
 
     public class AnomalyMonitor : Humidifier.Base.BaseResource, IHaveMonitorName

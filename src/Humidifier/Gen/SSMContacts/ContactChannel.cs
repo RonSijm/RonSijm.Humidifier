@@ -1,6 +1,6 @@
 namespace Humidifier.SSMContacts
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ContactChannel : Humidifier.Base.BaseResource, IHaveChannelName, IHaveContactId
     {

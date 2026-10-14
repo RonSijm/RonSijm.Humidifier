@@ -1,6 +1,6 @@
 namespace Humidifier.DataZone
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentProfileTypes;
 
     public class EnvironmentProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveAwsAccountId, IHaveDomainIdentifier, IHaveProjectIdentifier, IHaveEnvironmentBlueprintIdentifier

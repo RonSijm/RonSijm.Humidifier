@@ -1,6 +1,6 @@
 namespace Humidifier.OpsWorks
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InstanceTypes;
 
     public class Instance : Humidifier.Base.BaseResource, IHaveInstanceType, IHaveAvailabilityZone, IHaveSubnetId, IHaveEbsOptimized, IHaveTenancy, IHaveArchitecture, IHaveHostname, IHaveStackId, IHaveAgentVersion, IHaveAmiId, IHaveInstallUpdatesOnBoot

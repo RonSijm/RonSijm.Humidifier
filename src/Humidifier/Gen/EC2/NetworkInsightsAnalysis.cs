@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkInsightsAnalysisTypes;
 
     public class NetworkInsightsAnalysis : Humidifier.Base.BaseResource, IHaveTags
@@ -21,6 +21,15 @@ namespace Humidifier.EC2
         }
 
         public override string AWSTypeName { get => AWS.EC2.NetworkInsightsAnalysis; }
+        /// <summary>
+        /// FilterOutArns
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-filteroutarns
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic FilterOutArns { get; set; }
 
         /// <summary>
         /// NetworkInsightsPathId
@@ -57,7 +66,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace NetworkInsightsAnalysisTypes
@@ -130,22 +139,6 @@ namespace Humidifier.EC2
             /// </summary>
             public Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange PortRange { get; set; }
             /// <summary>
-            /// Cidr
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-cidr
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Cidr { get; set; }
-            /// <summary>
-            /// RuleAction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-ruleaction
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RuleAction { get; set; }
-            /// <summary>
             /// Egress
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-egress
             /// Required: False
@@ -162,6 +155,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic RuleNumber { get; set; }
             /// <summary>
+            /// Cidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-cidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Cidr { get; set; }
+            /// <summary>
             /// Protocol
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-protocol
             /// Required: False
@@ -169,18 +170,18 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Protocol { get; set; }
-        }
-
-        public class AnalysisComponent : Humidifier.Base.BaseSubResource, IHaveId, IHaveArn
-        {
             /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html#cfn-ec2-networkinsightsanalysis-analysiscomponent-id
+            /// RuleAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-ruleaction
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id { get; set; }
+            public dynamic RuleAction { get; set; }
+        }
+
+        public class AnalysisComponent : Humidifier.Base.BaseSubResource, IHaveId, IHaveArn
+        {
             /// <summary>
             /// Arn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html#cfn-ec2-networkinsightsanalysis-analysiscomponent-arn
@@ -189,6 +190,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Arn { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysiscomponent.html#cfn-ec2-networkinsightsanalysis-analysiscomponent-id
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
         }
 
         public class AnalysisLoadBalancerListener : Humidifier.Base.BaseSubResource, IHaveInstancePort, IHaveLoadBalancerPort
@@ -268,6 +277,14 @@ namespace Humidifier.EC2
             /// </summary>
             public List<Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange> SourcePortRanges { get; set; }
             /// <summary>
+            /// Protocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Protocol { get; set; }
+            /// <summary>
             /// DestinationAddresses
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses
             /// Required: False
@@ -276,14 +293,6 @@ namespace Humidifier.EC2
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic DestinationAddresses { get; set; }
-            /// <summary>
-            /// Protocol
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Protocol { get; set; }
             /// <summary>
             /// SourceAddresses
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses
@@ -406,22 +415,6 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic Cidr { get; set; }
             /// <summary>
-            /// PrefixListId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-prefixlistid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic PrefixListId { get; set; }
-            /// <summary>
-            /// SecurityGroupId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-securitygroupid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SecurityGroupId { get; set; }
-            /// <summary>
             /// Protocol
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-protocol
             /// Required: False
@@ -430,6 +423,14 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic Protocol { get; set; }
             /// <summary>
+            /// PrefixListId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-prefixlistid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrefixListId { get; set; }
+            /// <summary>
             /// Direction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-direction
             /// Required: False
@@ -437,6 +438,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Direction { get; set; }
+            /// <summary>
+            /// SecurityGroupId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-securitygroupid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecurityGroupId { get; set; }
         }
 
         public class Explanation : Humidifier.Base.BaseSubResource, IHavePort, IHaveState, IHaveAddress, IHaveDirection, IHaveAvailabilityZones, IHaveCidrs, IHaveProtocols, IHaveLoadBalancerArn, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveAddresses, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule

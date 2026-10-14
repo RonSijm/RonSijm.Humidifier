@@ -1,6 +1,6 @@
 namespace Humidifier.Detective
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class OrganizationAdmin : Humidifier.Base.BaseResource, IHaveAccountId
     {

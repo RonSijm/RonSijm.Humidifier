@@ -1,6 +1,6 @@
 namespace Humidifier.Route53Resolver
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResolverEndpointTypes;
 
     public class ResolverEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveSecurityGroupIds, IHaveDirection, IHaveOutpostArn, IHaveProtocols, IHavePreferredInstanceType
@@ -9,9 +9,6 @@ namespace Humidifier.Route53Resolver
         {
             public static string ResolverEndpointId =  "ResolverEndpointId" ;
             public static string IpAddressCount =  "IpAddressCount" ;
-            public static string OutpostArn =  "OutpostArn" ;
-            public static string PreferredInstanceType =  "PreferredInstanceType" ;
-            public static string ResolverEndpointType =  "ResolverEndpointType" ;
             public static string Arn =  "Arn" ;
             public static string Direction =  "Direction" ;
             public static string HostVPCId =  "HostVPCId" ;
@@ -19,17 +16,6 @@ namespace Humidifier.Route53Resolver
         }
 
         public override string AWSTypeName { get => AWS.Route53Resolver.ResolverEndpoint; }
-
-        /// <summary>
-        /// IpAddresses
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: IpAddressRequest
-        /// </summary>
-        [Required]
-        public List<Humidifier.Route53Resolver.ResolverEndpointTypes.IpAddressRequest> IpAddresses { get; set; }
         /// <summary>
         /// Protocols
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-protocols
@@ -47,14 +33,6 @@ namespace Humidifier.Route53Resolver
         /// PrimitiveType: String
         /// </summary>
         public dynamic OutpostArn { get; set; }
-        /// <summary>
-        /// PreferredInstanceType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-preferredinstancetype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic PreferredInstanceType { get; set; }
         /// <summary>
         /// ResolverEndpointType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-resolverendpointtype
@@ -84,6 +62,58 @@ namespace Humidifier.Route53Resolver
         /// </summary>
         [Required]
         public dynamic SecurityGroupIds { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+
+        /// <summary>
+        /// IpAddresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: IpAddressRequest
+        /// </summary>
+        [Required]
+        public List<Humidifier.Route53Resolver.ResolverEndpointTypes.IpAddressRequest> IpAddresses { get; set; }
+        /// <summary>
+        /// TargetNameServerMetricsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-targetnameservermetricsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic TargetNameServerMetricsEnabled { get; set; }
+        /// <summary>
+        /// RniEnhancedMetricsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-rnienhancedmetricsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic RniEnhancedMetricsEnabled { get; set; }
+        /// <summary>
+        /// Ipv6InternetAccessEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipv6internetaccessenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic Ipv6InternetAccessEnabled { get; set; }
+        /// <summary>
+        /// PreferredInstanceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-preferredinstancetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PreferredInstanceType { get; set; }
+        /// <summary>
+        /// Dns64Enabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-dns64enabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic Dns64Enabled { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags
@@ -92,8 +122,7 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ResolverEndpointTypes

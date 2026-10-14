@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CapacityReservationFleetTypes;
 
     public class CapacityReservationFleet : Humidifier.Base.BaseResource, IHaveAllocationStrategy, IHaveEndDate, IHaveTenancy, IHaveInstanceMatchCriteria, IHaveTotalTargetCapacity
@@ -39,7 +39,7 @@ namespace Humidifier.EC2
         /// TagSpecifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-tagspecifications
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: TagSpecification
         /// </summary>
@@ -155,7 +155,7 @@ namespace Humidifier.EC2
             /// ResourceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-resourcetype
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ResourceType { get; set; }
@@ -163,11 +163,11 @@ namespace Humidifier.EC2
             /// Tags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-tags
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
         }
     }
 }

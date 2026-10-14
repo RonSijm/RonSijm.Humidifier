@@ -1,6 +1,6 @@
 namespace Humidifier.Amplify
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AppTypes;
 
     public class App : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAccessToken, IHavePlatform, IHaveRepository, IHaveBuildSpec, IHaveAmplifyAppTypesBasicAuthConfigBasicAuthConfig
@@ -54,7 +54,23 @@ namespace Humidifier.Amplify
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic EnableBranchAutoDeletion { get; set; }
+        /// <summary>
+        /// JobConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-jobconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: JobConfig
+        /// </summary>
+        public Humidifier.Amplify.AppTypes.JobConfig JobConfig { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ComputeRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-computerolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ComputeRoleArn { get; set; }
         /// <summary>
         /// Repository
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-repository
@@ -129,7 +145,7 @@ namespace Humidifier.Amplify
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// IAMServiceRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-iamservicerole
@@ -330,6 +346,18 @@ namespace Humidifier.Amplify
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class JobConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BuildComputeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-jobconfig.html#cfn-amplify-app-jobconfig-buildcomputetype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BuildComputeType { get; set; }
         }
     }
 }

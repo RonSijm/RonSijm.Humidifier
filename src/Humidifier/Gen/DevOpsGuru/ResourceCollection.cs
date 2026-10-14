@@ -1,6 +1,6 @@
 namespace Humidifier.DevOpsGuru
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ResourceCollectionTypes;
 
     public class ResourceCollection : Humidifier.Base.BaseResource

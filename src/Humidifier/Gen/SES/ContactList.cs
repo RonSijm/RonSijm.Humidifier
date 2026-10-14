@@ -1,6 +1,6 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ContactListTypes;
 
     public class ContactList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
@@ -32,7 +32,7 @@ namespace Humidifier.SES
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ContactListTypes

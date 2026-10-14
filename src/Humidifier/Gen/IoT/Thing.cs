@@ -1,6 +1,6 @@
 namespace Humidifier.IoT
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ThingTypes;
 
     public class Thing : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveThingName

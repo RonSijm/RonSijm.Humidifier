@@ -1,9 +1,9 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServerTypes;
 
-    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveDomain, IHaveEndpointType, IHaveCertificate, IHaveProtocols, IHaveLoggingRole, IHaveSecurityPolicyName, IHaveIdentityProviderType
+    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveDomain, IHaveIpAddressType, IHaveEndpointType, IHaveCertificate, IHaveProtocols, IHaveLoggingRole, IHaveSecurityPolicyName, IHaveIdentityProviderType
     {
         public class Attributes
         {
@@ -14,6 +14,14 @@ namespace Humidifier.Transfer
         }
 
         public override string AWSTypeName { get => AWS.Transfer.Server; }
+        /// <summary>
+        /// IpAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-ipaddresstype
+        /// Required: False
+        /// UpdateType: Conditional
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpAddressType { get; set; }
         /// <summary>
         /// LoggingRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole
@@ -124,7 +132,7 @@ namespace Humidifier.Transfer
         /// IdentityProviderType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityprovidertype
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic IdentityProviderType { get; set; }
@@ -136,7 +144,7 @@ namespace Humidifier.Transfer
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// Certificate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-certificate
@@ -275,6 +283,26 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public dynamic TlsSessionResumptionMode { get; set; }
+            /// <summary>
+            /// ProxyConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-proxyconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ProxyConfig
+            /// </summary>
+            public Humidifier.Transfer.ServerTypes.ProxyConfig ProxyConfig { get; set; }
+        }
+
+        public class ProxyConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SftpMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-proxyconfig.html#cfn-transfer-server-proxyconfig-sftpmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SftpMode { get; set; }
         }
 
         public class S3StorageOptions : Humidifier.Base.BaseSubResource

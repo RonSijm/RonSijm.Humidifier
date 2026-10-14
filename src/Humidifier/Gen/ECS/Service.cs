@@ -1,6 +1,6 @@
 namespace Humidifier.ECS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServiceTypes;
 
     public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRole, IHaveServiceName, IHavePlatformVersion, IHavePropagateTags, IHaveLaunchType, IHaveCluster, IHaveEnableECSManagedTags, IHaveEnableExecuteCommand, IHaveTaskDefinition
@@ -68,7 +68,7 @@ namespace Humidifier.ECS
         /// LaunchType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
         public dynamic LaunchType { get; set; }
@@ -104,7 +104,23 @@ namespace Humidifier.ECS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// Monitoring
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-monitoring
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MonitoringConfiguration
+        /// </summary>
+        public Humidifier.ECS.ServiceTypes.MonitoringConfiguration Monitoring { get; set; }
+        /// <summary>
+        /// ForceNewDeployment
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-forcenewdeployment
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ForceNewDeployment
+        /// </summary>
+        public Humidifier.ECS.ServiceTypes.ForceNewDeployment ForceNewDeployment { get; set; }
         /// <summary>
         /// HealthCheckGracePeriodSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-healthcheckgraceperiodseconds
@@ -184,7 +200,7 @@ namespace Humidifier.ECS
         /// DeploymentController
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentcontroller
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: DeploymentController
         /// </summary>
         public Humidifier.ECS.ServiceTypes.DeploymentController DeploymentController { get; set; }
@@ -217,6 +233,42 @@ namespace Humidifier.ECS
 
     namespace ServiceTypes
     {
+        public class AdvancedConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        {
+            /// <summary>
+            /// TestListenerRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-advancedconfiguration.html#cfn-ecs-service-advancedconfiguration-testlistenerrule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TestListenerRule { get; set; }
+            /// <summary>
+            /// AlternateTargetGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-advancedconfiguration.html#cfn-ecs-service-advancedconfiguration-alternatetargetgrouparn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AlternateTargetGroupArn { get; set; }
+            /// <summary>
+            /// ProductionListenerRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-advancedconfiguration.html#cfn-ecs-service-advancedconfiguration-productionlistenerrule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProductionListenerRule { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-advancedconfiguration.html#cfn-ecs-service-advancedconfiguration-rolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+        }
+
         public class AwsVpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSubnets, IHaveSecurityGroups, IHaveAssignPublicIp
         {
             /// <summary>
@@ -245,6 +297,26 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic AssignPublicIp { get; set; }
+        }
+
+        public class CanaryConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CanaryPercent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-canaryconfiguration.html#cfn-ecs-service-canaryconfiguration-canarypercent
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic CanaryPercent { get; set; }
+            /// <summary>
+            /// CanaryBakeTimeInMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-canaryconfiguration.html#cfn-ecs-service-canaryconfiguration-canarybaketimeinminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CanaryBakeTimeInMinutes { get; set; }
         }
 
         public class CapacityProviderStrategyItem : Humidifier.Base.BaseSubResource, IHaveWeight, IHaveBase, IHaveCapacityProvider
@@ -307,6 +379,14 @@ namespace Humidifier.ECS
         public class DeploymentCircuitBreaker : Humidifier.Base.BaseSubResource, IHaveEnable, IHaveRollback
         {
             /// <summary>
+            /// ThresholdConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-thresholdconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ThresholdConfiguration
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.ThresholdConfiguration ThresholdConfiguration { get; set; }
+            /// <summary>
             /// Enable
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-enable
             /// Required: True
@@ -314,6 +394,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enable { get; set; }
+            /// <summary>
+            /// ResetOnHealthyTask
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-resetonhealthytask
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ResetOnHealthyTask { get; set; }
             /// <summary>
             /// Rollback
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-rollback
@@ -324,8 +412,41 @@ namespace Humidifier.ECS
             public dynamic Rollback { get; set; }
         }
 
-        public class DeploymentConfiguration : Humidifier.Base.BaseSubResource
+        public class DeploymentConfiguration : Humidifier.Base.BaseSubResource, IHaveStrategy
         {
+            /// <summary>
+            /// CanaryConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-canaryconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CanaryConfiguration
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.CanaryConfiguration CanaryConfiguration { get; set; }
+            /// <summary>
+            /// BakeTimeInMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-baketimeinminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BakeTimeInMinutes { get; set; }
+            /// <summary>
+            /// LifecycleHooks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-lifecyclehooks
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DeploymentLifecycleHook
+            /// </summary>
+            public List<Humidifier.ECS.ServiceTypes.DeploymentLifecycleHook> LifecycleHooks { get; set; }
+            /// <summary>
+            /// EarlySuccessCriteria
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-earlysuccesscriteria
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DeploymentEarlySuccessCriteria
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.DeploymentEarlySuccessCriteria EarlySuccessCriteria { get; set; }
             /// <summary>
             /// Alarms
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-alarms
@@ -334,6 +455,14 @@ namespace Humidifier.ECS
             /// Type: DeploymentAlarms
             /// </summary>
             public Humidifier.ECS.ServiceTypes.DeploymentAlarms Alarms { get; set; }
+            /// <summary>
+            /// Strategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-strategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Strategy { get; set; }
             /// <summary>
             /// DeploymentCircuitBreaker
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-deploymentcircuitbreaker
@@ -358,6 +487,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MinimumHealthyPercent { get; set; }
+            /// <summary>
+            /// LinearConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-linearconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LinearConfiguration
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.LinearConfiguration LinearConfiguration { get; set; }
         }
 
         public class DeploymentController : Humidifier.Base.BaseSubResource, IHaveType
@@ -366,10 +503,91 @@ namespace Humidifier.ECS
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcontroller.html#cfn-ecs-service-deploymentcontroller-type
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
+        }
+
+        public class DeploymentEarlySuccessCriteria : Humidifier.Base.BaseSubResource, IHaveEnable
+        {
+            /// <summary>
+            /// SourceServiceRevisionCleanup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentearlysuccesscriteria.html#cfn-ecs-service-deploymentearlysuccesscriteria-sourceservicerevisioncleanup
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceServiceRevisionCleanup { get; set; }
+            /// <summary>
+            /// HealthyPercent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentearlysuccesscriteria.html#cfn-ecs-service-deploymentearlysuccesscriteria-healthypercent
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HealthyPercent { get; set; }
+            /// <summary>
+            /// Enable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentearlysuccesscriteria.html#cfn-ecs-service-deploymentearlysuccesscriteria-enable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enable { get; set; }
+        }
+
+        public class DeploymentLifecycleHook : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveTargetType
+        {
+            /// <summary>
+            /// TimeoutConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentlifecyclehook.html#cfn-ecs-service-deploymentlifecyclehook-timeoutconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HookTimeoutConfig
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.HookTimeoutConfig TimeoutConfiguration { get; set; }
+            /// <summary>
+            /// LifecycleStages
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentlifecyclehook.html#cfn-ecs-service-deploymentlifecyclehook-lifecyclestages
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic LifecycleStages { get; set; }
+            /// <summary>
+            /// TargetType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentlifecyclehook.html#cfn-ecs-service-deploymentlifecyclehook-targettype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetType { get; set; }
+            /// <summary>
+            /// HookTargetArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentlifecyclehook.html#cfn-ecs-service-deploymentlifecyclehook-hooktargetarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HookTargetArn { get; set; }
+            /// <summary>
+            /// HookDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentlifecyclehook.html#cfn-ecs-service-deploymentlifecyclehook-hookdetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic HookDetails { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentlifecyclehook.html#cfn-ecs-service-deploymentlifecyclehook-rolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
         }
 
         public class EBSTagSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveResourceType, IHavePropagateTags
@@ -398,7 +616,67 @@ namespace Humidifier.ECS
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
+        }
+
+        public class ForceNewDeployment : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EnableForceNewDeployment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-forcenewdeployment.html#cfn-ecs-service-forcenewdeployment-enableforcenewdeployment
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableForceNewDeployment { get; set; }
+            /// <summary>
+            /// ForceNewDeploymentNonce
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-forcenewdeployment.html#cfn-ecs-service-forcenewdeployment-forcenewdeploymentnonce
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ForceNewDeploymentNonce { get; set; }
+        }
+
+        public class HookTimeoutConfig : Humidifier.Base.BaseSubResource, IHaveAction, IHaveTimeoutInMinutes
+        {
+            /// <summary>
+            /// Action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-hooktimeoutconfig.html#cfn-ecs-service-hooktimeoutconfig-action
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Action { get; set; }
+            /// <summary>
+            /// TimeoutInMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-hooktimeoutconfig.html#cfn-ecs-service-hooktimeoutconfig-timeoutinminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TimeoutInMinutes { get; set; }
+        }
+
+        public class LinearConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StepBakeTimeInMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-linearconfiguration.html#cfn-ecs-service-linearconfiguration-stepbaketimeinminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic StepBakeTimeInMinutes { get; set; }
+            /// <summary>
+            /// StepPercent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-linearconfiguration.html#cfn-ecs-service-linearconfiguration-steppercent
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic StepPercent { get; set; }
         }
 
         public class LoadBalancer : Humidifier.Base.BaseSubResource, IHaveContainerName, IHaveTargetGroupArn, IHaveContainerPort, IHaveLoadBalancerName
@@ -435,6 +713,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ContainerPort { get; set; }
+            /// <summary>
+            /// AdvancedConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html#cfn-ecs-service-loadbalancer-advancedconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AdvancedConfiguration
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.AdvancedConfiguration AdvancedConfiguration { get; set; }
         }
 
         public class LogConfiguration : Humidifier.Base.BaseSubResource, IHaveLogDriver
@@ -465,6 +751,40 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic LogDriver { get; set; }
+        }
+
+        public class MetricConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ResolutionSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-metricconfiguration.html#cfn-ecs-service-metricconfiguration-resolutionseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ResolutionSeconds { get; set; }
+            /// <summary>
+            /// MetricNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-metricconfiguration.html#cfn-ecs-service-metricconfiguration-metricnames
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic MetricNames { get; set; }
+        }
+
+        public class MonitoringConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MetricConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-monitoringconfiguration.html#cfn-ecs-service-monitoringconfiguration-metricconfigurations
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: MetricConfiguration
+            /// </summary>
+            public List<Humidifier.ECS.ServiceTypes.MetricConfiguration> MetricConfigurations { get; set; }
         }
 
         public class NetworkConfiguration : Humidifier.Base.BaseSubResource
@@ -539,6 +859,26 @@ namespace Humidifier.ECS
             public dynamic Name { get; set; }
         }
 
+        public class ServiceConnectAccessLogConfiguration : Humidifier.Base.BaseSubResource, IHaveFormat
+        {
+            /// <summary>
+            /// Format
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectaccesslogconfiguration.html#cfn-ecs-service-serviceconnectaccesslogconfiguration-format
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Format { get; set; }
+            /// <summary>
+            /// IncludeQueryParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectaccesslogconfiguration.html#cfn-ecs-service-serviceconnectaccesslogconfiguration-includequeryparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IncludeQueryParameters { get; set; }
+        }
+
         public class ServiceConnectClientAlias : Humidifier.Base.BaseSubResource, IHavePort, IHaveDnsName
         {
             /// <summary>
@@ -549,6 +889,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic DnsName { get; set; }
+            /// <summary>
+            /// TestTrafficRules
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectclientalias.html#cfn-ecs-service-serviceconnectclientalias-testtrafficrules
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ServiceConnectTestTrafficRules
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.ServiceConnectTestTrafficRules TestTrafficRules { get; set; }
             /// <summary>
             /// Port
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectclientalias.html#cfn-ecs-service-serviceconnectclientalias-port
@@ -570,6 +918,14 @@ namespace Humidifier.ECS
             /// ItemType: ServiceConnectService
             /// </summary>
             public List<Humidifier.ECS.ServiceTypes.ServiceConnectService> Services { get; set; }
+            /// <summary>
+            /// AccessLogConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-accesslogconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ServiceConnectAccessLogConfiguration
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.ServiceConnectAccessLogConfiguration AccessLogConfiguration { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-enabled
@@ -647,6 +1003,50 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic PortName { get; set; }
+        }
+
+        public class ServiceConnectTestTrafficRules : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Header
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnecttesttrafficrules.html#cfn-ecs-service-serviceconnecttesttrafficrules-header
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ServiceConnectTestTrafficRulesHeader
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.ServiceConnectTestTrafficRulesHeader Header { get; set; }
+        }
+
+        public class ServiceConnectTestTrafficRulesHeader : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnecttesttrafficrulesheader.html#cfn-ecs-service-serviceconnecttesttrafficrulesheader-value
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ServiceConnectTestTrafficRulesHeaderValue
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.ServiceConnectTestTrafficRulesHeaderValue Value { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnecttesttrafficrulesheader.html#cfn-ecs-service-serviceconnecttesttrafficrulesheader-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class ServiceConnectTestTrafficRulesHeaderValue : Humidifier.Base.BaseSubResource, IHaveExact
+        {
+            /// <summary>
+            /// Exact
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnecttesttrafficrulesheadervalue.html#cfn-ecs-service-serviceconnecttesttrafficrulesheadervalue-exact
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Exact { get; set; }
         }
 
         public class ServiceConnectTlsCertificateAuthority : Humidifier.Base.BaseSubResource
@@ -749,6 +1149,14 @@ namespace Humidifier.ECS
             /// </summary>
             public dynamic Throughput { get; set; }
             /// <summary>
+            /// VolumeInitializationRate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-servicemanagedebsvolumeconfiguration.html#cfn-ecs-service-servicemanagedebsvolumeconfiguration-volumeinitializationrate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeInitializationRate { get; set; }
+            /// <summary>
             /// Iops
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-servicemanagedebsvolumeconfiguration.html#cfn-ecs-service-servicemanagedebsvolumeconfiguration-iops
             /// Required: False
@@ -830,6 +1238,26 @@ namespace Humidifier.ECS
             public dynamic Name { get; set; }
         }
 
+        public class ThresholdConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-thresholdconfiguration.html#cfn-ecs-service-thresholdconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-thresholdconfiguration.html#cfn-ecs-service-thresholdconfiguration-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
         public class TimeoutConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -848,6 +1276,34 @@ namespace Humidifier.ECS
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic IdleTimeoutSeconds { get; set; }
+        }
+
+        public class VpcLatticeAdvancedConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TestListenerRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeadvancedconfiguration.html#cfn-ecs-service-vpclatticeadvancedconfiguration-testlistenerrule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TestListenerRule { get; set; }
+            /// <summary>
+            /// AlternateTargetGroupArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeadvancedconfiguration.html#cfn-ecs-service-vpclatticeadvancedconfiguration-alternatetargetgrouparn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AlternateTargetGroupArn { get; set; }
+            /// <summary>
+            /// ProductionListenerRule
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeadvancedconfiguration.html#cfn-ecs-service-vpclatticeadvancedconfiguration-productionlistenerrule
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProductionListenerRule { get; set; }
         }
 
         public class VpcLatticeConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveTargetGroupArn, IHavePortName
@@ -876,6 +1332,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
+            /// <summary>
+            /// AdvancedConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-vpclatticeconfiguration.html#cfn-ecs-service-vpclatticeconfiguration-advancedconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VpcLatticeAdvancedConfiguration
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.VpcLatticeAdvancedConfiguration AdvancedConfiguration { get; set; }
         }
     }
 }

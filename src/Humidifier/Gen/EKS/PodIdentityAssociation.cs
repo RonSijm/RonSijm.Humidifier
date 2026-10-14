@@ -1,16 +1,25 @@
 namespace Humidifier.EKS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class PodIdentityAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveNamespace_, IHaveClusterName, IHaveServiceAccount
+    public class PodIdentityAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveNamespace_, IHavePolicy, IHaveClusterName, IHaveServiceAccount
     {
         public class Attributes
         {
             public static string AssociationArn =  "AssociationArn" ;
+            public static string ExternalId =  "ExternalId" ;
             public static string AssociationId =  "AssociationId" ;
         }
 
         public override string AWSTypeName { get => AWS.EKS.PodIdentityAssociation; }
+        /// <summary>
+        /// Policy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-podidentityassociation.html#cfn-eks-podidentityassociation-policy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Policy { get; set; }
 
         /// <summary>
         /// ServiceAccount
@@ -21,6 +30,14 @@ namespace Humidifier.EKS
         /// </summary>
         [Required]
         public dynamic ServiceAccount { get; set; }
+        /// <summary>
+        /// TargetRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-podidentityassociation.html#cfn-eks-podidentityassociation-targetrolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TargetRoleArn { get; set; }
 
         /// <summary>
         /// ClusterName
@@ -31,6 +48,14 @@ namespace Humidifier.EKS
         /// </summary>
         [Required]
         public dynamic ClusterName { get; set; }
+        /// <summary>
+        /// DisableSessionTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-podidentityassociation.html#cfn-eks-podidentityassociation-disablesessiontags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DisableSessionTags { get; set; }
 
         /// <summary>
         /// RoleArn
@@ -59,6 +84,6 @@ namespace Humidifier.EKS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

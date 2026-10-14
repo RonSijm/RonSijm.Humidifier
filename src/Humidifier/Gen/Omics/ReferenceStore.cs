@@ -1,6 +1,6 @@
 namespace Humidifier.Omics
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ReferenceStoreTypes;
 
     public class ReferenceStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

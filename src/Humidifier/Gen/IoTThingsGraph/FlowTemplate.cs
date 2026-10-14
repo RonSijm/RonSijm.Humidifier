@@ -1,6 +1,6 @@
 namespace Humidifier.IoTThingsGraph
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowTemplateTypes;
 
     public class FlowTemplate : Humidifier.Base.BaseResource

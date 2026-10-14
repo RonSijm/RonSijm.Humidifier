@@ -1,6 +1,6 @@
 namespace Humidifier.IAM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ManagedPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHavePath, IHavePolicyDocument, IHaveGroups, IHaveUsers, IHaveRoles
     {

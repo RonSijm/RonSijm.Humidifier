@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ModelCardTypes;
 
     public class ModelCard : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveModelCardStatus
@@ -68,7 +68,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ModelCardTypes
@@ -862,14 +862,6 @@ namespace Humidifier.SageMaker
         public class UserContext : Humidifier.Base.BaseSubResource, IHaveDomainId, IHaveUserProfileName
         {
             /// <summary>
-            /// DomainId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-domainid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DomainId { get; set; }
-            /// <summary>
             /// UserProfileArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilearn
             /// Required: False
@@ -885,6 +877,14 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic UserProfileName { get; set; }
+            /// <summary>
+            /// DomainId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-domainid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainId { get; set; }
         }
     }
 }

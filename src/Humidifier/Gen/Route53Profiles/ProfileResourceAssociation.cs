@@ -1,6 +1,6 @@
 namespace Humidifier.Route53Profiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ProfileResourceAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveResourceArn, IHaveProfileId
     {

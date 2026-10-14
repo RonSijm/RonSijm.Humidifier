@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SMSChannel : Humidifier.Base.BaseResource, IHaveEnabled, IHaveApplicationId, IHaveSenderId
     {

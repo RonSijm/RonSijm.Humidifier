@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ChannelNamespaceTypes;
 
     public class ChannelNamespace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveApiId, IHaveCodeS3Location
@@ -45,6 +45,14 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic CodeHandlers { get; set; }
+        /// <summary>
+        /// HandlerConfigs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-channelnamespace.html#cfn-appsync-channelnamespace-handlerconfigs
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: HandlerConfigs
+        /// </summary>
+        public Humidifier.AppSync.ChannelNamespaceTypes.HandlerConfigs HandlerConfigs { get; set; }
 
         /// <summary>
         /// ApiId
@@ -63,7 +71,7 @@ namespace Humidifier.AppSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -79,6 +87,78 @@ namespace Humidifier.AppSync
             /// PrimitiveType: String
             /// </summary>
             public dynamic AuthType { get; set; }
+        }
+
+        public class HandlerConfig : Humidifier.Base.BaseSubResource, IHaveBehavior
+        {
+            /// <summary>
+            /// Integration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-handlerconfig.html#cfn-appsync-channelnamespace-handlerconfig-integration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Integration
+            /// </summary>
+            public Humidifier.AppSync.ChannelNamespaceTypes.Integration Integration { get; set; }
+            /// <summary>
+            /// Behavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-handlerconfig.html#cfn-appsync-channelnamespace-handlerconfig-behavior
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Behavior { get; set; }
+        }
+
+        public class HandlerConfigs : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OnPublish
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-handlerconfigs.html#cfn-appsync-channelnamespace-handlerconfigs-onpublish
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HandlerConfig
+            /// </summary>
+            public Humidifier.AppSync.ChannelNamespaceTypes.HandlerConfig OnPublish { get; set; }
+            /// <summary>
+            /// OnSubscribe
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-handlerconfigs.html#cfn-appsync-channelnamespace-handlerconfigs-onsubscribe
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HandlerConfig
+            /// </summary>
+            public Humidifier.AppSync.ChannelNamespaceTypes.HandlerConfig OnSubscribe { get; set; }
+        }
+
+        public class Integration : Humidifier.Base.BaseSubResource, IHaveDataSourceName
+        {
+            /// <summary>
+            /// DataSourceName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-integration.html#cfn-appsync-channelnamespace-integration-datasourcename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataSourceName { get; set; }
+            /// <summary>
+            /// LambdaConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-integration.html#cfn-appsync-channelnamespace-integration-lambdaconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LambdaConfig
+            /// </summary>
+            public Humidifier.AppSync.ChannelNamespaceTypes.LambdaConfig LambdaConfig { get; set; }
+        }
+
+        public class LambdaConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InvokeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-channelnamespace-lambdaconfig.html#cfn-appsync-channelnamespace-lambdaconfig-invoketype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InvokeType { get; set; }
         }
     }
 }

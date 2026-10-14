@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkAclEntryTypes;
 
     public class NetworkAclEntry : Humidifier.Base.BaseResource, IHaveProtocol, IHaveCidrBlock, IHaveIpv6CidrBlock, IHaveRuleAction, IHaveEgress, IHaveRuleNumber, IHaveNetworkAclId

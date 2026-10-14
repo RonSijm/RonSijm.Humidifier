@@ -1,6 +1,6 @@
 namespace Humidifier.AmplifyUIBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FormTypes;
 
     public class Form : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveAppId, IHaveEnvironmentName, IHaveSchemaVersion
@@ -531,14 +531,6 @@ namespace Humidifier.AmplifyUIBuilder
             /// </summary>
             public List<Humidifier.AmplifyUIBuilder.FormTypes.FormInputValueProperty> Concat { get; set; }
             /// <summary>
-            /// BindingProperties
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-forminputvalueproperty.html#cfn-amplifyuibuilder-form-forminputvalueproperty-bindingproperties
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: FormInputValuePropertyBindingProperties
-            /// </summary>
-            public Humidifier.AmplifyUIBuilder.FormTypes.FormInputValuePropertyBindingProperties BindingProperties { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-forminputvalueproperty.html#cfn-amplifyuibuilder-form-forminputvalueproperty-value
             /// Required: False
@@ -546,6 +538,14 @@ namespace Humidifier.AmplifyUIBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// BindingProperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplifyuibuilder-form-forminputvalueproperty.html#cfn-amplifyuibuilder-form-forminputvalueproperty-bindingproperties
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FormInputValuePropertyBindingProperties
+            /// </summary>
+            public Humidifier.AmplifyUIBuilder.FormTypes.FormInputValuePropertyBindingProperties BindingProperties { get; set; }
         }
 
         public class FormInputValuePropertyBindingProperties : Humidifier.Base.BaseSubResource, IHaveField, IHaveProperty

@@ -1,8 +1,8 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Volume : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveIops, IHaveSize, IHaveVolumeType, IHaveEncrypted, IHaveThroughput, IHaveSnapshotId, IHaveOutpostArn
+    public class Volume : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveAvailabilityZone, IHaveIops, IHaveSize, IHaveVolumeType, IHaveEncrypted, IHaveThroughput, IHaveSnapshotId, IHaveOutpostArn, IHaveAvailabilityZoneId
     {
         public class Attributes
         {
@@ -18,22 +18,6 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic MultiAttachEnabled { get; set; }
-        /// <summary>
-        /// SnapshotId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-snapshotid
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SnapshotId { get; set; }
-        /// <summary>
-        /// VolumeType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-volumetype
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic VolumeType { get; set; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-kmskeyid
@@ -74,15 +58,21 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic OutpostArn { get; set; }
-
         /// <summary>
-        /// AvailabilityZone
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzone
-        /// Required: True
+        /// AvailabilityZoneId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzoneid
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
+        public dynamic AvailabilityZoneId { get; set; }
+        /// <summary>
+        /// AvailabilityZone
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzone
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
         public dynamic AvailabilityZone { get; set; }
         /// <summary>
         /// Throughput
@@ -101,6 +91,38 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic Iops { get; set; }
         /// <summary>
+        /// VolumeInitializationRate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-volumeinitializationrate
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic VolumeInitializationRate { get; set; }
+        /// <summary>
+        /// SnapshotId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-snapshotid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SnapshotId { get; set; }
+        /// <summary>
+        /// VolumeType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-volumetype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic VolumeType { get; set; }
+        /// <summary>
+        /// SourceVolumeId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-sourcevolumeid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SourceVolumeId { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-tags
         /// Required: False
@@ -108,6 +130,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.Grafana
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WorkspaceTypes;
 
     public class Workspace : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveClientToken, IHaveStackSetName, IHaveOrganizationalUnits
@@ -9,12 +9,12 @@ namespace Humidifier.Grafana
         {
             public static string Status =  "Status" ;
             public static string GrafanaVersion =  "GrafanaVersion" ;
-            public static string CreationTimestamp =  "CreationTimestamp" ;
             public static string Endpoint =  "Endpoint" ;
+            public static string CreationTimestamp =  "CreationTimestamp" ;
             public static string SsoClientId =  "SsoClientId" ;
             public static string Id =  "Id" ;
-            public static string SamlConfigurationStatus =  "SamlConfigurationStatus" ;
             public static string ModificationTimestamp =  "ModificationTimestamp" ;
+            public static string SamlConfigurationStatus =  "SamlConfigurationStatus" ;
         }
 
         public override string AWSTypeName { get => AWS.Grafana.Workspace; }
@@ -157,6 +157,15 @@ namespace Humidifier.Grafana
         /// PrimitiveType: String
         /// </summary>
         public dynamic ClientToken { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-grafana-workspace.html#cfn-grafana-workspace-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: TagsItems
+        /// </summary>
+        public List<Humidifier.Grafana.WorkspaceTypes.TagsItems> Tags { get; set; }
     }
 
     namespace WorkspaceTypes
@@ -320,6 +329,26 @@ namespace Humidifier.Grafana
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AllowedOrganizations { get; set; }
+        }
+
+        public class TagsItems : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-tagsitems.html#cfn-grafana-workspace-tagsitems-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-grafana-workspace-tagsitems.html#cfn-grafana-workspace-tagsitems-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class VpcConfiguration : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds

@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StackTypes;
 
     public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisplayName, IHaveAttributesToDelete
@@ -40,6 +40,14 @@ namespace Humidifier.AppStream
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic EmbedHostDomains { get; set; }
+        /// <summary>
+        /// ContentRedirection
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-contentredirection
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ContentRedirection
+        /// </summary>
+        public Humidifier.AppStream.StackTypes.ContentRedirection ContentRedirection { get; set; }
         /// <summary>
         /// UserSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-usersettings
@@ -92,6 +100,14 @@ namespace Humidifier.AppStream
         /// </summary>
         public Humidifier.AppStream.StackTypes.ApplicationSettings ApplicationSettings { get; set; }
         /// <summary>
+        /// AgentAccessConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-agentaccessconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AgentAccessConfig
+        /// </summary>
+        public Humidifier.AppStream.StackTypes.AgentAccessConfig AgentAccessConfig { get; set; }
+        /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-displayname
         /// Required: False
@@ -107,7 +123,7 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AccessEndpoints
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-accessendpoints
@@ -141,6 +157,79 @@ namespace Humidifier.AppStream
             public dynamic VpceId { get; set; }
         }
 
+        public class AgentAccessConfig : Humidifier.Base.BaseSubResource, IHaveS3BucketArn
+        {
+            /// <summary>
+            /// ScreenResolution
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-screenresolution
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScreenResolution { get; set; }
+            /// <summary>
+            /// ScreenImageFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-screenimageformat
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScreenImageFormat { get; set; }
+            /// <summary>
+            /// ScreenshotsUploadEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-screenshotsuploadenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ScreenshotsUploadEnabled { get; set; }
+            /// <summary>
+            /// UserControlMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-usercontrolmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserControlMode { get; set; }
+            /// <summary>
+            /// S3BucketArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-s3bucketarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3BucketArn { get; set; }
+            /// <summary>
+            /// Settings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-settings
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AgentAccessSetting
+            /// </summary>
+            public List<Humidifier.AppStream.StackTypes.AgentAccessSetting> Settings { get; set; }
+        }
+
+        public class AgentAccessSetting : Humidifier.Base.BaseSubResource, IHavePermission
+        {
+            /// <summary>
+            /// Permission
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccesssetting.html#cfn-appstream-stack-agentaccesssetting-permission
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Permission { get; set; }
+            /// <summary>
+            /// AgentAction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccesssetting.html#cfn-appstream-stack-agentaccesssetting-agentaction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AgentAction { get; set; }
+        }
+
         public class ApplicationSettings : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveSettingsGroup
         {
             /// <summary>
@@ -159,6 +248,18 @@ namespace Humidifier.AppStream
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+        }
+
+        public class ContentRedirection : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// HostToClient
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-contentredirection.html#cfn-appstream-stack-contentredirection-hosttoclient
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: UrlRedirectionConfig
+            /// </summary>
+            public Humidifier.AppStream.StackTypes.UrlRedirectionConfig HostToClient { get; set; }
         }
 
         public class StorageConnector : Humidifier.Base.BaseSubResource, IHaveResourceIdentifier, IHaveConnectorType, IHaveDomains
@@ -200,6 +301,36 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public dynamic PreferredProtocol { get; set; }
+        }
+
+        public class UrlRedirectionConfig : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-urlredirectionconfig.html#cfn-appstream-stack-urlredirectionconfig-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// AllowedUrls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-urlredirectionconfig.html#cfn-appstream-stack-urlredirectionconfig-allowedurls
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedUrls { get; set; }
+            /// <summary>
+            /// DeniedUrls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-urlredirectionconfig.html#cfn-appstream-stack-urlredirectionconfig-deniedurls
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic DeniedUrls { get; set; }
         }
 
         public class UserSetting : Humidifier.Base.BaseSubResource, IHaveAction, IHavePermission, IHaveMaximumLength

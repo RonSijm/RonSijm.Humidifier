@@ -1,19 +1,19 @@
 namespace Humidifier.CodeDeploy
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DeploymentGroupTypes;
 
     public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveApplicationName, IHaveServiceRoleArn, IHaveDeploymentConfigName
     {
         public override string AWSTypeName { get => AWS.CodeDeploy.DeploymentGroup; }
         /// <summary>
-        /// AlarmConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration
+        /// OnPremisesTagSet
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: AlarmConfiguration
+        /// Type: OnPremisesTagSet
         /// </summary>
-        public Humidifier.CodeDeploy.DeploymentGroupTypes.AlarmConfiguration AlarmConfiguration { get; set; }
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.OnPremisesTagSet OnPremisesTagSet { get; set; }
 
         /// <summary>
         /// ApplicationName
@@ -25,13 +25,31 @@ namespace Humidifier.CodeDeploy
         [Required]
         public dynamic ApplicationName { get; set; }
         /// <summary>
-        /// AutoRollbackConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration
+        /// DeploymentStyle
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: AutoRollbackConfiguration
+        /// Type: DeploymentStyle
         /// </summary>
-        public Humidifier.CodeDeploy.DeploymentGroupTypes.AutoRollbackConfiguration AutoRollbackConfiguration { get; set; }
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.DeploymentStyle DeploymentStyle { get; set; }
+
+        /// <summary>
+        /// ServiceRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic ServiceRoleArn { get; set; }
+        /// <summary>
+        /// BlueGreenDeploymentConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: BlueGreenDeploymentConfiguration
+        /// </summary>
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.BlueGreenDeploymentConfiguration BlueGreenDeploymentConfiguration { get; set; }
         /// <summary>
         /// AutoScalingGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups
@@ -42,13 +60,30 @@ namespace Humidifier.CodeDeploy
         /// </summary>
         public dynamic AutoScalingGroups { get; set; }
         /// <summary>
-        /// BlueGreenDeploymentConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration
+        /// Ec2TagSet
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: BlueGreenDeploymentConfiguration
+        /// Type: EC2TagSet
         /// </summary>
-        public Humidifier.CodeDeploy.DeploymentGroupTypes.BlueGreenDeploymentConfiguration BlueGreenDeploymentConfiguration { get; set; }
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.EC2TagSet Ec2TagSet { get; set; }
+        /// <summary>
+        /// OutdatedInstancesStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-outdatedinstancesstrategy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OutdatedInstancesStrategy { get; set; }
+        /// <summary>
+        /// TriggerConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: TriggerConfig
+        /// </summary>
+        public List<Humidifier.CodeDeploy.DeploymentGroupTypes.TriggerConfig> TriggerConfigurations { get; set; }
         /// <summary>
         /// Deployment
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment
@@ -65,24 +100,14 @@ namespace Humidifier.CodeDeploy
         /// PrimitiveType: String
         /// </summary>
         public dynamic DeploymentConfigName { get; set; }
-        public dynamic DeploymentGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
-        /// DeploymentStyle
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle
+        /// AlarmConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: DeploymentStyle
+        /// Type: AlarmConfiguration
         /// </summary>
-        public Humidifier.CodeDeploy.DeploymentGroupTypes.DeploymentStyle DeploymentStyle { get; set; }
-        /// <summary>
-        /// ECSServices
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: ECSService
-        /// </summary>
-        public List<Humidifier.CodeDeploy.DeploymentGroupTypes.ECSService> ECSServices { get; set; }
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.AlarmConfiguration AlarmConfiguration { get; set; }
         /// <summary>
         /// Ec2TagFilters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters
@@ -93,13 +118,30 @@ namespace Humidifier.CodeDeploy
         /// </summary>
         public List<Humidifier.CodeDeploy.DeploymentGroupTypes.EC2TagFilter> Ec2TagFilters { get; set; }
         /// <summary>
-        /// Ec2TagSet
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset
+        /// TerminationHookEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-terminationhookenabled
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: EC2TagSet
+        /// PrimitiveType: Boolean
         /// </summary>
-        public Humidifier.CodeDeploy.DeploymentGroupTypes.EC2TagSet Ec2TagSet { get; set; }
+        public dynamic TerminationHookEnabled { get; set; }
+        /// <summary>
+        /// ECSServices
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ECSService
+        /// </summary>
+        public List<Humidifier.CodeDeploy.DeploymentGroupTypes.ECSService> ECSServices { get; set; }
+        /// <summary>
+        /// AutoRollbackConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AutoRollbackConfiguration
+        /// </summary>
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.AutoRollbackConfiguration AutoRollbackConfiguration { get; set; }
         /// <summary>
         /// LoadBalancerInfo
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo
@@ -108,6 +150,16 @@ namespace Humidifier.CodeDeploy
         /// Type: LoadBalancerInfo
         /// </summary>
         public Humidifier.CodeDeploy.DeploymentGroupTypes.LoadBalancerInfo LoadBalancerInfo { get; set; }
+        public dynamic DeploymentGroupName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// OnPremisesInstanceTagFilters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters
@@ -117,58 +169,6 @@ namespace Humidifier.CodeDeploy
         /// ItemType: TagFilter
         /// </summary>
         public List<Humidifier.CodeDeploy.DeploymentGroupTypes.TagFilter> OnPremisesInstanceTagFilters { get; set; }
-        /// <summary>
-        /// OnPremisesTagSet
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: OnPremisesTagSet
-        /// </summary>
-        public Humidifier.CodeDeploy.DeploymentGroupTypes.OnPremisesTagSet OnPremisesTagSet { get; set; }
-        /// <summary>
-        /// OutdatedInstancesStrategy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-outdatedinstancesstrategy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic OutdatedInstancesStrategy { get; set; }
-
-        /// <summary>
-        /// ServiceRoleArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic ServiceRoleArn { get; set; }
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
-        /// <summary>
-        /// TerminationHookEnabled
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-terminationhookenabled
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic TerminationHookEnabled { get; set; }
-        /// <summary>
-        /// TriggerConfigurations
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: TriggerConfig
-        /// </summary>
-        public List<Humidifier.CodeDeploy.DeploymentGroupTypes.TriggerConfig> TriggerConfigurations { get; set; }
     }
 
     namespace DeploymentGroupTypes
@@ -188,6 +188,14 @@ namespace Humidifier.CodeDeploy
         public class AlarmConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
         {
             /// <summary>
+            /// IgnorePollAlarmFailure
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-ignorepollalarmfailure
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IgnorePollAlarmFailure { get; set; }
+            /// <summary>
             /// Alarms
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-alarms
             /// Required: False
@@ -204,26 +212,10 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
-            /// <summary>
-            /// IgnorePollAlarmFailure
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-ignorepollalarmfailure
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic IgnorePollAlarmFailure { get; set; }
         }
 
         public class AutoRollbackConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveEvents
         {
-            /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-enabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled { get; set; }
             /// <summary>
             /// Events
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-events
@@ -233,6 +225,14 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Events { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class BlueGreenDeploymentConfiguration : Humidifier.Base.BaseSubResource
@@ -246,14 +246,6 @@ namespace Humidifier.CodeDeploy
             /// </summary>
             public Humidifier.CodeDeploy.DeploymentGroupTypes.DeploymentReadyOption DeploymentReadyOption { get; set; }
             /// <summary>
-            /// GreenFleetProvisioningOption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: GreenFleetProvisioningOption
-            /// </summary>
-            public Humidifier.CodeDeploy.DeploymentGroupTypes.GreenFleetProvisioningOption GreenFleetProvisioningOption { get; set; }
-            /// <summary>
             /// TerminateBlueInstancesOnDeploymentSuccess
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-terminateblueinstancesondeploymentsuccess
             /// Required: False
@@ -261,13 +253,21 @@ namespace Humidifier.CodeDeploy
             /// Type: BlueInstanceTerminationOption
             /// </summary>
             public Humidifier.CodeDeploy.DeploymentGroupTypes.BlueInstanceTerminationOption TerminateBlueInstancesOnDeploymentSuccess { get; set; }
+            /// <summary>
+            /// GreenFleetProvisioningOption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GreenFleetProvisioningOption
+            /// </summary>
+            public Humidifier.CodeDeploy.DeploymentGroupTypes.GreenFleetProvisioningOption GreenFleetProvisioningOption { get; set; }
         }
 
         public class BlueInstanceTerminationOption : Humidifier.Base.BaseSubResource, IHaveAction
         {
             /// <summary>
             /// Action
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-blueinstanceterminationoption-action
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -275,7 +275,7 @@ namespace Humidifier.CodeDeploy
             public dynamic Action { get; set; }
             /// <summary>
             /// TerminationWaitTimeInMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-terminationwaittimeinminutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-blueinstanceterminationoption-terminationwaittimeinminutes
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -287,60 +287,52 @@ namespace Humidifier.CodeDeploy
         {
             /// <summary>
             /// Description
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-codedeploy-deploymentgroup-deployment-description
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Description { get; set; }
             /// <summary>
-            /// IgnoreApplicationStopFailures
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-ignoreapplicationstopfailures
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic IgnoreApplicationStopFailures { get; set; }
-            /// <summary>
             /// Revision
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-codedeploy-deploymentgroup-deployment-revision
             /// Required: True
             /// UpdateType: Mutable
             /// Type: RevisionLocation
             /// </summary>
             public Humidifier.CodeDeploy.DeploymentGroupTypes.RevisionLocation Revision { get; set; }
+            /// <summary>
+            /// IgnoreApplicationStopFailures
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-codedeploy-deploymentgroup-deployment-ignoreapplicationstopfailures
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IgnoreApplicationStopFailures { get; set; }
         }
 
         public class DeploymentReadyOption : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// ActionOnTimeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-actionontimeout
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ActionOnTimeout { get; set; }
-            /// <summary>
             /// WaitTimeInMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-waittimeinminutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-deploymentreadyoption-waittimeinminutes
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic WaitTimeInMinutes { get; set; }
-        }
-
-        public class DeploymentStyle : Humidifier.Base.BaseSubResource, IHaveDeploymentType
-        {
             /// <summary>
-            /// DeploymentOption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymentoption
+            /// ActionOnTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-deploymentreadyoption-actionontimeout
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic DeploymentOption { get; set; }
+            public dynamic ActionOnTimeout { get; set; }
+        }
+
+        public class DeploymentStyle : Humidifier.Base.BaseSubResource, IHaveDeploymentType
+        {
             /// <summary>
             /// DeploymentType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymenttype
@@ -349,18 +341,26 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveType: String
             /// </summary>
             public dynamic DeploymentType { get; set; }
+            /// <summary>
+            /// DeploymentOption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymentoption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeploymentOption { get; set; }
         }
 
         public class EC2TagFilter : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue, IHaveKey
         {
             /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-key
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-value
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key { get; set; }
+            public dynamic Value { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-type
@@ -370,13 +370,13 @@ namespace Humidifier.CodeDeploy
             /// </summary>
             public dynamic Type { get; set; }
             /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-value
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-key
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value { get; set; }
+            public dynamic Key { get; set; }
         }
 
         public class EC2TagSet : Humidifier.Base.BaseSubResource
@@ -408,14 +408,6 @@ namespace Humidifier.CodeDeploy
         public class ECSService : Humidifier.Base.BaseSubResource, IHaveClusterName, IHaveServiceName
         {
             /// <summary>
-            /// ClusterName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-clustername
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ClusterName { get; set; }
-            /// <summary>
             /// ServiceName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-servicename
             /// Required: True
@@ -423,6 +415,14 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveType: String
             /// </summary>
             public dynamic ServiceName { get; set; }
+            /// <summary>
+            /// ClusterName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-clustername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClusterName { get; set; }
         }
 
         public class ELBInfo : Humidifier.Base.BaseSubResource, IHaveName
@@ -440,28 +440,28 @@ namespace Humidifier.CodeDeploy
         public class GitHubLocation : Humidifier.Base.BaseSubResource, IHaveRepository, IHaveCommitId
         {
             /// <summary>
-            /// CommitId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-commitid
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CommitId { get; set; }
-            /// <summary>
             /// Repository
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-repository
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-githublocation.html#cfn-codedeploy-deploymentgroup-githublocation-repository
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Repository { get; set; }
+            /// <summary>
+            /// CommitId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-githublocation.html#cfn-codedeploy-deploymentgroup-githublocation-commitid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommitId { get; set; }
         }
 
         public class GreenFleetProvisioningOption : Humidifier.Base.BaseSubResource, IHaveAction
         {
             /// <summary>
             /// Action
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-greenfleetprovisioningoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption-action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-greenfleetprovisioningoption.html#cfn-codedeploy-deploymentgroup-greenfleetprovisioningoption-action
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -530,7 +530,7 @@ namespace Humidifier.CodeDeploy
         {
             /// <summary>
             /// GitHubLocation
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-revisionlocation.html#cfn-codedeploy-deploymentgroup-revisionlocation-githublocation
             /// Required: False
             /// UpdateType: Mutable
             /// Type: GitHubLocation
@@ -538,7 +538,7 @@ namespace Humidifier.CodeDeploy
             public Humidifier.CodeDeploy.DeploymentGroupTypes.GitHubLocation GitHubLocation { get; set; }
             /// <summary>
             /// RevisionType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-revisiontype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-revisionlocation.html#cfn-codedeploy-deploymentgroup-revisionlocation-revisiontype
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -546,7 +546,7 @@ namespace Humidifier.CodeDeploy
             public dynamic RevisionType { get; set; }
             /// <summary>
             /// S3Location
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-revisionlocation.html#cfn-codedeploy-deploymentgroup-revisionlocation-s3location
             /// Required: False
             /// UpdateType: Mutable
             /// Type: S3Location
@@ -557,57 +557,57 @@ namespace Humidifier.CodeDeploy
         public class S3Location : Humidifier.Base.BaseSubResource, IHaveKey, IHaveVersion, IHaveBucket, IHaveETag
         {
             /// <summary>
-            /// Bucket
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bucket
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Bucket { get; set; }
-            /// <summary>
             /// BundleType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-bundletype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-s3location.html#cfn-codedeploy-deploymentgroup-s3location-bundletype
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic BundleType { get; set; }
             /// <summary>
+            /// Bucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-s3location.html#cfn-codedeploy-deploymentgroup-s3location-bucket
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Bucket { get; set; }
+            /// <summary>
             /// ETag
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-etag
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-s3location.html#cfn-codedeploy-deploymentgroup-s3location-etag
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ETag { get; set; }
             /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-key
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key { get; set; }
-            /// <summary>
             /// Version
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-s3location.html#cfn-codedeploy-deploymentgroup-s3location-version
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-s3location.html#cfn-codedeploy-deploymentgroup-s3location-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class TagFilter : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue, IHaveKey
         {
             /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-key
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-value
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Key { get; set; }
+            public dynamic Value { get; set; }
             /// <summary>
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-type
@@ -617,13 +617,13 @@ namespace Humidifier.CodeDeploy
             /// </summary>
             public dynamic Type { get; set; }
             /// <summary>
-            /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-value
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-key
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Value { get; set; }
+            public dynamic Key { get; set; }
         }
 
         public class TargetGroupInfo : Humidifier.Base.BaseSubResource, IHaveName
@@ -649,6 +649,14 @@ namespace Humidifier.CodeDeploy
             /// </summary>
             public Humidifier.CodeDeploy.DeploymentGroupTypes.TrafficRoute ProdTrafficRoute { get; set; }
             /// <summary>
+            /// TestTrafficRoute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-testtrafficroute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TrafficRoute
+            /// </summary>
+            public Humidifier.CodeDeploy.DeploymentGroupTypes.TrafficRoute TestTrafficRoute { get; set; }
+            /// <summary>
             /// TargetGroups
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-targetgroups
             /// Required: False
@@ -657,14 +665,6 @@ namespace Humidifier.CodeDeploy
             /// ItemType: TargetGroupInfo
             /// </summary>
             public List<Humidifier.CodeDeploy.DeploymentGroupTypes.TargetGroupInfo> TargetGroups { get; set; }
-            /// <summary>
-            /// TestTrafficRoute
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-testtrafficroute
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: TrafficRoute
-            /// </summary>
-            public Humidifier.CodeDeploy.DeploymentGroupTypes.TrafficRoute TestTrafficRoute { get; set; }
         }
 
         public class TrafficRoute : Humidifier.Base.BaseSubResource
@@ -683,6 +683,14 @@ namespace Humidifier.CodeDeploy
         public class TriggerConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// TriggerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggername
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TriggerName { get; set; }
+            /// <summary>
             /// TriggerEvents
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggerevents
             /// Required: False
@@ -691,14 +699,6 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic TriggerEvents { get; set; }
-            /// <summary>
-            /// TriggerName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggername
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TriggerName { get; set; }
             /// <summary>
             /// TriggerTargetArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggertargetarn

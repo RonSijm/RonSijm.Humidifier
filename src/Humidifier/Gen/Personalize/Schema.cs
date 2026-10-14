@@ -1,8 +1,8 @@
 namespace Humidifier.Personalize
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class Schema : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDomain
+    public class Schema : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDomain
     {
         public class Attributes
         {
@@ -28,6 +28,15 @@ namespace Humidifier.Personalize
         /// PrimitiveType: String
         /// </summary>
         public dynamic Domain { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-personalize-schema.html#cfn-personalize-schema-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

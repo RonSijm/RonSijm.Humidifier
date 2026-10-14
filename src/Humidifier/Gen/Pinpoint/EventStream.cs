@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EventStream : Humidifier.Base.BaseResource, IHaveRoleArn, IHaveApplicationId
     {

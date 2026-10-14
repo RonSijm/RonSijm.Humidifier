@@ -1,6 +1,6 @@
 namespace Humidifier.IoTFleetWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DecoderManifestTypes;
 
     public class DecoderManifest : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveStatus, IHaveModelManifestArn
@@ -73,7 +73,7 @@ namespace Humidifier.IoTFleetWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -141,6 +141,14 @@ namespace Humidifier.IoTFleetWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic IsSigned { get; set; }
+            /// <summary>
+            /// SignalValueType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-signalvaluetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SignalValueType { get; set; }
             /// <summary>
             /// StartBit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-startbit
@@ -361,6 +369,22 @@ namespace Humidifier.IoTFleetWise
             /// PrimitiveType: String
             /// </summary>
             public dynamic Pid { get; set; }
+            /// <summary>
+            /// IsSigned
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-issigned
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IsSigned { get; set; }
+            /// <summary>
+            /// SignalValueType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-signalvaluetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SignalValueType { get; set; }
             /// <summary>
             /// ServiceMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-servicemode

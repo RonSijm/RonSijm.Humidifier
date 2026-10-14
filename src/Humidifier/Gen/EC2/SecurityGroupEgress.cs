@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SecurityGroupEgress : Humidifier.Base.BaseResource, IHaveDescription, IHaveFromPort, IHaveToPort, IHaveGroupId, IHaveCidrIp, IHaveCidrIpv6, IHaveIpProtocol, IHaveDestinationPrefixListId, IHaveDestinationSecurityGroupId
     {

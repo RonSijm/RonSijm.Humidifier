@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkFirewall
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FirewallPolicyTypes;
 
     public class FirewallPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription
@@ -29,7 +29,7 @@ namespace Humidifier.NetworkFirewall
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// FirewallPolicy_
@@ -108,6 +108,14 @@ namespace Humidifier.NetworkFirewall
             /// ItemType: StatefulRuleGroupReference
             /// </summary>
             public List<Humidifier.NetworkFirewall.FirewallPolicyTypes.StatefulRuleGroupReference> StatefulRuleGroupReferences { get; set; }
+            /// <summary>
+            /// EnableTLSSessionHolding
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-enabletlssessionholding
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableTLSSessionHolding { get; set; }
             /// <summary>
             /// StatelessDefaultActions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelessdefaultactions
@@ -287,6 +295,14 @@ namespace Humidifier.NetworkFirewall
             /// Type: StatefulRuleGroupOverride
             /// </summary>
             public Humidifier.NetworkFirewall.FirewallPolicyTypes.StatefulRuleGroupOverride Override { get; set; }
+            /// <summary>
+            /// DeepThreatInspection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statefulrulegroupreference-deepthreatinspection
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DeepThreatInspection { get; set; }
         }
 
         public class StatelessRuleGroupReference : Humidifier.Base.BaseSubResource, IHavePriority, IHaveResourceArn

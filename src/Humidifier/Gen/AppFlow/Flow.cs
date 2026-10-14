@@ -1,6 +1,6 @@
 namespace Humidifier.AppFlow
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowTypes;
 
     public class Flow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveKMSArn, IHaveFlowName
@@ -86,7 +86,7 @@ namespace Humidifier.AppFlow
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MetadataCatalogConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-metadatacatalogconfig
@@ -102,14 +102,6 @@ namespace Humidifier.AppFlow
         public class AggregationConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// TargetFileSize
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-aggregationconfig.html#cfn-appflow-flow-aggregationconfig-targetfilesize
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic TargetFileSize { get; set; }
-            /// <summary>
             /// AggregationType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-aggregationconfig.html#cfn-appflow-flow-aggregationconfig-aggregationtype
             /// Required: False
@@ -117,6 +109,14 @@ namespace Humidifier.AppFlow
             /// PrimitiveType: String
             /// </summary>
             public dynamic AggregationType { get; set; }
+            /// <summary>
+            /// TargetFileSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-aggregationconfig.html#cfn-appflow-flow-aggregationconfig-targetfilesize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TargetFileSize { get; set; }
         }
 
         public class AmplitudeSourceProperties : Humidifier.Base.BaseSubResource, IHaveObject
@@ -521,13 +521,13 @@ namespace Humidifier.AppFlow
         public class ErrorHandlingConfig : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveBucketPrefix
         {
             /// <summary>
-            /// BucketName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-bucketname
+            /// FailOnFirstError
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-failonfirsterror
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Boolean
             /// </summary>
-            public dynamic BucketName { get; set; }
+            public dynamic FailOnFirstError { get; set; }
             /// <summary>
             /// BucketPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-bucketprefix
@@ -537,13 +537,13 @@ namespace Humidifier.AppFlow
             /// </summary>
             public dynamic BucketPrefix { get; set; }
             /// <summary>
-            /// FailOnFirstError
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-failonfirsterror
+            /// BucketName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-bucketname
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic FailOnFirstError { get; set; }
+            public dynamic BucketName { get; set; }
         }
 
         public class EventBridgeDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig
@@ -701,6 +701,14 @@ namespace Humidifier.AppFlow
         public class PrefixConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// PrefixFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixformat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrefixFormat { get; set; }
+            /// <summary>
             /// PrefixType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixtype
             /// Required: False
@@ -717,14 +725,6 @@ namespace Humidifier.AppFlow
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic PathPrefixHierarchy { get; set; }
-            /// <summary>
-            /// PrefixFormat
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixformat
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic PrefixFormat { get; set; }
         }
 
         public class RedshiftDestinationProperties : Humidifier.Base.BaseSubResource, IHaveObject, IHaveBucketPrefix, IHaveAppFlowFlowTypesErrorHandlingConfigErrorHandlingConfig, IHaveIntermediateBucketName

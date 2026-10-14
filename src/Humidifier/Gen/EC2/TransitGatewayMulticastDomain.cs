@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TransitGatewayMulticastDomainTypes;
 
     public class TransitGatewayMulticastDomain : Humidifier.Base.BaseResource, IHaveTags, IHaveTransitGatewayId
@@ -40,7 +40,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TransitGatewayMulticastDomainTypes

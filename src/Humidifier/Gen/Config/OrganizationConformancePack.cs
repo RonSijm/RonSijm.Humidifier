@@ -1,10 +1,15 @@
 namespace Humidifier.Config
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using OrganizationConformancePackTypes;
 
-    public class OrganizationConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTemplateBody, IHaveDeliveryS3Bucket, IHaveDeliveryS3KeyPrefix, IHaveTemplateS3Uri, IHaveExcludedAccounts
+    public class OrganizationConformancePack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTemplateBody, IHaveDeliveryS3Bucket, IHaveDeliveryS3KeyPrefix, IHaveTemplateS3Uri, IHaveExcludedAccounts
     {
+        public class Attributes
+        {
+            public static string OrganizationConformancePackArn =  "OrganizationConformancePackArn" ;
+        }
+
         public override string AWSTypeName { get => AWS.Config.OrganizationConformancePack; }
         /// <summary>
         /// ConformancePackInputParameters
@@ -48,6 +53,15 @@ namespace Humidifier.Config
         /// PrimitiveType: String
         /// </summary>
         public dynamic TemplateBody { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic OrganizationConformancePackName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// TemplateS3Uri

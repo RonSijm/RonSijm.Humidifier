@@ -1,6 +1,6 @@
 namespace Humidifier.B2BI
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PartnershipTypes;
 
     public class Partnership : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveEmail, IHaveProfileId, IHaveCapabilities, IHavePhone
@@ -70,7 +70,7 @@ namespace Humidifier.B2BI
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -79,6 +79,14 @@ namespace Humidifier.B2BI
         public class CapabilityOptions : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// InboundEdi
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-capabilityoptions.html#cfn-b2bi-partnership-capabilityoptions-inboundedi
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InboundEdiOptions
+            /// </summary>
+            public Humidifier.B2BI.PartnershipTypes.InboundEdiOptions InboundEdi { get; set; }
+            /// <summary>
             /// OutboundEdi
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-capabilityoptions.html#cfn-b2bi-partnership-capabilityoptions-outboundedi
             /// Required: False
@@ -86,6 +94,18 @@ namespace Humidifier.B2BI
             /// Type: OutboundEdiOptions
             /// </summary>
             public Humidifier.B2BI.PartnershipTypes.OutboundEdiOptions OutboundEdi { get; set; }
+        }
+
+        public class InboundEdiOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// X12
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-inboundedioptions.html#cfn-b2bi-partnership-inboundedioptions-x12
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: X12InboundEdiOptions
+            /// </summary>
+            public Humidifier.B2BI.PartnershipTypes.X12InboundEdiOptions X12 { get; set; }
         }
 
         public class OutboundEdiOptions : Humidifier.Base.BaseSubResource
@@ -98,6 +118,82 @@ namespace Humidifier.B2BI
             /// Type: X12Envelope
             /// </summary>
             public Humidifier.B2BI.PartnershipTypes.X12Envelope X12 { get; set; }
+        }
+
+        public class WrapOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LineLength
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-wrapoptions.html#cfn-b2bi-partnership-wrapoptions-linelength
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic LineLength { get; set; }
+            /// <summary>
+            /// WrapBy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-wrapoptions.html#cfn-b2bi-partnership-wrapoptions-wrapby
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WrapBy { get; set; }
+            /// <summary>
+            /// LineTerminator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-wrapoptions.html#cfn-b2bi-partnership-wrapoptions-lineterminator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LineTerminator { get; set; }
+        }
+
+        public class X12AcknowledgmentOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TechnicalAcknowledgment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12acknowledgmentoptions.html#cfn-b2bi-partnership-x12acknowledgmentoptions-technicalacknowledgment
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TechnicalAcknowledgment { get; set; }
+            /// <summary>
+            /// FunctionalAcknowledgment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12acknowledgmentoptions.html#cfn-b2bi-partnership-x12acknowledgmentoptions-functionalacknowledgment
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FunctionalAcknowledgment { get; set; }
+        }
+
+        public class X12ControlNumbers : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StartingFunctionalGroupControlNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12controlnumbers.html#cfn-b2bi-partnership-x12controlnumbers-startingfunctionalgroupcontrolnumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic StartingFunctionalGroupControlNumber { get; set; }
+            /// <summary>
+            /// StartingInterchangeControlNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12controlnumbers.html#cfn-b2bi-partnership-x12controlnumbers-startinginterchangecontrolnumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic StartingInterchangeControlNumber { get; set; }
+            /// <summary>
+            /// StartingTransactionSetControlNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12controlnumbers.html#cfn-b2bi-partnership-x12controlnumbers-startingtransactionsetcontrolnumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic StartingTransactionSetControlNumber { get; set; }
         }
 
         public class X12Delimiters : Humidifier.Base.BaseSubResource
@@ -130,6 +226,14 @@ namespace Humidifier.B2BI
 
         public class X12Envelope : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// WrapOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12envelope.html#cfn-b2bi-partnership-x12envelope-wrapoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WrapOptions
+            /// </summary>
+            public Humidifier.B2BI.PartnershipTypes.WrapOptions WrapOptions { get; set; }
             /// <summary>
             /// Common
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12envelope.html#cfn-b2bi-partnership-x12envelope-common
@@ -166,6 +270,18 @@ namespace Humidifier.B2BI
             /// PrimitiveType: String
             /// </summary>
             public dynamic ResponsibleAgencyCode { get; set; }
+        }
+
+        public class X12InboundEdiOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AcknowledgmentOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12inboundedioptions.html#cfn-b2bi-partnership-x12inboundedioptions-acknowledgmentoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: X12AcknowledgmentOptions
+            /// </summary>
+            public Humidifier.B2BI.PartnershipTypes.X12AcknowledgmentOptions AcknowledgmentOptions { get; set; }
         }
 
         public class X12InterchangeControlHeaders : Humidifier.Base.BaseSubResource, IHaveSenderId
@@ -239,6 +355,14 @@ namespace Humidifier.B2BI
             /// </summary>
             public Humidifier.B2BI.PartnershipTypes.X12Delimiters Delimiters { get; set; }
             /// <summary>
+            /// ControlNumbers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12outboundediheaders.html#cfn-b2bi-partnership-x12outboundediheaders-controlnumbers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: X12ControlNumbers
+            /// </summary>
+            public Humidifier.B2BI.PartnershipTypes.X12ControlNumbers ControlNumbers { get; set; }
+            /// <summary>
             /// FunctionalGroupHeaders
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12outboundediheaders.html#cfn-b2bi-partnership-x12outboundediheaders-functionalgroupheaders
             /// Required: False
@@ -262,6 +386,14 @@ namespace Humidifier.B2BI
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ValidateEdi { get; set; }
+            /// <summary>
+            /// Gs05TimeFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-partnership-x12outboundediheaders.html#cfn-b2bi-partnership-x12outboundediheaders-gs05timeformat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Gs05TimeFormat { get; set; }
         }
     }
 }

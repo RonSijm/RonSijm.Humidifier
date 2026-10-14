@@ -1,6 +1,6 @@
 namespace Humidifier.QBusiness
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PluginTypes;
 
     public class Plugin : Humidifier.Base.BaseResource, IHaveTags, IHaveType, IHaveDisplayName, IHaveState, IHaveApplicationId, IHaveServerUrl
@@ -85,7 +85,7 @@ namespace Humidifier.QBusiness
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PluginTypes

@@ -1,6 +1,6 @@
 namespace Humidifier.Route53Profiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ProfileAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveArn, IHaveResourceId, IHaveProfileId
     {
@@ -46,7 +46,7 @@ namespace Humidifier.Route53Profiles
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

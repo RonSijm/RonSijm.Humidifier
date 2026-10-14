@@ -1,6 +1,6 @@
 namespace Humidifier.RefactorSpaces
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RouteTypes;
 
     public class Route : Humidifier.Base.BaseResource, IHaveTags, IHaveEnvironmentIdentifier, IHaveServiceIdentifier, IHaveApplicationIdentifier
@@ -77,7 +77,7 @@ namespace Humidifier.RefactorSpaces
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace RouteTypes

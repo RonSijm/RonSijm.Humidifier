@@ -1,6 +1,6 @@
 namespace Humidifier.Lightsail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DistributionTypes;
 
     public class Distribution : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIpAddressType, IHaveBundleId, IHaveIsEnabled, IHaveCertificateName
@@ -84,7 +84,7 @@ namespace Humidifier.Lightsail
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// CacheBehaviors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#cfn-lightsail-distribution-cachebehaviors
@@ -145,7 +145,7 @@ namespace Humidifier.Lightsail
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-minimumttl
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic MinimumTTL { get; set; }
             /// <summary>
@@ -169,7 +169,7 @@ namespace Humidifier.Lightsail
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-maximumttl
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic MaximumTTL { get; set; }
             /// <summary>
@@ -185,7 +185,7 @@ namespace Humidifier.Lightsail
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-distribution-cachesettings.html#cfn-lightsail-distribution-cachesettings-defaultttl
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic DefaultTTL { get; set; }
             /// <summary>

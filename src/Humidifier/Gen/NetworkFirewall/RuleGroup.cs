@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkFirewall
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RuleGroupTypes;
 
     public class RuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveType, IHaveCapacity
@@ -42,6 +42,14 @@ namespace Humidifier.NetworkFirewall
         public dynamic Capacity { get; set; }
         public dynamic RuleGroupName { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// SummaryConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-summaryconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SummaryConfiguration
+        /// </summary>
+        public Humidifier.NetworkFirewall.RuleGroupTypes.SummaryConfiguration SummaryConfiguration { get; set; }
+        /// <summary>
         /// RuleGroup_
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup
         /// Required: False
@@ -57,7 +65,7 @@ namespace Humidifier.NetworkFirewall
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace RuleGroupTypes
@@ -256,14 +264,6 @@ namespace Humidifier.NetworkFirewall
         public class PortRange : Humidifier.Base.BaseSubResource, IHaveFromPort, IHaveToPort
         {
             /// <summary>
-            /// FromPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html#cfn-networkfirewall-rulegroup-portrange-fromport
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic FromPort { get; set; }
-            /// <summary>
             /// ToPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html#cfn-networkfirewall-rulegroup-portrange-toport
             /// Required: True
@@ -271,6 +271,14 @@ namespace Humidifier.NetworkFirewall
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ToPort { get; set; }
+            /// <summary>
+            /// FromPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html#cfn-networkfirewall-rulegroup-portrange-fromport
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FromPort { get; set; }
         }
 
         public class PortSet : Humidifier.Base.BaseSubResource, IHaveDefinition
@@ -560,6 +568,19 @@ namespace Humidifier.NetworkFirewall
             /// ItemType: CustomAction
             /// </summary>
             public List<Humidifier.NetworkFirewall.RuleGroupTypes.CustomAction> CustomActions { get; set; }
+        }
+
+        public class SummaryConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RuleOptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-summaryconfiguration.html#cfn-networkfirewall-rulegroup-summaryconfiguration-ruleoptions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic RuleOptions { get; set; }
         }
 
         public class TCPFlagField : Humidifier.Base.BaseSubResource

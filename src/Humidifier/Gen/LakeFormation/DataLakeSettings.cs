@@ -1,6 +1,6 @@
 namespace Humidifier.LakeFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataLakeSettingsTypes;
 
     public class DataLakeSettings : Humidifier.Base.BaseResource, IHaveParameters
@@ -46,6 +46,14 @@ namespace Humidifier.LakeFormation
         /// PrimitiveType: Json
         /// </summary>
         public dynamic Parameters { get; set; }
+        /// <summary>
+        /// ReadOnlyAdmins
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-readonlyadmins
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ReadOnlyAdmins
+        /// </summary>
+        public Humidifier.LakeFormation.DataLakeSettingsTypes.ReadOnlyAdmins ReadOnlyAdmins { get; set; }
         /// <summary>
         /// AllowFullTableExternalDataAccess
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-allowfulltableexternaldataaccess
@@ -139,6 +147,10 @@ namespace Humidifier.LakeFormation
             /// Type: DataLakePrincipal
             /// </summary>
             public Humidifier.LakeFormation.DataLakeSettingsTypes.DataLakePrincipal Principal { get; set; }
+        }
+
+        public class ReadOnlyAdmins : Humidifier.Base.BaseSubResource
+        {
         }
     }
 }

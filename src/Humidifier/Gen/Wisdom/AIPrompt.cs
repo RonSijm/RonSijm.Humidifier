@@ -1,6 +1,6 @@
 namespace Humidifier.Wisdom
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AIPromptTypes;
 
     public class AIPrompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveModelId, IHaveTemplateType, IHaveAssistantId
@@ -75,7 +75,7 @@ namespace Humidifier.Wisdom
         /// ModelId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-aiprompt.html#cfn-wisdom-aiprompt-modelid
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         [Required]

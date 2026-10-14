@@ -1,6 +1,6 @@
 namespace Humidifier.S3Outposts
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class BucketPolicy : Humidifier.Base.BaseResource, IHaveBucket, IHavePolicyDocument
     {

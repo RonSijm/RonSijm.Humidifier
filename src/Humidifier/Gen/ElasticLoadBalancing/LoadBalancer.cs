@@ -1,109 +1,39 @@
 namespace Humidifier.ElasticLoadBalancing
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LoadBalancerTypes;
 
     public class LoadBalancer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnets, IHaveSecurityGroups, IHaveAvailabilityZones, IHaveLoadBalancerName, IHaveScheme, IHaveInstances
     {
         public class Attributes
         {
-            public static string CanonicalHostedZoneName =  "CanonicalHostedZoneName" ;
+            public static string SourceSecurityGroup =  "SourceSecurityGroup" ;
             public static string CanonicalHostedZoneNameID =  "CanonicalHostedZoneNameID" ;
+            public static string CanonicalHostedZoneName =  "CanonicalHostedZoneName" ;
             public static string DNSName =  "DNSName" ;
         }
 
         public override string AWSTypeName { get => AWS.ElasticLoadBalancing.LoadBalancer; }
         /// <summary>
-        /// AccessLoggingPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy
+        /// SecurityGroups
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-securitygroups
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: AccessLoggingPolicy
-        /// </summary>
-        public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.AccessLoggingPolicy AccessLoggingPolicy { get; set; }
-        /// <summary>
-        /// AppCookieStickinessPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: AppCookieStickinessPolicy
-        /// </summary>
-        public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.AppCookieStickinessPolicy> AppCookieStickinessPolicy { get; set; }
-        /// <summary>
-        /// AvailabilityZones
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones
-        /// Required: False
-        /// UpdateType: Conditional
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic AvailabilityZones { get; set; }
+        public dynamic SecurityGroups { get; set; }
         /// <summary>
         /// ConnectionDrainingPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-connectiondrainingpolicy
         /// Required: False
         /// UpdateType: Mutable
         /// Type: ConnectionDrainingPolicy
         /// </summary>
         public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.ConnectionDrainingPolicy ConnectionDrainingPolicy { get; set; }
         /// <summary>
-        /// ConnectionSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ConnectionSettings
-        /// </summary>
-        public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.ConnectionSettings ConnectionSettings { get; set; }
-        /// <summary>
-        /// CrossZone
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic CrossZone { get; set; }
-        /// <summary>
-        /// HealthCheck
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck
-        /// Required: False
-        /// UpdateType: Conditional
-        /// Type: HealthCheck
-        /// </summary>
-        public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.HealthCheck HealthCheck { get; set; }
-        /// <summary>
-        /// Instances
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        public dynamic Instances { get; set; }
-        /// <summary>
-        /// LBCookieStickinessPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: LBCookieStickinessPolicy
-        /// </summary>
-        public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
-
-        /// <summary>
-        /// Listeners
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Listeners
-        /// </summary>
-        [Required]
-        public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.Listeners> Listeners { get; set; }
-        public dynamic LoadBalancerName { get => GivenName; set => GivenName = value; }
-        /// <summary>
         /// Policies
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-policies
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
@@ -112,24 +42,61 @@ namespace Humidifier.ElasticLoadBalancing
         public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.Policies> Policies { get; set; }
         /// <summary>
         /// Scheme
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-scheme
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-scheme
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic Scheme { get; set; }
         /// <summary>
-        /// SecurityGroups
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-securitygroups
+        /// AvailabilityZones
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-availabilityzones
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic AvailabilityZones { get; set; }
+        /// <summary>
+        /// HealthCheck
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-healthcheck
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: HealthCheck
+        /// </summary>
+        public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.HealthCheck HealthCheck { get; set; }
+        /// <summary>
+        /// AccessLoggingPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-accessloggingpolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AccessLoggingPolicy
+        /// </summary>
+        public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.AccessLoggingPolicy AccessLoggingPolicy { get; set; }
+        /// <summary>
+        /// Instances
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-instances
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// PrimitiveItemType: String
         /// </summary>
-        public dynamic SecurityGroups { get; set; }
+        public dynamic Instances { get; set; }
+        public dynamic LoadBalancerName { get => GivenName; set => GivenName = value; }
+
+        /// <summary>
+        /// Listeners
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-listeners
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Listeners
+        /// </summary>
+        [Required]
+        public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.Listeners> Listeners { get; set; }
         /// <summary>
         /// Subnets
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-subnets
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-subnets
         /// Required: False
         /// UpdateType: Conditional
         /// Type: List
@@ -137,14 +104,48 @@ namespace Humidifier.ElasticLoadBalancing
         /// </summary>
         public dynamic Subnets { get; set; }
         /// <summary>
+        /// CrossZone
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-crosszone
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic CrossZone { get; set; }
+        /// <summary>
+        /// AppCookieStickinessPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-appcookiestickinesspolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AppCookieStickinessPolicy
+        /// </summary>
+        public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.AppCookieStickinessPolicy> AppCookieStickinessPolicy { get; set; }
+        /// <summary>
+        /// LBCookieStickinessPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-lbcookiestickinesspolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: LBCookieStickinessPolicy
+        /// </summary>
+        public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.LBCookieStickinessPolicy> LBCookieStickinessPolicy { get; set; }
+        /// <summary>
+        /// ConnectionSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-connectionsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ConnectionSettings
+        /// </summary>
+        public Humidifier.ElasticLoadBalancing.LoadBalancerTypes.ConnectionSettings ConnectionSettings { get; set; }
+        /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-elasticloadbalancing-loadbalancer-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancing-loadbalancer.html#cfn-elasticloadbalancing-loadbalancer-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace LoadBalancerTypes
@@ -153,15 +154,23 @@ namespace Humidifier.ElasticLoadBalancing
         {
             /// <summary>
             /// EmitInterval
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-emitinterval
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-accessloggingpolicy.html#cfn-elasticloadbalancing-loadbalancer-accessloggingpolicy-emitinterval
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic EmitInterval { get; set; }
             /// <summary>
+            /// S3BucketPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-accessloggingpolicy.html#cfn-elasticloadbalancing-loadbalancer-accessloggingpolicy-s3bucketprefix
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3BucketPrefix { get; set; }
+            /// <summary>
             /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-accessloggingpolicy.html#cfn-elasticloadbalancing-loadbalancer-accessloggingpolicy-enabled
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
@@ -169,67 +178,59 @@ namespace Humidifier.ElasticLoadBalancing
             public dynamic Enabled { get; set; }
             /// <summary>
             /// S3BucketName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-accessloggingpolicy.html#cfn-elasticloadbalancing-loadbalancer-accessloggingpolicy-s3bucketname
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3BucketName { get; set; }
-            /// <summary>
-            /// S3BucketPrefix
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketprefix
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic S3BucketPrefix { get; set; }
         }
 
         public class AppCookieStickinessPolicy : Humidifier.Base.BaseSubResource, IHavePolicyName
         {
             /// <summary>
-            /// CookieName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CookieName { get; set; }
-            /// <summary>
             /// PolicyName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-appcookiestickinesspolicy.html#cfn-elasticloadbalancing-loadbalancer-appcookiestickinesspolicy-policyname
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic PolicyName { get; set; }
+            /// <summary>
+            /// CookieName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-appcookiestickinesspolicy.html#cfn-elasticloadbalancing-loadbalancer-appcookiestickinesspolicy-cookiename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CookieName { get; set; }
         }
 
         public class ConnectionDrainingPolicy : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveTimeout
         {
             /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-enabled
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled { get; set; }
-            /// <summary>
             /// Timeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-connectiondrainingpolicy.html#cfn-elasticloadbalancing-loadbalancer-connectiondrainingpolicy-timeout
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Timeout { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-connectiondrainingpolicy.html#cfn-elasticloadbalancing-loadbalancer-connectiondrainingpolicy-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class ConnectionSettings : Humidifier.Base.BaseSubResource, IHaveIdleTimeout
         {
             /// <summary>
             /// IdleTimeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-connectionsettings.html#cfn-elasticloadbalancing-loadbalancer-connectionsettings-idletimeout
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -240,52 +241,52 @@ namespace Humidifier.ElasticLoadBalancing
         public class HealthCheck : Humidifier.Base.BaseSubResource, IHaveTarget, IHaveInterval, IHaveTimeout, IHaveUnhealthyThreshold, IHaveHealthyThreshold
         {
             /// <summary>
-            /// HealthyThreshold
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-healthythreshold
+            /// Target
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-healthcheck.html#cfn-elasticloadbalancing-loadbalancer-healthcheck-target
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Target { get; set; }
+            /// <summary>
+            /// UnhealthyThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-healthcheck.html#cfn-elasticloadbalancing-loadbalancer-healthcheck-unhealthythreshold
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UnhealthyThreshold { get; set; }
+            /// <summary>
+            /// Timeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-healthcheck.html#cfn-elasticloadbalancing-loadbalancer-healthcheck-timeout
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Timeout { get; set; }
+            /// <summary>
+            /// HealthyThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-healthcheck.html#cfn-elasticloadbalancing-loadbalancer-healthcheck-healthythreshold
+            /// Required: True
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic HealthyThreshold { get; set; }
             /// <summary>
             /// Interval
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-interval
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-healthcheck.html#cfn-elasticloadbalancing-loadbalancer-healthcheck-interval
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Interval { get; set; }
-            /// <summary>
-            /// Target
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-target
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Target { get; set; }
-            /// <summary>
-            /// Timeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-timeout
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Timeout { get; set; }
-            /// <summary>
-            /// UnhealthyThreshold
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-unhealthythreshold
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic UnhealthyThreshold { get; set; }
         }
 
         public class LBCookieStickinessPolicy : Humidifier.Base.BaseSubResource, IHavePolicyName
         {
             /// <summary>
             /// CookieExpirationPeriod
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-lbcookiestickinesspolicy.html#cfn-elasticloadbalancing-loadbalancer-lbcookiestickinesspolicy-cookieexpirationperiod
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -293,7 +294,7 @@ namespace Humidifier.ElasticLoadBalancing
             public dynamic CookieExpirationPeriod { get; set; }
             /// <summary>
             /// PolicyName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-lbcookiestickinesspolicy.html#cfn-elasticloadbalancing-loadbalancer-lbcookiestickinesspolicy-policyname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -304,32 +305,8 @@ namespace Humidifier.ElasticLoadBalancing
         public class Listeners : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveInstancePort, IHaveLoadBalancerPort
         {
             /// <summary>
-            /// InstancePort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceport
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic InstancePort { get; set; }
-            /// <summary>
-            /// InstanceProtocol
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-instanceprotocol
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic InstanceProtocol { get; set; }
-            /// <summary>
-            /// LoadBalancerPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-loadbalancerport
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic LoadBalancerPort { get; set; }
-            /// <summary>
             /// PolicyNames
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-policynames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-listeners.html#cfn-elasticloadbalancing-loadbalancer-listeners-policynames
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
@@ -337,8 +314,24 @@ namespace Humidifier.ElasticLoadBalancing
             /// </summary>
             public dynamic PolicyNames { get; set; }
             /// <summary>
+            /// InstancePort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-listeners.html#cfn-elasticloadbalancing-loadbalancer-listeners-instanceport
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstancePort { get; set; }
+            /// <summary>
+            /// LoadBalancerPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-listeners.html#cfn-elasticloadbalancing-loadbalancer-listeners-loadbalancerport
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LoadBalancerPort { get; set; }
+            /// <summary>
             /// Protocol
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-protocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-listeners.html#cfn-elasticloadbalancing-loadbalancer-listeners-protocol
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -346,37 +339,52 @@ namespace Humidifier.ElasticLoadBalancing
             public dynamic Protocol { get; set; }
             /// <summary>
             /// SSLCertificateId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-listeners.html#cfn-elasticloadbalancing-loadbalancer-listeners-sslcertificateid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic SSLCertificateId { get; set; }
+            /// <summary>
+            /// InstanceProtocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-listeners.html#cfn-elasticloadbalancing-loadbalancer-listeners-instanceprotocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceProtocol { get; set; }
         }
 
         public class Policies : Humidifier.Base.BaseSubResource, IHavePolicyName, IHavePolicyType
         {
             /// <summary>
+            /// PolicyType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policies.html#cfn-elasticloadbalancing-loadbalancer-policies-policytype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyType { get; set; }
+            /// <summary>
+            /// PolicyName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policies.html#cfn-elasticloadbalancing-loadbalancer-policies-policyname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyName { get; set; }
+            /// <summary>
             /// Attributes_
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-attributes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policies.html#cfn-elasticloadbalancing-loadbalancer-policies-attributes
             /// Required: True
             /// UpdateType: Mutable
             /// Type: List
-            /// PrimitiveItemType: Json
+            /// ItemType: PolicyItem
             /// </summary>
-            public List<dynamic> Attributes_ { get; set; }
-            /// <summary>
-            /// InstancePorts
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-instanceports
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic InstancePorts { get; set; }
+            public List<Humidifier.ElasticLoadBalancing.LoadBalancerTypes.PolicyItem> Attributes_ { get; set; }
             /// <summary>
             /// LoadBalancerPorts
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-loadbalancerports
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policies.html#cfn-elasticloadbalancing-loadbalancer-policies-loadbalancerports
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
@@ -384,21 +392,54 @@ namespace Humidifier.ElasticLoadBalancing
             /// </summary>
             public dynamic LoadBalancerPorts { get; set; }
             /// <summary>
-            /// PolicyName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-policyname
-            /// Required: True
+            /// InstancePorts
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policies.html#cfn-elasticloadbalancing-loadbalancer-policies-instanceports
+            /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: List
+            /// PrimitiveItemType: String
             /// </summary>
-            public dynamic PolicyName { get; set; }
+            public dynamic InstancePorts { get; set; }
+        }
+
+        public class PolicyItem : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue
+        {
             /// <summary>
-            /// PolicyType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-policy.html#cfn-ec2-elb-policy-policytype
-            /// Required: True
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policyitem.html#cfn-elasticloadbalancing-loadbalancer-policyitem-value
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic PolicyType { get; set; }
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-policyitem.html#cfn-elasticloadbalancing-loadbalancer-policyitem-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class SourceSecurityGroup : Humidifier.Base.BaseSubResource, IHaveGroupName
+        {
+            /// <summary>
+            /// GroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-sourcesecuritygroup.html#cfn-elasticloadbalancing-loadbalancer-sourcesecuritygroup-groupname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupName { get; set; }
+            /// <summary>
+            /// OwnerAlias
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancing-loadbalancer-sourcesecuritygroup.html#cfn-elasticloadbalancing-loadbalancer-sourcesecuritygroup-owneralias
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OwnerAlias { get; set; }
         }
     }
 }

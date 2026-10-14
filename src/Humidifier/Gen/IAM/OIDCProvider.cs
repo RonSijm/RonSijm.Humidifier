@@ -1,6 +1,6 @@
 namespace Humidifier.IAM
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class OIDCProvider : Humidifier.Base.BaseResource, IHaveTags, IHaveUrl
     {
@@ -44,6 +44,6 @@ namespace Humidifier.IAM
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using UserPoolUserTypes;
 
     public class UserPoolUser : Humidifier.Base.BaseResource, IHaveUsername, IHaveUserPoolId, IHaveMessageAction

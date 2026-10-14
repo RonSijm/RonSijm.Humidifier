@@ -1,6 +1,6 @@
 namespace Humidifier.ServiceCatalog
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CloudFormationProductTypes;
 
     public class CloudFormationProduct : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveAcceptLanguage, IHaveOwner, IHaveProductType
@@ -10,6 +10,7 @@ namespace Humidifier.ServiceCatalog
             public static string ProductName =  "ProductName" ;
             public static string ProvisioningArtifactIds =  "ProvisioningArtifactIds" ;
             public static string ProvisioningArtifactNames =  "ProvisioningArtifactNames" ;
+            public static string Id =  "Id" ;
         }
 
         public override string AWSTypeName { get => AWS.ServiceCatalog.CloudFormationProduct; }
@@ -104,7 +105,7 @@ namespace Humidifier.ServiceCatalog
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// ProvisioningArtifactParameters
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
@@ -158,12 +159,32 @@ namespace Humidifier.ServiceCatalog
         {
             /// <summary>
             /// CodeStar
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters-codestar
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-connectionparameters.html#cfn-servicecatalog-cloudformationproduct-connectionparameters-codestar
             /// Required: False
             /// UpdateType: Mutable
             /// Type: CodeStarParameters
             /// </summary>
             public Humidifier.ServiceCatalog.CloudFormationProductTypes.CodeStarParameters CodeStar { get; set; }
+        }
+
+        public class Info : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// LoadTemplateFromURL
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-info.html#cfn-servicecatalog-cloudformationproduct-info-loadtemplatefromurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LoadTemplateFromURL { get; set; }
+            /// <summary>
+            /// ImportFromPhysicalId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-info.html#cfn-servicecatalog-cloudformationproduct-info-importfromphysicalid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImportFromPhysicalId { get; set; }
         }
 
         public class ProvisioningArtifactProperties : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveType
@@ -197,9 +218,9 @@ namespace Humidifier.ServiceCatalog
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-info
             /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// Type: Info
             /// </summary>
-            public dynamic Info { get; set; }
+            public Humidifier.ServiceCatalog.CloudFormationProductTypes.Info Info { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-name

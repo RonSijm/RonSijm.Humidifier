@@ -1,6 +1,6 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DirectoryConfigTypes;
 
     public class DirectoryConfig : Humidifier.Base.BaseResource, IHaveDirectoryName

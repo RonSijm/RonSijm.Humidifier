@@ -1,6 +1,6 @@
 namespace Humidifier.LakeFormation
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PermissionsTypes;
 
     public class Permissions : Humidifier.Base.BaseResource, IHavePermissionsWithGrantOption

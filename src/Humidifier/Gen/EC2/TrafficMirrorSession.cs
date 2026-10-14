@@ -1,9 +1,14 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TrafficMirrorSession : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveNetworkInterfaceId, IHaveTrafficMirrorFilterId
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.EC2.TrafficMirrorSession; }
 
         /// <summary>
@@ -23,6 +28,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// OwnerId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-ownerid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic OwnerId { get; set; }
 
         /// <summary>
         /// SessionNumber
@@ -54,7 +67,7 @@ namespace Humidifier.EC2
         /// NetworkInterfaceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-networkinterfaceid
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
@@ -77,6 +90,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

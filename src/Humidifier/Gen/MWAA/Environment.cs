@@ -1,6 +1,6 @@
 namespace Humidifier.MWAA
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentTypes;
 
     public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDynamicTags, IHaveExecutionRoleArn, IHaveKmsKey, IHaveWeeklyMaintenanceWindowStart
@@ -31,6 +31,14 @@ namespace Humidifier.MWAA
         /// PrimitiveType: String
         /// </summary>
         public dynamic PluginsS3Path { get; set; }
+        /// <summary>
+        /// WorkerReplacementStrategy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-workerreplacementstrategy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic WorkerReplacementStrategy { get; set; }
         /// <summary>
         /// StartupScriptS3Path
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-startupscripts3path

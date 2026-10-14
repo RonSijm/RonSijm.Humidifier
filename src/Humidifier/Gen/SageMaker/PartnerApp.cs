@@ -1,17 +1,26 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PartnerAppTypes;
 
-    public class PartnerApp : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveExecutionRoleArn, IHaveAuthType, IHaveTier
+    public class PartnerApp : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType, IHaveKmsKeyId, IHaveExecutionRoleArn, IHaveAuthType, IHaveTier
     {
         public class Attributes
         {
+            public static string CurrentVersionEolDate =  "CurrentVersionEolDate" ;
             public static string BaseUrl =  "BaseUrl" ;
             public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.PartnerApp; }
+        /// <summary>
+        /// AppVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-partnerapp.html#cfn-sagemaker-partnerapp-appversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AppVersion { get; set; }
 
         /// <summary>
         /// ExecutionRoleArn
@@ -33,6 +42,14 @@ namespace Humidifier.SageMaker
         [Required]
         public dynamic Type { get; set; }
         /// <summary>
+        /// KmsKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-partnerapp.html#cfn-sagemaker-partnerapp-kmskeyid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyId { get; set; }
+        /// <summary>
         /// EnableIamSessionBasedIdentity
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-partnerapp.html#cfn-sagemaker-partnerapp-enableiamsessionbasedidentity
         /// Required: False
@@ -50,6 +67,14 @@ namespace Humidifier.SageMaker
         /// </summary>
         [Required]
         public dynamic Tier { get; set; }
+        /// <summary>
+        /// EnableAutoMinorVersionUpgrade
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-partnerapp.html#cfn-sagemaker-partnerapp-enableautominorversionupgrade
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableAutoMinorVersionUpgrade { get; set; }
         /// <summary>
         /// ApplicationConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-partnerapp.html#cfn-sagemaker-partnerapp-applicationconfig
@@ -84,7 +109,7 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

@@ -1,9 +1,9 @@
 namespace Humidifier.DynamoDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GlobalTableTypes;
 
-    public class GlobalTable : Humidifier.Base.BaseResource, IHaveTableName, IHaveBillingMode, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings
+    public class GlobalTable : Humidifier.Base.BaseResource, IHaveTableName, IHaveBillingMode, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings
     {
         public class Attributes
         {
@@ -13,6 +13,14 @@ namespace Humidifier.DynamoDB
         }
 
         public override string AWSTypeName { get => AWS.DynamoDB.GlobalTable; }
+        /// <summary>
+        /// MultiRegionConsistency
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-multiregionconsistency
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MultiRegionConsistency { get; set; }
         /// <summary>
         /// SSESpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-ssespecification
@@ -37,6 +45,15 @@ namespace Humidifier.DynamoDB
         /// Type: WarmThroughput
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.WarmThroughput WarmThroughput { get; set; }
+        /// <summary>
+        /// VectorIndexes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-vectorindexes
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: VectorIndex
+        /// </summary>
+        public List<Humidifier.DynamoDB.GlobalTableTypes.VectorIndex> VectorIndexes { get; set; }
 
         /// <summary>
         /// Replicas
@@ -57,6 +74,14 @@ namespace Humidifier.DynamoDB
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.WriteProvisionedThroughputSettings WriteProvisionedThroughputSettings { get; set; }
         /// <summary>
+        /// GlobalTableSourceArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-globaltablesourcearn
+        /// Required: False
+        /// UpdateType: Conditional
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic GlobalTableSourceArn { get; set; }
+        /// <summary>
         /// WriteOnDemandThroughputSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeondemandthroughputsettings
         /// Required: False
@@ -65,6 +90,15 @@ namespace Humidifier.DynamoDB
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.WriteOnDemandThroughputSettings WriteOnDemandThroughputSettings { get; set; }
         /// <summary>
+        /// GlobalTableWitnesses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-globaltablewitnesses
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: GlobalTableWitness
+        /// </summary>
+        public List<Humidifier.DynamoDB.GlobalTableTypes.GlobalTableWitness> GlobalTableWitnesses { get; set; }
+        /// <summary>
         /// TableName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tablename
         /// Required: False
@@ -72,16 +106,14 @@ namespace Humidifier.DynamoDB
         /// PrimitiveType: String
         /// </summary>
         public dynamic TableName { get; set; }
-
         /// <summary>
         /// AttributeDefinitions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-attributedefinitions
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: List
         /// ItemType: AttributeDefinition
         /// </summary>
-        [Required]
         public List<Humidifier.DynamoDB.GlobalTableTypes.AttributeDefinition> AttributeDefinitions { get; set; }
         /// <summary>
         /// BillingMode
@@ -100,26 +132,40 @@ namespace Humidifier.DynamoDB
         /// ItemType: GlobalSecondaryIndex
         /// </summary>
         public List<Humidifier.DynamoDB.GlobalTableTypes.GlobalSecondaryIndex> GlobalSecondaryIndexes { get; set; }
-
         /// <summary>
         /// KeySchema
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-keyschema
-        /// Required: True
-        /// UpdateType: Immutable
+        /// Required: False
+        /// UpdateType: Conditional
         /// Type: List
         /// ItemType: KeySchema
         /// </summary>
-        [Required]
         public List<Humidifier.DynamoDB.GlobalTableTypes.KeySchema> KeySchema { get; set; }
         /// <summary>
         /// LocalSecondaryIndexes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-localsecondaryindexes
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Conditional
         /// Type: List
         /// ItemType: LocalSecondaryIndex
         /// </summary>
         public List<Humidifier.DynamoDB.GlobalTableTypes.LocalSecondaryIndex> LocalSecondaryIndexes { get; set; }
+        /// <summary>
+        /// ReadProvisionedThroughputSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: GlobalReadProvisionedThroughputSettings
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.GlobalReadProvisionedThroughputSettings ReadProvisionedThroughputSettings { get; set; }
+        /// <summary>
+        /// ReadOnDemandThroughputSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-readondemandthroughputsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ReadOnDemandThroughputSettings
+        /// </summary>
+        public Humidifier.DynamoDB.GlobalTableTypes.ReadOnDemandThroughputSettings ReadOnDemandThroughputSettings { get; set; }
         /// <summary>
         /// TimeToLiveSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-timetolivespecification
@@ -188,7 +234,7 @@ namespace Humidifier.DynamoDB
             public dynamic MaxCapacity { get; set; }
         }
 
-        public class ContributorInsightsSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled
+        public class ContributorInsightsSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveMode
         {
             /// <summary>
             /// Enabled
@@ -198,9 +244,29 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-contributorinsightsspecification.html#cfn-dynamodb-globaltable-contributorinsightsspecification-mode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
         }
 
-        public class GlobalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesProjectionProjection
+        public class GlobalReadProvisionedThroughputSettings : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits
+        {
+            /// <summary>
+            /// ReadCapacityUnits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalreadprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-globalreadprovisionedthroughputsettings-readcapacityunits
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ReadCapacityUnits { get; set; }
+        }
+
+        public class GlobalSecondaryIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesProjectionProjection, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings
         {
             /// <summary>
             /// IndexName
@@ -236,6 +302,14 @@ namespace Humidifier.DynamoDB
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.WarmThroughput WarmThroughput { get; set; }
             /// <summary>
+            /// ReadProvisionedThroughputSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-readprovisionedthroughputsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GlobalReadProvisionedThroughputSettings
+            /// </summary>
+            public Humidifier.DynamoDB.GlobalTableTypes.GlobalReadProvisionedThroughputSettings ReadProvisionedThroughputSettings { get; set; }
+            /// <summary>
             /// WriteProvisionedThroughputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-writeprovisionedthroughputsettings
             /// Required: False
@@ -244,6 +318,14 @@ namespace Humidifier.DynamoDB
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.WriteProvisionedThroughputSettings WriteProvisionedThroughputSettings { get; set; }
             /// <summary>
+            /// ReadOnDemandThroughputSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-readondemandthroughputsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ReadOnDemandThroughputSettings
+            /// </summary>
+            public Humidifier.DynamoDB.GlobalTableTypes.ReadOnDemandThroughputSettings ReadOnDemandThroughputSettings { get; set; }
+            /// <summary>
             /// WriteOnDemandThroughputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-writeondemandthroughputsettings
             /// Required: False
@@ -251,6 +333,18 @@ namespace Humidifier.DynamoDB
             /// Type: WriteOnDemandThroughputSettings
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.WriteOnDemandThroughputSettings WriteOnDemandThroughputSettings { get; set; }
+        }
+
+        public class GlobalTableWitness : Humidifier.Base.BaseSubResource, IHaveRegion
+        {
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globaltablewitness.html#cfn-dynamodb-globaltable-globaltablewitness-region
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
         }
 
         public class KeySchema : Humidifier.Base.BaseSubResource, IHaveAttributeName, IHaveKeyType
@@ -299,7 +393,7 @@ namespace Humidifier.DynamoDB
             /// IndexName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-indexname
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic IndexName { get; set; }
@@ -307,7 +401,7 @@ namespace Humidifier.DynamoDB
             /// Projection
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-projection
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: Projection
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.Projection Projection { get; set; }
@@ -315,7 +409,7 @@ namespace Humidifier.DynamoDB
             /// KeySchema
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-keyschema
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: KeySchema
             /// </summary>
@@ -378,14 +472,6 @@ namespace Humidifier.DynamoDB
         public class ReadProvisionedThroughputSettings : Humidifier.Base.BaseSubResource, IHaveReadCapacityUnits
         {
             /// <summary>
-            /// ReadCapacityUnits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityunits
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic ReadCapacityUnits { get; set; }
-            /// <summary>
             /// ReadCapacityAutoScalingSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityautoscalingsettings
             /// Required: False
@@ -393,6 +479,14 @@ namespace Humidifier.DynamoDB
             /// Type: CapacityAutoScalingSettings
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.CapacityAutoScalingSettings ReadCapacityAutoScalingSettings { get; set; }
+            /// <summary>
+            /// ReadCapacityUnits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityunits
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ReadCapacityUnits { get; set; }
         }
 
         public class ReplicaGlobalSecondaryIndexSpecification : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveDynamoDBGlobalTableTypesReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings
@@ -470,6 +564,14 @@ namespace Humidifier.DynamoDB
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.ContributorInsightsSpecification ContributorInsightsSpecification { get; set; }
             /// <summary>
+            /// GlobalTableSettingsReplicationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-globaltablesettingsreplicationmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GlobalTableSettingsReplicationMode { get; set; }
+            /// <summary>
             /// PointInTimeRecoverySpecification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-pointintimerecoveryspecification
             /// Required: False
@@ -542,7 +644,7 @@ namespace Humidifier.DynamoDB
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// ReadOnDemandThroughputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-readondemandthroughputsettings
@@ -553,16 +655,25 @@ namespace Humidifier.DynamoDB
             public Humidifier.DynamoDB.GlobalTableTypes.ReadOnDemandThroughputSettings ReadOnDemandThroughputSettings { get; set; }
         }
 
-        public class ReplicaStreamSpecification : Humidifier.Base.BaseSubResource, IHaveDynamoDBGlobalTableTypesResourcePolicyResourcePolicy
+        public class ReplicaStreamSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDynamoDBGlobalTableTypesResourcePolicyResourcePolicy
         {
             /// <summary>
             /// ResourcePolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicastreamspecification.html#cfn-dynamodb-globaltable-replicastreamspecification-resourcepolicy
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: ResourcePolicy
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.ResourcePolicy ResourcePolicy { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicastreamspecification.html#cfn-dynamodb-globaltable-replicastreamspecification-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Humidifier.Tag> Tags { get; set; }
         }
 
         public class ResourcePolicy : Humidifier.Base.BaseSubResource, IHavePolicyDocument
@@ -595,6 +706,26 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: String
             /// </summary>
             public dynamic SSEType { get; set; }
+        }
+
+        public class SearchSchemaElement : Humidifier.Base.BaseSubResource, IHaveAttributeName
+        {
+            /// <summary>
+            /// AttributeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-searchschemaelement.html#cfn-dynamodb-globaltable-searchschemaelement-attributename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttributeName { get; set; }
+            /// <summary>
+            /// SearchSchemaElementType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-searchschemaelement.html#cfn-dynamodb-globaltable-searchschemaelement-searchschemaelementtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SearchSchemaElementType { get; set; }
         }
 
         public class StreamSpecification : Humidifier.Base.BaseSubResource, IHaveStreamViewType
@@ -663,6 +794,71 @@ namespace Humidifier.DynamoDB
             /// PrimitiveType: String
             /// </summary>
             public dynamic AttributeName { get; set; }
+        }
+
+        public class VectorAttribute : Humidifier.Base.BaseSubResource, IHaveAttributeName
+        {
+            /// <summary>
+            /// AttributeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorattribute.html#cfn-dynamodb-globaltable-vectorattribute-attributename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttributeName { get; set; }
+        }
+
+        public class VectorIndex : Humidifier.Base.BaseSubResource, IHaveIndexName, IHaveDynamoDBGlobalTableTypesProjectionProjection
+        {
+            /// <summary>
+            /// IndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorindex.html#cfn-dynamodb-globaltable-vectorindex-indexname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IndexName { get; set; }
+            /// <summary>
+            /// VectorAttribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorindex.html#cfn-dynamodb-globaltable-vectorindex-vectorattribute
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: VectorAttribute
+            /// </summary>
+            public Humidifier.DynamoDB.GlobalTableTypes.VectorAttribute VectorAttribute { get; set; }
+            /// <summary>
+            /// Projection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorindex.html#cfn-dynamodb-globaltable-vectorindex-projection
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Projection
+            /// </summary>
+            public Humidifier.DynamoDB.GlobalTableTypes.Projection Projection { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorindex.html#cfn-dynamodb-globaltable-vectorindex-dimensions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Dimensions { get; set; }
+            /// <summary>
+            /// SearchSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorindex.html#cfn-dynamodb-globaltable-vectorindex-searchschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SearchSchemaElement
+            /// </summary>
+            public List<Humidifier.DynamoDB.GlobalTableTypes.SearchSchemaElement> SearchSchema { get; set; }
+            /// <summary>
+            /// DistanceFunction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-vectorindex.html#cfn-dynamodb-globaltable-vectorindex-distancefunction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DistanceFunction { get; set; }
         }
 
         public class WarmThroughput : Humidifier.Base.BaseSubResource, IHaveReadUnitsPerSecond, IHaveWriteUnitsPerSecond

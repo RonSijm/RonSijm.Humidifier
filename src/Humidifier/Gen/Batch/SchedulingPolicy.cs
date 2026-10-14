@@ -1,6 +1,6 @@
 namespace Humidifier.Batch
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SchedulingPolicyTypes;
 
     public class SchedulingPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
@@ -11,6 +11,14 @@ namespace Humidifier.Batch
         }
 
         public override string AWSTypeName { get => AWS.Batch.SchedulingPolicy; }
+        /// <summary>
+        /// QuotaSharePolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-quotasharepolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: QuotaSharePolicy
+        /// </summary>
+        public Humidifier.Batch.SchedulingPolicyTypes.QuotaSharePolicy QuotaSharePolicy { get; set; }
         /// <summary>
         /// FairsharePolicy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-fairsharepolicy
@@ -23,7 +31,7 @@ namespace Humidifier.Batch
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-schedulingpolicy.html#cfn-batch-schedulingpolicy-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
@@ -60,6 +68,18 @@ namespace Humidifier.Batch
             /// PrimitiveType: Double
             /// </summary>
             public dynamic ComputeReservation { get; set; }
+        }
+
+        public class QuotaSharePolicy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// IdleResourceAssignmentStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-schedulingpolicy-quotasharepolicy.html#cfn-batch-schedulingpolicy-quotasharepolicy-idleresourceassignmentstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdleResourceAssignmentStrategy { get; set; }
         }
 
         public class ShareAttributes : Humidifier.Base.BaseSubResource

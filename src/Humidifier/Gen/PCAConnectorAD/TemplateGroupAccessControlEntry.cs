@@ -1,6 +1,6 @@
 namespace Humidifier.PCAConnectorAD
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TemplateGroupAccessControlEntryTypes;
 
     public class TemplateGroupAccessControlEntry : Humidifier.Base.BaseResource, IHaveTemplateArn
@@ -16,13 +16,15 @@ namespace Humidifier.PCAConnectorAD
         /// </summary>
         [Required]
         public Humidifier.PCAConnectorAD.TemplateGroupAccessControlEntryTypes.AccessRights AccessRights { get; set; }
+
         /// <summary>
         /// TemplateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-templategroupaccesscontrolentry.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-templatearn
-        /// Required: False
+        /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic TemplateArn { get; set; }
 
         /// <summary>
@@ -34,13 +36,15 @@ namespace Humidifier.PCAConnectorAD
         /// </summary>
         [Required]
         public dynamic GroupDisplayName { get; set; }
+
         /// <summary>
         /// GroupSecurityIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcaconnectorad-templategroupaccesscontrolentry.html#cfn-pcaconnectorad-templategroupaccesscontrolentry-groupsecurityidentifier
-        /// Required: False
+        /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic GroupSecurityIdentifier { get; set; }
     }
 

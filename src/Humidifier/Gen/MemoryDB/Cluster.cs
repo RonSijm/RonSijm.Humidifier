@@ -1,9 +1,9 @@
 namespace Humidifier.MemoryDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHaveClusterName, IHaveEngine, IHaveSnsTopicArn, IHaveAutoMinorVersionUpgrade, IHaveNodeType, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveFinalSnapshotName, IHaveMaintenanceWindow, IHaveACLName, IHaveNumShards, IHaveTLSEnabled
+    public class Cluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHavePort, IHaveKmsKeyId, IHaveSecurityGroupIds, IHaveEngineVersion, IHaveClusterName, IHaveEngine, IHaveSnsTopicArn, IHaveAutoMinorVersionUpgrade, IHaveNetworkType, IHaveNodeType, IHaveParameterGroupName, IHaveSubnetGroupName, IHaveSnapshotName, IHaveSnapshotRetentionLimit, IHaveSnapshotArns, IHaveSnapshotWindow, IHaveFinalSnapshotName, IHaveIpDiscovery, IHaveMaintenanceWindow, IHaveACLName, IHaveNumShards, IHaveTLSEnabled
     {
         public class Attributes
         {
@@ -96,6 +96,14 @@ namespace Humidifier.MemoryDB
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic TLSEnabled { get; set; }
+        /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-networktype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
         public dynamic ClusterName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// SnsTopicArn
@@ -121,7 +129,7 @@ namespace Humidifier.MemoryDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MultiRegionClusterName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-multiregionclustername
@@ -221,6 +229,14 @@ namespace Humidifier.MemoryDB
         /// </summary>
         [Required]
         public dynamic NodeType { get; set; }
+        /// <summary>
+        /// IpDiscovery
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-ipdiscovery
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic IpDiscovery { get; set; }
         /// <summary>
         /// MaintenanceWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-maintenancewindow

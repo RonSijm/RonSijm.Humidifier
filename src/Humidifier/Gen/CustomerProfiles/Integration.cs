@@ -1,9 +1,9 @@
 namespace Humidifier.CustomerProfiles
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IntegrationTypes;
 
-    public class Integration : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveUri, IHaveObjectTypeName
+    public class Integration : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveScope, IHaveUri, IHaveObjectTypeName
     {
         public class Attributes
         {
@@ -30,6 +30,14 @@ namespace Humidifier.CustomerProfiles
         /// ItemType: ObjectTypeMapping
         /// </summary>
         public List<Humidifier.CustomerProfiles.IntegrationTypes.ObjectTypeMapping> ObjectTypeNames { get; set; }
+        /// <summary>
+        /// Scope
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-scope
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Scope { get; set; }
 
         /// <summary>
         /// DomainName
@@ -72,7 +80,7 @@ namespace Humidifier.CustomerProfiles
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace IntegrationTypes

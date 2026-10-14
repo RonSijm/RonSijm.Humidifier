@@ -1,6 +1,6 @@
 namespace Humidifier.CodeCommit
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RepositoryTypes;
 
     public class Repository : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyId, IHaveRepositoryName, IHaveRepositoryDescription, IHaveDescription
@@ -8,9 +8,9 @@ namespace Humidifier.CodeCommit
         public class Attributes
         {
             public static string CloneUrlHttp =  "CloneUrlHttp" ;
-            public static string KmsKeyId =  "KmsKeyId" ;
             public static string CloneUrlSsh =  "CloneUrlSsh" ;
             public static string Arn =  "Arn" ;
+            public static string RepositoryId =  "RepositoryId" ;
             public static string Name =  "Name" ;
         }
 
@@ -28,7 +28,7 @@ namespace Humidifier.CodeCommit
         /// Triggers
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-triggers
         /// Required: False
-        /// UpdateType: Conditional
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: RepositoryTrigger
         /// </summary>
@@ -60,7 +60,7 @@ namespace Humidifier.CodeCommit
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace RepositoryTypes

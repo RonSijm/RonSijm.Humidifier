@@ -1,6 +1,6 @@
 namespace Humidifier.CodeStarNotifications
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NotificationRuleTypes;
 
     public class NotificationRule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveStatus, IHaveResource, IHaveDetailType, IHaveCreatedBy, IHaveTargetAddress

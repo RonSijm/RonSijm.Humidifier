@@ -1,6 +1,6 @@
 namespace Humidifier.DAX
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveSubnetIds, IHaveSubnetGroupName
     {

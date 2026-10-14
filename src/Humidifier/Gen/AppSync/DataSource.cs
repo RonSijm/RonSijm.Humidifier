@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DataSourceTypes;
 
     public class DataSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType, IHaveApiId, IHaveServiceRoleArn, IHaveMetricsConfig
@@ -20,6 +20,16 @@ namespace Humidifier.AppSync
         /// Type: OpenSearchServiceConfig
         /// </summary>
         public Humidifier.AppSync.DataSourceTypes.OpenSearchServiceConfig OpenSearchServiceConfig { get; set; }
+
+        /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic Type { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description
@@ -36,25 +46,6 @@ namespace Humidifier.AppSync
         /// PrimitiveType: String
         /// </summary>
         public dynamic ServiceRoleArn { get; set; }
-        /// <summary>
-        /// MetricsConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-metricsconfig
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic MetricsConfig { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
-
-        /// <summary>
-        /// Type
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic Type { get; set; }
         /// <summary>
         /// EventBridgeConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-eventbridgeconfig
@@ -98,6 +89,15 @@ namespace Humidifier.AppSync
         [Required]
         public dynamic ApiId { get; set; }
         /// <summary>
+        /// MetricsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-metricsconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MetricsConfig { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
         /// DynamoDBConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig
         /// Required: False
@@ -105,14 +105,6 @@ namespace Humidifier.AppSync
         /// Type: DynamoDBConfig
         /// </summary>
         public Humidifier.AppSync.DataSourceTypes.DynamoDBConfig DynamoDBConfig { get; set; }
-        /// <summary>
-        /// ElasticsearchConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ElasticsearchConfig
-        /// </summary>
-        public Humidifier.AppSync.DataSourceTypes.ElasticsearchConfig ElasticsearchConfig { get; set; }
     }
 
     namespace DataSourceTypes
@@ -227,26 +219,6 @@ namespace Humidifier.AppSync
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic UseCallerCredentials { get; set; }
-        }
-
-        public class ElasticsearchConfig : Humidifier.Base.BaseSubResource, IHaveEndpoint, IHaveAwsRegion
-        {
-            /// <summary>
-            /// AwsRegion
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-awsregion
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic AwsRegion { get; set; }
-            /// <summary>
-            /// Endpoint
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-endpoint
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Endpoint { get; set; }
         }
 
         public class EventBridgeConfig : Humidifier.Base.BaseSubResource, IHaveEventBusArn

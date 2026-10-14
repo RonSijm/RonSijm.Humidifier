@@ -1,6 +1,6 @@
 namespace Humidifier.DataSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TaskTypes;
 
     public class Task : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveCloudWatchLogGroupArn, IHaveSourceLocationArn
@@ -100,7 +100,7 @@ namespace Humidifier.DataSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ManifestConfig
@@ -141,14 +141,6 @@ namespace Humidifier.DataSync
         public class FilterRule : Humidifier.Base.BaseSubResource, IHaveValue, IHaveFilterType
         {
             /// <summary>
-            /// FilterType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-filterrule.html#cfn-datasync-task-filterrule-filtertype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic FilterType { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-filterrule.html#cfn-datasync-task-filterrule-value
             /// Required: False
@@ -156,6 +148,14 @@ namespace Humidifier.DataSync
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// FilterType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-filterrule.html#cfn-datasync-task-filterrule-filtertype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FilterType { get; set; }
         }
 
         public class ManifestConfig : Humidifier.Base.BaseSubResource, IHaveAction, IHaveFormat
@@ -317,7 +317,7 @@ namespace Humidifier.DataSync
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-bytespersecond
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// PrimitiveType: Long
             /// </summary>
             public dynamic BytesPerSecond { get; set; }
             /// <summary>
@@ -344,6 +344,14 @@ namespace Humidifier.DataSync
             /// PrimitiveType: String
             /// </summary>
             public dynamic SecurityDescriptorCopyFlags { get; set; }
+            /// <summary>
+            /// ObjectMetadata
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-objectmetadata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ObjectMetadata { get; set; }
         }
 
         public class Overrides : Humidifier.Base.BaseSubResource

@@ -1,6 +1,6 @@
 namespace Humidifier.Route53Resolver
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ResolverRuleAssociation : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveVPCId
     {

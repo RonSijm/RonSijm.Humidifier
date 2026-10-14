@@ -1,6 +1,6 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InfrastructureConfigurationTypes;
 
     public class InfrastructureConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveSecurityGroupIds, IHaveSubnetId, IHaveSnsTopicArn, IHaveInstanceProfileName, IHaveInstanceTypes, IHaveKeyPair

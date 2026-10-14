@@ -1,12 +1,13 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ImageTypes;
 
     public class Image : Humidifier.Base.BaseResource, IHaveExecutionRole, IHaveInfrastructureConfigurationArn, IHaveImageRecipeArn, IHaveDistributionConfigurationArn, IHaveContainerRecipeArn, IHaveEnhancedImageMetadataEnabled
     {
         public class Attributes
         {
+            public static string LatestVersion =  "LatestVersion" ;
             public static string ImageId =  "ImageId" ;
             public static string ImageUri =  "ImageUri" ;
             public static string Arn =  "Arn" ;
@@ -22,6 +23,39 @@ namespace Humidifier.ImageBuilder
         /// Type: ImageScanningConfiguration
         /// </summary>
         public Humidifier.ImageBuilder.ImageTypes.ImageScanningConfiguration ImageScanningConfiguration { get; set; }
+        /// <summary>
+        /// ContainerRecipeArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-containerrecipearn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ContainerRecipeArn { get; set; }
+        /// <summary>
+        /// Workflows
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-workflows
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: WorkflowConfiguration
+        /// </summary>
+        public List<Humidifier.ImageBuilder.ImageTypes.WorkflowConfiguration> Workflows { get; set; }
+        /// <summary>
+        /// ImagePipelineExecutionSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagepipelineexecutionsettings
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: ImagePipelineExecutionSettings
+        /// </summary>
+        public Humidifier.ImageBuilder.ImageTypes.ImagePipelineExecutionSettings ImagePipelineExecutionSettings { get; set; }
+        /// <summary>
+        /// DeletionSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-deletionsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DeletionSettings
+        /// </summary>
+        public Humidifier.ImageBuilder.ImageTypes.DeletionSettings DeletionSettings { get; set; }
         /// <summary>
         /// InfrastructureConfigurationArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-infrastructureconfigurationarn
@@ -47,22 +81,13 @@ namespace Humidifier.ImageBuilder
         /// </summary>
         public dynamic DistributionConfigurationArn { get; set; }
         /// <summary>
-        /// ContainerRecipeArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-containerrecipearn
+        /// LoggingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-loggingconfiguration
         /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
+        /// UpdateType: Mutable
+        /// Type: ImageLoggingConfiguration
         /// </summary>
-        public dynamic ContainerRecipeArn { get; set; }
-        /// <summary>
-        /// Workflows
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-workflows
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// ItemType: WorkflowConfiguration
-        /// </summary>
-        public List<Humidifier.ImageBuilder.ImageTypes.WorkflowConfiguration> Workflows { get; set; }
+        public Humidifier.ImageBuilder.ImageTypes.ImageLoggingConfiguration LoggingConfiguration { get; set; }
         /// <summary>
         /// ImageTestsConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagetestsconfiguration
@@ -91,7 +116,7 @@ namespace Humidifier.ImageBuilder
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: Map
         /// PrimitiveItemType: String
         /// </summary>
@@ -100,6 +125,18 @@ namespace Humidifier.ImageBuilder
 
     namespace ImageTypes
     {
+        public class DeletionSettings : Humidifier.Base.BaseSubResource, IHaveExecutionRole
+        {
+            /// <summary>
+            /// ExecutionRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-deletionsettings.html#cfn-imagebuilder-image-deletionsettings-executionrole
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExecutionRole { get; set; }
+        }
+
         public class EcrConfiguration : Humidifier.Base.BaseSubResource, IHaveRepositoryName, IHaveContainerTags
         {
             /// <summary>
@@ -119,6 +156,38 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic RepositoryName { get; set; }
+        }
+
+        public class ImageLoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveLogGroupName
+        {
+            /// <summary>
+            /// LogGroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imageloggingconfiguration.html#cfn-imagebuilder-image-imageloggingconfiguration-loggroupname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogGroupName { get; set; }
+        }
+
+        public class ImagePipelineExecutionSettings : Humidifier.Base.BaseSubResource, IHaveDeploymentId
+        {
+            /// <summary>
+            /// DeploymentId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagepipelineexecutionsettings.html#cfn-imagebuilder-image-imagepipelineexecutionsettings-deploymentid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeploymentId { get; set; }
+            /// <summary>
+            /// OnUpdate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagepipelineexecutionsettings.html#cfn-imagebuilder-image-imagepipelineexecutionsettings-onupdate
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic OnUpdate { get; set; }
         }
 
         public class ImageScanningConfiguration : Humidifier.Base.BaseSubResource, IHaveImageScanningEnabled
@@ -159,6 +228,42 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ImageTestsEnabled { get; set; }
+        }
+
+        public class LatestVersion : Humidifier.Base.BaseSubResource, IHaveArn
+        {
+            /// <summary>
+            /// Major
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-latestversion.html#cfn-imagebuilder-image-latestversion-major
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Major { get; set; }
+            /// <summary>
+            /// Minor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-latestversion.html#cfn-imagebuilder-image-latestversion-minor
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Minor { get; set; }
+            /// <summary>
+            /// Arn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-latestversion.html#cfn-imagebuilder-image-latestversion-arn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Arn { get; set; }
+            /// <summary>
+            /// Patch
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-latestversion.html#cfn-imagebuilder-image-latestversion-patch
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Patch { get; set; }
         }
 
         public class WorkflowConfiguration : Humidifier.Base.BaseSubResource, IHaveParallelGroup, IHaveWorkflowArn, IHaveOnFailure

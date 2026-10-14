@@ -1,6 +1,6 @@
 namespace Humidifier.QBusiness
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WebExperienceTypes;
 
     public class WebExperience : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveTitle, IHaveApplicationId, IHaveSubtitle
@@ -99,7 +99,7 @@ namespace Humidifier.QBusiness
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// BrowserExtensionConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qbusiness-webexperience.html#cfn-qbusiness-webexperience-browserextensionconfiguration

@@ -1,9 +1,9 @@
 namespace Humidifier.GuardDuty
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ThreatIntelSetTypes;
 
-    public class ThreatIntelSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveFormat, IHaveLocation, IHaveDetectorId, IHaveActivate
+    public class ThreatIntelSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveFormat, IHaveLocation, IHaveDetectorId, IHaveActivate, IHaveExpectedBucketOwner
     {
         public class Attributes
         {
@@ -37,6 +37,14 @@ namespace Humidifier.GuardDuty
         /// PrimitiveType: String
         /// </summary>
         public dynamic DetectorId { get; set; }
+        /// <summary>
+        /// ExpectedBucketOwner
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-expectedbucketowner
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ExpectedBucketOwner { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-threatintelset.html#cfn-guardduty-threatintelset-tags

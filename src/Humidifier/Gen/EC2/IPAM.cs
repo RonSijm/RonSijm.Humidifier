@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using IPAMTypes;
 
     public class IPAM : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveTier
@@ -19,6 +19,15 @@ namespace Humidifier.EC2
 
         public override string AWSTypeName { get => AWS.EC2.IPAM; }
         /// <summary>
+        /// DefaultResourceDiscoveryOrganizationalUnitExclusions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryorganizationalunitexclusions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: IpamOrganizationalUnitExclusion
+        /// </summary>
+        public List<Humidifier.EC2.IPAMTypes.IpamOrganizationalUnitExclusion> DefaultResourceDiscoveryOrganizationalUnitExclusions { get; set; }
+        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-description
         /// Required: False
@@ -26,6 +35,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// MeteredAccount
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-meteredaccount
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MeteredAccount { get; set; }
         /// <summary>
         /// Tier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-tier
@@ -50,7 +67,7 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// OperatingRegions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-operatingregions
@@ -74,6 +91,18 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic RegionName { get; set; }
+        }
+
+        public class IpamOrganizationalUnitExclusion : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OrganizationsEntityPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamorganizationalunitexclusion.html#cfn-ec2-ipam-ipamorganizationalunitexclusion-organizationsentitypath
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OrganizationsEntityPath { get; set; }
         }
     }
 }

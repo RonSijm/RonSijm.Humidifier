@@ -1,6 +1,6 @@
 namespace Humidifier.Pinpoint
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using InAppTemplateTypes;
 
     public class InAppTemplate : Humidifier.Base.BaseResource, IHaveDynamicTags, IHaveTemplateName, IHaveTemplateDescription, IHaveCustomConfig, IHaveLayout
@@ -97,6 +97,14 @@ namespace Humidifier.Pinpoint
         public class ButtonConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// IOS
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-ios
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OverrideButtonConfiguration
+            /// </summary>
+            public Humidifier.Pinpoint.InAppTemplateTypes.OverrideButtonConfiguration IOS { get; set; }
+            /// <summary>
             /// Web
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-web
             /// Required: False
@@ -112,14 +120,6 @@ namespace Humidifier.Pinpoint
             /// Type: DefaultButtonConfiguration
             /// </summary>
             public Humidifier.Pinpoint.InAppTemplateTypes.DefaultButtonConfiguration DefaultConfig { get; set; }
-            /// <summary>
-            /// IOS
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-ios
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OverrideButtonConfiguration
-            /// </summary>
-            public Humidifier.Pinpoint.InAppTemplateTypes.OverrideButtonConfiguration IOS { get; set; }
             /// <summary>
             /// Android
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-inapptemplate-buttonconfig.html#cfn-pinpoint-inapptemplate-buttonconfig-android

@@ -1,6 +1,6 @@
 namespace Humidifier.OpenSearchServerless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SecurityConfigTypes;
 
     public class SecurityConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveType
@@ -35,6 +35,14 @@ namespace Humidifier.OpenSearchServerless
         /// Type: SamlConfigOptions
         /// </summary>
         public Humidifier.OpenSearchServerless.SecurityConfigTypes.SamlConfigOptions SamlOptions { get; set; }
+        /// <summary>
+        /// IamFederationOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-securityconfig.html#cfn-opensearchserverless-securityconfig-iamfederationoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IamFederationConfigOptions
+        /// </summary>
+        public Humidifier.OpenSearchServerless.SecurityConfigTypes.IamFederationConfigOptions IamFederationOptions { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// IamIdentityCenterOptions
@@ -48,6 +56,26 @@ namespace Humidifier.OpenSearchServerless
 
     namespace SecurityConfigTypes
     {
+        public class IamFederationConfigOptions : Humidifier.Base.BaseSubResource, IHaveUserAttribute, IHaveGroupAttribute
+        {
+            /// <summary>
+            /// UserAttribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-iamfederationconfigoptions.html#cfn-opensearchserverless-securityconfig-iamfederationconfigoptions-userattribute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserAttribute { get; set; }
+            /// <summary>
+            /// GroupAttribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchserverless-securityconfig-iamfederationconfigoptions.html#cfn-opensearchserverless-securityconfig-iamfederationconfigoptions-groupattribute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GroupAttribute { get; set; }
+        }
+
         public class IamIdentityCenterConfigOptions : Humidifier.Base.BaseSubResource, IHaveInstanceArn, IHaveApplicationName, IHaveApplicationArn, IHaveApplicationDescription, IHaveUserAttribute, IHaveGroupAttribute
         {
             /// <summary>

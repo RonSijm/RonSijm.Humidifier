@@ -1,6 +1,6 @@
 namespace Humidifier.OpsWorks
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ElasticLoadBalancerAttachment : Humidifier.Base.BaseResource, IHaveLayerId
     {

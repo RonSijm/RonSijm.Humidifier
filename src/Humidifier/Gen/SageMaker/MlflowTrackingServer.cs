@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class MlflowTrackingServer : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveWeeklyMaintenanceWindowStart
     {
@@ -80,6 +80,6 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

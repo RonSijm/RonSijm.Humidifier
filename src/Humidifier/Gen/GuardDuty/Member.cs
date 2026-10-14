@@ -1,6 +1,6 @@
 namespace Humidifier.GuardDuty
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Member : Humidifier.Base.BaseResource, IHaveStatus, IHaveMessage, IHaveDetectorId, IHaveEmail, IHaveMemberId, IHaveDisableEmailNotification
     {

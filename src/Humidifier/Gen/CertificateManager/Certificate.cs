@@ -1,10 +1,15 @@
 namespace Humidifier.CertificateManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CertificateTypes;
 
     public class Certificate : Humidifier.Base.BaseResource, IHaveTags, IHaveDomainName, IHaveCertificateAuthorityArn, IHaveKeyAlgorithm, IHaveSubjectAlternativeNames
     {
+        public class Attributes
+        {
+            public static string CertificateArn =  "CertificateArn" ;
+        }
+
         public override string AWSTypeName { get => AWS.CertificateManager.Certificate; }
         /// <summary>
         /// CertificateAuthorityArn
@@ -14,6 +19,23 @@ namespace Humidifier.CertificateManager
         /// PrimitiveType: String
         /// </summary>
         public dynamic CertificateAuthorityArn { get; set; }
+        /// <summary>
+        /// CertificateExport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificateexport
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CertificateExport { get; set; }
+        /// <summary>
+        /// DomainValidationOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: DomainValidationOption
+        /// </summary>
+        public List<Humidifier.CertificateManager.CertificateTypes.DomainValidationOption> DomainValidationOptions { get; set; }
         /// <summary>
         /// CertificateTransparencyLoggingPreference
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificatetransparencyloggingpreference
@@ -33,22 +55,13 @@ namespace Humidifier.CertificateManager
         [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
-        /// DomainValidationOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions
+        /// ValidationMethod
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
         /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// ItemType: DomainValidationOption
-        /// </summary>
-        public List<Humidifier.CertificateManager.CertificateTypes.DomainValidationOption> DomainValidationOptions { get; set; }
-        /// <summary>
-        /// KeyAlgorithm
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-keyalgorithm
-        /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic KeyAlgorithm { get; set; }
+        public dynamic ValidationMethod { get; set; }
         /// <summary>
         /// SubjectAlternativeNames
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-subjectalternativenames
@@ -66,15 +79,15 @@ namespace Humidifier.CertificateManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
-        /// ValidationMethod
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-validationmethod
+        /// KeyAlgorithm
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-keyalgorithm
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic ValidationMethod { get; set; }
+        public dynamic KeyAlgorithm { get; set; }
     }
 
     namespace CertificateTypes
@@ -83,9 +96,9 @@ namespace Humidifier.CertificateManager
         {
             /// <summary>
             /// DomainName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoptions-domainname
-            /// Required: True
-            /// UpdateType: Mutable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-domainname
+            /// Required: False
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DomainName { get; set; }
@@ -93,7 +106,7 @@ namespace Humidifier.CertificateManager
             /// HostedZoneId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-hostedzoneid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic HostedZoneId { get; set; }
@@ -101,7 +114,7 @@ namespace Humidifier.CertificateManager
             /// ValidationDomain
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-certificate-domainvalidationoption.html#cfn-certificatemanager-certificate-domainvalidationoption-validationdomain
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ValidationDomain { get; set; }

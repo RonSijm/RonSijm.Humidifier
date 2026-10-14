@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SubnetTypes;
 
     public class Subnet : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHaveAvailabilityZone, IHaveCidrBlock, IHaveOutpostArn, IHaveIpv6CidrBlock, IHaveIpv6NetmaskLength, IHaveIpv6IpamPoolId, IHaveIpv4NetmaskLength, IHaveIpv4IpamPoolId, IHaveAvailabilityZoneId
@@ -14,6 +14,7 @@ namespace Humidifier.EC2
             public static string AvailabilityZone =  "AvailabilityZone" ;
             public static string CidrBlock =  "CidrBlock" ;
             public static string SubnetId =  "SubnetId" ;
+            public static string BlockPublicAccessStates =  "BlockPublicAccessStates" ;
             public static string Ipv6CidrBlocks =  "Ipv6CidrBlocks" ;
         }
 
@@ -156,11 +157,23 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace SubnetTypes
     {
+        public class BlockPublicAccessStates : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// InternetGatewayBlockMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-blockpublicaccessstates.html#cfn-ec2-subnet-blockpublicaccessstates-internetgatewayblockmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InternetGatewayBlockMode { get; set; }
+        }
+
         public class PrivateDnsNameOptionsOnLaunch : Humidifier.Base.BaseSubResource, IHaveEnableResourceNameDnsARecord, IHaveHostnameType, IHaveEnableResourceNameDnsAAAARecord
         {
             /// <summary>

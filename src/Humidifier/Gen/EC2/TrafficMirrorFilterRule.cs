@@ -1,10 +1,15 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TrafficMirrorFilterRuleTypes;
 
     public class TrafficMirrorFilterRule : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveProtocol, IHaveDestinationCidrBlock, IHaveRuleAction, IHaveRuleNumber, IHaveTrafficMirrorFilterId
     {
+        public class Attributes
+        {
+            public static string TrafficMirrorFilterRuleId =  "TrafficMirrorFilterRuleId" ;
+        }
+
         public override string AWSTypeName { get => AWS.EC2.TrafficMirrorFilterRule; }
         /// <summary>
         /// DestinationPortRange
@@ -106,21 +111,13 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace TrafficMirrorFilterRuleTypes
     {
         public class TrafficMirrorPortRange : Humidifier.Base.BaseSubResource, IHaveFromPort, IHaveToPort
         {
-            /// <summary>
-            /// FromPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic FromPort { get; set; }
             /// <summary>
             /// ToPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport
@@ -129,6 +126,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ToPort { get; set; }
+            /// <summary>
+            /// FromPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FromPort { get; set; }
         }
     }
 }

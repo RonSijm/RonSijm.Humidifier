@@ -1,6 +1,6 @@
 namespace Humidifier.ECR
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ReplicationConfigurationTypes;
 
     public class ReplicationConfiguration : Humidifier.Base.BaseResource

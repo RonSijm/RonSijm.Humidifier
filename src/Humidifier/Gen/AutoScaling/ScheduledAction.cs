@@ -1,6 +1,6 @@
 namespace Humidifier.AutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ScheduledAction : Humidifier.Base.BaseResource, IHaveStartTime, IHaveMinSize, IHaveMaxSize, IHaveEndTime, IHaveTimeZone, IHaveAutoScalingGroupName, IHaveDesiredCapacity
     {

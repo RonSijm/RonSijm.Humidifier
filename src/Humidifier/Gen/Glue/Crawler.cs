@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CrawlerTypes;
 
     public class Crawler : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDatabaseName, IHaveDynamicTags, IHaveRole, IHaveConfiguration, IHaveTablePrefix
@@ -212,6 +212,22 @@ namespace Humidifier.Glue
             /// PrimitiveType: String
             /// </summary>
             public dynamic Path { get; set; }
+            /// <summary>
+            /// ScanRate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-scanrate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic ScanRate { get; set; }
+            /// <summary>
+            /// ScanAll
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-scanall
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ScanAll { get; set; }
         }
 
         public class HudiTarget : Humidifier.Base.BaseSubResource, IHaveConnectionName, IHaveExclusions

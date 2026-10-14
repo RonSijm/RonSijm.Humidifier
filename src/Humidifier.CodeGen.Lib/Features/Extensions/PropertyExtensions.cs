@@ -145,9 +145,13 @@ public static class PropertyExtensions
                     }
                     else
                     {
-                        if (property.ItemType == "Tag" || property.ItemType == "Protocol" || property.ItemType == "StructuredLogDestination")
+                        if (property.ItemType == "Tag")
                         {
-                            typeName = $"List<{property.ItemType}>";
+                            typeName = "List<Humidifier.Tag>";
+                        }
+                        else if (property.ItemType == "Protocol" || property.ItemType == "StructuredLogDestination")
+                        {
+                            typeName = $"List<Humidifier.Transfer.{property.ItemType}>";
                         }
                         else
                         {
@@ -170,6 +174,18 @@ public static class PropertyExtensions
                         case "Boolean":
                             typeName = "Dictionary<string, bool>";
                             break;
+                        case "Long":
+                            typeName = "Dictionary<string, long>";
+                            break;
+                        case "Integer":
+                            typeName = "Dictionary<string, int>";
+                            break;
+                        case "Double":
+                            typeName = "Dictionary<string, double>";
+                            break;
+                        case "Timestamp":
+                            typeName = "Dictionary<string, DateTime>";
+                            break;
 
                         // Not sure if this works, but if the specs expect Json,
                         // I guess you can just add a random object and serialize it right?
@@ -190,6 +206,15 @@ public static class PropertyExtensions
                     // Console.WriteLine("Map:: " + property.ItemType);
                     typeName = $"Dictionary<string, Humidifier.{nameSpace}.{propsNamespace}.{property.ItemType}>";
 
+                break;
+
+            case "Tag":
+                typeName = "Humidifier.Tag";
+                break;
+
+            case "Protocol":
+            case "StructuredLogDestination":
+                typeName = $"Humidifier.Transfer.{property.Type}";
                 break;
 
             default:

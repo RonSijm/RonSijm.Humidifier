@@ -1,10 +1,15 @@
 namespace Humidifier.AppStream
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FleetTypes;
 
-    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveDisplayName, IHaveIamRoleArn, IHaveImageName, IHavePlatform, IHaveEnableDefaultInternetAccess, IHaveFleetType, IHaveMaxUserDurationInSeconds, IHaveIdleDisconnectTimeoutInSeconds, IHaveDisconnectTimeoutInSeconds, IHaveMaxConcurrentSessions, IHaveImageArn
+    public class Fleet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveInstanceType, IHaveDisplayName, IHaveIamRoleArn, IHaveImageName, IHavePlatform, IHaveEnableDefaultInternetAccess, IHaveAttributesToDelete, IHaveFleetType, IHaveMaxUserDurationInSeconds, IHaveIdleDisconnectTimeoutInSeconds, IHaveDisconnectTimeoutInSeconds, IHaveMaxConcurrentSessions, IHaveImageArn
     {
+        public class Attributes
+        {
+            public static string Arn =  "Arn" ;
+        }
+
         public override string AWSTypeName { get => AWS.AppStream.Fleet; }
         /// <summary>
         /// Description
@@ -39,29 +44,13 @@ namespace Humidifier.AppStream
         /// </summary>
         public Humidifier.AppStream.FleetTypes.VpcConfig VpcConfig { get; set; }
         /// <summary>
-        /// FleetType
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-fleettype
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic FleetType { get; set; }
-        /// <summary>
-        /// EnableDefaultInternetAccess
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-enabledefaultinternetaccess
+        /// RootVolumeConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-rootvolumeconfig
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
+        /// Type: VolumeConfig
         /// </summary>
-        public dynamic EnableDefaultInternetAccess { get; set; }
-        /// <summary>
-        /// DomainJoinInfo
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-domainjoininfo
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: DomainJoinInfo
-        /// </summary>
-        public Humidifier.AppStream.FleetTypes.DomainJoinInfo DomainJoinInfo { get; set; }
+        public Humidifier.AppStream.FleetTypes.VolumeConfig RootVolumeConfig { get; set; }
         /// <summary>
         /// SessionScriptS3Location
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-sessionscripts3location
@@ -71,22 +60,6 @@ namespace Humidifier.AppStream
         /// </summary>
         public Humidifier.AppStream.FleetTypes.S3Location SessionScriptS3Location { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// ImageName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagename
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ImageName { get; set; }
-        /// <summary>
-        /// MaxUserDurationInSeconds
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic MaxUserDurationInSeconds { get; set; }
         /// <summary>
         /// IdleDisconnectTimeoutInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-idledisconnecttimeoutinseconds
@@ -120,14 +93,6 @@ namespace Humidifier.AppStream
         /// PrimitiveType: String
         /// </summary>
         public dynamic DisplayName { get; set; }
-        /// <summary>
-        /// StreamView
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-streamview
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic StreamView { get; set; }
         /// <summary>
         /// IamRoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-iamrolearn
@@ -170,7 +135,72 @@ namespace Humidifier.AppStream
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// FleetType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-fleettype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic FleetType { get; set; }
+        /// <summary>
+        /// DisableIMDSV1
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-disableimdsv1
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic DisableIMDSV1 { get; set; }
+        /// <summary>
+        /// AttributesToDelete
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-attributestodelete
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic AttributesToDelete { get; set; }
+        /// <summary>
+        /// EnableDefaultInternetAccess
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-enabledefaultinternetaccess
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic EnableDefaultInternetAccess { get; set; }
+        /// <summary>
+        /// DomainJoinInfo
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-domainjoininfo
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DomainJoinInfo
+        /// </summary>
+        public Humidifier.AppStream.FleetTypes.DomainJoinInfo DomainJoinInfo { get; set; }
+        /// <summary>
+        /// ImageName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagename
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ImageName { get; set; }
+        /// <summary>
+        /// MaxUserDurationInSeconds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-maxuserdurationinseconds
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic MaxUserDurationInSeconds { get; set; }
+        /// <summary>
+        /// StreamView
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-streamview
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StreamView { get; set; }
         /// <summary>
         /// ImageArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-imagearn
@@ -241,6 +271,18 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3Key { get; set; }
+        }
+
+        public class VolumeConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// VolumeSizeInGb
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-volumeconfig.html#cfn-appstream-fleet-volumeconfig-volumesizeingb
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic VolumeSizeInGb { get; set; }
         }
 
         public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds

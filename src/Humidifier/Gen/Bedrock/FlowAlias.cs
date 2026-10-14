@@ -1,6 +1,6 @@
 namespace Humidifier.Bedrock
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FlowAliasTypes;
 
     public class FlowAlias : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveFlowArn
@@ -23,6 +23,14 @@ namespace Humidifier.Bedrock
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// ConcurrencyConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrock-flowalias.html#cfn-bedrock-flowalias-concurrencyconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: FlowAliasConcurrencyConfiguration
+        /// </summary>
+        public Humidifier.Bedrock.FlowAliasTypes.FlowAliasConcurrencyConfiguration ConcurrencyConfiguration { get; set; }
 
         /// <summary>
         /// RoutingConfiguration
@@ -58,6 +66,26 @@ namespace Humidifier.Bedrock
 
     namespace FlowAliasTypes
     {
+        public class FlowAliasConcurrencyConfiguration : Humidifier.Base.BaseSubResource, IHaveType, IHaveMaxConcurrency
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowalias-flowaliasconcurrencyconfiguration.html#cfn-bedrock-flowalias-flowaliasconcurrencyconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// MaxConcurrency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrock-flowalias-flowaliasconcurrencyconfiguration.html#cfn-bedrock-flowalias-flowaliasconcurrencyconfiguration-maxconcurrency
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic MaxConcurrency { get; set; }
+        }
+
         public class FlowAliasRoutingConfigurationListItem : Humidifier.Base.BaseSubResource
         {
             /// <summary>

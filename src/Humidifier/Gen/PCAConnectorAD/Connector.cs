@@ -1,6 +1,6 @@
 namespace Humidifier.PCAConnectorAD
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ConnectorTypes;
 
     public class Connector : Humidifier.Base.BaseResource, IHaveCertificateAuthorityArn, IHaveDirectoryId
@@ -54,8 +54,16 @@ namespace Humidifier.PCAConnectorAD
 
     namespace ConnectorTypes
     {
-        public class VpcInformation : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds
+        public class VpcInformation : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveIpAddressType
         {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-connector-vpcinformation.html#cfn-pcaconnectorad-connector-vpcinformation-ipaddresstype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcaconnectorad-connector-vpcinformation.html#cfn-pcaconnectorad-connector-vpcinformation-securitygroupids

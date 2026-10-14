@@ -1,6 +1,6 @@
 namespace Humidifier.PCS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ComputeNodeGroupTypes;
 
     public class ComputeNodeGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveSubnetIds, IHaveClusterId, IHaveAmiId
@@ -42,6 +42,26 @@ namespace Humidifier.PCS
         public Humidifier.PCS.ComputeNodeGroupTypes.SlurmConfiguration SlurmConfiguration { get; set; }
 
         /// <summary>
+        /// SubnetIds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-subnetids
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        [Required]
+        public dynamic SubnetIds { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// NodeLifecycleActions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-nodelifecycleactions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: NodeLifecycleActions
+        /// </summary>
+        public Humidifier.PCS.ComputeNodeGroupTypes.NodeLifecycleActions NodeLifecycleActions { get; set; }
+
+        /// <summary>
         /// ScalingConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-scalingconfiguration
         /// Required: True
@@ -69,27 +89,14 @@ namespace Humidifier.PCS
         /// PrimitiveType: String
         /// </summary>
         public dynamic PurchaseOption { get; set; }
-
         /// <summary>
         /// CustomLaunchTemplate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-customlaunchtemplate
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// Type: CustomLaunchTemplate
         /// </summary>
-        [Required]
         public Humidifier.PCS.ComputeNodeGroupTypes.CustomLaunchTemplate CustomLaunchTemplate { get; set; }
-
-        /// <summary>
-        /// SubnetIds
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-subnetids
-        /// Required: True
-        /// UpdateType: Mutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        [Required]
-        public dynamic SubnetIds { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-tags
@@ -99,7 +106,6 @@ namespace Humidifier.PCS
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// AmiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-amiid
@@ -122,7 +128,7 @@ namespace Humidifier.PCS
 
     namespace ComputeNodeGroupTypes
     {
-        public class CustomLaunchTemplate : Humidifier.Base.BaseSubResource, IHaveId, IHaveVersion
+        public class CustomLaunchTemplate : Humidifier.Base.BaseSubResource, IHaveVersion, IHaveTemplateId
         {
             /// <summary>
             /// Version
@@ -133,13 +139,13 @@ namespace Humidifier.PCS
             /// </summary>
             public dynamic Version { get; set; }
             /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-customlaunchtemplate.html#cfn-pcs-computenodegroup-customlaunchtemplate-id
-            /// Required: True
+            /// TemplateId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-customlaunchtemplate.html#cfn-pcs-computenodegroup-customlaunchtemplate-templateid
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id { get; set; }
+            public dynamic TemplateId { get; set; }
         }
 
         public class ErrorInfo : Humidifier.Base.BaseSubResource, IHaveMessage, IHaveCode
@@ -174,6 +180,93 @@ namespace Humidifier.PCS
             public dynamic InstanceType { get; set; }
         }
 
+        public class NodeLifecycleActions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ScriptCachingPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecycleactions.html#cfn-pcs-computenodegroup-nodelifecycleactions-scriptcachingpolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScriptCachingPolicy { get; set; }
+            /// <summary>
+            /// Stages
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecycleactions.html#cfn-pcs-computenodegroup-nodelifecycleactions-stages
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: NodeLifecycleStages
+            /// </summary>
+            public Humidifier.PCS.ComputeNodeGroupTypes.NodeLifecycleStages Stages { get; set; }
+        }
+
+        public class NodeLifecycleScript : Humidifier.Base.BaseSubResource, IHaveName, IHaveArguments
+        {
+            /// <summary>
+            /// Arguments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclescript.html#cfn-pcs-computenodegroup-nodelifecyclescript-arguments
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Arguments { get; set; }
+            /// <summary>
+            /// OnError
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclescript.html#cfn-pcs-computenodegroup-nodelifecyclescript-onerror
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OnError { get; set; }
+            /// <summary>
+            /// ExecutionPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclescript.html#cfn-pcs-computenodegroup-nodelifecyclescript-executionpolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ExecutionPolicy { get; set; }
+            /// <summary>
+            /// ScriptSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclescript.html#cfn-pcs-computenodegroup-nodelifecyclescript-scriptsource
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: ScriptSource
+            /// </summary>
+            public Humidifier.PCS.ComputeNodeGroupTypes.ScriptSource ScriptSource { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclescript.html#cfn-pcs-computenodegroup-nodelifecyclescript-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class NodeLifecycleStages : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NodeBootstrapped
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclestages.html#cfn-pcs-computenodegroup-nodelifecyclestages-nodebootstrapped
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NodeLifecycleScript
+            /// </summary>
+            public List<Humidifier.PCS.ComputeNodeGroupTypes.NodeLifecycleScript> NodeBootstrapped { get; set; }
+            /// <summary>
+            /// NodeReady
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-nodelifecyclestages.html#cfn-pcs-computenodegroup-nodelifecyclestages-nodeready
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NodeLifecycleScript
+            /// </summary>
+            public List<Humidifier.PCS.ComputeNodeGroupTypes.NodeLifecycleScript> NodeReady { get; set; }
+        }
+
         public class ScalingConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxInstanceCount, IHaveMinInstanceCount
         {
             /// <summary>
@@ -194,8 +287,52 @@ namespace Humidifier.PCS
             public dynamic MinInstanceCount { get; set; }
         }
 
+        public class ScriptSource : Humidifier.Base.BaseSubResource, IHaveScriptLocation
+        {
+            /// <summary>
+            /// Checksum
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-scriptsource.html#cfn-pcs-computenodegroup-scriptsource-checksum
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Checksum { get; set; }
+            /// <summary>
+            /// S3VersionId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-scriptsource.html#cfn-pcs-computenodegroup-scriptsource-s3versionid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3VersionId { get; set; }
+            /// <summary>
+            /// ScriptLocation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-scriptsource.html#cfn-pcs-computenodegroup-scriptsource-scriptlocation
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScriptLocation { get; set; }
+        }
+
         public class SlurmConfiguration : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// GresCustomSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-slurmconfiguration.html#cfn-pcs-computenodegroup-slurmconfiguration-grescustomsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic GresCustomSettings { get; set; }
+            /// <summary>
+            /// ScaleDownIdleTimeInSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-slurmconfiguration.html#cfn-pcs-computenodegroup-slurmconfiguration-scaledownidletimeinseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ScaleDownIdleTimeInSeconds { get; set; }
             /// <summary>
             /// SlurmCustomSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pcs-computenodegroup-slurmconfiguration.html#cfn-pcs-computenodegroup-slurmconfiguration-slurmcustomsettings

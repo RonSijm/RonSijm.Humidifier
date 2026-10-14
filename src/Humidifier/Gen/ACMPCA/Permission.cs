@@ -1,6 +1,6 @@
 namespace Humidifier.ACMPCA
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Permission : Humidifier.Base.BaseResource, IHavePrincipal, IHaveActions, IHaveCertificateAuthorityArn, IHaveSourceAccount
     {

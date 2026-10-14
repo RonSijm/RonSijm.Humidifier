@@ -1,6 +1,6 @@
 namespace Humidifier.Location
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using APIKeyTypes;
 
     public class APIKey : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveKeyName
@@ -82,11 +82,31 @@ namespace Humidifier.Location
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace APIKeyTypes
     {
+        public class AndroidApp : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CertificateFingerprint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-apikey-androidapp.html#cfn-location-apikey-androidapp-certificatefingerprint
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CertificateFingerprint { get; set; }
+            /// <summary>
+            /// Package
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-apikey-androidapp.html#cfn-location-apikey-androidapp-package
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Package { get; set; }
+        }
+
         public class ApiKeyRestrictions : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -108,6 +128,15 @@ namespace Humidifier.Location
             /// </summary>
             public dynamic AllowResources { get; set; }
             /// <summary>
+            /// AllowAndroidApps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-apikey-apikeyrestrictions.html#cfn-location-apikey-apikeyrestrictions-allowandroidapps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AndroidApp
+            /// </summary>
+            public List<Humidifier.Location.APIKeyTypes.AndroidApp> AllowAndroidApps { get; set; }
+            /// <summary>
             /// AllowReferers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-apikey-apikeyrestrictions.html#cfn-location-apikey-apikeyrestrictions-allowreferers
             /// Required: False
@@ -116,6 +145,27 @@ namespace Humidifier.Location
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AllowReferers { get; set; }
+            /// <summary>
+            /// AllowAppleApps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-apikey-apikeyrestrictions.html#cfn-location-apikey-apikeyrestrictions-allowappleapps
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: AppleApp
+            /// </summary>
+            public List<Humidifier.Location.APIKeyTypes.AppleApp> AllowAppleApps { get; set; }
+        }
+
+        public class AppleApp : Humidifier.Base.BaseSubResource, IHaveBundleId
+        {
+            /// <summary>
+            /// BundleId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-apikey-appleapp.html#cfn-location-apikey-appleapp-bundleid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BundleId { get; set; }
         }
     }
 }

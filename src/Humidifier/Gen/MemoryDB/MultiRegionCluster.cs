@@ -1,6 +1,6 @@
 namespace Humidifier.MemoryDB
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class MultiRegionCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveEngineVersion, IHaveEngine, IHaveNodeType, IHaveNumShards, IHaveTLSEnabled
     {
@@ -86,7 +86,7 @@ namespace Humidifier.MemoryDB
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// NumShards
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-multiregioncluster.html#cfn-memorydb-multiregioncluster-numshards

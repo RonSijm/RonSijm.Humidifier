@@ -1,6 +1,6 @@
 namespace Humidifier.WorkSpacesThinClient
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EnvironmentTypes;
 
     public class Environment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyArn
@@ -54,7 +54,7 @@ namespace Humidifier.WorkSpacesThinClient
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> DeviceCreationTags { get; set; }
+        public List<Humidifier.Tag> DeviceCreationTags { get; set; }
         /// <summary>
         /// SoftwareSetUpdateMode
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspacesthinclient-environment.html#cfn-workspacesthinclient-environment-softwaresetupdatemode
@@ -95,7 +95,7 @@ namespace Humidifier.WorkSpacesThinClient
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

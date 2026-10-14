@@ -1,6 +1,7 @@
 namespace Humidifier.Transfer
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using AgreementTypes;
 
     public class Agreement : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveStatus, IHaveServerId, IHaveAccessRole, IHavePartnerProfileId, IHaveLocalProfileId
     {
@@ -27,6 +28,14 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// BaseDirectory
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-basedirectory
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic BaseDirectory { get; set; }
 
         /// <summary>
         /// ServerId
@@ -37,16 +46,14 @@ namespace Humidifier.Transfer
         /// </summary>
         [Required]
         public dynamic ServerId { get; set; }
-
         /// <summary>
-        /// BaseDirectory
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-basedirectory
-        /// Required: True
+        /// CustomDirectories
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-customdirectories
+        /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: String
+        /// Type: CustomDirectories
         /// </summary>
-        [Required]
-        public dynamic BaseDirectory { get; set; }
+        public Humidifier.Transfer.AgreementTypes.CustomDirectories CustomDirectories { get; set; }
 
         /// <summary>
         /// AccessRole
@@ -86,15 +93,6 @@ namespace Humidifier.Transfer
         /// </summary>
         public dynamic EnforceMessageSigning { get; set; }
         /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
-        /// <summary>
         /// PreserveFilename
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-preservefilename
         /// Required: False
@@ -102,5 +100,61 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic PreserveFilename { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-agreement.html#cfn-transfer-agreement-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
+    }
+
+    namespace AgreementTypes
+    {
+        public class CustomDirectories : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FailedFilesDirectory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-agreement-customdirectories.html#cfn-transfer-agreement-customdirectories-failedfilesdirectory
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FailedFilesDirectory { get; set; }
+            /// <summary>
+            /// TemporaryFilesDirectory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-agreement-customdirectories.html#cfn-transfer-agreement-customdirectories-temporaryfilesdirectory
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TemporaryFilesDirectory { get; set; }
+            /// <summary>
+            /// MdnFilesDirectory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-agreement-customdirectories.html#cfn-transfer-agreement-customdirectories-mdnfilesdirectory
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MdnFilesDirectory { get; set; }
+            /// <summary>
+            /// PayloadFilesDirectory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-agreement-customdirectories.html#cfn-transfer-agreement-customdirectories-payloadfilesdirectory
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PayloadFilesDirectory { get; set; }
+            /// <summary>
+            /// StatusFilesDirectory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-agreement-customdirectories.html#cfn-transfer-agreement-customdirectories-statusfilesdirectory
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StatusFilesDirectory { get; set; }
+        }
     }
 }

@@ -148,7 +148,7 @@ public class JsonStackSerializer : IStackSerializer
                     Type = resource.AWSTypeName,
                     Condition = condition,
                     Properties = resource,
-                    DependsOn = resource.DependsOn,
+                    DependsOn = dependsOn,
                     CreationPolicy = creationPolicy,
                     UpdatePolicy = updatePolicy,
                     DeletionPolicy = deletionPolicy,

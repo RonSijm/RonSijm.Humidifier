@@ -1,6 +1,6 @@
 namespace Humidifier.AppMesh
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VirtualNodeTypes;
 
     public class VirtualNode : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMeshName, IHaveMeshOwner, IHaveVirtualNodeName
@@ -53,7 +53,7 @@ namespace Humidifier.AppMesh
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace VirtualNodeTypes

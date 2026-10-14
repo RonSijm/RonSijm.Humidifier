@@ -1,6 +1,6 @@
 namespace Humidifier.IoTSiteWise
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PortalTypes;
 
     public class Portal : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveRoleArn, IHaveDescription
@@ -84,7 +84,7 @@ namespace Humidifier.IoTSiteWise
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// PortalDescription
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-portaldescription

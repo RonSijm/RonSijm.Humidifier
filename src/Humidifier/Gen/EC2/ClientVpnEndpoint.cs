@@ -1,20 +1,18 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClientVpnEndpointTypes;
 
     public class ClientVpnEndpoint : Humidifier.Base.BaseResource, IHaveDescription, IHaveSecurityGroupIds, IHaveVpcId, IHaveServerCertificateArn, IHaveDnsServers
     {
         public override string AWSTypeName { get => AWS.EC2.ClientVpnEndpoint; }
-
         /// <summary>
         /// ClientCidrBlock
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientcidrblock
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic ClientCidrBlock { get; set; }
         /// <summary>
         /// ClientConnectOptions
@@ -32,6 +30,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// ClientRouteEnforcementOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientrouteenforcementoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ClientRouteEnforcementOptions
+        /// </summary>
+        public Humidifier.EC2.ClientVpnEndpointTypes.ClientRouteEnforcementOptions ClientRouteEnforcementOptions { get; set; }
         /// <summary>
         /// TagSpecifications
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-tagspecifications
@@ -80,6 +86,14 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic DnsServers { get; set; }
         /// <summary>
+        /// DevicePostureOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-devicepostureoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DevicePostureOptions
+        /// </summary>
+        public Humidifier.EC2.ClientVpnEndpointTypes.DevicePostureOptions DevicePostureOptions { get; set; }
+        /// <summary>
         /// SecurityGroupIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-securitygroupids
         /// Required: False
@@ -107,6 +121,14 @@ namespace Humidifier.EC2
         [Required]
         public Humidifier.EC2.ClientVpnEndpointTypes.ConnectionLogOptions ConnectionLogOptions { get; set; }
         /// <summary>
+        /// AuthorizationPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authorizationpolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AuthorizationPolicy
+        /// </summary>
+        public Humidifier.EC2.ClientVpnEndpointTypes.AuthorizationPolicy AuthorizationPolicy { get; set; }
+        /// <summary>
         /// SplitTunnel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel
         /// Required: False
@@ -114,6 +136,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic SplitTunnel { get; set; }
+        /// <summary>
+        /// TrafficIpAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-trafficipaddresstype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TrafficIpAddressType { get; set; }
         /// <summary>
         /// ClientLoginBannerOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions
@@ -139,6 +169,14 @@ namespace Humidifier.EC2
         /// </summary>
         public dynamic SelfServicePortal { get; set; }
         /// <summary>
+        /// TransitGatewayConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: TransitGatewayConfiguration
+        /// </summary>
+        public Humidifier.EC2.ClientVpnEndpointTypes.TransitGatewayConfiguration TransitGatewayConfiguration { get; set; }
+        /// <summary>
         /// TransportProtocol
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transportprotocol
         /// Required: False
@@ -146,6 +184,14 @@ namespace Humidifier.EC2
         /// PrimitiveType: String
         /// </summary>
         public dynamic TransportProtocol { get; set; }
+        /// <summary>
+        /// EndpointIpAddressType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-endpointipaddresstype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointIpAddressType { get; set; }
         /// <summary>
         /// VpnPort
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpnport
@@ -158,6 +204,34 @@ namespace Humidifier.EC2
 
     namespace ClientVpnEndpointTypes
     {
+        public class AuthorizationPolicy : Humidifier.Base.BaseSubResource, IHaveDescription, IHavePolicyDocument
+        {
+            /// <summary>
+            /// Description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-authorizationpolicy.html#cfn-ec2-clientvpnendpoint-authorizationpolicy-description
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Description { get; set; }
+            /// <summary>
+            /// PolicyDocument
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-authorizationpolicy.html#cfn-ec2-clientvpnendpoint-authorizationpolicy-policydocument
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PolicyDocument { get; set; }
+            /// <summary>
+            /// ShadowMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-authorizationpolicy.html#cfn-ec2-clientvpnendpoint-authorizationpolicy-shadowmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ShadowMode { get; set; }
+        }
+
         public class CertificateAuthenticationRequest : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -246,8 +320,28 @@ namespace Humidifier.EC2
             public dynamic BannerText { get; set; }
         }
 
+        public class ClientRouteEnforcementOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Enforced
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientrouteenforcementoptions.html#cfn-ec2-clientvpnendpoint-clientrouteenforcementoptions-enforced
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enforced { get; set; }
+        }
+
         public class ConnectionLogOptions : Humidifier.Base.BaseSubResource, IHaveEnabled
         {
+            /// <summary>
+            /// IncludeAuthorizationPolicyContext
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-includeauthorizationpolicycontext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IncludeAuthorizationPolicyContext { get; set; }
             /// <summary>
             /// CloudwatchLogStream
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchlogstream
@@ -272,6 +366,55 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic CloudwatchLogGroup { get; set; }
+        }
+
+        public class DevicePostureOptions : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// TrustProviders
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-devicepostureoptions.html#cfn-ec2-clientvpnendpoint-devicepostureoptions-trustproviders
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DevicePostureTrustProvider
+            /// </summary>
+            public List<Humidifier.EC2.ClientVpnEndpointTypes.DevicePostureTrustProvider> TrustProviders { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-devicepostureoptions.html#cfn-ec2-clientvpnendpoint-devicepostureoptions-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class DevicePostureTrustProvider : Humidifier.Base.BaseSubResource, IHaveTrustProviderType, IHaveTenantId
+        {
+            /// <summary>
+            /// TenantId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-deviceposturetrustprovider.html#cfn-ec2-clientvpnendpoint-deviceposturetrustprovider-tenantid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TenantId { get; set; }
+            /// <summary>
+            /// TrustProviderType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-deviceposturetrustprovider.html#cfn-ec2-clientvpnendpoint-deviceposturetrustprovider-trustprovidertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TrustProviderType { get; set; }
+            /// <summary>
+            /// PublicSigningKeyUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-deviceposturetrustprovider.html#cfn-ec2-clientvpnendpoint-deviceposturetrustprovider-publicsigningkeyurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PublicSigningKeyUrl { get; set; }
         }
 
         public class DirectoryServiceAuthenticationRequest : Humidifier.Base.BaseSubResource, IHaveDirectoryId
@@ -324,7 +467,37 @@ namespace Humidifier.EC2
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
+        }
+
+        public class TransitGatewayConfiguration : Humidifier.Base.BaseSubResource, IHaveAvailabilityZones, IHaveTransitGatewayId
+        {
+            /// <summary>
+            /// TransitGatewayId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-transitgatewayconfiguration.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration-transitgatewayid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TransitGatewayId { get; set; }
+            /// <summary>
+            /// AvailabilityZoneIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-transitgatewayconfiguration.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration-availabilityzoneids
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AvailabilityZoneIds { get; set; }
+            /// <summary>
+            /// AvailabilityZones
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-transitgatewayconfiguration.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration-availabilityzones
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AvailabilityZones { get; set; }
         }
     }
 }

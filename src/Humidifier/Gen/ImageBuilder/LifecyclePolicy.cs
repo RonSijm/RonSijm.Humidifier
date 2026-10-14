@@ -1,6 +1,6 @@
 namespace Humidifier.ImageBuilder
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LifecyclePolicyTypes;
 
     public class LifecyclePolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveStatus, IHaveResourceType, IHaveExecutionRole

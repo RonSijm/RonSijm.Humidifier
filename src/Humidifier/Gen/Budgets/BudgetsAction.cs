@@ -1,6 +1,6 @@
 namespace Humidifier.Budgets
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BudgetsActionTypes;
 
     public class BudgetsAction : Humidifier.Base.BaseResource, IHaveExecutionRoleArn, IHaveActionType, IHaveNotificationType, IHaveBudgetName

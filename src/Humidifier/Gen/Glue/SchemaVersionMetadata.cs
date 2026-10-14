@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SchemaVersionMetadata : Humidifier.Base.BaseResource, IHaveValue, IHaveKey, IHaveSchemaVersionId
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.CloudTrail
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EventDataStoreTypes;
 
     public class EventDataStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyId, IHaveBillingMode, IHaveTerminationProtectionEnabled, IHaveRetentionPeriod
@@ -14,6 +14,14 @@ namespace Humidifier.CloudTrail
         }
 
         public override string AWSTypeName { get => AWS.CloudTrail.EventDataStore; }
+        /// <summary>
+        /// MaxEventSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-maxeventsize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MaxEventSize { get; set; }
         /// <summary>
         /// KmsKeyId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-kmskeyid
@@ -114,6 +122,15 @@ namespace Humidifier.CloudTrail
         /// </summary>
         public dynamic BillingMode { get; set; }
         /// <summary>
+        /// ContextKeySelectors
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-contextkeyselectors
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ContextKeySelector
+        /// </summary>
+        public List<Humidifier.CloudTrail.EventDataStoreTypes.ContextKeySelector> ContextKeySelectors { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-eventdatastore.html#cfn-cloudtrail-eventdatastore-tags
         /// Required: False
@@ -121,7 +138,7 @@ namespace Humidifier.CloudTrail
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace EventDataStoreTypes
@@ -211,6 +228,27 @@ namespace Humidifier.CloudTrail
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic NotEquals { get; set; }
+        }
+
+        public class ContextKeySelector : Humidifier.Base.BaseSubResource, IHaveType, IHaveEquals
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-eventdatastore-contextkeyselector.html#cfn-cloudtrail-eventdatastore-contextkeyselector-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Equals
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-eventdatastore-contextkeyselector.html#cfn-cloudtrail-eventdatastore-contextkeyselector-equals
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Equals { get; set; }
         }
 
         public class InsightSelector : Humidifier.Base.BaseSubResource, IHaveInsightType

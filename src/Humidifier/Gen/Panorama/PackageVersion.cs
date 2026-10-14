@@ -1,6 +1,6 @@
 namespace Humidifier.Panorama
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class PackageVersion : Humidifier.Base.BaseResource, IHaveOwnerAccount
     {

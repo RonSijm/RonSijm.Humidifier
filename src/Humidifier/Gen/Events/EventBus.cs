@@ -1,6 +1,6 @@
 namespace Humidifier.Events
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EventBusTypes;
 
     public class EventBus : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHavePolicy, IHaveKmsKeyIdentifier, IHaveEventSourceName
@@ -60,8 +60,16 @@ namespace Humidifier.Events
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// LogConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-logconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LogConfig
+        /// </summary>
+        public Humidifier.Events.EventBusTypes.LogConfig LogConfig { get; set; }
     }
 
     namespace EventBusTypes
@@ -76,6 +84,26 @@ namespace Humidifier.Events
             /// PrimitiveType: String
             /// </summary>
             public dynamic Arn { get; set; }
+        }
+
+        public class LogConfig : Humidifier.Base.BaseSubResource, IHaveLevel
+        {
+            /// <summary>
+            /// IncludeDetail
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-logconfig.html#cfn-events-eventbus-logconfig-includedetail
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IncludeDetail { get; set; }
+            /// <summary>
+            /// Level
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-logconfig.html#cfn-events-eventbus-logconfig-level
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Level { get; set; }
         }
     }
 }

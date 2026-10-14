@@ -1,6 +1,6 @@
 namespace Humidifier.Omics
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AnnotationStoreTypes;
 
     public class AnnotationStore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription

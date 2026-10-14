@@ -1,5 +1,6 @@
 ﻿using System.Threading.Tasks;
 using Humidifier.CodeGen.Lib.Features.JsonToModels.Models;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
 {
@@ -13,7 +14,8 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
                 .ToList();
 
             var namespaceDeclaration = NamespaceDeclaration(ParseName("Humidifier.Interfaces"))
-                .AddUsings(UsingDirective(ParseName("System.Collections.Generic")));
+                .AddUsings(UsingDirective(ParseName("global::System.Collections.Generic")));
+            var interfaceDeclarations = new List<InterfaceDeclarationSyntax>();
 
             foreach (var tryFindMostUsedProperty in tryFindMostUsedProperties)
             {
@@ -30,8 +32,10 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
                             AccessorDeclaration(SyntaxKind.SetAccessorDeclaration).WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                     ));
 
-                namespaceDeclaration = namespaceDeclaration.AddMembers(interfaceDeclaration);
+                interfaceDeclarations.Add(interfaceDeclaration);
             }
+
+            namespaceDeclaration = namespaceDeclaration.AddMembers(interfaceDeclarations.ToArray());
 
             var compilationUnit = CompilationUnit()
                 .AddUsings(UsingDirective(ParseName("System")))
@@ -66,20 +70,35 @@ namespace Humidifier.CodeGen.Lib.Features.InterfaceGenerator
                             return $"{item.PrimitiveItemType}ListOf{item.Name}";
                         }
 
+                        if (item.Type == "Map")
+                        {
+                            return $"{item.PrimitiveItemType}DictionaryOf{item.Name}";
+                        }
+
                         break;
                     }
                 }
             }
-            else if (item.CsFullTypeName == "List<Tag>")
+            else if (item.CsFullTypeName == "List<Humidifier.Tag>")
             {
-                return item.Name;
+                return item.Name is "Tags" or "MatchAnyTag" ? item.Name : $"TagListOf{item.Name}";
+            }
+            else if (item.CsFullTypeName is "Humidifier.Tag" or "Humidifier.Transfer.Protocol" or "Humidifier.Transfer.StructuredLogDestination")
+            {
+                var customTypeName = item.CsFullTypeName.Split('.').Last();
+                return $"{customTypeName}{item.Name}";
             }
 
             else if (item.NameSpace != null && item.ParentName != null)
             {
                 if (item.ItemType != null)
                 {
-                    return item.Type == "List" ? $"ListOf{item.NameSpace}{item.ParentName}{item.ItemType}{item.Name}" : $"{item.NameSpace}{item.ParentName}{item.ItemType}{item.Name}";
+                    return item.Type switch
+                    {
+                        "List" => $"ListOf{item.NameSpace}{item.ParentName}{item.ItemType}{item.Name}",
+                        "Map" => $"MapOf{item.NameSpace}{item.ParentName}{item.ItemType}{item.Name}",
+                        _ => $"{item.NameSpace}{item.ParentName}{item.ItemType}{item.Name}"
+                    };
                 }
 
                 return $"{item.NameSpace}{item.ParentName}{item.Type}{item.Name}";

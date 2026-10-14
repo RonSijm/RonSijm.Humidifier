@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ReportPlanTypes;
 
     public class ReportPlan : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription
@@ -51,7 +51,7 @@ namespace Humidifier.Backup
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> ReportPlanTags { get; set; }
+        public List<Humidifier.Tag> ReportPlanTags { get; set; }
     }
 
     namespace ReportPlanTypes

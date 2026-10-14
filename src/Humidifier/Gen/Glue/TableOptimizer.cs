@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TableOptimizerTypes;
 
     public class TableOptimizer : Humidifier.Base.BaseResource, IHaveType, IHaveDatabaseName, IHaveTableName, IHaveCatalogId
@@ -60,11 +60,51 @@ namespace Humidifier.Glue
 
     namespace TableOptimizerTypes
     {
+        public class CompactionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// IcebergConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-compactionconfiguration.html#cfn-glue-tableoptimizer-compactionconfiguration-icebergconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IcebergCompactionConfiguration
+            /// </summary>
+            public Humidifier.Glue.TableOptimizerTypes.IcebergCompactionConfiguration IcebergConfiguration { get; set; }
+        }
+
+        public class IcebergCompactionConfiguration : Humidifier.Base.BaseSubResource, IHaveStrategy
+        {
+            /// <summary>
+            /// MinInputFiles
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergcompactionconfiguration.html#cfn-glue-tableoptimizer-icebergcompactionconfiguration-mininputfiles
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinInputFiles { get; set; }
+            /// <summary>
+            /// DeleteFileThreshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergcompactionconfiguration.html#cfn-glue-tableoptimizer-icebergcompactionconfiguration-deletefilethreshold
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic DeleteFileThreshold { get; set; }
+            /// <summary>
+            /// Strategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergcompactionconfiguration.html#cfn-glue-tableoptimizer-icebergcompactionconfiguration-strategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Strategy { get; set; }
+        }
+
         public class IcebergConfiguration : Humidifier.Base.BaseSubResource, IHaveLocation
         {
             /// <summary>
             /// OrphanFileRetentionPeriodInDays
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration-orphanfiledeletionconfiguration-icebergconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-orphanfiledeletionconfiguration-icebergconfiguration-orphanfileretentionperiodindays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergconfiguration.html#cfn-glue-tableoptimizer-icebergconfiguration-orphanfileretentionperiodindays
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -72,7 +112,7 @@ namespace Humidifier.Glue
             public dynamic OrphanFileRetentionPeriodInDays { get; set; }
             /// <summary>
             /// Location
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration-orphanfiledeletionconfiguration-icebergconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-orphanfiledeletionconfiguration-icebergconfiguration-location
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergconfiguration.html#cfn-glue-tableoptimizer-icebergconfiguration-location
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -80,11 +120,39 @@ namespace Humidifier.Glue
             public dynamic Location { get; set; }
         }
 
+        public class IcebergRetentionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CleanExpiredFiles
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergretentionconfiguration.html#cfn-glue-tableoptimizer-icebergretentionconfiguration-cleanexpiredfiles
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic CleanExpiredFiles { get; set; }
+            /// <summary>
+            /// SnapshotRetentionPeriodInDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergretentionconfiguration.html#cfn-glue-tableoptimizer-icebergretentionconfiguration-snapshotretentionperiodindays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SnapshotRetentionPeriodInDays { get; set; }
+            /// <summary>
+            /// NumberOfSnapshotsToRetain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-icebergretentionconfiguration.html#cfn-glue-tableoptimizer-icebergretentionconfiguration-numberofsnapshotstoretain
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic NumberOfSnapshotsToRetain { get; set; }
+        }
+
         public class OrphanFileDeletionConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// IcebergConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration-orphanfiledeletionconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-orphanfiledeletionconfiguration-icebergconfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-orphanfiledeletionconfiguration.html#cfn-glue-tableoptimizer-orphanfiledeletionconfiguration-icebergconfiguration
             /// Required: False
             /// UpdateType: Mutable
             /// Type: IcebergConfiguration
@@ -96,12 +164,12 @@ namespace Humidifier.Glue
         {
             /// <summary>
             /// IcebergConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration-retentionconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-retentionconfiguration-icebergconfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-retentionconfiguration.html#cfn-glue-tableoptimizer-retentionconfiguration-icebergconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: IcebergConfiguration
+            /// Type: IcebergRetentionConfiguration
             /// </summary>
-            public Humidifier.Glue.TableOptimizerTypes.IcebergConfiguration IcebergConfiguration { get; set; }
+            public Humidifier.Glue.TableOptimizerTypes.IcebergRetentionConfiguration IcebergConfiguration { get; set; }
         }
 
         public class TableOptimizerConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveEnabled
@@ -139,6 +207,14 @@ namespace Humidifier.Glue
             /// </summary>
             public Humidifier.Glue.TableOptimizerTypes.VpcConfiguration VpcConfiguration { get; set; }
             /// <summary>
+            /// CompactionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-compactionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CompactionConfiguration
+            /// </summary>
+            public Humidifier.Glue.TableOptimizerTypes.CompactionConfiguration CompactionConfiguration { get; set; }
+            /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-rolearn
             /// Required: True
@@ -152,7 +228,7 @@ namespace Humidifier.Glue
         {
             /// <summary>
             /// GlueConnectionName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-tableoptimizerconfiguration-vpcconfiguration.html#cfn-glue-tableoptimizer-tableoptimizerconfiguration-vpcconfiguration-glueconnectionname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-tableoptimizer-vpcconfiguration.html#cfn-glue-tableoptimizer-vpcconfiguration-glueconnectionname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String

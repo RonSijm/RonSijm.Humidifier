@@ -1,6 +1,6 @@
 namespace Humidifier.Location
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class RouteCalculator : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveDataSource, IHavePricingPlan
     {
@@ -47,7 +47,7 @@ namespace Humidifier.Location
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// DataSource

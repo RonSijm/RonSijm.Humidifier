@@ -1,6 +1,6 @@
 namespace Humidifier.Scheduler
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScheduleTypes;
 
     public class Schedule : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveState, IHaveKmsKeyArn, IHaveGroupName, IHaveScheduleExpression, IHaveEndDate, IHaveStartDate, IHaveScheduleExpressionTimezone

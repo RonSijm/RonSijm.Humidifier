@@ -1,8 +1,8 @@
 namespace Humidifier.Neptune
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
-    public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHaveAutoMinorVersionUpgrade, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveAllowMajorVersionUpgrade, IHaveDBInstanceClass, IHaveDBParameterGroupName, IHaveDBSnapshotIdentifier
+    public class DBInstance : Humidifier.Base.BaseResource, IHaveTags, IHaveAvailabilityZone, IHavePreferredMaintenanceWindow, IHavePubliclyAccessible, IHaveAutoMinorVersionUpgrade, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHaveDBInstanceIdentifier, IHaveAllowMajorVersionUpgrade, IHaveDBInstanceClass, IHaveDBParameterGroupName
     {
         public class Attributes
         {
@@ -15,7 +15,7 @@ namespace Humidifier.Neptune
         /// DBParameterGroupName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbparametergroupname
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
         public dynamic DBParameterGroupName { get; set; }
@@ -57,7 +57,7 @@ namespace Humidifier.Neptune
         /// PreferredMaintenanceWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-preferredmaintenancewindow
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Conditional
         /// PrimitiveType: String
         /// </summary>
         public dynamic PreferredMaintenanceWindow { get; set; }
@@ -65,7 +65,7 @@ namespace Humidifier.Neptune
         /// AutoMinorVersionUpgrade
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-autominorversionupgrade
         /// Required: False
-        /// UpdateType: Mutable
+        /// UpdateType: Conditional
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutoMinorVersionUpgrade { get; set; }
@@ -78,6 +78,14 @@ namespace Humidifier.Neptune
         /// </summary>
         public dynamic DBSubnetGroupName { get; set; }
         /// <summary>
+        /// PubliclyAccessible
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-publiclyaccessible
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic PubliclyAccessible { get; set; }
+        /// <summary>
         /// DBInstanceIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbinstanceidentifier
         /// Required: False
@@ -86,14 +94,6 @@ namespace Humidifier.Neptune
         /// </summary>
         public dynamic DBInstanceIdentifier { get; set; }
         /// <summary>
-        /// DBSnapshotIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-dbsnapshotidentifier
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DBSnapshotIdentifier { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbinstance.html#cfn-neptune-dbinstance-tags
         /// Required: False
@@ -101,6 +101,6 @@ namespace Humidifier.Neptune
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

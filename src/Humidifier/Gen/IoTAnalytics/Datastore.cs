@@ -1,6 +1,6 @@
 namespace Humidifier.IoTAnalytics
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DatastoreTypes;
 
     public class Datastore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDatastoreName
@@ -52,7 +52,7 @@ namespace Humidifier.IoTAnalytics
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DatastoreTypes

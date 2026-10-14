@@ -1,6 +1,6 @@
 namespace Humidifier.MediaConvert
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Preset : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveDynamicTags, IHaveCategory, IHaveSettingsJson
     {

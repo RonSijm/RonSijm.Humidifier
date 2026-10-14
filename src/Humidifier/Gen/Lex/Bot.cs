@@ -1,6 +1,6 @@
 namespace Humidifier.Lex
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BotTypes;
 
     public class Bot : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveRoleArn, IHaveIdleSessionTTLInSeconds
@@ -20,6 +20,51 @@ namespace Humidifier.Lex
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// ErrorLogSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-errorlogsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ErrorLogSettings
+        /// </summary>
+        public Humidifier.Lex.BotTypes.ErrorLogSettings ErrorLogSettings { get; set; }
+
+        /// <summary>
+        /// RoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-rolearn
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic RoleArn { get; set; }
+        /// <summary>
+        /// BotType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-bottype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic BotType { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// BotTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-bottags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> BotTags { get; set; }
+        /// <summary>
+        /// TestBotAliasTags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliastags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> TestBotAliasTags { get; set; }
         /// <summary>
         /// AutoBuildBotLocales
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-autobuildbotlocales
@@ -64,6 +109,15 @@ namespace Humidifier.Lex
         /// </summary>
         public Humidifier.Lex.BotTypes.Replication Replication { get; set; }
         /// <summary>
+        /// BotMembers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botmembers
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: BotMember
+        /// </summary>
+        public List<Humidifier.Lex.BotTypes.BotMember> BotMembers { get; set; }
+        /// <summary>
         /// TestBotAliasSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings
         /// Required: False
@@ -71,35 +125,6 @@ namespace Humidifier.Lex
         /// Type: TestBotAliasSettings
         /// </summary>
         public Humidifier.Lex.BotTypes.TestBotAliasSettings TestBotAliasSettings { get; set; }
-
-        /// <summary>
-        /// RoleArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-rolearn
-        /// Required: True
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic RoleArn { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// BotTags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-bottags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> BotTags { get; set; }
-        /// <summary>
-        /// TestBotAliasTags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliastags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> TestBotAliasTags { get; set; }
 
         /// <summary>
         /// DataPrivacy
@@ -174,6 +199,50 @@ namespace Humidifier.Lex
             public dynamic StartTimeoutMs { get; set; }
         }
 
+        public class AudioFillerSettings : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiofillersettings.html#cfn-lex-bot-audiofillersettings-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// AudioType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiofillersettings.html#cfn-lex-bot-audiofillersettings-audiotype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AudioType { get; set; }
+            /// <summary>
+            /// MinimumPlayDurationInMilliseconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiofillersettings.html#cfn-lex-bot-audiofillersettings-minimumplaydurationinmilliseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinimumPlayDurationInMilliseconds { get; set; }
+            /// <summary>
+            /// ResponseDeliveryDelayInMilliseconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiofillersettings.html#cfn-lex-bot-audiofillersettings-responsedeliverydelayinmilliseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ResponseDeliveryDelayInMilliseconds { get; set; }
+            /// <summary>
+            /// StartDelayInMilliseconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiofillersettings.html#cfn-lex-bot-audiofillersettings-startdelayinmilliseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic StartDelayInMilliseconds { get; set; }
+        }
+
         public class AudioLogDestination : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -224,6 +293,162 @@ namespace Humidifier.Lex
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxLengthMs { get; set; }
+        }
+
+        public class BKBExactResponseFields : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AnswerField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bkbexactresponsefields.html#cfn-lex-bot-bkbexactresponsefields-answerfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AnswerField { get; set; }
+        }
+
+        public class BedrockAgentConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BedrockAgentId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockagentconfiguration.html#cfn-lex-bot-bedrockagentconfiguration-bedrockagentid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockAgentId { get; set; }
+            /// <summary>
+            /// BedrockAgentAliasId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockagentconfiguration.html#cfn-lex-bot-bedrockagentconfiguration-bedrockagentaliasid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockAgentAliasId { get; set; }
+        }
+
+        public class BedrockAgentIntentConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BedrockAgentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockagentintentconfiguration.html#cfn-lex-bot-bedrockagentintentconfiguration-bedrockagentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockAgentConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockAgentConfiguration BedrockAgentConfiguration { get; set; }
+            /// <summary>
+            /// BedrockAgentIntentKnowledgeBaseConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockagentintentconfiguration.html#cfn-lex-bot-bedrockagentintentconfiguration-bedrockagentintentknowledgebaseconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockAgentIntentKnowledgeBaseConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockAgentIntentKnowledgeBaseConfiguration BedrockAgentIntentKnowledgeBaseConfiguration { get; set; }
+        }
+
+        public class BedrockAgentIntentKnowledgeBaseConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BedrockModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockagentintentknowledgebaseconfiguration.html#cfn-lex-bot-bedrockagentintentknowledgebaseconfiguration-bedrockmodelconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: BedrockModelSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockModelSpecification BedrockModelConfiguration { get; set; }
+            /// <summary>
+            /// BedrockKnowledgeBaseArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockagentintentknowledgebaseconfiguration.html#cfn-lex-bot-bedrockagentintentknowledgebaseconfiguration-bedrockknowledgebasearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockKnowledgeBaseArn { get; set; }
+        }
+
+        public class BedrockGuardrailConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BedrockGuardrailVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockguardrailconfiguration.html#cfn-lex-bot-bedrockguardrailconfiguration-bedrockguardrailversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockGuardrailVersion { get; set; }
+            /// <summary>
+            /// BedrockGuardrailIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockguardrailconfiguration.html#cfn-lex-bot-bedrockguardrailconfiguration-bedrockguardrailidentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockGuardrailIdentifier { get; set; }
+        }
+
+        public class BedrockKnowledgeStoreConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BKBExactResponseFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockknowledgestoreconfiguration.html#cfn-lex-bot-bedrockknowledgestoreconfiguration-bkbexactresponsefields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BKBExactResponseFields
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BKBExactResponseFields BKBExactResponseFields { get; set; }
+            /// <summary>
+            /// ExactResponse
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockknowledgestoreconfiguration.html#cfn-lex-bot-bedrockknowledgestoreconfiguration-exactresponse
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ExactResponse { get; set; }
+            /// <summary>
+            /// BedrockKnowledgeBaseArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockknowledgestoreconfiguration.html#cfn-lex-bot-bedrockknowledgestoreconfiguration-bedrockknowledgebasearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockKnowledgeBaseArn { get; set; }
+        }
+
+        public class BedrockModelSpecification : Humidifier.Base.BaseSubResource, IHaveModelArn
+        {
+            /// <summary>
+            /// ModelArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockmodelspecification.html#cfn-lex-bot-bedrockmodelspecification-modelarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ModelArn { get; set; }
+            /// <summary>
+            /// BedrockTraceStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockmodelspecification.html#cfn-lex-bot-bedrockmodelspecification-bedrocktracestatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockTraceStatus { get; set; }
+            /// <summary>
+            /// BedrockModelCustomPrompt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockmodelspecification.html#cfn-lex-bot-bedrockmodelspecification-bedrockmodelcustomprompt
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BedrockModelCustomPrompt { get; set; }
+            /// <summary>
+            /// BedrockGuardrailConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-bedrockmodelspecification.html#cfn-lex-bot-bedrockmodelspecification-bedrockguardrailconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockGuardrailConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockGuardrailConfiguration BedrockGuardrailConfiguration { get; set; }
         }
 
         public class BotAliasLocaleSettings : Humidifier.Base.BaseSubResource, IHaveEnabled
@@ -293,6 +518,14 @@ namespace Humidifier.Lex
             /// </summary>
             public dynamic Description { get; set; }
             /// <summary>
+            /// GenerativeAISettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-generativeaisettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GenerativeAISettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.GenerativeAISettings GenerativeAISettings { get; set; }
+            /// <summary>
             /// CustomVocabulary
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-customvocabulary
             /// Required: False
@@ -300,6 +533,14 @@ namespace Humidifier.Lex
             /// Type: CustomVocabulary
             /// </summary>
             public Humidifier.Lex.BotTypes.CustomVocabulary CustomVocabulary { get; set; }
+            /// <summary>
+            /// SpeechRecognitionSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-speechrecognitionsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SpeechRecognitionSettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SpeechRecognitionSettings SpeechRecognitionSettings { get; set; }
             /// <summary>
             /// SlotTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-slottypes
@@ -309,6 +550,30 @@ namespace Humidifier.Lex
             /// ItemType: SlotType
             /// </summary>
             public List<Humidifier.Lex.BotTypes.SlotType> SlotTypes { get; set; }
+            /// <summary>
+            /// UnifiedSpeechSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-unifiedspeechsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: UnifiedSpeechSettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.UnifiedSpeechSettings UnifiedSpeechSettings { get; set; }
+            /// <summary>
+            /// AudioFillerSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-audiofillersettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AudioFillerSettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.AudioFillerSettings AudioFillerSettings { get; set; }
+            /// <summary>
+            /// SpeechDetectionSensitivity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-speechdetectionsensitivity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SpeechDetectionSensitivity { get; set; }
             /// <summary>
             /// Intents
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-intents
@@ -326,6 +591,70 @@ namespace Humidifier.Lex
             /// Type: VoiceSettings
             /// </summary>
             public Humidifier.Lex.BotTypes.VoiceSettings VoiceSettings { get; set; }
+        }
+
+        public class BotMember : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BotMemberName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botmember.html#cfn-lex-bot-botmember-botmembername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BotMemberName { get; set; }
+            /// <summary>
+            /// BotMemberAliasName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botmember.html#cfn-lex-bot-botmember-botmemberaliasname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BotMemberAliasName { get; set; }
+            /// <summary>
+            /// BotMemberId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botmember.html#cfn-lex-bot-botmember-botmemberid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BotMemberId { get; set; }
+            /// <summary>
+            /// BotMemberVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botmember.html#cfn-lex-bot-botmember-botmemberversion
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BotMemberVersion { get; set; }
+            /// <summary>
+            /// BotMemberAliasId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botmember.html#cfn-lex-bot-botmember-botmemberaliasid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BotMemberAliasId { get; set; }
+        }
+
+        public class BuildtimeSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DescriptiveBotBuilderSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-buildtimesettings.html#cfn-lex-bot-buildtimesettings-descriptivebotbuilderspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DescriptiveBotBuilderSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.DescriptiveBotBuilderSpecification DescriptiveBotBuilderSpecification { get; set; }
+            /// <summary>
+            /// SampleUtteranceGenerationSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-buildtimesettings.html#cfn-lex-bot-buildtimesettings-sampleutterancegenerationspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SampleUtteranceGenerationSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SampleUtteranceGenerationSpecification SampleUtteranceGenerationSpecification { get; set; }
         }
 
         public class Button : Humidifier.Base.BaseSubResource, IHaveValue, IHaveText
@@ -378,6 +707,19 @@ namespace Humidifier.Lex
             /// Type: LambdaCodeHook
             /// </summary>
             public Humidifier.Lex.BotTypes.LambdaCodeHook LambdaCodeHook { get; set; }
+        }
+
+        public class CompositeSlotTypeSetting : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SubSlots
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-compositeslottypesetting.html#cfn-lex-bot-compositeslottypesetting-subslots
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SubSlotTypeComposition
+            /// </summary>
+            public List<Humidifier.Lex.BotTypes.SubSlotTypeComposition> SubSlots { get; set; }
         }
 
         public class Condition : Humidifier.Base.BaseSubResource
@@ -580,6 +922,54 @@ namespace Humidifier.Lex
             public dynamic ChildDirected { get; set; }
         }
 
+        public class DataSourceConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// BedrockKnowledgeStoreConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-datasourceconfiguration.html#cfn-lex-bot-datasourceconfiguration-bedrockknowledgestoreconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockKnowledgeStoreConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockKnowledgeStoreConfiguration BedrockKnowledgeStoreConfiguration { get; set; }
+            /// <summary>
+            /// KendraConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-datasourceconfiguration.html#cfn-lex-bot-datasourceconfiguration-kendraconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: QnAKendraConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.QnAKendraConfiguration KendraConfiguration { get; set; }
+            /// <summary>
+            /// OpensearchConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-datasourceconfiguration.html#cfn-lex-bot-datasourceconfiguration-opensearchconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OpensearchConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.OpensearchConfiguration OpensearchConfiguration { get; set; }
+        }
+
+        public class DeepgramSpeechModelConfig : Humidifier.Base.BaseSubResource, IHaveModelId
+        {
+            /// <summary>
+            /// ApiTokenSecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-deepgramspeechmodelconfig.html#cfn-lex-bot-deepgramspeechmodelconfig-apitokensecretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApiTokenSecretArn { get; set; }
+            /// <summary>
+            /// ModelId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-deepgramspeechmodelconfig.html#cfn-lex-bot-deepgramspeechmodelconfig-modelid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ModelId { get; set; }
+        }
+
         public class DefaultConditionalBranch : Humidifier.Base.BaseSubResource, IHaveLexBotTypesDialogStateNextStep, IHaveLexBotTypesResponseSpecificationResponse
         {
             /// <summary>
@@ -598,6 +988,26 @@ namespace Humidifier.Lex
             /// Type: DialogState
             /// </summary>
             public Humidifier.Lex.BotTypes.DialogState NextStep { get; set; }
+        }
+
+        public class DescriptiveBotBuilderSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-descriptivebotbuilderspecification.html#cfn-lex-bot-descriptivebotbuilderspecification-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// BedrockModelSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-descriptivebotbuilderspecification.html#cfn-lex-bot-descriptivebotbuilderspecification-bedrockmodelspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockModelSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockModelSpecification BedrockModelSpecification { get; set; }
         }
 
         public class DialogAction : Humidifier.Base.BaseSubResource, IHaveType
@@ -631,6 +1041,14 @@ namespace Humidifier.Lex
         public class DialogCodeHookInvocationSetting : Humidifier.Base.BaseSubResource, IHaveIsActive, IHaveEnableCodeHookInvocation, IHaveInvocationLabel
         {
             /// <summary>
+            /// PostCodeHookSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-postcodehookspecification
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: PostDialogCodeHookInvocationSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.PostDialogCodeHookInvocationSpecification PostCodeHookSpecification { get; set; }
+            /// <summary>
             /// EnableCodeHookInvocation
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-enablecodehookinvocation
             /// Required: True
@@ -654,14 +1072,6 @@ namespace Humidifier.Lex
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic IsActive { get; set; }
-            /// <summary>
-            /// PostCodeHookSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehookinvocationsetting.html#cfn-lex-bot-dialogcodehookinvocationsetting-postcodehookspecification
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: PostDialogCodeHookInvocationSpecification
-            /// </summary>
-            public Humidifier.Lex.BotTypes.PostDialogCodeHookInvocationSpecification PostCodeHookSpecification { get; set; }
         }
 
         public class DialogCodeHookSetting : Humidifier.Base.BaseSubResource, IHaveEnabled
@@ -687,6 +1097,14 @@ namespace Humidifier.Lex
             /// </summary>
             public Humidifier.Lex.BotTypes.DialogAction DialogAction { get; set; }
             /// <summary>
+            /// Intent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html#cfn-lex-bot-dialogstate-intent
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IntentOverride
+            /// </summary>
+            public Humidifier.Lex.BotTypes.IntentOverride Intent { get; set; }
+            /// <summary>
             /// SessionAttributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html#cfn-lex-bot-dialogstate-sessionattributes
             /// Required: False
@@ -695,14 +1113,6 @@ namespace Humidifier.Lex
             /// ItemType: SessionAttribute
             /// </summary>
             public List<Humidifier.Lex.BotTypes.SessionAttribute> SessionAttributes { get; set; }
-            /// <summary>
-            /// Intent
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogstate.html#cfn-lex-bot-dialogstate-intent
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: IntentOverride
-            /// </summary>
-            public Humidifier.Lex.BotTypes.IntentOverride Intent { get; set; }
         }
 
         public class ElicitationCodeHookInvocationSetting : Humidifier.Base.BaseSubResource, IHaveEnableCodeHookInvocation, IHaveInvocationLabel
@@ -723,6 +1133,38 @@ namespace Humidifier.Lex
             /// PrimitiveType: String
             /// </summary>
             public dynamic InvocationLabel { get; set; }
+        }
+
+        public class ErrorLogSettings : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-errorlogsettings.html#cfn-lex-bot-errorlogsettings-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
+        public class ExactResponseFields : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QuestionField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-exactresponsefields.html#cfn-lex-bot-exactresponsefields-questionfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic QuestionField { get; set; }
+            /// <summary>
+            /// AnswerField
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-exactresponsefields.html#cfn-lex-bot-exactresponsefields-answerfield
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AnswerField { get; set; }
         }
 
         public class ExternalSourceSetting : Humidifier.Base.BaseSubResource
@@ -867,6 +1309,26 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.FulfillmentStartResponseSpecification StartResponse { get; set; }
         }
 
+        public class GenerativeAISettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RuntimeSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-generativeaisettings.html#cfn-lex-bot-generativeaisettings-runtimesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RuntimeSettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.RuntimeSettings RuntimeSettings { get; set; }
+            /// <summary>
+            /// BuildtimeSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-generativeaisettings.html#cfn-lex-bot-generativeaisettings-buildtimesettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BuildtimeSettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BuildtimeSettings BuildtimeSettings { get; set; }
+        }
+
         public class GrammarSlotTypeSetting : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -992,8 +1454,16 @@ namespace Humidifier.Lex
             public dynamic Name { get; set; }
         }
 
-        public class Intent : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
+        public class Intent : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveDisplayName
         {
+            /// <summary>
+            /// QInConnectIntentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-qinconnectintentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: QInConnectIntentConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.QInConnectIntentConfiguration QInConnectIntentConfiguration { get; set; }
             /// <summary>
             /// Description
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-description
@@ -1018,6 +1488,14 @@ namespace Humidifier.Lex
             /// Type: InitialResponseSetting
             /// </summary>
             public Humidifier.Lex.BotTypes.InitialResponseSetting InitialResponseSetting { get; set; }
+            /// <summary>
+            /// BedrockAgentIntentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-bedrockagentintentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockAgentIntentConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockAgentIntentConfiguration BedrockAgentIntentConfiguration { get; set; }
             /// <summary>
             /// FulfillmentCodeHook
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-fulfillmentcodehook
@@ -1052,6 +1530,14 @@ namespace Humidifier.Lex
             /// </summary>
             public List<Humidifier.Lex.BotTypes.Slot> Slots { get; set; }
             /// <summary>
+            /// QnAIntentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-qnaintentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: QnAIntentConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.QnAIntentConfiguration QnAIntentConfiguration { get; set; }
+            /// <summary>
             /// DialogCodeHook
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-dialogcodehook
             /// Required: False
@@ -1084,6 +1570,14 @@ namespace Humidifier.Lex
             /// Type: IntentClosingSetting
             /// </summary>
             public Humidifier.Lex.BotTypes.IntentClosingSetting IntentClosingSetting { get; set; }
+            /// <summary>
+            /// DisplayName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-displayname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DisplayName { get; set; }
             /// <summary>
             /// OutputContexts
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-outputcontexts
@@ -1257,6 +1751,34 @@ namespace Humidifier.Lex
             public Humidifier.Lex.BotTypes.ResponseSpecification DeclinationResponse { get; set; }
         }
 
+        public class IntentDisambiguationSettings : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// MaxDisambiguationIntents
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentdisambiguationsettings.html#cfn-lex-bot-intentdisambiguationsettings-maxdisambiguationintents
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxDisambiguationIntents { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentdisambiguationsettings.html#cfn-lex-bot-intentdisambiguationsettings-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// CustomDisambiguationMessage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentdisambiguationsettings.html#cfn-lex-bot-intentdisambiguationsettings-customdisambiguationmessage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomDisambiguationMessage { get; set; }
+        }
+
         public class IntentOverride : Humidifier.Base.BaseSubResource, IHaveName
         {
             /// <summary>
@@ -1395,6 +1917,34 @@ namespace Humidifier.Lex
             public dynamic AllowMultipleValues { get; set; }
         }
 
+        public class NluImprovementSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// AssistedNluMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-nluimprovementspecification.html#cfn-lex-bot-nluimprovementspecification-assistednlumode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AssistedNluMode { get; set; }
+            /// <summary>
+            /// IntentDisambiguationSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-nluimprovementspecification.html#cfn-lex-bot-nluimprovementspecification-intentdisambiguationsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IntentDisambiguationSettings
+            /// </summary>
+            public Humidifier.Lex.BotTypes.IntentDisambiguationSettings IntentDisambiguationSettings { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-nluimprovementspecification.html#cfn-lex-bot-nluimprovementspecification-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class ObfuscationSetting : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -1405,6 +1955,51 @@ namespace Humidifier.Lex
             /// PrimitiveType: String
             /// </summary>
             public dynamic ObfuscationSettingType { get; set; }
+        }
+
+        public class OpensearchConfiguration : Humidifier.Base.BaseSubResource, IHaveIndexName
+        {
+            /// <summary>
+            /// IndexName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-opensearchconfiguration.html#cfn-lex-bot-opensearchconfiguration-indexname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IndexName { get; set; }
+            /// <summary>
+            /// DomainEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-opensearchconfiguration.html#cfn-lex-bot-opensearchconfiguration-domainendpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DomainEndpoint { get; set; }
+            /// <summary>
+            /// ExactResponseFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-opensearchconfiguration.html#cfn-lex-bot-opensearchconfiguration-exactresponsefields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ExactResponseFields
+            /// </summary>
+            public Humidifier.Lex.BotTypes.ExactResponseFields ExactResponseFields { get; set; }
+            /// <summary>
+            /// ExactResponse
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-opensearchconfiguration.html#cfn-lex-bot-opensearchconfiguration-exactresponse
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ExactResponse { get; set; }
+            /// <summary>
+            /// IncludeFields
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-opensearchconfiguration.html#cfn-lex-bot-opensearchconfiguration-includefields
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic IncludeFields { get; set; }
         }
 
         public class OutputContext : Humidifier.Base.BaseSubResource, IHaveName
@@ -1646,6 +2241,22 @@ namespace Humidifier.Lex
             /// </summary>
             public dynamic MaxRetries { get; set; }
             /// <summary>
+            /// AllowInterrupt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-allowinterrupt
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AllowInterrupt { get; set; }
+            /// <summary>
+            /// MessageSelectionStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messageselectionstrategy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MessageSelectionStrategy { get; set; }
+            /// <summary>
             /// MessageGroupsList
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messagegroupslist
             /// Required: True
@@ -1663,22 +2274,86 @@ namespace Humidifier.Lex
             /// ItemType: PromptAttemptSpecification
             /// </summary>
             public Dictionary<string, Humidifier.Lex.BotTypes.PromptAttemptSpecification> PromptAttemptsSpecification { get; set; }
+        }
+
+        public class QInConnectAssistantConfiguration : Humidifier.Base.BaseSubResource
+        {
             /// <summary>
-            /// AllowInterrupt
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-allowinterrupt
+            /// AssistantArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qinconnectassistantconfiguration.html#cfn-lex-bot-qinconnectassistantconfiguration-assistantarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AssistantArn { get; set; }
+        }
+
+        public class QInConnectIntentConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QInConnectAssistantConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qinconnectintentconfiguration.html#cfn-lex-bot-qinconnectintentconfiguration-qinconnectassistantconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// Type: QInConnectAssistantConfiguration
             /// </summary>
-            public dynamic AllowInterrupt { get; set; }
+            public Humidifier.Lex.BotTypes.QInConnectAssistantConfiguration QInConnectAssistantConfiguration { get; set; }
+        }
+
+        public class QnAIntentConfiguration : Humidifier.Base.BaseSubResource
+        {
             /// <summary>
-            /// MessageSelectionStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messageselectionstrategy
+            /// BedrockModelConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qnaintentconfiguration.html#cfn-lex-bot-qnaintentconfiguration-bedrockmodelconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: BedrockModelSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockModelSpecification BedrockModelConfiguration { get; set; }
+            /// <summary>
+            /// DataSourceConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qnaintentconfiguration.html#cfn-lex-bot-qnaintentconfiguration-datasourceconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DataSourceConfiguration
+            /// </summary>
+            public Humidifier.Lex.BotTypes.DataSourceConfiguration DataSourceConfiguration { get; set; }
+        }
+
+        public class QnAKendraConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// QueryFilterString
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qnakendraconfiguration.html#cfn-lex-bot-qnakendraconfiguration-queryfilterstring
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic MessageSelectionStrategy { get; set; }
+            public dynamic QueryFilterString { get; set; }
+            /// <summary>
+            /// QueryFilterStringEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qnakendraconfiguration.html#cfn-lex-bot-qnakendraconfiguration-queryfilterstringenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic QueryFilterStringEnabled { get; set; }
+            /// <summary>
+            /// KendraIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qnakendraconfiguration.html#cfn-lex-bot-qnakendraconfiguration-kendraindex
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KendraIndex { get; set; }
+            /// <summary>
+            /// ExactResponse
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-qnakendraconfiguration.html#cfn-lex-bot-qnakendraconfiguration-exactresponse
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ExactResponse { get; set; }
         }
 
         public class Replication : Humidifier.Base.BaseSubResource
@@ -1697,6 +2372,14 @@ namespace Humidifier.Lex
         public class ResponseSpecification : Humidifier.Base.BaseSubResource, IHaveAllowInterrupt
         {
             /// <summary>
+            /// AllowInterrupt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html#cfn-lex-bot-responsespecification-allowinterrupt
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AllowInterrupt { get; set; }
+            /// <summary>
             /// MessageGroupsList
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html#cfn-lex-bot-responsespecification-messagegroupslist
             /// Required: True
@@ -1705,14 +2388,26 @@ namespace Humidifier.Lex
             /// ItemType: MessageGroup
             /// </summary>
             public List<Humidifier.Lex.BotTypes.MessageGroup> MessageGroupsList { get; set; }
+        }
+
+        public class RuntimeSettings : Humidifier.Base.BaseSubResource
+        {
             /// <summary>
-            /// AllowInterrupt
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-responsespecification.html#cfn-lex-bot-responsespecification-allowinterrupt
+            /// SlotResolutionImprovementSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-runtimesettings.html#cfn-lex-bot-runtimesettings-slotresolutionimprovementspecification
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// Type: SlotResolutionImprovementSpecification
             /// </summary>
-            public dynamic AllowInterrupt { get; set; }
+            public Humidifier.Lex.BotTypes.SlotResolutionImprovementSpecification SlotResolutionImprovementSpecification { get; set; }
+            /// <summary>
+            /// NluImprovementSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-runtimesettings.html#cfn-lex-bot-runtimesettings-nluimprovementspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: NluImprovementSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.NluImprovementSpecification NluImprovementSpecification { get; set; }
         }
 
         public class S3BucketLogDestination : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveS3BucketArn, IHaveLogPrefix
@@ -1795,6 +2490,26 @@ namespace Humidifier.Lex
             public dynamic Utterance { get; set; }
         }
 
+        public class SampleUtteranceGenerationSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-sampleutterancegenerationspecification.html#cfn-lex-bot-sampleutterancegenerationspecification-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// BedrockModelSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-sampleutterancegenerationspecification.html#cfn-lex-bot-sampleutterancegenerationspecification-bedrockmodelspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockModelSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockModelSpecification BedrockModelSpecification { get; set; }
+        }
+
         public class SampleValue : Humidifier.Base.BaseSubResource, IHaveValue
         {
             /// <summary>
@@ -1865,6 +2580,14 @@ namespace Humidifier.Lex
             /// Type: SlotValueElicitationSetting
             /// </summary>
             public Humidifier.Lex.BotTypes.SlotValueElicitationSetting ValueElicitationSetting { get; set; }
+            /// <summary>
+            /// SubSlotSetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-subslotsetting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SubSlotSetting
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SubSlotSetting SubSlotSetting { get; set; }
             /// <summary>
             /// ObfuscationSetting
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-obfuscationsetting
@@ -2004,6 +2727,26 @@ namespace Humidifier.Lex
             public dynamic SlotName { get; set; }
         }
 
+        public class SlotResolutionImprovementSpecification : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotresolutionimprovementspecification.html#cfn-lex-bot-slotresolutionimprovementspecification-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// BedrockModelSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotresolutionimprovementspecification.html#cfn-lex-bot-slotresolutionimprovementspecification-bedrockmodelspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BedrockModelSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.BedrockModelSpecification BedrockModelSpecification { get; set; }
+        }
+
         public class SlotType : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
         {
             /// <summary>
@@ -2039,6 +2782,14 @@ namespace Humidifier.Lex
             /// Type: SlotValueSelectionSetting
             /// </summary>
             public Humidifier.Lex.BotTypes.SlotValueSelectionSetting ValueSelectionSetting { get; set; }
+            /// <summary>
+            /// CompositeSlotTypeSetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-compositeslottypesetting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CompositeSlotTypeSetting
+            /// </summary>
+            public Humidifier.Lex.BotTypes.CompositeSlotTypeSetting CompositeSlotTypeSetting { get; set; }
             /// <summary>
             /// ExternalSourceSetting
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-externalsourcesetting
@@ -2146,14 +2897,6 @@ namespace Humidifier.Lex
         public class SlotValueOverride : Humidifier.Base.BaseSubResource, IHaveShape
         {
             /// <summary>
-            /// Shape
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html#cfn-lex-bot-slotvalueoverride-shape
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Shape { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html#cfn-lex-bot-slotvalueoverride-value
             /// Required: False
@@ -2170,6 +2913,14 @@ namespace Humidifier.Lex
             /// ItemType: SlotValueOverride
             /// </summary>
             public List<Humidifier.Lex.BotTypes.SlotValueOverride> Values { get; set; }
+            /// <summary>
+            /// Shape
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueoverride.html#cfn-lex-bot-slotvalueoverride-shape
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Shape { get; set; }
         }
 
         public class SlotValueOverrideMap : Humidifier.Base.BaseSubResource, IHaveSlotName
@@ -2232,6 +2983,86 @@ namespace Humidifier.Lex
             public dynamic ResolutionStrategy { get; set; }
         }
 
+        public class Specifications : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SlotTypeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-specifications.html#cfn-lex-bot-specifications-slottypename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SlotTypeName { get; set; }
+            /// <summary>
+            /// ValueElicitationSetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-specifications.html#cfn-lex-bot-specifications-valueelicitationsetting
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: SubSlotValueElicitationSetting
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SubSlotValueElicitationSetting ValueElicitationSetting { get; set; }
+            /// <summary>
+            /// SlotTypeId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-specifications.html#cfn-lex-bot-specifications-slottypeid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SlotTypeId { get; set; }
+        }
+
+        public class SpeechFoundationModel : Humidifier.Base.BaseSubResource, IHaveModelArn
+        {
+            /// <summary>
+            /// ModelArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-speechfoundationmodel.html#cfn-lex-bot-speechfoundationmodel-modelarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ModelArn { get; set; }
+            /// <summary>
+            /// VoiceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-speechfoundationmodel.html#cfn-lex-bot-speechfoundationmodel-voiceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VoiceId { get; set; }
+        }
+
+        public class SpeechModelConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DeepgramConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-speechmodelconfig.html#cfn-lex-bot-speechmodelconfig-deepgramconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DeepgramSpeechModelConfig
+            /// </summary>
+            public Humidifier.Lex.BotTypes.DeepgramSpeechModelConfig DeepgramConfig { get; set; }
+        }
+
+        public class SpeechRecognitionSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SpeechModelPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-speechrecognitionsettings.html#cfn-lex-bot-speechrecognitionsettings-speechmodelpreference
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SpeechModelPreference { get; set; }
+            /// <summary>
+            /// SpeechModelConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-speechrecognitionsettings.html#cfn-lex-bot-speechrecognitionsettings-speechmodelconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SpeechModelConfig
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SpeechModelConfig SpeechModelConfig { get; set; }
+        }
+
         public class StillWaitingResponseSpecification : Humidifier.Base.BaseSubResource, IHaveTimeoutInSeconds, IHaveAllowInterrupt, IHaveFrequencyInSeconds
         {
             /// <summary>
@@ -2267,6 +3098,92 @@ namespace Humidifier.Lex
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic FrequencyInSeconds { get; set; }
+        }
+
+        public class SubSlotSetting : Humidifier.Base.BaseSubResource, IHaveExpression
+        {
+            /// <summary>
+            /// Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslotsetting.html#cfn-lex-bot-subslotsetting-expression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expression { get; set; }
+            /// <summary>
+            /// SlotSpecifications
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslotsetting.html#cfn-lex-bot-subslotsetting-slotspecifications
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// ItemType: Specifications
+            /// </summary>
+            public Dictionary<string, Humidifier.Lex.BotTypes.Specifications> SlotSpecifications { get; set; }
+        }
+
+        public class SubSlotTypeComposition : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// SlotTypeName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslottypecomposition.html#cfn-lex-bot-subslottypecomposition-slottypename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SlotTypeName { get; set; }
+            /// <summary>
+            /// SlotTypeId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslottypecomposition.html#cfn-lex-bot-subslottypecomposition-slottypeid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SlotTypeId { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslottypecomposition.html#cfn-lex-bot-subslottypecomposition-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
+        public class SubSlotValueElicitationSetting : Humidifier.Base.BaseSubResource, IHaveLexBotTypesPromptSpecificationPromptSpecification
+        {
+            /// <summary>
+            /// PromptSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslotvalueelicitationsetting.html#cfn-lex-bot-subslotvalueelicitationsetting-promptspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PromptSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.PromptSpecification PromptSpecification { get; set; }
+            /// <summary>
+            /// WaitAndContinueSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslotvalueelicitationsetting.html#cfn-lex-bot-subslotvalueelicitationsetting-waitandcontinuespecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: WaitAndContinueSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.WaitAndContinueSpecification WaitAndContinueSpecification { get; set; }
+            /// <summary>
+            /// SampleUtterances
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslotvalueelicitationsetting.html#cfn-lex-bot-subslotvalueelicitationsetting-sampleutterances
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SampleUtterance
+            /// </summary>
+            public List<Humidifier.Lex.BotTypes.SampleUtterance> SampleUtterances { get; set; }
+            /// <summary>
+            /// DefaultValueSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-subslotvalueelicitationsetting.html#cfn-lex-bot-subslotvalueelicitationsetting-defaultvaluespecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SlotDefaultValueSpecification
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SlotDefaultValueSpecification DefaultValueSpecification { get; set; }
         }
 
         public class TestBotAliasSettings : Humidifier.Base.BaseSubResource, IHaveDescription
@@ -2348,6 +3265,18 @@ namespace Humidifier.Lex
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+        }
+
+        public class UnifiedSpeechSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SpeechFoundationModel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-unifiedspeechsettings.html#cfn-lex-bot-unifiedspeechsettings-speechfoundationmodel
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: SpeechFoundationModel
+            /// </summary>
+            public Humidifier.Lex.BotTypes.SpeechFoundationModel SpeechFoundationModel { get; set; }
         }
 
         public class VoiceSettings : Humidifier.Base.BaseSubResource, IHaveEngine

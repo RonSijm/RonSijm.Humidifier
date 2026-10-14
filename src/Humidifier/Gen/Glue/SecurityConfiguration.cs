@@ -1,6 +1,6 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SecurityConfigurationTypes;
 
     public class SecurityConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName
@@ -48,9 +48,10 @@ namespace Humidifier.Glue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-s3encryptions
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: S3Encryptions
+            /// Type: List
+            /// ItemType: S3Encryption
             /// </summary>
-            public Humidifier.Glue.SecurityConfigurationTypes.S3Encryptions S3Encryptions { get; set; }
+            public List<Humidifier.Glue.SecurityConfigurationTypes.S3Encryption> S3Encryptions { get; set; }
             /// <summary>
             /// CloudWatchEncryption
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-cloudwatchencryption
@@ -107,10 +108,6 @@ namespace Humidifier.Glue
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3EncryptionMode { get; set; }
-        }
-
-        public class S3Encryptions : Humidifier.Base.BaseSubResource
-        {
         }
     }
 }

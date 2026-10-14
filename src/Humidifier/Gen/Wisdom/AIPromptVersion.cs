@@ -1,6 +1,6 @@
 namespace Humidifier.Wisdom
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class AIPromptVersion : Humidifier.Base.BaseResource, IHaveAssistantId, IHaveModifiedTimeSeconds
     {

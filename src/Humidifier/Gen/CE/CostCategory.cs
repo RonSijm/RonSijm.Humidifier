@@ -1,6 +1,7 @@
 namespace Humidifier.CE
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
+    using CostCategoryTypes;
 
     public class CostCategory : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDefaultValue, IHaveRuleVersion, IHaveRules
     {
@@ -47,6 +48,38 @@ namespace Humidifier.CE
         /// </summary>
         [Required]
         public dynamic Rules { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#cfn-ce-costcategory-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ResourceTag
+        /// </summary>
+        public List<Humidifier.CE.CostCategoryTypes.ResourceTag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace CostCategoryTypes
+    {
+        public class ResourceTag : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-costcategory-resourcetag.html#cfn-ce-costcategory-resourcetag-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ce-costcategory-resourcetag.html#cfn-ce-costcategory-resourcetag-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
     }
 }

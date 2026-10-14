@@ -1,6 +1,6 @@
 namespace Humidifier.ApiGatewayV2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using StageTypes;
 
     public class Stage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveDynamicTags, IHaveApiId, IHaveStageName, IHaveDeploymentId, IHaveClientCertificateId, IHaveAutoDeploy, IHaveRouteSettings, IHaveStageVariables
@@ -31,14 +31,6 @@ namespace Humidifier.ApiGatewayV2
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
-        /// AccessLogSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesslogsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: AccessLogSettings
-        /// </summary>
-        public Humidifier.ApiGatewayV2.StageTypes.AccessLogSettings AccessLogSettings { get; set; }
-        /// <summary>
         /// AutoDeploy
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-autodeploy
         /// Required: False
@@ -46,6 +38,14 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic AutoDeploy { get; set; }
+        /// <summary>
+        /// AccessLogSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesslogsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AccessLogSettings
+        /// </summary>
+        public Humidifier.ApiGatewayV2.StageTypes.AccessLogSettings AccessLogSettings { get; set; }
         /// <summary>
         /// RouteSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-routesettings
@@ -63,14 +63,6 @@ namespace Humidifier.ApiGatewayV2
         /// PrimitiveType: Json
         /// </summary>
         public dynamic StageVariables { get; set; }
-        /// <summary>
-        /// AccessPolicyId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesspolicyid
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic AccessPolicyId { get; set; }
 
         /// <summary>
         /// ApiId

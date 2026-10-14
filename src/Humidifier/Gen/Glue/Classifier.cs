@@ -1,10 +1,15 @@
 namespace Humidifier.Glue
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ClassifierTypes;
 
     public class Classifier : Humidifier.Base.BaseResource
     {
+        public class Attributes
+        {
+            public static string Name =  "Name" ;
+        }
+
         public override string AWSTypeName { get => AWS.Glue.Classifier; }
         /// <summary>
         /// XMLClassifier

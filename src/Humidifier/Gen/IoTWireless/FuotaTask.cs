@@ -1,6 +1,6 @@
 namespace Humidifier.IoTWireless
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FuotaTaskTypes;
 
     public class FuotaTask : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveDisassociateWirelessDevice, IHaveAssociateWirelessDevice
@@ -91,7 +91,7 @@ namespace Humidifier.IoTWireless
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 

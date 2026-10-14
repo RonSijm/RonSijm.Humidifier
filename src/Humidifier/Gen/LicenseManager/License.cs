@@ -1,9 +1,9 @@
 namespace Humidifier.LicenseManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LicenseTypes;
 
-    public class License : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStatus, IHaveHomeRegion, IHaveProductName
+    public class License : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStatus, IHaveHomeRegion, IHaveProductName
     {
         public class Attributes
         {
@@ -12,13 +12,15 @@ namespace Humidifier.LicenseManager
         }
 
         public override string AWSTypeName { get => AWS.LicenseManager.License; }
+
         /// <summary>
         /// ProductSKU
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productsku
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ProductSKU { get; set; }
         /// <summary>
         /// Status
@@ -100,12 +102,23 @@ namespace Humidifier.LicenseManager
         public List<Humidifier.LicenseManager.LicenseTypes.Metadata> LicenseMetadata { get; set; }
         public dynamic LicenseName { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
+
+        /// <summary>
         /// Beneficiary
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-beneficiary
-        /// Required: False
+        /// Required: True
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic Beneficiary { get; set; }
     }
 

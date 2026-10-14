@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using EndpointTypes;
 
     public class Endpoint : Humidifier.Base.BaseResource, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveCertificateArn, IHaveServerName, IHaveResourceIdentifier, IHaveEndpointType, IHaveSslMode, IHaveEngineName
@@ -8,17 +8,10 @@ namespace Humidifier.DMS
         public class Attributes
         {
             public static string ExternalId =  "ExternalId" ;
+            public static string EndpointArn =  "EndpointArn" ;
         }
 
         public override string AWSTypeName { get => AWS.DMS.Endpoint; }
-        /// <summary>
-        /// SybaseSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sybasesettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: SybaseSettings
-        /// </summary>
-        public Humidifier.DMS.EndpointTypes.SybaseSettings SybaseSettings { get; set; }
         /// <summary>
         /// RedisSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-redissettings
@@ -27,6 +20,14 @@ namespace Humidifier.DMS
         /// Type: RedisSettings
         /// </summary>
         public Humidifier.DMS.EndpointTypes.RedisSettings RedisSettings { get; set; }
+        /// <summary>
+        /// SybaseSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sybasesettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SybaseSettings
+        /// </summary>
+        public Humidifier.DMS.EndpointTypes.SybaseSettings SybaseSettings { get; set; }
         /// <summary>
         /// OracleSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-oraclesettings
@@ -117,15 +118,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
-        /// <summary>
-        /// Password
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic Password { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// MongoDbSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings
@@ -134,6 +127,14 @@ namespace Humidifier.DMS
         /// Type: MongoDbSettings
         /// </summary>
         public Humidifier.DMS.EndpointTypes.MongoDbSettings MongoDbSettings { get; set; }
+        /// <summary>
+        /// Password
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-password
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Password { get; set; }
         /// <summary>
         /// IbmDb2Settings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-ibmdb2settings
@@ -174,6 +175,14 @@ namespace Humidifier.DMS
         /// Type: ElasticsearchSettings
         /// </summary>
         public Humidifier.DMS.EndpointTypes.ElasticsearchSettings ElasticsearchSettings { get; set; }
+        /// <summary>
+        /// DocDbSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-docdbsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DocDbSettings
+        /// </summary>
+        public Humidifier.DMS.EndpointTypes.DocDbSettings DocDbSettings { get; set; }
 
         /// <summary>
         /// EngineName
@@ -184,14 +193,6 @@ namespace Humidifier.DMS
         /// </summary>
         [Required]
         public dynamic EngineName { get; set; }
-        /// <summary>
-        /// DocDbSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-docdbsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: DocDbSettings
-        /// </summary>
-        public Humidifier.DMS.EndpointTypes.DocDbSettings DocDbSettings { get; set; }
         /// <summary>
         /// DynamoDbSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings
@@ -209,14 +210,6 @@ namespace Humidifier.DMS
         /// </summary>
         public dynamic Username { get; set; }
         /// <summary>
-        /// MicrosoftSqlServerSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-microsoftsqlserversettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: MicrosoftSqlServerSettings
-        /// </summary>
-        public Humidifier.DMS.EndpointTypes.MicrosoftSqlServerSettings MicrosoftSqlServerSettings { get; set; }
-        /// <summary>
         /// GcpMySQLSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-gcpmysqlsettings
         /// Required: False
@@ -225,13 +218,13 @@ namespace Humidifier.DMS
         /// </summary>
         public Humidifier.DMS.EndpointTypes.GcpMySQLSettings GcpMySQLSettings { get; set; }
         /// <summary>
-        /// ServerName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername
+        /// MicrosoftSqlServerSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-microsoftsqlserversettings
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: String
+        /// Type: MicrosoftSqlServerSettings
         /// </summary>
-        public dynamic ServerName { get; set; }
+        public Humidifier.DMS.EndpointTypes.MicrosoftSqlServerSettings MicrosoftSqlServerSettings { get; set; }
         /// <summary>
         /// ExtraConnectionAttributes
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes
@@ -241,13 +234,13 @@ namespace Humidifier.DMS
         /// </summary>
         public dynamic ExtraConnectionAttributes { get; set; }
         /// <summary>
-        /// EndpointIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier
+        /// ServerName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-servername
         /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic EndpointIdentifier { get; set; }
+        public dynamic ServerName { get; set; }
         /// <summary>
         /// CertificateArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-certificatearn
@@ -256,6 +249,14 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic CertificateArn { get; set; }
+        /// <summary>
+        /// EndpointIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-endpointidentifier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic EndpointIdentifier { get; set; }
         /// <summary>
         /// PostgreSqlSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-postgresqlsettings
@@ -330,7 +331,7 @@ namespace Humidifier.DMS
             /// EndpointUri
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html#cfn-dms-endpoint-elasticsearchsettings-endpointuri
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic EndpointUri { get; set; }
@@ -419,14 +420,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic ParallelLoadThreads { get; set; }
             /// <summary>
-            /// Username
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-username
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Username { get; set; }
-            /// <summary>
             /// MaxFileSize
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-maxfilesize
             /// Required: False
@@ -434,6 +427,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxFileSize { get; set; }
+            /// <summary>
+            /// Username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-username
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Username { get; set; }
             /// <summary>
             /// ServerName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-gcpmysqlsettings.html#cfn-dms-endpoint-gcpmysqlsettings-servername
@@ -487,14 +488,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic SetDataCaptureChanges { get; set; }
             /// <summary>
-            /// MaxFileSize
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-maxfilesize
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaxFileSize { get; set; }
-            /// <summary>
             /// KeepCsvFiles
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-keepcsvfiles
             /// Required: False
@@ -502,6 +495,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic KeepCsvFiles { get; set; }
+            /// <summary>
+            /// MaxFileSize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-maxfilesize
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxFileSize { get; set; }
             /// <summary>
             /// CurrentLsn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-currentlsn
@@ -587,14 +588,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic IncludeTransactionDetails { get; set; }
             /// <summary>
-            /// SecurityProtocol
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-securityprotocol
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SecurityProtocol { get; set; }
-            /// <summary>
             /// IncludeTableAlterOperations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-includetablealteroperations
             /// Required: False
@@ -602,6 +595,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic IncludeTableAlterOperations { get; set; }
+            /// <summary>
+            /// SecurityProtocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-securityprotocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecurityProtocol { get; set; }
             /// <summary>
             /// SslCaCertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-sslcacertificatearn
@@ -743,14 +744,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic StreamArn { get; set; }
             /// <summary>
-            /// ServiceAccessRoleArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-serviceaccessrolearn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ServiceAccessRoleArn { get; set; }
-            /// <summary>
             /// NoHexPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-nohexprefix
             /// Required: False
@@ -758,6 +751,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic NoHexPrefix { get; set; }
+            /// <summary>
+            /// ServiceAccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-serviceaccessrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServiceAccessRoleArn { get; set; }
             /// <summary>
             /// PartitionIncludeSchemaTable
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-partitionincludeschematable
@@ -811,6 +812,14 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic Port { get; set; }
             /// <summary>
+            /// DatabaseName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-databasename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DatabaseName { get; set; }
+            /// <summary>
             /// SafeguardPolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-safeguardpolicy
             /// Required: False
@@ -826,14 +835,6 @@ namespace Humidifier.DMS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic UseThirdPartyBackupDevice { get; set; }
-            /// <summary>
-            /// DatabaseName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-databasename
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DatabaseName { get; set; }
             /// <summary>
             /// UseBcpFullLoad
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-usebcpfullload
@@ -919,14 +920,6 @@ namespace Humidifier.DMS
         public class MongoDbSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveDatabaseName, IHaveUsername, IHavePassword, IHaveAuthType, IHaveServerName, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveAuthSource, IHaveAuthMechanism, IHaveDocsToInvestigate, IHaveExtractDocId, IHaveNestingLevel
         {
             /// <summary>
-            /// Port
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-port
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Port { get; set; }
-            /// <summary>
             /// ExtractDocId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-extractdocid
             /// Required: False
@@ -934,6 +927,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExtractDocId { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-port
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
             /// <summary>
             /// DatabaseName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-databasename
@@ -959,14 +960,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic AuthMechanism { get; set; }
             /// <summary>
-            /// Username
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-username
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Username { get; set; }
-            /// <summary>
             /// DocsToInvestigate
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-docstoinvestigate
             /// Required: False
@@ -974,6 +967,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic DocsToInvestigate { get; set; }
+            /// <summary>
+            /// Username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-username
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Username { get; set; }
             /// <summary>
             /// ServerName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-servername
@@ -994,7 +995,7 @@ namespace Humidifier.DMS
             /// AuthType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-authtype
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic AuthType { get; set; }
@@ -1007,14 +1008,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic SecretsManagerAccessRoleArn { get; set; }
             /// <summary>
-            /// Password
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-password
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Password { get; set; }
-            /// <summary>
             /// NestingLevel
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-nestinglevel
             /// Required: False
@@ -1022,6 +1015,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic NestingLevel { get; set; }
+            /// <summary>
+            /// Password
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-password
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Password { get; set; }
         }
 
         public class MySqlSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveMaxFileSize, IHaveAfterConnectScript, IHaveCleanSourceMetadataOnMismatch, IHaveServerTimezone, IHaveEventsPollInterval, IHaveParallelLoadThreads
@@ -1119,14 +1120,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic MaxFileSize { get; set; }
             /// <summary>
-            /// S3BucketFolder
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-s3bucketfolder
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic S3BucketFolder { get; set; }
-            /// <summary>
             /// ErrorRetryDuration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-errorretryduration
             /// Required: False
@@ -1134,6 +1127,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ErrorRetryDuration { get; set; }
+            /// <summary>
+            /// S3BucketFolder
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-s3bucketfolder
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic S3BucketFolder { get; set; }
             /// <summary>
             /// IamAuthEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-iamauthenabled
@@ -1219,14 +1220,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic AsmServer { get; set; }
             /// <summary>
-            /// SecretsManagerOracleAsmAccessRoleArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanageroracleasmaccessrolearn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SecretsManagerOracleAsmAccessRoleArn { get; set; }
-            /// <summary>
             /// OraclePathPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-oraclepathprefix
             /// Required: False
@@ -1234,6 +1227,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic OraclePathPrefix { get; set; }
+            /// <summary>
+            /// SecretsManagerOracleAsmAccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanageroracleasmaccessrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretsManagerOracleAsmAccessRoleArn { get; set; }
             /// <summary>
             /// ReadAheadBlocks
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-readaheadblocks
@@ -1283,14 +1284,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic UseBFile { get; set; }
             /// <summary>
-            /// EnableHomogenousTablespace
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-enablehomogenoustablespace
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic EnableHomogenousTablespace { get; set; }
-            /// <summary>
             /// AsmUser
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-asmuser
             /// Required: False
@@ -1298,6 +1291,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic AsmUser { get; set; }
+            /// <summary>
+            /// EnableHomogenousTablespace
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-enablehomogenoustablespace
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic EnableHomogenousTablespace { get; set; }
             /// <summary>
             /// UseDirectPathFullLoad
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usedirectpathfullload
@@ -1403,14 +1404,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic AccessAlternateDirectly { get; set; }
             /// <summary>
-            /// UseAlternateFolderForOnline
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usealternatefolderforonline
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic UseAlternateFolderForOnline { get; set; }
-            /// <summary>
             /// ArchivedLogsOnly
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-archivedlogsonly
             /// Required: False
@@ -1418,6 +1411,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ArchivedLogsOnly { get; set; }
+            /// <summary>
+            /// UseAlternateFolderForOnline
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-usealternatefolderforonline
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UseAlternateFolderForOnline { get; set; }
             /// <summary>
             /// ExtraArchivedLogDestIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-extraarchivedlogdestids
@@ -1552,14 +1553,6 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic SecretsManagerSecretId { get; set; }
             /// <summary>
-            /// SecretsManagerAccessRoleArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-secretsmanageraccessrolearn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SecretsManagerAccessRoleArn { get; set; }
-            /// <summary>
             /// HeartbeatSchema
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-heartbeatschema
             /// Required: False
@@ -1567,6 +1560,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic HeartbeatSchema { get; set; }
+            /// <summary>
+            /// SecretsManagerAccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-secretsmanageraccessrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretsManagerAccessRoleArn { get; set; }
             /// <summary>
             /// SlotName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-slotname
@@ -1580,14 +1581,6 @@ namespace Humidifier.DMS
         public class RedisSettings : Humidifier.Base.BaseSubResource, IHavePort, IHaveAuthType, IHaveServerName, IHaveSslCaCertificateArn
         {
             /// <summary>
-            /// SslSecurityProtocol
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-sslsecurityprotocol
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SslSecurityProtocol { get; set; }
-            /// <summary>
             /// AuthUserName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-authusername
             /// Required: False
@@ -1596,13 +1589,13 @@ namespace Humidifier.DMS
             /// </summary>
             public dynamic AuthUserName { get; set; }
             /// <summary>
-            /// ServerName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-servername
+            /// SslSecurityProtocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-sslsecurityprotocol
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic ServerName { get; set; }
+            public dynamic SslSecurityProtocol { get; set; }
             /// <summary>
             /// Port
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-port
@@ -1611,6 +1604,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Port { get; set; }
+            /// <summary>
+            /// ServerName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-servername
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServerName { get; set; }
             /// <summary>
             /// SslCaCertificateArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-redissettings.html#cfn-dms-endpoint-redissettings-sslcacertificatearn

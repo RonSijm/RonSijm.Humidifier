@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class EventBridgeRuleTemplateGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
     {

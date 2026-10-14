@@ -1,11 +1,12 @@
 namespace Humidifier.Organizations
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class OrganizationalUnit : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveParentId
     {
         public class Attributes
         {
+            public static string Path =  "Path" ;
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
         }
@@ -29,7 +30,7 @@ namespace Humidifier.Organizations
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 }

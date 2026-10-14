@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class GraphQLSchema : Humidifier.Base.BaseResource, IHaveApiId, IHaveDefinition
     {

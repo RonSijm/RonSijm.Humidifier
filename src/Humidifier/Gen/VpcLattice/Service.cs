@@ -1,6 +1,6 @@
 namespace Humidifier.VpcLattice
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ServiceTypes;
 
     public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveCertificateArn, IHaveAuthType
@@ -47,7 +47,7 @@ namespace Humidifier.VpcLattice
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// CertificateArn
@@ -57,6 +57,14 @@ namespace Humidifier.VpcLattice
         /// PrimitiveType: String
         /// </summary>
         public dynamic CertificateArn { get; set; }
+        /// <summary>
+        /// IdleTimeoutSeconds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-service.html#cfn-vpclattice-service-idletimeoutseconds
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic IdleTimeoutSeconds { get; set; }
     }
 
     namespace ServiceTypes

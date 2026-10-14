@@ -1,6 +1,6 @@
 namespace Humidifier.CloudFront
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DistributionTypes;
 
     public class Distribution : Humidifier.Base.BaseResource, IHaveTags
@@ -30,7 +30,7 @@ namespace Humidifier.CloudFront
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace DistributionTypes
@@ -213,6 +213,30 @@ namespace Humidifier.CloudFront
             public dynamic MaxTTL { get; set; }
         }
 
+        public class CacheTagConfig : Humidifier.Base.BaseSubResource, IHaveHeaderName
+        {
+            /// <summary>
+            /// HeaderName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachetagconfig.html#cfn-cloudfront-distribution-cachetagconfig-headername
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HeaderName { get; set; }
+        }
+
+        public class ConnectionFunctionAssociation : Humidifier.Base.BaseSubResource, IHaveId
+        {
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-connectionfunctionassociation.html#cfn-cloudfront-distribution-connectionfunctionassociation-id
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
+        }
+
         public class Cookies : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -270,8 +294,16 @@ namespace Humidifier.CloudFront
             public dynamic ResponsePagePath { get; set; }
         }
 
-        public class CustomOriginConfig : Humidifier.Base.BaseSubResource, IHaveHTTPSPort, IHaveOriginSSLProtocols, IHaveHTTPPort, IHaveOriginProtocolPolicy
+        public class CustomOriginConfig : Humidifier.Base.BaseSubResource, IHaveIpAddressType, IHaveHTTPSPort, IHaveOriginSSLProtocols, IHaveHTTPPort, IHaveOriginProtocolPolicy
         {
+            /// <summary>
+            /// IpAddressType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-ipaddresstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IpAddressType { get; set; }
             /// <summary>
             /// OriginReadTimeout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout
@@ -288,6 +320,14 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic HTTPSPort { get; set; }
+            /// <summary>
+            /// OriginMtlsConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originmtlsconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OriginMtlsConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.OriginMtlsConfig OriginMtlsConfig { get; set; }
             /// <summary>
             /// OriginKeepaliveTimeout
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout
@@ -493,8 +533,127 @@ namespace Humidifier.CloudFront
             public dynamic MaxTTL { get; set; }
         }
 
+        public class Definition : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// StringSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-definition.html#cfn-cloudfront-distribution-definition-stringschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StringSchema
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.StringSchema StringSchema { get; set; }
+        }
+
         public class DistributionConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveComment, IHaveAliases, IHaveWebACLId, IHavePriceClass
         {
+            /// <summary>
+            /// PriceClass
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PriceClass { get; set; }
+            /// <summary>
+            /// Staging
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-staging
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Staging { get; set; }
+            /// <summary>
+            /// CustomErrorResponses
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CustomErrorResponse
+            /// </summary>
+            public List<Humidifier.CloudFront.DistributionTypes.CustomErrorResponse> CustomErrorResponses { get; set; }
+            /// <summary>
+            /// ContinuousDeploymentPolicyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-continuousdeploymentpolicyid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ContinuousDeploymentPolicyId { get; set; }
+            /// <summary>
+            /// OriginGroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OriginGroups
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.OriginGroups OriginGroups { get; set; }
+            /// <summary>
+            /// ConnectionFunctionAssociation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-connectionfunctionassociation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ConnectionFunctionAssociation
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.ConnectionFunctionAssociation ConnectionFunctionAssociation { get; set; }
+            /// <summary>
+            /// IPV6Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IPV6Enabled { get; set; }
+            /// <summary>
+            /// TenantConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-tenantconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TenantConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.TenantConfig TenantConfig { get; set; }
+            /// <summary>
+            /// CNAMEs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cnames
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic CNAMEs { get; set; }
+            /// <summary>
+            /// ViewerMtlsConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-viewermtlsconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ViewerMtlsConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.ViewerMtlsConfig ViewerMtlsConfig { get; set; }
+            /// <summary>
+            /// HttpVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-httpversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpVersion { get; set; }
+            /// <summary>
+            /// Restrictions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Restrictions
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.Restrictions Restrictions { get; set; }
+            /// <summary>
+            /// CacheBehaviors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachebehaviors
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CacheBehavior
+            /// </summary>
+            public List<Humidifier.CloudFront.DistributionTypes.CacheBehavior> CacheBehaviors { get; set; }
             /// <summary>
             /// Logging
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-logging
@@ -545,14 +704,6 @@ namespace Humidifier.CloudFront
             /// </summary>
             public dynamic AnycastIpListId { get; set; }
             /// <summary>
-            /// PriceClass
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic PriceClass { get; set; }
-            /// <summary>
             /// CustomOrigin
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customorigin
             /// Required: False
@@ -577,39 +728,6 @@ namespace Humidifier.CloudFront
             /// </summary>
             public Humidifier.CloudFront.DistributionTypes.DefaultCacheBehavior DefaultCacheBehavior { get; set; }
             /// <summary>
-            /// Staging
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-staging
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Staging { get; set; }
-            /// <summary>
-            /// CustomErrorResponses
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: CustomErrorResponse
-            /// </summary>
-            public List<Humidifier.CloudFront.DistributionTypes.CustomErrorResponse> CustomErrorResponses { get; set; }
-            /// <summary>
-            /// ContinuousDeploymentPolicyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-continuousdeploymentpolicyid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ContinuousDeploymentPolicyId { get; set; }
-            /// <summary>
-            /// OriginGroups
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OriginGroups
-            /// </summary>
-            public Humidifier.CloudFront.DistributionTypes.OriginGroups OriginGroups { get; set; }
-            /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-enabled
             /// Required: True
@@ -617,6 +735,14 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// CacheTagConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachetagconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CacheTagConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.CacheTagConfig CacheTagConfig { get; set; }
             /// <summary>
             /// Aliases
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-aliases
@@ -627,22 +753,13 @@ namespace Humidifier.CloudFront
             /// </summary>
             public dynamic Aliases { get; set; }
             /// <summary>
-            /// IPV6Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled
+            /// ConnectionMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-connectionmode
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic IPV6Enabled { get; set; }
-            /// <summary>
-            /// CNAMEs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cnames
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic CNAMEs { get; set; }
+            public dynamic ConnectionMode { get; set; }
             /// <summary>
             /// WebACLId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid
@@ -651,35 +768,19 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: String
             /// </summary>
             public dynamic WebACLId { get; set; }
-            /// <summary>
-            /// HttpVersion
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-httpversion
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic HttpVersion { get; set; }
-            /// <summary>
-            /// Restrictions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Restrictions
-            /// </summary>
-            public Humidifier.CloudFront.DistributionTypes.Restrictions Restrictions { get; set; }
-            /// <summary>
-            /// CacheBehaviors
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachebehaviors
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: CacheBehavior
-            /// </summary>
-            public List<Humidifier.CloudFront.DistributionTypes.CacheBehavior> CacheBehaviors { get; set; }
         }
 
         public class ForwardedValues : Humidifier.Base.BaseSubResource, IHaveQueryString, IHaveHeaders
         {
+            /// <summary>
+            /// QueryStringCacheKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-querystringcachekeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic QueryStringCacheKeys { get; set; }
             /// <summary>
             /// Cookies
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-cookies
@@ -705,15 +806,6 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic QueryString { get; set; }
-            /// <summary>
-            /// QueryStringCacheKeys
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-querystringcachekeys
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic QueryStringCacheKeys { get; set; }
         }
 
         public class FunctionAssociation : Humidifier.Base.BaseSubResource, IHaveEventType, IHaveFunctionARN
@@ -772,14 +864,6 @@ namespace Humidifier.CloudFront
         public class LambdaFunctionAssociation : Humidifier.Base.BaseSubResource, IHaveEventType
         {
             /// <summary>
-            /// IncludeBody
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-includebody
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic IncludeBody { get; set; }
-            /// <summary>
             /// EventType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-eventtype
             /// Required: False
@@ -787,6 +871,14 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: String
             /// </summary>
             public dynamic EventType { get; set; }
+            /// <summary>
+            /// IncludeBody
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-includebody
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IncludeBody { get; set; }
             /// <summary>
             /// LambdaFunctionARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-lambdafunctionarn
@@ -966,6 +1058,14 @@ namespace Humidifier.CloudFront
             /// </summary>
             public dynamic OriginPath { get; set; }
             /// <summary>
+            /// ResponseCompletionTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-responsecompletiontimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic ResponseCompletionTimeout { get; set; }
+            /// <summary>
             /// Id
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id
             /// Required: True
@@ -1105,6 +1205,18 @@ namespace Humidifier.CloudFront
             public List<Humidifier.CloudFront.DistributionTypes.OriginGroup> Items { get; set; }
         }
 
+        public class OriginMtlsConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ClientCertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-originmtlsconfig.html#cfn-cloudfront-distribution-originmtlsconfig-clientcertificatearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientCertificateArn { get; set; }
+        }
+
         public class OriginShield : Humidifier.Base.BaseSubResource, IHaveEnabled
         {
             /// <summary>
@@ -1125,6 +1237,26 @@ namespace Humidifier.CloudFront
             public dynamic Enabled { get; set; }
         }
 
+        public class ParameterDefinition : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Definition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-parameterdefinition.html#cfn-cloudfront-distribution-parameterdefinition-definition
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Definition
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.Definition Definition { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-parameterdefinition.html#cfn-cloudfront-distribution-parameterdefinition-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
         public class Restrictions : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -1139,6 +1271,14 @@ namespace Humidifier.CloudFront
 
         public class S3OriginConfig : Humidifier.Base.BaseSubResource, IHaveOriginAccessIdentity
         {
+            /// <summary>
+            /// OriginReadTimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originreadtimeout
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic OriginReadTimeout { get; set; }
             /// <summary>
             /// OriginAccessIdentity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity
@@ -1168,6 +1308,75 @@ namespace Humidifier.CloudFront
             /// PrimitiveItemType: Integer
             /// </summary>
             public List<int> Items { get; set; }
+        }
+
+        public class StringSchema : Humidifier.Base.BaseSubResource, IHaveComment, IHaveDefaultValue, IHaveRequired
+        {
+            /// <summary>
+            /// Comment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-stringschema.html#cfn-cloudfront-distribution-stringschema-comment
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Comment { get; set; }
+            /// <summary>
+            /// DefaultValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-stringschema.html#cfn-cloudfront-distribution-stringschema-defaultvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DefaultValue { get; set; }
+            /// <summary>
+            /// Required
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-stringschema.html#cfn-cloudfront-distribution-stringschema-required
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Required { get; set; }
+        }
+
+        public class TenantConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ParameterDefinitions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-tenantconfig.html#cfn-cloudfront-distribution-tenantconfig-parameterdefinitions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ParameterDefinition
+            /// </summary>
+            public List<Humidifier.CloudFront.DistributionTypes.ParameterDefinition> ParameterDefinitions { get; set; }
+        }
+
+        public class TrustStoreConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TrustStoreId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-truststoreconfig.html#cfn-cloudfront-distribution-truststoreconfig-truststoreid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TrustStoreId { get; set; }
+            /// <summary>
+            /// IgnoreCertificateExpiry
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-truststoreconfig.html#cfn-cloudfront-distribution-truststoreconfig-ignorecertificateexpiry
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IgnoreCertificateExpiry { get; set; }
+            /// <summary>
+            /// AdvertiseTrustStoreCaNames
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-truststoreconfig.html#cfn-cloudfront-distribution-truststoreconfig-advertisetruststorecanames
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AdvertiseTrustStoreCaNames { get; set; }
         }
 
         public class ViewerCertificate : Humidifier.Base.BaseSubResource
@@ -1214,6 +1423,26 @@ namespace Humidifier.CloudFront
             public dynamic AcmCertificateArn { get; set; }
         }
 
+        public class ViewerMtlsConfig : Humidifier.Base.BaseSubResource, IHaveMode
+        {
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewermtlsconfig.html#cfn-cloudfront-distribution-viewermtlsconfig-mode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
+            /// <summary>
+            /// TrustStoreConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewermtlsconfig.html#cfn-cloudfront-distribution-viewermtlsconfig-truststoreconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TrustStoreConfig
+            /// </summary>
+            public Humidifier.CloudFront.DistributionTypes.TrustStoreConfig TrustStoreConfig { get; set; }
+        }
+
         public class VpcOriginConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -1240,6 +1469,14 @@ namespace Humidifier.CloudFront
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic OriginKeepaliveTimeout { get; set; }
+            /// <summary>
+            /// OwnerAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-vpcoriginconfig.html#cfn-cloudfront-distribution-vpcoriginconfig-owneraccountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OwnerAccountId { get; set; }
         }
     }
 }

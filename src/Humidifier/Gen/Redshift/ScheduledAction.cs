@@ -1,6 +1,6 @@
 namespace Humidifier.Redshift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScheduledActionTypes;
 
     public class ScheduledAction : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStartTime, IHaveEndTime, IHaveEnable, IHaveSchedule, IHaveScheduledActionName, IHaveDescription

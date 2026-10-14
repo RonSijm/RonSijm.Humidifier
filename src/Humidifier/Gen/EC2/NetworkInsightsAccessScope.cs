@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkInsightsAccessScopeTypes;
 
     public class NetworkInsightsAccessScope : Humidifier.Base.BaseResource, IHaveTags
@@ -40,21 +40,13 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace NetworkInsightsAccessScopeTypes
     {
         public class AccessScopePathRequest : Humidifier.Base.BaseSubResource
         {
-            /// <summary>
-            /// Destination
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-destination
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: PathStatementRequest
-            /// </summary>
-            public Humidifier.EC2.NetworkInsightsAccessScopeTypes.PathStatementRequest Destination { get; set; }
             /// <summary>
             /// ThroughResources
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-throughresources
@@ -64,6 +56,14 @@ namespace Humidifier.EC2
             /// ItemType: ThroughResourcesStatementRequest
             /// </summary>
             public List<Humidifier.EC2.NetworkInsightsAccessScopeTypes.ThroughResourcesStatementRequest> ThroughResources { get; set; }
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-destination
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: PathStatementRequest
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAccessScopeTypes.PathStatementRequest Destination { get; set; }
             /// <summary>
             /// Source
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-source
@@ -144,14 +144,6 @@ namespace Humidifier.EC2
         public class PathStatementRequest : Humidifier.Base.BaseSubResource, IHaveEC2NetworkInsightsAccessScopeTypesResourceStatementRequestResourceStatement
         {
             /// <summary>
-            /// ResourceStatement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: ResourceStatementRequest
-            /// </summary>
-            public Humidifier.EC2.NetworkInsightsAccessScopeTypes.ResourceStatementRequest ResourceStatement { get; set; }
-            /// <summary>
             /// PacketHeaderStatement
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-packetheaderstatement
             /// Required: False
@@ -159,6 +151,14 @@ namespace Humidifier.EC2
             /// Type: PacketHeaderStatementRequest
             /// </summary>
             public Humidifier.EC2.NetworkInsightsAccessScopeTypes.PacketHeaderStatementRequest PacketHeaderStatement { get; set; }
+            /// <summary>
+            /// ResourceStatement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ResourceStatementRequest
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAccessScopeTypes.ResourceStatementRequest ResourceStatement { get; set; }
         }
 
         public class ResourceStatementRequest : Humidifier.Base.BaseSubResource, IHaveResources, IHaveResourceTypes

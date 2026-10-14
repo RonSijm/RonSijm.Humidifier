@@ -1,20 +1,28 @@
 namespace Humidifier.S3
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BucketTypes;
 
     public class Bucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveBucketName, IHaveObjectLockEnabled
     {
         public class Attributes
         {
-            public static string RegionalDomainName =  "RegionalDomainName" ;
             public static string DomainName =  "DomainName" ;
             public static string WebsiteURL =  "WebsiteURL" ;
             public static string DualStackDomainName =  "DualStackDomainName" ;
+            public static string RegionalDomainName =  "RegionalDomainName" ;
             public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName { get => AWS.S3.Bucket; }
+        /// <summary>
+        /// BucketNamespace
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-bucketnamespace
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic BucketNamespace { get; set; }
         /// <summary>
         /// InventoryConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations
@@ -25,13 +33,13 @@ namespace Humidifier.S3
         /// </summary>
         public List<Humidifier.S3.BucketTypes.InventoryConfiguration> InventoryConfigurations { get; set; }
         /// <summary>
-        /// BucketEncryption
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-bucketencryption
+        /// BucketNamePrefix
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-bucketnameprefix
         /// Required: False
-        /// UpdateType: Mutable
-        /// Type: BucketEncryption
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
         /// </summary>
-        public Humidifier.S3.BucketTypes.BucketEncryption BucketEncryption { get; set; }
+        public dynamic BucketNamePrefix { get; set; }
         /// <summary>
         /// WebsiteConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-websiteconfiguration
@@ -40,6 +48,121 @@ namespace Humidifier.S3
         /// Type: WebsiteConfiguration
         /// </summary>
         public Humidifier.S3.BucketTypes.WebsiteConfiguration WebsiteConfiguration { get; set; }
+        /// <summary>
+        /// AccessControl
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-accesscontrol
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AccessControl { get; set; }
+        /// <summary>
+        /// MetadataTableConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-metadatatableconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MetadataTableConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.MetadataTableConfiguration MetadataTableConfiguration { get; set; }
+        /// <summary>
+        /// AnalyticsConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AnalyticsConfiguration
+        /// </summary>
+        public List<Humidifier.S3.BucketTypes.AnalyticsConfiguration> AnalyticsConfigurations { get; set; }
+        /// <summary>
+        /// AbacStatus
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-abacstatus
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AbacStatus { get; set; }
+        /// <summary>
+        /// AccelerateConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AccelerateConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.AccelerateConfiguration AccelerateConfiguration { get; set; }
+        /// <summary>
+        /// PublicAccessBlockConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PublicAccessBlockConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
+        public dynamic BucketName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// OwnershipControls
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-ownershipcontrols
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: OwnershipControls
+        /// </summary>
+        public Humidifier.S3.BucketTypes.OwnershipControls OwnershipControls { get; set; }
+        /// <summary>
+        /// ObjectLockConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ObjectLockConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.ObjectLockConfiguration ObjectLockConfiguration { get; set; }
+        /// <summary>
+        /// ObjectLockEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-objectlockenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic ObjectLockEnabled { get; set; }
+        /// <summary>
+        /// LoggingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-loggingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LoggingConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.LoggingConfiguration LoggingConfiguration { get; set; }
+        /// <summary>
+        /// MetadataConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-metadataconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MetadataConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.MetadataConfiguration MetadataConfiguration { get; set; }
+        /// <summary>
+        /// ReplicationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-replicationconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ReplicationConfiguration
+        /// </summary>
+        public Humidifier.S3.BucketTypes.ReplicationConfiguration ReplicationConfiguration { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// BucketEncryption
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-bucketencryption
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: BucketEncryption
+        /// </summary>
+        public Humidifier.S3.BucketTypes.BucketEncryption BucketEncryption { get; set; }
         /// <summary>
         /// NotificationConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-notificationconfiguration
@@ -74,22 +197,6 @@ namespace Humidifier.S3
         /// </summary>
         public List<Humidifier.S3.BucketTypes.MetricsConfiguration> MetricsConfigurations { get; set; }
         /// <summary>
-        /// AccessControl
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-accesscontrol
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic AccessControl { get; set; }
-        /// <summary>
-        /// MetadataTableConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-metadatatableconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: MetadataTableConfiguration
-        /// </summary>
-        public Humidifier.S3.BucketTypes.MetadataTableConfiguration MetadataTableConfiguration { get; set; }
-        /// <summary>
         /// IntelligentTieringConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-intelligenttieringconfigurations
         /// Required: False
@@ -99,32 +206,6 @@ namespace Humidifier.S3
         /// </summary>
         public List<Humidifier.S3.BucketTypes.IntelligentTieringConfiguration> IntelligentTieringConfigurations { get; set; }
         /// <summary>
-        /// AnalyticsConfigurations
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: AnalyticsConfiguration
-        /// </summary>
-        public List<Humidifier.S3.BucketTypes.AnalyticsConfiguration> AnalyticsConfigurations { get; set; }
-        /// <summary>
-        /// AccelerateConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: AccelerateConfiguration
-        /// </summary>
-        public Humidifier.S3.BucketTypes.AccelerateConfiguration AccelerateConfiguration { get; set; }
-        /// <summary>
-        /// PublicAccessBlockConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: PublicAccessBlockConfiguration
-        /// </summary>
-        public Humidifier.S3.BucketTypes.PublicAccessBlockConfiguration PublicAccessBlockConfiguration { get; set; }
-        public dynamic BucketName { get => GivenName; set => GivenName = value; }
-        /// <summary>
         /// CorsConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-corsconfiguration
         /// Required: False
@@ -132,55 +213,6 @@ namespace Humidifier.S3
         /// Type: CorsConfiguration
         /// </summary>
         public Humidifier.S3.BucketTypes.CorsConfiguration CorsConfiguration { get; set; }
-        /// <summary>
-        /// OwnershipControls
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-ownershipcontrols
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: OwnershipControls
-        /// </summary>
-        public Humidifier.S3.BucketTypes.OwnershipControls OwnershipControls { get; set; }
-        /// <summary>
-        /// ObjectLockConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ObjectLockConfiguration
-        /// </summary>
-        public Humidifier.S3.BucketTypes.ObjectLockConfiguration ObjectLockConfiguration { get; set; }
-        /// <summary>
-        /// ObjectLockEnabled
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-objectlockenabled
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic ObjectLockEnabled { get; set; }
-        /// <summary>
-        /// LoggingConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-loggingconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: LoggingConfiguration
-        /// </summary>
-        public Humidifier.S3.BucketTypes.LoggingConfiguration LoggingConfiguration { get; set; }
-        /// <summary>
-        /// ReplicationConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-replicationconfiguration
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ReplicationConfiguration
-        /// </summary>
-        public Humidifier.S3.BucketTypes.ReplicationConfiguration ReplicationConfiguration { get; set; }
-        /// <summary>
-        /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-bucket.html#cfn-s3-bucket-tags
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: Tag
-        /// </summary>
-        public List<Tag> Tags { get; set; }
     }
 
     namespace BucketTypes
@@ -256,6 +288,63 @@ namespace Humidifier.S3
             /// PrimitiveType: String
             /// </summary>
             public dynamic Prefix { get; set; }
+        }
+
+        public class AnnotationTableConfiguration : Humidifier.Base.BaseSubResource, IHaveTableName, IHaveRole
+        {
+            /// <summary>
+            /// Role
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-annotationtableconfiguration.html#cfn-s3-bucket-annotationtableconfiguration-role
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Role { get; set; }
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-annotationtableconfiguration.html#cfn-s3-bucket-annotationtableconfiguration-tablename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// ConfigurationState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-annotationtableconfiguration.html#cfn-s3-bucket-annotationtableconfiguration-configurationstate
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConfigurationState { get; set; }
+            /// <summary>
+            /// TableArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-annotationtableconfiguration.html#cfn-s3-bucket-annotationtableconfiguration-tablearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableArn { get; set; }
+            /// <summary>
+            /// EncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-annotationtableconfiguration.html#cfn-s3-bucket-annotationtableconfiguration-encryptionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetadataTableEncryptionConfiguration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.MetadataTableEncryptionConfiguration EncryptionConfiguration { get; set; }
+        }
+
+        public class BlockedEncryptionTypes : Humidifier.Base.BaseSubResource, IHaveEncryptionType
+        {
+            /// <summary>
+            /// EncryptionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-blockedencryptiontypes.html#cfn-s3-bucket-blockedencryptiontypes-encryptiontype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EncryptionType { get; set; }
         }
 
         public class BucketEncryption : Humidifier.Base.BaseSubResource
@@ -360,6 +449,26 @@ namespace Humidifier.S3
             public dynamic OutputSchemaVersion { get; set; }
         }
 
+        public class DefaultEventHold : Humidifier.Base.BaseSubResource, IHaveDays
+        {
+            /// <summary>
+            /// Years
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaulteventhold.html#cfn-s3-bucket-defaulteventhold-years
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Years { get; set; }
+            /// <summary>
+            /// Days
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaulteventhold.html#cfn-s3-bucket-defaulteventhold-days
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Days { get; set; }
+        }
+
         public class DefaultRetention : Humidifier.Base.BaseSubResource, IHaveMode, IHaveDays
         {
             /// <summary>
@@ -386,6 +495,14 @@ namespace Humidifier.S3
             /// PrimitiveType: String
             /// </summary>
             public dynamic Mode { get; set; }
+            /// <summary>
+            /// DefaultEventHold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-defaulteventhold
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DefaultEventHold
+            /// </summary>
+            public Humidifier.S3.BucketTypes.DefaultEventHold DefaultEventHold { get; set; }
         }
 
         public class DeleteMarkerReplication : Humidifier.Base.BaseSubResource, IHaveStatus
@@ -411,14 +528,6 @@ namespace Humidifier.S3
             /// </summary>
             public dynamic BucketArn { get; set; }
             /// <summary>
-            /// Format
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-format
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Format { get; set; }
-            /// <summary>
             /// BucketAccountId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-bucketaccountid
             /// Required: False
@@ -426,6 +535,14 @@ namespace Humidifier.S3
             /// PrimitiveType: String
             /// </summary>
             public dynamic BucketAccountId { get; set; }
+            /// <summary>
+            /// Format
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-format
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Format { get; set; }
             /// <summary>
             /// Prefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-prefix
@@ -587,6 +704,78 @@ namespace Humidifier.S3
             public dynamic ScheduleFrequency { get; set; }
         }
 
+        public class InventoryTableConfiguration : Humidifier.Base.BaseSubResource, IHaveTableName
+        {
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventorytableconfiguration.html#cfn-s3-bucket-inventorytableconfiguration-tablename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// ConfigurationState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventorytableconfiguration.html#cfn-s3-bucket-inventorytableconfiguration-configurationstate
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConfigurationState { get; set; }
+            /// <summary>
+            /// TableArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventorytableconfiguration.html#cfn-s3-bucket-inventorytableconfiguration-tablearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableArn { get; set; }
+            /// <summary>
+            /// EncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventorytableconfiguration.html#cfn-s3-bucket-inventorytableconfiguration-encryptionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetadataTableEncryptionConfiguration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.MetadataTableEncryptionConfiguration EncryptionConfiguration { get; set; }
+        }
+
+        public class JournalTableConfiguration : Humidifier.Base.BaseSubResource, IHaveTableName
+        {
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-journaltableconfiguration.html#cfn-s3-bucket-journaltableconfiguration-tablename
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// TableArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-journaltableconfiguration.html#cfn-s3-bucket-journaltableconfiguration-tablearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableArn { get; set; }
+            /// <summary>
+            /// EncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-journaltableconfiguration.html#cfn-s3-bucket-journaltableconfiguration-encryptionconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetadataTableEncryptionConfiguration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.MetadataTableEncryptionConfiguration EncryptionConfiguration { get; set; }
+            /// <summary>
+            /// RecordExpiration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-journaltableconfiguration.html#cfn-s3-bucket-journaltableconfiguration-recordexpiration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: RecordExpiration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.RecordExpiration RecordExpiration { get; set; }
+        }
+
         public class LambdaConfiguration : Humidifier.Base.BaseSubResource, IHaveEvent, IHaveFunction, IHaveS3BucketTypesNotificationFilterFilter
         {
             /// <summary>
@@ -664,6 +853,70 @@ namespace Humidifier.S3
             public dynamic DestinationBucketName { get; set; }
         }
 
+        public class MetadataConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Destination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadataconfiguration.html#cfn-s3-bucket-metadataconfiguration-destination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MetadataDestination
+            /// </summary>
+            public Humidifier.S3.BucketTypes.MetadataDestination Destination { get; set; }
+            /// <summary>
+            /// JournalTableConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadataconfiguration.html#cfn-s3-bucket-metadataconfiguration-journaltableconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: JournalTableConfiguration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.JournalTableConfiguration JournalTableConfiguration { get; set; }
+            /// <summary>
+            /// InventoryTableConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadataconfiguration.html#cfn-s3-bucket-metadataconfiguration-inventorytableconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InventoryTableConfiguration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.InventoryTableConfiguration InventoryTableConfiguration { get; set; }
+            /// <summary>
+            /// AnnotationTableConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadataconfiguration.html#cfn-s3-bucket-metadataconfiguration-annotationtableconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnnotationTableConfiguration
+            /// </summary>
+            public Humidifier.S3.BucketTypes.AnnotationTableConfiguration AnnotationTableConfiguration { get; set; }
+        }
+
+        public class MetadataDestination : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TableBucketArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadatadestination.html#cfn-s3-bucket-metadatadestination-tablebucketarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableBucketArn { get; set; }
+            /// <summary>
+            /// TableBucketType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadatadestination.html#cfn-s3-bucket-metadatadestination-tablebuckettype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableBucketType { get; set; }
+            /// <summary>
+            /// TableNamespace
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadatadestination.html#cfn-s3-bucket-metadatadestination-tablenamespace
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableNamespace { get; set; }
+        }
+
         public class MetadataTableConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -674,6 +927,26 @@ namespace Humidifier.S3
             /// Type: S3TablesDestination
             /// </summary>
             public Humidifier.S3.BucketTypes.S3TablesDestination S3TablesDestination { get; set; }
+        }
+
+        public class MetadataTableEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn
+        {
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadatatableencryptionconfiguration.html#cfn-s3-bucket-metadatatableencryptionconfiguration-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
+            /// <summary>
+            /// SseAlgorithm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metadatatableencryptionconfiguration.html#cfn-s3-bucket-metadatatableencryptionconfiguration-ssealgorithm
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SseAlgorithm { get; set; }
         }
 
         public class Metrics : Humidifier.Base.BaseSubResource, IHaveStatus
@@ -963,6 +1236,26 @@ namespace Humidifier.S3
             /// PrimitiveType: String
             /// </summary>
             public dynamic Queue { get; set; }
+        }
+
+        public class RecordExpiration : Humidifier.Base.BaseSubResource, IHaveDays
+        {
+            /// <summary>
+            /// Days
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-recordexpiration.html#cfn-s3-bucket-recordexpiration-days
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Days { get; set; }
+            /// <summary>
+            /// Expiration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-recordexpiration.html#cfn-s3-bucket-recordexpiration-expiration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expiration { get; set; }
         }
 
         public class RedirectAllRequestsTo : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveHostName
@@ -1525,6 +1818,14 @@ namespace Humidifier.S3
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic BucketKeyEnabled { get; set; }
+            /// <summary>
+            /// BlockedEncryptionTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-blockedencryptiontypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BlockedEncryptionTypes
+            /// </summary>
+            public Humidifier.S3.BucketTypes.BlockedEncryptionTypes BlockedEncryptionTypes { get; set; }
             /// <summary>
             /// ServerSideEncryptionByDefault
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault

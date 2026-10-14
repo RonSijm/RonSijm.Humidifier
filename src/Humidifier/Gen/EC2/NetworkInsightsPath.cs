@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkInsightsPathTypes;
 
     public class NetworkInsightsPath : Humidifier.Base.BaseResource, IHaveTags, IHaveProtocol, IHaveSource, IHaveDestination, IHaveSourceIp, IHaveDestinationPort, IHaveDestinationIp
@@ -91,21 +91,13 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace NetworkInsightsPathTypes
     {
         public class FilterPortRange : Humidifier.Base.BaseSubResource, IHaveFromPort, IHaveToPort
         {
-            /// <summary>
-            /// FromPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-filterportrange.html#cfn-ec2-networkinsightspath-filterportrange-fromport
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic FromPort { get; set; }
             /// <summary>
             /// ToPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-filterportrange.html#cfn-ec2-networkinsightspath-filterportrange-toport
@@ -114,6 +106,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic ToPort { get; set; }
+            /// <summary>
+            /// FromPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightspath-filterportrange.html#cfn-ec2-networkinsightspath-filterportrange-fromport
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FromPort { get; set; }
         }
 
         public class PathFilter : Humidifier.Base.BaseSubResource

@@ -1,6 +1,6 @@
 namespace Humidifier.PCAConnectorAD
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DirectoryRegistration : Humidifier.Base.BaseResource, IHaveDirectoryId
     {

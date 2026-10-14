@@ -1,6 +1,6 @@
 namespace Humidifier.EC2
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class VPCPeeringConnection : Humidifier.Base.BaseResource, IHaveTags, IHaveVpcId, IHavePeerRegion, IHavePeerVpcId
     {
@@ -39,6 +39,14 @@ namespace Humidifier.EC2
         [Required]
         public dynamic PeerVpcId { get; set; }
         /// <summary>
+        /// AssumeRoleRegion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-assumeroleregion
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AssumeRoleRegion { get; set; }
+        /// <summary>
         /// PeerRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerregion
         /// Required: False
@@ -62,6 +70,6 @@ namespace Humidifier.EC2
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

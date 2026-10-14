@@ -1,9 +1,14 @@
 namespace Humidifier.RDS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DBSubnetGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSubnetIds, IHaveDBSubnetGroupName, IHaveDBSubnetGroupDescription, IHaveDescription
     {
+        public class Attributes
+        {
+            public static string DBSubnetGroupArn =  "DBSubnetGroupArn" ;
+        }
+
         public override string AWSTypeName { get => AWS.RDS.DBSubnetGroup; }
         public dynamic DBSubnetGroupName { get => GivenName; set => GivenName = value; }
 
@@ -38,6 +43,6 @@ namespace Humidifier.RDS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 }

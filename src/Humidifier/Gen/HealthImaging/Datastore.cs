@@ -1,6 +1,6 @@
 namespace Humidifier.HealthImaging
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class Datastore : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveKmsKeyArn, IHaveDatastoreName
     {

@@ -1,6 +1,6 @@
 namespace Humidifier.MediaLive
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using NetworkTypes;
 
     public class Network : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName

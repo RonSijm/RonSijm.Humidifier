@@ -1,6 +1,6 @@
 namespace Humidifier.SES
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MailManagerRuleSetTypes;
 
     public class MailManagerRuleSet : Humidifier.Base.BaseResource, IHaveTags, IHaveRuleSetName
@@ -39,7 +39,7 @@ namespace Humidifier.SES
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace MailManagerRuleSetTypes
@@ -104,6 +104,66 @@ namespace Humidifier.SES
             public dynamic ActionFailurePolicy { get; set; }
         }
 
+        public class BounceAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveMessage, IHaveStatusCode, IHaveActionFailurePolicy
+        {
+            /// <summary>
+            /// Sender
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-sender
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Sender { get; set; }
+            /// <summary>
+            /// SmtpReplyCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-smtpreplycode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SmtpReplyCode { get; set; }
+            /// <summary>
+            /// DiagnosticMessage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-diagnosticmessage
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DiagnosticMessage { get; set; }
+            /// <summary>
+            /// Message
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-message
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Message { get; set; }
+            /// <summary>
+            /// ActionFailurePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-actionfailurepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ActionFailurePolicy { get; set; }
+            /// <summary>
+            /// StatusCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-statuscode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StatusCode { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-bounceaction.html#cfn-ses-mailmanagerruleset-bounceaction-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+        }
+
         public class DeliverToMailboxAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveActionFailurePolicy
         {
             /// <summary>
@@ -161,6 +221,50 @@ namespace Humidifier.SES
             /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-delivertoqbusinessaction.html#cfn-ses-mailmanagerruleset-delivertoqbusinessaction-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+        }
+
+        public class InvokeLambdaAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveFunctionArn, IHaveActionFailurePolicy, IHaveInvocationType
+        {
+            /// <summary>
+            /// FunctionArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-invokelambdaaction.html#cfn-ses-mailmanagerruleset-invokelambdaaction-functionarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FunctionArn { get; set; }
+            /// <summary>
+            /// RetryTimeMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-invokelambdaaction.html#cfn-ses-mailmanagerruleset-invokelambdaaction-retrytimeminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RetryTimeMinutes { get; set; }
+            /// <summary>
+            /// InvocationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-invokelambdaaction.html#cfn-ses-mailmanagerruleset-invokelambdaaction-invocationtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InvocationType { get; set; }
+            /// <summary>
+            /// ActionFailurePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-invokelambdaaction.html#cfn-ses-mailmanagerruleset-invokelambdaaction-actionfailurepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ActionFailurePolicy { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-invokelambdaaction.html#cfn-ses-mailmanagerruleset-invokelambdaaction-rolearn
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -299,6 +403,22 @@ namespace Humidifier.SES
             /// </summary>
             public Humidifier.SES.MailManagerRuleSetTypes.S3Action WriteToS3 { get; set; }
             /// <summary>
+            /// PublishToSns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleaction.html#cfn-ses-mailmanagerruleset-ruleaction-publishtosns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SnsAction
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.SnsAction PublishToSns { get; set; }
+            /// <summary>
+            /// Bounce
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleaction.html#cfn-ses-mailmanagerruleset-ruleaction-bounce
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BounceAction
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.BounceAction Bounce { get; set; }
+            /// <summary>
             /// DeliverToQBusiness
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleaction.html#cfn-ses-mailmanagerruleset-ruleaction-delivertoqbusiness
             /// Required: False
@@ -322,6 +442,14 @@ namespace Humidifier.SES
             /// Type: SendAction
             /// </summary>
             public Humidifier.SES.MailManagerRuleSetTypes.SendAction Send { get; set; }
+            /// <summary>
+            /// InvokeLambda
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleaction.html#cfn-ses-mailmanagerruleset-ruleaction-invokelambda
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InvokeLambdaAction
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.InvokeLambdaAction InvokeLambda { get; set; }
         }
 
         public class RuleBooleanExpression : Humidifier.Base.BaseSubResource, IHaveOperator
@@ -347,13 +475,29 @@ namespace Humidifier.SES
         public class RuleBooleanToEvaluate : Humidifier.Base.BaseSubResource, IHaveAttribute
         {
             /// <summary>
+            /// IsInAddressList
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulebooleantoevaluate.html#cfn-ses-mailmanagerruleset-rulebooleantoevaluate-isinaddresslist
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RuleIsInAddressList
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.RuleIsInAddressList IsInAddressList { get; set; }
+            /// <summary>
             /// Attribute
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulebooleantoevaluate.html#cfn-ses-mailmanagerruleset-rulebooleantoevaluate-attribute
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Attribute { get; set; }
+            /// <summary>
+            /// Analysis
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulebooleantoevaluate.html#cfn-ses-mailmanagerruleset-rulebooleantoevaluate-analysis
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Analysis
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.Analysis Analysis { get; set; }
         }
 
         public class RuleCondition : Humidifier.Base.BaseSubResource
@@ -366,6 +510,22 @@ namespace Humidifier.SES
             /// Type: RuleBooleanExpression
             /// </summary>
             public Humidifier.SES.MailManagerRuleSetTypes.RuleBooleanExpression BooleanExpression { get; set; }
+            /// <summary>
+            /// NumberExpression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulecondition.html#cfn-ses-mailmanagerruleset-rulecondition-numberexpression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RuleNumberExpression
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.RuleNumberExpression NumberExpression { get; set; }
+            /// <summary>
+            /// IpExpression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulecondition.html#cfn-ses-mailmanagerruleset-rulecondition-ipexpression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RuleIpExpression
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.RuleIpExpression IpExpression { get; set; }
             /// <summary>
             /// VerdictExpression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulecondition.html#cfn-ses-mailmanagerruleset-rulecondition-verdictexpression
@@ -390,22 +550,6 @@ namespace Humidifier.SES
             /// Type: RuleDmarcExpression
             /// </summary>
             public Humidifier.SES.MailManagerRuleSetTypes.RuleDmarcExpression DmarcExpression { get; set; }
-            /// <summary>
-            /// NumberExpression
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulecondition.html#cfn-ses-mailmanagerruleset-rulecondition-numberexpression
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: RuleNumberExpression
-            /// </summary>
-            public Humidifier.SES.MailManagerRuleSetTypes.RuleNumberExpression NumberExpression { get; set; }
-            /// <summary>
-            /// IpExpression
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulecondition.html#cfn-ses-mailmanagerruleset-rulecondition-ipexpression
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: RuleIpExpression
-            /// </summary>
-            public Humidifier.SES.MailManagerRuleSetTypes.RuleIpExpression IpExpression { get; set; }
         }
 
         public class RuleDmarcExpression : Humidifier.Base.BaseSubResource, IHaveValues, IHaveOperator
@@ -468,6 +612,27 @@ namespace Humidifier.SES
             /// PrimitiveType: String
             /// </summary>
             public dynamic Attribute { get; set; }
+        }
+
+        public class RuleIsInAddressList : Humidifier.Base.BaseSubResource, IHaveAttribute
+        {
+            /// <summary>
+            /// Attribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleisinaddresslist.html#cfn-ses-mailmanagerruleset-ruleisinaddresslist-attribute
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Attribute { get; set; }
+            /// <summary>
+            /// AddressLists
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-ruleisinaddresslist.html#cfn-ses-mailmanagerruleset-ruleisinaddresslist-addresslists
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AddressLists { get; set; }
         }
 
         public class RuleNumberExpression : Humidifier.Base.BaseSubResource, IHaveValue, IHaveOperator
@@ -557,6 +722,22 @@ namespace Humidifier.SES
             /// PrimitiveType: String
             /// </summary>
             public dynamic MimeHeaderAttribute { get; set; }
+            /// <summary>
+            /// Analysis
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulestringtoevaluate.html#cfn-ses-mailmanagerruleset-rulestringtoevaluate-analysis
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Analysis
+            /// </summary>
+            public Humidifier.SES.MailManagerRuleSetTypes.Analysis Analysis { get; set; }
+            /// <summary>
+            /// ClientCertificateAttribute
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-rulestringtoevaluate.html#cfn-ses-mailmanagerruleset-rulestringtoevaluate-clientcertificateattribute
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientCertificateAttribute { get; set; }
         }
 
         public class RuleVerdictExpression : Humidifier.Base.BaseSubResource, IHaveValues, IHaveOperator
@@ -670,6 +851,50 @@ namespace Humidifier.SES
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
+        }
+
+        public class SnsAction : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveTopicArn, IHaveActionFailurePolicy, IHavePayloadType, IHaveEncoding
+        {
+            /// <summary>
+            /// TopicArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-snsaction.html#cfn-ses-mailmanagerruleset-snsaction-topicarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicArn { get; set; }
+            /// <summary>
+            /// Encoding
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-snsaction.html#cfn-ses-mailmanagerruleset-snsaction-encoding
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Encoding { get; set; }
+            /// <summary>
+            /// ActionFailurePolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-snsaction.html#cfn-ses-mailmanagerruleset-snsaction-actionfailurepolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ActionFailurePolicy { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-snsaction.html#cfn-ses-mailmanagerruleset-snsaction-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+            /// <summary>
+            /// PayloadType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-mailmanagerruleset-snsaction.html#cfn-ses-mailmanagerruleset-snsaction-payloadtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PayloadType { get; set; }
         }
     }
 }

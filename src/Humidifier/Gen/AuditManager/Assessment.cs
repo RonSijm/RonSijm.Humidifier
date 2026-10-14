@@ -1,6 +1,6 @@
 namespace Humidifier.AuditManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using AssessmentTypes;
 
     public class Assessment : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveStatus
@@ -87,7 +87,7 @@ namespace Humidifier.AuditManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -96,14 +96,6 @@ namespace Humidifier.AuditManager
         public class AWSAccount : Humidifier.Base.BaseSubResource, IHaveName, IHaveId, IHaveEmailAddress
         {
             /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-id
-            /// Required: False
-            /// UpdateType: Conditional
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Id { get; set; }
-            /// <summary>
             /// EmailAddress
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-emailaddress
             /// Required: False
@@ -111,6 +103,14 @@ namespace Humidifier.AuditManager
             /// PrimitiveType: String
             /// </summary>
             public dynamic EmailAddress { get; set; }
+            /// <summary>
+            /// Id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-id
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Id { get; set; }
             /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-name

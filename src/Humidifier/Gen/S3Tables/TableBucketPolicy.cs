@@ -1,6 +1,6 @@
 namespace Humidifier.S3Tables
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TableBucketPolicy : Humidifier.Base.BaseResource
     {

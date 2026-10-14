@@ -1,6 +1,6 @@
 namespace Humidifier.MSK
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class BatchScramSecret : Humidifier.Base.BaseResource, IHaveClusterArn
     {

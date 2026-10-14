@@ -1,6 +1,6 @@
 namespace Humidifier.MediaPackage
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PackagingConfigurationTypes;
 
     public class PackagingConfiguration : Humidifier.Base.BaseResource, IHaveTags, IHaveId, IHavePackagingGroupId
@@ -71,7 +71,7 @@ namespace Humidifier.MediaPackage
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace PackagingConfigurationTypes
@@ -302,6 +302,14 @@ namespace Humidifier.MediaPackage
         public class HlsManifest : Humidifier.Base.BaseSubResource, IHaveManifestName, IHaveAdMarkers, IHaveIncludeIframeOnlyStream, IHaveProgramDateTimeIntervalSeconds, IHaveMediaPackagePackagingConfigurationTypesStreamSelectionStreamSelection, IHaveRepeatExtXKey
         {
             /// <summary>
+            /// IncludeIframeOnlyStream
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-includeiframeonlystream
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IncludeIframeOnlyStream { get; set; }
+            /// <summary>
             /// AdMarkers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-admarkers
             /// Required: False
@@ -341,14 +349,6 @@ namespace Humidifier.MediaPackage
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic RepeatExtXKey { get; set; }
-            /// <summary>
-            /// IncludeIframeOnlyStream
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-includeiframeonlystream
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic IncludeIframeOnlyStream { get; set; }
         }
 
         public class HlsPackage : Humidifier.Base.BaseSubResource, IHaveSegmentDurationSeconds, IHaveUseAudioRenditionGroup, IHaveIncludeDvbSubtitles
@@ -460,15 +460,6 @@ namespace Humidifier.MediaPackage
         public class SpekeKeyProvider : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveUrl, IHaveSystemIds
         {
             /// <summary>
-            /// SystemIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-spekekeyprovider.html#cfn-mediapackage-packagingconfiguration-spekekeyprovider-systemids
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: List
-            /// PrimitiveItemType: String
-            /// </summary>
-            public dynamic SystemIds { get; set; }
-            /// <summary>
             /// EncryptionContractConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-spekekeyprovider.html#cfn-mediapackage-packagingconfiguration-spekekeyprovider-encryptioncontractconfiguration
             /// Required: False
@@ -492,10 +483,27 @@ namespace Humidifier.MediaPackage
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+            /// <summary>
+            /// SystemIds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-spekekeyprovider.html#cfn-mediapackage-packagingconfiguration-spekekeyprovider-systemids
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic SystemIds { get; set; }
         }
 
         public class StreamSelection : Humidifier.Base.BaseSubResource, IHaveMinVideoBitsPerSecond, IHaveStreamOrder, IHaveMaxVideoBitsPerSecond
         {
+            /// <summary>
+            /// MaxVideoBitsPerSecond
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html#cfn-mediapackage-packagingconfiguration-streamselection-maxvideobitspersecond
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxVideoBitsPerSecond { get; set; }
             /// <summary>
             /// MinVideoBitsPerSecond
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html#cfn-mediapackage-packagingconfiguration-streamselection-minvideobitspersecond
@@ -512,14 +520,6 @@ namespace Humidifier.MediaPackage
             /// PrimitiveType: String
             /// </summary>
             public dynamic StreamOrder { get; set; }
-            /// <summary>
-            /// MaxVideoBitsPerSecond
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html#cfn-mediapackage-packagingconfiguration-streamselection-maxvideobitspersecond
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaxVideoBitsPerSecond { get; set; }
         }
     }
 }

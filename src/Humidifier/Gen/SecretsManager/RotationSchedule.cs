@@ -1,6 +1,6 @@
 namespace Humidifier.SecretsManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using RotationScheduleTypes;
 
     public class RotationSchedule : Humidifier.Base.BaseResource, IHaveSecretId
@@ -30,6 +30,23 @@ namespace Humidifier.SecretsManager
         [Required]
         public dynamic SecretId { get; set; }
         /// <summary>
+        /// ExternalSecretRotationMetadata
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-externalsecretrotationmetadata
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ExternalSecretRotationMetadataItem
+        /// </summary>
+        public List<Humidifier.SecretsManager.RotationScheduleTypes.ExternalSecretRotationMetadataItem> ExternalSecretRotationMetadata { get; set; }
+        /// <summary>
+        /// ExternalSecretRotationRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-externalsecretrotationrolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ExternalSecretRotationRoleArn { get; set; }
+        /// <summary>
         /// RotateImmediatelyOnUpdate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotateimmediatelyonupdate
         /// Required: False
@@ -57,6 +74,26 @@ namespace Humidifier.SecretsManager
 
     namespace RotationScheduleTypes
     {
+        public class ExternalSecretRotationMetadataItem : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-externalsecretrotationmetadataitem.html#cfn-secretsmanager-rotationschedule-externalsecretrotationmetadataitem-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-externalsecretrotationmetadataitem.html#cfn-secretsmanager-rotationschedule-externalsecretrotationmetadataitem-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+
         public class HostedRotationLambda : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveVpcSecurityGroupIds, IHaveRuntime, IHaveVpcSubnetIds, IHaveExcludeCharacters
         {
             /// <summary>

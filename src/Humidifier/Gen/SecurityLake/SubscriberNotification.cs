@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityLake
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SubscriberNotificationTypes;
 
     public class SubscriberNotification : Humidifier.Base.BaseResource

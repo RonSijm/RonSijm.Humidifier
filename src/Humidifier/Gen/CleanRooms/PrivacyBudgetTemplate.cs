@@ -1,6 +1,6 @@
 namespace Humidifier.CleanRooms
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using PrivacyBudgetTemplateTypes;
 
     public class PrivacyBudgetTemplate : Humidifier.Base.BaseResource, IHaveTags, IHaveMembershipIdentifier
@@ -53,7 +53,7 @@ namespace Humidifier.CleanRooms
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// AutoRefresh
@@ -68,12 +68,57 @@ namespace Humidifier.CleanRooms
 
     namespace PrivacyBudgetTemplateTypes
     {
-        public class Parameters : Humidifier.Base.BaseSubResource
+        public class BudgetParameter : Humidifier.Base.BaseSubResource, IHaveType
         {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-budgetparameter.html#cfn-cleanrooms-privacybudgettemplate-budgetparameter-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Budget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-budgetparameter.html#cfn-cleanrooms-privacybudgettemplate-budgetparameter-budget
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Budget { get; set; }
+            /// <summary>
+            /// AutoRefresh
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-budgetparameter.html#cfn-cleanrooms-privacybudgettemplate-budgetparameter-autorefresh
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AutoRefresh { get; set; }
+        }
+
+        public class Parameters : Humidifier.Base.BaseSubResource, IHaveResourceArn
+        {
+            /// <summary>
+            /// ResourceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-parameters.html#cfn-cleanrooms-privacybudgettemplate-parameters-resourcearn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceArn { get; set; }
+            /// <summary>
+            /// BudgetParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-parameters.html#cfn-cleanrooms-privacybudgettemplate-parameters-budgetparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: BudgetParameter
+            /// </summary>
+            public List<Humidifier.CleanRooms.PrivacyBudgetTemplateTypes.BudgetParameter> BudgetParameters { get; set; }
             /// <summary>
             /// Epsilon
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-parameters.html#cfn-cleanrooms-privacybudgettemplate-parameters-epsilon
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
@@ -81,7 +126,7 @@ namespace Humidifier.CleanRooms
             /// <summary>
             /// UsersNoisePerQuery
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-privacybudgettemplate-parameters.html#cfn-cleanrooms-privacybudgettemplate-parameters-usersnoiseperquery
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>

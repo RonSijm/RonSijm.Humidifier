@@ -1,11 +1,13 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class DeliverySource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveResourceArn, IHaveLogType
     {
         public class Attributes
         {
+            public static string Status =  "Status" ;
+            public static string StatusReason =  "StatusReason" ;
             public static string Service =  "Service" ;
             public static string Arn =  "Arn" ;
             public static string ResourceArns =  "ResourceArns" ;
@@ -36,7 +38,16 @@ namespace Humidifier.Logs
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// DeliverySourceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-deliverysource.html#cfn-logs-deliverysource-deliverysourceconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Dictionary<string, dynamic> DeliverySourceConfiguration { get; set; }
     }
 }

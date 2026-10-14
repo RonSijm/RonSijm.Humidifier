@@ -1,6 +1,6 @@
 namespace Humidifier.B2BI
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using CapabilityTypes;
 
     public class Capability : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveType
@@ -51,7 +51,7 @@ namespace Humidifier.B2BI
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
@@ -128,14 +128,6 @@ namespace Humidifier.B2BI
         public class S3Location : Humidifier.Base.BaseSubResource, IHaveKey, IHaveBucketName
         {
             /// <summary>
-            /// BucketName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-capability-s3location.html#cfn-b2bi-capability-s3location-bucketname
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic BucketName { get; set; }
-            /// <summary>
             /// Key
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-capability-s3location.html#cfn-b2bi-capability-s3location-key
             /// Required: False
@@ -143,6 +135,14 @@ namespace Humidifier.B2BI
             /// PrimitiveType: String
             /// </summary>
             public dynamic Key { get; set; }
+            /// <summary>
+            /// BucketName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-b2bi-capability-s3location.html#cfn-b2bi-capability-s3location-bucketname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketName { get; set; }
         }
 
         public class X12Details : Humidifier.Base.BaseSubResource, IHaveVersion, IHaveTransactionSet

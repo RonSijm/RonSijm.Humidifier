@@ -1,6 +1,6 @@
 namespace Humidifier.Redshift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class ClusterSecurityGroupIngress : Humidifier.Base.BaseResource, IHaveEC2SecurityGroupName, IHaveEC2SecurityGroupOwnerId, IHaveCIDRIP
     {

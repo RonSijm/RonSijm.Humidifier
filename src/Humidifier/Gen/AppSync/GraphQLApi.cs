@@ -1,6 +1,6 @@
 namespace Humidifier.AppSync
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GraphQLApiTypes;
 
     public class GraphQLApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveVisibility, IHaveAuthenticationType, IHaveOwnerContact, IHaveAppSyncGraphQLApiTypesOpenIDConnectConfigOpenIDConnectConfig, IHaveAppSyncGraphQLApiTypesLambdaAuthorizerConfigLambdaAuthorizerConfig
@@ -139,7 +139,7 @@ namespace Humidifier.AppSync
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
 
         /// <summary>
         /// AuthenticationType
@@ -287,7 +287,7 @@ namespace Humidifier.AppSync
             /// <summary>
             /// CloudWatchLogsRoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -303,7 +303,7 @@ namespace Humidifier.AppSync
             /// <summary>
             /// FieldLogLevel
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

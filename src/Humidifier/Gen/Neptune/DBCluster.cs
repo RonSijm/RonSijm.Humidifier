@@ -1,9 +1,9 @@
 namespace Humidifier.Neptune
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using DBClusterTypes;
 
-    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveBackupRetentionPeriod, IHaveSnapshotIdentifier, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveIamAuthEnabled, IHaveDBInstanceParameterGroupName
+    public class DBCluster : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyId, IHaveEngineVersion, IHavePreferredMaintenanceWindow, IHaveVpcSecurityGroupIds, IHaveAvailabilityZones, IHaveDeletionProtection, IHaveNetworkType, IHaveDBSubnetGroupName, IHaveDBClusterIdentifier, IHavePreferredBackupWindow, IHaveStorageEncrypted, IHaveSourceDBClusterIdentifier, IHaveBackupRetentionPeriod, IHaveSnapshotIdentifier, IHaveCopyTagsToSnapshot, IHaveUseLatestRestorableTime, IHaveDBClusterParameterGroupName, IHaveEnableCloudwatchLogsExports, IHaveRestoreToTime, IHaveRestoreType, IHaveIamAuthEnabled, IHaveDBInstanceParameterGroupName, IHaveGlobalClusterIdentifier
     {
         public class Attributes
         {
@@ -81,6 +81,14 @@ namespace Humidifier.Neptune
         /// </summary>
         public dynamic VpcSecurityGroupIds { get; set; }
         /// <summary>
+        /// NetworkType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-networktype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NetworkType { get; set; }
+        /// <summary>
         /// CopyTagsToSnapshot
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-copytagstosnapshot
         /// Required: False
@@ -88,6 +96,14 @@ namespace Humidifier.Neptune
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic CopyTagsToSnapshot { get; set; }
+        /// <summary>
+        /// GlobalClusterIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-globalclusteridentifier
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic GlobalClusterIdentifier { get; set; }
         /// <summary>
         /// RestoreType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-restoretype
@@ -104,7 +120,7 @@ namespace Humidifier.Neptune
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// EngineVersion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-engineversion

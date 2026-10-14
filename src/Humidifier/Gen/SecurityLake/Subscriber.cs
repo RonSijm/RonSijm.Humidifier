@@ -1,6 +1,6 @@
 namespace Humidifier.SecurityLake
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using SubscriberTypes;
 
     public class Subscriber : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataLakeArn, IHaveDescription
@@ -77,7 +77,7 @@ namespace Humidifier.SecurityLake
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace SubscriberTypes

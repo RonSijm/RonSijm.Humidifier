@@ -1,6 +1,6 @@
 namespace Humidifier.ARCZonalShift
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ZonalAutoshiftConfigurationTypes;
 
     public class ZonalAutoshiftConfiguration : Humidifier.Base.BaseResource, IHaveResourceIdentifier
@@ -39,14 +39,6 @@ namespace Humidifier.ARCZonalShift
         public class ControlCondition : Humidifier.Base.BaseSubResource, IHaveType
         {
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arczonalshift-zonalautoshiftconfiguration-controlcondition.html#cfn-arczonalshift-zonalautoshiftconfiguration-controlcondition-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
             /// AlarmIdentifier
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arczonalshift-zonalautoshiftconfiguration-controlcondition.html#cfn-arczonalshift-zonalautoshiftconfiguration-controlcondition-alarmidentifier
             /// Required: True
@@ -54,6 +46,14 @@ namespace Humidifier.ARCZonalShift
             /// PrimitiveType: String
             /// </summary>
             public dynamic AlarmIdentifier { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arczonalshift-zonalautoshiftconfiguration-controlcondition.html#cfn-arczonalshift-zonalautoshiftconfiguration-controlcondition-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
 
         public class PracticeRunConfiguration : Humidifier.Base.BaseSubResource

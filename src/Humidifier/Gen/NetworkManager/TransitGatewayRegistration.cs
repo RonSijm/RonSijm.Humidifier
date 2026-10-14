@@ -1,6 +1,6 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class TransitGatewayRegistration : Humidifier.Base.BaseResource, IHaveGlobalNetworkId, IHaveTransitGatewayArn
     {

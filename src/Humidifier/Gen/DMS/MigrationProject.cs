@@ -1,6 +1,6 @@
 namespace Humidifier.DMS
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using MigrationProjectTypes;
 
     public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceProfileName, IHaveMigrationProjectIdentifier, IHaveInstanceProfileIdentifier, IHaveInstanceProfileArn
@@ -86,7 +86,7 @@ namespace Humidifier.DMS
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// InstanceProfileIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-instanceprofileidentifier
@@ -102,14 +102,6 @@ namespace Humidifier.DMS
         public class DataProviderDescriptor : Humidifier.Base.BaseSubResource, IHaveSecretsManagerSecretId, IHaveSecretsManagerAccessRoleArn, IHaveDataProviderName, IHaveDataProviderIdentifier
         {
             /// <summary>
-            /// DataProviderName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-migrationproject-dataproviderdescriptor.html#cfn-dms-migrationproject-dataproviderdescriptor-dataprovidername
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DataProviderName { get; set; }
-            /// <summary>
             /// DataProviderArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-migrationproject-dataproviderdescriptor.html#cfn-dms-migrationproject-dataproviderdescriptor-dataproviderarn
             /// Required: False
@@ -117,6 +109,14 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public dynamic DataProviderArn { get; set; }
+            /// <summary>
+            /// DataProviderName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-migrationproject-dataproviderdescriptor.html#cfn-dms-migrationproject-dataproviderdescriptor-dataprovidername
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DataProviderName { get; set; }
             /// <summary>
             /// SecretsManagerSecretId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-migrationproject-dataproviderdescriptor.html#cfn-dms-migrationproject-dataproviderdescriptor-secretsmanagersecretid

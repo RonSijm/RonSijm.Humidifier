@@ -1,6 +1,6 @@
 namespace Humidifier.Logs
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using TransformerTypes;
 
     public class Transformer : Humidifier.Base.BaseResource
@@ -466,6 +466,42 @@ namespace Humidifier.Logs
             public dynamic Source { get; set; }
         }
 
+        public class ParseToOCSF : Humidifier.Base.BaseSubResource, IHaveSource, IHaveEventSource
+        {
+            /// <summary>
+            /// EventSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-transformer-parsetoocsf.html#cfn-logs-transformer-parsetoocsf-eventsource
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EventSource { get; set; }
+            /// <summary>
+            /// MappingVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-transformer-parsetoocsf.html#cfn-logs-transformer-parsetoocsf-mappingversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MappingVersion { get; set; }
+            /// <summary>
+            /// OcsfVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-transformer-parsetoocsf.html#cfn-logs-transformer-parsetoocsf-ocsfversion
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OcsfVersion { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-transformer-parsetoocsf.html#cfn-logs-transformer-parsetoocsf-source
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Source { get; set; }
+        }
+
         public class ParseVPC : Humidifier.Base.BaseSubResource, IHaveSource
         {
             /// <summary>
@@ -564,6 +600,14 @@ namespace Humidifier.Logs
             /// Type: AddKeys
             /// </summary>
             public Humidifier.Logs.TransformerTypes.AddKeys AddKeys { get; set; }
+            /// <summary>
+            /// ParseToOCSF
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-transformer-processor.html#cfn-logs-transformer-processor-parsetoocsf
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ParseToOCSF
+            /// </summary>
+            public Humidifier.Logs.TransformerTypes.ParseToOCSF ParseToOCSF { get; set; }
             /// <summary>
             /// SubstituteString
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-transformer-processor.html#cfn-logs-transformer-processor-substitutestring

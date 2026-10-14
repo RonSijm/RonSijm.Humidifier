@@ -1,6 +1,6 @@
 namespace Humidifier.SageMaker
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ProjectTypes;
 
     public class Project : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveProjectName, IHaveProjectDescription, IHaveDescription
@@ -16,6 +16,15 @@ namespace Humidifier.SageMaker
         public override string AWSTypeName { get => AWS.SageMaker.Project; }
         public dynamic ProjectName { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// TemplateProviderDetails
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-templateproviderdetails
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: TemplateProviderDetail
+        /// </summary>
+        public List<Humidifier.SageMaker.ProjectTypes.TemplateProviderDetail> TemplateProviderDetails { get; set; }
+        /// <summary>
         /// ServiceCatalogProvisionedProductDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails
         /// Required: False
@@ -23,15 +32,13 @@ namespace Humidifier.SageMaker
         /// Type: ServiceCatalogProvisionedProductDetails
         /// </summary>
         public Humidifier.SageMaker.ProjectTypes.ServiceCatalogProvisionedProductDetails ServiceCatalogProvisionedProductDetails { get; set; }
-
         /// <summary>
         /// ServiceCatalogProvisioningDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-servicecatalogprovisioningdetails
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// Type: ServiceCatalogProvisioningDetails
         /// </summary>
-        [Required]
         public Humidifier.SageMaker.ProjectTypes.ServiceCatalogProvisioningDetails ServiceCatalogProvisioningDetails { get; set; }
         /// <summary>
         /// ProjectDescription
@@ -52,11 +59,68 @@ namespace Humidifier.SageMaker
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace ProjectTypes
     {
+        public class CfnStackParameter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-cfnstackparameter.html#cfn-sagemaker-project-cfnstackparameter-value
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-cfnstackparameter.html#cfn-sagemaker-project-cfnstackparameter-key
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+
+        public class CfnTemplateProviderDetail : Humidifier.Base.BaseSubResource, IHaveRoleARN, IHaveTemplateName, IHaveTemplateURL
+        {
+            /// <summary>
+            /// TemplateURL
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-cfntemplateproviderdetail.html#cfn-sagemaker-project-cfntemplateproviderdetail-templateurl
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TemplateURL { get; set; }
+            /// <summary>
+            /// Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-cfntemplateproviderdetail.html#cfn-sagemaker-project-cfntemplateproviderdetail-parameters
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: CfnStackParameter
+            /// </summary>
+            public List<Humidifier.SageMaker.ProjectTypes.CfnStackParameter> Parameters { get; set; }
+            /// <summary>
+            /// TemplateName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-cfntemplateproviderdetail.html#cfn-sagemaker-project-cfntemplateproviderdetail-templatename
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TemplateName { get; set; }
+            /// <summary>
+            /// RoleARN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-cfntemplateproviderdetail.html#cfn-sagemaker-project-cfntemplateproviderdetail-rolearn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleARN { get; set; }
+        }
+
         public class ProvisioningParameter : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
         {
             /// <summary>
@@ -132,6 +196,18 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public dynamic ProvisioningArtifactId { get; set; }
+        }
+
+        public class TemplateProviderDetail : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CfnTemplateProviderDetail
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-templateproviderdetail.html#cfn-sagemaker-project-templateproviderdetail-cfntemplateproviderdetail
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: CfnTemplateProviderDetail
+            /// </summary>
+            public Humidifier.SageMaker.ProjectTypes.CfnTemplateProviderDetail CfnTemplateProviderDetail { get; set; }
         }
     }
 }

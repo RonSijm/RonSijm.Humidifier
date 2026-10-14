@@ -1,6 +1,6 @@
 namespace Humidifier.Cognito
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class UserPoolUserToGroupAttachment : Humidifier.Base.BaseResource, IHaveUsername, IHaveGroupName, IHaveUserPoolId
     {

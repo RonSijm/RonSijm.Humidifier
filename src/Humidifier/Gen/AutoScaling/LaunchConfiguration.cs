@@ -1,6 +1,6 @@
 namespace Humidifier.AutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using LaunchConfigurationTypes;
 
     public class LaunchConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveInstanceType, IHaveSecurityGroups, IHaveInstanceId, IHaveEbsOptimized, IHaveImageId, IHaveKeyName, IHaveUserData, IHaveAssociatePublicIpAddress, IHaveKernelId, IHaveSpotPrice, IHaveLaunchConfigurationName, IHaveIamInstanceProfile, IHaveRamDiskId

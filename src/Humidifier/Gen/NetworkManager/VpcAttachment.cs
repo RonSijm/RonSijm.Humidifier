@@ -1,35 +1,30 @@
 namespace Humidifier.NetworkManager
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using VpcAttachmentTypes;
 
     public class VpcAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveCoreNetworkId, IHaveSubnetArns
     {
         public class Attributes
         {
-            public static string ResourceArn =  "ResourceArn" ;
+            public static string ProposedSegmentChange =  "ProposedSegmentChange" ;
             public static string AttachmentType =  "AttachmentType" ;
+            public static string ProposedNetworkFunctionGroupChange =  "ProposedNetworkFunctionGroupChange" ;
             public static string SegmentName =  "SegmentName" ;
-            public static string State =  "State" ;
             public static string CreatedAt =  "CreatedAt" ;
-            public static string OwnerAccountId =  "OwnerAccountId" ;
             public static string UpdatedAt =  "UpdatedAt" ;
             public static string AttachmentId =  "AttachmentId" ;
             public static string NetworkFunctionGroupName =  "NetworkFunctionGroupName" ;
             public static string CoreNetworkArn =  "CoreNetworkArn" ;
+            public static string ResourceArn =  "ResourceArn" ;
+            public static string State =  "State" ;
+            public static string LastModificationErrors =  "LastModificationErrors" ;
+            public static string OwnerAccountId =  "OwnerAccountId" ;
             public static string EdgeLocation =  "EdgeLocation" ;
             public static string AttachmentPolicyRuleNumber =  "AttachmentPolicyRuleNumber" ;
         }
 
         public override string AWSTypeName { get => AWS.NetworkManager.VpcAttachment; }
-        /// <summary>
-        /// ProposedSegmentChange
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-proposedsegmentchange
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ProposedSegmentChange
-        /// </summary>
-        public Humidifier.NetworkManager.VpcAttachmentTypes.ProposedSegmentChange ProposedSegmentChange { get; set; }
 
         /// <summary>
         /// SubnetArns
@@ -60,13 +55,13 @@ namespace Humidifier.NetworkManager
         [Required]
         public dynamic CoreNetworkId { get; set; }
         /// <summary>
-        /// ProposedNetworkFunctionGroupChange
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-proposednetworkfunctiongroupchange
+        /// RoutingPolicyLabel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-routingpolicylabel
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: ProposedNetworkFunctionGroupChange
+        /// PrimitiveType: String
         /// </summary>
-        public Humidifier.NetworkManager.VpcAttachmentTypes.ProposedNetworkFunctionGroupChange ProposedNetworkFunctionGroupChange { get; set; }
+        public dynamic RoutingPolicyLabel { get; set; }
 
         /// <summary>
         /// VpcArn
@@ -85,7 +80,7 @@ namespace Humidifier.NetworkManager
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
     }
 
     namespace VpcAttachmentTypes
@@ -100,7 +95,7 @@ namespace Humidifier.NetworkManager
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// NetworkFunctionGroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposednetworkfunctiongroupchange.html#cfn-networkmanager-vpcattachment-proposednetworkfunctiongroupchange-networkfunctiongroupname
@@ -137,7 +132,7 @@ namespace Humidifier.NetworkManager
             /// Type: List
             /// ItemType: Tag
             /// </summary>
-            public List<Tag> Tags { get; set; }
+            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// AttachmentPolicyRuleNumber
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-attachmentpolicyrulenumber
@@ -148,7 +143,7 @@ namespace Humidifier.NetworkManager
             public dynamic AttachmentPolicyRuleNumber { get; set; }
         }
 
-        public class VpcOptions : Humidifier.Base.BaseSubResource, IHaveIpv6Support, IHaveApplianceModeSupport
+        public class VpcOptions : Humidifier.Base.BaseSubResource, IHaveSecurityGroupReferencingSupport, IHaveDnsSupport, IHaveIpv6Support, IHaveApplianceModeSupport
         {
             /// <summary>
             /// Ipv6Support
@@ -166,6 +161,22 @@ namespace Humidifier.NetworkManager
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ApplianceModeSupport { get; set; }
+            /// <summary>
+            /// SecurityGroupReferencingSupport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-securitygroupreferencingsupport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic SecurityGroupReferencingSupport { get; set; }
+            /// <summary>
+            /// DnsSupport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-dnssupport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DnsSupport { get; set; }
         }
     }
 }

@@ -1,6 +1,6 @@
 namespace Humidifier.ApplicationAutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using ScalingPolicyTypes;
 
     public class ScalingPolicy : Humidifier.Base.BaseResource, IHaveResourceId, IHavePolicyName, IHavePolicyType, IHaveServiceNamespace, IHaveScalableDimension
@@ -256,22 +256,6 @@ namespace Humidifier.ApplicationAutoScaling
         public class PredictiveScalingMetricDataQuery : Humidifier.Base.BaseSubResource, IHaveId, IHaveExpression, IHaveLabel, IHaveReturnData
         {
             /// <summary>
-            /// ReturnData
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-returndata
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic ReturnData { get; set; }
-            /// <summary>
-            /// Expression
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-expression
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Expression { get; set; }
-            /// <summary>
             /// Label
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-label
             /// Required: False
@@ -295,6 +279,22 @@ namespace Humidifier.ApplicationAutoScaling
             /// PrimitiveType: String
             /// </summary>
             public dynamic Id { get; set; }
+            /// <summary>
+            /// ReturnData
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-returndata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReturnData { get; set; }
+            /// <summary>
+            /// Expression
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery.html#cfn-applicationautoscaling-scalingpolicy-predictivescalingmetricdataquery-expression
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Expression { get; set; }
         }
 
         public class PredictiveScalingMetricDimension : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue

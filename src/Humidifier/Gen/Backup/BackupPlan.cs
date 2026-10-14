@@ -1,6 +1,6 @@
 namespace Humidifier.Backup
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using BackupPlanTypes;
 
     public class BackupPlan : Humidifier.Base.BaseResource
@@ -66,6 +66,15 @@ namespace Humidifier.Backup
             /// PrimitiveType: String
             /// </summary>
             public dynamic BackupPlanName { get; set; }
+            /// <summary>
+            /// ScanSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-scansettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ScanSettingResourceType
+            /// </summary>
+            public List<Humidifier.Backup.BackupPlanTypes.ScanSettingResourceType> ScanSettings { get; set; }
             /// <summary>
             /// AdvancedBackupSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-advancedbackupsettings
@@ -148,14 +157,6 @@ namespace Humidifier.Backup
             /// </summary>
             public List<Humidifier.Backup.BackupPlanTypes.IndexActionsResourceType> IndexActions { get; set; }
             /// <summary>
-            /// TargetBackupVault
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetbackupvault
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic TargetBackupVault { get; set; }
-            /// <summary>
             /// StartWindowMinutes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-startwindowminutes
             /// Required: False
@@ -171,6 +172,31 @@ namespace Humidifier.Backup
             /// PrimitiveType: String
             /// </summary>
             public dynamic ScheduleExpressionTimezone { get; set; }
+            /// <summary>
+            /// TargetLogicallyAirGappedBackupVaultArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetlogicallyairgappedbackupvaultarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetLogicallyAirGappedBackupVaultArn { get; set; }
+            /// <summary>
+            /// ScanActions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-scanactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ScanActionResourceType
+            /// </summary>
+            public List<Humidifier.Backup.BackupPlanTypes.ScanActionResourceType> ScanActions { get; set; }
+            /// <summary>
+            /// TargetBackupVault
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-targetbackupvault
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetBackupVault { get; set; }
             /// <summary>
             /// RuleName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-rulename
@@ -225,14 +251,6 @@ namespace Humidifier.Backup
             /// </summary>
             public dynamic OptInToArchiveForSupportedResources { get; set; }
             /// <summary>
-            /// DeleteAfterDays
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic DeleteAfterDays { get; set; }
-            /// <summary>
             /// MoveToColdStorageAfterDays
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays
             /// Required: False
@@ -240,6 +258,63 @@ namespace Humidifier.Backup
             /// PrimitiveType: Double
             /// </summary>
             public dynamic MoveToColdStorageAfterDays { get; set; }
+            /// <summary>
+            /// DeleteAfterDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-deleteafterdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic DeleteAfterDays { get; set; }
+        }
+
+        public class ScanActionResourceType : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ScanMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-scanactionresourcetype.html#cfn-backup-backupplan-scanactionresourcetype-scanmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScanMode { get; set; }
+            /// <summary>
+            /// MalwareScanner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-scanactionresourcetype.html#cfn-backup-backupplan-scanactionresourcetype-malwarescanner
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MalwareScanner { get; set; }
+        }
+
+        public class ScanSettingResourceType : Humidifier.Base.BaseSubResource, IHaveResourceTypes
+        {
+            /// <summary>
+            /// ResourceTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-scansettingresourcetype.html#cfn-backup-backupplan-scansettingresourcetype-resourcetypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ResourceTypes { get; set; }
+            /// <summary>
+            /// MalwareScanner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-scansettingresourcetype.html#cfn-backup-backupplan-scansettingresourcetype-malwarescanner
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MalwareScanner { get; set; }
+            /// <summary>
+            /// ScannerRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-scansettingresourcetype.html#cfn-backup-backupplan-scansettingresourcetype-scannerrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ScannerRoleArn { get; set; }
         }
     }
 }

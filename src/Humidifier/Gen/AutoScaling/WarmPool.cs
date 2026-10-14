@@ -1,6 +1,6 @@
 namespace Humidifier.AutoScaling
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using WarmPoolTypes;
 
     public class WarmPool : Humidifier.Base.BaseResource, IHaveMinSize, IHaveAutoScalingGroupName

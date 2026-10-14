@@ -1,6 +1,6 @@
 namespace Humidifier.SupportApp
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
 
     public class SlackWorkspaceConfiguration : Humidifier.Base.BaseResource, IHaveTeamId, IHaveVersionId
     {

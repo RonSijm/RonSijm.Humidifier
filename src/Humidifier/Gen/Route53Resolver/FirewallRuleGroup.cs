@@ -1,6 +1,6 @@
 namespace Humidifier.Route53Resolver
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using FirewallRuleGroupTypes;
 
     public class FirewallRuleGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags
@@ -37,13 +37,37 @@ namespace Humidifier.Route53Resolver
         /// Type: List
         /// ItemType: Tag
         /// </summary>
-        public List<Tag> Tags { get; set; }
+        public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace FirewallRuleGroupTypes
     {
-        public class FirewallRule : Humidifier.Base.BaseSubResource, IHaveAction, IHavePriority
+        public class FirewallAdvancedContentCategoryConfig : Humidifier.Base.BaseSubResource, IHaveCategory
+        {
+            /// <summary>
+            /// Category
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewalladvancedcontentcategoryconfig.html#cfn-route53resolver-firewallrulegroup-firewalladvancedcontentcategoryconfig-category
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Category { get; set; }
+        }
+
+        public class FirewallAdvancedThreatCategoryConfig : Humidifier.Base.BaseSubResource, IHaveCategory
+        {
+            /// <summary>
+            /// Category
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewalladvancedthreatcategoryconfig.html#cfn-route53resolver-firewallrulegroup-firewalladvancedthreatcategoryconfig-category
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Category { get; set; }
+        }
+
+        public class FirewallRule : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveAction, IHavePriority
         {
             /// <summary>
             /// Qtype
@@ -53,6 +77,14 @@ namespace Humidifier.Route53Resolver
             /// PrimitiveType: String
             /// </summary>
             public dynamic Qtype { get; set; }
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
             /// <summary>
             /// Action
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-action
@@ -69,6 +101,22 @@ namespace Humidifier.Route53Resolver
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Priority { get; set; }
+            /// <summary>
+            /// BlockOverrideTtl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridettl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic BlockOverrideTtl { get; set; }
+            /// <summary>
+            /// BlockOverrideDnsType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridednstype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BlockOverrideDnsType { get; set; }
             /// <summary>
             /// BlockOverrideDomain
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridedomain
@@ -118,21 +166,13 @@ namespace Humidifier.Route53Resolver
             /// </summary>
             public dynamic BlockResponse { get; set; }
             /// <summary>
-            /// BlockOverrideTtl
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridettl
+            /// FirewallRuleType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-firewallruletype
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// Type: FirewallRuleType
             /// </summary>
-            public dynamic BlockOverrideTtl { get; set; }
-            /// <summary>
-            /// BlockOverrideDnsType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockoverridednstype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic BlockOverrideDnsType { get; set; }
+            public Humidifier.Route53Resolver.FirewallRuleGroupTypes.FirewallRuleType FirewallRuleType { get; set; }
             /// <summary>
             /// FirewallDomainRedirectionAction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-firewalldomainredirectionaction
@@ -141,6 +181,46 @@ namespace Humidifier.Route53Resolver
             /// PrimitiveType: String
             /// </summary>
             public dynamic FirewallDomainRedirectionAction { get; set; }
+        }
+
+        public class FirewallRuleType : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FirewallAdvancedThreatCategory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallruletype.html#cfn-route53resolver-firewallrulegroup-firewallruletype-firewalladvancedthreatcategory
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FirewallAdvancedThreatCategoryConfig
+            /// </summary>
+            public Humidifier.Route53Resolver.FirewallRuleGroupTypes.FirewallAdvancedThreatCategoryConfig FirewallAdvancedThreatCategory { get; set; }
+            /// <summary>
+            /// PartnerThreatProtection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallruletype.html#cfn-route53resolver-firewallrulegroup-firewallruletype-partnerthreatprotection
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PartnerThreatProtectionConfig
+            /// </summary>
+            public Humidifier.Route53Resolver.FirewallRuleGroupTypes.PartnerThreatProtectionConfig PartnerThreatProtection { get; set; }
+            /// <summary>
+            /// FirewallAdvancedContentCategory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallruletype.html#cfn-route53resolver-firewallrulegroup-firewallruletype-firewalladvancedcontentcategory
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FirewallAdvancedContentCategoryConfig
+            /// </summary>
+            public Humidifier.Route53Resolver.FirewallRuleGroupTypes.FirewallAdvancedContentCategoryConfig FirewallAdvancedContentCategory { get; set; }
+        }
+
+        public class PartnerThreatProtectionConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Partner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-partnerthreatprotectionconfig.html#cfn-route53resolver-firewallrulegroup-partnerthreatprotectionconfig-partner
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Partner { get; set; }
         }
     }
 }

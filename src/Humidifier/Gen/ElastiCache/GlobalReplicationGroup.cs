@@ -1,14 +1,15 @@
 namespace Humidifier.ElastiCache
 {
-    using System.Collections.Generic;
+    using global::System.Collections.Generic;
     using GlobalReplicationGroupTypes;
 
-    public class GlobalReplicationGroup : Humidifier.Base.BaseResource, IHaveEngineVersion, IHaveEngine, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveAutomaticFailoverEnabled, IHaveDescription
+    public class GlobalReplicationGroup : Humidifier.Base.BaseResource, IHaveTags, IHaveEngineVersion, IHaveEngine, IHaveCacheNodeType, IHaveCacheParameterGroupName, IHaveAutomaticFailoverEnabled, IHaveDescription
     {
         public class Attributes
         {
             public static string Status =  "Status" ;
             public static string GlobalReplicationGroupId =  "GlobalReplicationGroupId" ;
+            public static string Arn =  "Arn" ;
         }
 
         public override string AWSTypeName { get => AWS.ElastiCache.GlobalReplicationGroup; }
@@ -83,6 +84,15 @@ namespace Humidifier.ElastiCache
         /// </summary>
         [Required]
         public List<Humidifier.ElastiCache.GlobalReplicationGroupTypes.GlobalReplicationGroupMember> Members { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
         /// AutomaticFailoverEnabled
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-automaticfailoverenabled
