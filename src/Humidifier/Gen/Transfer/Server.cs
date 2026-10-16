@@ -81,6 +81,14 @@ namespace Humidifier.Transfer
         /// </summary>
         public dynamic PostAuthenticationLoginBanner { get; set; }
         /// <summary>
+        /// CreateWithHostKey
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-createwithhostkey
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic CreateWithHostKey { get; set; }
+        /// <summary>
         /// EndpointType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype
         /// Required: False

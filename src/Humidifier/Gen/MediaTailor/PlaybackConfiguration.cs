@@ -62,6 +62,14 @@ namespace Humidifier.MediaTailor
         /// </summary>
         public dynamic PersonalizationThresholdSeconds { get; set; }
         /// <summary>
+        /// BeaconingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-beaconingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: BeaconingConfiguration
+        /// </summary>
+        public Humidifier.MediaTailor.PlaybackConfigurationTypes.BeaconingConfiguration BeaconingConfiguration { get; set; }
+        /// <summary>
         /// LivePreRollConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration
         /// Required: False
@@ -351,6 +359,18 @@ namespace Humidifier.MediaTailor
             public dynamic FillPolicy { get; set; }
         }
 
+        public class BeaconingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ClientSide
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-beaconingconfiguration.html#cfn-mediatailor-playbackconfiguration-beaconingconfiguration-clientside
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ClientSideBeaconingConfiguration
+            /// </summary>
+            public Humidifier.MediaTailor.PlaybackConfigurationTypes.ClientSideBeaconingConfiguration ClientSide { get; set; }
+        }
+
         public class Bumper : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -389,6 +409,27 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public dynamic ContentSegmentUrlPrefix { get; set; }
+        }
+
+        public class ClientSideBeaconingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ReportingMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration.html#cfn-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration-reportingmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ReportingMode { get; set; }
+            /// <summary>
+            /// AdditionalEventTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration.html#cfn-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration-additionaleventtypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AdditionalEventTypes { get; set; }
         }
 
         public class DashConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestEndpointPrefix

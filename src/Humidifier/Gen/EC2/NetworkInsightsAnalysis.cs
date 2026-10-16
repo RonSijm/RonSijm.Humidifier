@@ -448,6 +448,66 @@ namespace Humidifier.EC2
             public dynamic SecurityGroupId { get; set; }
         }
 
+        public class AnalysisTransitGatewayPolicyTableEntry : Humidifier.Base.BaseSubResource, IHaveProtocol, IHaveRuleNumber
+        {
+            /// <summary>
+            /// DestinationPortRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-destinationportrange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PortRange
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange DestinationPortRange { get; set; }
+            /// <summary>
+            /// SourcePortRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-sourceportrange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PortRange
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange SourcePortRange { get; set; }
+            /// <summary>
+            /// SourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-sourcecidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-rulenumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RuleNumber { get; set; }
+            /// <summary>
+            /// TargetRouteTableId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-targetroutetableid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetRouteTableId { get; set; }
+            /// <summary>
+            /// Protocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-protocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Protocol { get; set; }
+            /// <summary>
+            /// DestinationCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-destinationcidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DestinationCidr { get; set; }
+        }
+
         public class Explanation : Humidifier.Base.BaseSubResource, IHavePort, IHaveState, IHaveAddress, IHaveDirection, IHaveAvailabilityZones, IHaveCidrs, IHaveProtocols, IHaveLoadBalancerArn, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveAddresses, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule
         {
             /// <summary>
@@ -523,6 +583,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Port { get; set; }
+            /// <summary>
+            /// TransitGatewayPolicyTableEntry
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewaypolicytableentry
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisTransitGatewayPolicyTableEntry
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisTransitGatewayPolicyTableEntry TransitGatewayPolicyTableEntry { get; set; }
             /// <summary>
             /// Addresses
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses
@@ -775,6 +843,14 @@ namespace Humidifier.EC2
             /// </summary>
             public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisLoadBalancerTarget LoadBalancerTarget { get; set; }
             /// <summary>
+            /// TransitGatewayPolicyTable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewaypolicytable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisComponent
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisComponent TransitGatewayPolicyTable { get; set; }
+            /// <summary>
             /// LoadBalancerTargetGroups
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups
             /// Required: False
@@ -910,6 +986,14 @@ namespace Humidifier.EC2
             /// Type: AnalysisSecurityGroupRule
             /// </summary>
             public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisSecurityGroupRule SecurityGroupRule { get; set; }
+            /// <summary>
+            /// TransitGatewayPolicyTableEntry
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgatewaypolicytableentry
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisTransitGatewayPolicyTableEntry
+            /// </summary>
+            public Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisTransitGatewayPolicyTableEntry TransitGatewayPolicyTableEntry { get; set; }
             /// <summary>
             /// TransitGateway
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway

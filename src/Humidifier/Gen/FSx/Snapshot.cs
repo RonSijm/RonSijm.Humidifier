@@ -7,6 +7,7 @@ namespace Humidifier.FSx
         public class Attributes
         {
             public static string ResourceARN =  "ResourceARN" ;
+            public static string Id =  "Id" ;
         }
 
         public override string AWSTypeName { get => AWS.FSx.Snapshot; }

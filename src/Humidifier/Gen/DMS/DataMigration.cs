@@ -69,14 +69,6 @@ namespace Humidifier.DMS
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
-        /// <summary>
-        /// DataMigrationIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-datamigration.html#cfn-dms-datamigration-datamigrationidentifier
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic DataMigrationIdentifier { get; set; }
     }
 
     namespace DataMigrationTypes

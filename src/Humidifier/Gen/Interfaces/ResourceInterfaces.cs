@@ -29,14 +29,14 @@ namespace Humidifier.Interfaces
         dynamic Value { get; set; }
     }
 
-    public interface IHaveRoleArn : IResourceInterface
-    {
-        dynamic RoleArn { get; set; }
-    }
-
     public interface IHaveKey : IResourceInterface
     {
         dynamic Key { get; set; }
+    }
+
+    public interface IHaveRoleArn : IResourceInterface
+    {
+        dynamic RoleArn { get; set; }
     }
 
     public interface IHaveEnabled : IResourceInterface
@@ -89,14 +89,14 @@ namespace Humidifier.Interfaces
         dynamic FieldId { get; set; }
     }
 
-    public interface IHaveSubnetIds : IResourceInterface
-    {
-        dynamic SubnetIds { get; set; }
-    }
-
     public interface IHaveState : IResourceInterface
     {
         dynamic State { get; set; }
+    }
+
+    public interface IHaveSubnetIds : IResourceInterface
+    {
+        dynamic SubnetIds { get; set; }
     }
 
     public interface IHaveKmsKeyArn : IResourceInterface
@@ -159,14 +159,14 @@ namespace Humidifier.Interfaces
         dynamic Expression { get; set; }
     }
 
-    public interface IHaveVpcId : IResourceInterface
-    {
-        dynamic VpcId { get; set; }
-    }
-
     public interface IHaveDisplayName : IResourceInterface
     {
         dynamic DisplayName { get; set; }
+    }
+
+    public interface IHaveVpcId : IResourceInterface
+    {
+        dynamic VpcId { get; set; }
     }
 
     public interface IHaveDatabaseName : IResourceInterface
@@ -187,6 +187,11 @@ namespace Humidifier.Interfaces
     public interface IHaveMax : IResourceInterface
     {
         dynamic Max { get; set; }
+    }
+
+    public interface IHaveBucketName : IResourceInterface
+    {
+        dynamic BucketName { get; set; }
     }
 
     public interface IHaveAction : IResourceInterface
@@ -214,19 +219,9 @@ namespace Humidifier.Interfaces
         dynamic Mode { get; set; }
     }
 
-    public interface IHaveBucketName : IResourceInterface
-    {
-        dynamic BucketName { get; set; }
-    }
-
     public interface IHavePriority : IResourceInterface
     {
         dynamic Priority { get; set; }
-    }
-
-    public interface IHaveRegion : IResourceInterface
-    {
-        dynamic Region { get; set; }
     }
 
     public interface IHaveNamespace_ : IResourceInterface
@@ -234,14 +229,19 @@ namespace Humidifier.Interfaces
         dynamic Namespace_ { get; set; }
     }
 
-    public interface IHaveUnit : IResourceInterface
+    public interface IHaveRegion : IResourceInterface
     {
-        dynamic Unit { get; set; }
+        dynamic Region { get; set; }
     }
 
     public interface IHaveDomainName : IResourceInterface
     {
         dynamic DomainName { get; set; }
+    }
+
+    public interface IHaveUnit : IResourceInterface
+    {
+        dynamic Unit { get; set; }
     }
 
     public interface IHaveSource : IResourceInterface
@@ -259,24 +259,14 @@ namespace Humidifier.Interfaces
         dynamic MetricName { get; set; }
     }
 
-    public interface IHaveUrl : IResourceInterface
-    {
-        dynamic Url { get; set; }
-    }
-
-    public interface IHaveSubnets : IResourceInterface
-    {
-        dynamic Subnets { get; set; }
-    }
-
     public interface IHaveFormat : IResourceInterface
     {
         dynamic Format { get; set; }
     }
 
-    public interface IHaveTableName : IResourceInterface
+    public interface IHaveUrl : IResourceInterface
     {
-        dynamic TableName { get; set; }
+        dynamic Url { get; set; }
     }
 
     public interface IHaveResourceType : IResourceInterface
@@ -289,14 +279,29 @@ namespace Humidifier.Interfaces
         dynamic ClientId { get; set; }
     }
 
-    public interface IHaveInstanceArn : IResourceInterface
+    public interface IHaveSubnets : IResourceInterface
     {
-        dynamic InstanceArn { get; set; }
+        dynamic Subnets { get; set; }
+    }
+
+    public interface IHaveTableName : IResourceInterface
+    {
+        dynamic TableName { get; set; }
     }
 
     public interface IHaveExecutionRoleArn : IResourceInterface
     {
         dynamic ExecutionRoleArn { get; set; }
+    }
+
+    public interface IHaveInstanceArn : IResourceInterface
+    {
+        dynamic InstanceArn { get; set; }
+    }
+
+    public interface IHaveUsername : IResourceInterface
+    {
+        dynamic Username { get; set; }
     }
 
     public interface IHavePolicyDocument : IResourceInterface
@@ -307,11 +312,6 @@ namespace Humidifier.Interfaces
     public interface IHaveCertificateArn : IResourceInterface
     {
         dynamic CertificateArn { get; set; }
-    }
-
-    public interface IHaveUsername : IResourceInterface
-    {
-        dynamic Username { get; set; }
     }
 
     public interface IHaveScope : IResourceInterface
@@ -344,9 +344,9 @@ namespace Humidifier.Interfaces
         dynamic SecurityGroups { get; set; }
     }
 
-    public interface IHaveDynamicTags : IResourceInterface
+    public interface IHaveContentType : IResourceInterface
     {
-        dynamic Tags { get; set; }
+        dynamic ContentType { get; set; }
     }
 
     public interface IHaveIops : IResourceInterface
@@ -359,14 +359,14 @@ namespace Humidifier.Interfaces
         dynamic Policy { get; set; }
     }
 
-    public interface IHaveContentType : IResourceInterface
-    {
-        dynamic ContentType { get; set; }
-    }
-
     public interface IHaveIpAddressType : IResourceInterface
     {
         dynamic IpAddressType { get; set; }
+    }
+
+    public interface IHaveDynamicTags : IResourceInterface
+    {
+        dynamic Tags { get; set; }
     }
 
     public interface IHaveStartTime : IResourceInterface
@@ -374,14 +374,29 @@ namespace Humidifier.Interfaces
         dynamic StartTime { get; set; }
     }
 
+    public interface IHaveExternalId : IResourceInterface
+    {
+        dynamic ExternalId { get; set; }
+    }
+
+    public interface IHaveClientSecret : IResourceInterface
+    {
+        dynamic ClientSecret { get; set; }
+    }
+
     public interface IHaveParameterName : IResourceInterface
     {
         dynamic ParameterName { get; set; }
     }
 
-    public interface IHaveExternalId : IResourceInterface
+    public interface IHaveRole : IResourceInterface
     {
-        dynamic ExternalId { get; set; }
+        dynamic Role { get; set; }
+    }
+
+    public interface IHaveEndpoint : IResourceInterface
+    {
+        dynamic Endpoint { get; set; }
     }
 
     public interface IHaveComputationId : IResourceInterface
@@ -392,16 +407,6 @@ namespace Humidifier.Interfaces
     public interface IHaveCatalogId : IResourceInterface
     {
         dynamic CatalogId { get; set; }
-    }
-
-    public interface IHaveEndpoint : IResourceInterface
-    {
-        dynamic Endpoint { get; set; }
-    }
-
-    public interface IHaveClientSecret : IResourceInterface
-    {
-        dynamic ClientSecret { get; set; }
     }
 
     public interface IHaveWeight : IResourceInterface
@@ -417,11 +422,6 @@ namespace Humidifier.Interfaces
     public interface IHaveDomain : IResourceInterface
     {
         dynamic Domain { get; set; }
-    }
-
-    public interface IHaveRole : IResourceInterface
-    {
-        dynamic Role { get; set; }
     }
 
     public interface IHaveOperator : IResourceInterface
@@ -444,6 +444,16 @@ namespace Humidifier.Interfaces
         dynamic AccountId { get; set; }
     }
 
+    public interface IHaveS3Bucket : IResourceInterface
+    {
+        dynamic S3Bucket { get; set; }
+    }
+
+    public interface IHaveIdentifier : IResourceInterface
+    {
+        dynamic Identifier { get; set; }
+    }
+
     public interface IHaveInstanceCount : IResourceInterface
     {
         dynamic InstanceCount { get; set; }
@@ -454,9 +464,9 @@ namespace Humidifier.Interfaces
         dynamic CustomLabel { get; set; }
     }
 
-    public interface IHaveS3Bucket : IResourceInterface
+    public interface IHaveContent : IResourceInterface
     {
-        dynamic S3Bucket { get; set; }
+        dynamic Content { get; set; }
     }
 
     public interface IHaveLogGroupName : IResourceInterface
@@ -489,11 +499,6 @@ namespace Humidifier.Interfaces
         Humidifier.QuickSight.TemplateTypes.ColumnIdentifier Column { get; set; }
     }
 
-    public interface IHaveContent : IResourceInterface
-    {
-        dynamic Content { get; set; }
-    }
-
     public interface IHaveInstanceId : IResourceInterface
     {
         dynamic InstanceId { get; set; }
@@ -504,14 +509,14 @@ namespace Humidifier.Interfaces
         dynamic DefaultValue { get; set; }
     }
 
-    public interface IHaveIdentifier : IResourceInterface
-    {
-        dynamic Identifier { get; set; }
-    }
-
     public interface IHaveLanguageCode : IResourceInterface
     {
         dynamic LanguageCode { get; set; }
+    }
+
+    public interface IHaveParameters : IResourceInterface
+    {
+        dynamic Parameters { get; set; }
     }
 
     public interface IHaveAwsAccountId : IResourceInterface
@@ -547,11 +552,6 @@ namespace Humidifier.Interfaces
     public interface IHaveAlias : IResourceInterface
     {
         dynamic Alias { get; set; }
-    }
-
-    public interface IHaveParameters : IResourceInterface
-    {
-        dynamic Parameters { get; set; }
     }
 
     public interface IHaveClusterName : IResourceInterface
@@ -629,6 +629,16 @@ namespace Humidifier.Interfaces
         dynamic NetworkType { get; set; }
     }
 
+    public interface IHaveComment : IResourceInterface
+    {
+        dynamic Comment { get; set; }
+    }
+
+    public interface IHaveGroupName : IResourceInterface
+    {
+        dynamic GroupName { get; set; }
+    }
+
     public interface IHaveEngine : IResourceInterface
     {
         dynamic Engine { get; set; }
@@ -679,6 +689,16 @@ namespace Humidifier.Interfaces
         dynamic Actions { get; set; }
     }
 
+    public interface IHaveResourceId : IResourceInterface
+    {
+        dynamic ResourceId { get; set; }
+    }
+
+    public interface IHaveCode : IResourceInterface
+    {
+        dynamic Code { get; set; }
+    }
+
     public interface IHaveEndTime : IResourceInterface
     {
         dynamic EndTime { get; set; }
@@ -687,16 +707,6 @@ namespace Humidifier.Interfaces
     public interface IHaveEndpointName : IResourceInterface
     {
         dynamic EndpointName { get; set; }
-    }
-
-    public interface IHaveComment : IResourceInterface
-    {
-        dynamic Comment { get; set; }
-    }
-
-    public interface IHaveGroupName : IResourceInterface
-    {
-        dynamic GroupName { get; set; }
     }
 
     public interface IHaveNetworkInterfaceId : IResourceInterface
@@ -724,11 +734,6 @@ namespace Humidifier.Interfaces
         dynamic TopicArn { get; set; }
     }
 
-    public interface IHaveResourceId : IResourceInterface
-    {
-        dynamic ResourceId { get; set; }
-    }
-
     public interface IHaveApiId : IResourceInterface
     {
         dynamic ApiId { get; set; }
@@ -737,6 +742,11 @@ namespace Humidifier.Interfaces
     public interface IHaveAddress : IResourceInterface
     {
         dynamic Address { get; set; }
+    }
+
+    public interface IHaveTimeoutMinutes : IResourceInterface
+    {
+        dynamic TimeoutMinutes { get; set; }
     }
 
     public interface IHaveNullOption : IResourceInterface
@@ -784,9 +794,9 @@ namespace Humidifier.Interfaces
         dynamic Host { get; set; }
     }
 
-    public interface IHaveComparisonOperator : IResourceInterface
+    public interface IHavePattern : IResourceInterface
     {
-        dynamic ComparisonOperator { get; set; }
+        dynamic Pattern { get; set; }
     }
 
     public interface IHaveDestination : IResourceInterface
@@ -794,19 +804,14 @@ namespace Humidifier.Interfaces
         dynamic Destination { get; set; }
     }
 
-    public interface IHaveTimeoutMinutes : IResourceInterface
+    public interface IHaveEncryptionType : IResourceInterface
     {
-        dynamic TimeoutMinutes { get; set; }
+        dynamic EncryptionType { get; set; }
     }
 
     public interface IHaveLabel : IResourceInterface
     {
         dynamic Label { get; set; }
-    }
-
-    public interface IHaveStringValue : IResourceInterface
-    {
-        dynamic StringValue { get; set; }
     }
 
     public interface IHaveLambdaArn : IResourceInterface
@@ -824,14 +829,14 @@ namespace Humidifier.Interfaces
         dynamic AuthType { get; set; }
     }
 
-    public interface IHaveCode : IResourceInterface
-    {
-        dynamic Code { get; set; }
-    }
-
     public interface IHaveSourceType : IResourceInterface
     {
         dynamic SourceType { get; set; }
+    }
+
+    public interface IHaveComparisonOperator : IResourceInterface
+    {
+        dynamic ComparisonOperator { get; set; }
     }
 
     public interface IHavePeriod : IResourceInterface
@@ -839,14 +844,14 @@ namespace Humidifier.Interfaces
         dynamic Period { get; set; }
     }
 
-    public interface IHavePattern : IResourceInterface
-    {
-        dynamic Pattern { get; set; }
-    }
-
     public interface IHaveUserPoolId : IResourceInterface
     {
         dynamic UserPoolId { get; set; }
+    }
+
+    public interface IHaveUri : IResourceInterface
+    {
+        dynamic Uri { get; set; }
     }
 
     public interface IHaveInterval : IResourceInterface
@@ -862,6 +867,11 @@ namespace Humidifier.Interfaces
     public interface IHaveThroughput : IResourceInterface
     {
         dynamic Throughput { get; set; }
+    }
+
+    public interface IHaveStringValue : IResourceInterface
+    {
+        dynamic StringValue { get; set; }
     }
 
     public interface IHaveHeight : IResourceInterface
@@ -889,24 +899,14 @@ namespace Humidifier.Interfaces
         dynamic JobName { get; set; }
     }
 
-    public interface IHaveThreshold : IResourceInterface
+    public interface IHavePreferredMaintenanceWindow : IResourceInterface
     {
-        dynamic Threshold { get; set; }
-    }
-
-    public interface IHaveUri : IResourceInterface
-    {
-        dynamic Uri { get; set; }
+        dynamic PreferredMaintenanceWindow { get; set; }
     }
 
     public interface IHaveSnapshotId : IResourceInterface
     {
         dynamic SnapshotId { get; set; }
-    }
-
-    public interface IHaveEncryptionType : IResourceInterface
-    {
-        dynamic EncryptionType { get; set; }
     }
 
     public interface IHaveIndexName : IResourceInterface
@@ -917,6 +917,21 @@ namespace Humidifier.Interfaces
     public interface IHaveContainerName : IResourceInterface
     {
         dynamic ContainerName { get; set; }
+    }
+
+    public interface IHaveCrossAccountRole : IResourceInterface
+    {
+        dynamic CrossAccountRole { get; set; }
+    }
+
+    public interface IHaveLogGroup : IResourceInterface
+    {
+        dynamic LogGroup { get; set; }
+    }
+
+    public interface IHaveUpdatedAt : IResourceInterface
+    {
+        dynamic UpdatedAt { get; set; }
     }
 
     public interface IHaveDelimiter : IResourceInterface
@@ -949,6 +964,11 @@ namespace Humidifier.Interfaces
         dynamic KmsKey { get; set; }
     }
 
+    public interface IHaveAuthenticationType : IResourceInterface
+    {
+        dynamic AuthenticationType { get; set; }
+    }
+
     public interface IHaveEncryptionKeyArn : IResourceInterface
     {
         dynamic EncryptionKeyArn { get; set; }
@@ -957,6 +977,11 @@ namespace Humidifier.Interfaces
     public interface IHaveLevel : IResourceInterface
     {
         dynamic Level { get; set; }
+    }
+
+    public interface IHaveThreshold : IResourceInterface
+    {
+        dynamic Threshold { get; set; }
     }
 
     public interface IHaveTimeout : IResourceInterface
@@ -974,11 +999,6 @@ namespace Humidifier.Interfaces
         dynamic VolumeKmsKeyId { get; set; }
     }
 
-    public interface IHavePreferredMaintenanceWindow : IResourceInterface
-    {
-        dynamic PreferredMaintenanceWindow { get; set; }
-    }
-
     public interface IHaveServerName : IResourceInterface
     {
         dynamic ServerName { get; set; }
@@ -994,6 +1014,11 @@ namespace Humidifier.Interfaces
         dynamic PrivateIpAddress { get; set; }
     }
 
+    public interface IHaveGroupId : IResourceInterface
+    {
+        dynamic GroupId { get; set; }
+    }
+
     public interface IHaveS3Key : IResourceInterface
     {
         dynamic S3Key { get; set; }
@@ -1002,21 +1027,6 @@ namespace Humidifier.Interfaces
     public interface IHaveHostedZoneId : IResourceInterface
     {
         dynamic HostedZoneId { get; set; }
-    }
-
-    public interface IHaveCrossAccountRole : IResourceInterface
-    {
-        dynamic CrossAccountRole { get; set; }
-    }
-
-    public interface IHaveLogGroup : IResourceInterface
-    {
-        dynamic LogGroup { get; set; }
-    }
-
-    public interface IHaveUpdatedAt : IResourceInterface
-    {
-        dynamic UpdatedAt { get; set; }
     }
 
     public interface IHaveAttribute : IResourceInterface
@@ -1047,11 +1057,6 @@ namespace Humidifier.Interfaces
     public interface IHaveIamRoleArn : IResourceInterface
     {
         dynamic IamRoleArn { get; set; }
-    }
-
-    public interface IHaveAuthenticationType : IResourceInterface
-    {
-        dynamic AuthenticationType { get; set; }
     }
 
     public interface IHaveMaxTokens : IResourceInterface
@@ -1089,6 +1094,11 @@ namespace Humidifier.Interfaces
         dynamic Condition { get; set; }
     }
 
+    public interface IHaveTimezone : IResourceInterface
+    {
+        dynamic Timezone { get; set; }
+    }
+
     public interface IHaveRuntime : IResourceInterface
     {
         dynamic Runtime { get; set; }
@@ -1117,11 +1127,6 @@ namespace Humidifier.Interfaces
     public interface IHaveExact : IResourceInterface
     {
         dynamic Exact { get; set; }
-    }
-
-    public interface IHaveTargetArn : IResourceInterface
-    {
-        dynamic TargetArn { get; set; }
     }
 
     public interface IHaveClientToken : IResourceInterface
@@ -1154,11 +1159,6 @@ namespace Humidifier.Interfaces
         dynamic ToPort { get; set; }
     }
 
-    public interface IHaveGroupId : IResourceInterface
-    {
-        dynamic GroupId { get; set; }
-    }
-
     public interface IHaveDynDicOfProperties : IResourceInterface
     {
         Dictionary<string, dynamic> Properties { get; set; }
@@ -1167,11 +1167,6 @@ namespace Humidifier.Interfaces
     public interface IHaveDataType : IResourceInterface
     {
         dynamic DataType { get; set; }
-    }
-
-    public interface IHaveTimezone : IResourceInterface
-    {
-        dynamic Timezone { get; set; }
     }
 
     public interface IHaveLogLevel : IResourceInterface
@@ -1192,6 +1187,11 @@ namespace Humidifier.Interfaces
     public interface IHaveVolumeSizeInGB : IResourceInterface
     {
         dynamic VolumeSizeInGB { get; set; }
+    }
+
+    public interface IHaveEnd : IResourceInterface
+    {
+        dynamic End { get; set; }
     }
 
     public interface IHaveVolumeSize : IResourceInterface
@@ -1304,6 +1304,11 @@ namespace Humidifier.Interfaces
         dynamic Category { get; set; }
     }
 
+    public interface IHaveTargetArn : IResourceInterface
+    {
+        dynamic TargetArn { get; set; }
+    }
+
     public interface IHaveVpcSecurityGroupIds : IResourceInterface
     {
         dynamic VpcSecurityGroupIds { get; set; }
@@ -1339,6 +1344,11 @@ namespace Humidifier.Interfaces
         dynamic ParameterValue { get; set; }
     }
 
+    public interface IHaveStart : IResourceInterface
+    {
+        dynamic Start { get; set; }
+    }
+
     public interface IHaveMountPath : IResourceInterface
     {
         dynamic MountPath { get; set; }
@@ -1362,6 +1372,11 @@ namespace Humidifier.Interfaces
     public interface IHaveFallbackBehavior : IResourceInterface
     {
         dynamic FallbackBehavior { get; set; }
+    }
+
+    public interface IHaveAccessToken : IResourceInterface
+    {
+        dynamic AccessToken { get; set; }
     }
 
     public interface IHaveKeyType : IResourceInterface
@@ -1429,11 +1444,6 @@ namespace Humidifier.Interfaces
         dynamic Header { get; set; }
     }
 
-    public interface IHaveEnd : IResourceInterface
-    {
-        dynamic End { get; set; }
-    }
-
     public interface IHaveTargetValue : IResourceInterface
     {
         dynamic TargetValue { get; set; }
@@ -1477,11 +1487,6 @@ namespace Humidifier.Interfaces
     public interface IHaveQuickSightTemplateTypesTooltipOptionsTooltip : IResourceInterface
     {
         Humidifier.QuickSight.TemplateTypes.TooltipOptions Tooltip { get; set; }
-    }
-
-    public interface IHaveAccessToken : IResourceInterface
-    {
-        dynamic AccessToken { get; set; }
     }
 
     public interface IHavePermissions : IResourceInterface
@@ -1544,6 +1549,16 @@ namespace Humidifier.Interfaces
         dynamic ExpectedBucketOwner { get; set; }
     }
 
+    public interface IHaveCreatedAt : IResourceInterface
+    {
+        dynamic CreatedAt { get; set; }
+    }
+
+    public interface IHaveBehavior : IResourceInterface
+    {
+        dynamic Behavior { get; set; }
+    }
+
     public interface IHaveMinValue : IResourceInterface
     {
         dynamic MinValue { get; set; }
@@ -1557,11 +1572,6 @@ namespace Humidifier.Interfaces
     public interface IHaveInstanceUrl : IResourceInterface
     {
         dynamic InstanceUrl { get; set; }
-    }
-
-    public interface IHaveStart : IResourceInterface
-    {
-        dynamic Start { get; set; }
     }
 
     public interface IHaveVirtualName : IResourceInterface
@@ -1759,11 +1769,6 @@ namespace Humidifier.Interfaces
         dynamic PrivateKey { get; set; }
     }
 
-    public interface IHaveCreatedAt : IResourceInterface
-    {
-        dynamic CreatedAt { get; set; }
-    }
-
     public interface IHaveIsEnabled : IResourceInterface
     {
         dynamic IsEnabled { get; set; }
@@ -1784,14 +1789,14 @@ namespace Humidifier.Interfaces
         dynamic StatusReason { get; set; }
     }
 
+    public interface IHaveReadOnly : IResourceInterface
+    {
+        dynamic ReadOnly { get; set; }
+    }
+
     public interface IHaveStorageClass : IResourceInterface
     {
         dynamic StorageClass { get; set; }
-    }
-
-    public interface IHaveBehavior : IResourceInterface
-    {
-        dynamic Behavior { get; set; }
     }
 
     public interface IHaveBucketOwner : IResourceInterface
@@ -1817,11 +1822,6 @@ namespace Humidifier.Interfaces
     public interface IHaveTopP : IResourceInterface
     {
         dynamic TopP { get; set; }
-    }
-
-    public interface IHaveDoubleValue : IResourceInterface
-    {
-        dynamic DoubleValue { get; set; }
     }
 
     public interface IHaveSecretsManagerSecretId : IResourceInterface
@@ -1914,6 +1914,11 @@ namespace Humidifier.Interfaces
         dynamic RepositoryName { get; set; }
     }
 
+    public interface IHaveOwner : IResourceInterface
+    {
+        dynamic Owner { get; set; }
+    }
+
     public interface IHaveEndpointType : IResourceInterface
     {
         dynamic EndpointType { get; set; }
@@ -1957,6 +1962,11 @@ namespace Humidifier.Interfaces
     public interface IHaveEnableExecuteCommand : IResourceInterface
     {
         dynamic EnableExecuteCommand { get; set; }
+    }
+
+    public interface IHaveIpv6Address : IResourceInterface
+    {
+        dynamic Ipv6Address { get; set; }
     }
 
     public interface IHaveLogUri : IResourceInterface
@@ -2024,9 +2034,9 @@ namespace Humidifier.Interfaces
         dynamic EnableNetworkIsolation { get; set; }
     }
 
-    public interface IHaveBooleanValue : IResourceInterface
+    public interface IHaveSecretId : IResourceInterface
     {
-        dynamic BooleanValue { get; set; }
+        dynamic SecretId { get; set; }
     }
 
     public interface IHaveResourceLabel : IResourceInterface
@@ -2052,6 +2062,11 @@ namespace Humidifier.Interfaces
     public interface IHaveTenantId : IResourceInterface
     {
         dynamic TenantId { get; set; }
+    }
+
+    public interface IHaveDoubleValue : IResourceInterface
+    {
+        dynamic DoubleValue { get; set; }
     }
 
     public interface IHaveEntryPoint : IResourceInterface
@@ -2179,9 +2194,19 @@ namespace Humidifier.Interfaces
         dynamic SourceId { get; set; }
     }
 
+    public interface IHaveSchema : IResourceInterface
+    {
+        dynamic Schema { get; set; }
+    }
+
     public interface IHaveMinSize : IResourceInterface
     {
         dynamic MinSize { get; set; }
+    }
+
+    public interface IHavePolicyArn : IResourceInterface
+    {
+        dynamic PolicyArn { get; set; }
     }
 
     public interface IHaveDynDicOfEnvironmentVariables : IResourceInterface
@@ -2199,6 +2224,11 @@ namespace Humidifier.Interfaces
         dynamic Configuration { get; set; }
     }
 
+    public interface IHaveS3KeyPrefix : IResourceInterface
+    {
+        dynamic S3KeyPrefix { get; set; }
+    }
+
     public interface IHaveAlarmName : IResourceInterface
     {
         dynamic AlarmName { get; set; }
@@ -2209,14 +2239,14 @@ namespace Humidifier.Interfaces
         dynamic Stat { get; set; }
     }
 
-    public interface IHaveOwner : IResourceInterface
-    {
-        dynamic Owner { get; set; }
-    }
-
     public interface IHaveResource : IResourceInterface
     {
         dynamic Resource { get; set; }
+    }
+
+    public interface IHaveSecurityGroupArns : IResourceInterface
+    {
+        dynamic SecurityGroupArns { get; set; }
     }
 
     public interface IHaveS3BucketOwner : IResourceInterface
@@ -2232,11 +2262,6 @@ namespace Humidifier.Interfaces
     public interface IHaveLaunchTemplateName : IResourceInterface
     {
         dynamic LaunchTemplateName { get; set; }
-    }
-
-    public interface IHaveIpv6Address : IResourceInterface
-    {
-        dynamic Ipv6Address { get; set; }
     }
 
     public interface IHaveClusterId : IResourceInterface
@@ -2274,6 +2299,11 @@ namespace Humidifier.Interfaces
         dynamic ResourceTypes { get; set; }
     }
 
+    public interface IHaveStreamName : IResourceInterface
+    {
+        dynamic StreamName { get; set; }
+    }
+
     public interface IHaveDuration : IResourceInterface
     {
         dynamic Duration { get; set; }
@@ -2287,11 +2317,6 @@ namespace Humidifier.Interfaces
     public interface IHaveEnableInterContainerTrafficEncryption : IResourceInterface
     {
         dynamic EnableInterContainerTrafficEncryption { get; set; }
-    }
-
-    public interface IHaveSecretId : IResourceInterface
-    {
-        dynamic SecretId { get; set; }
     }
 
     public interface IHaveSourceName : IResourceInterface
@@ -2309,9 +2334,9 @@ namespace Humidifier.Interfaces
         Dictionary<string, dynamic> Options { get; set; }
     }
 
-    public interface IHaveReadOnly : IResourceInterface
+    public interface IHaveBooleanValue : IResourceInterface
     {
-        dynamic ReadOnly { get; set; }
+        dynamic BooleanValue { get; set; }
     }
 
     public interface IHaveRefreshToken : IResourceInterface
@@ -2407,11 +2432,6 @@ namespace Humidifier.Interfaces
     public interface IHaveInline : IResourceInterface
     {
         dynamic Inline { get; set; }
-    }
-
-    public interface IHaveFunctionArn : IResourceInterface
-    {
-        dynamic FunctionArn { get; set; }
     }
 
     public interface IHaveNext : IResourceInterface
@@ -2514,11 +2534,6 @@ namespace Humidifier.Interfaces
         dynamic ServiceRole { get; set; }
     }
 
-    public interface IHavePolicyArn : IResourceInterface
-    {
-        dynamic PolicyArn { get; set; }
-    }
-
     public interface IHaveTimeoutSeconds : IResourceInterface
     {
         dynamic TimeoutSeconds { get; set; }
@@ -2539,11 +2554,6 @@ namespace Humidifier.Interfaces
         dynamic Metadata { get; set; }
     }
 
-    public interface IHaveS3KeyPrefix : IResourceInterface
-    {
-        dynamic S3KeyPrefix { get; set; }
-    }
-
     public interface IHaveStartDate : IResourceInterface
     {
         dynamic StartDate { get; set; }
@@ -2554,6 +2564,16 @@ namespace Humidifier.Interfaces
         dynamic EncryptionKey { get; set; }
     }
 
+    public interface IHaveProviderType : IResourceInterface
+    {
+        dynamic ProviderType { get; set; }
+    }
+
+    public interface IHaveProvider : IResourceInterface
+    {
+        dynamic Provider { get; set; }
+    }
+
     public interface IHaveAutomatic : IResourceInterface
     {
         dynamic Automatic { get; set; }
@@ -2562,11 +2582,6 @@ namespace Humidifier.Interfaces
     public interface IHaveNodeType : IResourceInterface
     {
         dynamic NodeType { get; set; }
-    }
-
-    public interface IHaveSecurityGroupArns : IResourceInterface
-    {
-        dynamic SecurityGroupArns { get; set; }
     }
 
     public interface IHaveRateLimit : IResourceInterface
@@ -2644,6 +2659,11 @@ namespace Humidifier.Interfaces
         dynamic TimeoutInSeconds { get; set; }
     }
 
+    public interface IHaveScopes : IResourceInterface
+    {
+        dynamic Scopes { get; set; }
+    }
+
     public interface IHaveComponentName : IResourceInterface
     {
         dynamic ComponentName { get; set; }
@@ -2692,11 +2712,6 @@ namespace Humidifier.Interfaces
     public interface IHaveSubject : IResourceInterface
     {
         dynamic Subject { get; set; }
-    }
-
-    public interface IHaveStreamName : IResourceInterface
-    {
-        dynamic StreamName { get; set; }
     }
 
     public interface IHaveNamespaceName : IResourceInterface
@@ -2789,6 +2804,11 @@ namespace Humidifier.Interfaces
         dynamic Exclude { get; set; }
     }
 
+    public interface IHaveTargetUrl : IResourceInterface
+    {
+        dynamic TargetUrl { get; set; }
+    }
+
     public interface IHaveLambdaVersion : IResourceInterface
     {
         dynamic LambdaVersion { get; set; }
@@ -2809,14 +2829,14 @@ namespace Humidifier.Interfaces
         dynamic CapacityProvider { get; set; }
     }
 
+    public interface IHaveFunctionArn : IResourceInterface
+    {
+        dynamic FunctionArn { get; set; }
+    }
+
     public interface IHaveDestinationPath : IResourceInterface
     {
         dynamic DestinationPath { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesPayloadPayload : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.Payload Payload { get; set; }
     }
 
     public interface IHaveIoTEventsDetectorModelTypesPayloadPayload : IResourceInterface
@@ -2949,11 +2969,6 @@ namespace Humidifier.Interfaces
         dynamic HttpMethod { get; set; }
     }
 
-    public interface IHaveSchema : IResourceInterface
-    {
-        dynamic Schema { get; set; }
-    }
-
     public interface IHaveConnectionType : IResourceInterface
     {
         dynamic ConnectionType { get; set; }
@@ -2987,6 +3002,11 @@ namespace Humidifier.Interfaces
     public interface IHaveScalingAdjustment : IResourceInterface
     {
         dynamic ScalingAdjustment { get; set; }
+    }
+
+    public interface IHaveProfileId : IResourceInterface
+    {
+        dynamic ProfileId { get; set; }
     }
 
     public interface IHaveActionName : IResourceInterface
@@ -3024,11 +3044,6 @@ namespace Humidifier.Interfaces
         dynamic ComputeType { get; set; }
     }
 
-    public interface IHaveProviderType : IResourceInterface
-    {
-        dynamic ProviderType { get; set; }
-    }
-
     public interface IHaveValueType : IResourceInterface
     {
         dynamic ValueType { get; set; }
@@ -3042,6 +3057,11 @@ namespace Humidifier.Interfaces
     public interface IHaveCountryCode : IResourceInterface
     {
         dynamic CountryCode { get; set; }
+    }
+
+    public interface IHaveVersionDescription : IResourceInterface
+    {
+        dynamic VersionDescription { get; set; }
     }
 
     public interface IHaveServiceAccessRoleArn : IResourceInterface
@@ -3067,6 +3087,11 @@ namespace Humidifier.Interfaces
     public interface IHaveTemplateType : IResourceInterface
     {
         dynamic TemplateType { get; set; }
+    }
+
+    public interface IHaveAgentSpaceId : IResourceInterface
+    {
+        dynamic AgentSpaceId { get; set; }
     }
 
     public interface IHaveMtu : IResourceInterface
@@ -3144,14 +3169,14 @@ namespace Humidifier.Interfaces
         dynamic StorageCapacity { get; set; }
     }
 
-    public interface IHaveScopes : IResourceInterface
-    {
-        dynamic Scopes { get; set; }
-    }
-
     public interface IHaveProjectId : IResourceInterface
     {
         dynamic ProjectId { get; set; }
+    }
+
+    public interface IHaveS3Location : IResourceInterface
+    {
+        dynamic S3Location { get; set; }
     }
 
     public interface IHaveTagKey : IResourceInterface
@@ -3464,11 +3489,6 @@ namespace Humidifier.Interfaces
         dynamic LoggingLevel { get; set; }
     }
 
-    public interface IHaveProvider : IResourceInterface
-    {
-        dynamic Provider { get; set; }
-    }
-
     public interface IHaveIdentityPoolId : IResourceInterface
     {
         dynamic IdentityPoolId { get; set; }
@@ -3479,6 +3499,11 @@ namespace Humidifier.Interfaces
         dynamic ProviderName { get; set; }
     }
 
+    public interface IHaveVersionName : IResourceInterface
+    {
+        dynamic VersionName { get; set; }
+    }
+
     public interface IHaveDataSetId : IResourceInterface
     {
         dynamic DataSetId { get; set; }
@@ -3487,11 +3512,6 @@ namespace Humidifier.Interfaces
     public interface IHaveTemplate : IResourceInterface
     {
         dynamic Template { get; set; }
-    }
-
-    public interface IHaveVersionDescription : IResourceInterface
-    {
-        dynamic VersionDescription { get; set; }
     }
 
     public interface IHaveParameterGroupName : IResourceInterface
@@ -3524,11 +3544,6 @@ namespace Humidifier.Interfaces
         dynamic ProjectIdentifier { get; set; }
     }
 
-    public interface IHaveAgentSpaceId : IResourceInterface
-    {
-        dynamic AgentSpaceId { get; set; }
-    }
-
     public interface IHavePreferredBackupWindow : IResourceInterface
     {
         dynamic PreferredBackupWindow { get; set; }
@@ -3547,11 +3562,6 @@ namespace Humidifier.Interfaces
     public interface IHaveOutpostArn : IResourceInterface
     {
         dynamic OutpostArn { get; set; }
-    }
-
-    public interface IHaveAssetId : IResourceInterface
-    {
-        dynamic AssetId { get; set; }
     }
 
     public interface IHaveAddressFamily : IResourceInterface
@@ -3594,6 +3604,11 @@ namespace Humidifier.Interfaces
         dynamic InstanceTypes { get; set; }
     }
 
+    public interface IHaveEffect : IResourceInterface
+    {
+        dynamic Effect { get; set; }
+    }
+
     public interface IHaveRegistryName : IResourceInterface
     {
         dynamic RegistryName { get; set; }
@@ -3627,11 +3642,6 @@ namespace Humidifier.Interfaces
     public interface IHaveThingName : IResourceInterface
     {
         dynamic ThingName { get; set; }
-    }
-
-    public interface IHaveInputName : IResourceInterface
-    {
-        dynamic InputName { get; set; }
     }
 
     public interface IHaveWorkspaceName : IResourceInterface
@@ -3734,6 +3744,11 @@ namespace Humidifier.Interfaces
         dynamic AccessType { get; set; }
     }
 
+    public interface IHaveDocumentVersion : IResourceInterface
+    {
+        dynamic DocumentVersion { get; set; }
+    }
+
     public interface IHaveKMSKeyArn : IResourceInterface
     {
         dynamic KMSKeyArn { get; set; }
@@ -3772,6 +3787,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDiscoveryUrl : IResourceInterface
     {
         dynamic DiscoveryUrl { get; set; }
+    }
+
+    public interface IHaveAudience : IResourceInterface
+    {
+        dynamic Audience { get; set; }
     }
 
     public interface IHaveRepositoryUrl : IResourceInterface
@@ -3822,6 +3842,11 @@ namespace Humidifier.Interfaces
     public interface IHaveValueFrom : IResourceInterface
     {
         dynamic ValueFrom { get; set; }
+    }
+
+    public interface IHaveStopSequences : IResourceInterface
+    {
+        dynamic StopSequences { get; set; }
     }
 
     public interface IHaveInputEnabled : IResourceInterface
@@ -3919,11 +3944,6 @@ namespace Humidifier.Interfaces
         dynamic Cidrs { get; set; }
     }
 
-    public interface IHaveIntegerValue : IResourceInterface
-    {
-        dynamic IntegerValue { get; set; }
-    }
-
     public interface IHaveTimeoutDurationMinutes : IResourceInterface
     {
         dynamic TimeoutDurationMinutes { get; set; }
@@ -3937,11 +3957,6 @@ namespace Humidifier.Interfaces
     public interface IHaveSortOrder : IResourceInterface
     {
         dynamic SortOrder { get; set; }
-    }
-
-    public interface IHavePropertyId : IResourceInterface
-    {
-        dynamic PropertyId { get; set; }
     }
 
     public interface IHaveFullyQualifiedName : IResourceInterface
@@ -4314,6 +4329,11 @@ namespace Humidifier.Interfaces
         dynamic ConnectionId { get; set; }
     }
 
+    public interface IHaveIntegrationType : IResourceInterface
+    {
+        dynamic IntegrationType { get; set; }
+    }
+
     public interface IHaveApplicationIdentifier : IResourceInterface
     {
         dynamic ApplicationIdentifier { get; set; }
@@ -4359,11 +4379,6 @@ namespace Humidifier.Interfaces
         dynamic SpotPrice { get; set; }
     }
 
-    public interface IHaveProfileId : IResourceInterface
-    {
-        dynamic ProfileId { get; set; }
-    }
-
     public interface IHaveJobDefinitionName : IResourceInterface
     {
         dynamic JobDefinitionName { get; set; }
@@ -4372,11 +4387,6 @@ namespace Humidifier.Interfaces
     public interface IHaveGuardrailIdentifier : IResourceInterface
     {
         dynamic GuardrailIdentifier { get; set; }
-    }
-
-    public interface IHaveOperation : IResourceInterface
-    {
-        dynamic Operation { get; set; }
     }
 
     public interface IHaveS3Prefix : IResourceInterface
@@ -4409,9 +4419,9 @@ namespace Humidifier.Interfaces
         dynamic SourceVersion { get; set; }
     }
 
-    public interface IHaveVersionName : IResourceInterface
+    public interface IHaveBranch : IResourceInterface
     {
-        dynamic VersionName { get; set; }
+        dynamic Branch { get; set; }
     }
 
     public interface IHaveDatasetType : IResourceInterface
@@ -4437,6 +4447,11 @@ namespace Humidifier.Interfaces
     public interface IHaveActivate : IResourceInterface
     {
         dynamic Activate { get; set; }
+    }
+
+    public interface IHaveSubnetArns : IResourceInterface
+    {
+        dynamic SubnetArns { get; set; }
     }
 
     public interface IHaveAgentArns : IResourceInterface
@@ -4482,6 +4497,16 @@ namespace Humidifier.Interfaces
     public interface IHaveInstanceFamily : IResourceInterface
     {
         dynamic InstanceFamily { get; set; }
+    }
+
+    public interface IHaveAssetId : IResourceInterface
+    {
+        dynamic AssetId { get; set; }
+    }
+
+    public interface IHaveIpamId : IResourceInterface
+    {
+        dynamic IpamId { get; set; }
     }
 
     public interface IHaveIpv6CidrBlock : IResourceInterface
@@ -4532,11 +4557,6 @@ namespace Humidifier.Interfaces
     public interface IHaveLoadBalancerName : IResourceInterface
     {
         dynamic LoadBalancerName { get; set; }
-    }
-
-    public interface IHaveEffect : IResourceInterface
-    {
-        dynamic Effect { get; set; }
     }
 
     public interface IHaveStatement : IResourceInterface
@@ -4609,19 +4629,14 @@ namespace Humidifier.Interfaces
         dynamic MetricType { get; set; }
     }
 
+    public interface IHaveInputName : IResourceInterface
+    {
+        dynamic InputName { get; set; }
+    }
+
     public interface IHaveEntityId : IResourceInterface
     {
         dynamic EntityId { get; set; }
-    }
-
-    public interface IHaveS3Location : IResourceInterface
-    {
-        dynamic S3Location { get; set; }
-    }
-
-    public interface IHaveDeliveryStreamName : IResourceInterface
-    {
-        dynamic DeliveryStreamName { get; set; }
     }
 
     public interface IHaveTagValues : IResourceInterface
@@ -4679,6 +4694,11 @@ namespace Humidifier.Interfaces
         dynamic DefaultAuthenticationMethod { get; set; }
     }
 
+    public interface IHaveLayout : IResourceInterface
+    {
+        dynamic Layout { get; set; }
+    }
+
     public interface IHaveDesiredState : IResourceInterface
     {
         dynamic DesiredState { get; set; }
@@ -4707,11 +4727,6 @@ namespace Humidifier.Interfaces
     public interface IHaveBucketAccountId : IResourceInterface
     {
         dynamic BucketAccountId { get; set; }
-    }
-
-    public interface IHaveDocumentVersion : IResourceInterface
-    {
-        dynamic DocumentVersion { get; set; }
     }
 
     public interface IHaveAlgorithmName : IResourceInterface
@@ -4812,11 +4827,6 @@ namespace Humidifier.Interfaces
     public interface IHaveThrottlingRateLimit : IResourceInterface
     {
         dynamic ThrottlingRateLimit { get; set; }
-    }
-
-    public interface IHaveAudience : IResourceInterface
-    {
-        dynamic Audience { get; set; }
     }
 
     public interface IHaveTokenUrl : IResourceInterface
@@ -4949,11 +4959,6 @@ namespace Humidifier.Interfaces
         dynamic CredentialsParameter { get; set; }
     }
 
-    public interface IHaveStopSequences : IResourceInterface
-    {
-        dynamic StopSequences { get; set; }
-    }
-
     public interface IHavePiiEntityTypes : IResourceInterface
     {
         dynamic PiiEntityTypes { get; set; }
@@ -4992,11 +4997,6 @@ namespace Humidifier.Interfaces
     public interface IHaveResourceConfigurationIdentifier : IResourceInterface
     {
         dynamic ResourceConfigurationIdentifier { get; set; }
-    }
-
-    public interface IHaveSeparator : IResourceInterface
-    {
-        dynamic Separator { get; set; }
     }
 
     public interface IHaveDynDicOfHeaders : IResourceInterface
@@ -5134,6 +5134,11 @@ namespace Humidifier.Interfaces
         dynamic Filter { get; set; }
     }
 
+    public interface IHaveIntegerValue : IResourceInterface
+    {
+        dynamic IntegerValue { get; set; }
+    }
+
     public interface IHaveSessionTimeout : IResourceInterface
     {
         dynamic SessionTimeout { get; set; }
@@ -5202,6 +5207,11 @@ namespace Humidifier.Interfaces
     public interface IHaveLongitude : IResourceInterface
     {
         dynamic Longitude { get; set; }
+    }
+
+    public interface IHavePropertyId : IResourceInterface
+    {
+        dynamic PropertyId { get; set; }
     }
 
     public interface IHavePid : IResourceInterface
@@ -5409,6 +5419,11 @@ namespace Humidifier.Interfaces
         dynamic RetentionInDays { get; set; }
     }
 
+    public interface IHaveWorkspace : IResourceInterface
+    {
+        dynamic Workspace { get; set; }
+    }
+
     public interface IHaveAuthorizerType : IResourceInterface
     {
         dynamic AuthorizerType { get; set; }
@@ -5459,9 +5474,9 @@ namespace Humidifier.Interfaces
         dynamic ProtocolType { get; set; }
     }
 
-    public interface IHaveIntegrationType : IResourceInterface
+    public interface IHaveIntegrationId : IResourceInterface
     {
-        dynamic IntegrationType { get; set; }
+        dynamic IntegrationId { get; set; }
     }
 
     public interface IHaveConnectorProfileName : IResourceInterface
@@ -5502,6 +5517,11 @@ namespace Humidifier.Interfaces
     public interface IHaveGuardrailVersion : IResourceInterface
     {
         dynamic GuardrailVersion { get; set; }
+    }
+
+    public interface IHaveOperation : IResourceInterface
+    {
+        dynamic Operation { get; set; }
     }
 
     public interface IHaveNotificationType : IResourceInterface
@@ -5564,11 +5584,6 @@ namespace Humidifier.Interfaces
         dynamic ResourceName { get; set; }
     }
 
-    public interface IHaveBranch : IResourceInterface
-    {
-        dynamic Branch { get; set; }
-    }
-
     public interface IHaveRuleType : IResourceInterface
     {
         dynamic RuleType { get; set; }
@@ -5604,11 +5619,6 @@ namespace Humidifier.Interfaces
         dynamic ObjectTypeName { get; set; }
     }
 
-    public interface IHaveInstanceProfileName : IResourceInterface
-    {
-        dynamic InstanceProfileName { get; set; }
-    }
-
     public interface IHaveMultiAZ : IResourceInterface
     {
         dynamic MultiAZ { get; set; }
@@ -5622,11 +5632,6 @@ namespace Humidifier.Interfaces
     public interface IHaveCronExpression : IResourceInterface
     {
         dynamic CronExpression { get; set; }
-    }
-
-    public interface IHaveSubnetArns : IResourceInterface
-    {
-        dynamic SubnetArns { get; set; }
     }
 
     public interface IHaveSecretKey : IResourceInterface
@@ -5704,11 +5709,6 @@ namespace Humidifier.Interfaces
         dynamic IpamPoolId { get; set; }
     }
 
-    public interface IHaveIpamId : IResourceInterface
-    {
-        dynamic IpamId { get; set; }
-    }
-
     public interface IHaveMonitoring : IResourceInterface
     {
         dynamic Monitoring { get; set; }
@@ -5727,6 +5727,11 @@ namespace Humidifier.Interfaces
     public interface IHaveRuleAction : IResourceInterface
     {
         dynamic RuleAction { get; set; }
+    }
+
+    public interface IHaveRuleNumber : IResourceInterface
+    {
+        dynamic RuleNumber { get; set; }
     }
 
     public interface IHaveInterfaceType : IResourceInterface
@@ -5789,6 +5794,11 @@ namespace Humidifier.Interfaces
         dynamic ScanType { get; set; }
     }
 
+    public interface IHaveCritical : IResourceInterface
+    {
+        dynamic Critical { get; set; }
+    }
+
     public interface IHaveIpcMode : IResourceInterface
     {
         dynamic IpcMode { get; set; }
@@ -5817,6 +5827,11 @@ namespace Humidifier.Interfaces
     public interface IHaveMarket : IResourceInterface
     {
         dynamic Market { get; set; }
+    }
+
+    public interface IHaveAuthMode : IResourceInterface
+    {
+        dynamic AuthMode { get; set; }
     }
 
     public interface IHaveSiteId : IResourceInterface
@@ -5969,11 +5984,6 @@ namespace Humidifier.Interfaces
         dynamic PipelineName { get; set; }
     }
 
-    public interface IHaveSeverity : IResourceInterface
-    {
-        dynamic Severity { get; set; }
-    }
-
     public interface IHaveSignalCatalogArn : IResourceInterface
     {
         dynamic SignalCatalogArn { get; set; }
@@ -6002,6 +6012,11 @@ namespace Humidifier.Interfaces
     public interface IHaveServiceExecutionRoleArn : IResourceInterface
     {
         dynamic ServiceExecutionRoleArn { get; set; }
+    }
+
+    public interface IHaveDeliveryStreamName : IResourceInterface
+    {
+        dynamic DeliveryStreamName { get; set; }
     }
 
     public interface IHaveScale : IResourceInterface
@@ -6054,6 +6069,11 @@ namespace Humidifier.Interfaces
         dynamic MediaStreamName { get; set; }
     }
 
+    public interface IHaveTimeDelaySeconds : IResourceInterface
+    {
+        dynamic TimeDelaySeconds { get; set; }
+    }
+
     public interface IHaveGraphIdentifier : IResourceInterface
     {
         dynamic GraphIdentifier { get; set; }
@@ -6067,6 +6087,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSerialNumber : IResourceInterface
     {
         dynamic SerialNumber { get; set; }
+    }
+
+    public interface IHaveVpcArn : IResourceInterface
+    {
+        dynamic VpcArn { get; set; }
     }
 
     public interface IHaveReferenceArn : IResourceInterface
@@ -6114,11 +6139,6 @@ namespace Humidifier.Interfaces
         dynamic CloudWatchMetricsEnabled { get; set; }
     }
 
-    public interface IHaveLayout : IResourceInterface
-    {
-        dynamic Layout { get; set; }
-    }
-
     public interface IHaveThemeArn : IResourceInterface
     {
         dynamic ThemeArn { get; set; }
@@ -6164,6 +6184,11 @@ namespace Humidifier.Interfaces
         dynamic Application { get; set; }
     }
 
+    public interface IHaveConfidenceThreshold : IResourceInterface
+    {
+        dynamic ConfidenceThreshold { get; set; }
+    }
+
     public interface IHaveSecurityGroupId : IResourceInterface
     {
         dynamic SecurityGroupId { get; set; }
@@ -6197,6 +6222,11 @@ namespace Humidifier.Interfaces
     public interface IHaveTaskType : IResourceInterface
     {
         dynamic TaskType { get; set; }
+    }
+
+    public interface IHaveBucketRegion : IResourceInterface
+    {
+        dynamic BucketRegion { get; set; }
     }
 
     public interface IHaveContactId : IResourceInterface
@@ -6237,6 +6267,21 @@ namespace Humidifier.Interfaces
     public interface IHaveRuleOrder : IResourceInterface
     {
         dynamic RuleOrder { get; set; }
+    }
+
+    public interface IHaveGatewayARN : IResourceInterface
+    {
+        dynamic GatewayARN { get; set; }
+    }
+
+    public interface IHaveKMSKey : IResourceInterface
+    {
+        dynamic KMSKey { get; set; }
+    }
+
+    public interface IHaveKMSEncrypted : IResourceInterface
+    {
+        dynamic KMSEncrypted { get; set; }
     }
 
     public interface IHaveOrganization : IResourceInterface
@@ -6434,9 +6479,19 @@ namespace Humidifier.Interfaces
         Humidifier.Bedrock.PromptVersionTypes.CachePointBlock CachePoint { get; set; }
     }
 
+    public interface IHaveSeparator : IResourceInterface
+    {
+        dynamic Separator { get; set; }
+    }
+
     public interface IHaveBedrockAgentCoreHarnessTypesHarnessHookTargetTarget : IResourceInterface
     {
         Humidifier.BedrockAgentCore.HarnessTypes.HarnessHookTarget Target { get; set; }
+    }
+
+    public interface IHaveAdditionalParams : IResourceInterface
+    {
+        dynamic AdditionalParams { get; set; }
     }
 
     public interface IHaveDisabled : IResourceInterface
@@ -6597,6 +6652,11 @@ namespace Humidifier.Interfaces
     public interface IHaveHostName : IResourceInterface
     {
         dynamic HostName { get; set; }
+    }
+
+    public interface IHaveTokenValue : IResourceInterface
+    {
+        dynamic TokenValue { get; set; }
     }
 
     public interface IHaveAsn : IResourceInterface
@@ -6839,6 +6899,11 @@ namespace Humidifier.Interfaces
         dynamic SqlType { get; set; }
     }
 
+    public interface IHaveArtifactId : IResourceInterface
+    {
+        dynamic ArtifactId { get; set; }
+    }
+
     public interface IHaveKinesisFirehoseDeliveryStreamTypesBufferingHintsBufferingHints : IResourceInterface
     {
         Humidifier.KinesisFirehose.DeliveryStreamTypes.BufferingHints BufferingHints { get; set; }
@@ -6997,11 +7062,6 @@ namespace Humidifier.Interfaces
     public interface IHaveMediaPackagePackagingConfigurationTypesSpekeKeyProviderSpekeKeyProvider : IResourceInterface
     {
         Humidifier.MediaPackage.PackagingConfigurationTypes.SpekeKeyProvider SpekeKeyProvider { get; set; }
-    }
-
-    public interface IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration : IResourceInterface
-    {
-        Humidifier.MediaPackageV2.OriginEndpointTypes.FilterConfiguration FilterConfiguration { get; set; }
     }
 
     public interface IHaveRelativePosition : IResourceInterface
@@ -7379,9 +7439,9 @@ namespace Humidifier.Interfaces
         dynamic KeyAlgorithm { get; set; }
     }
 
-    public interface IHaveWorkspace : IResourceInterface
+    public interface IHaveRecordType : IResourceInterface
     {
-        dynamic Workspace { get; set; }
+        dynamic RecordType { get; set; }
     }
 
     public interface IHaveRegistryId : IResourceInterface
@@ -7639,6 +7699,11 @@ namespace Humidifier.Interfaces
         dynamic AutoUpdate { get; set; }
     }
 
+    public interface IHaveCallerReference : IResourceInterface
+    {
+        dynamic CallerReference { get; set; }
+    }
+
     public interface IHaveFields : IResourceInterface
     {
         dynamic Fields { get; set; }
@@ -7719,6 +7784,16 @@ namespace Humidifier.Interfaces
         dynamic ComputePlatform { get; set; }
     }
 
+    public interface IHaveAuthentication : IResourceInterface
+    {
+        dynamic Authentication { get; set; }
+    }
+
+    public interface IHaveOwnerId : IResourceInterface
+    {
+        dynamic OwnerId { get; set; }
+    }
+
     public interface IHaveDetailType : IResourceInterface
     {
         dynamic DetailType { get; set; }
@@ -7764,9 +7839,9 @@ namespace Humidifier.Interfaces
         dynamic IAMRoleARN { get; set; }
     }
 
-    public interface IHaveInstanceProfileArn : IResourceInterface
+    public interface IHaveInstanceProfileName : IResourceInterface
     {
-        dynamic InstanceProfileArn { get; set; }
+        dynamic InstanceProfileName { get; set; }
     }
 
     public interface IHaveAllowMajorVersionUpgrade : IResourceInterface
@@ -7959,11 +8034,6 @@ namespace Humidifier.Interfaces
         dynamic Egress { get; set; }
     }
 
-    public interface IHaveRuleNumber : IResourceInterface
-    {
-        dynamic RuleNumber { get; set; }
-    }
-
     public interface IHaveSourceIp : IResourceInterface
     {
         dynamic SourceIp { get; set; }
@@ -8084,11 +8154,6 @@ namespace Humidifier.Interfaces
         dynamic InstanceRole { get; set; }
     }
 
-    public interface IHaveAuthMode : IResourceInterface
-    {
-        dynamic AuthMode { get; set; }
-    }
-
     public interface IHaveSnapshotArns : IResourceInterface
     {
         dynamic SnapshotArns { get; set; }
@@ -8164,6 +8229,11 @@ namespace Humidifier.Interfaces
         dynamic WorkflowName { get; set; }
     }
 
+    public interface IHaveRetentionDays : IResourceInterface
+    {
+        dynamic RetentionDays { get; set; }
+    }
+
     public interface IHaveProject : IResourceInterface
     {
         dynamic Project { get; set; }
@@ -8192,6 +8262,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSchemaVersionId : IResourceInterface
     {
         dynamic SchemaVersionId { get; set; }
+    }
+
+    public interface IHaveOwnerType : IResourceInterface
+    {
+        dynamic OwnerType { get; set; }
     }
 
     public interface IHaveFunctionType : IResourceInterface
@@ -8232,6 +8307,11 @@ namespace Humidifier.Interfaces
     public interface IHavePackageName : IResourceInterface
     {
         dynamic PackageName { get; set; }
+    }
+
+    public interface IHaveTaskName : IResourceInterface
+    {
+        dynamic TaskName { get; set; }
     }
 
     public interface IHaveApplicationDescription : IResourceInterface
@@ -8404,11 +8484,6 @@ namespace Humidifier.Interfaces
         dynamic EdgeLocations { get; set; }
     }
 
-    public interface IHaveVpcArn : IResourceInterface
-    {
-        dynamic VpcArn { get; set; }
-    }
-
     public interface IHaveFirewallType : IResourceInterface
     {
         dynamic FirewallType { get; set; }
@@ -8534,6 +8609,11 @@ namespace Humidifier.Interfaces
         dynamic ResourceOwner { get; set; }
     }
 
+    public interface IHaveSeverity : IResourceInterface
+    {
+        dynamic Severity { get; set; }
+    }
+
     public interface IHaveFeatureType : IResourceInterface
     {
         dynamic FeatureType { get; set; }
@@ -8554,9 +8634,9 @@ namespace Humidifier.Interfaces
         dynamic DnsViewId { get; set; }
     }
 
-    public interface IHaveConfidenceThreshold : IResourceInterface
+    public interface IHaveIpv4Address : IResourceInterface
     {
-        dynamic ConfidenceThreshold { get; set; }
+        dynamic Ipv4Address { get; set; }
     }
 
     public interface IHaveVectorBucketArn : IResourceInterface
@@ -8674,6 +8754,16 @@ namespace Humidifier.Interfaces
         dynamic StateMachineArn { get; set; }
     }
 
+    public interface IHaveLocationARN : IResourceInterface
+    {
+        dynamic LocationARN { get; set; }
+    }
+
+    public interface IHaveRequesterPays : IResourceInterface
+    {
+        dynamic RequesterPays { get; set; }
+    }
+
     public interface IHaveRuntimeVersion : IResourceInterface
     {
         dynamic RuntimeVersion { get; set; }
@@ -8757,11 +8847,6 @@ namespace Humidifier.Interfaces
     public interface IHaveObjectIdentifier : IResourceInterface
     {
         dynamic ObjectIdentifier { get; set; }
-    }
-
-    public interface IHaveCritical : IResourceInterface
-    {
-        dynamic Critical { get; set; }
     }
 
     public interface IHaveKeyEncipherment : IResourceInterface
@@ -9289,11 +9374,6 @@ namespace Humidifier.Interfaces
         dynamic ConnectorId { get; set; }
     }
 
-    public interface IHaveAdditionalParams : IResourceInterface
-    {
-        dynamic AdditionalParams { get; set; }
-    }
-
     public interface IHaveApiKeyArn : IResourceInterface
     {
         dynamic ApiKeyArn { get; set; }
@@ -9409,14 +9489,14 @@ namespace Humidifier.Interfaces
         dynamic HeaderValue { get; set; }
     }
 
+    public interface IHaveApiKeyValue : IResourceInterface
+    {
+        dynamic ApiKeyValue { get; set; }
+    }
+
     public interface IHavePackaging : IResourceInterface
     {
         dynamic Packaging { get; set; }
-    }
-
-    public interface IHaveTargetUrl : IResourceInterface
-    {
-        dynamic TargetUrl { get; set; }
     }
 
     public interface IHaveSourceIdentifier : IResourceInterface
@@ -9539,6 +9619,11 @@ namespace Humidifier.Interfaces
         dynamic FlowId { get; set; }
     }
 
+    public interface IHaveBackground : IResourceInterface
+    {
+        dynamic Background { get; set; }
+    }
+
     public interface IHaveDialingCapacity : IResourceInterface
     {
         dynamic DialingCapacity { get; set; }
@@ -9599,6 +9684,11 @@ namespace Humidifier.Interfaces
         dynamic BucketAccessRoleArn { get; set; }
     }
 
+    public interface IHaveOperatorAppRoleArn : IResourceInterface
+    {
+        dynamic OperatorAppRoleArn { get; set; }
+    }
+
     public interface IHaveSubscriptionId : IResourceInterface
     {
         dynamic SubscriptionId { get; set; }
@@ -9612,6 +9702,16 @@ namespace Humidifier.Interfaces
     public interface IHaveDevOpsAgentServiceTypesOAuthClientDetailsOAuthClientCredentials : IResourceInterface
     {
         Humidifier.DevOpsAgent.ServiceTypes.OAuthClientDetails OAuthClientCredentials { get; set; }
+    }
+
+    public interface IHaveOrganizationName : IResourceInterface
+    {
+        dynamic OrganizationName { get; set; }
+    }
+
+    public interface IHaveTokenType : IResourceInterface
+    {
+        dynamic TokenType { get; set; }
     }
 
     public interface IHaveDevOpsAgentServiceTypesBearerTokenDetailsBearerToken : IResourceInterface
@@ -10069,84 +10169,9 @@ namespace Humidifier.Interfaces
         dynamic ErrorMessage { get; set; }
     }
 
-    public interface IHaveMqttTopic : IResourceInterface
-    {
-        dynamic MqttTopic { get; set; }
-    }
-
-    public interface IHaveOffsetInNanos : IResourceInterface
-    {
-        dynamic OffsetInNanos { get; set; }
-    }
-
-    public interface IHaveTimeInSeconds : IResourceInterface
-    {
-        dynamic TimeInSeconds { get; set; }
-    }
-
-    public interface IHaveQuality : IResourceInterface
-    {
-        dynamic Quality { get; set; }
-    }
-
     public interface IHaveMetricNamespace : IResourceInterface
     {
         dynamic MetricNamespace { get; set; }
-    }
-
-    public interface IHaveHashKeyField : IResourceInterface
-    {
-        dynamic HashKeyField { get; set; }
-    }
-
-    public interface IHaveHashKeyType : IResourceInterface
-    {
-        dynamic HashKeyType { get; set; }
-    }
-
-    public interface IHaveHashKeyValue : IResourceInterface
-    {
-        dynamic HashKeyValue { get; set; }
-    }
-
-    public interface IHavePayloadField : IResourceInterface
-    {
-        dynamic PayloadField { get; set; }
-    }
-
-    public interface IHaveRangeKeyField : IResourceInterface
-    {
-        dynamic RangeKeyField { get; set; }
-    }
-
-    public interface IHaveRangeKeyType : IResourceInterface
-    {
-        dynamic RangeKeyType { get; set; }
-    }
-
-    public interface IHaveRangeKeyValue : IResourceInterface
-    {
-        dynamic RangeKeyValue { get; set; }
-    }
-
-    public interface IHaveEntryId : IResourceInterface
-    {
-        dynamic EntryId { get; set; }
-    }
-
-    public interface IHavePropertyAlias : IResourceInterface
-    {
-        dynamic PropertyAlias { get; set; }
-    }
-
-    public interface IHaveQueueUrl : IResourceInterface
-    {
-        dynamic QueueUrl { get; set; }
-    }
-
-    public interface IHaveUseBase64 : IResourceInterface
-    {
-        dynamic UseBase64 { get; set; }
     }
 
     public interface IHaveNumberOfDays : IResourceInterface
@@ -10184,11 +10209,6 @@ namespace Humidifier.Interfaces
         dynamic DateValue { get; set; }
     }
 
-    public interface IHaveArtifactId : IResourceInterface
-    {
-        dynamic ArtifactId { get; set; }
-    }
-
     public interface IHaveKinesisFirehoseDeliveryStreamTypesVpcConfigurationVpcConfiguration : IResourceInterface
     {
         Humidifier.KinesisFirehose.DeliveryStreamTypes.VpcConfiguration VpcConfiguration { get; set; }
@@ -10202,6 +10222,11 @@ namespace Humidifier.Interfaces
     public interface IHaveExcludedColumnNames : IResourceInterface
     {
         dynamic ExcludedColumnNames { get; set; }
+    }
+
+    public interface IHaveLogStream : IResourceInterface
+    {
+        dynamic LogStream { get; set; }
     }
 
     public interface IHaveBedrockKnowledgeBaseArn : IResourceInterface
@@ -10542,6 +10567,21 @@ namespace Humidifier.Interfaces
     public interface IHaveUriPathType : IResourceInterface
     {
         dynamic UriPathType { get; set; }
+    }
+
+    public interface IHaveDrmSettings : IResourceInterface
+    {
+        dynamic DrmSettings { get; set; }
+    }
+
+    public interface IHaveClipStartTime : IResourceInterface
+    {
+        dynamic ClipStartTime { get; set; }
+    }
+
+    public interface IHaveManifestFilter : IResourceInterface
+    {
+        dynamic ManifestFilter { get; set; }
     }
 
     public interface IHaveSourceGroup : IResourceInterface
@@ -11994,6 +12034,11 @@ namespace Humidifier.Interfaces
         dynamic InputColumnName { get; set; }
     }
 
+    public interface IHaveQuickSightDataSourceTypesOAuthParametersOAuthParameters : IResourceInterface
+    {
+        Humidifier.QuickSight.DataSourceTypes.OAuthParameters OAuthParameters { get; set; }
+    }
+
     public interface IHaveTableBucketArn : IResourceInterface
     {
         dynamic TableBucketArn { get; set; }
@@ -12369,6 +12414,11 @@ namespace Humidifier.Interfaces
         dynamic LeaveComments { get; set; }
     }
 
+    public interface IHaveInstallationId : IResourceInterface
+    {
+        dynamic InstallationId { get; set; }
+    }
+
     public interface IHaveChannelIdentification : IResourceInterface
     {
         dynamic ChannelIdentification { get; set; }
@@ -12427,11 +12477,6 @@ namespace Humidifier.Interfaces
     public interface IHaveAnalyzerName : IResourceInterface
     {
         dynamic AnalyzerName { get; set; }
-    }
-
-    public interface IHaveRecordType : IResourceInterface
-    {
-        dynamic RecordType { get; set; }
     }
 
     public interface IHaveAuthenticationStrategy : IResourceInterface
@@ -12612,11 +12657,6 @@ namespace Humidifier.Interfaces
     public interface IHaveContentHandlingStrategy : IResourceInterface
     {
         dynamic ContentHandlingStrategy { get; set; }
-    }
-
-    public interface IHaveIntegrationId : IResourceInterface
-    {
-        dynamic IntegrationId { get; set; }
     }
 
     public interface IHaveModelSelectionExpression : IResourceInterface
@@ -13199,6 +13239,11 @@ namespace Humidifier.Interfaces
         dynamic DomainOwner { get; set; }
     }
 
+    public interface IHaveServerType : IResourceInterface
+    {
+        dynamic ServerType { get; set; }
+    }
+
     public interface IHaveHostArn : IResourceInterface
     {
         dynamic HostArn { get; set; }
@@ -13212,16 +13257,6 @@ namespace Humidifier.Interfaces
     public interface IHaveCodePipelinePipelineTypesArtifactStoreArtifactStore : IResourceInterface
     {
         Humidifier.CodePipeline.PipelineTypes.ArtifactStore ArtifactStore { get; set; }
-    }
-
-    public interface IHaveAuthentication : IResourceInterface
-    {
-        dynamic Authentication { get; set; }
-    }
-
-    public interface IHaveOwnerId : IResourceInterface
-    {
-        dynamic OwnerId { get; set; }
     }
 
     public interface IHaveSyncType : IResourceInterface
@@ -13329,6 +13364,11 @@ namespace Humidifier.Interfaces
         Humidifier.CustomerProfiles.RecommenderTypes.RecommenderConfig RecommenderConfig { get; set; }
     }
 
+    public interface IHaveRecommenderSchemaName : IResourceInterface
+    {
+        dynamic RecommenderSchemaName { get; set; }
+    }
+
     public interface IHaveSegmentDefinitionName : IResourceInterface
     {
         dynamic SegmentDefinitionName { get; set; }
@@ -13364,29 +13404,14 @@ namespace Humidifier.Interfaces
         dynamic CertificatePem { get; set; }
     }
 
-    public interface IHaveMigrationProjectIdentifier : IResourceInterface
-    {
-        dynamic MigrationProjectIdentifier { get; set; }
-    }
-
     public interface IHaveDataProviderName : IResourceInterface
     {
         dynamic DataProviderName { get; set; }
     }
 
-    public interface IHaveDataProviderIdentifier : IResourceInterface
-    {
-        dynamic DataProviderIdentifier { get; set; }
-    }
-
     public interface IHaveEngineName : IResourceInterface
     {
         dynamic EngineName { get; set; }
-    }
-
-    public interface IHaveInstanceProfileIdentifier : IResourceInterface
-    {
-        dynamic InstanceProfileIdentifier { get; set; }
     }
 
     public interface IHaveTableMappings : IResourceInterface
@@ -13542,6 +13567,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDisableEmailNotification : IResourceInterface
     {
         dynamic DisableEmailNotification { get; set; }
+    }
+
+    public interface IHavePrivateConnectionName : IResourceInterface
+    {
+        dynamic PrivateConnectionName { get; set; }
     }
 
     public interface IHaveRequestMACSec : IResourceInterface
@@ -13889,6 +13919,11 @@ namespace Humidifier.Interfaces
         dynamic TransitGatewayPolicyTableId { get; set; }
     }
 
+    public interface IHaveTargetRouteTableId : IResourceInterface
+    {
+        dynamic TargetRouteTableId { get; set; }
+    }
+
     public interface IHaveInternetGatewayBlockMode : IResourceInterface
     {
         dynamic InternetGatewayBlockMode { get; set; }
@@ -14129,11 +14164,6 @@ namespace Humidifier.Interfaces
         dynamic ArchiveName { get; set; }
     }
 
-    public interface IHaveRetentionDays : IResourceInterface
-    {
-        dynamic RetentionDays { get; set; }
-    }
-
     public interface IHaveEventSourceName : IResourceInterface
     {
         dynamic EventSourceName { get; set; }
@@ -14252,11 +14282,6 @@ namespace Humidifier.Interfaces
     public interface IHaveSchemaDefinition : IResourceInterface
     {
         dynamic SchemaDefinition { get; set; }
-    }
-
-    public interface IHaveOwnerType : IResourceInterface
-    {
-        dynamic OwnerType { get; set; }
     }
 
     public interface IHaveClassName : IResourceInterface
@@ -14507,11 +14532,6 @@ namespace Humidifier.Interfaces
     public interface IHaveGatewayName : IResourceInterface
     {
         dynamic GatewayName { get; set; }
-    }
-
-    public interface IHaveTaskName : IResourceInterface
-    {
-        dynamic TaskName { get; set; }
     }
 
     public interface IHaveDisassociateWirelessDevice : IResourceInterface
@@ -14772,11 +14792,6 @@ namespace Humidifier.Interfaces
     public interface IHavePackagingGroupId : IResourceInterface
     {
         dynamic PackagingGroupId { get; set; }
-    }
-
-    public interface IHaveTimeDelaySeconds : IResourceInterface
-    {
-        dynamic TimeDelaySeconds { get; set; }
     }
 
     public interface IHaveStartoverWindowSeconds : IResourceInterface
@@ -15074,6 +15089,11 @@ namespace Humidifier.Interfaces
         dynamic TargetIds { get; set; }
     }
 
+    public interface IHaveStartTimestamp : IResourceInterface
+    {
+        dynamic StartTimestamp { get; set; }
+    }
+
     public interface IHaveNumResults : IResourceInterface
     {
         dynamic NumResults { get; set; }
@@ -15127,6 +15147,11 @@ namespace Humidifier.Interfaces
     public interface IHaveEventDestinationName : IResourceInterface
     {
         dynamic EventDestinationName { get; set; }
+    }
+
+    public interface IHaveManagementAccountId : IResourceInterface
+    {
+        dynamic ManagementAccountId { get; set; }
     }
 
     public interface IHaveServerUrl : IResourceInterface
@@ -15187,6 +15212,11 @@ namespace Humidifier.Interfaces
     public interface IHaveReplace : IResourceInterface
     {
         dynamic Replace { get; set; }
+    }
+
+    public interface IHaveSources : IResourceInterface
+    {
+        dynamic Sources { get; set; }
     }
 
     public interface IHaveDBClusterSnapshotIdentifier : IResourceInterface
@@ -15354,6 +15384,11 @@ namespace Humidifier.Interfaces
         Humidifier.RedshiftServerless.WorkgroupTypes.PerformanceTarget PricePerformanceTarget { get; set; }
     }
 
+    public interface IHaveProjectArn : IResourceInterface
+    {
+        dynamic ProjectArn { get; set; }
+    }
+
     public interface IHaveAssessmentName : IResourceInterface
     {
         dynamic AssessmentName { get; set; }
@@ -15474,11 +15509,6 @@ namespace Humidifier.Interfaces
         dynamic ObjectLockEnabled { get; set; }
     }
 
-    public interface IHaveIpv4Address : IResourceInterface
-    {
-        dynamic Ipv4Address { get; set; }
-    }
-
     public interface IHaveOutpostId : IResourceInterface
     {
         dynamic OutpostId { get; set; }
@@ -15547,11 +15577,6 @@ namespace Humidifier.Interfaces
     public interface IHavePolicies : IResourceInterface
     {
         dynamic Policies { get; set; }
-    }
-
-    public interface IHaveBucketRegion : IResourceInterface
-    {
-        dynamic BucketRegion { get; set; }
     }
 
     public interface IHaveSyncFormat : IResourceInterface
@@ -15739,19 +15764,39 @@ namespace Humidifier.Interfaces
         dynamic StateMachineName { get; set; }
     }
 
-    public interface IHaveGatewayARN : IResourceInterface
+    public interface IHaveGuessMIMETypeEnabled : IResourceInterface
     {
-        dynamic GatewayARN { get; set; }
+        dynamic GuessMIMETypeEnabled { get; set; }
     }
 
-    public interface IHaveKMSKey : IResourceInterface
+    public interface IHaveObjectACL : IResourceInterface
     {
-        dynamic KMSKey { get; set; }
+        dynamic ObjectACL { get; set; }
     }
 
-    public interface IHaveKMSEncrypted : IResourceInterface
+    public interface IHaveFileShareName : IResourceInterface
     {
-        dynamic KMSEncrypted { get; set; }
+        dynamic FileShareName { get; set; }
+    }
+
+    public interface IHaveDefaultStorageClass : IResourceInterface
+    {
+        dynamic DefaultStorageClass { get; set; }
+    }
+
+    public interface IHaveAuditDestinationARN : IResourceInterface
+    {
+        dynamic AuditDestinationARN { get; set; }
+    }
+
+    public interface IHaveVPCEndpointDNSName : IResourceInterface
+    {
+        dynamic VPCEndpointDNSName { get; set; }
+    }
+
+    public interface IHaveNotificationPolicy : IResourceInterface
+    {
+        dynamic NotificationPolicy { get; set; }
     }
 
     public interface IHaveResourcesToReplicateTags : IResourceInterface
@@ -15972,6 +16017,11 @@ namespace Humidifier.Interfaces
     public interface IHavePseudonym : IResourceInterface
     {
         dynamic Pseudonym { get; set; }
+    }
+
+    public interface IHaveRetryIntervalMinutes : IResourceInterface
+    {
+        dynamic RetryIntervalMinutes { get; set; }
     }
 
     public interface IHaveDatabaseClusterArns : IResourceInterface
@@ -17014,14 +17064,29 @@ namespace Humidifier.Interfaces
         List<Humidifier.Bedrock.PromptVersionTypes.PromptInputVariable> InputVariables { get; set; }
     }
 
+    public interface IHaveInstanceProfileArn : IResourceInterface
+    {
+        dynamic InstanceProfileArn { get; set; }
+    }
+
     public interface IHaveCapacityProviderOperatorRoleArn : IResourceInterface
     {
         dynamic CapacityProviderOperatorRoleArn { get; set; }
     }
 
+    public interface IHaveCredentialProviderArn : IResourceInterface
+    {
+        dynamic CredentialProviderArn { get; set; }
+    }
+
     public interface IHaveBedrockAgentCoreEvaluatorTypesEvaluatorModelConfigModelConfig : IResourceInterface
     {
         Humidifier.BedrockAgentCore.EvaluatorTypes.EvaluatorModelConfig ModelConfig { get; set; }
+    }
+
+    public interface IHaveDynDicOfAdvertisedScopeMapping : IResourceInterface
+    {
+        Dictionary<string, dynamic> AdvertisedScopeMapping { get; set; }
     }
 
     public interface IHaveBundleVersion : IResourceInterface
@@ -17092,6 +17157,11 @@ namespace Humidifier.Interfaces
     public interface IHaveInputSchema : IResourceInterface
     {
         dynamic InputSchema { get; set; }
+    }
+
+    public interface IHaveApiBase : IResourceInterface
+    {
+        dynamic ApiBase { get; set; }
     }
 
     public interface IHaveIdleRuntimeSessionTimeout : IResourceInterface
@@ -17579,11 +17649,6 @@ namespace Humidifier.Interfaces
         dynamic AdvertiseTrustStoreCaNames { get; set; }
     }
 
-    public interface IHaveCallerReference : IResourceInterface
-    {
-        dynamic CallerReference { get; set; }
-    }
-
     public interface IHaveAccessControlMaxAgeSec : IResourceInterface
     {
         dynamic AccessControlMaxAgeSec { get; set; }
@@ -17794,6 +17859,61 @@ namespace Humidifier.Interfaces
         Humidifier.Connect.InstanceStorageConfigTypes.EncryptionConfig EncryptionConfig { get; set; }
     }
 
+    public interface IHaveDeDE : IResourceInterface
+    {
+        dynamic DeDE { get; set; }
+    }
+
+    public interface IHavePtBR : IResourceInterface
+    {
+        dynamic PtBR { get; set; }
+    }
+
+    public interface IHaveZhCN : IResourceInterface
+    {
+        dynamic ZhCN { get; set; }
+    }
+
+    public interface IHaveIdID : IResourceInterface
+    {
+        dynamic IdID { get; set; }
+    }
+
+    public interface IHaveItIT : IResourceInterface
+    {
+        dynamic ItIT { get; set; }
+    }
+
+    public interface IHaveEnUS : IResourceInterface
+    {
+        dynamic EnUS { get; set; }
+    }
+
+    public interface IHaveKoKR : IResourceInterface
+    {
+        dynamic KoKR { get; set; }
+    }
+
+    public interface IHaveFrFR : IResourceInterface
+    {
+        dynamic FrFR { get; set; }
+    }
+
+    public interface IHaveZhTW : IResourceInterface
+    {
+        dynamic ZhTW { get; set; }
+    }
+
+    public interface IHaveEsES : IResourceInterface
+    {
+        dynamic EsES { get; set; }
+    }
+
+    public interface IHaveJaJP : IResourceInterface
+    {
+        dynamic JaJP { get; set; }
+    }
+
     public interface IHaveQueueArn : IResourceInterface
     {
         dynamic QueueArn { get; set; }
@@ -17807,6 +17927,16 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfConnectRuleTypesFieldFields : IResourceInterface
     {
         List<Humidifier.Connect.RuleTypes.Field> Fields { get; set; }
+    }
+
+    public interface IHaveDynDicOfUserTags : IResourceInterface
+    {
+        Dictionary<string, dynamic> UserTags { get; set; }
+    }
+
+    public interface IHaveUserArns : IResourceInterface
+    {
+        dynamic UserArns { get; set; }
     }
 
     public interface IHaveAfterContactWorkTimeLimit : IResourceInterface
@@ -17827,11 +17957,6 @@ namespace Humidifier.Interfaces
     public interface IHavePhoneType : IResourceInterface
     {
         dynamic PhoneType { get; set; }
-    }
-
-    public interface IHaveBackground : IResourceInterface
-    {
-        dynamic Background { get; set; }
     }
 
     public interface IHaveTextHover : IResourceInterface
@@ -18374,14 +18499,19 @@ namespace Humidifier.Interfaces
         dynamic RenderingTaskBuffer { get; set; }
     }
 
-    public interface IHaveOperatorAppRoleArn : IResourceInterface
+    public interface IHaveIssuerUrl : IResourceInterface
     {
-        dynamic OperatorAppRoleArn { get; set; }
+        dynamic IssuerUrl { get; set; }
     }
 
     public interface IHaveAssumableRoleArn : IResourceInterface
     {
         dynamic AssumableRoleArn { get; set; }
+    }
+
+    public interface IHaveAgentElevatedRoleArn : IResourceInterface
+    {
+        dynamic AgentElevatedRoleArn { get; set; }
     }
 
     public interface IHaveListOfDevOpsAgentAssociationTypesAWSResourceResources : IResourceInterface
@@ -18399,6 +18529,11 @@ namespace Humidifier.Interfaces
         List<Humidifier.DevOpsAgent.AssociationTypes.KeyValuePair> Tags { get; set; }
     }
 
+    public interface IHaveEnabledElevatedTools : IResourceInterface
+    {
+        dynamic EnabledElevatedTools { get; set; }
+    }
+
     public interface IHaveServices : IResourceInterface
     {
         dynamic Services { get; set; }
@@ -18407,11 +18542,6 @@ namespace Humidifier.Interfaces
     public interface IHaveApiKeyHeader : IResourceInterface
     {
         dynamic ApiKeyHeader { get; set; }
-    }
-
-    public interface IHaveApiKeyValue : IResourceInterface
-    {
-        dynamic ApiKeyValue { get; set; }
     }
 
     public interface IHaveApiKeyName : IResourceInterface
@@ -18429,19 +18559,14 @@ namespace Humidifier.Interfaces
         dynamic WebIdentityTokenAudiences { get; set; }
     }
 
-    public interface IHaveTokenValue : IResourceInterface
-    {
-        dynamic TokenValue { get; set; }
-    }
-
     public interface IHaveAccountUrn : IResourceInterface
     {
         dynamic AccountUrn { get; set; }
     }
 
-    public interface IHaveTokenType : IResourceInterface
+    public interface IHaveAppVariant : IResourceInterface
     {
-        dynamic TokenType { get; set; }
+        dynamic AppVariant { get; set; }
     }
 
     public interface IHaveExchangeParameters : IResourceInterface
@@ -18687,6 +18812,16 @@ namespace Humidifier.Interfaces
     public interface IHaveLoadBalancerPort : IResourceInterface
     {
         dynamic LoadBalancerPort { get; set; }
+    }
+
+    public interface IHaveDestinationCidr : IResourceInterface
+    {
+        dynamic DestinationCidr { get; set; }
+    }
+
+    public interface IHaveEC2NetworkInsightsAnalysisTypesAnalysisTransitGatewayPolicyTableEntryTransitGatewayPolicyTableEntry : IResourceInterface
+    {
+        Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisTransitGatewayPolicyTableEntry TransitGatewayPolicyTableEntry { get; set; }
     }
 
     public interface IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener : IResourceInterface
@@ -18939,9 +19074,9 @@ namespace Humidifier.Interfaces
         dynamic CoolDown { get; set; }
     }
 
-    public interface IHaveListOfEMRInstanceFleetConfigTypesConfigurationConfigurations : IResourceInterface
+    public interface IHaveListOfEMRInstanceFleetConfigTypesApplicationConfigurationConfigurations : IResourceInterface
     {
-        List<Humidifier.EMR.InstanceFleetConfigTypes.Configuration> Configurations { get; set; }
+        List<Humidifier.EMR.InstanceFleetConfigTypes.ApplicationConfiguration> Configurations { get; set; }
     }
 
     public interface IHaveEMRInstanceFleetConfigTypesOnDemandCapacityReservationOptionsCapacityReservationOptions : IResourceInterface
@@ -19292,6 +19427,11 @@ namespace Humidifier.Interfaces
     public interface IHaveGameLiftContainerGroupDefinitionTypesLinuxCapabilitiesLinuxCapabilities : IResourceInterface
     {
         Humidifier.GameLift.ContainerGroupDefinitionTypes.LinuxCapabilities LinuxCapabilities { get; set; }
+    }
+
+    public interface IHaveVcpu : IResourceInterface
+    {
+        dynamic Vcpu { get; set; }
     }
 
     public interface IHaveResolvedImageDigest : IResourceInterface
@@ -19734,14 +19874,69 @@ namespace Humidifier.Interfaces
         dynamic ConfidenceLevel { get; set; }
     }
 
+    public interface IHaveMqttTopic : IResourceInterface
+    {
+        dynamic MqttTopic { get; set; }
+    }
+
     public interface IHaveIoTSoftwarePackageVersionTypesS3LocationS3Location : IResourceInterface
     {
         Humidifier.IoT.SoftwarePackageVersionTypes.S3Location S3Location { get; set; }
     }
 
+    public interface IHaveOffsetInNanos : IResourceInterface
+    {
+        dynamic OffsetInNanos { get; set; }
+    }
+
+    public interface IHaveTimeInSeconds : IResourceInterface
+    {
+        dynamic TimeInSeconds { get; set; }
+    }
+
+    public interface IHaveQuality : IResourceInterface
+    {
+        dynamic Quality { get; set; }
+    }
+
     public interface IHaveMetricValue : IResourceInterface
     {
         dynamic MetricValue { get; set; }
+    }
+
+    public interface IHaveHashKeyField : IResourceInterface
+    {
+        dynamic HashKeyField { get; set; }
+    }
+
+    public interface IHaveHashKeyType : IResourceInterface
+    {
+        dynamic HashKeyType { get; set; }
+    }
+
+    public interface IHaveHashKeyValue : IResourceInterface
+    {
+        dynamic HashKeyValue { get; set; }
+    }
+
+    public interface IHavePayloadField : IResourceInterface
+    {
+        dynamic PayloadField { get; set; }
+    }
+
+    public interface IHaveRangeKeyField : IResourceInterface
+    {
+        dynamic RangeKeyField { get; set; }
+    }
+
+    public interface IHaveRangeKeyType : IResourceInterface
+    {
+        dynamic RangeKeyType { get; set; }
+    }
+
+    public interface IHaveRangeKeyValue : IResourceInterface
+    {
+        dynamic RangeKeyValue { get; set; }
     }
 
     public interface IHaveIndex : IResourceInterface
@@ -19759,6 +19954,26 @@ namespace Humidifier.Interfaces
         dynamic MessageId { get; set; }
     }
 
+    public interface IHaveEntryId : IResourceInterface
+    {
+        dynamic EntryId { get; set; }
+    }
+
+    public interface IHavePropertyAlias : IResourceInterface
+    {
+        dynamic PropertyAlias { get; set; }
+    }
+
+    public interface IHaveQueueUrl : IResourceInterface
+    {
+        dynamic QueueUrl { get; set; }
+    }
+
+    public interface IHaveUseBase64 : IResourceInterface
+    {
+        dynamic UseBase64 { get; set; }
+    }
+
     public interface IHaveServiceManagedS3 : IResourceInterface
     {
         dynamic ServiceManagedS3 { get; set; }
@@ -19767,11 +19982,6 @@ namespace Humidifier.Interfaces
     public interface IHaveSqlQuery : IResourceInterface
     {
         dynamic SqlQuery { get; set; }
-    }
-
-    public interface IHaveContentExpression : IResourceInterface
-    {
-        dynamic ContentExpression { get; set; }
     }
 
     public interface IHaveListOfIoTEventsDetectorModelTypesActionActions : IResourceInterface
@@ -20067,11 +20277,6 @@ namespace Humidifier.Interfaces
     public interface IHaveIpv6AllowedForDualStack : IResourceInterface
     {
         dynamic Ipv6AllowedForDualStack { get; set; }
-    }
-
-    public interface IHaveLogStream : IResourceInterface
-    {
-        dynamic LogStream { get; set; }
     }
 
     public interface IHaveStartTimeoutMs : IResourceInterface
@@ -20877,6 +21082,11 @@ namespace Humidifier.Interfaces
     public interface IHavePresetSpeke20Video : IResourceInterface
     {
         dynamic PresetSpeke20Video { get; set; }
+    }
+
+    public interface IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration : IResourceInterface
+    {
+        Humidifier.MediaPackageV2.OriginEndpointTypes.FilterConfiguration FilterConfiguration { get; set; }
     }
 
     public interface IHaveChildManifestName : IResourceInterface
@@ -21919,11 +22129,6 @@ namespace Humidifier.Interfaces
         dynamic DatabaseAccessControlRole { get; set; }
     }
 
-    public interface IHaveQuickSightDataSourceTypesOAuthParametersOAuthParameters : IResourceInterface
-    {
-        Humidifier.QuickSight.DataSourceTypes.OAuthParameters OAuthParameters { get; set; }
-    }
-
     public interface IHaveQuickSightTemplateTypesBorderSettingsBorderSettings : IResourceInterface
     {
         Humidifier.QuickSight.TemplateTypes.BorderSettings BorderSettings { get; set; }
@@ -22589,6 +22794,11 @@ namespace Humidifier.Interfaces
         dynamic OptimizedSharedDelivery { get; set; }
     }
 
+    public interface IHaveSuppressedReasons : IResourceInterface
+    {
+        dynamic SuppressedReasons { get; set; }
+    }
+
     public interface IHaveResultField : IResourceInterface
     {
         dynamic ResultField { get; set; }
@@ -23004,6 +23214,21 @@ namespace Humidifier.Interfaces
         dynamic ExcludeCharacters { get; set; }
     }
 
+    public interface IHaveUris : IResourceInterface
+    {
+        dynamic Uris { get; set; }
+    }
+
+    public interface IHaveProviderResourceId : IResourceInterface
+    {
+        dynamic ProviderResourceId { get; set; }
+    }
+
+    public interface IHaveNetworkTrafficRuleType : IResourceInterface
+    {
+        dynamic NetworkTrafficRuleType { get; set; }
+    }
+
     public interface IHaveEnum : IResourceInterface
     {
         dynamic Enum { get; set; }
@@ -23074,9 +23299,29 @@ namespace Humidifier.Interfaces
         dynamic StateMachineVersionArn { get; set; }
     }
 
+    public interface IHaveCacheStaleTimeoutInSeconds : IResourceInterface
+    {
+        dynamic CacheStaleTimeoutInSeconds { get; set; }
+    }
+
     public interface IHaveBrowserType : IResourceInterface
     {
         dynamic BrowserType { get; set; }
+    }
+
+    public interface IHaveIngestQueryInstances : IResourceInterface
+    {
+        dynamic IngestQueryInstances { get; set; }
+    }
+
+    public interface IHaveDedicatedCompactor : IResourceInterface
+    {
+        dynamic DedicatedCompactor { get; set; }
+    }
+
+    public interface IHaveQueryOnlyInstances : IResourceInterface
+    {
+        dynamic QueryOnlyInstances { get; set; }
     }
 
     public interface IHaveTimestreamInfluxDBParameterGroupTypesDurationPreemptiveCacheAge : IResourceInterface
@@ -23794,6 +24039,11 @@ namespace Humidifier.Interfaces
         Humidifier.AgentRegistry.RegistryTypes.EncryptionConfiguration EncryptionConfiguration { get; set; }
     }
 
+    public interface IHaveAgentRegistryRegistryTypesCustomMetadataSchemaConfigurationCustomMetadataSchemaConfiguration : IResourceInterface
+    {
+        Humidifier.AgentRegistry.RegistryTypes.CustomMetadataSchemaConfiguration CustomMetadataSchemaConfiguration { get; set; }
+    }
+
     public interface IHaveAgentRegistryRegistryTypesDiscoveryConfigurationDiscoveryConfiguration : IResourceInterface
     {
         Humidifier.AgentRegistry.RegistryTypes.DiscoveryConfiguration DiscoveryConfiguration { get; set; }
@@ -23812,6 +24062,11 @@ namespace Humidifier.Interfaces
     public interface IHaveAgentRegistryRegistryRecordTypesDescriptorsDescriptors : IResourceInterface
     {
         Humidifier.AgentRegistry.RegistryRecordTypes.Descriptors Descriptors { get; set; }
+    }
+
+    public interface IHaveCustomMetadata : IResourceInterface
+    {
+        dynamic CustomMetadata { get; set; }
     }
 
     public interface IHaveDataReplicationPrimaryBrokerArn : IResourceInterface
@@ -24562,6 +24817,26 @@ namespace Humidifier.Interfaces
     public interface IHaveAppBundleIdentifier : IResourceInterface
     {
         dynamic AppBundleIdentifier { get; set; }
+    }
+
+    public interface IHaveAppBundleArn : IResourceInterface
+    {
+        dynamic AppBundleArn { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesDestinationConfigurationDestinationConfiguration : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.DestinationConfiguration DestinationConfiguration { get; set; }
+    }
+
+    public interface IHaveIngestionArn : IResourceInterface
+    {
+        dynamic IngestionArn { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesProcessingConfigurationProcessingConfiguration : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.ProcessingConfiguration ProcessingConfiguration { get; set; }
     }
 
     public interface IHaveConnectorProvisioningType : IResourceInterface
@@ -26354,6 +26629,16 @@ namespace Humidifier.Interfaces
         Humidifier.BedrockAgentCore.ConfigurationBundleVersionTypes.VersionCreatedBySource CreatedBy { get; set; }
     }
 
+    public interface IHaveBedrockAgentCoreConsentPortalTypesIdpConfigIdpConfig : IResourceInterface
+    {
+        Humidifier.BedrockAgentCore.ConsentPortalTypes.IdpConfig IdpConfig { get; set; }
+    }
+
+    public interface IHaveListOfBedrockAgentCoreConsentPortalTypesConsentPortalSourceSources : IResourceInterface
+    {
+        List<Humidifier.BedrockAgentCore.ConsentPortalTypes.ConsentPortalSource> Sources { get; set; }
+    }
+
     public interface IHaveSchemaType : IResourceInterface
     {
         dynamic SchemaType { get; set; }
@@ -27819,6 +28104,16 @@ namespace Humidifier.Interfaces
         dynamic ConnectionGroupId { get; set; }
     }
 
+    public interface IHaveCloudFrontFieldLevelEncryptionConfigTypesContentTypeProfileConfigContentTypeProfileConfig : IResourceInterface
+    {
+        Humidifier.CloudFront.FieldLevelEncryptionConfigTypes.ContentTypeProfileConfig ContentTypeProfileConfig { get; set; }
+    }
+
+    public interface IHaveCloudFrontFieldLevelEncryptionConfigTypesQueryArgProfileConfigQueryArgProfileConfig : IResourceInterface
+    {
+        Humidifier.CloudFront.FieldLevelEncryptionConfigTypes.QueryArgProfileConfig QueryArgProfileConfig { get; set; }
+    }
+
     public interface IHaveCloudFrontFieldLevelEncryptionProfileTypesFieldLevelEncryptionProfileConfigFieldLevelEncryptionProfileConfig : IResourceInterface
     {
         Humidifier.CloudFront.FieldLevelEncryptionProfileTypes.FieldLevelEncryptionProfileConfig FieldLevelEncryptionProfileConfig { get; set; }
@@ -28094,9 +28389,9 @@ namespace Humidifier.Interfaces
         Humidifier.CloudWatch.AnomalyDetectorTypes.MetricCharacteristics MetricCharacteristics { get; set; }
     }
 
-    public interface IHaveCloudWatchAnomalyDetectorTypesMetricConfigurationConfiguration : IResourceInterface
+    public interface IHaveCloudWatchAnomalyDetectorTypesConfigurationConfiguration : IResourceInterface
     {
-        Humidifier.CloudWatch.AnomalyDetectorTypes.MetricConfiguration Configuration { get; set; }
+        Humidifier.CloudWatch.AnomalyDetectorTypes.Configuration Configuration { get; set; }
     }
 
     public interface IHaveCloudWatchAnomalyDetectorTypesMetricMathAnomalyDetectorMetricMathAnomalyDetector : IResourceInterface
@@ -28142,6 +28437,21 @@ namespace Humidifier.Interfaces
     public interface IHaveRuleBody : IResourceInterface
     {
         dynamic RuleBody { get; set; }
+    }
+
+    public interface IHaveCloudWatchIntegrationTypesIntegrationCredentialCredential : IResourceInterface
+    {
+        Humidifier.CloudWatch.IntegrationTypes.IntegrationCredential Credential { get; set; }
+    }
+
+    public interface IHaveDynDicOfIntegrationAttributes : IResourceInterface
+    {
+        Dictionary<string, dynamic> IntegrationAttributes { get; set; }
+    }
+
+    public interface IHaveListOfCloudWatchIntegrationTypesTagsItemsTags : IResourceInterface
+    {
+        List<Humidifier.CloudWatch.IntegrationTypes.TagsItems> Tags { get; set; }
     }
 
     public interface IHaveCloudWatchLogAlarmTypesScheduledQueryConfigurationScheduledQueryConfiguration : IResourceInterface
@@ -28357,11 +28667,6 @@ namespace Humidifier.Interfaces
     public interface IHaveDeleteReports : IResourceInterface
     {
         dynamic DeleteReports { get; set; }
-    }
-
-    public interface IHaveServerType : IResourceInterface
-    {
-        dynamic ServerType { get; set; }
     }
 
     public interface IHaveListOfCodeCommitRepositoryTypesRepositoryTriggerTriggers : IResourceInterface
@@ -30074,9 +30379,19 @@ namespace Humidifier.Interfaces
         dynamic RecommenderRecipeName { get; set; }
     }
 
-    public interface IHaveRecommenderSchemaName : IResourceInterface
+    public interface IHaveRecommenderFilterExpression : IResourceInterface
     {
-        dynamic RecommenderSchemaName { get; set; }
+        dynamic RecommenderFilterExpression { get; set; }
+    }
+
+    public interface IHaveListOfCustomerProfilesRecommenderFilterTypesTagsItemsTags : IResourceInterface
+    {
+        List<Humidifier.CustomerProfiles.RecommenderFilterTypes.TagsItems> Tags { get; set; }
+    }
+
+    public interface IHaveRecommenderFilterName : IResourceInterface
+    {
+        dynamic RecommenderFilterName { get; set; }
     }
 
     public interface IHaveListOfCustomerProfilesRecommenderSchemaTypesTagsItemsTags : IResourceInterface
@@ -30154,14 +30469,14 @@ namespace Humidifier.Interfaces
         dynamic DataMigrationName { get; set; }
     }
 
+    public interface IHaveMigrationProjectIdentifier : IResourceInterface
+    {
+        dynamic MigrationProjectIdentifier { get; set; }
+    }
+
     public interface IHaveListOfDMSDataMigrationTypesSourceDataSettingsSourceDataSettings : IResourceInterface
     {
         List<Humidifier.DMS.DataMigrationTypes.SourceDataSettings> SourceDataSettings { get; set; }
-    }
-
-    public interface IHaveDataMigrationIdentifier : IResourceInterface
-    {
-        dynamic DataMigrationIdentifier { get; set; }
     }
 
     public interface IHaveExactSettings : IResourceInterface
@@ -30307,6 +30622,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDMSMigrationProjectTypesSchemaConversionApplicationAttributesSchemaConversionApplicationAttributes : IResourceInterface
     {
         Humidifier.DMS.MigrationProjectTypes.SchemaConversionApplicationAttributes SchemaConversionApplicationAttributes { get; set; }
+    }
+
+    public interface IHaveInstanceProfileIdentifier : IResourceInterface
+    {
+        dynamic InstanceProfileIdentifier { get; set; }
     }
 
     public interface IHaveReplicationSettings : IResourceInterface
@@ -31264,11 +31584,6 @@ namespace Humidifier.Interfaces
         Humidifier.DevOpsAgent.PrivateConnectionTypes.ConnectionConfiguration ConnectionConfiguration { get; set; }
     }
 
-    public interface IHavePrivateConnectionName : IResourceInterface
-    {
-        dynamic PrivateConnectionName { get; set; }
-    }
-
     public interface IHaveDevOpsAgentServiceTypesServiceDetailsServiceDetails : IResourceInterface
     {
         Humidifier.DevOpsAgent.ServiceTypes.ServiceDetails ServiceDetails { get; set; }
@@ -32064,6 +32379,16 @@ namespace Humidifier.Interfaces
         List<Humidifier.EC2.InstanceEventWindowTypes.TimeRange> TimeRanges { get; set; }
     }
 
+    public interface IHaveOrganizationHandle : IResourceInterface
+    {
+        dynamic OrganizationHandle { get; set; }
+    }
+
+    public interface IHaveRir : IResourceInterface
+    {
+        dynamic Rir { get; set; }
+    }
+
     public interface IHaveEC2LaunchTemplateTypesLaunchTemplateDataLaunchTemplateData : IResourceInterface
     {
         Humidifier.EC2.LaunchTemplateTypes.LaunchTemplateData LaunchTemplateData { get; set; }
@@ -32532,11 +32857,6 @@ namespace Humidifier.Interfaces
     public interface IHaveEC2TransitGatewayPolicyTableEntryTypesTransitGatewayPolicyRulePolicyRule : IResourceInterface
     {
         Humidifier.EC2.TransitGatewayPolicyTableEntryTypes.TransitGatewayPolicyRule PolicyRule { get; set; }
-    }
-
-    public interface IHaveTargetRouteTableId : IResourceInterface
-    {
-        dynamic TargetRouteTableId { get; set; }
     }
 
     public interface IHaveBlackhole : IResourceInterface
@@ -33639,11 +33959,6 @@ namespace Humidifier.Interfaces
         dynamic InstanceFleetType { get; set; }
     }
 
-    public interface IHaveListOfEMRInstanceFleetConfigTypesInstanceTypeConfigInstanceTypeConfigs : IResourceInterface
-    {
-        List<Humidifier.EMR.InstanceFleetConfigTypes.InstanceTypeConfig> InstanceTypeConfigs { get; set; }
-    }
-
     public interface IHaveEMRInstanceFleetConfigTypesInstanceFleetProvisioningSpecificationsLaunchSpecifications : IResourceInterface
     {
         Humidifier.EMR.InstanceFleetConfigTypes.InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
@@ -33652,6 +33967,11 @@ namespace Humidifier.Interfaces
     public interface IHaveEMRInstanceFleetConfigTypesInstanceFleetResizingSpecificationsResizeSpecifications : IResourceInterface
     {
         Humidifier.EMR.InstanceFleetConfigTypes.InstanceFleetResizingSpecifications ResizeSpecifications { get; set; }
+    }
+
+    public interface IHaveListOfEMRInstanceFleetConfigTypesInstanceTypeConfigInstanceTypeConfigs : IResourceInterface
+    {
+        List<Humidifier.EMR.InstanceFleetConfigTypes.InstanceTypeConfig> InstanceTypeConfigs { get; set; }
     }
 
     public interface IHaveEMRInstanceGroupConfigTypesAutoScalingPolicyAutoScalingPolicy : IResourceInterface
@@ -36039,9 +36359,24 @@ namespace Humidifier.Interfaces
         Humidifier.HealthLake.DataTransformationProfileTypes.Source Source { get; set; }
     }
 
+    public interface IHaveHealthLakeFHIRDatastoreTypesAnalyticsConfigurationAnalyticsConfiguration : IResourceInterface
+    {
+        Humidifier.HealthLake.FHIRDatastoreTypes.AnalyticsConfiguration AnalyticsConfiguration { get; set; }
+    }
+
     public interface IHaveDatastoreTypeVersion : IResourceInterface
     {
         dynamic DatastoreTypeVersion { get; set; }
+    }
+
+    public interface IHaveHealthLakeFHIRDatastoreTypesProfileConfigurationProfileConfiguration : IResourceInterface
+    {
+        Humidifier.HealthLake.FHIRDatastoreTypes.ProfileConfiguration ProfileConfiguration { get; set; }
+    }
+
+    public interface IHaveHealthLakeFHIRDatastoreTypesNlpConfigurationNlpConfiguration : IResourceInterface
+    {
+        Humidifier.HealthLake.FHIRDatastoreTypes.NlpConfiguration NlpConfiguration { get; set; }
     }
 
     public interface IHaveHealthLakeFHIRDatastoreTypesIdentityProviderConfigurationIdentityProviderConfiguration : IResourceInterface
@@ -37182,31 +37517,6 @@ namespace Humidifier.Interfaces
     public interface IHaveSuiteDefinitionId : IResourceInterface
     {
         dynamic SuiteDefinitionId { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAlarmRuleAlarmRule : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AlarmRule AlarmRule { get; set; }
-    }
-
-    public interface IHaveAlarmModelName : IResourceInterface
-    {
-        dynamic AlarmModelName { get; set; }
-    }
-
-    public interface IHaveAlarmModelDescription : IResourceInterface
-    {
-        dynamic AlarmModelDescription { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAlarmCapabilitiesAlarmCapabilities : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AlarmCapabilities AlarmCapabilities { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAlarmEventActionsAlarmEventActions : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AlarmEventActions AlarmEventActions { get; set; }
     }
 
     public interface IHaveIoTEventsDetectorModelTypesDetectorModelDefinitionDetectorModelDefinition : IResourceInterface
@@ -38834,6 +39144,41 @@ namespace Humidifier.Interfaces
         List<Humidifier.LicenseManager.LicenseAssetRuleSetTypes.LicenseAssetRule> Rules { get; set; }
     }
 
+    public interface IHaveLicenseCount : IResourceInterface
+    {
+        dynamic LicenseCount { get; set; }
+    }
+
+    public interface IHaveDisassociateWhenNotFound : IResourceInterface
+    {
+        dynamic DisassociateWhenNotFound { get; set; }
+    }
+
+    public interface IHaveLicenseRules : IResourceInterface
+    {
+        dynamic LicenseRules { get; set; }
+    }
+
+    public interface IHaveListOfLicenseManagerLicenseConfigurationTypesProductInformationProductInformationList : IResourceInterface
+    {
+        List<Humidifier.LicenseManager.LicenseConfigurationTypes.ProductInformation> ProductInformationList { get; set; }
+    }
+
+    public interface IHaveLicenseCountHardLimit : IResourceInterface
+    {
+        dynamic LicenseCountHardLimit { get; set; }
+    }
+
+    public interface IHaveLicenseExpiry : IResourceInterface
+    {
+        dynamic LicenseExpiry { get; set; }
+    }
+
+    public interface IHaveLicenseCountingType : IResourceInterface
+    {
+        dynamic LicenseCountingType { get; set; }
+    }
+
     public interface IHaveLicenseManagerReportGeneratorTypesReportContextReportContext : IResourceInterface
     {
         Humidifier.LicenseManager.ReportGeneratorTypes.ReportContext ReportContext { get; set; }
@@ -38857,6 +39202,16 @@ namespace Humidifier.Interfaces
     public interface IHaveSubscriptionProviderSource : IResourceInterface
     {
         dynamic SubscriptionProviderSource { get; set; }
+    }
+
+    public interface IHaveIdentityProviderArn : IResourceInterface
+    {
+        dynamic IdentityProviderArn { get; set; }
+    }
+
+    public interface IHaveLicenseManagerUserSubscriptionsLicenseServerEndpointTypesLicenseServerSettingsLicenseServerSettings : IResourceInterface
+    {
+        Humidifier.LicenseManagerUserSubscriptions.LicenseServerEndpointTypes.LicenseServerSettings LicenseServerSettings { get; set; }
     }
 
     public interface IHaveContactProtocols : IResourceInterface
@@ -39919,6 +40274,11 @@ namespace Humidifier.Interfaces
         dynamic RemoteId { get; set; }
     }
 
+    public interface IHaveNdiAudioReferenceLevel : IResourceInterface
+    {
+        dynamic NdiAudioReferenceLevel { get; set; }
+    }
+
     public interface IHaveListOfMediaConnectFlowOutputTypesMediaStreamOutputConfigurationMediaStreamOutputConfigurations : IResourceInterface
     {
         List<Humidifier.MediaConnect.FlowOutputTypes.MediaStreamOutputConfiguration> MediaStreamOutputConfigurations { get; set; }
@@ -40214,9 +40574,9 @@ namespace Humidifier.Interfaces
         List<Humidifier.MediaLive.InputTypes.InputDeviceSettings> InputDevices { get; set; }
     }
 
-    public interface IHaveListOfMediaLiveInputSecurityGroupTypesInputWhitelistRuleCidrWhitelistRules : IResourceInterface
+    public interface IHaveListOfMediaLiveInputSecurityGroupTypesInputWhitelistRuleWhitelistRules : IResourceInterface
     {
-        List<Humidifier.MediaLive.InputSecurityGroupTypes.InputWhitelistRuleCidr> WhitelistRules { get; set; }
+        List<Humidifier.MediaLive.InputSecurityGroupTypes.InputWhitelistRule> WhitelistRules { get; set; }
     }
 
     public interface IHaveMediaLiveMultiplexTypesMultiplexSettingsMultiplexSettings : IResourceInterface
@@ -40577,6 +40937,11 @@ namespace Humidifier.Interfaces
     public interface IHavePersonalizationThresholdSeconds : IResourceInterface
     {
         dynamic PersonalizationThresholdSeconds { get; set; }
+    }
+
+    public interface IHaveMediaTailorPlaybackConfigurationTypesBeaconingConfigurationBeaconingConfiguration : IResourceInterface
+    {
+        Humidifier.MediaTailor.PlaybackConfigurationTypes.BeaconingConfiguration BeaconingConfiguration { get; set; }
     }
 
     public interface IHaveMediaTailorPlaybackConfigurationTypesLivePreRollConfigurationLivePreRollConfiguration : IResourceInterface
@@ -42419,11 +42784,6 @@ namespace Humidifier.Interfaces
         dynamic ComponentRoleArn { get; set; }
     }
 
-    public interface IHaveManagementAccountId : IResourceInterface
-    {
-        dynamic ManagementAccountId { get; set; }
-    }
-
     public interface IHaveCodebuildRoleArn : IResourceInterface
     {
         dynamic CodebuildRoleArn { get; set; }
@@ -42752,6 +43112,31 @@ namespace Humidifier.Interfaces
     public interface IHaveQuickSightAssetBundleImportJobTypesAssetBundleImportJobOverrideValidationStrategyOverrideValidationStrategy : IResourceInterface
     {
         Humidifier.QuickSight.AssetBundleImportJobTypes.AssetBundleImportJobOverrideValidationStrategy OverrideValidationStrategy { get; set; }
+    }
+
+    public interface IHaveAssignmentName : IResourceInterface
+    {
+        dynamic AssignmentName { get; set; }
+    }
+
+    public interface IHaveAssignmentStatus : IResourceInterface
+    {
+        dynamic AssignmentStatus { get; set; }
+    }
+
+    public interface IHaveIdentities : IResourceInterface
+    {
+        dynamic Identities { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesBrandDefinitionBrandDefinition : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.BrandDefinition BrandDefinition { get; set; }
+    }
+
+    public interface IHaveBrandId : IResourceInterface
+    {
+        dynamic BrandId { get; set; }
     }
 
     public interface IHaveCustomPermissionsName : IResourceInterface
@@ -43149,11 +43534,6 @@ namespace Humidifier.Interfaces
         dynamic AllowExternalPrincipals { get; set; }
     }
 
-    public interface IHaveSources : IResourceInterface
-    {
-        dynamic Sources { get; set; }
-    }
-
     public interface IHaveDatabaseInstallationFilesS3Prefix : IResourceInterface
     {
         dynamic DatabaseInstallationFilesS3Prefix { get; set; }
@@ -43517,6 +43897,56 @@ namespace Humidifier.Interfaces
     public interface IHaveMinACU : IResourceInterface
     {
         dynamic MinACU { get; set; }
+    }
+
+    public interface IHaveBlueGreenDeploymentName : IResourceInterface
+    {
+        dynamic BlueGreenDeploymentName { get; set; }
+    }
+
+    public interface IHaveTargetAllocatedStorage : IResourceInterface
+    {
+        dynamic TargetAllocatedStorage { get; set; }
+    }
+
+    public interface IHaveUpgradeTargetStorageConfig : IResourceInterface
+    {
+        dynamic UpgradeTargetStorageConfig { get; set; }
+    }
+
+    public interface IHaveTargetDBParameterGroupName : IResourceInterface
+    {
+        dynamic TargetDBParameterGroupName { get; set; }
+    }
+
+    public interface IHaveTargetDBInstanceClass : IResourceInterface
+    {
+        dynamic TargetDBInstanceClass { get; set; }
+    }
+
+    public interface IHaveTargetIops : IResourceInterface
+    {
+        dynamic TargetIops { get; set; }
+    }
+
+    public interface IHaveTargetStorageThroughput : IResourceInterface
+    {
+        dynamic TargetStorageThroughput { get; set; }
+    }
+
+    public interface IHaveTargetDBClusterParameterGroupName : IResourceInterface
+    {
+        dynamic TargetDBClusterParameterGroupName { get; set; }
+    }
+
+    public interface IHaveTargetEngineVersion : IResourceInterface
+    {
+        dynamic TargetEngineVersion { get; set; }
+    }
+
+    public interface IHaveTargetStorageType : IResourceInterface
+    {
+        dynamic TargetStorageType { get; set; }
     }
 
     public interface IHaveOptionGroupDescription : IResourceInterface
@@ -43954,9 +44384,14 @@ namespace Humidifier.Interfaces
         Humidifier.RefactorSpaces.ServiceTypes.UrlEndpointInput UrlEndpoint { get; set; }
     }
 
-    public interface IHaveProjectArn : IResourceInterface
+    public interface IHaveRekognitionProjectVersionTypesOutputConfigOutputConfig : IResourceInterface
     {
-        dynamic ProjectArn { get; set; }
+        Humidifier.Rekognition.ProjectVersionTypes.OutputConfig OutputConfig { get; set; }
+    }
+
+    public interface IHaveRekognitionProjectVersionTypesCustomizationFeatureConfigFeatureConfig : IResourceInterface
+    {
+        Humidifier.Rekognition.ProjectVersionTypes.CustomizationFeatureConfig FeatureConfig { get; set; }
     }
 
     public interface IHaveRekognitionStreamProcessorTypesS3DestinationS3Destination : IResourceInterface
@@ -44232,6 +44667,11 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfRoute53HealthCheckTypesHealthCheckTagHealthCheckTags : IResourceInterface
     {
         List<Humidifier.Route53.HealthCheckTypes.HealthCheckTag> HealthCheckTags { get; set; }
+    }
+
+    public interface IHaveDelegationSetId : IResourceInterface
+    {
+        dynamic DelegationSetId { get; set; }
     }
 
     public interface IHaveListOfRoute53HostedZoneTypesHostedZoneTagHostedZoneTags : IResourceInterface
@@ -45064,6 +45504,11 @@ namespace Humidifier.Interfaces
         Humidifier.SES.TemplateTypes.Template Template_ { get; set; }
     }
 
+    public interface IHaveSESTenantTypesTenantSuppressionAttributesSuppressionAttributes : IResourceInterface
+    {
+        Humidifier.SES.TenantTypes.TenantSuppressionAttributes SuppressionAttributes { get; set; }
+    }
+
     public interface IHaveListOfSESTenantTypesResourceAssociationResourceAssociations : IResourceInterface
     {
         List<Humidifier.SES.TenantTypes.ResourceAssociation> ResourceAssociations { get; set; }
@@ -45072,6 +45517,11 @@ namespace Humidifier.Interfaces
     public interface IHaveTenantName : IResourceInterface
     {
         dynamic TenantName { get; set; }
+    }
+
+    public interface IHaveSESTenantTypesReputationEntityReputationEntity : IResourceInterface
+    {
+        Humidifier.SES.TenantTypes.ReputationEntity ReputationEntity { get; set; }
     }
 
     public interface IHaveSESVdmAttributesTypesDashboardAttributesDashboardAttributes : IResourceInterface
@@ -47109,6 +47559,11 @@ namespace Humidifier.Interfaces
         dynamic ArtifactContent { get; set; }
     }
 
+    public interface IHaveSecurityAgentIntegrationTypesProviderInputProviderInput : IResourceInterface
+    {
+        Humidifier.SecurityAgent.IntegrationTypes.ProviderInput ProviderInput { get; set; }
+    }
+
     public interface IHaveSecurityAgentPentestTypesNetworkTrafficConfigNetworkTrafficConfig : IResourceInterface
     {
         Humidifier.SecurityAgent.PentestTypes.NetworkTrafficConfig NetworkTrafficConfig { get; set; }
@@ -47147,6 +47602,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSecurityAgentPentestTypesCloudWatchLogLogConfig : IResourceInterface
     {
         Humidifier.SecurityAgent.PentestTypes.CloudWatchLog LogConfig { get; set; }
+    }
+
+    public interface IHavePentestId : IResourceInterface
+    {
+        dynamic PentestId { get; set; }
     }
 
     public interface IHaveListOfSecurityAgentSecurityRequirementPackTypesSecurityRequirementSecurityRequirements : IResourceInterface
@@ -47679,11 +48139,6 @@ namespace Humidifier.Interfaces
         dynamic FileShareARN { get; set; }
     }
 
-    public interface IHaveLocationARN : IResourceInterface
-    {
-        dynamic LocationARN { get; set; }
-    }
-
     public interface IHaveGatewayTimezone : IResourceInterface
     {
         dynamic GatewayTimezone { get; set; }
@@ -47692,6 +48147,66 @@ namespace Humidifier.Interfaces
     public interface IHaveGatewayRegion : IResourceInterface
     {
         dynamic GatewayRegion { get; set; }
+    }
+
+    public interface IHaveClientList : IResourceInterface
+    {
+        dynamic ClientList { get; set; }
+    }
+
+    public interface IHaveSquash : IResourceInterface
+    {
+        dynamic Squash { get; set; }
+    }
+
+    public interface IHaveStorageGatewayNFSFileShareTypesNFSFileShareDefaultsNFSFileShareDefaults : IResourceInterface
+    {
+        Humidifier.StorageGateway.NFSFileShareTypes.NFSFileShareDefaults NFSFileShareDefaults { get; set; }
+    }
+
+    public interface IHaveStorageGatewayNFSFileShareTypesCacheAttributesCacheAttributes : IResourceInterface
+    {
+        Humidifier.StorageGateway.NFSFileShareTypes.CacheAttributes CacheAttributes { get; set; }
+    }
+
+    public interface IHaveAccessBasedEnumeration : IResourceInterface
+    {
+        dynamic AccessBasedEnumeration { get; set; }
+    }
+
+    public interface IHaveSMBACLEnabled : IResourceInterface
+    {
+        dynamic SMBACLEnabled { get; set; }
+    }
+
+    public interface IHaveCaseSensitivity : IResourceInterface
+    {
+        dynamic CaseSensitivity { get; set; }
+    }
+
+    public interface IHaveValidUserList : IResourceInterface
+    {
+        dynamic ValidUserList { get; set; }
+    }
+
+    public interface IHaveAdminUserList : IResourceInterface
+    {
+        dynamic AdminUserList { get; set; }
+    }
+
+    public interface IHaveInvalidUserList : IResourceInterface
+    {
+        dynamic InvalidUserList { get; set; }
+    }
+
+    public interface IHaveStorageGatewaySMBFileShareTypesCacheAttributesCacheAttributes : IResourceInterface
+    {
+        Humidifier.StorageGateway.SMBFileShareTypes.CacheAttributes CacheAttributes { get; set; }
+    }
+
+    public interface IHaveOplocksEnabled : IResourceInterface
+    {
+        dynamic OplocksEnabled { get; set; }
     }
 
     public interface IHaveTapeBarcode : IResourceInterface
@@ -47867,6 +48382,11 @@ namespace Humidifier.Interfaces
     public interface IHaveAdapterName : IResourceInterface
     {
         dynamic AdapterName { get; set; }
+    }
+
+    public interface IHaveDbResourceId : IResourceInterface
+    {
+        dynamic DbResourceId { get; set; }
     }
 
     public interface IHaveTimestreamInfluxDBClusterTypesLogDeliveryConfigurationLogDeliveryConfiguration : IResourceInterface
@@ -48157,6 +48677,11 @@ namespace Humidifier.Interfaces
     public interface IHavePostAuthenticationLoginBanner : IResourceInterface
     {
         dynamic PostAuthenticationLoginBanner { get; set; }
+    }
+
+    public interface IHaveCreateWithHostKey : IResourceInterface
+    {
+        dynamic CreateWithHostKey { get; set; }
     }
 
     public interface IHaveTransferServerTypesProtocolDetailsProtocolDetails : IResourceInterface
@@ -49584,11 +50109,6 @@ namespace Humidifier.Interfaces
         List<Humidifier.ARCRegionSwitch.PlanTypes.Lambdas> Lambdas { get; set; }
     }
 
-    public interface IHaveRetryIntervalMinutes : IResourceInterface
-    {
-        dynamic RetryIntervalMinutes { get; set; }
-    }
-
     public interface IHaveRegionToRun : IResourceInterface
     {
         dynamic RegionToRun { get; set; }
@@ -49734,6 +50254,11 @@ namespace Humidifier.Interfaces
         Humidifier.ARCRegionSwitch.PlanTypes.AuroraProvisionedScalingConfiguration AuroraProvisionedScalingConfig { get; set; }
     }
 
+    public interface IHaveARCRegionSwitchPlanTypesSsmSendCommandConfigurationSsmSendCommandConfig : IResourceInterface
+    {
+        Humidifier.ARCRegionSwitch.PlanTypes.SsmSendCommandConfiguration SsmSendCommandConfig { get; set; }
+    }
+
     public interface IHaveARCRegionSwitchPlanTypesEc2AsgCapacityIncreaseConfigurationEc2AsgCapacityIncreaseConfig : IResourceInterface
     {
         Humidifier.ARCRegionSwitch.PlanTypes.Ec2AsgCapacityIncreaseConfiguration Ec2AsgCapacityIncreaseConfig { get; set; }
@@ -49787,6 +50312,26 @@ namespace Humidifier.Interfaces
     public interface IHaveRecordSetIdentifier : IResourceInterface
     {
         dynamic RecordSetIdentifier { get; set; }
+    }
+
+    public interface IHaveListOfARCRegionSwitchPlanTypesSsmTargetTargets : IResourceInterface
+    {
+        List<Humidifier.ARCRegionSwitch.PlanTypes.SsmTarget> Targets { get; set; }
+    }
+
+    public interface IHaveDocumentArn : IResourceInterface
+    {
+        dynamic DocumentArn { get; set; }
+    }
+
+    public interface IHaveMapOfARCRegionSwitchPlanTypesSsmDocumentConfigRegionDocuments : IResourceInterface
+    {
+        Dictionary<string, Humidifier.ARCRegionSwitch.PlanTypes.SsmDocumentConfig> RegionDocuments { get; set; }
+    }
+
+    public interface IHaveARCRegionSwitchPlanTypesSsmSendCommandUngracefulUngraceful : IResourceInterface
+    {
+        Humidifier.ARCRegionSwitch.PlanTypes.SsmSendCommandUngraceful Ungraceful { get; set; }
     }
 
     public interface IHaveARCRegionSwitchPlanTypesExecutionBlockConfigurationExecutionBlockConfiguration : IResourceInterface
@@ -49957,6 +50502,16 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfAgentRegistryRegistryTypesCustomClaimValidationTypeCustomClaims : IResourceInterface
     {
         List<Humidifier.AgentRegistry.RegistryTypes.CustomClaimValidationType> CustomClaims { get; set; }
+    }
+
+    public interface IHaveListOfAgentRegistryRegistryTypesRecordTypeSchemaOverrideRecordTypeSchemaOverrides : IResourceInterface
+    {
+        List<Humidifier.AgentRegistry.RegistryTypes.RecordTypeSchemaOverride> RecordTypeSchemaOverrides { get; set; }
+    }
+
+    public interface IHaveDefaultSchema : IResourceInterface
+    {
+        dynamic DefaultSchema { get; set; }
     }
 
     public interface IHaveAgentRegistryRegistryTypesAuthorizerConfigurationAuthorizerConfiguration : IResourceInterface
@@ -50737,6 +51292,31 @@ namespace Humidifier.Interfaces
     public interface IHaveAppFabricAppAuthorizationTypesOauth2CredentialOauth2Credential : IResourceInterface
     {
         Humidifier.AppFabric.AppAuthorizationTypes.Oauth2Credential Oauth2Credential { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesDestinationDestination : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.Destination Destination { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesS3BucketS3Bucket : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.S3Bucket S3Bucket { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesFirehoseStreamFirehoseStream : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.FirehoseStream FirehoseStream { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesAuditLogDestinationConfigurationAuditLog : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.AuditLogDestinationConfiguration AuditLog { get; set; }
+    }
+
+    public interface IHaveAppFabricIngestionDestinationTypesAuditLogProcessingConfigurationAuditLog : IResourceInterface
+    {
+        Humidifier.AppFabric.IngestionDestinationTypes.AuditLogProcessingConfiguration AuditLog { get; set; }
     }
 
     public interface IHaveAppFlowConnectorTypesLambdaConnectorProvisioningConfigLambda : IResourceInterface
@@ -56759,11 +57339,6 @@ namespace Humidifier.Interfaces
         Humidifier.BedrockAgentCore.GatewayTypes.AuthorizingClaimMatchValueType AuthorizingClaimMatchValue { get; set; }
     }
 
-    public interface IHaveDynDicOfAdvertisedScopeMapping : IResourceInterface
-    {
-        Dictionary<string, dynamic> AdvertisedScopeMapping { get; set; }
-    }
-
     public interface IHaveListOfBedrockAgentCoreGatewayTypesCustomClaimValidationTypeCustomClaims : IResourceInterface
     {
         List<Humidifier.BedrockAgentCore.GatewayTypes.CustomClaimValidationType> CustomClaims { get; set; }
@@ -57374,11 +57949,6 @@ namespace Humidifier.Interfaces
         Humidifier.BedrockAgentCore.HarnessTypes.HarnessHookEventBridgeTarget EventBridge { get; set; }
     }
 
-    public interface IHaveApiBase : IResourceInterface
-    {
-        dynamic ApiBase { get; set; }
-    }
-
     public interface IHaveStrategies : IResourceInterface
     {
         dynamic Strategies { get; set; }
@@ -57914,11 +58484,6 @@ namespace Humidifier.Interfaces
         Humidifier.BedrockAgentCore.PaymentConnectorTypes.PaymentCredentialProviderConfiguration StripePrivy { get; set; }
     }
 
-    public interface IHaveCredentialProviderArn : IResourceInterface
-    {
-        dynamic CredentialProviderArn { get; set; }
-    }
-
     public interface IHaveBedrockAgentCorePaymentCredentialProviderTypesSecretReferenceApiKeySecretConfig : IResourceInterface
     {
         Humidifier.BedrockAgentCore.PaymentCredentialProviderTypes.SecretReference ApiKeySecretConfig { get; set; }
@@ -58399,9 +58964,19 @@ namespace Humidifier.Interfaces
         dynamic IncludeRefund { get; set; }
     }
 
+    public interface IHaveBudgetsBudgetTypesExpressionDimensionValuesDimensions : IResourceInterface
+    {
+        Humidifier.Budgets.BudgetTypes.ExpressionDimensionValues Dimensions { get; set; }
+    }
+
     public interface IHaveBudgetsBudgetTypesExpressionNot : IResourceInterface
     {
         Humidifier.Budgets.BudgetTypes.Expression Not { get; set; }
+    }
+
+    public interface IHaveBudgetsBudgetTypesCostCategoryValuesCostCategories : IResourceInterface
+    {
+        Humidifier.Budgets.BudgetTypes.CostCategoryValues CostCategories { get; set; }
     }
 
     public interface IHaveListOfBudgetsBudgetTypesExpressionOr : IResourceInterface
@@ -58412,16 +58987,6 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfBudgetsBudgetTypesExpressionAnd : IResourceInterface
     {
         List<Humidifier.Budgets.BudgetTypes.Expression> And { get; set; }
-    }
-
-    public interface IHaveBudgetsBudgetTypesExpressionDimensionValuesDimensions : IResourceInterface
-    {
-        Humidifier.Budgets.BudgetTypes.ExpressionDimensionValues Dimensions { get; set; }
-    }
-
-    public interface IHaveBudgetsBudgetTypesCostCategoryValuesCostCategories : IResourceInterface
-    {
-        Humidifier.Budgets.BudgetTypes.CostCategoryValues CostCategories { get; set; }
     }
 
     public interface IHaveBudgetsBudgetTypesTagValuesTags : IResourceInterface
@@ -58932,11 +59497,6 @@ namespace Humidifier.Interfaces
     public interface IHaveChimeMediaInsightsPipelineTypesStreamChannelDefinitionStreamChannelDefinition : IResourceInterface
     {
         Humidifier.Chime.MediaInsightsPipelineTypes.StreamChannelDefinition StreamChannelDefinition { get; set; }
-    }
-
-    public interface IHaveStartTimestamp : IResourceInterface
-    {
-        dynamic StartTimestamp { get; set; }
     }
 
     public interface IHaveEndTimestamp : IResourceInterface
@@ -60294,6 +60854,31 @@ namespace Humidifier.Interfaces
         dynamic PrimaryDomainName { get; set; }
     }
 
+    public interface IHaveListOfCloudFrontFieldLevelEncryptionConfigTypesContentTypeProfileContentTypeProfiles : IResourceInterface
+    {
+        List<Humidifier.CloudFront.FieldLevelEncryptionConfigTypes.ContentTypeProfile> ContentTypeProfiles { get; set; }
+    }
+
+    public interface IHaveForwardWhenContentTypeIsUnknown : IResourceInterface
+    {
+        dynamic ForwardWhenContentTypeIsUnknown { get; set; }
+    }
+
+    public interface IHaveQueryArg : IResourceInterface
+    {
+        dynamic QueryArg { get; set; }
+    }
+
+    public interface IHaveListOfCloudFrontFieldLevelEncryptionConfigTypesQueryArgProfileQueryArgProfiles : IResourceInterface
+    {
+        List<Humidifier.CloudFront.FieldLevelEncryptionConfigTypes.QueryArgProfile> QueryArgProfiles { get; set; }
+    }
+
+    public interface IHaveForwardWhenQueryArgProfileIsUnknown : IResourceInterface
+    {
+        dynamic ForwardWhenQueryArgProfileIsUnknown { get; set; }
+    }
+
     public interface IHaveProviderId : IResourceInterface
     {
         dynamic ProviderId { get; set; }
@@ -60629,11 +61214,6 @@ namespace Humidifier.Interfaces
         Humidifier.CloudWatch.AlarmMuteRuleTypes.Schedule Schedule { get; set; }
     }
 
-    public interface IHavePeriodicSpikes : IResourceInterface
-    {
-        dynamic PeriodicSpikes { get; set; }
-    }
-
     public interface IHaveMetricTimeZone : IResourceInterface
     {
         dynamic MetricTimeZone { get; set; }
@@ -60642,6 +61222,11 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfCloudWatchAnomalyDetectorTypesRangeExcludedTimeRanges : IResourceInterface
     {
         List<Humidifier.CloudWatch.AnomalyDetectorTypes.Range> ExcludedTimeRanges { get; set; }
+    }
+
+    public interface IHavePeriodicSpikes : IResourceInterface
+    {
+        dynamic PeriodicSpikes { get; set; }
     }
 
     public interface IHaveCloudWatchAnomalyDetectorTypesMetricStatMetricStat : IResourceInterface
@@ -60657,6 +61242,11 @@ namespace Humidifier.Interfaces
     public interface IHaveCloudWatchAnomalyDetectorTypesMetricMetric : IResourceInterface
     {
         Humidifier.CloudWatch.AnomalyDetectorTypes.Metric Metric { get; set; }
+    }
+
+    public interface IHaveCloudWatchIntegrationTypesApiKeyCredentialApiKeyCredential : IResourceInterface
+    {
+        Humidifier.CloudWatch.IntegrationTypes.ApiKeyCredential ApiKeyCredential { get; set; }
     }
 
     public interface IHaveScheduledQueryRoleARN : IResourceInterface
@@ -62494,61 +63084,6 @@ namespace Humidifier.Interfaces
         Humidifier.Connect.MetricTypes.MetricFilterStringCondition StringCondition { get; set; }
     }
 
-    public interface IHaveDeDE : IResourceInterface
-    {
-        dynamic DeDE { get; set; }
-    }
-
-    public interface IHavePtBR : IResourceInterface
-    {
-        dynamic PtBR { get; set; }
-    }
-
-    public interface IHaveZhCN : IResourceInterface
-    {
-        dynamic ZhCN { get; set; }
-    }
-
-    public interface IHaveIdID : IResourceInterface
-    {
-        dynamic IdID { get; set; }
-    }
-
-    public interface IHaveItIT : IResourceInterface
-    {
-        dynamic ItIT { get; set; }
-    }
-
-    public interface IHaveEnUS : IResourceInterface
-    {
-        dynamic EnUS { get; set; }
-    }
-
-    public interface IHaveKoKR : IResourceInterface
-    {
-        dynamic KoKR { get; set; }
-    }
-
-    public interface IHaveFrFR : IResourceInterface
-    {
-        dynamic FrFR { get; set; }
-    }
-
-    public interface IHaveZhTW : IResourceInterface
-    {
-        dynamic ZhTW { get; set; }
-    }
-
-    public interface IHaveEsES : IResourceInterface
-    {
-        dynamic EsES { get; set; }
-    }
-
-    public interface IHaveJaJP : IResourceInterface
-    {
-        dynamic JaJP { get; set; }
-    }
-
     public interface IHaveEnableValueValidationOnAssociation : IResourceInterface
     {
         dynamic EnableValueValidationOnAssociation { get; set; }
@@ -62634,6 +63169,11 @@ namespace Humidifier.Interfaces
         List<Humidifier.Connect.RuleTypes.EventBridgeAction> EventBridgeActions { get; set; }
     }
 
+    public interface IHaveListOfConnectRuleTypesSendInAppNotificationActionSendInAppNotificationActions : IResourceInterface
+    {
+        List<Humidifier.Connect.RuleTypes.SendInAppNotificationAction> SendInAppNotificationActions { get; set; }
+    }
+
     public interface IHaveListOfConnectRuleTypesUpdateCaseActionUpdateCaseActions : IResourceInterface
     {
         List<Humidifier.Connect.RuleTypes.UpdateCaseAction> UpdateCaseActions { get; set; }
@@ -62699,19 +63239,24 @@ namespace Humidifier.Interfaces
         Humidifier.Connect.RuleTypes.FieldValue Value { get; set; }
     }
 
-    public interface IHaveDynDicOfUserTags : IResourceInterface
-    {
-        Dictionary<string, dynamic> UserTags { get; set; }
-    }
-
-    public interface IHaveUserArns : IResourceInterface
-    {
-        dynamic UserArns { get; set; }
-    }
-
     public interface IHaveIntegrationAssociationArn : IResourceInterface
     {
         dynamic IntegrationAssociationArn { get; set; }
+    }
+
+    public interface IHaveConnectRuleTypesNotificationContentContent : IResourceInterface
+    {
+        Humidifier.Connect.RuleTypes.NotificationContent Content { get; set; }
+    }
+
+    public interface IHaveConnectRuleTypesInAppNotificationRecipientTypeExclusion : IResourceInterface
+    {
+        Humidifier.Connect.RuleTypes.InAppNotificationRecipientType Exclusion { get; set; }
+    }
+
+    public interface IHaveConnectRuleTypesInAppNotificationRecipientTypeRecipient : IResourceInterface
+    {
+        Humidifier.Connect.RuleTypes.InAppNotificationRecipientType Recipient { get; set; }
     }
 
     public interface IHaveDeliveryMethod : IResourceInterface
@@ -64549,6 +65094,11 @@ namespace Humidifier.Interfaces
         dynamic DataProviderArn { get; set; }
     }
 
+    public interface IHaveDataProviderIdentifier : IResourceInterface
+    {
+        dynamic DataProviderIdentifier { get; set; }
+    }
+
     public interface IHaveS3BucketPath : IResourceInterface
     {
         dynamic S3BucketPath { get; set; }
@@ -66124,6 +66674,11 @@ namespace Humidifier.Interfaces
         Humidifier.Deadline.FleetTypes.ServiceManagedEc2AutoScalingConfiguration AutoScalingConfiguration { get; set; }
     }
 
+    public interface IHaveListOfDeadlineFleetTypesFleetSoftwareAddOnSoftwareAddOns : IResourceInterface
+    {
+        List<Humidifier.Deadline.FleetTypes.FleetSoftwareAddOn> SoftwareAddOns { get; set; }
+    }
+
     public interface IHaveDeadlineFleetTypesAcceleratorCapabilitiesAcceleratorCapabilities : IResourceInterface
     {
         Humidifier.Deadline.FleetTypes.AcceleratorCapabilities AcceleratorCapabilities { get; set; }
@@ -66239,9 +66794,19 @@ namespace Humidifier.Interfaces
         dynamic IdcApplicationArn { get; set; }
     }
 
+    public interface IHaveUserIdClaim : IResourceInterface
+    {
+        dynamic UserIdClaim { get; set; }
+    }
+
     public interface IHaveDevOpsAgentAgentSpaceTypesIamAuthConfigurationIam : IResourceInterface
     {
         Humidifier.DevOpsAgent.AgentSpaceTypes.IamAuthConfiguration Iam { get; set; }
+    }
+
+    public interface IHaveDevOpsAgentAgentSpaceTypesIdpAuthConfigurationIdp : IResourceInterface
+    {
+        Humidifier.DevOpsAgent.AgentSpaceTypes.IdpAuthConfiguration Idp { get; set; }
     }
 
     public interface IHaveDevOpsAgentAgentSpaceTypesIdcAuthConfigurationIdc : IResourceInterface
@@ -66384,6 +66949,11 @@ namespace Humidifier.Interfaces
         Humidifier.DevOpsAgent.AssociationTypes.SlackTransmissionTarget TransmissionTarget { get; set; }
     }
 
+    public interface IHaveDevOpsAgentAssociationTypesSlackBidirectionalConfigurationBidirectional : IResourceInterface
+    {
+        Humidifier.DevOpsAgent.AssociationTypes.SlackBidirectionalConfiguration Bidirectional { get; set; }
+    }
+
     public interface IHaveDevOpsAgentAssociationTypesSlackChannelIncidentResponseTarget : IResourceInterface
     {
         Humidifier.DevOpsAgent.AssociationTypes.SlackChannel IncidentResponseTarget { get; set; }
@@ -66417,6 +66987,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDevOpsAgentServiceTypesRegisteredServiceNowDetailsServiceNow : IResourceInterface
     {
         Humidifier.DevOpsAgent.ServiceTypes.RegisteredServiceNowDetails ServiceNow { get; set; }
+    }
+
+    public interface IHaveDevOpsAgentServiceTypesRegisteredGitHubServiceDetailsGitHub : IResourceInterface
+    {
+        Humidifier.DevOpsAgent.ServiceTypes.RegisteredGitHubServiceDetails GitHub { get; set; }
     }
 
     public interface IHaveDevOpsAgentServiceTypesRegisteredAzureIdentityDetailsAzureIdentity : IResourceInterface
@@ -66472,6 +67047,16 @@ namespace Humidifier.Interfaces
     public interface IHaveDevOpsAgentServiceTypesDynatraceAuthorizationConfigAuthorizationConfig : IResourceInterface
     {
         Humidifier.DevOpsAgent.ServiceTypes.DynatraceAuthorizationConfig AuthorizationConfig { get; set; }
+    }
+
+    public interface IHaveDevOpsAgentServiceTypesGitHubPatDetailsDirectAccess : IResourceInterface
+    {
+        Humidifier.DevOpsAgent.ServiceTypes.GitHubPatDetails DirectAccess { get; set; }
+    }
+
+    public interface IHaveDevOpsAgentServiceTypesGitHubAppVerificationDetailsAppVerification : IResourceInterface
+    {
+        Humidifier.DevOpsAgent.ServiceTypes.GitHubAppVerificationDetails AppVerification { get; set; }
     }
 
     public interface IHaveDevOpsAgentServiceTypesApiKeyDetailsApiKey : IResourceInterface
@@ -66539,6 +67124,11 @@ namespace Humidifier.Interfaces
         Humidifier.DevOpsAgent.ServiceTypes.PagerDutyAuthorizationConfig AuthorizationConfig { get; set; }
     }
 
+    public interface IHaveHostingType : IResourceInterface
+    {
+        dynamic HostingType { get; set; }
+    }
+
     public interface IHaveDevOpsAgentServiceTypesMCPServerDetailsMCPServer : IResourceInterface
     {
         Humidifier.DevOpsAgent.ServiceTypes.MCPServerDetails MCPServer { get; set; }
@@ -66547,6 +67137,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDevOpsAgentServiceTypesServiceNowServiceDetailsServiceNow : IResourceInterface
     {
         Humidifier.DevOpsAgent.ServiceTypes.ServiceNowServiceDetails ServiceNow { get; set; }
+    }
+
+    public interface IHaveDevOpsAgentServiceTypesGitHubDetailsGitHub : IResourceInterface
+    {
+        Humidifier.DevOpsAgent.ServiceTypes.GitHubDetails GitHub { get; set; }
     }
 
     public interface IHaveDevOpsAgentServiceTypesAzureIdentityServiceDetailsAzureIdentity : IResourceInterface
@@ -67489,6 +68084,21 @@ namespace Humidifier.Interfaces
         dynamic gatewayId { get; set; }
     }
 
+    public interface IHaveEC2NetworkInsightsAnalysisTypesPortRangeDestinationPortRange : IResourceInterface
+    {
+        Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange DestinationPortRange { get; set; }
+    }
+
+    public interface IHaveEC2NetworkInsightsAnalysisTypesPortRangeSourcePortRange : IResourceInterface
+    {
+        Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange SourcePortRange { get; set; }
+    }
+
+    public interface IHaveSourceCidr : IResourceInterface
+    {
+        dynamic SourceCidr { get; set; }
+    }
+
     public interface IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpnGateway : IResourceInterface
     {
         Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisComponent VpnGateway { get; set; }
@@ -67619,6 +68229,11 @@ namespace Humidifier.Interfaces
         Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisLoadBalancerTarget LoadBalancerTarget { get; set; }
     }
 
+    public interface IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGatewayPolicyTable : IResourceInterface
+    {
+        Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisComponent TransitGatewayPolicyTable { get; set; }
+    }
+
     public interface IHaveListOfEC2NetworkInsightsAnalysisTypesAnalysisComponentLoadBalancerTargetGroups : IResourceInterface
     {
         List<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisComponent> LoadBalancerTargetGroups { get; set; }
@@ -67672,11 +68287,6 @@ namespace Humidifier.Interfaces
     public interface IHaveRouteOrigin : IResourceInterface
     {
         dynamic RouteOrigin { get; set; }
-    }
-
-    public interface IHaveDestinationCidr : IResourceInterface
-    {
-        dynamic DestinationCidr { get; set; }
     }
 
     public interface IHaveEC2NetworkInsightsPathTypesFilterPortRangeDestinationPortRange : IResourceInterface
@@ -69414,6 +70024,11 @@ namespace Humidifier.Interfaces
         List<Humidifier.EKS.CapabilityTypes.ArgoCdRoleMapping> RbacRoleMappings { get; set; }
     }
 
+    public interface IHaveEndpointPrefix : IResourceInterface
+    {
+        dynamic EndpointPrefix { get; set; }
+    }
+
     public interface IHaveListOfEKSCapabilityTypesSsoIdentityIdentities : IResourceInterface
     {
         List<Humidifier.EKS.CapabilityTypes.SsoIdentity> Identities { get; set; }
@@ -69657,11 +70272,6 @@ namespace Humidifier.Interfaces
     public interface IHaveGroupsPrefix : IResourceInterface
     {
         dynamic GroupsPrefix { get; set; }
-    }
-
-    public interface IHaveIssuerUrl : IResourceInterface
-    {
-        dynamic IssuerUrl { get; set; }
     }
 
     public interface IHaveListOfEKSIdentityProviderConfigTypesRequiredClaimRequiredClaims : IResourceInterface
@@ -70034,14 +70644,14 @@ namespace Humidifier.Interfaces
         Humidifier.EMR.InstanceFleetConfigTypes.SpotProvisioningSpecification SpotSpecification { get; set; }
     }
 
-    public interface IHaveEMRInstanceFleetConfigTypesOnDemandResizingSpecificationOnDemandResizeSpecification : IResourceInterface
-    {
-        Humidifier.EMR.InstanceFleetConfigTypes.OnDemandResizingSpecification OnDemandResizeSpecification { get; set; }
-    }
-
     public interface IHaveEMRInstanceFleetConfigTypesSpotResizingSpecificationSpotResizeSpecification : IResourceInterface
     {
         Humidifier.EMR.InstanceFleetConfigTypes.SpotResizingSpecification SpotResizeSpecification { get; set; }
+    }
+
+    public interface IHaveEMRInstanceFleetConfigTypesOnDemandResizingSpecificationOnDemandResizeSpecification : IResourceInterface
+    {
+        Humidifier.EMR.InstanceFleetConfigTypes.OnDemandResizingSpecification OnDemandResizeSpecification { get; set; }
     }
 
     public interface IHaveEMRInstanceFleetConfigTypesEbsConfigurationEbsConfiguration : IResourceInterface
@@ -72294,11 +72904,6 @@ namespace Humidifier.Interfaces
         Humidifier.GameLift.ContainerGroupDefinitionTypes.ContainerHealthCheck HealthCheck { get; set; }
     }
 
-    public interface IHaveVcpu : IResourceInterface
-    {
-        dynamic Vcpu { get; set; }
-    }
-
     public interface IHaveCost : IResourceInterface
     {
         dynamic Cost { get; set; }
@@ -74039,6 +74644,11 @@ namespace Humidifier.Interfaces
         dynamic PreloadDataType { get; set; }
     }
 
+    public interface IHaveDefaultProfiles : IResourceInterface
+    {
+        dynamic DefaultProfiles { get; set; }
+    }
+
     public interface IHaveHealthLakeFHIRDatastoreTypesKmsEncryptionConfigKmsEncryptionConfig : IResourceInterface
     {
         Humidifier.HealthLake.FHIRDatastoreTypes.KmsEncryptionConfig KmsEncryptionConfig { get; set; }
@@ -74747,6 +75357,11 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfInspectorV2FilterTypesStringFilterSeverity : IResourceInterface
     {
         List<Humidifier.InspectorV2.FilterTypes.StringFilter> Severity { get; set; }
+    }
+
+    public interface IHaveListOfInspectorV2FilterTypesNumberFilterEcrImageInUseCount : IResourceInterface
+    {
+        List<Humidifier.InspectorV2.FilterTypes.NumberFilter> EcrImageInUseCount { get; set; }
     }
 
     public interface IHaveListOfInspectorV2FilterTypesStringFilterNetworkProtocol : IResourceInterface
@@ -75874,96 +76489,6 @@ namespace Humidifier.Interfaces
         Humidifier.IoTDeviceAdvisor.SuiteRunTypes.DeviceUnderTest PrimaryDevice { get; set; }
     }
 
-    public interface IHaveIoTEventsAlarmModelTypesDynamoDBv2DynamoDBv2 : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.DynamoDBv2 DynamoDBv2 { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesIotEventsIotEvents : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.IotEvents IotEvents { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesIotSiteWiseIotSiteWise : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.IotSiteWise IotSiteWise { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesSqsSqs : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.Sqs Sqs { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesFirehoseFirehose : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.Firehose Firehose { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesDynamoDBDynamoDB : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.DynamoDB DynamoDB { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesIotTopicPublishIotTopicPublish : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.IotTopicPublish IotTopicPublish { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesSnsSns : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.Sns Sns { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesLambdaLambda : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.Lambda Lambda { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAcknowledgeFlowAcknowledgeFlow : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AcknowledgeFlow AcknowledgeFlow { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesInitializationConfigurationInitializationConfiguration : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.InitializationConfiguration InitializationConfiguration { get; set; }
-    }
-
-    public interface IHaveListOfIoTEventsAlarmModelTypesAlarmActionAlarmActions : IResourceInterface
-    {
-        List<Humidifier.IoTEvents.AlarmModelTypes.AlarmAction> AlarmActions { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesSimpleRuleSimpleRule : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.SimpleRule SimpleRule { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAssetPropertyVariantValue : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AssetPropertyVariant Value { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAssetPropertyTimestampTimestamp : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AssetPropertyTimestamp Timestamp { get; set; }
-    }
-
-    public interface IHaveDisabledOnInitialization : IResourceInterface
-    {
-        dynamic DisabledOnInitialization { get; set; }
-    }
-
-    public interface IHaveIoTEventsAlarmModelTypesAssetPropertyValuePropertyValue : IResourceInterface
-    {
-        Humidifier.IoTEvents.AlarmModelTypes.AssetPropertyValue PropertyValue { get; set; }
-    }
-
-    public interface IHaveInputProperty : IResourceInterface
-    {
-        dynamic InputProperty { get; set; }
-    }
-
     public interface IHaveIoTEventsDetectorModelTypesIotEventsIotEvents : IResourceInterface
     {
         Humidifier.IoTEvents.DetectorModelTypes.IotEvents IotEvents { get; set; }
@@ -76057,6 +76582,11 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfIoTEventsDetectorModelTypesTransitionEventTransitionEvents : IResourceInterface
     {
         List<Humidifier.IoTEvents.DetectorModelTypes.TransitionEvent> TransitionEvents { get; set; }
+    }
+
+    public interface IHaveContentExpression : IResourceInterface
+    {
+        dynamic ContentExpression { get; set; }
     }
 
     public interface IHaveDurationExpression : IResourceInterface
@@ -78849,6 +79379,11 @@ namespace Humidifier.Interfaces
         dynamic MaxConcurrencyPerEnvironment { get; set; }
     }
 
+    public interface IHaveEgressNetworkConnectorArn : IResourceInterface
+    {
+        dynamic EgressNetworkConnectorArn { get; set; }
+    }
+
     public interface IHaveLambdaWebFunctionRevisionTypesTelemetryConfigTelemetryConfig : IResourceInterface
     {
         Humidifier.Lambda.WebFunctionRevisionTypes.TelemetryConfig TelemetryConfig { get; set; }
@@ -79809,6 +80344,26 @@ namespace Humidifier.Interfaces
         Humidifier.LicenseManager.LicenseAssetRuleSetTypes.LicenseConfigurationRuleStatement LicenseConfigurationRuleStatement { get; set; }
     }
 
+    public interface IHaveListOfLicenseManagerLicenseConfigurationTypesProductInformationFilterProductInformationFilterList : IResourceInterface
+    {
+        List<Humidifier.LicenseManager.LicenseConfigurationTypes.ProductInformationFilter> ProductInformationFilterList { get; set; }
+    }
+
+    public interface IHaveProductInformationFilterName : IResourceInterface
+    {
+        dynamic ProductInformationFilterName { get; set; }
+    }
+
+    public interface IHaveProductInformationFilterValue : IResourceInterface
+    {
+        dynamic ProductInformationFilterValue { get; set; }
+    }
+
+    public interface IHaveProductInformationFilterComparator : IResourceInterface
+    {
+        dynamic ProductInformationFilterComparator { get; set; }
+    }
+
     public interface IHaveLicenseAssetGroupArns : IResourceInterface
     {
         dynamic LicenseAssetGroupArns { get; set; }
@@ -79822,6 +80377,36 @@ namespace Humidifier.Interfaces
     public interface IHaveReportEndDate : IResourceInterface
     {
         dynamic ReportEndDate { get; set; }
+    }
+
+    public interface IHaveLicenseManagerUserSubscriptionsLicenseServerEndpointTypesSecretsManagerCredentialsProviderSecretsManagerCredentialsProvider : IResourceInterface
+    {
+        Humidifier.LicenseManagerUserSubscriptions.LicenseServerEndpointTypes.SecretsManagerCredentialsProvider SecretsManagerCredentialsProvider { get; set; }
+    }
+
+    public interface IHaveProvisioningStatus : IResourceInterface
+    {
+        dynamic ProvisioningStatus { get; set; }
+    }
+
+    public interface IHaveHealthStatus : IResourceInterface
+    {
+        dynamic HealthStatus { get; set; }
+    }
+
+    public interface IHaveLicenseManagerUserSubscriptionsLicenseServerEndpointTypesServerSettingsServerSettings : IResourceInterface
+    {
+        Humidifier.LicenseManagerUserSubscriptions.LicenseServerEndpointTypes.ServerSettings ServerSettings { get; set; }
+    }
+
+    public interface IHaveLicenseManagerUserSubscriptionsLicenseServerEndpointTypesCredentialsProviderRdsSalCredentialsProvider : IResourceInterface
+    {
+        Humidifier.LicenseManagerUserSubscriptions.LicenseServerEndpointTypes.CredentialsProvider RdsSalCredentialsProvider { get; set; }
+    }
+
+    public interface IHaveLicenseManagerUserSubscriptionsLicenseServerEndpointTypesRdsSalSettingsRdsSalSettings : IResourceInterface
+    {
+        Humidifier.LicenseManagerUserSubscriptions.LicenseServerEndpointTypes.RdsSalSettings RdsSalSettings { get; set; }
     }
 
     public interface IHaveAllowPublicOverrides : IResourceInterface
@@ -81412,6 +81997,11 @@ namespace Humidifier.Interfaces
     public interface IHaveVpcInterfaceAdapter : IResourceInterface
     {
         dynamic VpcInterfaceAdapter { get; set; }
+    }
+
+    public interface IHaveAudioReferenceLevel : IResourceInterface
+    {
+        dynamic AudioReferenceLevel { get; set; }
     }
 
     public interface IHaveMaxSyncBuffer : IResourceInterface
@@ -84334,6 +84924,11 @@ namespace Humidifier.Interfaces
         List<Humidifier.MediaPackageV2.HarvestJobTypes.HarvestedDashManifest> DashManifests { get; set; }
     }
 
+    public interface IHaveContentKeyPeriodTiming : IResourceInterface
+    {
+        dynamic ContentKeyPeriodTiming { get; set; }
+    }
+
     public interface IHaveFixedAvailabilityStartTime : IResourceInterface
     {
         dynamic FixedAvailabilityStartTime { get; set; }
@@ -84489,24 +85084,24 @@ namespace Humidifier.Interfaces
         dynamic TsEncryptionMethod { get; set; }
     }
 
-    public interface IHaveClipStartTime : IResourceInterface
+    public interface IHaveMediaPackageV2OriginEndpointTypesMultiviewFilterConfigurationMultiview : IResourceInterface
     {
-        dynamic ClipStartTime { get; set; }
-    }
-
-    public interface IHaveDrmSettings : IResourceInterface
-    {
-        dynamic DrmSettings { get; set; }
-    }
-
-    public interface IHaveManifestFilter : IResourceInterface
-    {
-        dynamic ManifestFilter { get; set; }
+        Humidifier.MediaPackageV2.OriginEndpointTypes.MultiviewFilterConfiguration Multiview { get; set; }
     }
 
     public interface IHaveEndpointErrorConditions : IResourceInterface
     {
         dynamic EndpointErrorConditions { get; set; }
+    }
+
+    public interface IHaveMediaPackageV2OriginEndpointTypesLowLatencyHlsFilterConfigurationFilterConfiguration : IResourceInterface
+    {
+        Humidifier.MediaPackageV2.OriginEndpointTypes.LowLatencyHlsFilterConfiguration FilterConfiguration { get; set; }
+    }
+
+    public interface IHaveMediaPackageV2OriginEndpointTypesMssFilterConfigurationFilterConfiguration : IResourceInterface
+    {
+        Humidifier.MediaPackageV2.OriginEndpointTypes.MssFilterConfiguration FilterConfiguration { get; set; }
     }
 
     public interface IHaveCustomAdTypes : IResourceInterface
@@ -84572,6 +85167,16 @@ namespace Humidifier.Interfaces
     public interface IHaveMediaPackageV2OriginEndpointTypesEncryptionContractConfigurationEncryptionContractConfiguration : IResourceInterface
     {
         Humidifier.MediaPackageV2.OriginEndpointTypes.EncryptionContractConfiguration EncryptionContractConfiguration { get; set; }
+    }
+
+    public interface IHaveSpekeVersion : IResourceInterface
+    {
+        dynamic SpekeVersion { get; set; }
+    }
+
+    public interface IHaveMediaPackageV2OriginEndpointTypesContentKeyPeriodConfigurationContentKeyPeriodConfiguration : IResourceInterface
+    {
+        Humidifier.MediaPackageV2.OriginEndpointTypes.ContentKeyPeriodConfiguration ContentKeyPeriodConfiguration { get; set; }
     }
 
     public interface IHaveTimeOffset : IResourceInterface
@@ -84704,6 +85309,11 @@ namespace Humidifier.Interfaces
         dynamic FillPolicy { get; set; }
     }
 
+    public interface IHaveMediaTailorPlaybackConfigurationTypesClientSideBeaconingConfigurationClientSide : IResourceInterface
+    {
+        Humidifier.MediaTailor.PlaybackConfigurationTypes.ClientSideBeaconingConfiguration ClientSide { get; set; }
+    }
+
     public interface IHaveStartUrl : IResourceInterface
     {
         dynamic StartUrl { get; set; }
@@ -84722,6 +85332,16 @@ namespace Humidifier.Interfaces
     public interface IHaveContentSegmentUrlPrefix : IResourceInterface
     {
         dynamic ContentSegmentUrlPrefix { get; set; }
+    }
+
+    public interface IHaveReportingMode : IResourceInterface
+    {
+        dynamic ReportingMode { get; set; }
+    }
+
+    public interface IHaveAdditionalEventTypes : IResourceInterface
+    {
+        dynamic AdditionalEventTypes { get; set; }
     }
 
     public interface IHaveMpdLocation : IResourceInterface
@@ -86467,6 +87087,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDbPassword : IResourceInterface
     {
         dynamic DbPassword { get; set; }
+    }
+
+    public interface IHaveManagementAccountEmail : IResourceInterface
+    {
+        dynamic ManagementAccountEmail { get; set; }
     }
 
     public interface IHaveAddressLine3 : IResourceInterface
@@ -90967,6 +91592,91 @@ namespace Humidifier.Interfaces
     public interface IHaveStrictModeForAllResources : IResourceInterface
     {
         dynamic StrictModeForAllResources { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesBrandColorPaletteBrandColorPalette : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.BrandColorPalette BrandColorPalette { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesBrandElementStyleBrandElementStyle : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.BrandElementStyle BrandElementStyle { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteSecondary : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Secondary { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteWarning : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Warning { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteAccent : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Accent { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPalettePrimary : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Primary { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteDanger : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Danger { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteMeasure : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Measure { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteDimension : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Dimension { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteInfo : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Info { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteSuccess : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette Success { get; set; }
+    }
+
+    public interface IHaveBrandName : IResourceInterface
+    {
+        dynamic BrandName { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesApplicationThemeApplicationTheme : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.ApplicationTheme ApplicationTheme { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesNavbarStyleNavbarStyle : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.NavbarStyle NavbarStyle { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteGlobalNavbar : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette GlobalNavbar { get; set; }
+    }
+
+    public interface IHaveQuickSightBrandTypesPaletteContextualNavbar : IResourceInterface
+    {
+        Humidifier.QuickSight.BrandTypes.Palette ContextualNavbar { get; set; }
+    }
+
+    public interface IHaveForeground : IResourceInterface
+    {
+        dynamic Foreground { get; set; }
     }
 
     public interface IHavePublishWithoutApproval : IResourceInterface
@@ -95724,6 +96434,11 @@ namespace Humidifier.Interfaces
         Humidifier.QuickSight.DataSourceTypes.KeyPairCredentials KeyPairCredentials { get; set; }
     }
 
+    public interface IHaveQuickSightDataSourceTypesOAuthClientCredentialsOAuthClientCredentials : IResourceInterface
+    {
+        Humidifier.QuickSight.DataSourceTypes.OAuthClientCredentials OAuthClientCredentials { get; set; }
+    }
+
     public interface IHaveQuickSightDataSourceTypesS3TablesParametersS3TablesParameters : IResourceInterface
     {
         Humidifier.QuickSight.DataSourceTypes.S3TablesParameters S3TablesParameters { get; set; }
@@ -99449,6 +100164,26 @@ namespace Humidifier.Interfaces
         dynamic SessionPinningFilters { get; set; }
     }
 
+    public interface IHaveTaskStatus : IResourceInterface
+    {
+        dynamic TaskStatus { get; set; }
+    }
+
+    public interface IHaveSourceMember : IResourceInterface
+    {
+        dynamic SourceMember { get; set; }
+    }
+
+    public interface IHaveSwitchoverDetailStatus : IResourceInterface
+    {
+        dynamic SwitchoverDetailStatus { get; set; }
+    }
+
+    public interface IHaveTargetMember : IResourceInterface
+    {
+        dynamic TargetMember { get; set; }
+    }
+
     public interface IHaveOptionVersion : IResourceInterface
     {
         dynamic OptionVersion { get; set; }
@@ -99877,6 +100612,16 @@ namespace Humidifier.Interfaces
     public interface IHaveHealthUrl : IResourceInterface
     {
         dynamic HealthUrl { get; set; }
+    }
+
+    public interface IHaveRekognitionProjectVersionTypesContentModerationConfigContentModeration : IResourceInterface
+    {
+        Humidifier.Rekognition.ProjectVersionTypes.ContentModerationConfig ContentModeration { get; set; }
+    }
+
+    public interface IHaveF1Score : IResourceInterface
+    {
+        dynamic F1Score { get; set; }
     }
 
     public interface IHaveMinConfidence : IResourceInterface
@@ -101029,11 +101774,6 @@ namespace Humidifier.Interfaces
         List<Humidifier.Tag> NewObjectTagging { get; set; }
     }
 
-    public interface IHaveRequesterPays : IResourceInterface
-    {
-        dynamic RequesterPays { get; set; }
-    }
-
     public interface IHaveUnModifiedSinceConstraint : IResourceInterface
     {
         dynamic UnModifiedSinceConstraint { get; set; }
@@ -101599,11 +102339,6 @@ namespace Humidifier.Interfaces
         dynamic ConfidenceVerdictThreshold { get; set; }
     }
 
-    public interface IHaveSuppressedReasons : IResourceInterface
-    {
-        dynamic SuppressedReasons { get; set; }
-    }
-
     public interface IHaveSESConfigurationSetTypesValidationOptionsValidationOptions : IResourceInterface
     {
         Humidifier.SES.ConfigurationSetTypes.ValidationOptions ValidationOptions { get; set; }
@@ -102047,6 +102782,21 @@ namespace Humidifier.Interfaces
     public interface IHaveSubjectPart : IResourceInterface
     {
         dynamic SubjectPart { get; set; }
+    }
+
+    public interface IHaveSESTenantTypesReputationPolicyPolicy : IResourceInterface
+    {
+        Humidifier.SES.TenantTypes.ReputationPolicy Policy { get; set; }
+    }
+
+    public interface IHaveReputationEntityPolicy : IResourceInterface
+    {
+        dynamic ReputationEntityPolicy { get; set; }
+    }
+
+    public interface IHaveSuppressionScope : IResourceInterface
+    {
+        dynamic SuppressionScope { get; set; }
     }
 
     public interface IHaveSMSVOICEConfigurationSetTypesSnsDestinationSnsDestination : IResourceInterface
@@ -105584,6 +106334,31 @@ namespace Humidifier.Interfaces
         dynamic IdCInstanceArn { get; set; }
     }
 
+    public interface IHaveSiteUrl : IResourceInterface
+    {
+        dynamic SiteUrl { get; set; }
+    }
+
+    public interface IHaveSecurityAgentIntegrationTypesGitHubInputGithub : IResourceInterface
+    {
+        Humidifier.SecurityAgent.IntegrationTypes.GitHubInput Github { get; set; }
+    }
+
+    public interface IHaveSecurityAgentIntegrationTypesConfluenceInputConfluence : IResourceInterface
+    {
+        Humidifier.SecurityAgent.IntegrationTypes.ConfluenceInput Confluence { get; set; }
+    }
+
+    public interface IHaveSecurityAgentIntegrationTypesBitbucketInputBitbucket : IResourceInterface
+    {
+        Humidifier.SecurityAgent.IntegrationTypes.BitbucketInput Bitbucket { get; set; }
+    }
+
+    public interface IHaveSecurityAgentIntegrationTypesGitLabInputGitlab : IResourceInterface
+    {
+        Humidifier.SecurityAgent.IntegrationTypes.GitLabInput Gitlab { get; set; }
+    }
+
     public interface IHaveMfaForwardingAddress : IResourceInterface
     {
         dynamic MfaForwardingAddress { get; set; }
@@ -105597,11 +106372,6 @@ namespace Humidifier.Interfaces
     public interface IHaveEnableEmailMfa : IResourceInterface
     {
         dynamic EnableEmailMfa { get; set; }
-    }
-
-    public interface IHaveUris : IResourceInterface
-    {
-        dynamic Uris { get; set; }
     }
 
     public interface IHaveListOfSecurityAgentPentestTypesEndpointEndpoints : IResourceInterface
@@ -105639,11 +106409,6 @@ namespace Humidifier.Interfaces
         dynamic InlinePem { get; set; }
     }
 
-    public interface IHaveProviderResourceId : IResourceInterface
-    {
-        dynamic ProviderResourceId { get; set; }
-    }
-
     public interface IHaveListOfSecurityAgentPentestTypesNetworkTrafficRuleRules : IResourceInterface
     {
         List<Humidifier.SecurityAgent.PentestTypes.NetworkTrafficRule> Rules { get; set; }
@@ -105654,14 +106419,29 @@ namespace Humidifier.Interfaces
         List<Humidifier.SecurityAgent.PentestTypes.CustomHeader> CustomHeaders { get; set; }
     }
 
-    public interface IHaveNetworkTrafficRuleType : IResourceInterface
-    {
-        dynamic NetworkTrafficRuleType { get; set; }
-    }
-
     public interface IHaveSecurityAgentPentestTypesCaCertificateSourceSource : IResourceInterface
     {
         Humidifier.SecurityAgent.PentestTypes.CaCertificateSource Source { get; set; }
+    }
+
+    public interface IHaveSecurityAgentPentestJobTypesAuthenticationAuthentication : IResourceInterface
+    {
+        Humidifier.SecurityAgent.PentestJobTypes.Authentication Authentication { get; set; }
+    }
+
+    public interface IHaveSecurityAgentPentestJobTypesIntegratedDocumentIntegratedDocument : IResourceInterface
+    {
+        Humidifier.SecurityAgent.PentestJobTypes.IntegratedDocument IntegratedDocument { get; set; }
+    }
+
+    public interface IHaveListOfSecurityAgentPentestJobTypesNetworkTrafficRuleRules : IResourceInterface
+    {
+        List<Humidifier.SecurityAgent.PentestJobTypes.NetworkTrafficRule> Rules { get; set; }
+    }
+
+    public interface IHaveListOfSecurityAgentPentestJobTypesCustomHeaderCustomHeaders : IResourceInterface
+    {
+        List<Humidifier.SecurityAgent.PentestJobTypes.CustomHeader> CustomHeaders { get; set; }
     }
 
     public interface IHaveEvaluation : IResourceInterface
@@ -106854,6 +107634,16 @@ namespace Humidifier.Interfaces
         dynamic TargetARN { get; set; }
     }
 
+    public interface IHaveFileMode : IResourceInterface
+    {
+        dynamic FileMode { get; set; }
+    }
+
+    public interface IHaveDirectoryMode : IResourceInterface
+    {
+        dynamic DirectoryMode { get; set; }
+    }
+
     public interface IHaveAllActions : IResourceInterface
     {
         dynamic AllActions { get; set; }
@@ -106972,6 +107762,11 @@ namespace Humidifier.Interfaces
     public interface IHaveCredentialType : IResourceInterface
     {
         dynamic CredentialType { get; set; }
+    }
+
+    public interface IHaveTimestreamInfluxDBBackupTypesS3ConfigurationS3Configuration : IResourceInterface
+    {
+        Humidifier.Timestream.InfluxDBBackupTypes.S3Configuration S3Configuration { get; set; }
     }
 
     public interface IHaveTimestreamInfluxDBClusterTypesS3ConfigurationS3Configuration : IResourceInterface
@@ -107199,24 +107994,9 @@ namespace Humidifier.Interfaces
         Humidifier.Timestream.InfluxDBParameterGroupTypes.Duration ReplicationInterval { get; set; }
     }
 
-    public interface IHaveIngestQueryInstances : IResourceInterface
-    {
-        dynamic IngestQueryInstances { get; set; }
-    }
-
     public interface IHaveTimestreamInfluxDBParameterGroupTypesDurationCompactionCheckInterval : IResourceInterface
     {
         Humidifier.Timestream.InfluxDBParameterGroupTypes.Duration CompactionCheckInterval { get; set; }
-    }
-
-    public interface IHaveQueryOnlyInstances : IResourceInterface
-    {
-        dynamic QueryOnlyInstances { get; set; }
-    }
-
-    public interface IHaveDedicatedCompactor : IResourceInterface
-    {
-        dynamic DedicatedCompactor { get; set; }
     }
 
     public interface IHaveTimestreamInfluxDBParameterGroupTypesInfluxDBv3CoreParametersInfluxDBv3Core : IResourceInterface

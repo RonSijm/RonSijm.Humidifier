@@ -454,6 +454,18 @@ namespace Humidifier.Deadline
             public Humidifier.Deadline.FleetTypes.CustomerManagedFleetConfiguration CustomerManaged { get; set; }
         }
 
+        public class FleetSoftwareAddOn : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-fleetsoftwareaddon.html#cfn-deadline-fleet-fleetsoftwareaddon-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
         public class HostConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -629,6 +641,15 @@ namespace Humidifier.Deadline
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AllowedInstanceTypes { get; set; }
+            /// <summary>
+            /// SoftwareAddOns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2instancecapabilities.html#cfn-deadline-fleet-servicemanagedec2instancecapabilities-softwareaddons
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FleetSoftwareAddOn
+            /// </summary>
+            public List<Humidifier.Deadline.FleetTypes.FleetSoftwareAddOn> SoftwareAddOns { get; set; }
             /// <summary>
             /// CustomAttributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2instancecapabilities.html#cfn-deadline-fleet-servicemanagedec2instancecapabilities-customattributes

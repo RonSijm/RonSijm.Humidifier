@@ -2,7 +2,7 @@ namespace Humidifier.DMS
 {
     using global::System.Collections.Generic;
 
-    public class InstanceProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveAvailabilityZone, IHaveKmsKeyArn, IHavePubliclyAccessible, IHaveNetworkType, IHaveInstanceProfileName, IHaveInstanceProfileIdentifier
+    public class InstanceProfile : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveAvailabilityZone, IHaveKmsKeyArn, IHavePubliclyAccessible, IHaveNetworkType, IHaveInstanceProfileName
     {
         public class Attributes
         {
@@ -78,13 +78,5 @@ namespace Humidifier.DMS
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
-        /// <summary>
-        /// InstanceProfileIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-instanceprofile.html#cfn-dms-instanceprofile-instanceprofileidentifier
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InstanceProfileIdentifier { get; set; }
     }
 }

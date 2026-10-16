@@ -202,6 +202,14 @@ namespace Humidifier.Lambda
             /// </summary>
             public Dictionary<string, dynamic> EnvironmentVariables { get; set; }
             /// <summary>
+            /// EgressNetworkConnectorArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-webfunctionrevision-serviceconfig.html#cfn-lambda-webfunctionrevision-serviceconfig-egressnetworkconnectorarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EgressNetworkConnectorArn { get; set; }
+            /// <summary>
             /// TelemetryConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-webfunctionrevision-serviceconfig.html#cfn-lambda-webfunctionrevision-serviceconfig-telemetryconfig
             /// Required: False
