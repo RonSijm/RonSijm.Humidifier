@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\BuildSettings\SupportedFrameworks.props" />
+	<Import Project="..\BuildSettings\NuGetVersioning.props" />
+
+	<PropertyGroup>
+		<Title>RonSijm.Humidifier</Title>
+		<Description>Humidifier allows you to build AWS CloudFormation templates programmatically.</Description>
+		<Copyright>Ron Sijm; Jake Scott</Copyright>
+		<AssemblyTitle>Humidifier</AssemblyTitle>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<Authors>Ron Sijm; Jake Scott</Authors>
+		<AssemblyName>Humidifier</AssemblyName>
+		<PackageId>RonSijm.Humidifier</PackageId>
+		<PackageTags>aws;cloudformation;</PackageTags>
+		<PackageIconUrl>https://raw.githubusercontent.com/jakejscott/humidifier/master/img/humidifier.png</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/RonSijm/RonSijm.Humidifier</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/RonSijm/RonSijm.Humidifier/blob/master/license.txt</PackageLicenseUrl>
+		<LangVersion>preview</LangVersion>
+		<PackageReadmeFile>packaging\README.md</PackageReadmeFile>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<WarningLevel>0</WarningLevel>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<DebugType>None</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="packaging" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Gen\TypeNames\" />
+	</ItemGroup>
+
+</Project>

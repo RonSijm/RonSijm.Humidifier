@@ -1,0 +1,47 @@
+namespace Humidifier.NetworkManager
+{
+    using global::System.Collections.Generic;
+
+    public class CustomerGatewayAssociation : Humidifier.Base.BaseResource, IHaveGlobalNetworkId, IHaveDeviceId, IHaveCustomerGatewayArn, IHaveLinkId
+    {
+        public override string AWSTypeName { get => AWS.NetworkManager.CustomerGatewayAssociation; }
+
+        /// <summary>
+        /// GlobalNetworkId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-globalnetworkid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? GlobalNetworkId { get; set; }
+
+        /// <summary>
+        /// DeviceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-deviceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? DeviceId { get; set; }
+
+        /// <summary>
+        /// CustomerGatewayArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-customergatewayarn
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? CustomerGatewayArn { get; set; }
+        /// <summary>
+        /// LinkId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-customergatewayassociation.html#cfn-networkmanager-customergatewayassociation-linkid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? LinkId { get; set; }
+    }
+}

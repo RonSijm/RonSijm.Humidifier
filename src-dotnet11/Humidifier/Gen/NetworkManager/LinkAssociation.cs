@@ -1,0 +1,39 @@
+namespace Humidifier.NetworkManager
+{
+    using global::System.Collections.Generic;
+
+    public class LinkAssociation : Humidifier.Base.BaseResource, IHaveGlobalNetworkId, IHaveDeviceId, IHaveLinkId
+    {
+        public override string AWSTypeName { get => AWS.NetworkManager.LinkAssociation; }
+
+        /// <summary>
+        /// GlobalNetworkId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html#cfn-networkmanager-linkassociation-globalnetworkid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? GlobalNetworkId { get; set; }
+
+        /// <summary>
+        /// DeviceId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html#cfn-networkmanager-linkassociation-deviceid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? DeviceId { get; set; }
+
+        /// <summary>
+        /// LinkId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-linkassociation.html#cfn-networkmanager-linkassociation-linkid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? LinkId { get; set; }
+    }
+}

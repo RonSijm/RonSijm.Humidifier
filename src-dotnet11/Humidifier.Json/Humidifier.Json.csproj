@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\BuildSettings\SupportedFrameworks.props" />
+	<Import Project="..\BuildSettings\NuGetVersioning.props" />
+
+	<PropertyGroup>
+		<Description>Json Serialization support for Humidifier.</Description>
+		<Copyright>RonSijm; Jake Scott</Copyright>
+		<AssemblyTitle>RonSijm.Humidifier.Json</AssemblyTitle>
+		<NeutralLanguage>en-US</NeutralLanguage>
+		<Authors>RonSijm; Jake Scott</Authors>
+		<AssemblyName>RonSijm.Humidifier.Json</AssemblyName>
+		<PackageId>RonSijm.Humidifier.Json</PackageId>
+		<PackageTags>aws;cloudformation;</PackageTags>
+		<PackageIconUrl>https://raw.githubusercontent.com/jakejscott/humidifier/master/img/humidifier.png</PackageIconUrl>
+		<PackageProjectUrl>https://github.com/jakejscott/humidifier</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/jakejscott/humidifier/blob/master/license.txt</PackageLicenseUrl>
+		<LangVersion>preview</LangVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)'=='Release'">
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<WarningLevel>0</WarningLevel>
+		<DebugType>None</DebugType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Humidifier\Humidifier.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,50 @@
+namespace Humidifier.ACMPCA
+{
+    using global::System.Collections.Generic;
+
+    public class CertificateAuthorityActivation : Humidifier.Base.BaseResource, IHaveStatus, IHaveCertificateAuthorityArn, IHaveCertificateChain, IHaveCertificate
+    {
+        public class Attributes
+        {
+            public static string CompleteCertificateChain =  "CompleteCertificateChain" ;
+        }
+
+        public override string AWSTypeName { get => AWS.ACMPCA.CertificateAuthorityActivation; }
+        /// <summary>
+        /// Status
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-status
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Status { get; set; }
+
+        /// <summary>
+        /// CertificateAuthorityArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificateauthorityarn
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? CertificateAuthorityArn { get; set; }
+        /// <summary>
+        /// CertificateChain
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificatechain
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? CertificateChain { get; set; }
+
+        /// <summary>
+        /// Certificate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthorityactivation.html#cfn-acmpca-certificateauthorityactivation-certificate
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? Certificate { get; set; }
+    }
+}

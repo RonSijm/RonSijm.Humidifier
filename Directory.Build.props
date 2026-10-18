@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <HumidifierSourceRoot Condition="'$(HumidifierSourceRoot)' == ''">$(MSBuildThisFileDirectory)src/</HumidifierSourceRoot>
+    <HumidifierVersionPrefix>$([System.IO.File]::ReadAllText('$(HumidifierSourceRoot)version.txt').Trim())</HumidifierVersionPrefix>
+    <HumidifierSpecVersion>$([System.IO.File]::ReadAllText('$(HumidifierSourceRoot)spec-version.txt').Trim())</HumidifierSpecVersion>
+    <HumidifierVersionSuffix Condition="Exists('$(HumidifierSourceRoot)version-suffix.txt')">$([System.IO.File]::ReadAllText('$(HumidifierSourceRoot)version-suffix.txt').Trim())</HumidifierVersionSuffix>
+    <Version>$(HumidifierVersionPrefix).$([System.String]::Copy('$(HumidifierSpecVersion)').Replace('.', ''))</Version>
+    <Version Condition="'$(HumidifierVersionSuffix)' != ''">$(Version)-$(HumidifierVersionSuffix)</Version>
+  </PropertyGroup>
+</Project>

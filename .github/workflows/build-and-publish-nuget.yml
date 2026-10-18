@@ -1,9 +1,10 @@
-name: Publish NuGet Package
+name: Publish NuGet Packages
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   publish:
@@ -11,38 +12,33 @@ jobs:
     permissions:
       contents: read
       id-token: write
-
+    strategy:
+      fail-fast: false
+      matrix:
+        source: [src, src-dotnet11]
+    defaults:
+      run:
+        working-directory: ${{ matrix.source }}
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v7
+      with:
+        ref: ${{ github.ref_name }}
 
-    - name: Set up .NET
+    - name: Set up the SDK for this source track
       uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: '10.0.x'
+        global-json-file: ${{ matrix.source }}/global.json
 
-    - name: Restore dependencies of Humidifier
-      run: dotnet restore src/Humidifier/Humidifier.csproj
-
-    - name: Restore dependencies of Humidifier.Json
-      run: dotnet restore src/Humidifier.Json/Humidifier.Json.csproj
-
-    - name: Combine version numbers
+    - name: Build NuGet packages
+      shell: bash
       run: |
-        VERSION=$(cat src/version.txt)
-        SPEC_VERSION=$(cat src/spec-version.txt | tr -d '.')
-        FINAL_VERSION="${VERSION}.${SPEC_VERSION}"
-        echo "FINAL_VERSION=$FINAL_VERSION" >> $GITHUB_ENV
-
-    - name: Build Humidifier
-      env:
-        FINAL_VERSION: ${{ env.FINAL_VERSION }}
-      run: dotnet build src/Humidifier --configuration Release /p:PackageVersion=$FINAL_VERSION /p:PackageOutputPath="$GITHUB_WORKSPACE/packages"
-    
-    - name: Build Humidifier.Json
-      env:
-        FINAL_VERSION: ${{ env.FINAL_VERSION }}
-      run: dotnet build src/Humidifier.Json --configuration Release /p:PackageVersion=$FINAL_VERSION /p:PackageOutputPath="$GITHUB_WORKSPACE/packages"
+        VERSION="$(cat version.txt).$(tr -d '.' < spec-version.txt)"
+        if [ -f version-suffix.txt ]; then VERSION="$VERSION-$(cat version-suffix.txt)"; fi
+        dotnet restore Humidifier/Humidifier.csproj
+        dotnet pack Humidifier/Humidifier.csproj -c Release --no-restore -p:PackageVersion="$VERSION" -p:Version="$VERSION" -p:GeneratePackageOnBuild=false -o "$GITHUB_WORKSPACE/packages/${{ matrix.source }}"
+        dotnet restore Humidifier.Json/Humidifier.Json.csproj
+        dotnet pack Humidifier.Json/Humidifier.Json.csproj -c Release --no-restore -p:PackageVersion="$VERSION" -p:Version="$VERSION" -p:GeneratePackageOnBuild=false -o "$GITHUB_WORKSPACE/packages/${{ matrix.source }}"
 
     - name: Log in to NuGet with trusted publishing
       id: login
@@ -51,4 +47,4 @@ jobs:
         user: Ron.Sijm
 
     - name: Publish to NuGet
-      run: dotnet nuget push "./packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --skip-duplicate
+      run: dotnet nuget push "$GITHUB_WORKSPACE/packages/${{ matrix.source }}/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --skip-duplicate

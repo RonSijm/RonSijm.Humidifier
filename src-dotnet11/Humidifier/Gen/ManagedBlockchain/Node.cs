@@ -1,0 +1,69 @@
+namespace Humidifier.ManagedBlockchain
+{
+    using global::System.Collections.Generic;
+    using NodeTypes;
+
+    public class Node : Humidifier.Base.BaseResource, IHaveMemberId, IHaveNetworkId, IHaveManagedBlockchainNodeTypesNodeConfigurationNodeConfiguration
+    {
+        public class Attributes
+        {
+            public static string MemberId =  "MemberId" ;
+            public static string NodeId =  "NodeId" ;
+            public static string Arn =  "Arn" ;
+            public static string NetworkId =  "NetworkId" ;
+        }
+
+        public override string AWSTypeName { get => AWS.ManagedBlockchain.Node; }
+        /// <summary>
+        /// MemberId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-memberid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? MemberId { get; set; }
+
+        /// <summary>
+        /// NetworkId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-networkid
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? NetworkId { get; set; }
+
+        /// <summary>
+        /// NodeConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-nodeconfiguration
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: NodeConfiguration
+        /// </summary>
+        [Required]
+        public Union<Humidifier.ManagedBlockchain.NodeTypes.NodeConfiguration, BaseFunction>? NodeConfiguration { get; set; }
+    }
+
+    namespace NodeTypes
+    {
+        public class NodeConfiguration : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveInstanceType
+        {
+            /// <summary>
+            /// AvailabilityZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-availabilityzone
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AvailabilityZone { get; set; }
+            /// <summary>
+            /// InstanceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-instancetype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? InstanceType { get; set; }
+        }
+    }
+}

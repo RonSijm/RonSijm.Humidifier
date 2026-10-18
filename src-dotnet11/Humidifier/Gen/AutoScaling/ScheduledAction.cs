@@ -1,0 +1,80 @@
+namespace Humidifier.AutoScaling
+{
+    using global::System.Collections.Generic;
+
+    public class ScheduledAction : Humidifier.Base.BaseResource, IHaveMinSize_Integer, IHaveRecurrence, IHaveTimeZone, IHaveEndTime, IHaveAutoScalingGroupName, IHaveStartTime, IHaveDesiredCapacity_Integer, IHaveMaxSize_Integer
+    {
+        public class Attributes
+        {
+            public static string ScheduledActionName =  "ScheduledActionName" ;
+        }
+
+        public override string AWSTypeName { get => AWS.AutoScaling.ScheduledAction; }
+        /// <summary>
+        /// MinSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-minsize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? MinSize { get; set; }
+        /// <summary>
+        /// Recurrence
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-recurrence
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Recurrence { get; set; }
+        /// <summary>
+        /// TimeZone
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-timezone
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? TimeZone { get; set; }
+        /// <summary>
+        /// EndTime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-endtime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? EndTime { get; set; }
+
+        /// <summary>
+        /// AutoScalingGroupName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-autoscalinggroupname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? AutoScalingGroupName { get; set; }
+        /// <summary>
+        /// StartTime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-starttime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? StartTime { get; set; }
+        /// <summary>
+        /// DesiredCapacity
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-desiredcapacity
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? DesiredCapacity { get; set; }
+        /// <summary>
+        /// MaxSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscaling-scheduledaction.html#cfn-autoscaling-scheduledaction-maxsize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? MaxSize { get; set; }
+    }
+}

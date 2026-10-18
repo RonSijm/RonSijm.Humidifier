@@ -1,0 +1,630 @@
+namespace Humidifier.CustomerProfiles
+{
+    using global::System.Collections.Generic;
+    using SegmentDefinitionTypes;
+
+    public class SegmentDefinition : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveDomainName, IHaveCustomerProfilesSegmentDefinitionTypesSegmentGroupSegmentGroups, IHaveDisplayName, IHaveSegmentDefinitionName, IHaveCustomerProfilesSegmentDefinitionTypesSegmentSortSegmentSort, IHaveSegmentSqlQuery
+    {
+        public class Attributes
+        {
+            public static string SegmentType =  "SegmentType" ;
+            public static string CreatedAt =  "CreatedAt" ;
+            public static string SegmentDefinitionArn =  "SegmentDefinitionArn" ;
+        }
+
+        public override string AWSTypeName { get => AWS.CustomerProfiles.SegmentDefinition; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Description { get; set; }
+
+        /// <summary>
+        /// DomainName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-domainname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? DomainName { get; set; }
+        /// <summary>
+        /// SegmentGroups
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-segmentgroups
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: SegmentGroup
+        /// </summary>
+        public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.SegmentGroup, BaseFunction>? SegmentGroups { get; set; }
+
+        /// <summary>
+        /// DisplayName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-displayname
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? DisplayName { get; set; }
+        public Union<string, BaseFunction>? SegmentDefinitionName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// SegmentSort
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-segmentsort
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SegmentSort
+        /// </summary>
+        public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.SegmentSort, BaseFunction>? SegmentSort { get; set; }
+        /// <summary>
+        /// SegmentSqlQuery
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-segmentsqlquery
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? SegmentSqlQuery { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-segmentdefinition.html#cfn-customerprofiles-segmentdefinition-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+
+    namespace SegmentDefinitionTypes
+    {
+        public class AddressDimension : Humidifier.Base.BaseSubResource, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionCountry, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionPostalCode, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionCity, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionCounty, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionState, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionProvince
+        {
+            /// <summary>
+            /// Country
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-addressdimension.html#cfn-customerprofiles-segmentdefinition-addressdimension-country
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? Country { get; set; }
+            /// <summary>
+            /// PostalCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-addressdimension.html#cfn-customerprofiles-segmentdefinition-addressdimension-postalcode
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? PostalCode { get; set; }
+            /// <summary>
+            /// City
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-addressdimension.html#cfn-customerprofiles-segmentdefinition-addressdimension-city
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? City { get; set; }
+            /// <summary>
+            /// County
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-addressdimension.html#cfn-customerprofiles-segmentdefinition-addressdimension-county
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? County { get; set; }
+            /// <summary>
+            /// State
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-addressdimension.html#cfn-customerprofiles-segmentdefinition-addressdimension-state
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? State { get; set; }
+            /// <summary>
+            /// Province
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-addressdimension.html#cfn-customerprofiles-segmentdefinition-addressdimension-province
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? Province { get; set; }
+        }
+
+        public class AttributeDimension : Humidifier.Base.BaseSubResource, IHaveDimensionType, IHaveStringListOfValues
+        {
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-attributedimension.html#cfn-customerprofiles-segmentdefinition-attributedimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionType { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-attributedimension.html#cfn-customerprofiles-segmentdefinition-attributedimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+        }
+
+        public class CalculatedAttributeDimension : Humidifier.Base.BaseSubResource, IHaveDimensionType, IHaveStringListOfValues, IHaveCustomerProfilesSegmentDefinitionTypesConditionOverridesConditionOverrides
+        {
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-calculatedattributedimension.html#cfn-customerprofiles-segmentdefinition-calculatedattributedimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionType { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-calculatedattributedimension.html#cfn-customerprofiles-segmentdefinition-calculatedattributedimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+            /// <summary>
+            /// ConditionOverrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-calculatedattributedimension.html#cfn-customerprofiles-segmentdefinition-calculatedattributedimension-conditionoverrides
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ConditionOverrides
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ConditionOverrides, BaseFunction>? ConditionOverrides { get; set; }
+        }
+
+        public class ConditionOverrides : Humidifier.Base.BaseSubResource, IHaveCustomerProfilesSegmentDefinitionTypesRangeOverrideRange
+        {
+            /// <summary>
+            /// Range
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-conditionoverrides.html#cfn-customerprofiles-segmentdefinition-conditionoverrides-range
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: RangeOverride
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.RangeOverride, BaseFunction>? Range { get; set; }
+        }
+
+        public class DateDimension : Humidifier.Base.BaseSubResource, IHaveDimensionType, IHaveStringListOfValues
+        {
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-datedimension.html#cfn-customerprofiles-segmentdefinition-datedimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionType { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-datedimension.html#cfn-customerprofiles-segmentdefinition-datedimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+        }
+
+        public class Dimension : Humidifier.Base.BaseSubResource, IHaveMapOfCustomerProfilesSegmentDefinitionTypesCalculatedAttributeDimensionCalculatedAttributes, IHaveCustomerProfilesSegmentDefinitionTypesProfileAttributesProfileAttributes
+        {
+            /// <summary>
+            /// CalculatedAttributes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-dimension.html#cfn-customerprofiles-segmentdefinition-dimension-calculatedattributes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: Map
+            /// ItemType: CalculatedAttributeDimension
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, Humidifier.CustomerProfiles.SegmentDefinitionTypes.CalculatedAttributeDimension>, IReadOnlyDictionary<string, Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.CalculatedAttributeDimension, BaseFunction>>, BaseFunction>? CalculatedAttributes { get; set; }
+            /// <summary>
+            /// ProfileAttributes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-dimension.html#cfn-customerprofiles-segmentdefinition-dimension-profileattributes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileAttributes
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileAttributes, BaseFunction>? ProfileAttributes { get; set; }
+        }
+
+        public class ExtraLengthValueProfileDimension : Humidifier.Base.BaseSubResource, IHaveDimensionType, IHaveStringListOfValues
+        {
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-extralengthvalueprofiledimension.html#cfn-customerprofiles-segmentdefinition-extralengthvalueprofiledimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionType { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-extralengthvalueprofiledimension.html#cfn-customerprofiles-segmentdefinition-extralengthvalueprofiledimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+        }
+
+        public class Group : Humidifier.Base.BaseSubResource, IHaveType, IHaveSourceType, IHaveListOfCustomerProfilesSegmentDefinitionTypesDimensionDimensions, IHaveListOfCustomerProfilesSegmentDefinitionTypesSourceSegmentSourceSegments
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-group.html#cfn-customerprofiles-segmentdefinition-group-type
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Type { get; set; }
+            /// <summary>
+            /// SourceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-group.html#cfn-customerprofiles-segmentdefinition-group-sourcetype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SourceType { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-group.html#cfn-customerprofiles-segmentdefinition-group-dimensions
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Dimension
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CustomerProfiles.SegmentDefinitionTypes.Dimension>, IReadOnlyList<Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.Dimension, BaseFunction>>, BaseFunction>? Dimensions { get; set; }
+            /// <summary>
+            /// SourceSegments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-group.html#cfn-customerprofiles-segmentdefinition-group-sourcesegments
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: SourceSegment
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CustomerProfiles.SegmentDefinitionTypes.SourceSegment>, IReadOnlyList<Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.SourceSegment, BaseFunction>>, BaseFunction>? SourceSegments { get; set; }
+        }
+
+        public class ProfileAttributes : Humidifier.Base.BaseSubResource, IHaveCustomerProfilesSegmentDefinitionTypesExtraLengthValueProfileDimensionAdditionalInformation, IHaveCustomerProfilesSegmentDefinitionTypesProfileTypeDimensionProfileType, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionBusinessName, IHaveCustomerProfilesSegmentDefinitionTypesAddressDimensionAddress, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionFirstName, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionPersonalEmailAddress, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionBusinessEmailAddress, IHaveMapOfCustomerProfilesSegmentDefinitionTypesAttributeDimensionAttributes_, IHaveCustomerProfilesSegmentDefinitionTypesAddressDimensionMailingAddress, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionBusinessPhoneNumber, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionMiddleName, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionMobilePhoneNumber, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionEmailAddress, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionAccountNumber, IHaveCustomerProfilesSegmentDefinitionTypesAddressDimensionBillingAddress, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionGenderString, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionHomePhoneNumber, IHaveCustomerProfilesSegmentDefinitionTypesAddressDimensionShippingAddress, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionPhoneNumber, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionLastName, IHaveCustomerProfilesSegmentDefinitionTypesProfileDimensionPartyTypeString, IHaveCustomerProfilesSegmentDefinitionTypesDateDimensionBirthDate
+        {
+            /// <summary>
+            /// AdditionalInformation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-additionalinformation
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ExtraLengthValueProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ExtraLengthValueProfileDimension, BaseFunction>? AdditionalInformation { get; set; }
+            /// <summary>
+            /// ProfileType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-profiletype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileTypeDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileTypeDimension, BaseFunction>? ProfileType { get; set; }
+            /// <summary>
+            /// BusinessName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-businessname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? BusinessName { get; set; }
+            /// <summary>
+            /// Address
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-address
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: AddressDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.AddressDimension, BaseFunction>? Address { get; set; }
+            /// <summary>
+            /// FirstName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-firstname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? FirstName { get; set; }
+            /// <summary>
+            /// PersonalEmailAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-personalemailaddress
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? PersonalEmailAddress { get; set; }
+            /// <summary>
+            /// BusinessEmailAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-businessemailaddress
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? BusinessEmailAddress { get; set; }
+            /// <summary>
+            /// Attributes_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-attributes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: Map
+            /// ItemType: AttributeDimension
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, Humidifier.CustomerProfiles.SegmentDefinitionTypes.AttributeDimension>, IReadOnlyDictionary<string, Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.AttributeDimension, BaseFunction>>, BaseFunction>? Attributes_ { get; set; }
+            /// <summary>
+            /// MailingAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-mailingaddress
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: AddressDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.AddressDimension, BaseFunction>? MailingAddress { get; set; }
+            /// <summary>
+            /// BusinessPhoneNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-businessphonenumber
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? BusinessPhoneNumber { get; set; }
+            /// <summary>
+            /// MiddleName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-middlename
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? MiddleName { get; set; }
+            /// <summary>
+            /// MobilePhoneNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-mobilephonenumber
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? MobilePhoneNumber { get; set; }
+            /// <summary>
+            /// EmailAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-emailaddress
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? EmailAddress { get; set; }
+            /// <summary>
+            /// AccountNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-accountnumber
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? AccountNumber { get; set; }
+            /// <summary>
+            /// BillingAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-billingaddress
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: AddressDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.AddressDimension, BaseFunction>? BillingAddress { get; set; }
+            /// <summary>
+            /// GenderString
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-genderstring
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? GenderString { get; set; }
+            /// <summary>
+            /// HomePhoneNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-homephonenumber
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? HomePhoneNumber { get; set; }
+            /// <summary>
+            /// ShippingAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-shippingaddress
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: AddressDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.AddressDimension, BaseFunction>? ShippingAddress { get; set; }
+            /// <summary>
+            /// PhoneNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-phonenumber
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? PhoneNumber { get; set; }
+            /// <summary>
+            /// LastName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-lastname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? LastName { get; set; }
+            /// <summary>
+            /// PartyTypeString
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-partytypestring
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ProfileDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.ProfileDimension, BaseFunction>? PartyTypeString { get; set; }
+            /// <summary>
+            /// BirthDate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profileattributes.html#cfn-customerprofiles-segmentdefinition-profileattributes-birthdate
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: DateDimension
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.DateDimension, BaseFunction>? BirthDate { get; set; }
+        }
+
+        public class ProfileDimension : Humidifier.Base.BaseSubResource, IHaveStringListOfValues, IHaveDimensionType
+        {
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profiledimension.html#cfn-customerprofiles-segmentdefinition-profiledimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profiledimension.html#cfn-customerprofiles-segmentdefinition-profiledimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionType { get; set; }
+        }
+
+        public class ProfileTypeDimension : Humidifier.Base.BaseSubResource, IHaveDimensionType, IHaveStringListOfValues
+        {
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profiletypedimension.html#cfn-customerprofiles-segmentdefinition-profiletypedimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionType { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-profiletypedimension.html#cfn-customerprofiles-segmentdefinition-profiletypedimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+        }
+
+        public class RangeOverride : Humidifier.Base.BaseSubResource, IHaveStart_Integer, IHaveEnd_Integer, IHaveUnit
+        {
+            /// <summary>
+            /// Start
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-rangeoverride.html#cfn-customerprofiles-segmentdefinition-rangeoverride-start
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? Start { get; set; }
+            /// <summary>
+            /// End
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-rangeoverride.html#cfn-customerprofiles-segmentdefinition-rangeoverride-end
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? End { get; set; }
+            /// <summary>
+            /// Unit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-rangeoverride.html#cfn-customerprofiles-segmentdefinition-rangeoverride-unit
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Unit { get; set; }
+        }
+
+        public class SegmentGroup : Humidifier.Base.BaseSubResource, IHaveListOfCustomerProfilesSegmentDefinitionTypesGroupGroups, IHaveInclude
+        {
+            /// <summary>
+            /// Groups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-segmentgroup.html#cfn-customerprofiles-segmentdefinition-segmentgroup-groups
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: Group
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CustomerProfiles.SegmentDefinitionTypes.Group>, IReadOnlyList<Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.Group, BaseFunction>>, BaseFunction>? Groups { get; set; }
+            /// <summary>
+            /// Include
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-segmentgroup.html#cfn-customerprofiles-segmentdefinition-segmentgroup-include
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Include { get; set; }
+        }
+
+        public class SegmentSort : Humidifier.Base.BaseSubResource, IHaveListOfCustomerProfilesSegmentDefinitionTypesSortAttributeAttributes_
+        {
+            /// <summary>
+            /// Attributes_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-segmentsort.html#cfn-customerprofiles-segmentdefinition-segmentsort-attributes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SortAttribute
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CustomerProfiles.SegmentDefinitionTypes.SortAttribute>, IReadOnlyList<Union<Humidifier.CustomerProfiles.SegmentDefinitionTypes.SortAttribute, BaseFunction>>, BaseFunction>? Attributes_ { get; set; }
+        }
+
+        public class SortAttribute : Humidifier.Base.BaseSubResource, IHaveOrder, IHaveType, IHaveDataType, IHaveName
+        {
+            /// <summary>
+            /// Order
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-sortattribute.html#cfn-customerprofiles-segmentdefinition-sortattribute-order
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Order { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-sortattribute.html#cfn-customerprofiles-segmentdefinition-sortattribute-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Type { get; set; }
+            /// <summary>
+            /// DataType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-sortattribute.html#cfn-customerprofiles-segmentdefinition-sortattribute-datatype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DataType { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-sortattribute.html#cfn-customerprofiles-segmentdefinition-sortattribute-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Name { get; set; }
+        }
+
+        public class SourceSegment : Humidifier.Base.BaseSubResource, IHaveSegmentDefinitionName
+        {
+            /// <summary>
+            /// SegmentDefinitionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-segmentdefinition-sourcesegment.html#cfn-customerprofiles-segmentdefinition-sourcesegment-segmentdefinitionname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SegmentDefinitionName { get; set; }
+        }
+    }
+}

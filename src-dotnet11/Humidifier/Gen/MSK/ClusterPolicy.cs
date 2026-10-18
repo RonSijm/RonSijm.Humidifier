@@ -1,0 +1,34 @@
+namespace Humidifier.MSK
+{
+    using global::System.Collections.Generic;
+
+    public class ClusterPolicy : Humidifier.Base.BaseResource, IHavePolicy_Json, IHaveClusterArn
+    {
+        public class Attributes
+        {
+            public static string CurrentVersion =  "CurrentVersion" ;
+        }
+
+        public override string AWSTypeName { get => AWS.MSK.ClusterPolicy; }
+
+        /// <summary>
+        /// Policy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-clusterpolicy.html#cfn-msk-clusterpolicy-policy
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        [Required]
+        public Union<object, BaseFunction>? Policy { get; set; }
+
+        /// <summary>
+        /// ClusterArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-clusterpolicy.html#cfn-msk-clusterpolicy-clusterarn
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? ClusterArn { get; set; }
+    }
+}

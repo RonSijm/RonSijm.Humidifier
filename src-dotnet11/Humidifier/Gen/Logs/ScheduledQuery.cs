@@ -1,0 +1,189 @@
+namespace Humidifier.Logs
+{
+    using global::System.Collections.Generic;
+    using ScheduledQueryTypes;
+
+    public class ScheduledQuery : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTimezone, IHaveScheduleExpression, IHaveLogsScheduledQueryTypesDestinationConfigurationDestinationConfiguration, IHaveDescription, IHaveStartTimeOffset_Integer, IHaveScheduleStartTime_Double, IHaveQueryString, IHaveName, IHaveScheduleEndTime_Double, IHaveExecutionRoleArn, IHaveState, IHaveQueryLanguage, IHaveStringListOfLogGroupIdentifiers, IHaveListOfLogsScheduledQueryTypesTagsItemsTags
+    {
+        public class Attributes
+        {
+            public static string LastTriggeredTime =  "LastTriggeredTime" ;
+            public static string LastExecutionStatus =  "LastExecutionStatus" ;
+            public static string CreationTime =  "CreationTime" ;
+            public static string LastUpdatedTime =  "LastUpdatedTime" ;
+            public static string ScheduledQueryArn =  "ScheduledQueryArn" ;
+        }
+
+        public override string AWSTypeName { get => AWS.Logs.ScheduledQuery; }
+        /// <summary>
+        /// Timezone
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-timezone
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Timezone { get; set; }
+
+        /// <summary>
+        /// ScheduleExpression
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-scheduleexpression
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? ScheduleExpression { get; set; }
+        /// <summary>
+        /// DestinationConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-destinationconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DestinationConfiguration
+        /// </summary>
+        public Union<Humidifier.Logs.ScheduledQueryTypes.DestinationConfiguration, BaseFunction>? DestinationConfiguration { get; set; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Description { get; set; }
+        /// <summary>
+        /// StartTimeOffset
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-starttimeoffset
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? StartTimeOffset { get; set; }
+        /// <summary>
+        /// ScheduleStartTime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-schedulestarttime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Double
+        /// </summary>
+        public Union<double, BaseFunction>? ScheduleStartTime { get; set; }
+
+        /// <summary>
+        /// QueryString
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-querystring
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? QueryString { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ScheduleEndTime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-scheduleendtime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Double
+        /// </summary>
+        public Union<double, BaseFunction>? ScheduleEndTime { get; set; }
+
+        /// <summary>
+        /// ExecutionRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-executionrolearn
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? ExecutionRoleArn { get; set; }
+        /// <summary>
+        /// State
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-state
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? State { get; set; }
+
+        /// <summary>
+        /// QueryLanguage
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-querylanguage
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? QueryLanguage { get; set; }
+        /// <summary>
+        /// LogGroupIdentifiers
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-loggroupidentifiers
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? LogGroupIdentifiers { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-scheduledquery.html#cfn-logs-scheduledquery-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: TagsItems
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Logs.ScheduledQueryTypes.TagsItems>, IReadOnlyList<Union<Humidifier.Logs.ScheduledQueryTypes.TagsItems, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+
+    namespace ScheduledQueryTypes
+    {
+        public class DestinationConfiguration : Humidifier.Base.BaseSubResource, IHaveLogsScheduledQueryTypesS3ConfigurationS3Configuration
+        {
+            /// <summary>
+            /// S3Configuration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-scheduledquery-destinationconfiguration.html#cfn-logs-scheduledquery-destinationconfiguration-s3configuration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3Configuration
+            /// </summary>
+            public Union<Humidifier.Logs.ScheduledQueryTypes.S3Configuration, BaseFunction>? S3Configuration { get; set; }
+        }
+
+        public class S3Configuration : Humidifier.Base.BaseSubResource, IHaveDestinationIdentifier, IHaveRoleArn
+        {
+            /// <summary>
+            /// DestinationIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-scheduledquery-s3configuration.html#cfn-logs-scheduledquery-s3configuration-destinationidentifier
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DestinationIdentifier { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-scheduledquery-s3configuration.html#cfn-logs-scheduledquery-s3configuration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RoleArn { get; set; }
+        }
+
+        public class TagsItems : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
+        {
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-scheduledquery-tagsitems.html#cfn-logs-scheduledquery-tagsitems-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-logs-scheduledquery-tagsitems.html#cfn-logs-scheduledquery-tagsitems-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Key { get; set; }
+        }
+    }
+}

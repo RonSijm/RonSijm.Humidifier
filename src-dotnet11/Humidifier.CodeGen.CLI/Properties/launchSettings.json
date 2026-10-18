@@ -1,0 +1,22 @@
+{
+  "profiles": {
+    "WSL": {
+      "commandName": "WSL2",
+      "environmentVariables": {
+        "BUILD_PATH": "C:\\dev\\Humidifier"
+      },
+      "distributionName": ""
+    },
+    "-forceRegenerate -noUpdateCheck": {
+      "commandName": "Project",
+      "commandLineArgs": "-forceRegenerate -noUpdateCheck"
+    },
+    "-forceRegenerate": {
+      "commandName": "Project",
+      "commandLineArgs": "-forceRegenerate"
+    },
+    "Default": {
+      "commandName": "Project"
+    }
+  }
+}

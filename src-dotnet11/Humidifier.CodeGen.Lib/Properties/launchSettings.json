@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Humidifier.CodeGen": {
+      "commandName": "Project",
+      "commandLineArgs": "force",
+      "environmentVariables": {
+        "BUILD_PATH": "C:\\dev\\Humidifier"
+      }
+    }
+  }
+}

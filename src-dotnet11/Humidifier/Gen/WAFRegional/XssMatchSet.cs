@@ -1,0 +1,63 @@
+namespace Humidifier.WAFRegional
+{
+    using global::System.Collections.Generic;
+    using XssMatchSetTypes;
+
+    public class XssMatchSet : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveListOfWAFRegionalXssMatchSetTypesXssMatchTupleXssMatchTuples, IHaveName
+    {
+        public override string AWSTypeName { get => AWS.WAFRegional.XssMatchSet; }
+        /// <summary>
+        /// XssMatchTuples
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-xssmatchtuples
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: XssMatchTuple
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.WAFRegional.XssMatchSetTypes.XssMatchTuple>, IReadOnlyList<Union<Humidifier.WAFRegional.XssMatchSetTypes.XssMatchTuple, BaseFunction>>, BaseFunction>? XssMatchTuples { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace XssMatchSetTypes
+    {
+        public class FieldToMatch : Humidifier.Base.BaseSubResource, IHaveType, IHaveData
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html#cfn-wafregional-xssmatchset-fieldtomatch-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Type { get; set; }
+            /// <summary>
+            /// Data
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html#cfn-wafregional-xssmatchset-fieldtomatch-data
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Data { get; set; }
+        }
+
+        public class XssMatchTuple : Humidifier.Base.BaseSubResource, IHaveTextTransformation, IHaveWAFRegionalXssMatchSetTypesFieldToMatchFieldToMatch
+        {
+            /// <summary>
+            /// TextTransformation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-texttransformation
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TextTransformation { get; set; }
+            /// <summary>
+            /// FieldToMatch
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-fieldtomatch
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FieldToMatch
+            /// </summary>
+            public Union<Humidifier.WAFRegional.XssMatchSetTypes.FieldToMatch, BaseFunction>? FieldToMatch { get; set; }
+        }
+    }
+}

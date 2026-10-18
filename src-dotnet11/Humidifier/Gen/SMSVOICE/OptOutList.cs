@@ -1,0 +1,24 @@
+namespace Humidifier.SMSVOICE
+{
+    using global::System.Collections.Generic;
+
+    public class OptOutList : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveOptOutListName
+    {
+        public class Attributes
+        {
+            public static string Arn =  "Arn" ;
+        }
+
+        public override string AWSTypeName { get => AWS.SMSVOICE.OptOutList; }
+        public Union<string, BaseFunction>? OptOutListName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-smsvoice-optoutlist.html#cfn-smsvoice-optoutlist-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+}

@@ -1,0 +1,158 @@
+namespace Humidifier.Route53Resolver
+{
+    using global::System.Collections.Generic;
+    using ResolverEndpointTypes;
+
+    public class ResolverEndpoint : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStringListOfProtocols, IHaveOutpostArn, IHaveResolverEndpointType, IHaveDirection, IHaveStringListOfSecurityGroupIds, IHaveName, IHaveListOfRoute53ResolverResolverEndpointTypesIpAddressRequestIpAddresses, IHaveTargetNameServerMetricsEnabled_Boolean, IHaveRniEnhancedMetricsEnabled_Boolean, IHaveIpv6InternetAccessEnabled_Boolean, IHavePreferredInstanceType, IHaveDns64Enabled_Boolean
+    {
+        public class Attributes
+        {
+            public static string ResolverEndpointId =  "ResolverEndpointId" ;
+            public static string IpAddressCount =  "IpAddressCount" ;
+            public static string Arn =  "Arn" ;
+            public static string Direction =  "Direction" ;
+            public static string HostVPCId =  "HostVPCId" ;
+            public static string Name =  "Name" ;
+        }
+
+        public override string AWSTypeName { get => AWS.Route53Resolver.ResolverEndpoint; }
+        /// <summary>
+        /// Protocols
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-protocols
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Protocols { get; set; }
+        /// <summary>
+        /// OutpostArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-outpostarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? OutpostArn { get; set; }
+        /// <summary>
+        /// ResolverEndpointType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-resolverendpointtype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? ResolverEndpointType { get; set; }
+
+        /// <summary>
+        /// Direction
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? Direction { get; set; }
+
+        /// <summary>
+        /// SecurityGroupIds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        [Required]
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? SecurityGroupIds { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+
+        /// <summary>
+        /// IpAddresses
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
+        /// Required: True
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: IpAddressRequest
+        /// </summary>
+        [Required]
+        public Union<IReadOnlyList<Humidifier.Route53Resolver.ResolverEndpointTypes.IpAddressRequest>, IReadOnlyList<Union<Humidifier.Route53Resolver.ResolverEndpointTypes.IpAddressRequest, BaseFunction>>, BaseFunction>? IpAddresses { get; set; }
+        /// <summary>
+        /// TargetNameServerMetricsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-targetnameservermetricsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? TargetNameServerMetricsEnabled { get; set; }
+        /// <summary>
+        /// RniEnhancedMetricsEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-rnienhancedmetricsenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? RniEnhancedMetricsEnabled { get; set; }
+        /// <summary>
+        /// Ipv6InternetAccessEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipv6internetaccessenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? Ipv6InternetAccessEnabled { get; set; }
+        /// <summary>
+        /// PreferredInstanceType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-preferredinstancetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? PreferredInstanceType { get; set; }
+        /// <summary>
+        /// Dns64Enabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-dns64enabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? Dns64Enabled { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+
+    namespace ResolverEndpointTypes
+    {
+        public class IpAddressRequest : Humidifier.Base.BaseSubResource, IHaveIpv6, IHaveIp, IHaveSubnetId
+        {
+            /// <summary>
+            /// Ipv6
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ipv6
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Ipv6 { get; set; }
+            /// <summary>
+            /// Ip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Ip { get; set; }
+            /// <summary>
+            /// SubnetId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-subnetid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SubnetId { get; set; }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+namespace Humidifier.AppRunner
+{
+    using global::System.Collections.Generic;
+    using ObservabilityConfigurationTypes;
+
+    public class ObservabilityConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveAppRunnerObservabilityConfigurationTypesTraceConfigurationTraceConfiguration, IHaveObservabilityConfigurationName
+    {
+        public class Attributes
+        {
+            public static string ObservabilityConfigurationRevision =  "ObservabilityConfigurationRevision" ;
+            public static string ObservabilityConfigurationArn =  "ObservabilityConfigurationArn" ;
+            public static string Latest =  "Latest" ;
+        }
+
+        public override string AWSTypeName { get => AWS.AppRunner.ObservabilityConfiguration; }
+        /// <summary>
+        /// TraceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#cfn-apprunner-observabilityconfiguration-traceconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: TraceConfiguration
+        /// </summary>
+        public Union<Humidifier.AppRunner.ObservabilityConfigurationTypes.TraceConfiguration, BaseFunction>? TraceConfiguration { get; set; }
+        public Union<string, BaseFunction>? ObservabilityConfigurationName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#cfn-apprunner-observabilityconfiguration-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+
+    namespace ObservabilityConfigurationTypes
+    {
+        public class TraceConfiguration : Humidifier.Base.BaseSubResource, IHaveVendor
+        {
+            /// <summary>
+            /// Vendor
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-observabilityconfiguration-traceconfiguration.html#cfn-apprunner-observabilityconfiguration-traceconfiguration-vendor
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Vendor { get; set; }
+        }
+    }
+}

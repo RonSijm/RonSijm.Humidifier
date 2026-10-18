@@ -1,0 +1,38 @@
+namespace Humidifier.IAM
+{
+    using global::System.Collections.Generic;
+
+    public class ServiceLinkedRole : Humidifier.Base.BaseResource, IHaveCustomSuffix, IHaveDescription, IHaveAWSServiceName
+    {
+        public class Attributes
+        {
+            public static string RoleName =  "RoleName" ;
+        }
+
+        public override string AWSTypeName { get => AWS.IAM.ServiceLinkedRole; }
+        /// <summary>
+        /// CustomSuffix
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-customsuffix
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? CustomSuffix { get; set; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Description { get; set; }
+        /// <summary>
+        /// AWSServiceName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-servicelinkedrole.html#cfn-iam-servicelinkedrole-awsservicename
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? AWSServiceName { get; set; }
+    }
+}

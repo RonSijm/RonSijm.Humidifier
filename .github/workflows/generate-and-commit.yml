@@ -2,89 +2,49 @@ name: Generate and Commit Changes
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight UTC
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      id-token: write
-
+    outputs:
+      changed: ${{ steps.changes.outputs.changed }}
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-
-    - name: Set up .NET
-      uses: actions/setup-dotnet@v6
+    - uses: actions/checkout@v7
+    - uses: actions/setup-dotnet@v6
       with:
-        dotnet-version: '10.0.x'
-
-    - name: Restore dependencies
-      run: dotnet restore src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj 
-
-    - name: Run the C# program to generate library and get spec version
-      run: dotnet run --project src/Humidifier.CodeGen.CLI/Humidifier.CodeGen.CLI.csproj --configuration WithoutReferences --framework net10.0 -- -directory $GITHUB_WORKSPACE
-
-    - name: Check for changes
-      id: git_diff
+        global-json-file: src/global.json
+    - uses: actions/setup-dotnet@v6
+      with:
+        global-json-file: src-dotnet11/global.json
+    - name: Regenerate stable resources
+      working-directory: src
+      run: dotnet run --project Humidifier.CodeGen.CLI -c WithoutReferences -f net10.0 -- -directory "$GITHUB_WORKSPACE/src"
+    - name: Regenerate union resources
+      working-directory: src-dotnet11
+      run: dotnet run --project Humidifier.CodeGen.CLI -c WithoutReferences -f net11.0 -- -directory "$GITHUB_WORKSPACE/src-dotnet11"
+    - name: Commit changes from both tracks
+      id: changes
+      shell: bash
       run: |
-        git config --global user.email "RonSijm@Github.Action"
-        git config --global user.name "Ron Sijm"
-        git add --all
-        if git diff-index --quiet HEAD --; then
-          echo "No changes detected"
-          echo "changes=false" >> "$GITHUB_OUTPUT"
+        git config user.email "RonSijm@Github.Action"
+        git config user.name "Ron Sijm"
+        git add src src-dotnet11
+        if git diff --cached --quiet; then
+          echo "changed=false" >> "$GITHUB_OUTPUT"
         else
-          echo "Changes detected"
-          echo "changes=true" >> "$GITHUB_OUTPUT"
+          git commit -m "Automated update of generated libraries"
+          git push origin main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
         fi
 
-    - name: Combine version numbers
-      if: steps.git_diff.outputs.changes == 'true'
-      run: |
-        VERSION=$(cat src/version.txt)
-        SPEC_VERSION=$(cat src/spec-version.txt)
-        SPEC_VERSION_COMPACT=$(echo "$SPEC_VERSION" | tr -d '.')
-        FINAL_VERSION="${VERSION}.${SPEC_VERSION_COMPACT}"
-        echo "SPEC_VERSION=$SPEC_VERSION" >> "$GITHUB_ENV"
-        echo "FINAL_VERSION=$FINAL_VERSION" >> "$GITHUB_ENV"
-
-    - name: Commit changes
-      if: steps.git_diff.outputs.changes == 'true'
-      env:
-        SPEC_VERSION: ${{ env.SPEC_VERSION }}
-      run: |
-        git commit -am "Automated update of generated library version to $SPEC_VERSION"
-        git push origin main
-
-    - name: Restore dependencies of Humidifier
-      if: steps.git_diff.outputs.changes == 'true'
-      run: dotnet restore src/Humidifier/Humidifier.csproj
-
-    - name: Restore dependencies of Humidifier.Json
-      if: steps.git_diff.outputs.changes == 'true'
-      run: dotnet restore src/Humidifier.Json/Humidifier.Json.csproj
-
-    - name: Build Humidifier
-      if: steps.git_diff.outputs.changes == 'true'
-      env:
-        FINAL_VERSION: ${{ env.FINAL_VERSION }}
-      run: dotnet build src/Humidifier --configuration Release /p:PackageVersion=$FINAL_VERSION /p:PackageOutputPath="$GITHUB_WORKSPACE/packages"
-
-    - name: Build Humidifier.Json
-      if: steps.git_diff.outputs.changes == 'true'
-      env:
-        FINAL_VERSION: ${{ env.FINAL_VERSION }}
-      run: dotnet build src/Humidifier.Json --configuration Release /p:PackageVersion=$FINAL_VERSION /p:PackageOutputPath="$GITHUB_WORKSPACE/packages"
-
-    - name: Log in to NuGet with trusted publishing
-      if: steps.git_diff.outputs.changes == 'true'
-      id: login
-      uses: NuGet/login@v1
-      with:
-        user: Ron.Sijm
-
-    - name: Publish to NuGet
-      if: steps.git_diff.outputs.changes == 'true'
-      run: dotnet nuget push "./packages/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key "${{ steps.login.outputs.NUGET_API_KEY }}" --skip-duplicate
+  publish:
+    needs: generate
+    if: needs.generate.outputs.changed == 'true'
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/build-and-publish-nuget.yml

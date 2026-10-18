@@ -1,0 +1,24 @@
+namespace Humidifier.GameLift
+{
+    using global::System.Collections.Generic;
+
+    public class Location : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveLocationName
+    {
+        public class Attributes
+        {
+            public static string LocationArn =  "LocationArn" ;
+        }
+
+        public override string AWSTypeName { get => AWS.GameLift.Location; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-location.html#cfn-gamelift-location-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        public Union<string, BaseFunction>? LocationName { get => GivenName; set => GivenName = value; }
+    }
+}

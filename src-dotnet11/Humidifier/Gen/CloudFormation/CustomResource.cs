@@ -1,0 +1,27 @@
+namespace Humidifier.CloudFormation
+{
+    using global::System.Collections.Generic;
+
+    public class CustomResource : Humidifier.Base.BaseResource, IHaveServiceTimeout_Integer, IHaveServiceToken
+    {
+        public override string AWSTypeName { get => AWS.CloudFormation.CustomResource; }
+        /// <summary>
+        /// ServiceTimeout
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetimeout
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? ServiceTimeout { get; set; }
+
+        /// <summary>
+        /// ServiceToken
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cfn-customresource.html#cfn-customresource-servicetoken
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? ServiceToken { get; set; }
+    }
+}

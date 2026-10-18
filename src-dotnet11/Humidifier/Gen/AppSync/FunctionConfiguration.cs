@@ -1,0 +1,190 @@
+namespace Humidifier.AppSync
+{
+    using global::System.Collections.Generic;
+    using FunctionConfigurationTypes;
+
+    public class FunctionConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveRequestMappingTemplate, IHaveResponseMappingTemplate, IHaveMaxBatchSize_Integer, IHaveAppSyncFunctionConfigurationTypesSyncConfigSyncConfig, IHaveCode, IHaveName, IHaveResponseMappingTemplateS3Location, IHaveAppSyncFunctionConfigurationTypesAppSyncRuntimeRuntime, IHaveCodeS3Location, IHaveDataSourceName, IHaveFunctionVersion, IHaveRequestMappingTemplateS3Location, IHaveApiId
+    {
+        public class Attributes
+        {
+            public static string FunctionId =  "FunctionId" ;
+            public static string FunctionArn =  "FunctionArn" ;
+            public static string DataSourceName =  "DataSourceName" ;
+            public static string Name =  "Name" ;
+        }
+
+        public override string AWSTypeName { get => AWS.AppSync.FunctionConfiguration; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Description { get; set; }
+        /// <summary>
+        /// RequestMappingTemplate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplate
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? RequestMappingTemplate { get; set; }
+        /// <summary>
+        /// ResponseMappingTemplate
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplate
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? ResponseMappingTemplate { get; set; }
+        /// <summary>
+        /// MaxBatchSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-maxbatchsize
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? MaxBatchSize { get; set; }
+        /// <summary>
+        /// SyncConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-syncconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SyncConfig
+        /// </summary>
+        public Union<Humidifier.AppSync.FunctionConfigurationTypes.SyncConfig, BaseFunction>? SyncConfig { get; set; }
+        /// <summary>
+        /// Code
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-code
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Code { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ResponseMappingTemplateS3Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplates3location
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? ResponseMappingTemplateS3Location { get; set; }
+        /// <summary>
+        /// Runtime
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-runtime
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AppSyncRuntime
+        /// </summary>
+        public Union<Humidifier.AppSync.FunctionConfigurationTypes.AppSyncRuntime, BaseFunction>? Runtime { get; set; }
+        /// <summary>
+        /// CodeS3Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-codes3location
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? CodeS3Location { get; set; }
+
+        /// <summary>
+        /// DataSourceName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? DataSourceName { get; set; }
+        /// <summary>
+        /// FunctionVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? FunctionVersion { get; set; }
+        /// <summary>
+        /// RequestMappingTemplateS3Location
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplates3location
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? RequestMappingTemplateS3Location { get; set; }
+
+        /// <summary>
+        /// ApiId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-apiid
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? ApiId { get; set; }
+    }
+
+    namespace FunctionConfigurationTypes
+    {
+        public class AppSyncRuntime : Humidifier.Base.BaseSubResource, IHaveRuntimeVersion, IHaveName
+        {
+            /// <summary>
+            /// RuntimeVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html#cfn-appsync-functionconfiguration-appsyncruntime-runtimeversion
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RuntimeVersion { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html#cfn-appsync-functionconfiguration-appsyncruntime-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Name { get; set; }
+        }
+
+        public class LambdaConflictHandlerConfig : Humidifier.Base.BaseSubResource, IHaveLambdaConflictHandlerArn
+        {
+            /// <summary>
+            /// LambdaConflictHandlerArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LambdaConflictHandlerArn { get; set; }
+        }
+
+        public class SyncConfig : Humidifier.Base.BaseSubResource, IHaveConflictHandler, IHaveConflictDetection, IHaveAppSyncFunctionConfigurationTypesLambdaConflictHandlerConfigLambdaConflictHandlerConfig
+        {
+            /// <summary>
+            /// ConflictHandler
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-conflicthandler
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ConflictHandler { get; set; }
+            /// <summary>
+            /// ConflictDetection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-conflictdetection
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ConflictDetection { get; set; }
+            /// <summary>
+            /// LambdaConflictHandlerConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-lambdaconflicthandlerconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LambdaConflictHandlerConfig
+            /// </summary>
+            public Union<Humidifier.AppSync.FunctionConfigurationTypes.LambdaConflictHandlerConfig, BaseFunction>? LambdaConflictHandlerConfig { get; set; }
+        }
+    }
+}

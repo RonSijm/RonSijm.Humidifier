@@ -1,0 +1,29 @@
+namespace Humidifier.OpsWorks
+{
+    using global::System.Collections.Generic;
+
+    public class ElasticLoadBalancerAttachment : Humidifier.Base.BaseResource, IHaveElasticLoadBalancerName, IHaveLayerId
+    {
+        public override string AWSTypeName { get => AWS.OpsWorks.ElasticLoadBalancerAttachment; }
+
+        /// <summary>
+        /// ElasticLoadBalancerName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-elbname
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? ElasticLoadBalancerName { get; set; }
+
+        /// <summary>
+        /// LayerId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-elbattachment.html#cfn-opsworks-elbattachment-layerid
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? LayerId { get; set; }
+    }
+}

@@ -1,0 +1,48 @@
+namespace Humidifier.SecurityHub
+{
+    using global::System.Collections.Generic;
+
+    public class Hub : Humidifier.Base.BaseResource, IHaveControlFindingGenerator, IHaveEnableDefaultStandards_Boolean, IHaveAutoEnableControls_Boolean, IHaveStringDictionaryOfTags
+    {
+        public class Attributes
+        {
+            public static string SubscribedAt =  "SubscribedAt" ;
+            public static string ARN =  "ARN" ;
+        }
+
+        public override string AWSTypeName { get => AWS.SecurityHub.Hub; }
+        /// <summary>
+        /// ControlFindingGenerator
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-controlfindinggenerator
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? ControlFindingGenerator { get; set; }
+        /// <summary>
+        /// EnableDefaultStandards
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-enabledefaultstandards
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? EnableDefaultStandards { get; set; }
+        /// <summary>
+        /// AutoEnableControls
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-autoenablecontrols
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? AutoEnableControls { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+}

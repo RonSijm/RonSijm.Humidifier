@@ -1,0 +1,78 @@
+namespace Humidifier.Connect
+{
+    using global::System.Collections.Generic;
+
+    public class AgentStatus : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveResetOrderNumber_Boolean, IHaveType, IHaveDescription, IHaveDisplayOrder_Integer, IHaveState, IHaveInstanceArn, IHaveName
+    {
+        public class Attributes
+        {
+            public static string AgentStatusArn =  "AgentStatusArn" ;
+            public static string LastModifiedTime =  "LastModifiedTime" ;
+            public static string LastModifiedRegion =  "LastModifiedRegion" ;
+        }
+
+        public override string AWSTypeName { get => AWS.Connect.AgentStatus; }
+        /// <summary>
+        /// ResetOrderNumber
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-resetordernumber
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? ResetOrderNumber { get; set; }
+        /// <summary>
+        /// Type
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-type
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Type { get; set; }
+        /// <summary>
+        /// Description
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-description
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? Description { get; set; }
+        /// <summary>
+        /// DisplayOrder
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-displayorder
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? DisplayOrder { get; set; }
+
+        /// <summary>
+        /// State
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-state
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? State { get; set; }
+
+        /// <summary>
+        /// InstanceArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-instancearn
+        /// Required: True
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public Union<string, BaseFunction>? InstanceArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-agentstatus.html#cfn-connect-agentstatus-tags
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+    }
+}

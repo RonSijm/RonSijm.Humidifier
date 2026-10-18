@@ -1,0 +1,39 @@
+namespace Humidifier.Route53Resolver
+{
+    using global::System.Collections.Generic;
+
+    public class ResolverQueryLoggingConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDestinationArn, IHaveName
+    {
+        public class Attributes
+        {
+            public static string Status =  "Status" ;
+            public static string OwnerId =  "OwnerId" ;
+            public static string AssociationCount =  "AssociationCount" ;
+            public static string CreationTime =  "CreationTime" ;
+            public static string ShareStatus =  "ShareStatus" ;
+            public static string Id =  "Id" ;
+            public static string Arn =  "Arn" ;
+            public static string CreatorRequestId =  "CreatorRequestId" ;
+        }
+
+        public override string AWSTypeName { get => AWS.Route53Resolver.ResolverQueryLoggingConfig; }
+        /// <summary>
+        /// DestinationArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#cfn-route53resolver-resolverqueryloggingconfig-destinationarn
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? DestinationArn { get; set; }
+        /// <summary>
+        /// Tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#cfn-route53resolver-resolverqueryloggingconfig-tags
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Tag
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+    }
+}
