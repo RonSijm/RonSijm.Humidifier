@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using global::System.Collections.Generic;
     using DaemonTypes;
 
-    public class Daemon : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterArn, IHaveDaemonTaskDefinitionArn, IHaveDaemonName, IHaveEnableECSManagedTags_Boolean, IHaveStringListOfCapacityProviderArns, IHaveEnableExecuteCommand_Boolean, IHavePropagateTags, IHaveECSDaemonTypesDaemonDeploymentConfigurationDeploymentConfiguration
+    public class Daemon : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveClusterArn, IHaveDaemonTaskDefinitionArn, IHaveDaemonName, IHaveEnableECSManagedTags_Boolean, IHaveStringListOfCapacityProviderArns, IHaveEnableExecuteCommand_Boolean, IHavePropagateTags, IHaveCritical_Boolean, IHaveECSDaemonTypesDaemonDeploymentConfigurationDeploymentConfiguration
     {
         public class Attributes
         {
@@ -65,6 +65,14 @@ namespace Humidifier.ECS
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? PropagateTags { get; set; }
+        /// <summary>
+        /// Critical
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-daemon.html#cfn-ecs-daemon-critical
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? Critical { get; set; }
         /// <summary>
         /// DeploymentConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-daemon.html#cfn-ecs-daemon-deploymentconfiguration

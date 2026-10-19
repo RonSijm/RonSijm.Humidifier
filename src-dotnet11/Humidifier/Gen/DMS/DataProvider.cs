@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using global::System.Collections.Generic;
     using DataProviderTypes;
 
-    public class DataProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataProviderName, IHaveDescription, IHaveExactSettings_Boolean, IHaveVirtual_Boolean, IHaveEngine, IHaveDMSDataProviderTypesSettingsSettings, IHaveDataProviderIdentifier
+    public class DataProvider : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataProviderName, IHaveDescription, IHaveExactSettings_Boolean, IHaveVirtual_Boolean, IHaveEngine, IHaveDMSDataProviderTypesSettingsSettings
     {
         public class Attributes
         {
@@ -64,14 +64,6 @@ namespace Humidifier.DMS
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
-        /// <summary>
-        /// DataProviderIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-dataprovider.html#cfn-dms-dataprovider-dataprovideridentifier
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? DataProviderIdentifier { get; set; }
     }
 
     namespace DataProviderTypes

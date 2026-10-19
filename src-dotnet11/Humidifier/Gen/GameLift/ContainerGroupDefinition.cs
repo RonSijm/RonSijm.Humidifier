@@ -239,7 +239,7 @@ namespace Humidifier.GameLift
             public Union<string, BaseFunction>? Protocol { get; set; }
         }
 
-        public class GameServerContainerDefinition : Humidifier.Base.BaseSubResource, IHaveListOfGameLiftContainerGroupDefinitionTypesContainerMountPointMountPoints, IHaveListOfGameLiftContainerGroupDefinitionTypesContainerDependencyDependsOn, IHaveContainerName, IHaveListOfGameLiftContainerGroupDefinitionTypesContainerEnvironmentEnvironmentOverride, IHaveGameLiftContainerGroupDefinitionTypesLinuxCapabilitiesLinuxCapabilities, IHaveServerSdkVersion, IHaveImageUri, IHaveResolvedImageDigest, IHaveGameLiftContainerGroupDefinitionTypesPortConfigurationPortConfiguration
+        public class GameServerContainerDefinition : Humidifier.Base.BaseSubResource, IHaveListOfGameLiftContainerGroupDefinitionTypesContainerMountPointMountPoints, IHaveListOfGameLiftContainerGroupDefinitionTypesContainerDependencyDependsOn, IHaveContainerName, IHaveListOfGameLiftContainerGroupDefinitionTypesContainerEnvironmentEnvironmentOverride, IHaveGameLiftContainerGroupDefinitionTypesLinuxCapabilitiesLinuxCapabilities, IHaveServerSdkVersion, IHaveVcpu_Double, IHaveImageUri, IHaveResolvedImageDigest, IHaveGameLiftContainerGroupDefinitionTypesPortConfigurationPortConfiguration
         {
             /// <summary>
             /// MountPoints
@@ -292,6 +292,14 @@ namespace Humidifier.GameLift
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ServerSdkVersion { get; set; }
+            /// <summary>
+            /// Vcpu
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-gameservercontainerdefinition.html#cfn-gamelift-containergroupdefinition-gameservercontainerdefinition-vcpu
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public Union<double, BaseFunction>? Vcpu { get; set; }
             /// <summary>
             /// ImageUri
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-gameservercontainerdefinition.html#cfn-gamelift-containergroupdefinition-gameservercontainerdefinition-imageuri

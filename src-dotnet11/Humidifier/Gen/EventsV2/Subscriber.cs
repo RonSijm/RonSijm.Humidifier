@@ -305,7 +305,7 @@ namespace Humidifier.EventsV2
             public Union<string, BaseFunction>? InvocationTimeoutSeconds { get; set; }
         }
 
-        public class InvokeConfiguration : Humidifier.Base.BaseSubResource, IHaveEventsV2SubscriberTypesStepFunctionsParametersStepFunctionsParameters, IHaveEventsV2SubscriberTypesSqsParametersSqsParameters, IHaveEventsV2SubscriberTypesSnsParametersSnsParameters, IHaveEventsV2SubscriberTypesHttpParametersHttpParameters, IHaveEventsV2SubscriberTypesEventBusV2ParametersEventBusV2Parameters, IHaveEventsV2SubscriberTypesUniversalTargetParametersUniversalTargetParameters, IHaveTargetArn_Json, IHaveEventsV2SubscriberTypesKinesisParametersKinesisParameters, IHaveRoleArn, IHaveEventsV2SubscriberTypesLambdaParametersLambdaParameters
+        public class InvokeConfiguration : Humidifier.Base.BaseSubResource, IHaveEventsV2SubscriberTypesStepFunctionsParametersStepFunctionsParameters, IHaveEventsV2SubscriberTypesSqsParametersSqsParameters, IHaveEventsV2SubscriberTypesSnsParametersSnsParameters, IHaveEventsV2SubscriberTypesHttpParametersHttpParameters, IHaveEventsV2SubscriberTypesEventBusV2ParametersEventBusV2Parameters, IHaveEventsV2SubscriberTypesUniversalTargetParametersUniversalTargetParameters, IHaveTargetArn, IHaveEventsV2SubscriberTypesKinesisParametersKinesisParameters, IHaveRoleArn, IHaveEventsV2SubscriberTypesLambdaParametersLambdaParameters
         {
             /// <summary>
             /// StepFunctionsParameters
@@ -360,9 +360,9 @@ namespace Humidifier.EventsV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventsv2-subscriber-invokeconfiguration.html#cfn-eventsv2-subscriber-invokeconfiguration-targetarn
             /// Required: True
             /// UpdateType: Immutable
-            /// PrimitiveType: Json
+            /// PrimitiveType: String
             /// </summary>
-            public Union<object, BaseFunction>? TargetArn { get; set; }
+            public Union<string, BaseFunction>? TargetArn { get; set; }
             /// <summary>
             /// KinesisParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventsv2-subscriber-invokeconfiguration.html#cfn-eventsv2-subscriber-invokeconfiguration-kinesisparameters

@@ -56,7 +56,7 @@ namespace Humidifier.DevOpsAgent
 
     namespace AssociationTypes
     {
-        public class AWSConfiguration : Humidifier.Base.BaseSubResource, IHaveAssumableRoleArn, IHaveAccountId, IHaveListOfDevOpsAgentAssociationTypesAWSResourceResources, IHaveAccountType, IHaveListOfDevOpsAgentAssociationTypesKeyValuePairTags
+        public class AWSConfiguration : Humidifier.Base.BaseSubResource, IHaveAssumableRoleArn, IHaveAccountId, IHaveAgentElevatedRoleArn, IHaveListOfDevOpsAgentAssociationTypesAWSResourceResources, IHaveAccountType, IHaveListOfDevOpsAgentAssociationTypesKeyValuePairTags
         {
             /// <summary>
             /// AssumableRoleArn
@@ -74,6 +74,14 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AccountId { get; set; }
+            /// <summary>
+            /// AgentElevatedRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-awsconfiguration.html#cfn-devopsagent-association-awsconfiguration-agentelevatedrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AgentElevatedRoleArn { get; set; }
             /// <summary>
             /// Resources
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-awsconfiguration.html#cfn-devopsagent-association-awsconfiguration-resources
@@ -320,7 +328,7 @@ namespace Humidifier.DevOpsAgent
             public Union<bool, BaseFunction>? EnableWebhookUpdates { get; set; }
         }
 
-        public class MCPServerDatadogConfiguration : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveEndpoint, IHaveName, IHaveEnableWebhookUpdates_Boolean
+        public class MCPServerDatadogConfiguration : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveEndpoint, IHaveStringListOfEnabledElevatedTools, IHaveName, IHaveEnableWebhookUpdates_Boolean
         {
             /// <summary>
             /// Description
@@ -339,6 +347,15 @@ namespace Humidifier.DevOpsAgent
             /// </summary>
             public Union<string, BaseFunction>? Endpoint { get; set; }
             /// <summary>
+            /// EnabledElevatedTools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpserverdatadogconfiguration.html#cfn-devopsagent-association-mcpserverdatadogconfiguration-enabledelevatedtools
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? EnabledElevatedTools { get; set; }
+            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpserverdatadogconfiguration.html#cfn-devopsagent-association-mcpserverdatadogconfiguration-name
             /// Required: False
@@ -356,7 +373,7 @@ namespace Humidifier.DevOpsAgent
             public Union<bool, BaseFunction>? EnableWebhookUpdates { get; set; }
         }
 
-        public class MCPServerGrafanaConfiguration : Humidifier.Base.BaseSubResource, IHaveEndpoint, IHaveStringListOfTools, IHaveEnableWebhookUpdates_Boolean
+        public class MCPServerGrafanaConfiguration : Humidifier.Base.BaseSubResource, IHaveEndpoint, IHaveStringListOfTools, IHaveStringListOfEnabledElevatedTools, IHaveEnableWebhookUpdates_Boolean
         {
             /// <summary>
             /// Endpoint
@@ -375,6 +392,15 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Tools { get; set; }
+            /// <summary>
+            /// EnabledElevatedTools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpservergrafanaconfiguration.html#cfn-devopsagent-association-mcpservergrafanaconfiguration-enabledelevatedtools
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? EnabledElevatedTools { get; set; }
             /// <summary>
             /// EnableWebhookUpdates
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpservergrafanaconfiguration.html#cfn-devopsagent-association-mcpservergrafanaconfiguration-enablewebhookupdates
@@ -635,6 +661,26 @@ namespace Humidifier.DevOpsAgent
             public Union<bool, BaseFunction>? EnableWebhookUpdates { get; set; }
         }
 
+        public class SlackBidirectionalConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled_Boolean, IHaveRoleArn
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackbidirectionalconfiguration.html#cfn-devopsagent-association-slackbidirectionalconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackbidirectionalconfiguration.html#cfn-devopsagent-association-slackbidirectionalconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RoleArn { get; set; }
+        }
+
         public class SlackChannel : Humidifier.Base.BaseSubResource, IHaveChannelName, IHaveChannelId
         {
             /// <summary>
@@ -655,7 +701,7 @@ namespace Humidifier.DevOpsAgent
             public Union<string, BaseFunction>? ChannelId { get; set; }
         }
 
-        public class SlackConfiguration : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesSlackTransmissionTargetTransmissionTarget, IHaveWorkspaceId, IHaveWorkspaceName
+        public class SlackConfiguration : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesSlackTransmissionTargetTransmissionTarget, IHaveDevOpsAgentAssociationTypesSlackBidirectionalConfigurationBidirectional, IHaveWorkspaceId, IHaveWorkspaceName
         {
             /// <summary>
             /// TransmissionTarget
@@ -665,6 +711,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: SlackTransmissionTarget
             /// </summary>
             public Union<Humidifier.DevOpsAgent.AssociationTypes.SlackTransmissionTarget, BaseFunction>? TransmissionTarget { get; set; }
+            /// <summary>
+            /// Bidirectional
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackconfiguration.html#cfn-devopsagent-association-slackconfiguration-bidirectional
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SlackBidirectionalConfiguration
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.SlackBidirectionalConfiguration, BaseFunction>? Bidirectional { get; set; }
             /// <summary>
             /// WorkspaceId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackconfiguration.html#cfn-devopsagent-association-slackconfiguration-workspaceid
@@ -695,7 +749,7 @@ namespace Humidifier.DevOpsAgent
             public Union<Humidifier.DevOpsAgent.AssociationTypes.SlackChannel, BaseFunction>? IncidentResponseTarget { get; set; }
         }
 
-        public class SourceAwsConfiguration : Humidifier.Base.BaseSubResource, IHaveAssumableRoleArn, IHaveAccountId, IHaveListOfDevOpsAgentAssociationTypesAWSResourceResources, IHaveAccountType, IHaveListOfDevOpsAgentAssociationTypesKeyValuePairTags
+        public class SourceAwsConfiguration : Humidifier.Base.BaseSubResource, IHaveAssumableRoleArn, IHaveAccountId, IHaveAgentElevatedRoleArn, IHaveListOfDevOpsAgentAssociationTypesAWSResourceResources, IHaveAccountType, IHaveListOfDevOpsAgentAssociationTypesKeyValuePairTags
         {
             /// <summary>
             /// AssumableRoleArn
@@ -713,6 +767,14 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AccountId { get; set; }
+            /// <summary>
+            /// AgentElevatedRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-sourceawsconfiguration.html#cfn-devopsagent-association-sourceawsconfiguration-agentelevatedrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AgentElevatedRoleArn { get; set; }
             /// <summary>
             /// Resources
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-sourceawsconfiguration.html#cfn-devopsagent-association-sourceawsconfiguration-resources

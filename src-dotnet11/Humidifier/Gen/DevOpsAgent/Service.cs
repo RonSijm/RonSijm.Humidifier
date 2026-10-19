@@ -3,7 +3,7 @@ namespace Humidifier.DevOpsAgent
     using global::System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveTags, IHavePrivateConnectionName, IHaveDevOpsAgentServiceTypesServiceDetailsServiceDetails, IHaveKmsKeyArn, IHaveServiceType, IHaveExchangeUrlPrivateConnectionName, IHaveTargetUrlPrivateConnectionName
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePrivateConnectionName, IHaveDevOpsAgentServiceTypesServiceDetailsServiceDetails, IHaveKmsKeyArn, IHaveServiceType, IHaveExchangeUrlPrivateConnectionName, IHaveTargetUrlPrivateConnectionName, IHaveName
     {
         public class Attributes
         {
@@ -73,11 +73,12 @@ namespace Humidifier.DevOpsAgent
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ServiceTypes
     {
-        public class AdditionalServiceDetails : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentServiceTypesRegisteredMCPServerDetailsMCPServer, IHaveDevOpsAgentServiceTypesRegisteredServiceNowDetailsServiceNow, IHaveDevOpsAgentServiceTypesRegisteredAzureIdentityDetailsAzureIdentity, IHaveDevOpsAgentServiceTypesRegisteredMCPServerGrafanaDetailsMCPServerGrafana, IHaveDevOpsAgentServiceTypesRegisteredDynatraceDetailsDynatrace, IHaveDevOpsAgentServiceTypesRegisteredMCPServerSigV4DetailsMCPServerSigV4, IHaveDevOpsAgentServiceTypesRegisteredMCPServerDetailsMCPServerSplunk, IHaveDevOpsAgentServiceTypesRegisteredNewRelicDetailsMCPServerNewRelic, IHaveDevOpsAgentServiceTypesRegisteredGitLabServiceDetailsGitLab, IHaveDevOpsAgentServiceTypesRegisteredPagerDutyDetailsPagerDuty
+        public class AdditionalServiceDetails : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentServiceTypesRegisteredMCPServerDetailsMCPServer, IHaveDevOpsAgentServiceTypesRegisteredServiceNowDetailsServiceNow, IHaveDevOpsAgentServiceTypesRegisteredGitHubServiceDetailsGitHub, IHaveDevOpsAgentServiceTypesRegisteredAzureIdentityDetailsAzureIdentity, IHaveDevOpsAgentServiceTypesRegisteredMCPServerGrafanaDetailsMCPServerGrafana, IHaveDevOpsAgentServiceTypesRegisteredDynatraceDetailsDynatrace, IHaveDevOpsAgentServiceTypesRegisteredMCPServerSigV4DetailsMCPServerSigV4, IHaveDevOpsAgentServiceTypesRegisteredMCPServerDetailsMCPServerSplunk, IHaveDevOpsAgentServiceTypesRegisteredNewRelicDetailsMCPServerNewRelic, IHaveDevOpsAgentServiceTypesRegisteredGitLabServiceDetailsGitLab, IHaveDevOpsAgentServiceTypesRegisteredPagerDutyDetailsPagerDuty
         {
             /// <summary>
             /// MCPServer
@@ -95,6 +96,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: RegisteredServiceNowDetails
             /// </summary>
             public Union<Humidifier.DevOpsAgent.ServiceTypes.RegisteredServiceNowDetails, BaseFunction>? ServiceNow { get; set; }
+            /// <summary>
+            /// GitHub
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-additionalservicedetails.html#cfn-devopsagent-service-additionalservicedetails-github
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RegisteredGitHubServiceDetails
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.ServiceTypes.RegisteredGitHubServiceDetails, BaseFunction>? GitHub { get; set; }
             /// <summary>
             /// AzureIdentity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-additionalservicedetails.html#cfn-devopsagent-service-additionalservicedetails-azureidentity
@@ -284,6 +293,90 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AccountUrn { get; set; }
+        }
+
+        public class GitHubAppVerificationDetails : Humidifier.Base.BaseSubResource, IHaveOrganizationName, IHaveTargetUrl, IHaveAppVariant, IHaveTokenValue
+        {
+            /// <summary>
+            /// OrganizationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-organizationname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? OrganizationName { get; set; }
+            /// <summary>
+            /// TargetUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-targeturl
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TargetUrl { get; set; }
+            /// <summary>
+            /// AppVariant
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-appvariant
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AppVariant { get; set; }
+            /// <summary>
+            /// TokenValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-tokenvalue
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TokenValue { get; set; }
+        }
+
+        public class GitHubDetails : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentServiceTypesGitHubPatDetailsDirectAccess, IHaveDevOpsAgentServiceTypesGitHubAppVerificationDetailsAppVerification
+        {
+            /// <summary>
+            /// DirectAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubdetails.html#cfn-devopsagent-service-githubdetails-directaccess
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GitHubPatDetails
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.ServiceTypes.GitHubPatDetails, BaseFunction>? DirectAccess { get; set; }
+            /// <summary>
+            /// AppVerification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubdetails.html#cfn-devopsagent-service-githubdetails-appverification
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GitHubAppVerificationDetails
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.ServiceTypes.GitHubAppVerificationDetails, BaseFunction>? AppVerification { get; set; }
+        }
+
+        public class GitHubPatDetails : Humidifier.Base.BaseSubResource, IHaveOrganizationName, IHaveTargetUrl, IHaveTokenValue
+        {
+            /// <summary>
+            /// OrganizationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubpatdetails.html#cfn-devopsagent-service-githubpatdetails-organizationname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? OrganizationName { get; set; }
+            /// <summary>
+            /// TargetUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubpatdetails.html#cfn-devopsagent-service-githubpatdetails-targeturl
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TargetUrl { get; set; }
+            /// <summary>
+            /// TokenValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubpatdetails.html#cfn-devopsagent-service-githubpatdetails-tokenvalue
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TokenValue { get; set; }
         }
 
         public class GitLabDetails : Humidifier.Base.BaseSubResource, IHaveTokenType, IHaveTargetUrl, IHaveTokenValue, IHaveGroupId
@@ -813,6 +906,58 @@ namespace Humidifier.DevOpsAgent
             public Union<string, BaseFunction>? AccountUrn { get; set; }
         }
 
+        public class RegisteredGitHubServiceDetails : Humidifier.Base.BaseSubResource, IHaveOwner, IHaveOwnerType, IHaveHostingType, IHaveTargetUrl, IHaveAppVariant, IHaveAuthMode
+        {
+            /// <summary>
+            /// Owner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-owner
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Owner { get; set; }
+            /// <summary>
+            /// OwnerType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-ownertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? OwnerType { get; set; }
+            /// <summary>
+            /// HostingType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-hostingtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? HostingType { get; set; }
+            /// <summary>
+            /// TargetUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-targeturl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TargetUrl { get; set; }
+            /// <summary>
+            /// AppVariant
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-appvariant
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AppVariant { get; set; }
+            /// <summary>
+            /// AuthMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-authmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AuthMode { get; set; }
+        }
+
         public class RegisteredGitLabServiceDetails : Humidifier.Base.BaseSubResource, IHaveTokenType, IHaveTargetUrl, IHaveGroupId
         {
             /// <summary>
@@ -1043,7 +1188,7 @@ namespace Humidifier.DevOpsAgent
             public Union<string, BaseFunction>? InstanceUrl { get; set; }
         }
 
-        public class ServiceDetails : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentServiceTypesMCPServerDetailsMCPServer, IHaveDevOpsAgentServiceTypesServiceNowServiceDetailsServiceNow, IHaveDevOpsAgentServiceTypesAzureIdentityServiceDetailsAzureIdentity, IHaveDevOpsAgentServiceTypesMCPServerGrafanaDetailsMCPServerGrafana, IHaveDevOpsAgentServiceTypesDynatraceServiceDetailsDynatrace, IHaveDevOpsAgentServiceTypesMCPServerSigV4DetailsMCPServerSigV4, IHaveDevOpsAgentServiceTypesMCPServerSplunkDetailsMCPServerSplunk, IHaveDevOpsAgentServiceTypesNewRelicServiceDetailsMCPServerNewRelic, IHaveDevOpsAgentServiceTypesGitLabDetailsGitLab, IHaveDevOpsAgentServiceTypesPagerDutyDetailsPagerDuty
+        public class ServiceDetails : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentServiceTypesMCPServerDetailsMCPServer, IHaveDevOpsAgentServiceTypesServiceNowServiceDetailsServiceNow, IHaveDevOpsAgentServiceTypesGitHubDetailsGitHub, IHaveDevOpsAgentServiceTypesAzureIdentityServiceDetailsAzureIdentity, IHaveDevOpsAgentServiceTypesMCPServerGrafanaDetailsMCPServerGrafana, IHaveDevOpsAgentServiceTypesDynatraceServiceDetailsDynatrace, IHaveDevOpsAgentServiceTypesMCPServerSigV4DetailsMCPServerSigV4, IHaveDevOpsAgentServiceTypesMCPServerSplunkDetailsMCPServerSplunk, IHaveDevOpsAgentServiceTypesNewRelicServiceDetailsMCPServerNewRelic, IHaveDevOpsAgentServiceTypesGitLabDetailsGitLab, IHaveDevOpsAgentServiceTypesPagerDutyDetailsPagerDuty
         {
             /// <summary>
             /// MCPServer
@@ -1061,6 +1206,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: ServiceNowServiceDetails
             /// </summary>
             public Union<Humidifier.DevOpsAgent.ServiceTypes.ServiceNowServiceDetails, BaseFunction>? ServiceNow { get; set; }
+            /// <summary>
+            /// GitHub
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-servicedetails.html#cfn-devopsagent-service-servicedetails-github
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GitHubDetails
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.ServiceTypes.GitHubDetails, BaseFunction>? GitHub { get; set; }
             /// <summary>
             /// AzureIdentity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-servicedetails.html#cfn-devopsagent-service-servicedetails-azureidentity

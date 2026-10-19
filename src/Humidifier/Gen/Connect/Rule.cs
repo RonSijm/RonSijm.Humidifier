@@ -87,6 +87,15 @@ namespace Humidifier.Connect
             /// </summary>
             public List<Humidifier.Connect.RuleTypes.EventBridgeAction> EventBridgeActions { get; set; }
             /// <summary>
+            /// SendInAppNotificationActions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-sendinappnotificationactions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SendInAppNotificationAction
+            /// </summary>
+            public List<Humidifier.Connect.RuleTypes.SendInAppNotificationAction> SendInAppNotificationActions { get; set; }
+            /// <summary>
             /// UpdateCaseActions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-actions.html#cfn-connect-rule-actions-updatecaseactions
             /// Required: False
@@ -314,6 +323,120 @@ namespace Humidifier.Connect
             public dynamic EmptyValue { get; set; }
         }
 
+        public class InAppNotificationRecipientType : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// UserTags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-inappnotificationrecipienttype.html#cfn-connect-rule-inappnotificationrecipienttype-usertags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> UserTags { get; set; }
+            /// <summary>
+            /// UserArns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-inappnotificationrecipienttype.html#cfn-connect-rule-inappnotificationrecipienttype-userarns
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic UserArns { get; set; }
+        }
+
+        public class NotificationContent : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DeDE
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-dede
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeDE { get; set; }
+            /// <summary>
+            /// PtBR
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-ptbr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PtBR { get; set; }
+            /// <summary>
+            /// ZhCN
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-zhcn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ZhCN { get; set; }
+            /// <summary>
+            /// IdID
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-idid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IdID { get; set; }
+            /// <summary>
+            /// ItIT
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-itit
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ItIT { get; set; }
+            /// <summary>
+            /// EnUS
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-enus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EnUS { get; set; }
+            /// <summary>
+            /// KoKR
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-kokr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KoKR { get; set; }
+            /// <summary>
+            /// FrFR
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-frfr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FrFR { get; set; }
+            /// <summary>
+            /// ZhTW
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-zhtw
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ZhTW { get; set; }
+            /// <summary>
+            /// EsES
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-eses
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EsES { get; set; }
+            /// <summary>
+            /// JaJP
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-notificationcontent.html#cfn-connect-rule-notificationcontent-jajp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic JaJP { get; set; }
+        }
+
         public class NotificationRecipientType : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -374,6 +497,42 @@ namespace Humidifier.Connect
             /// PrimitiveType: String
             /// </summary>
             public dynamic EventSourceName { get; set; }
+        }
+
+        public class SendInAppNotificationAction : Humidifier.Base.BaseSubResource, IHavePriority
+        {
+            /// <summary>
+            /// Content
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendinappnotificationaction.html#cfn-connect-rule-sendinappnotificationaction-content
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: NotificationContent
+            /// </summary>
+            public Humidifier.Connect.RuleTypes.NotificationContent Content { get; set; }
+            /// <summary>
+            /// Priority
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendinappnotificationaction.html#cfn-connect-rule-sendinappnotificationaction-priority
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Priority { get; set; }
+            /// <summary>
+            /// Exclusion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendinappnotificationaction.html#cfn-connect-rule-sendinappnotificationaction-exclusion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InAppNotificationRecipientType
+            /// </summary>
+            public Humidifier.Connect.RuleTypes.InAppNotificationRecipientType Exclusion { get; set; }
+            /// <summary>
+            /// Recipient
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-sendinappnotificationaction.html#cfn-connect-rule-sendinappnotificationaction-recipient
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: InAppNotificationRecipientType
+            /// </summary>
+            public Humidifier.Connect.RuleTypes.InAppNotificationRecipientType Recipient { get; set; }
         }
 
         public class SendNotificationAction : Humidifier.Base.BaseSubResource, IHaveContentType, IHaveContent, IHaveSubject

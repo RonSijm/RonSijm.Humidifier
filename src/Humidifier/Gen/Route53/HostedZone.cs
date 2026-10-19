@@ -13,6 +13,14 @@ namespace Humidifier.Route53
 
         public override string AWSTypeName { get => AWS.Route53.HostedZone; }
         /// <summary>
+        /// DelegationSetId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-delegationsetid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic DelegationSetId { get; set; }
+        /// <summary>
         /// HostedZoneTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzonetags
         /// Required: False

@@ -3,7 +3,7 @@ namespace Humidifier.DMS
     using global::System.Collections.Generic;
     using DataMigrationTypes;
 
-    public class DataMigration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataMigrationType, IHaveDMSDataMigrationTypesDataMigrationSettingsDataMigrationSettings, IHaveDataMigrationName, IHaveMigrationProjectIdentifier, IHaveListOfDMSDataMigrationTypesSourceDataSettingsSourceDataSettings, IHaveServiceAccessRoleArn, IHaveDataMigrationIdentifier
+    public class DataMigration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDataMigrationType, IHaveDMSDataMigrationTypesDataMigrationSettingsDataMigrationSettings, IHaveDataMigrationName, IHaveMigrationProjectIdentifier, IHaveListOfDMSDataMigrationTypesSourceDataSettingsSourceDataSettings, IHaveServiceAccessRoleArn
     {
         public class Attributes
         {
@@ -69,14 +69,6 @@ namespace Humidifier.DMS
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
-        /// <summary>
-        /// DataMigrationIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-datamigration.html#cfn-dms-datamigration-datamigrationidentifier
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? DataMigrationIdentifier { get; set; }
     }
 
     namespace DataMigrationTypes

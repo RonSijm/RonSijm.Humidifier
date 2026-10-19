@@ -166,7 +166,7 @@ namespace Humidifier.Lambda
             public Union<string, BaseFunction>? Key { get; set; }
         }
 
-        public class ServiceConfig : Humidifier.Base.BaseSubResource, IHaveTimeoutSeconds_Integer, IHaveExecutionRoleArn, IHaveMaxConcurrencyPerEnvironment_Integer, IHaveStringDictionaryOfEnvironmentVariables, IHaveLambdaWebFunctionRevisionTypesTelemetryConfigTelemetryConfig
+        public class ServiceConfig : Humidifier.Base.BaseSubResource, IHaveTimeoutSeconds_Integer, IHaveExecutionRoleArn, IHaveMaxConcurrencyPerEnvironment_Integer, IHaveStringDictionaryOfEnvironmentVariables, IHaveEgressNetworkConnectorArn, IHaveLambdaWebFunctionRevisionTypesTelemetryConfigTelemetryConfig
         {
             /// <summary>
             /// TimeoutSeconds
@@ -201,6 +201,14 @@ namespace Humidifier.Lambda
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? EnvironmentVariables { get; set; }
+            /// <summary>
+            /// EgressNetworkConnectorArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-webfunctionrevision-serviceconfig.html#cfn-lambda-webfunctionrevision-serviceconfig-egressnetworkconnectorarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? EgressNetworkConnectorArn { get; set; }
             /// <summary>
             /// TelemetryConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-webfunctionrevision-serviceconfig.html#cfn-lambda-webfunctionrevision-serviceconfig-telemetryconfig

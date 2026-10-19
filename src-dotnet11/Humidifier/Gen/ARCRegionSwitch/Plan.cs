@@ -732,7 +732,7 @@ namespace Humidifier.ARCRegionSwitch
             public Union<string, BaseFunction>? ApprovalRole { get; set; }
         }
 
-        public class ExecutionBlockConfiguration : Humidifier.Base.BaseSubResource, IHaveARCRegionSwitchPlanTypesAuroraServerlessScalingConfigurationAuroraServerlessScalingConfig, IHaveARCRegionSwitchPlanTypesRdsPromoteReadReplicaConfigurationRdsPromoteReadReplicaConfig, IHaveARCRegionSwitchPlanTypesParallelExecutionBlockConfigurationParallelConfig, IHaveARCRegionSwitchPlanTypesEcsCapacityIncreaseConfigurationEcsCapacityIncreaseConfig, IHaveARCRegionSwitchPlanTypesExecutionApprovalConfigurationExecutionApprovalConfig, IHaveARCRegionSwitchPlanTypesLambdaEventSourceMappingConfigurationLambdaEventSourceMappingConfig, IHaveARCRegionSwitchPlanTypesRegionSwitchPlanConfigurationRegionSwitchPlanConfig, IHaveARCRegionSwitchPlanTypesRdsSwitchoverReadReplicaConfigurationRdsSwitchoverReadReplicaConfig, IHaveARCRegionSwitchPlanTypesGlobalAuroraConfigurationGlobalAuroraConfig, IHaveARCRegionSwitchPlanTypesRoute53HealthCheckConfigurationRoute53HealthCheckConfig, IHaveARCRegionSwitchPlanTypesRdsCreateCrossRegionReplicaConfigurationRdsCreateCrossRegionReadReplicaConfig, IHaveARCRegionSwitchPlanTypesNeptuneGlobalDatabaseConfigurationNeptuneGlobalDatabaseConfig, IHaveARCRegionSwitchPlanTypesArcRoutingControlConfigurationArcRoutingControlConfig, IHaveARCRegionSwitchPlanTypesDocumentDbConfigurationDocumentDbConfig, IHaveARCRegionSwitchPlanTypesEksResourceScalingConfigurationEksResourceScalingConfig, IHaveARCRegionSwitchPlanTypesCustomActionLambdaConfigurationCustomActionLambdaConfig, IHaveARCRegionSwitchPlanTypesAuroraProvisionedScalingConfigurationAuroraProvisionedScalingConfig, IHaveARCRegionSwitchPlanTypesEc2AsgCapacityIncreaseConfigurationEc2AsgCapacityIncreaseConfig
+        public class ExecutionBlockConfiguration : Humidifier.Base.BaseSubResource, IHaveARCRegionSwitchPlanTypesAuroraServerlessScalingConfigurationAuroraServerlessScalingConfig, IHaveARCRegionSwitchPlanTypesRdsPromoteReadReplicaConfigurationRdsPromoteReadReplicaConfig, IHaveARCRegionSwitchPlanTypesParallelExecutionBlockConfigurationParallelConfig, IHaveARCRegionSwitchPlanTypesEcsCapacityIncreaseConfigurationEcsCapacityIncreaseConfig, IHaveARCRegionSwitchPlanTypesExecutionApprovalConfigurationExecutionApprovalConfig, IHaveARCRegionSwitchPlanTypesLambdaEventSourceMappingConfigurationLambdaEventSourceMappingConfig, IHaveARCRegionSwitchPlanTypesRegionSwitchPlanConfigurationRegionSwitchPlanConfig, IHaveARCRegionSwitchPlanTypesRdsSwitchoverReadReplicaConfigurationRdsSwitchoverReadReplicaConfig, IHaveARCRegionSwitchPlanTypesGlobalAuroraConfigurationGlobalAuroraConfig, IHaveARCRegionSwitchPlanTypesRoute53HealthCheckConfigurationRoute53HealthCheckConfig, IHaveARCRegionSwitchPlanTypesRdsCreateCrossRegionReplicaConfigurationRdsCreateCrossRegionReadReplicaConfig, IHaveARCRegionSwitchPlanTypesNeptuneGlobalDatabaseConfigurationNeptuneGlobalDatabaseConfig, IHaveARCRegionSwitchPlanTypesArcRoutingControlConfigurationArcRoutingControlConfig, IHaveARCRegionSwitchPlanTypesDocumentDbConfigurationDocumentDbConfig, IHaveARCRegionSwitchPlanTypesEksResourceScalingConfigurationEksResourceScalingConfig, IHaveARCRegionSwitchPlanTypesCustomActionLambdaConfigurationCustomActionLambdaConfig, IHaveARCRegionSwitchPlanTypesAuroraProvisionedScalingConfigurationAuroraProvisionedScalingConfig, IHaveARCRegionSwitchPlanTypesSsmSendCommandConfigurationSsmSendCommandConfig, IHaveARCRegionSwitchPlanTypesEc2AsgCapacityIncreaseConfigurationEc2AsgCapacityIncreaseConfig
         {
             /// <summary>
             /// AuroraServerlessScalingConfig
@@ -870,6 +870,14 @@ namespace Humidifier.ARCRegionSwitch
             /// Type: AuroraProvisionedScalingConfiguration
             /// </summary>
             public Union<Humidifier.ARCRegionSwitch.PlanTypes.AuroraProvisionedScalingConfiguration, BaseFunction>? AuroraProvisionedScalingConfig { get; set; }
+            /// <summary>
+            /// SsmSendCommandConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-executionblockconfiguration.html#cfn-arcregionswitch-plan-executionblockconfiguration-ssmsendcommandconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SsmSendCommandConfiguration
+            /// </summary>
+            public Union<Humidifier.ARCRegionSwitch.PlanTypes.SsmSendCommandConfiguration, BaseFunction>? SsmSendCommandConfig { get; set; }
             /// <summary>
             /// Ec2AsgCapacityIncreaseConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-executionblockconfiguration.html#cfn-arcregionswitch-plan-executionblockconfiguration-ec2asgcapacityincreaseconfig
@@ -1459,6 +1467,129 @@ namespace Humidifier.ARCRegionSwitch
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? CrossAccountRole { get; set; }
+        }
+
+        public class SsmDocumentConfig : Humidifier.Base.BaseSubResource, IHaveParameters_Json, IHaveExternalId, IHaveListOfARCRegionSwitchPlanTypesSsmTargetTargets, IHaveDocumentVersion, IHaveCrossAccountRole, IHaveDocumentArn
+        {
+            /// <summary>
+            /// Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmdocumentconfig.html#cfn-arcregionswitch-plan-ssmdocumentconfig-parameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? Parameters { get; set; }
+            /// <summary>
+            /// ExternalId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmdocumentconfig.html#cfn-arcregionswitch-plan-ssmdocumentconfig-externalid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ExternalId { get; set; }
+            /// <summary>
+            /// Targets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmdocumentconfig.html#cfn-arcregionswitch-plan-ssmdocumentconfig-targets
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SsmTarget
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.ARCRegionSwitch.PlanTypes.SsmTarget>, IReadOnlyList<Union<Humidifier.ARCRegionSwitch.PlanTypes.SsmTarget, BaseFunction>>, BaseFunction>? Targets { get; set; }
+            /// <summary>
+            /// DocumentVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmdocumentconfig.html#cfn-arcregionswitch-plan-ssmdocumentconfig-documentversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DocumentVersion { get; set; }
+            /// <summary>
+            /// CrossAccountRole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmdocumentconfig.html#cfn-arcregionswitch-plan-ssmdocumentconfig-crossaccountrole
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? CrossAccountRole { get; set; }
+            /// <summary>
+            /// DocumentArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmdocumentconfig.html#cfn-arcregionswitch-plan-ssmdocumentconfig-documentarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DocumentArn { get; set; }
+        }
+
+        public class SsmSendCommandConfiguration : Humidifier.Base.BaseSubResource, IHaveMapOfARCRegionSwitchPlanTypesSsmDocumentConfigRegionDocuments, IHaveRetryIntervalMinutes_Double, IHaveTimeoutMinutes_Double, IHaveARCRegionSwitchPlanTypesSsmSendCommandUngracefulUngraceful
+        {
+            /// <summary>
+            /// RegionDocuments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmsendcommandconfiguration.html#cfn-arcregionswitch-plan-ssmsendcommandconfiguration-regiondocuments
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// ItemType: SsmDocumentConfig
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, Humidifier.ARCRegionSwitch.PlanTypes.SsmDocumentConfig>, IReadOnlyDictionary<string, Union<Humidifier.ARCRegionSwitch.PlanTypes.SsmDocumentConfig, BaseFunction>>, BaseFunction>? RegionDocuments { get; set; }
+            /// <summary>
+            /// RetryIntervalMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmsendcommandconfiguration.html#cfn-arcregionswitch-plan-ssmsendcommandconfiguration-retryintervalminutes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public Union<double, BaseFunction>? RetryIntervalMinutes { get; set; }
+            /// <summary>
+            /// TimeoutMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmsendcommandconfiguration.html#cfn-arcregionswitch-plan-ssmsendcommandconfiguration-timeoutminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public Union<double, BaseFunction>? TimeoutMinutes { get; set; }
+            /// <summary>
+            /// Ungraceful
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmsendcommandconfiguration.html#cfn-arcregionswitch-plan-ssmsendcommandconfiguration-ungraceful
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SsmSendCommandUngraceful
+            /// </summary>
+            public Union<Humidifier.ARCRegionSwitch.PlanTypes.SsmSendCommandUngraceful, BaseFunction>? Ungraceful { get; set; }
+        }
+
+        public class SsmSendCommandUngraceful : Humidifier.Base.BaseSubResource, IHaveBehavior
+        {
+            /// <summary>
+            /// Behavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmsendcommandungraceful.html#cfn-arcregionswitch-plan-ssmsendcommandungraceful-behavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Behavior { get; set; }
+        }
+
+        public class SsmTarget : Humidifier.Base.BaseSubResource, IHaveStringListOfValues, IHaveKey
+        {
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmtarget.html#cfn-arcregionswitch-plan-ssmtarget-values
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-ssmtarget.html#cfn-arcregionswitch-plan-ssmtarget-key
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Key { get; set; }
         }
 
         public class Step : Humidifier.Base.BaseSubResource, IHaveARCRegionSwitchPlanTypesExecutionBlockConfigurationExecutionBlockConfiguration, IHaveDescription, IHaveExecutionBlockType, IHaveName

@@ -195,7 +195,7 @@ namespace Humidifier.BedrockAgentCore
             public Humidifier.BedrockAgentCore.EvaluatorTypes.OpenResponsesEvaluatorModelConfig ResponsesEvaluatorModelConfig { get; set; }
         }
 
-        public class InferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveTemperature, IHaveTopP
+        public class InferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveMaxTokens, IHaveTemperature, IHaveStopSequences, IHaveTopP
         {
             /// <summary>
             /// Temperature
@@ -205,6 +205,15 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Temperature { get; set; }
+            /// <summary>
+            /// StopSequences
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-inferenceconfiguration.html#cfn-bedrockagentcore-evaluator-inferenceconfiguration-stopsequences
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic StopSequences { get; set; }
             /// <summary>
             /// MaxTokens
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-inferenceconfiguration.html#cfn-bedrockagentcore-evaluator-inferenceconfiguration-maxtokens

@@ -3,7 +3,7 @@ namespace Humidifier.AgentRegistry
     using global::System.Collections.Generic;
     using RegistryRecordTypes;
 
-    public class RegistryRecord : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRecordVersion, IHaveRecordType, IHaveDisplayName, IHaveRegistryId, IHaveAgentRegistryRegistryRecordTypesDescriptorsDescriptors, IHaveName
+    public class RegistryRecord : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveRecordVersion, IHaveRecordType, IHaveDisplayName, IHaveRegistryId, IHaveAgentRegistryRegistryRecordTypesDescriptorsDescriptors, IHaveName, IHaveCustomMetadata_Json
     {
         public class Attributes
         {
@@ -79,6 +79,14 @@ namespace Humidifier.AgentRegistry
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
         public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// CustomMetadata
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-agentregistry-registryrecord.html#cfn-agentregistry-registryrecord-custommetadata
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public Union<object, BaseFunction>? CustomMetadata { get; set; }
     }
 
     namespace RegistryRecordTypes

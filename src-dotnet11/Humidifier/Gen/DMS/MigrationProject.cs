@@ -3,11 +3,13 @@ namespace Humidifier.DMS
     using global::System.Collections.Generic;
     using MigrationProjectTypes;
 
-    public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveListOfDMSMigrationProjectTypesDataProviderDescriptorTargetDataProviderDescriptors, IHaveMigrationProjectName, IHaveInstanceProfileName, IHaveDescription, IHaveMigrationProjectIdentifier, IHaveListOfDMSMigrationProjectTypesDataProviderDescriptorSourceDataProviderDescriptors, IHaveTransformationRules, IHaveDMSMigrationProjectTypesSchemaConversionApplicationAttributesSchemaConversionApplicationAttributes, IHaveInstanceProfileArn, IHaveInstanceProfileIdentifier
+    public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveListOfDMSMigrationProjectTypesDataProviderDescriptorTargetDataProviderDescriptors, IHaveMigrationProjectName, IHaveDescription, IHaveListOfDMSMigrationProjectTypesDataProviderDescriptorSourceDataProviderDescriptors, IHaveTransformationRules, IHaveDMSMigrationProjectTypesSchemaConversionApplicationAttributesSchemaConversionApplicationAttributes, IHaveInstanceProfileIdentifier
     {
         public class Attributes
         {
+            public static string InstanceProfileName =  "InstanceProfileName" ;
             public static string MigrationProjectArn =  "MigrationProjectArn" ;
+            public static string InstanceProfileArn =  "InstanceProfileArn" ;
         }
 
         public override string AWSTypeName { get => AWS.DMS.MigrationProject; }
@@ -22,14 +24,6 @@ namespace Humidifier.DMS
         public Union<IReadOnlyList<Humidifier.DMS.MigrationProjectTypes.DataProviderDescriptor>, IReadOnlyList<Union<Humidifier.DMS.MigrationProjectTypes.DataProviderDescriptor, BaseFunction>>, BaseFunction>? TargetDataProviderDescriptors { get; set; }
         public Union<string, BaseFunction>? MigrationProjectName { get => GivenName; set => GivenName = value; }
         /// <summary>
-        /// InstanceProfileName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-instanceprofilename
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? InstanceProfileName { get; set; }
-        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-description
         /// Required: False
@@ -37,14 +31,6 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? Description { get; set; }
-        /// <summary>
-        /// MigrationProjectIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-migrationprojectidentifier
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? MigrationProjectIdentifier { get; set; }
         /// <summary>
         /// SourceDataProviderDescriptors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-sourcedataproviderdescriptors
@@ -70,14 +56,6 @@ namespace Humidifier.DMS
         /// Type: SchemaConversionApplicationAttributes
         /// </summary>
         public Union<Humidifier.DMS.MigrationProjectTypes.SchemaConversionApplicationAttributes, BaseFunction>? SchemaConversionApplicationAttributes { get; set; }
-        /// <summary>
-        /// InstanceProfileArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-instanceprofilearn
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? InstanceProfileArn { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-tags

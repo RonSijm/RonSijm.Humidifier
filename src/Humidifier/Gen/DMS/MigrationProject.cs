@@ -3,11 +3,13 @@ namespace Humidifier.DMS
     using global::System.Collections.Generic;
     using MigrationProjectTypes;
 
-    public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceProfileName, IHaveMigrationProjectIdentifier, IHaveInstanceProfileIdentifier, IHaveInstanceProfileArn
+    public class MigrationProject : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveInstanceProfileIdentifier
     {
         public class Attributes
         {
+            public static string InstanceProfileName =  "InstanceProfileName" ;
             public static string MigrationProjectArn =  "MigrationProjectArn" ;
+            public static string InstanceProfileArn =  "InstanceProfileArn" ;
         }
 
         public override string AWSTypeName { get => AWS.DMS.MigrationProject; }
@@ -22,14 +24,6 @@ namespace Humidifier.DMS
         public List<Humidifier.DMS.MigrationProjectTypes.DataProviderDescriptor> TargetDataProviderDescriptors { get; set; }
         public dynamic MigrationProjectName { get => GivenName; set => GivenName = value; }
         /// <summary>
-        /// InstanceProfileName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-instanceprofilename
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InstanceProfileName { get; set; }
-        /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-description
         /// Required: False
@@ -37,14 +31,6 @@ namespace Humidifier.DMS
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
-        /// <summary>
-        /// MigrationProjectIdentifier
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-migrationprojectidentifier
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic MigrationProjectIdentifier { get; set; }
         /// <summary>
         /// SourceDataProviderDescriptors
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-sourcedataproviderdescriptors
@@ -70,14 +56,6 @@ namespace Humidifier.DMS
         /// Type: SchemaConversionApplicationAttributes
         /// </summary>
         public Humidifier.DMS.MigrationProjectTypes.SchemaConversionApplicationAttributes SchemaConversionApplicationAttributes { get; set; }
-        /// <summary>
-        /// InstanceProfileArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-instanceprofilearn
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic InstanceProfileArn { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-migrationproject.html#cfn-dms-migrationproject-tags

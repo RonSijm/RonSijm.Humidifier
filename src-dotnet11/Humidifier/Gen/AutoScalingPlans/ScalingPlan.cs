@@ -9,6 +9,7 @@ namespace Humidifier.AutoScalingPlans
         {
             public static string ScalingPlanName =  "ScalingPlanName" ;
             public static string ScalingPlanVersion =  "ScalingPlanVersion" ;
+            public static string ScalingPlanArn =  "ScalingPlanArn" ;
         }
 
         public override string AWSTypeName { get => AWS.AutoScalingPlans.ScalingPlan; }

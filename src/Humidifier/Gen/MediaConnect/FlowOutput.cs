@@ -68,6 +68,14 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public dynamic RemoteId { get; set; }
         /// <summary>
+        /// NdiAudioReferenceLevel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndiaudioreferencelevel
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic NdiAudioReferenceLevel { get; set; }
+        /// <summary>
         /// MediaStreamOutputConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-mediastreamoutputconfigurations
         /// Required: False

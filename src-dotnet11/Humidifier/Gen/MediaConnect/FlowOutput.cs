@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using global::System.Collections.Generic;
     using FlowOutputTypes;
 
-    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDestination, IHaveSmoothingLatency_Integer, IHaveStreamId, IHaveDescription, IHaveNdiSpeedHqQuality_Integer, IHavePort_Integer, IHaveRemoteId, IHaveListOfMediaConnectFlowOutputTypesMediaStreamOutputConfigurationMediaStreamOutputConfigurations, IHaveMediaConnectFlowOutputTypesEncryptionEncryption, IHaveRouterIntegrationState, IHaveOutputStatus, IHaveName, IHaveMediaConnectFlowOutputTypesVpcInterfaceAttachmentVpcInterfaceAttachment, IHaveNdiOutputTimecodeSource, IHaveMinLatency_Integer, IHaveMediaConnectFlowOutputTypesFlowTransitEncryptionRouterIntegrationTransitEncryption, IHaveProtocol, IHaveFlowArn, IHaveNdiProgramName, IHaveMaxLatency_Integer, IHaveStringListOfCidrAllowList
+    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDestination, IHaveSmoothingLatency_Integer, IHaveStreamId, IHaveDescription, IHaveNdiSpeedHqQuality_Integer, IHavePort_Integer, IHaveRemoteId, IHaveNdiAudioReferenceLevel_Integer, IHaveListOfMediaConnectFlowOutputTypesMediaStreamOutputConfigurationMediaStreamOutputConfigurations, IHaveMediaConnectFlowOutputTypesEncryptionEncryption, IHaveRouterIntegrationState, IHaveOutputStatus, IHaveName, IHaveMediaConnectFlowOutputTypesVpcInterfaceAttachmentVpcInterfaceAttachment, IHaveNdiOutputTimecodeSource, IHaveMinLatency_Integer, IHaveMediaConnectFlowOutputTypesFlowTransitEncryptionRouterIntegrationTransitEncryption, IHaveProtocol, IHaveFlowArn, IHaveNdiProgramName, IHaveMaxLatency_Integer, IHaveStringListOfCidrAllowList
     {
         public class Attributes
         {
@@ -67,6 +67,14 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? RemoteId { get; set; }
+        /// <summary>
+        /// NdiAudioReferenceLevel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndiaudioreferencelevel
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public Union<int, BaseFunction>? NdiAudioReferenceLevel { get; set; }
         /// <summary>
         /// MediaStreamOutputConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-mediastreamoutputconfigurations

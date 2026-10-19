@@ -134,6 +134,14 @@ namespace Humidifier.EKS
             /// </summary>
             public List<Humidifier.EKS.CapabilityTypes.ArgoCdRoleMapping> RbacRoleMappings { get; set; }
             /// <summary>
+            /// EndpointPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-capability-argocd.html#cfn-eks-capability-argocd-endpointprefix
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndpointPrefix { get; set; }
+            /// <summary>
             /// Namespace_
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-capability-argocd.html#cfn-eks-capability-argocd-namespace
             /// Required: False

@@ -301,6 +301,15 @@ namespace Humidifier.InspectorV2
             /// </summary>
             public List<Humidifier.InspectorV2.FilterTypes.StringFilter> Severity { get; set; }
             /// <summary>
+            /// EcrImageInUseCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-ecrimageinusecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NumberFilter
+            /// </summary>
+            public List<Humidifier.InspectorV2.FilterTypes.NumberFilter> EcrImageInUseCount { get; set; }
+            /// <summary>
             /// NetworkProtocol
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-filtercriteria.html#cfn-inspectorv2-filter-filtercriteria-networkprotocol
             /// Required: False

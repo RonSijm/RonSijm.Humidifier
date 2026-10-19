@@ -1120,7 +1120,7 @@ namespace Humidifier.ECS
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html#cfn-ecs-taskdefinition-resourcerequirement-value
-            /// Required: True
+            /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>

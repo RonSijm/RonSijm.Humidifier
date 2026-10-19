@@ -261,8 +261,17 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? InboundTokenClaimValueType { get; set; }
         }
 
-        public class CustomJWTAuthorizerConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfBedrockAgentCoreHarnessTypesPrivateEndpointOverridePrivateEndpointOverrides, IHaveDiscoveryUrl, IHaveStringListOfAllowedAudience, IHaveListOfBedrockAgentCoreHarnessTypesCustomClaimValidationTypeCustomClaims, IHaveBedrockAgentCoreHarnessTypesPrivateEndpointPrivateEndpoint, IHaveStringListOfAllowedClients, IHaveStringListOfAllowedScopes
+        public class CustomJWTAuthorizerConfiguration : Humidifier.Base.BaseSubResource, IHaveStringDictionaryOfAdvertisedScopeMapping, IHaveListOfBedrockAgentCoreHarnessTypesPrivateEndpointOverridePrivateEndpointOverrides, IHaveDiscoveryUrl, IHaveStringListOfAllowedAudience, IHaveListOfBedrockAgentCoreHarnessTypesCustomClaimValidationTypeCustomClaims, IHaveBedrockAgentCoreHarnessTypesPrivateEndpointPrivateEndpoint, IHaveStringListOfAllowedClients, IHaveStringListOfAllowedScopes
         {
+            /// <summary>
+            /// AdvertisedScopeMapping
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-harness-customjwtauthorizerconfiguration-advertisedscopemapping
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? AdvertisedScopeMapping { get; set; }
             /// <summary>
             /// PrivateEndpointOverrides
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-harness-customjwtauthorizerconfiguration-privateendpointoverrides
@@ -495,16 +504,16 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? Arn { get; set; }
         }
 
-        public class HarnessAgentCoreMemoryRetrievalConfig : Humidifier.Base.BaseSubResource, IHaveTopK, IHaveStrategyId, IHaveRelevanceScore
+        public class HarnessAgentCoreMemoryRetrievalConfig : Humidifier.Base.BaseSubResource, IHaveTopK_Integer, IHaveStrategyId, IHaveRelevanceScore_Double
         {
             /// <summary>
             /// TopK
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessagentcorememoryretrievalconfig.html#cfn-bedrockagentcore-harness-harnessagentcorememoryretrievalconfig-topk
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Integer
             /// </summary>
-            public Union<string, BaseFunction>? TopK { get; set; }
+            public Union<int, BaseFunction>? TopK { get; set; }
             /// <summary>
             /// StrategyId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessagentcorememoryretrievalconfig.html#cfn-bedrockagentcore-harness-harnessagentcorememoryretrievalconfig-strategyid
@@ -518,9 +527,9 @@ namespace Humidifier.BedrockAgentCore
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessagentcorememoryretrievalconfig.html#cfn-bedrockagentcore-harness-harnessagentcorememoryretrievalconfig-relevancescore
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// PrimitiveType: Double
             /// </summary>
-            public Union<string, BaseFunction>? RelevanceScore { get; set; }
+            public Union<double, BaseFunction>? RelevanceScore { get; set; }
         }
 
         public class HarnessAgentCoreRuntimeEnvironment : Humidifier.Base.BaseSubResource, IHaveAgentRuntimeId, IHaveListOfBedrockAgentCoreHarnessTypesFilesystemConfigurationFilesystemConfigurations, IHaveBedrockAgentCoreHarnessTypesLifecycleConfigurationLifecycleConfiguration, IHaveBedrockAgentCoreHarnessTypesNetworkConfigurationNetworkConfiguration, IHaveAgentRuntimeArn, IHaveAgentRuntimeName
@@ -720,7 +729,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<object, BaseFunction>? None { get; set; }
         }
 
-        public class HarnessGeminiModelConfig : Humidifier.Base.BaseSubResource, IHaveTopK_Integer, IHaveTemperature_Double, IHaveMaxTokens_Integer, IHaveApiKeyArn, IHaveTopP_Double, IHaveModelId
+        public class HarnessGeminiModelConfig : Humidifier.Base.BaseSubResource, IHaveTopK_Integer, IHaveTemperature_Double, IHaveAdditionalParams_Json, IHaveMaxTokens_Integer, IHaveApiKeyArn, IHaveTopP_Double, IHaveModelId
         {
             /// <summary>
             /// TopK
@@ -738,6 +747,14 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: Double
             /// </summary>
             public Union<double, BaseFunction>? Temperature { get; set; }
+            /// <summary>
+            /// AdditionalParams
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessgeminimodelconfig.html#cfn-bedrockagentcore-harness-harnessgeminimodelconfig-additionalparams
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? AdditionalParams { get; set; }
             /// <summary>
             /// MaxTokens
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessgeminimodelconfig.html#cfn-bedrockagentcore-harness-harnessgeminimodelconfig-maxtokens
@@ -1069,8 +1086,16 @@ namespace Humidifier.BedrockAgentCore
             public Union<Humidifier.BedrockAgentCore.HarnessTypes.HarnessOpenAiModelConfig, BaseFunction>? OpenAiModelConfig { get; set; }
         }
 
-        public class HarnessOpenAiModelConfig : Humidifier.Base.BaseSubResource, IHaveTemperature_Double, IHaveAdditionalParams_Json, IHaveMaxTokens_Integer, IHaveApiFormat, IHaveApiKeyArn, IHaveTopP_Double, IHaveModelId
+        public class HarnessOpenAiModelConfig : Humidifier.Base.BaseSubResource, IHaveApiBase, IHaveTemperature_Double, IHaveAdditionalParams_Json, IHaveMaxTokens_Integer, IHaveApiFormat, IHaveApiKeyArn, IHaveTopP_Double, IHaveModelId
         {
+            /// <summary>
+            /// ApiBase
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessopenaimodelconfig.html#cfn-bedrockagentcore-harness-harnessopenaimodelconfig-apibase
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApiBase { get; set; }
             /// <summary>
             /// Temperature
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessopenaimodelconfig.html#cfn-bedrockagentcore-harness-harnessopenaimodelconfig-temperature

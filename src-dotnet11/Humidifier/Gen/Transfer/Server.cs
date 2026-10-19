@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using global::System.Collections.Generic;
     using ServerTypes;
 
-    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveIpAddressType, IHaveLoggingRole, IHaveStringListOfProtocols, IHaveTransferServerTypesIdentityProviderDetailsIdentityProviderDetails, IHaveTransferServerTypesEndpointDetailsEndpointDetails, IHaveStringListOfStructuredLogDestinations, IHavePreAuthenticationLoginBanner, IHavePostAuthenticationLoginBanner, IHaveEndpointType, IHaveSecurityPolicyName, IHaveTransferServerTypesProtocolDetailsProtocolDetails, IHaveTransferServerTypesS3StorageOptionsS3StorageOptions, IHaveTransferServerTypesWorkflowDetailsWorkflowDetails, IHaveDomain, IHaveIdentityProviderType, IHaveCertificate
+    public class Server : Humidifier.Base.BaseResource, IHaveTags, IHaveIpAddressType, IHaveLoggingRole, IHaveStringListOfProtocols, IHaveTransferServerTypesIdentityProviderDetailsIdentityProviderDetails, IHaveTransferServerTypesEndpointDetailsEndpointDetails, IHaveStringListOfStructuredLogDestinations, IHavePreAuthenticationLoginBanner, IHavePostAuthenticationLoginBanner, IHaveCreateWithHostKey_Boolean, IHaveEndpointType, IHaveSecurityPolicyName, IHaveTransferServerTypesProtocolDetailsProtocolDetails, IHaveTransferServerTypesS3StorageOptionsS3StorageOptions, IHaveTransferServerTypesWorkflowDetailsWorkflowDetails, IHaveDomain, IHaveIdentityProviderType, IHaveCertificate
     {
         public class Attributes
         {
@@ -80,6 +80,14 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? PostAuthenticationLoginBanner { get; set; }
+        /// <summary>
+        /// CreateWithHostKey
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-createwithhostkey
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? CreateWithHostKey { get; set; }
         /// <summary>
         /// EndpointType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype

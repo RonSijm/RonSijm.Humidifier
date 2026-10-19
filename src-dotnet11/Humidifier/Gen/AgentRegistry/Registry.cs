@@ -3,7 +3,7 @@ namespace Humidifier.AgentRegistry
     using global::System.Collections.Generic;
     using RegistryTypes;
 
-    public class Registry : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveAgentRegistryRegistryTypesApprovalConfigurationApprovalConfiguration, IHaveAutoDetectionScope, IHaveAuthorizerType, IHaveAgentRegistryRegistryTypesEncryptionConfigurationEncryptionConfiguration, IHaveAgentRegistryRegistryTypesDiscoveryConfigurationDiscoveryConfiguration, IHaveAutoDetectionEnabled_Boolean, IHaveName
+    public class Registry : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveAgentRegistryRegistryTypesApprovalConfigurationApprovalConfiguration, IHaveAutoDetectionScope, IHaveAuthorizerType, IHaveAgentRegistryRegistryTypesEncryptionConfigurationEncryptionConfiguration, IHaveAgentRegistryRegistryTypesCustomMetadataSchemaConfigurationCustomMetadataSchemaConfiguration, IHaveAgentRegistryRegistryTypesDiscoveryConfigurationDiscoveryConfiguration, IHaveAutoDetectionEnabled_Boolean, IHaveName
     {
         public class Attributes
         {
@@ -56,6 +56,14 @@ namespace Humidifier.AgentRegistry
         /// Type: EncryptionConfiguration
         /// </summary>
         public Union<Humidifier.AgentRegistry.RegistryTypes.EncryptionConfiguration, BaseFunction>? EncryptionConfiguration { get; set; }
+        /// <summary>
+        /// CustomMetadataSchemaConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-agentregistry-registry.html#cfn-agentregistry-registry-custommetadataschemaconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomMetadataSchemaConfiguration
+        /// </summary>
+        public Union<Humidifier.AgentRegistry.RegistryTypes.CustomMetadataSchemaConfiguration, BaseFunction>? CustomMetadataSchemaConfiguration { get; set; }
         /// <summary>
         /// DiscoveryConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-agentregistry-registry.html#cfn-agentregistry-registry-discoveryconfiguration
@@ -228,6 +236,27 @@ namespace Humidifier.AgentRegistry
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AllowedScopes { get; set; }
         }
 
+        public class CustomMetadataSchemaConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfAgentRegistryRegistryTypesRecordTypeSchemaOverrideRecordTypeSchemaOverrides, IHaveDefaultSchema
+        {
+            /// <summary>
+            /// RecordTypeSchemaOverrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-custommetadataschemaconfiguration.html#cfn-agentregistry-registry-custommetadataschemaconfiguration-recordtypeschemaoverrides
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: RecordTypeSchemaOverride
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.AgentRegistry.RegistryTypes.RecordTypeSchemaOverride>, IReadOnlyList<Union<Humidifier.AgentRegistry.RegistryTypes.RecordTypeSchemaOverride, BaseFunction>>, BaseFunction>? RecordTypeSchemaOverrides { get; set; }
+            /// <summary>
+            /// DefaultSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-custommetadataschemaconfiguration.html#cfn-agentregistry-registry-custommetadataschemaconfiguration-defaultschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DefaultSchema { get; set; }
+        }
+
         public class DiscoveryConfiguration : Humidifier.Base.BaseSubResource, IHaveAgentRegistryRegistryTypesAuthorizerConfigurationAuthorizerConfiguration
         {
             /// <summary>
@@ -250,6 +279,26 @@ namespace Humidifier.AgentRegistry
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? KmsKeyArn { get; set; }
+        }
+
+        public class RecordTypeSchemaOverride : Humidifier.Base.BaseSubResource, IHaveRecordType, IHaveSchema
+        {
+            /// <summary>
+            /// RecordType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-recordtypeschemaoverride.html#cfn-agentregistry-registry-recordtypeschemaoverride-recordtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RecordType { get; set; }
+            /// <summary>
+            /// Schema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-recordtypeschemaoverride.html#cfn-agentregistry-registry-recordtypeschemaoverride-schema
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Schema { get; set; }
         }
     }
 }

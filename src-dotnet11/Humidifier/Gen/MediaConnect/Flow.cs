@@ -611,7 +611,7 @@ namespace Humidifier.MediaConnect
             public Union<string, BaseFunction>? VpcInterfaceAdapter { get; set; }
         }
 
-        public class NdiSourceSettings : Humidifier.Base.BaseSubResource, IHaveSourceName
+        public class NdiSourceSettings : Humidifier.Base.BaseSubResource, IHaveSourceName, IHaveAudioReferenceLevel_Integer
         {
             /// <summary>
             /// SourceName
@@ -621,6 +621,14 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SourceName { get; set; }
+            /// <summary>
+            /// AudioReferenceLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-ndisourcesettings.html#cfn-mediaconnect-flow-ndisourcesettings-audioreferencelevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? AudioReferenceLevel { get; set; }
         }
 
         public class SecretsManagerEncryptionKeyConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveRoleArn

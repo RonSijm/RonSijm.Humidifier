@@ -3,7 +3,7 @@ namespace Humidifier.DevOpsAgent
     using global::System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveTags, IHaveKmsKeyArn, IHaveServiceType
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveKmsKeyArn, IHaveServiceType
     {
         public class Attributes
         {
@@ -73,6 +73,7 @@ namespace Humidifier.DevOpsAgent
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ServiceTypes
@@ -95,6 +96,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: RegisteredServiceNowDetails
             /// </summary>
             public Humidifier.DevOpsAgent.ServiceTypes.RegisteredServiceNowDetails ServiceNow { get; set; }
+            /// <summary>
+            /// GitHub
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-additionalservicedetails.html#cfn-devopsagent-service-additionalservicedetails-github
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RegisteredGitHubServiceDetails
+            /// </summary>
+            public Humidifier.DevOpsAgent.ServiceTypes.RegisteredGitHubServiceDetails GitHub { get; set; }
             /// <summary>
             /// AzureIdentity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-additionalservicedetails.html#cfn-devopsagent-service-additionalservicedetails-azureidentity
@@ -284,6 +293,90 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccountUrn { get; set; }
+        }
+
+        public class GitHubAppVerificationDetails : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OrganizationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-organizationname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OrganizationName { get; set; }
+            /// <summary>
+            /// TargetUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-targeturl
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetUrl { get; set; }
+            /// <summary>
+            /// AppVariant
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-appvariant
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AppVariant { get; set; }
+            /// <summary>
+            /// TokenValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubappverificationdetails.html#cfn-devopsagent-service-githubappverificationdetails-tokenvalue
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TokenValue { get; set; }
+        }
+
+        public class GitHubDetails : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DirectAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubdetails.html#cfn-devopsagent-service-githubdetails-directaccess
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GitHubPatDetails
+            /// </summary>
+            public Humidifier.DevOpsAgent.ServiceTypes.GitHubPatDetails DirectAccess { get; set; }
+            /// <summary>
+            /// AppVerification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubdetails.html#cfn-devopsagent-service-githubdetails-appverification
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GitHubAppVerificationDetails
+            /// </summary>
+            public Humidifier.DevOpsAgent.ServiceTypes.GitHubAppVerificationDetails AppVerification { get; set; }
+        }
+
+        public class GitHubPatDetails : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OrganizationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubpatdetails.html#cfn-devopsagent-service-githubpatdetails-organizationname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OrganizationName { get; set; }
+            /// <summary>
+            /// TargetUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubpatdetails.html#cfn-devopsagent-service-githubpatdetails-targeturl
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetUrl { get; set; }
+            /// <summary>
+            /// TokenValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-githubpatdetails.html#cfn-devopsagent-service-githubpatdetails-tokenvalue
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TokenValue { get; set; }
         }
 
         public class GitLabDetails : Humidifier.Base.BaseSubResource, IHaveGroupId
@@ -813,6 +906,58 @@ namespace Humidifier.DevOpsAgent
             public dynamic AccountUrn { get; set; }
         }
 
+        public class RegisteredGitHubServiceDetails : Humidifier.Base.BaseSubResource, IHaveOwner, IHaveAuthMode
+        {
+            /// <summary>
+            /// Owner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-owner
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Owner { get; set; }
+            /// <summary>
+            /// OwnerType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-ownertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OwnerType { get; set; }
+            /// <summary>
+            /// HostingType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-hostingtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HostingType { get; set; }
+            /// <summary>
+            /// TargetUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-targeturl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetUrl { get; set; }
+            /// <summary>
+            /// AppVariant
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-appvariant
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AppVariant { get; set; }
+            /// <summary>
+            /// AuthMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-registeredgithubservicedetails.html#cfn-devopsagent-service-registeredgithubservicedetails-authmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthMode { get; set; }
+        }
+
         public class RegisteredGitLabServiceDetails : Humidifier.Base.BaseSubResource, IHaveGroupId
         {
             /// <summary>
@@ -1061,6 +1206,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: ServiceNowServiceDetails
             /// </summary>
             public Humidifier.DevOpsAgent.ServiceTypes.ServiceNowServiceDetails ServiceNow { get; set; }
+            /// <summary>
+            /// GitHub
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-servicedetails.html#cfn-devopsagent-service-servicedetails-github
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GitHubDetails
+            /// </summary>
+            public Humidifier.DevOpsAgent.ServiceTypes.GitHubDetails GitHub { get; set; }
             /// <summary>
             /// AzureIdentity
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-service-servicedetails.html#cfn-devopsagent-service-servicedetails-azureidentity

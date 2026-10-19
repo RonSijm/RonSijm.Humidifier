@@ -79,6 +79,14 @@ namespace Humidifier.AgentRegistry
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// CustomMetadata
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-agentregistry-registryrecord.html#cfn-agentregistry-registryrecord-custommetadata
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic CustomMetadata { get; set; }
     }
 
     namespace RegistryRecordTypes

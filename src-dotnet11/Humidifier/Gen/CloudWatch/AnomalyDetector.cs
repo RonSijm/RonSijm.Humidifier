@@ -3,13 +3,8 @@ namespace Humidifier.CloudWatch
     using global::System.Collections.Generic;
     using AnomalyDetectorTypes;
 
-    public class AnomalyDetector : Humidifier.Base.BaseResource, IHaveCloudWatchAnomalyDetectorTypesMetricCharacteristicsMetricCharacteristics, IHaveMetricName, IHaveStat, IHaveCloudWatchAnomalyDetectorTypesMetricConfigurationConfiguration, IHaveCloudWatchAnomalyDetectorTypesMetricMathAnomalyDetectorMetricMathAnomalyDetector, IHaveListOfCloudWatchAnomalyDetectorTypesDimensionDimensions, IHaveNamespace_, IHaveCloudWatchAnomalyDetectorTypesSingleMetricAnomalyDetectorSingleMetricAnomalyDetector
+    public class AnomalyDetector : Humidifier.Base.BaseResource, IHaveCloudWatchAnomalyDetectorTypesMetricCharacteristicsMetricCharacteristics, IHaveMetricName, IHaveStat, IHaveCloudWatchAnomalyDetectorTypesConfigurationConfiguration, IHaveCloudWatchAnomalyDetectorTypesMetricMathAnomalyDetectorMetricMathAnomalyDetector, IHaveListOfCloudWatchAnomalyDetectorTypesDimensionDimensions, IHaveNamespace_, IHaveCloudWatchAnomalyDetectorTypesSingleMetricAnomalyDetectorSingleMetricAnomalyDetector
     {
-        public class Attributes
-        {
-            public static string AnomalyDetectorId =  "AnomalyDetectorId" ;
-        }
-
         public override string AWSTypeName { get => AWS.CloudWatch.AnomalyDetector; }
         /// <summary>
         /// MetricCharacteristics
@@ -40,9 +35,9 @@ namespace Humidifier.CloudWatch
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-configuration
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: MetricConfiguration
+        /// Type: Configuration
         /// </summary>
-        public Union<Humidifier.CloudWatch.AnomalyDetectorTypes.MetricConfiguration, BaseFunction>? Configuration { get; set; }
+        public Union<Humidifier.CloudWatch.AnomalyDetectorTypes.Configuration, BaseFunction>? Configuration { get; set; }
         /// <summary>
         /// MetricMathAnomalyDetector
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-metricmathanomalydetector
@@ -80,6 +75,27 @@ namespace Humidifier.CloudWatch
 
     namespace AnomalyDetectorTypes
     {
+        public class Configuration : Humidifier.Base.BaseSubResource, IHaveMetricTimeZone, IHaveListOfCloudWatchAnomalyDetectorTypesRangeExcludedTimeRanges
+        {
+            /// <summary>
+            /// MetricTimeZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html#cfn-cloudwatch-anomalydetector-configuration-metrictimezone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? MetricTimeZone { get; set; }
+            /// <summary>
+            /// ExcludedTimeRanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html#cfn-cloudwatch-anomalydetector-configuration-excludedtimeranges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Range
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CloudWatch.AnomalyDetectorTypes.Range>, IReadOnlyList<Union<Humidifier.CloudWatch.AnomalyDetectorTypes.Range, BaseFunction>>, BaseFunction>? ExcludedTimeRanges { get; set; }
+        }
+
         public class Dimension : Humidifier.Base.BaseSubResource, IHaveValue, IHaveName
         {
             /// <summary>
@@ -141,25 +157,8 @@ namespace Humidifier.CloudWatch
             public Union<bool, BaseFunction>? PeriodicSpikes { get; set; }
         }
 
-        public class MetricConfiguration : Humidifier.Base.BaseSubResource, IHaveMetricTimeZone, IHaveListOfCloudWatchAnomalyDetectorTypesRangeExcludedTimeRanges
+        public class MetricDataQueries : Humidifier.Base.BaseSubResource
         {
-            /// <summary>
-            /// MetricTimeZone
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricconfiguration.html#cfn-cloudwatch-anomalydetector-metricconfiguration-metrictimezone
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? MetricTimeZone { get; set; }
-            /// <summary>
-            /// ExcludedTimeRanges
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricconfiguration.html#cfn-cloudwatch-anomalydetector-metricconfiguration-excludedtimeranges
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Range
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.CloudWatch.AnomalyDetectorTypes.Range>, IReadOnlyList<Union<Humidifier.CloudWatch.AnomalyDetectorTypes.Range, BaseFunction>>, BaseFunction>? ExcludedTimeRanges { get; set; }
         }
 
         public class MetricDataQuery : Humidifier.Base.BaseSubResource, IHaveAccountId, IHaveReturnData_Boolean, IHaveExpression, IHaveCloudWatchAnomalyDetectorTypesMetricStatMetricStat, IHaveLabel, IHavePeriod_Integer, IHaveId
@@ -176,7 +175,7 @@ namespace Humidifier.CloudWatch
             /// ReturnData
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataquery.html#cfn-cloudwatch-anomalydetector-metricdataquery-returndata
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? ReturnData { get; set; }
@@ -200,7 +199,7 @@ namespace Humidifier.CloudWatch
             /// Label
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-metricdataquery.html#cfn-cloudwatch-anomalydetector-metricdataquery-label
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Label { get; set; }

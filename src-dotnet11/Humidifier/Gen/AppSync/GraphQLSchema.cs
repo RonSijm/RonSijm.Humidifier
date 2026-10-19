@@ -4,6 +4,11 @@ namespace Humidifier.AppSync
 
     public class GraphQLSchema : Humidifier.Base.BaseResource, IHaveDefinition, IHaveDefinitionS3Location, IHaveApiId
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.AppSync.GraphQLSchema; }
         /// <summary>
         /// Definition
@@ -26,7 +31,7 @@ namespace Humidifier.AppSync
         /// ApiId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         [Required]

@@ -3,7 +3,7 @@ namespace Humidifier.Route53
     using global::System.Collections.Generic;
     using HostedZoneTypes;
 
-    public class HostedZone : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveListOfRoute53HostedZoneTypesHostedZoneTagHostedZoneTags, IHaveListOfRoute53HostedZoneTypesVPCVPCs, IHaveRoute53HostedZoneTypesHostedZoneFeaturesHostedZoneFeatures, IHaveRoute53HostedZoneTypesHostedZoneConfigHostedZoneConfig, IHaveRoute53HostedZoneTypesQueryLoggingConfigQueryLoggingConfig, IHaveName
+    public class HostedZone : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDelegationSetId, IHaveListOfRoute53HostedZoneTypesHostedZoneTagHostedZoneTags, IHaveListOfRoute53HostedZoneTypesVPCVPCs, IHaveRoute53HostedZoneTypesHostedZoneFeaturesHostedZoneFeatures, IHaveRoute53HostedZoneTypesHostedZoneConfigHostedZoneConfig, IHaveRoute53HostedZoneTypesQueryLoggingConfigQueryLoggingConfig, IHaveName
     {
         public class Attributes
         {
@@ -12,6 +12,14 @@ namespace Humidifier.Route53
         }
 
         public override string AWSTypeName { get => AWS.Route53.HostedZone; }
+        /// <summary>
+        /// DelegationSetId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-delegationsetid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? DelegationSetId { get; set; }
         /// <summary>
         /// HostedZoneTags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzonetags

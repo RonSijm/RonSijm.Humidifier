@@ -128,6 +128,7 @@ public class AWS
     public class AppFabric
     {
         public const string AppAuthorization = "AWS::AppFabric::AppAuthorization";
+        public const string IngestionDestination = "AWS::AppFabric::IngestionDestination";
     }
     public class AppFlow
     {
@@ -346,6 +347,7 @@ public class AWS
         public const string CodeInterpreterCustom = "AWS::BedrockAgentCore::CodeInterpreterCustom";
         public const string ConfigurationBundle = "AWS::BedrockAgentCore::ConfigurationBundle";
         public const string ConfigurationBundleVersion = "AWS::BedrockAgentCore::ConfigurationBundleVersion";
+        public const string ConsentPortal = "AWS::BedrockAgentCore::ConsentPortal";
         public const string Dataset = "AWS::BedrockAgentCore::Dataset";
         public const string Evaluator = "AWS::BedrockAgentCore::Evaluator";
         public const string Gateway = "AWS::BedrockAgentCore::Gateway";
@@ -458,6 +460,7 @@ public class AWS
     {
         public const string AnalysisTemplate = "AWS::CleanRooms::AnalysisTemplate";
         public const string Collaboration = "AWS::CleanRooms::Collaboration";
+        public const string ConfiguredAudienceModelAssociation = "AWS::CleanRooms::ConfiguredAudienceModelAssociation";
         public const string ConfiguredTable = "AWS::CleanRooms::ConfiguredTable";
         public const string ConfiguredTableAssociation = "AWS::CleanRooms::ConfiguredTableAssociation";
         public const string IdMappingTable = "AWS::CleanRooms::IdMappingTable";
@@ -516,6 +519,7 @@ public class AWS
         public const string ContinuousDeploymentPolicy = "AWS::CloudFront::ContinuousDeploymentPolicy";
         public const string Distribution = "AWS::CloudFront::Distribution";
         public const string DistributionTenant = "AWS::CloudFront::DistributionTenant";
+        public const string FieldLevelEncryptionConfig = "AWS::CloudFront::FieldLevelEncryptionConfig";
         public const string FieldLevelEncryptionProfile = "AWS::CloudFront::FieldLevelEncryptionProfile";
         public const string Function = "AWS::CloudFront::Function";
         public const string KeyGroup = "AWS::CloudFront::KeyGroup";
@@ -554,6 +558,7 @@ public class AWS
         public const string CompositeAlarm = "AWS::CloudWatch::CompositeAlarm";
         public const string Dashboard = "AWS::CloudWatch::Dashboard";
         public const string InsightRule = "AWS::CloudWatch::InsightRule";
+        public const string Integration = "AWS::CloudWatch::Integration";
         public const string LogAlarm = "AWS::CloudWatch::LogAlarm";
         public const string MetricStream = "AWS::CloudWatch::MetricStream";
         public const string OTelEnrichment = "AWS::CloudWatch::OTelEnrichment";
@@ -753,6 +758,7 @@ public class AWS
         public const string Integration = "AWS::CustomerProfiles::Integration";
         public const string ObjectType = "AWS::CustomerProfiles::ObjectType";
         public const string Recommender = "AWS::CustomerProfiles::Recommender";
+        public const string RecommenderFilter = "AWS::CustomerProfiles::RecommenderFilter";
         public const string RecommenderSchema = "AWS::CustomerProfiles::RecommenderSchema";
         public const string SegmentDefinition = "AWS::CustomerProfiles::SegmentDefinition";
     }
@@ -973,6 +979,7 @@ public class AWS
         public const string InternetGateway = "AWS::EC2::InternetGateway";
         public const string IpPoolRouteTableAssociation = "AWS::EC2::IpPoolRouteTableAssociation";
         public const string IpamExternalResourceVerificationToken = "AWS::EC2::IpamExternalResourceVerificationToken";
+        public const string IpamInternetRegistryAssociation = "AWS::EC2::IpamInternetRegistryAssociation";
         public const string KeyPair = "AWS::EC2::KeyPair";
         public const string LaunchTemplate = "AWS::EC2::LaunchTemplate";
         public const string LocalGatewayRoute = "AWS::EC2::LocalGatewayRoute";
@@ -1552,7 +1559,6 @@ public class AWS
     }
     public class IoTEvents
     {
-        public const string AlarmModel = "AWS::IoTEvents::AlarmModel";
         public const string DetectorModel = "AWS::IoTEvents::DetectorModel";
         public const string Input = "AWS::IoTEvents::Input";
     }
@@ -1717,11 +1723,16 @@ public class AWS
         public const string License = "AWS::LicenseManager::License";
         public const string LicenseAssetGroup = "AWS::LicenseManager::LicenseAssetGroup";
         public const string LicenseAssetRuleSet = "AWS::LicenseManager::LicenseAssetRuleSet";
+        public const string LicenseConfiguration = "AWS::LicenseManager::LicenseConfiguration";
         public const string ReportGenerator = "AWS::LicenseManager::ReportGenerator";
     }
     public class LicenseManagerLinuxSubscriptions
     {
         public const string SubscriptionProvider = "AWS::LicenseManagerLinuxSubscriptions::SubscriptionProvider";
+    }
+    public class LicenseManagerUserSubscriptions
+    {
+        public const string LicenseServerEndpoint = "AWS::LicenseManagerUserSubscriptions::LicenseServerEndpoint";
     }
     public class Lightsail
     {
@@ -1861,6 +1872,7 @@ public class AWS
     }
     public class MediaConvert
     {
+        public const string CertificateAssociation = "AWS::MediaConvert::CertificateAssociation";
         public const string Job = "AWS::MediaConvert::Job";
         public const string JobTemplate = "AWS::MediaConvert::JobTemplate";
         public const string Preset = "AWS::MediaConvert::Preset";
@@ -2102,6 +2114,7 @@ public class AWS
         public const string OrganizationalUnit = "AWS::Organizations::OrganizationalUnit";
         public const string Policy = "AWS::Organizations::Policy";
         public const string ResourcePolicy = "AWS::Organizations::ResourcePolicy";
+        public const string ResponsibilityTransfer = "AWS::Organizations::ResponsibilityTransfer";
         public const string Root = "AWS::Organizations::Root";
     }
     public class Outposts
@@ -2198,6 +2211,10 @@ public class AWS
     {
         public const string Pipe = "AWS::Pipes::Pipe";
     }
+    public class Polly
+    {
+        public const string Lexicon = "AWS::Polly::Lexicon";
+    }
     public class PricingPlanManager
     {
         public const string Subscription = "AWS::PricingPlanManager::Subscription";
@@ -2232,6 +2249,8 @@ public class AWS
         public const string ApprovalPolicy = "AWS::QuickSight::ApprovalPolicy";
         public const string AssetBundleExportJob = "AWS::QuickSight::AssetBundleExportJob";
         public const string AssetBundleImportJob = "AWS::QuickSight::AssetBundleImportJob";
+        public const string Assignment = "AWS::QuickSight::Assignment";
+        public const string Brand = "AWS::QuickSight::Brand";
         public const string CustomPermissions = "AWS::QuickSight::CustomPermissions";
         public const string Customization = "AWS::QuickSight::Customization";
         public const string DLPSetting = "AWS::QuickSight::DLPSetting";
@@ -2240,6 +2259,7 @@ public class AWS
         public const string DataSource = "AWS::QuickSight::DataSource";
         public const string Flow = "AWS::QuickSight::Flow";
         public const string Folder = "AWS::QuickSight::Folder";
+        public const string Group = "AWS::QuickSight::Group";
         public const string Ingestion = "AWS::QuickSight::Ingestion";
         public const string KnowledgeBase = "AWS::QuickSight::KnowledgeBase";
         public const string LimitsProfile = "AWS::QuickSight::LimitsProfile";
@@ -2280,6 +2300,7 @@ public class AWS
         public const string DBShardGroup = "AWS::RDS::DBShardGroup";
         public const string DBSnapshot = "AWS::RDS::DBSnapshot";
         public const string DBSubnetGroup = "AWS::RDS::DBSubnetGroup";
+        public const string Deployment = "AWS::RDS::Deployment";
         public const string EventSubscription = "AWS::RDS::EventSubscription";
         public const string GlobalCluster = "AWS::RDS::GlobalCluster";
         public const string Integration = "AWS::RDS::Integration";
@@ -2342,6 +2363,7 @@ public class AWS
         public const string Collection = "AWS::Rekognition::Collection";
         public const string Dataset = "AWS::Rekognition::Dataset";
         public const string Project = "AWS::Rekognition::Project";
+        public const string ProjectVersion = "AWS::Rekognition::ProjectVersion";
         public const string StreamProcessor = "AWS::Rekognition::StreamProcessor";
     }
     public class ResilienceHub
@@ -2698,7 +2720,9 @@ public class AWS
         public const string AgentSpace = "AWS::SecurityAgent::AgentSpace";
         public const string Application = "AWS::SecurityAgent::Application";
         public const string Artifact = "AWS::SecurityAgent::Artifact";
+        public const string Integration = "AWS::SecurityAgent::Integration";
         public const string Pentest = "AWS::SecurityAgent::Pentest";
+        public const string PentestJob = "AWS::SecurityAgent::PentestJob";
         public const string PentestTask = "AWS::SecurityAgent::PentestTask";
         public const string SecurityRequirementPack = "AWS::SecurityAgent::SecurityRequirementPack";
         public const string TargetDomain = "AWS::SecurityAgent::TargetDomain";
@@ -2805,6 +2829,8 @@ public class AWS
         public const string CacheReport = "AWS::StorageGateway::CacheReport";
         public const string Device = "AWS::StorageGateway::Device";
         public const string Gateway = "AWS::StorageGateway::Gateway";
+        public const string NFSFileShare = "AWS::StorageGateway::NFSFileShare";
+        public const string SMBFileShare = "AWS::StorageGateway::SMBFileShare";
         public const string Tape = "AWS::StorageGateway::Tape";
         public const string TapePool = "AWS::StorageGateway::TapePool";
         public const string Volume = "AWS::StorageGateway::Volume";
@@ -2839,6 +2865,7 @@ public class AWS
     public class Timestream
     {
         public const string Database = "AWS::Timestream::Database";
+        public const string InfluxDBBackup = "AWS::Timestream::InfluxDBBackup";
         public const string InfluxDBCluster = "AWS::Timestream::InfluxDBCluster";
         public const string InfluxDBInstance = "AWS::Timestream::InfluxDBInstance";
         public const string InfluxDBParameterGroup = "AWS::Timestream::InfluxDBParameterGroup";

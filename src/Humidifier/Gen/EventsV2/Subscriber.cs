@@ -360,7 +360,7 @@ namespace Humidifier.EventsV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventsv2-subscriber-invokeconfiguration.html#cfn-eventsv2-subscriber-invokeconfiguration-targetarn
             /// Required: True
             /// UpdateType: Immutable
-            /// PrimitiveType: Json
+            /// PrimitiveType: String
             /// </summary>
             public dynamic TargetArn { get; set; }
             /// <summary>

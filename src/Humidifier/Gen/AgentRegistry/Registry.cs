@@ -57,6 +57,14 @@ namespace Humidifier.AgentRegistry
         /// </summary>
         public Humidifier.AgentRegistry.RegistryTypes.EncryptionConfiguration EncryptionConfiguration { get; set; }
         /// <summary>
+        /// CustomMetadataSchemaConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-agentregistry-registry.html#cfn-agentregistry-registry-custommetadataschemaconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CustomMetadataSchemaConfiguration
+        /// </summary>
+        public Humidifier.AgentRegistry.RegistryTypes.CustomMetadataSchemaConfiguration CustomMetadataSchemaConfiguration { get; set; }
+        /// <summary>
         /// DiscoveryConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-agentregistry-registry.html#cfn-agentregistry-registry-discoveryconfiguration
         /// Required: False
@@ -228,6 +236,27 @@ namespace Humidifier.AgentRegistry
             public dynamic AllowedScopes { get; set; }
         }
 
+        public class CustomMetadataSchemaConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RecordTypeSchemaOverrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-custommetadataschemaconfiguration.html#cfn-agentregistry-registry-custommetadataschemaconfiguration-recordtypeschemaoverrides
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: RecordTypeSchemaOverride
+            /// </summary>
+            public List<Humidifier.AgentRegistry.RegistryTypes.RecordTypeSchemaOverride> RecordTypeSchemaOverrides { get; set; }
+            /// <summary>
+            /// DefaultSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-custommetadataschemaconfiguration.html#cfn-agentregistry-registry-custommetadataschemaconfiguration-defaultschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DefaultSchema { get; set; }
+        }
+
         public class DiscoveryConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -250,6 +279,26 @@ namespace Humidifier.AgentRegistry
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKeyArn { get; set; }
+        }
+
+        public class RecordTypeSchemaOverride : Humidifier.Base.BaseSubResource, IHaveSchema
+        {
+            /// <summary>
+            /// RecordType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-recordtypeschemaoverride.html#cfn-agentregistry-registry-recordtypeschemaoverride-recordtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RecordType { get; set; }
+            /// <summary>
+            /// Schema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-agentregistry-registry-recordtypeschemaoverride.html#cfn-agentregistry-registry-recordtypeschemaoverride-schema
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Schema { get; set; }
         }
     }
 }

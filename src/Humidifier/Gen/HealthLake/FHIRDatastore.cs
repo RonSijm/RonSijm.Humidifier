@@ -15,6 +15,14 @@ namespace Humidifier.HealthLake
         }
 
         public override string AWSTypeName { get => AWS.HealthLake.FHIRDatastore; }
+        /// <summary>
+        /// AnalyticsConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-analyticsconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AnalyticsConfiguration
+        /// </summary>
+        public Humidifier.HealthLake.FHIRDatastoreTypes.AnalyticsConfiguration AnalyticsConfiguration { get; set; }
 
         /// <summary>
         /// DatastoreTypeVersion
@@ -26,10 +34,26 @@ namespace Humidifier.HealthLake
         [Required]
         public dynamic DatastoreTypeVersion { get; set; }
         /// <summary>
+        /// ProfileConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-profileconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ProfileConfiguration
+        /// </summary>
+        public Humidifier.HealthLake.FHIRDatastoreTypes.ProfileConfiguration ProfileConfiguration { get; set; }
+        /// <summary>
+        /// NlpConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-nlpconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: NlpConfiguration
+        /// </summary>
+        public Humidifier.HealthLake.FHIRDatastoreTypes.NlpConfiguration NlpConfiguration { get; set; }
+        /// <summary>
         /// DatastoreName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-datastorename
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic DatastoreName { get; set; }
@@ -37,7 +61,7 @@ namespace Humidifier.HealthLake
         /// IdentityProviderConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: IdentityProviderConfiguration
         /// </summary>
         public Humidifier.HealthLake.FHIRDatastoreTypes.IdentityProviderConfiguration IdentityProviderConfiguration { get; set; }
@@ -70,6 +94,18 @@ namespace Humidifier.HealthLake
 
     namespace FHIRDatastoreTypes
     {
+        public class AnalyticsConfiguration : Humidifier.Base.BaseSubResource, IHaveStatus
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-analyticsconfiguration.html#cfn-healthlake-fhirdatastore-analyticsconfiguration-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+        }
+
         public class CreatedAt : Humidifier.Base.BaseSubResource, IHaveSeconds
         {
             /// <summary>
@@ -96,7 +132,7 @@ namespace Humidifier.HealthLake
             /// AuthorizationStrategy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-authorizationstrategy
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic AuthorizationStrategy { get; set; }
@@ -104,7 +140,7 @@ namespace Humidifier.HealthLake
             /// IdpLambdaArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-idplambdaarn
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic IdpLambdaArn { get; set; }
@@ -112,7 +148,7 @@ namespace Humidifier.HealthLake
             /// FineGrainedAuthorizationEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-finegrainedauthorizationenabled
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic FineGrainedAuthorizationEnabled { get; set; }
@@ -120,7 +156,7 @@ namespace Humidifier.HealthLake
             /// Metadata
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-identityproviderconfiguration.html#cfn-healthlake-fhirdatastore-identityproviderconfiguration-metadata
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Metadata { get; set; }
@@ -146,6 +182,18 @@ namespace Humidifier.HealthLake
             public dynamic CmkType { get; set; }
         }
 
+        public class NlpConfiguration : Humidifier.Base.BaseSubResource, IHaveStatus
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-nlpconfiguration.html#cfn-healthlake-fhirdatastore-nlpconfiguration-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+        }
+
         public class PreloadDataConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -156,6 +204,19 @@ namespace Humidifier.HealthLake
             /// PrimitiveType: String
             /// </summary>
             public dynamic PreloadDataType { get; set; }
+        }
+
+        public class ProfileConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DefaultProfiles
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-profileconfiguration.html#cfn-healthlake-fhirdatastore-profileconfiguration-defaultprofiles
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic DefaultProfiles { get; set; }
         }
 
         public class SseConfiguration : Humidifier.Base.BaseSubResource

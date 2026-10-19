@@ -266,7 +266,7 @@ namespace Humidifier.QuickSight
             public Union<string, BaseFunction>? Password { get; set; }
         }
 
-        public class DataSourceCredentials : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveCopySourceArn, IHaveQuickSightDataSourceTypesCredentialPairCredentialPair, IHaveQuickSightDataSourceTypesKeyPairCredentialsKeyPairCredentials
+        public class DataSourceCredentials : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveCopySourceArn, IHaveQuickSightDataSourceTypesCredentialPairCredentialPair, IHaveQuickSightDataSourceTypesKeyPairCredentialsKeyPairCredentials, IHaveQuickSightDataSourceTypesOAuthClientCredentialsOAuthClientCredentials
         {
             /// <summary>
             /// SecretArn
@@ -300,6 +300,14 @@ namespace Humidifier.QuickSight
             /// Type: KeyPairCredentials
             /// </summary>
             public Union<Humidifier.QuickSight.DataSourceTypes.KeyPairCredentials, BaseFunction>? KeyPairCredentials { get; set; }
+            /// <summary>
+            /// OAuthClientCredentials
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-oauthclientcredentials
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OAuthClientCredentials
+            /// </summary>
+            public Union<Humidifier.QuickSight.DataSourceTypes.OAuthClientCredentials, BaseFunction>? OAuthClientCredentials { get; set; }
         }
 
         public class DataSourceErrorInfo : Humidifier.Base.BaseSubResource, IHaveType, IHaveMessage
@@ -494,7 +502,7 @@ namespace Humidifier.QuickSight
             public Union<Humidifier.QuickSight.DataSourceTypes.DatabricksParameters, BaseFunction>? DatabricksParameters { get; set; }
         }
 
-        public class DatabricksParameters : Humidifier.Base.BaseSubResource, IHavePort_Double, IHaveHost, IHaveSqlEndpointPath
+        public class DatabricksParameters : Humidifier.Base.BaseSubResource, IHavePort_Double, IHaveQuickSightDataSourceTypesOAuthParametersOAuthParameters, IHaveHost, IHaveSqlEndpointPath, IHaveAuthenticationType
         {
             /// <summary>
             /// Port
@@ -504,6 +512,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: Double
             /// </summary>
             public Union<double, BaseFunction>? Port { get; set; }
+            /// <summary>
+            /// OAuthParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-oauthparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: OAuthParameters
+            /// </summary>
+            public Union<Humidifier.QuickSight.DataSourceTypes.OAuthParameters, BaseFunction>? OAuthParameters { get; set; }
             /// <summary>
             /// Host
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-host
@@ -520,6 +536,14 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SqlEndpointPath { get; set; }
+            /// <summary>
+            /// AuthenticationType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-authenticationtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AuthenticationType { get; set; }
         }
 
         public class IdentityCenterConfiguration : Humidifier.Base.BaseSubResource, IHaveEnableIdentityPropagation_Boolean
@@ -636,6 +660,34 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Host { get; set; }
+        }
+
+        public class OAuthClientCredentials : Humidifier.Base.BaseSubResource, IHaveUsername, IHaveClientSecret, IHaveClientId
+        {
+            /// <summary>
+            /// Username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthclientcredentials.html#cfn-quicksight-datasource-oauthclientcredentials-username
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Username { get; set; }
+            /// <summary>
+            /// ClientSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthclientcredentials.html#cfn-quicksight-datasource-oauthclientcredentials-clientsecret
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ClientSecret { get; set; }
+            /// <summary>
+            /// ClientId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oauthclientcredentials.html#cfn-quicksight-datasource-oauthclientcredentials-clientid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ClientId { get; set; }
         }
 
         public class OAuthParameters : Humidifier.Base.BaseSubResource, IHaveTokenProviderUrl, IHaveOAuthScope, IHaveQuickSightDataSourceTypesVpcConnectionPropertiesIdentityProviderVpcConnectionProperties, IHaveIdentityProviderResourceUri

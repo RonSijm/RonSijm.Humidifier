@@ -7,7 +7,9 @@ namespace Humidifier.Lambda
     {
         public class Attributes
         {
+            public static string LatestVersion =  "LatestVersion" ;
             public static string State =  "State" ;
+            public static string LatestVersionArn =  "LatestVersionArn" ;
             public static string Arn =  "Arn" ;
         }
 
@@ -70,7 +72,7 @@ namespace Humidifier.Lambda
             /// <summary>
             /// NetworkProtocol
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-networkprotocol
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -87,7 +89,7 @@ namespace Humidifier.Lambda
             /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-securitygroupids
-            /// Required: False
+            /// Required: True
             /// UpdateType: Mutable
             /// Type: List
             /// PrimitiveItemType: String

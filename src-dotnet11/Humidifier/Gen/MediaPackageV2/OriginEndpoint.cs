@@ -145,6 +145,18 @@ namespace Humidifier.MediaPackageV2
 
     namespace OriginEndpointTypes
     {
+        public class ContentKeyPeriodConfiguration : Humidifier.Base.BaseSubResource, IHaveContentKeyPeriodTiming
+        {
+            /// <summary>
+            /// ContentKeyPeriodTiming
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-contentkeyperiodconfiguration.html#cfn-mediapackagev2-originendpoint-contentkeyperiodconfiguration-contentkeyperiodtiming
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ContentKeyPeriodTiming { get; set; }
+        }
+
         public class DashAvailabilityStartTimeConfiguration : Humidifier.Base.BaseSubResource, IHaveFixedAvailabilityStartTime
         {
             /// <summary>
@@ -609,16 +621,8 @@ namespace Humidifier.MediaPackageV2
             public Union<string, BaseFunction>? TsEncryptionMethod { get; set; }
         }
 
-        public class FilterConfiguration : Humidifier.Base.BaseSubResource, IHaveEnd, IHaveStart, IHaveTimeDelaySeconds_Integer, IHaveClipStartTime, IHaveDrmSettings, IHaveManifestFilter
+        public class FilterConfiguration : Humidifier.Base.BaseSubResource, IHaveStart, IHaveDrmSettings, IHaveEnd, IHaveTimeDelaySeconds_Integer, IHaveClipStartTime, IHaveMediaPackageV2OriginEndpointTypesMultiviewFilterConfigurationMultiview, IHaveManifestFilter
         {
-            /// <summary>
-            /// End
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-end
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? End { get; set; }
             /// <summary>
             /// Start
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-start
@@ -627,6 +631,22 @@ namespace Humidifier.MediaPackageV2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Start { get; set; }
+            /// <summary>
+            /// DrmSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-drmsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DrmSettings { get; set; }
+            /// <summary>
+            /// End
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-end
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? End { get; set; }
             /// <summary>
             /// TimeDelaySeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-timedelayseconds
@@ -644,13 +664,13 @@ namespace Humidifier.MediaPackageV2
             /// </summary>
             public Union<string, BaseFunction>? ClipStartTime { get; set; }
             /// <summary>
-            /// DrmSettings
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-drmsettings
+            /// Multiview
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-multiview
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Type: MultiviewFilterConfiguration
             /// </summary>
-            public Union<string, BaseFunction>? DrmSettings { get; set; }
+            public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.MultiviewFilterConfiguration, BaseFunction>? Multiview { get; set; }
             /// <summary>
             /// ManifestFilter
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-filterconfiguration.html#cfn-mediapackagev2-originendpoint-filterconfiguration-manifestfilter
@@ -758,7 +778,59 @@ namespace Humidifier.MediaPackageV2
             public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.StartTag, BaseFunction>? StartTag { get; set; }
         }
 
-        public class LowLatencyHlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestWindowSeconds_Integer, IHaveManifestName, IHaveProgramDateTimeIntervalSeconds_Integer, IHaveChildManifestName, IHaveMediaPackageV2OriginEndpointTypesScteHlsScteHls, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration, IHaveUriPathType, IHaveUrlEncodeChildManifest_Boolean, IHaveUrl, IHaveMediaPackageV2OriginEndpointTypesStartTagStartTag
+        public class LowLatencyHlsFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveStart, IHaveDrmSettings, IHaveEnd, IHaveTimeDelaySeconds_Integer, IHaveClipStartTime, IHaveManifestFilter
+        {
+            /// <summary>
+            /// Start
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration-start
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Start { get; set; }
+            /// <summary>
+            /// DrmSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration-drmsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DrmSettings { get; set; }
+            /// <summary>
+            /// End
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration-end
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? End { get; set; }
+            /// <summary>
+            /// TimeDelaySeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration-timedelayseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? TimeDelaySeconds { get; set; }
+            /// <summary>
+            /// ClipStartTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration-clipstarttime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ClipStartTime { get; set; }
+            /// <summary>
+            /// ManifestFilter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsfilterconfiguration-manifestfilter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ManifestFilter { get; set; }
+        }
+
+        public class LowLatencyHlsManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestWindowSeconds_Integer, IHaveManifestName, IHaveProgramDateTimeIntervalSeconds_Integer, IHaveChildManifestName, IHaveMediaPackageV2OriginEndpointTypesScteHlsScteHls, IHaveMediaPackageV2OriginEndpointTypesLowLatencyHlsFilterConfigurationFilterConfiguration, IHaveUriPathType, IHaveUrlEncodeChildManifest_Boolean, IHaveUrl, IHaveMediaPackageV2OriginEndpointTypesStartTagStartTag
         {
             /// <summary>
             /// ManifestWindowSeconds
@@ -805,9 +877,9 @@ namespace Humidifier.MediaPackageV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-filterconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: FilterConfiguration
+            /// Type: LowLatencyHlsFilterConfiguration
             /// </summary>
-            public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.FilterConfiguration, BaseFunction>? FilterConfiguration { get; set; }
+            public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.LowLatencyHlsFilterConfiguration, BaseFunction>? FilterConfiguration { get; set; }
             /// <summary>
             /// UriPathType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-lowlatencyhlsmanifestconfiguration-uripathtype
@@ -842,7 +914,59 @@ namespace Humidifier.MediaPackageV2
             public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.StartTag, BaseFunction>? StartTag { get; set; }
         }
 
-        public class MssManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestWindowSeconds_Integer, IHaveManifestName, IHaveManifestLayout, IHaveMediaPackageV2OriginEndpointTypesFilterConfigurationFilterConfiguration
+        public class MssFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveStart, IHaveDrmSettings, IHaveEnd, IHaveTimeDelaySeconds_Integer, IHaveClipStartTime, IHaveManifestFilter
+        {
+            /// <summary>
+            /// Start
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssfilterconfiguration.html#cfn-mediapackagev2-originendpoint-mssfilterconfiguration-start
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Start { get; set; }
+            /// <summary>
+            /// DrmSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssfilterconfiguration.html#cfn-mediapackagev2-originendpoint-mssfilterconfiguration-drmsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DrmSettings { get; set; }
+            /// <summary>
+            /// End
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssfilterconfiguration.html#cfn-mediapackagev2-originendpoint-mssfilterconfiguration-end
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? End { get; set; }
+            /// <summary>
+            /// TimeDelaySeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssfilterconfiguration.html#cfn-mediapackagev2-originendpoint-mssfilterconfiguration-timedelayseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? TimeDelaySeconds { get; set; }
+            /// <summary>
+            /// ClipStartTime
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssfilterconfiguration.html#cfn-mediapackagev2-originendpoint-mssfilterconfiguration-clipstarttime
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ClipStartTime { get; set; }
+            /// <summary>
+            /// ManifestFilter
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssfilterconfiguration.html#cfn-mediapackagev2-originendpoint-mssfilterconfiguration-manifestfilter
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ManifestFilter { get; set; }
+        }
+
+        public class MssManifestConfiguration : Humidifier.Base.BaseSubResource, IHaveManifestWindowSeconds_Integer, IHaveManifestName, IHaveManifestLayout, IHaveMediaPackageV2OriginEndpointTypesMssFilterConfigurationFilterConfiguration
         {
             /// <summary>
             /// ManifestWindowSeconds
@@ -873,9 +997,30 @@ namespace Humidifier.MediaPackageV2
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-mssmanifestconfiguration.html#cfn-mediapackagev2-originendpoint-mssmanifestconfiguration-filterconfiguration
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: FilterConfiguration
+            /// Type: MssFilterConfiguration
             /// </summary>
-            public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.FilterConfiguration, BaseFunction>? FilterConfiguration { get; set; }
+            public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.MssFilterConfiguration, BaseFunction>? FilterConfiguration { get; set; }
+        }
+
+        public class MultiviewFilterConfiguration : Humidifier.Base.BaseSubResource, IHaveLayout, IHaveStringListOfSources
+        {
+            /// <summary>
+            /// Layout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-multiviewfilterconfiguration.html#cfn-mediapackagev2-originendpoint-multiviewfilterconfiguration-layout
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Layout { get; set; }
+            /// <summary>
+            /// Sources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-multiviewfilterconfiguration.html#cfn-mediapackagev2-originendpoint-multiviewfilterconfiguration-sources
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Sources { get; set; }
         }
 
         public class Scte : Humidifier.Base.BaseSubResource, IHaveStringListOfCustomAdTypes, IHaveScteInSegments, IHaveStringListOfScteFilter
@@ -1016,7 +1161,7 @@ namespace Humidifier.MediaPackageV2
             public Union<string, BaseFunction>? OutputTimestampMode { get; set; }
         }
 
-        public class SpekeKeyProvider : Humidifier.Base.BaseSubResource, IHaveStringListOfDrmSystems, IHaveResourceId, IHaveMediaPackageV2OriginEndpointTypesEncryptionContractConfigurationEncryptionContractConfiguration, IHaveRoleArn, IHaveUrl, IHaveCertificateArn
+        public class SpekeKeyProvider : Humidifier.Base.BaseSubResource, IHaveStringListOfDrmSystems, IHaveResourceId, IHaveMediaPackageV2OriginEndpointTypesEncryptionContractConfigurationEncryptionContractConfiguration, IHaveSpekeVersion, IHaveRoleArn, IHaveUrl, IHaveCertificateArn, IHaveMediaPackageV2OriginEndpointTypesContentKeyPeriodConfigurationContentKeyPeriodConfiguration
         {
             /// <summary>
             /// DrmSystems
@@ -1044,6 +1189,14 @@ namespace Humidifier.MediaPackageV2
             /// </summary>
             public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.EncryptionContractConfiguration, BaseFunction>? EncryptionContractConfiguration { get; set; }
             /// <summary>
+            /// SpekeVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-spekekeyprovider.html#cfn-mediapackagev2-originendpoint-spekekeyprovider-spekeversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SpekeVersion { get; set; }
+            /// <summary>
             /// RoleArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-spekekeyprovider.html#cfn-mediapackagev2-originendpoint-spekekeyprovider-rolearn
             /// Required: True
@@ -1067,6 +1220,14 @@ namespace Humidifier.MediaPackageV2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? CertificateArn { get; set; }
+            /// <summary>
+            /// ContentKeyPeriodConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackagev2-originendpoint-spekekeyprovider.html#cfn-mediapackagev2-originendpoint-spekekeyprovider-contentkeyperiodconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ContentKeyPeriodConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaPackageV2.OriginEndpointTypes.ContentKeyPeriodConfiguration, BaseFunction>? ContentKeyPeriodConfiguration { get; set; }
         }
 
         public class StartTag : Humidifier.Base.BaseSubResource, IHaveTimeOffset_Double, IHavePrecise_Boolean

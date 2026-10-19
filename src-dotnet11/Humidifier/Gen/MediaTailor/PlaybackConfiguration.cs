@@ -3,7 +3,7 @@ namespace Humidifier.MediaTailor
     using global::System.Collections.Generic;
     using PlaybackConfigurationTypes;
 
-    public class PlaybackConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMediaTailorPlaybackConfigurationTypesBumperBumper, IHaveMediaTailorPlaybackConfigurationTypesDashConfigurationDashConfiguration, IHaveInsertionMode, IHaveMediaTailorPlaybackConfigurationTypesManifestProcessingRulesManifestProcessingRules, IHaveMediaTailorPlaybackConfigurationTypesCdnConfigurationCdnConfiguration, IHavePersonalizationThresholdSeconds_Integer, IHaveMediaTailorPlaybackConfigurationTypesLivePreRollConfigurationLivePreRollConfiguration, IHaveMediaTailorPlaybackConfigurationTypesHlsConfigurationHlsConfiguration, IHaveMediaTailorPlaybackConfigurationTypesLogConfigurationLogConfiguration, IHaveVideoContentSourceUrl, IHaveMediaTailorPlaybackConfigurationTypesAdsPersonalizationConcurrencyAdsPersonalizationConcurrency, IHaveMediaTailorPlaybackConfigurationTypesAdDecisionServerConfigurationAdDecisionServerConfiguration, IHaveName, IHaveTranscodeProfileName, IHaveJsonDictionaryOfConfigurationAliases, IHaveAdDecisionServerUrl, IHaveStringDictionaryOfFunctionMapping, IHaveMediaTailorPlaybackConfigurationTypesAdConditioningConfigurationAdConditioningConfiguration, IHaveMediaTailorPlaybackConfigurationTypesAdsPersonalizationTimeoutsAdsPersonalizationTimeouts, IHaveSlateAdUrl, IHaveMediaTailorPlaybackConfigurationTypesAvailSuppressionAvailSuppression
+    public class PlaybackConfiguration : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveMediaTailorPlaybackConfigurationTypesBumperBumper, IHaveMediaTailorPlaybackConfigurationTypesDashConfigurationDashConfiguration, IHaveInsertionMode, IHaveMediaTailorPlaybackConfigurationTypesManifestProcessingRulesManifestProcessingRules, IHaveMediaTailorPlaybackConfigurationTypesCdnConfigurationCdnConfiguration, IHavePersonalizationThresholdSeconds_Integer, IHaveMediaTailorPlaybackConfigurationTypesBeaconingConfigurationBeaconingConfiguration, IHaveMediaTailorPlaybackConfigurationTypesLivePreRollConfigurationLivePreRollConfiguration, IHaveMediaTailorPlaybackConfigurationTypesHlsConfigurationHlsConfiguration, IHaveMediaTailorPlaybackConfigurationTypesLogConfigurationLogConfiguration, IHaveVideoContentSourceUrl, IHaveMediaTailorPlaybackConfigurationTypesAdsPersonalizationConcurrencyAdsPersonalizationConcurrency, IHaveMediaTailorPlaybackConfigurationTypesAdDecisionServerConfigurationAdDecisionServerConfiguration, IHaveName, IHaveTranscodeProfileName, IHaveJsonDictionaryOfConfigurationAliases, IHaveAdDecisionServerUrl, IHaveStringDictionaryOfFunctionMapping, IHaveMediaTailorPlaybackConfigurationTypesAdConditioningConfigurationAdConditioningConfiguration, IHaveMediaTailorPlaybackConfigurationTypesAdsPersonalizationTimeoutsAdsPersonalizationTimeouts, IHaveSlateAdUrl, IHaveMediaTailorPlaybackConfigurationTypesAvailSuppressionAvailSuppression
     {
         public class Attributes
         {
@@ -61,6 +61,14 @@ namespace Humidifier.MediaTailor
         /// PrimitiveType: Integer
         /// </summary>
         public Union<int, BaseFunction>? PersonalizationThresholdSeconds { get; set; }
+        /// <summary>
+        /// BeaconingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-beaconingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: BeaconingConfiguration
+        /// </summary>
+        public Union<Humidifier.MediaTailor.PlaybackConfigurationTypes.BeaconingConfiguration, BaseFunction>? BeaconingConfiguration { get; set; }
         /// <summary>
         /// LivePreRollConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration
@@ -351,6 +359,18 @@ namespace Humidifier.MediaTailor
             public Union<string, BaseFunction>? FillPolicy { get; set; }
         }
 
+        public class BeaconingConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaTailorPlaybackConfigurationTypesClientSideBeaconingConfigurationClientSide
+        {
+            /// <summary>
+            /// ClientSide
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-beaconingconfiguration.html#cfn-mediatailor-playbackconfiguration-beaconingconfiguration-clientside
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ClientSideBeaconingConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaTailor.PlaybackConfigurationTypes.ClientSideBeaconingConfiguration, BaseFunction>? ClientSide { get; set; }
+        }
+
         public class Bumper : Humidifier.Base.BaseSubResource, IHaveStartUrl, IHaveEndUrl
         {
             /// <summary>
@@ -389,6 +409,27 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ContentSegmentUrlPrefix { get; set; }
+        }
+
+        public class ClientSideBeaconingConfiguration : Humidifier.Base.BaseSubResource, IHaveReportingMode, IHaveStringListOfAdditionalEventTypes
+        {
+            /// <summary>
+            /// ReportingMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration.html#cfn-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration-reportingmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ReportingMode { get; set; }
+            /// <summary>
+            /// AdditionalEventTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration.html#cfn-mediatailor-playbackconfiguration-clientsidebeaconingconfiguration-additionaleventtypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AdditionalEventTypes { get; set; }
         }
 
         public class DashConfiguration : Humidifier.Base.BaseSubResource, IHaveMpdLocation, IHaveManifestEndpointPrefix, IHaveOriginManifestType

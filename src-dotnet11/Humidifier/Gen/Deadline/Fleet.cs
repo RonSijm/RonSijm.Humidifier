@@ -454,6 +454,18 @@ namespace Humidifier.Deadline
             public Union<Humidifier.Deadline.FleetTypes.CustomerManagedFleetConfiguration, BaseFunction>? CustomerManaged { get; set; }
         }
 
+        public class FleetSoftwareAddOn : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-fleetsoftwareaddon.html#cfn-deadline-fleet-fleetsoftwareaddon-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Name { get; set; }
+        }
+
         public class HostConfiguration : Humidifier.Base.BaseSubResource, IHaveScriptTimeoutSeconds_Integer, IHaveScriptBody
         {
             /// <summary>
@@ -618,7 +630,7 @@ namespace Humidifier.Deadline
             public Union<Humidifier.Deadline.FleetTypes.ServiceManagedEc2AutoScalingConfiguration, BaseFunction>? AutoScalingConfiguration { get; set; }
         }
 
-        public class ServiceManagedEc2InstanceCapabilities : Humidifier.Base.BaseSubResource, IHaveStringListOfAllowedInstanceTypes, IHaveListOfDeadlineFleetTypesFleetAttributeCapabilityCustomAttributes, IHaveDeadlineFleetTypesAcceleratorCapabilitiesAcceleratorCapabilities, IHaveListOfDeadlineFleetTypesFleetAmountCapabilityCustomAmounts, IHaveDeadlineFleetTypesVCpuCountRangeVCpuCount, IHaveStringListOfExcludedInstanceTypes, IHaveDeadlineFleetTypesMemoryMiBRangeMemoryMiB, IHaveOsFamily, IHaveCpuArchitectureType, IHaveDeadlineFleetTypesEc2EbsVolumeRootEbsVolume
+        public class ServiceManagedEc2InstanceCapabilities : Humidifier.Base.BaseSubResource, IHaveStringListOfAllowedInstanceTypes, IHaveListOfDeadlineFleetTypesFleetSoftwareAddOnSoftwareAddOns, IHaveListOfDeadlineFleetTypesFleetAttributeCapabilityCustomAttributes, IHaveDeadlineFleetTypesAcceleratorCapabilitiesAcceleratorCapabilities, IHaveListOfDeadlineFleetTypesFleetAmountCapabilityCustomAmounts, IHaveDeadlineFleetTypesVCpuCountRangeVCpuCount, IHaveStringListOfExcludedInstanceTypes, IHaveDeadlineFleetTypesMemoryMiBRangeMemoryMiB, IHaveOsFamily, IHaveCpuArchitectureType, IHaveDeadlineFleetTypesEc2EbsVolumeRootEbsVolume
         {
             /// <summary>
             /// AllowedInstanceTypes
@@ -629,6 +641,15 @@ namespace Humidifier.Deadline
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AllowedInstanceTypes { get; set; }
+            /// <summary>
+            /// SoftwareAddOns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2instancecapabilities.html#cfn-deadline-fleet-servicemanagedec2instancecapabilities-softwareaddons
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FleetSoftwareAddOn
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.Deadline.FleetTypes.FleetSoftwareAddOn>, IReadOnlyList<Union<Humidifier.Deadline.FleetTypes.FleetSoftwareAddOn, BaseFunction>>, BaseFunction>? SoftwareAddOns { get; set; }
             /// <summary>
             /// CustomAttributes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-deadline-fleet-servicemanagedec2instancecapabilities.html#cfn-deadline-fleet-servicemanagedec2instancecapabilities-customattributes

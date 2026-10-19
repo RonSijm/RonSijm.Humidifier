@@ -98,7 +98,7 @@ namespace Humidifier.EKS
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? DisabledServices { get; set; }
         }
 
-        public class ArgoCd : Humidifier.Base.BaseSubResource, IHaveServerUrl, IHaveEKSCapabilityTypesNetworkAccessNetworkAccess, IHaveEKSCapabilityTypesAwsIdcAwsIdc, IHaveListOfEKSCapabilityTypesArgoCdRoleMappingRbacRoleMappings, IHaveNamespace_
+        public class ArgoCd : Humidifier.Base.BaseSubResource, IHaveServerUrl, IHaveEKSCapabilityTypesNetworkAccessNetworkAccess, IHaveEKSCapabilityTypesAwsIdcAwsIdc, IHaveListOfEKSCapabilityTypesArgoCdRoleMappingRbacRoleMappings, IHaveEndpointPrefix, IHaveNamespace_
         {
             /// <summary>
             /// ServerUrl
@@ -133,6 +133,14 @@ namespace Humidifier.EKS
             /// ItemType: ArgoCdRoleMapping
             /// </summary>
             public Union<IReadOnlyList<Humidifier.EKS.CapabilityTypes.ArgoCdRoleMapping>, IReadOnlyList<Union<Humidifier.EKS.CapabilityTypes.ArgoCdRoleMapping, BaseFunction>>, BaseFunction>? RbacRoleMappings { get; set; }
+            /// <summary>
+            /// EndpointPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-capability-argocd.html#cfn-eks-capability-argocd-endpointprefix
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? EndpointPrefix { get; set; }
             /// <summary>
             /// Namespace_
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-capability-argocd.html#cfn-eks-capability-argocd-namespace

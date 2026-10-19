@@ -63,7 +63,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// Aggregates
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-aggregateconfiguration.html#cfn-fsx-volume-ontapconfiguration-aggregateconfiguration-aggregates
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-aggregateconfiguration.html#cfn-fsx-volume-aggregateconfiguration-aggregates
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -72,7 +72,7 @@ namespace Humidifier.FSx
             public dynamic Aggregates { get; set; }
             /// <summary>
             /// ConstituentsPerAggregate
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-aggregateconfiguration.html#cfn-fsx-volume-ontapconfiguration-aggregateconfiguration-constituentsperaggregate
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-aggregateconfiguration.html#cfn-fsx-volume-aggregateconfiguration-constituentsperaggregate
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: Integer
@@ -84,7 +84,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod-type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-autocommitperiod.html#cfn-fsx-volume-autocommitperiod-type
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -92,7 +92,7 @@ namespace Humidifier.FSx
             public dynamic Type { get; set; }
             /// <summary>
             /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod-value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-autocommitperiod.html#cfn-fsx-volume-autocommitperiod-value
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -104,7 +104,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// Options
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations.html#cfn-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations-options
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-clientconfigurations.html#cfn-fsx-volume-clientconfigurations-options
             /// Required: True
             /// UpdateType: Mutable
             /// Type: List
@@ -113,7 +113,7 @@ namespace Humidifier.FSx
             public dynamic Options { get; set; }
             /// <summary>
             /// Clients
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations.html#cfn-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations-clients
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-clientconfigurations.html#cfn-fsx-volume-clientconfigurations-clients
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -125,7 +125,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// ClientConfigurations
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-nfsexports.html#cfn-fsx-volume-openzfsconfiguration-nfsexports-clientconfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-nfsexports.html#cfn-fsx-volume-nfsexports-clientconfigurations
             /// Required: True
             /// UpdateType: Mutable
             /// Type: List
@@ -204,7 +204,7 @@ namespace Humidifier.FSx
             /// AggregateConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration.html#cfn-fsx-volume-ontapconfiguration-aggregateconfiguration
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: AggregateConfiguration
             /// </summary>
             public Humidifier.FSx.VolumeTypes.AggregateConfiguration AggregateConfiguration { get; set; }
@@ -341,7 +341,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// CopyStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-originsnapshot.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot-copystrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-originsnapshot.html#cfn-fsx-volume-originsnapshot-copystrategy
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -349,7 +349,7 @@ namespace Humidifier.FSx
             public dynamic CopyStrategy { get; set; }
             /// <summary>
             /// SnapshotARN
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-originsnapshot.html#cfn-fsx-volume-openzfsconfiguration-originsnapshot-snapshotarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-originsnapshot.html#cfn-fsx-volume-originsnapshot-snapshotarn
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -360,14 +360,6 @@ namespace Humidifier.FSx
         public class RetentionPeriod : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue
         {
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-retentionperiod.html#cfn-fsx-volume-retentionperiod-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-retentionperiod.html#cfn-fsx-volume-retentionperiod-value
             /// Required: False
@@ -375,13 +367,21 @@ namespace Humidifier.FSx
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-retentionperiod.html#cfn-fsx-volume-retentionperiod-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
 
         public class SnaplockConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// AuditLogVolume
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-auditlogvolume
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-snaplockconfiguration.html#cfn-fsx-volume-snaplockconfiguration-auditlogvolume
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -389,7 +389,7 @@ namespace Humidifier.FSx
             public dynamic AuditLogVolume { get; set; }
             /// <summary>
             /// VolumeAppendModeEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-volumeappendmodeenabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-snaplockconfiguration.html#cfn-fsx-volume-snaplockconfiguration-volumeappendmodeenabled
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -397,7 +397,7 @@ namespace Humidifier.FSx
             public dynamic VolumeAppendModeEnabled { get; set; }
             /// <summary>
             /// AutocommitPeriod
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-autocommitperiod
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-snaplockconfiguration.html#cfn-fsx-volume-snaplockconfiguration-autocommitperiod
             /// Required: False
             /// UpdateType: Mutable
             /// Type: AutocommitPeriod
@@ -405,7 +405,7 @@ namespace Humidifier.FSx
             public Humidifier.FSx.VolumeTypes.AutocommitPeriod AutocommitPeriod { get; set; }
             /// <summary>
             /// RetentionPeriod
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-retentionperiod
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-snaplockconfiguration.html#cfn-fsx-volume-snaplockconfiguration-retentionperiod
             /// Required: False
             /// UpdateType: Mutable
             /// Type: SnaplockRetentionPeriod
@@ -413,7 +413,7 @@ namespace Humidifier.FSx
             public Humidifier.FSx.VolumeTypes.SnaplockRetentionPeriod RetentionPeriod { get; set; }
             /// <summary>
             /// PrivilegedDelete
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-privilegeddelete
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-snaplockconfiguration.html#cfn-fsx-volume-snaplockconfiguration-privilegeddelete
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -421,7 +421,7 @@ namespace Humidifier.FSx
             public dynamic PrivilegedDelete { get; set; }
             /// <summary>
             /// SnaplockType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-snaplockconfiguration.html#cfn-fsx-volume-ontapconfiguration-snaplockconfiguration-snaplocktype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-snaplockconfiguration.html#cfn-fsx-volume-snaplockconfiguration-snaplocktype
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -461,7 +461,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// CoolingPeriod
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy-coolingperiod
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-tieringpolicy.html#cfn-fsx-volume-tieringpolicy-coolingperiod
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -469,7 +469,7 @@ namespace Humidifier.FSx
             public dynamic CoolingPeriod { get; set; }
             /// <summary>
             /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-ontapconfiguration-tieringpolicy.html#cfn-fsx-volume-ontapconfiguration-tieringpolicy-name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-tieringpolicy.html#cfn-fsx-volume-tieringpolicy-name
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -481,7 +481,7 @@ namespace Humidifier.FSx
         {
             /// <summary>
             /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-userandgroupquotas.html#cfn-fsx-volume-userandgroupquotas-type
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -489,7 +489,7 @@ namespace Humidifier.FSx
             public dynamic Type { get; set; }
             /// <summary>
             /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-id
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-userandgroupquotas.html#cfn-fsx-volume-userandgroupquotas-id
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -497,7 +497,7 @@ namespace Humidifier.FSx
             public dynamic Id { get; set; }
             /// <summary>
             /// StorageCapacityQuotaGiB
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-openzfsconfiguration-userandgroupquotas.html#cfn-fsx-volume-openzfsconfiguration-userandgroupquotas-storagecapacityquotagib
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-volume-userandgroupquotas.html#cfn-fsx-volume-userandgroupquotas-storagecapacityquotagib
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Integer

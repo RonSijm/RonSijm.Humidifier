@@ -81,11 +81,11 @@ namespace Humidifier.FSx
             public Union<string, BaseFunction>? NetBiosName { get; set; }
         }
 
-        public class SelfManagedActiveDirectoryConfiguration : Humidifier.Base.BaseSubResource, IHaveFileSystemAdministratorsGroup, IHaveUserName, IHaveDomainName, IHaveOrganizationalUnitDistinguishedName, IHaveDomainJoinServiceAccountSecret, IHaveStringListOfDnsIps, IHavePassword
+        public class SelfManagedActiveDirectoryConfiguration : Humidifier.Base.BaseSubResource, IHaveFileSystemAdministratorsGroup, IHaveUserName, IHaveDomainJoinServiceAccountSecret, IHaveDomainName, IHaveOrganizationalUnitDistinguishedName, IHaveStringListOfDnsIps, IHavePassword
         {
             /// <summary>
             /// FileSystemAdministratorsGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-filesystemadministratorsgroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-filesystemadministratorsgroup
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -93,15 +93,23 @@ namespace Humidifier.FSx
             public Union<string, BaseFunction>? FileSystemAdministratorsGroup { get; set; }
             /// <summary>
             /// UserName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-username
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? UserName { get; set; }
             /// <summary>
+            /// DomainJoinServiceAccountSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-domainjoinserviceaccountsecret
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DomainJoinServiceAccountSecret { get; set; }
+            /// <summary>
             /// DomainName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-domainname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-domainname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -109,23 +117,15 @@ namespace Humidifier.FSx
             public Union<string, BaseFunction>? DomainName { get; set; }
             /// <summary>
             /// OrganizationalUnitDistinguishedName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-organizationalunitdistinguishedname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-organizationalunitdistinguishedname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? OrganizationalUnitDistinguishedName { get; set; }
             /// <summary>
-            /// DomainJoinServiceAccountSecret
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-domainjoinserviceaccountsecret
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? DomainJoinServiceAccountSecret { get; set; }
-            /// <summary>
             /// DnsIps
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-dnsips
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-dnsips
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
@@ -134,7 +134,7 @@ namespace Humidifier.FSx
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? DnsIps { get; set; }
             /// <summary>
             /// Password
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-activedirectoryconfiguration-selfmanagedactivedirectoryconfiguration-password
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-storagevirtualmachine-selfmanagedactivedirectoryconfiguration-password
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String

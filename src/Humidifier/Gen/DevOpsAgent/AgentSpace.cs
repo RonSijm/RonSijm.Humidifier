@@ -140,6 +140,74 @@ namespace Humidifier.DevOpsAgent
             public dynamic IdcInstanceArn { get; set; }
         }
 
+        public class IdpAuthConfiguration : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveClientSecret, IHaveProvider, IHaveCreatedAt
+        {
+            /// <summary>
+            /// IssuerUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-issuerurl
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IssuerUrl { get; set; }
+            /// <summary>
+            /// ClientSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-clientsecret
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientSecret { get; set; }
+            /// <summary>
+            /// UserIdClaim
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-useridclaim
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserIdClaim { get; set; }
+            /// <summary>
+            /// CreatedAt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-createdat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CreatedAt { get; set; }
+            /// <summary>
+            /// OperatorAppRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-operatorapprolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OperatorAppRoleArn { get; set; }
+            /// <summary>
+            /// ClientId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-clientid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClientId { get; set; }
+            /// <summary>
+            /// UpdatedAt
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-updatedat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UpdatedAt { get; set; }
+            /// <summary>
+            /// Provider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-idpauthconfiguration.html#cfn-devopsagent-agentspace-idpauthconfiguration-provider
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Provider { get; set; }
+        }
+
         public class OperatorApp : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -150,6 +218,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: IamAuthConfiguration
             /// </summary>
             public Humidifier.DevOpsAgent.AgentSpaceTypes.IamAuthConfiguration Iam { get; set; }
+            /// <summary>
+            /// Idp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-operatorapp.html#cfn-devopsagent-agentspace-operatorapp-idp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IdpAuthConfiguration
+            /// </summary>
+            public Humidifier.DevOpsAgent.AgentSpaceTypes.IdpAuthConfiguration Idp { get; set; }
             /// <summary>
             /// Idc
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-agentspace-operatorapp.html#cfn-devopsagent-agentspace-operatorapp-idc

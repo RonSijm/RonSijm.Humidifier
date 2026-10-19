@@ -448,7 +448,67 @@ namespace Humidifier.EC2
             public Union<string, BaseFunction>? SecurityGroupId { get; set; }
         }
 
-        public class Explanation : Humidifier.Base.BaseSubResource, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpnGateway, IHavePacketField, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGatewayAttachment, IHaveStringListOfProtocols, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentIngressRouteTable, IHaveEC2NetworkInsightsAnalysisTypesAnalysisLoadBalancerListenerClassicLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpcPeeringConnection, IHaveAddress, IHavePort_Integer, IHaveStringListOfAddresses, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGatewayRouteTable, IHaveExplanationCode, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentInternetGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentAttachedTo, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentPrefixList, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveComponentRegion, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentLoadBalancerTargetGroup, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentNetworkInterface, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentCustomerGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSecurityGroup, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentRouteTable, IHaveState, IHaveLoadBalancerListenerPort_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentvpcEndpoint, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveStringListOfCidrs, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestination, IHaveListOfEC2NetworkInsightsAnalysisTypesAnalysisComponentSecurityGroups, IHaveComponentAccount, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpnConnection, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentNatGateway, IHaveDirection, IHaveLoadBalancerTargetPort_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisLoadBalancerTargetLoadBalancerTarget, IHaveListOfEC2NetworkInsightsAnalysisTypesAnalysisComponentLoadBalancerTargetGroups, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveMissingComponent, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute, IHaveStringListOfAvailabilityZones, IHaveListOfEC2NetworkInsightsAnalysisTypesPortRangePortRanges, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentAcl, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnetRouteTable, IHaveLoadBalancerArn, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule
+        public class AnalysisTransitGatewayPolicyTableEntry : Humidifier.Base.BaseSubResource, IHaveEC2NetworkInsightsAnalysisTypesPortRangeDestinationPortRange, IHaveEC2NetworkInsightsAnalysisTypesPortRangeSourcePortRange, IHaveSourceCidr, IHaveRuleNumber_Integer, IHaveTargetRouteTableId, IHaveProtocol, IHaveDestinationCidr
+        {
+            /// <summary>
+            /// DestinationPortRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-destinationportrange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PortRange
+            /// </summary>
+            public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange, BaseFunction>? DestinationPortRange { get; set; }
+            /// <summary>
+            /// SourcePortRange
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-sourceportrange
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PortRange
+            /// </summary>
+            public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.PortRange, BaseFunction>? SourcePortRange { get; set; }
+            /// <summary>
+            /// SourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-sourcecidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-rulenumber
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? RuleNumber { get; set; }
+            /// <summary>
+            /// TargetRouteTableId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-targetroutetableid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TargetRouteTableId { get; set; }
+            /// <summary>
+            /// Protocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-protocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Protocol { get; set; }
+            /// <summary>
+            /// DestinationCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry.html#cfn-ec2-networkinsightsanalysis-analysistransitgatewaypolicytableentry-destinationcidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DestinationCidr { get; set; }
+        }
+
+        public class Explanation : Humidifier.Base.BaseSubResource, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpnGateway, IHavePacketField, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGatewayAttachment, IHaveStringListOfProtocols, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentIngressRouteTable, IHaveEC2NetworkInsightsAnalysisTypesAnalysisLoadBalancerListenerClassicLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpcPeeringConnection, IHaveAddress, IHavePort_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisTransitGatewayPolicyTableEntryTransitGatewayPolicyTableEntry, IHaveStringListOfAddresses, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGatewayRouteTable, IHaveExplanationCode, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentInternetGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentAttachedTo, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentPrefixList, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveComponentRegion, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentLoadBalancerTargetGroup, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentNetworkInterface, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentCustomerGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSecurityGroup, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentRouteTable, IHaveState, IHaveLoadBalancerListenerPort_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentvpcEndpoint, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveStringListOfCidrs, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestination, IHaveListOfEC2NetworkInsightsAnalysisTypesAnalysisComponentSecurityGroups, IHaveComponentAccount, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpnConnection, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentNatGateway, IHaveDirection, IHaveLoadBalancerTargetPort_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisLoadBalancerTargetLoadBalancerTarget, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGatewayPolicyTable, IHaveListOfEC2NetworkInsightsAnalysisTypesAnalysisComponentLoadBalancerTargetGroups, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveMissingComponent, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute, IHaveStringListOfAvailabilityZones, IHaveListOfEC2NetworkInsightsAnalysisTypesPortRangePortRanges, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentAcl, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnetRouteTable, IHaveLoadBalancerArn, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule
         {
             /// <summary>
             /// VpnGateway
@@ -523,6 +583,14 @@ namespace Humidifier.EC2
             /// PrimitiveType: Integer
             /// </summary>
             public Union<int, BaseFunction>? Port { get; set; }
+            /// <summary>
+            /// TransitGatewayPolicyTableEntry
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewaypolicytableentry
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisTransitGatewayPolicyTableEntry
+            /// </summary>
+            public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisTransitGatewayPolicyTableEntry, BaseFunction>? TransitGatewayPolicyTableEntry { get; set; }
             /// <summary>
             /// Addresses
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses
@@ -775,6 +843,14 @@ namespace Humidifier.EC2
             /// </summary>
             public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisLoadBalancerTarget, BaseFunction>? LoadBalancerTarget { get; set; }
             /// <summary>
+            /// TransitGatewayPolicyTable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewaypolicytable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisComponent
+            /// </summary>
+            public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisComponent, BaseFunction>? TransitGatewayPolicyTable { get; set; }
+            /// <summary>
             /// LoadBalancerTargetGroups
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups
             /// Required: False
@@ -867,7 +943,7 @@ namespace Humidifier.EC2
             public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisAclRule, BaseFunction>? AclRule { get; set; }
         }
 
-        public class PathComponent : Humidifier.Base.BaseSubResource, IHaveListOfEC2NetworkInsightsAnalysisTypesAdditionalDetailAdditionalDetails, IHaveEC2NetworkInsightsAnalysisTypesAnalysisPacketHeaderInboundHeader, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveListOfEC2NetworkInsightsAnalysisTypesExplanationExplanations, IHaveServiceName, IHaveSequenceNumber_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisPacketHeaderOutboundHeader, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute
+        public class PathComponent : Humidifier.Base.BaseSubResource, IHaveListOfEC2NetworkInsightsAnalysisTypesAdditionalDetailAdditionalDetails, IHaveEC2NetworkInsightsAnalysisTypesAnalysisPacketHeaderInboundHeader, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentDestinationVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisSecurityGroupRuleSecurityGroupRule, IHaveEC2NetworkInsightsAnalysisTypesAnalysisTransitGatewayPolicyTableEntryTransitGatewayPolicyTableEntry, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentTransitGateway, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentElasticLoadBalancerListener, IHaveListOfEC2NetworkInsightsAnalysisTypesExplanationExplanations, IHaveServiceName, IHaveSequenceNumber_Integer, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSourceVpc, IHaveEC2NetworkInsightsAnalysisTypesAnalysisPacketHeaderOutboundHeader, IHaveEC2NetworkInsightsAnalysisTypesAnalysisAclRuleAclRule, IHaveEC2NetworkInsightsAnalysisTypesTransitGatewayRouteTableRouteTransitGatewayRouteTableRoute, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentComponent, IHaveEC2NetworkInsightsAnalysisTypesAnalysisComponentSubnet, IHaveEC2NetworkInsightsAnalysisTypesAnalysisRouteTableRouteRouteTableRoute
         {
             /// <summary>
             /// AdditionalDetails
@@ -910,6 +986,14 @@ namespace Humidifier.EC2
             /// Type: AnalysisSecurityGroupRule
             /// </summary>
             public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisSecurityGroupRule, BaseFunction>? SecurityGroupRule { get; set; }
+            /// <summary>
+            /// TransitGatewayPolicyTableEntry
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgatewaypolicytableentry
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AnalysisTransitGatewayPolicyTableEntry
+            /// </summary>
+            public Union<Humidifier.EC2.NetworkInsightsAnalysisTypes.AnalysisTransitGatewayPolicyTableEntry, BaseFunction>? TransitGatewayPolicyTableEntry { get; set; }
             /// <summary>
             /// TransitGateway
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway

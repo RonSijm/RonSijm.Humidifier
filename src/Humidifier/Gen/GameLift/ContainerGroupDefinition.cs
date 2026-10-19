@@ -293,6 +293,14 @@ namespace Humidifier.GameLift
             /// </summary>
             public dynamic ServerSdkVersion { get; set; }
             /// <summary>
+            /// Vcpu
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-gameservercontainerdefinition.html#cfn-gamelift-containergroupdefinition-gameservercontainerdefinition-vcpu
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Vcpu { get; set; }
+            /// <summary>
             /// ImageUri
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-containergroupdefinition-gameservercontainerdefinition.html#cfn-gamelift-containergroupdefinition-gameservercontainerdefinition-imageuri
             /// Required: True

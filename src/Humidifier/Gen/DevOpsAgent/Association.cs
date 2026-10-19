@@ -75,6 +75,14 @@ namespace Humidifier.DevOpsAgent
             /// </summary>
             public dynamic AccountId { get; set; }
             /// <summary>
+            /// AgentElevatedRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-awsconfiguration.html#cfn-devopsagent-association-awsconfiguration-agentelevatedrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AgentElevatedRoleArn { get; set; }
+            /// <summary>
             /// Resources
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-awsconfiguration.html#cfn-devopsagent-association-awsconfiguration-resources
             /// Required: False
@@ -339,6 +347,15 @@ namespace Humidifier.DevOpsAgent
             /// </summary>
             public dynamic Endpoint { get; set; }
             /// <summary>
+            /// EnabledElevatedTools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpserverdatadogconfiguration.html#cfn-devopsagent-association-mcpserverdatadogconfiguration-enabledelevatedtools
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EnabledElevatedTools { get; set; }
+            /// <summary>
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpserverdatadogconfiguration.html#cfn-devopsagent-association-mcpserverdatadogconfiguration-name
             /// Required: False
@@ -375,6 +392,15 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Tools { get; set; }
+            /// <summary>
+            /// EnabledElevatedTools
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpservergrafanaconfiguration.html#cfn-devopsagent-association-mcpservergrafanaconfiguration-enabledelevatedtools
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic EnabledElevatedTools { get; set; }
             /// <summary>
             /// EnableWebhookUpdates
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-mcpservergrafanaconfiguration.html#cfn-devopsagent-association-mcpservergrafanaconfiguration-enablewebhookupdates
@@ -635,6 +661,26 @@ namespace Humidifier.DevOpsAgent
             public dynamic EnableWebhookUpdates { get; set; }
         }
 
+        public class SlackBidirectionalConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackbidirectionalconfiguration.html#cfn-devopsagent-association-slackbidirectionalconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackbidirectionalconfiguration.html#cfn-devopsagent-association-slackbidirectionalconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+        }
+
         public class SlackChannel : Humidifier.Base.BaseSubResource, IHaveChannelName, IHaveChannelId
         {
             /// <summary>
@@ -665,6 +711,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: SlackTransmissionTarget
             /// </summary>
             public Humidifier.DevOpsAgent.AssociationTypes.SlackTransmissionTarget TransmissionTarget { get; set; }
+            /// <summary>
+            /// Bidirectional
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackconfiguration.html#cfn-devopsagent-association-slackconfiguration-bidirectional
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SlackBidirectionalConfiguration
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.SlackBidirectionalConfiguration Bidirectional { get; set; }
             /// <summary>
             /// WorkspaceId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-slackconfiguration.html#cfn-devopsagent-association-slackconfiguration-workspaceid
@@ -713,6 +767,14 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public dynamic AccountId { get; set; }
+            /// <summary>
+            /// AgentElevatedRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-sourceawsconfiguration.html#cfn-devopsagent-association-sourceawsconfiguration-agentelevatedrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AgentElevatedRoleArn { get; set; }
             /// <summary>
             /// Resources
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-sourceawsconfiguration.html#cfn-devopsagent-association-sourceawsconfiguration-resources

@@ -5,6 +5,11 @@ namespace Humidifier.Budgets
 
     public class Budget : Humidifier.Base.BaseResource, IHaveListOfBudgetsBudgetTypesNotificationWithSubscribersNotificationsWithSubscribers, IHaveListOfBudgetsBudgetTypesResourceTagResourceTags, IHaveBudgetsBudgetTypesBudgetDataBudget_
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.Budgets.Budget; }
         /// <summary>
         /// NotificationsWithSubscribers
@@ -58,7 +63,7 @@ namespace Humidifier.Budgets
             public Union<Humidifier.Budgets.BudgetTypes.HistoricalOptions, BaseFunction>? HistoricalOptions { get; set; }
         }
 
-        public class BudgetData : Humidifier.Base.BaseSubResource, IHaveStringListOfMetrics, IHaveBudgetsBudgetTypesSpendBudgetLimit, IHaveBudgetsBudgetTypesTimePeriodTimePeriod, IHaveBillingViewArn, IHaveBudgetsBudgetTypesAutoAdjustDataAutoAdjustData, IHaveTimeUnit, IHavePlannedBudgetLimits_Json, IHaveCostFilters_Json, IHaveBudgetsBudgetTypesExpressionFilterExpression, IHaveBudgetName, IHaveBudgetsBudgetTypesCostTypesCostTypes, IHaveBudgetType
+        public class BudgetData : Humidifier.Base.BaseSubResource, IHaveStringListOfMetrics, IHaveBudgetsBudgetTypesSpendBudgetLimit, IHaveBudgetsBudgetTypesTimePeriodTimePeriod, IHaveBillingViewArn, IHaveBudgetsBudgetTypesAutoAdjustDataAutoAdjustData, IHaveTimeUnit, IHavePlannedBudgetLimits_Json, IHaveCostFilters_Json, IHaveBudgetsBudgetTypesExpressionFilterExpression, IHaveBudgetsBudgetTypesCostTypesCostTypes, IHaveBudgetType, IHaveBudgetName
         {
             /// <summary>
             /// Metrics
@@ -134,14 +139,6 @@ namespace Humidifier.Budgets
             /// </summary>
             public Union<Humidifier.Budgets.BudgetTypes.Expression, BaseFunction>? FilterExpression { get; set; }
             /// <summary>
-            /// BudgetName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetname
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? BudgetName { get; set; }
-            /// <summary>
             /// CostTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-costtypes
             /// Required: False
@@ -157,6 +154,14 @@ namespace Humidifier.Budgets
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? BudgetType { get; set; }
+            /// <summary>
+            /// BudgetName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? BudgetName { get; set; }
         }
 
         public class CostCategoryValues : Humidifier.Base.BaseSubResource, IHaveStringListOfMatchOptions, IHaveStringListOfValues, IHaveKey
@@ -281,8 +286,16 @@ namespace Humidifier.Budgets
             public Union<bool, BaseFunction>? IncludeRefund { get; set; }
         }
 
-        public class Expression : Humidifier.Base.BaseSubResource, IHaveBudgetsBudgetTypesExpressionNot, IHaveListOfBudgetsBudgetTypesExpressionOr, IHaveListOfBudgetsBudgetTypesExpressionAnd, IHaveBudgetsBudgetTypesExpressionDimensionValuesDimensions, IHaveBudgetsBudgetTypesCostCategoryValuesCostCategories, IHaveBudgetsBudgetTypesTagValuesTags
+        public class Expression : Humidifier.Base.BaseSubResource, IHaveBudgetsBudgetTypesExpressionDimensionValuesDimensions, IHaveBudgetsBudgetTypesExpressionNot, IHaveBudgetsBudgetTypesCostCategoryValuesCostCategories, IHaveListOfBudgetsBudgetTypesExpressionOr, IHaveListOfBudgetsBudgetTypesExpressionAnd, IHaveBudgetsBudgetTypesTagValuesTags
         {
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-dimensions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ExpressionDimensionValues
+            /// </summary>
+            public Union<Humidifier.Budgets.BudgetTypes.ExpressionDimensionValues, BaseFunction>? Dimensions { get; set; }
             /// <summary>
             /// Not
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-not
@@ -291,6 +304,14 @@ namespace Humidifier.Budgets
             /// Type: Expression
             /// </summary>
             public Union<Humidifier.Budgets.BudgetTypes.Expression, BaseFunction>? Not { get; set; }
+            /// <summary>
+            /// CostCategories
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-costcategories
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostCategoryValues
+            /// </summary>
+            public Union<Humidifier.Budgets.BudgetTypes.CostCategoryValues, BaseFunction>? CostCategories { get; set; }
             /// <summary>
             /// Or
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-or
@@ -309,22 +330,6 @@ namespace Humidifier.Budgets
             /// ItemType: Expression
             /// </summary>
             public Union<IReadOnlyList<Humidifier.Budgets.BudgetTypes.Expression>, IReadOnlyList<Union<Humidifier.Budgets.BudgetTypes.Expression, BaseFunction>>, BaseFunction>? And { get; set; }
-            /// <summary>
-            /// Dimensions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-dimensions
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ExpressionDimensionValues
-            /// </summary>
-            public Union<Humidifier.Budgets.BudgetTypes.ExpressionDimensionValues, BaseFunction>? Dimensions { get; set; }
-            /// <summary>
-            /// CostCategories
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-costcategories
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: CostCategoryValues
-            /// </summary>
-            public Union<Humidifier.Budgets.BudgetTypes.CostCategoryValues, BaseFunction>? CostCategories { get; set; }
             /// <summary>
             /// Tags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-expression.html#cfn-budgets-budget-expression-tags
@@ -383,7 +388,7 @@ namespace Humidifier.Budgets
             /// ComparisonOperator
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-comparisonoperator
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ComparisonOperator { get; set; }
@@ -391,7 +396,7 @@ namespace Humidifier.Budgets
             /// NotificationType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-notificationtype
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? NotificationType { get; set; }
@@ -399,7 +404,7 @@ namespace Humidifier.Budgets
             /// Threshold
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-threshold
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Double
             /// </summary>
             public Union<double, BaseFunction>? Threshold { get; set; }
@@ -407,7 +412,7 @@ namespace Humidifier.Budgets
             /// ThresholdType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-thresholdtype
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ThresholdType { get; set; }
@@ -419,7 +424,7 @@ namespace Humidifier.Budgets
             /// Subscribers
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-subscribers
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: Subscriber
             /// </summary>
@@ -428,7 +433,7 @@ namespace Humidifier.Budgets
             /// Notification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-notification
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: Notification
             /// </summary>
             public Union<Humidifier.Budgets.BudgetTypes.Notification, BaseFunction>? Notification { get; set; }
@@ -480,7 +485,7 @@ namespace Humidifier.Budgets
             /// SubscriptionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SubscriptionType { get; set; }
@@ -488,7 +493,7 @@ namespace Humidifier.Budgets
             /// Address
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-address
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Address { get; set; }
