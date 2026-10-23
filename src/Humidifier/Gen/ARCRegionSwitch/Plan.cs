@@ -1042,7 +1042,7 @@ namespace Humidifier.ARCRegionSwitch
             public dynamic Behavior { get; set; }
         }
 
-        public class Lambdas : Humidifier.Base.BaseSubResource, IHaveArn, IHaveExternalId
+        public class Lambdas : Humidifier.Base.BaseSubResource, IHaveArn, IHaveExternalId, IHavePayload
         {
             /// <summary>
             /// ExternalId
@@ -1052,6 +1052,14 @@ namespace Humidifier.ARCRegionSwitch
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExternalId { get; set; }
+            /// <summary>
+            /// Payload
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-lambdas.html#cfn-arcregionswitch-plan-lambdas-payload
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Payload { get; set; }
             /// <summary>
             /// CrossAccountRole
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-arcregionswitch-plan-lambdas.html#cfn-arcregionswitch-plan-lambdas-crossaccountrole

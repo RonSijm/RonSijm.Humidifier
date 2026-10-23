@@ -66,31 +66,31 @@ namespace Humidifier.BedrockAgentCore
 
     namespace PaymentManagerTypes
     {
-        public class AuthorizerConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCorePaymentManagerTypesCustomJWTAuthorizerConfigurationCustomJWTAuthorizer
+        public class AuthorizerConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCorePaymentManagerTypesCustomJWTAuthorizerCustomJWTAuthorizer
         {
             /// <summary>
             /// CustomJWTAuthorizer
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-authorizerconfiguration.html#cfn-bedrockagentcore-paymentmanager-authorizerconfiguration-customjwtauthorizer
             /// Required: True
             /// UpdateType: Immutable
-            /// Type: CustomJWTAuthorizerConfiguration
+            /// Type: CustomJWTAuthorizer
             /// </summary>
-            public Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.CustomJWTAuthorizerConfiguration, BaseFunction>? CustomJWTAuthorizer { get; set; }
+            public Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.CustomJWTAuthorizer, BaseFunction>? CustomJWTAuthorizer { get; set; }
         }
 
-        public class AuthorizingClaimMatchValueType : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCorePaymentManagerTypesClaimMatchValueTypeClaimMatchValue, IHaveClaimMatchOperator
+        public class AuthorizingClaimMatchValue : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCorePaymentManagerTypesClaimMatchValueClaimMatchValue, IHaveClaimMatchOperator
         {
             /// <summary>
             /// ClaimMatchValue
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-authorizingclaimmatchvaluetype.html#cfn-bedrockagentcore-paymentmanager-authorizingclaimmatchvaluetype-claimmatchvalue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-authorizingclaimmatchvalue.html#cfn-bedrockagentcore-paymentmanager-authorizingclaimmatchvalue-claimmatchvalue
             /// Required: True
             /// UpdateType: Immutable
-            /// Type: ClaimMatchValueType
+            /// Type: ClaimMatchValue
             /// </summary>
-            public Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.ClaimMatchValueType, BaseFunction>? ClaimMatchValue { get; set; }
+            public Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.ClaimMatchValue, BaseFunction>? ClaimMatchValue { get; set; }
             /// <summary>
             /// ClaimMatchOperator
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-authorizingclaimmatchvaluetype.html#cfn-bedrockagentcore-paymentmanager-authorizingclaimmatchvaluetype-claimmatchoperator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-authorizingclaimmatchvalue.html#cfn-bedrockagentcore-paymentmanager-authorizingclaimmatchvalue-claimmatchoperator
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -98,11 +98,11 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? ClaimMatchOperator { get; set; }
         }
 
-        public class ClaimMatchValueType : Humidifier.Base.BaseSubResource, IHaveMatchValueString, IHaveStringListOfMatchValueStringList
+        public class ClaimMatchValue : Humidifier.Base.BaseSubResource, IHaveMatchValueString, IHaveStringListOfMatchValueStringList
         {
             /// <summary>
             /// MatchValueString
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-claimmatchvaluetype.html#cfn-bedrockagentcore-paymentmanager-claimmatchvaluetype-matchvaluestring
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-claimmatchvalue.html#cfn-bedrockagentcore-paymentmanager-claimmatchvalue-matchvaluestring
             /// Required: False
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -110,7 +110,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? MatchValueString { get; set; }
             /// <summary>
             /// MatchValueStringList
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-claimmatchvaluetype.html#cfn-bedrockagentcore-paymentmanager-claimmatchvaluetype-matchvaluestringlist
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-claimmatchvalue.html#cfn-bedrockagentcore-paymentmanager-claimmatchvalue-matchvaluestringlist
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -119,16 +119,16 @@ namespace Humidifier.BedrockAgentCore
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? MatchValueStringList { get; set; }
         }
 
-        public class CustomClaimValidationType : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCorePaymentManagerTypesAuthorizingClaimMatchValueTypeAuthorizingClaimMatchValue, IHaveInboundTokenClaimName, IHaveInboundTokenClaimValueType
+        public class CustomClaimValidationType : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCorePaymentManagerTypesAuthorizingClaimMatchValueAuthorizingClaimMatchValue, IHaveInboundTokenClaimName, IHaveInboundTokenClaimValueType
         {
             /// <summary>
             /// AuthorizingClaimMatchValue
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customclaimvalidationtype.html#cfn-bedrockagentcore-paymentmanager-customclaimvalidationtype-authorizingclaimmatchvalue
             /// Required: True
             /// UpdateType: Immutable
-            /// Type: AuthorizingClaimMatchValueType
+            /// Type: AuthorizingClaimMatchValue
             /// </summary>
-            public Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.AuthorizingClaimMatchValueType, BaseFunction>? AuthorizingClaimMatchValue { get; set; }
+            public Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.AuthorizingClaimMatchValue, BaseFunction>? AuthorizingClaimMatchValue { get; set; }
             /// <summary>
             /// InboundTokenClaimName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customclaimvalidationtype.html#cfn-bedrockagentcore-paymentmanager-customclaimvalidationtype-inboundtokenclaimname
@@ -147,11 +147,11 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? InboundTokenClaimValueType { get; set; }
         }
 
-        public class CustomJWTAuthorizerConfiguration : Humidifier.Base.BaseSubResource, IHaveDiscoveryUrl, IHaveStringListOfAllowedAudience, IHaveListOfBedrockAgentCorePaymentManagerTypesCustomClaimValidationTypeCustomClaims, IHaveStringListOfAllowedClients, IHaveStringListOfAllowedScopes
+        public class CustomJWTAuthorizer : Humidifier.Base.BaseSubResource, IHaveDiscoveryUrl, IHaveStringListOfAllowedAudience, IHaveListOfBedrockAgentCorePaymentManagerTypesCustomClaimValidationTypeCustomClaims, IHaveStringListOfAllowedClients, IHaveStringListOfAllowedScopes
         {
             /// <summary>
             /// DiscoveryUrl
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration-discoveryurl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizer.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizer-discoveryurl
             /// Required: True
             /// UpdateType: Immutable
             /// PrimitiveType: String
@@ -159,7 +159,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? DiscoveryUrl { get; set; }
             /// <summary>
             /// AllowedAudience
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration-allowedaudience
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizer.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizer-allowedaudience
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -168,7 +168,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AllowedAudience { get; set; }
             /// <summary>
             /// CustomClaims
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration-customclaims
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizer.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizer-customclaims
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -177,7 +177,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<IReadOnlyList<Humidifier.BedrockAgentCore.PaymentManagerTypes.CustomClaimValidationType>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.PaymentManagerTypes.CustomClaimValidationType, BaseFunction>>, BaseFunction>? CustomClaims { get; set; }
             /// <summary>
             /// AllowedClients
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration-allowedclients
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizer.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizer-allowedclients
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -186,7 +186,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AllowedClients { get; set; }
             /// <summary>
             /// AllowedScopes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizerconfiguration-allowedscopes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-customjwtauthorizer.html#cfn-bedrockagentcore-paymentmanager-customjwtauthorizer-allowedscopes
             /// Required: False
             /// UpdateType: Immutable
             /// Type: List
@@ -200,7 +200,7 @@ namespace Humidifier.BedrockAgentCore
             /// <summary>
             /// WorkloadIdentityArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-paymentmanager-workloadidentitydetails.html#cfn-bedrockagentcore-paymentmanager-workloadidentitydetails-workloadidentityarn
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

@@ -192,14 +192,6 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public dynamic NamespaceTemplates { get; set; }
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
             /// Description
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-description
             /// Required: False
@@ -216,13 +208,13 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public Humidifier.BedrockAgentCore.MemoryTypes.CustomConfigurationInput Configuration { get; set; }
             /// <summary>
-            /// MemoryRecordSchema
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-memoryrecordschema
+            /// RecordExpirySpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-recordexpiryspecification
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: MemoryRecordSchema
+            /// Type: RecordExpirySpecification
             /// </summary>
-            public Humidifier.BedrockAgentCore.MemoryTypes.MemoryRecordSchema MemoryRecordSchema { get; set; }
+            public Humidifier.BedrockAgentCore.MemoryTypes.RecordExpirySpecification RecordExpirySpecification { get; set; }
             /// <summary>
             /// CreatedAt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-createdat
@@ -255,6 +247,30 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// MemoryRecordSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-memoryrecordschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MemoryRecordSchema
+            /// </summary>
+            public Humidifier.BedrockAgentCore.MemoryTypes.MemoryRecordSchema MemoryRecordSchema { get; set; }
+            /// <summary>
+            /// RecordExpiryDurationDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-custommemorystrategy.html#cfn-bedrockagentcore-memory-custommemorystrategy-recordexpirydurationdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecordExpiryDurationDays { get; set; }
         }
 
         public class EpisodicMemoryStrategy : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveType, IHaveStatus, IHaveCreatedAt
@@ -286,14 +302,6 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public dynamic NamespaceTemplates { get; set; }
             /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
             /// Description
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-description
             /// Required: False
@@ -310,13 +318,13 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public Humidifier.BedrockAgentCore.MemoryTypes.EpisodicReflectionConfigurationInput ReflectionConfiguration { get; set; }
             /// <summary>
-            /// MemoryRecordSchema
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-memoryrecordschema
+            /// RecordExpirySpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-recordexpiryspecification
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: MemoryRecordSchema
+            /// Type: RecordExpirySpecification
             /// </summary>
-            public Humidifier.BedrockAgentCore.MemoryTypes.MemoryRecordSchema MemoryRecordSchema { get; set; }
+            public Humidifier.BedrockAgentCore.MemoryTypes.RecordExpirySpecification RecordExpirySpecification { get; set; }
             /// <summary>
             /// CreatedAt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-createdat
@@ -349,6 +357,30 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// MemoryRecordSchema
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-memoryrecordschema
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MemoryRecordSchema
+            /// </summary>
+            public Humidifier.BedrockAgentCore.MemoryTypes.MemoryRecordSchema MemoryRecordSchema { get; set; }
+            /// <summary>
+            /// RecordExpiryDurationDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-episodicmemorystrategy.html#cfn-bedrockagentcore-memory-episodicmemorystrategy-recordexpirydurationdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecordExpiryDurationDays { get; set; }
         }
 
         public class EpisodicOverride : Humidifier.Base.BaseSubResource
@@ -762,6 +794,18 @@ namespace Humidifier.BedrockAgentCore
             public dynamic MaxValue { get; set; }
         }
 
+        public class RecordExpirySpecification : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RecordExpiryDurationDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-recordexpiryspecification.html#cfn-bedrockagentcore-memory-recordexpiryspecification-recordexpirydurationdays
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecordExpiryDurationDays { get; set; }
+        }
+
         public class SelfManagedConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -836,6 +880,14 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public dynamic Description { get; set; }
             /// <summary>
+            /// RecordExpirySpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-semanticmemorystrategy.html#cfn-bedrockagentcore-memory-semanticmemorystrategy-recordexpiryspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RecordExpirySpecification
+            /// </summary>
+            public Humidifier.BedrockAgentCore.MemoryTypes.RecordExpirySpecification RecordExpirySpecification { get; set; }
+            /// <summary>
             /// MemoryRecordSchema
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-semanticmemorystrategy.html#cfn-bedrockagentcore-memory-semanticmemorystrategy-memoryrecordschema
             /// Required: False
@@ -859,6 +911,14 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic StrategyId { get; set; }
+            /// <summary>
+            /// RecordExpiryDurationDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-semanticmemorystrategy.html#cfn-bedrockagentcore-memory-semanticmemorystrategy-recordexpirydurationdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecordExpiryDurationDays { get; set; }
             /// <summary>
             /// UpdatedAt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-semanticmemorystrategy.html#cfn-bedrockagentcore-memory-semanticmemorystrategy-updatedat
@@ -1041,6 +1101,14 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public dynamic Description { get; set; }
             /// <summary>
+            /// RecordExpirySpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-summarymemorystrategy.html#cfn-bedrockagentcore-memory-summarymemorystrategy-recordexpiryspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RecordExpirySpecification
+            /// </summary>
+            public Humidifier.BedrockAgentCore.MemoryTypes.RecordExpirySpecification RecordExpirySpecification { get; set; }
+            /// <summary>
             /// MemoryRecordSchema
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-summarymemorystrategy.html#cfn-bedrockagentcore-memory-summarymemorystrategy-memoryrecordschema
             /// Required: False
@@ -1064,6 +1132,14 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic StrategyId { get; set; }
+            /// <summary>
+            /// RecordExpiryDurationDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-summarymemorystrategy.html#cfn-bedrockagentcore-memory-summarymemorystrategy-recordexpirydurationdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecordExpiryDurationDays { get; set; }
             /// <summary>
             /// UpdatedAt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-summarymemorystrategy.html#cfn-bedrockagentcore-memory-summarymemorystrategy-updatedat
@@ -1211,6 +1287,14 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public dynamic Description { get; set; }
             /// <summary>
+            /// RecordExpirySpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-userpreferencememorystrategy.html#cfn-bedrockagentcore-memory-userpreferencememorystrategy-recordexpiryspecification
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RecordExpirySpecification
+            /// </summary>
+            public Humidifier.BedrockAgentCore.MemoryTypes.RecordExpirySpecification RecordExpirySpecification { get; set; }
+            /// <summary>
             /// MemoryRecordSchema
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-userpreferencememorystrategy.html#cfn-bedrockagentcore-memory-userpreferencememorystrategy-memoryrecordschema
             /// Required: False
@@ -1234,6 +1318,14 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic StrategyId { get; set; }
+            /// <summary>
+            /// RecordExpiryDurationDays
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-userpreferencememorystrategy.html#cfn-bedrockagentcore-memory-userpreferencememorystrategy-recordexpirydurationdays
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RecordExpiryDurationDays { get; set; }
             /// <summary>
             /// UpdatedAt
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-memory-userpreferencememorystrategy.html#cfn-bedrockagentcore-memory-userpreferencememorystrategy-updatedat

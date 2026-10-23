@@ -229,6 +229,15 @@ namespace Humidifier.ECS
         /// Type: DeploymentConfiguration
         /// </summary>
         public Humidifier.ECS.ServiceTypes.DeploymentConfiguration DeploymentConfiguration { get; set; }
+        /// <summary>
+        /// GatewayConnectors
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-gatewayconnectors
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: GatewayConnector
+        /// </summary>
+        public List<Humidifier.ECS.ServiceTypes.GatewayConnector> GatewayConnectors { get; set; }
     }
 
     namespace ServiceTypes
@@ -639,6 +648,135 @@ namespace Humidifier.ECS
             public dynamic ForceNewDeploymentNonce { get; set; }
         }
 
+        public class GatewayConnector : Humidifier.Base.BaseSubResource, IHavePortName
+        {
+            /// <summary>
+            /// Filters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-filters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorFilters
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.GatewayConnectorFilters Filters { get; set; }
+            /// <summary>
+            /// HealthCheck
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-healthcheck
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorHealthCheck
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.GatewayConnectorHealthCheck HealthCheck { get; set; }
+            /// <summary>
+            /// PortName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-portname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PortName { get; set; }
+        }
+
+        public class GatewayConnectorFilters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AccessTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorfilters.html#cfn-ecs-service-gatewayconnectorfilters-accesstypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AccessTypes { get; set; }
+        }
+
+        public class GatewayConnectorHealthCheck : Humidifier.Base.BaseSubResource, IHaveHealthCheckIntervalSeconds, IHaveHealthCheckPath, IHaveUnhealthyThresholdCount, IHaveHealthCheckTimeoutSeconds, IHaveHealthyThresholdCount, IHaveHealthCheckProtocol, IHaveHealthCheckPort
+        {
+            /// <summary>
+            /// HealthCheckIntervalSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckintervalseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HealthCheckIntervalSeconds { get; set; }
+            /// <summary>
+            /// Matcher
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-matcher
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorHealthCheckMatcher
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.GatewayConnectorHealthCheckMatcher Matcher { get; set; }
+            /// <summary>
+            /// HealthyThresholdCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthythresholdcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HealthyThresholdCount { get; set; }
+            /// <summary>
+            /// HealthCheckPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckpath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HealthCheckPath { get; set; }
+            /// <summary>
+            /// HealthCheckProtocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckprotocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HealthCheckProtocol { get; set; }
+            /// <summary>
+            /// HealthCheckPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HealthCheckPort { get; set; }
+            /// <summary>
+            /// UnhealthyThresholdCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-unhealthythresholdcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic UnhealthyThresholdCount { get; set; }
+            /// <summary>
+            /// HealthCheckTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthchecktimeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic HealthCheckTimeoutSeconds { get; set; }
+        }
+
+        public class GatewayConnectorHealthCheckMatcher : Humidifier.Base.BaseSubResource, IHaveHttpCode
+        {
+            /// <summary>
+            /// GrpcCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheckmatcher.html#cfn-ecs-service-gatewayconnectorhealthcheckmatcher-grpccode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GrpcCode { get; set; }
+            /// <summary>
+            /// HttpCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheckmatcher.html#cfn-ecs-service-gatewayconnectorhealthcheckmatcher-httpcode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HttpCode { get; set; }
+        }
+
         public class HookTimeoutConfig : Humidifier.Base.BaseSubResource, IHaveAction, IHaveTimeoutInMinutes
         {
             /// <summary>
@@ -919,6 +1057,15 @@ namespace Humidifier.ECS
             /// </summary>
             public List<Humidifier.ECS.ServiceTypes.ServiceConnectService> Services { get; set; }
             /// <summary>
+            /// ContainerConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-containerconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ServiceConnectContainerConfiguration
+            /// </summary>
+            public List<Humidifier.ECS.ServiceTypes.ServiceConnectContainerConfiguration> ContainerConfigurations { get; set; }
+            /// <summary>
             /// AccessLogConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-accesslogconfiguration
             /// Required: False
@@ -950,6 +1097,18 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Namespace_ { get; set; }
+        }
+
+        public class ServiceConnectContainerConfiguration : Humidifier.Base.BaseSubResource, IHaveLogLevel
+        {
+            /// <summary>
+            /// LogLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectcontainerconfiguration.html#cfn-ecs-service-serviceconnectcontainerconfiguration-loglevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogLevel { get; set; }
         }
 
         public class ServiceConnectService : Humidifier.Base.BaseSubResource, IHavePortName

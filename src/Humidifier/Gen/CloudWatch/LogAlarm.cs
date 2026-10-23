@@ -135,6 +135,14 @@ namespace Humidifier.CloudWatch
         [Required]
         public dynamic QueryResultsToAlarm { get; set; }
         /// <summary>
+        /// ActionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-logalarm.html#cfn-cloudwatch-logalarm-actionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ActionConfiguration
+        /// </summary>
+        public Humidifier.CloudWatch.LogAlarmTypes.ActionConfiguration ActionConfiguration { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-logalarm.html#cfn-cloudwatch-logalarm-tags
         /// Required: False
@@ -157,6 +165,48 @@ namespace Humidifier.CloudWatch
 
     namespace LogAlarmTypes
     {
+        public class ActionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AlarmTagsPropagation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-actionconfiguration.html#cfn-cloudwatch-logalarm-actionconfiguration-alarmtagspropagation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AlarmTagsPropagation
+            /// </summary>
+            public Humidifier.CloudWatch.LogAlarmTypes.AlarmTagsPropagation AlarmTagsPropagation { get; set; }
+        }
+
+        public class AlarmTagsPropagation : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// IncludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-alarmtagspropagation.html#cfn-cloudwatch-logalarm-alarmtagspropagation-includedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic IncludedTagKeys { get; set; }
+            /// <summary>
+            /// ExcludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-alarmtagspropagation.html#cfn-cloudwatch-logalarm-alarmtagspropagation-excludedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludedTagKeys { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-alarmtagspropagation.html#cfn-cloudwatch-logalarm-alarmtagspropagation-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class ScheduleConfiguration : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveStartTimeOffset, IHaveEndTimeOffset
         {
             /// <summary>

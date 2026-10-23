@@ -316,6 +316,15 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaximumBuildsAllowed { get; set; }
+            /// <summary>
+            /// FleetsAllowed
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-batchrestrictions.html#cfn-codebuild-project-batchrestrictions-fleetsallowed
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic FleetsAllowed { get; set; }
         }
 
         public class BuildStatusConfig : Humidifier.Base.BaseSubResource, IHaveContext
@@ -341,14 +350,6 @@ namespace Humidifier.CodeBuild
         public class CloudWatchLogsConfig : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveGroupName, IHaveStreamName
         {
             /// <summary>
-            /// Status
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Status { get; set; }
-            /// <summary>
             /// GroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-groupname
             /// Required: False
@@ -356,6 +357,14 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: String
             /// </summary>
             public dynamic GroupName { get; set; }
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
             /// <summary>
             /// StreamName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname
@@ -506,10 +515,6 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
-        }
-
-        public class FilterGroup : Humidifier.Base.BaseSubResource
-        {
         }
 
         public class GitSubmodulesConfig : Humidifier.Base.BaseSubResource
@@ -708,10 +713,9 @@ namespace Humidifier.CodeBuild
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: FilterGroup
+            /// PrimitiveType: Json
             /// </summary>
-            public List<Humidifier.CodeBuild.ProjectTypes.FilterGroup> FilterGroups { get; set; }
+            public dynamic FilterGroups { get; set; }
             /// <summary>
             /// BuildType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-buildtype
@@ -975,34 +979,6 @@ namespace Humidifier.CodeBuild
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SecurityGroupIds { get; set; }
-        }
-
-        public class WebhookFilter : Humidifier.Base.BaseSubResource, IHaveType, IHavePattern
-        {
-            /// <summary>
-            /// Pattern
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-pattern
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Pattern { get; set; }
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Type { get; set; }
-            /// <summary>
-            /// ExcludeMatchedPattern
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-excludematchedpattern
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic ExcludeMatchedPattern { get; set; }
         }
     }
 }

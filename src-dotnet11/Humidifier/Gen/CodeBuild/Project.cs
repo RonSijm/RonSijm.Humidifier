@@ -297,7 +297,7 @@ namespace Humidifier.CodeBuild
             public Union<string, BaseFunction>? NamespaceType { get; set; }
         }
 
-        public class BatchRestrictions : Humidifier.Base.BaseSubResource, IHaveStringListOfComputeTypesAllowed, IHaveMaximumBuildsAllowed_Integer
+        public class BatchRestrictions : Humidifier.Base.BaseSubResource, IHaveStringListOfComputeTypesAllowed, IHaveMaximumBuildsAllowed_Integer, IHaveStringListOfFleetsAllowed
         {
             /// <summary>
             /// ComputeTypesAllowed
@@ -316,6 +316,15 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: Integer
             /// </summary>
             public Union<int, BaseFunction>? MaximumBuildsAllowed { get; set; }
+            /// <summary>
+            /// FleetsAllowed
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-batchrestrictions.html#cfn-codebuild-project-batchrestrictions-fleetsallowed
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? FleetsAllowed { get; set; }
         }
 
         public class BuildStatusConfig : Humidifier.Base.BaseSubResource, IHaveContext, IHaveTargetUrl
@@ -338,16 +347,8 @@ namespace Humidifier.CodeBuild
             public Union<string, BaseFunction>? TargetUrl { get; set; }
         }
 
-        public class CloudWatchLogsConfig : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveGroupName, IHaveStreamName
+        public class CloudWatchLogsConfig : Humidifier.Base.BaseSubResource, IHaveGroupName, IHaveStatus, IHaveStreamName
         {
-            /// <summary>
-            /// Status
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Status { get; set; }
             /// <summary>
             /// GroupName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-groupname
@@ -356,6 +357,14 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? GroupName { get; set; }
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Status { get; set; }
             /// <summary>
             /// StreamName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname
@@ -506,10 +515,6 @@ namespace Humidifier.CodeBuild
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Name { get; set; }
-        }
-
-        public class FilterGroup : Humidifier.Base.BaseSubResource
-        {
         }
 
         public class GitSubmodulesConfig : Humidifier.Base.BaseSubResource, IHaveFetchSubmodules_Boolean
@@ -701,17 +706,16 @@ namespace Humidifier.CodeBuild
             public Union<string, BaseFunction>? SourceVersion { get; set; }
         }
 
-        public class ProjectTriggers : Humidifier.Base.BaseSubResource, IHaveListOfCodeBuildProjectTypesFilterGroupFilterGroups, IHaveBuildType, IHaveWebhook_Boolean, IHaveCodeBuildProjectTypesScopeConfigurationScopeConfiguration, IHaveCodeBuildProjectTypesPullRequestBuildPolicyPullRequestBuildPolicy
+        public class ProjectTriggers : Humidifier.Base.BaseSubResource, IHaveFilterGroups_Json, IHaveBuildType, IHaveWebhook_Boolean, IHaveCodeBuildProjectTypesScopeConfigurationScopeConfiguration, IHaveCodeBuildProjectTypesPullRequestBuildPolicyPullRequestBuildPolicy
         {
             /// <summary>
             /// FilterGroups
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: FilterGroup
+            /// PrimitiveType: Json
             /// </summary>
-            public Union<IReadOnlyList<Humidifier.CodeBuild.ProjectTypes.FilterGroup>, IReadOnlyList<Union<Humidifier.CodeBuild.ProjectTypes.FilterGroup, BaseFunction>>, BaseFunction>? FilterGroups { get; set; }
+            public Union<object, BaseFunction>? FilterGroups { get; set; }
             /// <summary>
             /// BuildType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-buildtype
@@ -975,34 +979,6 @@ namespace Humidifier.CodeBuild
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? SecurityGroupIds { get; set; }
-        }
-
-        public class WebhookFilter : Humidifier.Base.BaseSubResource, IHavePattern, IHaveType, IHaveExcludeMatchedPattern_Boolean
-        {
-            /// <summary>
-            /// Pattern
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-pattern
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Pattern { get; set; }
-            /// <summary>
-            /// Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-type
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Type { get; set; }
-            /// <summary>
-            /// ExcludeMatchedPattern
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-excludematchedpattern
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public Union<bool, BaseFunction>? ExcludeMatchedPattern { get; set; }
         }
     }
 }

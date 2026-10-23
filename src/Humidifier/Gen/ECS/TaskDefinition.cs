@@ -1014,6 +1014,26 @@ namespace Humidifier.ECS
             public dynamic ContainerPath { get; set; }
         }
 
+        public class NvidiaMpsAllocation : Humidifier.Base.BaseSubResource, IHaveMemory
+        {
+            /// <summary>
+            /// Memory
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-nvidiampsallocation.html#cfn-ecs-taskdefinition-nvidiampsallocation-memory
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Memory { get; set; }
+            /// <summary>
+            /// MaxComputePercent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-nvidiampsallocation.html#cfn-ecs-taskdefinition-nvidiampsallocation-maxcomputepercent
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxComputePercent { get; set; }
+        }
+
         public class PortMapping : Humidifier.Base.BaseSubResource, IHaveName, IHaveProtocol, IHaveContainerPort, IHaveHostPort
         {
             /// <summary>
@@ -1117,6 +1137,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
+            /// <summary>
+            /// SharingStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html#cfn-ecs-taskdefinition-resourcerequirement-sharingstrategy
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: SharingStrategy
+            /// </summary>
+            public Humidifier.ECS.TaskDefinitionTypes.SharingStrategy SharingStrategy { get; set; }
             /// <summary>
             /// Value
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html#cfn-ecs-taskdefinition-resourcerequirement-value
@@ -1230,6 +1258,18 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class SharingStrategy : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NvidiaMps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-sharingstrategy.html#cfn-ecs-taskdefinition-sharingstrategy-nvidiamps
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: NvidiaMpsAllocation
+            /// </summary>
+            public Humidifier.ECS.TaskDefinitionTypes.NvidiaMpsAllocation NvidiaMps { get; set; }
         }
 
         public class SystemControl : Humidifier.Base.BaseSubResource, IHaveValue, IHaveNamespace_

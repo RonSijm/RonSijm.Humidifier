@@ -58,8 +58,16 @@ namespace Humidifier.Lambda
             public Union<Humidifier.Lambda.NetworkConnectorTypes.VpcEgressConfiguration, BaseFunction>? VpcEgressConfiguration { get; set; }
         }
 
-        public class VpcEgressConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfAssociatedComputeResourceTypes, IHaveNetworkProtocol, IHaveStringListOfSubnetIds, IHaveStringListOfSecurityGroupIds
+        public class VpcEgressConfiguration : Humidifier.Base.BaseSubResource, IHaveElasticIpConfiguration_Json, IHaveStringListOfAssociatedComputeResourceTypes, IHaveNetworkProtocol, IHaveStringListOfSubnetIds, IHaveStringListOfSecurityGroupIds
         {
+            /// <summary>
+            /// ElasticIpConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-elasticipconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? ElasticIpConfiguration { get; set; }
             /// <summary>
             /// AssociatedComputeResourceTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-associatedcomputeresourcetypes

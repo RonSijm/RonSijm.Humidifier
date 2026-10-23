@@ -1,6 +1,7 @@
 namespace Humidifier.CloudWatch
 {
     using global::System.Collections.Generic;
+    using CompositeAlarmTypes;
 
     public class CompositeAlarm : Humidifier.Base.BaseResource, IHaveTags, IHaveAlarmName, IHaveOKActions, IHaveAlarmActions, IHaveActionsEnabled, IHaveAlarmDescription, IHaveInsufficientDataActions
     {
@@ -79,6 +80,14 @@ namespace Humidifier.CloudWatch
         /// </summary>
         public dynamic InsufficientDataActions { get; set; }
         /// <summary>
+        /// ActionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ActionConfiguration
+        /// </summary>
+        public Humidifier.CloudWatch.CompositeAlarmTypes.ActionConfiguration ActionConfiguration { get; set; }
+        /// <summary>
         /// OKActions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-okactions
         /// Required: False
@@ -104,5 +113,50 @@ namespace Humidifier.CloudWatch
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+    }
+
+    namespace CompositeAlarmTypes
+    {
+        public class ActionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AlarmTagsPropagation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-actionconfiguration.html#cfn-cloudwatch-compositealarm-actionconfiguration-alarmtagspropagation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AlarmTagsPropagation
+            /// </summary>
+            public Humidifier.CloudWatch.CompositeAlarmTypes.AlarmTagsPropagation AlarmTagsPropagation { get; set; }
+        }
+
+        public class AlarmTagsPropagation : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// IncludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-alarmtagspropagation.html#cfn-cloudwatch-compositealarm-alarmtagspropagation-includedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic IncludedTagKeys { get; set; }
+            /// <summary>
+            /// ExcludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-alarmtagspropagation.html#cfn-cloudwatch-compositealarm-alarmtagspropagation-excludedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludedTagKeys { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-alarmtagspropagation.html#cfn-cloudwatch-compositealarm-alarmtagspropagation-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
     }
 }

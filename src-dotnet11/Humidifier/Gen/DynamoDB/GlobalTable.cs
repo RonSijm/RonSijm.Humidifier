@@ -3,7 +3,7 @@ namespace Humidifier.DynamoDB
     using global::System.Collections.Generic;
     using GlobalTableTypes;
 
-    public class GlobalTable : Humidifier.Base.BaseResource, IHaveMultiRegionConsistency, IHaveDynamoDBGlobalTableTypesSSESpecificationSSESpecification, IHaveDynamoDBGlobalTableTypesStreamSpecificationStreamSpecification, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveListOfDynamoDBGlobalTableTypesVectorIndexVectorIndexes, IHaveListOfDynamoDBGlobalTableTypesReplicaSpecificationReplicas, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveGlobalTableSourceArn, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings, IHaveListOfDynamoDBGlobalTableTypesGlobalTableWitnessGlobalTableWitnesses, IHaveTableName, IHaveListOfDynamoDBGlobalTableTypesAttributeDefinitionAttributeDefinitions, IHaveBillingMode, IHaveListOfDynamoDBGlobalTableTypesGlobalSecondaryIndexGlobalSecondaryIndexes, IHaveListOfDynamoDBGlobalTableTypesKeySchemaKeySchema, IHaveListOfDynamoDBGlobalTableTypesLocalSecondaryIndexLocalSecondaryIndexes, IHaveDynamoDBGlobalTableTypesGlobalReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesTimeToLiveSpecificationTimeToLiveSpecification
+    public class GlobalTable : Humidifier.Base.BaseResource, IHaveMultiRegionConsistency, IHaveDynamoDBGlobalTableTypesSSESpecificationSSESpecification, IHaveTableType, IHaveDynamoDBGlobalTableTypesStreamSpecificationStreamSpecification, IHaveDynamoDBGlobalTableTypesWarmThroughputWarmThroughput, IHaveListOfDynamoDBGlobalTableTypesVectorIndexVectorIndexes, IHaveListOfDynamoDBGlobalTableTypesReplicaSpecificationReplicas, IHaveDynamoDBGlobalTableTypesWriteProvisionedThroughputSettingsWriteProvisionedThroughputSettings, IHaveGlobalTableSourceArn, IHaveDynamoDBGlobalTableTypesWriteOnDemandThroughputSettingsWriteOnDemandThroughputSettings, IHaveListOfDynamoDBGlobalTableTypesGlobalTableWitnessGlobalTableWitnesses, IHaveTableName, IHaveListOfDynamoDBGlobalTableTypesAttributeDefinitionAttributeDefinitions, IHaveBillingMode, IHaveListOfDynamoDBGlobalTableTypesGlobalSecondaryIndexGlobalSecondaryIndexes, IHaveListOfDynamoDBGlobalTableTypesKeySchemaKeySchema, IHaveListOfDynamoDBGlobalTableTypesLocalSecondaryIndexLocalSecondaryIndexes, IHaveDynamoDBGlobalTableTypesGlobalReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings, IHaveDynamoDBGlobalTableTypesTimeToLiveSpecificationTimeToLiveSpecification
     {
         public class Attributes
         {
@@ -29,6 +29,14 @@ namespace Humidifier.DynamoDB
         /// Type: SSESpecification
         /// </summary>
         public Union<Humidifier.DynamoDB.GlobalTableTypes.SSESpecification, BaseFunction>? SSESpecification { get; set; }
+        /// <summary>
+        /// TableType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tabletype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? TableType { get; set; }
         /// <summary>
         /// StreamSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification
@@ -537,7 +545,7 @@ namespace Humidifier.DynamoDB
             public Union<string, BaseFunction>? KMSMasterKeyId { get; set; }
         }
 
-        public class ReplicaSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDynamoDBGlobalTableTypesReplicaSSESpecificationSSESpecification, IHaveDynamoDBGlobalTableTypesKinesisStreamSpecificationKinesisStreamSpecification, IHaveDynamoDBGlobalTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveGlobalTableSettingsReplicationMode, IHaveDynamoDBGlobalTableTypesPointInTimeRecoverySpecificationPointInTimeRecoverySpecification, IHaveDynamoDBGlobalTableTypesReplicaStreamSpecificationReplicaStreamSpecification, IHaveListOfDynamoDBGlobalTableTypesReplicaGlobalSecondaryIndexSpecificationGlobalSecondaryIndexes, IHaveRegion, IHaveDynamoDBGlobalTableTypesResourcePolicyResourcePolicy, IHaveDynamoDBGlobalTableTypesReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveTableClass, IHaveDeletionProtectionEnabled_Boolean, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings
+        public class ReplicaSpecification : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDynamoDBGlobalTableTypesReplicaSSESpecificationSSESpecification, IHaveDynamoDBGlobalTableTypesKinesisStreamSpecificationKinesisStreamSpecification, IHaveDynamoDBGlobalTableTypesContributorInsightsSpecificationContributorInsightsSpecification, IHaveGlobalTableSettingsReplicationMode, IHaveDynamoDBGlobalTableTypesPointInTimeRecoverySpecificationPointInTimeRecoverySpecification, IHaveDisassociationProtectionEnabled_Boolean, IHaveDynamoDBGlobalTableTypesReplicaStreamSpecificationReplicaStreamSpecification, IHaveListOfDynamoDBGlobalTableTypesReplicaGlobalSecondaryIndexSpecificationGlobalSecondaryIndexes, IHaveRegion, IHaveDynamoDBGlobalTableTypesResourcePolicyResourcePolicy, IHaveDynamoDBGlobalTableTypesReadProvisionedThroughputSettingsReadProvisionedThroughputSettings, IHaveTableClass, IHaveDeletionProtectionEnabled_Boolean, IHaveDynamoDBGlobalTableTypesReadOnDemandThroughputSettingsReadOnDemandThroughputSettings
         {
             /// <summary>
             /// SSESpecification
@@ -579,6 +587,14 @@ namespace Humidifier.DynamoDB
             /// Type: PointInTimeRecoverySpecification
             /// </summary>
             public Union<Humidifier.DynamoDB.GlobalTableTypes.PointInTimeRecoverySpecification, BaseFunction>? PointInTimeRecoverySpecification { get; set; }
+            /// <summary>
+            /// DisassociationProtectionEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-disassociationprotectionenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? DisassociationProtectionEnabled { get; set; }
             /// <summary>
             /// ReplicaStreamSpecification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-replicastreamspecification

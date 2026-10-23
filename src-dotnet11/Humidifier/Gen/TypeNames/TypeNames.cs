@@ -300,6 +300,7 @@ public class AWS
     }
     public class BcmPricingCalculator
     {
+        public const string BillEstimate = "AWS::BcmPricingCalculator::BillEstimate";
         public const string BillScenario = "AWS::BcmPricingCalculator::BillScenario";
         public const string WorkloadEstimate = "AWS::BcmPricingCalculator::WorkloadEstimate";
     }
@@ -334,6 +335,7 @@ public class AWS
         public const string Prompt = "AWS::Bedrock::Prompt";
         public const string PromptVersion = "AWS::Bedrock::PromptVersion";
         public const string ResourcePolicy = "AWS::Bedrock::ResourcePolicy";
+        public const string RetrievalInstruction = "AWS::Bedrock::RetrievalInstruction";
         public const string Session = "AWS::Bedrock::Session";
     }
     public class BedrockAgentCore
@@ -948,11 +950,13 @@ public class AWS
         public const string ClientVpnTargetNetworkAssociation = "AWS::EC2::ClientVpnTargetNetworkAssociation";
         public const string CustomerGateway = "AWS::EC2::CustomerGateway";
         public const string DHCPOptions = "AWS::EC2::DHCPOptions";
+        public const string DeclarativePoliciesReport = "AWS::EC2::DeclarativePoliciesReport";
         public const string EC2Fleet = "AWS::EC2::EC2Fleet";
         public const string EIP = "AWS::EC2::EIP";
         public const string EIPAssociation = "AWS::EC2::EIPAssociation";
         public const string EgressOnlyInternetGateway = "AWS::EC2::EgressOnlyInternetGateway";
         public const string EnclaveCertificateIamRoleAssociation = "AWS::EC2::EnclaveCertificateIamRoleAssociation";
+        public const string ExportImageTask = "AWS::EC2::ExportImageTask";
         public const string ExportInstanceTask = "AWS::EC2::ExportInstanceTask";
         public const string FlowLog = "AWS::EC2::FlowLog";
         public const string FpgaImage = "AWS::EC2::FpgaImage";
@@ -1031,6 +1035,7 @@ public class AWS
         public const string TrafficMirrorTarget = "AWS::EC2::TrafficMirrorTarget";
         public const string TransitGateway = "AWS::EC2::TransitGateway";
         public const string TransitGatewayAttachment = "AWS::EC2::TransitGatewayAttachment";
+        public const string TransitGatewayAttachmentNatConfiguration = "AWS::EC2::TransitGatewayAttachmentNatConfiguration";
         public const string TransitGatewayConnect = "AWS::EC2::TransitGatewayConnect";
         public const string TransitGatewayConnectPeer = "AWS::EC2::TransitGatewayConnectPeer";
         public const string TransitGatewayMeteringPolicy = "AWS::EC2::TransitGatewayMeteringPolicy";
@@ -1102,6 +1107,8 @@ public class AWS
         public const string DaemonRevision = "AWS::ECS::DaemonRevision";
         public const string DaemonTaskDefinition = "AWS::ECS::DaemonTaskDefinition";
         public const string ExpressGatewayService = "AWS::ECS::ExpressGatewayService";
+        public const string Gateway = "AWS::ECS::Gateway";
+        public const string GatewayClusterAssociations = "AWS::ECS::GatewayClusterAssociations";
         public const string PrimaryTaskSet = "AWS::ECS::PrimaryTaskSet";
         public const string Service = "AWS::ECS::Service";
         public const string ServiceDeployment = "AWS::ECS::ServiceDeployment";
@@ -1556,11 +1563,6 @@ public class AWS
     public class IoTDeviceAdvisor
     {
         public const string SuiteRun = "AWS::IoTDeviceAdvisor::SuiteRun";
-    }
-    public class IoTEvents
-    {
-        public const string DetectorModel = "AWS::IoTEvents::DetectorModel";
-        public const string Input = "AWS::IoTEvents::Input";
     }
     public class IoTFleetWise
     {
@@ -2651,6 +2653,7 @@ public class AWS
         public const string Cluster = "AWS::SageMaker::Cluster";
         public const string ClusterSchedulerConfig = "AWS::SageMaker::ClusterSchedulerConfig";
         public const string CodeRepository = "AWS::SageMaker::CodeRepository";
+        public const string ComputeQuota = "AWS::SageMaker::ComputeQuota";
         public const string Context = "AWS::SageMaker::Context";
         public const string DataQualityJobDefinition = "AWS::SageMaker::DataQualityJobDefinition";
         public const string Device = "AWS::SageMaker::Device";
@@ -2729,6 +2732,7 @@ public class AWS
     }
     public class SecurityHub
     {
+        public const string ActionTarget = "AWS::SecurityHub::ActionTarget";
         public const string AggregatorV2 = "AWS::SecurityHub::AggregatorV2";
         public const string AutomationRule = "AWS::SecurityHub::AutomationRule";
         public const string AutomationRuleV2 = "AWS::SecurityHub::AutomationRuleV2";

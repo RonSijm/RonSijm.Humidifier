@@ -82,6 +82,14 @@ namespace Humidifier.ImageBuilder
         public dynamic SecurityGroupIds { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// ParentInstance
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-parentinstance
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ParentInstance
+        /// </summary>
+        public Humidifier.ImageBuilder.InfrastructureConfigurationTypes.ParentInstance ParentInstance { get; set; }
+        /// <summary>
         /// Placement
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-placement
         /// Required: False
@@ -123,10 +131,38 @@ namespace Humidifier.ImageBuilder
         /// PrimitiveItemType: String
         /// </summary>
         public Dictionary<string, dynamic> Tags { get; set; }
+        /// <summary>
+        /// TerminateInstanceOnCompletion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-terminateinstanceoncompletion
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic TerminateInstanceOnCompletion { get; set; }
     }
 
     namespace InfrastructureConfigurationTypes
     {
+        public class AutoScalingGroup : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// CapacityWaitTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-autoscalinggroup.html#cfn-imagebuilder-infrastructureconfiguration-autoscalinggroup-capacitywaittimeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic CapacityWaitTimeoutSeconds { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-autoscalinggroup.html#cfn-imagebuilder-infrastructureconfiguration-autoscalinggroup-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+        }
+
         public class InstanceMetadataOptions : Humidifier.Base.BaseSubResource, IHaveHttpPutResponseHopLimit, IHaveHttpTokens
         {
             /// <summary>
@@ -157,6 +193,18 @@ namespace Humidifier.ImageBuilder
             /// Type: S3Logs
             /// </summary>
             public Humidifier.ImageBuilder.InfrastructureConfigurationTypes.S3Logs S3Logs { get; set; }
+        }
+
+        public class ParentInstance : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AutoScalingGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-parentinstance.html#cfn-imagebuilder-infrastructureconfiguration-parentinstance-autoscalinggroup
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: AutoScalingGroup
+            /// </summary>
+            public Humidifier.ImageBuilder.InfrastructureConfigurationTypes.AutoScalingGroup AutoScalingGroup { get; set; }
         }
 
         public class Placement : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveTenancy, IHaveHostId, IHaveHostResourceGroupArn

@@ -30,6 +30,14 @@ namespace Humidifier.DynamoDB
         /// </summary>
         public Humidifier.DynamoDB.GlobalTableTypes.SSESpecification SSESpecification { get; set; }
         /// <summary>
+        /// TableType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tabletype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic TableType { get; set; }
+        /// <summary>
         /// StreamSpecification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification
         /// Required: False
@@ -579,6 +587,14 @@ namespace Humidifier.DynamoDB
             /// Type: PointInTimeRecoverySpecification
             /// </summary>
             public Humidifier.DynamoDB.GlobalTableTypes.PointInTimeRecoverySpecification PointInTimeRecoverySpecification { get; set; }
+            /// <summary>
+            /// DisassociationProtectionEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-disassociationprotectionenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DisassociationProtectionEnabled { get; set; }
             /// <summary>
             /// ReplicaStreamSpecification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-replicastreamspecification

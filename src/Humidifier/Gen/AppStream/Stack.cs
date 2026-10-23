@@ -32,6 +32,14 @@ namespace Humidifier.AppStream
         /// </summary>
         public dynamic DeleteStorageConnectors { get; set; }
         /// <summary>
+        /// StorageConnectorAuthentication
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-storageconnectorauthentication
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StorageConnectorAuthentication { get; set; }
+        /// <summary>
         /// EmbedHostDomains
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-embedhostdomains
         /// Required: False

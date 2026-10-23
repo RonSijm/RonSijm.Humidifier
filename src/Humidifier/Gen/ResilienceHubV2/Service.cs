@@ -39,6 +39,27 @@ namespace Humidifier.ResilienceHubV2
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyId { get; set; }
+
+        /// <summary>
+        /// Regions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-regions
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        [Required]
+        public dynamic Regions { get; set; }
+        /// <summary>
+        /// Assertions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-assertions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AssertionDefinition
+        /// </summary>
+        public List<Humidifier.ResilienceHubV2.ServiceTypes.AssertionDefinition> Assertions { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// PolicyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-policyarn
@@ -55,17 +76,6 @@ namespace Humidifier.ResilienceHubV2
         /// Type: PermissionModel
         /// </summary>
         public Humidifier.ResilienceHubV2.ServiceTypes.PermissionModel PermissionModel { get; set; }
-
-        /// <summary>
-        /// Regions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-regions
-        /// Required: True
-        /// UpdateType: Immutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        [Required]
-        public dynamic Regions { get; set; }
         /// <summary>
         /// DependencyDiscovery
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-dependencydiscovery
@@ -92,14 +102,13 @@ namespace Humidifier.ResilienceHubV2
         /// </summary>
         public List<Humidifier.ResilienceHubV2.ServiceTypes.InputSourceDefinition> InputSources { get; set; }
         /// <summary>
-        /// Assertions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-assertions
+        /// DevOpsAgentConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-devopsagentconfiguration
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: AssertionDefinition
+        /// Type: DevOpsAgentConfiguration
         /// </summary>
-        public List<Humidifier.ResilienceHubV2.ServiceTypes.AssertionDefinition> Assertions { get; set; }
+        public Humidifier.ResilienceHubV2.ServiceTypes.DevOpsAgentConfiguration DevOpsAgentConfiguration { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-tags
@@ -109,7 +118,6 @@ namespace Humidifier.ResilienceHubV2
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ServiceTypes
@@ -165,6 +173,18 @@ namespace Humidifier.ResilienceHubV2
             /// PrimitiveType: String
             /// </summary>
             public dynamic ExternalId { get; set; }
+        }
+
+        public class DevOpsAgentConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AgentSpaceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehubv2-service-devopsagentconfiguration.html#cfn-resiliencehubv2-service-devopsagentconfiguration-agentspacearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AgentSpaceArn { get; set; }
         }
 
         public class DisasterRecoverySource : Humidifier.Base.BaseSubResource, IHaveValue, IHavePolicyName

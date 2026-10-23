@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using global::System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePlatformVersion, IHavePropagateTags, IHaveListOfECSServiceTypesPlacementStrategyPlacementStrategies, IHaveListOfECSServiceTypesServiceRegistryServiceRegistries, IHaveListOfECSServiceTypesServiceVolumeConfigurationVolumeConfigurations, IHaveListOfECSServiceTypesCapacityProviderStrategyItemCapacityProviderStrategy, IHaveLaunchType, IHaveAvailabilityZoneRebalancing, IHaveSchedulingStrategy, IHaveECSServiceTypesNetworkConfigurationNetworkConfiguration, IHaveECSServiceTypesMonitoringConfigurationMonitoring, IHaveECSServiceTypesForceNewDeploymentForceNewDeployment, IHaveHealthCheckGracePeriodSeconds_Integer, IHaveEnableECSManagedTags_Boolean, IHaveEnableExecuteCommand_Boolean, IHaveListOfECSServiceTypesPlacementConstraintPlacementConstraints, IHaveCluster, IHaveListOfECSServiceTypesLoadBalancerLoadBalancers, IHaveECSServiceTypesServiceConnectConfigurationServiceConnectConfiguration, IHaveDesiredCount_Integer, IHaveListOfECSServiceTypesVpcLatticeConfigurationVpcLatticeConfigurations, IHaveECSServiceTypesDeploymentControllerDeploymentController, IHaveRole, IHaveTaskDefinition, IHaveServiceName, IHaveECSServiceTypesDeploymentConfigurationDeploymentConfiguration
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePlatformVersion, IHavePropagateTags, IHaveListOfECSServiceTypesPlacementStrategyPlacementStrategies, IHaveListOfECSServiceTypesServiceRegistryServiceRegistries, IHaveListOfECSServiceTypesServiceVolumeConfigurationVolumeConfigurations, IHaveListOfECSServiceTypesCapacityProviderStrategyItemCapacityProviderStrategy, IHaveLaunchType, IHaveAvailabilityZoneRebalancing, IHaveSchedulingStrategy, IHaveECSServiceTypesNetworkConfigurationNetworkConfiguration, IHaveECSServiceTypesMonitoringConfigurationMonitoring, IHaveECSServiceTypesForceNewDeploymentForceNewDeployment, IHaveHealthCheckGracePeriodSeconds_Integer, IHaveEnableECSManagedTags_Boolean, IHaveEnableExecuteCommand_Boolean, IHaveListOfECSServiceTypesPlacementConstraintPlacementConstraints, IHaveCluster, IHaveListOfECSServiceTypesLoadBalancerLoadBalancers, IHaveECSServiceTypesServiceConnectConfigurationServiceConnectConfiguration, IHaveDesiredCount_Integer, IHaveListOfECSServiceTypesVpcLatticeConfigurationVpcLatticeConfigurations, IHaveECSServiceTypesDeploymentControllerDeploymentController, IHaveRole, IHaveTaskDefinition, IHaveServiceName, IHaveECSServiceTypesDeploymentConfigurationDeploymentConfiguration, IHaveListOfECSServiceTypesGatewayConnectorGatewayConnectors
     {
         public class Attributes
         {
@@ -229,6 +229,15 @@ namespace Humidifier.ECS
         /// Type: DeploymentConfiguration
         /// </summary>
         public Union<Humidifier.ECS.ServiceTypes.DeploymentConfiguration, BaseFunction>? DeploymentConfiguration { get; set; }
+        /// <summary>
+        /// GatewayConnectors
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-gatewayconnectors
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: GatewayConnector
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.ECS.ServiceTypes.GatewayConnector>, IReadOnlyList<Union<Humidifier.ECS.ServiceTypes.GatewayConnector, BaseFunction>>, BaseFunction>? GatewayConnectors { get; set; }
     }
 
     namespace ServiceTypes
@@ -639,6 +648,135 @@ namespace Humidifier.ECS
             public Union<string, BaseFunction>? ForceNewDeploymentNonce { get; set; }
         }
 
+        public class GatewayConnector : Humidifier.Base.BaseSubResource, IHaveECSServiceTypesGatewayConnectorFiltersFilters, IHaveECSServiceTypesGatewayConnectorHealthCheckHealthCheck, IHavePortName
+        {
+            /// <summary>
+            /// Filters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-filters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorFilters
+            /// </summary>
+            public Union<Humidifier.ECS.ServiceTypes.GatewayConnectorFilters, BaseFunction>? Filters { get; set; }
+            /// <summary>
+            /// HealthCheck
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-healthcheck
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorHealthCheck
+            /// </summary>
+            public Union<Humidifier.ECS.ServiceTypes.GatewayConnectorHealthCheck, BaseFunction>? HealthCheck { get; set; }
+            /// <summary>
+            /// PortName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-portname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? PortName { get; set; }
+        }
+
+        public class GatewayConnectorFilters : Humidifier.Base.BaseSubResource, IHaveStringListOfAccessTypes
+        {
+            /// <summary>
+            /// AccessTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorfilters.html#cfn-ecs-service-gatewayconnectorfilters-accesstypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AccessTypes { get; set; }
+        }
+
+        public class GatewayConnectorHealthCheck : Humidifier.Base.BaseSubResource, IHaveHealthCheckIntervalSeconds_Integer, IHaveECSServiceTypesGatewayConnectorHealthCheckMatcherMatcher, IHaveHealthyThresholdCount_Integer, IHaveHealthCheckPath, IHaveHealthCheckProtocol, IHaveHealthCheckPort_Integer, IHaveUnhealthyThresholdCount_Integer, IHaveHealthCheckTimeoutSeconds_Integer
+        {
+            /// <summary>
+            /// HealthCheckIntervalSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckintervalseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? HealthCheckIntervalSeconds { get; set; }
+            /// <summary>
+            /// Matcher
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-matcher
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorHealthCheckMatcher
+            /// </summary>
+            public Union<Humidifier.ECS.ServiceTypes.GatewayConnectorHealthCheckMatcher, BaseFunction>? Matcher { get; set; }
+            /// <summary>
+            /// HealthyThresholdCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthythresholdcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? HealthyThresholdCount { get; set; }
+            /// <summary>
+            /// HealthCheckPath
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckpath
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? HealthCheckPath { get; set; }
+            /// <summary>
+            /// HealthCheckProtocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckprotocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? HealthCheckProtocol { get; set; }
+            /// <summary>
+            /// HealthCheckPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthcheckport
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? HealthCheckPort { get; set; }
+            /// <summary>
+            /// UnhealthyThresholdCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-unhealthythresholdcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? UnhealthyThresholdCount { get; set; }
+            /// <summary>
+            /// HealthCheckTimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheck.html#cfn-ecs-service-gatewayconnectorhealthcheck-healthchecktimeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? HealthCheckTimeoutSeconds { get; set; }
+        }
+
+        public class GatewayConnectorHealthCheckMatcher : Humidifier.Base.BaseSubResource, IHaveGrpcCode, IHaveHttpCode
+        {
+            /// <summary>
+            /// GrpcCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheckmatcher.html#cfn-ecs-service-gatewayconnectorhealthcheckmatcher-grpccode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? GrpcCode { get; set; }
+            /// <summary>
+            /// HttpCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorhealthcheckmatcher.html#cfn-ecs-service-gatewayconnectorhealthcheckmatcher-httpcode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? HttpCode { get; set; }
+        }
+
         public class HookTimeoutConfig : Humidifier.Base.BaseSubResource, IHaveAction, IHaveTimeoutInMinutes_Integer
         {
             /// <summary>
@@ -907,7 +1045,7 @@ namespace Humidifier.ECS
             public Union<int, BaseFunction>? Port { get; set; }
         }
 
-        public class ServiceConnectConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfECSServiceTypesServiceConnectServiceServices, IHaveECSServiceTypesServiceConnectAccessLogConfigurationAccessLogConfiguration, IHaveEnabled_Boolean, IHaveECSServiceTypesLogConfigurationLogConfiguration, IHaveNamespace_
+        public class ServiceConnectConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfECSServiceTypesServiceConnectServiceServices, IHaveListOfECSServiceTypesServiceConnectContainerConfigurationContainerConfigurations, IHaveECSServiceTypesServiceConnectAccessLogConfigurationAccessLogConfiguration, IHaveEnabled_Boolean, IHaveECSServiceTypesLogConfigurationLogConfiguration, IHaveNamespace_
         {
             /// <summary>
             /// Services
@@ -918,6 +1056,15 @@ namespace Humidifier.ECS
             /// ItemType: ServiceConnectService
             /// </summary>
             public Union<IReadOnlyList<Humidifier.ECS.ServiceTypes.ServiceConnectService>, IReadOnlyList<Union<Humidifier.ECS.ServiceTypes.ServiceConnectService, BaseFunction>>, BaseFunction>? Services { get; set; }
+            /// <summary>
+            /// ContainerConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-containerconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ServiceConnectContainerConfiguration
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.ECS.ServiceTypes.ServiceConnectContainerConfiguration>, IReadOnlyList<Union<Humidifier.ECS.ServiceTypes.ServiceConnectContainerConfiguration, BaseFunction>>, BaseFunction>? ContainerConfigurations { get; set; }
             /// <summary>
             /// AccessLogConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectconfiguration.html#cfn-ecs-service-serviceconnectconfiguration-accesslogconfiguration
@@ -950,6 +1097,18 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Namespace_ { get; set; }
+        }
+
+        public class ServiceConnectContainerConfiguration : Humidifier.Base.BaseSubResource, IHaveLogLevel
+        {
+            /// <summary>
+            /// LogLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceconnectcontainerconfiguration.html#cfn-ecs-service-serviceconnectcontainerconfiguration-loglevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LogLevel { get; set; }
         }
 
         public class ServiceConnectService : Humidifier.Base.BaseSubResource, IHaveECSServiceTypesTimeoutConfigurationTimeout, IHaveIngressPortOverride_Integer, IHaveListOfECSServiceTypesServiceConnectClientAliasClientAliases, IHaveECSServiceTypesServiceConnectTlsConfigurationTls, IHaveDiscoveryName, IHavePortName

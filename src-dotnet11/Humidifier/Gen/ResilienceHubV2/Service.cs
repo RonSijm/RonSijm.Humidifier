@@ -3,7 +3,7 @@ namespace Humidifier.ResilienceHubV2
     using global::System.Collections.Generic;
     using ServiceTypes;
 
-    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveListOfResilienceHubV2ServiceTypesAssociatedSystemAssociatedSystems, IHaveKmsKeyId, IHavePolicyArn, IHaveResilienceHubV2ServiceTypesPermissionModelPermissionModel, IHaveStringListOfRegions, IHaveDependencyDiscovery, IHaveResilienceHubV2ServiceTypesServiceReportConfigurationReportConfiguration, IHaveListOfResilienceHubV2ServiceTypesInputSourceDefinitionInputSources, IHaveListOfResilienceHubV2ServiceTypesAssertionDefinitionAssertions, IHaveName
+    public class Service : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveListOfResilienceHubV2ServiceTypesAssociatedSystemAssociatedSystems, IHaveKmsKeyId, IHaveStringListOfRegions, IHaveListOfResilienceHubV2ServiceTypesAssertionDefinitionAssertions, IHaveName, IHavePolicyArn, IHaveResilienceHubV2ServiceTypesPermissionModelPermissionModel, IHaveDependencyDiscovery, IHaveResilienceHubV2ServiceTypesServiceReportConfigurationReportConfiguration, IHaveListOfResilienceHubV2ServiceTypesInputSourceDefinitionInputSources, IHaveResilienceHubV2ServiceTypesDevOpsAgentConfigurationDevOpsAgentConfiguration
     {
         public class Attributes
         {
@@ -39,6 +39,27 @@ namespace Humidifier.ResilienceHubV2
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? KmsKeyId { get; set; }
+
+        /// <summary>
+        /// Regions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-regions
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        [Required]
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Regions { get; set; }
+        /// <summary>
+        /// Assertions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-assertions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: AssertionDefinition
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.ResilienceHubV2.ServiceTypes.AssertionDefinition>, IReadOnlyList<Union<Humidifier.ResilienceHubV2.ServiceTypes.AssertionDefinition, BaseFunction>>, BaseFunction>? Assertions { get; set; }
+        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// PolicyArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-policyarn
@@ -55,17 +76,6 @@ namespace Humidifier.ResilienceHubV2
         /// Type: PermissionModel
         /// </summary>
         public Union<Humidifier.ResilienceHubV2.ServiceTypes.PermissionModel, BaseFunction>? PermissionModel { get; set; }
-
-        /// <summary>
-        /// Regions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-regions
-        /// Required: True
-        /// UpdateType: Immutable
-        /// Type: List
-        /// PrimitiveItemType: String
-        /// </summary>
-        [Required]
-        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Regions { get; set; }
         /// <summary>
         /// DependencyDiscovery
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-dependencydiscovery
@@ -92,14 +102,13 @@ namespace Humidifier.ResilienceHubV2
         /// </summary>
         public Union<IReadOnlyList<Humidifier.ResilienceHubV2.ServiceTypes.InputSourceDefinition>, IReadOnlyList<Union<Humidifier.ResilienceHubV2.ServiceTypes.InputSourceDefinition, BaseFunction>>, BaseFunction>? InputSources { get; set; }
         /// <summary>
-        /// Assertions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-assertions
+        /// DevOpsAgentConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-devopsagentconfiguration
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: List
-        /// ItemType: AssertionDefinition
+        /// Type: DevOpsAgentConfiguration
         /// </summary>
-        public Union<IReadOnlyList<Humidifier.ResilienceHubV2.ServiceTypes.AssertionDefinition>, IReadOnlyList<Union<Humidifier.ResilienceHubV2.ServiceTypes.AssertionDefinition, BaseFunction>>, BaseFunction>? Assertions { get; set; }
+        public Union<Humidifier.ResilienceHubV2.ServiceTypes.DevOpsAgentConfiguration, BaseFunction>? DevOpsAgentConfiguration { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resiliencehubv2-service.html#cfn-resiliencehubv2-service-tags
@@ -109,7 +118,6 @@ namespace Humidifier.ResilienceHubV2
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
-        public Union<string, BaseFunction>? Name { get => GivenName; set => GivenName = value; }
     }
 
     namespace ServiceTypes
@@ -165,6 +173,18 @@ namespace Humidifier.ResilienceHubV2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ExternalId { get; set; }
+        }
+
+        public class DevOpsAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveAgentSpaceArn
+        {
+            /// <summary>
+            /// AgentSpaceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resiliencehubv2-service-devopsagentconfiguration.html#cfn-resiliencehubv2-service-devopsagentconfiguration-agentspacearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AgentSpaceArn { get; set; }
         }
 
         public class DisasterRecoverySource : Humidifier.Base.BaseSubResource, IHaveValue, IHavePolicyName

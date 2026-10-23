@@ -3,7 +3,7 @@ namespace Humidifier.AppStream
     using global::System.Collections.Generic;
     using StackTypes;
 
-    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveListOfAppStreamStackTypesStorageConnectorStorageConnectors, IHaveDeleteStorageConnectors_Boolean, IHaveStringListOfEmbedHostDomains, IHaveAppStreamStackTypesContentRedirectionContentRedirection, IHaveListOfAppStreamStackTypesUserSettingUserSettings, IHaveStringListOfAttributesToDelete, IHaveRedirectURL, IHaveAppStreamStackTypesStreamingExperienceSettingsStreamingExperienceSettings, IHaveName, IHaveFeedbackURL, IHaveAppStreamStackTypesApplicationSettingsApplicationSettings, IHaveAppStreamStackTypesAgentAccessConfigAgentAccessConfig, IHaveDisplayName, IHaveListOfAppStreamStackTypesAccessEndpointAccessEndpoints
+    public class Stack : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDescription, IHaveListOfAppStreamStackTypesStorageConnectorStorageConnectors, IHaveDeleteStorageConnectors_Boolean, IHaveStorageConnectorAuthentication, IHaveStringListOfEmbedHostDomains, IHaveAppStreamStackTypesContentRedirectionContentRedirection, IHaveListOfAppStreamStackTypesUserSettingUserSettings, IHaveStringListOfAttributesToDelete, IHaveRedirectURL, IHaveAppStreamStackTypesStreamingExperienceSettingsStreamingExperienceSettings, IHaveName, IHaveFeedbackURL, IHaveAppStreamStackTypesApplicationSettingsApplicationSettings, IHaveAppStreamStackTypesAgentAccessConfigAgentAccessConfig, IHaveDisplayName, IHaveListOfAppStreamStackTypesAccessEndpointAccessEndpoints
     {
         public override string AWSTypeName { get => AWS.AppStream.Stack; }
         /// <summary>
@@ -31,6 +31,14 @@ namespace Humidifier.AppStream
         /// PrimitiveType: Boolean
         /// </summary>
         public Union<bool, BaseFunction>? DeleteStorageConnectors { get; set; }
+        /// <summary>
+        /// StorageConnectorAuthentication
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-storageconnectorauthentication
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? StorageConnectorAuthentication { get; set; }
         /// <summary>
         /// EmbedHostDomains
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-embedhostdomains

@@ -221,10 +221,30 @@ namespace Humidifier.CloudWatch
 
         [Ignore]
         public dynamic Description { get => AlarmDescription; set => AlarmDescription = value; }
+        /// <summary>
+        /// ActionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-actionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ActionConfiguration
+        /// </summary>
+        public Humidifier.CloudWatch.AlarmTypes.ActionConfiguration ActionConfiguration { get; set; }
     }
 
     namespace AlarmTypes
     {
+        public class ActionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AlarmTagsPropagation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-actionconfiguration.html#cfn-cloudwatch-alarm-actionconfiguration-alarmtagspropagation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AlarmTagsPropagation
+            /// </summary>
+            public Humidifier.CloudWatch.AlarmTypes.AlarmTagsPropagation AlarmTagsPropagation { get; set; }
+        }
+
         public class AlarmPromQLCriteria : Humidifier.Base.BaseSubResource, IHaveQuery
         {
             /// <summary>
@@ -251,6 +271,36 @@ namespace Humidifier.CloudWatch
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RecoveryPeriod { get; set; }
+        }
+
+        public class AlarmTagsPropagation : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// IncludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-alarmtagspropagation.html#cfn-cloudwatch-alarm-alarmtagspropagation-includedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic IncludedTagKeys { get; set; }
+            /// <summary>
+            /// ExcludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-alarmtagspropagation.html#cfn-cloudwatch-alarm-alarmtagspropagation-excludedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExcludedTagKeys { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-alarmtagspropagation.html#cfn-cloudwatch-alarm-alarmtagspropagation-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
         }
 
         public class Dimension : Humidifier.Base.BaseSubResource, IHaveName, IHaveValue

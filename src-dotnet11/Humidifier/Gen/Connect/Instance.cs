@@ -64,7 +64,7 @@ namespace Humidifier.Connect
 
     namespace InstanceTypes
     {
-        public class Attributes : Humidifier.Base.BaseSubResource, IHaveEnhancedContactMonitoring_Boolean, IHaveOutboundCalls_Boolean, IHaveEarlyMedia_Boolean, IHaveMessageStreaming_Boolean, IHaveMultiPartyConference_Boolean, IHaveContactLens_Boolean, IHaveAutoResolveBestVoices_Boolean, IHaveInboundCalls_Boolean, IHaveEnhancedChatMonitoring_Boolean, IHaveUseCustomTTSVoices_Boolean, IHaveContactflowLogs_Boolean, IHaveMultiPartyChatConference_Boolean, IHaveHighVolumeOutBound_Boolean
+        public class Attributes : Humidifier.Base.BaseSubResource, IHaveEnhancedContactMonitoring_Boolean, IHaveOutboundCalls_Boolean, IHaveEarlyMedia_Boolean, IHaveMessageStreaming_Boolean, IHaveMultiPartyConference_Boolean, IHaveContactLens_Boolean, IHaveAutoResolveBestVoices_Boolean, IHaveAutoMuteAgentOnHold_Boolean, IHaveInboundCalls_Boolean, IHaveEnhancedChatMonitoring_Boolean, IHaveUseCustomTTSVoices_Boolean, IHaveContactflowLogs_Boolean, IHaveMultiPartyChatConference_Boolean, IHaveHighVolumeOutBound_Boolean
         {
             /// <summary>
             /// EnhancedContactMonitoring
@@ -122,6 +122,14 @@ namespace Humidifier.Connect
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? AutoResolveBestVoices { get; set; }
+            /// <summary>
+            /// AutoMuteAgentOnHold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-automuteagentonhold
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? AutoMuteAgentOnHold { get; set; }
             /// <summary>
             /// InboundCalls
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-inboundcalls

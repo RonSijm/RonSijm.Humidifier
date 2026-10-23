@@ -3,13 +3,22 @@ namespace Humidifier.MediaLive
     using global::System.Collections.Generic;
     using InputTypes;
 
-    public class Input : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveMediaLiveInputTypesSrtSettingsRequestSrtSettings, IHaveInputNetworkLocation, IHaveListOfMediaLiveInputTypesInputDestinationRequestDestinations, IHaveMediaLiveInputTypesInputVpcRequestVpc, IHaveListOfMediaLiveInputTypesMediaConnectFlowRequestMediaConnectFlows, IHaveListOfMediaLiveInputTypesInputSourceRequestSources, IHaveRoleArn, IHaveName, IHaveMediaLiveInputTypesRouterSettingsRouterSettings, IHaveType, IHaveMediaLiveInputTypesSmpte2110ReceiverGroupSettingsSmpte2110ReceiverGroupSettings, IHaveStringListOfSdiSources, IHaveStringListOfInputSecurityGroups, IHaveMediaLiveInputTypesMulticastSettingsCreateRequestMulticastSettings, IHaveListOfMediaLiveInputTypesInputDeviceSettingsInputDevices, IHaveTags_Json
+    public class Input : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveMediaLiveInputTypesSrtSettingsSrtSettings, IHaveInputNetworkLocation, IHaveListOfMediaLiveInputTypesInputDestinationDestinations, IHaveMediaLiveInputTypesInputVpcRequestVpc, IHaveListOfMediaLiveInputTypesMediaConnectFlowMediaConnectFlows, IHaveListOfMediaLiveInputTypesInputSourceSources, IHaveRoleArn, IHaveName, IHaveMediaLiveInputTypesRouterSettingsRouterSettings, IHaveType, IHaveMediaLiveInputTypesSmpte2110ReceiverGroupSettingsSmpte2110ReceiverGroupSettings, IHaveStringListOfSdiSources, IHaveMediaLiveInputTypesMulticastSettingsMulticastSettings, IHaveStringListOfInputSecurityGroups, IHaveListOfMediaLiveInputTypesInputDeviceSettingsInputDevices, IHaveStringDictionaryOfTags
     {
         public class Attributes
         {
+            public static string SecurityGroups =  "SecurityGroups" ;
+            public static string InputClass =  "InputClass" ;
+            public static string DestinationUrls =  "DestinationUrls" ;
+            public static string State =  "State" ;
             public static string Destinations =  "Destinations" ;
+            public static string InputSourceType =  "InputSourceType" ;
+            public static string Id =  "Id" ;
+            public static string SourceUrls =  "SourceUrls" ;
             public static string Arn =  "Arn" ;
+            public static string AttachedChannels =  "AttachedChannels" ;
             public static string Sources =  "Sources" ;
+            public static string InputPartnerIds =  "InputPartnerIds" ;
         }
 
         public override string AWSTypeName { get => AWS.MediaLive.Input; }
@@ -18,9 +27,9 @@ namespace Humidifier.MediaLive
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-srtsettings
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: SrtSettingsRequest
+        /// Type: SrtSettings
         /// </summary>
-        public Union<Humidifier.MediaLive.InputTypes.SrtSettingsRequest, BaseFunction>? SrtSettings { get; set; }
+        public Union<Humidifier.MediaLive.InputTypes.SrtSettings, BaseFunction>? SrtSettings { get; set; }
         /// <summary>
         /// InputNetworkLocation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputnetworklocation
@@ -35,9 +44,9 @@ namespace Humidifier.MediaLive
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: InputDestinationRequest
+        /// ItemType: InputDestination
         /// </summary>
-        public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.InputDestinationRequest>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.InputDestinationRequest, BaseFunction>>, BaseFunction>? Destinations { get; set; }
+        public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.InputDestination>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.InputDestination, BaseFunction>>, BaseFunction>? Destinations { get; set; }
         /// <summary>
         /// Vpc
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc
@@ -52,18 +61,18 @@ namespace Humidifier.MediaLive
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: MediaConnectFlowRequest
+        /// ItemType: MediaConnectFlow
         /// </summary>
-        public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.MediaConnectFlowRequest>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.MediaConnectFlowRequest, BaseFunction>>, BaseFunction>? MediaConnectFlows { get; set; }
+        public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.MediaConnectFlow>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.MediaConnectFlow, BaseFunction>>, BaseFunction>? MediaConnectFlows { get; set; }
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: InputSourceRequest
+        /// ItemType: InputSource
         /// </summary>
-        public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.InputSourceRequest>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.InputSourceRequest, BaseFunction>>, BaseFunction>? Sources { get; set; }
+        public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.InputSource>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.InputSource, BaseFunction>>, BaseFunction>? Sources { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn
@@ -107,6 +116,14 @@ namespace Humidifier.MediaLive
         /// </summary>
         public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? SdiSources { get; set; }
         /// <summary>
+        /// MulticastSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-multicastsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MulticastSettings
+        /// </summary>
+        public Union<Humidifier.MediaLive.InputTypes.MulticastSettings, BaseFunction>? MulticastSettings { get; set; }
+        /// <summary>
         /// InputSecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups
         /// Required: False
@@ -115,14 +132,6 @@ namespace Humidifier.MediaLive
         /// PrimitiveItemType: String
         /// </summary>
         public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? InputSecurityGroups { get; set; }
-        /// <summary>
-        /// MulticastSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-multicastsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: MulticastSettingsCreateRequest
-        /// </summary>
-        public Union<Humidifier.MediaLive.InputTypes.MulticastSettingsCreateRequest, BaseFunction>? MulticastSettings { get; set; }
         /// <summary>
         /// InputDevices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputdevices
@@ -137,60 +146,121 @@ namespace Humidifier.MediaLive
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public Union<object, BaseFunction>? Tags { get; set; }
+        public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? Tags { get; set; }
     }
 
     namespace InputTypes
     {
-        public class InputDestinationRequest : Humidifier.Base.BaseSubResource, IHaveStreamName, IHaveNetwork, IHaveListOfMediaLiveInputTypesInputRequestDestinationRouteNetworkRoutes, IHaveStaticIpAddress
+        public class InputDestination : Humidifier.Base.BaseSubResource, IHaveStreamName, IHaveIp, IHavePort, IHaveNetwork, IHaveMediaLiveInputTypesInputDestinationVpcVpc, IHaveListOfMediaLiveInputTypesInputDestinationRouteNetworkRoutes, IHaveStaticIpAddress, IHaveUrl
         {
             /// <summary>
             /// StreamName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-streamname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? StreamName { get; set; }
             /// <summary>
+            /// Ip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-ip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Ip { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-port
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Port { get; set; }
+            /// <summary>
             /// Network
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-network
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-network
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Network { get; set; }
             /// <summary>
+            /// Vpc
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-vpc
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InputDestinationVpc
+            /// </summary>
+            public Union<Humidifier.MediaLive.InputTypes.InputDestinationVpc, BaseFunction>? Vpc { get; set; }
+            /// <summary>
             /// NetworkRoutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-networkroutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-networkroutes
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: InputRequestDestinationRoute
+            /// ItemType: InputDestinationRoute
             /// </summary>
-            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.InputRequestDestinationRoute>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.InputRequestDestinationRoute, BaseFunction>>, BaseFunction>? NetworkRoutes { get; set; }
+            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.InputDestinationRoute>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.InputDestinationRoute, BaseFunction>>, BaseFunction>? NetworkRoutes { get; set; }
             /// <summary>
             /// StaticIpAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-staticipaddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-staticipaddress
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? StaticIpAddress { get; set; }
-        }
-
-        public class InputDeviceRequest : Humidifier.Base.BaseSubResource, IHaveId
-        {
             /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicerequest.html#cfn-medialive-input-inputdevicerequest-id
+            /// Url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-url
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public Union<string, BaseFunction>? Id { get; set; }
+            public Union<string, BaseFunction>? Url { get; set; }
+        }
+
+        public class InputDestinationRoute : Humidifier.Base.BaseSubResource, IHaveCidr, IHaveGateway
+        {
+            /// <summary>
+            /// Cidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationroute.html#cfn-medialive-input-inputdestinationroute-cidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Cidr { get; set; }
+            /// <summary>
+            /// Gateway
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationroute.html#cfn-medialive-input-inputdestinationroute-gateway
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Gateway { get; set; }
+        }
+
+        public class InputDestinationVpc : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveNetworkInterfaceId
+        {
+            /// <summary>
+            /// AvailabilityZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationvpc.html#cfn-medialive-input-inputdestinationvpc-availabilityzone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AvailabilityZone { get; set; }
+            /// <summary>
+            /// NetworkInterfaceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationvpc.html#cfn-medialive-input-inputdestinationvpc-networkinterfaceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? NetworkInterfaceId { get; set; }
         }
 
         public class InputDeviceSettings : Humidifier.Base.BaseSubResource, IHaveId
@@ -203,26 +273,6 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Id { get; set; }
-        }
-
-        public class InputRequestDestinationRoute : Humidifier.Base.BaseSubResource, IHaveCidr, IHaveGateway
-        {
-            /// <summary>
-            /// Cidr
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputrequestdestinationroute.html#cfn-medialive-input-inputrequestdestinationroute-cidr
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Cidr { get; set; }
-            /// <summary>
-            /// Gateway
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputrequestdestinationroute.html#cfn-medialive-input-inputrequestdestinationroute-gateway
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Gateway { get; set; }
         }
 
         public class InputSdpLocation : Humidifier.Base.BaseSubResource, IHaveMediaIndex_Integer, IHaveSdpUrl
@@ -245,11 +295,11 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? SdpUrl { get; set; }
         }
 
-        public class InputSourceRequest : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePasswordParam, IHaveUrl
+        public class InputSource : Humidifier.Base.BaseSubResource, IHaveUsername, IHavePasswordParam, IHaveUrl
         {
             /// <summary>
             /// Username
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsource.html#cfn-medialive-input-inputsource-username
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -257,7 +307,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? Username { get; set; }
             /// <summary>
             /// PasswordParam
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsource.html#cfn-medialive-input-inputsource-passwordparam
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -265,7 +315,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? PasswordParam { get; set; }
             /// <summary>
             /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsource.html#cfn-medialive-input-inputsource-url
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -279,7 +329,7 @@ namespace Humidifier.MediaLive
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-securitygroupids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -288,18 +338,18 @@ namespace Humidifier.MediaLive
             /// SubnetIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? SubnetIds { get; set; }
         }
 
-        public class MediaConnectFlowRequest : Humidifier.Base.BaseSubResource, IHaveFlowArn
+        public class MediaConnectFlow : Humidifier.Base.BaseSubResource, IHaveFlowArn
         {
             /// <summary>
             /// FlowArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html#cfn-medialive-input-mediaconnectflowrequest-flowarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflow.html#cfn-medialive-input-mediaconnectflow-flowarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -307,37 +357,24 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? FlowArn { get; set; }
         }
 
-        public class MulticastSettingsCreateRequest : Humidifier.Base.BaseSubResource, IHaveListOfMediaLiveInputTypesMulticastSourceCreateRequestSources
+        public class MulticastSettings : Humidifier.Base.BaseSubResource, IHaveListOfMediaLiveInputTypesMulticastSourceSources
         {
             /// <summary>
             /// Sources
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsettingscreaterequest.html#cfn-medialive-input-multicastsettingscreaterequest-sources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsettings.html#cfn-medialive-input-multicastsettings-sources
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: MulticastSourceCreateRequest
+            /// ItemType: MulticastSource
             /// </summary>
-            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.MulticastSourceCreateRequest>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.MulticastSourceCreateRequest, BaseFunction>>, BaseFunction>? Sources { get; set; }
+            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.MulticastSource>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.MulticastSource, BaseFunction>>, BaseFunction>? Sources { get; set; }
         }
 
-        public class MulticastSettingsUpdateRequest : Humidifier.Base.BaseSubResource, IHaveListOfMediaLiveInputTypesMulticastSourceUpdateRequestSources
-        {
-            /// <summary>
-            /// Sources
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsettingsupdaterequest.html#cfn-medialive-input-multicastsettingsupdaterequest-sources
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: MulticastSourceUpdateRequest
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.MulticastSourceUpdateRequest>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.MulticastSourceUpdateRequest, BaseFunction>>, BaseFunction>? Sources { get; set; }
-        }
-
-        public class MulticastSourceCreateRequest : Humidifier.Base.BaseSubResource, IHaveSourceIp, IHaveUrl
+        public class MulticastSource : Humidifier.Base.BaseSubResource, IHaveSourceIp, IHaveUrl
         {
             /// <summary>
             /// SourceIp
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourcecreaterequest.html#cfn-medialive-input-multicastsourcecreaterequest-sourceip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsource.html#cfn-medialive-input-multicastsource-sourceip
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -345,41 +382,29 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? SourceIp { get; set; }
             /// <summary>
             /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourcecreaterequest.html#cfn-medialive-input-multicastsourcecreaterequest-url
-            /// Required: False
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsource.html#cfn-medialive-input-multicastsource-url
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Url { get; set; }
         }
 
-        public class MulticastSourceUpdateRequest : Humidifier.Base.BaseSubResource, IHaveSourceIp, IHaveUrl
+        public class RouterDestinationSettings : Humidifier.Base.BaseSubResource, IHaveRouterOutputArn, IHaveAvailabilityZoneName
         {
             /// <summary>
-            /// SourceIp
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourceupdaterequest.html#cfn-medialive-input-multicastsourceupdaterequest-sourceip
+            /// RouterOutputArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routerdestinationsettings.html#cfn-medialive-input-routerdestinationsettings-routeroutputarn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
-            public Union<string, BaseFunction>? SourceIp { get; set; }
-            /// <summary>
-            /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourceupdaterequest.html#cfn-medialive-input-multicastsourceupdaterequest-url
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Url { get; set; }
-        }
-
-        public class RouterDestinationSettings : Humidifier.Base.BaseSubResource, IHaveAvailabilityZoneName
-        {
+            public Union<string, BaseFunction>? RouterOutputArn { get; set; }
             /// <summary>
             /// AvailabilityZoneName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routerdestinationsettings.html#cfn-medialive-input-routerdestinationsettings-availabilityzonename
-            /// Required: False
-            /// UpdateType: Mutable
+            /// Required: True
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AvailabilityZoneName { get; set; }
@@ -391,7 +416,7 @@ namespace Humidifier.MediaLive
             /// SecretArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routersettings.html#cfn-medialive-input-routersettings-secretarn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SecretArn { get; set; }
@@ -399,7 +424,7 @@ namespace Humidifier.MediaLive
             /// EncryptionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routersettings.html#cfn-medialive-input-routersettings-encryptiontype
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? EncryptionType { get; set; }
@@ -407,7 +432,7 @@ namespace Humidifier.MediaLive
             /// Destinations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routersettings.html#cfn-medialive-input-routersettings-destinations
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: RouterDestinationSettings
             /// </summary>
@@ -469,23 +494,11 @@ namespace Humidifier.MediaLive
             public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.Smpte2110ReceiverGroup>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.Smpte2110ReceiverGroup, BaseFunction>>, BaseFunction>? Smpte2110ReceiverGroups { get; set; }
         }
 
-        public class SpecialRouterSettings : Humidifier.Base.BaseSubResource, IHaveRouterArn
-        {
-            /// <summary>
-            /// RouterArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-specialroutersettings.html#cfn-medialive-input-specialroutersettings-routerarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? RouterArn { get; set; }
-        }
-
-        public class SrtCallerDecryptionRequest : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHavePassphraseSecretArn
+        public class SrtCallerDecryption : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHavePassphraseSecretArn
         {
             /// <summary>
             /// Algorithm
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryptionrequest.html#cfn-medialive-input-srtcallerdecryptionrequest-algorithm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryption.html#cfn-medialive-input-srtcallerdecryption-algorithm
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -493,7 +506,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? Algorithm { get; set; }
             /// <summary>
             /// PassphraseSecretArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryptionrequest.html#cfn-medialive-input-srtcallerdecryptionrequest-passphrasesecretarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryption.html#cfn-medialive-input-srtcallerdecryption-passphrasesecretarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -501,11 +514,11 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? PassphraseSecretArn { get; set; }
         }
 
-        public class SrtCallerSourceRequest : Humidifier.Base.BaseSubResource, IHaveSrtListenerPort, IHaveStreamId, IHaveMinimumLatency_Integer, IHaveSrtListenerAddress, IHaveMediaLiveInputTypesSrtCallerDecryptionRequestDecryption
+        public class SrtCallerSource : Humidifier.Base.BaseSubResource, IHaveSrtListenerPort, IHaveStreamId, IHaveMinimumLatency_Integer, IHaveSrtListenerAddress, IHaveMediaLiveInputTypesSrtCallerDecryptionDecryption
         {
             /// <summary>
             /// SrtListenerPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-srtlistenerport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-srtlistenerport
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -513,7 +526,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? SrtListenerPort { get; set; }
             /// <summary>
             /// StreamId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-streamid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-streamid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -521,7 +534,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? StreamId { get; set; }
             /// <summary>
             /// MinimumLatency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-minimumlatency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-minimumlatency
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -529,7 +542,7 @@ namespace Humidifier.MediaLive
             public Union<int, BaseFunction>? MinimumLatency { get; set; }
             /// <summary>
             /// SrtListenerAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-srtlisteneraddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-srtlisteneraddress
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -537,19 +550,19 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? SrtListenerAddress { get; set; }
             /// <summary>
             /// Decryption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-decryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-decryption
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SrtCallerDecryptionRequest
+            /// Type: SrtCallerDecryption
             /// </summary>
-            public Union<Humidifier.MediaLive.InputTypes.SrtCallerDecryptionRequest, BaseFunction>? Decryption { get; set; }
+            public Union<Humidifier.MediaLive.InputTypes.SrtCallerDecryption, BaseFunction>? Decryption { get; set; }
         }
 
-        public class SrtListenerDecryptionRequest : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHavePassphraseSecretArn
+        public class SrtListenerDecryption : Humidifier.Base.BaseSubResource, IHaveAlgorithm, IHavePassphraseSecretArn
         {
             /// <summary>
             /// Algorithm
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryptionrequest.html#cfn-medialive-input-srtlistenerdecryptionrequest-algorithm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryption.html#cfn-medialive-input-srtlistenerdecryption-algorithm
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -557,7 +570,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? Algorithm { get; set; }
             /// <summary>
             /// PassphraseSecretArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryptionrequest.html#cfn-medialive-input-srtlistenerdecryptionrequest-passphrasesecretarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryption.html#cfn-medialive-input-srtlistenerdecryption-passphrasesecretarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -565,11 +578,11 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? PassphraseSecretArn { get; set; }
         }
 
-        public class SrtListenerSettingsRequest : Humidifier.Base.BaseSubResource, IHaveStreamId, IHaveMinimumLatency_Integer, IHaveMediaLiveInputTypesSrtListenerDecryptionRequestDecryption
+        public class SrtListenerSettings : Humidifier.Base.BaseSubResource, IHaveStreamId, IHaveMinimumLatency_Integer, IHaveMediaLiveInputTypesSrtListenerDecryptionDecryption
         {
             /// <summary>
             /// StreamId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettingsrequest.html#cfn-medialive-input-srtlistenersettingsrequest-streamid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettings.html#cfn-medialive-input-srtlistenersettings-streamid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -577,7 +590,7 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? StreamId { get; set; }
             /// <summary>
             /// MinimumLatency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettingsrequest.html#cfn-medialive-input-srtlistenersettingsrequest-minimumlatency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettings.html#cfn-medialive-input-srtlistenersettings-minimumlatency
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -585,33 +598,33 @@ namespace Humidifier.MediaLive
             public Union<int, BaseFunction>? MinimumLatency { get; set; }
             /// <summary>
             /// Decryption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettingsrequest.html#cfn-medialive-input-srtlistenersettingsrequest-decryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettings.html#cfn-medialive-input-srtlistenersettings-decryption
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SrtListenerDecryptionRequest
+            /// Type: SrtListenerDecryption
             /// </summary>
-            public Union<Humidifier.MediaLive.InputTypes.SrtListenerDecryptionRequest, BaseFunction>? Decryption { get; set; }
+            public Union<Humidifier.MediaLive.InputTypes.SrtListenerDecryption, BaseFunction>? Decryption { get; set; }
         }
 
-        public class SrtSettingsRequest : Humidifier.Base.BaseSubResource, IHaveListOfMediaLiveInputTypesSrtCallerSourceRequestSrtCallerSources, IHaveMediaLiveInputTypesSrtListenerSettingsRequestSrtListenerSettings
+        public class SrtSettings : Humidifier.Base.BaseSubResource, IHaveListOfMediaLiveInputTypesSrtCallerSourceSrtCallerSources, IHaveMediaLiveInputTypesSrtListenerSettingsSrtListenerSettings
         {
             /// <summary>
             /// SrtCallerSources
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettingsrequest.html#cfn-medialive-input-srtsettingsrequest-srtcallersources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettings.html#cfn-medialive-input-srtsettings-srtcallersources
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: SrtCallerSourceRequest
+            /// ItemType: SrtCallerSource
             /// </summary>
-            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.SrtCallerSourceRequest>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.SrtCallerSourceRequest, BaseFunction>>, BaseFunction>? SrtCallerSources { get; set; }
+            public Union<IReadOnlyList<Humidifier.MediaLive.InputTypes.SrtCallerSource>, IReadOnlyList<Union<Humidifier.MediaLive.InputTypes.SrtCallerSource, BaseFunction>>, BaseFunction>? SrtCallerSources { get; set; }
             /// <summary>
             /// SrtListenerSettings
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettingsrequest.html#cfn-medialive-input-srtsettingsrequest-srtlistenersettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettings.html#cfn-medialive-input-srtsettings-srtlistenersettings
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SrtListenerSettingsRequest
+            /// Type: SrtListenerSettings
             /// </summary>
-            public Union<Humidifier.MediaLive.InputTypes.SrtListenerSettingsRequest, BaseFunction>? SrtListenerSettings { get; set; }
+            public Union<Humidifier.MediaLive.InputTypes.SrtListenerSettings, BaseFunction>? SrtListenerSettings { get; set; }
         }
     }
 }

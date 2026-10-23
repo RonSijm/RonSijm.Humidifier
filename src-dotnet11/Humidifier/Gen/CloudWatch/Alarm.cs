@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using global::System.Collections.Generic;
     using AlarmTypes;
 
-    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveThresholdMetricId, IHaveComparisonOperator, IHaveEvaluationPeriods_Integer, IHaveUnit, IHaveStringListOfOKActions, IHaveMetricName, IHaveActionsEnabled_Boolean, IHaveListOfCloudWatchAlarmTypesMetricDataQueryMetrics, IHaveAlarmName, IHaveStatistic, IHaveCloudWatchAlarmTypesWarmUpConfigurationWarmUpConfiguration, IHaveCloudWatchAlarmTypesEvaluationWindowEvaluationWindow, IHaveStringListOfInsufficientDataActions, IHaveEvaluationInterval_Integer, IHaveDatapointsToAlarm_Integer, IHaveThreshold_Double, IHaveEvaluateLowSampleCountPercentile, IHaveExtendedStatistic, IHaveTreatMissingData, IHaveListOfCloudWatchAlarmTypesDimensionDimensions, IHavePeriod_Integer, IHaveCloudWatchAlarmTypesEvaluationCriteriaEvaluationCriteria, IHaveNamespace_, IHaveStringListOfAlarmActions, IHaveAlarmDescription, IHaveDescription
+    public class Alarm : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveThresholdMetricId, IHaveComparisonOperator, IHaveEvaluationPeriods_Integer, IHaveUnit, IHaveStringListOfOKActions, IHaveMetricName, IHaveActionsEnabled_Boolean, IHaveListOfCloudWatchAlarmTypesMetricDataQueryMetrics, IHaveAlarmName, IHaveStatistic, IHaveCloudWatchAlarmTypesWarmUpConfigurationWarmUpConfiguration, IHaveCloudWatchAlarmTypesEvaluationWindowEvaluationWindow, IHaveStringListOfInsufficientDataActions, IHaveEvaluationInterval_Integer, IHaveDatapointsToAlarm_Integer, IHaveThreshold_Double, IHaveEvaluateLowSampleCountPercentile, IHaveExtendedStatistic, IHaveTreatMissingData, IHaveListOfCloudWatchAlarmTypesDimensionDimensions, IHavePeriod_Integer, IHaveCloudWatchAlarmTypesEvaluationCriteriaEvaluationCriteria, IHaveNamespace_, IHaveStringListOfAlarmActions, IHaveAlarmDescription, IHaveCloudWatchAlarmTypesActionConfigurationActionConfiguration, IHaveDescription
     {
         public class Attributes
         {
@@ -221,10 +221,30 @@ namespace Humidifier.CloudWatch
 
         [Ignore]
         public Union<string, BaseFunction>? Description { get => AlarmDescription; set => AlarmDescription = value; }
+        /// <summary>
+        /// ActionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-alarm.html#cfn-cloudwatch-alarm-actionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ActionConfiguration
+        /// </summary>
+        public Union<Humidifier.CloudWatch.AlarmTypes.ActionConfiguration, BaseFunction>? ActionConfiguration { get; set; }
     }
 
     namespace AlarmTypes
     {
+        public class ActionConfiguration : Humidifier.Base.BaseSubResource, IHaveCloudWatchAlarmTypesAlarmTagsPropagationAlarmTagsPropagation
+        {
+            /// <summary>
+            /// AlarmTagsPropagation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-actionconfiguration.html#cfn-cloudwatch-alarm-actionconfiguration-alarmtagspropagation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AlarmTagsPropagation
+            /// </summary>
+            public Union<Humidifier.CloudWatch.AlarmTypes.AlarmTagsPropagation, BaseFunction>? AlarmTagsPropagation { get; set; }
+        }
+
         public class AlarmPromQLCriteria : Humidifier.Base.BaseSubResource, IHavePendingPeriod_Integer, IHaveQuery, IHaveRecoveryPeriod_Integer
         {
             /// <summary>
@@ -251,6 +271,36 @@ namespace Humidifier.CloudWatch
             /// PrimitiveType: Integer
             /// </summary>
             public Union<int, BaseFunction>? RecoveryPeriod { get; set; }
+        }
+
+        public class AlarmTagsPropagation : Humidifier.Base.BaseSubResource, IHaveStringListOfIncludedTagKeys, IHaveStringListOfExcludedTagKeys, IHaveEnabled_Boolean
+        {
+            /// <summary>
+            /// IncludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-alarmtagspropagation.html#cfn-cloudwatch-alarm-alarmtagspropagation-includedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? IncludedTagKeys { get; set; }
+            /// <summary>
+            /// ExcludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-alarmtagspropagation.html#cfn-cloudwatch-alarm-alarmtagspropagation-excludedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ExcludedTagKeys { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-alarmtagspropagation.html#cfn-cloudwatch-alarm-alarmtagspropagation-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
         }
 
         public class Dimension : Humidifier.Base.BaseSubResource, IHaveValue, IHaveName

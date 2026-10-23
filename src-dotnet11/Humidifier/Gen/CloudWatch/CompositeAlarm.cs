@@ -1,8 +1,9 @@
 namespace Humidifier.CloudWatch
 {
     using global::System.Collections.Generic;
+    using CompositeAlarmTypes;
 
-    public class CompositeAlarm : Humidifier.Base.BaseResource, IHaveTags, IHaveActionsSuppressorWaitPeriod_Integer, IHaveStringListOfAlarmActions, IHaveActionsEnabled_Boolean, IHaveAlarmName, IHaveAlarmDescription, IHaveActionsSuppressor, IHaveAlarmRule, IHaveStringListOfInsufficientDataActions, IHaveStringListOfOKActions, IHaveActionsSuppressorExtensionPeriod_Integer
+    public class CompositeAlarm : Humidifier.Base.BaseResource, IHaveTags, IHaveActionsSuppressorWaitPeriod_Integer, IHaveStringListOfAlarmActions, IHaveActionsEnabled_Boolean, IHaveAlarmName, IHaveAlarmDescription, IHaveActionsSuppressor, IHaveAlarmRule, IHaveStringListOfInsufficientDataActions, IHaveCloudWatchCompositeAlarmTypesActionConfigurationActionConfiguration, IHaveStringListOfOKActions, IHaveActionsSuppressorExtensionPeriod_Integer
     {
         public class Attributes
         {
@@ -79,6 +80,14 @@ namespace Humidifier.CloudWatch
         /// </summary>
         public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? InsufficientDataActions { get; set; }
         /// <summary>
+        /// ActionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-actionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ActionConfiguration
+        /// </summary>
+        public Union<Humidifier.CloudWatch.CompositeAlarmTypes.ActionConfiguration, BaseFunction>? ActionConfiguration { get; set; }
+        /// <summary>
         /// OKActions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-compositealarm.html#cfn-cloudwatch-compositealarm-okactions
         /// Required: False
@@ -104,5 +113,50 @@ namespace Humidifier.CloudWatch
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+    }
+
+    namespace CompositeAlarmTypes
+    {
+        public class ActionConfiguration : Humidifier.Base.BaseSubResource, IHaveCloudWatchCompositeAlarmTypesAlarmTagsPropagationAlarmTagsPropagation
+        {
+            /// <summary>
+            /// AlarmTagsPropagation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-actionconfiguration.html#cfn-cloudwatch-compositealarm-actionconfiguration-alarmtagspropagation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AlarmTagsPropagation
+            /// </summary>
+            public Union<Humidifier.CloudWatch.CompositeAlarmTypes.AlarmTagsPropagation, BaseFunction>? AlarmTagsPropagation { get; set; }
+        }
+
+        public class AlarmTagsPropagation : Humidifier.Base.BaseSubResource, IHaveStringListOfIncludedTagKeys, IHaveStringListOfExcludedTagKeys, IHaveEnabled_Boolean
+        {
+            /// <summary>
+            /// IncludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-alarmtagspropagation.html#cfn-cloudwatch-compositealarm-alarmtagspropagation-includedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? IncludedTagKeys { get; set; }
+            /// <summary>
+            /// ExcludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-alarmtagspropagation.html#cfn-cloudwatch-compositealarm-alarmtagspropagation-excludedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ExcludedTagKeys { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-compositealarm-alarmtagspropagation.html#cfn-cloudwatch-compositealarm-alarmtagspropagation-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+        }
     }
 }

@@ -123,6 +123,14 @@ namespace Humidifier.Connect
             /// </summary>
             public dynamic AutoResolveBestVoices { get; set; }
             /// <summary>
+            /// AutoMuteAgentOnHold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-automuteagentonhold
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AutoMuteAgentOnHold { get; set; }
+            /// <summary>
             /// InboundCalls
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-instance-attributes.html#cfn-connect-instance-attributes-inboundcalls
             /// Required: True

@@ -147,6 +147,56 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? BaseEvaluatorId { get; set; }
         }
 
+        public class DimensionRatingScale : Humidifier.Base.BaseSubResource, IHaveListOfBedrockAgentCoreEvaluatorTypesNumericalScaleDefinitionNumerical, IHaveListOfBedrockAgentCoreEvaluatorTypesCategoricalScaleDefinitionCategorical
+        {
+            /// <summary>
+            /// Numerical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-dimensionratingscale.html#cfn-bedrockagentcore-evaluator-dimensionratingscale-numerical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NumericalScaleDefinition
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.BedrockAgentCore.EvaluatorTypes.NumericalScaleDefinition>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.EvaluatorTypes.NumericalScaleDefinition, BaseFunction>>, BaseFunction>? Numerical { get; set; }
+            /// <summary>
+            /// Categorical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-dimensionratingscale.html#cfn-bedrockagentcore-evaluator-dimensionratingscale-categorical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CategoricalScaleDefinition
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.BedrockAgentCore.EvaluatorTypes.CategoricalScaleDefinition>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.EvaluatorTypes.CategoricalScaleDefinition, BaseFunction>>, BaseFunction>? Categorical { get; set; }
+        }
+
+        public class EvaluationDimension : Humidifier.Base.BaseSubResource, IHaveDimensionInstruction, IHaveBedrockAgentCoreEvaluatorTypesDimensionRatingScaleDimensionRatingScale, IHaveDimensionName
+        {
+            /// <summary>
+            /// DimensionInstruction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-evaluationdimension.html#cfn-bedrockagentcore-evaluator-evaluationdimension-dimensioninstruction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionInstruction { get; set; }
+            /// <summary>
+            /// DimensionRatingScale
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-evaluationdimension.html#cfn-bedrockagentcore-evaluator-evaluationdimension-dimensionratingscale
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DimensionRatingScale
+            /// </summary>
+            public Union<Humidifier.BedrockAgentCore.EvaluatorTypes.DimensionRatingScale, BaseFunction>? DimensionRatingScale { get; set; }
+            /// <summary>
+            /// DimensionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-evaluationdimension.html#cfn-bedrockagentcore-evaluator-evaluationdimension-dimensionname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DimensionName { get; set; }
+        }
+
         public class EvaluatorConfig : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreEvaluatorTypesCodeBasedEvaluatorConfigCodeBased, IHaveBedrockAgentCoreEvaluatorTypesLlmAsAJudgeEvaluatorConfigLlmAsAJudge, IHaveBedrockAgentCoreEvaluatorTypesDerivedEvaluatorConfigDerived
         {
             /// <summary>
@@ -352,7 +402,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? ModelId { get; set; }
         }
 
-        public class RatingScale : Humidifier.Base.BaseSubResource, IHaveListOfBedrockAgentCoreEvaluatorTypesNumericalScaleDefinitionNumerical, IHaveListOfBedrockAgentCoreEvaluatorTypesCategoricalScaleDefinitionCategorical
+        public class RatingScale : Humidifier.Base.BaseSubResource, IHaveListOfBedrockAgentCoreEvaluatorTypesNumericalScaleDefinitionNumerical, IHaveListOfBedrockAgentCoreEvaluatorTypesCategoricalScaleDefinitionCategorical, IHaveListOfBedrockAgentCoreEvaluatorTypesEvaluationDimensionMultiDimensional
         {
             /// <summary>
             /// Numerical
@@ -372,6 +422,15 @@ namespace Humidifier.BedrockAgentCore
             /// ItemType: CategoricalScaleDefinition
             /// </summary>
             public Union<IReadOnlyList<Humidifier.BedrockAgentCore.EvaluatorTypes.CategoricalScaleDefinition>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.EvaluatorTypes.CategoricalScaleDefinition, BaseFunction>>, BaseFunction>? Categorical { get; set; }
+            /// <summary>
+            /// MultiDimensional
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-ratingscale.html#cfn-bedrockagentcore-evaluator-ratingscale-multidimensional
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: EvaluationDimension
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.BedrockAgentCore.EvaluatorTypes.EvaluationDimension>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.EvaluatorTypes.EvaluationDimension, BaseFunction>>, BaseFunction>? MultiDimensional { get; set; }
         }
 
         public class ReasoningConfiguration : Humidifier.Base.BaseSubResource, IHaveEffort

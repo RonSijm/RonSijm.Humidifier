@@ -471,6 +471,14 @@ namespace Humidifier.SageMaker
             /// </summary>
             public Humidifier.SageMaker.ClusterTypes.AutoPatchConfig AutoPatchConfig { get; set; }
             /// <summary>
+            /// ImageReleaseVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-clusterinstancegroup.html#cfn-sagemaker-cluster-clusterinstancegroup-imagereleaseversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ImageReleaseVersion { get; set; }
+            /// <summary>
             /// ExecutionRole
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-clusterinstancegroup.html#cfn-sagemaker-cluster-clusterinstancegroup-executionrole
             /// Required: True

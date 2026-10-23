@@ -12,21 +12,25 @@ namespace Humidifier.Route53Resolver
         }
 
         public override string AWSTypeName { get => AWS.Route53Resolver.FirewallConfig; }
+
         /// <summary>
         /// ResourceId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallconfig.html#cfn-route53resolver-firewallconfig-resourceid
-        /// Required: False
+        /// Required: True
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic ResourceId { get; set; }
+
         /// <summary>
         /// FirewallFailOpen
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallconfig.html#cfn-route53resolver-firewallconfig-firewallfailopen
-        /// Required: False
-        /// UpdateType: Immutable
+        /// Required: True
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
+        [Required]
         public dynamic FirewallFailOpen { get; set; }
     }
 }

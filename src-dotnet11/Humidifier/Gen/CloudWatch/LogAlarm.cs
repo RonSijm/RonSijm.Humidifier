@@ -3,7 +3,7 @@ namespace Humidifier.CloudWatch
     using global::System.Collections.Generic;
     using LogAlarmTypes;
 
-    public class LogAlarm : Humidifier.Base.BaseResource, IHaveTags, IHaveComparisonOperator, IHaveTreatMissingData, IHaveCloudWatchLogAlarmTypesScheduledQueryConfigurationScheduledQueryConfiguration, IHaveQueryResultsToEvaluate_Integer, IHaveStringListOfOKActions, IHaveStringListOfAlarmActions, IHaveActionsEnabled_Boolean, IHaveActionLogLineRoleArn, IHaveAlarmName, IHaveAlarmDescription, IHaveCloudWatchLogAlarmTypesWarmUpConfigurationWarmUpConfiguration, IHaveActionLogLineCount_Integer, IHaveStringListOfInsufficientDataActions, IHaveQueryResultsToAlarm_Integer, IHaveThreshold_Double
+    public class LogAlarm : Humidifier.Base.BaseResource, IHaveTags, IHaveComparisonOperator, IHaveTreatMissingData, IHaveCloudWatchLogAlarmTypesScheduledQueryConfigurationScheduledQueryConfiguration, IHaveQueryResultsToEvaluate_Integer, IHaveStringListOfOKActions, IHaveStringListOfAlarmActions, IHaveActionsEnabled_Boolean, IHaveActionLogLineRoleArn, IHaveAlarmName, IHaveAlarmDescription, IHaveCloudWatchLogAlarmTypesWarmUpConfigurationWarmUpConfiguration, IHaveActionLogLineCount_Integer, IHaveStringListOfInsufficientDataActions, IHaveQueryResultsToAlarm_Integer, IHaveCloudWatchLogAlarmTypesActionConfigurationActionConfiguration, IHaveThreshold_Double
     {
         public class Attributes
         {
@@ -135,6 +135,14 @@ namespace Humidifier.CloudWatch
         [Required]
         public Union<int, BaseFunction>? QueryResultsToAlarm { get; set; }
         /// <summary>
+        /// ActionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-logalarm.html#cfn-cloudwatch-logalarm-actionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ActionConfiguration
+        /// </summary>
+        public Union<Humidifier.CloudWatch.LogAlarmTypes.ActionConfiguration, BaseFunction>? ActionConfiguration { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-logalarm.html#cfn-cloudwatch-logalarm-tags
         /// Required: False
@@ -157,6 +165,48 @@ namespace Humidifier.CloudWatch
 
     namespace LogAlarmTypes
     {
+        public class ActionConfiguration : Humidifier.Base.BaseSubResource, IHaveCloudWatchLogAlarmTypesAlarmTagsPropagationAlarmTagsPropagation
+        {
+            /// <summary>
+            /// AlarmTagsPropagation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-actionconfiguration.html#cfn-cloudwatch-logalarm-actionconfiguration-alarmtagspropagation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AlarmTagsPropagation
+            /// </summary>
+            public Union<Humidifier.CloudWatch.LogAlarmTypes.AlarmTagsPropagation, BaseFunction>? AlarmTagsPropagation { get; set; }
+        }
+
+        public class AlarmTagsPropagation : Humidifier.Base.BaseSubResource, IHaveStringListOfIncludedTagKeys, IHaveStringListOfExcludedTagKeys, IHaveEnabled_Boolean
+        {
+            /// <summary>
+            /// IncludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-alarmtagspropagation.html#cfn-cloudwatch-logalarm-alarmtagspropagation-includedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? IncludedTagKeys { get; set; }
+            /// <summary>
+            /// ExcludedTagKeys
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-alarmtagspropagation.html#cfn-cloudwatch-logalarm-alarmtagspropagation-excludedtagkeys
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ExcludedTagKeys { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-logalarm-alarmtagspropagation.html#cfn-cloudwatch-logalarm-alarmtagspropagation-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+        }
+
         public class ScheduleConfiguration : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveStartTimeOffset_Integer, IHaveEndTimeOffset_Integer
         {
             /// <summary>

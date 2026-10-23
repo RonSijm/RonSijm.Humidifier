@@ -147,6 +147,56 @@ namespace Humidifier.BedrockAgentCore
             public dynamic BaseEvaluatorId { get; set; }
         }
 
+        public class DimensionRatingScale : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Numerical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-dimensionratingscale.html#cfn-bedrockagentcore-evaluator-dimensionratingscale-numerical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: NumericalScaleDefinition
+            /// </summary>
+            public List<Humidifier.BedrockAgentCore.EvaluatorTypes.NumericalScaleDefinition> Numerical { get; set; }
+            /// <summary>
+            /// Categorical
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-dimensionratingscale.html#cfn-bedrockagentcore-evaluator-dimensionratingscale-categorical
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CategoricalScaleDefinition
+            /// </summary>
+            public List<Humidifier.BedrockAgentCore.EvaluatorTypes.CategoricalScaleDefinition> Categorical { get; set; }
+        }
+
+        public class EvaluationDimension : Humidifier.Base.BaseSubResource, IHaveDimensionName
+        {
+            /// <summary>
+            /// DimensionInstruction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-evaluationdimension.html#cfn-bedrockagentcore-evaluator-evaluationdimension-dimensioninstruction
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DimensionInstruction { get; set; }
+            /// <summary>
+            /// DimensionRatingScale
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-evaluationdimension.html#cfn-bedrockagentcore-evaluator-evaluationdimension-dimensionratingscale
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DimensionRatingScale
+            /// </summary>
+            public Humidifier.BedrockAgentCore.EvaluatorTypes.DimensionRatingScale DimensionRatingScale { get; set; }
+            /// <summary>
+            /// DimensionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-evaluationdimension.html#cfn-bedrockagentcore-evaluator-evaluationdimension-dimensionname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DimensionName { get; set; }
+        }
+
         public class EvaluatorConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -372,6 +422,15 @@ namespace Humidifier.BedrockAgentCore
             /// ItemType: CategoricalScaleDefinition
             /// </summary>
             public List<Humidifier.BedrockAgentCore.EvaluatorTypes.CategoricalScaleDefinition> Categorical { get; set; }
+            /// <summary>
+            /// MultiDimensional
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-evaluator-ratingscale.html#cfn-bedrockagentcore-evaluator-ratingscale-multidimensional
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: EvaluationDimension
+            /// </summary>
+            public List<Humidifier.BedrockAgentCore.EvaluatorTypes.EvaluationDimension> MultiDimensional { get; set; }
         }
 
         public class ReasoningConfiguration : Humidifier.Base.BaseSubResource

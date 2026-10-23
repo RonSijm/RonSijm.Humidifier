@@ -2,13 +2,14 @@ namespace Humidifier.Transfer
 {
     using global::System.Collections.Generic;
 
-    public class HostKey : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveServerId
+    public class HostKey : Humidifier.Base.BaseResource, IHaveTags, IHaveDescription, IHaveKmsKey, IHaveStorageType, IHaveServerId
     {
         public class Attributes
         {
             public static string Type =  "Type" ;
             public static string HostKeyId =  "HostKeyId" ;
             public static string HostKeyFingerprint =  "HostKeyFingerprint" ;
+            public static string SecretId =  "SecretId" ;
             public static string Arn =  "Arn" ;
             public static string DateImported =  "DateImported" ;
         }
@@ -32,6 +33,22 @@ namespace Humidifier.Transfer
         /// PrimitiveType: String
         /// </summary>
         public dynamic Description { get; set; }
+        /// <summary>
+        /// StorageType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-hostkey.html#cfn-transfer-hostkey-storagetype
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic StorageType { get; set; }
+        /// <summary>
+        /// KmsKey
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-hostkey.html#cfn-transfer-hostkey-kmskey
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKey { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-hostkey.html#cfn-transfer-hostkey-tags

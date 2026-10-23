@@ -3,13 +3,22 @@ namespace Humidifier.MediaLive
     using global::System.Collections.Generic;
     using InputTypes;
 
-    public class Input : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveType, IHaveRoleArn, IHaveDynamicTags
+    public class Input : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveType, IHaveRoleArn
     {
         public class Attributes
         {
+            public static string SecurityGroups =  "SecurityGroups" ;
+            public static string InputClass =  "InputClass" ;
+            public static string DestinationUrls =  "DestinationUrls" ;
+            public static string State =  "State" ;
             public static string Destinations =  "Destinations" ;
+            public static string InputSourceType =  "InputSourceType" ;
+            public static string Id =  "Id" ;
+            public static string SourceUrls =  "SourceUrls" ;
             public static string Arn =  "Arn" ;
+            public static string AttachedChannels =  "AttachedChannels" ;
             public static string Sources =  "Sources" ;
+            public static string InputPartnerIds =  "InputPartnerIds" ;
         }
 
         public override string AWSTypeName { get => AWS.MediaLive.Input; }
@@ -18,9 +27,9 @@ namespace Humidifier.MediaLive
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-srtsettings
         /// Required: False
         /// UpdateType: Mutable
-        /// Type: SrtSettingsRequest
+        /// Type: SrtSettings
         /// </summary>
-        public Humidifier.MediaLive.InputTypes.SrtSettingsRequest SrtSettings { get; set; }
+        public Humidifier.MediaLive.InputTypes.SrtSettings SrtSettings { get; set; }
         /// <summary>
         /// InputNetworkLocation
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputnetworklocation
@@ -35,9 +44,9 @@ namespace Humidifier.MediaLive
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: InputDestinationRequest
+        /// ItemType: InputDestination
         /// </summary>
-        public List<Humidifier.MediaLive.InputTypes.InputDestinationRequest> Destinations { get; set; }
+        public List<Humidifier.MediaLive.InputTypes.InputDestination> Destinations { get; set; }
         /// <summary>
         /// Vpc
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc
@@ -52,18 +61,18 @@ namespace Humidifier.MediaLive
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: MediaConnectFlowRequest
+        /// ItemType: MediaConnectFlow
         /// </summary>
-        public List<Humidifier.MediaLive.InputTypes.MediaConnectFlowRequest> MediaConnectFlows { get; set; }
+        public List<Humidifier.MediaLive.InputTypes.MediaConnectFlow> MediaConnectFlows { get; set; }
         /// <summary>
         /// Sources
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
-        /// ItemType: InputSourceRequest
+        /// ItemType: InputSource
         /// </summary>
-        public List<Humidifier.MediaLive.InputTypes.InputSourceRequest> Sources { get; set; }
+        public List<Humidifier.MediaLive.InputTypes.InputSource> Sources { get; set; }
         /// <summary>
         /// RoleArn
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn
@@ -107,6 +116,14 @@ namespace Humidifier.MediaLive
         /// </summary>
         public dynamic SdiSources { get; set; }
         /// <summary>
+        /// MulticastSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-multicastsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: MulticastSettings
+        /// </summary>
+        public Humidifier.MediaLive.InputTypes.MulticastSettings MulticastSettings { get; set; }
+        /// <summary>
         /// InputSecurityGroups
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups
         /// Required: False
@@ -115,14 +132,6 @@ namespace Humidifier.MediaLive
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic InputSecurityGroups { get; set; }
-        /// <summary>
-        /// MulticastSettings
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-multicastsettings
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: MulticastSettingsCreateRequest
-        /// </summary>
-        public Humidifier.MediaLive.InputTypes.MulticastSettingsCreateRequest MulticastSettings { get; set; }
         /// <summary>
         /// InputDevices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputdevices
@@ -137,60 +146,121 @@ namespace Humidifier.MediaLive
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-tags
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic Tags { get; set; }
+        public Dictionary<string, dynamic> Tags { get; set; }
     }
 
     namespace InputTypes
     {
-        public class InputDestinationRequest : Humidifier.Base.BaseSubResource, IHaveStreamName
+        public class InputDestination : Humidifier.Base.BaseSubResource, IHavePort, IHaveUrl, IHaveStreamName, IHaveIp
         {
             /// <summary>
             /// StreamName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-streamname
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic StreamName { get; set; }
             /// <summary>
+            /// Ip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-ip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ip { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-port
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Port { get; set; }
+            /// <summary>
             /// Network
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-network
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-network
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Network { get; set; }
             /// <summary>
+            /// Vpc
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-vpc
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: InputDestinationVpc
+            /// </summary>
+            public Humidifier.MediaLive.InputTypes.InputDestinationVpc Vpc { get; set; }
+            /// <summary>
             /// NetworkRoutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-networkroutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-networkroutes
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: InputRequestDestinationRoute
+            /// ItemType: InputDestinationRoute
             /// </summary>
-            public List<Humidifier.MediaLive.InputTypes.InputRequestDestinationRoute> NetworkRoutes { get; set; }
+            public List<Humidifier.MediaLive.InputTypes.InputDestinationRoute> NetworkRoutes { get; set; }
             /// <summary>
             /// StaticIpAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-staticipaddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-staticipaddress
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic StaticIpAddress { get; set; }
-        }
-
-        public class InputDeviceRequest : Humidifier.Base.BaseSubResource, IHaveId
-        {
             /// <summary>
-            /// Id
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicerequest.html#cfn-medialive-input-inputdevicerequest-id
+            /// Url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestination.html#cfn-medialive-input-inputdestination-url
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic Id { get; set; }
+            public dynamic Url { get; set; }
+        }
+
+        public class InputDestinationRoute : Humidifier.Base.BaseSubResource, IHaveCidr, IHaveGateway
+        {
+            /// <summary>
+            /// Cidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationroute.html#cfn-medialive-input-inputdestinationroute-cidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Cidr { get; set; }
+            /// <summary>
+            /// Gateway
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationroute.html#cfn-medialive-input-inputdestinationroute-gateway
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Gateway { get; set; }
+        }
+
+        public class InputDestinationVpc : Humidifier.Base.BaseSubResource, IHaveAvailabilityZone, IHaveNetworkInterfaceId
+        {
+            /// <summary>
+            /// AvailabilityZone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationvpc.html#cfn-medialive-input-inputdestinationvpc-availabilityzone
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AvailabilityZone { get; set; }
+            /// <summary>
+            /// NetworkInterfaceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationvpc.html#cfn-medialive-input-inputdestinationvpc-networkinterfaceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NetworkInterfaceId { get; set; }
         }
 
         public class InputDeviceSettings : Humidifier.Base.BaseSubResource, IHaveId
@@ -203,26 +273,6 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: String
             /// </summary>
             public dynamic Id { get; set; }
-        }
-
-        public class InputRequestDestinationRoute : Humidifier.Base.BaseSubResource, IHaveCidr, IHaveGateway
-        {
-            /// <summary>
-            /// Cidr
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputrequestdestinationroute.html#cfn-medialive-input-inputrequestdestinationroute-cidr
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Cidr { get; set; }
-            /// <summary>
-            /// Gateway
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputrequestdestinationroute.html#cfn-medialive-input-inputrequestdestinationroute-gateway
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Gateway { get; set; }
         }
 
         public class InputSdpLocation : Humidifier.Base.BaseSubResource
@@ -245,11 +295,11 @@ namespace Humidifier.MediaLive
             public dynamic SdpUrl { get; set; }
         }
 
-        public class InputSourceRequest : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveUsername, IHavePasswordParam
+        public class InputSource : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveUsername, IHavePasswordParam
         {
             /// <summary>
             /// Username
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsource.html#cfn-medialive-input-inputsource-username
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -257,7 +307,7 @@ namespace Humidifier.MediaLive
             public dynamic Username { get; set; }
             /// <summary>
             /// PasswordParam
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-passwordparam
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsource.html#cfn-medialive-input-inputsource-passwordparam
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -265,7 +315,7 @@ namespace Humidifier.MediaLive
             public dynamic PasswordParam { get; set; }
             /// <summary>
             /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-url
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsource.html#cfn-medialive-input-inputsource-url
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -279,7 +329,7 @@ namespace Humidifier.MediaLive
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-securitygroupids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -288,18 +338,18 @@ namespace Humidifier.MediaLive
             /// SubnetIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic SubnetIds { get; set; }
         }
 
-        public class MediaConnectFlowRequest : Humidifier.Base.BaseSubResource, IHaveFlowArn
+        public class MediaConnectFlow : Humidifier.Base.BaseSubResource, IHaveFlowArn
         {
             /// <summary>
             /// FlowArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html#cfn-medialive-input-mediaconnectflowrequest-flowarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflow.html#cfn-medialive-input-mediaconnectflow-flowarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -307,37 +357,24 @@ namespace Humidifier.MediaLive
             public dynamic FlowArn { get; set; }
         }
 
-        public class MulticastSettingsCreateRequest : Humidifier.Base.BaseSubResource
+        public class MulticastSettings : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// Sources
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsettingscreaterequest.html#cfn-medialive-input-multicastsettingscreaterequest-sources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsettings.html#cfn-medialive-input-multicastsettings-sources
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: MulticastSourceCreateRequest
+            /// ItemType: MulticastSource
             /// </summary>
-            public List<Humidifier.MediaLive.InputTypes.MulticastSourceCreateRequest> Sources { get; set; }
+            public List<Humidifier.MediaLive.InputTypes.MulticastSource> Sources { get; set; }
         }
 
-        public class MulticastSettingsUpdateRequest : Humidifier.Base.BaseSubResource
-        {
-            /// <summary>
-            /// Sources
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsettingsupdaterequest.html#cfn-medialive-input-multicastsettingsupdaterequest-sources
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: MulticastSourceUpdateRequest
-            /// </summary>
-            public List<Humidifier.MediaLive.InputTypes.MulticastSourceUpdateRequest> Sources { get; set; }
-        }
-
-        public class MulticastSourceCreateRequest : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveSourceIp
+        public class MulticastSource : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveSourceIp
         {
             /// <summary>
             /// SourceIp
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourcecreaterequest.html#cfn-medialive-input-multicastsourcecreaterequest-sourceip
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsource.html#cfn-medialive-input-multicastsource-sourceip
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -345,28 +382,8 @@ namespace Humidifier.MediaLive
             public dynamic SourceIp { get; set; }
             /// <summary>
             /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourcecreaterequest.html#cfn-medialive-input-multicastsourcecreaterequest-url
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Url { get; set; }
-        }
-
-        public class MulticastSourceUpdateRequest : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveSourceIp
-        {
-            /// <summary>
-            /// SourceIp
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourceupdaterequest.html#cfn-medialive-input-multicastsourceupdaterequest-sourceip
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SourceIp { get; set; }
-            /// <summary>
-            /// Url
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsourceupdaterequest.html#cfn-medialive-input-multicastsourceupdaterequest-url
-            /// Required: False
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-multicastsource.html#cfn-medialive-input-multicastsource-url
+            /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -376,10 +393,18 @@ namespace Humidifier.MediaLive
         public class RouterDestinationSettings : Humidifier.Base.BaseSubResource, IHaveAvailabilityZoneName
         {
             /// <summary>
+            /// RouterOutputArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routerdestinationsettings.html#cfn-medialive-input-routerdestinationsettings-routeroutputarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RouterOutputArn { get; set; }
+            /// <summary>
             /// AvailabilityZoneName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routerdestinationsettings.html#cfn-medialive-input-routerdestinationsettings-availabilityzonename
-            /// Required: False
-            /// UpdateType: Mutable
+            /// Required: True
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic AvailabilityZoneName { get; set; }
@@ -391,7 +416,7 @@ namespace Humidifier.MediaLive
             /// SecretArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routersettings.html#cfn-medialive-input-routersettings-secretarn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic SecretArn { get; set; }
@@ -399,7 +424,7 @@ namespace Humidifier.MediaLive
             /// EncryptionType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routersettings.html#cfn-medialive-input-routersettings-encryptiontype
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic EncryptionType { get; set; }
@@ -407,7 +432,7 @@ namespace Humidifier.MediaLive
             /// Destinations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-routersettings.html#cfn-medialive-input-routersettings-destinations
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: RouterDestinationSettings
             /// </summary>
@@ -469,23 +494,11 @@ namespace Humidifier.MediaLive
             public List<Humidifier.MediaLive.InputTypes.Smpte2110ReceiverGroup> Smpte2110ReceiverGroups { get; set; }
         }
 
-        public class SpecialRouterSettings : Humidifier.Base.BaseSubResource
-        {
-            /// <summary>
-            /// RouterArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-specialroutersettings.html#cfn-medialive-input-specialroutersettings-routerarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RouterArn { get; set; }
-        }
-
-        public class SrtCallerDecryptionRequest : Humidifier.Base.BaseSubResource, IHaveAlgorithm
+        public class SrtCallerDecryption : Humidifier.Base.BaseSubResource, IHaveAlgorithm
         {
             /// <summary>
             /// Algorithm
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryptionrequest.html#cfn-medialive-input-srtcallerdecryptionrequest-algorithm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryption.html#cfn-medialive-input-srtcallerdecryption-algorithm
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -493,7 +506,7 @@ namespace Humidifier.MediaLive
             public dynamic Algorithm { get; set; }
             /// <summary>
             /// PassphraseSecretArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryptionrequest.html#cfn-medialive-input-srtcallerdecryptionrequest-passphrasesecretarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallerdecryption.html#cfn-medialive-input-srtcallerdecryption-passphrasesecretarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -501,11 +514,11 @@ namespace Humidifier.MediaLive
             public dynamic PassphraseSecretArn { get; set; }
         }
 
-        public class SrtCallerSourceRequest : Humidifier.Base.BaseSubResource, IHaveStreamId
+        public class SrtCallerSource : Humidifier.Base.BaseSubResource, IHaveStreamId
         {
             /// <summary>
             /// SrtListenerPort
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-srtlistenerport
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-srtlistenerport
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -513,7 +526,7 @@ namespace Humidifier.MediaLive
             public dynamic SrtListenerPort { get; set; }
             /// <summary>
             /// StreamId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-streamid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-streamid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -521,7 +534,7 @@ namespace Humidifier.MediaLive
             public dynamic StreamId { get; set; }
             /// <summary>
             /// MinimumLatency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-minimumlatency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-minimumlatency
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -529,7 +542,7 @@ namespace Humidifier.MediaLive
             public dynamic MinimumLatency { get; set; }
             /// <summary>
             /// SrtListenerAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-srtlisteneraddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-srtlisteneraddress
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -537,19 +550,19 @@ namespace Humidifier.MediaLive
             public dynamic SrtListenerAddress { get; set; }
             /// <summary>
             /// Decryption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersourcerequest.html#cfn-medialive-input-srtcallersourcerequest-decryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtcallersource.html#cfn-medialive-input-srtcallersource-decryption
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SrtCallerDecryptionRequest
+            /// Type: SrtCallerDecryption
             /// </summary>
-            public Humidifier.MediaLive.InputTypes.SrtCallerDecryptionRequest Decryption { get; set; }
+            public Humidifier.MediaLive.InputTypes.SrtCallerDecryption Decryption { get; set; }
         }
 
-        public class SrtListenerDecryptionRequest : Humidifier.Base.BaseSubResource, IHaveAlgorithm
+        public class SrtListenerDecryption : Humidifier.Base.BaseSubResource, IHaveAlgorithm
         {
             /// <summary>
             /// Algorithm
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryptionrequest.html#cfn-medialive-input-srtlistenerdecryptionrequest-algorithm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryption.html#cfn-medialive-input-srtlistenerdecryption-algorithm
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -557,7 +570,7 @@ namespace Humidifier.MediaLive
             public dynamic Algorithm { get; set; }
             /// <summary>
             /// PassphraseSecretArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryptionrequest.html#cfn-medialive-input-srtlistenerdecryptionrequest-passphrasesecretarn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenerdecryption.html#cfn-medialive-input-srtlistenerdecryption-passphrasesecretarn
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -565,11 +578,11 @@ namespace Humidifier.MediaLive
             public dynamic PassphraseSecretArn { get; set; }
         }
 
-        public class SrtListenerSettingsRequest : Humidifier.Base.BaseSubResource, IHaveStreamId
+        public class SrtListenerSettings : Humidifier.Base.BaseSubResource, IHaveStreamId
         {
             /// <summary>
             /// StreamId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettingsrequest.html#cfn-medialive-input-srtlistenersettingsrequest-streamid
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettings.html#cfn-medialive-input-srtlistenersettings-streamid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
@@ -577,7 +590,7 @@ namespace Humidifier.MediaLive
             public dynamic StreamId { get; set; }
             /// <summary>
             /// MinimumLatency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettingsrequest.html#cfn-medialive-input-srtlistenersettingsrequest-minimumlatency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettings.html#cfn-medialive-input-srtlistenersettings-minimumlatency
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -585,33 +598,33 @@ namespace Humidifier.MediaLive
             public dynamic MinimumLatency { get; set; }
             /// <summary>
             /// Decryption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettingsrequest.html#cfn-medialive-input-srtlistenersettingsrequest-decryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtlistenersettings.html#cfn-medialive-input-srtlistenersettings-decryption
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SrtListenerDecryptionRequest
+            /// Type: SrtListenerDecryption
             /// </summary>
-            public Humidifier.MediaLive.InputTypes.SrtListenerDecryptionRequest Decryption { get; set; }
+            public Humidifier.MediaLive.InputTypes.SrtListenerDecryption Decryption { get; set; }
         }
 
-        public class SrtSettingsRequest : Humidifier.Base.BaseSubResource
+        public class SrtSettings : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// SrtCallerSources
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettingsrequest.html#cfn-medialive-input-srtsettingsrequest-srtcallersources
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettings.html#cfn-medialive-input-srtsettings-srtcallersources
             /// Required: False
             /// UpdateType: Mutable
             /// Type: List
-            /// ItemType: SrtCallerSourceRequest
+            /// ItemType: SrtCallerSource
             /// </summary>
-            public List<Humidifier.MediaLive.InputTypes.SrtCallerSourceRequest> SrtCallerSources { get; set; }
+            public List<Humidifier.MediaLive.InputTypes.SrtCallerSource> SrtCallerSources { get; set; }
             /// <summary>
             /// SrtListenerSettings
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettingsrequest.html#cfn-medialive-input-srtsettingsrequest-srtlistenersettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-srtsettings.html#cfn-medialive-input-srtsettings-srtlistenersettings
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: SrtListenerSettingsRequest
+            /// Type: SrtListenerSettings
             /// </summary>
-            public Humidifier.MediaLive.InputTypes.SrtListenerSettingsRequest SrtListenerSettings { get; set; }
+            public Humidifier.MediaLive.InputTypes.SrtListenerSettings SrtListenerSettings { get; set; }
         }
     }
 }

@@ -322,7 +322,7 @@ namespace Humidifier.SageMaker
             public Union<string, BaseFunction>? DnsName { get; set; }
         }
 
-        public class ClusterInstanceGroup : Humidifier.Base.BaseSubResource, IHaveSageMakerClusterTypesClusterSlurmConfigSlurmConfig, IHaveSageMakerClusterTypesClusterCapacityRequirementsCapacityRequirements, IHaveInstanceGroupName, IHaveListOfSageMakerClusterTypesClusterInstanceStorageConfigInstanceStorageConfigs, IHaveSageMakerClusterTypesClusterKubernetesConfigKubernetesConfig, IHaveSageMakerClusterTypesClusterNetworkInterfaceNetworkInterface, IHaveSageMakerClusterTypesClusterLifeCycleConfigLifeCycleConfig, IHaveTrainingPlanArn, IHaveThreadsPerCore_Integer, IHaveSageMakerClusterTypesVpcConfigOverrideVpcConfig, IHaveInstanceCount_Integer, IHaveStringListOfOnStartDeepHealthChecks, IHaveImageId, IHaveCurrentCount_Integer, IHaveSageMakerClusterTypesScheduledUpdateConfigScheduledUpdateConfig, IHaveSageMakerClusterTypesInstanceRequirementsInstanceRequirements, IHaveInstanceType, IHaveSageMakerClusterTypesAutoPatchConfigAutoPatchConfig, IHaveExecutionRole, IHaveMinInstanceCount_Integer
+        public class ClusterInstanceGroup : Humidifier.Base.BaseSubResource, IHaveSageMakerClusterTypesClusterSlurmConfigSlurmConfig, IHaveSageMakerClusterTypesClusterCapacityRequirementsCapacityRequirements, IHaveInstanceGroupName, IHaveListOfSageMakerClusterTypesClusterInstanceStorageConfigInstanceStorageConfigs, IHaveSageMakerClusterTypesClusterKubernetesConfigKubernetesConfig, IHaveSageMakerClusterTypesClusterNetworkInterfaceNetworkInterface, IHaveSageMakerClusterTypesClusterLifeCycleConfigLifeCycleConfig, IHaveTrainingPlanArn, IHaveThreadsPerCore_Integer, IHaveSageMakerClusterTypesVpcConfigOverrideVpcConfig, IHaveInstanceCount_Integer, IHaveStringListOfOnStartDeepHealthChecks, IHaveImageId, IHaveCurrentCount_Integer, IHaveSageMakerClusterTypesScheduledUpdateConfigScheduledUpdateConfig, IHaveSageMakerClusterTypesInstanceRequirementsInstanceRequirements, IHaveInstanceType, IHaveSageMakerClusterTypesAutoPatchConfigAutoPatchConfig, IHaveImageReleaseVersion, IHaveExecutionRole, IHaveMinInstanceCount_Integer
         {
             /// <summary>
             /// SlurmConfig
@@ -470,6 +470,14 @@ namespace Humidifier.SageMaker
             /// Type: AutoPatchConfig
             /// </summary>
             public Union<Humidifier.SageMaker.ClusterTypes.AutoPatchConfig, BaseFunction>? AutoPatchConfig { get; set; }
+            /// <summary>
+            /// ImageReleaseVersion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-clusterinstancegroup.html#cfn-sagemaker-cluster-clusterinstancegroup-imagereleaseversion
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ImageReleaseVersion { get; set; }
             /// <summary>
             /// ExecutionRole
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-cluster-clusterinstancegroup.html#cfn-sagemaker-cluster-clusterinstancegroup-executionrole
