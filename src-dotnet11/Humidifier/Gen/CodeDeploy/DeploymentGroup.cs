@@ -3,7 +3,7 @@ namespace Humidifier.CodeDeploy
     using global::System.Collections.Generic;
     using DeploymentGroupTypes;
 
-    public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveCodeDeployDeploymentGroupTypesOnPremisesTagSetOnPremisesTagSet, IHaveApplicationName, IHaveCodeDeployDeploymentGroupTypesDeploymentStyleDeploymentStyle, IHaveServiceRoleArn, IHaveCodeDeployDeploymentGroupTypesBlueGreenDeploymentConfigurationBlueGreenDeploymentConfiguration, IHaveStringListOfAutoScalingGroups, IHaveCodeDeployDeploymentGroupTypesEC2TagSetEc2TagSet, IHaveOutdatedInstancesStrategy, IHaveListOfCodeDeployDeploymentGroupTypesTriggerConfigTriggerConfigurations, IHaveCodeDeployDeploymentGroupTypesDeploymentDeployment, IHaveDeploymentConfigName, IHaveCodeDeployDeploymentGroupTypesAlarmConfigurationAlarmConfiguration, IHaveListOfCodeDeployDeploymentGroupTypesEC2TagFilterEc2TagFilters, IHaveTerminationHookEnabled_Boolean, IHaveListOfCodeDeployDeploymentGroupTypesECSServiceECSServices, IHaveCodeDeployDeploymentGroupTypesAutoRollbackConfigurationAutoRollbackConfiguration, IHaveCodeDeployDeploymentGroupTypesLoadBalancerInfoLoadBalancerInfo, IHaveDeploymentGroupName, IHaveListOfCodeDeployDeploymentGroupTypesTagFilterOnPremisesInstanceTagFilters
+    public class DeploymentGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveCodeDeployDeploymentGroupTypesOnPremisesTagSetOnPremisesTagSet, IHaveApplicationName, IHaveCodeDeployDeploymentGroupTypesDeploymentStyleDeploymentStyle, IHaveServiceRoleArn, IHaveCodeDeployDeploymentGroupTypesBlueGreenDeploymentConfigurationBlueGreenDeploymentConfiguration, IHaveStringListOfAutoScalingGroups, IHaveCodeDeployDeploymentGroupTypesEC2TagSetEc2TagSet, IHaveOutdatedInstancesStrategy, IHaveListOfCodeDeployDeploymentGroupTypesTriggerConfigTriggerConfigurations, IHaveCodeDeployDeploymentGroupTypesDeploymentDeployment, IHaveDeploymentConfigName, IHaveCodeDeployDeploymentGroupTypesAlarmConfigurationAlarmConfiguration, IHaveListOfCodeDeployDeploymentGroupTypesEC2TagFilterEc2TagFilters, IHaveTerminationHookEnabled_Boolean, IHaveCodeDeployDeploymentGroupTypesEc2DeploymentOptionsEc2DeploymentOptions, IHaveListOfCodeDeployDeploymentGroupTypesECSServiceECSServices, IHaveCodeDeployDeploymentGroupTypesAutoRollbackConfigurationAutoRollbackConfiguration, IHaveCodeDeployDeploymentGroupTypesLoadBalancerInfoLoadBalancerInfo, IHaveDeploymentGroupName, IHaveListOfCodeDeployDeploymentGroupTypesTagFilterOnPremisesInstanceTagFilters
     {
         public override string AWSTypeName { get => AWS.CodeDeploy.DeploymentGroup; }
         /// <summary>
@@ -125,6 +125,14 @@ namespace Humidifier.CodeDeploy
         /// PrimitiveType: Boolean
         /// </summary>
         public Union<bool, BaseFunction>? TerminationHookEnabled { get; set; }
+        /// <summary>
+        /// Ec2DeploymentOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2deploymentoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Ec2DeploymentOptions
+        /// </summary>
+        public Union<Humidifier.CodeDeploy.DeploymentGroupTypes.Ec2DeploymentOptions, BaseFunction>? Ec2DeploymentOptions { get; set; }
         /// <summary>
         /// ECSServices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices
@@ -435,6 +443,19 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Name { get; set; }
+        }
+
+        public class Ec2DeploymentOptions : Humidifier.Base.BaseSubResource, IHaveStringListOfAutoScalingGroupProcessesToSuspend
+        {
+            /// <summary>
+            /// AutoScalingGroupProcessesToSuspend
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2deploymentoptions.html#cfn-codedeploy-deploymentgroup-ec2deploymentoptions-autoscalinggroupprocessestosuspend
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AutoScalingGroupProcessesToSuspend { get; set; }
         }
 
         public class GitHubLocation : Humidifier.Base.BaseSubResource, IHaveRepository, IHaveCommitId

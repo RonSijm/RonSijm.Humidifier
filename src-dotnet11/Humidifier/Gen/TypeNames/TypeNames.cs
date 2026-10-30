@@ -128,6 +128,8 @@ public class AWS
     public class AppFabric
     {
         public const string AppAuthorization = "AWS::AppFabric::AppAuthorization";
+        public const string AppBundle = "AWS::AppFabric::AppBundle";
+        public const string Ingestion = "AWS::AppFabric::Ingestion";
         public const string IngestionDestination = "AWS::AppFabric::IngestionDestination";
     }
     public class AppFlow
@@ -554,17 +556,24 @@ public class AWS
     }
     public class CloudWatch
     {
+        public const string AccessGrant = "AWS::CloudWatch::AccessGrant";
+        public const string AccessProfile = "AWS::CloudWatch::AccessProfile";
         public const string Alarm = "AWS::CloudWatch::Alarm";
         public const string AlarmMuteRule = "AWS::CloudWatch::AlarmMuteRule";
         public const string AnomalyDetector = "AWS::CloudWatch::AnomalyDetector";
         public const string CompositeAlarm = "AWS::CloudWatch::CompositeAlarm";
         public const string Dashboard = "AWS::CloudWatch::Dashboard";
+        public const string Domain = "AWS::CloudWatch::Domain";
+        public const string DomainAccessGrantForOrganization = "AWS::CloudWatch::DomainAccessGrantForOrganization";
+        public const string DomainForOrganization = "AWS::CloudWatch::DomainForOrganization";
         public const string InsightRule = "AWS::CloudWatch::InsightRule";
         public const string Integration = "AWS::CloudWatch::Integration";
         public const string LogAlarm = "AWS::CloudWatch::LogAlarm";
         public const string MetricStream = "AWS::CloudWatch::MetricStream";
         public const string OTelEnrichment = "AWS::CloudWatch::OTelEnrichment";
+        public const string OmniDashboard = "AWS::CloudWatch::OmniDashboard";
         public const string ResourceMetricsConfiguration = "AWS::CloudWatch::ResourceMetricsConfiguration";
+        public const string Space = "AWS::CloudWatch::Space";
         public const string View = "AWS::CloudWatch::View";
     }
     public class CodeArtifact
@@ -973,6 +982,7 @@ public class AWS
         public const string IPAMResourceDiscoveryAssociation = "AWS::EC2::IPAMResourceDiscoveryAssociation";
         public const string IPAMScope = "AWS::EC2::IPAMScope";
         public const string IPv4Pool = "AWS::EC2::IPv4Pool";
+        public const string IPv6Pool = "AWS::EC2::IPv6Pool";
         public const string Image = "AWS::EC2::Image";
         public const string ImageUsageReport = "AWS::EC2::ImageUsageReport";
         public const string ImportImageTask = "AWS::EC2::ImportImageTask";
@@ -986,6 +996,7 @@ public class AWS
         public const string IpamInternetRegistryAssociation = "AWS::EC2::IpamInternetRegistryAssociation";
         public const string KeyPair = "AWS::EC2::KeyPair";
         public const string LaunchTemplate = "AWS::EC2::LaunchTemplate";
+        public const string LocalGateway = "AWS::EC2::LocalGateway";
         public const string LocalGatewayRoute = "AWS::EC2::LocalGatewayRoute";
         public const string LocalGatewayRouteTable = "AWS::EC2::LocalGatewayRouteTable";
         public const string LocalGatewayRouteTableVPCAssociation = "AWS::EC2::LocalGatewayRouteTableVPCAssociation";
@@ -1020,6 +1031,7 @@ public class AWS
         public const string SecurityGroupEgress = "AWS::EC2::SecurityGroupEgress";
         public const string SecurityGroupIngress = "AWS::EC2::SecurityGroupIngress";
         public const string SecurityGroupVpcAssociation = "AWS::EC2::SecurityGroupVpcAssociation";
+        public const string Snapshot = "AWS::EC2::Snapshot";
         public const string SnapshotBlockPublicAccess = "AWS::EC2::SnapshotBlockPublicAccess";
         public const string SpotFleet = "AWS::EC2::SpotFleet";
         public const string SpotInstancesRequest = "AWS::EC2::SpotInstancesRequest";
@@ -1532,6 +1544,7 @@ public class AWS
         public const string JobTemplate = "AWS::IoT::JobTemplate";
         public const string Logging = "AWS::IoT::Logging";
         public const string MitigationAction = "AWS::IoT::MitigationAction";
+        public const string OTAUpdate = "AWS::IoT::OTAUpdate";
         public const string Policy = "AWS::IoT::Policy";
         public const string PolicyPrincipalAttachment = "AWS::IoT::PolicyPrincipalAttachment";
         public const string ProvisioningTemplate = "AWS::IoT::ProvisioningTemplate";
@@ -1791,10 +1804,6 @@ public class AWS
     {
         public const string InferenceScheduler = "AWS::LookoutEquipment::InferenceScheduler";
     }
-    public class LookoutVision
-    {
-        public const string Project = "AWS::LookoutVision::Project";
-    }
     public class M2
     {
         public const string Application = "AWS::M2::Application";
@@ -1803,13 +1812,16 @@ public class AWS
     }
     public class MGN
     {
+        public const string Application = "AWS::MGN::Application";
         public const string Connector = "AWS::MGN::Connector";
         public const string Export = "AWS::MGN::Export";
         public const string Import = "AWS::MGN::Import";
         public const string Job = "AWS::MGN::Job";
         public const string LaunchConfigurationTemplate = "AWS::MGN::LaunchConfigurationTemplate";
         public const string NetworkMigrationDefinition = "AWS::MGN::NetworkMigrationDefinition";
+        public const string ReplicationConfigurationTemplate = "AWS::MGN::ReplicationConfigurationTemplate";
         public const string SourceServer = "AWS::MGN::SourceServer";
+        public const string Wave = "AWS::MGN::Wave";
     }
     public class MPA
     {
@@ -1859,6 +1871,7 @@ public class AWS
         public const string Bridge = "AWS::MediaConnect::Bridge";
         public const string BridgeOutput = "AWS::MediaConnect::BridgeOutput";
         public const string BridgeSource = "AWS::MediaConnect::BridgeSource";
+        public const string DestinationEndpoint = "AWS::MediaConnect::DestinationEndpoint";
         public const string Flow = "AWS::MediaConnect::Flow";
         public const string FlowEntitlement = "AWS::MediaConnect::FlowEntitlement";
         public const string FlowMediaStream = "AWS::MediaConnect::FlowMediaStream";
@@ -1871,6 +1884,7 @@ public class AWS
         public const string RouterInput = "AWS::MediaConnect::RouterInput";
         public const string RouterNetworkInterface = "AWS::MediaConnect::RouterNetworkInterface";
         public const string RouterOutput = "AWS::MediaConnect::RouterOutput";
+        public const string SourceEndpoint = "AWS::MediaConnect::SourceEndpoint";
     }
     public class MediaConvert
     {
@@ -1890,6 +1904,7 @@ public class AWS
         public const string EventBridgeRuleTemplate = "AWS::MediaLive::EventBridgeRuleTemplate";
         public const string EventBridgeRuleTemplateGroup = "AWS::MediaLive::EventBridgeRuleTemplateGroup";
         public const string Input = "AWS::MediaLive::Input";
+        public const string InputDevice = "AWS::MediaLive::InputDevice";
         public const string InputSecurityGroup = "AWS::MediaLive::InputSecurityGroup";
         public const string Multiplex = "AWS::MediaLive::Multiplex";
         public const string Multiplexprogram = "AWS::MediaLive::Multiplexprogram";
@@ -2005,6 +2020,7 @@ public class AWS
     public class NetworkMonitor
     {
         public const string Monitor = "AWS::NetworkMonitor::Monitor";
+        public const string Probe = "AWS::NetworkMonitor::Probe";
     }
     public class NetworkSecurityManager
     {
@@ -2177,6 +2193,7 @@ public class AWS
         public const string Filter = "AWS::Personalize::Filter";
         public const string MetricAttribution = "AWS::Personalize::MetricAttribution";
         public const string Recipe = "AWS::Personalize::Recipe";
+        public const string Recommender = "AWS::Personalize::Recommender";
         public const string Schema = "AWS::Personalize::Schema";
         public const string Solution = "AWS::Personalize::Solution";
     }
@@ -2727,6 +2744,7 @@ public class AWS
         public const string Pentest = "AWS::SecurityAgent::Pentest";
         public const string PentestJob = "AWS::SecurityAgent::PentestJob";
         public const string PentestTask = "AWS::SecurityAgent::PentestTask";
+        public const string PrivateConnection = "AWS::SecurityAgent::PrivateConnection";
         public const string SecurityRequirementPack = "AWS::SecurityAgent::SecurityRequirementPack";
         public const string TargetDomain = "AWS::SecurityAgent::TargetDomain";
     }

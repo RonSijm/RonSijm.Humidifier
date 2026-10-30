@@ -58,8 +58,16 @@ namespace Humidifier.Omics
             public Union<Humidifier.Omics.ConfigurationTypes.VpcConfig, BaseFunction>? VpcConfig { get; set; }
         }
 
-        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveStringListOfSecurityGroupIds, IHaveStringListOfSubnetIds
+        public class VpcConfig : Humidifier.Base.BaseSubResource, IHaveVpcOwnerAccountId, IHaveStringListOfSecurityGroupIds, IHaveStringListOfSubnetIds
         {
+            /// <summary>
+            /// VpcOwnerAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-configuration-vpcconfig.html#cfn-omics-configuration-vpcconfig-vpcowneraccountid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? VpcOwnerAccountId { get; set; }
             /// <summary>
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-omics-configuration-vpcconfig.html#cfn-omics-configuration-vpcconfig-securitygroupids

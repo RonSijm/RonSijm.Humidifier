@@ -135,6 +135,54 @@ namespace Humidifier.SecurityAgent
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? LambdaFunctionArns { get; set; }
         }
 
+        public class AzureDevOpsCapabilitiesResource : Humidifier.Base.BaseSubResource, IHaveRemediateCode_Boolean, IHaveLeaveComments_Boolean
+        {
+            /// <summary>
+            /// RemediateCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-azuredevopscapabilitiesresource.html#cfn-securityagent-agentspace-azuredevopscapabilitiesresource-remediatecode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? RemediateCode { get; set; }
+            /// <summary>
+            /// LeaveComments
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-azuredevopscapabilitiesresource.html#cfn-securityagent-agentspace-azuredevopscapabilitiesresource-leavecomments
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? LeaveComments { get; set; }
+        }
+
+        public class AzureDevOpsRepositoryResource : Humidifier.Base.BaseSubResource, IHaveProject, IHaveOrganization, IHaveName
+        {
+            /// <summary>
+            /// Project
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-azuredevopsrepositoryresource.html#cfn-securityagent-agentspace-azuredevopsrepositoryresource-project
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Project { get; set; }
+            /// <summary>
+            /// Organization
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-azuredevopsrepositoryresource.html#cfn-securityagent-agentspace-azuredevopsrepositoryresource-organization
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Organization { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-azuredevopsrepositoryresource.html#cfn-securityagent-agentspace-azuredevopsrepositoryresource-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Name { get; set; }
+        }
+
         public class BitbucketCapabilitiesResource : Humidifier.Base.BaseSubResource, IHaveRemediateCode_Boolean, IHaveLeaveComments_Boolean
         {
             /// <summary>
@@ -368,7 +416,7 @@ namespace Humidifier.SecurityAgent
             public Union<IReadOnlyList<Humidifier.SecurityAgent.AgentSpaceTypes.ProviderResource>, IReadOnlyList<Union<Humidifier.SecurityAgent.AgentSpaceTypes.ProviderResource, BaseFunction>>, BaseFunction>? ProviderResources { get; set; }
         }
 
-        public class ProviderResource : Humidifier.Base.BaseSubResource, IHaveSecurityAgentAgentSpaceTypesBitbucketCapabilitiesResourceBitbucketCapabilities, IHaveSecurityAgentAgentSpaceTypesGitLabCapabilitiesResourceGitLabCapabilities, IHaveSecurityAgentAgentSpaceTypesBitbucketRepositoryResourceBitbucketRepository, IHaveSecurityAgentAgentSpaceTypesConfluenceCapabilitiesResourceConfluenceCapabilities, IHaveSecurityAgentAgentSpaceTypesGitLabRepositoryResourceGitLabRepository, IHaveSecurityAgentAgentSpaceTypesConfluenceDocumentResourceConfluenceDocument, IHaveSecurityAgentAgentSpaceTypesGitHubRepositoryResourceGitHubRepository, IHaveSecurityAgentAgentSpaceTypesGitHubCapabilitiesResourceGitHubCapabilities
+        public class ProviderResource : Humidifier.Base.BaseSubResource, IHaveSecurityAgentAgentSpaceTypesBitbucketCapabilitiesResourceBitbucketCapabilities, IHaveSecurityAgentAgentSpaceTypesGitLabCapabilitiesResourceGitLabCapabilities, IHaveSecurityAgentAgentSpaceTypesAzureDevOpsRepositoryResourceAzureDevOpsRepository, IHaveSecurityAgentAgentSpaceTypesAzureDevOpsCapabilitiesResourceAzureDevOpsCapabilities, IHaveSecurityAgentAgentSpaceTypesBitbucketRepositoryResourceBitbucketRepository, IHaveSecurityAgentAgentSpaceTypesConfluenceCapabilitiesResourceConfluenceCapabilities, IHaveSecurityAgentAgentSpaceTypesGitLabRepositoryResourceGitLabRepository, IHaveSecurityAgentAgentSpaceTypesConfluenceDocumentResourceConfluenceDocument, IHaveSecurityAgentAgentSpaceTypesGitHubRepositoryResourceGitHubRepository, IHaveSecurityAgentAgentSpaceTypesGitHubCapabilitiesResourceGitHubCapabilities
         {
             /// <summary>
             /// BitbucketCapabilities
@@ -386,6 +434,22 @@ namespace Humidifier.SecurityAgent
             /// Type: GitLabCapabilitiesResource
             /// </summary>
             public Union<Humidifier.SecurityAgent.AgentSpaceTypes.GitLabCapabilitiesResource, BaseFunction>? GitLabCapabilities { get; set; }
+            /// <summary>
+            /// AzureDevOpsRepository
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-providerresource.html#cfn-securityagent-agentspace-providerresource-azuredevopsrepository
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AzureDevOpsRepositoryResource
+            /// </summary>
+            public Union<Humidifier.SecurityAgent.AgentSpaceTypes.AzureDevOpsRepositoryResource, BaseFunction>? AzureDevOpsRepository { get; set; }
+            /// <summary>
+            /// AzureDevOpsCapabilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-providerresource.html#cfn-securityagent-agentspace-providerresource-azuredevopscapabilities
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AzureDevOpsCapabilitiesResource
+            /// </summary>
+            public Union<Humidifier.SecurityAgent.AgentSpaceTypes.AzureDevOpsCapabilitiesResource, BaseFunction>? AzureDevOpsCapabilities { get; set; }
             /// <summary>
             /// BitbucketRepository
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityagent-agentspace-providerresource.html#cfn-securityagent-agentspace-providerresource-bitbucketrepository

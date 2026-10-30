@@ -126,6 +126,14 @@ namespace Humidifier.CodeDeploy
         /// </summary>
         public dynamic TerminationHookEnabled { get; set; }
         /// <summary>
+        /// Ec2DeploymentOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2deploymentoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Ec2DeploymentOptions
+        /// </summary>
+        public Humidifier.CodeDeploy.DeploymentGroupTypes.Ec2DeploymentOptions Ec2DeploymentOptions { get; set; }
+        /// <summary>
         /// ECSServices
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices
         /// Required: False
@@ -435,6 +443,19 @@ namespace Humidifier.CodeDeploy
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
+        }
+
+        public class Ec2DeploymentOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AutoScalingGroupProcessesToSuspend
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2deploymentoptions.html#cfn-codedeploy-deploymentgroup-ec2deploymentoptions-autoscalinggroupprocessestosuspend
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AutoScalingGroupProcessesToSuspend { get; set; }
         }
 
         public class GitHubLocation : Humidifier.Base.BaseSubResource, IHaveRepository, IHaveCommitId

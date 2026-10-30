@@ -47,6 +47,15 @@ namespace Humidifier.BedrockAgentCore
         /// </summary>
         public dynamic GatewayIdentifier { get; set; }
         /// <summary>
+        /// CertificateConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrockagentcore-gatewaytarget.html#cfn-bedrockagentcore-gatewaytarget-certificateconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: CertificateConfiguration
+        /// </summary>
+        public List<Humidifier.BedrockAgentCore.GatewayTargetTypes.CertificateConfiguration> CertificateConfigurations { get; set; }
+        /// <summary>
         /// MetadataConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrockagentcore-gatewaytarget.html#cfn-bedrockagentcore-gatewaytarget-metadataconfiguration
         /// Required: False
@@ -249,6 +258,26 @@ namespace Humidifier.BedrockAgentCore
             /// Type: OAuth2AuthorizationData
             /// </summary>
             public Humidifier.BedrockAgentCore.GatewayTargetTypes.OAuth2AuthorizationData Oauth2 { get; set; }
+        }
+
+        public class CertificateConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// S3
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewaytarget-certificateconfiguration.html#cfn-bedrockagentcore-gatewaytarget-certificateconfiguration-s3
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3CertificateConfiguration
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayTargetTypes.S3CertificateConfiguration S3 { get; set; }
+            /// <summary>
+            /// SecretsManager
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewaytarget-certificateconfiguration.html#cfn-bedrockagentcore-gatewaytarget-certificateconfiguration-secretsmanager
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SecretsManagerCertificateConfiguration
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayTargetTypes.SecretsManagerCertificateConfiguration SecretsManager { get; set; }
         }
 
         public class ConnectorConfiguration : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
@@ -1037,6 +1066,26 @@ namespace Humidifier.BedrockAgentCore
             public dynamic Arn { get; set; }
         }
 
+        public class S3CertificateConfiguration : Humidifier.Base.BaseSubResource, IHaveUri
+        {
+            /// <summary>
+            /// BucketOwnerAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewaytarget-s3certificateconfiguration.html#cfn-bedrockagentcore-gatewaytarget-s3certificateconfiguration-bucketowneraccountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic BucketOwnerAccountId { get; set; }
+            /// <summary>
+            /// Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewaytarget-s3certificateconfiguration.html#cfn-bedrockagentcore-gatewaytarget-s3certificateconfiguration-uri
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Uri { get; set; }
+        }
+
         public class S3Configuration : Humidifier.Base.BaseSubResource, IHaveUri
         {
             /// <summary>
@@ -1101,6 +1150,18 @@ namespace Humidifier.BedrockAgentCore
             /// ItemType: SchemaDefinition
             /// </summary>
             public Dictionary<string, Humidifier.BedrockAgentCore.GatewayTargetTypes.SchemaDefinition> Properties { get; set; }
+        }
+
+        public class SecretsManagerCertificateConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewaytarget-secretsmanagercertificateconfiguration.html#cfn-bedrockagentcore-gatewaytarget-secretsmanagercertificateconfiguration-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
         }
 
         public class SelfManagedLatticeResource : Humidifier.Base.BaseSubResource

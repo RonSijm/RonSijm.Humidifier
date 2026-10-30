@@ -402,8 +402,16 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? Arn { get; set; }
         }
 
-        public class MCPGatewayConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfSupportedVersions, IHaveInstructions, IHaveSearchType, IHaveBedrockAgentCoreGatewayTypesStreamingConfigurationStreamingConfiguration, IHaveBedrockAgentCoreGatewayTypesSessionConfigurationSessionConfiguration
+        public class MCPGatewayConfiguration : Humidifier.Base.BaseSubResource, IHaveDisableMcpListToolsPagination_Boolean, IHaveStringListOfSupportedVersions, IHaveInstructions, IHaveSearchType, IHaveBedrockAgentCoreGatewayTypesStreamingConfigurationStreamingConfiguration, IHaveBedrockAgentCoreGatewayTypesSessionConfigurationSessionConfiguration
         {
+            /// <summary>
+            /// DisableMcpListToolsPagination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gateway-mcpgatewayconfiguration.html#cfn-bedrockagentcore-gateway-mcpgatewayconfiguration-disablemcplisttoolspagination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? DisableMcpListToolsPagination { get; set; }
             /// <summary>
             /// SupportedVersions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gateway-mcpgatewayconfiguration.html#cfn-bedrockagentcore-gateway-mcpgatewayconfiguration-supportedversions

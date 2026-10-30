@@ -347,6 +347,14 @@ namespace Humidifier.RDS
         /// </summary>
         public dynamic ClusterScalabilityType { get; set; }
         /// <summary>
+        /// WithExpressConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-withexpressconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic WithExpressConfiguration { get; set; }
+        /// <summary>
         /// PreferredBackupWindow
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-preferredbackupwindow
         /// Required: False

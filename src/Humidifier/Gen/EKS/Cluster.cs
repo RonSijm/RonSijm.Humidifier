@@ -376,6 +376,14 @@ namespace Humidifier.EKS
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// GatewayApi
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-elasticloadbalancing.html#cfn-eks-cluster-elasticloadbalancing-gatewayapi
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayApi
+            /// </summary>
+            public Humidifier.EKS.ClusterTypes.GatewayApi GatewayApi { get; set; }
         }
 
         public class EncryptionConfig : Humidifier.Base.BaseSubResource, IHaveResources
@@ -409,6 +417,30 @@ namespace Humidifier.EKS
             /// PrimitiveType: String
             /// </summary>
             public dynamic SpreadLevel { get; set; }
+        }
+
+        public class GatewayApi : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Crds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-gatewayapi.html#cfn-eks-cluster-gatewayapi-crds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GatewayApiCrds
+            /// </summary>
+            public Humidifier.EKS.ClusterTypes.GatewayApiCrds Crds { get; set; }
+        }
+
+        public class GatewayApiCrds : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Managed
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-gatewayapicrds.html#cfn-eks-cluster-gatewayapicrds-managed
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Managed { get; set; }
         }
 
         public class HorizontalPodAutoscalerControllerConfig : Humidifier.Base.BaseSubResource

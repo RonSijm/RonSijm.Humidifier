@@ -489,6 +489,74 @@ namespace Humidifier.CleanRooms
             public Humidifier.CleanRooms.ConfiguredTableTypes.AnalysisRuleCustom Custom { get; set; }
         }
 
+        public class DatabricksConnectionType : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// DeltaSharing
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databricksconnectiontype.html#cfn-cleanrooms-configuredtable-databricksconnectiontype-deltasharing
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DatabricksDeltaSharingConnection
+            /// </summary>
+            public Humidifier.CleanRooms.ConfiguredTableTypes.DatabricksDeltaSharingConnection DeltaSharing { get; set; }
+        }
+
+        public class DatabricksDeltaSharingConnection : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ShareName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databricksdeltasharingconnection.html#cfn-cleanrooms-configuredtable-databricksdeltasharingconnection-sharename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ShareName { get; set; }
+            /// <summary>
+            /// DeltaShareEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databricksdeltasharingconnection.html#cfn-cleanrooms-configuredtable-databricksdeltasharingconnection-deltashareendpoint
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DeltaShareEndpoint { get; set; }
+        }
+
+        public class DatabricksTableReference : Humidifier.Base.BaseSubResource, IHaveTableName, IHaveSchemaName
+        {
+            /// <summary>
+            /// TableName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databrickstablereference.html#cfn-cleanrooms-configuredtable-databrickstablereference-tablename
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TableName { get; set; }
+            /// <summary>
+            /// ConnectionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databrickstablereference.html#cfn-cleanrooms-configuredtable-databrickstablereference-connectiontype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: DatabricksConnectionType
+            /// </summary>
+            public Humidifier.CleanRooms.ConfiguredTableTypes.DatabricksConnectionType ConnectionType { get; set; }
+            /// <summary>
+            /// WorkspaceUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databrickstablereference.html#cfn-cleanrooms-configuredtable-databrickstablereference-workspaceurl
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WorkspaceUrl { get; set; }
+            /// <summary>
+            /// SchemaName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-databrickstablereference.html#cfn-cleanrooms-configuredtable-databrickstablereference-schemaname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SchemaName { get; set; }
+        }
+
         public class DifferentialPrivacy : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -665,6 +733,14 @@ namespace Humidifier.CleanRooms
             /// Type: SnowflakeTableReference
             /// </summary>
             public Humidifier.CleanRooms.ConfiguredTableTypes.SnowflakeTableReference Snowflake { get; set; }
+            /// <summary>
+            /// Databricks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-tablereference.html#cfn-cleanrooms-configuredtable-tablereference-databricks
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DatabricksTableReference
+            /// </summary>
+            public Humidifier.CleanRooms.ConfiguredTableTypes.DatabricksTableReference Databricks { get; set; }
             /// <summary>
             /// Athena
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-configuredtable-tablereference.html#cfn-cleanrooms-configuredtable-tablereference-athena

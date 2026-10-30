@@ -366,7 +366,7 @@ namespace Humidifier.EKS
             public Union<string, BaseFunction>? Tier { get; set; }
         }
 
-        public class ElasticLoadBalancing : Humidifier.Base.BaseSubResource, IHaveEnabled_Boolean
+        public class ElasticLoadBalancing : Humidifier.Base.BaseSubResource, IHaveEnabled_Boolean, IHaveEKSClusterTypesGatewayApiGatewayApi
         {
             /// <summary>
             /// Enabled
@@ -376,6 +376,14 @@ namespace Humidifier.EKS
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? Enabled { get; set; }
+            /// <summary>
+            /// GatewayApi
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-elasticloadbalancing.html#cfn-eks-cluster-elasticloadbalancing-gatewayapi
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayApi
+            /// </summary>
+            public Union<Humidifier.EKS.ClusterTypes.GatewayApi, BaseFunction>? GatewayApi { get; set; }
         }
 
         public class EncryptionConfig : Humidifier.Base.BaseSubResource, IHaveStringListOfResources, IHaveEKSClusterTypesProviderProvider
@@ -409,6 +417,30 @@ namespace Humidifier.EKS
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SpreadLevel { get; set; }
+        }
+
+        public class GatewayApi : Humidifier.Base.BaseSubResource, IHaveEKSClusterTypesGatewayApiCrdsCrds
+        {
+            /// <summary>
+            /// Crds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-gatewayapi.html#cfn-eks-cluster-gatewayapi-crds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GatewayApiCrds
+            /// </summary>
+            public Union<Humidifier.EKS.ClusterTypes.GatewayApiCrds, BaseFunction>? Crds { get; set; }
+        }
+
+        public class GatewayApiCrds : Humidifier.Base.BaseSubResource, IHaveManaged_Boolean
+        {
+            /// <summary>
+            /// Managed
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-gatewayapicrds.html#cfn-eks-cluster-gatewayapicrds-managed
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Managed { get; set; }
         }
 
         public class HorizontalPodAutoscalerControllerConfig : Humidifier.Base.BaseSubResource, IHaveHorizontalPodAutoscalerSyncPeriod

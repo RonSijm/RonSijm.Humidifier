@@ -8,6 +8,7 @@ namespace Humidifier.MediaConnect
         public class Attributes
         {
             public static string InputType =  "InputType" ;
+            public static string AssociatedDestinationEndpointArns =  "AssociatedDestinationEndpointArns" ;
             public static string State =  "State" ;
             public static string CreatedAt =  "CreatedAt" ;
             public static string ContentQualityAnalysisType =  "ContentQualityAnalysisType" ;
@@ -160,6 +161,66 @@ namespace Humidifier.MediaConnect
             /// Type: FrozenFramesConfiguration
             /// </summary>
             public Humidifier.MediaConnect.RouterInputTypes.FrozenFramesConfiguration FrozenFrames { get; set; }
+        }
+
+        public class DestinationEndpointRouterInputConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SourceTransitDecryptionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-destinationendpointrouterinputconfiguration.html#cfn-mediaconnect-routerinput-destinationendpointrouterinputconfiguration-sourcetransitdecryptiontype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceTransitDecryptionType { get; set; }
+            /// <summary>
+            /// SourceTransitDecryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-destinationendpointrouterinputconfiguration.html#cfn-mediaconnect-routerinput-destinationendpointrouterinputconfiguration-sourcetransitdecryption
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: EndpointEncryptionConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.RouterInputTypes.EndpointEncryptionConfiguration SourceTransitDecryption { get; set; }
+            /// <summary>
+            /// EndpointLifecycleManagement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-destinationendpointrouterinputconfiguration.html#cfn-mediaconnect-routerinput-destinationendpointrouterinputconfiguration-endpointlifecyclemanagement
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndpointLifecycleManagement { get; set; }
+        }
+
+        public class EndpointEncryptionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SecretsManager
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-endpointencryptionconfiguration.html#cfn-mediaconnect-routerinput-endpointencryptionconfiguration-secretsmanager
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SecretsManagerEndpointEncryptionConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.RouterInputTypes.SecretsManagerEndpointEncryptionConfiguration SecretsManager { get; set; }
+            /// <summary>
+            /// Automatic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-endpointencryptionconfiguration.html#cfn-mediaconnect-routerinput-endpointencryptionconfiguration-automatic
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Automatic { get; set; }
+        }
+
+        public class EndpointEncryptionSecretConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-endpointencryptionsecretconfiguration.html#cfn-mediaconnect-routerinput-endpointencryptionsecretconfiguration-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SecretArn { get; set; }
         }
 
         public class FailoverRouterInputConfiguration : Humidifier.Base.BaseSubResource
@@ -547,6 +608,14 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public Humidifier.MediaConnect.RouterInputTypes.MergeRouterInputConfiguration Merge { get; set; }
             /// <summary>
+            /// DestinationEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputconfiguration.html#cfn-mediaconnect-routerinput-routerinputconfiguration-destinationendpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DestinationEndpointRouterInputConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.RouterInputTypes.DestinationEndpointRouterInputConfiguration DestinationEndpoint { get; set; }
+            /// <summary>
             /// MediaLiveChannel
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputconfiguration.html#cfn-mediaconnect-routerinput-routerinputconfiguration-medialivechannel
             /// Required: False
@@ -678,6 +747,26 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
+        }
+
+        public class SecretsManagerEndpointEncryptionConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// EncryptionSecretType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-secretsmanagerendpointencryptionconfiguration.html#cfn-mediaconnect-routerinput-secretsmanagerendpointencryptionconfiguration-encryptionsecrettype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionSecretType { get; set; }
+            /// <summary>
+            /// EncryptionSecret
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-secretsmanagerendpointencryptionconfiguration.html#cfn-mediaconnect-routerinput-secretsmanagerendpointencryptionconfiguration-encryptionsecret
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: EndpointEncryptionSecretConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.RouterInputTypes.EndpointEncryptionSecretConfiguration EncryptionSecret { get; set; }
         }
 
         public class SilentAudioConfiguration : Humidifier.Base.BaseSubResource, IHaveState

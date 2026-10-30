@@ -405,6 +405,14 @@ namespace Humidifier.BedrockAgentCore
         public class MCPGatewayConfiguration : Humidifier.Base.BaseSubResource, IHaveInstructions
         {
             /// <summary>
+            /// DisableMcpListToolsPagination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gateway-mcpgatewayconfiguration.html#cfn-bedrockagentcore-gateway-mcpgatewayconfiguration-disablemcplisttoolspagination
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DisableMcpListToolsPagination { get; set; }
+            /// <summary>
             /// SupportedVersions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gateway-mcpgatewayconfiguration.html#cfn-bedrockagentcore-gateway-mcpgatewayconfiguration-supportedversions
             /// Required: False

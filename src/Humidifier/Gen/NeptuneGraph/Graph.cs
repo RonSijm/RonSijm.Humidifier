@@ -7,20 +7,14 @@ namespace Humidifier.NeptuneGraph
     {
         public class Attributes
         {
+            public static string Status =  "Status" ;
             public static string Endpoint =  "Endpoint" ;
             public static string GraphArn =  "GraphArn" ;
             public static string GraphId =  "GraphId" ;
+            public static string CreateTime =  "CreateTime" ;
         }
 
         public override string AWSTypeName { get => AWS.NeptuneGraph.Graph; }
-        /// <summary>
-        /// PublicConnectivity
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-publicconnectivity
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public dynamic PublicConnectivity { get; set; }
         /// <summary>
         /// KmsKeyIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-kmskeyidentifier
@@ -29,6 +23,14 @@ namespace Humidifier.NeptuneGraph
         /// PrimitiveType: String
         /// </summary>
         public dynamic KmsKeyIdentifier { get; set; }
+        /// <summary>
+        /// PublicConnectivity
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-publicconnectivity
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic PublicConnectivity { get; set; }
         public dynamic GraphName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ImportTask

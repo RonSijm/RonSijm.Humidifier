@@ -3,7 +3,7 @@ namespace Humidifier.QuickSight
     using global::System.Collections.Generic;
     using ApprovalPolicyTypes;
 
-    public class ApprovalPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription
+    public class ApprovalPolicy : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveDescription, IHaveActions
     {
         public class Attributes
         {
@@ -30,10 +30,10 @@ namespace Humidifier.QuickSight
         /// Required: True
         /// UpdateType: Mutable
         /// Type: List
-        /// PrimitiveItemType: Json
+        /// PrimitiveItemType: String
         /// </summary>
         [Required]
-        public List<dynamic> AssetTypes { get; set; }
+        public dynamic AssetTypes { get; set; }
         /// <summary>
         /// Description
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-approvalpolicy.html#cfn-quicksight-approvalpolicy-description
@@ -49,10 +49,10 @@ namespace Humidifier.QuickSight
         /// Required: True
         /// UpdateType: Mutable
         /// Type: List
-        /// PrimitiveItemType: Json
+        /// PrimitiveItemType: String
         /// </summary>
         [Required]
-        public List<dynamic> Actions { get; set; }
+        public dynamic Actions { get; set; }
 
         /// <summary>
         /// ApprovalGroups
@@ -95,7 +95,7 @@ namespace Humidifier.QuickSight
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-approvalpolicy-applicableto.html#cfn-quicksight-approvalpolicy-applicableto-type
             /// Required: True
             /// UpdateType: Mutable
-            /// PrimitiveType: Json
+            /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
         }

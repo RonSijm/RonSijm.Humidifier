@@ -10,6 +10,7 @@ namespace Humidifier.DocDB
             public static string ClusterResourceId =  "ClusterResourceId" ;
             public static string Endpoint =  "Endpoint" ;
             public static string Port =  "Port" ;
+            public static string ServerlessV2PlatformVersion =  "ServerlessV2PlatformVersion" ;
             public static string ReadEndpoint =  "ReadEndpoint" ;
         }
 

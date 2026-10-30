@@ -3,24 +3,18 @@ namespace Humidifier.NeptuneGraph
     using global::System.Collections.Generic;
     using GraphTypes;
 
-    public class Graph : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHavePublicConnectivity_Boolean, IHaveKmsKeyIdentifier, IHaveGraphName, IHaveNeptuneGraphGraphTypesImportTaskImportTask, IHaveReplicaCount_Integer, IHaveProvisionedMemory_Integer, IHaveDeletionProtection_Boolean, IHaveNeptuneGraphGraphTypesVectorSearchConfigurationVectorSearchConfiguration
+    public class Graph : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveKmsKeyIdentifier, IHavePublicConnectivity_Boolean, IHaveGraphName, IHaveNeptuneGraphGraphTypesImportTaskImportTask, IHaveReplicaCount_Integer, IHaveProvisionedMemory_Integer, IHaveDeletionProtection_Boolean, IHaveNeptuneGraphGraphTypesVectorSearchConfigurationVectorSearchConfiguration
     {
         public class Attributes
         {
+            public static string Status =  "Status" ;
             public static string Endpoint =  "Endpoint" ;
             public static string GraphArn =  "GraphArn" ;
             public static string GraphId =  "GraphId" ;
+            public static string CreateTime =  "CreateTime" ;
         }
 
         public override string AWSTypeName { get => AWS.NeptuneGraph.Graph; }
-        /// <summary>
-        /// PublicConnectivity
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-publicconnectivity
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
-        /// </summary>
-        public Union<bool, BaseFunction>? PublicConnectivity { get; set; }
         /// <summary>
         /// KmsKeyIdentifier
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-kmskeyidentifier
@@ -29,6 +23,14 @@ namespace Humidifier.NeptuneGraph
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? KmsKeyIdentifier { get; set; }
+        /// <summary>
+        /// PublicConnectivity
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptunegraph-graph.html#cfn-neptunegraph-graph-publicconnectivity
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? PublicConnectivity { get; set; }
         public Union<string, BaseFunction>? GraphName { get => GivenName; set => GivenName = value; }
         /// <summary>
         /// ImportTask

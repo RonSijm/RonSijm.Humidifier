@@ -50,6 +50,15 @@ namespace Humidifier.OpenSearchService
         /// </summary>
         public Humidifier.OpenSearchService.DomainTypes.NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
         /// <summary>
+        /// AcceptedWarnings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-acceptedwarnings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic AcceptedWarnings { get; set; }
+        /// <summary>
         /// DomainEndpointOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainendpointoptions
         /// Required: False
@@ -590,7 +599,7 @@ namespace Humidifier.OpenSearchService
             public dynamic VolumeSize { get; set; }
         }
 
-        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveKmsKeyId
+        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveKmsKeyId, IHaveEncryptionMode
         {
             /// <summary>
             /// KmsKeyId
@@ -608,6 +617,14 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
+            /// <summary>
+            /// EncryptionMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-encryptionmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionMode { get; set; }
         }
 
         public class IAMFederationOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveSubjectKey, IHaveRolesKey

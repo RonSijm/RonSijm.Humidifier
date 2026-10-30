@@ -54,7 +54,7 @@ namespace Humidifier.KafkaConnect
         /// WorkerConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-workerconfiguration
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: WorkerConfiguration
         /// </summary>
         public Union<Humidifier.KafkaConnect.ConnectorTypes.WorkerConfiguration, BaseFunction>? WorkerConfiguration { get; set; }
@@ -132,7 +132,7 @@ namespace Humidifier.KafkaConnect
         /// Plugins
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-plugins
         /// Required: True
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Plugin
         /// </summary>
@@ -260,7 +260,7 @@ namespace Humidifier.KafkaConnect
             /// CustomPluginArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-customplugin.html#cfn-kafkaconnect-connector-customplugin-custompluginarn
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? CustomPluginArn { get; set; }
@@ -268,7 +268,7 @@ namespace Humidifier.KafkaConnect
             /// Revision
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-customplugin.html#cfn-kafkaconnect-connector-customplugin-revision
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Long
             /// </summary>
             public Union<long, BaseFunction>? Revision { get; set; }
@@ -348,7 +348,7 @@ namespace Humidifier.KafkaConnect
             /// CustomPlugin
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-plugin.html#cfn-kafkaconnect-connector-plugin-customplugin
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// Type: CustomPlugin
             /// </summary>
             public Union<Humidifier.KafkaConnect.ConnectorTypes.CustomPlugin, BaseFunction>? CustomPlugin { get; set; }
@@ -454,7 +454,7 @@ namespace Humidifier.KafkaConnect
             /// Revision
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: Long
             /// </summary>
             public Union<long, BaseFunction>? Revision { get; set; }
@@ -462,7 +462,7 @@ namespace Humidifier.KafkaConnect
             /// WorkerConfigurationArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? WorkerConfigurationArn { get; set; }

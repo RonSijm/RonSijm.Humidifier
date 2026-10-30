@@ -1648,7 +1648,7 @@ namespace Humidifier.Lex
             /// <summary>
             /// PromptSpecification
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-promptspecification
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: PromptSpecification
             /// </summary>
@@ -3304,7 +3304,7 @@ namespace Humidifier.Lex
             /// <summary>
             /// WaitingResponse
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-waitingresponse
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: ResponseSpecification
             /// </summary>
@@ -3328,7 +3328,7 @@ namespace Humidifier.Lex
             /// <summary>
             /// ContinueResponse
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-continueresponse
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: ResponseSpecification
             /// </summary>

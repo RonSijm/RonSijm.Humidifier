@@ -86,8 +86,28 @@ namespace Humidifier.BedrockAgentCore
             public Humidifier.BedrockAgentCore.GatewayRuleTypes.ConfigurationBundleAction ConfigurationBundle { get; set; }
         }
 
+        public class CircuitBreakerConfiguration : Humidifier.Base.BaseSubResource, IHaveMode
+        {
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-circuitbreakerconfiguration.html#cfn-bedrockagentcore-gatewayrule-circuitbreakerconfiguration-mode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Mode { get; set; }
+        }
+
         public class Condition : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// MatchModels
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-condition.html#cfn-bedrockagentcore-gatewayrule-condition-matchmodels
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MatchModels
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayRuleTypes.MatchModels MatchModels { get; set; }
             /// <summary>
             /// MatchPaths
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-condition.html#cfn-bedrockagentcore-gatewayrule-condition-matchpaths
@@ -146,6 +166,101 @@ namespace Humidifier.BedrockAgentCore
             public dynamic BundleArn { get; set; }
         }
 
+        public class Fallback : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TriggerOn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallback.html#cfn-bedrockagentcore-gatewayrule-fallback-triggeron
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FallbackTriggers
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayRuleTypes.FallbackTriggers TriggerOn { get; set; }
+            /// <summary>
+            /// FirstByteTimeoutMilliseconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallback.html#cfn-bedrockagentcore-gatewayrule-fallback-firstbytetimeoutmilliseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FirstByteTimeoutMilliseconds { get; set; }
+            /// <summary>
+            /// CircuitBreaker
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallback.html#cfn-bedrockagentcore-gatewayrule-fallback-circuitbreaker
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CircuitBreakerConfiguration
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayRuleTypes.CircuitBreakerConfiguration CircuitBreaker { get; set; }
+            /// <summary>
+            /// TargetFallback
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallback.html#cfn-bedrockagentcore-gatewayrule-fallback-targetfallback
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FallbackTarget
+            /// </summary>
+            public List<Humidifier.BedrockAgentCore.GatewayRuleTypes.FallbackTarget> TargetFallback { get; set; }
+        }
+
+        public class FallbackTarget : Humidifier.Base.BaseSubResource, IHaveModel, IHaveTargetName
+        {
+            /// <summary>
+            /// TriggerOn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallbacktarget.html#cfn-bedrockagentcore-gatewayrule-fallbacktarget-triggeron
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FallbackTriggers
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayRuleTypes.FallbackTriggers TriggerOn { get; set; }
+            /// <summary>
+            /// FirstByteTimeoutMilliseconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallbacktarget.html#cfn-bedrockagentcore-gatewayrule-fallbacktarget-firstbytetimeoutmilliseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FirstByteTimeoutMilliseconds { get; set; }
+            /// <summary>
+            /// Model
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallbacktarget.html#cfn-bedrockagentcore-gatewayrule-fallbacktarget-model
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Model { get; set; }
+            /// <summary>
+            /// TargetName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallbacktarget.html#cfn-bedrockagentcore-gatewayrule-fallbacktarget-targetname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetName { get; set; }
+        }
+
+        public class FallbackTriggers : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Errors
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallbacktriggers.html#cfn-bedrockagentcore-gatewayrule-fallbacktriggers-errors
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Errors { get; set; }
+            /// <summary>
+            /// StatusCodes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-fallbacktriggers.html#cfn-bedrockagentcore-gatewayrule-fallbacktriggers-statuscodes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic StatusCodes { get; set; }
+        }
+
         public class IamPrincipal : Humidifier.Base.BaseSubResource, IHaveArn, IHaveOperator
         {
             /// <summary>
@@ -164,6 +279,39 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic Arn { get; set; }
+        }
+
+        public class MatchModelEntry : Humidifier.Base.BaseSubResource, IHaveValue, IHaveOperator
+        {
+            /// <summary>
+            /// Operator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-matchmodelentry.html#cfn-bedrockagentcore-gatewayrule-matchmodelentry-operator
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Operator { get; set; }
+            /// <summary>
+            /// Value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-matchmodelentry.html#cfn-bedrockagentcore-gatewayrule-matchmodelentry-value
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Value { get; set; }
+        }
+
+        public class MatchModels : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AnyOf
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-matchmodels.html#cfn-bedrockagentcore-gatewayrule-matchmodels-anyof
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: MatchModelEntry
+            /// </summary>
+            public List<Humidifier.BedrockAgentCore.GatewayRuleTypes.MatchModelEntry> AnyOf { get; set; }
         }
 
         public class MatchPaths : Humidifier.Base.BaseSubResource
@@ -244,8 +392,24 @@ namespace Humidifier.BedrockAgentCore
             public dynamic BundleArn { get; set; }
         }
 
-        public class StaticRoute : Humidifier.Base.BaseSubResource, IHaveTargetName
+        public class StaticRoute : Humidifier.Base.BaseSubResource, IHaveModel, IHaveTargetName
         {
+            /// <summary>
+            /// Model
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-staticroute.html#cfn-bedrockagentcore-gatewayrule-staticroute-model
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Model { get; set; }
+            /// <summary>
+            /// Fallback
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-staticroute.html#cfn-bedrockagentcore-gatewayrule-staticroute-fallback
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Fallback
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayRuleTypes.Fallback Fallback { get; set; }
             /// <summary>
             /// TargetName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-staticroute.html#cfn-bedrockagentcore-gatewayrule-staticroute-targetname
@@ -268,7 +432,7 @@ namespace Humidifier.BedrockAgentCore
             public dynamic ManagedBy { get; set; }
         }
 
-        public class TargetTrafficSplitEntry : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveWeight, IHaveTargetName
+        public class TargetTrafficSplitEntry : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription, IHaveWeight, IHaveModel, IHaveTargetName
         {
             /// <summary>
             /// Description
@@ -278,6 +442,22 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic Description { get; set; }
+            /// <summary>
+            /// Model
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-targettrafficsplitentry.html#cfn-bedrockagentcore-gatewayrule-targettrafficsplitentry-model
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Model { get; set; }
+            /// <summary>
+            /// Fallback
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-targettrafficsplitentry.html#cfn-bedrockagentcore-gatewayrule-targettrafficsplitentry-fallback
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Fallback
+            /// </summary>
+            public Humidifier.BedrockAgentCore.GatewayRuleTypes.Fallback Fallback { get; set; }
             /// <summary>
             /// Metadata
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-gatewayrule-targettrafficsplitentry.html#cfn-bedrockagentcore-gatewayrule-targettrafficsplitentry-metadata

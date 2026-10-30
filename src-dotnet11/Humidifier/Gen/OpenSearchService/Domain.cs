@@ -3,7 +3,7 @@ namespace Humidifier.OpenSearchService
     using global::System.Collections.Generic;
     using DomainTypes;
 
-    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSkipShardMigrationWait_Boolean, IHaveEngineMode, IHaveOpenSearchServiceDomainTypesSnapshotOptionsSnapshotOptions, IHaveOpenSearchServiceDomainTypesNodeToNodeEncryptionOptionsNodeToNodeEncryptionOptions, IHaveOpenSearchServiceDomainTypesDomainEndpointOptionsDomainEndpointOptions, IHaveOpenSearchServiceDomainTypesCognitoOptionsCognitoOptions, IHaveStringDictionaryOfAdvancedOptions, IHaveIPAddressType, IHaveOpenSearchServiceDomainTypesEBSOptionsEBSOptions, IHaveEngineVersion, IHaveOpenSearchServiceDomainTypesSoftwareUpdateOptionsSoftwareUpdateOptions, IHaveDomainName, IHaveMapOfOpenSearchServiceDomainTypesLogPublishingOptionLogPublishingOptions, IHaveOpenSearchServiceDomainTypesAIMLOptionsAIMLOptions, IHaveOpenSearchServiceDomainTypesVPCOptionsVPCOptions, IHaveOpenSearchServiceDomainTypesAutomatedSnapshotPauseOptionsAutomatedSnapshotPauseOptions, IHaveUseCase, IHaveOpenSearchServiceDomainTypesDeploymentStrategyOptionsDeploymentStrategyOptions, IHaveAccessPolicies_Json, IHaveOpenSearchServiceDomainTypesAdvancedSecurityOptionsInputAdvancedSecurityOptions, IHaveOpenSearchServiceDomainTypesIdentityCenterOptionsIdentityCenterOptions, IHaveOpenSearchServiceDomainTypesEncryptionAtRestOptionsEncryptionAtRestOptions, IHaveOpenSearchServiceDomainTypesOffPeakWindowOptionsOffPeakWindowOptions, IHaveOpenSearchServiceDomainTypesClusterConfigClusterConfig
+    public class Domain : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveSkipShardMigrationWait_Boolean, IHaveEngineMode, IHaveOpenSearchServiceDomainTypesSnapshotOptionsSnapshotOptions, IHaveOpenSearchServiceDomainTypesNodeToNodeEncryptionOptionsNodeToNodeEncryptionOptions, IHaveStringListOfAcceptedWarnings, IHaveOpenSearchServiceDomainTypesDomainEndpointOptionsDomainEndpointOptions, IHaveOpenSearchServiceDomainTypesCognitoOptionsCognitoOptions, IHaveStringDictionaryOfAdvancedOptions, IHaveIPAddressType, IHaveOpenSearchServiceDomainTypesEBSOptionsEBSOptions, IHaveEngineVersion, IHaveOpenSearchServiceDomainTypesSoftwareUpdateOptionsSoftwareUpdateOptions, IHaveDomainName, IHaveMapOfOpenSearchServiceDomainTypesLogPublishingOptionLogPublishingOptions, IHaveOpenSearchServiceDomainTypesAIMLOptionsAIMLOptions, IHaveOpenSearchServiceDomainTypesVPCOptionsVPCOptions, IHaveOpenSearchServiceDomainTypesAutomatedSnapshotPauseOptionsAutomatedSnapshotPauseOptions, IHaveUseCase, IHaveOpenSearchServiceDomainTypesDeploymentStrategyOptionsDeploymentStrategyOptions, IHaveAccessPolicies_Json, IHaveOpenSearchServiceDomainTypesAdvancedSecurityOptionsInputAdvancedSecurityOptions, IHaveOpenSearchServiceDomainTypesIdentityCenterOptionsIdentityCenterOptions, IHaveOpenSearchServiceDomainTypesEncryptionAtRestOptionsEncryptionAtRestOptions, IHaveOpenSearchServiceDomainTypesOffPeakWindowOptionsOffPeakWindowOptions, IHaveOpenSearchServiceDomainTypesClusterConfigClusterConfig
     {
         public class Attributes
         {
@@ -49,6 +49,15 @@ namespace Humidifier.OpenSearchService
         /// Type: NodeToNodeEncryptionOptions
         /// </summary>
         public Union<Humidifier.OpenSearchService.DomainTypes.NodeToNodeEncryptionOptions, BaseFunction>? NodeToNodeEncryptionOptions { get; set; }
+        /// <summary>
+        /// AcceptedWarnings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-acceptedwarnings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AcceptedWarnings { get; set; }
         /// <summary>
         /// DomainEndpointOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainendpointoptions
@@ -590,7 +599,7 @@ namespace Humidifier.OpenSearchService
             public Union<int, BaseFunction>? VolumeSize { get; set; }
         }
 
-        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveKmsKeyId, IHaveEnabled_Boolean
+        public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveKmsKeyId, IHaveEnabled_Boolean, IHaveEncryptionMode
         {
             /// <summary>
             /// KmsKeyId
@@ -608,6 +617,14 @@ namespace Humidifier.OpenSearchService
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? Enabled { get; set; }
+            /// <summary>
+            /// EncryptionMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-encryptionmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? EncryptionMode { get; set; }
         }
 
         public class IAMFederationOptions : Humidifier.Base.BaseSubResource, IHaveSubjectKey, IHaveRolesKey, IHaveEnabled_Boolean
