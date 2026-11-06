@@ -201,6 +201,23 @@ namespace Humidifier.ImageBuilder
             /// </summary>
             public Humidifier.ImageBuilder.ImageTypes.EcrConfiguration EcrConfiguration { get; set; }
             /// <summary>
+            /// ScanResultCondition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-scanresultcondition
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ScanResultCondition
+            /// </summary>
+            public Humidifier.ImageBuilder.ImageTypes.ScanResultCondition ScanResultCondition { get; set; }
+            /// <summary>
+            /// ImageScanningTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-imagescanningtypes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ImageScanningTypes { get; set; }
+            /// <summary>
             /// ImageScanningEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-imagescanningenabled
             /// Required: False
@@ -264,6 +281,26 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic Patch { get; set; }
+        }
+
+        public class ScanResultCondition : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FixAvailable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-scanresultcondition.html#cfn-imagebuilder-image-scanresultcondition-fixavailable
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic FixAvailable { get; set; }
+            /// <summary>
+            /// MaximumSeverityLabel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-scanresultcondition.html#cfn-imagebuilder-image-scanresultcondition-maximumseveritylabel
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MaximumSeverityLabel { get; set; }
         }
 
         public class WorkflowConfiguration : Humidifier.Base.BaseSubResource, IHaveParallelGroup, IHaveWorkflowArn, IHaveOnFailure

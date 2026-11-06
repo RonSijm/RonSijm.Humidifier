@@ -256,7 +256,7 @@ namespace Humidifier.Transfer
             public Union<string, BaseFunction>? SftpAuthenticationMethods { get; set; }
         }
 
-        public class ProtocolDetails : Humidifier.Base.BaseSubResource, IHaveStringListOfAs2Transports, IHavePassiveIp, IHaveSetStatOption, IHaveTlsSessionResumptionMode, IHaveTransferServerTypesProxyConfigProxyConfig
+        public class ProtocolDetails : Humidifier.Base.BaseSubResource, IHaveStringListOfAs2Transports, IHavePassiveIp, IHaveSetStatOption, IHaveListOfTransferServerTypesSftpPortWithOptionsSftpPorts, IHaveTlsSessionResumptionMode, IHaveTransferServerTypesProxyConfigProxyConfig
         {
             /// <summary>
             /// As2Transports
@@ -283,6 +283,15 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SetStatOption { get; set; }
+            /// <summary>
+            /// SftpPorts
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-sftpports
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: SftpPortWithOptions
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.Transfer.ServerTypes.SftpPortWithOptions>, IReadOnlyList<Union<Humidifier.Transfer.ServerTypes.SftpPortWithOptions, BaseFunction>>, BaseFunction>? SftpPorts { get; set; }
             /// <summary>
             /// TlsSessionResumptionMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-tlssessionresumptionmode
@@ -323,6 +332,26 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? DirectoryListingOptimization { get; set; }
+        }
+
+        public class SftpPortWithOptions : Humidifier.Base.BaseSubResource, IHaveCommunicationMode, IHaveSftpPort_Integer
+        {
+            /// <summary>
+            /// CommunicationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-sftpportwithoptions.html#cfn-transfer-server-sftpportwithoptions-communicationmode
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? CommunicationMode { get; set; }
+            /// <summary>
+            /// SftpPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-sftpportwithoptions.html#cfn-transfer-server-sftpportwithoptions-sftpport
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? SftpPort { get; set; }
         }
 
         public class WorkflowDetail : Humidifier.Base.BaseSubResource, IHaveWorkflowId, IHaveExecutionRole

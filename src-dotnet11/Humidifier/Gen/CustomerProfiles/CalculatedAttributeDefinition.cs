@@ -35,7 +35,7 @@ namespace Humidifier.CustomerProfiles
         /// AttributeDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-attributedetails
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// Type: AttributeDetails
         /// </summary>
         [Required]
@@ -45,7 +45,7 @@ namespace Humidifier.CustomerProfiles
         /// Statistic
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-statistic
         /// Required: True
-        /// UpdateType: Mutable
+        /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         [Required]
@@ -105,7 +105,7 @@ namespace Humidifier.CustomerProfiles
             /// Expression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-attributedetails.html#cfn-customerprofiles-calculatedattributedefinition-attributedetails-expression
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Expression { get; set; }
@@ -113,7 +113,7 @@ namespace Humidifier.CustomerProfiles
             /// Attributes_
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-attributedetails.html#cfn-customerprofiles-calculatedattributedefinition-attributedetails-attributes
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: AttributeItem
             /// </summary>
@@ -126,7 +126,7 @@ namespace Humidifier.CustomerProfiles
             /// Name
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-attributeitem.html#cfn-customerprofiles-calculatedattributedefinition-attributeitem-name
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Name { get; set; }

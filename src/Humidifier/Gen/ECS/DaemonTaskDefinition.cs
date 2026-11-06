@@ -600,6 +600,18 @@ namespace Humidifier.ECS
             public dynamic LogDriver { get; set; }
         }
 
+        public class LogDriverVolumeConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Driver
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-daemontaskdefinition-logdrivervolumeconfiguration.html#cfn-ecs-daemontaskdefinition-logdrivervolumeconfiguration-driver
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Driver { get; set; }
+        }
+
         public class MountPoint : Humidifier.Base.BaseSubResource, IHaveReadOnly, IHaveContainerPath, IHaveSourceVolume
         {
             /// <summary>
@@ -768,6 +780,14 @@ namespace Humidifier.ECS
 
         public class Volume : Humidifier.Base.BaseSubResource, IHaveName
         {
+            /// <summary>
+            /// LogDriverVolumeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-daemontaskdefinition-volume.html#cfn-ecs-daemontaskdefinition-volume-logdrivervolumeconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: LogDriverVolumeConfiguration
+            /// </summary>
+            public Humidifier.ECS.DaemonTaskDefinitionTypes.LogDriverVolumeConfiguration LogDriverVolumeConfiguration { get; set; }
             /// <summary>
             /// Host
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-daemontaskdefinition-volume.html#cfn-ecs-daemontaskdefinition-volume-host

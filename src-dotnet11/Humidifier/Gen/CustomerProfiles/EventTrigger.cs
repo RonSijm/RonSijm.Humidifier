@@ -3,7 +3,7 @@ namespace Humidifier.CustomerProfiles
     using global::System.Collections.Generic;
     using EventTriggerTypes;
 
-    public class EventTrigger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveCustomerProfilesEventTriggerTypesEventTriggerLimitsEventTriggerLimits, IHaveDescription, IHaveDomainName, IHaveObjectTypeName, IHaveSegmentFilter, IHaveListOfCustomerProfilesEventTriggerTypesEventTriggerConditionEventTriggerConditions, IHaveEventTriggerName
+    public class EventTrigger : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveCustomerProfilesEventTriggerTypesEventTriggerLimitsEventTriggerLimits, IHaveDescription, IHaveDomainName, IHaveObjectTypeName, IHaveSegmentFilter, IHaveListOfCustomerProfilesEventTriggerTypesEventTriggerConditionEventTriggerConditions, IHaveEventTriggerName, IHaveCustomerProfilesEventTriggerTypesIntentFilterDefinitionIntentFilterDefinition
     {
         public class Attributes
         {
@@ -68,6 +68,14 @@ namespace Humidifier.CustomerProfiles
         [Required]
         public Union<IReadOnlyList<Humidifier.CustomerProfiles.EventTriggerTypes.EventTriggerCondition>, IReadOnlyList<Union<Humidifier.CustomerProfiles.EventTriggerTypes.EventTriggerCondition, BaseFunction>>, BaseFunction>? EventTriggerConditions { get; set; }
         public Union<string, BaseFunction>? EventTriggerName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// IntentFilterDefinition
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-eventtrigger.html#cfn-customerprofiles-eventtrigger-intentfilterdefinition
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: IntentFilterDefinition
+        /// </summary>
+        public Union<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterDefinition, BaseFunction>? IntentFilterDefinition { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-eventtrigger.html#cfn-customerprofiles-eventtrigger-tags
@@ -134,6 +142,97 @@ namespace Humidifier.CustomerProfiles
             /// PrimitiveType: Long
             /// </summary>
             public Union<long, BaseFunction>? EventExpiration { get; set; }
+        }
+
+        public class Intent : Humidifier.Base.BaseSubResource, IHaveIntentDomain, IHaveType
+        {
+            /// <summary>
+            /// IntentDomain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intent.html#cfn-customerprofiles-eventtrigger-intent-intentdomain
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? IntentDomain { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intent.html#cfn-customerprofiles-eventtrigger-intent-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Type { get; set; }
+        }
+
+        public class IntentFilterCondition : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveStringListOfValues, IHaveCustomerProfilesEventTriggerTypesIntentIntent
+        {
+            /// <summary>
+            /// ComparisonOperator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfiltercondition.html#cfn-customerprofiles-eventtrigger-intentfiltercondition-comparisonoperator
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ComparisonOperator { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfiltercondition.html#cfn-customerprofiles-eventtrigger-intentfiltercondition-values
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
+            /// <summary>
+            /// Intent
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfiltercondition.html#cfn-customerprofiles-eventtrigger-intentfiltercondition-intent
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Intent
+            /// </summary>
+            public Union<Humidifier.CustomerProfiles.EventTriggerTypes.Intent, BaseFunction>? Intent { get; set; }
+        }
+
+        public class IntentFilterDefinition : Humidifier.Base.BaseSubResource, IHaveListOfCustomerProfilesEventTriggerTypesIntentFilterGroupGroups, IHaveLogicalOperator
+        {
+            /// <summary>
+            /// Groups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfilterdefinition.html#cfn-customerprofiles-eventtrigger-intentfilterdefinition-groups
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: IntentFilterGroup
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterGroup>, IReadOnlyList<Union<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterGroup, BaseFunction>>, BaseFunction>? Groups { get; set; }
+            /// <summary>
+            /// LogicalOperator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfilterdefinition.html#cfn-customerprofiles-eventtrigger-intentfilterdefinition-logicaloperator
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LogicalOperator { get; set; }
+        }
+
+        public class IntentFilterGroup : Humidifier.Base.BaseSubResource, IHaveLogicalOperator, IHaveListOfCustomerProfilesEventTriggerTypesIntentFilterConditionConditions
+        {
+            /// <summary>
+            /// LogicalOperator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfiltergroup.html#cfn-customerprofiles-eventtrigger-intentfiltergroup-logicaloperator
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LogicalOperator { get; set; }
+            /// <summary>
+            /// Conditions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-eventtrigger-intentfiltergroup.html#cfn-customerprofiles-eventtrigger-intentfiltergroup-conditions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: IntentFilterCondition
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterCondition>, IReadOnlyList<Union<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterCondition, BaseFunction>>, BaseFunction>? Conditions { get; set; }
         }
 
         public class ObjectAttribute : Humidifier.Base.BaseSubResource, IHaveComparisonOperator, IHaveStringListOfValues, IHaveFieldName, IHaveSource

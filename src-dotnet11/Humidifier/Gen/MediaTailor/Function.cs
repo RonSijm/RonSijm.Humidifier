@@ -100,7 +100,7 @@ namespace Humidifier.MediaTailor
 
     namespace FunctionTypes
     {
-        public class AwsServiceRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveTargetRegion, IHaveMethodType, IHaveRuntime, IHaveTargetService, IHaveRequestTimeoutMilliseconds_Integer, IHaveStringDictionaryOfHeaders, IHaveStringDictionaryOfOutput, IHaveBody, IHaveUrl
+        public class AwsServiceRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveTargetRegion, IHaveMethodType, IHaveRuntime, IHaveTargetService, IHaveRequestTimeoutMilliseconds_Integer, IHaveStringDictionaryOfHeaders, IHaveStringDictionaryOfOutput, IHaveBody, IHaveUrl, IHaveMediaTailorFunctionTypesHttpRequestCacheConfigurationCache
         {
             /// <summary>
             /// TargetRegion
@@ -176,6 +176,14 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Url { get; set; }
+            /// <summary>
+            /// Cache
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-awsservicerequestconfiguration.html#cfn-mediatailor-function-awsservicerequestconfiguration-cache
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HttpRequestCacheConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration, BaseFunction>? Cache { get; set; }
         }
 
         public class ConcurrentExecutorConfiguration : Humidifier.Base.BaseSubResource, IHaveRuntime, IHaveStringDictionaryOfOutput, IHaveListOfMediaTailorFunctionTypesFunctionRefFunctionList, IHaveMaxConcurrency_Integer, IHaveTimeoutMilliseconds_Integer
@@ -273,7 +281,35 @@ namespace Humidifier.MediaTailor
             public Union<string, BaseFunction>? Alias { get; set; }
         }
 
-        public class HttpRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveMethodType, IHaveRuntime, IHaveRequestTimeoutMilliseconds_Integer, IHaveStringDictionaryOfHeaders, IHaveStringDictionaryOfOutput, IHaveBody, IHaveUrl
+        public class HttpRequestCacheConfiguration : Humidifier.Base.BaseSubResource, IHaveTtlMinimumSeconds_Integer, IHaveTtlMaximumSeconds_Integer, IHaveKey
+        {
+            /// <summary>
+            /// TtlMinimumSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestcacheconfiguration.html#cfn-mediatailor-function-httprequestcacheconfiguration-ttlminimumseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? TtlMinimumSeconds { get; set; }
+            /// <summary>
+            /// TtlMaximumSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestcacheconfiguration.html#cfn-mediatailor-function-httprequestcacheconfiguration-ttlmaximumseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? TtlMaximumSeconds { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestcacheconfiguration.html#cfn-mediatailor-function-httprequestcacheconfiguration-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Key { get; set; }
+        }
+
+        public class HttpRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveMethodType, IHaveRuntime, IHaveRequestTimeoutMilliseconds_Integer, IHaveStringDictionaryOfHeaders, IHaveStringDictionaryOfOutput, IHaveBody, IHaveUrl, IHaveMediaTailorFunctionTypesHttpRequestCacheConfigurationCache
         {
             /// <summary>
             /// MethodType
@@ -333,6 +369,14 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Url { get; set; }
+            /// <summary>
+            /// Cache
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestconfiguration.html#cfn-mediatailor-function-httprequestconfiguration-cache
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HttpRequestCacheConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration, BaseFunction>? Cache { get; set; }
         }
 
         public class SequentialExecutorConfiguration : Humidifier.Base.BaseSubResource, IHaveRuntime, IHaveStringDictionaryOfOutput, IHaveListOfMediaTailorFunctionTypesFunctionRefFunctionList, IHaveTimeoutMilliseconds_Integer
@@ -373,7 +417,7 @@ namespace Humidifier.MediaTailor
             public Union<int, BaseFunction>? TimeoutMilliseconds { get; set; }
         }
 
-        public class VastRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveMethodType, IHaveRuntime, IHaveRequestTimeoutMilliseconds_Integer, IHaveStringDictionaryOfHeaders, IHaveStringDictionaryOfOutput, IHaveBody, IHaveUrl
+        public class VastRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveMethodType, IHaveRuntime, IHaveRequestTimeoutMilliseconds_Integer, IHaveStringDictionaryOfHeaders, IHaveStringDictionaryOfOutput, IHaveBody, IHaveUrl, IHaveMediaTailorFunctionTypesHttpRequestCacheConfigurationCache
         {
             /// <summary>
             /// MethodType
@@ -433,6 +477,14 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Url { get; set; }
+            /// <summary>
+            /// Cache
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-vastrequestconfiguration.html#cfn-mediatailor-function-vastrequestconfiguration-cache
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HttpRequestCacheConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration, BaseFunction>? Cache { get; set; }
         }
     }
 }

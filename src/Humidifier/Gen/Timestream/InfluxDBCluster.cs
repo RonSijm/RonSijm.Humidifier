@@ -3,14 +3,17 @@ namespace Humidifier.Timestream
     using global::System.Collections.Generic;
     using InfluxDBClusterTypes;
 
-    public class InfluxDBCluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePort, IHaveBucket, IHaveUsername, IHavePassword, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveNetworkType, IHaveDeploymentType, IHaveAllocatedStorage, IHaveVpcSubnetIds, IHaveOrganization, IHaveFailoverMode
+    public class InfluxDBCluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHavePort, IHaveKmsKeyId, IHaveBucket, IHaveUsername, IHavePassword, IHaveVpcSecurityGroupIds, IHavePubliclyAccessible, IHaveNetworkType, IHaveDeploymentType, IHaveAllocatedStorage, IHaveVpcSubnetIds, IHaveOrganization, IHaveFailoverMode
     {
         public class Attributes
         {
             public static string Status =  "Status" ;
             public static string Endpoint =  "Endpoint" ;
             public static string InfluxAuthParametersSecretArn =  "InfluxAuthParametersSecretArn" ;
+            public static string EffectiveDbParameterGroupIdentifier =  "EffectiveDbParameterGroupIdentifier" ;
             public static string NextMaintenanceTime =  "NextMaintenanceTime" ;
+            public static string MemberCount =  "MemberCount" ;
+            public static string MemberModeCounts =  "MemberModeCounts" ;
             public static string EngineType =  "EngineType" ;
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
@@ -34,6 +37,14 @@ namespace Humidifier.Timestream
         /// PrimitiveType: String
         /// </summary>
         public dynamic Organization { get; set; }
+        /// <summary>
+        /// KmsKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbcluster.html#cfn-timestream-influxdbcluster-kmskeyid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyId { get; set; }
         /// <summary>
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbcluster.html#cfn-timestream-influxdbcluster-port
@@ -200,6 +211,26 @@ namespace Humidifier.Timestream
             /// PrimitiveType: String
             /// </summary>
             public dynamic PreferredMaintenanceWindow { get; set; }
+        }
+
+        public class MemberModeCount : Humidifier.Base.BaseSubResource, IHaveMode, IHaveCount
+        {
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-influxdbcluster-membermodecount.html#cfn-timestream-influxdbcluster-membermodecount-mode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Mode { get; set; }
+            /// <summary>
+            /// Count
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-influxdbcluster-membermodecount.html#cfn-timestream-influxdbcluster-membermodecount-count
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Count { get; set; }
         }
 
         public class S3Configuration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveBucketName

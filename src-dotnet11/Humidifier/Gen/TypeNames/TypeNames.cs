@@ -266,6 +266,7 @@ public class AWS
     }
     public class Backup
     {
+        public const string BackupAccessPoint = "AWS::Backup::BackupAccessPoint";
         public const string BackupPlan = "AWS::Backup::BackupPlan";
         public const string BackupSelection = "AWS::Backup::BackupSelection";
         public const string BackupVault = "AWS::Backup::BackupVault";
@@ -316,6 +317,7 @@ public class AWS
         public const string AutomatedReasoningPolicyVersion = "AWS::Bedrock::AutomatedReasoningPolicyVersion";
         public const string Blueprint = "AWS::Bedrock::Blueprint";
         public const string DataAutomationLibrary = "AWS::Bedrock::DataAutomationLibrary";
+        public const string DataAutomationLibraryIngestionJob = "AWS::Bedrock::DataAutomationLibraryIngestionJob";
         public const string DataAutomationProject = "AWS::Bedrock::DataAutomationProject";
         public const string DataSource = "AWS::Bedrock::DataSource";
         public const string DefaultPromptRouter = "AWS::Bedrock::DefaultPromptRouter";
@@ -918,6 +920,7 @@ public class AWS
         public const string Lag = "AWS::DirectConnect::Lag";
         public const string PrivateVirtualInterface = "AWS::DirectConnect::PrivateVirtualInterface";
         public const string PublicVirtualInterface = "AWS::DirectConnect::PublicVirtualInterface";
+        public const string ResiliencyGroup = "AWS::DirectConnect::ResiliencyGroup";
         public const string TransitVirtualInterface = "AWS::DirectConnect::TransitVirtualInterface";
     }
     public class DirectoryService
@@ -2061,6 +2064,7 @@ public class AWS
     {
         public const string Pipeline = "AWS::OSIS::Pipeline";
         public const string PipelineBlueprint = "AWS::OSIS::PipelineBlueprint";
+        public const string PipelineEndpoint = "AWS::OSIS::PipelineEndpoint";
     }
     public class Oam
     {
@@ -3034,6 +3038,7 @@ public class AWS
         public const string WorkSpaceApplication = "AWS::WorkSpaces::WorkSpaceApplication";
         public const string Workspace = "AWS::WorkSpaces::Workspace";
         public const string WorkspaceBundle = "AWS::WorkSpaces::WorkspaceBundle";
+        public const string WorkspaceImage = "AWS::WorkSpaces::WorkspaceImage";
         public const string WorkspaceIpGroup = "AWS::WorkSpaces::WorkspaceIpGroup";
         public const string WorkspacesPool = "AWS::WorkSpaces::WorkspacesPool";
     }

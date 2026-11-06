@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using global::System.Collections.Generic;
     using MicrovmImageTypes;
 
-    public class MicrovmImage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveLambdaMicrovmImageTypesLoggingLogging, IHaveDescription, IHaveListOfLambdaMicrovmImageTypesCpuConfigurationCpuConfigurations, IHaveLambdaMicrovmImageTypesCodeArtifactCodeArtifact, IHaveName, IHaveListOfLambdaMicrovmImageTypesEnvironmentVariableEnvironmentVariables, IHaveBaseImageVersion, IHaveBuildRoleArn, IHaveStringListOfAdditionalOsCapabilities, IHaveLambdaMicrovmImageTypesHooksHooks, IHaveListOfLambdaMicrovmImageTypesResourcesResources, IHaveBaseImageArn, IHaveStringListOfEgressNetworkConnectors
+    public class MicrovmImage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveLambdaMicrovmImageTypesLoggingLogging, IHaveKmsKeyIdentifier, IHaveDescription, IHaveListOfLambdaMicrovmImageTypesCpuConfigurationCpuConfigurations, IHaveLambdaMicrovmImageTypesCodeArtifactCodeArtifact, IHaveName, IHaveListOfLambdaMicrovmImageTypesEnvironmentVariableEnvironmentVariables, IHaveBaseImageVersion, IHaveBuildRoleArn, IHaveStringListOfAdditionalOsCapabilities, IHaveLambdaMicrovmImageTypesHooksHooks, IHaveListOfLambdaMicrovmImageTypesResourcesResources, IHaveBaseImageArn, IHaveStringListOfEgressNetworkConnectors
     {
         public class Attributes
         {
@@ -26,6 +26,14 @@ namespace Humidifier.Lambda
         /// </summary>
         [Required]
         public Union<Humidifier.Lambda.MicrovmImageTypes.Logging, BaseFunction>? Logging { get; set; }
+        /// <summary>
+        /// KmsKeyIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-microvmimage.html#cfn-lambda-microvmimage-kmskeyidentifier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? KmsKeyIdentifier { get; set; }
 
         /// <summary>
         /// Description

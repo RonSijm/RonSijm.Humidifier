@@ -176,6 +176,14 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+            /// <summary>
+            /// Cache
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-awsservicerequestconfiguration.html#cfn-mediatailor-function-awsservicerequestconfiguration-cache
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HttpRequestCacheConfiguration
+            /// </summary>
+            public Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration Cache { get; set; }
         }
 
         public class ConcurrentExecutorConfiguration : Humidifier.Base.BaseSubResource, IHaveRuntime, IHaveMaxConcurrency
@@ -273,6 +281,34 @@ namespace Humidifier.MediaTailor
             public dynamic Alias { get; set; }
         }
 
+        public class HttpRequestCacheConfiguration : Humidifier.Base.BaseSubResource, IHaveKey
+        {
+            /// <summary>
+            /// TtlMinimumSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestcacheconfiguration.html#cfn-mediatailor-function-httprequestcacheconfiguration-ttlminimumseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TtlMinimumSeconds { get; set; }
+            /// <summary>
+            /// TtlMaximumSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestcacheconfiguration.html#cfn-mediatailor-function-httprequestcacheconfiguration-ttlmaximumseconds
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TtlMaximumSeconds { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestcacheconfiguration.html#cfn-mediatailor-function-httprequestcacheconfiguration-key
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+
         public class HttpRequestConfiguration : Humidifier.Base.BaseSubResource, IHaveUrl, IHaveBody, IHaveRuntime
         {
             /// <summary>
@@ -333,6 +369,14 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+            /// <summary>
+            /// Cache
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-httprequestconfiguration.html#cfn-mediatailor-function-httprequestconfiguration-cache
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HttpRequestCacheConfiguration
+            /// </summary>
+            public Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration Cache { get; set; }
         }
 
         public class SequentialExecutorConfiguration : Humidifier.Base.BaseSubResource, IHaveRuntime
@@ -433,6 +477,14 @@ namespace Humidifier.MediaTailor
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+            /// <summary>
+            /// Cache
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediatailor-function-vastrequestconfiguration.html#cfn-mediatailor-function-vastrequestconfiguration-cache
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HttpRequestCacheConfiguration
+            /// </summary>
+            public Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration Cache { get; set; }
         }
     }
 }

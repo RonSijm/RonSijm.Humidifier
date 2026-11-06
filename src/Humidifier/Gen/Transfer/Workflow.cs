@@ -49,6 +49,15 @@ namespace Humidifier.Transfer
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// StructuredLogDestinations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-structuredlogdestinations
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic StructuredLogDestinations { get; set; }
     }
 
     namespace WorkflowTypes

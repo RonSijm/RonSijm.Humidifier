@@ -7,46 +7,83 @@ namespace Humidifier.EMR
     {
         public class Attributes
         {
+            public static string Id =  "Id" ;
             public static string MasterPublicDNS =  "MasterPublicDNS" ;
         }
 
         public override string AWSTypeName { get => AWS.EMR.Cluster; }
         /// <summary>
-        /// AdditionalInfo
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-additionalinfo
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Json
-        /// </summary>
-        public dynamic AdditionalInfo { get; set; }
-        /// <summary>
-        /// Applications
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-applications
+        /// Steps
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-steps
         /// Required: False
         /// UpdateType: Immutable
         /// Type: List
-        /// ItemType: Application
+        /// ItemType: StepConfig
         /// </summary>
-        public List<Humidifier.EMR.ClusterTypes.Application> Applications { get; set; }
+        public List<Humidifier.EMR.ClusterTypes.StepConfig> Steps { get; set; }
         /// <summary>
-        /// AutoScalingRole
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoscalingrole
+        /// PlacementGroupConfigs
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-placementgroupconfigs
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: PlacementGroupConfig
+        /// </summary>
+        public List<Humidifier.EMR.ClusterTypes.PlacementGroupConfig> PlacementGroupConfigs { get; set; }
+        /// <summary>
+        /// StepConcurrencyLevel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-stepconcurrencylevel
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic StepConcurrencyLevel { get; set; }
+        /// <summary>
+        /// EbsRootVolumeSize
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-ebsrootvolumesize
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic EbsRootVolumeSize { get; set; }
+        /// <summary>
+        /// OSReleaseLabel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-osreleaselabel
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        public dynamic AutoScalingRole { get; set; }
+        public dynamic OSReleaseLabel { get; set; }
+        public dynamic Name { get => GivenName; set => GivenName = value; }
+
         /// <summary>
-        /// AutoTerminationPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoterminationpolicy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: AutoTerminationPolicy
+        /// ServiceRole
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-servicerole
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
         /// </summary>
-        public Humidifier.EMR.ClusterTypes.AutoTerminationPolicy AutoTerminationPolicy { get; set; }
+        [Required]
+        public dynamic ServiceRole { get; set; }
+        /// <summary>
+        /// SessionEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-sessionenabled
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic SessionEnabled { get; set; }
+        /// <summary>
+        /// LogUri
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-loguri
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LogUri { get; set; }
         /// <summary>
         /// BootstrapActions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-bootstrapactions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-bootstrapactions
         /// Required: False
         /// UpdateType: Immutable
         /// Type: List
@@ -55,169 +92,24 @@ namespace Humidifier.EMR
         public List<Humidifier.EMR.ClusterTypes.BootstrapActionConfig> BootstrapActions { get; set; }
         /// <summary>
         /// Configurations
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-configurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-configurations
         /// Required: False
         /// UpdateType: Immutable
         /// Type: List
-        /// ItemType: Configuration
+        /// ItemType: EMRConfiguration
         /// </summary>
-        public List<Humidifier.EMR.ClusterTypes.Configuration> Configurations { get; set; }
-        /// <summary>
-        /// CustomAmiId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-customamiid
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic CustomAmiId { get; set; }
-        /// <summary>
-        /// EbsRootVolumeIops
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumeiops
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic EbsRootVolumeIops { get; set; }
-        /// <summary>
-        /// EbsRootVolumeSize
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic EbsRootVolumeSize { get; set; }
-        /// <summary>
-        /// EbsRootVolumeThroughput
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumethroughput
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic EbsRootVolumeThroughput { get; set; }
-
-        /// <summary>
-        /// Instances
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances
-        /// Required: True
-        /// UpdateType: Conditional
-        /// Type: JobFlowInstancesConfig
-        /// </summary>
-        [Required]
-        public Humidifier.EMR.ClusterTypes.JobFlowInstancesConfig Instances { get; set; }
-
-        /// <summary>
-        /// JobFlowRole
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-jobflowrole
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic JobFlowRole { get; set; }
-        /// <summary>
-        /// KerberosAttributes
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-kerberosattributes
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: KerberosAttributes
-        /// </summary>
-        public Humidifier.EMR.ClusterTypes.KerberosAttributes KerberosAttributes { get; set; }
-        /// <summary>
-        /// LogEncryptionKmsKeyId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-logencryptionkmskeyid
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic LogEncryptionKmsKeyId { get; set; }
-        /// <summary>
-        /// LogUri
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-loguri
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic LogUri { get; set; }
-        /// <summary>
-        /// ManagedScalingPolicy
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-managedscalingpolicy
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ManagedScalingPolicy
-        /// </summary>
-        public Humidifier.EMR.ClusterTypes.ManagedScalingPolicy ManagedScalingPolicy { get; set; }
-        public dynamic Name { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// OSReleaseLabel
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-osreleaselabel
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic OSReleaseLabel { get; set; }
-        /// <summary>
-        /// PlacementGroupConfigs
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-placementgroupconfigs
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// ItemType: PlacementGroupConfig
-        /// </summary>
-        public List<Humidifier.EMR.ClusterTypes.PlacementGroupConfig> PlacementGroupConfigs { get; set; }
+        public List<Humidifier.EMR.ClusterTypes.EMRConfiguration> Configurations { get; set; }
         /// <summary>
         /// ReleaseLabel
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-releaselabel
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-releaselabel
         /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic ReleaseLabel { get; set; }
         /// <summary>
-        /// ScaleDownBehavior
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-scaledownbehavior
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ScaleDownBehavior { get; set; }
-        /// <summary>
-        /// SecurityConfiguration
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-securityconfiguration
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic SecurityConfiguration { get; set; }
-
-        /// <summary>
-        /// ServiceRole
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-servicerole
-        /// Required: True
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        [Required]
-        public dynamic ServiceRole { get; set; }
-        /// <summary>
-        /// StepConcurrencyLevel
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-stepconcurrencylevel
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: Integer
-        /// </summary>
-        public dynamic StepConcurrencyLevel { get; set; }
-        /// <summary>
-        /// Steps
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-steps
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: List
-        /// ItemType: StepConfig
-        /// </summary>
-        public List<Humidifier.EMR.ClusterTypes.StepConfig> Steps { get; set; }
-        /// <summary>
         /// Tags
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-tags
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-tags
         /// Required: False
         /// UpdateType: Mutable
         /// Type: List
@@ -225,13 +117,130 @@ namespace Humidifier.EMR
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
-        /// VisibleToAllUsers
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-visibletoallusers
+        /// ManagedScalingPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-managedscalingpolicy
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Boolean
+        /// Type: ManagedScalingPolicy
         /// </summary>
-        public dynamic VisibleToAllUsers { get; set; }
+        public Humidifier.EMR.ClusterTypes.ManagedScalingPolicy ManagedScalingPolicy { get; set; }
+        /// <summary>
+        /// LogEncryptionKmsKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-logencryptionkmskeyid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic LogEncryptionKmsKeyId { get; set; }
+        /// <summary>
+        /// AdditionalInfo
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-additionalinfo
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Json
+        /// </summary>
+        public dynamic AdditionalInfo { get; set; }
+        /// <summary>
+        /// AutoTerminationPolicy
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-autoterminationpolicy
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AutoTerminationPolicy
+        /// </summary>
+        public Humidifier.EMR.ClusterTypes.AutoTerminationPolicy AutoTerminationPolicy { get; set; }
+        /// <summary>
+        /// KerberosAttributes
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-kerberosattributes
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: KerberosAttributes
+        /// </summary>
+        public Humidifier.EMR.ClusterTypes.KerberosAttributes KerberosAttributes { get; set; }
+        /// <summary>
+        /// Applications
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-applications
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: Application
+        /// </summary>
+        public List<Humidifier.EMR.ClusterTypes.Application> Applications { get; set; }
+        /// <summary>
+        /// AutoScalingRole
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-autoscalingrole
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic AutoScalingRole { get; set; }
+        /// <summary>
+        /// MonitoringConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-monitoringconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: MonitoringConfiguration
+        /// </summary>
+        public Humidifier.EMR.ClusterTypes.MonitoringConfiguration MonitoringConfiguration { get; set; }
+        /// <summary>
+        /// CustomAmiId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-customamiid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CustomAmiId { get; set; }
+        /// <summary>
+        /// EbsRootVolumeIops
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-ebsrootvolumeiops
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic EbsRootVolumeIops { get; set; }
+
+        /// <summary>
+        /// Instances
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-instances
+        /// Required: True
+        /// UpdateType: Conditional
+        /// Type: JobFlowInstancesConfig
+        /// </summary>
+        [Required]
+        public Humidifier.EMR.ClusterTypes.JobFlowInstancesConfig Instances { get; set; }
+        /// <summary>
+        /// ScaleDownBehavior
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-scaledownbehavior
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ScaleDownBehavior { get; set; }
+        /// <summary>
+        /// EbsRootVolumeThroughput
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-ebsrootvolumethroughput
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: Integer
+        /// </summary>
+        public dynamic EbsRootVolumeThroughput { get; set; }
+
+        /// <summary>
+        /// JobFlowRole
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-jobflowrole
+        /// Required: True
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        [Required]
+        public dynamic JobFlowRole { get; set; }
+        /// <summary>
+        /// SecurityConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-cluster.html#cfn-emr-cluster-securityconfiguration
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SecurityConfiguration { get; set; }
     }
 
     namespace ClusterTypes
@@ -240,55 +249,55 @@ namespace Humidifier.EMR
         {
             /// <summary>
             /// AdditionalInfo
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-additionalinfo
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-additionalinfo
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
             public Dictionary<string, dynamic> AdditionalInfo { get; set; }
             /// <summary>
             /// Args
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-args
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-args
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Args { get; set; }
             /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-name
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name { get; set; }
-            /// <summary>
             /// Version
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-version
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-version
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Version { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-application.html#cfn-emr-cluster-application-name
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class AutoScalingPolicy : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// Constraints
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-constraints
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-autoscalingpolicy.html#cfn-emr-cluster-autoscalingpolicy-constraints
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: ScalingConstraints
             /// </summary>
             public Humidifier.EMR.ClusterTypes.ScalingConstraints Constraints { get; set; }
             /// <summary>
             /// Rules
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-rules
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-autoscalingpolicy.html#cfn-emr-cluster-autoscalingpolicy-rules
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: ScalingRule
             /// </summary>
@@ -299,10 +308,10 @@ namespace Humidifier.EMR
         {
             /// <summary>
             /// IdleTimeout
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoterminationpolicy.html#cfn-elasticmapreduce-cluster-autoterminationpolicy-idletimeout
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-autoterminationpolicy.html#cfn-emr-cluster-autoterminationpolicy-idletimeout
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Long
+            /// PrimitiveType: Integer
             /// </summary>
             public dynamic IdleTimeout { get; set; }
         }
@@ -310,105 +319,165 @@ namespace Humidifier.EMR
         public class BootstrapActionConfig : Humidifier.Base.BaseSubResource, IHaveName
         {
             /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-name
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name { get; set; }
-            /// <summary>
             /// ScriptBootstrapAction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-scriptbootstrapaction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig.html#cfn-emr-cluster-bootstrapactionconfig-scriptbootstrapaction
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: ScriptBootstrapActionConfig
             /// </summary>
             public Humidifier.EMR.ClusterTypes.ScriptBootstrapActionConfig ScriptBootstrapAction { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-bootstrapactionconfig.html#cfn-emr-cluster-bootstrapactionconfig-name
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class CloudWatchAlarmDefinition : Humidifier.Base.BaseSubResource, IHaveUnit, IHaveMetricName, IHaveNamespace_, IHaveComparisonOperator, IHavePeriod, IHaveThreshold, IHaveStatistic, IHaveEvaluationPeriods
         {
             /// <summary>
-            /// ComparisonOperator
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-comparisonoperator
+            /// MetricName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-metricname
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetricName { get; set; }
+            /// <summary>
+            /// ComparisonOperator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-comparisonoperator
+            /// Required: True
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic ComparisonOperator { get; set; }
             /// <summary>
-            /// Dimensions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-dimensions
+            /// Statistic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-statistic
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Statistic { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-dimensions
+            /// Required: False
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: MetricDimension
             /// </summary>
             public List<Humidifier.EMR.ClusterTypes.MetricDimension> Dimensions { get; set; }
             /// <summary>
-            /// EvaluationPeriods
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-evaluationperiods
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic EvaluationPeriods { get; set; }
-            /// <summary>
-            /// MetricName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-metricname
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MetricName { get; set; }
-            /// <summary>
-            /// Namespace_
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-namespace
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Namespace_ { get; set; }
-            /// <summary>
             /// Period
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-period
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-period
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Period { get; set; }
             /// <summary>
-            /// Statistic
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-statistic
+            /// EvaluationPeriods
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-evaluationperiods
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic Statistic { get; set; }
-            /// <summary>
-            /// Threshold
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-threshold
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
-            /// </summary>
-            public dynamic Threshold { get; set; }
+            public dynamic EvaluationPeriods { get; set; }
             /// <summary>
             /// Unit
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-unit
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-unit
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Unit { get; set; }
+            /// <summary>
+            /// Namespace_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-namespace
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Namespace_ { get; set; }
+            /// <summary>
+            /// Threshold
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchalarmdefinition.html#cfn-emr-cluster-cloudwatchalarmdefinition-threshold
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Threshold { get; set; }
+        }
+
+        public class CloudWatchLogConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveLogGroupName, IHaveEncryptionKeyArn
+        {
+            /// <summary>
+            /// EncryptionKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchlogconfiguration.html#cfn-emr-cluster-cloudwatchlogconfiguration-encryptionkeyarn
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EncryptionKeyArn { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchlogconfiguration.html#cfn-emr-cluster-cloudwatchlogconfiguration-enabled
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// LogStreamNamePrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchlogconfiguration.html#cfn-emr-cluster-cloudwatchlogconfiguration-logstreamnameprefix
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogStreamNamePrefix { get; set; }
+            /// <summary>
+            /// LogGroupName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchlogconfiguration.html#cfn-emr-cluster-cloudwatchlogconfiguration-loggroupname
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LogGroupName { get; set; }
+            /// <summary>
+            /// LogTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-cloudwatchlogconfiguration.html#cfn-emr-cluster-cloudwatchlogconfiguration-logtypes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic LogTypes { get; set; }
         }
 
         public class ComputeLimits : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// MaximumOnDemandCapacityUnits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-computelimits.html#cfn-emr-cluster-computelimits-maximumondemandcapacityunits
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaximumOnDemandCapacityUnits { get; set; }
+            /// <summary>
+            /// UnitType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-computelimits.html#cfn-emr-cluster-computelimits-unittype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UnitType { get; set; }
+            /// <summary>
             /// MaximumCapacityUnits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumcapacityunits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-computelimits.html#cfn-emr-cluster-computelimits-maximumcapacityunits
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
@@ -416,83 +485,67 @@ namespace Humidifier.EMR
             public dynamic MaximumCapacityUnits { get; set; }
             /// <summary>
             /// MaximumCoreCapacityUnits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumcorecapacityunits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-computelimits.html#cfn-emr-cluster-computelimits-maximumcorecapacityunits
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaximumCoreCapacityUnits { get; set; }
             /// <summary>
-            /// MaximumOnDemandCapacityUnits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumondemandcapacityunits
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaximumOnDemandCapacityUnits { get; set; }
-            /// <summary>
             /// MinimumCapacityUnits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-minimumcapacityunits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-computelimits.html#cfn-emr-cluster-computelimits-minimumcapacityunits
             /// Required: True
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MinimumCapacityUnits { get; set; }
-            /// <summary>
-            /// UnitType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-unittype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic UnitType { get; set; }
         }
 
-        public class Configuration : Humidifier.Base.BaseSubResource, IHaveClassification
+        public class EMRConfiguration : Humidifier.Base.BaseSubResource, IHaveClassification
         {
             /// <summary>
-            /// Classification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-classification
+            /// Configurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-emrconfiguration.html#cfn-emr-cluster-emrconfiguration-configurations
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: EMRConfiguration
+            /// </summary>
+            public List<Humidifier.EMR.ClusterTypes.EMRConfiguration> Configurations { get; set; }
+            /// <summary>
+            /// Classification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-emrconfiguration.html#cfn-emr-cluster-emrconfiguration-classification
+            /// Required: False
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Classification { get; set; }
             /// <summary>
             /// ConfigurationProperties
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurationproperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-emrconfiguration.html#cfn-emr-cluster-emrconfiguration-configurationproperties
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: Map
             /// PrimitiveItemType: String
             /// </summary>
             public Dictionary<string, dynamic> ConfigurationProperties { get; set; }
-            /// <summary>
-            /// Configurations
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurations
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Configuration
-            /// </summary>
-            public List<Humidifier.EMR.ClusterTypes.Configuration> Configurations { get; set; }
         }
 
         public class EbsBlockDeviceConfig : Humidifier.Base.BaseSubResource, IHaveVolumesPerInstance
         {
             /// <summary>
             /// VolumeSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumespecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ebsblockdeviceconfig.html#cfn-emr-cluster-ebsblockdeviceconfig-volumespecification
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: VolumeSpecification
             /// </summary>
             public Humidifier.EMR.ClusterTypes.VolumeSpecification VolumeSpecification { get; set; }
             /// <summary>
             /// VolumesPerInstance
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumesperinstance
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ebsblockdeviceconfig.html#cfn-emr-cluster-ebsblockdeviceconfig-volumesperinstance
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic VolumesPerInstance { get; set; }
@@ -502,18 +555,18 @@ namespace Humidifier.EMR
         {
             /// <summary>
             /// EbsBlockDeviceConfigs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsblockdeviceconfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ebsconfiguration.html#cfn-emr-cluster-ebsconfiguration-ebsblockdeviceconfigs
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: EbsBlockDeviceConfig
             /// </summary>
             public List<Humidifier.EMR.ClusterTypes.EbsBlockDeviceConfig> EbsBlockDeviceConfigs { get; set; }
             /// <summary>
             /// EbsOptimized
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ebsconfiguration.html#cfn-emr-cluster-ebsconfiguration-ebsoptimized
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic EbsOptimized { get; set; }
@@ -523,108 +576,108 @@ namespace Humidifier.EMR
         {
             /// <summary>
             /// Args
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-args
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-hadoopjarstepconfig.html#cfn-emr-cluster-hadoopjarstepconfig-args
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Args { get; set; }
             /// <summary>
-            /// Jar
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-jar
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Jar { get; set; }
-            /// <summary>
             /// MainClass
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-mainclass
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-hadoopjarstepconfig.html#cfn-emr-cluster-hadoopjarstepconfig-mainclass
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic MainClass { get; set; }
             /// <summary>
             /// StepProperties
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-stepproperties
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-hadoopjarstepconfig.html#cfn-emr-cluster-hadoopjarstepconfig-stepproperties
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: KeyValue
             /// </summary>
             public List<Humidifier.EMR.ClusterTypes.KeyValue> StepProperties { get; set; }
+            /// <summary>
+            /// Jar
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-hadoopjarstepconfig.html#cfn-emr-cluster-hadoopjarstepconfig-jar
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Jar { get; set; }
         }
 
         public class InstanceFleetConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveTargetOnDemandCapacity, IHaveTargetSpotCapacity
         {
             /// <summary>
-            /// InstanceTypeConfigs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-instancetypeconfigs
+            /// ResizeSpecifications
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetconfig.html#cfn-emr-cluster-instancefleetconfig-resizespecifications
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// Type: InstanceFleetResizingSpecifications
+            /// </summary>
+            public Humidifier.EMR.ClusterTypes.InstanceFleetResizingSpecifications ResizeSpecifications { get; set; }
+            /// <summary>
+            /// TargetOnDemandCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetconfig.html#cfn-emr-cluster-instancefleetconfig-targetondemandcapacity
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TargetOnDemandCapacity { get; set; }
+            /// <summary>
+            /// TargetSpotCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetconfig.html#cfn-emr-cluster-instancefleetconfig-targetspotcapacity
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TargetSpotCapacity { get; set; }
+            /// <summary>
+            /// InstanceTypeConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetconfig.html#cfn-emr-cluster-instancefleetconfig-instancetypeconfigs
+            /// Required: False
+            /// UpdateType: Conditional
             /// Type: List
             /// ItemType: InstanceTypeConfig
             /// </summary>
             public List<Humidifier.EMR.ClusterTypes.InstanceTypeConfig> InstanceTypeConfigs { get; set; }
             /// <summary>
             /// LaunchSpecifications
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-launchspecifications
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetconfig.html#cfn-emr-cluster-instancefleetconfig-launchspecifications
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: InstanceFleetProvisioningSpecifications
             /// </summary>
             public Humidifier.EMR.ClusterTypes.InstanceFleetProvisioningSpecifications LaunchSpecifications { get; set; }
             /// <summary>
             /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetconfig.html#cfn-emr-cluster-instancefleetconfig-name
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
-            /// <summary>
-            /// ResizeSpecifications
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-resizespecifications
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: InstanceFleetResizingSpecifications
-            /// </summary>
-            public Humidifier.EMR.ClusterTypes.InstanceFleetResizingSpecifications ResizeSpecifications { get; set; }
-            /// <summary>
-            /// TargetOnDemandCapacity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-targetondemandcapacity
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic TargetOnDemandCapacity { get; set; }
-            /// <summary>
-            /// TargetSpotCapacity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-targetspotcapacity
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic TargetSpotCapacity { get; set; }
         }
 
         public class InstanceFleetProvisioningSpecifications : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// OnDemandSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-ondemandspecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetprovisioningspecifications.html#cfn-emr-cluster-instancefleetprovisioningspecifications-ondemandspecification
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: OnDemandProvisioningSpecification
             /// </summary>
             public Humidifier.EMR.ClusterTypes.OnDemandProvisioningSpecification OnDemandSpecification { get; set; }
             /// <summary>
             /// SpotSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetprovisioningspecifications.html#cfn-emr-cluster-instancefleetprovisioningspecifications-spotspecification
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: SpotProvisioningSpecification
             /// </summary>
             public Humidifier.EMR.ClusterTypes.SpotProvisioningSpecification SpotSpecification { get; set; }
@@ -633,95 +686,95 @@ namespace Humidifier.EMR
         public class InstanceFleetResizingSpecifications : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// OnDemandResizeSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetresizingspecifications.html#cfn-elasticmapreduce-cluster-instancefleetresizingspecifications-ondemandresizespecification
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: OnDemandResizingSpecification
-            /// </summary>
-            public Humidifier.EMR.ClusterTypes.OnDemandResizingSpecification OnDemandResizeSpecification { get; set; }
-            /// <summary>
             /// SpotResizeSpecification
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetresizingspecifications.html#cfn-elasticmapreduce-cluster-instancefleetresizingspecifications-spotresizespecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetresizingspecifications.html#cfn-emr-cluster-instancefleetresizingspecifications-spotresizespecification
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: SpotResizingSpecification
             /// </summary>
             public Humidifier.EMR.ClusterTypes.SpotResizingSpecification SpotResizeSpecification { get; set; }
+            /// <summary>
+            /// OnDemandResizeSpecification
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancefleetresizingspecifications.html#cfn-emr-cluster-instancefleetresizingspecifications-ondemandresizespecification
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: OnDemandResizingSpecification
+            /// </summary>
+            public Humidifier.EMR.ClusterTypes.OnDemandResizingSpecification OnDemandResizeSpecification { get; set; }
         }
 
         public class InstanceGroupConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveInstanceType, IHaveInstanceCount, IHaveCustomAmiId, IHaveBidPrice, IHaveMarket, IHaveEMRClusterTypesEbsConfigurationEbsConfiguration
         {
             /// <summary>
             /// AutoScalingPolicy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-autoscalingpolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-autoscalingpolicy
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: AutoScalingPolicy
             /// </summary>
             public Humidifier.EMR.ClusterTypes.AutoScalingPolicy AutoScalingPolicy { get; set; }
             /// <summary>
             /// BidPrice
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-bidprice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-bidprice
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic BidPrice { get; set; }
             /// <summary>
-            /// Configurations
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-configurations
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: List
-            /// ItemType: Configuration
-            /// </summary>
-            public List<Humidifier.EMR.ClusterTypes.Configuration> Configurations { get; set; }
-            /// <summary>
-            /// CustomAmiId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-customamiid
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CustomAmiId { get; set; }
-            /// <summary>
-            /// EbsConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-ebsconfiguration
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: EbsConfiguration
-            /// </summary>
-            public Humidifier.EMR.ClusterTypes.EbsConfiguration EbsConfiguration { get; set; }
-            /// <summary>
             /// InstanceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancecount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-instancecount
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic InstanceCount { get; set; }
             /// <summary>
+            /// EbsConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-ebsconfiguration
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: EbsConfiguration
+            /// </summary>
+            public Humidifier.EMR.ClusterTypes.EbsConfiguration EbsConfiguration { get; set; }
+            /// <summary>
+            /// CustomAmiId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-customamiid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomAmiId { get; set; }
+            /// <summary>
+            /// Configurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-configurations
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: EMRConfiguration
+            /// </summary>
+            public List<Humidifier.EMR.ClusterTypes.EMRConfiguration> Configurations { get; set; }
+            /// <summary>
             /// InstanceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancetype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-instancetype
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceType { get; set; }
             /// <summary>
             /// Market
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-market
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-market
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Market { get; set; }
             /// <summary>
             /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancegroupconfig.html#cfn-emr-cluster-instancegroupconfig-name
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -731,199 +784,166 @@ namespace Humidifier.EMR
         {
             /// <summary>
             /// BidPrice
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidprice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-bidprice
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic BidPrice { get; set; }
             /// <summary>
-            /// BidPriceAsPercentageOfOnDemandPrice
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidpriceaspercentageofondemandprice
+            /// WeightedCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-weightedcapacity
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic BidPriceAsPercentageOfOnDemandPrice { get; set; }
-            /// <summary>
-            /// Configurations
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-configurations
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Configuration
-            /// </summary>
-            public List<Humidifier.EMR.ClusterTypes.Configuration> Configurations { get; set; }
-            /// <summary>
-            /// CustomAmiId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-customamiid
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CustomAmiId { get; set; }
+            public dynamic WeightedCapacity { get; set; }
             /// <summary>
             /// EbsConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-ebsconfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-ebsconfiguration
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: EbsConfiguration
             /// </summary>
             public Humidifier.EMR.ClusterTypes.EbsConfiguration EbsConfiguration { get; set; }
             /// <summary>
-            /// InstanceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-instancetype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic InstanceType { get; set; }
-            /// <summary>
             /// Priority
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-priority
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-priority
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Double
             /// </summary>
             public dynamic Priority { get; set; }
             /// <summary>
-            /// WeightedCapacity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-weightedcapacity
+            /// BidPriceAsPercentageOfOnDemandPrice
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-bidpriceaspercentageofondemandprice
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// UpdateType: Conditional
+            /// PrimitiveType: Double
             /// </summary>
-            public dynamic WeightedCapacity { get; set; }
+            public dynamic BidPriceAsPercentageOfOnDemandPrice { get; set; }
+            /// <summary>
+            /// CustomAmiId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-customamiid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomAmiId { get; set; }
+            /// <summary>
+            /// Configurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-configurations
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: EMRConfiguration
+            /// </summary>
+            public List<Humidifier.EMR.ClusterTypes.EMRConfiguration> Configurations { get; set; }
+            /// <summary>
+            /// InstanceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-instancetypeconfig.html#cfn-emr-cluster-instancetypeconfig-instancetype
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic InstanceType { get; set; }
         }
 
         public class JobFlowInstancesConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// AdditionalMasterSecurityGroups
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-additionalmastersecuritygroups
+            /// MasterInstanceFleet
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-masterinstancefleet
             /// Required: False
-            /// UpdateType: Immutable
-            /// Type: List
-            /// PrimitiveItemType: String
+            /// UpdateType: Conditional
+            /// Type: InstanceFleetConfig
             /// </summary>
-            public dynamic AdditionalMasterSecurityGroups { get; set; }
+            public Humidifier.EMR.ClusterTypes.InstanceFleetConfig MasterInstanceFleet { get; set; }
             /// <summary>
             /// AdditionalSlaveSecurityGroups
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-additionalslavesecuritygroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-additionalslavesecuritygroups
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic AdditionalSlaveSecurityGroups { get; set; }
             /// <summary>
             /// CoreInstanceFleet
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-coreinstancefleet
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancefleet
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: InstanceFleetConfig
             /// </summary>
             public Humidifier.EMR.ClusterTypes.InstanceFleetConfig CoreInstanceFleet { get; set; }
             /// <summary>
             /// CoreInstanceGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-coreinstancegroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-coreinstancegroup
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: InstanceGroupConfig
             /// </summary>
             public Humidifier.EMR.ClusterTypes.InstanceGroupConfig CoreInstanceGroup { get; set; }
             /// <summary>
-            /// Ec2KeyName
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2keyname
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Ec2KeyName { get; set; }
-            /// <summary>
-            /// Ec2SubnetId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetid
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Ec2SubnetId { get; set; }
-            /// <summary>
             /// Ec2SubnetIds
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-ec2subnetids
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2subnetids
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Ec2SubnetIds { get; set; }
             /// <summary>
-            /// EmrManagedMasterSecurityGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-emrmanagedmastersecuritygroup
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic EmrManagedMasterSecurityGroup { get; set; }
-            /// <summary>
-            /// EmrManagedSlaveSecurityGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-emrmanagedslavesecuritygroup
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic EmrManagedSlaveSecurityGroup { get; set; }
-            /// <summary>
             /// HadoopVersion
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-hadoopversion
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-hadoopversion
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic HadoopVersion { get; set; }
             /// <summary>
-            /// KeepJobFlowAliveWhenNoSteps
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-keepjobflowalivewhennosteps
+            /// TerminationProtected
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-terminationprotected
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic TerminationProtected { get; set; }
+            /// <summary>
+            /// UnhealthyNodeReplacement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-unhealthynodereplacement
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UnhealthyNodeReplacement { get; set; }
+            /// <summary>
+            /// KeepJobFlowAliveWhenNoSteps
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-keepjobflowalivewhennosteps
+            /// Required: False
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic KeepJobFlowAliveWhenNoSteps { get; set; }
             /// <summary>
-            /// MasterInstanceFleet
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancefleet
+            /// Ec2KeyName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2keyname
             /// Required: False
-            /// UpdateType: Immutable
-            /// Type: InstanceFleetConfig
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
             /// </summary>
-            public Humidifier.EMR.ClusterTypes.InstanceFleetConfig MasterInstanceFleet { get; set; }
+            public dynamic Ec2KeyName { get; set; }
             /// <summary>
             /// MasterInstanceGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancegroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-masterinstancegroup
             /// Required: False
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// Type: InstanceGroupConfig
             /// </summary>
             public Humidifier.EMR.ClusterTypes.InstanceGroupConfig MasterInstanceGroup { get; set; }
             /// <summary>
-            /// Placement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-placement
-            /// Required: False
-            /// UpdateType: Immutable
-            /// Type: PlacementType
-            /// </summary>
-            public Humidifier.EMR.ClusterTypes.PlacementType Placement { get; set; }
-            /// <summary>
-            /// ServiceAccessSecurityGroup
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-serviceaccesssecuritygroup
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ServiceAccessSecurityGroup { get; set; }
-            /// <summary>
             /// TaskInstanceFleets
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-taskinstancefleets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-taskinstancefleets
             /// Required: False
             /// UpdateType: Conditional
             /// Type: List
@@ -931,8 +951,24 @@ namespace Humidifier.EMR
             /// </summary>
             public List<Humidifier.EMR.ClusterTypes.InstanceFleetConfig> TaskInstanceFleets { get; set; }
             /// <summary>
+            /// Placement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-placement
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: PlacementType
+            /// </summary>
+            public Humidifier.EMR.ClusterTypes.PlacementType Placement { get; set; }
+            /// <summary>
+            /// Ec2SubnetId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-ec2subnetid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Ec2SubnetId { get; set; }
+            /// <summary>
             /// TaskInstanceGroups
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-taskinstancegroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-taskinstancegroups
             /// Required: False
             /// UpdateType: Conditional
             /// Type: List
@@ -940,179 +976,208 @@ namespace Humidifier.EMR
             /// </summary>
             public List<Humidifier.EMR.ClusterTypes.InstanceGroupConfig> TaskInstanceGroups { get; set; }
             /// <summary>
-            /// TerminationProtected
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-terminationprotected
+            /// ServiceAccessSecurityGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-serviceaccesssecuritygroup
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic TerminationProtected { get; set; }
+            public dynamic ServiceAccessSecurityGroup { get; set; }
             /// <summary>
-            /// UnhealthyNodeReplacement
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-unhealthynodereplacement
+            /// EmrManagedSlaveSecurityGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-emrmanagedslavesecuritygroup
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic UnhealthyNodeReplacement { get; set; }
+            public dynamic EmrManagedSlaveSecurityGroup { get; set; }
+            /// <summary>
+            /// AdditionalMasterSecurityGroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-additionalmastersecuritygroups
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AdditionalMasterSecurityGroups { get; set; }
+            /// <summary>
+            /// EmrManagedMasterSecurityGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-jobflowinstancesconfig.html#cfn-emr-cluster-jobflowinstancesconfig-emrmanagedmastersecuritygroup
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EmrManagedMasterSecurityGroup { get; set; }
         }
 
         public class KerberosAttributes : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// ADDomainJoinPassword
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html#cfn-elasticmapreduce-cluster-kerberosattributes-addomainjoinpassword
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic ADDomainJoinPassword { get; set; }
-            /// <summary>
             /// ADDomainJoinUser
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html#cfn-elasticmapreduce-cluster-kerberosattributes-addomainjoinuser
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-kerberosattributes.html#cfn-emr-cluster-kerberosattributes-addomainjoinuser
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ADDomainJoinUser { get; set; }
             /// <summary>
             /// CrossRealmTrustPrincipalPassword
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html#cfn-elasticmapreduce-cluster-kerberosattributes-crossrealmtrustprincipalpassword
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-kerberosattributes.html#cfn-emr-cluster-kerberosattributes-crossrealmtrustprincipalpassword
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic CrossRealmTrustPrincipalPassword { get; set; }
             /// <summary>
             /// KdcAdminPassword
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html#cfn-elasticmapreduce-cluster-kerberosattributes-kdcadminpassword
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-kerberosattributes.html#cfn-emr-cluster-kerberosattributes-kdcadminpassword
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic KdcAdminPassword { get; set; }
             /// <summary>
             /// Realm
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html#cfn-elasticmapreduce-cluster-kerberosattributes-realm
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-kerberosattributes.html#cfn-emr-cluster-kerberosattributes-realm
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Realm { get; set; }
+            /// <summary>
+            /// ADDomainJoinPassword
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-kerberosattributes.html#cfn-emr-cluster-kerberosattributes-addomainjoinpassword
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ADDomainJoinPassword { get; set; }
         }
 
         public class KeyValue : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
         {
             /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html#cfn-elasticmapreduce-cluster-keyvalue-key
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key { get; set; }
-            /// <summary>
             /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html#cfn-elasticmapreduce-cluster-keyvalue-value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-keyvalue.html#cfn-emr-cluster-keyvalue-value
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-keyvalue.html#cfn-emr-cluster-keyvalue-key
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
         }
 
         public class ManagedScalingPolicy : Humidifier.Base.BaseSubResource
         {
             /// <summary>
-            /// ComputeLimits
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-computelimits
+            /// UtilizationPerformanceIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-managedscalingpolicy.html#cfn-emr-cluster-managedscalingpolicy-utilizationperformanceindex
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: ComputeLimits
+            /// PrimitiveType: Integer
             /// </summary>
-            public Humidifier.EMR.ClusterTypes.ComputeLimits ComputeLimits { get; set; }
+            public dynamic UtilizationPerformanceIndex { get; set; }
             /// <summary>
             /// ScalingStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-scalingstrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-managedscalingpolicy.html#cfn-emr-cluster-managedscalingpolicy-scalingstrategy
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ScalingStrategy { get; set; }
             /// <summary>
-            /// UtilizationPerformanceIndex
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-utilizationperformanceindex
+            /// ComputeLimits
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-managedscalingpolicy.html#cfn-emr-cluster-managedscalingpolicy-computelimits
             /// Required: False
             /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// Type: ComputeLimits
             /// </summary>
-            public dynamic UtilizationPerformanceIndex { get; set; }
+            public Humidifier.EMR.ClusterTypes.ComputeLimits ComputeLimits { get; set; }
         }
 
         public class MetricDimension : Humidifier.Base.BaseSubResource, IHaveValue, IHaveKey
         {
             /// <summary>
-            /// Key
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-metricdimension.html#cfn-elasticmapreduce-cluster-metricdimension-key
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Key { get; set; }
-            /// <summary>
             /// Value
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-metricdimension.html#cfn-elasticmapreduce-cluster-metricdimension-value
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-metricdimension.html#cfn-emr-cluster-metricdimension-value
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Value { get; set; }
+            /// <summary>
+            /// Key
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-metricdimension.html#cfn-emr-cluster-metricdimension-key
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Key { get; set; }
+        }
+
+        public class MonitoringConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CloudWatchLogConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-monitoringconfiguration.html#cfn-emr-cluster-monitoringconfiguration-cloudwatchlogconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: CloudWatchLogConfiguration
+            /// </summary>
+            public Humidifier.EMR.ClusterTypes.CloudWatchLogConfiguration CloudWatchLogConfiguration { get; set; }
         }
 
         public class OnDemandCapacityReservationOptions : Humidifier.Base.BaseSubResource, IHaveCapacityReservationPreference, IHaveUsageStrategy, IHaveCapacityReservationResourceGroupArn
         {
             /// <summary>
-            /// CapacityReservationPreference
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandcapacityreservationoptions.html#cfn-elasticmapreduce-cluster-ondemandcapacityreservationoptions-capacityreservationpreference
+            /// UsageStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandcapacityreservationoptions.html#cfn-emr-cluster-ondemandcapacityreservationoptions-usagestrategy
             /// Required: False
-            /// UpdateType: Mutable
-            /// Type: dynamic
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
-            public dynamic CapacityReservationPreference { get; set; }
+            public dynamic UsageStrategy { get; set; }
             /// <summary>
             /// CapacityReservationResourceGroupArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandcapacityreservationoptions.html#cfn-elasticmapreduce-cluster-ondemandcapacityreservationoptions-capacityreservationresourcegrouparn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandcapacityreservationoptions.html#cfn-emr-cluster-ondemandcapacityreservationoptions-capacityreservationresourcegrouparn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic CapacityReservationResourceGroupArn { get; set; }
             /// <summary>
-            /// UsageStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandcapacityreservationoptions.html#cfn-elasticmapreduce-cluster-ondemandcapacityreservationoptions-usagestrategy
+            /// CapacityReservationPreference
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandcapacityreservationoptions.html#cfn-emr-cluster-ondemandcapacityreservationoptions-capacityreservationpreference
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// Type: dynamic
             /// PrimitiveType: String
             /// </summary>
-            public dynamic UsageStrategy { get; set; }
+            public dynamic CapacityReservationPreference { get; set; }
         }
 
         public class OnDemandProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveEMRClusterTypesOnDemandCapacityReservationOptionsCapacityReservationOptions
         {
             /// <summary>
             /// AllocationStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandprovisioningspecification.html#cfn-elasticmapreduce-cluster-ondemandprovisioningspecification-allocationstrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandprovisioningspecification.html#cfn-emr-cluster-ondemandprovisioningspecification-allocationstrategy
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AllocationStrategy { get; set; }
             /// <summary>
             /// CapacityReservationOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandprovisioningspecification.html#cfn-elasticmapreduce-cluster-ondemandprovisioningspecification-capacityreservationoptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandprovisioningspecification.html#cfn-emr-cluster-ondemandprovisioningspecification-capacityreservationoptions
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: OnDemandCapacityReservationOptions
             /// </summary>
             public Humidifier.EMR.ClusterTypes.OnDemandCapacityReservationOptions CapacityReservationOptions { get; set; }
@@ -1121,46 +1186,46 @@ namespace Humidifier.EMR
         public class OnDemandResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveTimeoutDurationMinutes, IHaveEMRClusterTypesOnDemandCapacityReservationOptionsCapacityReservationOptions
         {
             /// <summary>
-            /// AllocationStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandresizingspecification.html#cfn-elasticmapreduce-cluster-ondemandresizingspecification-allocationstrategy
+            /// TimeoutDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandresizingspecification.html#cfn-emr-cluster-ondemandresizingspecification-timeoutdurationminutes
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TimeoutDurationMinutes { get; set; }
+            /// <summary>
+            /// AllocationStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandresizingspecification.html#cfn-emr-cluster-ondemandresizingspecification-allocationstrategy
+            /// Required: False
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AllocationStrategy { get; set; }
             /// <summary>
             /// CapacityReservationOptions
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandresizingspecification.html#cfn-elasticmapreduce-cluster-ondemandresizingspecification-capacityreservationoptions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-ondemandresizingspecification.html#cfn-emr-cluster-ondemandresizingspecification-capacityreservationoptions
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: OnDemandCapacityReservationOptions
             /// </summary>
             public Humidifier.EMR.ClusterTypes.OnDemandCapacityReservationOptions CapacityReservationOptions { get; set; }
-            /// <summary>
-            /// TimeoutDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandresizingspecification.html#cfn-elasticmapreduce-cluster-ondemandresizingspecification-timeoutdurationminutes
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic TimeoutDurationMinutes { get; set; }
         }
 
         public class PlacementGroupConfig : Humidifier.Base.BaseSubResource, IHaveInstanceRole
         {
             /// <summary>
             /// InstanceRole
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementgroupconfig.html#cfn-elasticmapreduce-cluster-placementgroupconfig-instancerole
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-placementgroupconfig.html#cfn-emr-cluster-placementgroupconfig-instancerole
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceRole { get; set; }
             /// <summary>
             /// PlacementStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementgroupconfig.html#cfn-elasticmapreduce-cluster-placementgroupconfig-placementstrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-placementgroupconfig.html#cfn-emr-cluster-placementgroupconfig-placementstrategy
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic PlacementStrategy { get; set; }
@@ -1170,9 +1235,9 @@ namespace Humidifier.EMR
         {
             /// <summary>
             /// AvailabilityZone
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html#cfn-elasticmapreduce-cluster-placementtype-availabilityzone
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-placementtype.html#cfn-emr-cluster-placementtype-availabilityzone
             /// Required: True
-            /// UpdateType: Immutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AvailabilityZone { get; set; }
@@ -1181,86 +1246,86 @@ namespace Humidifier.EMR
         public class ScalingAction : Humidifier.Base.BaseSubResource, IHaveMarket
         {
             /// <summary>
-            /// Market
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-market
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Market { get; set; }
-            /// <summary>
             /// SimpleScalingPolicyConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-simplescalingpolicyconfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingaction.html#cfn-emr-cluster-scalingaction-simplescalingpolicyconfiguration
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: SimpleScalingPolicyConfiguration
             /// </summary>
             public Humidifier.EMR.ClusterTypes.SimpleScalingPolicyConfiguration SimpleScalingPolicyConfiguration { get; set; }
+            /// <summary>
+            /// Market
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingaction.html#cfn-emr-cluster-scalingaction-market
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Market { get; set; }
         }
 
         public class ScalingConstraints : Humidifier.Base.BaseSubResource, IHaveMaxCapacity, IHaveMinCapacity
         {
             /// <summary>
-            /// MaxCapacity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html#cfn-elasticmapreduce-cluster-scalingconstraints-maxcapacity
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaxCapacity { get; set; }
-            /// <summary>
             /// MinCapacity
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html#cfn-elasticmapreduce-cluster-scalingconstraints-mincapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingconstraints.html#cfn-emr-cluster-scalingconstraints-mincapacity
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MinCapacity { get; set; }
+            /// <summary>
+            /// MaxCapacity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingconstraints.html#cfn-emr-cluster-scalingconstraints-maxcapacity
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxCapacity { get; set; }
         }
 
         public class ScalingRule : Humidifier.Base.BaseSubResource, IHaveName, IHaveDescription
         {
             /// <summary>
             /// Action
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingrule.html#cfn-emr-cluster-scalingrule-action
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: ScalingAction
             /// </summary>
             public Humidifier.EMR.ClusterTypes.ScalingAction Action { get; set; }
             /// <summary>
             /// Description
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingrule.html#cfn-emr-cluster-scalingrule-description
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic Description { get; set; }
             /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-name
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name { get; set; }
-            /// <summary>
             /// Trigger
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-trigger
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingrule.html#cfn-emr-cluster-scalingrule-trigger
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: ScalingTrigger
             /// </summary>
             public Humidifier.EMR.ClusterTypes.ScalingTrigger Trigger { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingrule.html#cfn-emr-cluster-scalingrule-name
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class ScalingTrigger : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// CloudWatchAlarmDefinition
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scalingtrigger.html#cfn-emr-cluster-scalingtrigger-cloudwatchalarmdefinition
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: CloudWatchAlarmDefinition
             /// </summary>
             public Humidifier.EMR.ClusterTypes.CloudWatchAlarmDefinition CloudWatchAlarmDefinition { get; set; }
@@ -1269,131 +1334,131 @@ namespace Humidifier.EMR
         public class ScriptBootstrapActionConfig : Humidifier.Base.BaseSubResource, IHavePath, IHaveArgs
         {
             /// <summary>
+            /// Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scriptbootstrapactionconfig.html#cfn-emr-cluster-scriptbootstrapactionconfig-path
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Path { get; set; }
+            /// <summary>
             /// Args
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html#cfn-elasticmapreduce-cluster-scriptbootstrapactionconfig-args
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-scriptbootstrapactionconfig.html#cfn-emr-cluster-scriptbootstrapactionconfig-args
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Args { get; set; }
-            /// <summary>
-            /// Path
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html#cfn-elasticmapreduce-cluster-scriptbootstrapactionconfig-path
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Path { get; set; }
         }
 
         public class SimpleScalingPolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveScalingAdjustment, IHaveAdjustmentType, IHaveCoolDown
         {
             /// <summary>
-            /// AdjustmentType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-adjustmenttype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// ScalingAdjustment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-simplescalingpolicyconfiguration.html#cfn-emr-cluster-simplescalingpolicyconfiguration-scalingadjustment
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic AdjustmentType { get; set; }
+            public dynamic ScalingAdjustment { get; set; }
             /// <summary>
             /// CoolDown
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-cooldown
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-simplescalingpolicyconfiguration.html#cfn-emr-cluster-simplescalingpolicyconfiguration-cooldown
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic CoolDown { get; set; }
             /// <summary>
-            /// ScalingAdjustment
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-scalingadjustment
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
+            /// AdjustmentType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-simplescalingpolicyconfiguration.html#cfn-emr-cluster-simplescalingpolicyconfiguration-adjustmenttype
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
             /// </summary>
-            public dynamic ScalingAdjustment { get; set; }
+            public dynamic AdjustmentType { get; set; }
         }
 
         public class SpotProvisioningSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveTimeoutDurationMinutes, IHaveBlockDurationMinutes, IHaveTimeoutAction
         {
             /// <summary>
             /// AllocationStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotprovisioningspecification.html#cfn-elasticmapreduce-cluster-spotprovisioningspecification-allocationstrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-spotprovisioningspecification.html#cfn-emr-cluster-spotprovisioningspecification-allocationstrategy
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AllocationStrategy { get; set; }
             /// <summary>
-            /// BlockDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotprovisioningspecification.html#cfn-elasticmapreduce-cluster-spotprovisioningspecification-blockdurationminutes
-            /// Required: False
-            /// UpdateType: Mutable
+            /// TimeoutDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-spotprovisioningspecification.html#cfn-emr-cluster-spotprovisioningspecification-timeoutdurationminutes
+            /// Required: True
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic BlockDurationMinutes { get; set; }
+            public dynamic TimeoutDurationMinutes { get; set; }
             /// <summary>
             /// TimeoutAction
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotprovisioningspecification.html#cfn-elasticmapreduce-cluster-spotprovisioningspecification-timeoutaction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-spotprovisioningspecification.html#cfn-emr-cluster-spotprovisioningspecification-timeoutaction
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic TimeoutAction { get; set; }
             /// <summary>
-            /// TimeoutDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotprovisioningspecification.html#cfn-elasticmapreduce-cluster-spotprovisioningspecification-timeoutdurationminutes
-            /// Required: True
-            /// UpdateType: Mutable
+            /// BlockDurationMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-spotprovisioningspecification.html#cfn-emr-cluster-spotprovisioningspecification-blockdurationminutes
+            /// Required: False
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
-            public dynamic TimeoutDurationMinutes { get; set; }
+            public dynamic BlockDurationMinutes { get; set; }
         }
 
         public class SpotResizingSpecification : Humidifier.Base.BaseSubResource, IHaveAllocationStrategy, IHaveTimeoutDurationMinutes
         {
             /// <summary>
-            /// AllocationStrategy
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotresizingspecification.html#cfn-elasticmapreduce-cluster-spotresizingspecification-allocationstrategy
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic AllocationStrategy { get; set; }
-            /// <summary>
             /// TimeoutDurationMinutes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotresizingspecification.html#cfn-elasticmapreduce-cluster-spotresizingspecification-timeoutdurationminutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-spotresizingspecification.html#cfn-emr-cluster-spotresizingspecification-timeoutdurationminutes
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic TimeoutDurationMinutes { get; set; }
+            /// <summary>
+            /// AllocationStrategy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-spotresizingspecification.html#cfn-emr-cluster-spotresizingspecification-allocationstrategy
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AllocationStrategy { get; set; }
         }
 
         public class StepConfig : Humidifier.Base.BaseSubResource, IHaveName, IHaveActionOnFailure
         {
             /// <summary>
             /// ActionOnFailure
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-stepconfig.html#cfn-emr-cluster-stepconfig-actiononfailure
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ActionOnFailure { get; set; }
             /// <summary>
             /// HadoopJarStep
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-hadoopjarstep
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-stepconfig.html#cfn-emr-cluster-stepconfig-hadoopjarstep
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: HadoopJarStepConfig
             /// </summary>
             public Humidifier.EMR.ClusterTypes.HadoopJarStepConfig HadoopJarStep { get; set; }
             /// <summary>
             /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-stepconfig.html#cfn-emr-cluster-stepconfig-name
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Name { get; set; }
@@ -1402,37 +1467,37 @@ namespace Humidifier.EMR
         public class VolumeSpecification : Humidifier.Base.BaseSubResource, IHaveIops, IHaveVolumeType, IHaveThroughput, IHaveSizeInGB
         {
             /// <summary>
-            /// Iops
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-iops
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic Iops { get; set; }
-            /// <summary>
             /// SizeInGB
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-sizeingb
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-sizeingb
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic SizeInGB { get; set; }
             /// <summary>
+            /// VolumeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-volumetype
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VolumeType { get; set; }
+            /// <summary>
             /// Throughput
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-throughput
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-throughput
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic Throughput { get; set; }
             /// <summary>
-            /// VolumeType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-volumetype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
+            /// Iops
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-volumespecification.html#cfn-emr-cluster-volumespecification-iops
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
             /// </summary>
-            public dynamic VolumeType { get; set; }
+            public dynamic Iops { get; set; }
         }
     }
 }

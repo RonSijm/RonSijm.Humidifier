@@ -184,7 +184,7 @@ namespace Humidifier.ECS
             public Union<int, BaseFunction>? ScaleInAfter { get; set; }
         }
 
-        public class InstanceLaunchTemplate : Humidifier.Base.BaseSubResource, IHaveEc2InstanceProfileArn, IHaveCapacityOptionType, IHaveFipsEnabled_Boolean, IHaveInstanceMetadataTagsPropagation_Boolean, IHaveECSCapacityProviderTypesManagedInstancesStorageConfigurationStorageConfiguration, IHaveECSCapacityProviderTypesManagedInstancesNetworkConfigurationNetworkConfiguration, IHaveECSCapacityProviderTypesInstanceRequirementsRequestInstanceRequirements, IHaveECSCapacityProviderTypesCapacityReservationRequestCapacityReservations, IHaveECSCapacityProviderTypesManagedInstancesLocalStorageConfigurationLocalStorageConfiguration, IHaveMonitoring
+        public class InstanceLaunchTemplate : Humidifier.Base.BaseSubResource, IHaveEc2InstanceProfileArn, IHaveCapacityOptionType, IHaveFipsEnabled_Boolean, IHaveInstanceMetadataTagsPropagation_Boolean, IHaveNitroEnclavesEnabled_Boolean, IHaveECSCapacityProviderTypesManagedInstancesStorageConfigurationStorageConfiguration, IHaveECSCapacityProviderTypesManagedInstancesNetworkConfigurationNetworkConfiguration, IHaveECSCapacityProviderTypesInstanceRequirementsRequestInstanceRequirements, IHaveECSCapacityProviderTypesCapacityReservationRequestCapacityReservations, IHaveECSCapacityProviderTypesManagedInstancesLocalStorageConfigurationLocalStorageConfiguration, IHaveMonitoring
         {
             /// <summary>
             /// Ec2InstanceProfileArn
@@ -218,6 +218,14 @@ namespace Humidifier.ECS
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? InstanceMetadataTagsPropagation { get; set; }
+            /// <summary>
+            /// NitroEnclavesEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-instancelaunchtemplate.html#cfn-ecs-capacityprovider-instancelaunchtemplate-nitroenclavesenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? NitroEnclavesEnabled { get; set; }
             /// <summary>
             /// StorageConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-instancelaunchtemplate.html#cfn-ecs-capacityprovider-instancelaunchtemplate-storageconfiguration

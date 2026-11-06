@@ -3,7 +3,7 @@ namespace Humidifier.Transfer
     using global::System.Collections.Generic;
     using WorkflowTypes;
 
-    public class Workflow : Humidifier.Base.BaseResource, IHaveTags, IHaveListOfTransferWorkflowTypesWorkflowStepSteps, IHaveDescription, IHaveListOfTransferWorkflowTypesWorkflowStepOnExceptionSteps
+    public class Workflow : Humidifier.Base.BaseResource, IHaveTags, IHaveListOfTransferWorkflowTypesWorkflowStepSteps, IHaveDescription, IHaveListOfTransferWorkflowTypesWorkflowStepOnExceptionSteps, IHaveStringListOfStructuredLogDestinations
     {
         public class Attributes
         {
@@ -49,6 +49,15 @@ namespace Humidifier.Transfer
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        /// <summary>
+        /// StructuredLogDestinations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-workflow.html#cfn-transfer-workflow-structuredlogdestinations
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? StructuredLogDestinations { get; set; }
     }
 
     namespace WorkflowTypes

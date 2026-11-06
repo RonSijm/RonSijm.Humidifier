@@ -4,6 +4,11 @@ namespace Humidifier.EC2
 
     public class ClientVpnTargetNetworkAssociation : Humidifier.Base.BaseResource, IHaveAvailabilityZone, IHaveSubnetId, IHaveClientVpnEndpointId, IHaveAvailabilityZoneId
     {
+        public class Attributes
+        {
+            public static string AssociationId =  "AssociationId" ;
+        }
+
         public override string AWSTypeName { get => AWS.EC2.ClientVpnTargetNetworkAssociation; }
 
         /// <summary>

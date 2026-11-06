@@ -187,6 +187,23 @@ namespace Humidifier.ImageBuilder
             /// </summary>
             public Humidifier.ImageBuilder.ImagePipelineTypes.EcrConfiguration EcrConfiguration { get; set; }
             /// <summary>
+            /// ScanResultCondition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-scanresultcondition
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ScanResultCondition
+            /// </summary>
+            public Humidifier.ImageBuilder.ImagePipelineTypes.ScanResultCondition ScanResultCondition { get; set; }
+            /// <summary>
+            /// ImageScanningTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-imagescanningtypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ImageScanningTypes { get; set; }
+            /// <summary>
             /// ImageScanningEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-imagescanningenabled
             /// Required: False
@@ -234,6 +251,26 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public dynamic ImageLogGroupName { get; set; }
+        }
+
+        public class ScanResultCondition : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// FixAvailable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-scanresultcondition.html#cfn-imagebuilder-imagepipeline-scanresultcondition-fixavailable
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic FixAvailable { get; set; }
+            /// <summary>
+            /// MaximumSeverityLabel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-scanresultcondition.html#cfn-imagebuilder-imagepipeline-scanresultcondition-maximumseveritylabel
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MaximumSeverityLabel { get; set; }
         }
 
         public class Schedule : Humidifier.Base.BaseSubResource, IHaveScheduleExpression, IHaveTimezone

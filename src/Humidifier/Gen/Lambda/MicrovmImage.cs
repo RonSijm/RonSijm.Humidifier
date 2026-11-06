@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using global::System.Collections.Generic;
     using MicrovmImageTypes;
 
-    public class MicrovmImage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription
+    public class MicrovmImage : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveDescription, IHaveKmsKeyIdentifier
     {
         public class Attributes
         {
@@ -26,6 +26,14 @@ namespace Humidifier.Lambda
         /// </summary>
         [Required]
         public Humidifier.Lambda.MicrovmImageTypes.Logging Logging { get; set; }
+        /// <summary>
+        /// KmsKeyIdentifier
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-microvmimage.html#cfn-lambda-microvmimage-kmskeyidentifier
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic KmsKeyIdentifier { get; set; }
 
         /// <summary>
         /// Description

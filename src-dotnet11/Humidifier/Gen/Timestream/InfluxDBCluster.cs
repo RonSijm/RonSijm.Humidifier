@@ -3,14 +3,17 @@ namespace Humidifier.Timestream
     using global::System.Collections.Generic;
     using InfluxDBClusterTypes;
 
-    public class InfluxDBCluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDbParameterGroupIdentifier, IHaveOrganization, IHavePort_Integer, IHaveDbInstanceType, IHaveStringListOfVpcSubnetIds, IHaveFailoverMode, IHaveDeploymentType, IHaveName, IHaveAllocatedStorage_Integer, IHaveDbStorageType, IHaveTimestreamInfluxDBClusterTypesLogDeliveryConfigurationLogDeliveryConfiguration, IHaveUsername, IHaveBucket, IHaveStringListOfVpcSecurityGroupIds, IHaveNetworkType, IHavePubliclyAccessible_Boolean, IHaveTimestreamInfluxDBClusterTypesMaintenanceScheduleMaintenanceSchedule, IHavePassword
+    public class InfluxDBCluster : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDbParameterGroupIdentifier, IHaveOrganization, IHaveKmsKeyId, IHavePort_Integer, IHaveDbInstanceType, IHaveStringListOfVpcSubnetIds, IHaveFailoverMode, IHaveDeploymentType, IHaveName, IHaveAllocatedStorage_Integer, IHaveDbStorageType, IHaveTimestreamInfluxDBClusterTypesLogDeliveryConfigurationLogDeliveryConfiguration, IHaveUsername, IHaveBucket, IHaveStringListOfVpcSecurityGroupIds, IHaveNetworkType, IHavePubliclyAccessible_Boolean, IHaveTimestreamInfluxDBClusterTypesMaintenanceScheduleMaintenanceSchedule, IHavePassword
     {
         public class Attributes
         {
             public static string Status =  "Status" ;
             public static string Endpoint =  "Endpoint" ;
             public static string InfluxAuthParametersSecretArn =  "InfluxAuthParametersSecretArn" ;
+            public static string EffectiveDbParameterGroupIdentifier =  "EffectiveDbParameterGroupIdentifier" ;
             public static string NextMaintenanceTime =  "NextMaintenanceTime" ;
+            public static string MemberCount =  "MemberCount" ;
+            public static string MemberModeCounts =  "MemberModeCounts" ;
             public static string EngineType =  "EngineType" ;
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
@@ -34,6 +37,14 @@ namespace Humidifier.Timestream
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? Organization { get; set; }
+        /// <summary>
+        /// KmsKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbcluster.html#cfn-timestream-influxdbcluster-kmskeyid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? KmsKeyId { get; set; }
         /// <summary>
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbcluster.html#cfn-timestream-influxdbcluster-port
@@ -200,6 +211,26 @@ namespace Humidifier.Timestream
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? PreferredMaintenanceWindow { get; set; }
+        }
+
+        public class MemberModeCount : Humidifier.Base.BaseSubResource, IHaveMode, IHaveCount_Integer
+        {
+            /// <summary>
+            /// Mode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-influxdbcluster-membermodecount.html#cfn-timestream-influxdbcluster-membermodecount-mode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Mode { get; set; }
+            /// <summary>
+            /// Count
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-influxdbcluster-membermodecount.html#cfn-timestream-influxdbcluster-membermodecount-count
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? Count { get; set; }
         }
 
         public class S3Configuration : Humidifier.Base.BaseSubResource, IHaveBucketName, IHaveEnabled_Boolean

@@ -109,14 +109,14 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Values { get; set; }
     }
 
-    public interface IHaveVisualId : IResourceInterface
-    {
-        Union<string, BaseFunction>? VisualId { get; set; }
-    }
-
     public interface IHaveS3Uri : IResourceInterface
     {
         Union<string, BaseFunction>? S3Uri { get; set; }
+    }
+
+    public interface IHaveVisualId : IResourceInterface
+    {
+        Union<string, BaseFunction>? VisualId { get; set; }
     }
 
     public interface IHaveTitle : IResourceInterface
@@ -199,14 +199,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? Color { get; set; }
     }
 
-    public interface IHaveAction : IResourceInterface
-    {
-        Union<string, BaseFunction>? Action { get; set; }
-    }
-
     public interface IHaveMode : IResourceInterface
     {
         Union<string, BaseFunction>? Mode { get; set; }
+    }
+
+    public interface IHaveAction : IResourceInterface
+    {
+        Union<string, BaseFunction>? Action { get; set; }
     }
 
     public interface IHaveNamespace_ : IResourceInterface
@@ -244,6 +244,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? MetricName { get; set; }
     }
 
+    public interface IHavePriority_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? Priority { get; set; }
+    }
+
     public interface IHaveFormat : IResourceInterface
     {
         Union<string, BaseFunction>? Format { get; set; }
@@ -257,11 +262,6 @@ namespace Humidifier.Interfaces
     public interface IHaveUrl : IResourceInterface
     {
         Union<string, BaseFunction>? Url { get; set; }
-    }
-
-    public interface IHavePriority_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? Priority { get; set; }
     }
 
     public interface IHaveStringListOfSubnets : IResourceInterface
@@ -444,6 +444,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? AccountId { get; set; }
     }
 
+    public interface IHaveLogGroupName : IResourceInterface
+    {
+        Union<string, BaseFunction>? LogGroupName { get; set; }
+    }
+
     public interface IHaveIdentifier : IResourceInterface
     {
         Union<string, BaseFunction>? Identifier { get; set; }
@@ -462,11 +467,6 @@ namespace Humidifier.Interfaces
     public interface IHaveTarget : IResourceInterface
     {
         Union<string, BaseFunction>? Target { get; set; }
-    }
-
-    public interface IHaveLogGroupName : IResourceInterface
-    {
-        Union<string, BaseFunction>? LogGroupName { get; set; }
     }
 
     public interface IHaveVolumeType : IResourceInterface
@@ -789,6 +789,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? Host { get; set; }
     }
 
+    public interface IHaveComparisonOperator : IResourceInterface
+    {
+        Union<string, BaseFunction>? ComparisonOperator { get; set; }
+    }
+
     public interface IHaveUri : IResourceInterface
     {
         Union<string, BaseFunction>? Uri { get; set; }
@@ -834,11 +839,6 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? SourceType { get; set; }
     }
 
-    public interface IHaveComparisonOperator : IResourceInterface
-    {
-        Union<string, BaseFunction>? ComparisonOperator { get; set; }
-    }
-
     public interface IHavePattern : IResourceInterface
     {
         Union<string, BaseFunction>? Pattern { get; set; }
@@ -882,6 +882,11 @@ namespace Humidifier.Interfaces
     public interface IHaveDatabase : IResourceInterface
     {
         Union<string, BaseFunction>? Database { get; set; }
+    }
+
+    public interface IHaveEncryptionKeyArn : IResourceInterface
+    {
+        Union<string, BaseFunction>? EncryptionKeyArn { get; set; }
     }
 
     public interface IHaveJobName : IResourceInterface
@@ -957,11 +962,6 @@ namespace Humidifier.Interfaces
     public interface IHaveAuthenticationType : IResourceInterface
     {
         Union<string, BaseFunction>? AuthenticationType { get; set; }
-    }
-
-    public interface IHaveEncryptionKeyArn : IResourceInterface
-    {
-        Union<string, BaseFunction>? EncryptionKeyArn { get; set; }
     }
 
     public interface IHaveDataAccessRoleArn : IResourceInterface
@@ -1374,6 +1374,11 @@ namespace Humidifier.Interfaces
         Union<double, BaseFunction>? Threshold { get; set; }
     }
 
+    public interface IHaveCount_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? Count { get; set; }
+    }
+
     public interface IHaveStatistic : IResourceInterface
     {
         Union<string, BaseFunction>? Statistic { get; set; }
@@ -1459,6 +1464,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? StatusCode { get; set; }
     }
 
+    public interface IHaveKmsKeyIdentifier : IResourceInterface
+    {
+        Union<string, BaseFunction>? KmsKeyIdentifier { get; set; }
+    }
+
     public interface IHaveService : IResourceInterface
     {
         Union<string, BaseFunction>? Service { get; set; }
@@ -1477,11 +1487,6 @@ namespace Humidifier.Interfaces
     public interface IHaveFunctionName : IResourceInterface
     {
         Union<string, BaseFunction>? FunctionName { get; set; }
-    }
-
-    public interface IHaveCount_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? Count { get; set; }
     }
 
     public interface IHavePermission : IResourceInterface
@@ -1622,11 +1627,6 @@ namespace Humidifier.Interfaces
     public interface IHaveQuickSightTemplateTypesVisualPaletteVisualPalette : IResourceInterface
     {
         Union<Humidifier.QuickSight.TemplateTypes.VisualPalette, BaseFunction>? VisualPalette { get; set; }
-    }
-
-    public interface IHaveKmsKeyIdentifier : IResourceInterface
-    {
-        Union<string, BaseFunction>? KmsKeyIdentifier { get; set; }
     }
 
     public interface IHaveTenantId : IResourceInterface
@@ -1842,6 +1842,11 @@ namespace Humidifier.Interfaces
     public interface IHaveStringListOfPermissions : IResourceInterface
     {
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Permissions { get; set; }
+    }
+
+    public interface IHaveStringDictionaryOfEnvironmentVariables : IResourceInterface
+    {
+        Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? EnvironmentVariables { get; set; }
     }
 
     public interface IHavePolicyType : IResourceInterface
@@ -2102,11 +2107,6 @@ namespace Humidifier.Interfaces
     public interface IHaveMaxTokens_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? MaxTokens { get; set; }
-    }
-
-    public interface IHaveStringDictionaryOfEnvironmentVariables : IResourceInterface
-    {
-        Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? EnvironmentVariables { get; set; }
     }
 
     public interface IHaveMembershipIdentifier : IResourceInterface
@@ -3149,6 +3149,11 @@ namespace Humidifier.Interfaces
         Union<bool, BaseFunction>? ReturnData { get; set; }
     }
 
+    public interface IHaveLogStreamNamePrefix : IResourceInterface
+    {
+        Union<string, BaseFunction>? LogStreamNamePrefix { get; set; }
+    }
+
     public interface IHaveStringListOfExcludedInstanceTypes : IResourceInterface
     {
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ExcludedInstanceTypes { get; set; }
@@ -3722,11 +3727,6 @@ namespace Humidifier.Interfaces
     public interface IHaveRepositoryUrl : IResourceInterface
     {
         Union<string, BaseFunction>? RepositoryUrl { get; set; }
-    }
-
-    public interface IHaveLogStreamNamePrefix : IResourceInterface
-    {
-        Union<string, BaseFunction>? LogStreamNamePrefix { get; set; }
     }
 
     public interface IHaveStringListOfAcceleratorTypes : IResourceInterface
@@ -4349,6 +4349,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? JobDefinitionName { get; set; }
     }
 
+    public interface IHaveEntityType : IResourceInterface
+    {
+        Union<string, BaseFunction>? EntityType { get; set; }
+    }
+
     public interface IHaveGuardrailIdentifier : IResourceInterface
     {
         Union<string, BaseFunction>? GuardrailIdentifier { get; set; }
@@ -4519,14 +4524,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? LaunchType { get; set; }
     }
 
-    public interface IHaveCustomAmiId : IResourceInterface
-    {
-        Union<string, BaseFunction>? CustomAmiId { get; set; }
-    }
-
     public interface IHaveReleaseLabel : IResourceInterface
     {
         Union<string, BaseFunction>? ReleaseLabel { get; set; }
+    }
+
+    public interface IHaveCustomAmiId : IResourceInterface
+    {
+        Union<string, BaseFunction>? CustomAmiId { get; set; }
     }
 
     public interface IHaveSecurityConfiguration : IResourceInterface
@@ -5389,6 +5394,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? AuthorizerUri { get; set; }
     }
 
+    public interface IHaveAuthorizerResultTtlInSeconds_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? AuthorizerResultTtlInSeconds { get; set; }
+    }
+
     public interface IHaveBasePath : IResourceInterface
     {
         Union<string, BaseFunction>? BasePath { get; set; }
@@ -5559,11 +5569,6 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? CloudWatchLogGroupArn { get; set; }
     }
 
-    public interface IHaveEntityType : IResourceInterface
-    {
-        Union<string, BaseFunction>? EntityType { get; set; }
-    }
-
     public interface IHaveFleetId : IResourceInterface
     {
         Union<string, BaseFunction>? FleetId { get; set; }
@@ -5709,9 +5714,9 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? Labels { get; set; }
     }
 
-    public interface IHaveListOfEMRClusterTypesConfigurationConfigurations : IResourceInterface
+    public interface IHaveListOfEMRClusterTypesEMRConfigurationConfigurations : IResourceInterface
     {
-        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.Configuration>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.Configuration, BaseFunction>>, BaseFunction>? Configurations { get; set; }
+        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.EMRConfiguration>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.EMRConfiguration, BaseFunction>>, BaseFunction>? Configurations { get; set; }
     }
 
     public interface IHaveBidPrice : IResourceInterface
@@ -6334,6 +6339,11 @@ namespace Humidifier.Interfaces
         Union<int, BaseFunction>? ScaleInCooldown { get; set; }
     }
 
+    public interface IHaveLogTypes_Json : IResourceInterface
+    {
+        Union<object, BaseFunction>? LogTypes { get; set; }
+    }
+
     public interface IHaveEncryptionOption : IResourceInterface
     {
         Union<string, BaseFunction>? EncryptionOption { get; set; }
@@ -6567,6 +6577,11 @@ namespace Humidifier.Interfaces
     public interface IHaveAttributeMatchingModel : IResourceInterface
     {
         Union<string, BaseFunction>? AttributeMatchingModel { get; set; }
+    }
+
+    public interface IHaveLogicalOperator : IResourceInterface
+    {
+        Union<string, BaseFunction>? LogicalOperator { get; set; }
     }
 
     public interface IHaveAfterConnectScript : IResourceInterface
@@ -6969,29 +6984,9 @@ namespace Humidifier.Interfaces
         Union<int, BaseFunction>? Pid { get; set; }
     }
 
-    public interface IHaveFixedAfd : IResourceInterface
-    {
-        Union<string, BaseFunction>? FixedAfd { get; set; }
-    }
-
-    public interface IHaveGopSizeUnits : IResourceInterface
-    {
-        Union<string, BaseFunction>? GopSizeUnits { get; set; }
-    }
-
     public interface IHaveFramerateNumerator_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? FramerateNumerator { get; set; }
-    }
-
-    public interface IHaveAfdSignaling : IResourceInterface
-    {
-        Union<string, BaseFunction>? AfdSignaling { get; set; }
-    }
-
-    public interface IHaveTimecodeInsertion : IResourceInterface
-    {
-        Union<string, BaseFunction>? TimecodeInsertion { get; set; }
     }
 
     public interface IHaveFramerateDenominator_Integer : IResourceInterface
@@ -7002,6 +6997,26 @@ namespace Humidifier.Interfaces
     public interface IHaveGopSize_Double : IResourceInterface
     {
         Union<double, BaseFunction>? GopSize { get; set; }
+    }
+
+    public interface IHaveFixedAfd : IResourceInterface
+    {
+        Union<string, BaseFunction>? FixedAfd { get; set; }
+    }
+
+    public interface IHaveGopSizeUnits : IResourceInterface
+    {
+        Union<string, BaseFunction>? GopSizeUnits { get; set; }
+    }
+
+    public interface IHaveAfdSignaling : IResourceInterface
+    {
+        Union<string, BaseFunction>? AfdSignaling { get; set; }
+    }
+
+    public interface IHaveTimecodeInsertion : IResourceInterface
+    {
+        Union<string, BaseFunction>? TimecodeInsertion { get; set; }
     }
 
     public interface IHaveTimedMetadataId3Frame : IResourceInterface
@@ -7482,11 +7497,6 @@ namespace Humidifier.Interfaces
     public interface IHaveComponentType : IResourceInterface
     {
         Union<string, BaseFunction>? ComponentType { get; set; }
-    }
-
-    public interface IHaveAuthorizerResultTtlInSeconds_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? AuthorizerResultTtlInSeconds { get; set; }
     }
 
     public interface IHaveDomainNameArn : IResourceInterface
@@ -8174,6 +8184,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? TargetRoleArn { get; set; }
     }
 
+    public interface IHaveSessionEnabled_Boolean : IResourceInterface
+    {
+        Union<bool, BaseFunction>? SessionEnabled { get; set; }
+    }
+
     public interface IHaveInstanceRole : IResourceInterface
     {
         Union<string, BaseFunction>? InstanceRole { get; set; }
@@ -8272,6 +8287,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSchemaVersionId : IResourceInterface
     {
         Union<string, BaseFunction>? SchemaVersionId { get; set; }
+    }
+
+    public interface IHaveIdleTimeout_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? IdleTimeout { get; set; }
     }
 
     public interface IHaveOwnerType : IResourceInterface
@@ -9102,11 +9122,6 @@ namespace Humidifier.Interfaces
     public interface IHaveStringDictionaryOfSparkProperties : IResourceInterface
     {
         Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? SparkProperties { get; set; }
-    }
-
-    public interface IHaveLogTypes_Json : IResourceInterface
-    {
-        Union<object, BaseFunction>? LogTypes { get; set; }
     }
 
     public interface IHaveOutputLocation : IResourceInterface
@@ -10394,21 +10409,6 @@ namespace Humidifier.Interfaces
         Union<int, BaseFunction>? QvbrQualityLevel { get; set; }
     }
 
-    public interface IHaveParDenominator_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? ParDenominator { get; set; }
-    }
-
-    public interface IHaveParNumerator_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? ParNumerator { get; set; }
-    }
-
-    public interface IHaveBufSize_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? BufSize { get; set; }
-    }
-
     public interface IHaveMinBitrate_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? MinBitrate { get; set; }
@@ -10424,9 +10424,29 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? SceneChangeDetect { get; set; }
     }
 
+    public interface IHaveParDenominator_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? ParDenominator { get; set; }
+    }
+
+    public interface IHaveParNumerator_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? ParNumerator { get; set; }
+    }
+
+    public interface IHaveBufSize_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? BufSize { get; set; }
+    }
+
     public interface IHaveLookAheadRateControl : IResourceInterface
     {
         Union<string, BaseFunction>? LookAheadRateControl { get; set; }
+    }
+
+    public interface IHaveStrength : IResourceInterface
+    {
+        Union<string, BaseFunction>? Strength { get; set; }
     }
 
     public interface IHaveKlvBehavior : IResourceInterface
@@ -10607,6 +10627,11 @@ namespace Humidifier.Interfaces
     public interface IHaveRequestTimeoutMilliseconds_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? RequestTimeoutMilliseconds { get; set; }
+    }
+
+    public interface IHaveMediaTailorFunctionTypesHttpRequestCacheConfigurationCache : IResourceInterface
+    {
+        Union<Humidifier.MediaTailor.FunctionTypes.HttpRequestCacheConfiguration, BaseFunction>? Cache { get; set; }
     }
 
     public interface IHaveBaseUrl : IResourceInterface
@@ -13034,6 +13059,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? BusinessName { get; set; }
     }
 
+    public interface IHaveAccessPointInTime : IResourceInterface
+    {
+        Union<string, BaseFunction>? AccessPointInTime { get; set; }
+    }
+
     public interface IHaveStringDictionaryOfBackupVaultTags : IResourceInterface
     {
         Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? BackupVaultTags { get; set; }
@@ -14324,11 +14354,6 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? VirtualClusterId { get; set; }
     }
 
-    public interface IHaveSessionEnabled_Boolean : IResourceInterface
-    {
-        Union<bool, BaseFunction>? SessionEnabled { get; set; }
-    }
-
     public interface IHaveEMRServerlessApplicationTypesImageConfigurationInputImageConfiguration : IResourceInterface
     {
         Union<Humidifier.EMRServerless.ApplicationTypes.ImageConfigurationInput, BaseFunction>? ImageConfiguration { get; set; }
@@ -14532,11 +14557,6 @@ namespace Humidifier.Interfaces
     public interface IHaveSchemaDefinition : IResourceInterface
     {
         Union<string, BaseFunction>? SchemaDefinition { get; set; }
-    }
-
-    public interface IHaveIdleTimeout_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? IdleTimeout { get; set; }
     }
 
     public interface IHaveClassName : IResourceInterface
@@ -16157,6 +16177,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSecurityPolicyName : IResourceInterface
     {
         Union<string, BaseFunction>? SecurityPolicyName { get; set; }
+    }
+
+    public interface IHaveStringListOfStructuredLogDestinations : IResourceInterface
+    {
+        Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? StructuredLogDestinations { get; set; }
     }
 
     public interface IHaveIdentityProviderType : IResourceInterface
@@ -18399,11 +18424,6 @@ namespace Humidifier.Interfaces
         Union<Humidifier.CustomerProfiles.DomainTypes.ExportingConfig, BaseFunction>? ExportingConfig { get; set; }
     }
 
-    public interface IHaveLogicalOperator : IResourceInterface
-    {
-        Union<string, BaseFunction>? LogicalOperator { get; set; }
-    }
-
     public interface IHaveKmsArn : IResourceInterface
     {
         Union<string, BaseFunction>? KmsArn { get; set; }
@@ -19354,6 +19374,11 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Drop { get; set; }
     }
 
+    public interface IHaveDriver : IResourceInterface
+    {
+        Union<string, BaseFunction>? Driver { get; set; }
+    }
+
     public interface IHaveIntegerListOfIgnoredExitCodes : IResourceInterface
     {
         Union<IReadOnlyList<int>, IReadOnlyList<Union<int, BaseFunction>>, BaseFunction>? IgnoredExitCodes { get; set; }
@@ -19439,14 +19464,14 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? VpceIds { get; set; }
     }
 
-    public interface IHaveJar : IResourceInterface
-    {
-        Union<string, BaseFunction>? Jar { get; set; }
-    }
-
     public interface IHaveMainClass : IResourceInterface
     {
         Union<string, BaseFunction>? MainClass { get; set; }
+    }
+
+    public interface IHaveJar : IResourceInterface
+    {
+        Union<string, BaseFunction>? Jar { get; set; }
     }
 
     public interface IHaveEMRClusterTypesEbsConfigurationEbsConfiguration : IResourceInterface
@@ -19454,14 +19479,14 @@ namespace Humidifier.Interfaces
         Union<Humidifier.EMR.ClusterTypes.EbsConfiguration, BaseFunction>? EbsConfiguration { get; set; }
     }
 
-    public interface IHaveBidPriceAsPercentageOfOnDemandPrice_Double : IResourceInterface
-    {
-        Union<double, BaseFunction>? BidPriceAsPercentageOfOnDemandPrice { get; set; }
-    }
-
     public interface IHaveWeightedCapacity_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? WeightedCapacity { get; set; }
+    }
+
+    public interface IHaveBidPriceAsPercentageOfOnDemandPrice_Double : IResourceInterface
+    {
+        Union<double, BaseFunction>? BidPriceAsPercentageOfOnDemandPrice { get; set; }
     }
 
     public interface IHaveEMRClusterTypesOnDemandCapacityReservationOptionsCapacityReservationOptions : IResourceInterface
@@ -20249,9 +20274,24 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? LicenseConfigurationArns { get; set; }
     }
 
+    public interface IHaveStringListOfImageScanningTypes : IResourceInterface
+    {
+        Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ImageScanningTypes { get; set; }
+    }
+
     public interface IHaveImageScanningEnabled_Boolean : IResourceInterface
     {
         Union<bool, BaseFunction>? ImageScanningEnabled { get; set; }
+    }
+
+    public interface IHaveFixAvailable_Boolean : IResourceInterface
+    {
+        Union<bool, BaseFunction>? FixAvailable { get; set; }
+    }
+
+    public interface IHaveMaximumSeverityLabel : IResourceInterface
+    {
+        Union<string, BaseFunction>? MaximumSeverityLabel { get; set; }
     }
 
     public interface IHaveParallelGroup : IResourceInterface
@@ -21099,9 +21139,19 @@ namespace Humidifier.Interfaces
         Union<Humidifier.MediaLive.ChannelTypes.EmptyConfigurationSettings, BaseFunction>? Hlg2020Settings { get; set; }
     }
 
-    public interface IHaveSpatialAq : IResourceInterface
+    public interface IHaveMediaLiveChannelTypesAutoFilterSettingsAutoFilterSettings : IResourceInterface
     {
-        Union<string, BaseFunction>? SpatialAq { get; set; }
+        Union<Humidifier.MediaLive.ChannelTypes.AutoFilterSettings, BaseFunction>? AutoFilterSettings { get; set; }
+    }
+
+    public interface IHaveMediaLiveChannelTypesPerceptualFilterSettingsPerceptualFilterSettings : IResourceInterface
+    {
+        Union<Humidifier.MediaLive.ChannelTypes.PerceptualFilterSettings, BaseFunction>? PerceptualFilterSettings { get; set; }
+    }
+
+    public interface IHaveMediaLiveChannelTypesNoneFilterSettingsNoneFilterSettings : IResourceInterface
+    {
+        Union<Humidifier.MediaLive.ChannelTypes.NoneFilterSettings, BaseFunction>? NoneFilterSettings { get; set; }
     }
 
     public interface IHaveTemporalAq : IResourceInterface
@@ -21109,14 +21159,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? TemporalAq { get; set; }
     }
 
+    public interface IHaveSpatialAq : IResourceInterface
+    {
+        Union<string, BaseFunction>? SpatialAq { get; set; }
+    }
+
     public interface IHavePostFilterSharpening : IResourceInterface
     {
         Union<string, BaseFunction>? PostFilterSharpening { get; set; }
-    }
-
-    public interface IHaveStrength : IResourceInterface
-    {
-        Union<string, BaseFunction>? Strength { get; set; }
     }
 
     public interface IHaveFontSize : IResourceInterface
@@ -21777,6 +21827,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSpaceType : IResourceInterface
     {
         Union<string, BaseFunction>? SpaceType { get; set; }
+    }
+
+    public interface IHaveUpdateAvailable_Boolean : IResourceInterface
+    {
+        Union<bool, BaseFunction>? UpdateAvailable { get; set; }
     }
 
     public interface IHaveRevision : IResourceInterface
@@ -25894,14 +25949,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? IntrospectionConfig { get; set; }
     }
 
-    public interface IHaveMergedApiExecutionRoleArn : IResourceInterface
-    {
-        Union<string, BaseFunction>? MergedApiExecutionRoleArn { get; set; }
-    }
-
     public interface IHaveAppSyncGraphQLApiTypesEnhancedMetricsConfigEnhancedMetricsConfig : IResourceInterface
     {
         Union<Humidifier.AppSync.GraphQLApiTypes.EnhancedMetricsConfig, BaseFunction>? EnhancedMetricsConfig { get; set; }
+    }
+
+    public interface IHaveMergedApiExecutionRoleArn : IResourceInterface
+    {
+        Union<string, BaseFunction>? MergedApiExecutionRoleArn { get; set; }
     }
 
     public interface IHaveResolverCountLimit_Integer : IResourceInterface
@@ -25912,11 +25967,6 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfAppSyncGraphQLApiTypesAdditionalAuthenticationProviderAdditionalAuthenticationProviders : IResourceInterface
     {
         Union<IReadOnlyList<Humidifier.AppSync.GraphQLApiTypes.AdditionalAuthenticationProvider>, IReadOnlyList<Union<Humidifier.AppSync.GraphQLApiTypes.AdditionalAuthenticationProvider, BaseFunction>>, BaseFunction>? AdditionalAuthenticationProviders { get; set; }
-    }
-
-    public interface IHaveEnvironmentVariables_Json : IResourceInterface
-    {
-        Union<object, BaseFunction>? EnvironmentVariables { get; set; }
     }
 
     public interface IHaveApiType : IResourceInterface
@@ -26474,6 +26524,16 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<Humidifier.BCMDataExports.ExportTypes.ResourceTag>, IReadOnlyList<Union<Humidifier.BCMDataExports.ExportTypes.ResourceTag, BaseFunction>>, BaseFunction>? Tags { get; set; }
     }
 
+    public interface IHaveRecoveryPointArn : IResourceInterface
+    {
+        Union<string, BaseFunction>? RecoveryPointArn { get; set; }
+    }
+
+    public interface IHaveAccessPointPolicy_Json : IResourceInterface
+    {
+        Union<object, BaseFunction>? AccessPointPolicy { get; set; }
+    }
+
     public interface IHaveBackupBackupPlanTypesBackupPlanResourceTypeBackupPlan_ : IResourceInterface
     {
         Union<Humidifier.Backup.BackupPlanTypes.BackupPlanResourceType, BaseFunction>? BackupPlan_ { get; set; }
@@ -26942,6 +27002,21 @@ namespace Humidifier.Interfaces
     public interface IHaveLibraryName : IResourceInterface
     {
         Union<string, BaseFunction>? LibraryName { get; set; }
+    }
+
+    public interface IHaveBedrockDataAutomationLibraryIngestionJobTypesOutputConfigurationOutputConfiguration : IResourceInterface
+    {
+        Union<Humidifier.Bedrock.DataAutomationLibraryIngestionJobTypes.OutputConfiguration, BaseFunction>? OutputConfiguration { get; set; }
+    }
+
+    public interface IHaveOperationType : IResourceInterface
+    {
+        Union<string, BaseFunction>? OperationType { get; set; }
+    }
+
+    public interface IHaveLibraryArn : IResourceInterface
+    {
+        Union<string, BaseFunction>? LibraryArn { get; set; }
     }
 
     public interface IHaveBedrockDataAutomationProjectTypesStandardOutputConfigurationStandardOutputConfiguration : IResourceInterface
@@ -30989,6 +31064,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? EventTriggerName { get; set; }
     }
 
+    public interface IHaveCustomerProfilesEventTriggerTypesIntentFilterDefinitionIntentFilterDefinition : IResourceInterface
+    {
+        Union<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterDefinition, BaseFunction>? IntentFilterDefinition { get; set; }
+    }
+
     public interface IHaveStringListOfEventTriggerNames : IResourceInterface
     {
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? EventTriggerNames { get; set; }
@@ -32322,6 +32402,21 @@ namespace Humidifier.Interfaces
     public interface IHaveAllocatePublicVirtualInterfaceRoleArn : IResourceInterface
     {
         Union<string, BaseFunction>? AllocatePublicVirtualInterfaceRoleArn { get; set; }
+    }
+
+    public interface IHaveResiliencyGroupName : IResourceInterface
+    {
+        Union<string, BaseFunction>? ResiliencyGroupName { get; set; }
+    }
+
+    public interface IHaveStringListOfConnectionArns : IResourceInterface
+    {
+        Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ConnectionArns { get; set; }
+    }
+
+    public interface IHaveIntendedResiliencyModel : IResourceInterface
+    {
+        Union<string, BaseFunction>? IntendedResiliencyModel { get; set; }
     }
 
     public interface IHaveListOfDirectConnectTransitVirtualInterfaceTypesBgpPeerBgpPeers : IResourceInterface
@@ -34569,9 +34664,59 @@ namespace Humidifier.Interfaces
         Union<bool, BaseFunction>? DisableSessionTags { get; set; }
     }
 
+    public interface IHaveListOfEMRClusterTypesStepConfigSteps : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.StepConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.StepConfig, BaseFunction>>, BaseFunction>? Steps { get; set; }
+    }
+
+    public interface IHaveListOfEMRClusterTypesPlacementGroupConfigPlacementGroupConfigs : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.PlacementGroupConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.PlacementGroupConfig, BaseFunction>>, BaseFunction>? PlacementGroupConfigs { get; set; }
+    }
+
+    public interface IHaveStepConcurrencyLevel_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? StepConcurrencyLevel { get; set; }
+    }
+
+    public interface IHaveEbsRootVolumeSize_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? EbsRootVolumeSize { get; set; }
+    }
+
+    public interface IHaveOSReleaseLabel : IResourceInterface
+    {
+        Union<string, BaseFunction>? OSReleaseLabel { get; set; }
+    }
+
+    public interface IHaveListOfEMRClusterTypesBootstrapActionConfigBootstrapActions : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.BootstrapActionConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.BootstrapActionConfig, BaseFunction>>, BaseFunction>? BootstrapActions { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesManagedScalingPolicyManagedScalingPolicy : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.ManagedScalingPolicy, BaseFunction>? ManagedScalingPolicy { get; set; }
+    }
+
+    public interface IHaveLogEncryptionKmsKeyId : IResourceInterface
+    {
+        Union<string, BaseFunction>? LogEncryptionKmsKeyId { get; set; }
+    }
+
     public interface IHaveAdditionalInfo_Json : IResourceInterface
     {
         Union<object, BaseFunction>? AdditionalInfo { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesAutoTerminationPolicyAutoTerminationPolicy : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.AutoTerminationPolicy, BaseFunction>? AutoTerminationPolicy { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesKerberosAttributesKerberosAttributes : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.KerberosAttributes, BaseFunction>? KerberosAttributes { get; set; }
     }
 
     public interface IHaveListOfEMRClusterTypesApplicationApplications : IResourceInterface
@@ -34584,14 +34729,9 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? AutoScalingRole { get; set; }
     }
 
-    public interface IHaveEMRClusterTypesAutoTerminationPolicyAutoTerminationPolicy : IResourceInterface
+    public interface IHaveEMRClusterTypesMonitoringConfigurationMonitoringConfiguration : IResourceInterface
     {
-        Union<Humidifier.EMR.ClusterTypes.AutoTerminationPolicy, BaseFunction>? AutoTerminationPolicy { get; set; }
-    }
-
-    public interface IHaveListOfEMRClusterTypesBootstrapActionConfigBootstrapActions : IResourceInterface
-    {
-        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.BootstrapActionConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.BootstrapActionConfig, BaseFunction>>, BaseFunction>? BootstrapActions { get; set; }
+        Union<Humidifier.EMR.ClusterTypes.MonitoringConfiguration, BaseFunction>? MonitoringConfiguration { get; set; }
     }
 
     public interface IHaveEbsRootVolumeIops_Integer : IResourceInterface
@@ -34599,49 +34739,9 @@ namespace Humidifier.Interfaces
         Union<int, BaseFunction>? EbsRootVolumeIops { get; set; }
     }
 
-    public interface IHaveEbsRootVolumeSize_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? EbsRootVolumeSize { get; set; }
-    }
-
-    public interface IHaveEbsRootVolumeThroughput_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? EbsRootVolumeThroughput { get; set; }
-    }
-
     public interface IHaveEMRClusterTypesJobFlowInstancesConfigInstances : IResourceInterface
     {
         Union<Humidifier.EMR.ClusterTypes.JobFlowInstancesConfig, BaseFunction>? Instances { get; set; }
-    }
-
-    public interface IHaveJobFlowRole : IResourceInterface
-    {
-        Union<string, BaseFunction>? JobFlowRole { get; set; }
-    }
-
-    public interface IHaveEMRClusterTypesKerberosAttributesKerberosAttributes : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.KerberosAttributes, BaseFunction>? KerberosAttributes { get; set; }
-    }
-
-    public interface IHaveLogEncryptionKmsKeyId : IResourceInterface
-    {
-        Union<string, BaseFunction>? LogEncryptionKmsKeyId { get; set; }
-    }
-
-    public interface IHaveEMRClusterTypesManagedScalingPolicyManagedScalingPolicy : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.ManagedScalingPolicy, BaseFunction>? ManagedScalingPolicy { get; set; }
-    }
-
-    public interface IHaveOSReleaseLabel : IResourceInterface
-    {
-        Union<string, BaseFunction>? OSReleaseLabel { get; set; }
-    }
-
-    public interface IHaveListOfEMRClusterTypesPlacementGroupConfigPlacementGroupConfigs : IResourceInterface
-    {
-        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.PlacementGroupConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.PlacementGroupConfig, BaseFunction>>, BaseFunction>? PlacementGroupConfigs { get; set; }
     }
 
     public interface IHaveScaleDownBehavior : IResourceInterface
@@ -34649,19 +34749,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? ScaleDownBehavior { get; set; }
     }
 
-    public interface IHaveStepConcurrencyLevel_Integer : IResourceInterface
+    public interface IHaveEbsRootVolumeThroughput_Integer : IResourceInterface
     {
-        Union<int, BaseFunction>? StepConcurrencyLevel { get; set; }
+        Union<int, BaseFunction>? EbsRootVolumeThroughput { get; set; }
     }
 
-    public interface IHaveListOfEMRClusterTypesStepConfigSteps : IResourceInterface
+    public interface IHaveJobFlowRole : IResourceInterface
     {
-        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.StepConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.StepConfig, BaseFunction>>, BaseFunction>? Steps { get; set; }
-    }
-
-    public interface IHaveVisibleToAllUsers_Boolean : IResourceInterface
-    {
-        Union<bool, BaseFunction>? VisibleToAllUsers { get; set; }
+        Union<string, BaseFunction>? JobFlowRole { get; set; }
     }
 
     public interface IHaveInstanceFleetType : IResourceInterface
@@ -42504,6 +42599,16 @@ namespace Humidifier.Interfaces
         Union<Humidifier.OSIS.PipelineTypes.EncryptionAtRestOptions, BaseFunction>? EncryptionAtRestOptions { get; set; }
     }
 
+    public interface IHavePipelineArn : IResourceInterface
+    {
+        Union<string, BaseFunction>? PipelineArn { get; set; }
+    }
+
+    public interface IHaveOSISPipelineEndpointTypesVpcOptionsVpcOptions : IResourceInterface
+    {
+        Union<Humidifier.OSIS.PipelineEndpointTypes.VpcOptions, BaseFunction>? VpcOptions { get; set; }
+    }
+
     public interface IHaveSinkIdentifier : IResourceInterface
     {
         Union<string, BaseFunction>? SinkIdentifier { get; set; }
@@ -49629,11 +49734,6 @@ namespace Humidifier.Interfaces
         Union<Humidifier.Transfer.ServerTypes.EndpointDetails, BaseFunction>? EndpointDetails { get; set; }
     }
 
-    public interface IHaveStringListOfStructuredLogDestinations : IResourceInterface
-    {
-        Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? StructuredLogDestinations { get; set; }
-    }
-
     public interface IHavePreAuthenticationLoginBanner : IResourceInterface
     {
         Union<string, BaseFunction>? PreAuthenticationLoginBanner { get; set; }
@@ -53959,11 +54059,6 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? DataSourceLevelMetricsBehavior { get; set; }
     }
 
-    public interface IHaveAuthorizerResultTtlInSeconds_Double : IResourceInterface
-    {
-        Union<double, BaseFunction>? AuthorizerResultTtlInSeconds { get; set; }
-    }
-
     public interface IHaveExcludeVerboseContent_Boolean : IResourceInterface
     {
         Union<bool, BaseFunction>? ExcludeVerboseContent { get; set; }
@@ -55597,6 +55692,16 @@ namespace Humidifier.Interfaces
     public interface IHaveOverwrite : IResourceInterface
     {
         Union<string, BaseFunction>? Overwrite { get; set; }
+    }
+
+    public interface IHaveS3AccessPointArn : IResourceInterface
+    {
+        Union<string, BaseFunction>? S3AccessPointArn { get; set; }
+    }
+
+    public interface IHaveS3AccessPointAlias : IResourceInterface
+    {
+        Union<string, BaseFunction>? S3AccessPointAlias { get; set; }
     }
 
     public interface IHaveBackupOptions_Json : IResourceInterface
@@ -65369,6 +65474,26 @@ namespace Humidifier.Interfaces
         Union<long, BaseFunction>? EventExpiration { get; set; }
     }
 
+    public interface IHaveIntentDomain : IResourceInterface
+    {
+        Union<string, BaseFunction>? IntentDomain { get; set; }
+    }
+
+    public interface IHaveCustomerProfilesEventTriggerTypesIntentIntent : IResourceInterface
+    {
+        Union<Humidifier.CustomerProfiles.EventTriggerTypes.Intent, BaseFunction>? Intent { get; set; }
+    }
+
+    public interface IHaveListOfCustomerProfilesEventTriggerTypesIntentFilterGroupGroups : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterGroup>, IReadOnlyList<Union<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterGroup, BaseFunction>>, BaseFunction>? Groups { get; set; }
+    }
+
+    public interface IHaveListOfCustomerProfilesEventTriggerTypesIntentFilterConditionConditions : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterCondition>, IReadOnlyList<Union<Humidifier.CustomerProfiles.EventTriggerTypes.IntentFilterCondition, BaseFunction>>, BaseFunction>? Conditions { get; set; }
+    }
+
     public interface IHaveMaxInvocationsPerProfile_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? MaxInvocationsPerProfile { get; set; }
@@ -70589,6 +70714,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? ManagedDraining { get; set; }
     }
 
+    public interface IHaveNitroEnclavesEnabled_Boolean : IResourceInterface
+    {
+        Union<bool, BaseFunction>? NitroEnclavesEnabled { get; set; }
+    }
+
     public interface IHaveECSCapacityProviderTypesManagedInstancesStorageConfigurationStorageConfiguration : IResourceInterface
     {
         Union<Humidifier.ECS.CapacityProviderTypes.ManagedInstancesStorageConfiguration, BaseFunction>? StorageConfiguration { get; set; }
@@ -70857,6 +70987,11 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfECSDaemonTaskDefinitionTypesSecretSecretOptions : IResourceInterface
     {
         Union<IReadOnlyList<Humidifier.ECS.DaemonTaskDefinitionTypes.Secret>, IReadOnlyList<Union<Humidifier.ECS.DaemonTaskDefinitionTypes.Secret, BaseFunction>>, BaseFunction>? SecretOptions { get; set; }
+    }
+
+    public interface IHaveECSDaemonTaskDefinitionTypesLogDriverVolumeConfigurationLogDriverVolumeConfiguration : IResourceInterface
+    {
+        Union<Humidifier.ECS.DaemonTaskDefinitionTypes.LogDriverVolumeConfiguration, BaseFunction>? LogDriverVolumeConfiguration { get; set; }
     }
 
     public interface IHaveECSDaemonTaskDefinitionTypesHostVolumePropertiesHost : IResourceInterface
@@ -71534,11 +71669,6 @@ namespace Humidifier.Interfaces
         Union<bool, BaseFunction>? Autoprovision { get; set; }
     }
 
-    public interface IHaveDriver : IResourceInterface
-    {
-        Union<string, BaseFunction>? Driver { get; set; }
-    }
-
     public interface IHaveFilesystemId : IResourceInterface
     {
         Union<string, BaseFunction>? FilesystemId { get; set; }
@@ -72074,11 +72204,6 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.ScalingRule>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.ScalingRule, BaseFunction>>, BaseFunction>? Rules { get; set; }
     }
 
-    public interface IHaveIdleTimeout_Long : IResourceInterface
-    {
-        Union<long, BaseFunction>? IdleTimeout { get; set; }
-    }
-
     public interface IHaveEMRClusterTypesScriptBootstrapActionConfigScriptBootstrapAction : IResourceInterface
     {
         Union<Humidifier.EMR.ClusterTypes.ScriptBootstrapActionConfig, BaseFunction>? ScriptBootstrapAction { get; set; }
@@ -72087,6 +72212,16 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfEMRClusterTypesMetricDimensionDimensions : IResourceInterface
     {
         Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.MetricDimension>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.MetricDimension, BaseFunction>>, BaseFunction>? Dimensions { get; set; }
+    }
+
+    public interface IHaveMaximumOnDemandCapacityUnits_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? MaximumOnDemandCapacityUnits { get; set; }
+    }
+
+    public interface IHaveUnitType : IResourceInterface
+    {
+        Union<string, BaseFunction>? UnitType { get; set; }
     }
 
     public interface IHaveMaximumCapacityUnits_Integer : IResourceInterface
@@ -72099,19 +72234,9 @@ namespace Humidifier.Interfaces
         Union<int, BaseFunction>? MaximumCoreCapacityUnits { get; set; }
     }
 
-    public interface IHaveMaximumOnDemandCapacityUnits_Integer : IResourceInterface
-    {
-        Union<int, BaseFunction>? MaximumOnDemandCapacityUnits { get; set; }
-    }
-
     public interface IHaveMinimumCapacityUnits_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? MinimumCapacityUnits { get; set; }
-    }
-
-    public interface IHaveUnitType : IResourceInterface
-    {
-        Union<string, BaseFunction>? UnitType { get; set; }
     }
 
     public interface IHaveEMRClusterTypesVolumeSpecificationVolumeSpecification : IResourceInterface
@@ -72129,6 +72254,11 @@ namespace Humidifier.Interfaces
         Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.KeyValue>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.KeyValue, BaseFunction>>, BaseFunction>? StepProperties { get; set; }
     }
 
+    public interface IHaveEMRClusterTypesInstanceFleetResizingSpecificationsResizeSpecifications : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.InstanceFleetResizingSpecifications, BaseFunction>? ResizeSpecifications { get; set; }
+    }
+
     public interface IHaveListOfEMRClusterTypesInstanceTypeConfigInstanceTypeConfigs : IResourceInterface
     {
         Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.InstanceTypeConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.InstanceTypeConfig, BaseFunction>>, BaseFunction>? InstanceTypeConfigs { get; set; }
@@ -72137,11 +72267,6 @@ namespace Humidifier.Interfaces
     public interface IHaveEMRClusterTypesInstanceFleetProvisioningSpecificationsLaunchSpecifications : IResourceInterface
     {
         Union<Humidifier.EMR.ClusterTypes.InstanceFleetProvisioningSpecifications, BaseFunction>? LaunchSpecifications { get; set; }
-    }
-
-    public interface IHaveEMRClusterTypesInstanceFleetResizingSpecificationsResizeSpecifications : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.InstanceFleetResizingSpecifications, BaseFunction>? ResizeSpecifications { get; set; }
     }
 
     public interface IHaveEMRClusterTypesOnDemandProvisioningSpecificationOnDemandSpecification : IResourceInterface
@@ -72154,14 +72279,14 @@ namespace Humidifier.Interfaces
         Union<Humidifier.EMR.ClusterTypes.SpotProvisioningSpecification, BaseFunction>? SpotSpecification { get; set; }
     }
 
-    public interface IHaveEMRClusterTypesOnDemandResizingSpecificationOnDemandResizeSpecification : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.OnDemandResizingSpecification, BaseFunction>? OnDemandResizeSpecification { get; set; }
-    }
-
     public interface IHaveEMRClusterTypesSpotResizingSpecificationSpotResizeSpecification : IResourceInterface
     {
         Union<Humidifier.EMR.ClusterTypes.SpotResizingSpecification, BaseFunction>? SpotResizeSpecification { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesOnDemandResizingSpecificationOnDemandResizeSpecification : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.OnDemandResizingSpecification, BaseFunction>? OnDemandResizeSpecification { get; set; }
     }
 
     public interface IHaveEMRClusterTypesAutoScalingPolicyAutoScalingPolicy : IResourceInterface
@@ -72169,9 +72294,9 @@ namespace Humidifier.Interfaces
         Union<Humidifier.EMR.ClusterTypes.AutoScalingPolicy, BaseFunction>? AutoScalingPolicy { get; set; }
     }
 
-    public interface IHaveStringListOfAdditionalMasterSecurityGroups : IResourceInterface
+    public interface IHaveEMRClusterTypesInstanceFleetConfigMasterInstanceFleet : IResourceInterface
     {
-        Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AdditionalMasterSecurityGroups { get; set; }
+        Union<Humidifier.EMR.ClusterTypes.InstanceFleetConfig, BaseFunction>? MasterInstanceFleet { get; set; }
     }
 
     public interface IHaveStringListOfAdditionalSlaveSecurityGroups : IResourceInterface
@@ -72189,69 +72314,14 @@ namespace Humidifier.Interfaces
         Union<Humidifier.EMR.ClusterTypes.InstanceGroupConfig, BaseFunction>? CoreInstanceGroup { get; set; }
     }
 
-    public interface IHaveEc2KeyName : IResourceInterface
-    {
-        Union<string, BaseFunction>? Ec2KeyName { get; set; }
-    }
-
-    public interface IHaveEc2SubnetId : IResourceInterface
-    {
-        Union<string, BaseFunction>? Ec2SubnetId { get; set; }
-    }
-
     public interface IHaveStringListOfEc2SubnetIds : IResourceInterface
     {
         Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Ec2SubnetIds { get; set; }
     }
 
-    public interface IHaveEmrManagedMasterSecurityGroup : IResourceInterface
-    {
-        Union<string, BaseFunction>? EmrManagedMasterSecurityGroup { get; set; }
-    }
-
-    public interface IHaveEmrManagedSlaveSecurityGroup : IResourceInterface
-    {
-        Union<string, BaseFunction>? EmrManagedSlaveSecurityGroup { get; set; }
-    }
-
     public interface IHaveHadoopVersion : IResourceInterface
     {
         Union<string, BaseFunction>? HadoopVersion { get; set; }
-    }
-
-    public interface IHaveKeepJobFlowAliveWhenNoSteps_Boolean : IResourceInterface
-    {
-        Union<bool, BaseFunction>? KeepJobFlowAliveWhenNoSteps { get; set; }
-    }
-
-    public interface IHaveEMRClusterTypesInstanceFleetConfigMasterInstanceFleet : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.InstanceFleetConfig, BaseFunction>? MasterInstanceFleet { get; set; }
-    }
-
-    public interface IHaveEMRClusterTypesInstanceGroupConfigMasterInstanceGroup : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.InstanceGroupConfig, BaseFunction>? MasterInstanceGroup { get; set; }
-    }
-
-    public interface IHaveEMRClusterTypesPlacementTypePlacement : IResourceInterface
-    {
-        Union<Humidifier.EMR.ClusterTypes.PlacementType, BaseFunction>? Placement { get; set; }
-    }
-
-    public interface IHaveServiceAccessSecurityGroup : IResourceInterface
-    {
-        Union<string, BaseFunction>? ServiceAccessSecurityGroup { get; set; }
-    }
-
-    public interface IHaveListOfEMRClusterTypesInstanceFleetConfigTaskInstanceFleets : IResourceInterface
-    {
-        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.InstanceFleetConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.InstanceFleetConfig, BaseFunction>>, BaseFunction>? TaskInstanceFleets { get; set; }
-    }
-
-    public interface IHaveListOfEMRClusterTypesInstanceGroupConfigTaskInstanceGroups : IResourceInterface
-    {
-        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.InstanceGroupConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.InstanceGroupConfig, BaseFunction>>, BaseFunction>? TaskInstanceGroups { get; set; }
     }
 
     public interface IHaveTerminationProtected_Boolean : IResourceInterface
@@ -72264,9 +72334,59 @@ namespace Humidifier.Interfaces
         Union<bool, BaseFunction>? UnhealthyNodeReplacement { get; set; }
     }
 
-    public interface IHaveADDomainJoinPassword : IResourceInterface
+    public interface IHaveKeepJobFlowAliveWhenNoSteps_Boolean : IResourceInterface
     {
-        Union<string, BaseFunction>? ADDomainJoinPassword { get; set; }
+        Union<bool, BaseFunction>? KeepJobFlowAliveWhenNoSteps { get; set; }
+    }
+
+    public interface IHaveEc2KeyName : IResourceInterface
+    {
+        Union<string, BaseFunction>? Ec2KeyName { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesInstanceGroupConfigMasterInstanceGroup : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.InstanceGroupConfig, BaseFunction>? MasterInstanceGroup { get; set; }
+    }
+
+    public interface IHaveListOfEMRClusterTypesInstanceFleetConfigTaskInstanceFleets : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.InstanceFleetConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.InstanceFleetConfig, BaseFunction>>, BaseFunction>? TaskInstanceFleets { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesPlacementTypePlacement : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.PlacementType, BaseFunction>? Placement { get; set; }
+    }
+
+    public interface IHaveEc2SubnetId : IResourceInterface
+    {
+        Union<string, BaseFunction>? Ec2SubnetId { get; set; }
+    }
+
+    public interface IHaveListOfEMRClusterTypesInstanceGroupConfigTaskInstanceGroups : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.EMR.ClusterTypes.InstanceGroupConfig>, IReadOnlyList<Union<Humidifier.EMR.ClusterTypes.InstanceGroupConfig, BaseFunction>>, BaseFunction>? TaskInstanceGroups { get; set; }
+    }
+
+    public interface IHaveServiceAccessSecurityGroup : IResourceInterface
+    {
+        Union<string, BaseFunction>? ServiceAccessSecurityGroup { get; set; }
+    }
+
+    public interface IHaveEmrManagedSlaveSecurityGroup : IResourceInterface
+    {
+        Union<string, BaseFunction>? EmrManagedSlaveSecurityGroup { get; set; }
+    }
+
+    public interface IHaveStringListOfAdditionalMasterSecurityGroups : IResourceInterface
+    {
+        Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AdditionalMasterSecurityGroups { get; set; }
+    }
+
+    public interface IHaveEmrManagedMasterSecurityGroup : IResourceInterface
+    {
+        Union<string, BaseFunction>? EmrManagedMasterSecurityGroup { get; set; }
     }
 
     public interface IHaveADDomainJoinUser : IResourceInterface
@@ -72289,9 +72409,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? Realm { get; set; }
     }
 
-    public interface IHaveEMRClusterTypesComputeLimitsComputeLimits : IResourceInterface
+    public interface IHaveADDomainJoinPassword : IResourceInterface
     {
-        Union<Humidifier.EMR.ClusterTypes.ComputeLimits, BaseFunction>? ComputeLimits { get; set; }
+        Union<string, BaseFunction>? ADDomainJoinPassword { get; set; }
+    }
+
+    public interface IHaveUtilizationPerformanceIndex_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? UtilizationPerformanceIndex { get; set; }
     }
 
     public interface IHaveScalingStrategy : IResourceInterface
@@ -72299,9 +72424,14 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? ScalingStrategy { get; set; }
     }
 
-    public interface IHaveUtilizationPerformanceIndex_Integer : IResourceInterface
+    public interface IHaveEMRClusterTypesComputeLimitsComputeLimits : IResourceInterface
     {
-        Union<int, BaseFunction>? UtilizationPerformanceIndex { get; set; }
+        Union<Humidifier.EMR.ClusterTypes.ComputeLimits, BaseFunction>? ComputeLimits { get; set; }
+    }
+
+    public interface IHaveEMRClusterTypesCloudWatchLogConfigurationCloudWatchLogConfiguration : IResourceInterface
+    {
+        Union<Humidifier.EMR.ClusterTypes.CloudWatchLogConfiguration, BaseFunction>? CloudWatchLogConfiguration { get; set; }
     }
 
     public interface IHaveEMRClusterTypesSimpleScalingPolicyConfigurationSimpleScalingPolicyConfiguration : IResourceInterface
@@ -76764,6 +76894,11 @@ namespace Humidifier.Interfaces
         Union<Humidifier.ImageBuilder.ImageTypes.EcrConfiguration, BaseFunction>? EcrConfiguration { get; set; }
     }
 
+    public interface IHaveImageBuilderImageTypesScanResultConditionScanResultCondition : IResourceInterface
+    {
+        Union<Humidifier.ImageBuilder.ImageTypes.ScanResultCondition, BaseFunction>? ScanResultCondition { get; set; }
+    }
+
     public interface IHaveListOfImageBuilderImageTypesWorkflowParameterParameters : IResourceInterface
     {
         Union<IReadOnlyList<Humidifier.ImageBuilder.ImageTypes.WorkflowParameter>, IReadOnlyList<Union<Humidifier.ImageBuilder.ImageTypes.WorkflowParameter, BaseFunction>>, BaseFunction>? Parameters { get; set; }
@@ -76772,6 +76907,11 @@ namespace Humidifier.Interfaces
     public interface IHaveImageBuilderImagePipelineTypesEcrConfigurationEcrConfiguration : IResourceInterface
     {
         Union<Humidifier.ImageBuilder.ImagePipelineTypes.EcrConfiguration, BaseFunction>? EcrConfiguration { get; set; }
+    }
+
+    public interface IHaveImageBuilderImagePipelineTypesScanResultConditionScanResultCondition : IResourceInterface
+    {
+        Union<Humidifier.ImageBuilder.ImagePipelineTypes.ScanResultCondition, BaseFunction>? ScanResultCondition { get; set; }
     }
 
     public interface IHavePipelineLogGroupName : IResourceInterface
@@ -84899,14 +85039,19 @@ namespace Humidifier.Interfaces
         Union<int, BaseFunction>? ErrorClearTimeMsec { get; set; }
     }
 
-    public interface IHaveMediaLiveChannelTypesAv1ColorSpaceSettingsColorSpaceSettings : IResourceInterface
-    {
-        Union<Humidifier.MediaLive.ChannelTypes.Av1ColorSpaceSettings, BaseFunction>? ColorSpaceSettings { get; set; }
-    }
-
     public interface IHaveBitDepth : IResourceInterface
     {
         Union<string, BaseFunction>? BitDepth { get; set; }
+    }
+
+    public interface IHaveMediaLiveChannelTypesAv1FilterSettingsFilterSettings : IResourceInterface
+    {
+        Union<Humidifier.MediaLive.ChannelTypes.Av1FilterSettings, BaseFunction>? FilterSettings { get; set; }
+    }
+
+    public interface IHaveMediaLiveChannelTypesAv1ColorSpaceSettingsColorSpaceSettings : IResourceInterface
+    {
+        Union<Humidifier.MediaLive.ChannelTypes.Av1ColorSpaceSettings, BaseFunction>? ColorSpaceSettings { get; set; }
     }
 
     public interface IHaveMediaLiveChannelTypesInputLocationAvailBlankingImage : IResourceInterface
@@ -85587,6 +85732,11 @@ namespace Humidifier.Interfaces
     public interface IHaveSoftness_Integer : IResourceInterface
     {
         Union<int, BaseFunction>? Softness { get; set; }
+    }
+
+    public interface IHaveAllowExplicitWeightedPrediction : IResourceInterface
+    {
+        Union<string, BaseFunction>? AllowExplicitWeightedPrediction { get; set; }
     }
 
     public interface IHaveMediaLiveChannelTypesH264ColorSpaceSettingsColorSpaceSettings : IResourceInterface
@@ -87594,6 +87744,16 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? RunCondition { get; set; }
     }
 
+    public interface IHaveTtlMinimumSeconds_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? TtlMinimumSeconds { get; set; }
+    }
+
+    public interface IHaveTtlMaximumSeconds_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? TtlMaximumSeconds { get; set; }
+    }
+
     public interface IHaveStreamingMediaFileConditioning : IResourceInterface
     {
         Union<string, BaseFunction>? StreamingMediaFileConditioning { get; set; }
@@ -89322,11 +89482,6 @@ namespace Humidifier.Interfaces
     public interface IHaveAutomatedUpdateDate : IResourceInterface
     {
         Union<string, BaseFunction>? AutomatedUpdateDate { get; set; }
-    }
-
-    public interface IHaveUpdateAvailable_Boolean : IResourceInterface
-    {
-        Union<bool, BaseFunction>? UpdateAvailable { get; set; }
     }
 
     public interface IHaveOptionalDeployment_Boolean : IResourceInterface
@@ -112224,6 +112379,11 @@ namespace Humidifier.Interfaces
         Union<string, BaseFunction>? SetStatOption { get; set; }
     }
 
+    public interface IHaveListOfTransferServerTypesSftpPortWithOptionsSftpPorts : IResourceInterface
+    {
+        Union<IReadOnlyList<Humidifier.Transfer.ServerTypes.SftpPortWithOptions>, IReadOnlyList<Union<Humidifier.Transfer.ServerTypes.SftpPortWithOptions, BaseFunction>>, BaseFunction>? SftpPorts { get; set; }
+    }
+
     public interface IHaveTlsSessionResumptionMode : IResourceInterface
     {
         Union<string, BaseFunction>? TlsSessionResumptionMode { get; set; }
@@ -112242,6 +112402,16 @@ namespace Humidifier.Interfaces
     public interface IHaveDirectoryListingOptimization : IResourceInterface
     {
         Union<string, BaseFunction>? DirectoryListingOptimization { get; set; }
+    }
+
+    public interface IHaveCommunicationMode : IResourceInterface
+    {
+        Union<string, BaseFunction>? CommunicationMode { get; set; }
+    }
+
+    public interface IHaveSftpPort_Integer : IResourceInterface
+    {
+        Union<int, BaseFunction>? SftpPort { get; set; }
     }
 
     public interface IHaveListOfTransferServerTypesWorkflowDetailOnUpload : IResourceInterface
@@ -112977,6 +113147,11 @@ namespace Humidifier.Interfaces
     public interface IHaveListOfWAFv2WebACLTypesApplicationAttributeAttributes_ : IResourceInterface
     {
         Union<IReadOnlyList<Humidifier.WAFv2.WebACLTypes.ApplicationAttribute>, IReadOnlyList<Union<Humidifier.WAFv2.WebACLTypes.ApplicationAttribute, BaseFunction>>, BaseFunction>? Attributes_ { get; set; }
+    }
+
+    public interface IHaveJsonDictionaryOfChallengeJavascriptSdkInjection : IResourceInterface
+    {
+        Union<IReadOnlyDictionary<string, object>, IReadOnlyDictionary<string, Union<object, BaseFunction>>, BaseFunction>? ChallengeJavascriptSdkInjection { get; set; }
     }
 
     public interface IHaveMapOfWAFv2WebACLTypesRequestBodyAssociatedResourceTypeConfigRequestBody : IResourceInterface

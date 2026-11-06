@@ -284,6 +284,15 @@ namespace Humidifier.Transfer
             /// </summary>
             public dynamic SetStatOption { get; set; }
             /// <summary>
+            /// SftpPorts
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-sftpports
+            /// Required: False
+            /// UpdateType: Conditional
+            /// Type: List
+            /// ItemType: SftpPortWithOptions
+            /// </summary>
+            public List<Humidifier.Transfer.ServerTypes.SftpPortWithOptions> SftpPorts { get; set; }
+            /// <summary>
             /// TlsSessionResumptionMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-tlssessionresumptionmode
             /// Required: False
@@ -323,6 +332,26 @@ namespace Humidifier.Transfer
             /// PrimitiveType: String
             /// </summary>
             public dynamic DirectoryListingOptimization { get; set; }
+        }
+
+        public class SftpPortWithOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CommunicationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-sftpportwithoptions.html#cfn-transfer-server-sftpportwithoptions-communicationmode
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CommunicationMode { get; set; }
+            /// <summary>
+            /// SftpPort
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-sftpportwithoptions.html#cfn-transfer-server-sftpportwithoptions-sftpport
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic SftpPort { get; set; }
         }
 
         public class WorkflowDetail : Humidifier.Base.BaseSubResource, IHaveExecutionRole

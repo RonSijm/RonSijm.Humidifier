@@ -6,6 +6,7 @@ namespace Humidifier.SWF
     {
         public class Attributes
         {
+            public static string Status =  "Status" ;
             public static string Description =  "Description" ;
             public static string Arn =  "Arn" ;
             public static string WorkflowExecutionRetentionPeriodInDays =  "WorkflowExecutionRetentionPeriodInDays" ;

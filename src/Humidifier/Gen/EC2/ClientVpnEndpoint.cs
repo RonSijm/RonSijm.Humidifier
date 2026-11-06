@@ -5,6 +5,11 @@ namespace Humidifier.EC2
 
     public class ClientVpnEndpoint : Humidifier.Base.BaseResource, IHaveDescription, IHaveSecurityGroupIds, IHaveVpcId, IHaveServerCertificateArn, IHaveDnsServers
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.EC2.ClientVpnEndpoint; }
         /// <summary>
         /// ClientCidrBlock
@@ -238,7 +243,7 @@ namespace Humidifier.EC2
             /// ClientRootCertificateChainArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-certificateauthenticationrequest.html#cfn-ec2-clientvpnendpoint-certificateauthenticationrequest-clientrootcertificatechainarn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ClientRootCertificateChainArn { get; set; }
@@ -250,7 +255,7 @@ namespace Humidifier.EC2
             /// MutualAuthentication
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-mutualauthentication
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: CertificateAuthenticationRequest
             /// </summary>
             public Humidifier.EC2.ClientVpnEndpointTypes.CertificateAuthenticationRequest MutualAuthentication { get; set; }
@@ -258,7 +263,7 @@ namespace Humidifier.EC2
             /// Type
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-type
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic Type { get; set; }
@@ -266,7 +271,7 @@ namespace Humidifier.EC2
             /// FederatedAuthentication
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-federatedauthentication
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: FederatedAuthenticationRequest
             /// </summary>
             public Humidifier.EC2.ClientVpnEndpointTypes.FederatedAuthenticationRequest FederatedAuthentication { get; set; }
@@ -274,7 +279,7 @@ namespace Humidifier.EC2
             /// ActiveDirectory
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-activedirectory
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: DirectoryServiceAuthenticationRequest
             /// </summary>
             public Humidifier.EC2.ClientVpnEndpointTypes.DirectoryServiceAuthenticationRequest ActiveDirectory { get; set; }
@@ -423,7 +428,7 @@ namespace Humidifier.EC2
             /// DirectoryId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html#cfn-ec2-clientvpnendpoint-directoryserviceauthenticationrequest-directoryid
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic DirectoryId { get; set; }
@@ -435,7 +440,7 @@ namespace Humidifier.EC2
             /// SelfServiceSAMLProviderArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-selfservicesamlproviderarn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic SelfServiceSAMLProviderArn { get; set; }
@@ -443,7 +448,7 @@ namespace Humidifier.EC2
             /// SAMLProviderArn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-samlproviderarn
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic SAMLProviderArn { get; set; }
@@ -455,7 +460,7 @@ namespace Humidifier.EC2
             /// ResourceType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic ResourceType { get; set; }
@@ -463,7 +468,7 @@ namespace Humidifier.EC2
             /// Tags
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-tags
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// ItemType: Tag
             /// </summary>
@@ -476,7 +481,7 @@ namespace Humidifier.EC2
             /// TransitGatewayId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-transitgatewayconfiguration.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration-transitgatewayid
             /// Required: True
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic TransitGatewayId { get; set; }
@@ -484,7 +489,7 @@ namespace Humidifier.EC2
             /// AvailabilityZoneIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-transitgatewayconfiguration.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration-availabilityzoneids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -493,7 +498,7 @@ namespace Humidifier.EC2
             /// AvailabilityZones
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-transitgatewayconfiguration.html#cfn-ec2-clientvpnendpoint-transitgatewayconfiguration-availabilityzones
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>

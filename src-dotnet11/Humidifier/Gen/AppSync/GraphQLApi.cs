@@ -3,7 +3,7 @@ namespace Humidifier.AppSync
     using global::System.Collections.Generic;
     using GraphQLApiTypes;
 
-    public class GraphQLApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveQueryDepthLimit_Integer, IHaveAppSyncGraphQLApiTypesOpenIDConnectConfigOpenIDConnectConfig, IHaveIntrospectionConfig, IHaveMergedApiExecutionRoleArn, IHaveAppSyncGraphQLApiTypesEnhancedMetricsConfigEnhancedMetricsConfig, IHaveOwnerContact, IHaveResolverCountLimit_Integer, IHaveName, IHaveListOfAppSyncGraphQLApiTypesAdditionalAuthenticationProviderAdditionalAuthenticationProviders, IHaveEnvironmentVariables_Json, IHaveApiType, IHaveAppSyncGraphQLApiTypesLambdaAuthorizerConfigLambdaAuthorizerConfig, IHaveXrayEnabled_Boolean, IHaveVisibility, IHaveAppSyncGraphQLApiTypesUserPoolConfigUserPoolConfig, IHaveAuthenticationType, IHaveAppSyncGraphQLApiTypesLogConfigLogConfig
+    public class GraphQLApi : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveQueryDepthLimit_Integer, IHaveAppSyncGraphQLApiTypesOpenIDConnectConfigOpenIDConnectConfig, IHaveIntrospectionConfig, IHaveAppSyncGraphQLApiTypesEnhancedMetricsConfigEnhancedMetricsConfig, IHaveMergedApiExecutionRoleArn, IHaveOwnerContact, IHaveResolverCountLimit_Integer, IHaveName, IHaveListOfAppSyncGraphQLApiTypesAdditionalAuthenticationProviderAdditionalAuthenticationProviders, IHaveStringDictionaryOfEnvironmentVariables, IHaveApiType, IHaveAppSyncGraphQLApiTypesLambdaAuthorizerConfigLambdaAuthorizerConfig, IHaveXrayEnabled_Boolean, IHaveVisibility, IHaveAppSyncGraphQLApiTypesUserPoolConfigUserPoolConfig, IHaveAuthenticationType, IHaveAppSyncGraphQLApiTypesLogConfigLogConfig
     {
         public class Attributes
         {
@@ -42,14 +42,6 @@ namespace Humidifier.AppSync
         /// </summary>
         public Union<string, BaseFunction>? IntrospectionConfig { get; set; }
         /// <summary>
-        /// MergedApiExecutionRoleArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-mergedapiexecutionrolearn
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? MergedApiExecutionRoleArn { get; set; }
-        /// <summary>
         /// EnhancedMetricsConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-enhancedmetricsconfig
         /// Required: False
@@ -57,6 +49,14 @@ namespace Humidifier.AppSync
         /// Type: EnhancedMetricsConfig
         /// </summary>
         public Union<Humidifier.AppSync.GraphQLApiTypes.EnhancedMetricsConfig, BaseFunction>? EnhancedMetricsConfig { get; set; }
+        /// <summary>
+        /// MergedApiExecutionRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-mergedapiexecutionrolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? MergedApiExecutionRoleArn { get; set; }
         /// <summary>
         /// OwnerContact
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-ownercontact
@@ -88,9 +88,10 @@ namespace Humidifier.AppSync
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-environmentvariables
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public Union<object, BaseFunction>? EnvironmentVariables { get; set; }
+        public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? EnvironmentVariables { get; set; }
         /// <summary>
         /// ApiType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-apitype
@@ -254,32 +255,32 @@ namespace Humidifier.AppSync
             public Union<string, BaseFunction>? DataSourceLevelMetricsBehavior { get; set; }
         }
 
-        public class LambdaAuthorizerConfig : Humidifier.Base.BaseSubResource, IHaveIdentityValidationExpression, IHaveAuthorizerUri, IHaveAuthorizerResultTtlInSeconds_Double
+        public class LambdaAuthorizerConfig : Humidifier.Base.BaseSubResource, IHaveIdentityValidationExpression, IHaveAuthorizerResultTtlInSeconds_Integer, IHaveAuthorizerUri
         {
             /// <summary>
             /// IdentityValidationExpression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-identityvalidationexpression
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? IdentityValidationExpression { get; set; }
             /// <summary>
-            /// AuthorizerUri
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizeruri
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? AuthorizerUri { get; set; }
-            /// <summary>
             /// AuthorizerResultTtlInSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizerresultttlinseconds
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
             /// </summary>
-            public Union<double, BaseFunction>? AuthorizerResultTtlInSeconds { get; set; }
+            public Union<int, BaseFunction>? AuthorizerResultTtlInSeconds { get; set; }
+            /// <summary>
+            /// AuthorizerUri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizeruri
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AuthorizerUri { get; set; }
         }
 
         public class LogConfig : Humidifier.Base.BaseSubResource, IHaveCloudWatchLogsRoleArn, IHaveExcludeVerboseContent_Boolean, IHaveFieldLogLevel
@@ -310,21 +311,13 @@ namespace Humidifier.AppSync
             public Union<string, BaseFunction>? FieldLogLevel { get; set; }
         }
 
-        public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveClientId, IHaveAuthTTL_Double, IHaveIatTTL_Double
+        public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveAuthTTL_Double, IHaveIssuer, IHaveIatTTL_Double
         {
-            /// <summary>
-            /// Issuer
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Issuer { get; set; }
             /// <summary>
             /// ClientId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-clientid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ClientId { get; set; }
@@ -332,15 +325,23 @@ namespace Humidifier.AppSync
             /// AuthTTL
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Double
             /// </summary>
             public Union<double, BaseFunction>? AuthTTL { get; set; }
             /// <summary>
+            /// Issuer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Issuer { get; set; }
+            /// <summary>
             /// IatTTL
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Double
             /// </summary>
             public Union<double, BaseFunction>? IatTTL { get; set; }
@@ -352,7 +353,7 @@ namespace Humidifier.AppSync
             /// AppIdClientRegex
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-appidclientregex
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AppIdClientRegex { get; set; }
@@ -360,7 +361,7 @@ namespace Humidifier.AppSync
             /// UserPoolId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-userpoolid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? UserPoolId { get; set; }
@@ -368,7 +369,7 @@ namespace Humidifier.AppSync
             /// AwsRegion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-awsregion
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AwsRegion { get; set; }
@@ -376,7 +377,7 @@ namespace Humidifier.AppSync
             /// DefaultAction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-defaultaction
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? DefaultAction { get; set; }

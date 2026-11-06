@@ -349,8 +349,17 @@ namespace Humidifier.WAFv2
             public Union<IReadOnlyList<int>, IReadOnlyList<Union<int, BaseFunction>>, BaseFunction>? AsnList { get; set; }
         }
 
-        public class AssociationConfig : Humidifier.Base.BaseSubResource, IHaveMapOfWAFv2WebACLTypesRequestBodyAssociatedResourceTypeConfigRequestBody
+        public class AssociationConfig : Humidifier.Base.BaseSubResource, IHaveJsonDictionaryOfChallengeJavascriptSdkInjection, IHaveMapOfWAFv2WebACLTypesRequestBodyAssociatedResourceTypeConfigRequestBody
         {
+            /// <summary>
+            /// ChallengeJavascriptSdkInjection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-associationconfig.html#cfn-wafv2-webacl-associationconfig-challengejavascriptsdkinjection
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, object>, IReadOnlyDictionary<string, Union<object, BaseFunction>>, BaseFunction>? ChallengeJavascriptSdkInjection { get; set; }
             /// <summary>
             /// RequestBody
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-associationconfig.html#cfn-wafv2-webacl-associationconfig-requestbody

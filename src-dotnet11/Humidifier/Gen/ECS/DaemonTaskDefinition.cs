@@ -600,6 +600,18 @@ namespace Humidifier.ECS
             public Union<string, BaseFunction>? LogDriver { get; set; }
         }
 
+        public class LogDriverVolumeConfiguration : Humidifier.Base.BaseSubResource, IHaveDriver
+        {
+            /// <summary>
+            /// Driver
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-daemontaskdefinition-logdrivervolumeconfiguration.html#cfn-ecs-daemontaskdefinition-logdrivervolumeconfiguration-driver
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Driver { get; set; }
+        }
+
         public class MountPoint : Humidifier.Base.BaseSubResource, IHaveReadOnly_Boolean, IHaveSourceVolume, IHaveContainerPath
         {
             /// <summary>
@@ -766,8 +778,16 @@ namespace Humidifier.ECS
             public Union<string, BaseFunction>? Name { get; set; }
         }
 
-        public class Volume : Humidifier.Base.BaseSubResource, IHaveECSDaemonTaskDefinitionTypesHostVolumePropertiesHost, IHaveName
+        public class Volume : Humidifier.Base.BaseSubResource, IHaveECSDaemonTaskDefinitionTypesLogDriverVolumeConfigurationLogDriverVolumeConfiguration, IHaveECSDaemonTaskDefinitionTypesHostVolumePropertiesHost, IHaveName
         {
+            /// <summary>
+            /// LogDriverVolumeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-daemontaskdefinition-volume.html#cfn-ecs-daemontaskdefinition-volume-logdrivervolumeconfiguration
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: LogDriverVolumeConfiguration
+            /// </summary>
+            public Union<Humidifier.ECS.DaemonTaskDefinitionTypes.LogDriverVolumeConfiguration, BaseFunction>? LogDriverVolumeConfiguration { get; set; }
             /// <summary>
             /// Host
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-daemontaskdefinition-volume.html#cfn-ecs-daemontaskdefinition-volume-host

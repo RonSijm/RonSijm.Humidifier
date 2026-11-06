@@ -4,6 +4,11 @@ namespace Humidifier.LakeFormation
 
     public class Resource : Humidifier.Base.BaseResource, IHaveResourceArn, IHaveWithFederation_Boolean, IHaveUseServiceLinkedRole_Boolean, IHaveHybridAccessEnabled_Boolean, IHaveRoleArn
     {
+        public class Attributes
+        {
+            public static string Id =  "Id" ;
+        }
+
         public override string AWSTypeName { get => AWS.LakeFormation.Resource; }
 
         /// <summary>
@@ -28,7 +33,7 @@ namespace Humidifier.LakeFormation
         /// UseServiceLinkedRole
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-resource.html#cfn-lakeformation-resource-useservicelinkedrole
         /// Required: True
-        /// UpdateType: Conditional
+        /// UpdateType: Mutable
         /// PrimitiveType: Boolean
         /// </summary>
         [Required]

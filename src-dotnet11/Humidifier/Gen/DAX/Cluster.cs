@@ -144,7 +144,7 @@ namespace Humidifier.DAX
             /// SSEEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dax-cluster-ssespecification.html#cfn-dax-cluster-ssespecification-sseenabled
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Immutable
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? SSEEnabled { get; set; }

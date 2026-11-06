@@ -3,7 +3,7 @@ namespace Humidifier.Timestream
     using global::System.Collections.Generic;
     using InfluxDBInstanceTypes;
 
-    public class InfluxDBInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDbParameterGroupIdentifier, IHaveOrganization, IHavePort_Integer, IHaveDbInstanceType, IHaveStringListOfVpcSubnetIds, IHaveDeploymentType, IHaveName, IHaveAllocatedStorage_Integer, IHaveDbStorageType, IHaveTimestreamInfluxDBInstanceTypesLogDeliveryConfigurationLogDeliveryConfiguration, IHaveUsername, IHaveBucket, IHaveStringListOfVpcSecurityGroupIds, IHaveNetworkType, IHavePubliclyAccessible_Boolean, IHaveTimestreamInfluxDBInstanceTypesMaintenanceScheduleMaintenanceSchedule, IHavePassword
+    public class InfluxDBInstance : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDbParameterGroupIdentifier, IHaveOrganization, IHaveKmsKeyId, IHavePort_Integer, IHaveDbInstanceType, IHaveStringListOfVpcSubnetIds, IHaveDeploymentType, IHaveName, IHaveAllocatedStorage_Integer, IHaveDbStorageType, IHaveTimestreamInfluxDBInstanceTypesLogDeliveryConfigurationLogDeliveryConfiguration, IHaveUsername, IHaveBucket, IHaveStringListOfVpcSecurityGroupIds, IHaveNetworkType, IHavePubliclyAccessible_Boolean, IHaveTimestreamInfluxDBInstanceTypesMaintenanceScheduleMaintenanceSchedule, IHavePassword
     {
         public class Attributes
         {
@@ -12,6 +12,7 @@ namespace Humidifier.Timestream
             public static string InfluxAuthParametersSecretArn =  "InfluxAuthParametersSecretArn" ;
             public static string NextMaintenanceTime =  "NextMaintenanceTime" ;
             public static string AvailabilityZone =  "AvailabilityZone" ;
+            public static string DbClusterId =  "DbClusterId" ;
             public static string SecondaryAvailabilityZone =  "SecondaryAvailabilityZone" ;
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
@@ -34,6 +35,14 @@ namespace Humidifier.Timestream
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? Organization { get; set; }
+        /// <summary>
+        /// KmsKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-kmskeyid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? KmsKeyId { get; set; }
         /// <summary>
         /// Port
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-influxdbinstance.html#cfn-timestream-influxdbinstance-port

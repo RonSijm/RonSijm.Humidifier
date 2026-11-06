@@ -190,7 +190,7 @@ namespace Humidifier.ImageBuilder
             public Union<bool, BaseFunction>? OnUpdate { get; set; }
         }
 
-        public class ImageScanningConfiguration : Humidifier.Base.BaseSubResource, IHaveImageBuilderImageTypesEcrConfigurationEcrConfiguration, IHaveImageScanningEnabled_Boolean
+        public class ImageScanningConfiguration : Humidifier.Base.BaseSubResource, IHaveImageBuilderImageTypesEcrConfigurationEcrConfiguration, IHaveImageBuilderImageTypesScanResultConditionScanResultCondition, IHaveStringListOfImageScanningTypes, IHaveImageScanningEnabled_Boolean
         {
             /// <summary>
             /// EcrConfiguration
@@ -200,6 +200,23 @@ namespace Humidifier.ImageBuilder
             /// Type: EcrConfiguration
             /// </summary>
             public Union<Humidifier.ImageBuilder.ImageTypes.EcrConfiguration, BaseFunction>? EcrConfiguration { get; set; }
+            /// <summary>
+            /// ScanResultCondition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-scanresultcondition
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: ScanResultCondition
+            /// </summary>
+            public Union<Humidifier.ImageBuilder.ImageTypes.ScanResultCondition, BaseFunction>? ScanResultCondition { get; set; }
+            /// <summary>
+            /// ImageScanningTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-imagescanningtypes
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ImageScanningTypes { get; set; }
             /// <summary>
             /// ImageScanningEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-imagescanningenabled
@@ -264,6 +281,26 @@ namespace Humidifier.ImageBuilder
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Patch { get; set; }
+        }
+
+        public class ScanResultCondition : Humidifier.Base.BaseSubResource, IHaveFixAvailable_Boolean, IHaveMaximumSeverityLabel
+        {
+            /// <summary>
+            /// FixAvailable
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-scanresultcondition.html#cfn-imagebuilder-image-scanresultcondition-fixavailable
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? FixAvailable { get; set; }
+            /// <summary>
+            /// MaximumSeverityLabel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-scanresultcondition.html#cfn-imagebuilder-image-scanresultcondition-maximumseveritylabel
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? MaximumSeverityLabel { get; set; }
         }
 
         public class WorkflowConfiguration : Humidifier.Base.BaseSubResource, IHaveParallelGroup, IHaveListOfImageBuilderImageTypesWorkflowParameterParameters, IHaveWorkflowArn, IHaveOnFailure

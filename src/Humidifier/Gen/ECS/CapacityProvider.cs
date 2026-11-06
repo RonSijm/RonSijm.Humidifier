@@ -219,6 +219,14 @@ namespace Humidifier.ECS
             /// </summary>
             public dynamic InstanceMetadataTagsPropagation { get; set; }
             /// <summary>
+            /// NitroEnclavesEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-instancelaunchtemplate.html#cfn-ecs-capacityprovider-instancelaunchtemplate-nitroenclavesenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic NitroEnclavesEnabled { get; set; }
+            /// <summary>
             /// StorageConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-instancelaunchtemplate.html#cfn-ecs-capacityprovider-instancelaunchtemplate-storageconfiguration
             /// Required: False

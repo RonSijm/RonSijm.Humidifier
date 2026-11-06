@@ -352,6 +352,15 @@ namespace Humidifier.WAFv2
         public class AssociationConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
+            /// ChallengeJavascriptSdkInjection
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-associationconfig.html#cfn-wafv2-webacl-associationconfig-challengejavascriptsdkinjection
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public dynamic ChallengeJavascriptSdkInjection { get; set; }
+            /// <summary>
             /// RequestBody
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-associationconfig.html#cfn-wafv2-webacl-associationconfig-requestbody
             /// Required: False

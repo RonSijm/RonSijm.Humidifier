@@ -42,14 +42,6 @@ namespace Humidifier.AppSync
         /// </summary>
         public dynamic IntrospectionConfig { get; set; }
         /// <summary>
-        /// MergedApiExecutionRoleArn
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-mergedapiexecutionrolearn
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic MergedApiExecutionRoleArn { get; set; }
-        /// <summary>
         /// EnhancedMetricsConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-enhancedmetricsconfig
         /// Required: False
@@ -57,6 +49,14 @@ namespace Humidifier.AppSync
         /// Type: EnhancedMetricsConfig
         /// </summary>
         public Humidifier.AppSync.GraphQLApiTypes.EnhancedMetricsConfig EnhancedMetricsConfig { get; set; }
+        /// <summary>
+        /// MergedApiExecutionRoleArn
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-mergedapiexecutionrolearn
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic MergedApiExecutionRoleArn { get; set; }
         /// <summary>
         /// OwnerContact
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-ownercontact
@@ -88,9 +88,10 @@ namespace Humidifier.AppSync
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-environmentvariables
         /// Required: False
         /// UpdateType: Mutable
-        /// PrimitiveType: Json
+        /// Type: Map
+        /// PrimitiveItemType: String
         /// </summary>
-        public dynamic EnvironmentVariables { get; set; }
+        public Dictionary<string, dynamic> EnvironmentVariables { get; set; }
         /// <summary>
         /// ApiType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-apitype
@@ -260,26 +261,26 @@ namespace Humidifier.AppSync
             /// IdentityValidationExpression
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-identityvalidationexpression
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic IdentityValidationExpression { get; set; }
             /// <summary>
-            /// AuthorizerUri
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizeruri
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic AuthorizerUri { get; set; }
-            /// <summary>
             /// AuthorizerResultTtlInSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizerresultttlinseconds
             /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Double
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
             /// </summary>
             public dynamic AuthorizerResultTtlInSeconds { get; set; }
+            /// <summary>
+            /// AuthorizerUri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-authorizeruri
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthorizerUri { get; set; }
         }
 
         public class LogConfig : Humidifier.Base.BaseSubResource, IHaveCloudWatchLogsRoleArn
@@ -313,18 +314,10 @@ namespace Humidifier.AppSync
         public class OpenIDConnectConfig : Humidifier.Base.BaseSubResource, IHaveClientId, IHaveIssuer, IHaveAuthTTL, IHaveIatTTL
         {
             /// <summary>
-            /// Issuer
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Issuer { get; set; }
-            /// <summary>
             /// ClientId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-clientid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic ClientId { get; set; }
@@ -332,15 +325,23 @@ namespace Humidifier.AppSync
             /// AuthTTL
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-authttl
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Double
             /// </summary>
             public dynamic AuthTTL { get; set; }
             /// <summary>
+            /// Issuer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Issuer { get; set; }
+            /// <summary>
             /// IatTTL
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-iatttl
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Double
             /// </summary>
             public dynamic IatTTL { get; set; }
@@ -352,7 +353,7 @@ namespace Humidifier.AppSync
             /// AppIdClientRegex
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-appidclientregex
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AppIdClientRegex { get; set; }
@@ -360,7 +361,7 @@ namespace Humidifier.AppSync
             /// UserPoolId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-userpoolid
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic UserPoolId { get; set; }
@@ -368,7 +369,7 @@ namespace Humidifier.AppSync
             /// AwsRegion
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-awsregion
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic AwsRegion { get; set; }
@@ -376,7 +377,7 @@ namespace Humidifier.AppSync
             /// DefaultAction
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-defaultaction
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic DefaultAction { get; set; }
