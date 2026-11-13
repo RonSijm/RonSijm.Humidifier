@@ -281,6 +281,68 @@ namespace Humidifier.WAFv2
             public Union<Humidifier.WAFv2.RuleGroupTypes.ImmunityTimeProperty, BaseFunction>? ImmunityTimeProperty { get; set; }
         }
 
+        public class ConnectedAccountChainConfig : Humidifier.Base.BaseSubResource, IHaveChain, IHaveListOfWAFv2RuleGroupTypesConnectedAccountPricePrices
+        {
+            /// <summary>
+            /// Chain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-connectedaccountchainconfig.html#cfn-wafv2-rulegroup-connectedaccountchainconfig-chain
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Chain { get; set; }
+            /// <summary>
+            /// Prices
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-connectedaccountchainconfig.html#cfn-wafv2-rulegroup-connectedaccountchainconfig-prices
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountPrice
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.WAFv2.RuleGroupTypes.ConnectedAccountPrice>, IReadOnlyList<Union<Humidifier.WAFv2.RuleGroupTypes.ConnectedAccountPrice, BaseFunction>>, BaseFunction>? Prices { get; set; }
+        }
+
+        public class ConnectedAccountConfig : Humidifier.Base.BaseSubResource, IHaveListOfWAFv2RuleGroupTypesConnectedAccountChainConfigPaymentNetworks, IHaveConnectedAccountArn
+        {
+            /// <summary>
+            /// PaymentNetworks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-connectedaccountconfig.html#cfn-wafv2-rulegroup-connectedaccountconfig-paymentnetworks
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountChainConfig
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.WAFv2.RuleGroupTypes.ConnectedAccountChainConfig>, IReadOnlyList<Union<Humidifier.WAFv2.RuleGroupTypes.ConnectedAccountChainConfig, BaseFunction>>, BaseFunction>? PaymentNetworks { get; set; }
+            /// <summary>
+            /// ConnectedAccountArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-connectedaccountconfig.html#cfn-wafv2-rulegroup-connectedaccountconfig-connectedaccountarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ConnectedAccountArn { get; set; }
+        }
+
+        public class ConnectedAccountPrice : Humidifier.Base.BaseSubResource, IHaveAmount, IHaveCurrency
+        {
+            /// <summary>
+            /// Amount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-connectedaccountprice.html#cfn-wafv2-rulegroup-connectedaccountprice-amount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Amount { get; set; }
+            /// <summary>
+            /// Currency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-connectedaccountprice.html#cfn-wafv2-rulegroup-connectedaccountprice-currency
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Currency { get; set; }
+        }
+
         public class CookieMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll_Json, IHaveStringListOfIncludedCookies, IHaveStringListOfExcludedCookies
         {
             /// <summary>
@@ -858,8 +920,17 @@ namespace Humidifier.WAFv2
             public Union<string, BaseFunction>? Name { get; set; }
         }
 
-        public class MonetizationConfig : Humidifier.Base.BaseSubResource, IHaveCurrencyMode, IHaveWAFv2RuleGroupTypesCryptoConfigCryptoConfig
+        public class MonetizationConfig : Humidifier.Base.BaseSubResource, IHaveListOfWAFv2RuleGroupTypesConnectedAccountConfigConnectedAccountConfigs, IHaveCurrencyMode, IHaveWAFv2RuleGroupTypesCryptoConfigCryptoConfig
         {
+            /// <summary>
+            /// ConnectedAccountConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-monetizationconfig.html#cfn-wafv2-rulegroup-monetizationconfig-connectedaccountconfigs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountConfig
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.WAFv2.RuleGroupTypes.ConnectedAccountConfig>, IReadOnlyList<Union<Humidifier.WAFv2.RuleGroupTypes.ConnectedAccountConfig, BaseFunction>>, BaseFunction>? ConnectedAccountConfigs { get; set; }
             /// <summary>
             /// CurrencyMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-monetizationconfig.html#cfn-wafv2-rulegroup-monetizationconfig-currencymode

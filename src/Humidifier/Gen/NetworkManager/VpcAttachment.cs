@@ -16,6 +16,7 @@ namespace Humidifier.NetworkManager
             public static string AttachmentId =  "AttachmentId" ;
             public static string NetworkFunctionGroupName =  "NetworkFunctionGroupName" ;
             public static string CoreNetworkArn =  "CoreNetworkArn" ;
+            public static string NatSystemRouteSupport =  "NatSystemRouteSupport" ;
             public static string ResourceArn =  "ResourceArn" ;
             public static string State =  "State" ;
             public static string LastModificationErrors =  "LastModificationErrors" ;
@@ -55,6 +56,23 @@ namespace Humidifier.NetworkManager
         [Required]
         public dynamic CoreNetworkId { get; set; }
         /// <summary>
+        /// NatGatewaySupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-natgatewaysupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NatGatewaySupport { get; set; }
+        /// <summary>
+        /// NatGatewayRules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-natgatewayrules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: NatRule
+        /// </summary>
+        public List<Humidifier.NetworkManager.VpcAttachmentTypes.NatRule> NatGatewayRules { get; set; }
+        /// <summary>
         /// RoutingPolicyLabel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-routingpolicylabel
         /// Required: False
@@ -85,6 +103,34 @@ namespace Humidifier.NetworkManager
 
     namespace VpcAttachmentTypes
     {
+        public class NatRule : Humidifier.Base.BaseSubResource, IHaveRuleNumber
+        {
+            /// <summary>
+            /// MatchSourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-natrule.html#cfn-networkmanager-vpcattachment-natrule-matchsourcecidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MatchSourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-natrule.html#cfn-networkmanager-vpcattachment-natrule-rulenumber
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RuleNumber { get; set; }
+            /// <summary>
+            /// NatCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-natrule.html#cfn-networkmanager-vpcattachment-natrule-natcidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NatCidr { get; set; }
+        }
+
         public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveNetworkFunctionGroupName
         {
             /// <summary>

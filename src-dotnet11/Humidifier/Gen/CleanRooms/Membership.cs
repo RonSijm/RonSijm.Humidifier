@@ -267,7 +267,7 @@ namespace Humidifier.CleanRooms
             public Union<bool, BaseFunction>? IsResponsible { get; set; }
         }
 
-        public class ProtectedJobS3OutputConfigurationInput : Humidifier.Base.BaseSubResource, IHaveBucket, IHaveKeyPrefix
+        public class ProtectedJobS3OutputConfigurationInput : Humidifier.Base.BaseSubResource, IHaveBucket, IHaveResultFormat, IHaveKeyPrefix
         {
             /// <summary>
             /// Bucket
@@ -277,6 +277,14 @@ namespace Humidifier.CleanRooms
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Bucket { get; set; }
+            /// <summary>
+            /// ResultFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-protectedjobs3outputconfigurationinput.html#cfn-cleanrooms-membership-protectedjobs3outputconfigurationinput-resultformat
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ResultFormat { get; set; }
             /// <summary>
             /// KeyPrefix
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cleanrooms-membership-protectedjobs3outputconfigurationinput.html#cfn-cleanrooms-membership-protectedjobs3outputconfigurationinput-keyprefix

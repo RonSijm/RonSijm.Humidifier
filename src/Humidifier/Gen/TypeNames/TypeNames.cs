@@ -562,6 +562,7 @@ public class AWS
         public const string AccessProfile = "AWS::CloudWatch::AccessProfile";
         public const string Alarm = "AWS::CloudWatch::Alarm";
         public const string AlarmMuteRule = "AWS::CloudWatch::AlarmMuteRule";
+        public const string Alert = "AWS::CloudWatch::Alert";
         public const string AnomalyDetector = "AWS::CloudWatch::AnomalyDetector";
         public const string CompositeAlarm = "AWS::CloudWatch::CompositeAlarm";
         public const string Dashboard = "AWS::CloudWatch::Dashboard";
@@ -1683,6 +1684,7 @@ public class AWS
         public const string ApplicationCloudWatchLoggingOption = "AWS::KinesisAnalyticsV2::ApplicationCloudWatchLoggingOption";
         public const string ApplicationOutput = "AWS::KinesisAnalyticsV2::ApplicationOutput";
         public const string ApplicationReferenceDataSource = "AWS::KinesisAnalyticsV2::ApplicationReferenceDataSource";
+        public const string Snapshot = "AWS::KinesisAnalyticsV2::Snapshot";
     }
     public class KinesisFirehose
     {
@@ -2612,6 +2614,7 @@ public class AWS
         public const string Association = "AWS::SSM::Association";
         public const string AutomationExecution = "AWS::SSM::AutomationExecution";
         public const string CloudConnector = "AWS::SSM::CloudConnector";
+        public const string DefaultHostManagementConfiguration = "AWS::SSM::DefaultHostManagementConfiguration";
         public const string Document = "AWS::SSM::Document";
         public const string MaintenanceWindow = "AWS::SSM::MaintenanceWindow";
         public const string MaintenanceWindowTarget = "AWS::SSM::MaintenanceWindowTarget";
@@ -3003,7 +3006,9 @@ public class AWS
     {
         public const string AgentContext = "AWS::WellArchitected::AgentContext";
         public const string AgentGoal = "AWS::WellArchitected::AgentGoal";
+        public const string AgentOrganizationalProfile = "AWS::WellArchitected::AgentOrganizationalProfile";
         public const string AgentProfile = "AWS::WellArchitected::AgentProfile";
+        public const string AgentProfilePolicy = "AWS::WellArchitected::AgentProfilePolicy";
         public const string Lens = "AWS::WellArchitected::Lens";
         public const string Profile = "AWS::WellArchitected::Profile";
         public const string ReviewTemplate = "AWS::WellArchitected::ReviewTemplate";

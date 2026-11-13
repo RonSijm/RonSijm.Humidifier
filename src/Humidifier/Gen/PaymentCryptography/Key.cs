@@ -200,7 +200,7 @@ namespace Humidifier.PaymentCryptography
             public dynamic Encrypt { get; set; }
         }
 
-        public class ReplicationStatusType : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveKmsKeyId, IHaveKmsKeyArn, IHaveStatusMessage
+        public class ReplicationStatusType : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveStatusMessage
         {
             /// <summary>
             /// Status
@@ -211,21 +211,13 @@ namespace Humidifier.PaymentCryptography
             /// </summary>
             public dynamic Status { get; set; }
             /// <summary>
-            /// KmsKeyArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmskeyarn
+            /// KmsEncryptionKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmsencryptionkeyid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public dynamic KmsKeyArn { get; set; }
-            /// <summary>
-            /// KmsKeyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmskeyid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic KmsKeyId { get; set; }
+            public dynamic KmsEncryptionKeyId { get; set; }
             /// <summary>
             /// StatusMessage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-statusmessage
@@ -234,6 +226,14 @@ namespace Humidifier.PaymentCryptography
             /// PrimitiveType: String
             /// </summary>
             public dynamic StatusMessage { get; set; }
+            /// <summary>
+            /// KmsEncryptionKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmsencryptionkeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsEncryptionKeyArn { get; set; }
         }
     }
 }

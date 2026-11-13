@@ -3,7 +3,7 @@ namespace Humidifier.PCS
     using global::System.Collections.Generic;
     using ComputeNodeGroupTypes;
 
-    public class ComputeNodeGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveClusterId, IHavePCSComputeNodeGroupTypesSpotOptionsSpotOptions, IHavePCSComputeNodeGroupTypesSlurmConfigurationSlurmConfiguration, IHaveStringListOfSubnetIds, IHaveName, IHavePCSComputeNodeGroupTypesNodeLifecycleActionsNodeLifecycleActions, IHavePCSComputeNodeGroupTypesScalingConfigurationScalingConfiguration, IHaveListOfPCSComputeNodeGroupTypesInstanceConfigInstanceConfigs, IHavePurchaseOption, IHavePCSComputeNodeGroupTypesCustomLaunchTemplateCustomLaunchTemplate, IHaveStringDictionaryOfTags, IHaveAmiId, IHaveIamInstanceProfileArn
+    public class ComputeNodeGroup : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveSshKeyName, IHaveClusterId, IHavePCSComputeNodeGroupTypesSpotOptionsSpotOptions, IHavePCSComputeNodeGroupTypesSlurmConfigurationSlurmConfiguration, IHaveLaunchTemplateMode, IHaveStringListOfSecurityGroupIds, IHaveStringListOfSubnetIds, IHaveName, IHavePCSComputeNodeGroupTypesNodeLifecycleActionsNodeLifecycleActions, IHavePCSComputeNodeGroupTypesScalingConfigurationScalingConfiguration, IHaveListOfPCSComputeNodeGroupTypesInstanceConfigInstanceConfigs, IHavePurchaseOption, IHavePCSComputeNodeGroupTypesCustomLaunchTemplateCustomLaunchTemplate, IHaveStringDictionaryOfTags, IHaveAmiId, IHaveIamInstanceProfileArn
     {
         public class Attributes
         {
@@ -14,6 +14,14 @@ namespace Humidifier.PCS
         }
 
         public override string AWSTypeName { get => AWS.PCS.ComputeNodeGroup; }
+        /// <summary>
+        /// SshKeyName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-sshkeyname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? SshKeyName { get; set; }
 
         /// <summary>
         /// ClusterId
@@ -40,6 +48,23 @@ namespace Humidifier.PCS
         /// Type: SlurmConfiguration
         /// </summary>
         public Union<Humidifier.PCS.ComputeNodeGroupTypes.SlurmConfiguration, BaseFunction>? SlurmConfiguration { get; set; }
+        /// <summary>
+        /// LaunchTemplateMode
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-launchtemplatemode
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? LaunchTemplateMode { get; set; }
+        /// <summary>
+        /// SecurityGroupIds
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pcs-computenodegroup.html#cfn-pcs-computenodegroup-securitygroupids
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? SecurityGroupIds { get; set; }
 
         /// <summary>
         /// SubnetIds

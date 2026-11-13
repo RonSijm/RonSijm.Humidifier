@@ -3,7 +3,7 @@ namespace Humidifier.CloudTrail
     using global::System.Collections.Generic;
     using TrailTypes;
 
-    public class Trail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIncludeGlobalServiceEvents_Boolean, IHaveListOfCloudTrailTrailTypesEventSelectorEventSelectors, IHaveKMSKeyId, IHaveListOfCloudTrailTrailTypesAggregationConfigurationAggregationConfigurations, IHaveCloudWatchLogsRoleArn, IHaveS3KeyPrefix, IHaveListOfCloudTrailTrailTypesAdvancedEventSelectorAdvancedEventSelectors, IHaveTrailName, IHaveIsOrganizationTrail_Boolean, IHaveListOfCloudTrailTrailTypesInsightSelectorInsightSelectors, IHaveCloudWatchLogsLogGroupArn, IHaveSnsTopicName, IHaveIsMultiRegionTrail_Boolean, IHaveS3BucketName, IHaveEnableLogFileValidation_Boolean, IHaveIsLogging_Boolean
+    public class Trail : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIncludeGlobalServiceEvents_Boolean, IHaveListOfCloudTrailTrailTypesEventSelectorEventSelectors, IHaveKMSKeyId, IHaveRecursiveLogging_Boolean, IHaveListOfCloudTrailTrailTypesAggregationConfigurationAggregationConfigurations, IHaveCloudWatchLogsRoleArn, IHaveS3KeyPrefix, IHaveListOfCloudTrailTrailTypesAdvancedEventSelectorAdvancedEventSelectors, IHaveTrailName, IHaveIsOrganizationTrail_Boolean, IHaveListOfCloudTrailTrailTypesInsightSelectorInsightSelectors, IHaveCloudWatchLogsLogGroupArn, IHaveSnsTopicName, IHaveIsMultiRegionTrail_Boolean, IHaveS3BucketName, IHaveEnableLogFileValidation_Boolean, IHaveIsLogging_Boolean
     {
         public class Attributes
         {
@@ -37,6 +37,14 @@ namespace Humidifier.CloudTrail
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? KMSKeyId { get; set; }
+        /// <summary>
+        /// RecursiveLogging
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-recursivelogging
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? RecursiveLogging { get; set; }
         /// <summary>
         /// AggregationConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-aggregationconfigurations

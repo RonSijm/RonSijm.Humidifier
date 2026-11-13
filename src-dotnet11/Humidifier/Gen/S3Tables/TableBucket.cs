@@ -3,7 +3,7 @@ namespace Humidifier.S3Tables
     using global::System.Collections.Generic;
     using TableBucketTypes;
 
-    public class TableBucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableBucketName, IHaveS3TablesTableBucketTypesStorageClassConfigurationStorageClassConfiguration, IHaveS3TablesTableBucketTypesMetricsConfigurationMetricsConfiguration, IHaveS3TablesTableBucketTypesEncryptionConfigurationEncryptionConfiguration, IHaveS3TablesTableBucketTypesUnreferencedFileRemovalUnreferencedFileRemoval, IHaveS3TablesTableBucketTypesReplicationConfigurationReplicationConfiguration
+    public class TableBucket : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTableBucketName, IHaveS3TablesTableBucketTypesStorageClassConfigurationStorageClassConfiguration, IHaveS3TablesTableBucketTypesMetricsConfigurationMetricsConfiguration, IHaveS3TablesTableBucketTypesEncryptionConfigurationEncryptionConfiguration, IHaveS3TablesTableBucketTypesLoggingConfigurationLoggingConfiguration, IHaveS3TablesTableBucketTypesUnreferencedFileRemovalUnreferencedFileRemoval, IHaveS3TablesTableBucketTypesReplicationConfigurationReplicationConfiguration
     {
         public class Attributes
         {
@@ -36,6 +36,14 @@ namespace Humidifier.S3Tables
         /// Type: EncryptionConfiguration
         /// </summary>
         public Union<Humidifier.S3Tables.TableBucketTypes.EncryptionConfiguration, BaseFunction>? EncryptionConfiguration { get; set; }
+        /// <summary>
+        /// LoggingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3tables-tablebucket.html#cfn-s3tables-tablebucket-loggingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LoggingConfiguration
+        /// </summary>
+        public Union<Humidifier.S3Tables.TableBucketTypes.LoggingConfiguration, BaseFunction>? LoggingConfiguration { get; set; }
         /// <summary>
         /// UnreferencedFileRemoval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3tables-tablebucket.html#cfn-s3tables-tablebucket-unreferencedfileremoval
@@ -85,6 +93,34 @@ namespace Humidifier.S3Tables
             public Union<string, BaseFunction>? SSEAlgorithm { get; set; }
         }
 
+        public class LoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveTargetPrefix, IHaveS3TablesTableBucketTypesTargetObjectKeyFormatTargetObjectKeyFormat, IHaveTargetBucket
+        {
+            /// <summary>
+            /// TargetPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-loggingconfiguration.html#cfn-s3tables-tablebucket-loggingconfiguration-targetprefix
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TargetPrefix { get; set; }
+            /// <summary>
+            /// TargetObjectKeyFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-loggingconfiguration.html#cfn-s3tables-tablebucket-loggingconfiguration-targetobjectkeyformat
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: TargetObjectKeyFormat
+            /// </summary>
+            public Union<Humidifier.S3Tables.TableBucketTypes.TargetObjectKeyFormat, BaseFunction>? TargetObjectKeyFormat { get; set; }
+            /// <summary>
+            /// TargetBucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-loggingconfiguration.html#cfn-s3tables-tablebucket-loggingconfiguration-targetbucket
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TargetBucket { get; set; }
+        }
+
         public class MetricsConfiguration : Humidifier.Base.BaseSubResource, IHaveStatus
         {
             /// <summary>
@@ -95,6 +131,18 @@ namespace Humidifier.S3Tables
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Status { get; set; }
+        }
+
+        public class PartitionedPrefix : Humidifier.Base.BaseSubResource, IHavePartitionDateSource
+        {
+            /// <summary>
+            /// PartitionDateSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-partitionedprefix.html#cfn-s3tables-tablebucket-partitionedprefix-partitiondatesource
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? PartitionDateSource { get; set; }
         }
 
         public class ReplicationConfiguration : Humidifier.Base.BaseSubResource, IHaveRole, IHaveListOfS3TablesTableBucketTypesReplicationRuleRules
@@ -153,6 +201,18 @@ namespace Humidifier.S3Tables
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? StorageClass { get; set; }
+        }
+
+        public class TargetObjectKeyFormat : Humidifier.Base.BaseSubResource, IHaveS3TablesTableBucketTypesPartitionedPrefixPartitionedPrefix
+        {
+            /// <summary>
+            /// PartitionedPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-targetobjectkeyformat.html#cfn-s3tables-tablebucket-targetobjectkeyformat-partitionedprefix
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: PartitionedPrefix
+            /// </summary>
+            public Union<Humidifier.S3Tables.TableBucketTypes.PartitionedPrefix, BaseFunction>? PartitionedPrefix { get; set; }
         }
 
         public class UnreferencedFileRemoval : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveNoncurrentDays_Integer, IHaveUnreferencedDays_Integer

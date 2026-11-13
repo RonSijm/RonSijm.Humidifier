@@ -416,7 +416,7 @@ namespace Humidifier.DMS
             public Union<string, BaseFunction>? CertificateArn { get; set; }
         }
 
-        public class OracleSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerOracleAsmAccessRoleArn, IHaveSecretsManagerOracleAsmSecretId, IHaveSslMode, IHaveSecretsManagerSecurityDbEncryptionSecretId, IHaveServerName, IHavePort_Integer, IHaveDatabaseName, IHaveAsmServer, IHaveCertificateArn, IHaveSecretsManagerSecurityDbEncryptionAccessRoleArn
+        public class OracleSettings : Humidifier.Base.BaseSubResource, IHaveSecretsManagerOracleAsmAccessRoleArn, IHaveS3AccessRoleArn, IHaveS3Path, IHaveSecretsManagerOracleAsmSecretId, IHaveSslMode, IHaveSecretsManagerSecurityDbEncryptionSecretId, IHaveServerName, IHavePort_Integer, IHaveDatabaseName, IHaveAsmServer, IHaveCertificateArn, IHaveSecretsManagerSecurityDbEncryptionAccessRoleArn
         {
             /// <summary>
             /// SecretsManagerOracleAsmAccessRoleArn
@@ -426,6 +426,22 @@ namespace Humidifier.DMS
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SecretsManagerOracleAsmAccessRoleArn { get; set; }
+            /// <summary>
+            /// S3AccessRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-oraclesettings.html#cfn-dms-dataprovider-oraclesettings-s3accessrolearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? S3AccessRoleArn { get; set; }
+            /// <summary>
+            /// S3Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-oraclesettings.html#cfn-dms-dataprovider-oraclesettings-s3path
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? S3Path { get; set; }
             /// <summary>
             /// SecretsManagerOracleAsmSecretId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-dataprovider-oraclesettings.html#cfn-dms-dataprovider-oraclesettings-secretsmanageroracleasmsecretid

@@ -14,15 +14,13 @@ namespace Humidifier.FSx
         }
 
         public override string AWSTypeName { get => AWS.FSx.Backup; }
-
         /// <summary>
         /// FileSystemId
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-backup.html#cfn-fsx-backup-filesystemid
-        /// Required: True
+        /// Required: False
         /// UpdateType: Immutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public Union<string, BaseFunction>? FileSystemId { get; set; }
         /// <summary>
         /// Tags

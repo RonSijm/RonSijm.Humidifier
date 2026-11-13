@@ -34,6 +34,23 @@ namespace Humidifier.NetworkManager
         /// </summary>
         [Required]
         public dynamic CoreNetworkId { get; set; }
+        /// <summary>
+        /// NatGatewaySupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-natgatewaysupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NatGatewaySupport { get; set; }
+        /// <summary>
+        /// NatGatewayRules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-natgatewayrules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: NatRule
+        /// </summary>
+        public List<Humidifier.NetworkManager.DirectConnectGatewayAttachmentTypes.NatRule> NatGatewayRules { get; set; }
 
         /// <summary>
         /// EdgeLocations
@@ -72,10 +89,46 @@ namespace Humidifier.NetworkManager
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// NatSystemRouteSupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-directconnectgatewayattachment.html#cfn-networkmanager-directconnectgatewayattachment-natsystemroutesupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic NatSystemRouteSupport { get; set; }
     }
 
     namespace DirectConnectGatewayAttachmentTypes
     {
+        public class NatRule : Humidifier.Base.BaseSubResource, IHaveRuleNumber
+        {
+            /// <summary>
+            /// MatchSourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-directconnectgatewayattachment-natrule.html#cfn-networkmanager-directconnectgatewayattachment-natrule-matchsourcecidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MatchSourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-directconnectgatewayattachment-natrule.html#cfn-networkmanager-directconnectgatewayattachment-natrule-rulenumber
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RuleNumber { get; set; }
+            /// <summary>
+            /// NatCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-directconnectgatewayattachment-natrule.html#cfn-networkmanager-directconnectgatewayattachment-natrule-natcidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NatCidr { get; set; }
+        }
+
         public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveNetworkFunctionGroupName
         {
             /// <summary>

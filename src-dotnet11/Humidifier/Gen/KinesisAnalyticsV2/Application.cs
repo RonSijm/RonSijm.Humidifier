@@ -103,7 +103,7 @@ namespace Humidifier.KinesisAnalyticsV2
             public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.CodeContent, BaseFunction>? CodeContent { get; set; }
         }
 
-        public class ApplicationConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesApplicationCodeConfigurationApplicationCodeConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesApplicationEncryptionConfigurationApplicationEncryptionConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesEnvironmentPropertiesEnvironmentProperties, IHaveKinesisAnalyticsV2ApplicationTypesFlinkApplicationConfigurationFlinkApplicationConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesSqlApplicationConfigurationSqlApplicationConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesZeppelinApplicationConfigurationZeppelinApplicationConfiguration, IHaveListOfKinesisAnalyticsV2ApplicationTypesVpcConfigurationVpcConfigurations, IHaveKinesisAnalyticsV2ApplicationTypesApplicationSnapshotConfigurationApplicationSnapshotConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesApplicationSystemRollbackConfigurationApplicationSystemRollbackConfiguration
+        public class ApplicationConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesApplicationCodeConfigurationApplicationCodeConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesApplicationEncryptionConfigurationApplicationEncryptionConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesEnvironmentPropertiesEnvironmentProperties, IHaveKinesisAnalyticsV2ApplicationTypesFlinkApplicationConfigurationFlinkApplicationConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesZeppelinApplicationConfigurationZeppelinApplicationConfiguration, IHaveListOfKinesisAnalyticsV2ApplicationTypesVpcConfigurationVpcConfigurations, IHaveKinesisAnalyticsV2ApplicationTypesApplicationSnapshotConfigurationApplicationSnapshotConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesApplicationSystemRollbackConfigurationApplicationSystemRollbackConfiguration
         {
             /// <summary>
             /// ApplicationCodeConfiguration
@@ -137,14 +137,6 @@ namespace Humidifier.KinesisAnalyticsV2
             /// Type: FlinkApplicationConfiguration
             /// </summary>
             public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.FlinkApplicationConfiguration, BaseFunction>? FlinkApplicationConfiguration { get; set; }
-            /// <summary>
-            /// SqlApplicationConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-sqlapplicationconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: SqlApplicationConfiguration
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.SqlApplicationConfiguration, BaseFunction>? SqlApplicationConfiguration { get; set; }
             /// <summary>
             /// ZeppelinApplicationConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationconfiguration.html#cfn-kinesisanalyticsv2-application-applicationconfiguration-zeppelinapplicationconfiguration
@@ -212,8 +204,16 @@ namespace Humidifier.KinesisAnalyticsV2
             public Union<string, BaseFunction>? ApplicationMaintenanceWindowStartTime { get; set; }
         }
 
-        public class ApplicationRestoreConfiguration : Humidifier.Base.BaseSubResource, IHaveSnapshotName, IHaveApplicationRestoreType
+        public class ApplicationRestoreConfiguration : Humidifier.Base.BaseSubResource, IHaveSnapshotArn, IHaveSnapshotName, IHaveApplicationRestoreType
         {
+            /// <summary>
+            /// SnapshotArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationrestoreconfiguration.html#cfn-kinesisanalyticsv2-application-applicationrestoreconfiguration-snapshotarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SnapshotArn { get; set; }
             /// <summary>
             /// SnapshotName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationrestoreconfiguration.html#cfn-kinesisanalyticsv2-application-applicationrestoreconfiguration-snapshotname
@@ -232,8 +232,16 @@ namespace Humidifier.KinesisAnalyticsV2
             public Union<string, BaseFunction>? ApplicationRestoreType { get; set; }
         }
 
-        public class ApplicationSnapshotConfiguration : Humidifier.Base.BaseSubResource, IHaveSnapshotsEnabled_Boolean
+        public class ApplicationSnapshotConfiguration : Humidifier.Base.BaseSubResource, IHaveSnapshotMode, IHaveSnapshotsEnabled_Boolean
         {
+            /// <summary>
+            /// SnapshotMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html#cfn-kinesisanalyticsv2-application-applicationsnapshotconfiguration-snapshotmode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SnapshotMode { get; set; }
             /// <summary>
             /// SnapshotsEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-applicationsnapshotconfiguration.html#cfn-kinesisanalyticsv2-application-applicationsnapshotconfiguration-snapshotsenabled
@@ -254,26 +262,6 @@ namespace Humidifier.KinesisAnalyticsV2
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? RollbackEnabled { get; set; }
-        }
-
-        public class CSVMappingParameters : Humidifier.Base.BaseSubResource, IHaveRecordRowDelimiter, IHaveRecordColumnDelimiter
-        {
-            /// <summary>
-            /// RecordRowDelimiter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-csvmappingparameters.html#cfn-kinesisanalyticsv2-application-csvmappingparameters-recordrowdelimiter
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? RecordRowDelimiter { get; set; }
-            /// <summary>
-            /// RecordColumnDelimiter
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-csvmappingparameters.html#cfn-kinesisanalyticsv2-application-csvmappingparameters-recordcolumndelimiter
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? RecordColumnDelimiter { get; set; }
         }
 
         public class CatalogConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesGlueDataCatalogConfigurationGlueDataCatalogConfiguration
@@ -457,179 +445,6 @@ namespace Humidifier.KinesisAnalyticsV2
             public Union<string, BaseFunction>? DatabaseARN { get; set; }
         }
 
-        public class Input : Humidifier.Base.BaseSubResource, IHaveNamePrefix, IHaveKinesisAnalyticsV2ApplicationTypesInputSchemaInputSchema, IHaveKinesisAnalyticsV2ApplicationTypesKinesisStreamsInputKinesisStreamsInput, IHaveKinesisAnalyticsV2ApplicationTypesKinesisFirehoseInputKinesisFirehoseInput, IHaveKinesisAnalyticsV2ApplicationTypesInputProcessingConfigurationInputProcessingConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesInputParallelismInputParallelism
-        {
-            /// <summary>
-            /// NamePrefix
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-nameprefix
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? NamePrefix { get; set; }
-            /// <summary>
-            /// InputSchema
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputschema
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: InputSchema
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.InputSchema, BaseFunction>? InputSchema { get; set; }
-            /// <summary>
-            /// KinesisStreamsInput
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-kinesisstreamsinput
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: KinesisStreamsInput
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.KinesisStreamsInput, BaseFunction>? KinesisStreamsInput { get; set; }
-            /// <summary>
-            /// KinesisFirehoseInput
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-kinesisfirehoseinput
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: KinesisFirehoseInput
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.KinesisFirehoseInput, BaseFunction>? KinesisFirehoseInput { get; set; }
-            /// <summary>
-            /// InputProcessingConfiguration
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputprocessingconfiguration
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: InputProcessingConfiguration
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.InputProcessingConfiguration, BaseFunction>? InputProcessingConfiguration { get; set; }
-            /// <summary>
-            /// InputParallelism
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-input.html#cfn-kinesisanalyticsv2-application-input-inputparallelism
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: InputParallelism
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.InputParallelism, BaseFunction>? InputParallelism { get; set; }
-        }
-
-        public class InputLambdaProcessor : Humidifier.Base.BaseSubResource, IHaveResourceARN
-        {
-            /// <summary>
-            /// ResourceARN
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputlambdaprocessor.html#cfn-kinesisanalyticsv2-application-inputlambdaprocessor-resourcearn
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? ResourceARN { get; set; }
-        }
-
-        public class InputParallelism : Humidifier.Base.BaseSubResource, IHaveCount_Integer
-        {
-            /// <summary>
-            /// Count
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputparallelism.html#cfn-kinesisanalyticsv2-application-inputparallelism-count
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public Union<int, BaseFunction>? Count { get; set; }
-        }
-
-        public class InputProcessingConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesInputLambdaProcessorInputLambdaProcessor
-        {
-            /// <summary>
-            /// InputLambdaProcessor
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputprocessingconfiguration.html#cfn-kinesisanalyticsv2-application-inputprocessingconfiguration-inputlambdaprocessor
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: InputLambdaProcessor
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.InputLambdaProcessor, BaseFunction>? InputLambdaProcessor { get; set; }
-        }
-
-        public class InputSchema : Humidifier.Base.BaseSubResource, IHaveRecordEncoding, IHaveListOfKinesisAnalyticsV2ApplicationTypesRecordColumnRecordColumns, IHaveKinesisAnalyticsV2ApplicationTypesRecordFormatRecordFormat
-        {
-            /// <summary>
-            /// RecordEncoding
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordencoding
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? RecordEncoding { get; set; }
-            /// <summary>
-            /// RecordColumns
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordcolumns
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: RecordColumn
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.KinesisAnalyticsV2.ApplicationTypes.RecordColumn>, IReadOnlyList<Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.RecordColumn, BaseFunction>>, BaseFunction>? RecordColumns { get; set; }
-            /// <summary>
-            /// RecordFormat
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-inputschema.html#cfn-kinesisanalyticsv2-application-inputschema-recordformat
-            /// Required: True
-            /// UpdateType: Mutable
-            /// Type: RecordFormat
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.RecordFormat, BaseFunction>? RecordFormat { get; set; }
-        }
-
-        public class JSONMappingParameters : Humidifier.Base.BaseSubResource, IHaveRecordRowPath
-        {
-            /// <summary>
-            /// RecordRowPath
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-jsonmappingparameters.html#cfn-kinesisanalyticsv2-application-jsonmappingparameters-recordrowpath
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? RecordRowPath { get; set; }
-        }
-
-        public class KinesisFirehoseInput : Humidifier.Base.BaseSubResource, IHaveResourceARN
-        {
-            /// <summary>
-            /// ResourceARN
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-kinesisfirehoseinput.html#cfn-kinesisanalyticsv2-application-kinesisfirehoseinput-resourcearn
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? ResourceARN { get; set; }
-        }
-
-        public class KinesisStreamsInput : Humidifier.Base.BaseSubResource, IHaveResourceARN
-        {
-            /// <summary>
-            /// ResourceARN
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-kinesisstreamsinput.html#cfn-kinesisanalyticsv2-application-kinesisstreamsinput-resourcearn
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? ResourceARN { get; set; }
-        }
-
-        public class MappingParameters : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesJSONMappingParametersJSONMappingParameters, IHaveKinesisAnalyticsV2ApplicationTypesCSVMappingParametersCSVMappingParameters
-        {
-            /// <summary>
-            /// JSONMappingParameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html#cfn-kinesisanalyticsv2-application-mappingparameters-jsonmappingparameters
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: JSONMappingParameters
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.JSONMappingParameters, BaseFunction>? JSONMappingParameters { get; set; }
-            /// <summary>
-            /// CSVMappingParameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-mappingparameters.html#cfn-kinesisanalyticsv2-application-mappingparameters-csvmappingparameters
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: CSVMappingParameters
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.CSVMappingParameters, BaseFunction>? CSVMappingParameters { get; set; }
-        }
-
         public class MavenReference : Humidifier.Base.BaseSubResource, IHaveArtifactId, IHaveVersion, IHaveGroupId
         {
             /// <summary>
@@ -743,54 +558,6 @@ namespace Humidifier.KinesisAnalyticsV2
             public Union<string, BaseFunction>? PropertyGroupId { get; set; }
         }
 
-        public class RecordColumn : Humidifier.Base.BaseSubResource, IHaveMapping, IHaveSqlType, IHaveName
-        {
-            /// <summary>
-            /// Mapping
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html#cfn-kinesisanalyticsv2-application-recordcolumn-mapping
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Mapping { get; set; }
-            /// <summary>
-            /// SqlType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html#cfn-kinesisanalyticsv2-application-recordcolumn-sqltype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? SqlType { get; set; }
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordcolumn.html#cfn-kinesisanalyticsv2-application-recordcolumn-name
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Name { get; set; }
-        }
-
-        public class RecordFormat : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesMappingParametersMappingParameters, IHaveRecordFormatType
-        {
-            /// <summary>
-            /// MappingParameters
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordformat.html#cfn-kinesisanalyticsv2-application-recordformat-mappingparameters
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: MappingParameters
-            /// </summary>
-            public Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.MappingParameters, BaseFunction>? MappingParameters { get; set; }
-            /// <summary>
-            /// RecordFormatType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-recordformat.html#cfn-kinesisanalyticsv2-application-recordformat-recordformattype
-            /// Required: True
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? RecordFormatType { get; set; }
-        }
-
         public class RunConfiguration : Humidifier.Base.BaseSubResource, IHaveKinesisAnalyticsV2ApplicationTypesFlinkRunConfigurationFlinkRunConfiguration, IHaveKinesisAnalyticsV2ApplicationTypesApplicationRestoreConfigurationApplicationRestoreConfiguration
         {
             /// <summary>
@@ -857,19 +624,6 @@ namespace Humidifier.KinesisAnalyticsV2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ObjectVersion { get; set; }
-        }
-
-        public class SqlApplicationConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfKinesisAnalyticsV2ApplicationTypesInputInputs
-        {
-            /// <summary>
-            /// Inputs
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-sqlapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-sqlapplicationconfiguration-inputs
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Input
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.KinesisAnalyticsV2.ApplicationTypes.Input>, IReadOnlyList<Union<Humidifier.KinesisAnalyticsV2.ApplicationTypes.Input, BaseFunction>>, BaseFunction>? Inputs { get; set; }
         }
 
         public class VpcConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfSecurityGroupIds, IHaveStringListOfSubnetIds

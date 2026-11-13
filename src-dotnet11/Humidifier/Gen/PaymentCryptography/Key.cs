@@ -200,7 +200,7 @@ namespace Humidifier.PaymentCryptography
             public Union<bool, BaseFunction>? Encrypt { get; set; }
         }
 
-        public class ReplicationStatusType : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveKmsKeyArn, IHaveKmsKeyId, IHaveStatusMessage
+        public class ReplicationStatusType : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveKmsEncryptionKeyId, IHaveStatusMessage, IHaveKmsEncryptionKeyArn
         {
             /// <summary>
             /// Status
@@ -211,21 +211,13 @@ namespace Humidifier.PaymentCryptography
             /// </summary>
             public Union<string, BaseFunction>? Status { get; set; }
             /// <summary>
-            /// KmsKeyArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmskeyarn
+            /// KmsEncryptionKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmsencryptionkeyid
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
-            public Union<string, BaseFunction>? KmsKeyArn { get; set; }
-            /// <summary>
-            /// KmsKeyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmskeyid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? KmsKeyId { get; set; }
+            public Union<string, BaseFunction>? KmsEncryptionKeyId { get; set; }
             /// <summary>
             /// StatusMessage
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-statusmessage
@@ -234,6 +226,14 @@ namespace Humidifier.PaymentCryptography
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? StatusMessage { get; set; }
+            /// <summary>
+            /// KmsEncryptionKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-paymentcryptography-key-replicationstatustype.html#cfn-paymentcryptography-key-replicationstatustype-kmsencryptionkeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? KmsEncryptionKeyArn { get; set; }
         }
     }
 }

@@ -34,6 +34,23 @@ namespace Humidifier.NetworkManager
         /// </summary>
         [Required]
         public dynamic CoreNetworkId { get; set; }
+        /// <summary>
+        /// NatGatewaySupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-natgatewaysupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NatGatewaySupport { get; set; }
+        /// <summary>
+        /// NatGatewayRules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-natgatewayrules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: NatRule
+        /// </summary>
+        public List<Humidifier.NetworkManager.SiteToSiteVpnAttachmentTypes.NatRule> NatGatewayRules { get; set; }
 
         /// <summary>
         /// VpnConnectionArn
@@ -69,10 +86,46 @@ namespace Humidifier.NetworkManager
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// NatSystemRouteSupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-natsystemroutesupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic NatSystemRouteSupport { get; set; }
     }
 
     namespace SiteToSiteVpnAttachmentTypes
     {
+        public class NatRule : Humidifier.Base.BaseSubResource, IHaveRuleNumber
+        {
+            /// <summary>
+            /// MatchSourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-natrule.html#cfn-networkmanager-sitetositevpnattachment-natrule-matchsourcecidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MatchSourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-natrule.html#cfn-networkmanager-sitetositevpnattachment-natrule-rulenumber
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RuleNumber { get; set; }
+            /// <summary>
+            /// NatCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-natrule.html#cfn-networkmanager-sitetositevpnattachment-natrule-natcidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NatCidr { get; set; }
+        }
+
         public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveNetworkFunctionGroupName
         {
             /// <summary>

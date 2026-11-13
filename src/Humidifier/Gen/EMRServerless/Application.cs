@@ -270,6 +270,14 @@ namespace Humidifier.EMRServerless
             /// PrimitiveType: String
             /// </summary>
             public dynamic IdentityCenterInstanceArn { get; set; }
+            /// <summary>
+            /// UserBackgroundSessionsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-identitycenterconfiguration.html#cfn-emrserverless-application-identitycenterconfiguration-userbackgroundsessionsenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic UserBackgroundSessionsEnabled { get; set; }
         }
 
         public class ImageConfigurationInput : Humidifier.Base.BaseSubResource, IHaveImageUri

@@ -24,6 +24,14 @@ namespace Humidifier.DevOpsAgent
         [Required]
         public Humidifier.DevOpsAgent.AssociationTypes.ServiceConfiguration Configuration { get; set; }
         /// <summary>
+        /// Capabilities
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsagent-association.html#cfn-devopsagent-association-capabilities
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Capabilities
+        /// </summary>
+        public Humidifier.DevOpsAgent.AssociationTypes.Capabilities Capabilities { get; set; }
+        /// <summary>
         /// LinkedAssociationIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsagent-association.html#cfn-devopsagent-association-linkedassociationids
         /// Required: False
@@ -138,6 +146,18 @@ namespace Humidifier.DevOpsAgent
             public dynamic ResourceType { get; set; }
         }
 
+        public class AutomatedTestingCapabilityConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-automatedtestingcapabilityconfiguration.html#cfn-devopsagent-association-automatedtestingcapabilityconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
+
         public class AzureConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -148,6 +168,47 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public dynamic SubscriptionId { get; set; }
+        }
+
+        public class Capabilities : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// CodeChangeRiskAnalysisAutomatedTesting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilities.html#cfn-devopsagent-association-capabilities-codechangeriskanalysisautomatedtesting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AutomatedTestingCapabilityConfiguration
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.AutomatedTestingCapabilityConfiguration CodeChangeRiskAnalysisAutomatedTesting { get; set; }
+            /// <summary>
+            /// CodeChangeRiskAnalysis
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilities.html#cfn-devopsagent-association-capabilities-codechangeriskanalysis
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapabilityConfiguration
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.CapabilityConfiguration CodeChangeRiskAnalysis { get; set; }
+        }
+
+        public class CapabilityConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilityconfiguration.html#cfn-devopsagent-association-capabilityconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
+            /// TriggerFilterGroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilityconfiguration.html#cfn-devopsagent-association-capabilityconfiguration-triggerfiltergroups
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: TriggerFilterGroup
+            /// </summary>
+            public List<Humidifier.DevOpsAgent.AssociationTypes.TriggerFilterGroup> TriggerFilterGroups { get; set; }
         }
 
         public class DynatraceConfiguration : Humidifier.Base.BaseSubResource, IHaveResources
@@ -480,6 +541,18 @@ namespace Humidifier.DevOpsAgent
             public dynamic EnableWebhookUpdates { get; set; }
         }
 
+        public class NetworkAccessConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PrivateAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-networkaccessconfiguration.html#cfn-devopsagent-association-networkaccessconfiguration-privateaccess
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: PrivateNetworkAccess
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.PrivateNetworkAccess PrivateAccess { get; set; }
+        }
+
         public class PagerDutyConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -507,6 +580,59 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic EnableWebhookUpdates { get; set; }
+        }
+
+        public class PatternFilter : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Patterns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-patternfilter.html#cfn-devopsagent-association-patternfilter-patterns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Patterns { get; set; }
+        }
+
+        public class PrivateNetworkAccess : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PrivateConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-privatenetworkaccess.html#cfn-devopsagent-association-privatenetworkaccess-privateconnectionname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PrivateConnectionName { get; set; }
+            /// <summary>
+            /// RuntimeRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-privatenetworkaccess.html#cfn-devopsagent-association-privatenetworkaccess-runtimerolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RuntimeRoleArn { get; set; }
+        }
+
+        public class ReleaseManagementConfiguration : Humidifier.Base.BaseSubResource, IHaveName
+        {
+            /// <summary>
+            /// NetworkAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-releasemanagementconfiguration.html#cfn-devopsagent-association-releasemanagementconfiguration-networkaccess
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: NetworkAccessConfiguration
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.NetworkAccessConfiguration NetworkAccess { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-releasemanagementconfiguration.html#cfn-devopsagent-association-releasemanagementconfiguration-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
         }
 
         public class ServiceConfiguration : Humidifier.Base.BaseSubResource
@@ -599,6 +725,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: SlackConfiguration
             /// </summary>
             public Humidifier.DevOpsAgent.AssociationTypes.SlackConfiguration Slack { get; set; }
+            /// <summary>
+            /// ReleaseManagement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-serviceconfiguration.html#cfn-devopsagent-association-serviceconfiguration-releasemanagement
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ReleaseManagementConfiguration
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.ReleaseManagementConfiguration ReleaseManagement { get; set; }
             /// <summary>
             /// MCPServerDatadog
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-serviceconfiguration.html#cfn-devopsagent-association-serviceconfiguration-mcpserverdatadog
@@ -801,6 +935,27 @@ namespace Humidifier.DevOpsAgent
             /// ItemType: KeyValuePair
             /// </summary>
             public List<Humidifier.DevOpsAgent.AssociationTypes.KeyValuePair> Tags { get; set; }
+        }
+
+        public class TriggerFilterGroup : Humidifier.Base.BaseSubResource, IHaveEvents
+        {
+            /// <summary>
+            /// Events
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-triggerfiltergroup.html#cfn-devopsagent-association-triggerfiltergroup-events
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Events { get; set; }
+            /// <summary>
+            /// TargetBranches
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-triggerfiltergroup.html#cfn-devopsagent-association-triggerfiltergroup-targetbranches
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PatternFilter
+            /// </summary>
+            public Humidifier.DevOpsAgent.AssociationTypes.PatternFilter TargetBranches { get; set; }
         }
     }
 }

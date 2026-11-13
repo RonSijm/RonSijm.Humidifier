@@ -669,6 +669,28 @@ namespace Humidifier.Batch
             public dynamic Name { get; set; }
         }
 
+        public class EksContainerLinuxCapabilities : Humidifier.Base.BaseSubResource, IHaveDrop
+        {
+            /// <summary>
+            /// Add
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainerlinuxcapabilities.html#cfn-batch-jobdefinition-ekscontainerlinuxcapabilities-add
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Add { get; set; }
+            /// <summary>
+            /// Drop
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainerlinuxcapabilities.html#cfn-batch-jobdefinition-ekscontainerlinuxcapabilities-drop
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Drop { get; set; }
+        }
+
         public class EksContainerResourceRequirements : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -734,6 +756,14 @@ namespace Humidifier.Batch
             /// </summary>
             public dynamic ReadOnlyRootFilesystem { get; set; }
             /// <summary>
+            /// Capabilities
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-capabilities
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EksContainerLinuxCapabilities
+            /// </summary>
+            public Humidifier.Batch.JobDefinitionTypes.EksContainerLinuxCapabilities Capabilities { get; set; }
+            /// <summary>
             /// RunAsGroup
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-runasgroup
             /// Required: False
@@ -741,6 +771,14 @@ namespace Humidifier.Batch
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic RunAsGroup { get; set; }
+            /// <summary>
+            /// SeccompProfile
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekscontainersecuritycontext.html#cfn-batch-jobdefinition-ekscontainersecuritycontext-seccompprofile
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EksSeccompProfile
+            /// </summary>
+            public Humidifier.Batch.JobDefinitionTypes.EksSeccompProfile SeccompProfile { get; set; }
         }
 
         public class EksContainerVolumeMount : Humidifier.Base.BaseSubResource, IHaveName, IHaveReadOnly, IHaveMountPath
@@ -907,6 +945,14 @@ namespace Humidifier.Batch
             /// </summary>
             public Humidifier.Batch.JobDefinitionTypes.EksMetadata Metadata { get; set; }
             /// <summary>
+            /// SecurityContext
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodproperties.html#cfn-batch-jobdefinition-ekspodproperties-securitycontext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EksPodSecurityContext
+            /// </summary>
+            public Humidifier.Batch.JobDefinitionTypes.EksPodSecurityContext SecurityContext { get; set; }
+            /// <summary>
             /// ServiceAccountName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodproperties.html#cfn-batch-jobdefinition-ekspodproperties-serviceaccountname
             /// Required: False
@@ -941,6 +987,50 @@ namespace Humidifier.Batch
             public dynamic ShareProcessNamespace { get; set; }
         }
 
+        public class EksPodSecurityContext : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RunAsUser
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodsecuritycontext.html#cfn-batch-jobdefinition-ekspodsecuritycontext-runasuser
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RunAsUser { get; set; }
+            /// <summary>
+            /// RunAsNonRoot
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodsecuritycontext.html#cfn-batch-jobdefinition-ekspodsecuritycontext-runasnonroot
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic RunAsNonRoot { get; set; }
+            /// <summary>
+            /// RunAsGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodsecuritycontext.html#cfn-batch-jobdefinition-ekspodsecuritycontext-runasgroup
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RunAsGroup { get; set; }
+            /// <summary>
+            /// SeccompProfile
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodsecuritycontext.html#cfn-batch-jobdefinition-ekspodsecuritycontext-seccompprofile
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EksSeccompProfile
+            /// </summary>
+            public Humidifier.Batch.JobDefinitionTypes.EksSeccompProfile SeccompProfile { get; set; }
+            /// <summary>
+            /// FsGroup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ekspodsecuritycontext.html#cfn-batch-jobdefinition-ekspodsecuritycontext-fsgroup
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic FsGroup { get; set; }
+        }
+
         public class EksProperties : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -951,6 +1041,26 @@ namespace Humidifier.Batch
             /// Type: EksPodProperties
             /// </summary>
             public Humidifier.Batch.JobDefinitionTypes.EksPodProperties PodProperties { get; set; }
+        }
+
+        public class EksSeccompProfile : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// LocalhostProfile
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksseccompprofile.html#cfn-batch-jobdefinition-eksseccompprofile-localhostprofile
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic LocalhostProfile { get; set; }
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-eksseccompprofile.html#cfn-batch-jobdefinition-eksseccompprofile-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
         }
 
         public class EksSecret : Humidifier.Base.BaseSubResource, IHaveSecretName, IHaveOptional

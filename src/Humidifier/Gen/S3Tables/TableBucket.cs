@@ -37,6 +37,14 @@ namespace Humidifier.S3Tables
         /// </summary>
         public Humidifier.S3Tables.TableBucketTypes.EncryptionConfiguration EncryptionConfiguration { get; set; }
         /// <summary>
+        /// LoggingConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3tables-tablebucket.html#cfn-s3tables-tablebucket-loggingconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LoggingConfiguration
+        /// </summary>
+        public Humidifier.S3Tables.TableBucketTypes.LoggingConfiguration LoggingConfiguration { get; set; }
+        /// <summary>
         /// UnreferencedFileRemoval
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3tables-tablebucket.html#cfn-s3tables-tablebucket-unreferencedfileremoval
         /// Required: False
@@ -85,6 +93,34 @@ namespace Humidifier.S3Tables
             public dynamic SSEAlgorithm { get; set; }
         }
 
+        public class LoggingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// TargetPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-loggingconfiguration.html#cfn-s3tables-tablebucket-loggingconfiguration-targetprefix
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetPrefix { get; set; }
+            /// <summary>
+            /// TargetObjectKeyFormat
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-loggingconfiguration.html#cfn-s3tables-tablebucket-loggingconfiguration-targetobjectkeyformat
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: TargetObjectKeyFormat
+            /// </summary>
+            public Humidifier.S3Tables.TableBucketTypes.TargetObjectKeyFormat TargetObjectKeyFormat { get; set; }
+            /// <summary>
+            /// TargetBucket
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-loggingconfiguration.html#cfn-s3tables-tablebucket-loggingconfiguration-targetbucket
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TargetBucket { get; set; }
+        }
+
         public class MetricsConfiguration : Humidifier.Base.BaseSubResource, IHaveStatus
         {
             /// <summary>
@@ -95,6 +131,18 @@ namespace Humidifier.S3Tables
             /// PrimitiveType: String
             /// </summary>
             public dynamic Status { get; set; }
+        }
+
+        public class PartitionedPrefix : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PartitionDateSource
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-partitionedprefix.html#cfn-s3tables-tablebucket-partitionedprefix-partitiondatesource
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic PartitionDateSource { get; set; }
         }
 
         public class ReplicationConfiguration : Humidifier.Base.BaseSubResource, IHaveRole
@@ -153,6 +201,18 @@ namespace Humidifier.S3Tables
             /// PrimitiveType: String
             /// </summary>
             public dynamic StorageClass { get; set; }
+        }
+
+        public class TargetObjectKeyFormat : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PartitionedPrefix
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3tables-tablebucket-targetobjectkeyformat.html#cfn-s3tables-tablebucket-targetobjectkeyformat-partitionedprefix
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: PartitionedPrefix
+            /// </summary>
+            public Humidifier.S3Tables.TableBucketTypes.PartitionedPrefix PartitionedPrefix { get; set; }
         }
 
         public class UnreferencedFileRemoval : Humidifier.Base.BaseSubResource, IHaveStatus, IHaveNoncurrentDays

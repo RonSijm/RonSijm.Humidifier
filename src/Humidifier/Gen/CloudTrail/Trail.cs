@@ -38,6 +38,14 @@ namespace Humidifier.CloudTrail
         /// </summary>
         public dynamic KMSKeyId { get; set; }
         /// <summary>
+        /// RecursiveLogging
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-recursivelogging
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic RecursiveLogging { get; set; }
+        /// <summary>
         /// AggregationConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-aggregationconfigurations
         /// Required: False

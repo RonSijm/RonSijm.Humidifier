@@ -257,7 +257,7 @@ namespace Humidifier.QuickSight
             public Union<string, BaseFunction>? ArcThickness { get; set; }
         }
 
-        public class AssetOptions : Humidifier.Base.BaseSubResource, IHaveTimezone, IHaveWeekStart
+        public class AssetOptions : Humidifier.Base.BaseSubResource, IHaveTimezone, IHaveWeekStart, IHaveQuickSightTemplateTypesVisualCustomActionDefaultsCustomActionDefaults, IHaveQuickSightTemplateTypesVisualMessagesVisualMessages
         {
             /// <summary>
             /// Timezone
@@ -275,6 +275,22 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? WeekStart { get; set; }
+            /// <summary>
+            /// CustomActionDefaults
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-assetoptions.html#cfn-quicksight-template-assetoptions-customactiondefaults
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualCustomActionDefaults
+            /// </summary>
+            public Union<Humidifier.QuickSight.TemplateTypes.VisualCustomActionDefaults, BaseFunction>? CustomActionDefaults { get; set; }
+            /// <summary>
+            /// VisualMessages
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-assetoptions.html#cfn-quicksight-template-assetoptions-visualmessages
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualMessages
+            /// </summary>
+            public Union<Humidifier.QuickSight.TemplateTypes.VisualMessages, BaseFunction>? VisualMessages { get; set; }
         }
 
         public class AttributeAggregationFunction : Humidifier.Base.BaseSubResource, IHaveSimpleAttributeAggregation, IHaveValueForMultipleValues
@@ -13927,7 +13943,7 @@ namespace Humidifier.QuickSight
             public Union<Humidifier.QuickSight.TemplateTypes.GridLayoutConfiguration, BaseFunction>? GridLayout { get; set; }
         }
 
-        public class SheetDefinition : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveListOfQuickSightTemplateTypesParameterControlParameterControls, IHaveListOfQuickSightTemplateTypesSheetTextBoxTextBoxes, IHaveContentType, IHaveListOfQuickSightTemplateTypesLayoutLayouts, IHaveSheetId, IHaveListOfQuickSightTemplateTypesFilterControlFilterControls, IHaveListOfQuickSightTemplateTypesSheetImageImages, IHaveListOfQuickSightTemplateTypesSheetControlLayoutSheetControlLayouts, IHaveTitle, IHaveListOfQuickSightTemplateTypesVisualVisuals, IHaveName
+        public class SheetDefinition : Humidifier.Base.BaseSubResource, IHaveDescription, IHaveListOfQuickSightTemplateTypesParameterControlParameterControls, IHaveContentType, IHaveSheetId, IHaveListOfQuickSightTemplateTypesSheetImageImages, IHaveListOfQuickSightTemplateTypesSheetControlLayoutSheetControlLayouts, IHaveTitle, IHaveName, IHaveListOfQuickSightTemplateTypesSheetTextBoxTextBoxes, IHaveListOfQuickSightTemplateTypesLayoutLayouts, IHaveListOfQuickSightTemplateTypesFilterControlFilterControls, IHaveQuickSightTemplateTypesVisualCustomActionDefaultsCustomActionDefaults, IHaveListOfQuickSightTemplateTypesVisualVisuals
         {
             /// <summary>
             /// Description
@@ -13947,15 +13963,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.ParameterControl>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.ParameterControl, BaseFunction>>, BaseFunction>? ParameterControls { get; set; }
             /// <summary>
-            /// TextBoxes
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-textboxes
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: SheetTextBox
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.SheetTextBox>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.SheetTextBox, BaseFunction>>, BaseFunction>? TextBoxes { get; set; }
-            /// <summary>
             /// ContentType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-contenttype
             /// Required: False
@@ -13964,15 +13971,6 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Union<string, BaseFunction>? ContentType { get; set; }
             /// <summary>
-            /// Layouts
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-layouts
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Layout
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.Layout>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.Layout, BaseFunction>>, BaseFunction>? Layouts { get; set; }
-            /// <summary>
             /// SheetId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-sheetid
             /// Required: True
@@ -13980,15 +13978,6 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SheetId { get; set; }
-            /// <summary>
-            /// FilterControls
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-filtercontrols
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: FilterControl
-            /// </summary>
-            public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.FilterControl>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.FilterControl, BaseFunction>>, BaseFunction>? FilterControls { get; set; }
             /// <summary>
             /// Images
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-images
@@ -14016,6 +14005,49 @@ namespace Humidifier.QuickSight
             /// </summary>
             public Union<string, BaseFunction>? Title { get; set; }
             /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-name
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Name { get; set; }
+            /// <summary>
+            /// TextBoxes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-textboxes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SheetTextBox
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.SheetTextBox>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.SheetTextBox, BaseFunction>>, BaseFunction>? TextBoxes { get; set; }
+            /// <summary>
+            /// Layouts
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-layouts
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Layout
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.Layout>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.Layout, BaseFunction>>, BaseFunction>? Layouts { get; set; }
+            /// <summary>
+            /// FilterControls
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-filtercontrols
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: FilterControl
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.FilterControl>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.FilterControl, BaseFunction>>, BaseFunction>? FilterControls { get; set; }
+            /// <summary>
+            /// CustomActionDefaults
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-customactiondefaults
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualCustomActionDefaults
+            /// </summary>
+            public Union<Humidifier.QuickSight.TemplateTypes.VisualCustomActionDefaults, BaseFunction>? CustomActionDefaults { get; set; }
+            /// <summary>
             /// Visuals
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-visuals
             /// Required: False
@@ -14024,14 +14056,6 @@ namespace Humidifier.QuickSight
             /// ItemType: Visual
             /// </summary>
             public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.Visual>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.Visual, BaseFunction>>, BaseFunction>? Visuals { get; set; }
-            /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheetdefinition.html#cfn-quicksight-template-sheetdefinition-name
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Name { get; set; }
         }
 
         public class SheetElementConfigurationOverrides : Humidifier.Base.BaseSubResource, IHaveVisibility
@@ -17152,6 +17176,18 @@ namespace Humidifier.QuickSight
             public Union<IReadOnlyList<Humidifier.QuickSight.TemplateTypes.VisualCustomActionOperation>, IReadOnlyList<Union<Humidifier.QuickSight.TemplateTypes.VisualCustomActionOperation, BaseFunction>>, BaseFunction>? ActionOperations { get; set; }
         }
 
+        public class VisualCustomActionDefaults : Humidifier.Base.BaseSubResource, IHaveQuickSightTemplateTypesVisualHighlightOperationHighlightOperation
+        {
+            /// <summary>
+            /// HighlightOperation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualcustomactiondefaults.html#cfn-quicksight-template-visualcustomactiondefaults-highlightoperation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualHighlightOperation
+            /// </summary>
+            public Union<Humidifier.QuickSight.TemplateTypes.VisualHighlightOperation, BaseFunction>? HighlightOperation { get; set; }
+        }
+
         public class VisualCustomActionOperation : Humidifier.Base.BaseSubResource, IHaveQuickSightTemplateTypesCustomActionNavigationOperationNavigationOperation, IHaveQuickSightTemplateTypesCustomActionSetParametersOperationSetParametersOperation, IHaveQuickSightTemplateTypesCustomActionFilterOperationFilterOperation, IHaveQuickSightTemplateTypesCustomActionURLOperationURLOperation
         {
             /// <summary>
@@ -17188,6 +17224,18 @@ namespace Humidifier.QuickSight
             public Union<Humidifier.QuickSight.TemplateTypes.CustomActionURLOperation, BaseFunction>? URLOperation { get; set; }
         }
 
+        public class VisualHighlightOperation : Humidifier.Base.BaseSubResource, IHaveTrigger
+        {
+            /// <summary>
+            /// Trigger
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualhighlightoperation.html#cfn-quicksight-template-visualhighlightoperation-trigger
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Trigger { get; set; }
+        }
+
         public class VisualInteractionOptions : Humidifier.Base.BaseSubResource, IHaveQuickSightTemplateTypesVisualMenuOptionVisualMenuOption, IHaveQuickSightTemplateTypesContextMenuOptionContextMenuOption
         {
             /// <summary>
@@ -17218,6 +17266,86 @@ namespace Humidifier.QuickSight
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? AvailabilityStatus { get; set; }
+        }
+
+        public class VisualMessageConfiguration : Humidifier.Base.BaseSubResource, IHaveTitleVisibility, IHaveDescription, IHaveLinkUrl, IHaveLinkVisibility, IHaveEnabled_Boolean, IHaveTitle, IHaveDescriptionVisibility, IHaveLinkText
+        {
+            /// <summary>
+            /// TitleVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-titlevisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TitleVisibility { get; set; }
+            /// <summary>
+            /// Description
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-description
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Description { get; set; }
+            /// <summary>
+            /// LinkUrl
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-linkurl
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LinkUrl { get; set; }
+            /// <summary>
+            /// LinkVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-linkvisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LinkVisibility { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+            /// <summary>
+            /// Title
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-title
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Title { get; set; }
+            /// <summary>
+            /// DescriptionVisibility
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-descriptionvisibility
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DescriptionVisibility { get; set; }
+            /// <summary>
+            /// LinkText
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessageconfiguration.html#cfn-quicksight-template-visualmessageconfiguration-linktext
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LinkText { get; set; }
+        }
+
+        public class VisualMessages : Humidifier.Base.BaseSubResource, IHaveQuickSightTemplateTypesVisualMessageConfigurationNoDataMessage
+        {
+            /// <summary>
+            /// NoDataMessage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-visualmessages.html#cfn-quicksight-template-visualmessages-nodatamessage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: VisualMessageConfiguration
+            /// </summary>
+            public Union<Humidifier.QuickSight.TemplateTypes.VisualMessageConfiguration, BaseFunction>? NoDataMessage { get; set; }
         }
 
         public class VisualPalette : Humidifier.Base.BaseSubResource, IHaveChartColor, IHaveListOfQuickSightTemplateTypesDataPathColorColorMap

@@ -61,6 +61,14 @@ namespace Humidifier.CustomerProfiles
         [Required]
         public dynamic DomainName { get; set; }
         /// <summary>
+        /// Filter
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-filter
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: Filter
+        /// </summary>
+        public Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.Filter Filter { get; set; }
+        /// <summary>
         /// DisplayName
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-calculatedattributedefinition.html#cfn-customerprofiles-calculatedattributedefinition-displayname
         /// Required: False
@@ -160,6 +168,82 @@ namespace Humidifier.CustomerProfiles
             public Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.Threshold Threshold { get; set; }
         }
 
+        public class Filter : Humidifier.Base.BaseSubResource, IHaveInclude
+        {
+            /// <summary>
+            /// Groups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filter.html#cfn-customerprofiles-calculatedattributedefinition-filter-groups
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: FilterGroup
+            /// </summary>
+            public List<Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.FilterGroup> Groups { get; set; }
+            /// <summary>
+            /// Include
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filter.html#cfn-customerprofiles-calculatedattributedefinition-filter-include
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Include { get; set; }
+        }
+
+        public class FilterAttributeDimension : Humidifier.Base.BaseSubResource, IHaveValues, IHaveDimensionType
+        {
+            /// <summary>
+            /// DimensionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filterattributedimension.html#cfn-customerprofiles-calculatedattributedefinition-filterattributedimension-dimensiontype
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DimensionType { get; set; }
+            /// <summary>
+            /// Values
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filterattributedimension.html#cfn-customerprofiles-calculatedattributedefinition-filterattributedimension-values
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Values { get; set; }
+        }
+
+        public class FilterDimension : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Attributes_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filterdimension.html#cfn-customerprofiles-calculatedattributedefinition-filterdimension-attributes
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: Map
+            /// ItemType: FilterAttributeDimension
+            /// </summary>
+            public Dictionary<string, Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.FilterAttributeDimension> Attributes_ { get; set; }
+        }
+
+        public class FilterGroup : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filtergroup.html#cfn-customerprofiles-calculatedattributedefinition-filtergroup-type
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+            /// <summary>
+            /// Dimensions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-filtergroup.html#cfn-customerprofiles-calculatedattributedefinition-filtergroup-dimensions
+            /// Required: True
+            /// UpdateType: Immutable
+            /// Type: List
+            /// ItemType: FilterDimension
+            /// </summary>
+            public List<Humidifier.CustomerProfiles.CalculatedAttributeDefinitionTypes.FilterDimension> Dimensions { get; set; }
+        }
+
         public class Range : Humidifier.Base.BaseSubResource, IHaveValue, IHaveUnit, IHaveTimestampFormat
         {
             /// <summary>
@@ -197,7 +281,7 @@ namespace Humidifier.CustomerProfiles
             /// <summary>
             /// Unit
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-calculatedattributedefinition-range.html#cfn-customerprofiles-calculatedattributedefinition-range-unit
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

@@ -56,6 +56,18 @@ namespace Humidifier.NetworkFirewall
             public Union<Humidifier.NetworkFirewall.FirewallPolicyTypes.PublishMetricAction, BaseFunction>? PublishMetricAction { get; set; }
         }
 
+        public class Address : Humidifier.Base.BaseSubResource, IHaveAddressDefinition
+        {
+            /// <summary>
+            /// AddressDefinition
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-address.html#cfn-networkfirewall-firewallpolicy-address-addressdefinition
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AddressDefinition { get; set; }
+        }
+
         public class CustomAction : Humidifier.Base.BaseSubResource, IHaveActionName, IHaveNetworkFirewallFirewallPolicyTypesActionDefinitionActionDefinition
         {
             /// <summary>
@@ -88,7 +100,7 @@ namespace Humidifier.NetworkFirewall
             public Union<string, BaseFunction>? Value { get; set; }
         }
 
-        public class FirewallPolicy : Humidifier.Base.BaseSubResource, IHaveListOfNetworkFirewallFirewallPolicyTypesStatelessRuleGroupReferenceStatelessRuleGroupReferences, IHaveListOfNetworkFirewallFirewallPolicyTypesStatefulRuleGroupReferenceStatefulRuleGroupReferences, IHaveEnableTLSSessionHolding_Boolean, IHaveStringListOfStatelessDefaultActions, IHaveNetworkFirewallFirewallPolicyTypesStatefulEngineOptionsStatefulEngineOptions, IHaveListOfNetworkFirewallFirewallPolicyTypesCustomActionStatelessCustomActions, IHaveStringListOfStatelessFragmentDefaultActions, IHaveNetworkFirewallFirewallPolicyTypesPolicyVariablesPolicyVariables, IHaveStringListOfStatefulDefaultActions, IHaveTLSInspectionConfigurationArn
+        public class FirewallPolicy : Humidifier.Base.BaseSubResource, IHaveListOfNetworkFirewallFirewallPolicyTypesStatelessRuleGroupReferenceStatelessRuleGroupReferences, IHaveListOfNetworkFirewallFirewallPolicyTypesStatefulRuleGroupReferenceStatefulRuleGroupReferences, IHaveEnableTLSSessionHolding_Boolean, IHaveStringListOfStatelessDefaultActions, IHaveNetworkFirewallFirewallPolicyTypesRoute53ResolvedIPValidationRoute53ResolvedIPValidation, IHaveNetworkFirewallFirewallPolicyTypesStatefulEngineOptionsStatefulEngineOptions, IHaveListOfNetworkFirewallFirewallPolicyTypesCustomActionStatelessCustomActions, IHaveStringListOfStatelessFragmentDefaultActions, IHaveNetworkFirewallFirewallPolicyTypesPolicyVariablesPolicyVariables, IHaveStringListOfStatefulDefaultActions, IHaveTLSInspectionConfigurationArn
         {
             /// <summary>
             /// StatelessRuleGroupReferences
@@ -125,6 +137,14 @@ namespace Humidifier.NetworkFirewall
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? StatelessDefaultActions { get; set; }
+            /// <summary>
+            /// Route53ResolvedIPValidation
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-route53resolvedipvalidation
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Route53ResolvedIPValidation
+            /// </summary>
+            public Union<Humidifier.NetworkFirewall.FirewallPolicyTypes.Route53ResolvedIPValidation, BaseFunction>? Route53ResolvedIPValidation { get; set; }
             /// <summary>
             /// StatefulEngineOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statefulengineoptions
@@ -227,6 +247,52 @@ namespace Humidifier.NetworkFirewall
             /// ItemType: Dimension
             /// </summary>
             public Union<IReadOnlyList<Humidifier.NetworkFirewall.FirewallPolicyTypes.Dimension>, IReadOnlyList<Union<Humidifier.NetworkFirewall.FirewallPolicyTypes.Dimension, BaseFunction>>, BaseFunction>? Dimensions { get; set; }
+        }
+
+        public class Route53ResolvedIPValidation : Humidifier.Base.BaseSubResource, IHaveDNSExpiryExceptionPolicy, IHaveDNSFirewallRuleGroupId, IHaveAction, IHaveListOfNetworkFirewallFirewallPolicyTypesAddressBypassDestinationValidationIPRanges, IHaveListOfNetworkFirewallFirewallPolicyTypesAddressSourceIPRanges
+        {
+            /// <summary>
+            /// DNSExpiryExceptionPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-route53resolvedipvalidation.html#cfn-networkfirewall-firewallpolicy-route53resolvedipvalidation-dnsexpiryexceptionpolicy
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DNSExpiryExceptionPolicy { get; set; }
+            /// <summary>
+            /// DNSFirewallRuleGroupId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-route53resolvedipvalidation.html#cfn-networkfirewall-firewallpolicy-route53resolvedipvalidation-dnsfirewallrulegroupid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DNSFirewallRuleGroupId { get; set; }
+            /// <summary>
+            /// Action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-route53resolvedipvalidation.html#cfn-networkfirewall-firewallpolicy-route53resolvedipvalidation-action
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Action { get; set; }
+            /// <summary>
+            /// BypassDestinationValidationIPRanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-route53resolvedipvalidation.html#cfn-networkfirewall-firewallpolicy-route53resolvedipvalidation-bypassdestinationvalidationipranges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Address
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.NetworkFirewall.FirewallPolicyTypes.Address>, IReadOnlyList<Union<Humidifier.NetworkFirewall.FirewallPolicyTypes.Address, BaseFunction>>, BaseFunction>? BypassDestinationValidationIPRanges { get; set; }
+            /// <summary>
+            /// SourceIPRanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-route53resolvedipvalidation.html#cfn-networkfirewall-firewallpolicy-route53resolvedipvalidation-sourceipranges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Address
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.NetworkFirewall.FirewallPolicyTypes.Address>, IReadOnlyList<Union<Humidifier.NetworkFirewall.FirewallPolicyTypes.Address, BaseFunction>>, BaseFunction>? SourceIPRanges { get; set; }
         }
 
         public class StatefulEngineOptions : Humidifier.Base.BaseSubResource, IHaveStreamExceptionPolicy, IHaveNetworkFirewallFirewallPolicyTypesFlowTimeoutsFlowTimeouts, IHaveRuleOrder

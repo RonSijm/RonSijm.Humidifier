@@ -142,6 +142,26 @@ namespace Humidifier.Wisdom
             public Union<Humidifier.Wisdom.AIAgentTypes.EmailGenerativeAnswerAIAgentConfiguration, BaseFunction>? EmailGenerativeAnswerAIAgentConfiguration { get; set; }
         }
 
+        public class AgentTarget : Humidifier.Base.BaseSubResource, IHaveApplicationId, IHaveAIAgentId
+        {
+            /// <summary>
+            /// ApplicationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-agenttarget.html#cfn-wisdom-aiagent-agenttarget-applicationid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApplicationId { get; set; }
+            /// <summary>
+            /// AIAgentId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-agenttarget.html#cfn-wisdom-aiagent-agenttarget-aiagentid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AIAgentId { get; set; }
+        }
+
         public class AnswerRecommendationAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveLocale, IHaveAnswerGenerationAIPromptId, IHaveIntentLabelingGenerationAIPromptId, IHaveQueryReformulationAIPromptId, IHaveAnswerGenerationAIGuardrailId, IHaveListOfWisdomAIAgentTypesAssociationConfigurationAssociationConfigurations
         {
             /// <summary>
@@ -263,6 +283,26 @@ namespace Humidifier.Wisdom
             public Union<string, BaseFunction>? CaseSummarizationAIGuardrailId { get; set; }
         }
 
+        public class DelegateAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveWisdomAIAgentTypesAgentTargetAgentTarget, IHaveWisdomAIAgentTypesMultiAgentInstructionInstruction
+        {
+            /// <summary>
+            /// AgentTarget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-delegateagentconfiguration.html#cfn-wisdom-aiagent-delegateagentconfiguration-agenttarget
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: AgentTarget
+            /// </summary>
+            public Union<Humidifier.Wisdom.AIAgentTypes.AgentTarget, BaseFunction>? AgentTarget { get; set; }
+            /// <summary>
+            /// Instruction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-delegateagentconfiguration.html#cfn-wisdom-aiagent-delegateagentconfiguration-instruction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MultiAgentInstruction
+            /// </summary>
+            public Union<Humidifier.Wisdom.AIAgentTypes.MultiAgentInstruction, BaseFunction>? Instruction { get; set; }
+        }
+
         public class EmailGenerativeAnswerAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveEmailGenerativeAnswerAIPromptId, IHaveLocale, IHaveEmailQueryReformulationAIPromptId, IHaveListOfWisdomAIAgentTypesAssociationConfigurationAssociationConfigurations
         {
             /// <summary>
@@ -357,6 +397,42 @@ namespace Humidifier.Wisdom
             public Union<IReadOnlyList<Humidifier.Wisdom.AIAgentTypes.AssociationConfiguration>, IReadOnlyList<Union<Humidifier.Wisdom.AIAgentTypes.AssociationConfiguration, BaseFunction>>, BaseFunction>? AssociationConfigurations { get; set; }
         }
 
+        public class HandoffAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveWisdomAIAgentTypesAgentTargetAgentTarget, IHaveImmediateHandoff_Boolean, IHaveAudioStreamingEnabled_Boolean, IHaveWisdomAIAgentTypesMultiAgentInstructionInstruction
+        {
+            /// <summary>
+            /// AgentTarget
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-handoffagentconfiguration.html#cfn-wisdom-aiagent-handoffagentconfiguration-agenttarget
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: AgentTarget
+            /// </summary>
+            public Union<Humidifier.Wisdom.AIAgentTypes.AgentTarget, BaseFunction>? AgentTarget { get; set; }
+            /// <summary>
+            /// ImmediateHandoff
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-handoffagentconfiguration.html#cfn-wisdom-aiagent-handoffagentconfiguration-immediatehandoff
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? ImmediateHandoff { get; set; }
+            /// <summary>
+            /// AudioStreamingEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-handoffagentconfiguration.html#cfn-wisdom-aiagent-handoffagentconfiguration-audiostreamingenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? AudioStreamingEnabled { get; set; }
+            /// <summary>
+            /// Instruction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-handoffagentconfiguration.html#cfn-wisdom-aiagent-handoffagentconfiguration-instruction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MultiAgentInstruction
+            /// </summary>
+            public Union<Humidifier.Wisdom.AIAgentTypes.MultiAgentInstruction, BaseFunction>? Instruction { get; set; }
+        }
+
         public class KnowledgeBaseAssociationConfigurationData : Humidifier.Base.BaseSubResource, IHaveMaxResults_Double, IHaveWisdomAIAgentTypesTagFilterContentTagFilter, IHaveOverrideKnowledgeBaseSearchType
         {
             /// <summary>
@@ -422,6 +498,47 @@ namespace Humidifier.Wisdom
             public Union<IReadOnlyList<Humidifier.Wisdom.AIAgentTypes.AssociationConfiguration>, IReadOnlyList<Union<Humidifier.Wisdom.AIAgentTypes.AssociationConfiguration, BaseFunction>>, BaseFunction>? AssociationConfigurations { get; set; }
         }
 
+        public class MultiAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveWisdomAIAgentTypesHandoffAgentConfigurationHandoffAgentConfiguration, IHaveWisdomAIAgentTypesDelegateAgentConfigurationDelegateAgentConfiguration
+        {
+            /// <summary>
+            /// HandoffAgentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-multiagentconfiguration.html#cfn-wisdom-aiagent-multiagentconfiguration-handoffagentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HandoffAgentConfiguration
+            /// </summary>
+            public Union<Humidifier.Wisdom.AIAgentTypes.HandoffAgentConfiguration, BaseFunction>? HandoffAgentConfiguration { get; set; }
+            /// <summary>
+            /// DelegateAgentConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-multiagentconfiguration.html#cfn-wisdom-aiagent-multiagentconfiguration-delegateagentconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DelegateAgentConfiguration
+            /// </summary>
+            public Union<Humidifier.Wisdom.AIAgentTypes.DelegateAgentConfiguration, BaseFunction>? DelegateAgentConfiguration { get; set; }
+        }
+
+        public class MultiAgentInstruction : Humidifier.Base.BaseSubResource, IHaveInstruction, IHaveStringListOfExamples
+        {
+            /// <summary>
+            /// Instruction
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-multiagentinstruction.html#cfn-wisdom-aiagent-multiagentinstruction-instruction
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Instruction { get; set; }
+            /// <summary>
+            /// Examples
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-multiagentinstruction.html#cfn-wisdom-aiagent-multiagentinstruction-examples
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Examples { get; set; }
+        }
+
         public class NoteTakingAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveLocale, IHaveNoteTakingAIGuardrailId, IHaveNoteTakingAIPromptId
         {
             /// <summary>
@@ -471,12 +588,12 @@ namespace Humidifier.Wisdom
             public Union<Humidifier.Wisdom.AIAgentTypes.TagCondition, BaseFunction>? TagCondition { get; set; }
         }
 
-        public class OrchestrationAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveOrchestrationAIPromptId, IHaveLocale, IHaveListOfWisdomAIAgentTypesToolConfigurationToolConfigurations, IHaveOrchestrationAIGuardrailId, IHaveConnectInstanceArn
+        public class OrchestrationAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveOrchestrationAIPromptId, IHaveLocale, IHaveListOfWisdomAIAgentTypesToolConfigurationToolConfigurations, IHaveJsonListOfInputSchemas, IHaveOrchestrationAIGuardrailId, IHaveConnectInstanceArn, IHaveListOfWisdomAIAgentTypesMultiAgentConfigurationMultiAgentConfigurations, IHaveJsonListOfOutputSchemas
         {
             /// <summary>
             /// OrchestrationAIPromptId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-orchestrationaiagentconfiguration.html#cfn-wisdom-aiagent-orchestrationaiagentconfiguration-orchestrationaipromptid
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
@@ -499,6 +616,15 @@ namespace Humidifier.Wisdom
             /// </summary>
             public Union<IReadOnlyList<Humidifier.Wisdom.AIAgentTypes.ToolConfiguration>, IReadOnlyList<Union<Humidifier.Wisdom.AIAgentTypes.ToolConfiguration, BaseFunction>>, BaseFunction>? ToolConfigurations { get; set; }
             /// <summary>
+            /// InputSchemas
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-orchestrationaiagentconfiguration.html#cfn-wisdom-aiagent-orchestrationaiagentconfiguration-inputschemas
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public Union<IReadOnlyList<object>, IReadOnlyList<Union<object, BaseFunction>>, BaseFunction>? InputSchemas { get; set; }
+            /// <summary>
             /// OrchestrationAIGuardrailId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-orchestrationaiagentconfiguration.html#cfn-wisdom-aiagent-orchestrationaiagentconfiguration-orchestrationaiguardrailid
             /// Required: False
@@ -514,6 +640,24 @@ namespace Humidifier.Wisdom
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ConnectInstanceArn { get; set; }
+            /// <summary>
+            /// MultiAgentConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-orchestrationaiagentconfiguration.html#cfn-wisdom-aiagent-orchestrationaiagentconfiguration-multiagentconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: MultiAgentConfiguration
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.Wisdom.AIAgentTypes.MultiAgentConfiguration>, IReadOnlyList<Union<Humidifier.Wisdom.AIAgentTypes.MultiAgentConfiguration, BaseFunction>>, BaseFunction>? MultiAgentConfigurations { get; set; }
+            /// <summary>
+            /// OutputSchemas
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiagent-orchestrationaiagentconfiguration.html#cfn-wisdom-aiagent-orchestrationaiagentconfiguration-outputschemas
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public Union<IReadOnlyList<object>, IReadOnlyList<Union<object, BaseFunction>>, BaseFunction>? OutputSchemas { get; set; }
         }
 
         public class SelfServiceAIAgentConfiguration : Humidifier.Base.BaseSubResource, IHaveSelfServiceAIGuardrailId, IHaveSelfServicePreProcessingAIPromptId, IHaveSelfServiceAnswerGenerationAIPromptId, IHaveListOfWisdomAIAgentTypesAssociationConfigurationAssociationConfigurations

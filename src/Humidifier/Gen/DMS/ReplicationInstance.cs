@@ -6,6 +6,7 @@ namespace Humidifier.DMS
     {
         public class Attributes
         {
+            public static string ReplicationInstanceArn =  "ReplicationInstanceArn" ;
             public static string ReplicationInstancePublicIpAddresses =  "ReplicationInstancePublicIpAddresses" ;
             public static string ReplicationInstancePrivateIpAddresses =  "ReplicationInstancePrivateIpAddresses" ;
         }

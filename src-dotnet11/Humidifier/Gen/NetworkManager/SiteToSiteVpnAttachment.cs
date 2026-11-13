@@ -3,7 +3,7 @@ namespace Humidifier.NetworkManager
     using global::System.Collections.Generic;
     using SiteToSiteVpnAttachmentTypes;
 
-    public class SiteToSiteVpnAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveCoreNetworkId, IHaveVpnConnectionArn, IHaveRoutingPolicyLabel, IHaveNetworkFunctionGroupName
+    public class SiteToSiteVpnAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveCoreNetworkId, IHaveNatGatewaySupport, IHaveListOfNetworkManagerSiteToSiteVpnAttachmentTypesNatRuleNatGatewayRules, IHaveVpnConnectionArn, IHaveRoutingPolicyLabel, IHaveNetworkFunctionGroupName, IHaveNatSystemRouteSupport_Boolean
     {
         public class Attributes
         {
@@ -34,6 +34,23 @@ namespace Humidifier.NetworkManager
         /// </summary>
         [Required]
         public Union<string, BaseFunction>? CoreNetworkId { get; set; }
+        /// <summary>
+        /// NatGatewaySupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-natgatewaysupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? NatGatewaySupport { get; set; }
+        /// <summary>
+        /// NatGatewayRules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-natgatewayrules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: NatRule
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.NetworkManager.SiteToSiteVpnAttachmentTypes.NatRule>, IReadOnlyList<Union<Humidifier.NetworkManager.SiteToSiteVpnAttachmentTypes.NatRule, BaseFunction>>, BaseFunction>? NatGatewayRules { get; set; }
 
         /// <summary>
         /// VpnConnectionArn
@@ -69,10 +86,46 @@ namespace Humidifier.NetworkManager
         /// ItemType: Tag
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Tag>, IReadOnlyList<Union<Humidifier.Tag, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        /// <summary>
+        /// NatSystemRouteSupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-natsystemroutesupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public Union<bool, BaseFunction>? NatSystemRouteSupport { get; set; }
     }
 
     namespace SiteToSiteVpnAttachmentTypes
     {
+        public class NatRule : Humidifier.Base.BaseSubResource, IHaveMatchSourceCidr, IHaveRuleNumber_Integer, IHaveNatCidr
+        {
+            /// <summary>
+            /// MatchSourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-natrule.html#cfn-networkmanager-sitetositevpnattachment-natrule-matchsourcecidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? MatchSourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-natrule.html#cfn-networkmanager-sitetositevpnattachment-natrule-rulenumber
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? RuleNumber { get; set; }
+            /// <summary>
+            /// NatCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-natrule.html#cfn-networkmanager-sitetositevpnattachment-natrule-natcidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? NatCidr { get; set; }
+        }
+
         public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveNetworkFunctionGroupName, IHaveAttachmentPolicyRuleNumber_Integer
         {
             /// <summary>

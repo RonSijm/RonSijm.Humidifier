@@ -3,7 +3,7 @@ namespace Humidifier.DevOpsAgent
     using global::System.Collections.Generic;
     using AssociationTypes;
 
-    public class Association : Humidifier.Base.BaseResource, IHaveDevOpsAgentAssociationTypesServiceConfigurationConfiguration, IHaveStringListOfLinkedAssociationIds, IHaveAgentSpaceId, IHaveServiceId
+    public class Association : Humidifier.Base.BaseResource, IHaveDevOpsAgentAssociationTypesServiceConfigurationConfiguration, IHaveDevOpsAgentAssociationTypesCapabilitiesCapabilities, IHaveStringListOfLinkedAssociationIds, IHaveAgentSpaceId, IHaveServiceId
     {
         public class Attributes
         {
@@ -23,6 +23,14 @@ namespace Humidifier.DevOpsAgent
         /// </summary>
         [Required]
         public Union<Humidifier.DevOpsAgent.AssociationTypes.ServiceConfiguration, BaseFunction>? Configuration { get; set; }
+        /// <summary>
+        /// Capabilities
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsagent-association.html#cfn-devopsagent-association-capabilities
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Capabilities
+        /// </summary>
+        public Union<Humidifier.DevOpsAgent.AssociationTypes.Capabilities, BaseFunction>? Capabilities { get; set; }
         /// <summary>
         /// LinkedAssociationIds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsagent-association.html#cfn-devopsagent-association-linkedassociationids
@@ -138,6 +146,18 @@ namespace Humidifier.DevOpsAgent
             public Union<string, BaseFunction>? ResourceType { get; set; }
         }
 
+        public class AutomatedTestingCapabilityConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled_Boolean
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-automatedtestingcapabilityconfiguration.html#cfn-devopsagent-association-automatedtestingcapabilityconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+        }
+
         public class AzureConfiguration : Humidifier.Base.BaseSubResource, IHaveSubscriptionId
         {
             /// <summary>
@@ -148,6 +168,47 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SubscriptionId { get; set; }
+        }
+
+        public class Capabilities : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesAutomatedTestingCapabilityConfigurationCodeChangeRiskAnalysisAutomatedTesting, IHaveDevOpsAgentAssociationTypesCapabilityConfigurationCodeChangeRiskAnalysis
+        {
+            /// <summary>
+            /// CodeChangeRiskAnalysisAutomatedTesting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilities.html#cfn-devopsagent-association-capabilities-codechangeriskanalysisautomatedtesting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AutomatedTestingCapabilityConfiguration
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.AutomatedTestingCapabilityConfiguration, BaseFunction>? CodeChangeRiskAnalysisAutomatedTesting { get; set; }
+            /// <summary>
+            /// CodeChangeRiskAnalysis
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilities.html#cfn-devopsagent-association-capabilities-codechangeriskanalysis
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CapabilityConfiguration
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.CapabilityConfiguration, BaseFunction>? CodeChangeRiskAnalysis { get; set; }
+        }
+
+        public class CapabilityConfiguration : Humidifier.Base.BaseSubResource, IHaveEnabled_Boolean, IHaveListOfDevOpsAgentAssociationTypesTriggerFilterGroupTriggerFilterGroups
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilityconfiguration.html#cfn-devopsagent-association-capabilityconfiguration-enabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+            /// <summary>
+            /// TriggerFilterGroups
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-capabilityconfiguration.html#cfn-devopsagent-association-capabilityconfiguration-triggerfiltergroups
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: TriggerFilterGroup
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.DevOpsAgent.AssociationTypes.TriggerFilterGroup>, IReadOnlyList<Union<Humidifier.DevOpsAgent.AssociationTypes.TriggerFilterGroup, BaseFunction>>, BaseFunction>? TriggerFilterGroups { get; set; }
         }
 
         public class DynatraceConfiguration : Humidifier.Base.BaseSubResource, IHaveEnvId, IHaveStringListOfResources, IHaveEnableWebhookUpdates_Boolean
@@ -480,6 +541,18 @@ namespace Humidifier.DevOpsAgent
             public Union<bool, BaseFunction>? EnableWebhookUpdates { get; set; }
         }
 
+        public class NetworkAccessConfiguration : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesPrivateNetworkAccessPrivateAccess
+        {
+            /// <summary>
+            /// PrivateAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-networkaccessconfiguration.html#cfn-devopsagent-association-networkaccessconfiguration-privateaccess
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: PrivateNetworkAccess
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.PrivateNetworkAccess, BaseFunction>? PrivateAccess { get; set; }
+        }
+
         public class PagerDutyConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfServices, IHaveCustomerEmail, IHaveEnableWebhookUpdates_Boolean
         {
             /// <summary>
@@ -509,7 +582,60 @@ namespace Humidifier.DevOpsAgent
             public Union<bool, BaseFunction>? EnableWebhookUpdates { get; set; }
         }
 
-        public class ServiceConfiguration : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesMCPServerConfigurationMCPServer, IHaveDevOpsAgentAssociationTypesServiceNowConfigurationServiceNow, IHaveDevOpsAgentAssociationTypesAzureConfigurationAzure, IHaveDevOpsAgentAssociationTypesGitHubConfigurationGitHub, IHaveDevOpsAgentAssociationTypesMCPServerGrafanaConfigurationMCPServerGrafana, IHaveDevOpsAgentAssociationTypesMCPServerSplunkConfigurationMCPServerSplunk, IHaveDevOpsAgentAssociationTypesMCPServerNewRelicConfigurationMCPServerNewRelic, IHaveDevOpsAgentAssociationTypesPagerDutyConfigurationPagerDuty, IHaveDevOpsAgentAssociationTypesEventChannelConfigurationEventChannel, IHaveDevOpsAgentAssociationTypesSourceAwsConfigurationSourceAws, IHaveDevOpsAgentAssociationTypesSlackConfigurationSlack, IHaveDevOpsAgentAssociationTypesMCPServerDatadogConfigurationMCPServerDatadog, IHaveDevOpsAgentAssociationTypesDynatraceConfigurationDynatrace, IHaveDevOpsAgentAssociationTypesMCPServerSigV4ConfigurationMCPServerSigV4, IHaveDevOpsAgentAssociationTypesAWSConfigurationAws, IHaveDevOpsAgentAssociationTypesGitLabConfigurationGitLab
+        public class PatternFilter : Humidifier.Base.BaseSubResource, IHaveStringListOfPatterns
+        {
+            /// <summary>
+            /// Patterns
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-patternfilter.html#cfn-devopsagent-association-patternfilter-patterns
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Patterns { get; set; }
+        }
+
+        public class PrivateNetworkAccess : Humidifier.Base.BaseSubResource, IHavePrivateConnectionName, IHaveRuntimeRoleArn
+        {
+            /// <summary>
+            /// PrivateConnectionName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-privatenetworkaccess.html#cfn-devopsagent-association-privatenetworkaccess-privateconnectionname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? PrivateConnectionName { get; set; }
+            /// <summary>
+            /// RuntimeRoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-privatenetworkaccess.html#cfn-devopsagent-association-privatenetworkaccess-runtimerolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RuntimeRoleArn { get; set; }
+        }
+
+        public class ReleaseManagementConfiguration : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesNetworkAccessConfigurationNetworkAccess, IHaveName
+        {
+            /// <summary>
+            /// NetworkAccess
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-releasemanagementconfiguration.html#cfn-devopsagent-association-releasemanagementconfiguration-networkaccess
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: NetworkAccessConfiguration
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.NetworkAccessConfiguration, BaseFunction>? NetworkAccess { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-releasemanagementconfiguration.html#cfn-devopsagent-association-releasemanagementconfiguration-name
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Name { get; set; }
+        }
+
+        public class ServiceConfiguration : Humidifier.Base.BaseSubResource, IHaveDevOpsAgentAssociationTypesMCPServerConfigurationMCPServer, IHaveDevOpsAgentAssociationTypesServiceNowConfigurationServiceNow, IHaveDevOpsAgentAssociationTypesAzureConfigurationAzure, IHaveDevOpsAgentAssociationTypesGitHubConfigurationGitHub, IHaveDevOpsAgentAssociationTypesMCPServerGrafanaConfigurationMCPServerGrafana, IHaveDevOpsAgentAssociationTypesMCPServerSplunkConfigurationMCPServerSplunk, IHaveDevOpsAgentAssociationTypesMCPServerNewRelicConfigurationMCPServerNewRelic, IHaveDevOpsAgentAssociationTypesPagerDutyConfigurationPagerDuty, IHaveDevOpsAgentAssociationTypesEventChannelConfigurationEventChannel, IHaveDevOpsAgentAssociationTypesSourceAwsConfigurationSourceAws, IHaveDevOpsAgentAssociationTypesSlackConfigurationSlack, IHaveDevOpsAgentAssociationTypesReleaseManagementConfigurationReleaseManagement, IHaveDevOpsAgentAssociationTypesMCPServerDatadogConfigurationMCPServerDatadog, IHaveDevOpsAgentAssociationTypesDynatraceConfigurationDynatrace, IHaveDevOpsAgentAssociationTypesMCPServerSigV4ConfigurationMCPServerSigV4, IHaveDevOpsAgentAssociationTypesAWSConfigurationAws, IHaveDevOpsAgentAssociationTypesGitLabConfigurationGitLab
         {
             /// <summary>
             /// MCPServer
@@ -599,6 +725,14 @@ namespace Humidifier.DevOpsAgent
             /// Type: SlackConfiguration
             /// </summary>
             public Union<Humidifier.DevOpsAgent.AssociationTypes.SlackConfiguration, BaseFunction>? Slack { get; set; }
+            /// <summary>
+            /// ReleaseManagement
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-serviceconfiguration.html#cfn-devopsagent-association-serviceconfiguration-releasemanagement
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ReleaseManagementConfiguration
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.ReleaseManagementConfiguration, BaseFunction>? ReleaseManagement { get; set; }
             /// <summary>
             /// MCPServerDatadog
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-serviceconfiguration.html#cfn-devopsagent-association-serviceconfiguration-mcpserverdatadog
@@ -801,6 +935,27 @@ namespace Humidifier.DevOpsAgent
             /// ItemType: KeyValuePair
             /// </summary>
             public Union<IReadOnlyList<Humidifier.DevOpsAgent.AssociationTypes.KeyValuePair>, IReadOnlyList<Union<Humidifier.DevOpsAgent.AssociationTypes.KeyValuePair, BaseFunction>>, BaseFunction>? Tags { get; set; }
+        }
+
+        public class TriggerFilterGroup : Humidifier.Base.BaseSubResource, IHaveStringListOfEvents, IHaveDevOpsAgentAssociationTypesPatternFilterTargetBranches
+        {
+            /// <summary>
+            /// Events
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-triggerfiltergroup.html#cfn-devopsagent-association-triggerfiltergroup-events
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Events { get; set; }
+            /// <summary>
+            /// TargetBranches
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-triggerfiltergroup.html#cfn-devopsagent-association-triggerfiltergroup-targetbranches
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: PatternFilter
+            /// </summary>
+            public Union<Humidifier.DevOpsAgent.AssociationTypes.PatternFilter, BaseFunction>? TargetBranches { get; set; }
         }
     }
 }

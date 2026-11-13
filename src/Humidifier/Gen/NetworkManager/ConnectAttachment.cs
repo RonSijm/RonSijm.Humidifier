@@ -15,6 +15,7 @@ namespace Humidifier.NetworkManager
             public static string UpdatedAt =  "UpdatedAt" ;
             public static string AttachmentId =  "AttachmentId" ;
             public static string CoreNetworkArn =  "CoreNetworkArn" ;
+            public static string NatSystemRouteSupport =  "NatSystemRouteSupport" ;
             public static string ResourceArn =  "ResourceArn" ;
             public static string State =  "State" ;
             public static string LastModificationErrors =  "LastModificationErrors" ;
@@ -53,6 +54,23 @@ namespace Humidifier.NetworkManager
         /// </summary>
         [Required]
         public dynamic CoreNetworkId { get; set; }
+        /// <summary>
+        /// NatGatewaySupport
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-natgatewaysupport
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic NatGatewaySupport { get; set; }
+        /// <summary>
+        /// NatGatewayRules
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-natgatewayrules
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: NatRule
+        /// </summary>
+        public List<Humidifier.NetworkManager.ConnectAttachmentTypes.NatRule> NatGatewayRules { get; set; }
         /// <summary>
         /// RoutingPolicyLabel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-routingpolicylabel
@@ -102,6 +120,34 @@ namespace Humidifier.NetworkManager
             /// PrimitiveType: String
             /// </summary>
             public dynamic Protocol { get; set; }
+        }
+
+        public class NatRule : Humidifier.Base.BaseSubResource, IHaveRuleNumber
+        {
+            /// <summary>
+            /// MatchSourceCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-natrule.html#cfn-networkmanager-connectattachment-natrule-matchsourcecidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MatchSourceCidr { get; set; }
+            /// <summary>
+            /// RuleNumber
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-natrule.html#cfn-networkmanager-connectattachment-natrule-rulenumber
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RuleNumber { get; set; }
+            /// <summary>
+            /// NatCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-natrule.html#cfn-networkmanager-connectattachment-natrule-natcidr
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic NatCidr { get; set; }
         }
 
         public class ProposedNetworkFunctionGroupChange : Humidifier.Base.BaseSubResource, IHaveTags, IHaveAttachmentPolicyRuleNumber, IHaveNetworkFunctionGroupName

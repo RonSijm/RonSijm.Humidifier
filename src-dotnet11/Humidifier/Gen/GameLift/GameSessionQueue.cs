@@ -3,7 +3,7 @@ namespace Humidifier.GameLift
     using global::System.Collections.Generic;
     using GameSessionQueueTypes;
 
-    public class GameSessionQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTimeoutInSeconds_Integer, IHaveListOfGameLiftGameSessionQueueTypesPlayerLatencyPolicyPlayerLatencyPolicies, IHaveListOfGameLiftGameSessionQueueTypesGameSessionQueueDestinationDestinations, IHaveNotificationTarget, IHaveGameLiftGameSessionQueueTypesFilterConfigurationFilterConfiguration, IHaveCustomEventData, IHaveName, IHaveGameLiftGameSessionQueueTypesPriorityConfigurationPriorityConfiguration
+    public class GameSessionQueue : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveTimeoutInSeconds_Integer, IHaveListOfGameLiftGameSessionQueueTypesPlayerLatencyPolicyPlayerLatencyPolicies, IHaveListOfGameLiftGameSessionQueueTypesGameSessionQueueDestinationDestinations, IHaveNotificationTarget, IHaveGameLiftGameSessionQueueTypesFilterConfigurationFilterConfiguration, IHaveGameLiftGameSessionQueueTypesLogConfigurationLogConfiguration, IHaveCustomEventData, IHaveName, IHaveGameLiftGameSessionQueueTypesPriorityConfigurationPriorityConfiguration
     {
         public class Attributes
         {
@@ -55,6 +55,14 @@ namespace Humidifier.GameLift
         /// </summary>
         public Union<Humidifier.GameLift.GameSessionQueueTypes.FilterConfiguration, BaseFunction>? FilterConfiguration { get; set; }
         /// <summary>
+        /// LogConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-logconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: LogConfiguration
+        /// </summary>
+        public Union<Humidifier.GameLift.GameSessionQueueTypes.LogConfiguration, BaseFunction>? LogConfiguration { get; set; }
+        /// <summary>
         /// CustomEventData
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-customeventdata
         /// Required: False
@@ -84,6 +92,26 @@ namespace Humidifier.GameLift
 
     namespace GameSessionQueueTypes
     {
+        public class DeliveryDestination : Humidifier.Base.BaseSubResource, IHaveLogDestination, IHaveDestinationArn
+        {
+            /// <summary>
+            /// LogDestination
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-deliverydestination.html#cfn-gamelift-gamesessionqueue-deliverydestination-logdestination
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? LogDestination { get; set; }
+            /// <summary>
+            /// DestinationArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-deliverydestination.html#cfn-gamelift-gamesessionqueue-deliverydestination-destinationarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DestinationArn { get; set; }
+        }
+
         public class FilterConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfAllowedLocations
         {
             /// <summary>
@@ -107,6 +135,19 @@ namespace Humidifier.GameLift
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? DestinationArn { get; set; }
+        }
+
+        public class LogConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfGameLiftGameSessionQueueTypesDeliveryDestinationDeliveryDestinations
+        {
+            /// <summary>
+            /// DeliveryDestinations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-logconfiguration.html#cfn-gamelift-gamesessionqueue-logconfiguration-deliverydestinations
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: DeliveryDestination
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.GameLift.GameSessionQueueTypes.DeliveryDestination>, IReadOnlyList<Union<Humidifier.GameLift.GameSessionQueueTypes.DeliveryDestination, BaseFunction>>, BaseFunction>? DeliveryDestinations { get; set; }
         }
 
         public class PlayerLatencyPolicy : Humidifier.Base.BaseSubResource, IHavePolicyDurationSeconds_Integer, IHaveMaximumIndividualPlayerLatencyMilliseconds_Integer
