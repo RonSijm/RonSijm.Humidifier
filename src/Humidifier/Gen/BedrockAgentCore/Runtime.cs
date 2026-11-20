@@ -35,6 +35,15 @@ namespace Humidifier.BedrockAgentCore
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// ResourceConfigurations
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrockagentcore-runtime.html#cfn-bedrockagentcore-runtime-resourceconfigurations
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: ResourceConfiguration
+        /// </summary>
+        public List<Humidifier.BedrockAgentCore.RuntimeTypes.ResourceConfiguration> ResourceConfigurations { get; set; }
+        /// <summary>
         /// LifecycleConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrockagentcore-runtime.html#cfn-bedrockagentcore-runtime-lifecycleconfiguration
         /// Required: False
@@ -70,6 +79,14 @@ namespace Humidifier.BedrockAgentCore
         /// PrimitiveType: String
         /// </summary>
         public dynamic ProtocolConfiguration { get; set; }
+        /// <summary>
+        /// HooksConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrockagentcore-runtime.html#cfn-bedrockagentcore-runtime-hooksconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RuntimeHooksConfiguration
+        /// </summary>
+        public Humidifier.BedrockAgentCore.RuntimeTypes.RuntimeHooksConfiguration HooksConfiguration { get; set; }
         /// <summary>
         /// EnvironmentVariables
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-bedrockagentcore-runtime.html#cfn-bedrockagentcore-runtime-environmentvariables
@@ -215,6 +232,18 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic ClaimMatchOperator { get; set; }
+        }
+
+        public class BuildLifecycleHooks : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Warmup
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-buildlifecyclehooks.html#cfn-bedrockagentcore-runtime-buildlifecyclehooks-warmup
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LifecycleHook
+            /// </summary>
+            public Humidifier.BedrockAgentCore.RuntimeTypes.LifecycleHook Warmup { get; set; }
         }
 
         public class CapacityProviderConfiguration : Humidifier.Base.BaseSubResource
@@ -492,6 +521,26 @@ namespace Humidifier.BedrockAgentCore
             public dynamic Arn { get; set; }
         }
 
+        public class HttpPostLifecycleHookAction : Humidifier.Base.BaseSubResource, IHavePort, IHavePath
+        {
+            /// <summary>
+            /// Path
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-httppostlifecyclehookaction.html#cfn-bedrockagentcore-runtime-httppostlifecyclehookaction-path
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Path { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-httppostlifecyclehookaction.html#cfn-bedrockagentcore-runtime-httppostlifecyclehookaction-port
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic Port { get; set; }
+        }
+
         public class LifecycleConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -510,6 +559,30 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic IdleRuntimeSessionTimeout { get; set; }
+        }
+
+        public class LifecycleHook : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Action
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-lifecyclehook.html#cfn-bedrockagentcore-runtime-lifecyclehook-action
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: LifecycleHookAction
+            /// </summary>
+            public Humidifier.BedrockAgentCore.RuntimeTypes.LifecycleHookAction Action { get; set; }
+        }
+
+        public class LifecycleHookAction : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// HttpPost
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-lifecyclehookaction.html#cfn-bedrockagentcore-runtime-lifecyclehookaction-httppost
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: HttpPostLifecycleHookAction
+            /// </summary>
+            public Humidifier.BedrockAgentCore.RuntimeTypes.HttpPostLifecycleHookAction HttpPost { get; set; }
         }
 
         public class ManagedVpcResource : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds, IHaveVpcIdentifier
@@ -638,6 +711,30 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic RequestHeaderAllowlist { get; set; }
+        }
+
+        public class ResourceConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MinimumMemoryInMiB
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-resourceconfiguration.html#cfn-bedrockagentcore-runtime-resourceconfiguration-minimummemoryinmib
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinimumMemoryInMiB { get; set; }
+        }
+
+        public class RuntimeHooksConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Build
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-runtime-runtimehooksconfiguration.html#cfn-bedrockagentcore-runtime-runtimehooksconfiguration-build
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: BuildLifecycleHooks
+            /// </summary>
+            public Humidifier.BedrockAgentCore.RuntimeTypes.BuildLifecycleHooks Build { get; set; }
         }
 
         public class S3FilesAccessPointConfiguration : Humidifier.Base.BaseSubResource, IHaveAccessPointArn, IHaveMountPath

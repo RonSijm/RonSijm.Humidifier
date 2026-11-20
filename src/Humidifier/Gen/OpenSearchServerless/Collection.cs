@@ -68,7 +68,7 @@ namespace Humidifier.OpenSearchServerless
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchserverless-collection.html#cfn-opensearchserverless-collection-tags
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// Type: List
         /// ItemType: Tag
         /// </summary>

@@ -54,7 +54,7 @@ namespace Humidifier.Route53
             public Union<string, BaseFunction>? Name { get; set; }
         }
 
-        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveEnableSNI_Boolean, IHaveStringListOfChildHealthChecks, IHaveMeasureLatency_Boolean, IHavePort_Integer, IHaveStringListOfRegions, IHaveInsufficientDataHealthStatus, IHaveSearchString, IHaveType, IHaveResourcePath, IHaveRoutingControlArn, IHaveFullyQualifiedDomainName, IHaveInverted_Boolean, IHaveHealthThreshold_Integer, IHaveRequestInterval_Integer, IHaveRoute53HealthCheckTypesAlarmIdentifierAlarmIdentifier, IHaveFailureThreshold_Integer, IHaveIPAddress
+        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveEnableSNI_Boolean, IHaveStringListOfChildHealthChecks, IHaveMeasureLatency_Boolean, IHavePort_Integer, IHaveStringListOfRegions, IHaveHealthCheckSourceId, IHaveInsufficientDataHealthStatus, IHaveSearchString, IHaveType, IHaveResourcePath, IHaveRoutingControlArn, IHaveFullyQualifiedDomainName, IHaveInverted_Boolean, IHaveHealthThreshold_Integer, IHaveRequestInterval_Integer, IHaveRoute53HealthCheckTypesAlarmIdentifierAlarmIdentifier, IHaveEndpointType, IHaveFailureThreshold_Integer, IHaveIPAddress
         {
             /// <summary>
             /// EnableSNI
@@ -98,6 +98,14 @@ namespace Humidifier.Route53
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Regions { get; set; }
+            /// <summary>
+            /// HealthCheckSourceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-healthchecksourceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? HealthCheckSourceId { get; set; }
             /// <summary>
             /// InsufficientDataHealthStatus
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-insufficientdatahealthstatus
@@ -178,6 +186,14 @@ namespace Humidifier.Route53
             /// Type: AlarmIdentifier
             /// </summary>
             public Union<Humidifier.Route53.HealthCheckTypes.AlarmIdentifier, BaseFunction>? AlarmIdentifier { get; set; }
+            /// <summary>
+            /// EndpointType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-endpointtype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? EndpointType { get; set; }
             /// <summary>
             /// FailureThreshold
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-failurethreshold

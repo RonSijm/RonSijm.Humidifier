@@ -144,11 +144,19 @@ namespace Humidifier.SSM
             /// <summary>
             /// AzureConfiguration
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-cloudconnectorconfiguration.html#cfn-ssm-cloudconnector-cloudconnectorconfiguration-azureconfiguration
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: AzureConfiguration
             /// </summary>
             public Humidifier.SSM.CloudConnectorTypes.AzureConfiguration AzureConfiguration { get; set; }
+            /// <summary>
+            /// GcpConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-cloudconnectorconfiguration.html#cfn-ssm-cloudconnector-cloudconnectorconfiguration-gcpconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GcpConfiguration
+            /// </summary>
+            public Humidifier.SSM.CloudConnectorTypes.GcpConfiguration GcpConfiguration { get; set; }
         }
 
         public class ConfigurationTargets : Humidifier.Base.BaseSubResource
@@ -162,6 +170,75 @@ namespace Humidifier.SSM
             /// ItemType: AzureSubscription
             /// </summary>
             public List<Humidifier.SSM.CloudConnectorTypes.AzureSubscription> Subscriptions { get; set; }
+        }
+
+        public class GcpConfiguration : Humidifier.Base.BaseSubResource, IHaveOrganizationId
+        {
+            /// <summary>
+            /// WorkloadIdentityPoolProvider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpconfiguration.html#cfn-ssm-cloudconnector-gcpconfiguration-workloadidentitypoolprovider
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WorkloadIdentityPoolProvider { get; set; }
+            /// <summary>
+            /// Targets
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpconfiguration.html#cfn-ssm-cloudconnector-gcpconfiguration-targets
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GcpConfigurationTargets
+            /// </summary>
+            public Humidifier.SSM.CloudConnectorTypes.GcpConfigurationTargets Targets { get; set; }
+            /// <summary>
+            /// OrganizationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpconfiguration.html#cfn-ssm-cloudconnector-gcpconfiguration-organizationid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic OrganizationId { get; set; }
+            /// <summary>
+            /// ServiceAccountEmail
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpconfiguration.html#cfn-ssm-cloudconnector-gcpconfiguration-serviceaccountemail
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServiceAccountEmail { get; set; }
+        }
+
+        public class GcpConfigurationTargets : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Projects
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpconfigurationtargets.html#cfn-ssm-cloudconnector-gcpconfigurationtargets-projects
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: GcpProject
+            /// </summary>
+            public List<Humidifier.SSM.CloudConnectorTypes.GcpProject> Projects { get; set; }
+        }
+
+        public class GcpProject : Humidifier.Base.BaseSubResource, IHaveProjectId
+        {
+            /// <summary>
+            /// ProjectDisplayName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpproject.html#cfn-ssm-cloudconnector-gcpproject-projectdisplayname
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProjectDisplayName { get; set; }
+            /// <summary>
+            /// ProjectId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-cloudconnector-gcpproject.html#cfn-ssm-cloudconnector-gcpproject-projectid
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProjectId { get; set; }
         }
     }
 }

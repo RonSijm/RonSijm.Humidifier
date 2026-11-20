@@ -3,7 +3,7 @@ namespace Humidifier.MediaConnect
     using global::System.Collections.Generic;
     using FlowOutputTypes;
 
-    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDestination, IHaveSmoothingLatency_Integer, IHaveStreamId, IHaveDescription, IHaveNdiSpeedHqQuality_Integer, IHavePort_Integer, IHaveRemoteId, IHaveNdiAudioReferenceLevel_Integer, IHaveListOfMediaConnectFlowOutputTypesMediaStreamOutputConfigurationMediaStreamOutputConfigurations, IHaveMediaConnectFlowOutputTypesEncryptionEncryption, IHaveRouterIntegrationState, IHaveOutputStatus, IHaveName, IHaveMediaConnectFlowOutputTypesVpcInterfaceAttachmentVpcInterfaceAttachment, IHaveNdiOutputTimecodeSource, IHaveMinLatency_Integer, IHaveMediaConnectFlowOutputTypesFlowTransitEncryptionRouterIntegrationTransitEncryption, IHaveProtocol, IHaveFlowArn, IHaveNdiProgramName, IHaveMaxLatency_Integer, IHaveStringListOfCidrAllowList
+    public class FlowOutput : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveDestination, IHaveSmoothingLatency_Integer, IHaveStreamId, IHaveDescription, IHaveNdiSpeedHqQuality_Integer, IHavePort_Integer, IHaveNdiAudioReferenceLevel_Integer, IHaveRemoteId, IHaveListOfMediaConnectFlowOutputTypesMediaStreamOutputConfigurationMediaStreamOutputConfigurations, IHaveMediaConnectFlowOutputTypesEncryptionEncryption, IHaveRouterIntegrationState, IHaveOutputStatus, IHaveName, IHaveMediaConnectFlowOutputTypesVpcInterfaceAttachmentVpcInterfaceAttachment, IHaveNdiOutputTimecodeSource, IHaveMinLatency_Integer, IHaveMediaConnectFlowOutputTypesRtmpPushSettingsRtmpPushSettings, IHaveMediaConnectFlowOutputTypesFlowTransitEncryptionRouterIntegrationTransitEncryption, IHaveProtocol, IHaveNdiProgramName, IHaveFlowArn, IHaveMaxLatency_Integer, IHaveStringListOfCidrAllowList
     {
         public class Attributes
         {
@@ -60,14 +60,6 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public Union<int, BaseFunction>? Port { get; set; }
         /// <summary>
-        /// RemoteId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-remoteid
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? RemoteId { get; set; }
-        /// <summary>
         /// NdiAudioReferenceLevel
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndiaudioreferencelevel
         /// Required: False
@@ -75,6 +67,14 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: Integer
         /// </summary>
         public Union<int, BaseFunction>? NdiAudioReferenceLevel { get; set; }
+        /// <summary>
+        /// RemoteId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-remoteid
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? RemoteId { get; set; }
         /// <summary>
         /// MediaStreamOutputConfigurations
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-mediastreamoutputconfigurations
@@ -134,6 +134,14 @@ namespace Humidifier.MediaConnect
         /// </summary>
         public Union<int, BaseFunction>? MinLatency { get; set; }
         /// <summary>
+        /// RtmpPushSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-rtmppushsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RtmpPushSettings
+        /// </summary>
+        public Union<Humidifier.MediaConnect.FlowOutputTypes.RtmpPushSettings, BaseFunction>? RtmpPushSettings { get; set; }
+        /// <summary>
         /// RouterIntegrationTransitEncryption
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-routerintegrationtransitencryption
         /// Required: False
@@ -149,6 +157,14 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? Protocol { get; set; }
+        /// <summary>
+        /// NdiProgramName
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndiprogramname
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? NdiProgramName { get; set; }
 
         /// <summary>
         /// FlowArn
@@ -159,14 +175,6 @@ namespace Humidifier.MediaConnect
         /// </summary>
         [Required]
         public Union<string, BaseFunction>? FlowArn { get; set; }
-        /// <summary>
-        /// NdiProgramName
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-ndiprogramname
-        /// Required: False
-        /// UpdateType: Mutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? NdiProgramName { get; set; }
         /// <summary>
         /// MaxLatency
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-maxlatency
@@ -370,6 +378,34 @@ namespace Humidifier.MediaConnect
             public Union<IReadOnlyList<Humidifier.MediaConnect.FlowOutputTypes.DestinationConfiguration>, IReadOnlyList<Union<Humidifier.MediaConnect.FlowOutputTypes.DestinationConfiguration, BaseFunction>>, BaseFunction>? DestinationConfigurations { get; set; }
         }
 
+        public class RtmpPushSettings : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName, IHaveMediaConnectFlowOutputTypesTlsEncryptionTlsEncryption
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-rtmppushsettings.html#cfn-mediaconnect-flowoutput-rtmppushsettings-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-rtmppushsettings.html#cfn-mediaconnect-flowoutput-rtmppushsettings-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? StreamName { get; set; }
+            /// <summary>
+            /// TlsEncryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-rtmppushsettings.html#cfn-mediaconnect-flowoutput-rtmppushsettings-tlsencryption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: TlsEncryption
+            /// </summary>
+            public Union<Humidifier.MediaConnect.FlowOutputTypes.TlsEncryption, BaseFunction>? TlsEncryption { get; set; }
+        }
+
         public class SecretsManagerEncryptionKeyConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn, IHaveRoleArn
         {
             /// <summary>
@@ -388,6 +424,38 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? RoleArn { get; set; }
+        }
+
+        public class TlsEncryption : Humidifier.Base.BaseSubResource, IHaveEncryptionType, IHaveMediaConnectFlowOutputTypesTlsEncryptionConfigurationEncryptionConfiguration
+        {
+            /// <summary>
+            /// EncryptionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-tlsencryption.html#cfn-mediaconnect-flowoutput-tlsencryption-encryptiontype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? EncryptionType { get; set; }
+            /// <summary>
+            /// EncryptionConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-tlsencryption.html#cfn-mediaconnect-flowoutput-tlsencryption-encryptionconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: TlsEncryptionConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.FlowOutputTypes.TlsEncryptionConfiguration, BaseFunction>? EncryptionConfiguration { get; set; }
+        }
+
+        public class TlsEncryptionConfiguration : Humidifier.Base.BaseSubResource, IHavePublic_Json
+        {
+            /// <summary>
+            /// Public
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-tlsencryptionconfiguration.html#cfn-mediaconnect-flowoutput-tlsencryptionconfiguration-public
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? Public { get; set; }
         }
 
         public class VpcInterfaceAttachment : Humidifier.Base.BaseSubResource, IHaveVpcInterfaceName

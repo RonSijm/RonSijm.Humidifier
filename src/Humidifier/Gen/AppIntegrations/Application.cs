@@ -8,7 +8,9 @@ namespace Humidifier.AppIntegrations
         public class Attributes
         {
             public static string ApplicationArn =  "ApplicationArn" ;
+            public static string LastModifiedTime =  "LastModifiedTime" ;
             public static string Id =  "Id" ;
+            public static string LastModifiedRegion =  "LastModifiedRegion" ;
         }
 
         public override string AWSTypeName { get => AWS.AppIntegrations.Application; }
@@ -72,6 +74,14 @@ namespace Humidifier.AppIntegrations
         /// </summary>
         public dynamic Permissions { get; set; }
         /// <summary>
+        /// AuthConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-application.html#cfn-appintegrations-application-authconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AuthConfig
+        /// </summary>
+        public Humidifier.AppIntegrations.ApplicationTypes.AuthConfig AuthConfig { get; set; }
+        /// <summary>
         /// IsService
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-application.html#cfn-appintegrations-application-isservice
         /// Required: False
@@ -120,11 +130,39 @@ namespace Humidifier.AppIntegrations
             /// <summary>
             /// ExternalUrlConfig
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-application-applicationsourceconfig.html#cfn-appintegrations-application-applicationsourceconfig-externalurlconfig
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: ExternalUrlConfig
             /// </summary>
             public Humidifier.AppIntegrations.ApplicationTypes.ExternalUrlConfig ExternalUrlConfig { get; set; }
+        }
+
+        public class AuthConfig : Humidifier.Base.BaseSubResource, IHaveAuthType
+        {
+            /// <summary>
+            /// AudienceOverride
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-application-authconfig.html#cfn-appintegrations-application-authconfig-audienceoverride
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AudienceOverride { get; set; }
+            /// <summary>
+            /// AuthType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-application-authconfig.html#cfn-appintegrations-application-authconfig-authtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AuthType { get; set; }
+            /// <summary>
+            /// CredentialProviderIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-application-authconfig.html#cfn-appintegrations-application-authconfig-credentialprovideridentifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CredentialProviderIdentifier { get; set; }
         }
 
         public class ContactHandling : Humidifier.Base.BaseSubResource, IHaveScope
@@ -132,7 +170,7 @@ namespace Humidifier.AppIntegrations
             /// <summary>
             /// Scope
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-application-contacthandling.html#cfn-appintegrations-application-contacthandling-scope
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>

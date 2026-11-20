@@ -538,6 +538,68 @@ namespace Humidifier.WAFv2
             public Humidifier.WAFv2.WebACLTypes.ClientSideAction Challenge { get; set; }
         }
 
+        public class ConnectedAccountChainConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Chain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountchainconfig.html#cfn-wafv2-webacl-connectedaccountchainconfig-chain
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Chain { get; set; }
+            /// <summary>
+            /// Prices
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountchainconfig.html#cfn-wafv2-webacl-connectedaccountchainconfig-prices
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountPrice
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.ConnectedAccountPrice> Prices { get; set; }
+        }
+
+        public class ConnectedAccountConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PaymentNetworks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountconfig.html#cfn-wafv2-webacl-connectedaccountconfig-paymentnetworks
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountChainConfig
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.ConnectedAccountChainConfig> PaymentNetworks { get; set; }
+            /// <summary>
+            /// ConnectedAccountArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountconfig.html#cfn-wafv2-webacl-connectedaccountconfig-connectedaccountarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectedAccountArn { get; set; }
+        }
+
+        public class ConnectedAccountPrice : Humidifier.Base.BaseSubResource, IHaveAmount
+        {
+            /// <summary>
+            /// Amount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountprice.html#cfn-wafv2-webacl-connectedaccountprice-amount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Amount { get; set; }
+            /// <summary>
+            /// Currency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountprice.html#cfn-wafv2-webacl-connectedaccountprice-currency
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Currency { get; set; }
+        }
+
         public class CookieMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll, IHaveIncludedCookies, IHaveExcludedCookies
         {
             /// <summary>
@@ -1350,6 +1412,15 @@ namespace Humidifier.WAFv2
 
         public class MonetizationConfig : Humidifier.Base.BaseSubResource
         {
+            /// <summary>
+            /// ConnectedAccountConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizationconfig.html#cfn-wafv2-webacl-monetizationconfig-connectedaccountconfigs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountConfig
+            /// </summary>
+            public List<Humidifier.WAFv2.WebACLTypes.ConnectedAccountConfig> ConnectedAccountConfigs { get; set; }
             /// <summary>
             /// CurrencyMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizationconfig.html#cfn-wafv2-webacl-monetizationconfig-currencymode

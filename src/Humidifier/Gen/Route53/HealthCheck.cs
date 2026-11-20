@@ -54,7 +54,7 @@ namespace Humidifier.Route53
             public dynamic Name { get; set; }
         }
 
-        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHaveRegions, IHaveResourcePath, IHaveSearchString, IHaveFailureThreshold, IHaveInverted
+        public class HealthCheckConfig : Humidifier.Base.BaseSubResource, IHaveType, IHavePort, IHaveEndpointType, IHaveRegions, IHaveResourcePath, IHaveSearchString, IHaveFailureThreshold, IHaveInverted
         {
             /// <summary>
             /// EnableSNI
@@ -98,6 +98,14 @@ namespace Humidifier.Route53
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic Regions { get; set; }
+            /// <summary>
+            /// HealthCheckSourceId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-healthchecksourceid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic HealthCheckSourceId { get; set; }
             /// <summary>
             /// InsufficientDataHealthStatus
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-insufficientdatahealthstatus
@@ -178,6 +186,14 @@ namespace Humidifier.Route53
             /// Type: AlarmIdentifier
             /// </summary>
             public Humidifier.Route53.HealthCheckTypes.AlarmIdentifier AlarmIdentifier { get; set; }
+            /// <summary>
+            /// EndpointType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-endpointtype
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EndpointType { get; set; }
             /// <summary>
             /// FailureThreshold
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthcheckconfig.html#cfn-route53-healthcheck-healthcheckconfig-failurethreshold

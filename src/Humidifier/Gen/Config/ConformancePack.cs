@@ -7,6 +7,7 @@ namespace Humidifier.Config
     {
         public class Attributes
         {
+            public static string Type =  "Type" ;
             public static string ConformancePackArn =  "ConformancePackArn" ;
         }
 
@@ -20,6 +21,14 @@ namespace Humidifier.Config
         /// ItemType: ConformancePackInputParameter
         /// </summary>
         public List<Humidifier.Config.ConformancePackTypes.ConformancePackInputParameter> ConformancePackInputParameters { get; set; }
+        /// <summary>
+        /// Scope
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-scope
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Scope
+        /// </summary>
+        public Humidifier.Config.ConformancePackTypes.Scope Scope { get; set; }
         /// <summary>
         /// TemplateSSMDocumentDetails
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatessmdocumentdetails
@@ -63,6 +72,14 @@ namespace Humidifier.Config
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
         /// <summary>
+        /// Source
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-source
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: Source
+        /// </summary>
+        public Humidifier.Config.ConformancePackTypes.Source Source { get; set; }
+        /// <summary>
         /// TemplateS3Uri
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri
         /// Required: False
@@ -92,6 +109,38 @@ namespace Humidifier.Config
             /// PrimitiveType: String
             /// </summary>
             public dynamic ParameterName { get; set; }
+        }
+
+        public class Scope : Humidifier.Base.BaseSubResource, IHaveTagKey, IHaveTagValue
+        {
+            /// <summary>
+            /// TagKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-scope.html#cfn-config-conformancepack-scope-tagkey
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TagKey { get; set; }
+            /// <summary>
+            /// TagValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-scope.html#cfn-config-conformancepack-scope-tagvalue
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TagValue { get; set; }
+        }
+
+        public class Source : Humidifier.Base.BaseSubResource, IHaveSourceIdentifier
+        {
+            /// <summary>
+            /// SourceIdentifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-source.html#cfn-config-conformancepack-source-sourceidentifier
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceIdentifier { get; set; }
         }
 
         public class TemplateSSMDocumentDetails : Humidifier.Base.BaseSubResource, IHaveDocumentVersion, IHaveDocumentName

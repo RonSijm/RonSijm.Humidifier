@@ -41,7 +41,7 @@ namespace Humidifier.VpcLattice
         /// ResourceConfigDnsResolution
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-vpclattice-resourcegateway.html#cfn-vpclattice-resourcegateway-resourceconfigdnsresolution
         /// Required: False
-        /// UpdateType: Immutable
+        /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
         public dynamic ResourceConfigDnsResolution { get; set; }

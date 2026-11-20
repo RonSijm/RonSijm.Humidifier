@@ -12,6 +12,14 @@ namespace Humidifier.Connect
 
         public override string AWSTypeName { get => AWS.Connect.TaskTemplate; }
         /// <summary>
+        /// ContactHooks
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-contacthooks
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ContactHooks
+        /// </summary>
+        public Humidifier.Connect.TaskTemplateTypes.ContactHooks ContactHooks { get; set; }
+        /// <summary>
         /// Status
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-tasktemplate.html#cfn-connect-tasktemplate-status
         /// Required: False
@@ -130,6 +138,18 @@ namespace Humidifier.Connect
             /// ItemType: RequiredFieldInfo
             /// </summary>
             public List<Humidifier.Connect.TaskTemplateTypes.RequiredFieldInfo> RequiredFields { get; set; }
+        }
+
+        public class ContactHooks : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// WrapUpFlowArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-tasktemplate-contacthooks.html#cfn-connect-tasktemplate-contacthooks-wrapupflowarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WrapUpFlowArn { get; set; }
         }
 
         public class DefaultFieldValue : Humidifier.Base.BaseSubResource, IHaveDefaultValue, IHaveConnectTaskTemplateTypesFieldIdentifierId

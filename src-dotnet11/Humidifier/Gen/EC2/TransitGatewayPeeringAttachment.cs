@@ -3,17 +3,29 @@ namespace Humidifier.EC2
     using global::System.Collections.Generic;
     using TransitGatewayPeeringAttachmentTypes;
 
-    public class TransitGatewayPeeringAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveTransitGatewayId, IHavePeerTransitGatewayId, IHavePeerAccountId, IHavePeerRegion
+    public class TransitGatewayPeeringAttachment : Humidifier.Base.BaseResource, IHaveTags, IHaveEC2TransitGatewayPeeringAttachmentTypesTransitGatewayPeeringAttachmentOptionsOptions, IHaveTransitGatewayId, IHavePeerTransitGatewayId, IHavePeerAccountId, IHavePeerRegion
     {
         public class Attributes
         {
             public static string Status =  "Status" ;
+            public static string AccepterAllowMultipathResilience =  "AccepterAllowMultipathResilience" ;
+            public static string RequesterMultipathResilienceMode =  "RequesterMultipathResilienceMode" ;
             public static string State =  "State" ;
             public static string CreationTime =  "CreationTime" ;
+            public static string RequesterAllowMultipathResilience =  "RequesterAllowMultipathResilience" ;
             public static string TransitGatewayAttachmentId =  "TransitGatewayAttachmentId" ;
+            public static string MultipathResilienceStatus =  "MultipathResilienceStatus" ;
         }
 
         public override string AWSTypeName { get => AWS.EC2.TransitGatewayPeeringAttachment; }
+        /// <summary>
+        /// Options
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-options
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TransitGatewayPeeringAttachmentOptions
+        /// </summary>
+        public Union<Humidifier.EC2.TransitGatewayPeeringAttachmentTypes.TransitGatewayPeeringAttachmentOptions, BaseFunction>? Options { get; set; }
 
         /// <summary>
         /// TransitGatewayId
@@ -85,6 +97,26 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Code { get; set; }
+        }
+
+        public class TransitGatewayPeeringAttachmentOptions : Humidifier.Base.BaseSubResource, IHaveMultipathResilienceMode, IHaveAllowMultipathResilience_Boolean
+        {
+            /// <summary>
+            /// MultipathResilienceMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions.html#cfn-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions-multipathresiliencemode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? MultipathResilienceMode { get; set; }
+            /// <summary>
+            /// AllowMultipathResilience
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions.html#cfn-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions-allowmultipathresilience
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? AllowMultipathResilience { get; set; }
         }
     }
 }

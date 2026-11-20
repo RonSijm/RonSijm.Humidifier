@@ -50,6 +50,14 @@ namespace Humidifier.Wisdom
         /// PrimitiveType: String
         /// </summary>
         public dynamic AssistantId { get; set; }
+        /// <summary>
+        /// InferenceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-aiprompt.html#cfn-wisdom-aiprompt-inferenceconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AIPromptInferenceConfiguration
+        /// </summary>
+        public Humidifier.Wisdom.AIPromptTypes.AIPromptInferenceConfiguration InferenceConfiguration { get; set; }
 
         /// <summary>
         /// TemplateConfiguration
@@ -94,6 +102,42 @@ namespace Humidifier.Wisdom
 
     namespace AIPromptTypes
     {
+        public class AIPromptInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTemperature, IHaveTopP
+        {
+            /// <summary>
+            /// TopK
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-topk
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TopK { get; set; }
+            /// <summary>
+            /// Temperature
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-temperature
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic Temperature { get; set; }
+            /// <summary>
+            /// MaxTokensToSample
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-maxtokenstosample
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxTokensToSample { get; set; }
+            /// <summary>
+            /// TopP
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-topp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public dynamic TopP { get; set; }
+        }
+
         public class AIPromptTemplateConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>

@@ -3,7 +3,7 @@ namespace Humidifier.Lambda
     using global::System.Collections.Generic;
     using FunctionTypes;
 
-    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveLambdaFunctionTypesFunctionScalingConfigFunctionScalingConfig, IHaveDescription, IHaveLambdaFunctionTypesTracingConfigTracingConfig, IHaveLambdaFunctionTypesVpcConfigVpcConfig, IHaveLambdaFunctionTypesRuntimeManagementConfigRuntimeManagementConfig, IHaveLambdaFunctionTypesDurableConfigDurableConfig, IHaveReservedConcurrentExecutions_Integer, IHaveLambdaFunctionTypesSnapStartSnapStart, IHaveListOfLambdaFunctionTypesFileSystemConfigFileSystemConfigs, IHaveFunctionName, IHaveRuntime, IHaveKmsKeyArn, IHavePublishToLatestPublished_Boolean, IHavePackageType, IHaveCodeSigningConfigArn, IHaveStringListOfLayers, IHaveLambdaFunctionTypesTenancyConfigTenancyConfig, IHaveLambdaFunctionTypesImageConfigImageConfig, IHaveMemorySize_Integer, IHaveLambdaFunctionTypesDeadLetterConfigDeadLetterConfig, IHaveTimeout_Integer, IHaveLambdaFunctionTypesCapacityProviderConfigCapacityProviderConfig, IHaveHandler, IHaveLambdaFunctionTypesCodeCode, IHaveRole, IHaveLambdaFunctionTypesLoggingConfigLoggingConfig, IHaveRecursiveLoop, IHaveLambdaFunctionTypesEnvironmentEnvironment, IHaveLambdaFunctionTypesEphemeralStorageEphemeralStorage, IHaveStringListOfArchitectures
+    public class Function : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveLambdaFunctionTypesFunctionScalingConfigFunctionScalingConfig, IHaveDescription, IHaveLambdaFunctionTypesTracingConfigTracingConfig, IHaveLambdaFunctionTypesVpcConfigVpcConfig, IHaveLambdaFunctionTypesRuntimeManagementConfigRuntimeManagementConfig, IHaveLambdaFunctionTypesDurableConfigDurableConfig, IHaveReservedConcurrentExecutions_Integer, IHaveLambdaFunctionTypesSnapStartSnapStart, IHaveListOfLambdaFunctionTypesFileSystemConfigFileSystemConfigs, IHaveFunctionName, IHaveLambdaFunctionTypesAcceleratorConfigAcceleratorConfig, IHaveRuntime, IHaveKmsKeyArn, IHavePublishToLatestPublished_Boolean, IHavePackageType, IHaveCodeSigningConfigArn, IHaveStringListOfLayers, IHaveLambdaFunctionTypesTenancyConfigTenancyConfig, IHaveLambdaFunctionTypesImageConfigImageConfig, IHaveMemorySize_Integer, IHaveLambdaFunctionTypesDeadLetterConfigDeadLetterConfig, IHaveTimeout_Integer, IHaveLambdaFunctionTypesCapacityProviderConfigCapacityProviderConfig, IHaveHandler, IHaveLambdaFunctionTypesCodeCode, IHaveRole, IHaveLambdaFunctionTypesLoggingConfigLoggingConfig, IHaveRecursiveLoop, IHaveLambdaFunctionTypesEnvironmentEnvironment, IHaveLambdaFunctionTypesRuntimeConfigRuntimeConfig, IHaveLambdaFunctionTypesEphemeralStorageEphemeralStorage, IHaveStringListOfArchitectures
     {
         public class Attributes
         {
@@ -86,6 +86,14 @@ namespace Humidifier.Lambda
         /// </summary>
         public Union<IReadOnlyList<Humidifier.Lambda.FunctionTypes.FileSystemConfig>, IReadOnlyList<Union<Humidifier.Lambda.FunctionTypes.FileSystemConfig, BaseFunction>>, BaseFunction>? FileSystemConfigs { get; set; }
         public Union<string, BaseFunction>? FunctionName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// AcceleratorConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-acceleratorconfig
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: AcceleratorConfig
+        /// </summary>
+        public Union<Humidifier.Lambda.FunctionTypes.AcceleratorConfig, BaseFunction>? AcceleratorConfig { get; set; }
         /// <summary>
         /// Runtime
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
@@ -245,6 +253,14 @@ namespace Humidifier.Lambda
         /// </summary>
         public Union<Humidifier.Lambda.FunctionTypes.Environment, BaseFunction>? Environment { get; set; }
         /// <summary>
+        /// RuntimeConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtimeconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RuntimeConfig
+        /// </summary>
+        public Union<Humidifier.Lambda.FunctionTypes.RuntimeConfig, BaseFunction>? RuntimeConfig { get; set; }
+        /// <summary>
         /// EphemeralStorage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-ephemeralstorage
         /// Required: False
@@ -265,6 +281,18 @@ namespace Humidifier.Lambda
 
     namespace FunctionTypes
     {
+        public class AcceleratorConfig : Humidifier.Base.BaseSubResource, IHaveAcceleratorMemorySize_Integer
+        {
+            /// <summary>
+            /// AcceleratorMemorySize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-acceleratorconfig.html#cfn-lambda-function-acceleratorconfig-acceleratormemorysize
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? AcceleratorMemorySize { get; set; }
+        }
+
         public class CapacityProviderConfig : Humidifier.Base.BaseSubResource, IHaveLambdaFunctionTypesLambdaManagedInstancesCapacityProviderConfigLambdaManagedInstancesCapacityProviderConfig
         {
             /// <summary>
@@ -542,6 +570,26 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SystemLogLevel { get; set; }
+        }
+
+        public class RuntimeConfig : Humidifier.Base.BaseSubResource, IHaveRuntimeAlias, IHaveRuntimeArn
+        {
+            /// <summary>
+            /// RuntimeAlias
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimeconfig.html#cfn-lambda-function-runtimeconfig-runtimealias
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RuntimeAlias { get; set; }
+            /// <summary>
+            /// RuntimeArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimeconfig.html#cfn-lambda-function-runtimeconfig-runtimearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? RuntimeArn { get; set; }
         }
 
         public class RuntimeManagementConfig : Humidifier.Base.BaseSubResource, IHaveUpdateRuntimeOn, IHaveRuntimeVersionArn

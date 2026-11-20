@@ -66,6 +66,42 @@ namespace Humidifier.Config
             /// Type: AzureConnectorConfiguration
             /// </summary>
             public Humidifier.Config.ConnectorTypes.AzureConnectorConfiguration Azure { get; set; }
+            /// <summary>
+            /// Gcp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-connectorconfiguration.html#cfn-config-connector-connectorconfiguration-gcp
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GcpConnectorConfiguration
+            /// </summary>
+            public Humidifier.Config.ConnectorTypes.GcpConnectorConfiguration Gcp { get; set; }
+        }
+
+        public class GcpConnectorConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// WorkloadIdentityPoolProvider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-gcpconnectorconfiguration.html#cfn-config-connector-gcpconnectorconfiguration-workloadidentitypoolprovider
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WorkloadIdentityPoolProvider { get; set; }
+            /// <summary>
+            /// GcpOrganizationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-gcpconnectorconfiguration.html#cfn-config-connector-gcpconnectorconfiguration-gcporganizationid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic GcpOrganizationId { get; set; }
+            /// <summary>
+            /// ServiceAccountEmail
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-gcpconnectorconfiguration.html#cfn-config-connector-gcpconnectorconfiguration-serviceaccountemail
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ServiceAccountEmail { get; set; }
         }
     }
 }

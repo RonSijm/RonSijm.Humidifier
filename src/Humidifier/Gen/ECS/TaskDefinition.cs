@@ -28,6 +28,14 @@ namespace Humidifier.ECS
         /// </summary>
         public dynamic IpcMode { get; set; }
         /// <summary>
+        /// TrustedExecutionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-trustedexecutionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TrustedExecutionConfiguration
+        /// </summary>
+        public Humidifier.ECS.TaskDefinitionTypes.TrustedExecutionConfiguration TrustedExecutionConfiguration { get; set; }
+        /// <summary>
         /// Memory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory
         /// Required: False
@@ -1339,6 +1347,26 @@ namespace Humidifier.ECS
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic MountOptions { get; set; }
+        }
+
+        public class TrustedExecutionConfiguration : Humidifier.Base.BaseSubResource, IHaveIsolationMode
+        {
+            /// <summary>
+            /// IsolationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-trustedexecutionconfiguration.html#cfn-ecs-taskdefinition-trustedexecutionconfiguration-isolationmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IsolationMode { get; set; }
+            /// <summary>
+            /// AttestationPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-trustedexecutionconfiguration.html#cfn-ecs-taskdefinition-trustedexecutionconfiguration-attestationpolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AttestationPolicy { get; set; }
         }
 
         public class Ulimit : Humidifier.Base.BaseSubResource, IHaveName, IHaveSoftLimit, IHaveHardLimit

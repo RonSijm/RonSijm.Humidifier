@@ -3,7 +3,7 @@ namespace Humidifier.SageMaker
     using global::System.Collections.Generic;
     using EndpointConfigTypes;
 
-    public class EndpointConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveListOfSageMakerEndpointConfigTypesProductionVariantShadowProductionVariants, IHaveSageMakerEndpointConfigTypesDataCaptureConfigDataCaptureConfig, IHaveExecutionRoleArn, IHaveEnableNetworkIsolation_Boolean, IHaveListOfSageMakerEndpointConfigTypesProductionVariantProductionVariants, IHaveKmsKeyId, IHaveSageMakerEndpointConfigTypesAsyncInferenceConfigAsyncInferenceConfig, IHaveSageMakerEndpointConfigTypesVpcConfigVpcConfig, IHaveEndpointConfigName, IHaveSageMakerEndpointConfigTypesExplainerConfigExplainerConfig, IHaveSageMakerEndpointConfigTypesMetricsConfigMetricsConfig
+    public class EndpointConfig : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveListOfSageMakerEndpointConfigTypesProductionVariantProductionVariants, IHaveKmsKeyId, IHaveSageMakerEndpointConfigTypesVpcConfigVpcConfig, IHaveEndpointConfigName, IHaveSageMakerEndpointConfigTypesExplainerConfigExplainerConfig, IHaveSageMakerEndpointConfigTypesMetricsConfigMetricsConfig, IHaveListOfSageMakerEndpointConfigTypesProductionVariantShadowProductionVariants, IHaveSageMakerEndpointConfigTypesDataCaptureConfigDataCaptureConfig, IHaveExecutionRoleArn, IHaveEnableNetworkIsolation_Boolean, IHaveSageMakerEndpointConfigTypesAsyncInferenceConfigAsyncInferenceConfig, IHaveSageMakerEndpointConfigTypesCrossRegionTrafficConfigCrossRegionTrafficConfig
     {
         public class Attributes
         {
@@ -12,6 +12,50 @@ namespace Humidifier.SageMaker
         }
 
         public override string AWSTypeName { get => AWS.SageMaker.EndpointConfig; }
+
+        /// <summary>
+        /// ProductionVariants
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants
+        /// Required: True
+        /// UpdateType: Immutable
+        /// Type: List
+        /// ItemType: ProductionVariant
+        /// </summary>
+        [Required]
+        public Union<IReadOnlyList<Humidifier.SageMaker.EndpointConfigTypes.ProductionVariant>, IReadOnlyList<Union<Humidifier.SageMaker.EndpointConfigTypes.ProductionVariant, BaseFunction>>, BaseFunction>? ProductionVariants { get; set; }
+        /// <summary>
+        /// KmsKeyId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? KmsKeyId { get; set; }
+        /// <summary>
+        /// VpcConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-vpcconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: VpcConfig
+        /// </summary>
+        public Union<Humidifier.SageMaker.EndpointConfigTypes.VpcConfig, BaseFunction>? VpcConfig { get; set; }
+        public Union<string, BaseFunction>? EndpointConfigName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ExplainerConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-explainerconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: ExplainerConfig
+        /// </summary>
+        public Union<Humidifier.SageMaker.EndpointConfigTypes.ExplainerConfig, BaseFunction>? ExplainerConfig { get; set; }
+        /// <summary>
+        /// MetricsConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-metricsconfig
+        /// Required: False
+        /// UpdateType: Immutable
+        /// Type: MetricsConfig
+        /// </summary>
+        public Union<Humidifier.SageMaker.EndpointConfigTypes.MetricsConfig, BaseFunction>? MetricsConfig { get; set; }
         /// <summary>
         /// ShadowProductionVariants
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-shadowproductionvariants
@@ -45,25 +89,6 @@ namespace Humidifier.SageMaker
         /// PrimitiveType: Boolean
         /// </summary>
         public Union<bool, BaseFunction>? EnableNetworkIsolation { get; set; }
-
-        /// <summary>
-        /// ProductionVariants
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants
-        /// Required: True
-        /// UpdateType: Immutable
-        /// Type: List
-        /// ItemType: ProductionVariant
-        /// </summary>
-        [Required]
-        public Union<IReadOnlyList<Humidifier.SageMaker.EndpointConfigTypes.ProductionVariant>, IReadOnlyList<Union<Humidifier.SageMaker.EndpointConfigTypes.ProductionVariant, BaseFunction>>, BaseFunction>? ProductionVariants { get; set; }
-        /// <summary>
-        /// KmsKeyId
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid
-        /// Required: False
-        /// UpdateType: Immutable
-        /// PrimitiveType: String
-        /// </summary>
-        public Union<string, BaseFunction>? KmsKeyId { get; set; }
         /// <summary>
         /// AsyncInferenceConfig
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceconfig
@@ -73,30 +98,13 @@ namespace Humidifier.SageMaker
         /// </summary>
         public Union<Humidifier.SageMaker.EndpointConfigTypes.AsyncInferenceConfig, BaseFunction>? AsyncInferenceConfig { get; set; }
         /// <summary>
-        /// VpcConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-vpcconfig
+        /// CrossRegionTrafficConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-crossregiontrafficconfig
         /// Required: False
         /// UpdateType: Immutable
-        /// Type: VpcConfig
+        /// Type: CrossRegionTrafficConfig
         /// </summary>
-        public Union<Humidifier.SageMaker.EndpointConfigTypes.VpcConfig, BaseFunction>? VpcConfig { get; set; }
-        public Union<string, BaseFunction>? EndpointConfigName { get => GivenName; set => GivenName = value; }
-        /// <summary>
-        /// ExplainerConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-explainerconfig
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: ExplainerConfig
-        /// </summary>
-        public Union<Humidifier.SageMaker.EndpointConfigTypes.ExplainerConfig, BaseFunction>? ExplainerConfig { get; set; }
-        /// <summary>
-        /// MetricsConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-metricsconfig
-        /// Required: False
-        /// UpdateType: Immutable
-        /// Type: MetricsConfig
-        /// </summary>
-        public Union<Humidifier.SageMaker.EndpointConfigTypes.MetricsConfig, BaseFunction>? MetricsConfig { get; set; }
+        public Union<Humidifier.SageMaker.EndpointConfigTypes.CrossRegionTrafficConfig, BaseFunction>? CrossRegionTrafficConfig { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-tags
@@ -494,6 +502,26 @@ namespace Humidifier.SageMaker
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? DestinationS3Uri { get; set; }
+        }
+
+        public class CrossRegionTrafficConfig : Humidifier.Base.BaseSubResource, IHaveMaxCrossRegionPercentPerEndpoint_Integer, IHaveMaxInvocationsPerSecondPerInstance_Integer
+        {
+            /// <summary>
+            /// MaxCrossRegionPercentPerEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-crossregiontrafficconfig.html#cfn-sagemaker-endpointconfig-crossregiontrafficconfig-maxcrossregionpercentperendpoint
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? MaxCrossRegionPercentPerEndpoint { get; set; }
+            /// <summary>
+            /// MaxInvocationsPerSecondPerInstance
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-crossregiontrafficconfig.html#cfn-sagemaker-endpointconfig-crossregiontrafficconfig-maxinvocationspersecondperinstance
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? MaxInvocationsPerSecondPerInstance { get; set; }
         }
 
         public class DataCaptureConfig : Humidifier.Base.BaseSubResource, IHaveListOfSageMakerEndpointConfigTypesCaptureOptionCaptureOptions, IHaveKmsKeyId, IHaveDestinationS3Uri, IHaveInitialSamplingPercentage_Integer, IHaveSageMakerEndpointConfigTypesCaptureContentTypeHeaderCaptureContentTypeHeader, IHaveEnableCapture_Boolean

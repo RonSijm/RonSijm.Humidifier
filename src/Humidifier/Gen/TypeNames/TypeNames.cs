@@ -227,6 +227,7 @@ public class AWS
         public const string NamedQuery = "AWS::Athena::NamedQuery";
         public const string PreparedStatement = "AWS::Athena::PreparedStatement";
         public const string Session = "AWS::Athena::Session";
+        public const string SystemTables = "AWS::Athena::SystemTables";
         public const string WorkGroup = "AWS::Athena::WorkGroup";
     }
     public class AuditManager
@@ -572,6 +573,7 @@ public class AWS
         public const string InsightRule = "AWS::CloudWatch::InsightRule";
         public const string Integration = "AWS::CloudWatch::Integration";
         public const string LogAlarm = "AWS::CloudWatch::LogAlarm";
+        public const string MetricDataQueryDefinition = "AWS::CloudWatch::MetricDataQueryDefinition";
         public const string MetricStream = "AWS::CloudWatch::MetricStream";
         public const string OTelEnrichment = "AWS::CloudWatch::OTelEnrichment";
         public const string OmniDashboard = "AWS::CloudWatch::OmniDashboard";
@@ -650,6 +652,7 @@ public class AWS
         public const string Terms = "AWS::Cognito::Terms";
         public const string UserPool = "AWS::Cognito::UserPool";
         public const string UserPoolClient = "AWS::Cognito::UserPoolClient";
+        public const string UserPoolClientSessionConfigurationAttachment = "AWS::Cognito::UserPoolClientSessionConfigurationAttachment";
         public const string UserPoolDomain = "AWS::Cognito::UserPoolDomain";
         public const string UserPoolGroup = "AWS::Cognito::UserPoolGroup";
         public const string UserPoolIdentityProvider = "AWS::Cognito::UserPoolIdentityProvider";
@@ -657,6 +660,7 @@ public class AWS
         public const string UserPoolReplica = "AWS::Cognito::UserPoolReplica";
         public const string UserPoolResourceServer = "AWS::Cognito::UserPoolResourceServer";
         public const string UserPoolRiskConfigurationAttachment = "AWS::Cognito::UserPoolRiskConfigurationAttachment";
+        public const string UserPoolSessionConfigurationAttachment = "AWS::Cognito::UserPoolSessionConfigurationAttachment";
         public const string UserPoolUICustomizationAttachment = "AWS::Cognito::UserPoolUICustomizationAttachment";
         public const string UserPoolUser = "AWS::Cognito::UserPoolUser";
         public const string UserPoolUserToGroupAttachment = "AWS::Cognito::UserPoolUserToGroupAttachment";
@@ -971,6 +975,8 @@ public class AWS
         public const string EnclaveCertificateIamRoleAssociation = "AWS::EC2::EnclaveCertificateIamRoleAssociation";
         public const string ExportImageTask = "AWS::EC2::ExportImageTask";
         public const string ExportInstanceTask = "AWS::EC2::ExportInstanceTask";
+        public const string FcaPolicy = "AWS::EC2::FcaPolicy";
+        public const string FcaPolicyAssociation = "AWS::EC2::FcaPolicyAssociation";
         public const string FlowLog = "AWS::EC2::FlowLog";
         public const string FpgaImage = "AWS::EC2::FpgaImage";
         public const string GatewayRouteTableAssociation = "AWS::EC2::GatewayRouteTableAssociation";
@@ -1060,6 +1066,7 @@ public class AWS
         public const string TransitGatewayMulticastDomainAssociation = "AWS::EC2::TransitGatewayMulticastDomainAssociation";
         public const string TransitGatewayMulticastGroupMember = "AWS::EC2::TransitGatewayMulticastGroupMember";
         public const string TransitGatewayMulticastGroupSource = "AWS::EC2::TransitGatewayMulticastGroupSource";
+        public const string TransitGatewayNetworkFunctionAttachment = "AWS::EC2::TransitGatewayNetworkFunctionAttachment";
         public const string TransitGatewayPeeringAttachment = "AWS::EC2::TransitGatewayPeeringAttachment";
         public const string TransitGatewayPolicyTable = "AWS::EC2::TransitGatewayPolicyTable";
         public const string TransitGatewayPolicyTableAssociation = "AWS::EC2::TransitGatewayPolicyTableAssociation";
@@ -1720,6 +1727,9 @@ public class AWS
         public const string NetworkConnector = "AWS::Lambda::NetworkConnector";
         public const string Permission = "AWS::Lambda::Permission";
         public const string ResourcePolicy = "AWS::Lambda::ResourcePolicy";
+        public const string Runtime = "AWS::Lambda::Runtime";
+        public const string RuntimeAlias = "AWS::Lambda::RuntimeAlias";
+        public const string RuntimeVersion = "AWS::Lambda::RuntimeVersion";
         public const string Url = "AWS::Lambda::Url";
         public const string Version = "AWS::Lambda::Version";
         public const string WebFunction = "AWS::Lambda::WebFunction";
@@ -2001,12 +2011,16 @@ public class AWS
     public class NetworkFlowMonitor
     {
         public const string Monitor = "AWS::NetworkFlowMonitor::Monitor";
+        public const string PerformanceMonitor = "AWS::NetworkFlowMonitor::PerformanceMonitor";
         public const string Scope = "AWS::NetworkFlowMonitor::Scope";
     }
     public class NetworkManager
     {
         public const string ConnectAttachment = "AWS::NetworkManager::ConnectAttachment";
         public const string ConnectPeer = "AWS::NetworkManager::ConnectPeer";
+        public const string Connection = "AWS::NetworkManager::Connection";
+        public const string ContextStore = "AWS::NetworkManager::ContextStore";
+        public const string ContextStoreAssociation = "AWS::NetworkManager::ContextStoreAssociation";
         public const string CoreNetwork = "AWS::NetworkManager::CoreNetwork";
         public const string CoreNetworkPrefixListAssociation = "AWS::NetworkManager::CoreNetworkPrefixListAssociation";
         public const string CustomerGatewayAssociation = "AWS::NetworkManager::CustomerGatewayAssociation";
@@ -2439,11 +2453,13 @@ public class AWS
         public const string DNSSEC = "AWS::Route53::DNSSEC";
         public const string DelegationSet = "AWS::Route53::DelegationSet";
         public const string HealthCheck = "AWS::Route53::HealthCheck";
+        public const string HealthCheckSource = "AWS::Route53::HealthCheckSource";
         public const string HostedZone = "AWS::Route53::HostedZone";
         public const string KeySigningKey = "AWS::Route53::KeySigningKey";
         public const string QueryLoggingConfig = "AWS::Route53::QueryLoggingConfig";
         public const string RecordSet = "AWS::Route53::RecordSet";
         public const string RecordSetGroup = "AWS::Route53::RecordSetGroup";
+        public const string RecordSetProtection = "AWS::Route53::RecordSetProtection";
         public const string TrafficPolicy = "AWS::Route53::TrafficPolicy";
         public const string TrafficPolicyInstance = "AWS::Route53::TrafficPolicyInstance";
     }
@@ -2451,6 +2467,7 @@ public class AWS
     {
         public const string AccessSource = "AWS::Route53GlobalResolver::AccessSource";
         public const string AccessToken = "AWS::Route53GlobalResolver::AccessToken";
+        public const string CoreNetworkEndpoint = "AWS::Route53GlobalResolver::CoreNetworkEndpoint";
         public const string DnsView = "AWS::Route53GlobalResolver::DnsView";
         public const string FirewallDomainList = "AWS::Route53GlobalResolver::FirewallDomainList";
         public const string FirewallRule = "AWS::Route53GlobalResolver::FirewallRule";
@@ -2686,6 +2703,7 @@ public class AWS
         public const string Endpoint = "AWS::SageMaker::Endpoint";
         public const string EndpointConfig = "AWS::SageMaker::EndpointConfig";
         public const string Experiment = "AWS::SageMaker::Experiment";
+        public const string Extension = "AWS::SageMaker::Extension";
         public const string FeatureGroup = "AWS::SageMaker::FeatureGroup";
         public const string Hub = "AWS::SageMaker::Hub";
         public const string HubContentVersion = "AWS::SageMaker::HubContentVersion";

@@ -428,6 +428,26 @@ namespace Humidifier.MediaConnect
             public dynamic MaintenanceStartHour { get; set; }
         }
 
+        public class ManualRtmpPushNamingConfiguration : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-manualrtmppushnamingconfiguration.html#cfn-mediaconnect-flow-manualrtmppushnamingconfiguration-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-manualrtmppushnamingconfiguration.html#cfn-mediaconnect-flow-manualrtmppushnamingconfiguration-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StreamName { get; set; }
+        }
+
         public class MediaStream : Humidifier.Base.BaseSubResource, IHaveTags, IHaveDescription, IHaveMediaStreamName
         {
             /// <summary>
@@ -631,6 +651,58 @@ namespace Humidifier.MediaConnect
             public dynamic AudioReferenceLevel { get; set; }
         }
 
+        public class RtmpPushDetails : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-rtmppushdetails.html#cfn-mediaconnect-flow-rtmppushdetails-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-rtmppushdetails.html#cfn-mediaconnect-flow-rtmppushdetails-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic StreamName { get; set; }
+        }
+
+        public class RtmpPushNamingConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Manual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-rtmppushnamingconfiguration.html#cfn-mediaconnect-flow-rtmppushnamingconfiguration-manual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManualRtmpPushNamingConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.ManualRtmpPushNamingConfiguration Manual { get; set; }
+            /// <summary>
+            /// Automatic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-rtmppushnamingconfiguration.html#cfn-mediaconnect-flow-rtmppushnamingconfiguration-automatic
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic Automatic { get; set; }
+        }
+
+        public class RtmpPushSettings : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// NamingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-rtmppushsettings.html#cfn-mediaconnect-flow-rtmppushsettings-namingconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: RtmpPushNamingConfiguration
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.RtmpPushNamingConfiguration NamingConfiguration { get; set; }
+        }
+
         public class SecretsManagerEncryptionKeyConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveSecretArn
         {
             /// <summary>
@@ -682,14 +754,6 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public dynamic MaxSyncBuffer { get; set; }
             /// <summary>
-            /// IngestIp
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestip
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic IngestIp { get; set; }
-            /// <summary>
             /// StreamId
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-streamid
             /// Required: False
@@ -705,6 +769,111 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public dynamic Description { get; set; }
+            /// <summary>
+            /// Decryption
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-decryption
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Encryption
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.Encryption Decryption { get; set; }
+            /// <summary>
+            /// RouterIntegrationState
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-routerintegrationstate
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RouterIntegrationState { get; set; }
+            /// <summary>
+            /// SourceListenerAddress
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelisteneraddress
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceListenerAddress { get; set; }
+            /// <summary>
+            /// Name
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-name
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Name { get; set; }
+            /// <summary>
+            /// WhitelistCidr
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic WhitelistCidr { get; set; }
+            /// <summary>
+            /// EntitlementArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-entitlementarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EntitlementArn { get; set; }
+            /// <summary>
+            /// SourceArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic SourceArn { get; set; }
+            /// <summary>
+            /// RtmpPushDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-rtmppushdetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RtmpPushDetails
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.RtmpPushDetails RtmpPushDetails { get; set; }
+            /// <summary>
+            /// RtmpPushSettings
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-rtmppushsettings
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RtmpPushSettings
+            /// </summary>
+            public Humidifier.MediaConnect.FlowTypes.RtmpPushSettings RtmpPushSettings { get; set; }
+            /// <summary>
+            /// Protocol
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-protocol
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Protocol { get; set; }
+            /// <summary>
+            /// MaxLatency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxlatency
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxLatency { get; set; }
+            /// <summary>
+            /// Tags
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-tags
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: Tag
+            /// </summary>
+            public List<Humidifier.Tag> Tags { get; set; }
+            /// <summary>
+            /// IngestIp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ingestip
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic IngestIp { get; set; }
             /// <summary>
             /// RouterIntegrationTransitDecryption
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-routerintegrationtransitdecryption
@@ -731,22 +900,6 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public dynamic IngestPort { get; set; }
             /// <summary>
-            /// Decryption
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-decryption
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: Encryption
-            /// </summary>
-            public Humidifier.MediaConnect.FlowTypes.Encryption Decryption { get; set; }
-            /// <summary>
-            /// RouterIntegrationState
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-routerintegrationstate
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic RouterIntegrationState { get; set; }
-            /// <summary>
             /// GatewayBridgeSource
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-gatewaybridgesource
             /// Required: False
@@ -754,14 +907,6 @@ namespace Humidifier.MediaConnect
             /// Type: GatewayBridgeSource
             /// </summary>
             public Humidifier.MediaConnect.FlowTypes.GatewayBridgeSource GatewayBridgeSource { get; set; }
-            /// <summary>
-            /// SourceListenerAddress
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelisteneraddress
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SourceListenerAddress { get; set; }
             /// <summary>
             /// SourceListenerPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelistenerport
@@ -771,22 +916,6 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public dynamic SourceListenerPort { get; set; }
             /// <summary>
-            /// Name
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-name
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Name { get; set; }
-            /// <summary>
-            /// WhitelistCidr
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic WhitelistCidr { get; set; }
-            /// <summary>
             /// NdiSourceSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-ndisourcesettings
             /// Required: False
@@ -794,22 +923,6 @@ namespace Humidifier.MediaConnect
             /// Type: NdiSourceSettings
             /// </summary>
             public Humidifier.MediaConnect.FlowTypes.NdiSourceSettings NdiSourceSettings { get; set; }
-            /// <summary>
-            /// EntitlementArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-entitlementarn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic EntitlementArn { get; set; }
-            /// <summary>
-            /// SourceArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcearn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic SourceArn { get; set; }
             /// <summary>
             /// MinLatency
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-minlatency
@@ -834,31 +947,6 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic MaxBitrate { get; set; }
-            /// <summary>
-            /// Protocol
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-protocol
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic Protocol { get; set; }
-            /// <summary>
-            /// MaxLatency
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-maxlatency
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic MaxLatency { get; set; }
-            /// <summary>
-            /// Tags
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-tags
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: List
-            /// ItemType: Tag
-            /// </summary>
-            public List<Humidifier.Tag> Tags { get; set; }
             /// <summary>
             /// SourceIngestPort
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourceingestport

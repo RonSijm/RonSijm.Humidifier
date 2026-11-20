@@ -2,7 +2,7 @@ namespace Humidifier.Route53GlobalResolver
 {
     using global::System.Collections.Generic;
 
-    public class AccessSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveProtocol, IHaveCidr, IHaveIpAddressType, IHaveClientToken
+    public class AccessSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveTags, IHaveProtocol, IHaveCidr, IHaveIpAddressType, IHaveClientToken, IHaveSegment
     {
         public class Attributes
         {
@@ -15,6 +15,14 @@ namespace Humidifier.Route53GlobalResolver
 
         public override string AWSTypeName { get => AWS.Route53GlobalResolver.AccessSource; }
         /// <summary>
+        /// CoreNetworkEndpointId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-accesssource.html#cfn-route53globalresolver-accesssource-corenetworkendpointid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic CoreNetworkEndpointId { get; set; }
+        /// <summary>
         /// IpAddressType
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-accesssource.html#cfn-route53globalresolver-accesssource-ipaddresstype
         /// Required: False
@@ -22,15 +30,13 @@ namespace Humidifier.Route53GlobalResolver
         /// PrimitiveType: String
         /// </summary>
         public dynamic IpAddressType { get; set; }
-
         /// <summary>
         /// Cidr
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-accesssource.html#cfn-route53globalresolver-accesssource-cidr
-        /// Required: True
+        /// Required: False
         /// UpdateType: Mutable
         /// PrimitiveType: String
         /// </summary>
-        [Required]
         public dynamic Cidr { get; set; }
 
         /// <summary>
@@ -60,6 +66,14 @@ namespace Humidifier.Route53GlobalResolver
         /// PrimitiveType: String
         /// </summary>
         public dynamic ClientToken { get; set; }
+        /// <summary>
+        /// Segment
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-accesssource.html#cfn-route53globalresolver-accesssource-segment
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic Segment { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-accesssource.html#cfn-route53globalresolver-accesssource-tags

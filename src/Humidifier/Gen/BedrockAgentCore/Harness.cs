@@ -1166,6 +1166,14 @@ namespace Humidifier.BedrockAgentCore
             /// </summary>
             public Dictionary<string, dynamic> Headers { get; set; }
             /// <summary>
+            /// OutboundAuth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessremotemcpconfig.html#cfn-bedrockagentcore-harness-harnessremotemcpconfig-outboundauth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: HarnessRemoteMcpOutboundAuth
+            /// </summary>
+            public Humidifier.BedrockAgentCore.HarnessTypes.HarnessRemoteMcpOutboundAuth OutboundAuth { get; set; }
+            /// <summary>
             /// Url
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessremotemcpconfig.html#cfn-bedrockagentcore-harness-harnessremotemcpconfig-url
             /// Required: True
@@ -1173,6 +1181,26 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public dynamic Url { get; set; }
+        }
+
+        public class HarnessRemoteMcpOutboundAuth : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AwsIam
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessremotemcpoutboundauth.html#cfn-bedrockagentcore-harness-harnessremotemcpoutboundauth-awsiam
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IamCredentialProvider
+            /// </summary>
+            public Humidifier.BedrockAgentCore.HarnessTypes.IamCredentialProvider AwsIam { get; set; }
+            /// <summary>
+            /// None
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-harnessremotemcpoutboundauth.html#cfn-bedrockagentcore-harness-harnessremotemcpoutboundauth-none
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public dynamic None { get; set; }
         }
 
         public class HarnessSkill : Humidifier.Base.BaseSubResource, IHavePath
@@ -1446,6 +1474,26 @@ namespace Humidifier.BedrockAgentCore
             /// Type: HarnessSummarizationConfiguration
             /// </summary>
             public Humidifier.BedrockAgentCore.HarnessTypes.HarnessSummarizationConfiguration Summarization { get; set; }
+        }
+
+        public class IamCredentialProvider : Humidifier.Base.BaseSubResource, IHaveRegion, IHaveService
+        {
+            /// <summary>
+            /// Service
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-iamcredentialprovider.html#cfn-bedrockagentcore-harness-iamcredentialprovider-service
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Service { get; set; }
+            /// <summary>
+            /// Region
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-harness-iamcredentialprovider.html#cfn-bedrockagentcore-harness-iamcredentialprovider-region
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Region { get; set; }
         }
 
         public class LifecycleConfiguration : Humidifier.Base.BaseSubResource

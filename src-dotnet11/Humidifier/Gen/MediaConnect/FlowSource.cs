@@ -3,12 +3,13 @@ namespace Humidifier.MediaConnect
     using global::System.Collections.Generic;
     using FlowSourceTypes;
 
-    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStreamId, IHaveDescription, IHaveIngestPort_Integer, IHaveMediaConnectFlowSourceTypesEncryptionDecryption, IHaveMediaConnectFlowSourceTypesGatewayBridgeSourceGatewayBridgeSource, IHaveSourceListenerAddress, IHaveSourceListenerPort_Integer, IHaveName, IHaveWhitelistCidr, IHaveMinLatency_Integer, IHaveVpcInterfaceName, IHaveMaxBitrate_Integer, IHaveProtocol, IHaveFlowArn, IHaveMaxLatency_Integer
+    public class FlowSource : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveStreamId, IHaveDescription, IHaveIngestPort_Integer, IHaveMediaConnectFlowSourceTypesEncryptionDecryption, IHaveMediaConnectFlowSourceTypesGatewayBridgeSourceGatewayBridgeSource, IHaveSourceListenerAddress, IHaveSourceListenerPort_Integer, IHaveName, IHaveWhitelistCidr, IHaveMinLatency_Integer, IHaveVpcInterfaceName, IHaveMediaConnectFlowSourceTypesRtmpPushSettingsRtmpPushSettings, IHaveMaxBitrate_Integer, IHaveProtocol, IHaveFlowArn, IHaveMaxLatency_Integer
     {
         public class Attributes
         {
             public static string IngestIp =  "IngestIp" ;
             public static string SourceArn =  "SourceArn" ;
+            public static string RtmpPushDetails =  "RtmpPushDetails" ;
             public static string SourceIngestPort =  "SourceIngestPort" ;
         }
 
@@ -96,6 +97,14 @@ namespace Humidifier.MediaConnect
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? VpcInterfaceName { get; set; }
+        /// <summary>
+        /// RtmpPushSettings
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-rtmppushsettings
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RtmpPushSettings
+        /// </summary>
+        public Union<Humidifier.MediaConnect.FlowSourceTypes.RtmpPushSettings, BaseFunction>? RtmpPushSettings { get; set; }
         /// <summary>
         /// MaxBitrate
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-maxbitrate
@@ -197,6 +206,78 @@ namespace Humidifier.MediaConnect
             /// Type: VpcInterfaceAttachment
             /// </summary>
             public Union<Humidifier.MediaConnect.FlowSourceTypes.VpcInterfaceAttachment, BaseFunction>? VpcInterfaceAttachment { get; set; }
+        }
+
+        public class ManualRtmpPushNamingConfiguration : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-manualrtmppushnamingconfiguration.html#cfn-mediaconnect-flowsource-manualrtmppushnamingconfiguration-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-manualrtmppushnamingconfiguration.html#cfn-mediaconnect-flowsource-manualrtmppushnamingconfiguration-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? StreamName { get; set; }
+        }
+
+        public class RtmpPushDetails : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-rtmppushdetails.html#cfn-mediaconnect-flowsource-rtmppushdetails-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-rtmppushdetails.html#cfn-mediaconnect-flowsource-rtmppushdetails-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? StreamName { get; set; }
+        }
+
+        public class RtmpPushNamingConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectFlowSourceTypesManualRtmpPushNamingConfigurationManual, IHaveAutomatic_Json
+        {
+            /// <summary>
+            /// Manual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-rtmppushnamingconfiguration.html#cfn-mediaconnect-flowsource-rtmppushnamingconfiguration-manual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManualRtmpPushNamingConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.FlowSourceTypes.ManualRtmpPushNamingConfiguration, BaseFunction>? Manual { get; set; }
+            /// <summary>
+            /// Automatic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-rtmppushnamingconfiguration.html#cfn-mediaconnect-flowsource-rtmppushnamingconfiguration-automatic
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? Automatic { get; set; }
+        }
+
+        public class RtmpPushSettings : Humidifier.Base.BaseSubResource, IHaveMediaConnectFlowSourceTypesRtmpPushNamingConfigurationNamingConfiguration
+        {
+            /// <summary>
+            /// NamingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-rtmppushsettings.html#cfn-mediaconnect-flowsource-rtmppushsettings-namingconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: RtmpPushNamingConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.FlowSourceTypes.RtmpPushNamingConfiguration, BaseFunction>? NamingConfiguration { get; set; }
         }
 
         public class VpcInterfaceAttachment : Humidifier.Base.BaseSubResource, IHaveVpcInterfaceName

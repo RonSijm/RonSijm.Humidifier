@@ -165,7 +165,7 @@ namespace Humidifier.AppStream
             public dynamic VpceId { get; set; }
         }
 
-        public class AgentAccessConfig : Humidifier.Base.BaseSubResource, IHaveS3BucketArn
+        public class AgentAccessConfig : Humidifier.Base.BaseSubResource, IHaveKmsKeyArn, IHaveS3BucketArn
         {
             /// <summary>
             /// ScreenResolution
@@ -183,6 +183,14 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public dynamic ScreenImageFormat { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyArn { get; set; }
             /// <summary>
             /// ScreenshotsUploadEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-screenshotsuploadenabled
@@ -207,6 +215,14 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public dynamic S3BucketArn { get; set; }
+            /// <summary>
+            /// ReplaySessionEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-replaysessionenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic ReplaySessionEnabled { get; set; }
             /// <summary>
             /// Settings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-settings

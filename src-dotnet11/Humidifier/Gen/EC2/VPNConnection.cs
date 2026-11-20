@@ -313,7 +313,7 @@ namespace Humidifier.EC2
             public Union<Humidifier.EC2.VPNConnectionTypes.CloudwatchLogOptionsSpecification, BaseFunction>? CloudwatchLogOptions { get; set; }
         }
 
-        public class VpnTunnelOptionsSpecification : Humidifier.Base.BaseSubResource, IHaveListOfEC2VPNConnectionTypesPhase2EncryptionAlgorithmsRequestListValuePhase2EncryptionAlgorithms, IHaveListOfEC2VPNConnectionTypesPhase2DHGroupNumbersRequestListValuePhase2DHGroupNumbers, IHaveTunnelInsideIpv6Cidr, IHaveStartupAction, IHaveTunnelInsideCidr, IHaveListOfEC2VPNConnectionTypesIKEVersionsRequestListValueIKEVersions, IHaveEC2VPNConnectionTypesVpnTunnelLogOptionsSpecificationLogOptions, IHaveListOfEC2VPNConnectionTypesPhase1DHGroupNumbersRequestListValuePhase1DHGroupNumbers, IHaveReplayWindowSize_Integer, IHaveEnableTunnelLifecycleControl_Boolean, IHaveRekeyMarginTimeSeconds_Integer, IHaveDPDTimeoutAction, IHavePhase2LifetimeSeconds_Integer, IHaveListOfEC2VPNConnectionTypesPhase2IntegrityAlgorithmsRequestListValuePhase2IntegrityAlgorithms, IHaveListOfEC2VPNConnectionTypesPhase1IntegrityAlgorithmsRequestListValuePhase1IntegrityAlgorithms, IHavePreSharedKey, IHavePhase1LifetimeSeconds_Integer, IHaveRekeyFuzzPercentage_Integer, IHaveListOfEC2VPNConnectionTypesPhase1EncryptionAlgorithmsRequestListValuePhase1EncryptionAlgorithms, IHaveDPDTimeoutSeconds_Integer
+        public class VpnTunnelOptionsSpecification : Humidifier.Base.BaseSubResource, IHaveListOfEC2VPNConnectionTypesPhase2EncryptionAlgorithmsRequestListValuePhase2EncryptionAlgorithms, IHaveListOfEC2VPNConnectionTypesPhase2DHGroupNumbersRequestListValuePhase2DHGroupNumbers, IHaveTunnelInsideIpv6Cidr, IHaveStartupAction, IHaveJsonListOfPhase2AdditionalKeyExchanges, IHaveTunnelInsideCidr, IHaveListOfEC2VPNConnectionTypesIKEVersionsRequestListValueIKEVersions, IHaveEC2VPNConnectionTypesVpnTunnelLogOptionsSpecificationLogOptions, IHaveListOfEC2VPNConnectionTypesPhase1DHGroupNumbersRequestListValuePhase1DHGroupNumbers, IHaveReplayWindowSize_Integer, IHaveEnableTunnelLifecycleControl_Boolean, IHaveRekeyMarginTimeSeconds_Integer, IHaveDPDTimeoutAction, IHaveJsonListOfPhase1AdditionalKeyExchanges, IHavePhase2LifetimeSeconds_Integer, IHaveListOfEC2VPNConnectionTypesPhase2IntegrityAlgorithmsRequestListValuePhase2IntegrityAlgorithms, IHaveListOfEC2VPNConnectionTypesPhase1IntegrityAlgorithmsRequestListValuePhase1IntegrityAlgorithms, IHavePreSharedKey, IHavePhase1LifetimeSeconds_Integer, IHaveRekeyFuzzPercentage_Integer, IHaveListOfEC2VPNConnectionTypesPhase1EncryptionAlgorithmsRequestListValuePhase1EncryptionAlgorithms, IHaveDPDTimeoutSeconds_Integer
         {
             /// <summary>
             /// Phase2EncryptionAlgorithms
@@ -349,6 +349,15 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? StartupAction { get; set; }
+            /// <summary>
+            /// Phase2AdditionalKeyExchanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2additionalkeyexchanges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public Union<IReadOnlyList<object>, IReadOnlyList<Union<object, BaseFunction>>, BaseFunction>? Phase2AdditionalKeyExchanges { get; set; }
             /// <summary>
             /// TunnelInsideCidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
@@ -415,6 +424,15 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? DPDTimeoutAction { get; set; }
+            /// <summary>
+            /// Phase1AdditionalKeyExchanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1additionalkeyexchanges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public Union<IReadOnlyList<object>, IReadOnlyList<Union<object, BaseFunction>>, BaseFunction>? Phase1AdditionalKeyExchanges { get; set; }
             /// <summary>
             /// Phase2LifetimeSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2lifetimeseconds

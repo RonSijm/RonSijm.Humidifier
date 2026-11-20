@@ -659,6 +659,14 @@ namespace Humidifier.ECS
             /// </summary>
             public Humidifier.ECS.ServiceTypes.GatewayConnectorFilters Filters { get; set; }
             /// <summary>
+            /// DeregistrationDelay
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-deregistrationdelay
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorDeregistrationDelay
+            /// </summary>
+            public Humidifier.ECS.ServiceTypes.GatewayConnectorDeregistrationDelay DeregistrationDelay { get; set; }
+            /// <summary>
             /// HealthCheck
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-healthcheck
             /// Required: False
@@ -674,6 +682,18 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public dynamic PortName { get; set; }
+        }
+
+        public class GatewayConnectorDeregistrationDelay : Humidifier.Base.BaseSubResource, IHaveTimeoutSeconds
+        {
+            /// <summary>
+            /// TimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorderegistrationdelay.html#cfn-ecs-service-gatewayconnectorderegistrationdelay-timeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic TimeoutSeconds { get; set; }
         }
 
         public class GatewayConnectorFilters : Humidifier.Base.BaseSubResource

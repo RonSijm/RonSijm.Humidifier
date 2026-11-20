@@ -24,6 +24,14 @@ namespace Humidifier.NetworkSecurityManager
         /// </summary>
         public dynamic ScopeConfiguration { get; set; }
         /// <summary>
+        /// SpecializedScopeType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networksecuritymanager-scope.html#cfn-networksecuritymanager-scope-specializedscopetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic SpecializedScopeType { get; set; }
+        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networksecuritymanager-scope.html#cfn-networksecuritymanager-scope-tags
         /// Required: False

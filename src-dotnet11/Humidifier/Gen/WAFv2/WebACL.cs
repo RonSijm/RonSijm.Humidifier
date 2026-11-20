@@ -538,6 +538,68 @@ namespace Humidifier.WAFv2
             public Union<Humidifier.WAFv2.WebACLTypes.ClientSideAction, BaseFunction>? Challenge { get; set; }
         }
 
+        public class ConnectedAccountChainConfig : Humidifier.Base.BaseSubResource, IHaveChain, IHaveListOfWAFv2WebACLTypesConnectedAccountPricePrices
+        {
+            /// <summary>
+            /// Chain
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountchainconfig.html#cfn-wafv2-webacl-connectedaccountchainconfig-chain
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Chain { get; set; }
+            /// <summary>
+            /// Prices
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountchainconfig.html#cfn-wafv2-webacl-connectedaccountchainconfig-prices
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountPrice
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.WAFv2.WebACLTypes.ConnectedAccountPrice>, IReadOnlyList<Union<Humidifier.WAFv2.WebACLTypes.ConnectedAccountPrice, BaseFunction>>, BaseFunction>? Prices { get; set; }
+        }
+
+        public class ConnectedAccountConfig : Humidifier.Base.BaseSubResource, IHaveListOfWAFv2WebACLTypesConnectedAccountChainConfigPaymentNetworks, IHaveConnectedAccountArn
+        {
+            /// <summary>
+            /// PaymentNetworks
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountconfig.html#cfn-wafv2-webacl-connectedaccountconfig-paymentnetworks
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountChainConfig
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.WAFv2.WebACLTypes.ConnectedAccountChainConfig>, IReadOnlyList<Union<Humidifier.WAFv2.WebACLTypes.ConnectedAccountChainConfig, BaseFunction>>, BaseFunction>? PaymentNetworks { get; set; }
+            /// <summary>
+            /// ConnectedAccountArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountconfig.html#cfn-wafv2-webacl-connectedaccountconfig-connectedaccountarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ConnectedAccountArn { get; set; }
+        }
+
+        public class ConnectedAccountPrice : Humidifier.Base.BaseSubResource, IHaveAmount, IHaveCurrency
+        {
+            /// <summary>
+            /// Amount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountprice.html#cfn-wafv2-webacl-connectedaccountprice-amount
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Amount { get; set; }
+            /// <summary>
+            /// Currency
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-connectedaccountprice.html#cfn-wafv2-webacl-connectedaccountprice-currency
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Currency { get; set; }
+        }
+
         public class CookieMatchPattern : Humidifier.Base.BaseSubResource, IHaveAll_Json, IHaveStringListOfIncludedCookies, IHaveStringListOfExcludedCookies
         {
             /// <summary>
@@ -1348,8 +1410,17 @@ namespace Humidifier.WAFv2
             public Union<Humidifier.WAFv2.WebACLTypes.Statement, BaseFunction>? ScopeDownStatement { get; set; }
         }
 
-        public class MonetizationConfig : Humidifier.Base.BaseSubResource, IHaveCurrencyMode, IHaveWAFv2WebACLTypesCryptoConfigCryptoConfig
+        public class MonetizationConfig : Humidifier.Base.BaseSubResource, IHaveListOfWAFv2WebACLTypesConnectedAccountConfigConnectedAccountConfigs, IHaveCurrencyMode, IHaveWAFv2WebACLTypesCryptoConfigCryptoConfig
         {
+            /// <summary>
+            /// ConnectedAccountConfigs
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizationconfig.html#cfn-wafv2-webacl-monetizationconfig-connectedaccountconfigs
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: ConnectedAccountConfig
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.WAFv2.WebACLTypes.ConnectedAccountConfig>, IReadOnlyList<Union<Humidifier.WAFv2.WebACLTypes.ConnectedAccountConfig, BaseFunction>>, BaseFunction>? ConnectedAccountConfigs { get; set; }
             /// <summary>
             /// CurrencyMode
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-monetizationconfig.html#cfn-wafv2-webacl-monetizationconfig-currencymode

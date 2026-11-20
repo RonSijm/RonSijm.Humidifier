@@ -3,7 +3,7 @@ namespace Humidifier.Cognito
     using global::System.Collections.Generic;
     using UserPoolTypes;
 
-    public class UserPool : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStringDictionaryOfUserPoolTags, IHaveCognitoUserPoolTypesPoliciesPolicies, IHaveCognitoUserPoolTypesKeyConfigurationKeyConfiguration, IHaveListOfCognitoUserPoolTypesSchemaAttributeSchema, IHaveCognitoUserPoolTypesAdminCreateUserConfigAdminCreateUserConfig, IHaveUserPoolTier, IHaveCognitoUserPoolTypesUsernameConfigurationUsernameConfiguration, IHaveUserPoolName, IHaveSmsVerificationMessage, IHaveCognitoUserPoolTypesUserAttributeUpdateSettingsUserAttributeUpdateSettings, IHaveCognitoUserPoolTypesEmailConfigurationEmailConfiguration, IHaveCognitoUserPoolTypesSmsConfigurationSmsConfiguration, IHaveEmailVerificationSubject, IHaveWebAuthnRelyingPartyID, IHaveEmailAuthenticationSubject, IHaveCognitoUserPoolTypesAccountRecoverySettingAccountRecoverySetting, IHaveCognitoUserPoolTypesVerificationMessageTemplateVerificationMessageTemplate, IHaveCognitoUserPoolTypesIssuerConfigurationIssuerConfiguration, IHaveMfaConfiguration, IHaveDeletionProtection, IHaveWebAuthnFactorConfiguration, IHaveSmsAuthenticationMessage, IHaveWebAuthnUserVerification, IHaveCognitoUserPoolTypesUserPoolAddOnsUserPoolAddOns, IHaveEmailAuthenticationMessage, IHaveStringListOfAliasAttributes, IHaveStringListOfEnabledMfas, IHaveCognitoUserPoolTypesLambdaConfigLambdaConfig, IHaveStringListOfUsernameAttributes, IHaveStringListOfAutoVerifiedAttributes, IHaveCognitoUserPoolTypesDeviceConfigurationDeviceConfiguration, IHaveEmailVerificationMessage
+    public class UserPool : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveStringDictionaryOfUserPoolTags, IHaveCognitoUserPoolTypesPoliciesPolicies, IHaveCognitoUserPoolTypesKeyConfigurationKeyConfiguration, IHaveListOfCognitoUserPoolTypesSchemaAttributeSchema, IHaveCognitoUserPoolTypesAdminCreateUserConfigAdminCreateUserConfig, IHaveUserPoolTier, IHaveCognitoUserPoolTypesUsernameConfigurationUsernameConfiguration, IHaveUserPoolName, IHaveSmsVerificationMessage, IHaveCognitoUserPoolTypesUserAttributeUpdateSettingsUserAttributeUpdateSettings, IHaveCognitoUserPoolTypesEmailConfigurationEmailConfiguration, IHaveCognitoUserPoolTypesSmsConfigurationSmsConfiguration, IHaveEmailVerificationSubject, IHaveWebAuthnRelyingPartyID, IHaveEmailAuthenticationSubject, IHaveCognitoUserPoolTypesAccountRecoverySettingAccountRecoverySetting, IHaveCognitoUserPoolTypesVerificationMessageTemplateVerificationMessageTemplate, IHaveCognitoUserPoolTypesIssuerConfigurationIssuerConfiguration, IHaveMfaConfiguration, IHaveDeletionProtection, IHaveWebAuthnFactorConfiguration, IHaveSmsAuthenticationMessage, IHaveCognitoUserPoolTypesDcrConfigurationDcrConfiguration, IHaveWebAuthnUserVerification, IHaveCognitoUserPoolTypesUserPoolAddOnsUserPoolAddOns, IHaveEmailAuthenticationMessage, IHaveStringListOfAliasAttributes, IHaveStringListOfEnabledMfas, IHaveCognitoUserPoolTypesLambdaConfigLambdaConfig, IHaveStringListOfUsernameAttributes, IHaveStringListOfAutoVerifiedAttributes, IHaveCognitoUserPoolTypesDeviceConfigurationDeviceConfiguration, IHaveEmailVerificationMessage
     {
         public class Attributes
         {
@@ -186,6 +186,14 @@ namespace Humidifier.Cognito
         /// </summary>
         public Union<string, BaseFunction>? SmsAuthenticationMessage { get; set; }
         /// <summary>
+        /// DcrConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-dcrconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DcrConfiguration
+        /// </summary>
+        public Union<Humidifier.Cognito.UserPoolTypes.DcrConfiguration, BaseFunction>? DcrConfiguration { get; set; }
+        /// <summary>
         /// WebAuthnUserVerification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-webauthnuserverification
         /// Required: False
@@ -364,6 +372,53 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? LambdaVersion { get; set; }
+        }
+
+        public class DcrConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfOpenDcrGrantTypes, IHaveStringListOfAuthenticatedGrantTypes, IHaveEnableStatus, IHaveOpenDcrEnabled_Boolean, IHaveStringListOfAllowedScopes
+        {
+            /// <summary>
+            /// OpenDcrGrantTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-opendcrgranttypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? OpenDcrGrantTypes { get; set; }
+            /// <summary>
+            /// AuthenticatedGrantTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-authenticatedgranttypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AuthenticatedGrantTypes { get; set; }
+            /// <summary>
+            /// EnableStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-enablestatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? EnableStatus { get; set; }
+            /// <summary>
+            /// OpenDcrEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-opendcrenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? OpenDcrEnabled { get; set; }
+            /// <summary>
+            /// AllowedScopes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-allowedscopes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? AllowedScopes { get; set; }
         }
 
         public class DeviceConfiguration : Humidifier.Base.BaseSubResource, IHaveDeviceOnlyRememberedOnUserPrompt_Boolean, IHaveChallengeRequiredOnNewDevice_Boolean

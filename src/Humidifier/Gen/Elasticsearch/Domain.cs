@@ -7,12 +7,62 @@ namespace Humidifier.Elasticsearch
     {
         public class Attributes
         {
+            public static string DomainEndpoint =  "DomainEndpoint" ;
             public static string Arn =  "Arn" ;
             public static string DomainArn =  "DomainArn" ;
-            public static string DomainEndpoint =  "DomainEndpoint" ;
         }
 
         public override string AWSTypeName { get => AWS.Elasticsearch.Domain; }
+        /// <summary>
+        /// ElasticsearchClusterConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchclusterconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: ElasticsearchClusterConfig
+        /// </summary>
+        public Humidifier.Elasticsearch.DomainTypes.ElasticsearchClusterConfig ElasticsearchClusterConfig { get; set; }
+        public dynamic DomainName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// ElasticsearchVersion
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
+        /// Required: False
+        /// UpdateType: Conditional
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic ElasticsearchVersion { get; set; }
+        /// <summary>
+        /// LogPublishingOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-logpublishingoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Map
+        /// ItemType: LogPublishingOption
+        /// </summary>
+        public Dictionary<string, Humidifier.Elasticsearch.DomainTypes.LogPublishingOption> LogPublishingOptions { get; set; }
+        /// <summary>
+        /// SnapshotOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: SnapshotOptions
+        /// </summary>
+        public Humidifier.Elasticsearch.DomainTypes.SnapshotOptions SnapshotOptions { get; set; }
+        /// <summary>
+        /// VPCOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: VPCOptions
+        /// </summary>
+        public Humidifier.Elasticsearch.DomainTypes.VPCOptions VPCOptions { get; set; }
+        /// <summary>
+        /// NodeToNodeEncryptionOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: NodeToNodeEncryptionOptions
+        /// </summary>
+        public Humidifier.Elasticsearch.DomainTypes.NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
         /// <summary>
         /// AccessPolicies
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-accesspolicies
@@ -21,6 +71,22 @@ namespace Humidifier.Elasticsearch
         /// PrimitiveType: Json
         /// </summary>
         public dynamic AccessPolicies { get; set; }
+        /// <summary>
+        /// DomainEndpointOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainendpointoptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DomainEndpointOptions
+        /// </summary>
+        public Humidifier.Elasticsearch.DomainTypes.DomainEndpointOptions DomainEndpointOptions { get; set; }
+        /// <summary>
+        /// CognitoOptions
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-cognitooptions
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: CognitoOptions
+        /// </summary>
+        public Humidifier.Elasticsearch.DomainTypes.CognitoOptions CognitoOptions { get; set; }
         /// <summary>
         /// AdvancedOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedoptions
@@ -39,23 +105,6 @@ namespace Humidifier.Elasticsearch
         /// </summary>
         public Humidifier.Elasticsearch.DomainTypes.AdvancedSecurityOptionsInput AdvancedSecurityOptions { get; set; }
         /// <summary>
-        /// CognitoOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-cognitooptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: CognitoOptions
-        /// </summary>
-        public Humidifier.Elasticsearch.DomainTypes.CognitoOptions CognitoOptions { get; set; }
-        /// <summary>
-        /// DomainEndpointOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainendpointoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: DomainEndpointOptions
-        /// </summary>
-        public Humidifier.Elasticsearch.DomainTypes.DomainEndpointOptions DomainEndpointOptions { get; set; }
-        public dynamic DomainName { get => GivenName; set => GivenName = value; }
-        /// <summary>
         /// EBSOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-ebsoptions
         /// Required: False
@@ -63,22 +112,6 @@ namespace Humidifier.Elasticsearch
         /// Type: EBSOptions
         /// </summary>
         public Humidifier.Elasticsearch.DomainTypes.EBSOptions EBSOptions { get; set; }
-        /// <summary>
-        /// ElasticsearchClusterConfig
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchclusterconfig
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: ElasticsearchClusterConfig
-        /// </summary>
-        public Humidifier.Elasticsearch.DomainTypes.ElasticsearchClusterConfig ElasticsearchClusterConfig { get; set; }
-        /// <summary>
-        /// ElasticsearchVersion
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion
-        /// Required: False
-        /// UpdateType: Conditional
-        /// PrimitiveType: String
-        /// </summary>
-        public dynamic ElasticsearchVersion { get; set; }
         /// <summary>
         /// EncryptionAtRestOptions
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions
@@ -88,31 +121,6 @@ namespace Humidifier.Elasticsearch
         /// </summary>
         public Humidifier.Elasticsearch.DomainTypes.EncryptionAtRestOptions EncryptionAtRestOptions { get; set; }
         /// <summary>
-        /// LogPublishingOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-logpublishingoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: Map
-        /// ItemType: LogPublishingOption
-        /// </summary>
-        public Dictionary<string, Humidifier.Elasticsearch.DomainTypes.LogPublishingOption> LogPublishingOptions { get; set; }
-        /// <summary>
-        /// NodeToNodeEncryptionOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions
-        /// Required: False
-        /// UpdateType: Conditional
-        /// Type: NodeToNodeEncryptionOptions
-        /// </summary>
-        public Humidifier.Elasticsearch.DomainTypes.NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions { get; set; }
-        /// <summary>
-        /// SnapshotOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: SnapshotOptions
-        /// </summary>
-        public Humidifier.Elasticsearch.DomainTypes.SnapshotOptions SnapshotOptions { get; set; }
-        /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-tags
         /// Required: False
@@ -121,14 +129,6 @@ namespace Humidifier.Elasticsearch
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
-        /// <summary>
-        /// VPCOptions
-        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions
-        /// Required: False
-        /// UpdateType: Mutable
-        /// Type: VPCOptions
-        /// </summary>
-        public Humidifier.Elasticsearch.DomainTypes.VPCOptions VPCOptions { get; set; }
     }
 
     namespace DomainTypes
@@ -139,31 +139,31 @@ namespace Humidifier.Elasticsearch
             /// AnonymousAuthEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-anonymousauthenabled
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic AnonymousAuthEnabled { get; set; }
             /// <summary>
-            /// Enabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-enabled
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic Enabled { get; set; }
-            /// <summary>
             /// InternalUserDatabaseEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-internaluserdatabaseenabled
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic InternalUserDatabaseEnabled { get; set; }
             /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-enabled
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+            /// <summary>
             /// MasterUserOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-masteruseroptions
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: MasterUserOptions
             /// </summary>
             public Humidifier.Elasticsearch.DomainTypes.MasterUserOptions MasterUserOptions { get; set; }
@@ -171,6 +171,14 @@ namespace Humidifier.Elasticsearch
 
         public class CognitoOptions : Humidifier.Base.BaseSubResource, IHaveRoleArn, IHaveEnabled, IHaveUserPoolId, IHaveIdentityPoolId
         {
+            /// <summary>
+            /// UserPoolId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-userpoolid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic UserPoolId { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-enabled
@@ -195,14 +203,6 @@ namespace Humidifier.Elasticsearch
             /// PrimitiveType: String
             /// </summary>
             public dynamic RoleArn { get; set; }
-            /// <summary>
-            /// UserPoolId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-userpoolid
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic UserPoolId { get; set; }
         }
 
         public class ColdStorageOptions : Humidifier.Base.BaseSubResource, IHaveEnabled
@@ -220,22 +220,6 @@ namespace Humidifier.Elasticsearch
         public class DomainEndpointOptions : Humidifier.Base.BaseSubResource, IHaveCustomEndpoint, IHaveCustomEndpointCertificateArn, IHaveCustomEndpointEnabled, IHaveEnforceHTTPS, IHaveTLSSecurityPolicy
         {
             /// <summary>
-            /// CustomEndpoint
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpoint
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CustomEndpoint { get; set; }
-            /// <summary>
-            /// CustomEndpointCertificateArn
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointcertificatearn
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic CustomEndpointCertificateArn { get; set; }
-            /// <summary>
             /// CustomEndpointEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointenabled
             /// Required: False
@@ -251,6 +235,22 @@ namespace Humidifier.Elasticsearch
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic EnforceHTTPS { get; set; }
+            /// <summary>
+            /// CustomEndpointCertificateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpointcertificatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomEndpointCertificateArn { get; set; }
+            /// <summary>
+            /// CustomEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-customendpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CustomEndpoint { get; set; }
             /// <summary>
             /// TLSSecurityPolicy
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-tlssecuritypolicy
@@ -272,6 +272,14 @@ namespace Humidifier.Elasticsearch
             /// </summary>
             public dynamic EBSEnabled { get; set; }
             /// <summary>
+            /// VolumeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-volumetype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic VolumeType { get; set; }
+            /// <summary>
             /// Iops
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-iops
             /// Required: False
@@ -287,18 +295,50 @@ namespace Humidifier.Elasticsearch
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic VolumeSize { get; set; }
-            /// <summary>
-            /// VolumeType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-volumetype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic VolumeType { get; set; }
         }
 
         public class ElasticsearchClusterConfig : Humidifier.Base.BaseSubResource, IHaveInstanceType, IHaveInstanceCount, IHaveDedicatedMasterCount, IHaveDedicatedMasterEnabled, IHaveDedicatedMasterType, IHaveWarmCount, IHaveWarmEnabled, IHaveWarmType, IHaveZoneAwarenessEnabled
         {
+            /// <summary>
+            /// InstanceCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-instancecount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic InstanceCount { get; set; }
+            /// <summary>
+            /// WarmEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic WarmEnabled { get; set; }
+            /// <summary>
+            /// WarmCount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmcount
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic WarmCount { get; set; }
+            /// <summary>
+            /// DedicatedMasterEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-dedicatedmasterenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic DedicatedMasterEnabled { get; set; }
+            /// <summary>
+            /// ZoneAwarenessConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-zoneawarenessconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ZoneAwarenessConfig
+            /// </summary>
+            public Humidifier.Elasticsearch.DomainTypes.ZoneAwarenessConfig ZoneAwarenessConfig { get; set; }
             /// <summary>
             /// ColdStorageOptions
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-coldstorageoptions
@@ -309,60 +349,20 @@ namespace Humidifier.Elasticsearch
             public Humidifier.Elasticsearch.DomainTypes.ColdStorageOptions ColdStorageOptions { get; set; }
             /// <summary>
             /// DedicatedMasterCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastercount
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-dedicatedmastercount
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Integer
             /// </summary>
             public dynamic DedicatedMasterCount { get; set; }
             /// <summary>
-            /// DedicatedMasterEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmasterenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic DedicatedMasterEnabled { get; set; }
-            /// <summary>
-            /// DedicatedMasterType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastertype
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic DedicatedMasterType { get; set; }
-            /// <summary>
-            /// InstanceCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instancecount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic InstanceCount { get; set; }
-            /// <summary>
             /// InstanceType
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-instnacetype
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-instancetype
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: String
             /// </summary>
             public dynamic InstanceType { get; set; }
-            /// <summary>
-            /// WarmCount
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmcount
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Integer
-            /// </summary>
-            public dynamic WarmCount { get; set; }
-            /// <summary>
-            /// WarmEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmenabled
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: Boolean
-            /// </summary>
-            public dynamic WarmEnabled { get; set; }
             /// <summary>
             /// WarmType
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmtype
@@ -372,25 +372,33 @@ namespace Humidifier.Elasticsearch
             /// </summary>
             public dynamic WarmType { get; set; }
             /// <summary>
-            /// ZoneAwarenessConfig
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-zoneawarenessconfig
-            /// Required: False
-            /// UpdateType: Mutable
-            /// Type: ZoneAwarenessConfig
-            /// </summary>
-            public Humidifier.Elasticsearch.DomainTypes.ZoneAwarenessConfig ZoneAwarenessConfig { get; set; }
-            /// <summary>
             /// ZoneAwarenessEnabled
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-zoneawarenessenabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-zoneawarenessenabled
             /// Required: False
             /// UpdateType: Mutable
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ZoneAwarenessEnabled { get; set; }
+            /// <summary>
+            /// DedicatedMasterType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-dedicatedmastertype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DedicatedMasterType { get; set; }
         }
 
         public class EncryptionAtRestOptions : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveKmsKeyId
         {
+            /// <summary>
+            /// KmsKeyId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic KmsKeyId { get; set; }
             /// <summary>
             /// Enabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-enabled
@@ -399,14 +407,6 @@ namespace Humidifier.Elasticsearch
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic Enabled { get; set; }
-            /// <summary>
-            /// KmsKeyId
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid
-            /// Required: False
-            /// UpdateType: Immutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic KmsKeyId { get; set; }
         }
 
         public class LogPublishingOption : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveCloudWatchLogsLogGroupArn
@@ -432,10 +432,18 @@ namespace Humidifier.Elasticsearch
         public class MasterUserOptions : Humidifier.Base.BaseSubResource, IHaveMasterUserPassword, IHaveMasterUserName, IHaveMasterUserARN
         {
             /// <summary>
+            /// MasterUserPassword
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-masteruseroptions.html#cfn-elasticsearch-domain-masteruseroptions-masteruserpassword
+            /// Required: False
+            /// UpdateType: Conditional
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MasterUserPassword { get; set; }
+            /// <summary>
             /// MasterUserARN
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-masteruseroptions.html#cfn-elasticsearch-domain-masteruseroptions-masteruserarn
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic MasterUserARN { get; set; }
@@ -443,18 +451,10 @@ namespace Humidifier.Elasticsearch
             /// MasterUserName
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-masteruseroptions.html#cfn-elasticsearch-domain-masteruseroptions-masterusername
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// PrimitiveType: String
             /// </summary>
             public dynamic MasterUserName { get; set; }
-            /// <summary>
-            /// MasterUserPassword
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-masteruseroptions.html#cfn-elasticsearch-domain-masteruseroptions-masteruserpassword
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public dynamic MasterUserPassword { get; set; }
         }
 
         public class NodeToNodeEncryptionOptions : Humidifier.Base.BaseSubResource, IHaveEnabled
@@ -487,7 +487,7 @@ namespace Humidifier.Elasticsearch
             /// SecurityGroupIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html#cfn-elasticsearch-domain-vpcoptions-securitygroupids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>
@@ -496,7 +496,7 @@ namespace Humidifier.Elasticsearch
             /// SubnetIds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html#cfn-elasticsearch-domain-vpcoptions-subnetids
             /// Required: False
-            /// UpdateType: Mutable
+            /// UpdateType: Conditional
             /// Type: List
             /// PrimitiveItemType: String
             /// </summary>

@@ -1,6 +1,7 @@
 namespace Humidifier.EKS
 {
     using global::System.Collections.Generic;
+    using PodIdentityAssociationTypes;
 
     public class PodIdentityAssociation : Humidifier.Base.BaseResource, IHaveTags, IHaveRoleArn, IHaveNamespace_, IHavePolicy, IHaveClusterName, IHaveServiceAccount
     {
@@ -56,6 +57,14 @@ namespace Humidifier.EKS
         /// PrimitiveType: Boolean
         /// </summary>
         public dynamic DisableSessionTags { get; set; }
+        /// <summary>
+        /// WorkloadIdentityConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-podidentityassociation.html#cfn-eks-podidentityassociation-workloadidentityconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: WorkloadIdentityConfig
+        /// </summary>
+        public Humidifier.EKS.PodIdentityAssociationTypes.WorkloadIdentityConfig WorkloadIdentityConfig { get; set; }
 
         /// <summary>
         /// RoleArn
@@ -85,5 +94,36 @@ namespace Humidifier.EKS
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+    }
+
+    namespace PodIdentityAssociationTypes
+    {
+        public class WorkloadIdentityConfig : Humidifier.Base.BaseSubResource, IHaveEnabled, IHaveTemplateArn
+        {
+            /// <summary>
+            /// TemplateArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-podidentityassociation-workloadidentityconfig.html#cfn-eks-podidentityassociation-workloadidentityconfig-templatearn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TemplateArn { get; set; }
+            /// <summary>
+            /// ProviderArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-podidentityassociation-workloadidentityconfig.html#cfn-eks-podidentityassociation-workloadidentityconfig-providerarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ProviderArn { get; set; }
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-podidentityassociation-workloadidentityconfig.html#cfn-eks-podidentityassociation-workloadidentityconfig-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Enabled { get; set; }
+        }
     }
 }

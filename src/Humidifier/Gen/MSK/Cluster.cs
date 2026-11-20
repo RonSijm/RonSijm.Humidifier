@@ -213,6 +213,14 @@ namespace Humidifier.MSK
             /// </summary>
             public Humidifier.MSK.ClusterTypes.ConnectivityInfo ConnectivityInfo { get; set; }
             /// <summary>
+            /// TopicReassignment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-topicreassignment
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic TopicReassignment { get; set; }
+            /// <summary>
             /// StorageInfo
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-storageinfo
             /// Required: False

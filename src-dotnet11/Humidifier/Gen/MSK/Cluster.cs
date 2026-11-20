@@ -184,7 +184,7 @@ namespace Humidifier.MSK
             public Union<Humidifier.MSK.ClusterTypes.CloudWatchLogs, BaseFunction>? CloudWatchLogs { get; set; }
         }
 
-        public class BrokerNodeGroupInfo : Humidifier.Base.BaseSubResource, IHaveStringListOfSecurityGroups, IHaveStringListOfClientSubnets, IHaveMSKClusterTypesConnectivityInfoConnectivityInfo, IHaveMSKClusterTypesStorageInfoStorageInfo, IHaveBrokerAZDistribution, IHaveInstanceType
+        public class BrokerNodeGroupInfo : Humidifier.Base.BaseSubResource, IHaveStringListOfSecurityGroups, IHaveStringListOfClientSubnets, IHaveMSKClusterTypesConnectivityInfoConnectivityInfo, IHaveTopicReassignment, IHaveMSKClusterTypesStorageInfoStorageInfo, IHaveBrokerAZDistribution, IHaveInstanceType
         {
             /// <summary>
             /// SecurityGroups
@@ -212,6 +212,14 @@ namespace Humidifier.MSK
             /// Type: ConnectivityInfo
             /// </summary>
             public Union<Humidifier.MSK.ClusterTypes.ConnectivityInfo, BaseFunction>? ConnectivityInfo { get; set; }
+            /// <summary>
+            /// TopicReassignment
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-topicreassignment
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TopicReassignment { get; set; }
             /// <summary>
             /// StorageInfo
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-storageinfo

@@ -165,7 +165,7 @@ namespace Humidifier.AppStream
             public Union<string, BaseFunction>? VpceId { get; set; }
         }
 
-        public class AgentAccessConfig : Humidifier.Base.BaseSubResource, IHaveScreenResolution, IHaveScreenImageFormat, IHaveScreenshotsUploadEnabled_Boolean, IHaveUserControlMode, IHaveS3BucketArn, IHaveListOfAppStreamStackTypesAgentAccessSettingSettings
+        public class AgentAccessConfig : Humidifier.Base.BaseSubResource, IHaveScreenResolution, IHaveScreenImageFormat, IHaveKmsKeyArn, IHaveScreenshotsUploadEnabled_Boolean, IHaveUserControlMode, IHaveS3BucketArn, IHaveReplaySessionEnabled_Boolean, IHaveListOfAppStreamStackTypesAgentAccessSettingSettings
         {
             /// <summary>
             /// ScreenResolution
@@ -183,6 +183,14 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ScreenImageFormat { get; set; }
+            /// <summary>
+            /// KmsKeyArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-kmskeyarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? KmsKeyArn { get; set; }
             /// <summary>
             /// ScreenshotsUploadEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-screenshotsuploadenabled
@@ -207,6 +215,14 @@ namespace Humidifier.AppStream
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? S3BucketArn { get; set; }
+            /// <summary>
+            /// ReplaySessionEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-replaysessionenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? ReplaySessionEnabled { get; set; }
             /// <summary>
             /// Settings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-agentaccessconfig.html#cfn-appstream-stack-agentaccessconfig-settings

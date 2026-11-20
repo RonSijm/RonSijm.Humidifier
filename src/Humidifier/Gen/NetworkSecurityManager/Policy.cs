@@ -99,6 +99,27 @@ namespace Humidifier.NetworkSecurityManager
             public dynamic RuleArn { get; set; }
         }
 
+        public class IgwFirewallConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// SubnetConnectivityOverrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-igwfirewallconfig.html#cfn-networksecuritymanager-policy-igwfirewallconfig-subnetconnectivityoverrides
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SubnetConnectivityOverride
+            /// </summary>
+            public List<Humidifier.NetworkSecurityManager.PolicyTypes.SubnetConnectivityOverride> SubnetConnectivityOverrides { get; set; }
+            /// <summary>
+            /// DefaultSubnetConnectivity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-igwfirewallconfig.html#cfn-networksecuritymanager-policy-igwfirewallconfig-defaultsubnetconnectivity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DefaultSubnetConnectivity { get; set; }
+        }
+
         public class PolicyConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -109,6 +130,14 @@ namespace Humidifier.NetworkSecurityManager
             /// PrimitiveType: Boolean
             /// </summary>
             public dynamic ResourcesCleanUp { get; set; }
+            /// <summary>
+            /// IgwFirewallConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-policyconfiguration.html#cfn-networksecuritymanager-policy-policyconfiguration-igwfirewallconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IgwFirewallConfig
+            /// </summary>
+            public Humidifier.NetworkSecurityManager.PolicyTypes.IgwFirewallConfig IgwFirewallConfig { get; set; }
             /// <summary>
             /// RemediationEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-policyconfiguration.html#cfn-networksecuritymanager-policy-policyconfiguration-remediationenabled
@@ -125,6 +154,27 @@ namespace Humidifier.NetworkSecurityManager
             /// Type: WafConfig
             /// </summary>
             public Humidifier.NetworkSecurityManager.PolicyTypes.WafConfig WafConfig { get; set; }
+        }
+
+        public class SubnetConnectivityOverride : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ConnectivityType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-subnetconnectivityoverride.html#cfn-networksecuritymanager-policy-subnetconnectivityoverride-connectivitytype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectivityType { get; set; }
+            /// <summary>
+            /// Scopes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-subnetconnectivityoverride.html#cfn-networksecuritymanager-policy-subnetconnectivityoverride-scopes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Scopes { get; set; }
         }
 
         public class WafConfig : Humidifier.Base.BaseSubResource

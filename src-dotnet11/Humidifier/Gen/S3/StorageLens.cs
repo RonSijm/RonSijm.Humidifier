@@ -239,6 +239,58 @@ namespace Humidifier.S3
             public Union<bool, BaseFunction>? IsEnabled { get; set; }
         }
 
+        public class CostAndUsageReportsPrefixLevel : Humidifier.Base.BaseSubResource, IHaveIsEnabled_Boolean, IHaveS3StorageLensTypesCostAndUsageReportsSelectionCriteriaSelectionCriteria
+        {
+            /// <summary>
+            /// IsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsprefixlevel.html#cfn-s3-storagelens-costandusagereportsprefixlevel-isenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? IsEnabled { get; set; }
+            /// <summary>
+            /// SelectionCriteria
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsprefixlevel.html#cfn-s3-storagelens-costandusagereportsprefixlevel-selectioncriteria
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostAndUsageReportsSelectionCriteria
+            /// </summary>
+            public Union<Humidifier.S3.StorageLensTypes.CostAndUsageReportsSelectionCriteria, BaseFunction>? SelectionCriteria { get; set; }
+        }
+
+        public class CostAndUsageReportsPublish : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesCostAndUsageReportsPrefixLevelPrefixLevel
+        {
+            /// <summary>
+            /// PrefixLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportspublish.html#cfn-s3-storagelens-costandusagereportspublish-prefixlevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostAndUsageReportsPrefixLevel
+            /// </summary>
+            public Union<Humidifier.S3.StorageLensTypes.CostAndUsageReportsPrefixLevel, BaseFunction>? PrefixLevel { get; set; }
+        }
+
+        public class CostAndUsageReportsSelectionCriteria : Humidifier.Base.BaseSubResource, IHaveMaxDepth_Integer, IHaveMinDepth_Integer
+        {
+            /// <summary>
+            /// MaxDepth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsselectioncriteria.html#cfn-s3-storagelens-costandusagereportsselectioncriteria-maxdepth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? MaxDepth { get; set; }
+            /// <summary>
+            /// MinDepth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsselectioncriteria.html#cfn-s3-storagelens-costandusagereportsselectioncriteria-mindepth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? MinDepth { get; set; }
+        }
+
         public class DataExport : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesStorageLensTableDestinationStorageLensTableDestination, IHaveS3StorageLensTypesS3BucketDestinationS3BucketDestination, IHaveS3StorageLensTypesCloudWatchMetricsCloudWatchMetrics
         {
             /// <summary>
@@ -297,6 +349,18 @@ namespace Humidifier.S3
             /// PrimitiveType: Json
             /// </summary>
             public Union<object, BaseFunction>? SSES3 { get; set; }
+        }
+
+        public class IntAccessTiers : Humidifier.Base.BaseSubResource, IHaveIsEnabled_Boolean
+        {
+            /// <summary>
+            /// IsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-intaccesstiers.html#cfn-s3-storagelens-intaccesstiers-isenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? IsEnabled { get; set; }
         }
 
         public class PrefixLevel : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesPrefixLevelStorageMetricsStorageMetrics
@@ -423,7 +487,7 @@ namespace Humidifier.S3
             public Union<double, BaseFunction>? MinStorageBytesPercentage { get; set; }
         }
 
-        public class StorageLensConfiguration : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesAccountLevelAccountLevel, IHaveS3StorageLensTypesBucketsAndRegionsExclude, IHaveIsEnabled_Boolean, IHaveS3StorageLensTypesBucketsAndRegionsInclude, IHavePrefixDelimiter, IHaveS3StorageLensTypesAwsOrgAwsOrg, IHaveId, IHaveStorageLensArn, IHaveS3StorageLensTypesDataExportDataExport, IHaveS3StorageLensTypesStorageLensExpandedPrefixesDataExportExpandedPrefixesDataExport
+        public class StorageLensConfiguration : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesAccountLevelAccountLevel, IHaveS3StorageLensTypesBucketsAndRegionsExclude, IHaveS3StorageLensTypesIntAccessTiersIntAccessTiers, IHaveIsEnabled_Boolean, IHaveS3StorageLensTypesBucketsAndRegionsInclude, IHavePrefixDelimiter, IHaveS3StorageLensTypesAwsOrgAwsOrg, IHaveId, IHaveStorageLensArn, IHaveS3StorageLensTypesDataExportDataExport, IHaveS3StorageLensTypesStorageLensExpandedPrefixesDataExportExpandedPrefixesDataExport, IHaveS3StorageLensTypesCostAndUsageReportsPublishCostAndUsageReportsPublish
         {
             /// <summary>
             /// AccountLevel
@@ -441,6 +505,14 @@ namespace Humidifier.S3
             /// Type: BucketsAndRegions
             /// </summary>
             public Union<Humidifier.S3.StorageLensTypes.BucketsAndRegions, BaseFunction>? Exclude { get; set; }
+            /// <summary>
+            /// IntAccessTiers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-intaccesstiers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IntAccessTiers
+            /// </summary>
+            public Union<Humidifier.S3.StorageLensTypes.IntAccessTiers, BaseFunction>? IntAccessTiers { get; set; }
             /// <summary>
             /// IsEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-isenabled
@@ -505,6 +577,14 @@ namespace Humidifier.S3
             /// Type: StorageLensExpandedPrefixesDataExport
             /// </summary>
             public Union<Humidifier.S3.StorageLensTypes.StorageLensExpandedPrefixesDataExport, BaseFunction>? ExpandedPrefixesDataExport { get; set; }
+            /// <summary>
+            /// CostAndUsageReportsPublish
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-costandusagereportspublish
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostAndUsageReportsPublish
+            /// </summary>
+            public Union<Humidifier.S3.StorageLensTypes.CostAndUsageReportsPublish, BaseFunction>? CostAndUsageReportsPublish { get; set; }
         }
 
         public class StorageLensExpandedPrefixesDataExport : Humidifier.Base.BaseSubResource, IHaveS3StorageLensTypesStorageLensTableDestinationStorageLensTableDestination, IHaveS3StorageLensTypesS3BucketDestinationS3BucketDestination

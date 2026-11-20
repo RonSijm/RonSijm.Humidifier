@@ -13,6 +13,14 @@ namespace Humidifier.RolesAnywhere
 
         public override string AWSTypeName { get => AWS.RolesAnywhere.TrustAnchor; }
         /// <summary>
+        /// CrlDpRevocationEnabled
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html#cfn-rolesanywhere-trustanchor-crldprevocationenabled
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: Boolean
+        /// </summary>
+        public dynamic CrlDpRevocationEnabled { get; set; }
+        /// <summary>
         /// NotificationSettings
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rolesanywhere-trustanchor.html#cfn-rolesanywhere-trustanchor-notificationsettings
         /// Required: False

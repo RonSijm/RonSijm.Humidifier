@@ -3,7 +3,7 @@ namespace Humidifier.ECS
     using global::System.Collections.Generic;
     using TaskDefinitionTypes;
 
-    public class TaskDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveTaskRoleArn, IHaveIpcMode, IHaveMemory, IHaveListOfECSTaskDefinitionTypesTaskDefinitionPlacementConstraintPlacementConstraints, IHaveCpu, IHaveStringListOfRequiresCompatibilities, IHaveNetworkMode, IHavePidMode, IHaveEnableFaultInjection_Boolean, IHaveExecutionRoleArn, IHaveECSTaskDefinitionTypesRuntimePlatformRuntimePlatform, IHaveECSTaskDefinitionTypesProxyConfigurationProxyConfiguration, IHaveListOfECSTaskDefinitionTypesVolumeVolumes, IHaveListOfECSTaskDefinitionTypesContainerDefinitionContainerDefinitions, IHaveFamily, IHaveECSTaskDefinitionTypesEphemeralStorageEphemeralStorage
+    public class TaskDefinition : Humidifier.Base.BaseResource, IHaveTags, IHaveTaskRoleArn, IHaveIpcMode, IHaveECSTaskDefinitionTypesTrustedExecutionConfigurationTrustedExecutionConfiguration, IHaveMemory, IHaveListOfECSTaskDefinitionTypesTaskDefinitionPlacementConstraintPlacementConstraints, IHaveCpu, IHaveStringListOfRequiresCompatibilities, IHaveNetworkMode, IHavePidMode, IHaveEnableFaultInjection_Boolean, IHaveExecutionRoleArn, IHaveECSTaskDefinitionTypesRuntimePlatformRuntimePlatform, IHaveECSTaskDefinitionTypesProxyConfigurationProxyConfiguration, IHaveListOfECSTaskDefinitionTypesVolumeVolumes, IHaveListOfECSTaskDefinitionTypesContainerDefinitionContainerDefinitions, IHaveFamily, IHaveECSTaskDefinitionTypesEphemeralStorageEphemeralStorage
     {
         public class Attributes
         {
@@ -27,6 +27,14 @@ namespace Humidifier.ECS
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? IpcMode { get; set; }
+        /// <summary>
+        /// TrustedExecutionConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-trustedexecutionconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TrustedExecutionConfiguration
+        /// </summary>
+        public Union<Humidifier.ECS.TaskDefinitionTypes.TrustedExecutionConfiguration, BaseFunction>? TrustedExecutionConfiguration { get; set; }
         /// <summary>
         /// Memory
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-memory
@@ -1339,6 +1347,26 @@ namespace Humidifier.ECS
             /// PrimitiveItemType: String
             /// </summary>
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? MountOptions { get; set; }
+        }
+
+        public class TrustedExecutionConfiguration : Humidifier.Base.BaseSubResource, IHaveIsolationMode, IHaveAttestationPolicy
+        {
+            /// <summary>
+            /// IsolationMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-trustedexecutionconfiguration.html#cfn-ecs-taskdefinition-trustedexecutionconfiguration-isolationmode
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? IsolationMode { get; set; }
+            /// <summary>
+            /// AttestationPolicy
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-trustedexecutionconfiguration.html#cfn-ecs-taskdefinition-trustedexecutionconfiguration-attestationpolicy
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AttestationPolicy { get; set; }
         }
 
         public class Ulimit : Humidifier.Base.BaseSubResource, IHaveSoftLimit_Integer, IHaveHardLimit_Integer, IHaveName

@@ -7,17 +7,18 @@ namespace Humidifier.MediaConnect
     {
         public class Attributes
         {
+            public static string CreatedAt =  "CreatedAt" ;
+            public static string MaintenanceType =  "MaintenanceType" ;
+            public static string StreamDetails =  "StreamDetails" ;
+            public static string UpdatedAt =  "UpdatedAt" ;
             public static string InputType =  "InputType" ;
             public static string AssociatedDestinationEndpointArns =  "AssociatedDestinationEndpointArns" ;
             public static string State =  "State" ;
-            public static string CreatedAt =  "CreatedAt" ;
             public static string ContentQualityAnalysisType =  "ContentQualityAnalysisType" ;
             public static string IpAddress =  "IpAddress" ;
             public static string Id =  "Id" ;
             public static string Arn =  "Arn" ;
             public static string RoutedOutputs =  "RoutedOutputs" ;
-            public static string UpdatedAt =  "UpdatedAt" ;
-            public static string MaintenanceType =  "MaintenanceType" ;
         }
 
         public override string AWSTypeName { get => AWS.MediaConnect.RouterInput; }
@@ -260,7 +261,27 @@ namespace Humidifier.MediaConnect
             public Union<int, BaseFunction>? PrimarySourceIndex { get; set; }
         }
 
-        public class FailoverRouterInputProtocolConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesSrtCallerRouterInputConfigurationSrtCaller, IHaveMediaConnectRouterInputTypesSrtListenerRouterInputConfigurationSrtListener, IHaveMediaConnectRouterInputTypesRistRouterInputConfigurationRist, IHaveMediaConnectRouterInputTypesRtpRouterInputConfigurationRtp
+        public class FailoverRouterInputIndexedStreamDetails : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesRtmpPushStreamDetailsRtmpPush, IHaveSourceIndex_Integer
+        {
+            /// <summary>
+            /// RtmpPush
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-failoverrouterinputindexedstreamdetails.html#cfn-mediaconnect-routerinput-failoverrouterinputindexedstreamdetails-rtmppush
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RtmpPushStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.RtmpPushStreamDetails, BaseFunction>? RtmpPush { get; set; }
+            /// <summary>
+            /// SourceIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-failoverrouterinputindexedstreamdetails.html#cfn-mediaconnect-routerinput-failoverrouterinputindexedstreamdetails-sourceindex
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? SourceIndex { get; set; }
+        }
+
+        public class FailoverRouterInputProtocolConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesSrtCallerRouterInputConfigurationSrtCaller, IHaveMediaConnectRouterInputTypesSrtListenerRouterInputConfigurationSrtListener, IHaveMediaConnectRouterInputTypesRtmpPushRouterInputConfigurationRtmpPush, IHaveMediaConnectRouterInputTypesRistRouterInputConfigurationRist, IHaveMediaConnectRouterInputTypesRtpRouterInputConfigurationRtp
         {
             /// <summary>
             /// SrtCaller
@@ -279,6 +300,14 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public Union<Humidifier.MediaConnect.RouterInputTypes.SrtListenerRouterInputConfiguration, BaseFunction>? SrtListener { get; set; }
             /// <summary>
+            /// RtmpPush
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-failoverrouterinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-failoverrouterinputprotocolconfiguration-rtmppush
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RtmpPushRouterInputConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.RtmpPushRouterInputConfiguration, BaseFunction>? RtmpPush { get; set; }
+            /// <summary>
             /// Rist
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-failoverrouterinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-failoverrouterinputprotocolconfiguration-rist
             /// Required: False
@@ -294,6 +323,26 @@ namespace Humidifier.MediaConnect
             /// Type: RtpRouterInputConfiguration
             /// </summary>
             public Union<Humidifier.MediaConnect.RouterInputTypes.RtpRouterInputConfiguration, BaseFunction>? Rtp { get; set; }
+        }
+
+        public class FailoverRouterInputStreamDetails : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesFailoverRouterInputIndexedStreamDetailsSourceIndexOneStreamDetails, IHaveMediaConnectRouterInputTypesFailoverRouterInputIndexedStreamDetailsSourceIndexZeroStreamDetails
+        {
+            /// <summary>
+            /// SourceIndexOneStreamDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-failoverrouterinputstreamdetails.html#cfn-mediaconnect-routerinput-failoverrouterinputstreamdetails-sourceindexonestreamdetails
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FailoverRouterInputIndexedStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.FailoverRouterInputIndexedStreamDetails, BaseFunction>? SourceIndexOneStreamDetails { get; set; }
+            /// <summary>
+            /// SourceIndexZeroStreamDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-failoverrouterinputstreamdetails.html#cfn-mediaconnect-routerinput-failoverrouterinputstreamdetails-sourceindexzerostreamdetails
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: FailoverRouterInputIndexedStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.FailoverRouterInputIndexedStreamDetails, BaseFunction>? SourceIndexZeroStreamDetails { get; set; }
         }
 
         public class FlowTransitEncryption : Humidifier.Base.BaseSubResource, IHaveEncryptionKeyType, IHaveMediaConnectRouterInputTypesFlowTransitEncryptionKeyConfigurationEncryptionKeyConfiguration
@@ -374,6 +423,26 @@ namespace Humidifier.MediaConnect
             /// Type: PreferredDayTimeMaintenanceConfiguration
             /// </summary>
             public Union<Humidifier.MediaConnect.RouterInputTypes.PreferredDayTimeMaintenanceConfiguration, BaseFunction>? PreferredDayTime { get; set; }
+        }
+
+        public class ManualRtmpPushNamingConfiguration : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-manualrtmppushnamingconfiguration.html#cfn-mediaconnect-routerinput-manualrtmppushnamingconfiguration-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-manualrtmppushnamingconfiguration.html#cfn-mediaconnect-routerinput-manualrtmppushnamingconfiguration-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? StreamName { get; set; }
         }
 
         public class MediaConnectFlowRouterInputConfiguration : Humidifier.Base.BaseSubResource, IHaveFlowOutputArn, IHaveMediaConnectRouterInputTypesFlowTransitEncryptionSourceTransitDecryption, IHaveFlowArn
@@ -509,8 +578,36 @@ namespace Humidifier.MediaConnect
             public Union<IReadOnlyList<Humidifier.MediaConnect.RouterInputTypes.MergeRouterInputProtocolConfiguration>, IReadOnlyList<Union<Humidifier.MediaConnect.RouterInputTypes.MergeRouterInputProtocolConfiguration, BaseFunction>>, BaseFunction>? ProtocolConfigurations { get; set; }
         }
 
-        public class MergeRouterInputProtocolConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesRistRouterInputConfigurationRist, IHaveMediaConnectRouterInputTypesRtpRouterInputConfigurationRtp
+        public class MergeRouterInputIndexedStreamDetails : Humidifier.Base.BaseSubResource, IHaveSourceIndex_Integer
         {
+            /// <summary>
+            /// SourceIndex
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-mergerouterinputindexedstreamdetails.html#cfn-mediaconnect-routerinput-mergerouterinputindexedstreamdetails-sourceindex
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? SourceIndex { get; set; }
+        }
+
+        public class MergeRouterInputProtocolConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesSrtCallerRouterInputConfigurationSrtCaller, IHaveMediaConnectRouterInputTypesSrtListenerRouterInputConfigurationSrtListener, IHaveMediaConnectRouterInputTypesRistRouterInputConfigurationRist, IHaveMediaConnectRouterInputTypesRtpRouterInputConfigurationRtp
+        {
+            /// <summary>
+            /// SrtCaller
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-mergerouterinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-mergerouterinputprotocolconfiguration-srtcaller
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SrtCallerRouterInputConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.SrtCallerRouterInputConfiguration, BaseFunction>? SrtCaller { get; set; }
+            /// <summary>
+            /// SrtListener
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-mergerouterinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-mergerouterinputprotocolconfiguration-srtlistener
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SrtListenerRouterInputConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.SrtListenerRouterInputConfiguration, BaseFunction>? SrtListener { get; set; }
             /// <summary>
             /// Rist
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-mergerouterinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-mergerouterinputprotocolconfiguration-rist
@@ -527,6 +624,26 @@ namespace Humidifier.MediaConnect
             /// Type: RtpRouterInputConfiguration
             /// </summary>
             public Union<Humidifier.MediaConnect.RouterInputTypes.RtpRouterInputConfiguration, BaseFunction>? Rtp { get; set; }
+        }
+
+        public class MergeRouterInputStreamDetails : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesMergeRouterInputIndexedStreamDetailsSourceIndexOneStreamDetails, IHaveMediaConnectRouterInputTypesMergeRouterInputIndexedStreamDetailsSourceIndexZeroStreamDetails
+        {
+            /// <summary>
+            /// SourceIndexOneStreamDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-mergerouterinputstreamdetails.html#cfn-mediaconnect-routerinput-mergerouterinputstreamdetails-sourceindexonestreamdetails
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: MergeRouterInputIndexedStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.MergeRouterInputIndexedStreamDetails, BaseFunction>? SourceIndexOneStreamDetails { get; set; }
+            /// <summary>
+            /// SourceIndexZeroStreamDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-mergerouterinputstreamdetails.html#cfn-mediaconnect-routerinput-mergerouterinputstreamdetails-sourceindexzerostreamdetails
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: MergeRouterInputIndexedStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.MergeRouterInputIndexedStreamDetails, BaseFunction>? SourceIndexZeroStreamDetails { get; set; }
         }
 
         public class PreferredDayTimeMaintenanceConfiguration : Humidifier.Base.BaseSubResource, IHaveTime, IHaveDay
@@ -633,7 +750,7 @@ namespace Humidifier.MediaConnect
             public Union<Humidifier.MediaConnect.RouterInputTypes.StandardRouterInputConfiguration, BaseFunction>? Standard { get; set; }
         }
 
-        public class RouterInputProtocolConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesSrtCallerRouterInputConfigurationSrtCaller, IHaveMediaConnectRouterInputTypesSrtListenerRouterInputConfigurationSrtListener, IHaveMediaConnectRouterInputTypesRistRouterInputConfigurationRist, IHaveMediaConnectRouterInputTypesRtpRouterInputConfigurationRtp
+        public class RouterInputProtocolConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesSrtCallerRouterInputConfigurationSrtCaller, IHaveMediaConnectRouterInputTypesSrtListenerRouterInputConfigurationSrtListener, IHaveMediaConnectRouterInputTypesRtmpPushRouterInputConfigurationRtmpPush, IHaveMediaConnectRouterInputTypesRistRouterInputConfigurationRist, IHaveMediaConnectRouterInputTypesRtpRouterInputConfigurationRtp
         {
             /// <summary>
             /// SrtCaller
@@ -652,6 +769,14 @@ namespace Humidifier.MediaConnect
             /// </summary>
             public Union<Humidifier.MediaConnect.RouterInputTypes.SrtListenerRouterInputConfiguration, BaseFunction>? SrtListener { get; set; }
             /// <summary>
+            /// RtmpPush
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-routerinputprotocolconfiguration-rtmppush
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RtmpPushRouterInputConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.RtmpPushRouterInputConfiguration, BaseFunction>? RtmpPush { get; set; }
+            /// <summary>
             /// Rist
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputprotocolconfiguration.html#cfn-mediaconnect-routerinput-routerinputprotocolconfiguration-rist
             /// Required: False
@@ -667,6 +792,58 @@ namespace Humidifier.MediaConnect
             /// Type: RtpRouterInputConfiguration
             /// </summary>
             public Union<Humidifier.MediaConnect.RouterInputTypes.RtpRouterInputConfiguration, BaseFunction>? Rtp { get; set; }
+        }
+
+        public class RouterInputStreamDetails : Humidifier.Base.BaseSubResource, IHaveMediaConnectFlow_Json, IHaveMediaConnectRouterInputTypesFailoverRouterInputStreamDetailsFailover, IHaveMediaConnectRouterInputTypesMergeRouterInputStreamDetailsMerge, IHaveDestinationEndpoint_Json, IHaveMediaLiveChannel_Json, IHaveMediaConnectRouterInputTypesStandardRouterInputStreamDetailsStandard
+        {
+            /// <summary>
+            /// MediaConnectFlow
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputstreamdetails.html#cfn-mediaconnect-routerinput-routerinputstreamdetails-mediaconnectflow
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? MediaConnectFlow { get; set; }
+            /// <summary>
+            /// Failover
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputstreamdetails.html#cfn-mediaconnect-routerinput-routerinputstreamdetails-failover
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: FailoverRouterInputStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.FailoverRouterInputStreamDetails, BaseFunction>? Failover { get; set; }
+            /// <summary>
+            /// Merge
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputstreamdetails.html#cfn-mediaconnect-routerinput-routerinputstreamdetails-merge
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: MergeRouterInputStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.MergeRouterInputStreamDetails, BaseFunction>? Merge { get; set; }
+            /// <summary>
+            /// DestinationEndpoint
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputstreamdetails.html#cfn-mediaconnect-routerinput-routerinputstreamdetails-destinationendpoint
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? DestinationEndpoint { get; set; }
+            /// <summary>
+            /// MediaLiveChannel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputstreamdetails.html#cfn-mediaconnect-routerinput-routerinputstreamdetails-medialivechannel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? MediaLiveChannel { get; set; }
+            /// <summary>
+            /// Standard
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-routerinputstreamdetails.html#cfn-mediaconnect-routerinput-routerinputstreamdetails-standard
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: StandardRouterInputStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.StandardRouterInputStreamDetails, BaseFunction>? Standard { get; set; }
         }
 
         public class RouterInputTransitEncryption : Humidifier.Base.BaseSubResource, IHaveEncryptionKeyType, IHaveMediaConnectRouterInputTypesRouterInputTransitEncryptionKeyConfigurationEncryptionKeyConfiguration
@@ -707,6 +884,74 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: Json
             /// </summary>
             public Union<object, BaseFunction>? Automatic { get; set; }
+        }
+
+        public class RtmpPushNamingConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesManualRtmpPushNamingConfigurationManual, IHaveAutomatic_Json
+        {
+            /// <summary>
+            /// Manual
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushnamingconfiguration.html#cfn-mediaconnect-routerinput-rtmppushnamingconfiguration-manual
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManualRtmpPushNamingConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.ManualRtmpPushNamingConfiguration, BaseFunction>? Manual { get; set; }
+            /// <summary>
+            /// Automatic
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushnamingconfiguration.html#cfn-mediaconnect-routerinput-rtmppushnamingconfiguration-automatic
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Json
+            /// </summary>
+            public Union<object, BaseFunction>? Automatic { get; set; }
+        }
+
+        public class RtmpPushRouterInputConfiguration : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesRtmpPushNamingConfigurationNamingConfiguration, IHavePort_Integer, IHaveNamingType
+        {
+            /// <summary>
+            /// NamingConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushrouterinputconfiguration.html#cfn-mediaconnect-routerinput-rtmppushrouterinputconfiguration-namingconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: RtmpPushNamingConfiguration
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.RtmpPushNamingConfiguration, BaseFunction>? NamingConfiguration { get; set; }
+            /// <summary>
+            /// Port
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushrouterinputconfiguration.html#cfn-mediaconnect-routerinput-rtmppushrouterinputconfiguration-port
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? Port { get; set; }
+            /// <summary>
+            /// NamingType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushrouterinputconfiguration.html#cfn-mediaconnect-routerinput-rtmppushrouterinputconfiguration-namingtype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? NamingType { get; set; }
+        }
+
+        public class RtmpPushStreamDetails : Humidifier.Base.BaseSubResource, IHaveApplicationName, IHaveStreamName
+        {
+            /// <summary>
+            /// ApplicationName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushstreamdetails.html#cfn-mediaconnect-routerinput-rtmppushstreamdetails-applicationname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ApplicationName { get; set; }
+            /// <summary>
+            /// StreamName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-rtmppushstreamdetails.html#cfn-mediaconnect-routerinput-rtmppushstreamdetails-streamname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? StreamName { get; set; }
         }
 
         public class RtpRouterInputConfiguration : Humidifier.Base.BaseSubResource, IHaveForwardErrorCorrection, IHavePort_Integer
@@ -899,6 +1144,18 @@ namespace Humidifier.MediaConnect
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Protocol { get; set; }
+        }
+
+        public class StandardRouterInputStreamDetails : Humidifier.Base.BaseSubResource, IHaveMediaConnectRouterInputTypesRtmpPushStreamDetailsRtmpPush
+        {
+            /// <summary>
+            /// RtmpPush
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-routerinput-standardrouterinputstreamdetails.html#cfn-mediaconnect-routerinput-standardrouterinputstreamdetails-rtmppush
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: RtmpPushStreamDetails
+            /// </summary>
+            public Union<Humidifier.MediaConnect.RouterInputTypes.RtmpPushStreamDetails, BaseFunction>? RtmpPush { get; set; }
         }
     }
 }

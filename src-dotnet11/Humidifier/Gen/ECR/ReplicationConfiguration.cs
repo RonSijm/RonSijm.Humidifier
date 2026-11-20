@@ -25,6 +25,18 @@ namespace Humidifier.ECR
 
     namespace ReplicationConfigurationTypes
     {
+        public class DeleteReplication : Humidifier.Base.BaseSubResource, IHaveEnabled_Boolean
+        {
+            /// <summary>
+            /// Enabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-deletereplication.html#cfn-ecr-replicationconfiguration-deletereplication-enabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public Union<bool, BaseFunction>? Enabled { get; set; }
+        }
+
         public class ReplicationConfiguration : Humidifier.Base.BaseSubResource, IHaveListOfECRReplicationConfigurationTypesReplicationRuleRules
         {
             /// <summary>
@@ -58,7 +70,7 @@ namespace Humidifier.ECR
             public Union<string, BaseFunction>? RegistryId { get; set; }
         }
 
-        public class ReplicationRule : Humidifier.Base.BaseSubResource, IHaveListOfECRReplicationConfigurationTypesRepositoryFilterRepositoryFilters, IHaveListOfECRReplicationConfigurationTypesReplicationDestinationDestinations
+        public class ReplicationRule : Humidifier.Base.BaseSubResource, IHaveListOfECRReplicationConfigurationTypesRepositoryFilterRepositoryFilters, IHaveECRReplicationConfigurationTypesDeleteReplicationDeleteReplication, IHaveListOfECRReplicationConfigurationTypesReplicationDestinationDestinations
         {
             /// <summary>
             /// RepositoryFilters
@@ -69,6 +81,14 @@ namespace Humidifier.ECR
             /// ItemType: RepositoryFilter
             /// </summary>
             public Union<IReadOnlyList<Humidifier.ECR.ReplicationConfigurationTypes.RepositoryFilter>, IReadOnlyList<Union<Humidifier.ECR.ReplicationConfigurationTypes.RepositoryFilter, BaseFunction>>, BaseFunction>? RepositoryFilters { get; set; }
+            /// <summary>
+            /// DeleteReplication
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-deletereplication
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: DeleteReplication
+            /// </summary>
+            public Union<Humidifier.ECR.ReplicationConfigurationTypes.DeleteReplication, BaseFunction>? DeleteReplication { get; set; }
             /// <summary>
             /// Destinations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations

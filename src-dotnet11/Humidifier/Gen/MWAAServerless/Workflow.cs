@@ -3,7 +3,7 @@ namespace Humidifier.MWAAServerless
     using global::System.Collections.Generic;
     using WorkflowTypes;
 
-    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveMWAAServerlessWorkflowTypesEncryptionConfigurationEncryptionConfiguration, IHaveMWAAServerlessWorkflowTypesLoggingConfigurationLoggingConfiguration, IHaveMWAAServerlessWorkflowTypesS3LocationDefinitionS3Location, IHaveMWAAServerlessWorkflowTypesNetworkConfigurationNetworkConfiguration, IHaveTriggerMode, IHaveMWAAServerlessWorkflowTypesCodeCode, IHaveRoleArn, IHaveStringDictionaryOfTags, IHaveName
+    public class Workflow : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveDescription, IHaveMWAAServerlessWorkflowTypesEncryptionConfigurationEncryptionConfiguration, IHaveMWAAServerlessWorkflowTypesLoggingConfigurationLoggingConfiguration, IHaveMWAAServerlessWorkflowTypesS3LocationDefinitionS3Location, IHaveMWAAServerlessWorkflowTypesEnvironmentEnvironment, IHaveMWAAServerlessWorkflowTypesNetworkConfigurationNetworkConfiguration, IHaveTriggerMode, IHaveMWAAServerlessWorkflowTypesCodeCode, IHaveRoleArn, IHaveStringDictionaryOfTags, IHaveName
     {
         public class Attributes
         {
@@ -51,6 +51,14 @@ namespace Humidifier.MWAAServerless
         /// </summary>
         [Required]
         public Union<Humidifier.MWAAServerless.WorkflowTypes.S3Location, BaseFunction>? DefinitionS3Location { get; set; }
+        /// <summary>
+        /// Environment
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaaserverless-workflow.html#cfn-mwaaserverless-workflow-environment
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Environment
+        /// </summary>
+        public Union<Humidifier.MWAAServerless.WorkflowTypes.Environment, BaseFunction>? Environment { get; set; }
         /// <summary>
         /// NetworkConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaaserverless-workflow.html#cfn-mwaaserverless-workflow-networkconfiguration
@@ -157,6 +165,19 @@ namespace Humidifier.MWAAServerless
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? KmsKeyId { get; set; }
+        }
+
+        public class Environment : Humidifier.Base.BaseSubResource, IHaveStringDictionaryOfVariables
+        {
+            /// <summary>
+            /// Variables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaaserverless-workflow-environment.html#cfn-mwaaserverless-workflow-environment-variables
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? Variables { get; set; }
         }
 
         public class LoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveLogGroupName

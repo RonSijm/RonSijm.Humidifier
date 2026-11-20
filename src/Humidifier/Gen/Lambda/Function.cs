@@ -87,6 +87,14 @@ namespace Humidifier.Lambda
         public List<Humidifier.Lambda.FunctionTypes.FileSystemConfig> FileSystemConfigs { get; set; }
         public dynamic FunctionName { get => GivenName; set => GivenName = value; }
         /// <summary>
+        /// AcceleratorConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-acceleratorconfig
+        /// Required: False
+        /// UpdateType: Conditional
+        /// Type: AcceleratorConfig
+        /// </summary>
+        public Humidifier.Lambda.FunctionTypes.AcceleratorConfig AcceleratorConfig { get; set; }
+        /// <summary>
         /// Runtime
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
         /// Required: False
@@ -245,6 +253,14 @@ namespace Humidifier.Lambda
         /// </summary>
         public Humidifier.Lambda.FunctionTypes.Environment Environment { get; set; }
         /// <summary>
+        /// RuntimeConfig
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtimeconfig
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: RuntimeConfig
+        /// </summary>
+        public Humidifier.Lambda.FunctionTypes.RuntimeConfig RuntimeConfig { get; set; }
+        /// <summary>
         /// EphemeralStorage
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-ephemeralstorage
         /// Required: False
@@ -265,6 +281,18 @@ namespace Humidifier.Lambda
 
     namespace FunctionTypes
     {
+        public class AcceleratorConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AcceleratorMemorySize
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-acceleratorconfig.html#cfn-lambda-function-acceleratorconfig-acceleratormemorysize
+            /// Required: True
+            /// UpdateType: Conditional
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic AcceleratorMemorySize { get; set; }
+        }
+
         public class CapacityProviderConfig : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -542,6 +570,26 @@ namespace Humidifier.Lambda
             /// PrimitiveType: String
             /// </summary>
             public dynamic SystemLogLevel { get; set; }
+        }
+
+        public class RuntimeConfig : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// RuntimeAlias
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimeconfig.html#cfn-lambda-function-runtimeconfig-runtimealias
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RuntimeAlias { get; set; }
+            /// <summary>
+            /// RuntimeArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimeconfig.html#cfn-lambda-function-runtimeconfig-runtimearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RuntimeArn { get; set; }
         }
 
         public class RuntimeManagementConfig : Humidifier.Base.BaseSubResource, IHaveUpdateRuntimeOn, IHaveRuntimeVersionArn

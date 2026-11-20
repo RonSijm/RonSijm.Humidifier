@@ -14,6 +14,15 @@ namespace Humidifier.EC2
         /// PrimitiveItemType: String
         /// </summary>
         public dynamic AllowedPrincipals { get; set; }
+        /// <summary>
+        /// TransitGatewayAttachmentAllowedPrincipals
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-transitgatewayattachmentallowedprincipals
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// PrimitiveItemType: String
+        /// </summary>
+        public dynamic TransitGatewayAttachmentAllowedPrincipals { get; set; }
 
         /// <summary>
         /// ServiceId

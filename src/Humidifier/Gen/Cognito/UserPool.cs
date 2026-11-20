@@ -186,6 +186,14 @@ namespace Humidifier.Cognito
         /// </summary>
         public dynamic SmsAuthenticationMessage { get; set; }
         /// <summary>
+        /// DcrConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-dcrconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: DcrConfiguration
+        /// </summary>
+        public Humidifier.Cognito.UserPoolTypes.DcrConfiguration DcrConfiguration { get; set; }
+        /// <summary>
         /// WebAuthnUserVerification
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-webauthnuserverification
         /// Required: False
@@ -364,6 +372,53 @@ namespace Humidifier.Cognito
             /// PrimitiveType: String
             /// </summary>
             public dynamic LambdaVersion { get; set; }
+        }
+
+        public class DcrConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// OpenDcrGrantTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-opendcrgranttypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic OpenDcrGrantTypes { get; set; }
+            /// <summary>
+            /// AuthenticatedGrantTypes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-authenticatedgranttypes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AuthenticatedGrantTypes { get; set; }
+            /// <summary>
+            /// EnableStatus
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-enablestatus
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic EnableStatus { get; set; }
+            /// <summary>
+            /// OpenDcrEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-opendcrenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic OpenDcrEnabled { get; set; }
+            /// <summary>
+            /// AllowedScopes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-dcrconfiguration.html#cfn-cognito-userpool-dcrconfiguration-allowedscopes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic AllowedScopes { get; set; }
         }
 
         public class DeviceConfiguration : Humidifier.Base.BaseSubResource

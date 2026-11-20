@@ -311,6 +311,39 @@ namespace Humidifier.Scheduler
             public Union<string, BaseFunction>? Source { get; set; }
         }
 
+        public class EventBridgePutEventsV2Parameters : Humidifier.Base.BaseSubResource, IHaveDetailType, IHaveSource
+        {
+            /// <summary>
+            /// DetailType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeputeventsv2parameters.html#cfn-scheduler-schedule-eventbridgeputeventsv2parameters-detailtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DetailType { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeputeventsv2parameters.html#cfn-scheduler-schedule-eventbridgeputeventsv2parameters-source
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Source { get; set; }
+        }
+
+        public class EventBridgePutRawEventsParameters : Humidifier.Base.BaseSubResource, IHaveStringDictionaryOfMetadata
+        {
+            /// <summary>
+            /// Metadata
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeputraweventsparameters.html#cfn-scheduler-schedule-eventbridgeputraweventsparameters-metadata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyDictionary<string, string>, IReadOnlyDictionary<string, Union<string, BaseFunction>>, BaseFunction>? Metadata { get; set; }
+        }
+
         public class FlexibleTimeWindow : Humidifier.Base.BaseSubResource, IHaveMode, IHaveMaximumWindowInMinutes_Double
         {
             /// <summary>
@@ -460,7 +493,7 @@ namespace Humidifier.Scheduler
             public Union<string, BaseFunction>? MessageGroupId { get; set; }
         }
 
-        public class Target : Humidifier.Base.BaseSubResource, IHaveInput, IHaveSchedulerScheduleTypesSqsParametersSqsParameters, IHaveSchedulerScheduleTypesDeadLetterConfigDeadLetterConfig, IHaveSchedulerScheduleTypesEcsParametersEcsParameters, IHaveSchedulerScheduleTypesEventBridgeParametersEventBridgeParameters, IHaveArn, IHaveSchedulerScheduleTypesKinesisParametersKinesisParameters, IHaveSchedulerScheduleTypesSageMakerPipelineParametersSageMakerPipelineParameters, IHaveSchedulerScheduleTypesRetryPolicyRetryPolicy, IHaveRoleArn
+        public class Target : Humidifier.Base.BaseSubResource, IHaveInput, IHaveSchedulerScheduleTypesEventBridgePutRawEventsParametersEventBridgePutRawEventsParameters, IHaveSchedulerScheduleTypesSqsParametersSqsParameters, IHaveSchedulerScheduleTypesDeadLetterConfigDeadLetterConfig, IHaveSchedulerScheduleTypesEcsParametersEcsParameters, IHaveSchedulerScheduleTypesEventBridgeParametersEventBridgeParameters, IHaveSchedulerScheduleTypesEventBridgePutEventsV2ParametersEventBridgePutEventsV2Parameters, IHaveArn, IHaveSchedulerScheduleTypesKinesisParametersKinesisParameters, IHaveSchedulerScheduleTypesSageMakerPipelineParametersSageMakerPipelineParameters, IHaveSchedulerScheduleTypesRetryPolicyRetryPolicy, IHaveRoleArn
         {
             /// <summary>
             /// Input
@@ -470,6 +503,14 @@ namespace Humidifier.Scheduler
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Input { get; set; }
+            /// <summary>
+            /// EventBridgePutRawEventsParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-eventbridgeputraweventsparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EventBridgePutRawEventsParameters
+            /// </summary>
+            public Union<Humidifier.Scheduler.ScheduleTypes.EventBridgePutRawEventsParameters, BaseFunction>? EventBridgePutRawEventsParameters { get; set; }
             /// <summary>
             /// SqsParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-sqsparameters
@@ -502,6 +543,14 @@ namespace Humidifier.Scheduler
             /// Type: EventBridgeParameters
             /// </summary>
             public Union<Humidifier.Scheduler.ScheduleTypes.EventBridgeParameters, BaseFunction>? EventBridgeParameters { get; set; }
+            /// <summary>
+            /// EventBridgePutEventsV2Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-eventbridgeputeventsv2parameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EventBridgePutEventsV2Parameters
+            /// </summary>
+            public Union<Humidifier.Scheduler.ScheduleTypes.EventBridgePutEventsV2Parameters, BaseFunction>? EventBridgePutEventsV2Parameters { get; set; }
             /// <summary>
             /// Arn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-arn

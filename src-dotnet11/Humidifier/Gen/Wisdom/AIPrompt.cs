@@ -3,7 +3,7 @@ namespace Humidifier.Wisdom
     using global::System.Collections.Generic;
     using AIPromptTypes;
 
-    public class AIPrompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveType, IHaveDescription, IHaveApiFormat, IHaveAssistantId, IHaveWisdomAIPromptTypesAIPromptTemplateConfigurationTemplateConfiguration, IHaveTemplateType, IHaveModelId, IHaveStringDictionaryOfTags, IHaveName
+    public class AIPrompt : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveType, IHaveDescription, IHaveApiFormat, IHaveAssistantId, IHaveWisdomAIPromptTypesAIPromptInferenceConfigurationInferenceConfiguration, IHaveWisdomAIPromptTypesAIPromptTemplateConfigurationTemplateConfiguration, IHaveTemplateType, IHaveModelId, IHaveStringDictionaryOfTags, IHaveName
     {
         public class Attributes
         {
@@ -50,6 +50,14 @@ namespace Humidifier.Wisdom
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? AssistantId { get; set; }
+        /// <summary>
+        /// InferenceConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wisdom-aiprompt.html#cfn-wisdom-aiprompt-inferenceconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: AIPromptInferenceConfiguration
+        /// </summary>
+        public Union<Humidifier.Wisdom.AIPromptTypes.AIPromptInferenceConfiguration, BaseFunction>? InferenceConfiguration { get; set; }
 
         /// <summary>
         /// TemplateConfiguration
@@ -94,6 +102,42 @@ namespace Humidifier.Wisdom
 
     namespace AIPromptTypes
     {
+        public class AIPromptInferenceConfiguration : Humidifier.Base.BaseSubResource, IHaveTopK_Integer, IHaveTemperature_Double, IHaveMaxTokensToSample_Integer, IHaveTopP_Double
+        {
+            /// <summary>
+            /// TopK
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-topk
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? TopK { get; set; }
+            /// <summary>
+            /// Temperature
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-temperature
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public Union<double, BaseFunction>? Temperature { get; set; }
+            /// <summary>
+            /// MaxTokensToSample
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-maxtokenstosample
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? MaxTokensToSample { get; set; }
+            /// <summary>
+            /// TopP
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-aiprompt-aipromptinferenceconfiguration.html#cfn-wisdom-aiprompt-aipromptinferenceconfiguration-topp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Double
+            /// </summary>
+            public Union<double, BaseFunction>? TopP { get; set; }
+        }
+
         public class AIPromptTemplateConfiguration : Humidifier.Base.BaseSubResource, IHaveWisdomAIPromptTypesTextFullAIPromptEditTemplateConfigurationTextFullAIPromptEditTemplateConfiguration
         {
             /// <summary>

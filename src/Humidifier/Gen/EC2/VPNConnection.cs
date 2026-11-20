@@ -350,6 +350,15 @@ namespace Humidifier.EC2
             /// </summary>
             public dynamic StartupAction { get; set; }
             /// <summary>
+            /// Phase2AdditionalKeyExchanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2additionalkeyexchanges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public List<dynamic> Phase2AdditionalKeyExchanges { get; set; }
+            /// <summary>
             /// TunnelInsideCidr
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr
             /// Required: False
@@ -415,6 +424,15 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic DPDTimeoutAction { get; set; }
+            /// <summary>
+            /// Phase1AdditionalKeyExchanges
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase1additionalkeyexchanges
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: Json
+            /// </summary>
+            public List<dynamic> Phase1AdditionalKeyExchanges { get; set; }
             /// <summary>
             /// Phase2LifetimeSeconds
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-phase2lifetimeseconds

@@ -2,7 +2,7 @@ namespace Humidifier.NetworkSecurityManager
 {
     using global::System.Collections.Generic;
 
-    public class Scope : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveScopeName, IHaveScopeConfiguration, IHaveScopeDescription, IHaveDescription
+    public class Scope : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveScopeName, IHaveScopeConfiguration, IHaveSpecializedScopeType, IHaveScopeDescription, IHaveDescription
     {
         public class Attributes
         {
@@ -23,6 +23,14 @@ namespace Humidifier.NetworkSecurityManager
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? ScopeConfiguration { get; set; }
+        /// <summary>
+        /// SpecializedScopeType
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networksecuritymanager-scope.html#cfn-networksecuritymanager-scope-specializedscopetype
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? SpecializedScopeType { get; set; }
         /// <summary>
         /// Tags
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networksecuritymanager-scope.html#cfn-networksecuritymanager-scope-tags

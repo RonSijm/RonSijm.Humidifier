@@ -3,7 +3,7 @@ namespace Humidifier.CloudFormation
     using global::System.Collections.Generic;
     using GeneratedTemplateTypes;
 
-    public class GeneratedTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveCloudFormationGeneratedTemplateTypesTemplateConfigurationTemplateConfiguration, IHaveGeneratedTemplateName
+    public class GeneratedTemplate : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveCloudFormationGeneratedTemplateTypesTemplateConfigurationTemplateConfiguration, IHaveGeneratedTemplateName, IHaveStackId
     {
         public class Attributes
         {
@@ -25,6 +25,14 @@ namespace Humidifier.CloudFormation
         /// </summary>
         public Union<Humidifier.CloudFormation.GeneratedTemplateTypes.TemplateConfiguration, BaseFunction>? TemplateConfiguration { get; set; }
         public Union<string, BaseFunction>? GeneratedTemplateName { get => GivenName; set => GivenName = value; }
+        /// <summary>
+        /// StackId
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-generatedtemplate.html#cfn-cloudformation-generatedtemplate-stackid
+        /// Required: False
+        /// UpdateType: Immutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? StackId { get; set; }
     }
 
     namespace GeneratedTemplateTypes

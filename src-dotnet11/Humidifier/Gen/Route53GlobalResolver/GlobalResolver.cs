@@ -2,7 +2,7 @@ namespace Humidifier.Route53GlobalResolver
 {
     using global::System.Collections.Generic;
 
-    public class GlobalResolver : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIpAddressType, IHaveDescription, IHaveObservabilityRegion, IHaveStringListOfRegions, IHaveClientToken, IHaveName
+    public class GlobalResolver : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveTags, IHaveIpAddressType, IHaveDescription, IHavePublicIpStatus, IHaveObservabilityRegion, IHaveStringListOfRegions, IHaveClientToken, IHaveName
     {
         public class Attributes
         {
@@ -33,6 +33,14 @@ namespace Humidifier.Route53GlobalResolver
         /// PrimitiveType: String
         /// </summary>
         public Union<string, BaseFunction>? Description { get; set; }
+        /// <summary>
+        /// PublicIpStatus
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-globalresolver.html#cfn-route53globalresolver-globalresolver-publicipstatus
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public Union<string, BaseFunction>? PublicIpStatus { get; set; }
         /// <summary>
         /// ObservabilityRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-globalresolver.html#cfn-route53globalresolver-globalresolver-observabilityregion

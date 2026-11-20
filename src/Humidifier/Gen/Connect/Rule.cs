@@ -8,6 +8,7 @@ namespace Humidifier.Connect
         public class Attributes
         {
             public static string RuleArn =  "RuleArn" ;
+            public static string RuleCapabilityTiers =  "RuleCapabilityTiers" ;
         }
 
         public override string AWSTypeName { get => AWS.Connect.Rule; }
@@ -60,6 +61,14 @@ namespace Humidifier.Connect
         /// ItemType: Tag
         /// </summary>
         public List<Humidifier.Tag> Tags { get; set; }
+        /// <summary>
+        /// PreEvaluationFilters
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-connect-rule.html#cfn-connect-rule-preevaluationfilters
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: PreEvaluationFilters
+        /// </summary>
+        public Humidifier.Connect.RuleTypes.PreEvaluationFilters PreEvaluationFilters { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
 
         /// <summary>
@@ -457,6 +466,63 @@ namespace Humidifier.Connect
             /// PrimitiveItemType: String
             /// </summary>
             public dynamic UserArns { get; set; }
+        }
+
+        public class PreEvaluationFilter : Humidifier.Base.BaseSubResource, IHaveResourceType, IHaveOperator, IHaveFilterType
+        {
+            /// <summary>
+            /// Operator
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-preevaluationfilter.html#cfn-connect-rule-preevaluationfilter-operator
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Operator { get; set; }
+            /// <summary>
+            /// FilterType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-preevaluationfilter.html#cfn-connect-rule-preevaluationfilter-filtertype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FilterType { get; set; }
+            /// <summary>
+            /// ResourceType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-preevaluationfilter.html#cfn-connect-rule-preevaluationfilter-resourcetype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ResourceType { get; set; }
+            /// <summary>
+            /// FilterKey
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-preevaluationfilter.html#cfn-connect-rule-preevaluationfilter-filterkey
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FilterKey { get; set; }
+            /// <summary>
+            /// FilterValue
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-preevaluationfilter.html#cfn-connect-rule-preevaluationfilter-filtervalue
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic FilterValue { get; set; }
+        }
+
+        public class PreEvaluationFilters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AndConditions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connect-rule-preevaluationfilters.html#cfn-connect-rule-preevaluationfilters-andconditions
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: PreEvaluationFilter
+            /// </summary>
+            public List<Humidifier.Connect.RuleTypes.PreEvaluationFilter> AndConditions { get; set; }
         }
 
         public class Reference : Humidifier.Base.BaseSubResource, IHaveType, IHaveValue

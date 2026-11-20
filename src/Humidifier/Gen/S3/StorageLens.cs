@@ -239,6 +239,58 @@ namespace Humidifier.S3
             public dynamic IsEnabled { get; set; }
         }
 
+        public class CostAndUsageReportsPrefixLevel : Humidifier.Base.BaseSubResource, IHaveIsEnabled
+        {
+            /// <summary>
+            /// IsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsprefixlevel.html#cfn-s3-storagelens-costandusagereportsprefixlevel-isenabled
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsEnabled { get; set; }
+            /// <summary>
+            /// SelectionCriteria
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsprefixlevel.html#cfn-s3-storagelens-costandusagereportsprefixlevel-selectioncriteria
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostAndUsageReportsSelectionCriteria
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.CostAndUsageReportsSelectionCriteria SelectionCriteria { get; set; }
+        }
+
+        public class CostAndUsageReportsPublish : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// PrefixLevel
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportspublish.html#cfn-s3-storagelens-costandusagereportspublish-prefixlevel
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostAndUsageReportsPrefixLevel
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.CostAndUsageReportsPrefixLevel PrefixLevel { get; set; }
+        }
+
+        public class CostAndUsageReportsSelectionCriteria : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MaxDepth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsselectioncriteria.html#cfn-s3-storagelens-costandusagereportsselectioncriteria-maxdepth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MaxDepth { get; set; }
+            /// <summary>
+            /// MinDepth
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-costandusagereportsselectioncriteria.html#cfn-s3-storagelens-costandusagereportsselectioncriteria-mindepth
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic MinDepth { get; set; }
+        }
+
         public class DataExport : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -297,6 +349,18 @@ namespace Humidifier.S3
             /// PrimitiveType: Json
             /// </summary>
             public dynamic SSES3 { get; set; }
+        }
+
+        public class IntAccessTiers : Humidifier.Base.BaseSubResource, IHaveIsEnabled
+        {
+            /// <summary>
+            /// IsEnabled
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-intaccesstiers.html#cfn-s3-storagelens-intaccesstiers-isenabled
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic IsEnabled { get; set; }
         }
 
         public class PrefixLevel : Humidifier.Base.BaseSubResource
@@ -442,6 +506,14 @@ namespace Humidifier.S3
             /// </summary>
             public Humidifier.S3.StorageLensTypes.BucketsAndRegions Exclude { get; set; }
             /// <summary>
+            /// IntAccessTiers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-intaccesstiers
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IntAccessTiers
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.IntAccessTiers IntAccessTiers { get; set; }
+            /// <summary>
             /// IsEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-isenabled
             /// Required: True
@@ -505,6 +577,14 @@ namespace Humidifier.S3
             /// Type: StorageLensExpandedPrefixesDataExport
             /// </summary>
             public Humidifier.S3.StorageLensTypes.StorageLensExpandedPrefixesDataExport ExpandedPrefixesDataExport { get; set; }
+            /// <summary>
+            /// CostAndUsageReportsPublish
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-costandusagereportspublish
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: CostAndUsageReportsPublish
+            /// </summary>
+            public Humidifier.S3.StorageLensTypes.CostAndUsageReportsPublish CostAndUsageReportsPublish { get; set; }
         }
 
         public class StorageLensExpandedPrefixesDataExport : Humidifier.Base.BaseSubResource

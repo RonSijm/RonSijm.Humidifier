@@ -3,7 +3,7 @@ namespace Humidifier.DSQL
     using global::System.Collections.Generic;
     using ClusterTypes;
 
-    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHavePolicyDocument, IHaveKmsEncryptionKey, IHaveDeletionProtectionEnabled_Boolean, IHaveDSQLClusterTypesMultiRegionPropertiesMultiRegionProperties
+    public class Cluster : Humidifier.Base.BaseResource, IHaveTags, IHaveListOfDSQLClusterTypesMetricGroupMetricGroups, IHavePolicyDocument, IHaveKmsEncryptionKey, IHaveDeletionProtectionEnabled_Boolean, IHaveDSQLClusterTypesMultiRegionPropertiesMultiRegionProperties
     {
         public class Attributes
         {
@@ -19,6 +19,15 @@ namespace Humidifier.DSQL
         }
 
         public override string AWSTypeName { get => AWS.DSQL.Cluster; }
+        /// <summary>
+        /// MetricGroups
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dsql-cluster.html#cfn-dsql-cluster-metricgroups
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: MetricGroup
+        /// </summary>
+        public Union<IReadOnlyList<Humidifier.DSQL.ClusterTypes.MetricGroup>, IReadOnlyList<Union<Humidifier.DSQL.ClusterTypes.MetricGroup, BaseFunction>>, BaseFunction>? MetricGroups { get; set; }
         /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dsql-cluster.html#cfn-dsql-cluster-policydocument
@@ -90,6 +99,18 @@ namespace Humidifier.DSQL
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? KmsKeyArn { get; set; }
+        }
+
+        public class MetricGroup : Humidifier.Base.BaseSubResource, IHaveMetricGroup_
+        {
+            /// <summary>
+            /// MetricGroup_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dsql-cluster-metricgroup.html#cfn-dsql-cluster-metricgroup-metricgroup
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? MetricGroup_ { get; set; }
         }
 
         public class MultiRegionProperties : Humidifier.Base.BaseSubResource, IHaveStringListOfClusters, IHaveWitnessRegion

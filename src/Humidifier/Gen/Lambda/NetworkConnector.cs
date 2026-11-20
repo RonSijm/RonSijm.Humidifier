@@ -58,8 +58,28 @@ namespace Humidifier.Lambda
             public Humidifier.Lambda.NetworkConnectorTypes.VpcEgressConfiguration VpcEgressConfiguration { get; set; }
         }
 
+        public class ElasticIpConfiguration : Humidifier.Base.BaseSubResource, IHaveType
+        {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-elasticipconfiguration.html#cfn-lambda-networkconnector-elasticipconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Type { get; set; }
+        }
+
         public class VpcEgressConfiguration : Humidifier.Base.BaseSubResource, IHaveSecurityGroupIds, IHaveSubnetIds
         {
+            /// <summary>
+            /// ElasticIpConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-elasticipconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ElasticIpConfiguration
+            /// </summary>
+            public Humidifier.Lambda.NetworkConnectorTypes.ElasticIpConfiguration ElasticIpConfiguration { get; set; }
             /// <summary>
             /// AssociatedComputeResourceTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-associatedcomputeresourcetypes

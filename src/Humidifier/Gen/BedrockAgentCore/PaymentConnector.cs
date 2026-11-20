@@ -9,9 +9,10 @@ namespace Humidifier.BedrockAgentCore
         {
             public static string AuthorizationUrl =  "AuthorizationUrl" ;
             public static string ConnectorCreatedAt =  "ConnectorCreatedAt" ;
+            public static string AwsBillingIamRoleArn =  "AwsBillingIamRoleArn" ;
             public static string ConnectorLastUpdatedAt =  "ConnectorLastUpdatedAt" ;
-            public static string PaymentConnectorId =  "PaymentConnectorId" ;
             public static string ConnectorStatus =  "ConnectorStatus" ;
+            public static string PaymentConnectorId =  "PaymentConnectorId" ;
             public static string PaymentConnectorArn =  "PaymentConnectorArn" ;
         }
 

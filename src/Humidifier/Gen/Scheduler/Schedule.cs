@@ -311,6 +311,39 @@ namespace Humidifier.Scheduler
             public dynamic Source { get; set; }
         }
 
+        public class EventBridgePutEventsV2Parameters : Humidifier.Base.BaseSubResource, IHaveSource, IHaveDetailType
+        {
+            /// <summary>
+            /// DetailType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeputeventsv2parameters.html#cfn-scheduler-schedule-eventbridgeputeventsv2parameters-detailtype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic DetailType { get; set; }
+            /// <summary>
+            /// Source
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeputeventsv2parameters.html#cfn-scheduler-schedule-eventbridgeputeventsv2parameters-source
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Source { get; set; }
+        }
+
+        public class EventBridgePutRawEventsParameters : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Metadata
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-eventbridgeputraweventsparameters.html#cfn-scheduler-schedule-eventbridgeputraweventsparameters-metadata
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> Metadata { get; set; }
+        }
+
         public class FlexibleTimeWindow : Humidifier.Base.BaseSubResource, IHaveMode
         {
             /// <summary>
@@ -471,6 +504,14 @@ namespace Humidifier.Scheduler
             /// </summary>
             public dynamic Input { get; set; }
             /// <summary>
+            /// EventBridgePutRawEventsParameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-eventbridgeputraweventsparameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EventBridgePutRawEventsParameters
+            /// </summary>
+            public Humidifier.Scheduler.ScheduleTypes.EventBridgePutRawEventsParameters EventBridgePutRawEventsParameters { get; set; }
+            /// <summary>
             /// SqsParameters
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-sqsparameters
             /// Required: False
@@ -502,6 +543,14 @@ namespace Humidifier.Scheduler
             /// Type: EventBridgeParameters
             /// </summary>
             public Humidifier.Scheduler.ScheduleTypes.EventBridgeParameters EventBridgeParameters { get; set; }
+            /// <summary>
+            /// EventBridgePutEventsV2Parameters
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-eventbridgeputeventsv2parameters
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: EventBridgePutEventsV2Parameters
+            /// </summary>
+            public Humidifier.Scheduler.ScheduleTypes.EventBridgePutEventsV2Parameters EventBridgePutEventsV2Parameters { get; set; }
             /// <summary>
             /// Arn
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-target.html#cfn-scheduler-schedule-target-arn

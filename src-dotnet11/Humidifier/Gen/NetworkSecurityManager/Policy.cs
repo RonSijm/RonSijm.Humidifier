@@ -99,7 +99,28 @@ namespace Humidifier.NetworkSecurityManager
             public Union<string, BaseFunction>? RuleArn { get; set; }
         }
 
-        public class PolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveResourcesCleanUp_Boolean, IHaveRemediationEnabled_Boolean, IHaveNetworkSecurityManagerPolicyTypesWafConfigWafConfig
+        public class IgwFirewallConfig : Humidifier.Base.BaseSubResource, IHaveListOfNetworkSecurityManagerPolicyTypesSubnetConnectivityOverrideSubnetConnectivityOverrides, IHaveDefaultSubnetConnectivity
+        {
+            /// <summary>
+            /// SubnetConnectivityOverrides
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-igwfirewallconfig.html#cfn-networksecuritymanager-policy-igwfirewallconfig-subnetconnectivityoverrides
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: SubnetConnectivityOverride
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.NetworkSecurityManager.PolicyTypes.SubnetConnectivityOverride>, IReadOnlyList<Union<Humidifier.NetworkSecurityManager.PolicyTypes.SubnetConnectivityOverride, BaseFunction>>, BaseFunction>? SubnetConnectivityOverrides { get; set; }
+            /// <summary>
+            /// DefaultSubnetConnectivity
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-igwfirewallconfig.html#cfn-networksecuritymanager-policy-igwfirewallconfig-defaultsubnetconnectivity
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? DefaultSubnetConnectivity { get; set; }
+        }
+
+        public class PolicyConfiguration : Humidifier.Base.BaseSubResource, IHaveResourcesCleanUp_Boolean, IHaveNetworkSecurityManagerPolicyTypesIgwFirewallConfigIgwFirewallConfig, IHaveRemediationEnabled_Boolean, IHaveNetworkSecurityManagerPolicyTypesWafConfigWafConfig
         {
             /// <summary>
             /// ResourcesCleanUp
@@ -109,6 +130,14 @@ namespace Humidifier.NetworkSecurityManager
             /// PrimitiveType: Boolean
             /// </summary>
             public Union<bool, BaseFunction>? ResourcesCleanUp { get; set; }
+            /// <summary>
+            /// IgwFirewallConfig
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-policyconfiguration.html#cfn-networksecuritymanager-policy-policyconfiguration-igwfirewallconfig
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: IgwFirewallConfig
+            /// </summary>
+            public Union<Humidifier.NetworkSecurityManager.PolicyTypes.IgwFirewallConfig, BaseFunction>? IgwFirewallConfig { get; set; }
             /// <summary>
             /// RemediationEnabled
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-policyconfiguration.html#cfn-networksecuritymanager-policy-policyconfiguration-remediationenabled
@@ -125,6 +154,27 @@ namespace Humidifier.NetworkSecurityManager
             /// Type: WafConfig
             /// </summary>
             public Union<Humidifier.NetworkSecurityManager.PolicyTypes.WafConfig, BaseFunction>? WafConfig { get; set; }
+        }
+
+        public class SubnetConnectivityOverride : Humidifier.Base.BaseSubResource, IHaveConnectivityType, IHaveStringListOfScopes
+        {
+            /// <summary>
+            /// ConnectivityType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-subnetconnectivityoverride.html#cfn-networksecuritymanager-policy-subnetconnectivityoverride-connectivitytype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ConnectivityType { get; set; }
+            /// <summary>
+            /// Scopes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networksecuritymanager-policy-subnetconnectivityoverride.html#cfn-networksecuritymanager-policy-subnetconnectivityoverride-scopes
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? Scopes { get; set; }
         }
 
         public class WafConfig : Humidifier.Base.BaseSubResource, IHaveExistingCustomerWebACLResolution, IHaveConflictResolution

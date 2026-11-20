@@ -1,6 +1,7 @@
 namespace Humidifier.ApiGateway
 {
     using global::System.Collections.Generic;
+    using AuthorizerTypes;
 
     public class Authorizer : Humidifier.Base.BaseResource, IHaveImpliedResourceName, IHaveName, IHaveType, IHaveAuthType, IHaveRestApiId, IHaveIdentityValidationExpression, IHaveAuthorizerUri, IHaveAuthorizerResultTtlInSeconds, IHaveIdentitySource
     {
@@ -54,6 +55,14 @@ namespace Humidifier.ApiGateway
         /// </summary>
         public dynamic AuthorizerUri { get; set; }
         /// <summary>
+        /// JwtConfiguration
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-jwtconfiguration
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: JwtConfiguration
+        /// </summary>
+        public Humidifier.ApiGateway.AuthorizerTypes.JwtConfiguration JwtConfiguration { get; set; }
+        /// <summary>
         /// AuthorizerResultTtlInSeconds
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-authorizer.html#cfn-apigateway-authorizer-authorizerresultttlinseconds
         /// Required: False
@@ -88,5 +97,97 @@ namespace Humidifier.ApiGateway
         /// </summary>
         public dynamic AuthType { get; set; }
         public dynamic Name { get => GivenName; set => GivenName = value; }
+    }
+
+    namespace AuthorizerTypes
+    {
+        public class JwtAdditionalClaim : Humidifier.Base.BaseSubResource, IHaveFormat, IHaveRequired
+        {
+            /// <summary>
+            /// ClaimName
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtadditionalclaim.html#cfn-apigateway-authorizer-jwtadditionalclaim-claimname
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ClaimName { get; set; }
+            /// <summary>
+            /// Format
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtadditionalclaim.html#cfn-apigateway-authorizer-jwtadditionalclaim-format
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Format { get; set; }
+            /// <summary>
+            /// Required
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtadditionalclaim.html#cfn-apigateway-authorizer-jwtadditionalclaim-required
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic Required { get; set; }
+            /// <summary>
+            /// ExpectedValues
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtadditionalclaim.html#cfn-apigateway-authorizer-jwtadditionalclaim-expectedvalues
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic ExpectedValues { get; set; }
+        }
+
+        public class JwtConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Issuers
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtconfiguration.html#cfn-apigateway-authorizer-jwtconfiguration-issuers
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: JwtIssuer
+            /// </summary>
+            public List<Humidifier.ApiGateway.AuthorizerTypes.JwtIssuer> Issuers { get; set; }
+            /// <summary>
+            /// DefaultAlgorithms
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtconfiguration.html#cfn-apigateway-authorizer-jwtconfiguration-defaultalgorithms
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic DefaultAlgorithms { get; set; }
+        }
+
+        public class JwtIssuer : Humidifier.Base.BaseSubResource, IHaveIssuer, IHaveAudiences
+        {
+            /// <summary>
+            /// Issuer
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtissuer.html#cfn-apigateway-authorizer-jwtissuer-issuer
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Issuer { get; set; }
+            /// <summary>
+            /// Audiences
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtissuer.html#cfn-apigateway-authorizer-jwtissuer-audiences
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic Audiences { get; set; }
+            /// <summary>
+            /// AdditionalClaims
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-authorizer-jwtissuer.html#cfn-apigateway-authorizer-jwtissuer-additionalclaims
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: JwtAdditionalClaim
+            /// </summary>
+            public List<Humidifier.ApiGateway.AuthorizerTypes.JwtAdditionalClaim> AdditionalClaims { get; set; }
+        }
     }
 }

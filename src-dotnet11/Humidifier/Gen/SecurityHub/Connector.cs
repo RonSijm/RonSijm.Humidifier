@@ -102,6 +102,56 @@ namespace Humidifier.SecurityHub
             public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ScopeValues { get; set; }
         }
 
+        public class GcpProviderConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfGCPRegions, IHaveAWSConfigConnectorArn, IHaveSecurityHubConnectorTypesGcpScopeConfigurationScopeConfiguration
+        {
+            /// <summary>
+            /// GCPRegions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-gcpproviderconfiguration.html#cfn-securityhub-connector-gcpproviderconfiguration-gcpregions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? GCPRegions { get; set; }
+            /// <summary>
+            /// AWSConfigConnectorArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-gcpproviderconfiguration.html#cfn-securityhub-connector-gcpproviderconfiguration-awsconfigconnectorarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? AWSConfigConnectorArn { get; set; }
+            /// <summary>
+            /// ScopeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-gcpproviderconfiguration.html#cfn-securityhub-connector-gcpproviderconfiguration-scopeconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GcpScopeConfiguration
+            /// </summary>
+            public Union<Humidifier.SecurityHub.ConnectorTypes.GcpScopeConfiguration, BaseFunction>? ScopeConfiguration { get; set; }
+        }
+
+        public class GcpScopeConfiguration : Humidifier.Base.BaseSubResource, IHaveScopeType, IHaveStringListOfScopeValues
+        {
+            /// <summary>
+            /// ScopeType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-gcpscopeconfiguration.html#cfn-securityhub-connector-gcpscopeconfiguration-scopetype
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ScopeType { get; set; }
+            /// <summary>
+            /// ScopeValues
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-gcpscopeconfiguration.html#cfn-securityhub-connector-gcpscopeconfiguration-scopevalues
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Union<IReadOnlyList<string>, IReadOnlyList<Union<string, BaseFunction>>, BaseFunction>? ScopeValues { get; set; }
+        }
+
         public class HealthIssue : Humidifier.Base.BaseSubResource, IHaveMessage, IHaveCode
         {
             /// <summary>
@@ -122,16 +172,24 @@ namespace Humidifier.SecurityHub
             public Union<string, BaseFunction>? Code { get; set; }
         }
 
-        public class Provider : Humidifier.Base.BaseSubResource, IHaveSecurityHubConnectorTypesAzureProviderConfigurationAzure
+        public class Provider : Humidifier.Base.BaseSubResource, IHaveSecurityHubConnectorTypesAzureProviderConfigurationAzure, IHaveSecurityHubConnectorTypesGcpProviderConfigurationGCP
         {
             /// <summary>
             /// Azure
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-provider.html#cfn-securityhub-connector-provider-azure
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: AzureProviderConfiguration
             /// </summary>
             public Union<Humidifier.SecurityHub.ConnectorTypes.AzureProviderConfiguration, BaseFunction>? Azure { get; set; }
+            /// <summary>
+            /// GCP
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-securityhub-connector-provider.html#cfn-securityhub-connector-provider-gcp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GcpProviderConfiguration
+            /// </summary>
+            public Union<Humidifier.SecurityHub.ConnectorTypes.GcpProviderConfiguration, BaseFunction>? GCP { get; set; }
         }
     }
 }

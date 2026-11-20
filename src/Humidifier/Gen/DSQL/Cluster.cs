@@ -20,6 +20,15 @@ namespace Humidifier.DSQL
 
         public override string AWSTypeName { get => AWS.DSQL.Cluster; }
         /// <summary>
+        /// MetricGroups
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dsql-cluster.html#cfn-dsql-cluster-metricgroups
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: List
+        /// ItemType: MetricGroup
+        /// </summary>
+        public List<Humidifier.DSQL.ClusterTypes.MetricGroup> MetricGroups { get; set; }
+        /// <summary>
         /// PolicyDocument
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dsql-cluster.html#cfn-dsql-cluster-policydocument
         /// Required: False
@@ -90,6 +99,18 @@ namespace Humidifier.DSQL
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKeyArn { get; set; }
+        }
+
+        public class MetricGroup : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MetricGroup_
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dsql-cluster-metricgroup.html#cfn-dsql-cluster-metricgroup-metricgroup
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MetricGroup_ { get; set; }
         }
 
         public class MultiRegionProperties : Humidifier.Base.BaseSubResource

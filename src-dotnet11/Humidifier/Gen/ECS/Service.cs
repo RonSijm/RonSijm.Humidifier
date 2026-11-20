@@ -648,7 +648,7 @@ namespace Humidifier.ECS
             public Union<string, BaseFunction>? ForceNewDeploymentNonce { get; set; }
         }
 
-        public class GatewayConnector : Humidifier.Base.BaseSubResource, IHaveECSServiceTypesGatewayConnectorFiltersFilters, IHaveECSServiceTypesGatewayConnectorHealthCheckHealthCheck, IHavePortName
+        public class GatewayConnector : Humidifier.Base.BaseSubResource, IHaveECSServiceTypesGatewayConnectorFiltersFilters, IHaveECSServiceTypesGatewayConnectorDeregistrationDelayDeregistrationDelay, IHaveECSServiceTypesGatewayConnectorHealthCheckHealthCheck, IHavePortName
         {
             /// <summary>
             /// Filters
@@ -658,6 +658,14 @@ namespace Humidifier.ECS
             /// Type: GatewayConnectorFilters
             /// </summary>
             public Union<Humidifier.ECS.ServiceTypes.GatewayConnectorFilters, BaseFunction>? Filters { get; set; }
+            /// <summary>
+            /// DeregistrationDelay
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-deregistrationdelay
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GatewayConnectorDeregistrationDelay
+            /// </summary>
+            public Union<Humidifier.ECS.ServiceTypes.GatewayConnectorDeregistrationDelay, BaseFunction>? DeregistrationDelay { get; set; }
             /// <summary>
             /// HealthCheck
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnector.html#cfn-ecs-service-gatewayconnector-healthcheck
@@ -674,6 +682,18 @@ namespace Humidifier.ECS
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? PortName { get; set; }
+        }
+
+        public class GatewayConnectorDeregistrationDelay : Humidifier.Base.BaseSubResource, IHaveTimeoutSeconds_Integer
+        {
+            /// <summary>
+            /// TimeoutSeconds
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-gatewayconnectorderegistrationdelay.html#cfn-ecs-service-gatewayconnectorderegistrationdelay-timeoutseconds
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public Union<int, BaseFunction>? TimeoutSeconds { get; set; }
         }
 
         public class GatewayConnectorFilters : Humidifier.Base.BaseSubResource, IHaveStringListOfAccessTypes

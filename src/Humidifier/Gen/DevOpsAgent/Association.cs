@@ -286,6 +286,14 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public dynamic RepoId { get; set; }
+            /// <summary>
+            /// ReleaseManagementAssociationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-githubconfiguration.html#cfn-devopsagent-association-githubconfiguration-releasemanagementassociationid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ReleaseManagementAssociationId { get; set; }
         }
 
         public class GitLabConfiguration : Humidifier.Base.BaseSubResource, IHaveProjectId
@@ -314,6 +322,14 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public dynamic ProjectPath { get; set; }
+            /// <summary>
+            /// ReleaseManagementAssociationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-gitlabconfiguration.html#cfn-devopsagent-association-gitlabconfiguration-releasemanagementassociationid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ReleaseManagementAssociationId { get; set; }
             /// <summary>
             /// EnableWebhookUpdates
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-gitlabconfiguration.html#cfn-devopsagent-association-gitlabconfiguration-enablewebhookupdates

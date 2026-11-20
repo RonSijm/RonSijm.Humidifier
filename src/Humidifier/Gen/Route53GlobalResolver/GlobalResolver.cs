@@ -34,6 +34,14 @@ namespace Humidifier.Route53GlobalResolver
         /// </summary>
         public dynamic Description { get; set; }
         /// <summary>
+        /// PublicIpStatus
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-globalresolver.html#cfn-route53globalresolver-globalresolver-publicipstatus
+        /// Required: False
+        /// UpdateType: Mutable
+        /// PrimitiveType: String
+        /// </summary>
+        public dynamic PublicIpStatus { get; set; }
+        /// <summary>
         /// ObservabilityRegion
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53globalresolver-globalresolver.html#cfn-route53globalresolver-globalresolver-observabilityregion
         /// Required: False

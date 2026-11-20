@@ -2006,18 +2006,6 @@ namespace Humidifier.MediaLive
             public Union<int, BaseFunction>? CaptionChannel { get; set; }
         }
 
-        public class CmafIngestFrameCaptureOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier
-        {
-            /// <summary>
-            /// NameModifier
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-cmafingestframecaptureoutputsettings.html#cfn-medialive-channel-cmafingestframecaptureoutputsettings-namemodifier
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? NameModifier { get; set; }
-        }
-
         public class CmafIngestGroupSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesOutputLocationRefDestination, IHaveKlvNameModifier, IHaveScte35Type, IHaveTimedMetadataId3Frame, IHaveTimedMetadataPassthrough, IHaveNielsenId3Behavior, IHaveScte35NameModifier, IHaveListOfMediaLiveChannelTypesCmafIngestCaptionLanguageMappingCaptionLanguageMappings, IHaveMediaLiveChannelTypesCmafIngestWatermarkingSettingsWatermarkingSettings, IHaveSegmentLengthUnits, IHaveTimedMetadataId3Period_Integer, IHaveListOfMediaLiveChannelTypesAdditionalDestinationsAdditionalDestinations, IHaveNielsenId3NameModifier, IHaveKlvBehavior, IHaveSegmentLength_Integer, IHaveId3Behavior, IHaveSendDelayMs_Integer, IHaveId3NameModifier
         {
             /// <summary>
@@ -2235,6 +2223,18 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? Profile { get; set; }
+        }
+
+        public class CmafIngestOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier
+        {
+            /// <summary>
+            /// NameModifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-cmafingestoutputsettings.html#cfn-medialive-channel-cmafingestoutputsettings-namemodifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? NameModifier { get; set; }
         }
 
         public class CmafIngestWatermarkingSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesCmafIngestMediaPackageV2AbWatermarkerIrdetoSettingsCmafIngestAbWatermarkerIrdetoSettings
@@ -3084,6 +3084,18 @@ namespace Humidifier.MediaLive
             /// Type: OutputLocationRef
             /// </summary>
             public Union<Humidifier.MediaLive.ChannelTypes.OutputLocationRef, BaseFunction>? Destination { get; set; }
+        }
+
+        public class FrameCaptureOutputSettings : Humidifier.Base.BaseSubResource, IHaveNameModifier
+        {
+            /// <summary>
+            /// NameModifier
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecaptureoutputsettings.html#cfn-medialive-channel-framecaptureoutputsettings-namemodifier
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? NameModifier { get; set; }
         }
 
         public class FrameCaptureSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesTimecodeBurninSettingsTimecodeBurninSettings, IHaveCaptureInterval_Integer, IHaveCaptureIntervalUnits
@@ -5843,8 +5855,40 @@ namespace Humidifier.MediaLive
             public Union<string, BaseFunction>? HlsAutoSelect { get; set; }
         }
 
-        public class MediaPackageV2GroupSettings : Humidifier.Base.BaseSubResource, IHaveListOfMediaLiveChannelTypesCaptionLanguageMappingCaptionLanguageMappings, IHaveMediaLiveChannelTypesMediaPackageV2WatermarkingSettingsWatermarkingSettings, IHaveScte35Type, IHaveSegmentLengthUnits, IHaveTimedMetadataId3Frame, IHaveTimedMetadataId3Period_Integer, IHaveTimedMetadataPassthrough, IHaveListOfMediaLiveChannelTypesAdditionalDestinationsAdditionalDestinations, IHaveNielsenId3Behavior, IHaveKlvBehavior, IHaveId3Behavior, IHaveSegmentLength_Integer
+        public class MediaPackageV2GroupSettings : Humidifier.Base.BaseSubResource, IHaveScte35Type, IHaveTimedMetadataId3Frame, IHaveTimedMetadataPassthrough, IHaveNielsenId3Behavior, IHaveListOfMediaLiveChannelTypesCaptionLanguageMappingCaptionLanguageMappings, IHaveMediaLiveChannelTypesMediaPackageV2WatermarkingSettingsWatermarkingSettings, IHaveSegmentLengthUnits, IHaveTimedMetadataId3Period_Integer, IHaveListOfMediaLiveChannelTypesAdditionalDestinationsAdditionalDestinations, IHaveKlvBehavior, IHaveCaptionLanguageSetting, IHaveId3Behavior, IHaveSegmentLength_Integer
         {
+            /// <summary>
+            /// Scte35Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-scte35type
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Scte35Type { get; set; }
+            /// <summary>
+            /// TimedMetadataId3Frame
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-timedmetadataid3frame
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TimedMetadataId3Frame { get; set; }
+            /// <summary>
+            /// TimedMetadataPassthrough
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-timedmetadatapassthrough
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? TimedMetadataPassthrough { get; set; }
+            /// <summary>
+            /// NielsenId3Behavior
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-nielsenid3behavior
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? NielsenId3Behavior { get; set; }
             /// <summary>
             /// CaptionLanguageMappings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-captionlanguagemappings
@@ -5863,14 +5907,6 @@ namespace Humidifier.MediaLive
             /// </summary>
             public Union<Humidifier.MediaLive.ChannelTypes.MediaPackageV2WatermarkingSettings, BaseFunction>? WatermarkingSettings { get; set; }
             /// <summary>
-            /// Scte35Type
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-scte35type
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? Scte35Type { get; set; }
-            /// <summary>
             /// SegmentLengthUnits
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-segmentlengthunits
             /// Required: False
@@ -5879,14 +5915,6 @@ namespace Humidifier.MediaLive
             /// </summary>
             public Union<string, BaseFunction>? SegmentLengthUnits { get; set; }
             /// <summary>
-            /// TimedMetadataId3Frame
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-timedmetadataid3frame
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? TimedMetadataId3Frame { get; set; }
-            /// <summary>
             /// TimedMetadataId3Period
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-timedmetadataid3period
             /// Required: False
@@ -5894,14 +5922,6 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: Integer
             /// </summary>
             public Union<int, BaseFunction>? TimedMetadataId3Period { get; set; }
-            /// <summary>
-            /// TimedMetadataPassthrough
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-timedmetadatapassthrough
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? TimedMetadataPassthrough { get; set; }
             /// <summary>
             /// AdditionalDestinations
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-additionaldestinations
@@ -5912,14 +5932,6 @@ namespace Humidifier.MediaLive
             /// </summary>
             public Union<IReadOnlyList<Humidifier.MediaLive.ChannelTypes.AdditionalDestinations>, IReadOnlyList<Union<Humidifier.MediaLive.ChannelTypes.AdditionalDestinations, BaseFunction>>, BaseFunction>? AdditionalDestinations { get; set; }
             /// <summary>
-            /// NielsenId3Behavior
-            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-nielsenid3behavior
-            /// Required: False
-            /// UpdateType: Mutable
-            /// PrimitiveType: String
-            /// </summary>
-            public Union<string, BaseFunction>? NielsenId3Behavior { get; set; }
-            /// <summary>
             /// KlvBehavior
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-klvbehavior
             /// Required: False
@@ -5927,6 +5939,14 @@ namespace Humidifier.MediaLive
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? KlvBehavior { get; set; }
+            /// <summary>
+            /// CaptionLanguageSetting
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-captionlanguagesetting
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? CaptionLanguageSetting { get; set; }
             /// <summary>
             /// Id3Behavior
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagev2groupsettings.html#cfn-medialive-channel-mediapackagev2groupsettings-id3behavior
@@ -6985,7 +7005,7 @@ namespace Humidifier.MediaLive
             public Union<Humidifier.MediaLive.ChannelTypes.EpochLockingSettings, BaseFunction>? EpochLockingSettings { get; set; }
         }
 
-        public class OutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesMediaPackageOutputSettingsMediaPackageOutputSettings, IHaveMediaLiveChannelTypesMsSmoothOutputSettingsMsSmoothOutputSettings, IHaveMediaLiveChannelTypesCmafIngestFrameCaptureOutputSettingsFrameCaptureOutputSettings, IHaveMediaLiveChannelTypesHlsOutputSettingsHlsOutputSettings, IHaveMediaLiveChannelTypesRtmpOutputSettingsRtmpOutputSettings, IHaveMediaLiveChannelTypesUdpOutputSettingsUdpOutputSettings, IHaveMediaLiveChannelTypesMultiplexOutputSettingsMultiplexOutputSettings, IHaveMediaLiveChannelTypesMediaConnectRouterOutputSettingsMediaConnectRouterOutputSettings, IHaveMediaLiveChannelTypesCmafIngestFrameCaptureOutputSettingsCmafIngestOutputSettings, IHaveMediaLiveChannelTypesSrtOutputSettingsSrtOutputSettings, IHaveMediaLiveChannelTypesArchiveOutputSettingsArchiveOutputSettings
+        public class OutputSettings : Humidifier.Base.BaseSubResource, IHaveMediaLiveChannelTypesMediaPackageOutputSettingsMediaPackageOutputSettings, IHaveMediaLiveChannelTypesMsSmoothOutputSettingsMsSmoothOutputSettings, IHaveMediaLiveChannelTypesFrameCaptureOutputSettingsFrameCaptureOutputSettings, IHaveMediaLiveChannelTypesHlsOutputSettingsHlsOutputSettings, IHaveMediaLiveChannelTypesRtmpOutputSettingsRtmpOutputSettings, IHaveMediaLiveChannelTypesUdpOutputSettingsUdpOutputSettings, IHaveMediaLiveChannelTypesMultiplexOutputSettingsMultiplexOutputSettings, IHaveMediaLiveChannelTypesMediaConnectRouterOutputSettingsMediaConnectRouterOutputSettings, IHaveMediaLiveChannelTypesCmafIngestOutputSettingsCmafIngestOutputSettings, IHaveMediaLiveChannelTypesSrtOutputSettingsSrtOutputSettings, IHaveMediaLiveChannelTypesArchiveOutputSettingsArchiveOutputSettings
         {
             /// <summary>
             /// MediaPackageOutputSettings
@@ -7008,9 +7028,9 @@ namespace Humidifier.MediaLive
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-framecaptureoutputsettings
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: CmafIngestFrameCaptureOutputSettings
+            /// Type: FrameCaptureOutputSettings
             /// </summary>
-            public Union<Humidifier.MediaLive.ChannelTypes.CmafIngestFrameCaptureOutputSettings, BaseFunction>? FrameCaptureOutputSettings { get; set; }
+            public Union<Humidifier.MediaLive.ChannelTypes.FrameCaptureOutputSettings, BaseFunction>? FrameCaptureOutputSettings { get; set; }
             /// <summary>
             /// HlsOutputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-hlsoutputsettings
@@ -7056,9 +7076,9 @@ namespace Humidifier.MediaLive
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-cmafingestoutputsettings
             /// Required: False
             /// UpdateType: Mutable
-            /// Type: CmafIngestFrameCaptureOutputSettings
+            /// Type: CmafIngestOutputSettings
             /// </summary>
-            public Union<Humidifier.MediaLive.ChannelTypes.CmafIngestFrameCaptureOutputSettings, BaseFunction>? CmafIngestOutputSettings { get; set; }
+            public Union<Humidifier.MediaLive.ChannelTypes.CmafIngestOutputSettings, BaseFunction>? CmafIngestOutputSettings { get; set; }
             /// <summary>
             /// SrtOutputSettings
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-srtoutputsettings

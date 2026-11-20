@@ -252,7 +252,7 @@ namespace Humidifier.DevOpsAgent
             public Union<bool, BaseFunction>? EnableWebhookUpdates { get; set; }
         }
 
-        public class GitHubConfiguration : Humidifier.Base.BaseSubResource, IHaveOwner, IHaveOwnerType, IHaveRepoName, IHaveRepoId
+        public class GitHubConfiguration : Humidifier.Base.BaseSubResource, IHaveOwner, IHaveOwnerType, IHaveRepoName, IHaveRepoId, IHaveReleaseManagementAssociationId
         {
             /// <summary>
             /// Owner
@@ -286,9 +286,17 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? RepoId { get; set; }
+            /// <summary>
+            /// ReleaseManagementAssociationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-githubconfiguration.html#cfn-devopsagent-association-githubconfiguration-releasemanagementassociationid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ReleaseManagementAssociationId { get; set; }
         }
 
-        public class GitLabConfiguration : Humidifier.Base.BaseSubResource, IHaveProjectId, IHaveInstanceIdentifier, IHaveProjectPath, IHaveEnableWebhookUpdates_Boolean
+        public class GitLabConfiguration : Humidifier.Base.BaseSubResource, IHaveProjectId, IHaveInstanceIdentifier, IHaveProjectPath, IHaveReleaseManagementAssociationId, IHaveEnableWebhookUpdates_Boolean
         {
             /// <summary>
             /// ProjectId
@@ -314,6 +322,14 @@ namespace Humidifier.DevOpsAgent
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ProjectPath { get; set; }
+            /// <summary>
+            /// ReleaseManagementAssociationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-gitlabconfiguration.html#cfn-devopsagent-association-gitlabconfiguration-releasemanagementassociationid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ReleaseManagementAssociationId { get; set; }
             /// <summary>
             /// EnableWebhookUpdates
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsagent-association-gitlabconfiguration.html#cfn-devopsagent-association-gitlabconfiguration-enablewebhookupdates

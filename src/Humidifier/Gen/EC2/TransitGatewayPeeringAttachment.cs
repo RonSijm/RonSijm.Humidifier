@@ -8,12 +8,24 @@ namespace Humidifier.EC2
         public class Attributes
         {
             public static string Status =  "Status" ;
+            public static string AccepterAllowMultipathResilience =  "AccepterAllowMultipathResilience" ;
+            public static string RequesterMultipathResilienceMode =  "RequesterMultipathResilienceMode" ;
             public static string State =  "State" ;
             public static string CreationTime =  "CreationTime" ;
+            public static string RequesterAllowMultipathResilience =  "RequesterAllowMultipathResilience" ;
             public static string TransitGatewayAttachmentId =  "TransitGatewayAttachmentId" ;
+            public static string MultipathResilienceStatus =  "MultipathResilienceStatus" ;
         }
 
         public override string AWSTypeName { get => AWS.EC2.TransitGatewayPeeringAttachment; }
+        /// <summary>
+        /// Options
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-options
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: TransitGatewayPeeringAttachmentOptions
+        /// </summary>
+        public Humidifier.EC2.TransitGatewayPeeringAttachmentTypes.TransitGatewayPeeringAttachmentOptions Options { get; set; }
 
         /// <summary>
         /// TransitGatewayId
@@ -85,6 +97,26 @@ namespace Humidifier.EC2
             /// PrimitiveType: String
             /// </summary>
             public dynamic Code { get; set; }
+        }
+
+        public class TransitGatewayPeeringAttachmentOptions : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// MultipathResilienceMode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions.html#cfn-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions-multipathresiliencemode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic MultipathResilienceMode { get; set; }
+            /// <summary>
+            /// AllowMultipathResilience
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions.html#cfn-ec2-transitgatewaypeeringattachment-transitgatewaypeeringattachmentoptions-allowmultipathresilience
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AllowMultipathResilience { get; set; }
         }
     }
 }

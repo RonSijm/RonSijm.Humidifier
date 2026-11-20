@@ -7,10 +7,10 @@ namespace Humidifier.Glue
     {
         public class Attributes
         {
-            public static string ResourceArn =  "ResourceArn" ;
             public static string CreateTime =  "CreateTime" ;
-            public static string UpdateTime =  "UpdateTime" ;
             public static string CatalogId =  "CatalogId" ;
+            public static string ResourceArn =  "ResourceArn" ;
+            public static string UpdateTime =  "UpdateTime" ;
         }
 
         public override string AWSTypeName { get => AWS.Glue.Catalog; }
@@ -103,6 +103,34 @@ namespace Humidifier.Glue
 
     namespace CatalogTypes
     {
+        public class AssetsSyncConfiguration : Humidifier.Base.BaseSubResource, IHaveStatus
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-assetssyncconfiguration.html#cfn-glue-catalog-assetssyncconfiguration-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// RefreshIntervalMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-assetssyncconfiguration.html#cfn-glue-catalog-assetssyncconfiguration-refreshintervalminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RefreshIntervalMinutes { get; set; }
+            /// <summary>
+            /// ManagedCrawlerDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-assetssyncconfiguration.html#cfn-glue-catalog-assetssyncconfiguration-managedcrawlerdetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedCrawlerDetails
+            /// </summary>
+            public Humidifier.Glue.CatalogTypes.ManagedCrawlerDetails ManagedCrawlerDetails { get; set; }
+        }
+
         public class CatalogProperties : Humidifier.Base.BaseSubResource
         {
             /// <summary>
@@ -204,7 +232,27 @@ namespace Humidifier.Glue
             public dynamic DataLakePrincipalIdentifier { get; set; }
         }
 
-        public class FederatedCatalog : Humidifier.Base.BaseSubResource, IHaveConnectionName, IHaveIdentifier
+        public class ErrorDetail : Humidifier.Base.BaseSubResource, IHaveErrorCode, IHaveErrorMessage
+        {
+            /// <summary>
+            /// ErrorCode
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-errordetail.html#cfn-glue-catalog-errordetail-errorcode
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ErrorCode { get; set; }
+            /// <summary>
+            /// ErrorMessage
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-errordetail.html#cfn-glue-catalog-errordetail-errormessage
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ErrorMessage { get; set; }
+        }
+
+        public class FederatedCatalog : Humidifier.Base.BaseSubResource, IHaveConnectionName, IHaveIdentifier, IHaveConnectionType
         {
             /// <summary>
             /// ConnectionName
@@ -222,6 +270,78 @@ namespace Humidifier.Glue
             /// PrimitiveType: String
             /// </summary>
             public dynamic Identifier { get; set; }
+            /// <summary>
+            /// ConnectionType
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-federatedcatalog.html#cfn-glue-catalog-federatedcatalog-connectiontype
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic ConnectionType { get; set; }
+            /// <summary>
+            /// SyncConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-federatedcatalog.html#cfn-glue-catalog-federatedcatalog-syncconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SyncConfiguration
+            /// </summary>
+            public Humidifier.Glue.CatalogTypes.SyncConfiguration SyncConfiguration { get; set; }
+        }
+
+        public class LineageSyncConfiguration : Humidifier.Base.BaseSubResource, IHaveStatus
+        {
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-lineagesyncconfiguration.html#cfn-glue-catalog-lineagesyncconfiguration-status
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// RefreshIntervalMinutes
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-lineagesyncconfiguration.html#cfn-glue-catalog-lineagesyncconfiguration-refreshintervalminutes
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Integer
+            /// </summary>
+            public dynamic RefreshIntervalMinutes { get; set; }
+            /// <summary>
+            /// ManagedCrawlerDetails
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-lineagesyncconfiguration.html#cfn-glue-catalog-lineagesyncconfiguration-managedcrawlerdetails
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ManagedCrawlerDetails
+            /// </summary>
+            public Humidifier.Glue.CatalogTypes.ManagedCrawlerDetails ManagedCrawlerDetails { get; set; }
+        }
+
+        public class ManagedCrawlerDetails : Humidifier.Base.BaseSubResource, IHaveStatus
+        {
+            /// <summary>
+            /// CrawlerArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-managedcrawlerdetails.html#cfn-glue-catalog-managedcrawlerdetails-crawlerarn
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic CrawlerArn { get; set; }
+            /// <summary>
+            /// Status
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-managedcrawlerdetails.html#cfn-glue-catalog-managedcrawlerdetails-status
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic Status { get; set; }
+            /// <summary>
+            /// Error
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-managedcrawlerdetails.html#cfn-glue-catalog-managedcrawlerdetails-error
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ErrorDetail
+            /// </summary>
+            public Humidifier.Glue.CatalogTypes.ErrorDetail Error { get; set; }
         }
 
         public class PrincipalPermissions : Humidifier.Base.BaseSubResource, IHavePermissions
@@ -243,6 +363,34 @@ namespace Humidifier.Glue
             /// Type: DataLakePrincipal
             /// </summary>
             public Humidifier.Glue.CatalogTypes.DataLakePrincipal Principal { get; set; }
+        }
+
+        public class SyncConfiguration : Humidifier.Base.BaseSubResource, IHaveRoleArn
+        {
+            /// <summary>
+            /// AssetsSyncConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-syncconfiguration.html#cfn-glue-catalog-syncconfiguration-assetssyncconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: AssetsSyncConfiguration
+            /// </summary>
+            public Humidifier.Glue.CatalogTypes.AssetsSyncConfiguration AssetsSyncConfiguration { get; set; }
+            /// <summary>
+            /// RoleArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-syncconfiguration.html#cfn-glue-catalog-syncconfiguration-rolearn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic RoleArn { get; set; }
+            /// <summary>
+            /// LineageSyncConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-catalog-syncconfiguration.html#cfn-glue-catalog-syncconfiguration-lineagesyncconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: LineageSyncConfiguration
+            /// </summary>
+            public Humidifier.Glue.CatalogTypes.LineageSyncConfiguration LineageSyncConfiguration { get; set; }
         }
 
         public class TargetRedshiftCatalog : Humidifier.Base.BaseSubResource

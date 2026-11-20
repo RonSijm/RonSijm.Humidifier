@@ -56,7 +56,7 @@ namespace Humidifier.Config
             public Union<string, BaseFunction>? ClientIdentifier { get; set; }
         }
 
-        public class ConnectorConfiguration : Humidifier.Base.BaseSubResource, IHaveConfigConnectorTypesAzureConnectorConfigurationAzure
+        public class ConnectorConfiguration : Humidifier.Base.BaseSubResource, IHaveConfigConnectorTypesAzureConnectorConfigurationAzure, IHaveConfigConnectorTypesGcpConnectorConfigurationGcp
         {
             /// <summary>
             /// Azure
@@ -66,6 +66,42 @@ namespace Humidifier.Config
             /// Type: AzureConnectorConfiguration
             /// </summary>
             public Union<Humidifier.Config.ConnectorTypes.AzureConnectorConfiguration, BaseFunction>? Azure { get; set; }
+            /// <summary>
+            /// Gcp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-connectorconfiguration.html#cfn-config-connector-connectorconfiguration-gcp
+            /// Required: False
+            /// UpdateType: Immutable
+            /// Type: GcpConnectorConfiguration
+            /// </summary>
+            public Union<Humidifier.Config.ConnectorTypes.GcpConnectorConfiguration, BaseFunction>? Gcp { get; set; }
+        }
+
+        public class GcpConnectorConfiguration : Humidifier.Base.BaseSubResource, IHaveWorkloadIdentityPoolProvider, IHaveGcpOrganizationId, IHaveServiceAccountEmail
+        {
+            /// <summary>
+            /// WorkloadIdentityPoolProvider
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-gcpconnectorconfiguration.html#cfn-config-connector-gcpconnectorconfiguration-workloadidentitypoolprovider
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? WorkloadIdentityPoolProvider { get; set; }
+            /// <summary>
+            /// GcpOrganizationId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-gcpconnectorconfiguration.html#cfn-config-connector-gcpconnectorconfiguration-gcporganizationid
+            /// Required: False
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? GcpOrganizationId { get; set; }
+            /// <summary>
+            /// ServiceAccountEmail
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-connector-gcpconnectorconfiguration.html#cfn-config-connector-gcpconnectorconfiguration-serviceaccountemail
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? ServiceAccountEmail { get; set; }
         }
     }
 }

@@ -52,6 +52,14 @@ namespace Humidifier.MWAAServerless
         [Required]
         public Humidifier.MWAAServerless.WorkflowTypes.S3Location DefinitionS3Location { get; set; }
         /// <summary>
+        /// Environment
+        /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaaserverless-workflow.html#cfn-mwaaserverless-workflow-environment
+        /// Required: False
+        /// UpdateType: Mutable
+        /// Type: Environment
+        /// </summary>
+        public Humidifier.MWAAServerless.WorkflowTypes.Environment Environment { get; set; }
+        /// <summary>
         /// NetworkConfiguration
         /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaaserverless-workflow.html#cfn-mwaaserverless-workflow-networkconfiguration
         /// Required: False
@@ -157,6 +165,19 @@ namespace Humidifier.MWAAServerless
             /// PrimitiveType: String
             /// </summary>
             public dynamic KmsKeyId { get; set; }
+        }
+
+        public class Environment : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// Variables
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaaserverless-workflow-environment.html#cfn-mwaaserverless-workflow-environment-variables
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: Map
+            /// PrimitiveItemType: String
+            /// </summary>
+            public Dictionary<string, dynamic> Variables { get; set; }
         }
 
         public class LoggingConfiguration : Humidifier.Base.BaseSubResource, IHaveLogGroupName

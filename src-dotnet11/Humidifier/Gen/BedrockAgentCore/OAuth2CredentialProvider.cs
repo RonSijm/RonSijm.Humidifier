@@ -87,6 +87,26 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? ClientSecretSource { get; set; }
         }
 
+        public class CertificateConfiguration : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesS3CertificateConfigurationS3, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesSecretsManagerCertificateConfigurationSecretsManager
+        {
+            /// <summary>
+            /// S3
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-certificateconfiguration.html#cfn-bedrockagentcore-oauth2credentialprovider-certificateconfiguration-s3
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: S3CertificateConfiguration
+            /// </summary>
+            public Union<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.S3CertificateConfiguration, BaseFunction>? S3 { get; set; }
+            /// <summary>
+            /// SecretsManager
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-certificateconfiguration.html#cfn-bedrockagentcore-oauth2credentialprovider-certificateconfiguration-secretsmanager
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: SecretsManagerCertificateConfiguration
+            /// </summary>
+            public Union<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.SecretsManagerCertificateConfiguration, BaseFunction>? SecretsManager { get; set; }
+        }
+
         public class ClientSecretArn : Humidifier.Base.BaseSubResource, IHaveSecretArn
         {
             /// <summary>
@@ -99,7 +119,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<string, BaseFunction>? SecretArn { get; set; }
         }
 
-        public class CustomOauth2ProviderConfigInput : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOnBehalfOfTokenExchangeConfigOnBehalfOfTokenExchangeConfig, IHaveListOfBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointOverridePrivateEndpointOverrides, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesSecretReferenceClientSecretConfig, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateKeyJwtConfigPrivateKeyJwtConfig, IHaveClientSecret, IHaveClientId, IHaveClientAuthenticationMethod, IHaveClientSecretSource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointPrivateEndpoint, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOauth2DiscoveryOauthDiscovery
+        public class CustomOauth2ProviderConfigInput : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOnBehalfOfTokenExchangeConfigOnBehalfOfTokenExchangeConfig, IHaveListOfBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointOverridePrivateEndpointOverrides, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesSecretReferenceClientSecretConfig, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateKeyJwtConfigPrivateKeyJwtConfig, IHaveClientSecret, IHaveClientId, IHaveClientAuthenticationMethod, IHaveListOfBedrockAgentCoreOAuth2CredentialProviderTypesCertificateConfigurationCertificateConfigurations, IHaveClientSecretSource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointPrivateEndpoint, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOauth2DiscoveryOauthDiscovery
         {
             /// <summary>
             /// OnBehalfOfTokenExchangeConfig
@@ -158,6 +178,15 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ClientAuthenticationMethod { get; set; }
+            /// <summary>
+            /// CertificateConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-customoauth2providerconfiginput.html#cfn-bedrockagentcore-oauth2credentialprovider-customoauth2providerconfiginput-certificateconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CertificateConfiguration
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.CertificateConfiguration>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.CertificateConfiguration, BaseFunction>>, BaseFunction>? CertificateConfigurations { get; set; }
             /// <summary>
             /// ClientSecretSource
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-customoauth2providerconfiginput.html#cfn-bedrockagentcore-oauth2credentialprovider-customoauth2providerconfiginput-clientsecretsource
@@ -596,7 +625,7 @@ namespace Humidifier.BedrockAgentCore
             public Union<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.LinkedinOauth2ProviderConfigInput, BaseFunction>? LinkedinOauth2ProviderConfig { get; set; }
         }
 
-        public class Oauth2ProviderConfigOutput : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOnBehalfOfTokenExchangeConfigOnBehalfOfTokenExchangeConfig, IHaveListOfBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointOverridePrivateEndpointOverrides, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateKeyJwtConfigPrivateKeyJwtConfig, IHaveClientId, IHaveClientAuthenticationMethod, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointPrivateEndpoint, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOauth2DiscoveryOauthDiscovery
+        public class Oauth2ProviderConfigOutput : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOnBehalfOfTokenExchangeConfigOnBehalfOfTokenExchangeConfig, IHaveListOfBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointOverridePrivateEndpointOverrides, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateKeyJwtConfigPrivateKeyJwtConfig, IHaveClientId, IHaveClientAuthenticationMethod, IHaveListOfBedrockAgentCoreOAuth2CredentialProviderTypesCertificateConfigurationCertificateConfigurations, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesPrivateEndpointPrivateEndpoint, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesOauth2DiscoveryOauthDiscovery
         {
             /// <summary>
             /// OnBehalfOfTokenExchangeConfig
@@ -639,6 +668,15 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? ClientAuthenticationMethod { get; set; }
+            /// <summary>
+            /// CertificateConfigurations
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-oauth2providerconfigoutput.html#cfn-bedrockagentcore-oauth2credentialprovider-oauth2providerconfigoutput-certificateconfigurations
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: List
+            /// ItemType: CertificateConfiguration
+            /// </summary>
+            public Union<IReadOnlyList<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.CertificateConfiguration>, IReadOnlyList<Union<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.CertificateConfiguration, BaseFunction>>, BaseFunction>? CertificateConfigurations { get; set; }
             /// <summary>
             /// PrivateEndpoint
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-oauth2providerconfigoutput.html#cfn-bedrockagentcore-oauth2credentialprovider-oauth2providerconfigoutput-privateendpoint
@@ -767,6 +805,26 @@ namespace Humidifier.BedrockAgentCore
             public Union<Humidifier.BedrockAgentCore.OAuth2CredentialProviderTypes.KmsKeySourceType, BaseFunction>? KmsKeySource { get; set; }
         }
 
+        public class S3CertificateConfiguration : Humidifier.Base.BaseSubResource, IHaveBucketOwnerAccountId, IHaveUri
+        {
+            /// <summary>
+            /// BucketOwnerAccountId
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-s3certificateconfiguration.html#cfn-bedrockagentcore-oauth2credentialprovider-s3certificateconfiguration-bucketowneraccountid
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? BucketOwnerAccountId { get; set; }
+            /// <summary>
+            /// Uri
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-s3certificateconfiguration.html#cfn-bedrockagentcore-oauth2credentialprovider-s3certificateconfiguration-uri
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Uri { get; set; }
+        }
+
         public class SalesforceOauth2ProviderConfigInput : Humidifier.Base.BaseSubResource, IHaveBedrockAgentCoreOAuth2CredentialProviderTypesSecretReferenceClientSecretConfig, IHaveClientSecret, IHaveClientId, IHaveClientSecretSource
         {
             /// <summary>
@@ -821,6 +879,18 @@ namespace Humidifier.BedrockAgentCore
             /// PrimitiveType: String
             /// </summary>
             public Union<string, BaseFunction>? SecretId { get; set; }
+        }
+
+        public class SecretsManagerCertificateConfiguration : Humidifier.Base.BaseSubResource, IHaveSecretArn
+        {
+            /// <summary>
+            /// SecretArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-bedrockagentcore-oauth2credentialprovider-secretsmanagercertificateconfiguration.html#cfn-bedrockagentcore-oauth2credentialprovider-secretsmanagercertificateconfiguration-secretarn
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? SecretArn { get; set; }
         }
 
         public class SelfManagedLatticeResource : Humidifier.Base.BaseSubResource, IHaveResourceConfigurationIdentifier

@@ -58,8 +58,28 @@ namespace Humidifier.Lambda
             public Union<Humidifier.Lambda.NetworkConnectorTypes.VpcEgressConfiguration, BaseFunction>? VpcEgressConfiguration { get; set; }
         }
 
-        public class VpcEgressConfiguration : Humidifier.Base.BaseSubResource, IHaveStringListOfAssociatedComputeResourceTypes, IHaveNetworkProtocol, IHaveStringListOfSubnetIds, IHaveStringListOfSecurityGroupIds
+        public class ElasticIpConfiguration : Humidifier.Base.BaseSubResource, IHaveType
         {
+            /// <summary>
+            /// Type
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-elasticipconfiguration.html#cfn-lambda-networkconnector-elasticipconfiguration-type
+            /// Required: True
+            /// UpdateType: Mutable
+            /// PrimitiveType: String
+            /// </summary>
+            public Union<string, BaseFunction>? Type { get; set; }
+        }
+
+        public class VpcEgressConfiguration : Humidifier.Base.BaseSubResource, IHaveLambdaNetworkConnectorTypesElasticIpConfigurationElasticIpConfiguration, IHaveStringListOfAssociatedComputeResourceTypes, IHaveNetworkProtocol, IHaveStringListOfSubnetIds, IHaveStringListOfSecurityGroupIds
+        {
+            /// <summary>
+            /// ElasticIpConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-elasticipconfiguration
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ElasticIpConfiguration
+            /// </summary>
+            public Union<Humidifier.Lambda.NetworkConnectorTypes.ElasticIpConfiguration, BaseFunction>? ElasticIpConfiguration { get; set; }
             /// <summary>
             /// AssociatedComputeResourceTypes
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-networkconnector-vpcegressconfiguration.html#cfn-lambda-networkconnector-vpcegressconfiguration-associatedcomputeresourcetypes

@@ -151,16 +151,89 @@ namespace Humidifier.InspectorV2
             public dynamic ConnectorStatus { get; set; }
         }
 
+        public class GcpProviderConfiguration : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// AwsConfigConnectorArn
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpproviderconfiguration.html#cfn-inspectorv2-connector-gcpproviderconfiguration-awsconfigconnectorarn
+            /// Required: True
+            /// UpdateType: Immutable
+            /// PrimitiveType: String
+            /// </summary>
+            public dynamic AwsConfigConnectorArn { get; set; }
+            /// <summary>
+            /// GcpRegions
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpproviderconfiguration.html#cfn-inspectorv2-connector-gcpproviderconfiguration-gcpregions
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: List
+            /// PrimitiveItemType: String
+            /// </summary>
+            public dynamic GcpRegions { get; set; }
+            /// <summary>
+            /// ScopeConfiguration
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpproviderconfiguration.html#cfn-inspectorv2-connector-gcpproviderconfiguration-scopeconfiguration
+            /// Required: True
+            /// UpdateType: Mutable
+            /// Type: GcpScopeConfigurationMap
+            /// </summary>
+            public Humidifier.InspectorV2.ConnectorTypes.GcpScopeConfigurationMap ScopeConfiguration { get; set; }
+            /// <summary>
+            /// AutoInstallVMScanner
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpproviderconfiguration.html#cfn-inspectorv2-connector-gcpproviderconfiguration-autoinstallvmscanner
+            /// Required: False
+            /// UpdateType: Mutable
+            /// PrimitiveType: Boolean
+            /// </summary>
+            public dynamic AutoInstallVMScanner { get; set; }
+        }
+
+        public class GcpScopeConfigurationMap : Humidifier.Base.BaseSubResource
+        {
+            /// <summary>
+            /// ServerlessScanning
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpscopeconfigurationmap.html#cfn-inspectorv2-connector-gcpscopeconfigurationmap-serverlessscanning
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ScopeConfiguration
+            /// </summary>
+            public Humidifier.InspectorV2.ConnectorTypes.ScopeConfiguration ServerlessScanning { get; set; }
+            /// <summary>
+            /// ContainerImageScanning
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpscopeconfigurationmap.html#cfn-inspectorv2-connector-gcpscopeconfigurationmap-containerimagescanning
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ScopeConfiguration
+            /// </summary>
+            public Humidifier.InspectorV2.ConnectorTypes.ScopeConfiguration ContainerImageScanning { get; set; }
+            /// <summary>
+            /// VmScanning
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-gcpscopeconfigurationmap.html#cfn-inspectorv2-connector-gcpscopeconfigurationmap-vmscanning
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: ScopeConfiguration
+            /// </summary>
+            public Humidifier.InspectorV2.ConnectorTypes.ScopeConfiguration VmScanning { get; set; }
+        }
+
         public class ProviderConfiguration : Humidifier.Base.BaseSubResource
         {
             /// <summary>
             /// Azure
             /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-providerconfiguration.html#cfn-inspectorv2-connector-providerconfiguration-azure
-            /// Required: True
+            /// Required: False
             /// UpdateType: Mutable
             /// Type: AzureProviderConfiguration
             /// </summary>
             public Humidifier.InspectorV2.ConnectorTypes.AzureProviderConfiguration Azure { get; set; }
+            /// <summary>
+            /// Gcp
+            /// http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-connector-providerconfiguration.html#cfn-inspectorv2-connector-providerconfiguration-gcp
+            /// Required: False
+            /// UpdateType: Mutable
+            /// Type: GcpProviderConfiguration
+            /// </summary>
+            public Humidifier.InspectorV2.ConnectorTypes.GcpProviderConfiguration Gcp { get; set; }
         }
 
         public class ScopeConfiguration : Humidifier.Base.BaseSubResource, IHaveState
